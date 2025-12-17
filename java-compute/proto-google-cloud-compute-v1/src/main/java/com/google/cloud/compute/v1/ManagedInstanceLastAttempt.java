@@ -69,7 +69,8 @@ public final class ManagedInstanceLastAttempt extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output Only] Encountered errors during the last attempt to create or delete the instance.
+   * Output only. [Output Only] Encountered errors during the last attempt to create or
+   * delete the instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ManagedInstanceLastAttemptErrors errors = 315977579;
@@ -86,7 +87,8 @@ public final class ManagedInstanceLastAttempt extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output Only] Encountered errors during the last attempt to create or delete the instance.
+   * Output only. [Output Only] Encountered errors during the last attempt to create or
+   * delete the instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ManagedInstanceLastAttemptErrors errors = 315977579;
@@ -105,7 +107,8 @@ public final class ManagedInstanceLastAttempt extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output Only] Encountered errors during the last attempt to create or delete the instance.
+   * Output only. [Output Only] Encountered errors during the last attempt to create or
+   * delete the instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ManagedInstanceLastAttemptErrors errors = 315977579;
@@ -492,7 +495,8 @@ public final class ManagedInstanceLastAttempt extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Encountered errors during the last attempt to create or delete the instance.
+     * Output only. [Output Only] Encountered errors during the last attempt to create or
+     * delete the instance.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ManagedInstanceLastAttemptErrors errors = 315977579;
@@ -508,7 +512,8 @@ public final class ManagedInstanceLastAttempt extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Encountered errors during the last attempt to create or delete the instance.
+     * Output only. [Output Only] Encountered errors during the last attempt to create or
+     * delete the instance.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ManagedInstanceLastAttemptErrors errors = 315977579;
@@ -530,7 +535,8 @@ public final class ManagedInstanceLastAttempt extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Encountered errors during the last attempt to create or delete the instance.
+     * Output only. [Output Only] Encountered errors during the last attempt to create or
+     * delete the instance.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ManagedInstanceLastAttemptErrors errors = 315977579;
@@ -554,7 +560,8 @@ public final class ManagedInstanceLastAttempt extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Encountered errors during the last attempt to create or delete the instance.
+     * Output only. [Output Only] Encountered errors during the last attempt to create or
+     * delete the instance.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ManagedInstanceLastAttemptErrors errors = 315977579;
@@ -576,7 +583,8 @@ public final class ManagedInstanceLastAttempt extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Encountered errors during the last attempt to create or delete the instance.
+     * Output only. [Output Only] Encountered errors during the last attempt to create or
+     * delete the instance.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ManagedInstanceLastAttemptErrors errors = 315977579;
@@ -607,7 +615,8 @@ public final class ManagedInstanceLastAttempt extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Encountered errors during the last attempt to create or delete the instance.
+     * Output only. [Output Only] Encountered errors during the last attempt to create or
+     * delete the instance.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ManagedInstanceLastAttemptErrors errors = 315977579;
@@ -628,7 +637,8 @@ public final class ManagedInstanceLastAttempt extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Encountered errors during the last attempt to create or delete the instance.
+     * Output only. [Output Only] Encountered errors during the last attempt to create or
+     * delete the instance.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ManagedInstanceLastAttemptErrors errors = 315977579;
@@ -644,7 +654,8 @@ public final class ManagedInstanceLastAttempt extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Encountered errors during the last attempt to create or delete the instance.
+     * Output only. [Output Only] Encountered errors during the last attempt to create or
+     * delete the instance.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ManagedInstanceLastAttemptErrors errors = 315977579;
@@ -665,7 +676,8 @@ public final class ManagedInstanceLastAttempt extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Encountered errors during the last attempt to create or delete the instance.
+     * Output only. [Output Only] Encountered errors during the last attempt to create or
+     * delete the instance.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ManagedInstanceLastAttemptErrors errors = 315977579;

@@ -585,6 +585,7 @@ public class BackupDRClientHttpJsonTest {
             .setTotalStoredBytes(1181597162)
             .setUid("uid115792")
             .putAllAnnotations(new HashMap<String, String>())
+            .setEncryptionConfig(BackupVault.EncryptionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -652,6 +653,7 @@ public class BackupDRClientHttpJsonTest {
             .setTotalStoredBytes(1181597162)
             .setUid("uid115792")
             .putAllAnnotations(new HashMap<String, String>())
+            .setEncryptionConfig(BackupVault.EncryptionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -919,6 +921,7 @@ public class BackupDRClientHttpJsonTest {
             .setTotalStoredBytes(1181597162)
             .setUid("uid115792")
             .putAllAnnotations(new HashMap<String, String>())
+            .setEncryptionConfig(BackupVault.EncryptionConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -976,6 +979,7 @@ public class BackupDRClientHttpJsonTest {
             .setTotalStoredBytes(1181597162)
             .setUid("uid115792")
             .putAllAnnotations(new HashMap<String, String>())
+            .setEncryptionConfig(BackupVault.EncryptionConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1033,6 +1037,7 @@ public class BackupDRClientHttpJsonTest {
             .setTotalStoredBytes(1181597162)
             .setUid("uid115792")
             .putAllAnnotations(new HashMap<String, String>())
+            .setEncryptionConfig(BackupVault.EncryptionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1058,6 +1063,7 @@ public class BackupDRClientHttpJsonTest {
             .setTotalStoredBytes(1181597162)
             .setUid("uid115792")
             .putAllAnnotations(new HashMap<String, String>())
+            .setEncryptionConfig(BackupVault.EncryptionConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1103,6 +1109,7 @@ public class BackupDRClientHttpJsonTest {
               .setTotalStoredBytes(1181597162)
               .setUid("uid115792")
               .putAllAnnotations(new HashMap<String, String>())
+              .setEncryptionConfig(BackupVault.EncryptionConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateBackupVaultAsync(backupVault, updateMask).get();
@@ -1740,6 +1747,7 @@ public class BackupDRClientHttpJsonTest {
             .setResourceSizeBytes(-275424386)
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllKmsKeyVersions(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1802,6 +1810,7 @@ public class BackupDRClientHttpJsonTest {
             .setResourceSizeBytes(-275424386)
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllKmsKeyVersions(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1864,6 +1873,7 @@ public class BackupDRClientHttpJsonTest {
             .setResourceSizeBytes(-275424386)
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllKmsKeyVersions(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1892,6 +1902,7 @@ public class BackupDRClientHttpJsonTest {
             .setResourceSizeBytes(-275424386)
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllKmsKeyVersions(new ArrayList<String>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1940,6 +1951,7 @@ public class BackupDRClientHttpJsonTest {
               .setResourceSizeBytes(-275424386)
               .setSatisfiesPzs(true)
               .setSatisfiesPzi(true)
+              .addAllKmsKeyVersions(new ArrayList<String>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateBackupAsync(backup, updateMask).get();
@@ -1969,6 +1981,7 @@ public class BackupDRClientHttpJsonTest {
             .setResourceSizeBytes(-275424386)
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllKmsKeyVersions(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2036,6 +2049,7 @@ public class BackupDRClientHttpJsonTest {
             .setResourceSizeBytes(-275424386)
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllKmsKeyVersions(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

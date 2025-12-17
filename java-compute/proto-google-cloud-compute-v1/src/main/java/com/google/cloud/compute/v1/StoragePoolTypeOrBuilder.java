@@ -28,7 +28,8 @@ public interface StoragePoolTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -41,7 +42,8 @@ public interface StoragePoolTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -54,7 +56,8 @@ public interface StoragePoolTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -67,7 +70,8 @@ public interface StoragePoolTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The deprecation status associated with this storage pool type.
+   * [Output Only] The deprecation status associated with this storage pool
+   * type.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
@@ -80,7 +84,8 @@ public interface StoragePoolTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The deprecation status associated with this storage pool type.
+   * [Output Only] The deprecation status associated with this storage pool
+   * type.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
@@ -93,7 +98,8 @@ public interface StoragePoolTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The deprecation status associated with this storage pool type.
+   * [Output Only] The deprecation status associated with this storage pool
+   * type.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
@@ -143,7 +149,8 @@ public interface StoragePoolTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -156,7 +163,8 @@ public interface StoragePoolTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -169,7 +177,7 @@ public interface StoragePoolTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#storagePoolType for storage pool types.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#storagePoolType for storage pool types.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -182,7 +190,7 @@ public interface StoragePoolTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#storagePoolType for storage pool types.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#storagePoolType for storage pool types.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -195,7 +203,7 @@ public interface StoragePoolTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#storagePoolType for storage pool types.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#storagePoolType for storage pool types.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -364,7 +372,8 @@ public interface StoragePoolTypeOrBuilder
    *
    *
    * <pre>
-   * [Deprecated] This field is deprecated. Use minPoolProvisionedCapacityGb instead.
+   * [Deprecated] This field is deprecated. Use minPoolProvisionedCapacityGb
+   * instead.
    * </pre>
    *
    * <code>optional int64 min_size_gb = 385278188;</code>
@@ -377,7 +386,8 @@ public interface StoragePoolTypeOrBuilder
    *
    *
    * <pre>
-   * [Deprecated] This field is deprecated. Use minPoolProvisionedCapacityGb instead.
+   * [Deprecated] This field is deprecated. Use minPoolProvisionedCapacityGb
+   * instead.
    * </pre>
    *
    * <code>optional int64 min_size_gb = 385278188;</code>
@@ -468,7 +478,7 @@ public interface StoragePoolTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -481,7 +491,7 @@ public interface StoragePoolTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -494,7 +504,7 @@ public interface StoragePoolTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -561,7 +571,9 @@ public interface StoragePoolTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the storage pool type resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * [Output Only] URL of the zone where the storage pool type resides.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -574,7 +586,9 @@ public interface StoragePoolTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the storage pool type resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * [Output Only] URL of the zone where the storage pool type resides.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -587,7 +601,9 @@ public interface StoragePoolTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the storage pool type resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * [Output Only] URL of the zone where the storage pool type resides.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>

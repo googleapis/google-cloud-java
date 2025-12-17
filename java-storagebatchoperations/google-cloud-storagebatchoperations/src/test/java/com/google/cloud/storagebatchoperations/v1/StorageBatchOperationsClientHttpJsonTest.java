@@ -199,6 +199,7 @@ public class StorageBatchOperationsClientHttpJsonTest {
             .setCompleteTime(Timestamp.newBuilder().build())
             .setCounters(Counters.newBuilder().build())
             .addAllErrorSummaries(new ArrayList<ErrorSummary>())
+            .setDryRun(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -250,6 +251,7 @@ public class StorageBatchOperationsClientHttpJsonTest {
             .setCompleteTime(Timestamp.newBuilder().build())
             .setCounters(Counters.newBuilder().build())
             .addAllErrorSummaries(new ArrayList<ErrorSummary>())
+            .setDryRun(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -301,6 +303,7 @@ public class StorageBatchOperationsClientHttpJsonTest {
             .setCompleteTime(Timestamp.newBuilder().build())
             .setCounters(Counters.newBuilder().build())
             .addAllErrorSummaries(new ArrayList<ErrorSummary>())
+            .setDryRun(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -361,6 +364,7 @@ public class StorageBatchOperationsClientHttpJsonTest {
             .setCompleteTime(Timestamp.newBuilder().build())
             .setCounters(Counters.newBuilder().build())
             .addAllErrorSummaries(new ArrayList<ErrorSummary>())
+            .setDryRun(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()

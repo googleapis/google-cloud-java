@@ -77,7 +77,9 @@ public final class GetNatIpInfoRouterRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Name of the nat service to filter the NAT IP information. If it is omitted, all nats for this router will be returned. Name should conform to RFC1035.
+   * Name of the nat service to filter the NAT IP information.
+   * If it is omitted, all nats for this router will be returned.
+   * Name should conform to RFC1035.
    * </pre>
    *
    * <code>optional string nat_name = 425596649;</code>
@@ -93,7 +95,9 @@ public final class GetNatIpInfoRouterRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Name of the nat service to filter the NAT IP information. If it is omitted, all nats for this router will be returned. Name should conform to RFC1035.
+   * Name of the nat service to filter the NAT IP information.
+   * If it is omitted, all nats for this router will be returned.
+   * Name should conform to RFC1035.
    * </pre>
    *
    * <code>optional string nat_name = 425596649;</code>
@@ -117,7 +121,9 @@ public final class GetNatIpInfoRouterRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Name of the nat service to filter the NAT IP information. If it is omitted, all nats for this router will be returned. Name should conform to RFC1035.
+   * Name of the nat service to filter the NAT IP information.
+   * If it is omitted, all nats for this router will be returned.
+   * Name should conform to RFC1035.
    * </pre>
    *
    * <code>optional string nat_name = 425596649;</code>
@@ -252,7 +258,8 @@ public final class GetNatIpInfoRouterRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Name of the Router resource to query for Nat IP information. The name should conform to RFC1035.
+   * Name of the Router resource to query for Nat IP information. The name
+   * should conform to RFC1035.
    * </pre>
    *
    * <code>string router = 148608841 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -276,7 +283,8 @@ public final class GetNatIpInfoRouterRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Name of the Router resource to query for Nat IP information. The name should conform to RFC1035.
+   * Name of the Router resource to query for Nat IP information. The name
+   * should conform to RFC1035.
    * </pre>
    *
    * <code>string router = 148608841 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -726,7 +734,9 @@ public final class GetNatIpInfoRouterRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Name of the nat service to filter the NAT IP information. If it is omitted, all nats for this router will be returned. Name should conform to RFC1035.
+     * Name of the nat service to filter the NAT IP information.
+     * If it is omitted, all nats for this router will be returned.
+     * Name should conform to RFC1035.
      * </pre>
      *
      * <code>optional string nat_name = 425596649;</code>
@@ -741,7 +751,9 @@ public final class GetNatIpInfoRouterRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Name of the nat service to filter the NAT IP information. If it is omitted, all nats for this router will be returned. Name should conform to RFC1035.
+     * Name of the nat service to filter the NAT IP information.
+     * If it is omitted, all nats for this router will be returned.
+     * Name should conform to RFC1035.
      * </pre>
      *
      * <code>optional string nat_name = 425596649;</code>
@@ -764,7 +776,9 @@ public final class GetNatIpInfoRouterRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Name of the nat service to filter the NAT IP information. If it is omitted, all nats for this router will be returned. Name should conform to RFC1035.
+     * Name of the nat service to filter the NAT IP information.
+     * If it is omitted, all nats for this router will be returned.
+     * Name should conform to RFC1035.
      * </pre>
      *
      * <code>optional string nat_name = 425596649;</code>
@@ -787,7 +801,9 @@ public final class GetNatIpInfoRouterRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Name of the nat service to filter the NAT IP information. If it is omitted, all nats for this router will be returned. Name should conform to RFC1035.
+     * Name of the nat service to filter the NAT IP information.
+     * If it is omitted, all nats for this router will be returned.
+     * Name should conform to RFC1035.
      * </pre>
      *
      * <code>optional string nat_name = 425596649;</code>
@@ -809,7 +825,9 @@ public final class GetNatIpInfoRouterRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Name of the nat service to filter the NAT IP information. If it is omitted, all nats for this router will be returned. Name should conform to RFC1035.
+     * Name of the nat service to filter the NAT IP information.
+     * If it is omitted, all nats for this router will be returned.
+     * Name should conform to RFC1035.
      * </pre>
      *
      * <code>optional string nat_name = 425596649;</code>
@@ -827,7 +845,9 @@ public final class GetNatIpInfoRouterRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Name of the nat service to filter the NAT IP information. If it is omitted, all nats for this router will be returned. Name should conform to RFC1035.
+     * Name of the nat service to filter the NAT IP information.
+     * If it is omitted, all nats for this router will be returned.
+     * Name should conform to RFC1035.
      * </pre>
      *
      * <code>optional string nat_name = 425596649;</code>
@@ -1074,7 +1094,8 @@ public final class GetNatIpInfoRouterRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Name of the Router resource to query for Nat IP information. The name should conform to RFC1035.
+     * Name of the Router resource to query for Nat IP information. The name
+     * should conform to RFC1035.
      * </pre>
      *
      * <code>string router = 148608841 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1097,7 +1118,8 @@ public final class GetNatIpInfoRouterRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Name of the Router resource to query for Nat IP information. The name should conform to RFC1035.
+     * Name of the Router resource to query for Nat IP information. The name
+     * should conform to RFC1035.
      * </pre>
      *
      * <code>string router = 148608841 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1120,7 +1142,8 @@ public final class GetNatIpInfoRouterRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Name of the Router resource to query for Nat IP information. The name should conform to RFC1035.
+     * Name of the Router resource to query for Nat IP information. The name
+     * should conform to RFC1035.
      * </pre>
      *
      * <code>string router = 148608841 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1142,7 +1165,8 @@ public final class GetNatIpInfoRouterRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Name of the Router resource to query for Nat IP information. The name should conform to RFC1035.
+     * Name of the Router resource to query for Nat IP information. The name
+     * should conform to RFC1035.
      * </pre>
      *
      * <code>string router = 148608841 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1160,7 +1184,8 @@ public final class GetNatIpInfoRouterRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Name of the Router resource to query for Nat IP information. The name should conform to RFC1035.
+     * Name of the Router resource to query for Nat IP information. The name
+     * should conform to RFC1035.
      * </pre>
      *
      * <code>string router = 148608841 [(.google.api.field_behavior) = REQUIRED];</code>

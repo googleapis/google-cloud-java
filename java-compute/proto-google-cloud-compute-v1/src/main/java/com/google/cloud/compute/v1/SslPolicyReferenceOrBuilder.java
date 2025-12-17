@@ -28,7 +28,8 @@ public interface SslPolicyReferenceOrBuilder
    *
    *
    * <pre>
-   * URL of the SSL policy resource. Set this to empty string to clear any existing SSL policy associated with the target proxy resource.
+   * URL of the SSL policy resource. Set this to empty string to clear any
+   * existing SSL policy associated with the target proxy resource.
    * </pre>
    *
    * <code>optional string ssl_policy = 295190213;</code>
@@ -41,7 +42,8 @@ public interface SslPolicyReferenceOrBuilder
    *
    *
    * <pre>
-   * URL of the SSL policy resource. Set this to empty string to clear any existing SSL policy associated with the target proxy resource.
+   * URL of the SSL policy resource. Set this to empty string to clear any
+   * existing SSL policy associated with the target proxy resource.
    * </pre>
    *
    * <code>optional string ssl_policy = 295190213;</code>
@@ -54,7 +56,8 @@ public interface SslPolicyReferenceOrBuilder
    *
    *
    * <pre>
-   * URL of the SSL policy resource. Set this to empty string to clear any existing SSL policy associated with the target proxy resource.
+   * URL of the SSL policy resource. Set this to empty string to clear any
+   * existing SSL policy associated with the target proxy resource.
    * </pre>
    *
    * <code>optional string ssl_policy = 295190213;</code>

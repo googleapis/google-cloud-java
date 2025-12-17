@@ -28,7 +28,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Specifies configuration that overrides the instance template configuration for the group.
+   * Specifies configuration that overrides the instance template configuration
+   * for the group.
    * </pre>
    *
    * <code>
@@ -43,7 +44,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Specifies configuration that overrides the instance template configuration for the group.
+   * Specifies configuration that overrides the instance template configuration
+   * for the group.
    * </pre>
    *
    * <code>
@@ -58,7 +60,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Specifies configuration that overrides the instance template configuration for the group.
+   * Specifies configuration that overrides the instance template configuration
+   * for the group.
    * </pre>
    *
    * <code>
@@ -72,7 +75,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * The autohealing policy for this managed instance group. You can specify only one value.
+   * The autohealing policy for this managed instance group. You can specify
+   * only one value.
    * </pre>
    *
    * <code>
@@ -86,7 +90,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * The autohealing policy for this managed instance group. You can specify only one value.
+   * The autohealing policy for this managed instance group. You can specify
+   * only one value.
    * </pre>
    *
    * <code>
@@ -100,7 +105,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * The autohealing policy for this managed instance group. You can specify only one value.
+   * The autohealing policy for this managed instance group. You can specify
+   * only one value.
    * </pre>
    *
    * <code>
@@ -113,7 +119,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * The autohealing policy for this managed instance group. You can specify only one value.
+   * The autohealing policy for this managed instance group. You can specify
+   * only one value.
    * </pre>
    *
    * <code>
@@ -128,7 +135,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * The autohealing policy for this managed instance group. You can specify only one value.
+   * The autohealing policy for this managed instance group. You can specify
+   * only one value.
    * </pre>
    *
    * <code>
@@ -142,7 +150,18 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * The base instance name is a prefix that you want to attach to the names of all VMs in a MIG. The maximum character length is 58 and the name must comply with RFC1035 format. When a VM is created in the group, the MIG appends a hyphen and a random four-character string to the base instance name. If you want the MIG to assign sequential numbers instead of a random string, then end the base instance name with a hyphen followed by one or more hash symbols. The hash symbols indicate the number of digits. For example, a base instance name of "vm-###" results in "vm-001" as a VM name. &#64;pattern [a-z](([-a-z0-9]{0,57})|([-a-z0-9]{0,51}-#{1,10}(&#92;&#92;[[0-9]{1,10}&#92;&#92;])?))
+   * The base instance name is a prefix that you want to attach to the names of
+   * all VMs in a MIG. The maximum character length is 58 and the name must
+   * comply with RFC1035 format.
+   *
+   * When a VM is created in the group, the MIG appends a hyphen and a random
+   * four-character string to the base instance name. If you want the MIG to
+   * assign sequential numbers instead of a random string, then end the base
+   * instance name with a hyphen followed by one or more hash symbols. The hash
+   * symbols indicate the number of digits. For example, a base instance name of
+   * "vm-###" results in "vm-001" as a VM name.
+   * &#64;pattern
+   * [a-z](([-a-z0-9]{0,57})|([-a-z0-9]{0,51}-#{1,10}(&#92;&#92;[[0-9]{1,10}&#92;&#92;])?))
    * </pre>
    *
    * <code>optional string base_instance_name = 389106439;</code>
@@ -155,7 +174,18 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * The base instance name is a prefix that you want to attach to the names of all VMs in a MIG. The maximum character length is 58 and the name must comply with RFC1035 format. When a VM is created in the group, the MIG appends a hyphen and a random four-character string to the base instance name. If you want the MIG to assign sequential numbers instead of a random string, then end the base instance name with a hyphen followed by one or more hash symbols. The hash symbols indicate the number of digits. For example, a base instance name of "vm-###" results in "vm-001" as a VM name. &#64;pattern [a-z](([-a-z0-9]{0,57})|([-a-z0-9]{0,51}-#{1,10}(&#92;&#92;[[0-9]{1,10}&#92;&#92;])?))
+   * The base instance name is a prefix that you want to attach to the names of
+   * all VMs in a MIG. The maximum character length is 58 and the name must
+   * comply with RFC1035 format.
+   *
+   * When a VM is created in the group, the MIG appends a hyphen and a random
+   * four-character string to the base instance name. If you want the MIG to
+   * assign sequential numbers instead of a random string, then end the base
+   * instance name with a hyphen followed by one or more hash symbols. The hash
+   * symbols indicate the number of digits. For example, a base instance name of
+   * "vm-###" results in "vm-001" as a VM name.
+   * &#64;pattern
+   * [a-z](([-a-z0-9]{0,57})|([-a-z0-9]{0,51}-#{1,10}(&#92;&#92;[[0-9]{1,10}&#92;&#92;])?))
    * </pre>
    *
    * <code>optional string base_instance_name = 389106439;</code>
@@ -168,7 +198,18 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * The base instance name is a prefix that you want to attach to the names of all VMs in a MIG. The maximum character length is 58 and the name must comply with RFC1035 format. When a VM is created in the group, the MIG appends a hyphen and a random four-character string to the base instance name. If you want the MIG to assign sequential numbers instead of a random string, then end the base instance name with a hyphen followed by one or more hash symbols. The hash symbols indicate the number of digits. For example, a base instance name of "vm-###" results in "vm-001" as a VM name. &#64;pattern [a-z](([-a-z0-9]{0,57})|([-a-z0-9]{0,51}-#{1,10}(&#92;&#92;[[0-9]{1,10}&#92;&#92;])?))
+   * The base instance name is a prefix that you want to attach to the names of
+   * all VMs in a MIG. The maximum character length is 58 and the name must
+   * comply with RFC1035 format.
+   *
+   * When a VM is created in the group, the MIG appends a hyphen and a random
+   * four-character string to the base instance name. If you want the MIG to
+   * assign sequential numbers instead of a random string, then end the base
+   * instance name with a hyphen followed by one or more hash symbols. The hash
+   * symbols indicate the number of digits. For example, a base instance name of
+   * "vm-###" results in "vm-001" as a VM name.
+   * &#64;pattern
+   * [a-z](([-a-z0-9]{0,57})|([-a-z0-9]{0,51}-#{1,10}(&#92;&#92;[[0-9]{1,10}&#92;&#92;])?))
    * </pre>
    *
    * <code>optional string base_instance_name = 389106439;</code>
@@ -181,7 +222,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The creation timestamp for this managed instance group in RFC3339 text format.
+   * Output only. [Output Only] The creation timestamp for this managed instance group inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -194,7 +236,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The creation timestamp for this managed instance group in RFC3339 text format.
+   * Output only. [Output Only] The creation timestamp for this managed instance group inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -207,7 +250,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The creation timestamp for this managed instance group in RFC3339 text format.
+   * Output only. [Output Only] The creation timestamp for this managed instance group inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -220,7 +264,9 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The list of instance actions and the number of instances in this managed instance group that are scheduled for each of those actions.
+   * Output only. [Output Only] The list of instance actions and the number of instances
+   * in this managed instance group that are scheduled for each of those
+   * actions.
    * </pre>
    *
    * <code>
@@ -235,7 +281,9 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The list of instance actions and the number of instances in this managed instance group that are scheduled for each of those actions.
+   * Output only. [Output Only] The list of instance actions and the number of instances
+   * in this managed instance group that are scheduled for each of those
+   * actions.
    * </pre>
    *
    * <code>
@@ -250,7 +298,9 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The list of instance actions and the number of instances in this managed instance group that are scheduled for each of those actions.
+   * Output only. [Output Only] The list of instance actions and the number of instances
+   * in this managed instance group that are scheduled for each of those
+   * actions.
    * </pre>
    *
    * <code>
@@ -303,7 +353,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
+   * Policy specifying the intended distribution of managed instances across
+   * zones in a regional managed instance group.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;
@@ -317,7 +368,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
+   * Policy specifying the intended distribution of managed instances across
+   * zones in a regional managed instance group.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;
@@ -331,7 +383,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
+   * Policy specifying the intended distribution of managed instances across
+   * zones in a regional managed instance group.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;
@@ -343,7 +396,13 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
+   * Fingerprint of this resource. This field may be used in optimistic locking.
+   * It will be ignored when inserting an InstanceGroupManager. An up-to-date
+   * fingerprint must be provided in order to update the InstanceGroupManager,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve an InstanceGroupManager.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -356,7 +415,13 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
+   * Fingerprint of this resource. This field may be used in optimistic locking.
+   * It will be ignored when inserting an InstanceGroupManager. An up-to-date
+   * fingerprint must be provided in order to update the InstanceGroupManager,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve an InstanceGroupManager.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -369,7 +434,13 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
+   * Fingerprint of this resource. This field may be used in optimistic locking.
+   * It will be ignored when inserting an InstanceGroupManager. An up-to-date
+   * fingerprint must be provided in order to update the InstanceGroupManager,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve an InstanceGroupManager.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -382,7 +453,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A unique identifier for this resource type. The server generates this identifier.
+   * Output only. [Output Only] A unique identifier for this resource type. The server
+   * generates this identifier.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -395,7 +467,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A unique identifier for this resource type. The server generates this identifier.
+   * Output only. [Output Only] A unique identifier for this resource type. The server
+   * generates this identifier.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -408,7 +481,10 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Instance flexibility allowing MIG to create VMs from multiple types of machines. Instance flexibility configuration on MIG overrides instance template configuration.
+   * Instance flexibility allowing MIG to create VMs from multiple
+   * types of machines.
+   * Instance flexibility configuration on MIG overrides instance
+   * template configuration.
    * </pre>
    *
    * <code>
@@ -423,7 +499,10 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Instance flexibility allowing MIG to create VMs from multiple types of machines. Instance flexibility configuration on MIG overrides instance template configuration.
+   * Instance flexibility allowing MIG to create VMs from multiple
+   * types of machines.
+   * Instance flexibility configuration on MIG overrides instance
+   * template configuration.
    * </pre>
    *
    * <code>
@@ -439,7 +518,10 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Instance flexibility allowing MIG to create VMs from multiple types of machines. Instance flexibility configuration on MIG overrides instance template configuration.
+   * Instance flexibility allowing MIG to create VMs from multiple
+   * types of machines.
+   * Instance flexibility configuration on MIG overrides instance
+   * template configuration.
    * </pre>
    *
    * <code>
@@ -453,7 +535,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the Instance Group resource.
+   * Output only. [Output Only] The URL of the Instance Group resource.
    * </pre>
    *
    * <code>optional string instance_group = 81095253;</code>
@@ -466,7 +548,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the Instance Group resource.
+   * Output only. [Output Only] The URL of the Instance Group resource.
    * </pre>
    *
    * <code>optional string instance_group = 81095253;</code>
@@ -479,7 +561,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the Instance Group resource.
+   * Output only. [Output Only] The URL of the Instance Group resource.
    * </pre>
    *
    * <code>optional string instance_group = 81095253;</code>
@@ -537,7 +619,10 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
+   * The URL of the instance template that is specified for this managed
+   * instance group. The group uses this template to create all new instances
+   * in the managed instance group. The templates for existing instances in the
+   * group do not change unless you run recreateInstances, runapplyUpdatesToInstances, or set the group'supdatePolicy.type to PROACTIVE.
    * </pre>
    *
    * <code>optional string instance_template = 309248228;</code>
@@ -550,7 +635,10 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
+   * The URL of the instance template that is specified for this managed
+   * instance group. The group uses this template to create all new instances
+   * in the managed instance group. The templates for existing instances in the
+   * group do not change unless you run recreateInstances, runapplyUpdatesToInstances, or set the group'supdatePolicy.type to PROACTIVE.
    * </pre>
    *
    * <code>optional string instance_template = 309248228;</code>
@@ -563,7 +651,10 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
+   * The URL of the instance template that is specified for this managed
+   * instance group. The group uses this template to create all new instances
+   * in the managed instance group. The templates for existing instances in the
+   * group do not change unless you run recreateInstances, runapplyUpdatesToInstances, or set the group'supdatePolicy.type to PROACTIVE.
    * </pre>
    *
    * <code>optional string instance_template = 309248228;</code>
@@ -576,7 +667,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is always compute#instanceGroupManager for managed instance groups.
+   * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroupManager for managed instance groups.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -589,7 +680,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is always compute#instanceGroupManager for managed instance groups.
+   * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroupManager for managed instance groups.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -602,7 +693,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is always compute#instanceGroupManager for managed instance groups.
+   * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroupManager for managed instance groups.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -615,7 +706,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Pagination behavior of the listManagedInstances API method for this managed instance group.
+   * Pagination behavior of the listManagedInstances API method for
+   * this managed instance group.
    * Check the ListManagedInstancesResults enum for the list of possible values.
    * </pre>
    *
@@ -629,7 +721,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Pagination behavior of the listManagedInstances API method for this managed instance group.
+   * Pagination behavior of the listManagedInstances API method for
+   * this managed instance group.
    * Check the ListManagedInstancesResults enum for the list of possible values.
    * </pre>
    *
@@ -643,7 +736,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Pagination behavior of the listManagedInstances API method for this managed instance group.
+   * Pagination behavior of the listManagedInstances API method for
+   * this managed instance group.
    * Check the ListManagedInstancesResults enum for the list of possible values.
    * </pre>
    *
@@ -657,7 +751,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * The name of the managed instance group. The name must be 1-63 characters long, and comply with RFC1035.
+   * The name of the managed instance group. The name must be 1-63 characters
+   * long, and comply withRFC1035.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -670,7 +765,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * The name of the managed instance group. The name must be 1-63 characters long, and comply with RFC1035.
+   * The name of the managed instance group. The name must be 1-63 characters
+   * long, and comply withRFC1035.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -683,7 +779,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * The name of the managed instance group. The name must be 1-63 characters long, and comply with RFC1035.
+   * The name of the managed instance group. The name must be 1-63 characters
+   * long, and comply withRFC1035.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -696,7 +793,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Named ports configured on the Instance Groups complementary to this Instance Group Manager.
+   * [Output Only] Named ports configured on the Instance Groups complementary
+   * to this Instance Group Manager.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -707,7 +805,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Named ports configured on the Instance Groups complementary to this Instance Group Manager.
+   * [Output Only] Named ports configured on the Instance Groups complementary
+   * to this Instance Group Manager.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -718,7 +817,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Named ports configured on the Instance Groups complementary to this Instance Group Manager.
+   * [Output Only] Named ports configured on the Instance Groups complementary
+   * to this Instance Group Manager.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -729,7 +829,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Named ports configured on the Instance Groups complementary to this Instance Group Manager.
+   * [Output Only] Named ports configured on the Instance Groups complementary
+   * to this Instance Group Manager.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -741,7 +842,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Named ports configured on the Instance Groups complementary to this Instance Group Manager.
+   * [Output Only] Named ports configured on the Instance Groups complementary
+   * to this Instance Group Manager.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -752,7 +854,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the region where the managed instance group resides (for regional resources).
+   * Output only. [Output Only] The URL of theregion
+   * where the managed instance group resides (for regional resources).
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -765,7 +868,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the region where the managed instance group resides (for regional resources).
+   * Output only. [Output Only] The URL of theregion
+   * where the managed instance group resides (for regional resources).
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -778,7 +882,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the region where the managed instance group resides (for regional resources).
+   * Output only. [Output Only] The URL of theregion
+   * where the managed instance group resides (for regional resources).
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -835,7 +940,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzi = 480964257;</code>
@@ -848,7 +953,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzi = 480964257;</code>
@@ -861,7 +966,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -874,7 +979,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -887,7 +992,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL for this managed instance group. The server defines this URL.
+   * Output only. [Output Only] The URL for this managed instance group. The server defines
+   * this URL.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -900,7 +1006,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL for this managed instance group. The server defines this URL.
+   * Output only. [Output Only] The URL for this managed instance group. The server defines
+   * this URL.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -913,7 +1020,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL for this managed instance group. The server defines this URL.
+   * Output only. [Output Only] The URL for this managed instance group. The server defines
+   * this URL.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1007,7 +1115,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of this managed instance group.
+   * Output only. [Output Only] The status of this managed instance group.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
@@ -1020,7 +1128,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of this managed instance group.
+   * Output only. [Output Only] The status of this managed instance group.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
@@ -1033,7 +1141,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of this managed instance group.
+   * Output only. [Output Only] The status of this managed instance group.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
@@ -1044,7 +1152,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * The URLs for all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
+   * The URLs for all TargetPool resources to which instances in theinstanceGroup field are added. The target pools automatically
+   * apply to all of the instances in the managed instance group.
    * </pre>
    *
    * <code>repeated string target_pools = 336072617;</code>
@@ -1057,7 +1166,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * The URLs for all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
+   * The URLs for all TargetPool resources to which instances in theinstanceGroup field are added. The target pools automatically
+   * apply to all of the instances in the managed instance group.
    * </pre>
    *
    * <code>repeated string target_pools = 336072617;</code>
@@ -1070,7 +1180,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * The URLs for all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
+   * The URLs for all TargetPool resources to which instances in theinstanceGroup field are added. The target pools automatically
+   * apply to all of the instances in the managed instance group.
    * </pre>
    *
    * <code>repeated string target_pools = 336072617;</code>
@@ -1084,7 +1195,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * The URLs for all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
+   * The URLs for all TargetPool resources to which instances in theinstanceGroup field are added. The target pools automatically
+   * apply to all of the instances in the managed instance group.
    * </pre>
    *
    * <code>repeated string target_pools = 336072617;</code>
@@ -1098,7 +1210,10 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * The target number of running instances for this managed instance group. You can reduce this number by using the instanceGroupManager deleteInstances or abandonInstances methods. Resizing the group also changes this number.
+   * The target number of running instances for this managed instance group.
+   * You can reduce this number by using the instanceGroupManager
+   * deleteInstances or abandonInstances methods. Resizing the group also
+   * changes this number.
    * </pre>
    *
    * <code>optional int32 target_size = 62880239;</code>
@@ -1111,7 +1226,10 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * The target number of running instances for this managed instance group. You can reduce this number by using the instanceGroupManager deleteInstances or abandonInstances methods. Resizing the group also changes this number.
+   * The target number of running instances for this managed instance group.
+   * You can reduce this number by using the instanceGroupManager
+   * deleteInstances or abandonInstances methods. Resizing the group also
+   * changes this number.
    * </pre>
    *
    * <code>optional int32 target_size = 62880239;</code>
@@ -1124,7 +1242,14 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * The target number of stopped instances for this managed instance group. This number changes when you: - Stop instance using the stopInstances method or start instances using the startInstances method. - Manually change the targetStoppedSize using the update method.
+   * The target number of stopped instances for this managed instance group.
+   * This number changes when you:
+   *
+   *    - Stop instance using the stopInstances
+   *    method or start instances using the startInstances
+   *    method.
+   *    - Manually change the targetStoppedSize using the update
+   *    method.
    * </pre>
    *
    * <code>optional int32 target_stopped_size = 2419489;</code>
@@ -1137,7 +1262,14 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * The target number of stopped instances for this managed instance group. This number changes when you: - Stop instance using the stopInstances method or start instances using the startInstances method. - Manually change the targetStoppedSize using the update method.
+   * The target number of stopped instances for this managed instance group.
+   * This number changes when you:
+   *
+   *    - Stop instance using the stopInstances
+   *    method or start instances using the startInstances
+   *    method.
+   *    - Manually change the targetStoppedSize using the update
+   *    method.
    * </pre>
    *
    * <code>optional int32 target_stopped_size = 2419489;</code>
@@ -1150,7 +1282,14 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * The target number of suspended instances for this managed instance group. This number changes when you: - Suspend instance using the suspendInstances method or resume instances using the resumeInstances method. - Manually change the targetSuspendedSize using the update method.
+   * The target number of suspended instances for this managed instance group.
+   * This number changes when you:
+   *
+   *    - Suspend instance using the suspendInstances
+   *    method or resume instances using the resumeInstances
+   *    method.
+   *    - Manually change the targetSuspendedSize using the update
+   *    method.
    * </pre>
    *
    * <code>optional int32 target_suspended_size = 308085843;</code>
@@ -1163,7 +1302,14 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * The target number of suspended instances for this managed instance group. This number changes when you: - Suspend instance using the suspendInstances method or resume instances using the resumeInstances method. - Manually change the targetSuspendedSize using the update method.
+   * The target number of suspended instances for this managed instance group.
+   * This number changes when you:
+   *
+   *    - Suspend instance using the suspendInstances
+   *    method or resume instances using the resumeInstances
+   *    method.
+   *    - Manually change the targetSuspendedSize using the update
+   *    method.
    * </pre>
    *
    * <code>optional int32 target_suspended_size = 308085843;</code>
@@ -1219,7 +1365,15 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+   * Specifies the instance templates used by this managed instance group to
+   * create instances.
+   *
+   * Each version is defined by an instanceTemplate and aname. Every version can appear at most once per instance
+   * group. This field overrides the top-level instanceTemplate
+   * field. Read more about therelationships
+   * between these fields. Exactly one version must leave thetargetSize field unset. That version will be applied to all
+   * remaining instances. For more information, read aboutcanary
+   * updates.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -1231,7 +1385,15 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+   * Specifies the instance templates used by this managed instance group to
+   * create instances.
+   *
+   * Each version is defined by an instanceTemplate and aname. Every version can appear at most once per instance
+   * group. This field overrides the top-level instanceTemplate
+   * field. Read more about therelationships
+   * between these fields. Exactly one version must leave thetargetSize field unset. That version will be applied to all
+   * remaining instances. For more information, read aboutcanary
+   * updates.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -1243,7 +1405,15 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+   * Specifies the instance templates used by this managed instance group to
+   * create instances.
+   *
+   * Each version is defined by an instanceTemplate and aname. Every version can appear at most once per instance
+   * group. This field overrides the top-level instanceTemplate
+   * field. Read more about therelationships
+   * between these fields. Exactly one version must leave thetargetSize field unset. That version will be applied to all
+   * remaining instances. For more information, read aboutcanary
+   * updates.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -1255,7 +1425,15 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+   * Specifies the instance templates used by this managed instance group to
+   * create instances.
+   *
+   * Each version is defined by an instanceTemplate and aname. Every version can appear at most once per instance
+   * group. This field overrides the top-level instanceTemplate
+   * field. Read more about therelationships
+   * between these fields. Exactly one version must leave thetargetSize field unset. That version will be applied to all
+   * remaining instances. For more information, read aboutcanary
+   * updates.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -1268,7 +1446,15 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+   * Specifies the instance templates used by this managed instance group to
+   * create instances.
+   *
+   * Each version is defined by an instanceTemplate and aname. Every version can appear at most once per instance
+   * group. This field overrides the top-level instanceTemplate
+   * field. Read more about therelationships
+   * between these fields. Exactly one version must leave thetargetSize field unset. That version will be applied to all
+   * remaining instances. For more information, read aboutcanary
+   * updates.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -1280,7 +1466,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of a zone where the managed instance group is located (for zonal resources).
+   * Output only. [Output Only] The URL of azone
+   * where the managed instance group is located (for zonal resources).
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -1293,7 +1480,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of a zone where the managed instance group is located (for zonal resources).
+   * Output only. [Output Only] The URL of azone
+   * where the managed instance group is located (for zonal resources).
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -1306,7 +1494,8 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of a zone where the managed instance group is located (for zonal resources).
+   * Output only. [Output Only] The URL of azone
+   * where the managed instance group is located (for zonal resources).
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>

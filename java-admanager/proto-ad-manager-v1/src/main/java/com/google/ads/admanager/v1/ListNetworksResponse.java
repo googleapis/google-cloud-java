@@ -41,6 +41,7 @@ public final class ListNetworksResponse extends com.google.protobuf.GeneratedMes
 
   private ListNetworksResponse() {
     networks_ = java.util.Collections.emptyList();
+    nextPageToken_ = "";
   }
 
   @java.lang.Override
@@ -140,6 +141,88 @@ public final class ListNetworksResponse extends com.google.protobuf.GeneratedMes
     return networks_.get(index);
   }
 
+  public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * A token, which can be sent as `page_token` to retrieve the next page.
+   * If this field is omitted, there are no subsequent pages.
+   * </pre>
+   *
+   * <code>string next_page_token = 2;</code>
+   *
+   * @return The nextPageToken.
+   */
+  @java.lang.Override
+  public java.lang.String getNextPageToken() {
+    java.lang.Object ref = nextPageToken_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      nextPageToken_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A token, which can be sent as `page_token` to retrieve the next page.
+   * If this field is omitted, there are no subsequent pages.
+   * </pre>
+   *
+   * <code>string next_page_token = 2;</code>
+   *
+   * @return The bytes for nextPageToken.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNextPageTokenBytes() {
+    java.lang.Object ref = nextPageToken_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      nextPageToken_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TOTAL_SIZE_FIELD_NUMBER = 3;
+  private int totalSize_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Total number of `Network`s.
+   *
+   * `total_size` won't be calculated in the response unless it has been
+   * included in a response field mask. The response field mask can be provided
+   * to the method by using the URL parameter `$fields` or `fields`, or by using
+   * the HTTP/gRPC header `X-Goog-FieldMask`.
+   *
+   * For more information, see
+   * https://developers.google.com/ad-manager/api/beta/field-masks
+   * </pre>
+   *
+   * <code>int32 total_size = 3;</code>
+   *
+   * @return The totalSize.
+   */
+  @java.lang.Override
+  public int getTotalSize() {
+    return totalSize_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -157,6 +240,12 @@ public final class ListNetworksResponse extends com.google.protobuf.GeneratedMes
     for (int i = 0; i < networks_.size(); i++) {
       output.writeMessage(1, networks_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
+    }
+    if (totalSize_ != 0) {
+      output.writeInt32(3, totalSize_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -168,6 +257,12 @@ public final class ListNetworksResponse extends com.google.protobuf.GeneratedMes
     size = 0;
     for (int i = 0; i < networks_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, networks_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
+    }
+    if (totalSize_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, totalSize_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -186,6 +281,8 @@ public final class ListNetworksResponse extends com.google.protobuf.GeneratedMes
         (com.google.ads.admanager.v1.ListNetworksResponse) obj;
 
     if (!getNetworksList().equals(other.getNetworksList())) return false;
+    if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    if (getTotalSize() != other.getTotalSize()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -201,6 +298,10 @@ public final class ListNetworksResponse extends com.google.protobuf.GeneratedMes
       hash = (37 * hash) + NETWORKS_FIELD_NUMBER;
       hash = (53 * hash) + getNetworksList().hashCode();
     }
+    hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getNextPageToken().hashCode();
+    hash = (37 * hash) + TOTAL_SIZE_FIELD_NUMBER;
+    hash = (53 * hash) + getTotalSize();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -348,6 +449,8 @@ public final class ListNetworksResponse extends com.google.protobuf.GeneratedMes
         networksBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      nextPageToken_ = "";
+      totalSize_ = 0;
       return this;
     }
 
@@ -398,6 +501,12 @@ public final class ListNetworksResponse extends com.google.protobuf.GeneratedMes
 
     private void buildPartial0(com.google.ads.admanager.v1.ListNetworksResponse result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.totalSize_ = totalSize_;
+      }
     }
 
     @java.lang.Override
@@ -473,6 +582,14 @@ public final class ListNetworksResponse extends com.google.protobuf.GeneratedMes
           }
         }
       }
+      if (!other.getNextPageToken().isEmpty()) {
+        nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (other.getTotalSize() != 0) {
+        setTotalSize(other.getTotalSize());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -512,6 +629,18 @@ public final class ListNetworksResponse extends com.google.protobuf.GeneratedMes
                 }
                 break;
               } // case 10
+            case 18:
+              {
+                nextPageToken_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+            case 24:
+              {
+                totalSize_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -894,6 +1023,202 @@ public final class ListNetworksResponse extends com.google.protobuf.GeneratedMes
         networks_ = null;
       }
       return networksBuilder_;
+    }
+
+    private java.lang.Object nextPageToken_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * A token, which can be sent as `page_token` to retrieve the next page.
+     * If this field is omitted, there are no subsequent pages.
+     * </pre>
+     *
+     * <code>string next_page_token = 2;</code>
+     *
+     * @return The nextPageToken.
+     */
+    public java.lang.String getNextPageToken() {
+      java.lang.Object ref = nextPageToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nextPageToken_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A token, which can be sent as `page_token` to retrieve the next page.
+     * If this field is omitted, there are no subsequent pages.
+     * </pre>
+     *
+     * <code>string next_page_token = 2;</code>
+     *
+     * @return The bytes for nextPageToken.
+     */
+    public com.google.protobuf.ByteString getNextPageTokenBytes() {
+      java.lang.Object ref = nextPageToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        nextPageToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A token, which can be sent as `page_token` to retrieve the next page.
+     * If this field is omitted, there are no subsequent pages.
+     * </pre>
+     *
+     * <code>string next_page_token = 2;</code>
+     *
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNextPageToken(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A token, which can be sent as `page_token` to retrieve the next page.
+     * If this field is omitted, there are no subsequent pages.
+     * </pre>
+     *
+     * <code>string next_page_token = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNextPageToken() {
+      nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A token, which can be sent as `page_token` to retrieve the next page.
+     * If this field is omitted, there are no subsequent pages.
+     * </pre>
+     *
+     * <code>string next_page_token = 2;</code>
+     *
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private int totalSize_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Total number of `Network`s.
+     *
+     * `total_size` won't be calculated in the response unless it has been
+     * included in a response field mask. The response field mask can be provided
+     * to the method by using the URL parameter `$fields` or `fields`, or by using
+     * the HTTP/gRPC header `X-Goog-FieldMask`.
+     *
+     * For more information, see
+     * https://developers.google.com/ad-manager/api/beta/field-masks
+     * </pre>
+     *
+     * <code>int32 total_size = 3;</code>
+     *
+     * @return The totalSize.
+     */
+    @java.lang.Override
+    public int getTotalSize() {
+      return totalSize_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Total number of `Network`s.
+     *
+     * `total_size` won't be calculated in the response unless it has been
+     * included in a response field mask. The response field mask can be provided
+     * to the method by using the URL parameter `$fields` or `fields`, or by using
+     * the HTTP/gRPC header `X-Goog-FieldMask`.
+     *
+     * For more information, see
+     * https://developers.google.com/ad-manager/api/beta/field-masks
+     * </pre>
+     *
+     * <code>int32 total_size = 3;</code>
+     *
+     * @param value The totalSize to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotalSize(int value) {
+
+      totalSize_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Total number of `Network`s.
+     *
+     * `total_size` won't be calculated in the response unless it has been
+     * included in a response field mask. The response field mask can be provided
+     * to the method by using the URL parameter `$fields` or `fields`, or by using
+     * the HTTP/gRPC header `X-Goog-FieldMask`.
+     *
+     * For more information, see
+     * https://developers.google.com/ad-manager/api/beta/field-masks
+     * </pre>
+     *
+     * <code>int32 total_size = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTotalSize() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      totalSize_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

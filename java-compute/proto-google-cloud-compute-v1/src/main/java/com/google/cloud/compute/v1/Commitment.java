@@ -23,7 +23,13 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a regional resource-based commitment resource. Creating this commitment resource means that you are purchasing a resource-based committed use contract, with an explicit start and end time. You can purchase resource-based commitments for both hardware and software resources. For more information, read Resource-based committed use discounts
+ * Represents a regional resource-based commitment resource.
+ *
+ * Creating this commitment resource means that you are purchasing a
+ * resource-based committed use contract, with an explicit start and end time.
+ * You can purchase resource-based commitments for both hardware and software
+ * resources. For more information, read
+ * Resource-based committed use discounts
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Commitment}
@@ -86,7 +92,14 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The category of the commitment; specifies whether the commitment is for hardware or software resources. Category MACHINE specifies that you are committing to hardware machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies that you are committing to software licenses, listed in licenseResources. Note that if you specify MACHINE commitments, then you must also specify a type to indicate the machine series of the hardware resource that you are committing to.
+   * The category of the commitment; specifies whether the commitment is for
+   * hardware or software resources. Category MACHINE specifies
+   * that you are committing to hardware machine resources such asVCPU or MEMORY, listed in resources.
+   * Category LICENSE specifies that you are committing to software
+   * licenses, listed in licenseResources.
+   * Note that if you specify MACHINE commitments, then you must
+   * also specify a type to indicate the machine series of the
+   * hardware resource that you are committing to.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Commitment.Category}
@@ -220,7 +233,12 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The minimum time duration that you commit to purchasing resources. The plan that you choose determines the preset term length of the commitment (which is 1 year or 3 years) and affects the discount rate that you receive for your resources. Committing to a longer time duration typically gives you a higher discount rate. The supported values for this field are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+   * The minimum time duration that you commit to purchasing resources.
+   * The plan that you choose determines the preset term length of the
+   * commitment (which is 1 year or 3 years) and affects the discount rate that
+   * you receive for your resources. Committing to a longer time duration
+   * typically gives you a higher discount rate. The supported values for this
+   * field are TWELVE_MONTH (1 year), andTHIRTY_SIX_MONTH (3 years).
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Commitment.Plan}
@@ -354,7 +372,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). Status can be one of the following values: NOT_YET_ACTIVE, ACTIVE, or EXPIRED.
+   * Output only. [Output Only] Status of the commitment with regards to eventual expiration
+   * (each commitment has an end date defined). Status can be one of the
+   * following values: NOT_YET_ACTIVE, ACTIVE, orEXPIRED.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Commitment.Status}
@@ -376,7 +396,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecate CANCELED status. Will use separate status to differentiate cancel by mergeCud or manual cancellation.
+     * Deprecate CANCELED status. Will use separate status to differentiate
+     * cancel by mergeCud or manual cancellation.
      * </pre>
      *
      * <code>CANCELLED = 41957681;</code>
@@ -409,7 +430,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecate CANCELED status. Will use separate status to differentiate cancel by mergeCud or manual cancellation.
+     * Deprecate CANCELED status. Will use separate status to differentiate
+     * cancel by mergeCud or manual cancellation.
      * </pre>
      *
      * <code>CANCELLED = 41957681;</code>
@@ -518,7 +540,17 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type of commitment; specifies the machine series for which you want to commit to purchasing resources. The choice of machine series affects the discount rate and the eligible resource types. The type must be one of the following: ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3, ACCELERATOR_OPTIMIZED_A3_MEGA, COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D, COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D, COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE, GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2, GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D, GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D, GRAPHICS_OPTIMIZED, MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3, MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For example, type MEMORY_OPTIMIZED specifies a commitment that applies only to eligible resources of memory optimized M1 and M2 machine series. Type GENERAL_PURPOSE specifies a commitment that applies only to eligible resources of general purpose N1 machine series.
+   * The type of commitment; specifies the
+   * machine series for which you want to commit to purchasing resources.
+   * The choice of machine series affects the discount rate and the eligible
+   * resource types.
+   *
+   *  The type must be one of the following:ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3,ACCELERATOR_OPTIMIZED_A3_MEGA,COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D,
+   *  COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, GRAPHICS_OPTIMIZED_G4,MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3,MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For
+   * example, type MEMORY_OPTIMIZED specifies a commitment that
+   * applies only to eligible resources of memory optimized M1 and M2 machine
+   * series. Type GENERAL_PURPOSE specifies a commitment that
+   * applies only to eligible resources of general purpose N1 machine series.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Commitment.Type}
@@ -572,10 +604,14 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     GENERAL_PURPOSE_N2D(232471400),
     /** <code>GENERAL_PURPOSE_N4 = 301912158;</code> */
     GENERAL_PURPOSE_N4(301912158),
+    /** <code>GENERAL_PURPOSE_N4D = 232471462;</code> */
+    GENERAL_PURPOSE_N4D(232471462),
     /** <code>GENERAL_PURPOSE_T2D = 232477166;</code> */
     GENERAL_PURPOSE_T2D(232477166),
     /** <code>GRAPHICS_OPTIMIZED = 68500563;</code> */
     GRAPHICS_OPTIMIZED(68500563),
+    /** <code>GRAPHICS_OPTIMIZED_G4 = 54029369;</code> */
+    GRAPHICS_OPTIMIZED_G4(54029369),
     /** <code>MEMORY_OPTIMIZED = 281753417;</code> */
     MEMORY_OPTIMIZED(281753417),
     /** <code>MEMORY_OPTIMIZED_M3 = 276301372;</code> */
@@ -596,7 +632,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Note for internal users: When adding a new enum Type for v1, make sure to also add it in the comment for the `optional Type type` definition. This ensures that the public documentation displays the new enum Type.
+     * Note for internal users: When adding a new enum Type for v1, make sure
+     * to also add it in the comment for the `optional Type type` definition.
+     * This ensures that the public documentation displays the new enum Type.
      * </pre>
      *
      * <code>TYPE_UNSPECIFIED = 437714322;</code>
@@ -673,11 +711,17 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     /** <code>GENERAL_PURPOSE_N4 = 301912158;</code> */
     public static final int GENERAL_PURPOSE_N4_VALUE = 301912158;
 
+    /** <code>GENERAL_PURPOSE_N4D = 232471462;</code> */
+    public static final int GENERAL_PURPOSE_N4D_VALUE = 232471462;
+
     /** <code>GENERAL_PURPOSE_T2D = 232477166;</code> */
     public static final int GENERAL_PURPOSE_T2D_VALUE = 232477166;
 
     /** <code>GRAPHICS_OPTIMIZED = 68500563;</code> */
     public static final int GRAPHICS_OPTIMIZED_VALUE = 68500563;
+
+    /** <code>GRAPHICS_OPTIMIZED_G4 = 54029369;</code> */
+    public static final int GRAPHICS_OPTIMIZED_G4_VALUE = 54029369;
 
     /** <code>MEMORY_OPTIMIZED = 281753417;</code> */
     public static final int MEMORY_OPTIMIZED_VALUE = 281753417;
@@ -707,7 +751,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Note for internal users: When adding a new enum Type for v1, make sure to also add it in the comment for the `optional Type type` definition. This ensures that the public documentation displays the new enum Type.
+     * Note for internal users: When adding a new enum Type for v1, make sure
+     * to also add it in the comment for the `optional Type type` definition.
+     * This ensures that the public documentation displays the new enum Type.
      * </pre>
      *
      * <code>TYPE_UNSPECIFIED = 437714322;</code>
@@ -778,10 +824,14 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
           return GENERAL_PURPOSE_N2D;
         case 301912158:
           return GENERAL_PURPOSE_N4;
+        case 232471462:
+          return GENERAL_PURPOSE_N4D;
         case 232477166:
           return GENERAL_PURPOSE_T2D;
         case 68500563:
           return GRAPHICS_OPTIMIZED;
+        case 54029369:
+          return GRAPHICS_OPTIMIZED_G4;
         case 281753417:
           return MEMORY_OPTIMIZED;
         case 276301372:
@@ -861,7 +911,13 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies whether to automatically renew the commitment at the end of its current term. The default value is false. If you set the field to true, each time your commitment reaches the end of its term, Compute Engine automatically renews it for another term. You can update this field anytime before the commitment expires. For example, if the commitment is set to expire at 12 AM UTC-8 on January 3, 2027, you can update this field until 11:59 PM UTC-8 on January 2, 2027.
+   * Specifies whether to automatically renew the commitment at the end of its
+   * current term. The default value is false. If you set the field
+   * to true, each time your commitment reaches the end of its
+   * term, Compute Engine automatically renews it for another term. You can
+   * update this field anytime before the commitment expires. For example, if
+   * the commitment is set to expire at 12 AM UTC-8 on January 3, 2027, you can
+   * update this field until 11:59 PM UTC-8 on January 2, 2027.
    * </pre>
    *
    * <code>optional bool auto_renew = 495520765;</code>
@@ -877,7 +933,13 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies whether to automatically renew the commitment at the end of its current term. The default value is false. If you set the field to true, each time your commitment reaches the end of its term, Compute Engine automatically renews it for another term. You can update this field anytime before the commitment expires. For example, if the commitment is set to expire at 12 AM UTC-8 on January 3, 2027, you can update this field until 11:59 PM UTC-8 on January 2, 2027.
+   * Specifies whether to automatically renew the commitment at the end of its
+   * current term. The default value is false. If you set the field
+   * to true, each time your commitment reaches the end of its
+   * term, Compute Engine automatically renews it for another term. You can
+   * update this field anytime before the commitment expires. For example, if
+   * the commitment is set to expire at 12 AM UTC-8 on January 3, 2027, you can
+   * update this field until 11:59 PM UTC-8 on January 2, 2027.
    * </pre>
    *
    * <code>optional bool auto_renew = 495520765;</code>
@@ -898,7 +960,14 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The category of the commitment; specifies whether the commitment is for hardware or software resources. Category MACHINE specifies that you are committing to hardware machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies that you are committing to software licenses, listed in licenseResources. Note that if you specify MACHINE commitments, then you must also specify a type to indicate the machine series of the hardware resource that you are committing to.
+   * The category of the commitment; specifies whether the commitment is for
+   * hardware or software resources. Category MACHINE specifies
+   * that you are committing to hardware machine resources such asVCPU or MEMORY, listed in resources.
+   * Category LICENSE specifies that you are committing to software
+   * licenses, listed in licenseResources.
+   * Note that if you specify MACHINE commitments, then you must
+   * also specify a type to indicate the machine series of the
+   * hardware resource that you are committing to.
    * Check the Category enum for the list of possible values.
    * </pre>
    *
@@ -915,7 +984,14 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The category of the commitment; specifies whether the commitment is for hardware or software resources. Category MACHINE specifies that you are committing to hardware machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies that you are committing to software licenses, listed in licenseResources. Note that if you specify MACHINE commitments, then you must also specify a type to indicate the machine series of the hardware resource that you are committing to.
+   * The category of the commitment; specifies whether the commitment is for
+   * hardware or software resources. Category MACHINE specifies
+   * that you are committing to hardware machine resources such asVCPU or MEMORY, listed in resources.
+   * Category LICENSE specifies that you are committing to software
+   * licenses, listed in licenseResources.
+   * Note that if you specify MACHINE commitments, then you must
+   * also specify a type to indicate the machine series of the
+   * hardware resource that you are committing to.
    * Check the Category enum for the list of possible values.
    * </pre>
    *
@@ -940,7 +1016,14 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The category of the commitment; specifies whether the commitment is for hardware or software resources. Category MACHINE specifies that you are committing to hardware machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies that you are committing to software licenses, listed in licenseResources. Note that if you specify MACHINE commitments, then you must also specify a type to indicate the machine series of the hardware resource that you are committing to.
+   * The category of the commitment; specifies whether the commitment is for
+   * hardware or software resources. Category MACHINE specifies
+   * that you are committing to hardware machine resources such asVCPU or MEMORY, listed in resources.
+   * Category LICENSE specifies that you are committing to software
+   * licenses, listed in licenseResources.
+   * Note that if you specify MACHINE commitments, then you must
+   * also specify a type to indicate the machine series of the
+   * hardware resource that you are committing to.
    * Check the Category enum for the list of possible values.
    * </pre>
    *
@@ -970,7 +1053,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -986,7 +1070,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -1010,7 +1095,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -1039,7 +1125,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Input Only] Optional, specifies the requested commitment end time in RFC3339 text format. Use this option when the desired commitment's end date is later than the start date + term duration.
+   * [Input Only] Optional, specifies the requested commitment end time inRFC3339 text format. Use this option when the desired
+   * commitment's end date is later than the start date + term duration.
    * </pre>
    *
    * <code>optional string custom_end_timestamp = 181770852;</code>
@@ -1055,7 +1142,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Input Only] Optional, specifies the requested commitment end time in RFC3339 text format. Use this option when the desired commitment's end date is later than the start date + term duration.
+   * [Input Only] Optional, specifies the requested commitment end time inRFC3339 text format. Use this option when the desired
+   * commitment's end date is later than the start date + term duration.
    * </pre>
    *
    * <code>optional string custom_end_timestamp = 181770852;</code>
@@ -1079,7 +1167,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Input Only] Optional, specifies the requested commitment end time in RFC3339 text format. Use this option when the desired commitment's end date is later than the start date + term duration.
+   * [Input Only] Optional, specifies the requested commitment end time inRFC3339 text format. Use this option when the desired
+   * commitment's end date is later than the start date + term duration.
    * </pre>
    *
    * <code>optional string custom_end_timestamp = 181770852;</code>
@@ -1108,7 +1197,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of the commitment. You can provide this property when you create the resource.
+   * An optional description of the commitment. You can provide this property
+   * when you create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -1124,7 +1214,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of the commitment. You can provide this property when you create the resource.
+   * An optional description of the commitment. You can provide this property
+   * when you create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -1148,7 +1239,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of the commitment. You can provide this property when you create the resource.
+   * An optional description of the commitment. You can provide this property
+   * when you create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -1177,7 +1269,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Commitment end time in RFC3339 text format.
+   * Output only. [Output Only] Commitment end time inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string end_timestamp = 468096690;</code>
@@ -1193,7 +1286,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Commitment end time in RFC3339 text format.
+   * Output only. [Output Only] Commitment end time inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string end_timestamp = 468096690;</code>
@@ -1217,7 +1311,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Commitment end time in RFC3339 text format.
+   * Output only. [Output Only] Commitment end time inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string end_timestamp = 468096690;</code>
@@ -1288,7 +1383,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -1304,7 +1400,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -1325,7 +1422,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#commitment for commitments.
+   * Output only. [Output Only] Type of the resource. Always compute#commitment
+   * for commitments.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1341,7 +1439,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#commitment for commitments.
+   * Output only. [Output Only] Type of the resource. Always compute#commitment
+   * for commitments.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1365,7 +1464,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#commitment for commitments.
+   * Output only. [Output Only] Type of the resource. Always compute#commitment
+   * for commitments.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1452,7 +1552,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of source commitments that you are merging to create the new merged commitment. For more information, see Merging commitments.
+   * The list of source commitments that you are merging to create the new
+   * merged commitment. For more information, see
+   * Merging commitments.
    * </pre>
    *
    * <code>repeated string merge_source_commitments = 188093761;</code>
@@ -1467,7 +1569,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of source commitments that you are merging to create the new merged commitment. For more information, see Merging commitments.
+   * The list of source commitments that you are merging to create the new
+   * merged commitment. For more information, see
+   * Merging commitments.
    * </pre>
    *
    * <code>repeated string merge_source_commitments = 188093761;</code>
@@ -1482,7 +1586,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of source commitments that you are merging to create the new merged commitment. For more information, see Merging commitments.
+   * The list of source commitments that you are merging to create the new
+   * merged commitment. For more information, see
+   * Merging commitments.
    * </pre>
    *
    * <code>repeated string merge_source_commitments = 188093761;</code>
@@ -1498,7 +1604,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of source commitments that you are merging to create the new merged commitment. For more information, see Merging commitments.
+   * The list of source commitments that you are merging to create the new
+   * merged commitment. For more information, see
+   * Merging commitments.
    * </pre>
    *
    * <code>repeated string merge_source_commitments = 188093761;</code>
@@ -1519,7 +1627,13 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the commitment. You must specify a name when you purchase the commitment. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the commitment. You must specify a name when you purchase the
+   * commitment. The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1535,7 +1649,13 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the commitment. You must specify a name when you purchase the commitment. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the commitment. You must specify a name when you purchase the
+   * commitment. The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1559,7 +1679,13 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the commitment. You must specify a name when you purchase the commitment. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the commitment. You must specify a name when you purchase the
+   * commitment. The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1588,7 +1714,12 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The minimum time duration that you commit to purchasing resources. The plan that you choose determines the preset term length of the commitment (which is 1 year or 3 years) and affects the discount rate that you receive for your resources. Committing to a longer time duration typically gives you a higher discount rate. The supported values for this field are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+   * The minimum time duration that you commit to purchasing resources.
+   * The plan that you choose determines the preset term length of the
+   * commitment (which is 1 year or 3 years) and affects the discount rate that
+   * you receive for your resources. Committing to a longer time duration
+   * typically gives you a higher discount rate. The supported values for this
+   * field are TWELVE_MONTH (1 year), andTHIRTY_SIX_MONTH (3 years).
    * Check the Plan enum for the list of possible values.
    * </pre>
    *
@@ -1605,7 +1736,12 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The minimum time duration that you commit to purchasing resources. The plan that you choose determines the preset term length of the commitment (which is 1 year or 3 years) and affects the discount rate that you receive for your resources. Committing to a longer time duration typically gives you a higher discount rate. The supported values for this field are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+   * The minimum time duration that you commit to purchasing resources.
+   * The plan that you choose determines the preset term length of the
+   * commitment (which is 1 year or 3 years) and affects the discount rate that
+   * you receive for your resources. Committing to a longer time duration
+   * typically gives you a higher discount rate. The supported values for this
+   * field are TWELVE_MONTH (1 year), andTHIRTY_SIX_MONTH (3 years).
    * Check the Plan enum for the list of possible values.
    * </pre>
    *
@@ -1630,7 +1766,12 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The minimum time duration that you commit to purchasing resources. The plan that you choose determines the preset term length of the commitment (which is 1 year or 3 years) and affects the discount rate that you receive for your resources. Committing to a longer time duration typically gives you a higher discount rate. The supported values for this field are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+   * The minimum time duration that you commit to purchasing resources.
+   * The plan that you choose determines the preset term length of the
+   * commitment (which is 1 year or 3 years) and affects the discount rate that
+   * you receive for your resources. Committing to a longer time duration
+   * typically gives you a higher discount rate. The supported values for this
+   * field are TWELVE_MONTH (1 year), andTHIRTY_SIX_MONTH (3 years).
    * Check the Plan enum for the list of possible values.
    * </pre>
    *
@@ -1660,7 +1801,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the commitment and committed resources are located.
+   * Output only. [Output Only] URL of the region where the commitment and committed
+   * resources are located.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -1676,7 +1818,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the commitment and committed resources are located.
+   * Output only. [Output Only] URL of the region where the commitment and committed
+   * resources are located.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -1700,7 +1843,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the commitment and committed resources are located.
+   * Output only. [Output Only] URL of the region where the commitment and committed
+   * resources are located.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -1729,7 +1873,15 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of new reservations that you want to create and attach to this commitment. You must attach reservations to your commitment if your commitment specifies any GPUs or Local SSD disks. For more information, see Attach reservations to resource-based commitments. Specify this property only if you want to create new reservations to attach. To attach existing reservations, specify the existingReservations property instead.
+   * The list of new reservations that you want to create and attach to this
+   * commitment.
+   *
+   * You must attach reservations to your commitment if your commitment
+   * specifies any GPUs or Local SSD disks. For more information, see
+   * Attach reservations to resource-based commitments.
+   *
+   * Specify this property only if you want to create new
+   * reservations to attach. To attach existing reservations, specify theexistingReservations property instead.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -1743,7 +1895,15 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of new reservations that you want to create and attach to this commitment. You must attach reservations to your commitment if your commitment specifies any GPUs or Local SSD disks. For more information, see Attach reservations to resource-based commitments. Specify this property only if you want to create new reservations to attach. To attach existing reservations, specify the existingReservations property instead.
+   * The list of new reservations that you want to create and attach to this
+   * commitment.
+   *
+   * You must attach reservations to your commitment if your commitment
+   * specifies any GPUs or Local SSD disks. For more information, see
+   * Attach reservations to resource-based commitments.
+   *
+   * Specify this property only if you want to create new
+   * reservations to attach. To attach existing reservations, specify theexistingReservations property instead.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -1758,7 +1918,15 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of new reservations that you want to create and attach to this commitment. You must attach reservations to your commitment if your commitment specifies any GPUs or Local SSD disks. For more information, see Attach reservations to resource-based commitments. Specify this property only if you want to create new reservations to attach. To attach existing reservations, specify the existingReservations property instead.
+   * The list of new reservations that you want to create and attach to this
+   * commitment.
+   *
+   * You must attach reservations to your commitment if your commitment
+   * specifies any GPUs or Local SSD disks. For more information, see
+   * Attach reservations to resource-based commitments.
+   *
+   * Specify this property only if you want to create new
+   * reservations to attach. To attach existing reservations, specify theexistingReservations property instead.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -1772,7 +1940,15 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of new reservations that you want to create and attach to this commitment. You must attach reservations to your commitment if your commitment specifies any GPUs or Local SSD disks. For more information, see Attach reservations to resource-based commitments. Specify this property only if you want to create new reservations to attach. To attach existing reservations, specify the existingReservations property instead.
+   * The list of new reservations that you want to create and attach to this
+   * commitment.
+   *
+   * You must attach reservations to your commitment if your commitment
+   * specifies any GPUs or Local SSD disks. For more information, see
+   * Attach reservations to resource-based commitments.
+   *
+   * Specify this property only if you want to create new
+   * reservations to attach. To attach existing reservations, specify theexistingReservations property instead.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -1786,7 +1962,15 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of new reservations that you want to create and attach to this commitment. You must attach reservations to your commitment if your commitment specifies any GPUs or Local SSD disks. For more information, see Attach reservations to resource-based commitments. Specify this property only if you want to create new reservations to attach. To attach existing reservations, specify the existingReservations property instead.
+   * The list of new reservations that you want to create and attach to this
+   * commitment.
+   *
+   * You must attach reservations to your commitment if your commitment
+   * specifies any GPUs or Local SSD disks. For more information, see
+   * Attach reservations to resource-based commitments.
+   *
+   * Specify this property only if you want to create new
+   * reservations to attach. To attach existing reservations, specify theexistingReservations property instead.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -1803,7 +1987,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status information for Commitment resource.
+   * Output only. [Output Only] Status information for Commitment resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.CommitmentResourceStatus resource_status = 249429315;
@@ -1820,7 +2004,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status information for Commitment resource.
+   * Output only. [Output Only] Status information for Commitment resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.CommitmentResourceStatus resource_status = 249429315;
@@ -1839,7 +2023,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status information for Commitment resource.
+   * Output only. [Output Only] Status information for Commitment resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.CommitmentResourceStatus resource_status = 249429315;
@@ -1862,7 +2046,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of all the hardware resources, with their types and amounts, that you want to commit to. Specify as a separate entry in the list for each individual resource type.
+   * The list of all the hardware resources, with their types and amounts, that
+   * you want to commit to. Specify as a separate entry in the list for each
+   * individual resource type.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ResourceCommitment resources = 164412965;</code>
@@ -1876,7 +2062,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of all the hardware resources, with their types and amounts, that you want to commit to. Specify as a separate entry in the list for each individual resource type.
+   * The list of all the hardware resources, with their types and amounts, that
+   * you want to commit to. Specify as a separate entry in the list for each
+   * individual resource type.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ResourceCommitment resources = 164412965;</code>
@@ -1891,7 +2079,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of all the hardware resources, with their types and amounts, that you want to commit to. Specify as a separate entry in the list for each individual resource type.
+   * The list of all the hardware resources, with their types and amounts, that
+   * you want to commit to. Specify as a separate entry in the list for each
+   * individual resource type.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ResourceCommitment resources = 164412965;</code>
@@ -1905,7 +2095,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of all the hardware resources, with their types and amounts, that you want to commit to. Specify as a separate entry in the list for each individual resource type.
+   * The list of all the hardware resources, with their types and amounts, that
+   * you want to commit to. Specify as a separate entry in the list for each
+   * individual resource type.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ResourceCommitment resources = 164412965;</code>
@@ -1919,7 +2111,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of all the hardware resources, with their types and amounts, that you want to commit to. Specify as a separate entry in the list for each individual resource type.
+   * The list of all the hardware resources, with their types and amounts, that
+   * you want to commit to. Specify as a separate entry in the list for each
+   * individual resource type.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ResourceCommitment resources = 164412965;</code>
@@ -1938,7 +2132,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1954,7 +2148,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1978,7 +2172,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -2007,7 +2201,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The source commitment from which you are transferring resources to create the new split commitment. For more information, see Split commitments.
+   * The source commitment from which you are transferring resources to create
+   * the new split commitment. For more information, see
+   * Split commitments.
    * </pre>
    *
    * <code>optional string split_source_commitment = 402611156;</code>
@@ -2023,7 +2219,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The source commitment from which you are transferring resources to create the new split commitment. For more information, see Split commitments.
+   * The source commitment from which you are transferring resources to create
+   * the new split commitment. For more information, see
+   * Split commitments.
    * </pre>
    *
    * <code>optional string split_source_commitment = 402611156;</code>
@@ -2047,7 +2245,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The source commitment from which you are transferring resources to create the new split commitment. For more information, see Split commitments.
+   * The source commitment from which you are transferring resources to create
+   * the new split commitment. For more information, see
+   * Split commitments.
    * </pre>
    *
    * <code>optional string split_source_commitment = 402611156;</code>
@@ -2076,7 +2276,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Commitment start time in RFC3339 text format.
+   * Output only. [Output Only] Commitment start time inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string start_timestamp = 83645817;</code>
@@ -2092,7 +2293,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Commitment start time in RFC3339 text format.
+   * Output only. [Output Only] Commitment start time inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string start_timestamp = 83645817;</code>
@@ -2116,7 +2318,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Commitment start time in RFC3339 text format.
+   * Output only. [Output Only] Commitment start time inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string start_timestamp = 83645817;</code>
@@ -2145,7 +2348,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). Status can be one of the following values: NOT_YET_ACTIVE, ACTIVE, or EXPIRED.
+   * Output only. [Output Only] Status of the commitment with regards to eventual expiration
+   * (each commitment has an end date defined). Status can be one of the
+   * following values: NOT_YET_ACTIVE, ACTIVE, orEXPIRED.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -2162,7 +2367,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). Status can be one of the following values: NOT_YET_ACTIVE, ACTIVE, or EXPIRED.
+   * Output only. [Output Only] Status of the commitment with regards to eventual expiration
+   * (each commitment has an end date defined). Status can be one of the
+   * following values: NOT_YET_ACTIVE, ACTIVE, orEXPIRED.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -2187,7 +2394,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). Status can be one of the following values: NOT_YET_ACTIVE, ACTIVE, or EXPIRED.
+   * Output only. [Output Only] Status of the commitment with regards to eventual expiration
+   * (each commitment has an end date defined). Status can be one of the
+   * following values: NOT_YET_ACTIVE, ACTIVE, orEXPIRED.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -2217,7 +2426,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An optional, human-readable explanation of the status.
+   * Output only. [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
    * <code>optional string status_message = 297428154;</code>
@@ -2233,7 +2442,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An optional, human-readable explanation of the status.
+   * Output only. [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
    * <code>optional string status_message = 297428154;</code>
@@ -2257,7 +2466,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An optional, human-readable explanation of the status.
+   * Output only. [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
    * <code>optional string status_message = 297428154;</code>
@@ -2286,7 +2495,17 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type of commitment; specifies the machine series for which you want to commit to purchasing resources. The choice of machine series affects the discount rate and the eligible resource types. The type must be one of the following: ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3, ACCELERATOR_OPTIMIZED_A3_MEGA, COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D, COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D, COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE, GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2, GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D, GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D, GRAPHICS_OPTIMIZED, MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3, MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For example, type MEMORY_OPTIMIZED specifies a commitment that applies only to eligible resources of memory optimized M1 and M2 machine series. Type GENERAL_PURPOSE specifies a commitment that applies only to eligible resources of general purpose N1 machine series.
+   * The type of commitment; specifies the
+   * machine series for which you want to commit to purchasing resources.
+   * The choice of machine series affects the discount rate and the eligible
+   * resource types.
+   *
+   *  The type must be one of the following:ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3,ACCELERATOR_OPTIMIZED_A3_MEGA,COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D,
+   *  COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, GRAPHICS_OPTIMIZED_G4,MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3,MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For
+   * example, type MEMORY_OPTIMIZED specifies a commitment that
+   * applies only to eligible resources of memory optimized M1 and M2 machine
+   * series. Type GENERAL_PURPOSE specifies a commitment that
+   * applies only to eligible resources of general purpose N1 machine series.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -2303,7 +2522,17 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type of commitment; specifies the machine series for which you want to commit to purchasing resources. The choice of machine series affects the discount rate and the eligible resource types. The type must be one of the following: ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3, ACCELERATOR_OPTIMIZED_A3_MEGA, COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D, COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D, COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE, GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2, GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D, GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D, GRAPHICS_OPTIMIZED, MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3, MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For example, type MEMORY_OPTIMIZED specifies a commitment that applies only to eligible resources of memory optimized M1 and M2 machine series. Type GENERAL_PURPOSE specifies a commitment that applies only to eligible resources of general purpose N1 machine series.
+   * The type of commitment; specifies the
+   * machine series for which you want to commit to purchasing resources.
+   * The choice of machine series affects the discount rate and the eligible
+   * resource types.
+   *
+   *  The type must be one of the following:ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3,ACCELERATOR_OPTIMIZED_A3_MEGA,COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D,
+   *  COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, GRAPHICS_OPTIMIZED_G4,MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3,MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For
+   * example, type MEMORY_OPTIMIZED specifies a commitment that
+   * applies only to eligible resources of memory optimized M1 and M2 machine
+   * series. Type GENERAL_PURPOSE specifies a commitment that
+   * applies only to eligible resources of general purpose N1 machine series.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -2328,7 +2557,17 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type of commitment; specifies the machine series for which you want to commit to purchasing resources. The choice of machine series affects the discount rate and the eligible resource types. The type must be one of the following: ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3, ACCELERATOR_OPTIMIZED_A3_MEGA, COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D, COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D, COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE, GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2, GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D, GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D, GRAPHICS_OPTIMIZED, MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3, MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For example, type MEMORY_OPTIMIZED specifies a commitment that applies only to eligible resources of memory optimized M1 and M2 machine series. Type GENERAL_PURPOSE specifies a commitment that applies only to eligible resources of general purpose N1 machine series.
+   * The type of commitment; specifies the
+   * machine series for which you want to commit to purchasing resources.
+   * The choice of machine series affects the discount rate and the eligible
+   * resource types.
+   *
+   *  The type must be one of the following:ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3,ACCELERATOR_OPTIMIZED_A3_MEGA,COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D,
+   *  COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, GRAPHICS_OPTIMIZED_G4,MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3,MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For
+   * example, type MEMORY_OPTIMIZED specifies a commitment that
+   * applies only to eligible resources of memory optimized M1 and M2 machine
+   * series. Type GENERAL_PURPOSE specifies a commitment that
+   * applies only to eligible resources of general purpose N1 machine series.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -2834,7 +3073,13 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a regional resource-based commitment resource. Creating this commitment resource means that you are purchasing a resource-based committed use contract, with an explicit start and end time. You can purchase resource-based commitments for both hardware and software resources. For more information, read Resource-based committed use discounts
+   * Represents a regional resource-based commitment resource.
+   *
+   * Creating this commitment resource means that you are purchasing a
+   * resource-based committed use contract, with an explicit start and end time.
+   * You can purchase resource-based commitments for both hardware and software
+   * resources. For more information, read
+   * Resource-based committed use discounts
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Commitment}
@@ -3483,7 +3728,13 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether to automatically renew the commitment at the end of its current term. The default value is false. If you set the field to true, each time your commitment reaches the end of its term, Compute Engine automatically renews it for another term. You can update this field anytime before the commitment expires. For example, if the commitment is set to expire at 12 AM UTC-8 on January 3, 2027, you can update this field until 11:59 PM UTC-8 on January 2, 2027.
+     * Specifies whether to automatically renew the commitment at the end of its
+     * current term. The default value is false. If you set the field
+     * to true, each time your commitment reaches the end of its
+     * term, Compute Engine automatically renews it for another term. You can
+     * update this field anytime before the commitment expires. For example, if
+     * the commitment is set to expire at 12 AM UTC-8 on January 3, 2027, you can
+     * update this field until 11:59 PM UTC-8 on January 2, 2027.
      * </pre>
      *
      * <code>optional bool auto_renew = 495520765;</code>
@@ -3499,7 +3750,13 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether to automatically renew the commitment at the end of its current term. The default value is false. If you set the field to true, each time your commitment reaches the end of its term, Compute Engine automatically renews it for another term. You can update this field anytime before the commitment expires. For example, if the commitment is set to expire at 12 AM UTC-8 on January 3, 2027, you can update this field until 11:59 PM UTC-8 on January 2, 2027.
+     * Specifies whether to automatically renew the commitment at the end of its
+     * current term. The default value is false. If you set the field
+     * to true, each time your commitment reaches the end of its
+     * term, Compute Engine automatically renews it for another term. You can
+     * update this field anytime before the commitment expires. For example, if
+     * the commitment is set to expire at 12 AM UTC-8 on January 3, 2027, you can
+     * update this field until 11:59 PM UTC-8 on January 2, 2027.
      * </pre>
      *
      * <code>optional bool auto_renew = 495520765;</code>
@@ -3515,7 +3772,13 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether to automatically renew the commitment at the end of its current term. The default value is false. If you set the field to true, each time your commitment reaches the end of its term, Compute Engine automatically renews it for another term. You can update this field anytime before the commitment expires. For example, if the commitment is set to expire at 12 AM UTC-8 on January 3, 2027, you can update this field until 11:59 PM UTC-8 on January 2, 2027.
+     * Specifies whether to automatically renew the commitment at the end of its
+     * current term. The default value is false. If you set the field
+     * to true, each time your commitment reaches the end of its
+     * term, Compute Engine automatically renews it for another term. You can
+     * update this field anytime before the commitment expires. For example, if
+     * the commitment is set to expire at 12 AM UTC-8 on January 3, 2027, you can
+     * update this field until 11:59 PM UTC-8 on January 2, 2027.
      * </pre>
      *
      * <code>optional bool auto_renew = 495520765;</code>
@@ -3535,7 +3798,13 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether to automatically renew the commitment at the end of its current term. The default value is false. If you set the field to true, each time your commitment reaches the end of its term, Compute Engine automatically renews it for another term. You can update this field anytime before the commitment expires. For example, if the commitment is set to expire at 12 AM UTC-8 on January 3, 2027, you can update this field until 11:59 PM UTC-8 on January 2, 2027.
+     * Specifies whether to automatically renew the commitment at the end of its
+     * current term. The default value is false. If you set the field
+     * to true, each time your commitment reaches the end of its
+     * term, Compute Engine automatically renews it for another term. You can
+     * update this field anytime before the commitment expires. For example, if
+     * the commitment is set to expire at 12 AM UTC-8 on January 3, 2027, you can
+     * update this field until 11:59 PM UTC-8 on January 2, 2027.
      * </pre>
      *
      * <code>optional bool auto_renew = 495520765;</code>
@@ -3555,7 +3824,14 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The category of the commitment; specifies whether the commitment is for hardware or software resources. Category MACHINE specifies that you are committing to hardware machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies that you are committing to software licenses, listed in licenseResources. Note that if you specify MACHINE commitments, then you must also specify a type to indicate the machine series of the hardware resource that you are committing to.
+     * The category of the commitment; specifies whether the commitment is for
+     * hardware or software resources. Category MACHINE specifies
+     * that you are committing to hardware machine resources such asVCPU or MEMORY, listed in resources.
+     * Category LICENSE specifies that you are committing to software
+     * licenses, listed in licenseResources.
+     * Note that if you specify MACHINE commitments, then you must
+     * also specify a type to indicate the machine series of the
+     * hardware resource that you are committing to.
      * Check the Category enum for the list of possible values.
      * </pre>
      *
@@ -3571,7 +3847,14 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The category of the commitment; specifies whether the commitment is for hardware or software resources. Category MACHINE specifies that you are committing to hardware machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies that you are committing to software licenses, listed in licenseResources. Note that if you specify MACHINE commitments, then you must also specify a type to indicate the machine series of the hardware resource that you are committing to.
+     * The category of the commitment; specifies whether the commitment is for
+     * hardware or software resources. Category MACHINE specifies
+     * that you are committing to hardware machine resources such asVCPU or MEMORY, listed in resources.
+     * Category LICENSE specifies that you are committing to software
+     * licenses, listed in licenseResources.
+     * Note that if you specify MACHINE commitments, then you must
+     * also specify a type to indicate the machine series of the
+     * hardware resource that you are committing to.
      * Check the Category enum for the list of possible values.
      * </pre>
      *
@@ -3595,7 +3878,14 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The category of the commitment; specifies whether the commitment is for hardware or software resources. Category MACHINE specifies that you are committing to hardware machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies that you are committing to software licenses, listed in licenseResources. Note that if you specify MACHINE commitments, then you must also specify a type to indicate the machine series of the hardware resource that you are committing to.
+     * The category of the commitment; specifies whether the commitment is for
+     * hardware or software resources. Category MACHINE specifies
+     * that you are committing to hardware machine resources such asVCPU or MEMORY, listed in resources.
+     * Category LICENSE specifies that you are committing to software
+     * licenses, listed in licenseResources.
+     * Note that if you specify MACHINE commitments, then you must
+     * also specify a type to indicate the machine series of the
+     * hardware resource that you are committing to.
      * Check the Category enum for the list of possible values.
      * </pre>
      *
@@ -3619,7 +3909,14 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The category of the commitment; specifies whether the commitment is for hardware or software resources. Category MACHINE specifies that you are committing to hardware machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies that you are committing to software licenses, listed in licenseResources. Note that if you specify MACHINE commitments, then you must also specify a type to indicate the machine series of the hardware resource that you are committing to.
+     * The category of the commitment; specifies whether the commitment is for
+     * hardware or software resources. Category MACHINE specifies
+     * that you are committing to hardware machine resources such asVCPU or MEMORY, listed in resources.
+     * Category LICENSE specifies that you are committing to software
+     * licenses, listed in licenseResources.
+     * Note that if you specify MACHINE commitments, then you must
+     * also specify a type to indicate the machine series of the
+     * hardware resource that you are committing to.
      * Check the Category enum for the list of possible values.
      * </pre>
      *
@@ -3642,7 +3939,14 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The category of the commitment; specifies whether the commitment is for hardware or software resources. Category MACHINE specifies that you are committing to hardware machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies that you are committing to software licenses, listed in licenseResources. Note that if you specify MACHINE commitments, then you must also specify a type to indicate the machine series of the hardware resource that you are committing to.
+     * The category of the commitment; specifies whether the commitment is for
+     * hardware or software resources. Category MACHINE specifies
+     * that you are committing to hardware machine resources such asVCPU or MEMORY, listed in resources.
+     * Category LICENSE specifies that you are committing to software
+     * licenses, listed in licenseResources.
+     * Note that if you specify MACHINE commitments, then you must
+     * also specify a type to indicate the machine series of the
+     * hardware resource that you are committing to.
      * Check the Category enum for the list of possible values.
      * </pre>
      *
@@ -3661,7 +3965,14 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The category of the commitment; specifies whether the commitment is for hardware or software resources. Category MACHINE specifies that you are committing to hardware machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies that you are committing to software licenses, listed in licenseResources. Note that if you specify MACHINE commitments, then you must also specify a type to indicate the machine series of the hardware resource that you are committing to.
+     * The category of the commitment; specifies whether the commitment is for
+     * hardware or software resources. Category MACHINE specifies
+     * that you are committing to hardware machine resources such asVCPU or MEMORY, listed in resources.
+     * Category LICENSE specifies that you are committing to software
+     * licenses, listed in licenseResources.
+     * Note that if you specify MACHINE commitments, then you must
+     * also specify a type to indicate the machine series of the
+     * hardware resource that you are committing to.
      * Check the Category enum for the list of possible values.
      * </pre>
      *
@@ -3687,7 +3998,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -3702,7 +4014,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -3725,7 +4038,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -3748,7 +4062,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -3770,7 +4085,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -3788,7 +4104,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -3813,7 +4130,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] Optional, specifies the requested commitment end time in RFC3339 text format. Use this option when the desired commitment's end date is later than the start date + term duration.
+     * [Input Only] Optional, specifies the requested commitment end time inRFC3339 text format. Use this option when the desired
+     * commitment's end date is later than the start date + term duration.
      * </pre>
      *
      * <code>optional string custom_end_timestamp = 181770852;</code>
@@ -3828,7 +4146,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] Optional, specifies the requested commitment end time in RFC3339 text format. Use this option when the desired commitment's end date is later than the start date + term duration.
+     * [Input Only] Optional, specifies the requested commitment end time inRFC3339 text format. Use this option when the desired
+     * commitment's end date is later than the start date + term duration.
      * </pre>
      *
      * <code>optional string custom_end_timestamp = 181770852;</code>
@@ -3851,7 +4170,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] Optional, specifies the requested commitment end time in RFC3339 text format. Use this option when the desired commitment's end date is later than the start date + term duration.
+     * [Input Only] Optional, specifies the requested commitment end time inRFC3339 text format. Use this option when the desired
+     * commitment's end date is later than the start date + term duration.
      * </pre>
      *
      * <code>optional string custom_end_timestamp = 181770852;</code>
@@ -3874,7 +4194,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] Optional, specifies the requested commitment end time in RFC3339 text format. Use this option when the desired commitment's end date is later than the start date + term duration.
+     * [Input Only] Optional, specifies the requested commitment end time inRFC3339 text format. Use this option when the desired
+     * commitment's end date is later than the start date + term duration.
      * </pre>
      *
      * <code>optional string custom_end_timestamp = 181770852;</code>
@@ -3896,7 +4217,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] Optional, specifies the requested commitment end time in RFC3339 text format. Use this option when the desired commitment's end date is later than the start date + term duration.
+     * [Input Only] Optional, specifies the requested commitment end time inRFC3339 text format. Use this option when the desired
+     * commitment's end date is later than the start date + term duration.
      * </pre>
      *
      * <code>optional string custom_end_timestamp = 181770852;</code>
@@ -3914,7 +4236,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] Optional, specifies the requested commitment end time in RFC3339 text format. Use this option when the desired commitment's end date is later than the start date + term duration.
+     * [Input Only] Optional, specifies the requested commitment end time inRFC3339 text format. Use this option when the desired
+     * commitment's end date is later than the start date + term duration.
      * </pre>
      *
      * <code>optional string custom_end_timestamp = 181770852;</code>
@@ -3939,7 +4262,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of the commitment. You can provide this property when you create the resource.
+     * An optional description of the commitment. You can provide this property
+     * when you create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -3954,7 +4278,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of the commitment. You can provide this property when you create the resource.
+     * An optional description of the commitment. You can provide this property
+     * when you create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -3977,7 +4302,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of the commitment. You can provide this property when you create the resource.
+     * An optional description of the commitment. You can provide this property
+     * when you create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -4000,7 +4326,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of the commitment. You can provide this property when you create the resource.
+     * An optional description of the commitment. You can provide this property
+     * when you create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -4022,7 +4349,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of the commitment. You can provide this property when you create the resource.
+     * An optional description of the commitment. You can provide this property
+     * when you create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -4040,7 +4368,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of the commitment. You can provide this property when you create the resource.
+     * An optional description of the commitment. You can provide this property
+     * when you create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -4065,7 +4394,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Commitment end time in RFC3339 text format.
+     * Output only. [Output Only] Commitment end time inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string end_timestamp = 468096690;</code>
@@ -4080,7 +4410,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Commitment end time in RFC3339 text format.
+     * Output only. [Output Only] Commitment end time inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string end_timestamp = 468096690;</code>
@@ -4103,7 +4434,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Commitment end time in RFC3339 text format.
+     * Output only. [Output Only] Commitment end time inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string end_timestamp = 468096690;</code>
@@ -4126,7 +4458,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Commitment end time in RFC3339 text format.
+     * Output only. [Output Only] Commitment end time inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string end_timestamp = 468096690;</code>
@@ -4148,7 +4481,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Commitment end time in RFC3339 text format.
+     * Output only. [Output Only] Commitment end time inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string end_timestamp = 468096690;</code>
@@ -4166,7 +4500,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Commitment end time in RFC3339 text format.
+     * Output only. [Output Only] Commitment end time inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string end_timestamp = 468096690;</code>
@@ -4320,7 +4655,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -4336,7 +4672,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -4352,7 +4689,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -4372,7 +4710,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -4392,7 +4731,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#commitment for commitments.
+     * Output only. [Output Only] Type of the resource. Always compute#commitment
+     * for commitments.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4407,7 +4747,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#commitment for commitments.
+     * Output only. [Output Only] Type of the resource. Always compute#commitment
+     * for commitments.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4430,7 +4771,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#commitment for commitments.
+     * Output only. [Output Only] Type of the resource. Always compute#commitment
+     * for commitments.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4453,7 +4795,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#commitment for commitments.
+     * Output only. [Output Only] Type of the resource. Always compute#commitment
+     * for commitments.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4475,7 +4818,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#commitment for commitments.
+     * Output only. [Output Only] Type of the resource. Always compute#commitment
+     * for commitments.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4493,7 +4837,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#commitment for commitments.
+     * Output only. [Output Only] Type of the resource. Always compute#commitment
+     * for commitments.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4744,7 +5089,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of source commitments that you are merging to create the new merged commitment. For more information, see Merging commitments.
+     * The list of source commitments that you are merging to create the new
+     * merged commitment. For more information, see
+     * Merging commitments.
      * </pre>
      *
      * <code>repeated string merge_source_commitments = 188093761;</code>
@@ -4760,7 +5107,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of source commitments that you are merging to create the new merged commitment. For more information, see Merging commitments.
+     * The list of source commitments that you are merging to create the new
+     * merged commitment. For more information, see
+     * Merging commitments.
      * </pre>
      *
      * <code>repeated string merge_source_commitments = 188093761;</code>
@@ -4775,7 +5124,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of source commitments that you are merging to create the new merged commitment. For more information, see Merging commitments.
+     * The list of source commitments that you are merging to create the new
+     * merged commitment. For more information, see
+     * Merging commitments.
      * </pre>
      *
      * <code>repeated string merge_source_commitments = 188093761;</code>
@@ -4791,7 +5142,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of source commitments that you are merging to create the new merged commitment. For more information, see Merging commitments.
+     * The list of source commitments that you are merging to create the new
+     * merged commitment. For more information, see
+     * Merging commitments.
      * </pre>
      *
      * <code>repeated string merge_source_commitments = 188093761;</code>
@@ -4807,7 +5160,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of source commitments that you are merging to create the new merged commitment. For more information, see Merging commitments.
+     * The list of source commitments that you are merging to create the new
+     * merged commitment. For more information, see
+     * Merging commitments.
      * </pre>
      *
      * <code>repeated string merge_source_commitments = 188093761;</code>
@@ -4831,7 +5186,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of source commitments that you are merging to create the new merged commitment. For more information, see Merging commitments.
+     * The list of source commitments that you are merging to create the new
+     * merged commitment. For more information, see
+     * Merging commitments.
      * </pre>
      *
      * <code>repeated string merge_source_commitments = 188093761;</code>
@@ -4854,7 +5211,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of source commitments that you are merging to create the new merged commitment. For more information, see Merging commitments.
+     * The list of source commitments that you are merging to create the new
+     * merged commitment. For more information, see
+     * Merging commitments.
      * </pre>
      *
      * <code>repeated string merge_source_commitments = 188093761;</code>
@@ -4874,7 +5233,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of source commitments that you are merging to create the new merged commitment. For more information, see Merging commitments.
+     * The list of source commitments that you are merging to create the new
+     * merged commitment. For more information, see
+     * Merging commitments.
      * </pre>
      *
      * <code>repeated string merge_source_commitments = 188093761;</code>
@@ -4893,7 +5254,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of source commitments that you are merging to create the new merged commitment. For more information, see Merging commitments.
+     * The list of source commitments that you are merging to create the new
+     * merged commitment. For more information, see
+     * Merging commitments.
      * </pre>
      *
      * <code>repeated string merge_source_commitments = 188093761;</code>
@@ -4919,7 +5282,13 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the commitment. You must specify a name when you purchase the commitment. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the commitment. You must specify a name when you purchase the
+     * commitment. The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -4934,7 +5303,13 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the commitment. You must specify a name when you purchase the commitment. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the commitment. You must specify a name when you purchase the
+     * commitment. The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -4957,7 +5332,13 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the commitment. You must specify a name when you purchase the commitment. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the commitment. You must specify a name when you purchase the
+     * commitment. The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -4980,7 +5361,13 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the commitment. You must specify a name when you purchase the commitment. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the commitment. You must specify a name when you purchase the
+     * commitment. The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -5002,7 +5389,13 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the commitment. You must specify a name when you purchase the commitment. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the commitment. You must specify a name when you purchase the
+     * commitment. The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -5020,7 +5413,13 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the commitment. You must specify a name when you purchase the commitment. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the commitment. You must specify a name when you purchase the
+     * commitment. The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -5045,7 +5444,12 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The minimum time duration that you commit to purchasing resources. The plan that you choose determines the preset term length of the commitment (which is 1 year or 3 years) and affects the discount rate that you receive for your resources. Committing to a longer time duration typically gives you a higher discount rate. The supported values for this field are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+     * The minimum time duration that you commit to purchasing resources.
+     * The plan that you choose determines the preset term length of the
+     * commitment (which is 1 year or 3 years) and affects the discount rate that
+     * you receive for your resources. Committing to a longer time duration
+     * typically gives you a higher discount rate. The supported values for this
+     * field are TWELVE_MONTH (1 year), andTHIRTY_SIX_MONTH (3 years).
      * Check the Plan enum for the list of possible values.
      * </pre>
      *
@@ -5061,7 +5465,12 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The minimum time duration that you commit to purchasing resources. The plan that you choose determines the preset term length of the commitment (which is 1 year or 3 years) and affects the discount rate that you receive for your resources. Committing to a longer time duration typically gives you a higher discount rate. The supported values for this field are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+     * The minimum time duration that you commit to purchasing resources.
+     * The plan that you choose determines the preset term length of the
+     * commitment (which is 1 year or 3 years) and affects the discount rate that
+     * you receive for your resources. Committing to a longer time duration
+     * typically gives you a higher discount rate. The supported values for this
+     * field are TWELVE_MONTH (1 year), andTHIRTY_SIX_MONTH (3 years).
      * Check the Plan enum for the list of possible values.
      * </pre>
      *
@@ -5085,7 +5494,12 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The minimum time duration that you commit to purchasing resources. The plan that you choose determines the preset term length of the commitment (which is 1 year or 3 years) and affects the discount rate that you receive for your resources. Committing to a longer time duration typically gives you a higher discount rate. The supported values for this field are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+     * The minimum time duration that you commit to purchasing resources.
+     * The plan that you choose determines the preset term length of the
+     * commitment (which is 1 year or 3 years) and affects the discount rate that
+     * you receive for your resources. Committing to a longer time duration
+     * typically gives you a higher discount rate. The supported values for this
+     * field are TWELVE_MONTH (1 year), andTHIRTY_SIX_MONTH (3 years).
      * Check the Plan enum for the list of possible values.
      * </pre>
      *
@@ -5109,7 +5523,12 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The minimum time duration that you commit to purchasing resources. The plan that you choose determines the preset term length of the commitment (which is 1 year or 3 years) and affects the discount rate that you receive for your resources. Committing to a longer time duration typically gives you a higher discount rate. The supported values for this field are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+     * The minimum time duration that you commit to purchasing resources.
+     * The plan that you choose determines the preset term length of the
+     * commitment (which is 1 year or 3 years) and affects the discount rate that
+     * you receive for your resources. Committing to a longer time duration
+     * typically gives you a higher discount rate. The supported values for this
+     * field are TWELVE_MONTH (1 year), andTHIRTY_SIX_MONTH (3 years).
      * Check the Plan enum for the list of possible values.
      * </pre>
      *
@@ -5132,7 +5551,12 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The minimum time duration that you commit to purchasing resources. The plan that you choose determines the preset term length of the commitment (which is 1 year or 3 years) and affects the discount rate that you receive for your resources. Committing to a longer time duration typically gives you a higher discount rate. The supported values for this field are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+     * The minimum time duration that you commit to purchasing resources.
+     * The plan that you choose determines the preset term length of the
+     * commitment (which is 1 year or 3 years) and affects the discount rate that
+     * you receive for your resources. Committing to a longer time duration
+     * typically gives you a higher discount rate. The supported values for this
+     * field are TWELVE_MONTH (1 year), andTHIRTY_SIX_MONTH (3 years).
      * Check the Plan enum for the list of possible values.
      * </pre>
      *
@@ -5151,7 +5575,12 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The minimum time duration that you commit to purchasing resources. The plan that you choose determines the preset term length of the commitment (which is 1 year or 3 years) and affects the discount rate that you receive for your resources. Committing to a longer time duration typically gives you a higher discount rate. The supported values for this field are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+     * The minimum time duration that you commit to purchasing resources.
+     * The plan that you choose determines the preset term length of the
+     * commitment (which is 1 year or 3 years) and affects the discount rate that
+     * you receive for your resources. Committing to a longer time duration
+     * typically gives you a higher discount rate. The supported values for this
+     * field are TWELVE_MONTH (1 year), andTHIRTY_SIX_MONTH (3 years).
      * Check the Plan enum for the list of possible values.
      * </pre>
      *
@@ -5177,7 +5606,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the commitment and committed resources are located.
+     * Output only. [Output Only] URL of the region where the commitment and committed
+     * resources are located.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -5192,7 +5622,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the commitment and committed resources are located.
+     * Output only. [Output Only] URL of the region where the commitment and committed
+     * resources are located.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -5215,7 +5646,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the commitment and committed resources are located.
+     * Output only. [Output Only] URL of the region where the commitment and committed
+     * resources are located.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -5238,7 +5670,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the commitment and committed resources are located.
+     * Output only. [Output Only] URL of the region where the commitment and committed
+     * resources are located.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -5260,7 +5693,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the commitment and committed resources are located.
+     * Output only. [Output Only] URL of the region where the commitment and committed
+     * resources are located.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -5278,7 +5712,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the commitment and committed resources are located.
+     * Output only. [Output Only] URL of the region where the commitment and committed
+     * resources are located.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -5318,7 +5753,15 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of new reservations that you want to create and attach to this commitment. You must attach reservations to your commitment if your commitment specifies any GPUs or Local SSD disks. For more information, see Attach reservations to resource-based commitments. Specify this property only if you want to create new reservations to attach. To attach existing reservations, specify the existingReservations property instead.
+     * The list of new reservations that you want to create and attach to this
+     * commitment.
+     *
+     * You must attach reservations to your commitment if your commitment
+     * specifies any GPUs or Local SSD disks. For more information, see
+     * Attach reservations to resource-based commitments.
+     *
+     * Specify this property only if you want to create new
+     * reservations to attach. To attach existing reservations, specify theexistingReservations property instead.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -5335,7 +5778,15 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of new reservations that you want to create and attach to this commitment. You must attach reservations to your commitment if your commitment specifies any GPUs or Local SSD disks. For more information, see Attach reservations to resource-based commitments. Specify this property only if you want to create new reservations to attach. To attach existing reservations, specify the existingReservations property instead.
+     * The list of new reservations that you want to create and attach to this
+     * commitment.
+     *
+     * You must attach reservations to your commitment if your commitment
+     * specifies any GPUs or Local SSD disks. For more information, see
+     * Attach reservations to resource-based commitments.
+     *
+     * Specify this property only if you want to create new
+     * reservations to attach. To attach existing reservations, specify theexistingReservations property instead.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -5352,7 +5803,15 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of new reservations that you want to create and attach to this commitment. You must attach reservations to your commitment if your commitment specifies any GPUs or Local SSD disks. For more information, see Attach reservations to resource-based commitments. Specify this property only if you want to create new reservations to attach. To attach existing reservations, specify the existingReservations property instead.
+     * The list of new reservations that you want to create and attach to this
+     * commitment.
+     *
+     * You must attach reservations to your commitment if your commitment
+     * specifies any GPUs or Local SSD disks. For more information, see
+     * Attach reservations to resource-based commitments.
+     *
+     * Specify this property only if you want to create new
+     * reservations to attach. To attach existing reservations, specify theexistingReservations property instead.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -5369,7 +5828,15 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of new reservations that you want to create and attach to this commitment. You must attach reservations to your commitment if your commitment specifies any GPUs or Local SSD disks. For more information, see Attach reservations to resource-based commitments. Specify this property only if you want to create new reservations to attach. To attach existing reservations, specify the existingReservations property instead.
+     * The list of new reservations that you want to create and attach to this
+     * commitment.
+     *
+     * You must attach reservations to your commitment if your commitment
+     * specifies any GPUs or Local SSD disks. For more information, see
+     * Attach reservations to resource-based commitments.
+     *
+     * Specify this property only if you want to create new
+     * reservations to attach. To attach existing reservations, specify theexistingReservations property instead.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -5392,7 +5859,15 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of new reservations that you want to create and attach to this commitment. You must attach reservations to your commitment if your commitment specifies any GPUs or Local SSD disks. For more information, see Attach reservations to resource-based commitments. Specify this property only if you want to create new reservations to attach. To attach existing reservations, specify the existingReservations property instead.
+     * The list of new reservations that you want to create and attach to this
+     * commitment.
+     *
+     * You must attach reservations to your commitment if your commitment
+     * specifies any GPUs or Local SSD disks. For more information, see
+     * Attach reservations to resource-based commitments.
+     *
+     * Specify this property only if you want to create new
+     * reservations to attach. To attach existing reservations, specify theexistingReservations property instead.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -5413,7 +5888,15 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of new reservations that you want to create and attach to this commitment. You must attach reservations to your commitment if your commitment specifies any GPUs or Local SSD disks. For more information, see Attach reservations to resource-based commitments. Specify this property only if you want to create new reservations to attach. To attach existing reservations, specify the existingReservations property instead.
+     * The list of new reservations that you want to create and attach to this
+     * commitment.
+     *
+     * You must attach reservations to your commitment if your commitment
+     * specifies any GPUs or Local SSD disks. For more information, see
+     * Attach reservations to resource-based commitments.
+     *
+     * Specify this property only if you want to create new
+     * reservations to attach. To attach existing reservations, specify theexistingReservations property instead.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -5436,7 +5919,15 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of new reservations that you want to create and attach to this commitment. You must attach reservations to your commitment if your commitment specifies any GPUs or Local SSD disks. For more information, see Attach reservations to resource-based commitments. Specify this property only if you want to create new reservations to attach. To attach existing reservations, specify the existingReservations property instead.
+     * The list of new reservations that you want to create and attach to this
+     * commitment.
+     *
+     * You must attach reservations to your commitment if your commitment
+     * specifies any GPUs or Local SSD disks. For more information, see
+     * Attach reservations to resource-based commitments.
+     *
+     * Specify this property only if you want to create new
+     * reservations to attach. To attach existing reservations, specify theexistingReservations property instead.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -5459,7 +5950,15 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of new reservations that you want to create and attach to this commitment. You must attach reservations to your commitment if your commitment specifies any GPUs or Local SSD disks. For more information, see Attach reservations to resource-based commitments. Specify this property only if you want to create new reservations to attach. To attach existing reservations, specify the existingReservations property instead.
+     * The list of new reservations that you want to create and attach to this
+     * commitment.
+     *
+     * You must attach reservations to your commitment if your commitment
+     * specifies any GPUs or Local SSD disks. For more information, see
+     * Attach reservations to resource-based commitments.
+     *
+     * Specify this property only if you want to create new
+     * reservations to attach. To attach existing reservations, specify theexistingReservations property instead.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -5480,7 +5979,15 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of new reservations that you want to create and attach to this commitment. You must attach reservations to your commitment if your commitment specifies any GPUs or Local SSD disks. For more information, see Attach reservations to resource-based commitments. Specify this property only if you want to create new reservations to attach. To attach existing reservations, specify the existingReservations property instead.
+     * The list of new reservations that you want to create and attach to this
+     * commitment.
+     *
+     * You must attach reservations to your commitment if your commitment
+     * specifies any GPUs or Local SSD disks. For more information, see
+     * Attach reservations to resource-based commitments.
+     *
+     * Specify this property only if you want to create new
+     * reservations to attach. To attach existing reservations, specify theexistingReservations property instead.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -5501,7 +6008,15 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of new reservations that you want to create and attach to this commitment. You must attach reservations to your commitment if your commitment specifies any GPUs or Local SSD disks. For more information, see Attach reservations to resource-based commitments. Specify this property only if you want to create new reservations to attach. To attach existing reservations, specify the existingReservations property instead.
+     * The list of new reservations that you want to create and attach to this
+     * commitment.
+     *
+     * You must attach reservations to your commitment if your commitment
+     * specifies any GPUs or Local SSD disks. For more information, see
+     * Attach reservations to resource-based commitments.
+     *
+     * Specify this property only if you want to create new
+     * reservations to attach. To attach existing reservations, specify theexistingReservations property instead.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -5522,7 +6037,15 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of new reservations that you want to create and attach to this commitment. You must attach reservations to your commitment if your commitment specifies any GPUs or Local SSD disks. For more information, see Attach reservations to resource-based commitments. Specify this property only if you want to create new reservations to attach. To attach existing reservations, specify the existingReservations property instead.
+     * The list of new reservations that you want to create and attach to this
+     * commitment.
+     *
+     * You must attach reservations to your commitment if your commitment
+     * specifies any GPUs or Local SSD disks. For more information, see
+     * Attach reservations to resource-based commitments.
+     *
+     * Specify this property only if you want to create new
+     * reservations to attach. To attach existing reservations, specify theexistingReservations property instead.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -5542,7 +6065,15 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of new reservations that you want to create and attach to this commitment. You must attach reservations to your commitment if your commitment specifies any GPUs or Local SSD disks. For more information, see Attach reservations to resource-based commitments. Specify this property only if you want to create new reservations to attach. To attach existing reservations, specify the existingReservations property instead.
+     * The list of new reservations that you want to create and attach to this
+     * commitment.
+     *
+     * You must attach reservations to your commitment if your commitment
+     * specifies any GPUs or Local SSD disks. For more information, see
+     * Attach reservations to resource-based commitments.
+     *
+     * Specify this property only if you want to create new
+     * reservations to attach. To attach existing reservations, specify theexistingReservations property instead.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -5562,7 +6093,15 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of new reservations that you want to create and attach to this commitment. You must attach reservations to your commitment if your commitment specifies any GPUs or Local SSD disks. For more information, see Attach reservations to resource-based commitments. Specify this property only if you want to create new reservations to attach. To attach existing reservations, specify the existingReservations property instead.
+     * The list of new reservations that you want to create and attach to this
+     * commitment.
+     *
+     * You must attach reservations to your commitment if your commitment
+     * specifies any GPUs or Local SSD disks. For more information, see
+     * Attach reservations to resource-based commitments.
+     *
+     * Specify this property only if you want to create new
+     * reservations to attach. To attach existing reservations, specify theexistingReservations property instead.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -5575,7 +6114,15 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of new reservations that you want to create and attach to this commitment. You must attach reservations to your commitment if your commitment specifies any GPUs or Local SSD disks. For more information, see Attach reservations to resource-based commitments. Specify this property only if you want to create new reservations to attach. To attach existing reservations, specify the existingReservations property instead.
+     * The list of new reservations that you want to create and attach to this
+     * commitment.
+     *
+     * You must attach reservations to your commitment if your commitment
+     * specifies any GPUs or Local SSD disks. For more information, see
+     * Attach reservations to resource-based commitments.
+     *
+     * Specify this property only if you want to create new
+     * reservations to attach. To attach existing reservations, specify theexistingReservations property instead.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -5592,7 +6139,15 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of new reservations that you want to create and attach to this commitment. You must attach reservations to your commitment if your commitment specifies any GPUs or Local SSD disks. For more information, see Attach reservations to resource-based commitments. Specify this property only if you want to create new reservations to attach. To attach existing reservations, specify the existingReservations property instead.
+     * The list of new reservations that you want to create and attach to this
+     * commitment.
+     *
+     * You must attach reservations to your commitment if your commitment
+     * specifies any GPUs or Local SSD disks. For more information, see
+     * Attach reservations to resource-based commitments.
+     *
+     * Specify this property only if you want to create new
+     * reservations to attach. To attach existing reservations, specify theexistingReservations property instead.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -5610,7 +6165,15 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of new reservations that you want to create and attach to this commitment. You must attach reservations to your commitment if your commitment specifies any GPUs or Local SSD disks. For more information, see Attach reservations to resource-based commitments. Specify this property only if you want to create new reservations to attach. To attach existing reservations, specify the existingReservations property instead.
+     * The list of new reservations that you want to create and attach to this
+     * commitment.
+     *
+     * You must attach reservations to your commitment if your commitment
+     * specifies any GPUs or Local SSD disks. For more information, see
+     * Attach reservations to resource-based commitments.
+     *
+     * Specify this property only if you want to create new
+     * reservations to attach. To attach existing reservations, specify theexistingReservations property instead.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -5624,7 +6187,15 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of new reservations that you want to create and attach to this commitment. You must attach reservations to your commitment if your commitment specifies any GPUs or Local SSD disks. For more information, see Attach reservations to resource-based commitments. Specify this property only if you want to create new reservations to attach. To attach existing reservations, specify the existingReservations property instead.
+     * The list of new reservations that you want to create and attach to this
+     * commitment.
+     *
+     * You must attach reservations to your commitment if your commitment
+     * specifies any GPUs or Local SSD disks. For more information, see
+     * Attach reservations to resource-based commitments.
+     *
+     * Specify this property only if you want to create new
+     * reservations to attach. To attach existing reservations, specify theexistingReservations property instead.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -5638,7 +6209,15 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of new reservations that you want to create and attach to this commitment. You must attach reservations to your commitment if your commitment specifies any GPUs or Local SSD disks. For more information, see Attach reservations to resource-based commitments. Specify this property only if you want to create new reservations to attach. To attach existing reservations, specify the existingReservations property instead.
+     * The list of new reservations that you want to create and attach to this
+     * commitment.
+     *
+     * You must attach reservations to your commitment if your commitment
+     * specifies any GPUs or Local SSD disks. For more information, see
+     * Attach reservations to resource-based commitments.
+     *
+     * Specify this property only if you want to create new
+     * reservations to attach. To attach existing reservations, specify theexistingReservations property instead.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
@@ -5676,7 +6255,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for Commitment resource.
+     * Output only. [Output Only] Status information for Commitment resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.CommitmentResourceStatus resource_status = 249429315;
@@ -5692,7 +6271,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for Commitment resource.
+     * Output only. [Output Only] Status information for Commitment resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.CommitmentResourceStatus resource_status = 249429315;
@@ -5714,7 +6293,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for Commitment resource.
+     * Output only. [Output Only] Status information for Commitment resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.CommitmentResourceStatus resource_status = 249429315;
@@ -5738,7 +6317,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for Commitment resource.
+     * Output only. [Output Only] Status information for Commitment resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.CommitmentResourceStatus resource_status = 249429315;
@@ -5760,7 +6339,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for Commitment resource.
+     * Output only. [Output Only] Status information for Commitment resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.CommitmentResourceStatus resource_status = 249429315;
@@ -5790,7 +6369,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for Commitment resource.
+     * Output only. [Output Only] Status information for Commitment resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.CommitmentResourceStatus resource_status = 249429315;
@@ -5811,7 +6390,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for Commitment resource.
+     * Output only. [Output Only] Status information for Commitment resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.CommitmentResourceStatus resource_status = 249429315;
@@ -5827,7 +6406,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for Commitment resource.
+     * Output only. [Output Only] Status information for Commitment resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.CommitmentResourceStatus resource_status = 249429315;
@@ -5848,7 +6427,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for Commitment resource.
+     * Output only. [Output Only] Status information for Commitment resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.CommitmentResourceStatus resource_status = 249429315;
@@ -5892,7 +6471,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of all the hardware resources, with their types and amounts, that you want to commit to. Specify as a separate entry in the list for each individual resource type.
+     * The list of all the hardware resources, with their types and amounts, that
+     * you want to commit to. Specify as a separate entry in the list for each
+     * individual resource type.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ResourceCommitment resources = 164412965;</code>
@@ -5909,7 +6490,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of all the hardware resources, with their types and amounts, that you want to commit to. Specify as a separate entry in the list for each individual resource type.
+     * The list of all the hardware resources, with their types and amounts, that
+     * you want to commit to. Specify as a separate entry in the list for each
+     * individual resource type.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ResourceCommitment resources = 164412965;</code>
@@ -5926,7 +6509,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of all the hardware resources, with their types and amounts, that you want to commit to. Specify as a separate entry in the list for each individual resource type.
+     * The list of all the hardware resources, with their types and amounts, that
+     * you want to commit to. Specify as a separate entry in the list for each
+     * individual resource type.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ResourceCommitment resources = 164412965;</code>
@@ -5943,7 +6528,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of all the hardware resources, with their types and amounts, that you want to commit to. Specify as a separate entry in the list for each individual resource type.
+     * The list of all the hardware resources, with their types and amounts, that
+     * you want to commit to. Specify as a separate entry in the list for each
+     * individual resource type.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ResourceCommitment resources = 164412965;</code>
@@ -5966,7 +6553,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of all the hardware resources, with their types and amounts, that you want to commit to. Specify as a separate entry in the list for each individual resource type.
+     * The list of all the hardware resources, with their types and amounts, that
+     * you want to commit to. Specify as a separate entry in the list for each
+     * individual resource type.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ResourceCommitment resources = 164412965;</code>
@@ -5987,7 +6576,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of all the hardware resources, with their types and amounts, that you want to commit to. Specify as a separate entry in the list for each individual resource type.
+     * The list of all the hardware resources, with their types and amounts, that
+     * you want to commit to. Specify as a separate entry in the list for each
+     * individual resource type.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ResourceCommitment resources = 164412965;</code>
@@ -6010,7 +6601,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of all the hardware resources, with their types and amounts, that you want to commit to. Specify as a separate entry in the list for each individual resource type.
+     * The list of all the hardware resources, with their types and amounts, that
+     * you want to commit to. Specify as a separate entry in the list for each
+     * individual resource type.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ResourceCommitment resources = 164412965;</code>
@@ -6033,7 +6626,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of all the hardware resources, with their types and amounts, that you want to commit to. Specify as a separate entry in the list for each individual resource type.
+     * The list of all the hardware resources, with their types and amounts, that
+     * you want to commit to. Specify as a separate entry in the list for each
+     * individual resource type.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ResourceCommitment resources = 164412965;</code>
@@ -6054,7 +6649,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of all the hardware resources, with their types and amounts, that you want to commit to. Specify as a separate entry in the list for each individual resource type.
+     * The list of all the hardware resources, with their types and amounts, that
+     * you want to commit to. Specify as a separate entry in the list for each
+     * individual resource type.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ResourceCommitment resources = 164412965;</code>
@@ -6075,7 +6672,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of all the hardware resources, with their types and amounts, that you want to commit to. Specify as a separate entry in the list for each individual resource type.
+     * The list of all the hardware resources, with their types and amounts, that
+     * you want to commit to. Specify as a separate entry in the list for each
+     * individual resource type.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ResourceCommitment resources = 164412965;</code>
@@ -6096,7 +6695,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of all the hardware resources, with their types and amounts, that you want to commit to. Specify as a separate entry in the list for each individual resource type.
+     * The list of all the hardware resources, with their types and amounts, that
+     * you want to commit to. Specify as a separate entry in the list for each
+     * individual resource type.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ResourceCommitment resources = 164412965;</code>
@@ -6116,7 +6717,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of all the hardware resources, with their types and amounts, that you want to commit to. Specify as a separate entry in the list for each individual resource type.
+     * The list of all the hardware resources, with their types and amounts, that
+     * you want to commit to. Specify as a separate entry in the list for each
+     * individual resource type.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ResourceCommitment resources = 164412965;</code>
@@ -6136,7 +6739,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of all the hardware resources, with their types and amounts, that you want to commit to. Specify as a separate entry in the list for each individual resource type.
+     * The list of all the hardware resources, with their types and amounts, that
+     * you want to commit to. Specify as a separate entry in the list for each
+     * individual resource type.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ResourceCommitment resources = 164412965;</code>
@@ -6149,7 +6754,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of all the hardware resources, with their types and amounts, that you want to commit to. Specify as a separate entry in the list for each individual resource type.
+     * The list of all the hardware resources, with their types and amounts, that
+     * you want to commit to. Specify as a separate entry in the list for each
+     * individual resource type.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ResourceCommitment resources = 164412965;</code>
@@ -6167,7 +6774,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of all the hardware resources, with their types and amounts, that you want to commit to. Specify as a separate entry in the list for each individual resource type.
+     * The list of all the hardware resources, with their types and amounts, that
+     * you want to commit to. Specify as a separate entry in the list for each
+     * individual resource type.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ResourceCommitment resources = 164412965;</code>
@@ -6185,7 +6794,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of all the hardware resources, with their types and amounts, that you want to commit to. Specify as a separate entry in the list for each individual resource type.
+     * The list of all the hardware resources, with their types and amounts, that
+     * you want to commit to. Specify as a separate entry in the list for each
+     * individual resource type.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ResourceCommitment resources = 164412965;</code>
@@ -6199,7 +6810,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of all the hardware resources, with their types and amounts, that you want to commit to. Specify as a separate entry in the list for each individual resource type.
+     * The list of all the hardware resources, with their types and amounts, that
+     * you want to commit to. Specify as a separate entry in the list for each
+     * individual resource type.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ResourceCommitment resources = 164412965;</code>
@@ -6213,7 +6826,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of all the hardware resources, with their types and amounts, that you want to commit to. Specify as a separate entry in the list for each individual resource type.
+     * The list of all the hardware resources, with their types and amounts, that
+     * you want to commit to. Specify as a separate entry in the list for each
+     * individual resource type.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ResourceCommitment resources = 164412965;</code>
@@ -6246,7 +6861,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -6261,7 +6876,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -6284,7 +6899,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -6307,7 +6922,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -6329,7 +6944,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -6347,7 +6962,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -6372,7 +6987,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source commitment from which you are transferring resources to create the new split commitment. For more information, see Split commitments.
+     * The source commitment from which you are transferring resources to create
+     * the new split commitment. For more information, see
+     * Split commitments.
      * </pre>
      *
      * <code>optional string split_source_commitment = 402611156;</code>
@@ -6387,7 +7004,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source commitment from which you are transferring resources to create the new split commitment. For more information, see Split commitments.
+     * The source commitment from which you are transferring resources to create
+     * the new split commitment. For more information, see
+     * Split commitments.
      * </pre>
      *
      * <code>optional string split_source_commitment = 402611156;</code>
@@ -6410,7 +7029,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source commitment from which you are transferring resources to create the new split commitment. For more information, see Split commitments.
+     * The source commitment from which you are transferring resources to create
+     * the new split commitment. For more information, see
+     * Split commitments.
      * </pre>
      *
      * <code>optional string split_source_commitment = 402611156;</code>
@@ -6433,7 +7054,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source commitment from which you are transferring resources to create the new split commitment. For more information, see Split commitments.
+     * The source commitment from which you are transferring resources to create
+     * the new split commitment. For more information, see
+     * Split commitments.
      * </pre>
      *
      * <code>optional string split_source_commitment = 402611156;</code>
@@ -6455,7 +7078,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source commitment from which you are transferring resources to create the new split commitment. For more information, see Split commitments.
+     * The source commitment from which you are transferring resources to create
+     * the new split commitment. For more information, see
+     * Split commitments.
      * </pre>
      *
      * <code>optional string split_source_commitment = 402611156;</code>
@@ -6473,7 +7098,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source commitment from which you are transferring resources to create the new split commitment. For more information, see Split commitments.
+     * The source commitment from which you are transferring resources to create
+     * the new split commitment. For more information, see
+     * Split commitments.
      * </pre>
      *
      * <code>optional string split_source_commitment = 402611156;</code>
@@ -6498,7 +7125,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Commitment start time in RFC3339 text format.
+     * Output only. [Output Only] Commitment start time inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string start_timestamp = 83645817;</code>
@@ -6513,7 +7141,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Commitment start time in RFC3339 text format.
+     * Output only. [Output Only] Commitment start time inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string start_timestamp = 83645817;</code>
@@ -6536,7 +7165,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Commitment start time in RFC3339 text format.
+     * Output only. [Output Only] Commitment start time inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string start_timestamp = 83645817;</code>
@@ -6559,7 +7189,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Commitment start time in RFC3339 text format.
+     * Output only. [Output Only] Commitment start time inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string start_timestamp = 83645817;</code>
@@ -6581,7 +7212,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Commitment start time in RFC3339 text format.
+     * Output only. [Output Only] Commitment start time inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string start_timestamp = 83645817;</code>
@@ -6599,7 +7231,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Commitment start time in RFC3339 text format.
+     * Output only. [Output Only] Commitment start time inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string start_timestamp = 83645817;</code>
@@ -6624,7 +7257,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). Status can be one of the following values: NOT_YET_ACTIVE, ACTIVE, or EXPIRED.
+     * Output only. [Output Only] Status of the commitment with regards to eventual expiration
+     * (each commitment has an end date defined). Status can be one of the
+     * following values: NOT_YET_ACTIVE, ACTIVE, orEXPIRED.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -6640,7 +7275,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). Status can be one of the following values: NOT_YET_ACTIVE, ACTIVE, or EXPIRED.
+     * Output only. [Output Only] Status of the commitment with regards to eventual expiration
+     * (each commitment has an end date defined). Status can be one of the
+     * following values: NOT_YET_ACTIVE, ACTIVE, orEXPIRED.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -6664,7 +7301,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). Status can be one of the following values: NOT_YET_ACTIVE, ACTIVE, or EXPIRED.
+     * Output only. [Output Only] Status of the commitment with regards to eventual expiration
+     * (each commitment has an end date defined). Status can be one of the
+     * following values: NOT_YET_ACTIVE, ACTIVE, orEXPIRED.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -6688,7 +7327,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). Status can be one of the following values: NOT_YET_ACTIVE, ACTIVE, or EXPIRED.
+     * Output only. [Output Only] Status of the commitment with regards to eventual expiration
+     * (each commitment has an end date defined). Status can be one of the
+     * following values: NOT_YET_ACTIVE, ACTIVE, orEXPIRED.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -6711,7 +7352,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). Status can be one of the following values: NOT_YET_ACTIVE, ACTIVE, or EXPIRED.
+     * Output only. [Output Only] Status of the commitment with regards to eventual expiration
+     * (each commitment has an end date defined). Status can be one of the
+     * following values: NOT_YET_ACTIVE, ACTIVE, orEXPIRED.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -6730,7 +7373,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). Status can be one of the following values: NOT_YET_ACTIVE, ACTIVE, or EXPIRED.
+     * Output only. [Output Only] Status of the commitment with regards to eventual expiration
+     * (each commitment has an end date defined). Status can be one of the
+     * following values: NOT_YET_ACTIVE, ACTIVE, orEXPIRED.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -6756,7 +7401,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional, human-readable explanation of the status.
+     * Output only. [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
      * <code>optional string status_message = 297428154;</code>
@@ -6771,7 +7416,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional, human-readable explanation of the status.
+     * Output only. [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
      * <code>optional string status_message = 297428154;</code>
@@ -6794,7 +7439,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional, human-readable explanation of the status.
+     * Output only. [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
      * <code>optional string status_message = 297428154;</code>
@@ -6817,7 +7462,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional, human-readable explanation of the status.
+     * Output only. [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
      * <code>optional string status_message = 297428154;</code>
@@ -6839,7 +7484,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional, human-readable explanation of the status.
+     * Output only. [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
      * <code>optional string status_message = 297428154;</code>
@@ -6857,7 +7502,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional, human-readable explanation of the status.
+     * Output only. [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
      * <code>optional string status_message = 297428154;</code>
@@ -6882,7 +7527,17 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of commitment; specifies the machine series for which you want to commit to purchasing resources. The choice of machine series affects the discount rate and the eligible resource types. The type must be one of the following: ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3, ACCELERATOR_OPTIMIZED_A3_MEGA, COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D, COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D, COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE, GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2, GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D, GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D, GRAPHICS_OPTIMIZED, MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3, MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For example, type MEMORY_OPTIMIZED specifies a commitment that applies only to eligible resources of memory optimized M1 and M2 machine series. Type GENERAL_PURPOSE specifies a commitment that applies only to eligible resources of general purpose N1 machine series.
+     * The type of commitment; specifies the
+     * machine series for which you want to commit to purchasing resources.
+     * The choice of machine series affects the discount rate and the eligible
+     * resource types.
+     *
+     *  The type must be one of the following:ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3,ACCELERATOR_OPTIMIZED_A3_MEGA,COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D,
+     *  COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, GRAPHICS_OPTIMIZED_G4,MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3,MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For
+     * example, type MEMORY_OPTIMIZED specifies a commitment that
+     * applies only to eligible resources of memory optimized M1 and M2 machine
+     * series. Type GENERAL_PURPOSE specifies a commitment that
+     * applies only to eligible resources of general purpose N1 machine series.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -6898,7 +7553,17 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of commitment; specifies the machine series for which you want to commit to purchasing resources. The choice of machine series affects the discount rate and the eligible resource types. The type must be one of the following: ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3, ACCELERATOR_OPTIMIZED_A3_MEGA, COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D, COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D, COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE, GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2, GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D, GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D, GRAPHICS_OPTIMIZED, MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3, MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For example, type MEMORY_OPTIMIZED specifies a commitment that applies only to eligible resources of memory optimized M1 and M2 machine series. Type GENERAL_PURPOSE specifies a commitment that applies only to eligible resources of general purpose N1 machine series.
+     * The type of commitment; specifies the
+     * machine series for which you want to commit to purchasing resources.
+     * The choice of machine series affects the discount rate and the eligible
+     * resource types.
+     *
+     *  The type must be one of the following:ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3,ACCELERATOR_OPTIMIZED_A3_MEGA,COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D,
+     *  COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, GRAPHICS_OPTIMIZED_G4,MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3,MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For
+     * example, type MEMORY_OPTIMIZED specifies a commitment that
+     * applies only to eligible resources of memory optimized M1 and M2 machine
+     * series. Type GENERAL_PURPOSE specifies a commitment that
+     * applies only to eligible resources of general purpose N1 machine series.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -6922,7 +7587,17 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of commitment; specifies the machine series for which you want to commit to purchasing resources. The choice of machine series affects the discount rate and the eligible resource types. The type must be one of the following: ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3, ACCELERATOR_OPTIMIZED_A3_MEGA, COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D, COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D, COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE, GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2, GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D, GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D, GRAPHICS_OPTIMIZED, MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3, MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For example, type MEMORY_OPTIMIZED specifies a commitment that applies only to eligible resources of memory optimized M1 and M2 machine series. Type GENERAL_PURPOSE specifies a commitment that applies only to eligible resources of general purpose N1 machine series.
+     * The type of commitment; specifies the
+     * machine series for which you want to commit to purchasing resources.
+     * The choice of machine series affects the discount rate and the eligible
+     * resource types.
+     *
+     *  The type must be one of the following:ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3,ACCELERATOR_OPTIMIZED_A3_MEGA,COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D,
+     *  COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, GRAPHICS_OPTIMIZED_G4,MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3,MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For
+     * example, type MEMORY_OPTIMIZED specifies a commitment that
+     * applies only to eligible resources of memory optimized M1 and M2 machine
+     * series. Type GENERAL_PURPOSE specifies a commitment that
+     * applies only to eligible resources of general purpose N1 machine series.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -6946,7 +7621,17 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of commitment; specifies the machine series for which you want to commit to purchasing resources. The choice of machine series affects the discount rate and the eligible resource types. The type must be one of the following: ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3, ACCELERATOR_OPTIMIZED_A3_MEGA, COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D, COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D, COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE, GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2, GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D, GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D, GRAPHICS_OPTIMIZED, MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3, MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For example, type MEMORY_OPTIMIZED specifies a commitment that applies only to eligible resources of memory optimized M1 and M2 machine series. Type GENERAL_PURPOSE specifies a commitment that applies only to eligible resources of general purpose N1 machine series.
+     * The type of commitment; specifies the
+     * machine series for which you want to commit to purchasing resources.
+     * The choice of machine series affects the discount rate and the eligible
+     * resource types.
+     *
+     *  The type must be one of the following:ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3,ACCELERATOR_OPTIMIZED_A3_MEGA,COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D,
+     *  COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, GRAPHICS_OPTIMIZED_G4,MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3,MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For
+     * example, type MEMORY_OPTIMIZED specifies a commitment that
+     * applies only to eligible resources of memory optimized M1 and M2 machine
+     * series. Type GENERAL_PURPOSE specifies a commitment that
+     * applies only to eligible resources of general purpose N1 machine series.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -6969,7 +7654,17 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of commitment; specifies the machine series for which you want to commit to purchasing resources. The choice of machine series affects the discount rate and the eligible resource types. The type must be one of the following: ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3, ACCELERATOR_OPTIMIZED_A3_MEGA, COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D, COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D, COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE, GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2, GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D, GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D, GRAPHICS_OPTIMIZED, MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3, MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For example, type MEMORY_OPTIMIZED specifies a commitment that applies only to eligible resources of memory optimized M1 and M2 machine series. Type GENERAL_PURPOSE specifies a commitment that applies only to eligible resources of general purpose N1 machine series.
+     * The type of commitment; specifies the
+     * machine series for which you want to commit to purchasing resources.
+     * The choice of machine series affects the discount rate and the eligible
+     * resource types.
+     *
+     *  The type must be one of the following:ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3,ACCELERATOR_OPTIMIZED_A3_MEGA,COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D,
+     *  COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, GRAPHICS_OPTIMIZED_G4,MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3,MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For
+     * example, type MEMORY_OPTIMIZED specifies a commitment that
+     * applies only to eligible resources of memory optimized M1 and M2 machine
+     * series. Type GENERAL_PURPOSE specifies a commitment that
+     * applies only to eligible resources of general purpose N1 machine series.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -6988,7 +7683,17 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of commitment; specifies the machine series for which you want to commit to purchasing resources. The choice of machine series affects the discount rate and the eligible resource types. The type must be one of the following: ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3, ACCELERATOR_OPTIMIZED_A3_MEGA, COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D, COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D, COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE, GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2, GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D, GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D, GRAPHICS_OPTIMIZED, MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3, MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For example, type MEMORY_OPTIMIZED specifies a commitment that applies only to eligible resources of memory optimized M1 and M2 machine series. Type GENERAL_PURPOSE specifies a commitment that applies only to eligible resources of general purpose N1 machine series.
+     * The type of commitment; specifies the
+     * machine series for which you want to commit to purchasing resources.
+     * The choice of machine series affects the discount rate and the eligible
+     * resource types.
+     *
+     *  The type must be one of the following:ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3,ACCELERATOR_OPTIMIZED_A3_MEGA,COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D,
+     *  COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, GRAPHICS_OPTIMIZED_G4,MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3,MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For
+     * example, type MEMORY_OPTIMIZED specifies a commitment that
+     * applies only to eligible resources of memory optimized M1 and M2 machine
+     * series. Type GENERAL_PURPOSE specifies a commitment that
+     * applies only to eligible resources of general purpose N1 machine series.
      * Check the Type enum for the list of possible values.
      * </pre>
      *

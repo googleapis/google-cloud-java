@@ -17,6 +17,7 @@
 package com.google.cloud.channel.v1.samples;
 
 // [START cloudchannel_v1_generated_CloudChannelService_RegisterSubscriber_sync]
+import com.google.cloud.channel.v1.AccountName;
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
 import com.google.cloud.channel.v1.RegisterSubscriberRequest;
 import com.google.cloud.channel.v1.RegisterSubscriberResponse;
@@ -36,8 +37,9 @@ public class SyncRegisterSubscriber {
     try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
       RegisterSubscriberRequest request =
           RegisterSubscriberRequest.newBuilder()
-              .setAccount("account-1177318867")
+              .setAccount(AccountName.of("[ACCOUNT]").toString())
               .setServiceAccount("serviceAccount1079137720")
+              .setIntegrator("integrator-1902360937")
               .build();
       RegisterSubscriberResponse response = cloudChannelServiceClient.registerSubscriber(request);
     }

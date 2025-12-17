@@ -95,7 +95,8 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
    *
    * <pre>
    * Returns true if the Cloud Identity account is associated with a customer
-   * of the Channel Services partner.
+   * of the Channel Services partner (with active subscriptions or purchase
+   * consents).
    * </pre>
    *
    * <code>bool owned = 2;</code>
@@ -842,7 +843,8 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
      *
      * <pre>
      * Returns true if the Cloud Identity account is associated with a customer
-     * of the Channel Services partner.
+     * of the Channel Services partner (with active subscriptions or purchase
+     * consents).
      * </pre>
      *
      * <code>bool owned = 2;</code>
@@ -859,7 +861,8 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
      *
      * <pre>
      * Returns true if the Cloud Identity account is associated with a customer
-     * of the Channel Services partner.
+     * of the Channel Services partner (with active subscriptions or purchase
+     * consents).
      * </pre>
      *
      * <code>bool owned = 2;</code>
@@ -880,7 +883,8 @@ public final class CloudIdentityCustomerAccount extends com.google.protobuf.Gene
      *
      * <pre>
      * Returns true if the Cloud Identity account is associated with a customer
-     * of the Channel Services partner.
+     * of the Channel Services partner (with active subscriptions or purchase
+     * consents).
      * </pre>
      *
      * <code>bool owned = 2;</code>

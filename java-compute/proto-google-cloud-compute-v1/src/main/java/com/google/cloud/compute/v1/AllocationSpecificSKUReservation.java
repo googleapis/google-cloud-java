@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * This reservation type allows to pre allocate specific instance configuration.
+ * This reservation type allows to pre allocate specific instance
+ *  configuration.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.AllocationSpecificSKUReservation}
@@ -73,7 +74,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
    *
    *
    * <pre>
-   * [Output Only] Indicates how many instances are actually usable currently.
+   * Output only. [Output Only] Indicates how many instances are actually usable currently.
    * </pre>
    *
    * <code>optional int64 assured_count = 281197645;</code>
@@ -89,7 +90,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
    *
    *
    * <pre>
-   * [Output Only] Indicates how many instances are actually usable currently.
+   * Output only. [Output Only] Indicates how many instances are actually usable currently.
    * </pre>
    *
    * <code>optional int64 assured_count = 281197645;</code>
@@ -143,7 +144,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
    *
    *
    * <pre>
-   * [Output Only] Indicates how many instances are in use.
+   * Output only. [Output Only] Indicates how many instances are in use.
    * </pre>
    *
    * <code>optional int64 in_use_count = 493458877;</code>
@@ -159,7 +160,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
    *
    *
    * <pre>
-   * [Output Only] Indicates how many instances are in use.
+   * Output only. [Output Only] Indicates how many instances are in use.
    * </pre>
    *
    * <code>optional int64 in_use_count = 493458877;</code>
@@ -245,7 +246,16 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
    *
    *
    * <pre>
-   * Specifies the instance template to create the reservation. If you use this field, you must exclude the instanceProperties field. This field is optional, and it can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
+   * Specifies the instance template to create the reservation. If you use
+   * this field, you must exclude the instanceProperties field.
+   *
+   * This field is optional, and it can be a full or partial URL. For example,
+   * the following are all valid URLs to an instance template:
+   *
+   *
+   *       - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
+   *       - projects/project/global/instanceTemplates/instanceTemplate
+   *       - global/instanceTemplates/instanceTemplate
    * </pre>
    *
    * <code>optional string source_instance_template = 332423616;</code>
@@ -261,7 +271,16 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
    *
    *
    * <pre>
-   * Specifies the instance template to create the reservation. If you use this field, you must exclude the instanceProperties field. This field is optional, and it can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
+   * Specifies the instance template to create the reservation. If you use
+   * this field, you must exclude the instanceProperties field.
+   *
+   * This field is optional, and it can be a full or partial URL. For example,
+   * the following are all valid URLs to an instance template:
+   *
+   *
+   *       - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
+   *       - projects/project/global/instanceTemplates/instanceTemplate
+   *       - global/instanceTemplates/instanceTemplate
    * </pre>
    *
    * <code>optional string source_instance_template = 332423616;</code>
@@ -285,7 +304,16 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
    *
    *
    * <pre>
-   * Specifies the instance template to create the reservation. If you use this field, you must exclude the instanceProperties field. This field is optional, and it can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
+   * Specifies the instance template to create the reservation. If you use
+   * this field, you must exclude the instanceProperties field.
+   *
+   * This field is optional, and it can be a full or partial URL. For example,
+   * the following are all valid URLs to an instance template:
+   *
+   *
+   *       - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
+   *       - projects/project/global/instanceTemplates/instanceTemplate
+   *       - global/instanceTemplates/instanceTemplate
    * </pre>
    *
    * <code>optional string source_instance_template = 332423616;</code>
@@ -536,7 +564,8 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
    *
    *
    * <pre>
-   * This reservation type allows to pre allocate specific instance configuration.
+   * This reservation type allows to pre allocate specific instance
+   *  configuration.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.AllocationSpecificSKUReservation}
@@ -800,7 +829,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      *
      *
      * <pre>
-     * [Output Only] Indicates how many instances are actually usable currently.
+     * Output only. [Output Only] Indicates how many instances are actually usable currently.
      * </pre>
      *
      * <code>optional int64 assured_count = 281197645;</code>
@@ -816,7 +845,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      *
      *
      * <pre>
-     * [Output Only] Indicates how many instances are actually usable currently.
+     * Output only. [Output Only] Indicates how many instances are actually usable currently.
      * </pre>
      *
      * <code>optional int64 assured_count = 281197645;</code>
@@ -832,7 +861,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      *
      *
      * <pre>
-     * [Output Only] Indicates how many instances are actually usable currently.
+     * Output only. [Output Only] Indicates how many instances are actually usable currently.
      * </pre>
      *
      * <code>optional int64 assured_count = 281197645;</code>
@@ -852,7 +881,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      *
      *
      * <pre>
-     * [Output Only] Indicates how many instances are actually usable currently.
+     * Output only. [Output Only] Indicates how many instances are actually usable currently.
      * </pre>
      *
      * <code>optional int64 assured_count = 281197645;</code>
@@ -944,7 +973,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      *
      *
      * <pre>
-     * [Output Only] Indicates how many instances are in use.
+     * Output only. [Output Only] Indicates how many instances are in use.
      * </pre>
      *
      * <code>optional int64 in_use_count = 493458877;</code>
@@ -960,7 +989,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      *
      *
      * <pre>
-     * [Output Only] Indicates how many instances are in use.
+     * Output only. [Output Only] Indicates how many instances are in use.
      * </pre>
      *
      * <code>optional int64 in_use_count = 493458877;</code>
@@ -976,7 +1005,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      *
      *
      * <pre>
-     * [Output Only] Indicates how many instances are in use.
+     * Output only. [Output Only] Indicates how many instances are in use.
      * </pre>
      *
      * <code>optional int64 in_use_count = 493458877;</code>
@@ -996,7 +1025,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      *
      *
      * <pre>
-     * [Output Only] Indicates how many instances are in use.
+     * Output only. [Output Only] Indicates how many instances are in use.
      * </pre>
      *
      * <code>optional int64 in_use_count = 493458877;</code>
@@ -1253,7 +1282,16 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      *
      *
      * <pre>
-     * Specifies the instance template to create the reservation. If you use this field, you must exclude the instanceProperties field. This field is optional, and it can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
+     * Specifies the instance template to create the reservation. If you use
+     * this field, you must exclude the instanceProperties field.
+     *
+     * This field is optional, and it can be a full or partial URL. For example,
+     * the following are all valid URLs to an instance template:
+     *
+     *
+     *       - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
+     *       - projects/project/global/instanceTemplates/instanceTemplate
+     *       - global/instanceTemplates/instanceTemplate
      * </pre>
      *
      * <code>optional string source_instance_template = 332423616;</code>
@@ -1268,7 +1306,16 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      *
      *
      * <pre>
-     * Specifies the instance template to create the reservation. If you use this field, you must exclude the instanceProperties field. This field is optional, and it can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
+     * Specifies the instance template to create the reservation. If you use
+     * this field, you must exclude the instanceProperties field.
+     *
+     * This field is optional, and it can be a full or partial URL. For example,
+     * the following are all valid URLs to an instance template:
+     *
+     *
+     *       - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
+     *       - projects/project/global/instanceTemplates/instanceTemplate
+     *       - global/instanceTemplates/instanceTemplate
      * </pre>
      *
      * <code>optional string source_instance_template = 332423616;</code>
@@ -1291,7 +1338,16 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      *
      *
      * <pre>
-     * Specifies the instance template to create the reservation. If you use this field, you must exclude the instanceProperties field. This field is optional, and it can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
+     * Specifies the instance template to create the reservation. If you use
+     * this field, you must exclude the instanceProperties field.
+     *
+     * This field is optional, and it can be a full or partial URL. For example,
+     * the following are all valid URLs to an instance template:
+     *
+     *
+     *       - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
+     *       - projects/project/global/instanceTemplates/instanceTemplate
+     *       - global/instanceTemplates/instanceTemplate
      * </pre>
      *
      * <code>optional string source_instance_template = 332423616;</code>
@@ -1314,7 +1370,16 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      *
      *
      * <pre>
-     * Specifies the instance template to create the reservation. If you use this field, you must exclude the instanceProperties field. This field is optional, and it can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
+     * Specifies the instance template to create the reservation. If you use
+     * this field, you must exclude the instanceProperties field.
+     *
+     * This field is optional, and it can be a full or partial URL. For example,
+     * the following are all valid URLs to an instance template:
+     *
+     *
+     *       - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
+     *       - projects/project/global/instanceTemplates/instanceTemplate
+     *       - global/instanceTemplates/instanceTemplate
      * </pre>
      *
      * <code>optional string source_instance_template = 332423616;</code>
@@ -1336,7 +1401,16 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      *
      *
      * <pre>
-     * Specifies the instance template to create the reservation. If you use this field, you must exclude the instanceProperties field. This field is optional, and it can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
+     * Specifies the instance template to create the reservation. If you use
+     * this field, you must exclude the instanceProperties field.
+     *
+     * This field is optional, and it can be a full or partial URL. For example,
+     * the following are all valid URLs to an instance template:
+     *
+     *
+     *       - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
+     *       - projects/project/global/instanceTemplates/instanceTemplate
+     *       - global/instanceTemplates/instanceTemplate
      * </pre>
      *
      * <code>optional string source_instance_template = 332423616;</code>
@@ -1354,7 +1428,16 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      *
      *
      * <pre>
-     * Specifies the instance template to create the reservation. If you use this field, you must exclude the instanceProperties field. This field is optional, and it can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
+     * Specifies the instance template to create the reservation. If you use
+     * this field, you must exclude the instanceProperties field.
+     *
+     * This field is optional, and it can be a full or partial URL. For example,
+     * the following are all valid URLs to an instance template:
+     *
+     *
+     *       - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
+     *       - projects/project/global/instanceTemplates/instanceTemplate
+     *       - global/instanceTemplates/instanceTemplate
      * </pre>
      *
      * <code>optional string source_instance_template = 332423616;</code>

@@ -476,6 +476,55 @@ public final class CreateConversationModelOperationMetadata
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
+  public static final int DONE_TIME_FIELD_NUMBER = 7;
+  private com.google.protobuf.Timestamp doneTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The time when the operation finished.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp done_time = 7;</code>
+   *
+   * @return Whether the doneTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasDoneTime() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The time when the operation finished.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp done_time = 7;</code>
+   *
+   * @return The doneTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getDoneTime() {
+    return doneTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : doneTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The time when the operation finished.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp done_time = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getDoneTimeOrBuilder() {
+    return doneTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : doneTime_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -502,6 +551,9 @@ public final class CreateConversationModelOperationMetadata
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(3, getCreateTime());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(7, getDoneTime());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -522,6 +574,9 @@ public final class CreateConversationModelOperationMetadata
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getCreateTime());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getDoneTime());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -545,6 +600,10 @@ public final class CreateConversationModelOperationMetadata
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
+    if (hasDoneTime() != other.hasDoneTime()) return false;
+    if (hasDoneTime()) {
+      if (!getDoneTime().equals(other.getDoneTime())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -563,6 +622,10 @@ public final class CreateConversationModelOperationMetadata
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
+    }
+    if (hasDoneTime()) {
+      hash = (37 * hash) + DONE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getDoneTime().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -712,6 +775,7 @@ public final class CreateConversationModelOperationMetadata
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCreateTimeFieldBuilder();
+        getDoneTimeFieldBuilder();
       }
     }
 
@@ -725,6 +789,11 @@ public final class CreateConversationModelOperationMetadata
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
+      }
+      doneTime_ = null;
+      if (doneTimeBuilder_ != null) {
+        doneTimeBuilder_.dispose();
+        doneTimeBuilder_ = null;
       }
       return this;
     }
@@ -776,6 +845,10 @@ public final class CreateConversationModelOperationMetadata
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.doneTime_ = doneTimeBuilder_ == null ? doneTime_ : doneTimeBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -841,6 +914,9 @@ public final class CreateConversationModelOperationMetadata
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
+      if (other.hasDoneTime()) {
+        mergeDoneTime(other.getDoneTime());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -885,6 +961,12 @@ public final class CreateConversationModelOperationMetadata
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 58:
+              {
+                input.readMessage(getDoneTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1327,6 +1409,196 @@ public final class CreateConversationModelOperationMetadata
         createTime_ = null;
       }
       return createTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp doneTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        doneTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The time when the operation finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp done_time = 7;</code>
+     *
+     * @return Whether the doneTime field is set.
+     */
+    public boolean hasDoneTime() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The time when the operation finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp done_time = 7;</code>
+     *
+     * @return The doneTime.
+     */
+    public com.google.protobuf.Timestamp getDoneTime() {
+      if (doneTimeBuilder_ == null) {
+        return doneTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : doneTime_;
+      } else {
+        return doneTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The time when the operation finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp done_time = 7;</code>
+     */
+    public Builder setDoneTime(com.google.protobuf.Timestamp value) {
+      if (doneTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        doneTime_ = value;
+      } else {
+        doneTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The time when the operation finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp done_time = 7;</code>
+     */
+    public Builder setDoneTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (doneTimeBuilder_ == null) {
+        doneTime_ = builderForValue.build();
+      } else {
+        doneTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The time when the operation finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp done_time = 7;</code>
+     */
+    public Builder mergeDoneTime(com.google.protobuf.Timestamp value) {
+      if (doneTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && doneTime_ != null
+            && doneTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getDoneTimeBuilder().mergeFrom(value);
+        } else {
+          doneTime_ = value;
+        }
+      } else {
+        doneTimeBuilder_.mergeFrom(value);
+      }
+      if (doneTime_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The time when the operation finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp done_time = 7;</code>
+     */
+    public Builder clearDoneTime() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      doneTime_ = null;
+      if (doneTimeBuilder_ != null) {
+        doneTimeBuilder_.dispose();
+        doneTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The time when the operation finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp done_time = 7;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getDoneTimeBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getDoneTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The time when the operation finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp done_time = 7;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getDoneTimeOrBuilder() {
+      if (doneTimeBuilder_ != null) {
+        return doneTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return doneTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : doneTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The time when the operation finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp done_time = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getDoneTimeFieldBuilder() {
+      if (doneTimeBuilder_ == null) {
+        doneTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getDoneTime(), getParentForChildren(), isClean());
+        doneTime_ = null;
+      }
+      return doneTimeBuilder_;
     }
 
     @java.lang.Override

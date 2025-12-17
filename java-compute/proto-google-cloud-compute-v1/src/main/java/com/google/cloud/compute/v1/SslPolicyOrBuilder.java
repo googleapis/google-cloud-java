@@ -28,7 +28,8 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -41,7 +42,8 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -54,7 +56,8 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -67,7 +70,9 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+   * A list of features enabled when the selected profile is CUSTOM. The
+   *  method returns the set of features that can be
+   * specified in this list. This field must be empty if the profile is notCUSTOM.
    * </pre>
    *
    * <code>repeated string custom_features = 34789707;</code>
@@ -80,7 +85,9 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+   * A list of features enabled when the selected profile is CUSTOM. The
+   *  method returns the set of features that can be
+   * specified in this list. This field must be empty if the profile is notCUSTOM.
    * </pre>
    *
    * <code>repeated string custom_features = 34789707;</code>
@@ -93,7 +100,9 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+   * A list of features enabled when the selected profile is CUSTOM. The
+   *  method returns the set of features that can be
+   * specified in this list. This field must be empty if the profile is notCUSTOM.
    * </pre>
    *
    * <code>repeated string custom_features = 34789707;</code>
@@ -107,7 +116,9 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+   * A list of features enabled when the selected profile is CUSTOM. The
+   *  method returns the set of features that can be
+   * specified in this list. This field must be empty if the profile is notCUSTOM.
    * </pre>
    *
    * <code>repeated string custom_features = 34789707;</code>
@@ -121,7 +132,8 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -134,7 +146,8 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -147,7 +160,8 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -160,7 +174,7 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The list of features enabled in the SSL policy.
+   * Output only. [Output Only] The list of features enabled in the SSL policy.
    * </pre>
    *
    * <code>repeated string enabled_features = 469017467;</code>
@@ -173,7 +187,7 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The list of features enabled in the SSL policy.
+   * Output only. [Output Only] The list of features enabled in the SSL policy.
    * </pre>
    *
    * <code>repeated string enabled_features = 469017467;</code>
@@ -186,7 +200,7 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The list of features enabled in the SSL policy.
+   * Output only. [Output Only] The list of features enabled in the SSL policy.
    * </pre>
    *
    * <code>repeated string enabled_features = 469017467;</code>
@@ -200,7 +214,7 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The list of features enabled in the SSL policy.
+   * Output only. [Output Only] The list of features enabled in the SSL policy.
    * </pre>
    *
    * <code>repeated string enabled_features = 469017467;</code>
@@ -214,7 +228,14 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
+   * Fingerprint of this resource. A hash of the contents stored in this object.
+   * This field is used in optimistic locking. This field will be ignored when
+   * inserting a SslPolicy. An up-to-date fingerprint must be
+   * provided in order to update the SslPolicy, otherwise the
+   * request will fail with error 412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve an SslPolicy.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -227,7 +248,14 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
+   * Fingerprint of this resource. A hash of the contents stored in this object.
+   * This field is used in optimistic locking. This field will be ignored when
+   * inserting a SslPolicy. An up-to-date fingerprint must be
+   * provided in order to update the SslPolicy, otherwise the
+   * request will fail with error 412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve an SslPolicy.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -240,7 +268,14 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
+   * Fingerprint of this resource. A hash of the contents stored in this object.
+   * This field is used in optimistic locking. This field will be ignored when
+   * inserting a SslPolicy. An up-to-date fingerprint must be
+   * provided in order to update the SslPolicy, otherwise the
+   * request will fail with error 412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve an SslPolicy.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -253,7 +288,8 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -266,7 +302,8 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -279,7 +316,7 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Always compute#sslPolicyfor SSL policies.
+   * Output only. [Output only] Type of the resource. Alwayscompute#sslPolicyfor SSL policies.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -292,7 +329,7 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Always compute#sslPolicyfor SSL policies.
+   * Output only. [Output only] Type of the resource. Alwayscompute#sslPolicyfor SSL policies.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -305,7 +342,7 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Always compute#sslPolicyfor SSL policies.
+   * Output only. [Output only] Type of the resource. Alwayscompute#sslPolicyfor SSL policies.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -318,7 +355,9 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+   * The minimum version of SSL protocol that can be used by the clients to
+   * establish a connection with the load balancer. This can be one ofTLS_1_0, TLS_1_1, TLS_1_2,TLS_1_3. When set to TLS_1_3, the profile field
+   * must be set to RESTRICTED.
    * Check the MinTlsVersion enum for the list of possible values.
    * </pre>
    *
@@ -332,7 +371,9 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+   * The minimum version of SSL protocol that can be used by the clients to
+   * establish a connection with the load balancer. This can be one ofTLS_1_0, TLS_1_1, TLS_1_2,TLS_1_3. When set to TLS_1_3, the profile field
+   * must be set to RESTRICTED.
    * Check the MinTlsVersion enum for the list of possible values.
    * </pre>
    *
@@ -346,7 +387,9 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+   * The minimum version of SSL protocol that can be used by the clients to
+   * establish a connection with the load balancer. This can be one ofTLS_1_0, TLS_1_1, TLS_1_2,TLS_1_3. When set to TLS_1_3, the profile field
+   * must be set to RESTRICTED.
    * Check the MinTlsVersion enum for the list of possible values.
    * </pre>
    *
@@ -360,7 +403,13 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. The name must be 1-63 characters long, and comply
+   * with RFC1035. Specifically, the name must be 1-63 characters
+   * long and match the regular expression
+   * `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character
+   * must be a lowercase letter, and all following characters must be a dash,
+   * lowercase letter, or digit, except the last character, which cannot be a
+   * dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -373,7 +422,13 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. The name must be 1-63 characters long, and comply
+   * with RFC1035. Specifically, the name must be 1-63 characters
+   * long and match the regular expression
+   * `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character
+   * must be a lowercase letter, and all following characters must be a dash,
+   * lowercase letter, or digit, except the last character, which cannot be a
+   * dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -386,7 +441,13 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. The name must be 1-63 characters long, and comply
+   * with RFC1035. Specifically, the name must be 1-63 characters
+   * long and match the regular expression
+   * `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character
+   * must be a lowercase letter, and all following characters must be a dash,
+   * lowercase letter, or digit, except the last character, which cannot be a
+   * dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -399,7 +460,9 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+   * Profile specifies the set of SSL features that can be used by the load
+   * balancer when negotiating SSL with clients. This can be one ofCOMPATIBLE, MODERN, RESTRICTED, orCUSTOM. If using CUSTOM, the set of SSL features
+   * to enable must be specified in the customFeatures field.
    * Check the Profile enum for the list of possible values.
    * </pre>
    *
@@ -413,7 +476,9 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+   * Profile specifies the set of SSL features that can be used by the load
+   * balancer when negotiating SSL with clients. This can be one ofCOMPATIBLE, MODERN, RESTRICTED, orCUSTOM. If using CUSTOM, the set of SSL features
+   * to enable must be specified in the customFeatures field.
    * Check the Profile enum for the list of possible values.
    * </pre>
    *
@@ -427,7 +492,9 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+   * Profile specifies the set of SSL features that can be used by the load
+   * balancer when negotiating SSL with clients. This can be one ofCOMPATIBLE, MODERN, RESTRICTED, orCUSTOM. If using CUSTOM, the set of SSL features
+   * to enable must be specified in the customFeatures field.
    * Check the Profile enum for the list of possible values.
    * </pre>
    *
@@ -441,7 +508,8 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional SSL policy resides. This field is not applicable to global SSL policies.
+   * Output only. [Output Only] URL of the region where the regional SSL policy
+   * resides. This field is not applicable to global SSL policies.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -454,7 +522,8 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional SSL policy resides. This field is not applicable to global SSL policies.
+   * Output only. [Output Only] URL of the region where the regional SSL policy
+   * resides. This field is not applicable to global SSL policies.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -467,7 +536,8 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional SSL policy resides. This field is not applicable to global SSL policies.
+   * Output only. [Output Only] URL of the region where the regional SSL policy
+   * resides. This field is not applicable to global SSL policies.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -480,7 +550,7 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -493,7 +563,7 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -506,7 +576,7 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -519,7 +589,8 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
+   * Output only. [Output Only] If potential misconfigurations are detected for this
+   * SSL policy, this field will be populated with warning messages.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -530,7 +601,8 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
+   * Output only. [Output Only] If potential misconfigurations are detected for this
+   * SSL policy, this field will be populated with warning messages.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -541,7 +613,8 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
+   * Output only. [Output Only] If potential misconfigurations are detected for this
+   * SSL policy, this field will be populated with warning messages.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -552,7 +625,8 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
+   * Output only. [Output Only] If potential misconfigurations are detected for this
+   * SSL policy, this field will be populated with warning messages.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -564,7 +638,8 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
+   * Output only. [Output Only] If potential misconfigurations are detected for this
+   * SSL policy, this field will be populated with warning messages.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>

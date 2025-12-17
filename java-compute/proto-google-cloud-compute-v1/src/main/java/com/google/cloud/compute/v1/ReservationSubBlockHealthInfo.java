@@ -291,7 +291,8 @@ public final class ReservationSubBlockHealthInfo extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The number of degraded infrastructure (e.g NV link domain) in the reservation subblock.
+   * The number of degraded infrastructure (e.g NV link domain) in the
+   * reservation subblock.
    * </pre>
    *
    * <code>optional int32 degraded_infra_count = 138638927;</code>
@@ -307,7 +308,8 @@ public final class ReservationSubBlockHealthInfo extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The number of degraded infrastructure (e.g NV link domain) in the reservation subblock.
+   * The number of degraded infrastructure (e.g NV link domain) in the
+   * reservation subblock.
    * </pre>
    *
    * <code>optional int32 degraded_infra_count = 138638927;</code>
@@ -433,7 +435,8 @@ public final class ReservationSubBlockHealthInfo extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The number of healthy infrastructure (e.g NV link domain) in the reservation subblock.
+   * The number of healthy infrastructure (e.g NV link domain) in the
+   * reservation subblock.
    * </pre>
    *
    * <code>optional int32 healthy_infra_count = 385052222;</code>
@@ -449,7 +452,8 @@ public final class ReservationSubBlockHealthInfo extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The number of healthy infrastructure (e.g NV link domain) in the reservation subblock.
+   * The number of healthy infrastructure (e.g NV link domain) in the
+   * reservation subblock.
    * </pre>
    *
    * <code>optional int32 healthy_infra_count = 385052222;</code>
@@ -1004,7 +1008,8 @@ public final class ReservationSubBlockHealthInfo extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The number of degraded infrastructure (e.g NV link domain) in the reservation subblock.
+     * The number of degraded infrastructure (e.g NV link domain) in the
+     * reservation subblock.
      * </pre>
      *
      * <code>optional int32 degraded_infra_count = 138638927;</code>
@@ -1020,7 +1025,8 @@ public final class ReservationSubBlockHealthInfo extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The number of degraded infrastructure (e.g NV link domain) in the reservation subblock.
+     * The number of degraded infrastructure (e.g NV link domain) in the
+     * reservation subblock.
      * </pre>
      *
      * <code>optional int32 degraded_infra_count = 138638927;</code>
@@ -1036,7 +1042,8 @@ public final class ReservationSubBlockHealthInfo extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The number of degraded infrastructure (e.g NV link domain) in the reservation subblock.
+     * The number of degraded infrastructure (e.g NV link domain) in the
+     * reservation subblock.
      * </pre>
      *
      * <code>optional int32 degraded_infra_count = 138638927;</code>
@@ -1056,7 +1063,8 @@ public final class ReservationSubBlockHealthInfo extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The number of degraded infrastructure (e.g NV link domain) in the reservation subblock.
+     * The number of degraded infrastructure (e.g NV link domain) in the
+     * reservation subblock.
      * </pre>
      *
      * <code>optional int32 degraded_infra_count = 138638927;</code>
@@ -1280,7 +1288,8 @@ public final class ReservationSubBlockHealthInfo extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The number of healthy infrastructure (e.g NV link domain) in the reservation subblock.
+     * The number of healthy infrastructure (e.g NV link domain) in the
+     * reservation subblock.
      * </pre>
      *
      * <code>optional int32 healthy_infra_count = 385052222;</code>
@@ -1296,7 +1305,8 @@ public final class ReservationSubBlockHealthInfo extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The number of healthy infrastructure (e.g NV link domain) in the reservation subblock.
+     * The number of healthy infrastructure (e.g NV link domain) in the
+     * reservation subblock.
      * </pre>
      *
      * <code>optional int32 healthy_infra_count = 385052222;</code>
@@ -1312,7 +1322,8 @@ public final class ReservationSubBlockHealthInfo extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The number of healthy infrastructure (e.g NV link domain) in the reservation subblock.
+     * The number of healthy infrastructure (e.g NV link domain) in the
+     * reservation subblock.
      * </pre>
      *
      * <code>optional int32 healthy_infra_count = 385052222;</code>
@@ -1332,7 +1343,8 @@ public final class ReservationSubBlockHealthInfo extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The number of healthy infrastructure (e.g NV link domain) in the reservation subblock.
+     * The number of healthy infrastructure (e.g NV link domain) in the
+     * reservation subblock.
      * </pre>
      *
      * <code>optional int32 healthy_infra_count = 385052222;</code>

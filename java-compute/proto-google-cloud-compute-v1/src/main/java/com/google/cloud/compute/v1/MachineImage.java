@@ -23,7 +23,11 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a machine image resource. A machine image is a Compute Engine resource that stores all the configuration, metadata, permissions, and data from one or more disks required to create a Virtual machine (VM) instance. For more information, see Machine images.
+ * Represents a machine image resource.
+ *
+ * A machine image is a Compute Engine resource that stores all the
+ * configuration, metadata, permissions, and data from one or more disks
+ * required to create a Virtual machine (VM) instance. For more information, seeMachine images.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.MachineImage}
@@ -90,7 +94,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the machine image. One of the following values: INVALID, CREATING, READY, DELETING, and UPLOADING.
+   * Output only. [Output Only] The status of the machine image. One of the following values:INVALID, CREATING, READY,DELETING, and UPLOADING.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.MachineImage.Status}
@@ -244,7 +248,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The creation timestamp for this machine image in RFC3339 text format.
+   * Output only. [Output Only] The creation timestamp for this machine image inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -260,7 +265,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The creation timestamp for this machine image in RFC3339 text format.
+   * Output only. [Output Only] The creation timestamp for this machine image inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -284,7 +290,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The creation timestamp for this machine image in RFC3339 text format.
+   * Output only. [Output Only] The creation timestamp for this machine image inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -313,7 +320,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -329,7 +337,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -353,7 +362,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -380,7 +390,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Input Only] Whether to attempt an application consistent machine image by informing the OS to prepare for the snapshot process.
+   * [Input Only] Whether to attempt an application consistent machine image by
+   * informing the OS to prepare for the snapshot process.
    * </pre>
    *
    * <code>optional bool guest_flush = 385550813;</code>
@@ -396,7 +407,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Input Only] Whether to attempt an application consistent machine image by informing the OS to prepare for the snapshot process.
+   * [Input Only] Whether to attempt an application consistent machine image by
+   * informing the OS to prepare for the snapshot process.
    * </pre>
    *
    * <code>optional bool guest_flush = 385550813;</code>
@@ -415,7 +427,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A unique identifier for this machine image. The server defines this identifier.
+   * Output only. [Output Only] A unique identifier for this machine image. The server
+   * defines this identifier.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -431,7 +444,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A unique identifier for this machine image. The server defines this identifier.
+   * Output only. [Output Only] A unique identifier for this machine image. The server
+   * defines this identifier.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -508,7 +522,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is always compute#machineImage for machine image.
+   * Output only. [Output Only] The resource type, which is alwayscompute#machineImage for machine image.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -524,7 +538,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is always compute#machineImage for machine image.
+   * Output only. [Output Only] The resource type, which is alwayscompute#machineImage for machine image.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -548,7 +562,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is always compute#machineImage for machine image.
+   * Output only. [Output Only] The resource type, which is alwayscompute#machineImage for machine image.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -577,7 +591,14 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this machine image, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the machine image.
+   * A fingerprint for the labels being applied to this machine image, which is
+   * essentially a hash of the labels set used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels.
+   *
+   * To see the latest fingerprint, make get() request to the
+   * machine image.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -593,7 +614,14 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this machine image, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the machine image.
+   * A fingerprint for the labels being applied to this machine image, which is
+   * essentially a hash of the labels set used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels.
+   *
+   * To see the latest fingerprint, make get() request to the
+   * machine image.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -617,7 +645,14 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this machine image, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the machine image.
+   * A fingerprint for the labels being applied to this machine image, which is
+   * essentially a hash of the labels set used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels.
+   *
+   * To see the latest fingerprint, make get() request to the
+   * machine image.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -668,7 +703,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels to apply to this machine image. These can be later modified by the setLabels method.
+   * Labels to apply to this machine image. These can be later modified by
+   * the setLabels method.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -692,7 +728,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels to apply to this machine image. These can be later modified by the setLabels method.
+   * Labels to apply to this machine image. These can be later modified by
+   * the setLabels method.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -706,7 +743,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels to apply to this machine image. These can be later modified by the setLabels method.
+   * Labels to apply to this machine image. These can be later modified by
+   * the setLabels method.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -727,7 +765,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels to apply to this machine image. These can be later modified by the setLabels method.
+   * Labels to apply to this machine image. These can be later modified by
+   * the setLabels method.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -751,7 +790,20 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encrypts the machine image using a customer-supplied encryption key. After you encrypt a machine image using a customer-supplied key, you must provide the same key if you use the machine image later. For example, you must provide the encryption key when you create an instance from the encrypted machine image in a future request. Customer-supplied encryption keys do not protect access to metadata of the machine image. If you do not provide an encryption key when creating the machine image, then the machine image will be encrypted using an automatically generated key and you do not need to provide a key to use the machine image later.
+   * Encrypts the machine image using acustomer-supplied
+   * encryption key.
+   *
+   * After you encrypt a machine image using a customer-supplied key, you must
+   * provide the same key if you use the machine image later. For example, you
+   * must provide the encryption key when you create an instance from the
+   * encrypted machine image in a future request.
+   *
+   * Customer-supplied encryption keys do not protect access to metadata of the
+   * machine image.
+   *
+   * If you do not provide an encryption key when creating the machine image,
+   * then the machine image will be encrypted using an automatically generated
+   * key and you do not need to provide a key to use the machine image later.
    * </pre>
    *
    * <code>
@@ -769,7 +821,20 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encrypts the machine image using a customer-supplied encryption key. After you encrypt a machine image using a customer-supplied key, you must provide the same key if you use the machine image later. For example, you must provide the encryption key when you create an instance from the encrypted machine image in a future request. Customer-supplied encryption keys do not protect access to metadata of the machine image. If you do not provide an encryption key when creating the machine image, then the machine image will be encrypted using an automatically generated key and you do not need to provide a key to use the machine image later.
+   * Encrypts the machine image using acustomer-supplied
+   * encryption key.
+   *
+   * After you encrypt a machine image using a customer-supplied key, you must
+   * provide the same key if you use the machine image later. For example, you
+   * must provide the encryption key when you create an instance from the
+   * encrypted machine image in a future request.
+   *
+   * Customer-supplied encryption keys do not protect access to metadata of the
+   * machine image.
+   *
+   * If you do not provide an encryption key when creating the machine image,
+   * then the machine image will be encrypted using an automatically generated
+   * key and you do not need to provide a key to use the machine image later.
    * </pre>
    *
    * <code>
@@ -789,7 +854,20 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encrypts the machine image using a customer-supplied encryption key. After you encrypt a machine image using a customer-supplied key, you must provide the same key if you use the machine image later. For example, you must provide the encryption key when you create an instance from the encrypted machine image in a future request. Customer-supplied encryption keys do not protect access to metadata of the machine image. If you do not provide an encryption key when creating the machine image, then the machine image will be encrypted using an automatically generated key and you do not need to provide a key to use the machine image later.
+   * Encrypts the machine image using acustomer-supplied
+   * encryption key.
+   *
+   * After you encrypt a machine image using a customer-supplied key, you must
+   * provide the same key if you use the machine image later. For example, you
+   * must provide the encryption key when you create an instance from the
+   * encrypted machine image in a future request.
+   *
+   * Customer-supplied encryption keys do not protect access to metadata of the
+   * machine image.
+   *
+   * If you do not provide an encryption key when creating the machine image,
+   * then the machine image will be encrypted using an automatically generated
+   * key and you do not need to provide a key to use the machine image later.
    * </pre>
    *
    * <code>
@@ -813,7 +891,13 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource; provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be
+   * a dash, lowercase letter, or digit, except the last character, which cannot
+   * be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -829,7 +913,13 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource; provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be
+   * a dash, lowercase letter, or digit, except the last character, which cannot
+   * be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -853,7 +943,13 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource; provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be
+   * a dash, lowercase letter, or digit, except the last character, which cannot
+   * be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -915,7 +1011,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -931,7 +1027,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -952,7 +1048,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An array of Machine Image specific properties for disks attached to the source instance
+   * Output only. An array of Machine Image specific properties for disks attached to the
+   * source instance
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.SavedDisk saved_disks = 397424318;</code>
@@ -966,7 +1063,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An array of Machine Image specific properties for disks attached to the source instance
+   * Output only. An array of Machine Image specific properties for disks attached to the
+   * source instance
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.SavedDisk saved_disks = 397424318;</code>
@@ -981,7 +1079,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An array of Machine Image specific properties for disks attached to the source instance
+   * Output only. An array of Machine Image specific properties for disks attached to the
+   * source instance
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.SavedDisk saved_disks = 397424318;</code>
@@ -995,7 +1094,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An array of Machine Image specific properties for disks attached to the source instance
+   * Output only. An array of Machine Image specific properties for disks attached to the
+   * source instance
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.SavedDisk saved_disks = 397424318;</code>
@@ -1009,7 +1109,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An array of Machine Image specific properties for disks attached to the source instance
+   * Output only. An array of Machine Image specific properties for disks attached to the
+   * source instance
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.SavedDisk saved_disks = 397424318;</code>
@@ -1028,7 +1129,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL for this machine image. The server defines this URL.
+   * Output only. [Output Only] The URL for this machine image. The server defines this URL.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1044,7 +1145,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL for this machine image. The server defines this URL.
+   * Output only. [Output Only] The URL for this machine image. The server defines this URL.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1068,7 +1169,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL for this machine image. The server defines this URL.
+   * Output only. [Output Only] The URL for this machine image. The server defines this URL.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1098,7 +1199,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Input Only] The customer-supplied encryption key of the disks attached to the source instance. Required if the source disk is protected by a customer-supplied encryption key.
+   * [Input Only] Thecustomer-supplied
+   * encryption key of the disks attached to the source instance. Required
+   * if the source disk is protected by a customer-supplied encryption key.
    * </pre>
    *
    * <code>
@@ -1115,7 +1218,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Input Only] The customer-supplied encryption key of the disks attached to the source instance. Required if the source disk is protected by a customer-supplied encryption key.
+   * [Input Only] Thecustomer-supplied
+   * encryption key of the disks attached to the source instance. Required
+   * if the source disk is protected by a customer-supplied encryption key.
    * </pre>
    *
    * <code>
@@ -1132,7 +1237,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Input Only] The customer-supplied encryption key of the disks attached to the source instance. Required if the source disk is protected by a customer-supplied encryption key.
+   * [Input Only] Thecustomer-supplied
+   * encryption key of the disks attached to the source instance. Required
+   * if the source disk is protected by a customer-supplied encryption key.
    * </pre>
    *
    * <code>
@@ -1148,7 +1255,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Input Only] The customer-supplied encryption key of the disks attached to the source instance. Required if the source disk is protected by a customer-supplied encryption key.
+   * [Input Only] Thecustomer-supplied
+   * encryption key of the disks attached to the source instance. Required
+   * if the source disk is protected by a customer-supplied encryption key.
    * </pre>
    *
    * <code>
@@ -1165,7 +1274,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Input Only] The customer-supplied encryption key of the disks attached to the source instance. Required if the source disk is protected by a customer-supplied encryption key.
+   * [Input Only] Thecustomer-supplied
+   * encryption key of the disks attached to the source instance. Required
+   * if the source disk is protected by a customer-supplied encryption key.
    * </pre>
    *
    * <code>
@@ -1187,7 +1298,13 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The source instance used to create the machine image. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance
+   * The source instance used to create the machine image. You can provide this
+   * as a partial or full URL to the resource. For example, the following are
+   * valid values:
+   *
+   *
+   *      - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
+   *    - projects/project/zones/zone/instances/instance
    * </pre>
    *
    * <code>optional string source_instance = 396315705;</code>
@@ -1203,7 +1320,13 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The source instance used to create the machine image. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance
+   * The source instance used to create the machine image. You can provide this
+   * as a partial or full URL to the resource. For example, the following are
+   * valid values:
+   *
+   *
+   *      - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
+   *    - projects/project/zones/zone/instances/instance
    * </pre>
    *
    * <code>optional string source_instance = 396315705;</code>
@@ -1227,7 +1350,13 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The source instance used to create the machine image. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance
+   * The source instance used to create the machine image. You can provide this
+   * as a partial or full URL to the resource. For example, the following are
+   * valid values:
+   *
+   *
+   *      - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
+   *    - projects/project/zones/zone/instances/instance
    * </pre>
    *
    * <code>optional string source_instance = 396315705;</code>
@@ -1254,7 +1383,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] DEPRECATED: Please use instance_properties instead for source instance related properties. New properties will not be added to this field.
+   * Output only. [Output Only] DEPRECATED: Please use instance_properties
+   * instead for source instance related properties. New properties will not be
+   * added to this field.
    * </pre>
    *
    * <code>
@@ -1272,7 +1403,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] DEPRECATED: Please use instance_properties instead for source instance related properties. New properties will not be added to this field.
+   * Output only. [Output Only] DEPRECATED: Please use instance_properties
+   * instead for source instance related properties. New properties will not be
+   * added to this field.
    * </pre>
    *
    * <code>
@@ -1292,7 +1425,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] DEPRECATED: Please use instance_properties instead for source instance related properties. New properties will not be added to this field.
+   * Output only. [Output Only] DEPRECATED: Please use instance_properties
+   * instead for source instance related properties. New properties will not be
+   * added to this field.
    * </pre>
    *
    * <code>
@@ -1316,7 +1451,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the machine image. One of the following values: INVALID, CREATING, READY, DELETING, and UPLOADING.
+   * Output only. [Output Only] The status of the machine image. One of the following values:INVALID, CREATING, READY,DELETING, and UPLOADING.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -1333,7 +1468,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the machine image. One of the following values: INVALID, CREATING, READY, DELETING, and UPLOADING.
+   * Output only. [Output Only] The status of the machine image. One of the following values:INVALID, CREATING, READY,DELETING, and UPLOADING.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -1358,7 +1493,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the machine image. One of the following values: INVALID, CREATING, READY, DELETING, and UPLOADING.
+   * Output only. [Output Only] The status of the machine image. One of the following values:INVALID, CREATING, READY,DELETING, and UPLOADING.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -1389,7 +1524,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The regional or multi-regional Cloud Storage bucket location where the machine image is stored.
+   * The regional or multi-regional Cloud Storage bucket location where themachine image is
+   * stored.
    * </pre>
    *
    * <code>repeated string storage_locations = 328005274;</code>
@@ -1404,7 +1540,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The regional or multi-regional Cloud Storage bucket location where the machine image is stored.
+   * The regional or multi-regional Cloud Storage bucket location where themachine image is
+   * stored.
    * </pre>
    *
    * <code>repeated string storage_locations = 328005274;</code>
@@ -1419,7 +1556,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The regional or multi-regional Cloud Storage bucket location where the machine image is stored.
+   * The regional or multi-regional Cloud Storage bucket location where themachine image is
+   * stored.
    * </pre>
    *
    * <code>repeated string storage_locations = 328005274;</code>
@@ -1435,7 +1573,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The regional or multi-regional Cloud Storage bucket location where the machine image is stored.
+   * The regional or multi-regional Cloud Storage bucket location where themachine image is
+   * stored.
    * </pre>
    *
    * <code>repeated string storage_locations = 328005274;</code>
@@ -1454,7 +1593,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Total size of the storage used by the machine image.
+   * Output only. [Output Only] Total size of the storage used by the machine image.
    * </pre>
    *
    * <code>optional int64 total_storage_bytes = 81855468;</code>
@@ -1470,7 +1609,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Total size of the storage used by the machine image.
+   * Output only. [Output Only] Total size of the storage used by the machine image.
    * </pre>
    *
    * <code>optional int64 total_storage_bytes = 81855468;</code>
@@ -1929,7 +2068,11 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a machine image resource. A machine image is a Compute Engine resource that stores all the configuration, metadata, permissions, and data from one or more disks required to create a Virtual machine (VM) instance. For more information, see Machine images.
+   * Represents a machine image resource.
+   *
+   * A machine image is a Compute Engine resource that stores all the
+   * configuration, metadata, permissions, and data from one or more disks
+   * required to create a Virtual machine (VM) instance. For more information, seeMachine images.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.MachineImage}
@@ -2558,7 +2701,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The creation timestamp for this machine image in RFC3339 text format.
+     * Output only. [Output Only] The creation timestamp for this machine image inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2573,7 +2717,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The creation timestamp for this machine image in RFC3339 text format.
+     * Output only. [Output Only] The creation timestamp for this machine image inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2596,7 +2741,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The creation timestamp for this machine image in RFC3339 text format.
+     * Output only. [Output Only] The creation timestamp for this machine image inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2619,7 +2765,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The creation timestamp for this machine image in RFC3339 text format.
+     * Output only. [Output Only] The creation timestamp for this machine image inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2641,7 +2788,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The creation timestamp for this machine image in RFC3339 text format.
+     * Output only. [Output Only] The creation timestamp for this machine image inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2659,7 +2807,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The creation timestamp for this machine image in RFC3339 text format.
+     * Output only. [Output Only] The creation timestamp for this machine image inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2684,7 +2833,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2699,7 +2849,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2722,7 +2873,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2745,7 +2897,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2767,7 +2920,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2785,7 +2939,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2810,7 +2965,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] Whether to attempt an application consistent machine image by informing the OS to prepare for the snapshot process.
+     * [Input Only] Whether to attempt an application consistent machine image by
+     * informing the OS to prepare for the snapshot process.
      * </pre>
      *
      * <code>optional bool guest_flush = 385550813;</code>
@@ -2826,7 +2982,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] Whether to attempt an application consistent machine image by informing the OS to prepare for the snapshot process.
+     * [Input Only] Whether to attempt an application consistent machine image by
+     * informing the OS to prepare for the snapshot process.
      * </pre>
      *
      * <code>optional bool guest_flush = 385550813;</code>
@@ -2842,7 +2999,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] Whether to attempt an application consistent machine image by informing the OS to prepare for the snapshot process.
+     * [Input Only] Whether to attempt an application consistent machine image by
+     * informing the OS to prepare for the snapshot process.
      * </pre>
      *
      * <code>optional bool guest_flush = 385550813;</code>
@@ -2862,7 +3020,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] Whether to attempt an application consistent machine image by informing the OS to prepare for the snapshot process.
+     * [Input Only] Whether to attempt an application consistent machine image by
+     * informing the OS to prepare for the snapshot process.
      * </pre>
      *
      * <code>optional bool guest_flush = 385550813;</code>
@@ -2882,7 +3041,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A unique identifier for this machine image. The server defines this identifier.
+     * Output only. [Output Only] A unique identifier for this machine image. The server
+     * defines this identifier.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2898,7 +3058,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A unique identifier for this machine image. The server defines this identifier.
+     * Output only. [Output Only] A unique identifier for this machine image. The server
+     * defines this identifier.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2914,7 +3075,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A unique identifier for this machine image. The server defines this identifier.
+     * Output only. [Output Only] A unique identifier for this machine image. The server
+     * defines this identifier.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2934,7 +3096,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A unique identifier for this machine image. The server defines this identifier.
+     * Output only. [Output Only] A unique identifier for this machine image. The server
+     * defines this identifier.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -3160,7 +3323,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is always compute#machineImage for machine image.
+     * Output only. [Output Only] The resource type, which is alwayscompute#machineImage for machine image.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3175,7 +3338,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is always compute#machineImage for machine image.
+     * Output only. [Output Only] The resource type, which is alwayscompute#machineImage for machine image.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3198,7 +3361,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is always compute#machineImage for machine image.
+     * Output only. [Output Only] The resource type, which is alwayscompute#machineImage for machine image.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3221,7 +3384,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is always compute#machineImage for machine image.
+     * Output only. [Output Only] The resource type, which is alwayscompute#machineImage for machine image.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3243,7 +3406,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is always compute#machineImage for machine image.
+     * Output only. [Output Only] The resource type, which is alwayscompute#machineImage for machine image.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3261,7 +3424,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is always compute#machineImage for machine image.
+     * Output only. [Output Only] The resource type, which is alwayscompute#machineImage for machine image.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3286,7 +3449,14 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this machine image, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the machine image.
+     * A fingerprint for the labels being applied to this machine image, which is
+     * essentially a hash of the labels set used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * machine image.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -3301,7 +3471,14 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this machine image, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the machine image.
+     * A fingerprint for the labels being applied to this machine image, which is
+     * essentially a hash of the labels set used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * machine image.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -3324,7 +3501,14 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this machine image, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the machine image.
+     * A fingerprint for the labels being applied to this machine image, which is
+     * essentially a hash of the labels set used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * machine image.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -3347,7 +3531,14 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this machine image, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the machine image.
+     * A fingerprint for the labels being applied to this machine image, which is
+     * essentially a hash of the labels set used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * machine image.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -3369,7 +3560,14 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this machine image, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the machine image.
+     * A fingerprint for the labels being applied to this machine image, which is
+     * essentially a hash of the labels set used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * machine image.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -3387,7 +3585,14 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this machine image, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the machine image.
+     * A fingerprint for the labels being applied to this machine image, which is
+     * essentially a hash of the labels set used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * machine image.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -3436,7 +3641,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels to apply to this machine image. These can be later modified by the setLabels method.
+     * Labels to apply to this machine image. These can be later modified by
+     * the setLabels method.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -3460,7 +3666,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels to apply to this machine image. These can be later modified by the setLabels method.
+     * Labels to apply to this machine image. These can be later modified by
+     * the setLabels method.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -3474,7 +3681,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels to apply to this machine image. These can be later modified by the setLabels method.
+     * Labels to apply to this machine image. These can be later modified by
+     * the setLabels method.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -3495,7 +3703,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels to apply to this machine image. These can be later modified by the setLabels method.
+     * Labels to apply to this machine image. These can be later modified by
+     * the setLabels method.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -3522,7 +3731,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels to apply to this machine image. These can be later modified by the setLabels method.
+     * Labels to apply to this machine image. These can be later modified by
+     * the setLabels method.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -3546,7 +3756,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels to apply to this machine image. These can be later modified by the setLabels method.
+     * Labels to apply to this machine image. These can be later modified by
+     * the setLabels method.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -3567,7 +3778,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels to apply to this machine image. These can be later modified by the setLabels method.
+     * Labels to apply to this machine image. These can be later modified by
+     * the setLabels method.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -3589,7 +3801,20 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the machine image using a customer-supplied encryption key. After you encrypt a machine image using a customer-supplied key, you must provide the same key if you use the machine image later. For example, you must provide the encryption key when you create an instance from the encrypted machine image in a future request. Customer-supplied encryption keys do not protect access to metadata of the machine image. If you do not provide an encryption key when creating the machine image, then the machine image will be encrypted using an automatically generated key and you do not need to provide a key to use the machine image later.
+     * Encrypts the machine image using acustomer-supplied
+     * encryption key.
+     *
+     * After you encrypt a machine image using a customer-supplied key, you must
+     * provide the same key if you use the machine image later. For example, you
+     * must provide the encryption key when you create an instance from the
+     * encrypted machine image in a future request.
+     *
+     * Customer-supplied encryption keys do not protect access to metadata of the
+     * machine image.
+     *
+     * If you do not provide an encryption key when creating the machine image,
+     * then the machine image will be encrypted using an automatically generated
+     * key and you do not need to provide a key to use the machine image later.
      * </pre>
      *
      * <code>
@@ -3606,7 +3831,20 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the machine image using a customer-supplied encryption key. After you encrypt a machine image using a customer-supplied key, you must provide the same key if you use the machine image later. For example, you must provide the encryption key when you create an instance from the encrypted machine image in a future request. Customer-supplied encryption keys do not protect access to metadata of the machine image. If you do not provide an encryption key when creating the machine image, then the machine image will be encrypted using an automatically generated key and you do not need to provide a key to use the machine image later.
+     * Encrypts the machine image using acustomer-supplied
+     * encryption key.
+     *
+     * After you encrypt a machine image using a customer-supplied key, you must
+     * provide the same key if you use the machine image later. For example, you
+     * must provide the encryption key when you create an instance from the
+     * encrypted machine image in a future request.
+     *
+     * Customer-supplied encryption keys do not protect access to metadata of the
+     * machine image.
+     *
+     * If you do not provide an encryption key when creating the machine image,
+     * then the machine image will be encrypted using an automatically generated
+     * key and you do not need to provide a key to use the machine image later.
      * </pre>
      *
      * <code>
@@ -3629,7 +3867,20 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the machine image using a customer-supplied encryption key. After you encrypt a machine image using a customer-supplied key, you must provide the same key if you use the machine image later. For example, you must provide the encryption key when you create an instance from the encrypted machine image in a future request. Customer-supplied encryption keys do not protect access to metadata of the machine image. If you do not provide an encryption key when creating the machine image, then the machine image will be encrypted using an automatically generated key and you do not need to provide a key to use the machine image later.
+     * Encrypts the machine image using acustomer-supplied
+     * encryption key.
+     *
+     * After you encrypt a machine image using a customer-supplied key, you must
+     * provide the same key if you use the machine image later. For example, you
+     * must provide the encryption key when you create an instance from the
+     * encrypted machine image in a future request.
+     *
+     * Customer-supplied encryption keys do not protect access to metadata of the
+     * machine image.
+     *
+     * If you do not provide an encryption key when creating the machine image,
+     * then the machine image will be encrypted using an automatically generated
+     * key and you do not need to provide a key to use the machine image later.
      * </pre>
      *
      * <code>
@@ -3655,7 +3906,20 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the machine image using a customer-supplied encryption key. After you encrypt a machine image using a customer-supplied key, you must provide the same key if you use the machine image later. For example, you must provide the encryption key when you create an instance from the encrypted machine image in a future request. Customer-supplied encryption keys do not protect access to metadata of the machine image. If you do not provide an encryption key when creating the machine image, then the machine image will be encrypted using an automatically generated key and you do not need to provide a key to use the machine image later.
+     * Encrypts the machine image using acustomer-supplied
+     * encryption key.
+     *
+     * After you encrypt a machine image using a customer-supplied key, you must
+     * provide the same key if you use the machine image later. For example, you
+     * must provide the encryption key when you create an instance from the
+     * encrypted machine image in a future request.
+     *
+     * Customer-supplied encryption keys do not protect access to metadata of the
+     * machine image.
+     *
+     * If you do not provide an encryption key when creating the machine image,
+     * then the machine image will be encrypted using an automatically generated
+     * key and you do not need to provide a key to use the machine image later.
      * </pre>
      *
      * <code>
@@ -3678,7 +3942,20 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the machine image using a customer-supplied encryption key. After you encrypt a machine image using a customer-supplied key, you must provide the same key if you use the machine image later. For example, you must provide the encryption key when you create an instance from the encrypted machine image in a future request. Customer-supplied encryption keys do not protect access to metadata of the machine image. If you do not provide an encryption key when creating the machine image, then the machine image will be encrypted using an automatically generated key and you do not need to provide a key to use the machine image later.
+     * Encrypts the machine image using acustomer-supplied
+     * encryption key.
+     *
+     * After you encrypt a machine image using a customer-supplied key, you must
+     * provide the same key if you use the machine image later. For example, you
+     * must provide the encryption key when you create an instance from the
+     * encrypted machine image in a future request.
+     *
+     * Customer-supplied encryption keys do not protect access to metadata of the
+     * machine image.
+     *
+     * If you do not provide an encryption key when creating the machine image,
+     * then the machine image will be encrypted using an automatically generated
+     * key and you do not need to provide a key to use the machine image later.
      * </pre>
      *
      * <code>
@@ -3710,7 +3987,20 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the machine image using a customer-supplied encryption key. After you encrypt a machine image using a customer-supplied key, you must provide the same key if you use the machine image later. For example, you must provide the encryption key when you create an instance from the encrypted machine image in a future request. Customer-supplied encryption keys do not protect access to metadata of the machine image. If you do not provide an encryption key when creating the machine image, then the machine image will be encrypted using an automatically generated key and you do not need to provide a key to use the machine image later.
+     * Encrypts the machine image using acustomer-supplied
+     * encryption key.
+     *
+     * After you encrypt a machine image using a customer-supplied key, you must
+     * provide the same key if you use the machine image later. For example, you
+     * must provide the encryption key when you create an instance from the
+     * encrypted machine image in a future request.
+     *
+     * Customer-supplied encryption keys do not protect access to metadata of the
+     * machine image.
+     *
+     * If you do not provide an encryption key when creating the machine image,
+     * then the machine image will be encrypted using an automatically generated
+     * key and you do not need to provide a key to use the machine image later.
      * </pre>
      *
      * <code>
@@ -3732,7 +4022,20 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the machine image using a customer-supplied encryption key. After you encrypt a machine image using a customer-supplied key, you must provide the same key if you use the machine image later. For example, you must provide the encryption key when you create an instance from the encrypted machine image in a future request. Customer-supplied encryption keys do not protect access to metadata of the machine image. If you do not provide an encryption key when creating the machine image, then the machine image will be encrypted using an automatically generated key and you do not need to provide a key to use the machine image later.
+     * Encrypts the machine image using acustomer-supplied
+     * encryption key.
+     *
+     * After you encrypt a machine image using a customer-supplied key, you must
+     * provide the same key if you use the machine image later. For example, you
+     * must provide the encryption key when you create an instance from the
+     * encrypted machine image in a future request.
+     *
+     * Customer-supplied encryption keys do not protect access to metadata of the
+     * machine image.
+     *
+     * If you do not provide an encryption key when creating the machine image,
+     * then the machine image will be encrypted using an automatically generated
+     * key and you do not need to provide a key to use the machine image later.
      * </pre>
      *
      * <code>
@@ -3750,7 +4053,20 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the machine image using a customer-supplied encryption key. After you encrypt a machine image using a customer-supplied key, you must provide the same key if you use the machine image later. For example, you must provide the encryption key when you create an instance from the encrypted machine image in a future request. Customer-supplied encryption keys do not protect access to metadata of the machine image. If you do not provide an encryption key when creating the machine image, then the machine image will be encrypted using an automatically generated key and you do not need to provide a key to use the machine image later.
+     * Encrypts the machine image using acustomer-supplied
+     * encryption key.
+     *
+     * After you encrypt a machine image using a customer-supplied key, you must
+     * provide the same key if you use the machine image later. For example, you
+     * must provide the encryption key when you create an instance from the
+     * encrypted machine image in a future request.
+     *
+     * Customer-supplied encryption keys do not protect access to metadata of the
+     * machine image.
+     *
+     * If you do not provide an encryption key when creating the machine image,
+     * then the machine image will be encrypted using an automatically generated
+     * key and you do not need to provide a key to use the machine image later.
      * </pre>
      *
      * <code>
@@ -3772,7 +4088,20 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the machine image using a customer-supplied encryption key. After you encrypt a machine image using a customer-supplied key, you must provide the same key if you use the machine image later. For example, you must provide the encryption key when you create an instance from the encrypted machine image in a future request. Customer-supplied encryption keys do not protect access to metadata of the machine image. If you do not provide an encryption key when creating the machine image, then the machine image will be encrypted using an automatically generated key and you do not need to provide a key to use the machine image later.
+     * Encrypts the machine image using acustomer-supplied
+     * encryption key.
+     *
+     * After you encrypt a machine image using a customer-supplied key, you must
+     * provide the same key if you use the machine image later. For example, you
+     * must provide the encryption key when you create an instance from the
+     * encrypted machine image in a future request.
+     *
+     * Customer-supplied encryption keys do not protect access to metadata of the
+     * machine image.
+     *
+     * If you do not provide an encryption key when creating the machine image,
+     * then the machine image will be encrypted using an automatically generated
+     * key and you do not need to provide a key to use the machine image later.
      * </pre>
      *
      * <code>
@@ -3802,7 +4131,13 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource; provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3817,7 +4152,13 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource; provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3840,7 +4181,13 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource; provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3863,7 +4210,13 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource; provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3885,7 +4238,13 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource; provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3903,7 +4262,13 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource; provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -4000,7 +4365,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -4016,7 +4381,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -4032,7 +4397,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -4052,7 +4417,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -4086,7 +4451,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of Machine Image specific properties for disks attached to the source instance
+     * Output only. An array of Machine Image specific properties for disks attached to the
+     * source instance
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SavedDisk saved_disks = 397424318;</code>
@@ -4103,7 +4469,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of Machine Image specific properties for disks attached to the source instance
+     * Output only. An array of Machine Image specific properties for disks attached to the
+     * source instance
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SavedDisk saved_disks = 397424318;</code>
@@ -4120,7 +4487,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of Machine Image specific properties for disks attached to the source instance
+     * Output only. An array of Machine Image specific properties for disks attached to the
+     * source instance
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SavedDisk saved_disks = 397424318;</code>
@@ -4137,7 +4505,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of Machine Image specific properties for disks attached to the source instance
+     * Output only. An array of Machine Image specific properties for disks attached to the
+     * source instance
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SavedDisk saved_disks = 397424318;</code>
@@ -4160,7 +4529,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of Machine Image specific properties for disks attached to the source instance
+     * Output only. An array of Machine Image specific properties for disks attached to the
+     * source instance
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SavedDisk saved_disks = 397424318;</code>
@@ -4181,7 +4551,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of Machine Image specific properties for disks attached to the source instance
+     * Output only. An array of Machine Image specific properties for disks attached to the
+     * source instance
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SavedDisk saved_disks = 397424318;</code>
@@ -4204,7 +4575,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of Machine Image specific properties for disks attached to the source instance
+     * Output only. An array of Machine Image specific properties for disks attached to the
+     * source instance
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SavedDisk saved_disks = 397424318;</code>
@@ -4227,7 +4599,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of Machine Image specific properties for disks attached to the source instance
+     * Output only. An array of Machine Image specific properties for disks attached to the
+     * source instance
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SavedDisk saved_disks = 397424318;</code>
@@ -4247,7 +4620,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of Machine Image specific properties for disks attached to the source instance
+     * Output only. An array of Machine Image specific properties for disks attached to the
+     * source instance
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SavedDisk saved_disks = 397424318;</code>
@@ -4268,7 +4642,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of Machine Image specific properties for disks attached to the source instance
+     * Output only. An array of Machine Image specific properties for disks attached to the
+     * source instance
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SavedDisk saved_disks = 397424318;</code>
@@ -4289,7 +4664,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of Machine Image specific properties for disks attached to the source instance
+     * Output only. An array of Machine Image specific properties for disks attached to the
+     * source instance
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SavedDisk saved_disks = 397424318;</code>
@@ -4309,7 +4685,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of Machine Image specific properties for disks attached to the source instance
+     * Output only. An array of Machine Image specific properties for disks attached to the
+     * source instance
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SavedDisk saved_disks = 397424318;</code>
@@ -4329,7 +4706,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of Machine Image specific properties for disks attached to the source instance
+     * Output only. An array of Machine Image specific properties for disks attached to the
+     * source instance
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SavedDisk saved_disks = 397424318;</code>
@@ -4342,7 +4720,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of Machine Image specific properties for disks attached to the source instance
+     * Output only. An array of Machine Image specific properties for disks attached to the
+     * source instance
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SavedDisk saved_disks = 397424318;</code>
@@ -4359,7 +4738,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of Machine Image specific properties for disks attached to the source instance
+     * Output only. An array of Machine Image specific properties for disks attached to the
+     * source instance
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SavedDisk saved_disks = 397424318;</code>
@@ -4377,7 +4757,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of Machine Image specific properties for disks attached to the source instance
+     * Output only. An array of Machine Image specific properties for disks attached to the
+     * source instance
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SavedDisk saved_disks = 397424318;</code>
@@ -4391,7 +4772,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of Machine Image specific properties for disks attached to the source instance
+     * Output only. An array of Machine Image specific properties for disks attached to the
+     * source instance
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SavedDisk saved_disks = 397424318;</code>
@@ -4405,7 +4787,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of Machine Image specific properties for disks attached to the source instance
+     * Output only. An array of Machine Image specific properties for disks attached to the
+     * source instance
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SavedDisk saved_disks = 397424318;</code>
@@ -4438,7 +4821,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL for this machine image. The server defines this URL.
+     * Output only. [Output Only] The URL for this machine image. The server defines this URL.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4453,7 +4836,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL for this machine image. The server defines this URL.
+     * Output only. [Output Only] The URL for this machine image. The server defines this URL.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4476,7 +4859,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL for this machine image. The server defines this URL.
+     * Output only. [Output Only] The URL for this machine image. The server defines this URL.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4499,7 +4882,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL for this machine image. The server defines this URL.
+     * Output only. [Output Only] The URL for this machine image. The server defines this URL.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4521,7 +4904,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL for this machine image. The server defines this URL.
+     * Output only. [Output Only] The URL for this machine image. The server defines this URL.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4539,7 +4922,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL for this machine image. The server defines this URL.
+     * Output only. [Output Only] The URL for this machine image. The server defines this URL.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4580,7 +4963,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] The customer-supplied encryption key of the disks attached to the source instance. Required if the source disk is protected by a customer-supplied encryption key.
+     * [Input Only] Thecustomer-supplied
+     * encryption key of the disks attached to the source instance. Required
+     * if the source disk is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -4600,7 +4985,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] The customer-supplied encryption key of the disks attached to the source instance. Required if the source disk is protected by a customer-supplied encryption key.
+     * [Input Only] Thecustomer-supplied
+     * encryption key of the disks attached to the source instance. Required
+     * if the source disk is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -4619,7 +5006,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] The customer-supplied encryption key of the disks attached to the source instance. Required if the source disk is protected by a customer-supplied encryption key.
+     * [Input Only] Thecustomer-supplied
+     * encryption key of the disks attached to the source instance. Required
+     * if the source disk is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -4639,7 +5028,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] The customer-supplied encryption key of the disks attached to the source instance. Required if the source disk is protected by a customer-supplied encryption key.
+     * [Input Only] Thecustomer-supplied
+     * encryption key of the disks attached to the source instance. Required
+     * if the source disk is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -4665,7 +5056,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] The customer-supplied encryption key of the disks attached to the source instance. Required if the source disk is protected by a customer-supplied encryption key.
+     * [Input Only] Thecustomer-supplied
+     * encryption key of the disks attached to the source instance. Required
+     * if the source disk is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -4688,7 +5081,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] The customer-supplied encryption key of the disks attached to the source instance. Required if the source disk is protected by a customer-supplied encryption key.
+     * [Input Only] Thecustomer-supplied
+     * encryption key of the disks attached to the source instance. Required
+     * if the source disk is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -4714,7 +5109,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] The customer-supplied encryption key of the disks attached to the source instance. Required if the source disk is protected by a customer-supplied encryption key.
+     * [Input Only] Thecustomer-supplied
+     * encryption key of the disks attached to the source instance. Required
+     * if the source disk is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -4740,7 +5137,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] The customer-supplied encryption key of the disks attached to the source instance. Required if the source disk is protected by a customer-supplied encryption key.
+     * [Input Only] Thecustomer-supplied
+     * encryption key of the disks attached to the source instance. Required
+     * if the source disk is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -4763,7 +5162,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] The customer-supplied encryption key of the disks attached to the source instance. Required if the source disk is protected by a customer-supplied encryption key.
+     * [Input Only] Thecustomer-supplied
+     * encryption key of the disks attached to the source instance. Required
+     * if the source disk is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -4786,7 +5187,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] The customer-supplied encryption key of the disks attached to the source instance. Required if the source disk is protected by a customer-supplied encryption key.
+     * [Input Only] Thecustomer-supplied
+     * encryption key of the disks attached to the source instance. Required
+     * if the source disk is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -4809,7 +5212,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] The customer-supplied encryption key of the disks attached to the source instance. Required if the source disk is protected by a customer-supplied encryption key.
+     * [Input Only] Thecustomer-supplied
+     * encryption key of the disks attached to the source instance. Required
+     * if the source disk is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -4831,7 +5236,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] The customer-supplied encryption key of the disks attached to the source instance. Required if the source disk is protected by a customer-supplied encryption key.
+     * [Input Only] Thecustomer-supplied
+     * encryption key of the disks attached to the source instance. Required
+     * if the source disk is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -4853,7 +5260,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] The customer-supplied encryption key of the disks attached to the source instance. Required if the source disk is protected by a customer-supplied encryption key.
+     * [Input Only] Thecustomer-supplied
+     * encryption key of the disks attached to the source instance. Required
+     * if the source disk is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -4869,7 +5278,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] The customer-supplied encryption key of the disks attached to the source instance. Required if the source disk is protected by a customer-supplied encryption key.
+     * [Input Only] Thecustomer-supplied
+     * encryption key of the disks attached to the source instance. Required
+     * if the source disk is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -4889,7 +5300,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] The customer-supplied encryption key of the disks attached to the source instance. Required if the source disk is protected by a customer-supplied encryption key.
+     * [Input Only] Thecustomer-supplied
+     * encryption key of the disks attached to the source instance. Required
+     * if the source disk is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -4909,7 +5322,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] The customer-supplied encryption key of the disks attached to the source instance. Required if the source disk is protected by a customer-supplied encryption key.
+     * [Input Only] Thecustomer-supplied
+     * encryption key of the disks attached to the source instance. Required
+     * if the source disk is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -4926,7 +5341,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] The customer-supplied encryption key of the disks attached to the source instance. Required if the source disk is protected by a customer-supplied encryption key.
+     * [Input Only] Thecustomer-supplied
+     * encryption key of the disks attached to the source instance. Required
+     * if the source disk is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -4944,7 +5361,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Input Only] The customer-supplied encryption key of the disks attached to the source instance. Required if the source disk is protected by a customer-supplied encryption key.
+     * [Input Only] Thecustomer-supplied
+     * encryption key of the disks attached to the source instance. Required
+     * if the source disk is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -4982,7 +5401,13 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source instance used to create the machine image. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance
+     * The source instance used to create the machine image. You can provide this
+     * as a partial or full URL to the resource. For example, the following are
+     * valid values:
+     *
+     *
+     *      - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
+     *    - projects/project/zones/zone/instances/instance
      * </pre>
      *
      * <code>optional string source_instance = 396315705;</code>
@@ -4997,7 +5422,13 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source instance used to create the machine image. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance
+     * The source instance used to create the machine image. You can provide this
+     * as a partial or full URL to the resource. For example, the following are
+     * valid values:
+     *
+     *
+     *      - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
+     *    - projects/project/zones/zone/instances/instance
      * </pre>
      *
      * <code>optional string source_instance = 396315705;</code>
@@ -5020,7 +5451,13 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source instance used to create the machine image. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance
+     * The source instance used to create the machine image. You can provide this
+     * as a partial or full URL to the resource. For example, the following are
+     * valid values:
+     *
+     *
+     *      - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
+     *    - projects/project/zones/zone/instances/instance
      * </pre>
      *
      * <code>optional string source_instance = 396315705;</code>
@@ -5043,7 +5480,13 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source instance used to create the machine image. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance
+     * The source instance used to create the machine image. You can provide this
+     * as a partial or full URL to the resource. For example, the following are
+     * valid values:
+     *
+     *
+     *      - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
+     *    - projects/project/zones/zone/instances/instance
      * </pre>
      *
      * <code>optional string source_instance = 396315705;</code>
@@ -5065,7 +5508,13 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source instance used to create the machine image. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance
+     * The source instance used to create the machine image. You can provide this
+     * as a partial or full URL to the resource. For example, the following are
+     * valid values:
+     *
+     *
+     *      - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
+     *    - projects/project/zones/zone/instances/instance
      * </pre>
      *
      * <code>optional string source_instance = 396315705;</code>
@@ -5083,7 +5532,13 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The source instance used to create the machine image. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance
+     * The source instance used to create the machine image. You can provide this
+     * as a partial or full URL to the resource. For example, the following are
+     * valid values:
+     *
+     *
+     *      - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
+     *    - projects/project/zones/zone/instances/instance
      * </pre>
      *
      * <code>optional string source_instance = 396315705;</code>
@@ -5113,7 +5568,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] DEPRECATED: Please use instance_properties instead for source instance related properties. New properties will not be added to this field.
+     * Output only. [Output Only] DEPRECATED: Please use instance_properties
+     * instead for source instance related properties. New properties will not be
+     * added to this field.
      * </pre>
      *
      * <code>
@@ -5130,7 +5587,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] DEPRECATED: Please use instance_properties instead for source instance related properties. New properties will not be added to this field.
+     * Output only. [Output Only] DEPRECATED: Please use instance_properties
+     * instead for source instance related properties. New properties will not be
+     * added to this field.
      * </pre>
      *
      * <code>
@@ -5153,7 +5612,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] DEPRECATED: Please use instance_properties instead for source instance related properties. New properties will not be added to this field.
+     * Output only. [Output Only] DEPRECATED: Please use instance_properties
+     * instead for source instance related properties. New properties will not be
+     * added to this field.
      * </pre>
      *
      * <code>
@@ -5179,7 +5640,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] DEPRECATED: Please use instance_properties instead for source instance related properties. New properties will not be added to this field.
+     * Output only. [Output Only] DEPRECATED: Please use instance_properties
+     * instead for source instance related properties. New properties will not be
+     * added to this field.
      * </pre>
      *
      * <code>
@@ -5202,7 +5665,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] DEPRECATED: Please use instance_properties instead for source instance related properties. New properties will not be added to this field.
+     * Output only. [Output Only] DEPRECATED: Please use instance_properties
+     * instead for source instance related properties. New properties will not be
+     * added to this field.
      * </pre>
      *
      * <code>
@@ -5234,7 +5699,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] DEPRECATED: Please use instance_properties instead for source instance related properties. New properties will not be added to this field.
+     * Output only. [Output Only] DEPRECATED: Please use instance_properties
+     * instead for source instance related properties. New properties will not be
+     * added to this field.
      * </pre>
      *
      * <code>
@@ -5256,7 +5723,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] DEPRECATED: Please use instance_properties instead for source instance related properties. New properties will not be added to this field.
+     * Output only. [Output Only] DEPRECATED: Please use instance_properties
+     * instead for source instance related properties. New properties will not be
+     * added to this field.
      * </pre>
      *
      * <code>
@@ -5274,7 +5743,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] DEPRECATED: Please use instance_properties instead for source instance related properties. New properties will not be added to this field.
+     * Output only. [Output Only] DEPRECATED: Please use instance_properties
+     * instead for source instance related properties. New properties will not be
+     * added to this field.
      * </pre>
      *
      * <code>
@@ -5296,7 +5767,9 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] DEPRECATED: Please use instance_properties instead for source instance related properties. New properties will not be added to this field.
+     * Output only. [Output Only] DEPRECATED: Please use instance_properties
+     * instead for source instance related properties. New properties will not be
+     * added to this field.
      * </pre>
      *
      * <code>
@@ -5326,7 +5799,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the machine image. One of the following values: INVALID, CREATING, READY, DELETING, and UPLOADING.
+     * Output only. [Output Only] The status of the machine image. One of the following values:INVALID, CREATING, READY,DELETING, and UPLOADING.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -5342,7 +5815,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the machine image. One of the following values: INVALID, CREATING, READY, DELETING, and UPLOADING.
+     * Output only. [Output Only] The status of the machine image. One of the following values:INVALID, CREATING, READY,DELETING, and UPLOADING.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -5366,7 +5839,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the machine image. One of the following values: INVALID, CREATING, READY, DELETING, and UPLOADING.
+     * Output only. [Output Only] The status of the machine image. One of the following values:INVALID, CREATING, READY,DELETING, and UPLOADING.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -5390,7 +5863,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the machine image. One of the following values: INVALID, CREATING, READY, DELETING, and UPLOADING.
+     * Output only. [Output Only] The status of the machine image. One of the following values:INVALID, CREATING, READY,DELETING, and UPLOADING.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -5413,7 +5886,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the machine image. One of the following values: INVALID, CREATING, READY, DELETING, and UPLOADING.
+     * Output only. [Output Only] The status of the machine image. One of the following values:INVALID, CREATING, READY,DELETING, and UPLOADING.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -5432,7 +5905,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the machine image. One of the following values: INVALID, CREATING, READY, DELETING, and UPLOADING.
+     * Output only. [Output Only] The status of the machine image. One of the following values:INVALID, CREATING, READY,DELETING, and UPLOADING.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -5466,7 +5939,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The regional or multi-regional Cloud Storage bucket location where the machine image is stored.
+     * The regional or multi-regional Cloud Storage bucket location where themachine image is
+     * stored.
      * </pre>
      *
      * <code>repeated string storage_locations = 328005274;</code>
@@ -5482,7 +5956,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The regional or multi-regional Cloud Storage bucket location where the machine image is stored.
+     * The regional or multi-regional Cloud Storage bucket location where themachine image is
+     * stored.
      * </pre>
      *
      * <code>repeated string storage_locations = 328005274;</code>
@@ -5497,7 +5972,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The regional or multi-regional Cloud Storage bucket location where the machine image is stored.
+     * The regional or multi-regional Cloud Storage bucket location where themachine image is
+     * stored.
      * </pre>
      *
      * <code>repeated string storage_locations = 328005274;</code>
@@ -5513,7 +5989,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The regional or multi-regional Cloud Storage bucket location where the machine image is stored.
+     * The regional or multi-regional Cloud Storage bucket location where themachine image is
+     * stored.
      * </pre>
      *
      * <code>repeated string storage_locations = 328005274;</code>
@@ -5529,7 +6006,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The regional or multi-regional Cloud Storage bucket location where the machine image is stored.
+     * The regional or multi-regional Cloud Storage bucket location where themachine image is
+     * stored.
      * </pre>
      *
      * <code>repeated string storage_locations = 328005274;</code>
@@ -5553,7 +6031,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The regional or multi-regional Cloud Storage bucket location where the machine image is stored.
+     * The regional or multi-regional Cloud Storage bucket location where themachine image is
+     * stored.
      * </pre>
      *
      * <code>repeated string storage_locations = 328005274;</code>
@@ -5576,7 +6055,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The regional or multi-regional Cloud Storage bucket location where the machine image is stored.
+     * The regional or multi-regional Cloud Storage bucket location where themachine image is
+     * stored.
      * </pre>
      *
      * <code>repeated string storage_locations = 328005274;</code>
@@ -5596,7 +6076,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The regional or multi-regional Cloud Storage bucket location where the machine image is stored.
+     * The regional or multi-regional Cloud Storage bucket location where themachine image is
+     * stored.
      * </pre>
      *
      * <code>repeated string storage_locations = 328005274;</code>
@@ -5615,7 +6096,8 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The regional or multi-regional Cloud Storage bucket location where the machine image is stored.
+     * The regional or multi-regional Cloud Storage bucket location where themachine image is
+     * stored.
      * </pre>
      *
      * <code>repeated string storage_locations = 328005274;</code>
@@ -5641,7 +6123,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Total size of the storage used by the machine image.
+     * Output only. [Output Only] Total size of the storage used by the machine image.
      * </pre>
      *
      * <code>optional int64 total_storage_bytes = 81855468;</code>
@@ -5657,7 +6139,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Total size of the storage used by the machine image.
+     * Output only. [Output Only] Total size of the storage used by the machine image.
      * </pre>
      *
      * <code>optional int64 total_storage_bytes = 81855468;</code>
@@ -5673,7 +6155,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Total size of the storage used by the machine image.
+     * Output only. [Output Only] Total size of the storage used by the machine image.
      * </pre>
      *
      * <code>optional int64 total_storage_bytes = 81855468;</code>
@@ -5693,7 +6175,7 @@ public final class MachineImage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Total size of the storage used by the machine image.
+     * Output only. [Output Only] Total size of the storage used by the machine image.
      * </pre>
      *
      * <code>optional int64 total_storage_bytes = 81855468;</code>

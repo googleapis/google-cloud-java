@@ -28,7 +28,8 @@ public interface ReservationsResizeRequestOrBuilder
    *
    *
    * <pre>
-   * Number of allocated resources can be resized with minimum = 1 and maximum = 1000.
+   * Number of allocated resources can be resized with minimum = 1 and
+   * maximum = 1000.
    * </pre>
    *
    * <code>optional int64 specific_sku_count = 13890720;</code>
@@ -41,7 +42,8 @@ public interface ReservationsResizeRequestOrBuilder
    *
    *
    * <pre>
-   * Number of allocated resources can be resized with minimum = 1 and maximum = 1000.
+   * Number of allocated resources can be resized with minimum = 1 and
+   * maximum = 1000.
    * </pre>
    *
    * <code>optional int64 specific_sku_count = 13890720;</code>

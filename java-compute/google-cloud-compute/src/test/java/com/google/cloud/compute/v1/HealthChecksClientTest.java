@@ -213,6 +213,7 @@ public class HealthChecksClientTest {
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
             .setGrpcHealthCheck(GRPCHealthCheck.newBuilder().build())
+            .setGrpcTlsHealthCheck(GRPCTLSHealthCheck.newBuilder().build())
             .setHealthyThreshold(-133658551)
             .setHttp2HealthCheck(HTTP2HealthCheck.newBuilder().build())
             .setHttpHealthCheck(HTTPHealthCheck.newBuilder().build())

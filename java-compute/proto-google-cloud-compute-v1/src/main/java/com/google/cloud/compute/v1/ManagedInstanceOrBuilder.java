@@ -28,7 +28,32 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+   * Output only. [Output Only] The current action that the managed instance group has
+   * scheduled for the instance. Possible values:
+   *
+   *    - NONE The instance is running, and the managed
+   *    instance group does not have any scheduled actions for this instance.
+   *    - CREATING The managed instance group is creating this
+   *    instance. If the group fails to create this instance, it will try again
+   *    until it is successful.
+   *    - CREATING_WITHOUT_RETRIES The managed instance group
+   *    is attempting to create this instance only once. If the group fails
+   *    to create this instance, it does not try again and the group'stargetSize value is decreased instead.
+   *    - RECREATING The managed instance group is recreating
+   *    this instance.
+   *    - DELETING The managed instance group is permanently
+   *    deleting this instance.
+   *    - ABANDONING The managed instance group is abandoning
+   *    this instance. The instance will be removed from the instance group
+   *    and from any target pools that are associated with this group.
+   *    - RESTARTING The managed instance group is restarting
+   *    the instance.
+   *    - REFRESHING The managed instance group is applying
+   *    configuration changes to the instance without stopping it. For example,
+   *    the group can update the target pool list for an instance without
+   *    stopping that instance.
+   *    - VERIFYING The managed instance group has created the
+   *    instance and it is in the process of being verified.
    * Check the CurrentAction enum for the list of possible values.
    * </pre>
    *
@@ -42,7 +67,32 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+   * Output only. [Output Only] The current action that the managed instance group has
+   * scheduled for the instance. Possible values:
+   *
+   *    - NONE The instance is running, and the managed
+   *    instance group does not have any scheduled actions for this instance.
+   *    - CREATING The managed instance group is creating this
+   *    instance. If the group fails to create this instance, it will try again
+   *    until it is successful.
+   *    - CREATING_WITHOUT_RETRIES The managed instance group
+   *    is attempting to create this instance only once. If the group fails
+   *    to create this instance, it does not try again and the group'stargetSize value is decreased instead.
+   *    - RECREATING The managed instance group is recreating
+   *    this instance.
+   *    - DELETING The managed instance group is permanently
+   *    deleting this instance.
+   *    - ABANDONING The managed instance group is abandoning
+   *    this instance. The instance will be removed from the instance group
+   *    and from any target pools that are associated with this group.
+   *    - RESTARTING The managed instance group is restarting
+   *    the instance.
+   *    - REFRESHING The managed instance group is applying
+   *    configuration changes to the instance without stopping it. For example,
+   *    the group can update the target pool list for an instance without
+   *    stopping that instance.
+   *    - VERIFYING The managed instance group has created the
+   *    instance and it is in the process of being verified.
    * Check the CurrentAction enum for the list of possible values.
    * </pre>
    *
@@ -56,7 +106,32 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+   * Output only. [Output Only] The current action that the managed instance group has
+   * scheduled for the instance. Possible values:
+   *
+   *    - NONE The instance is running, and the managed
+   *    instance group does not have any scheduled actions for this instance.
+   *    - CREATING The managed instance group is creating this
+   *    instance. If the group fails to create this instance, it will try again
+   *    until it is successful.
+   *    - CREATING_WITHOUT_RETRIES The managed instance group
+   *    is attempting to create this instance only once. If the group fails
+   *    to create this instance, it does not try again and the group'stargetSize value is decreased instead.
+   *    - RECREATING The managed instance group is recreating
+   *    this instance.
+   *    - DELETING The managed instance group is permanently
+   *    deleting this instance.
+   *    - ABANDONING The managed instance group is abandoning
+   *    this instance. The instance will be removed from the instance group
+   *    and from any target pools that are associated with this group.
+   *    - RESTARTING The managed instance group is restarting
+   *    the instance.
+   *    - REFRESHING The managed instance group is applying
+   *    configuration changes to the instance without stopping it. For example,
+   *    the group can update the target pool list for an instance without
+   *    stopping that instance.
+   *    - VERIFYING The managed instance group has created the
+   *    instance and it is in the process of being verified.
    * Check the CurrentAction enum for the list of possible values.
    * </pre>
    *
@@ -70,7 +145,8 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output only] The unique identifier for this resource. This field is empty when instance does not exist.
+   * Output only. [Output only] The unique identifier for this resource. This field is empty
+   * when instance does not exist.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -83,7 +159,8 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output only] The unique identifier for this resource. This field is empty when instance does not exist.
+   * Output only. [Output only] The unique identifier for this resource. This field is empty
+   * when instance does not exist.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -96,7 +173,8 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the instance. The URL can exist even if the instance has not yet been created.
+   * Output only. [Output Only] The URL of the instance. The URL can exist even if the
+   * instance has not yet been created.
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -109,7 +187,8 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the instance. The URL can exist even if the instance has not yet been created.
+   * Output only. [Output Only] The URL of the instance. The URL can exist even if the
+   * instance has not yet been created.
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -122,7 +201,8 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the instance. The URL can exist even if the instance has not yet been created.
+   * Output only. [Output Only] The URL of the instance. The URL can exist even if the
+   * instance has not yet been created.
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -135,7 +215,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Health state of the instance per health-check.
+   * Output only. [Output Only] Health state of the instance per health-check.
    * </pre>
    *
    * <code>
@@ -148,7 +228,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Health state of the instance per health-check.
+   * Output only. [Output Only] Health state of the instance per health-check.
    * </pre>
    *
    * <code>
@@ -161,7 +241,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Health state of the instance per health-check.
+   * Output only. [Output Only] Health state of the instance per health-check.
    * </pre>
    *
    * <code>
@@ -174,7 +254,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Health state of the instance per health-check.
+   * Output only. [Output Only] Health state of the instance per health-check.
    * </pre>
    *
    * <code>
@@ -188,7 +268,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Health state of the instance per health-check.
+   * Output only. [Output Only] Health state of the instance per health-check.
    * </pre>
    *
    * <code>
@@ -202,7 +282,8 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+   * Output only. [Output Only] The status of the instance. This field is empty when
+   * the instance does not exist.
    * Check the InstanceStatus enum for the list of possible values.
    * </pre>
    *
@@ -216,7 +297,8 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+   * Output only. [Output Only] The status of the instance. This field is empty when
+   * the instance does not exist.
    * Check the InstanceStatus enum for the list of possible values.
    * </pre>
    *
@@ -230,7 +312,8 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+   * Output only. [Output Only] The status of the instance. This field is empty when
+   * the instance does not exist.
    * Check the InstanceStatus enum for the list of possible values.
    * </pre>
    *
@@ -244,7 +327,8 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Information about the last attempt to create or delete the instance.
+   * Output only. [Output Only] Information about the last attempt to create or delete
+   * the instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;
@@ -258,7 +342,8 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Information about the last attempt to create or delete the instance.
+   * Output only. [Output Only] Information about the last attempt to create or delete
+   * the instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;
@@ -272,7 +357,8 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Information about the last attempt to create or delete the instance.
+   * Output only. [Output Only] Information about the last attempt to create or delete
+   * the instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;
@@ -284,7 +370,8 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of the instance. The name always exists even if the instance has not yet been created.
+   * Output only. [Output Only] The name of the instance. The name always exists even if the
+   * instance has not yet been created.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -297,7 +384,8 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of the instance. The name always exists even if the instance has not yet been created.
+   * Output only. [Output Only] The name of the instance. The name always exists even if the
+   * instance has not yet been created.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -310,7 +398,8 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of the instance. The name always exists even if the instance has not yet been created.
+   * Output only. [Output Only] The name of the instance. The name always exists even if the
+   * instance has not yet been created.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -323,7 +412,8 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Preserved state applied from per-instance config for this instance.
+   * Output only. [Output Only] Preserved state applied from per-instance config
+   * for this instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.PreservedState preserved_state_from_config = 98661858;
@@ -337,7 +427,8 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Preserved state applied from per-instance config for this instance.
+   * Output only. [Output Only] Preserved state applied from per-instance config
+   * for this instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.PreservedState preserved_state_from_config = 98661858;
@@ -351,7 +442,8 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Preserved state applied from per-instance config for this instance.
+   * Output only. [Output Only] Preserved state applied from per-instance config
+   * for this instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.PreservedState preserved_state_from_config = 98661858;
@@ -363,7 +455,8 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Preserved state generated based on stateful policy for this instance.
+   * Output only. [Output Only] Preserved state generated based on stateful policy
+   * for this instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.PreservedState preserved_state_from_policy = 470783954;
@@ -377,7 +470,8 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Preserved state generated based on stateful policy for this instance.
+   * Output only. [Output Only] Preserved state generated based on stateful policy
+   * for this instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.PreservedState preserved_state_from_policy = 470783954;
@@ -391,7 +485,8 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Preserved state generated based on stateful policy for this instance.
+   * Output only. [Output Only] Preserved state generated based on stateful policy
+   * for this instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.PreservedState preserved_state_from_policy = 470783954;
@@ -403,7 +498,8 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
+   * Output only. [Output Only] Instance properties selected for this instance resulting from
+   * InstanceFlexibilityPolicy.
    * </pre>
    *
    * <code>
@@ -418,7 +514,8 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
+   * Output only. [Output Only] Instance properties selected for this instance resulting from
+   * InstanceFlexibilityPolicy.
    * </pre>
    *
    * <code>
@@ -434,7 +531,8 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
+   * Output only. [Output Only] Instance properties selected for this instance resulting from
+   * InstanceFlexibilityPolicy.
    * </pre>
    *
    * <code>
@@ -448,7 +546,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Intended version of this instance.
+   * Output only. [Output Only] Intended version of this instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
@@ -461,7 +559,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Intended version of this instance.
+   * Output only. [Output Only] Intended version of this instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
@@ -474,7 +572,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Intended version of this instance.
+   * Output only. [Output Only] Intended version of this instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>

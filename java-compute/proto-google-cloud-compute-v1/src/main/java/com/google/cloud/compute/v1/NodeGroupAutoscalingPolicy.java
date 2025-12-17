@@ -67,7 +67,9 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
+   * The autoscaling mode. Set to one of: ON, OFF,
+   * or ONLY_SCALE_OUT. For more information, see
+   * Autoscaler modes.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.NodeGroupAutoscalingPolicy.Mode}
@@ -262,7 +264,8 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The maximum number of nodes that the group should have. Must be set if autoscaling is enabled. Maximum value allowed is 100.
+   * The maximum number of nodes that the group should have. Must be set if
+   * autoscaling is enabled. Maximum value allowed is 100.
    * </pre>
    *
    * <code>optional int32 max_nodes = 297762838;</code>
@@ -278,7 +281,8 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The maximum number of nodes that the group should have. Must be set if autoscaling is enabled. Maximum value allowed is 100.
+   * The maximum number of nodes that the group should have. Must be set if
+   * autoscaling is enabled. Maximum value allowed is 100.
    * </pre>
    *
    * <code>optional int32 max_nodes = 297762838;</code>
@@ -334,7 +338,9 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
+   * The autoscaling mode. Set to one of: ON, OFF,
+   * or ONLY_SCALE_OUT. For more information, see
+   * Autoscaler modes.
    * Check the Mode enum for the list of possible values.
    * </pre>
    *
@@ -351,7 +357,9 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
+   * The autoscaling mode. Set to one of: ON, OFF,
+   * or ONLY_SCALE_OUT. For more information, see
+   * Autoscaler modes.
    * Check the Mode enum for the list of possible values.
    * </pre>
    *
@@ -376,7 +384,9 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
+   * The autoscaling mode. Set to one of: ON, OFF,
+   * or ONLY_SCALE_OUT. For more information, see
+   * Autoscaler modes.
    * Check the Mode enum for the list of possible values.
    * </pre>
    *
@@ -810,7 +820,8 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The maximum number of nodes that the group should have. Must be set if autoscaling is enabled. Maximum value allowed is 100.
+     * The maximum number of nodes that the group should have. Must be set if
+     * autoscaling is enabled. Maximum value allowed is 100.
      * </pre>
      *
      * <code>optional int32 max_nodes = 297762838;</code>
@@ -826,7 +837,8 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The maximum number of nodes that the group should have. Must be set if autoscaling is enabled. Maximum value allowed is 100.
+     * The maximum number of nodes that the group should have. Must be set if
+     * autoscaling is enabled. Maximum value allowed is 100.
      * </pre>
      *
      * <code>optional int32 max_nodes = 297762838;</code>
@@ -842,7 +854,8 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The maximum number of nodes that the group should have. Must be set if autoscaling is enabled. Maximum value allowed is 100.
+     * The maximum number of nodes that the group should have. Must be set if
+     * autoscaling is enabled. Maximum value allowed is 100.
      * </pre>
      *
      * <code>optional int32 max_nodes = 297762838;</code>
@@ -862,7 +875,8 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The maximum number of nodes that the group should have. Must be set if autoscaling is enabled. Maximum value allowed is 100.
+     * The maximum number of nodes that the group should have. Must be set if
+     * autoscaling is enabled. Maximum value allowed is 100.
      * </pre>
      *
      * <code>optional int32 max_nodes = 297762838;</code>
@@ -954,7 +968,9 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
+     * The autoscaling mode. Set to one of: ON, OFF,
+     * or ONLY_SCALE_OUT. For more information, see
+     * Autoscaler modes.
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -970,7 +986,9 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
+     * The autoscaling mode. Set to one of: ON, OFF,
+     * or ONLY_SCALE_OUT. For more information, see
+     * Autoscaler modes.
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -994,7 +1012,9 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
+     * The autoscaling mode. Set to one of: ON, OFF,
+     * or ONLY_SCALE_OUT. For more information, see
+     * Autoscaler modes.
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -1018,7 +1038,9 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
+     * The autoscaling mode. Set to one of: ON, OFF,
+     * or ONLY_SCALE_OUT. For more information, see
+     * Autoscaler modes.
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -1041,7 +1063,9 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
+     * The autoscaling mode. Set to one of: ON, OFF,
+     * or ONLY_SCALE_OUT. For more information, see
+     * Autoscaler modes.
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -1060,7 +1084,9 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
+     * The autoscaling mode. Set to one of: ON, OFF,
+     * or ONLY_SCALE_OUT. For more information, see
+     * Autoscaler modes.
      * Check the Mode enum for the list of possible values.
      * </pre>
      *

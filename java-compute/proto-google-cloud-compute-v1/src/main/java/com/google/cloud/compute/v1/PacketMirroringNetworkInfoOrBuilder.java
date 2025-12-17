@@ -28,7 +28,7 @@ public interface PacketMirroringNetworkInfoOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unique identifier for the network; defined by the server.
+   * Output only. [Output Only] Unique identifier for the network; defined by the server.
    * </pre>
    *
    * <code>optional string canonical_url = 512294820;</code>
@@ -41,7 +41,7 @@ public interface PacketMirroringNetworkInfoOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unique identifier for the network; defined by the server.
+   * Output only. [Output Only] Unique identifier for the network; defined by the server.
    * </pre>
    *
    * <code>optional string canonical_url = 512294820;</code>
@@ -54,7 +54,7 @@ public interface PacketMirroringNetworkInfoOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unique identifier for the network; defined by the server.
+   * Output only. [Output Only] Unique identifier for the network; defined by the server.
    * </pre>
    *
    * <code>optional string canonical_url = 512294820;</code>

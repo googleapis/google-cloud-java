@@ -69,7 +69,8 @@ public final class SnapshotSettings extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Policy of which storage location is going to be resolved, and additional data that particularizes how the policy is going to be carried out.
+   * Policy of which storage location is going to be resolved, and additional
+   * data that particularizes how the policy is going to be carried out.
    * </pre>
    *
    * <code>
@@ -87,7 +88,8 @@ public final class SnapshotSettings extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Policy of which storage location is going to be resolved, and additional data that particularizes how the policy is going to be carried out.
+   * Policy of which storage location is going to be resolved, and additional
+   * data that particularizes how the policy is going to be carried out.
    * </pre>
    *
    * <code>
@@ -107,7 +109,8 @@ public final class SnapshotSettings extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Policy of which storage location is going to be resolved, and additional data that particularizes how the policy is going to be carried out.
+   * Policy of which storage location is going to be resolved, and additional
+   * data that particularizes how the policy is going to be carried out.
    * </pre>
    *
    * <code>
@@ -495,7 +498,8 @@ public final class SnapshotSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Policy of which storage location is going to be resolved, and additional data that particularizes how the policy is going to be carried out.
+     * Policy of which storage location is going to be resolved, and additional
+     * data that particularizes how the policy is going to be carried out.
      * </pre>
      *
      * <code>
@@ -512,7 +516,8 @@ public final class SnapshotSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Policy of which storage location is going to be resolved, and additional data that particularizes how the policy is going to be carried out.
+     * Policy of which storage location is going to be resolved, and additional
+     * data that particularizes how the policy is going to be carried out.
      * </pre>
      *
      * <code>
@@ -537,7 +542,8 @@ public final class SnapshotSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Policy of which storage location is going to be resolved, and additional data that particularizes how the policy is going to be carried out.
+     * Policy of which storage location is going to be resolved, and additional
+     * data that particularizes how the policy is going to be carried out.
      * </pre>
      *
      * <code>
@@ -563,7 +569,8 @@ public final class SnapshotSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Policy of which storage location is going to be resolved, and additional data that particularizes how the policy is going to be carried out.
+     * Policy of which storage location is going to be resolved, and additional
+     * data that particularizes how the policy is going to be carried out.
      * </pre>
      *
      * <code>
@@ -587,7 +594,8 @@ public final class SnapshotSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Policy of which storage location is going to be resolved, and additional data that particularizes how the policy is going to be carried out.
+     * Policy of which storage location is going to be resolved, and additional
+     * data that particularizes how the policy is going to be carried out.
      * </pre>
      *
      * <code>
@@ -620,7 +628,8 @@ public final class SnapshotSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Policy of which storage location is going to be resolved, and additional data that particularizes how the policy is going to be carried out.
+     * Policy of which storage location is going to be resolved, and additional
+     * data that particularizes how the policy is going to be carried out.
      * </pre>
      *
      * <code>
@@ -642,7 +651,8 @@ public final class SnapshotSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Policy of which storage location is going to be resolved, and additional data that particularizes how the policy is going to be carried out.
+     * Policy of which storage location is going to be resolved, and additional
+     * data that particularizes how the policy is going to be carried out.
      * </pre>
      *
      * <code>
@@ -660,7 +670,8 @@ public final class SnapshotSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Policy of which storage location is going to be resolved, and additional data that particularizes how the policy is going to be carried out.
+     * Policy of which storage location is going to be resolved, and additional
+     * data that particularizes how the policy is going to be carried out.
      * </pre>
      *
      * <code>
@@ -683,7 +694,8 @@ public final class SnapshotSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Policy of which storage location is going to be resolved, and additional data that particularizes how the policy is going to be carried out.
+     * Policy of which storage location is going to be resolved, and additional
+     * data that particularizes how the policy is going to be carried out.
      * </pre>
      *
      * <code>

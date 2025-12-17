@@ -23,7 +23,9 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * A routing configuration attached to a network resource. The message includes the list of routers associated with the network, and a flag indicating the type of routing behavior to enforce network-wide.
+ * A routing configuration attached to a network resource. The message
+ * includes the list of routers associated with the network, and a flag
+ * indicating the type of routing behavior to enforce network-wide.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.NetworkRoutingConfig}
@@ -71,7 +73,9 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The BGP best path selection algorithm to be employed within this network for dynamic routes learned by Cloud Routers. Can be LEGACY (default) or STANDARD.
+   * The BGP best path selection algorithm to be employed within this network
+   * for dynamic routes learned by Cloud Routers. Can be LEGACY
+   * (default) or STANDARD.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.NetworkRoutingConfig.BgpBestPathSelectionMode}
@@ -201,7 +205,9 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Allows to define a preferred approach for handling inter-region cost in the selection process when using the STANDARD BGP best path selection algorithm. Can be DEFAULT or ADD_COST_TO_MED.
+   * Allows to define a preferred approach for handling inter-region cost in
+   * the selection process when using the STANDARD BGP best path
+   * selection algorithm. Can be DEFAULT orADD_COST_TO_MED.
    * Additional supported values which may be not listed in the enum directly due to technical reasons:
    * ADD_COST_TO_MED
    * DEFAULT
@@ -334,7 +340,8 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Effective value of the bgp_inter_region_cost field.
+   * Output only. [Output Only] Effective value of the bgp_inter_region_cost
+   * field.
    * Additional supported values which may be not listed in the enum directly due to technical reasons:
    * ADD_COST_TO_MED
    * DEFAULT
@@ -453,7 +460,10 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The network-wide routing mode to use. If set to REGIONAL, this network's Cloud Routers will only advertise routes with subnets of this network in the same region as the router. If set to GLOBAL, this network's Cloud Routers will advertise routes with all subnets of this network, across regions.
+   * The network-wide routing mode to use. If set to REGIONAL,
+   * this network's Cloud Routers will only advertise routes with subnets
+   * of this network in the same region as the router. If set toGLOBAL, this network's Cloud Routers will advertise
+   * routes with all subnets of this network, across regions.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.NetworkRoutingConfig.RoutingMode}
@@ -584,7 +594,9 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Enable comparison of Multi-Exit Discriminators (MED) across routes with different neighbor ASNs when using the STANDARD BGP best path selection algorithm.
+   * Enable comparison of Multi-Exit Discriminators (MED) across routes with
+   * different neighbor ASNs when using the STANDARD BGP best path selection
+   * algorithm.
    * </pre>
    *
    * <code>optional bool bgp_always_compare_med = 213102902;</code>
@@ -600,7 +612,9 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Enable comparison of Multi-Exit Discriminators (MED) across routes with different neighbor ASNs when using the STANDARD BGP best path selection algorithm.
+   * Enable comparison of Multi-Exit Discriminators (MED) across routes with
+   * different neighbor ASNs when using the STANDARD BGP best path selection
+   * algorithm.
    * </pre>
    *
    * <code>optional bool bgp_always_compare_med = 213102902;</code>
@@ -621,7 +635,9 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The BGP best path selection algorithm to be employed within this network for dynamic routes learned by Cloud Routers. Can be LEGACY (default) or STANDARD.
+   * The BGP best path selection algorithm to be employed within this network
+   * for dynamic routes learned by Cloud Routers. Can be LEGACY
+   * (default) or STANDARD.
    * Check the BgpBestPathSelectionMode enum for the list of possible values.
    * </pre>
    *
@@ -638,7 +654,9 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The BGP best path selection algorithm to be employed within this network for dynamic routes learned by Cloud Routers. Can be LEGACY (default) or STANDARD.
+   * The BGP best path selection algorithm to be employed within this network
+   * for dynamic routes learned by Cloud Routers. Can be LEGACY
+   * (default) or STANDARD.
    * Check the BgpBestPathSelectionMode enum for the list of possible values.
    * </pre>
    *
@@ -663,7 +681,9 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The BGP best path selection algorithm to be employed within this network for dynamic routes learned by Cloud Routers. Can be LEGACY (default) or STANDARD.
+   * The BGP best path selection algorithm to be employed within this network
+   * for dynamic routes learned by Cloud Routers. Can be LEGACY
+   * (default) or STANDARD.
    * Check the BgpBestPathSelectionMode enum for the list of possible values.
    * </pre>
    *
@@ -693,7 +713,9 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Allows to define a preferred approach for handling inter-region cost in the selection process when using the STANDARD BGP best path selection algorithm. Can be DEFAULT or ADD_COST_TO_MED.
+   * Allows to define a preferred approach for handling inter-region cost in
+   * the selection process when using the STANDARD BGP best path
+   * selection algorithm. Can be DEFAULT orADD_COST_TO_MED.
    * Check the BgpInterRegionCost enum for the list of possible values.
    * </pre>
    *
@@ -710,7 +732,9 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Allows to define a preferred approach for handling inter-region cost in the selection process when using the STANDARD BGP best path selection algorithm. Can be DEFAULT or ADD_COST_TO_MED.
+   * Allows to define a preferred approach for handling inter-region cost in
+   * the selection process when using the STANDARD BGP best path
+   * selection algorithm. Can be DEFAULT orADD_COST_TO_MED.
    * Check the BgpInterRegionCost enum for the list of possible values.
    * </pre>
    *
@@ -735,7 +759,9 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Allows to define a preferred approach for handling inter-region cost in the selection process when using the STANDARD BGP best path selection algorithm. Can be DEFAULT or ADD_COST_TO_MED.
+   * Allows to define a preferred approach for handling inter-region cost in
+   * the selection process when using the STANDARD BGP best path
+   * selection algorithm. Can be DEFAULT orADD_COST_TO_MED.
    * Check the BgpInterRegionCost enum for the list of possible values.
    * </pre>
    *
@@ -763,7 +789,8 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Effective value of the bgp_always_compare_med field.
+   * Output only. [Output Only] Effective value of the bgp_always_compare_med
+   * field.
    * </pre>
    *
    * <code>optional bool effective_bgp_always_compare_med = 214661838;</code>
@@ -779,7 +806,8 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Effective value of the bgp_always_compare_med field.
+   * Output only. [Output Only] Effective value of the bgp_always_compare_med
+   * field.
    * </pre>
    *
    * <code>optional bool effective_bgp_always_compare_med = 214661838;</code>
@@ -800,7 +828,8 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Effective value of the bgp_inter_region_cost field.
+   * Output only. [Output Only] Effective value of the bgp_inter_region_cost
+   * field.
    * Check the EffectiveBgpInterRegionCost enum for the list of possible values.
    * </pre>
    *
@@ -817,7 +846,8 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Effective value of the bgp_inter_region_cost field.
+   * Output only. [Output Only] Effective value of the bgp_inter_region_cost
+   * field.
    * Check the EffectiveBgpInterRegionCost enum for the list of possible values.
    * </pre>
    *
@@ -842,7 +872,8 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Effective value of the bgp_inter_region_cost field.
+   * Output only. [Output Only] Effective value of the bgp_inter_region_cost
+   * field.
    * Check the EffectiveBgpInterRegionCost enum for the list of possible values.
    * </pre>
    *
@@ -872,7 +903,10 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The network-wide routing mode to use. If set to REGIONAL, this network's Cloud Routers will only advertise routes with subnets of this network in the same region as the router. If set to GLOBAL, this network's Cloud Routers will advertise routes with all subnets of this network, across regions.
+   * The network-wide routing mode to use. If set to REGIONAL,
+   * this network's Cloud Routers will only advertise routes with subnets
+   * of this network in the same region as the router. If set toGLOBAL, this network's Cloud Routers will advertise
+   * routes with all subnets of this network, across regions.
    * Check the RoutingMode enum for the list of possible values.
    * </pre>
    *
@@ -889,7 +923,10 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The network-wide routing mode to use. If set to REGIONAL, this network's Cloud Routers will only advertise routes with subnets of this network in the same region as the router. If set to GLOBAL, this network's Cloud Routers will advertise routes with all subnets of this network, across regions.
+   * The network-wide routing mode to use. If set to REGIONAL,
+   * this network's Cloud Routers will only advertise routes with subnets
+   * of this network in the same region as the router. If set toGLOBAL, this network's Cloud Routers will advertise
+   * routes with all subnets of this network, across regions.
    * Check the RoutingMode enum for the list of possible values.
    * </pre>
    *
@@ -914,7 +951,10 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The network-wide routing mode to use. If set to REGIONAL, this network's Cloud Routers will only advertise routes with subnets of this network in the same region as the router. If set to GLOBAL, this network's Cloud Routers will advertise routes with all subnets of this network, across regions.
+   * The network-wide routing mode to use. If set to REGIONAL,
+   * this network's Cloud Routers will only advertise routes with subnets
+   * of this network in the same region as the router. If set toGLOBAL, this network's Cloud Routers will advertise
+   * routes with all subnets of this network, across regions.
    * Check the RoutingMode enum for the list of possible values.
    * </pre>
    *
@@ -1187,7 +1227,9 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * A routing configuration attached to a network resource. The message includes the list of routers associated with the network, and a flag indicating the type of routing behavior to enforce network-wide.
+   * A routing configuration attached to a network resource. The message
+   * includes the list of routers associated with the network, and a flag
+   * indicating the type of routing behavior to enforce network-wide.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.NetworkRoutingConfig}
@@ -1451,7 +1493,9 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Enable comparison of Multi-Exit Discriminators (MED) across routes with different neighbor ASNs when using the STANDARD BGP best path selection algorithm.
+     * Enable comparison of Multi-Exit Discriminators (MED) across routes with
+     * different neighbor ASNs when using the STANDARD BGP best path selection
+     * algorithm.
      * </pre>
      *
      * <code>optional bool bgp_always_compare_med = 213102902;</code>
@@ -1467,7 +1511,9 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Enable comparison of Multi-Exit Discriminators (MED) across routes with different neighbor ASNs when using the STANDARD BGP best path selection algorithm.
+     * Enable comparison of Multi-Exit Discriminators (MED) across routes with
+     * different neighbor ASNs when using the STANDARD BGP best path selection
+     * algorithm.
      * </pre>
      *
      * <code>optional bool bgp_always_compare_med = 213102902;</code>
@@ -1483,7 +1529,9 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Enable comparison of Multi-Exit Discriminators (MED) across routes with different neighbor ASNs when using the STANDARD BGP best path selection algorithm.
+     * Enable comparison of Multi-Exit Discriminators (MED) across routes with
+     * different neighbor ASNs when using the STANDARD BGP best path selection
+     * algorithm.
      * </pre>
      *
      * <code>optional bool bgp_always_compare_med = 213102902;</code>
@@ -1503,7 +1551,9 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Enable comparison of Multi-Exit Discriminators (MED) across routes with different neighbor ASNs when using the STANDARD BGP best path selection algorithm.
+     * Enable comparison of Multi-Exit Discriminators (MED) across routes with
+     * different neighbor ASNs when using the STANDARD BGP best path selection
+     * algorithm.
      * </pre>
      *
      * <code>optional bool bgp_always_compare_med = 213102902;</code>
@@ -1523,7 +1573,9 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The BGP best path selection algorithm to be employed within this network for dynamic routes learned by Cloud Routers. Can be LEGACY (default) or STANDARD.
+     * The BGP best path selection algorithm to be employed within this network
+     * for dynamic routes learned by Cloud Routers. Can be LEGACY
+     * (default) or STANDARD.
      * Check the BgpBestPathSelectionMode enum for the list of possible values.
      * </pre>
      *
@@ -1539,7 +1591,9 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The BGP best path selection algorithm to be employed within this network for dynamic routes learned by Cloud Routers. Can be LEGACY (default) or STANDARD.
+     * The BGP best path selection algorithm to be employed within this network
+     * for dynamic routes learned by Cloud Routers. Can be LEGACY
+     * (default) or STANDARD.
      * Check the BgpBestPathSelectionMode enum for the list of possible values.
      * </pre>
      *
@@ -1563,7 +1617,9 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The BGP best path selection algorithm to be employed within this network for dynamic routes learned by Cloud Routers. Can be LEGACY (default) or STANDARD.
+     * The BGP best path selection algorithm to be employed within this network
+     * for dynamic routes learned by Cloud Routers. Can be LEGACY
+     * (default) or STANDARD.
      * Check the BgpBestPathSelectionMode enum for the list of possible values.
      * </pre>
      *
@@ -1587,7 +1643,9 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The BGP best path selection algorithm to be employed within this network for dynamic routes learned by Cloud Routers. Can be LEGACY (default) or STANDARD.
+     * The BGP best path selection algorithm to be employed within this network
+     * for dynamic routes learned by Cloud Routers. Can be LEGACY
+     * (default) or STANDARD.
      * Check the BgpBestPathSelectionMode enum for the list of possible values.
      * </pre>
      *
@@ -1610,7 +1668,9 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The BGP best path selection algorithm to be employed within this network for dynamic routes learned by Cloud Routers. Can be LEGACY (default) or STANDARD.
+     * The BGP best path selection algorithm to be employed within this network
+     * for dynamic routes learned by Cloud Routers. Can be LEGACY
+     * (default) or STANDARD.
      * Check the BgpBestPathSelectionMode enum for the list of possible values.
      * </pre>
      *
@@ -1629,7 +1689,9 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The BGP best path selection algorithm to be employed within this network for dynamic routes learned by Cloud Routers. Can be LEGACY (default) or STANDARD.
+     * The BGP best path selection algorithm to be employed within this network
+     * for dynamic routes learned by Cloud Routers. Can be LEGACY
+     * (default) or STANDARD.
      * Check the BgpBestPathSelectionMode enum for the list of possible values.
      * </pre>
      *
@@ -1655,7 +1717,9 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Allows to define a preferred approach for handling inter-region cost in the selection process when using the STANDARD BGP best path selection algorithm. Can be DEFAULT or ADD_COST_TO_MED.
+     * Allows to define a preferred approach for handling inter-region cost in
+     * the selection process when using the STANDARD BGP best path
+     * selection algorithm. Can be DEFAULT orADD_COST_TO_MED.
      * Check the BgpInterRegionCost enum for the list of possible values.
      * </pre>
      *
@@ -1671,7 +1735,9 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Allows to define a preferred approach for handling inter-region cost in the selection process when using the STANDARD BGP best path selection algorithm. Can be DEFAULT or ADD_COST_TO_MED.
+     * Allows to define a preferred approach for handling inter-region cost in
+     * the selection process when using the STANDARD BGP best path
+     * selection algorithm. Can be DEFAULT orADD_COST_TO_MED.
      * Check the BgpInterRegionCost enum for the list of possible values.
      * </pre>
      *
@@ -1695,7 +1761,9 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Allows to define a preferred approach for handling inter-region cost in the selection process when using the STANDARD BGP best path selection algorithm. Can be DEFAULT or ADD_COST_TO_MED.
+     * Allows to define a preferred approach for handling inter-region cost in
+     * the selection process when using the STANDARD BGP best path
+     * selection algorithm. Can be DEFAULT orADD_COST_TO_MED.
      * Check the BgpInterRegionCost enum for the list of possible values.
      * </pre>
      *
@@ -1719,7 +1787,9 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Allows to define a preferred approach for handling inter-region cost in the selection process when using the STANDARD BGP best path selection algorithm. Can be DEFAULT or ADD_COST_TO_MED.
+     * Allows to define a preferred approach for handling inter-region cost in
+     * the selection process when using the STANDARD BGP best path
+     * selection algorithm. Can be DEFAULT orADD_COST_TO_MED.
      * Check the BgpInterRegionCost enum for the list of possible values.
      * </pre>
      *
@@ -1742,7 +1812,9 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Allows to define a preferred approach for handling inter-region cost in the selection process when using the STANDARD BGP best path selection algorithm. Can be DEFAULT or ADD_COST_TO_MED.
+     * Allows to define a preferred approach for handling inter-region cost in
+     * the selection process when using the STANDARD BGP best path
+     * selection algorithm. Can be DEFAULT orADD_COST_TO_MED.
      * Check the BgpInterRegionCost enum for the list of possible values.
      * </pre>
      *
@@ -1761,7 +1833,9 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Allows to define a preferred approach for handling inter-region cost in the selection process when using the STANDARD BGP best path selection algorithm. Can be DEFAULT or ADD_COST_TO_MED.
+     * Allows to define a preferred approach for handling inter-region cost in
+     * the selection process when using the STANDARD BGP best path
+     * selection algorithm. Can be DEFAULT orADD_COST_TO_MED.
      * Check the BgpInterRegionCost enum for the list of possible values.
      * </pre>
      *
@@ -1787,7 +1861,8 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Effective value of the bgp_always_compare_med field.
+     * Output only. [Output Only] Effective value of the bgp_always_compare_med
+     * field.
      * </pre>
      *
      * <code>optional bool effective_bgp_always_compare_med = 214661838;</code>
@@ -1803,7 +1878,8 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Effective value of the bgp_always_compare_med field.
+     * Output only. [Output Only] Effective value of the bgp_always_compare_med
+     * field.
      * </pre>
      *
      * <code>optional bool effective_bgp_always_compare_med = 214661838;</code>
@@ -1819,7 +1895,8 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Effective value of the bgp_always_compare_med field.
+     * Output only. [Output Only] Effective value of the bgp_always_compare_med
+     * field.
      * </pre>
      *
      * <code>optional bool effective_bgp_always_compare_med = 214661838;</code>
@@ -1839,7 +1916,8 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Effective value of the bgp_always_compare_med field.
+     * Output only. [Output Only] Effective value of the bgp_always_compare_med
+     * field.
      * </pre>
      *
      * <code>optional bool effective_bgp_always_compare_med = 214661838;</code>
@@ -1859,7 +1937,8 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Effective value of the bgp_inter_region_cost field.
+     * Output only. [Output Only] Effective value of the bgp_inter_region_cost
+     * field.
      * Check the EffectiveBgpInterRegionCost enum for the list of possible values.
      * </pre>
      *
@@ -1875,7 +1954,8 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Effective value of the bgp_inter_region_cost field.
+     * Output only. [Output Only] Effective value of the bgp_inter_region_cost
+     * field.
      * Check the EffectiveBgpInterRegionCost enum for the list of possible values.
      * </pre>
      *
@@ -1899,7 +1979,8 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Effective value of the bgp_inter_region_cost field.
+     * Output only. [Output Only] Effective value of the bgp_inter_region_cost
+     * field.
      * Check the EffectiveBgpInterRegionCost enum for the list of possible values.
      * </pre>
      *
@@ -1923,7 +2004,8 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Effective value of the bgp_inter_region_cost field.
+     * Output only. [Output Only] Effective value of the bgp_inter_region_cost
+     * field.
      * Check the EffectiveBgpInterRegionCost enum for the list of possible values.
      * </pre>
      *
@@ -1946,7 +2028,8 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Effective value of the bgp_inter_region_cost field.
+     * Output only. [Output Only] Effective value of the bgp_inter_region_cost
+     * field.
      * Check the EffectiveBgpInterRegionCost enum for the list of possible values.
      * </pre>
      *
@@ -1965,7 +2048,8 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Effective value of the bgp_inter_region_cost field.
+     * Output only. [Output Only] Effective value of the bgp_inter_region_cost
+     * field.
      * Check the EffectiveBgpInterRegionCost enum for the list of possible values.
      * </pre>
      *
@@ -1991,7 +2075,10 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The network-wide routing mode to use. If set to REGIONAL, this network's Cloud Routers will only advertise routes with subnets of this network in the same region as the router. If set to GLOBAL, this network's Cloud Routers will advertise routes with all subnets of this network, across regions.
+     * The network-wide routing mode to use. If set to REGIONAL,
+     * this network's Cloud Routers will only advertise routes with subnets
+     * of this network in the same region as the router. If set toGLOBAL, this network's Cloud Routers will advertise
+     * routes with all subnets of this network, across regions.
      * Check the RoutingMode enum for the list of possible values.
      * </pre>
      *
@@ -2007,7 +2094,10 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The network-wide routing mode to use. If set to REGIONAL, this network's Cloud Routers will only advertise routes with subnets of this network in the same region as the router. If set to GLOBAL, this network's Cloud Routers will advertise routes with all subnets of this network, across regions.
+     * The network-wide routing mode to use. If set to REGIONAL,
+     * this network's Cloud Routers will only advertise routes with subnets
+     * of this network in the same region as the router. If set toGLOBAL, this network's Cloud Routers will advertise
+     * routes with all subnets of this network, across regions.
      * Check the RoutingMode enum for the list of possible values.
      * </pre>
      *
@@ -2031,7 +2121,10 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The network-wide routing mode to use. If set to REGIONAL, this network's Cloud Routers will only advertise routes with subnets of this network in the same region as the router. If set to GLOBAL, this network's Cloud Routers will advertise routes with all subnets of this network, across regions.
+     * The network-wide routing mode to use. If set to REGIONAL,
+     * this network's Cloud Routers will only advertise routes with subnets
+     * of this network in the same region as the router. If set toGLOBAL, this network's Cloud Routers will advertise
+     * routes with all subnets of this network, across regions.
      * Check the RoutingMode enum for the list of possible values.
      * </pre>
      *
@@ -2055,7 +2148,10 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The network-wide routing mode to use. If set to REGIONAL, this network's Cloud Routers will only advertise routes with subnets of this network in the same region as the router. If set to GLOBAL, this network's Cloud Routers will advertise routes with all subnets of this network, across regions.
+     * The network-wide routing mode to use. If set to REGIONAL,
+     * this network's Cloud Routers will only advertise routes with subnets
+     * of this network in the same region as the router. If set toGLOBAL, this network's Cloud Routers will advertise
+     * routes with all subnets of this network, across regions.
      * Check the RoutingMode enum for the list of possible values.
      * </pre>
      *
@@ -2078,7 +2174,10 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The network-wide routing mode to use. If set to REGIONAL, this network's Cloud Routers will only advertise routes with subnets of this network in the same region as the router. If set to GLOBAL, this network's Cloud Routers will advertise routes with all subnets of this network, across regions.
+     * The network-wide routing mode to use. If set to REGIONAL,
+     * this network's Cloud Routers will only advertise routes with subnets
+     * of this network in the same region as the router. If set toGLOBAL, this network's Cloud Routers will advertise
+     * routes with all subnets of this network, across regions.
      * Check the RoutingMode enum for the list of possible values.
      * </pre>
      *
@@ -2097,7 +2196,10 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The network-wide routing mode to use. If set to REGIONAL, this network's Cloud Routers will only advertise routes with subnets of this network in the same region as the router. If set to GLOBAL, this network's Cloud Routers will advertise routes with all subnets of this network, across regions.
+     * The network-wide routing mode to use. If set to REGIONAL,
+     * this network's Cloud Routers will only advertise routes with subnets
+     * of this network in the same region as the router. If set toGLOBAL, this network's Cloud Routers will advertise
+     * routes with all subnets of this network, across regions.
      * Check the RoutingMode enum for the list of possible values.
      * </pre>
      *

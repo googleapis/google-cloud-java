@@ -43,6 +43,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     accessConfigs_ = java.util.Collections.emptyList();
     aliasIpRanges_ = java.util.Collections.emptyList();
     fingerprint_ = "";
+    igmpQuery_ = "";
     ipv6AccessConfigs_ = java.util.Collections.emptyList();
     ipv6AccessType_ = "";
     ipv6Address_ = "";
@@ -82,7 +83,171 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be accessed from the Internet. This field is always inherited from its subnetwork. Valid only if stackType is IPV4_IPV6.
+   * Indicate whether igmp query is enabled on the network interface
+   * or not. If enabled, also indicates the version of IGMP supported.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.NetworkInterface.IgmpQuery}
+   */
+  public enum IgmpQuery implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_IGMP_QUERY = 0;</code>
+     */
+    UNDEFINED_IGMP_QUERY(0),
+    /**
+     *
+     *
+     * <pre>
+     * The network interface has disabled IGMP query.
+     * </pre>
+     *
+     * <code>IGMP_QUERY_DISABLED = 28285169;</code>
+     */
+    IGMP_QUERY_DISABLED(28285169),
+    /**
+     *
+     *
+     * <pre>
+     * The network interface has enabled IGMP query - v2.
+     * </pre>
+     *
+     * <code>IGMP_QUERY_V2 = 333493457;</code>
+     */
+    IGMP_QUERY_V2(333493457),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_IGMP_QUERY = 0;</code>
+     */
+    public static final int UNDEFINED_IGMP_QUERY_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The network interface has disabled IGMP query.
+     * </pre>
+     *
+     * <code>IGMP_QUERY_DISABLED = 28285169;</code>
+     */
+    public static final int IGMP_QUERY_DISABLED_VALUE = 28285169;
+
+    /**
+     *
+     *
+     * <pre>
+     * The network interface has enabled IGMP query - v2.
+     * </pre>
+     *
+     * <code>IGMP_QUERY_V2 = 333493457;</code>
+     */
+    public static final int IGMP_QUERY_V2_VALUE = 333493457;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static IgmpQuery valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static IgmpQuery forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_IGMP_QUERY;
+        case 28285169:
+          return IGMP_QUERY_DISABLED;
+        case 333493457:
+          return IGMP_QUERY_V2;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<IgmpQuery> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<IgmpQuery> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<IgmpQuery>() {
+          public IgmpQuery findValueByNumber(int number) {
+            return IgmpQuery.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.NetworkInterface.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final IgmpQuery[] VALUES = values();
+
+    public static IgmpQuery valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private IgmpQuery(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.NetworkInterface.IgmpQuery)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be
+   * accessed from the Internet. This field is always inherited from its
+   * subnetwork.
+   *
+   * Valid only if stackType is IPV4_IPV6.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.NetworkInterface.Ipv6AccessType}
@@ -220,7 +385,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.NetworkInterface.getDescriptor().getEnumTypes().get(0);
+      return com.google.cloud.compute.v1.NetworkInterface.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final Ipv6AccessType[] VALUES = values();
@@ -248,7 +413,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+   * The type of vNIC to be used on this interface. This may be gVNIC or
+   * VirtioNet.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.NetworkInterface.NicType}
@@ -471,7 +637,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.NetworkInterface.getDescriptor().getEnumTypes().get(1);
+      return com.google.cloud.compute.v1.NetworkInterface.getDescriptor().getEnumTypes().get(2);
     }
 
     private static final NicType[] VALUES = values();
@@ -499,7 +665,11 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The stack type for this network interface. To assign only IPv4 addresses, use IPV4_ONLY. To assign both IPv4 and IPv6 addresses, use IPV4_IPV6. If not specified, IPV4_ONLY is used. This field can be both set at instance creation and update network interface operations.
+   * The stack type for this network interface. To assign only IPv4 addresses,
+   * use IPV4_ONLY. To assign both IPv4 and IPv6 addresses, useIPV4_IPV6. If not specified, IPV4_ONLY is used.
+   *
+   * This field can be both set at instance creation and update network
+   * interface operations.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.NetworkInterface.StackType}
@@ -660,7 +830,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.NetworkInterface.getDescriptor().getEnumTypes().get(2);
+      return com.google.cloud.compute.v1.NetworkInterface.getDescriptor().getEnumTypes().get(3);
     }
 
     private static final StackType[] VALUES = values();
@@ -694,7 +864,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * An array of configurations for this interface. Currently, only one access config, ONE_TO_ONE_NAT, is supported. If there are no accessConfigs specified, then this instance will have no external internet access.
+   * An array of configurations for this interface. Currently, only one access
+   * config, ONE_TO_ONE_NAT, is supported. If there are noaccessConfigs specified, then this instance will have
+   * no external internet access.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AccessConfig access_configs = 111058326;</code>
@@ -708,7 +880,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * An array of configurations for this interface. Currently, only one access config, ONE_TO_ONE_NAT, is supported. If there are no accessConfigs specified, then this instance will have no external internet access.
+   * An array of configurations for this interface. Currently, only one access
+   * config, ONE_TO_ONE_NAT, is supported. If there are noaccessConfigs specified, then this instance will have
+   * no external internet access.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AccessConfig access_configs = 111058326;</code>
@@ -723,7 +897,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * An array of configurations for this interface. Currently, only one access config, ONE_TO_ONE_NAT, is supported. If there are no accessConfigs specified, then this instance will have no external internet access.
+   * An array of configurations for this interface. Currently, only one access
+   * config, ONE_TO_ONE_NAT, is supported. If there are noaccessConfigs specified, then this instance will have
+   * no external internet access.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AccessConfig access_configs = 111058326;</code>
@@ -737,7 +913,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * An array of configurations for this interface. Currently, only one access config, ONE_TO_ONE_NAT, is supported. If there are no accessConfigs specified, then this instance will have no external internet access.
+   * An array of configurations for this interface. Currently, only one access
+   * config, ONE_TO_ONE_NAT, is supported. If there are noaccessConfigs specified, then this instance will have
+   * no external internet access.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AccessConfig access_configs = 111058326;</code>
@@ -751,7 +929,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * An array of configurations for this interface. Currently, only one access config, ONE_TO_ONE_NAT, is supported. If there are no accessConfigs specified, then this instance will have no external internet access.
+   * An array of configurations for this interface. Currently, only one access
+   * config, ONE_TO_ONE_NAT, is supported. If there are noaccessConfigs specified, then this instance will have
+   * no external internet access.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AccessConfig access_configs = 111058326;</code>
@@ -770,7 +950,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * An array of alias IP ranges for this network interface. You can only specify this field for network interfaces in VPC networks.
+   * An array of alias IP ranges for this network interface.
+   * You can only specify this field for network interfaces in VPC networks.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ip_ranges = 165085631;</code>
@@ -784,7 +965,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * An array of alias IP ranges for this network interface. You can only specify this field for network interfaces in VPC networks.
+   * An array of alias IP ranges for this network interface.
+   * You can only specify this field for network interfaces in VPC networks.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ip_ranges = 165085631;</code>
@@ -799,7 +981,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * An array of alias IP ranges for this network interface. You can only specify this field for network interfaces in VPC networks.
+   * An array of alias IP ranges for this network interface.
+   * You can only specify this field for network interfaces in VPC networks.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ip_ranges = 165085631;</code>
@@ -813,7 +996,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * An array of alias IP ranges for this network interface. You can only specify this field for network interfaces in VPC networks.
+   * An array of alias IP ranges for this network interface.
+   * You can only specify this field for network interfaces in VPC networks.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ip_ranges = 165085631;</code>
@@ -827,7 +1011,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * An array of alias IP ranges for this network interface. You can only specify this field for network interfaces in VPC networks.
+   * An array of alias IP ranges for this network interface.
+   * You can only specify this field for network interfaces in VPC networks.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ip_ranges = 165085631;</code>
@@ -846,7 +1031,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Fingerprint hash of contents stored in this network interface. This field will be ignored when inserting an Instance or adding a NetworkInterface. An up-to-date fingerprint must be provided in order to update the NetworkInterface. The request will fail with error 400 Bad Request if the fingerprint is not provided, or 412 Precondition Failed if the fingerprint is out of date.
+   * Fingerprint hash of contents stored in this network interface.
+   * This field will be ignored when inserting an Instance or
+   * adding a NetworkInterface. An up-to-date
+   * fingerprint must be provided in order to update theNetworkInterface. The request will fail with error400 Bad Request if the fingerprint is not provided, or412 Precondition Failed if the fingerprint is out of date.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -862,7 +1050,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Fingerprint hash of contents stored in this network interface. This field will be ignored when inserting an Instance or adding a NetworkInterface. An up-to-date fingerprint must be provided in order to update the NetworkInterface. The request will fail with error 400 Bad Request if the fingerprint is not provided, or 412 Precondition Failed if the fingerprint is out of date.
+   * Fingerprint hash of contents stored in this network interface.
+   * This field will be ignored when inserting an Instance or
+   * adding a NetworkInterface. An up-to-date
+   * fingerprint must be provided in order to update theNetworkInterface. The request will fail with error400 Bad Request if the fingerprint is not provided, or412 Precondition Failed if the fingerprint is out of date.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -886,7 +1077,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Fingerprint hash of contents stored in this network interface. This field will be ignored when inserting an Instance or adding a NetworkInterface. An up-to-date fingerprint must be provided in order to update the NetworkInterface. The request will fail with error 400 Bad Request if the fingerprint is not provided, or 412 Precondition Failed if the fingerprint is out of date.
+   * Fingerprint hash of contents stored in this network interface.
+   * This field will be ignored when inserting an Instance or
+   * adding a NetworkInterface. An up-to-date
+   * fingerprint must be provided in order to update theNetworkInterface. The request will fail with error400 Bad Request if the fingerprint is not provided, or412 Precondition Failed if the fingerprint is out of date.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -900,6 +1094,81 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       fingerprint_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int IGMP_QUERY_FIELD_NUMBER = 30249546;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object igmpQuery_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicate whether igmp query is enabled on the network interface
+   * or not. If enabled, also indicates the version of IGMP supported.
+   * Check the IgmpQuery enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string igmp_query = 30249546;</code>
+   *
+   * @return Whether the igmpQuery field is set.
+   */
+  @java.lang.Override
+  public boolean hasIgmpQuery() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicate whether igmp query is enabled on the network interface
+   * or not. If enabled, also indicates the version of IGMP supported.
+   * Check the IgmpQuery enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string igmp_query = 30249546;</code>
+   *
+   * @return The igmpQuery.
+   */
+  @java.lang.Override
+  public java.lang.String getIgmpQuery() {
+    java.lang.Object ref = igmpQuery_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      igmpQuery_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicate whether igmp query is enabled on the network interface
+   * or not. If enabled, also indicates the version of IGMP supported.
+   * Check the IgmpQuery enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string igmp_query = 30249546;</code>
+   *
+   * @return The bytes for igmpQuery.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getIgmpQueryBytes() {
+    java.lang.Object ref = igmpQuery_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      igmpQuery_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -922,7 +1191,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasInternalIpv6PrefixLength() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -950,7 +1219,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access.
+   * An array of IPv6 access configurations for this interface. Currently, only
+   * one IPv6 access config, DIRECT_IPV6, is supported. If there
+   * is no ipv6AccessConfig specified, then this instance will
+   * have no external IPv6 Internet access.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AccessConfig ipv6_access_configs = 483472110;</code>
@@ -964,7 +1236,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access.
+   * An array of IPv6 access configurations for this interface. Currently, only
+   * one IPv6 access config, DIRECT_IPV6, is supported. If there
+   * is no ipv6AccessConfig specified, then this instance will
+   * have no external IPv6 Internet access.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AccessConfig ipv6_access_configs = 483472110;</code>
@@ -979,7 +1254,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access.
+   * An array of IPv6 access configurations for this interface. Currently, only
+   * one IPv6 access config, DIRECT_IPV6, is supported. If there
+   * is no ipv6AccessConfig specified, then this instance will
+   * have no external IPv6 Internet access.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AccessConfig ipv6_access_configs = 483472110;</code>
@@ -993,7 +1271,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access.
+   * An array of IPv6 access configurations for this interface. Currently, only
+   * one IPv6 access config, DIRECT_IPV6, is supported. If there
+   * is no ipv6AccessConfig specified, then this instance will
+   * have no external IPv6 Internet access.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AccessConfig ipv6_access_configs = 483472110;</code>
@@ -1007,7 +1288,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access.
+   * An array of IPv6 access configurations for this interface. Currently, only
+   * one IPv6 access config, DIRECT_IPV6, is supported. If there
+   * is no ipv6AccessConfig specified, then this instance will
+   * have no external IPv6 Internet access.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AccessConfig ipv6_access_configs = 483472110;</code>
@@ -1027,7 +1311,11 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be accessed from the Internet. This field is always inherited from its subnetwork. Valid only if stackType is IPV4_IPV6.
+   * Output only. [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be
+   * accessed from the Internet. This field is always inherited from its
+   * subnetwork.
+   *
+   * Valid only if stackType is IPV4_IPV6.
    * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
    *
@@ -1037,14 +1325,18 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasIpv6AccessType() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be accessed from the Internet. This field is always inherited from its subnetwork. Valid only if stackType is IPV4_IPV6.
+   * Output only. [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be
+   * accessed from the Internet. This field is always inherited from its
+   * subnetwork.
+   *
+   * Valid only if stackType is IPV4_IPV6.
    * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
    *
@@ -1069,7 +1361,11 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be accessed from the Internet. This field is always inherited from its subnetwork. Valid only if stackType is IPV4_IPV6.
+   * Output only. [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be
+   * accessed from the Internet. This field is always inherited from its
+   * subnetwork.
+   *
+   * Valid only if stackType is IPV4_IPV6.
    * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
    *
@@ -1099,7 +1395,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * An IPv6 internal network address for this network interface. To use a static internal IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an internal IPv6 address from the instance's subnetwork.
+   * An IPv6 internal network address for this network interface. To
+   * use a static internal IP address, it must be unused and in the same region
+   * as the instance's zone. If not specified, Google Cloud will automatically
+   * assign an internal IPv6 address from the instance's subnetwork.
    * </pre>
    *
    * <code>optional string ipv6_address = 341563804;</code>
@@ -1108,14 +1407,17 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasIpv6Address() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * An IPv6 internal network address for this network interface. To use a static internal IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an internal IPv6 address from the instance's subnetwork.
+   * An IPv6 internal network address for this network interface. To
+   * use a static internal IP address, it must be unused and in the same region
+   * as the instance's zone. If not specified, Google Cloud will automatically
+   * assign an internal IPv6 address from the instance's subnetwork.
    * </pre>
    *
    * <code>optional string ipv6_address = 341563804;</code>
@@ -1139,7 +1441,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * An IPv6 internal network address for this network interface. To use a static internal IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an internal IPv6 address from the instance's subnetwork.
+   * An IPv6 internal network address for this network interface. To
+   * use a static internal IP address, it must be unused and in the same region
+   * as the instance's zone. If not specified, Google Cloud will automatically
+   * assign an internal IPv6 address from the instance's subnetwork.
    * </pre>
    *
    * <code>optional string ipv6_address = 341563804;</code>
@@ -1168,7 +1473,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#networkInterface for network interfaces.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#networkInterface for network interfaces.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1177,14 +1482,14 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasKind() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#networkInterface for network interfaces.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#networkInterface for network interfaces.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1208,7 +1513,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#networkInterface for network interfaces.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#networkInterface for network interfaces.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1237,7 +1542,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The name of the network interface, which is generated by the server. For a VM, the network interface uses the nicN naming format. Where N is a value between 0 and 7. The default interface value is nic0.
+   * [Output Only] The name of the network interface, which is generated by the
+   * server. For a VM, the network interface uses the nicN naming
+   * format. Where N is a value between 0 and7. The default interface value is nic0.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1246,14 +1553,16 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] The name of the network interface, which is generated by the server. For a VM, the network interface uses the nicN naming format. Where N is a value between 0 and 7. The default interface value is nic0.
+   * [Output Only] The name of the network interface, which is generated by the
+   * server. For a VM, the network interface uses the nicN naming
+   * format. Where N is a value between 0 and7. The default interface value is nic0.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1277,7 +1586,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The name of the network interface, which is generated by the server. For a VM, the network interface uses the nicN naming format. Where N is a value between 0 and 7. The default interface value is nic0.
+   * [Output Only] The name of the network interface, which is generated by the
+   * server. For a VM, the network interface uses the nicN naming
+   * format. Where N is a value between 0 and7. The default interface value is nic0.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1306,7 +1617,20 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URL of the VPC network resource for this instance. When creating an instance, if neither the network nor the subnetwork is specified, the default network global/networks/default is used. If the selected project doesn't have the default network, you must specify a network or subnet. If the network is not specified but the subnetwork is specified, the network is inferred. If you specify this property, you can specify the network as a full or partial URL. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/global/networks/ network - projects/project/global/networks/network - global/networks/default
+   * URL of the VPC network resource for this instance. When creating an
+   * instance, if neither the network nor the subnetwork is specified, the
+   * default network global/networks/default is used. If the
+   * selected project doesn't have the default network, you must specify a
+   * network or subnet. If the network is not specified but the subnetwork is
+   * specified, the network is inferred.
+   *
+   * If you specify this property, you can specify the network as
+   * a full or partial URL. For example, the following are all valid URLs:
+   *
+   *
+   *       - https://www.googleapis.com/compute/v1/projects/project/global/networks/network
+   *       - projects/project/global/networks/network
+   *       - global/networks/default
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -1315,14 +1639,27 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasNetwork() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * URL of the VPC network resource for this instance. When creating an instance, if neither the network nor the subnetwork is specified, the default network global/networks/default is used. If the selected project doesn't have the default network, you must specify a network or subnet. If the network is not specified but the subnetwork is specified, the network is inferred. If you specify this property, you can specify the network as a full or partial URL. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/global/networks/ network - projects/project/global/networks/network - global/networks/default
+   * URL of the VPC network resource for this instance. When creating an
+   * instance, if neither the network nor the subnetwork is specified, the
+   * default network global/networks/default is used. If the
+   * selected project doesn't have the default network, you must specify a
+   * network or subnet. If the network is not specified but the subnetwork is
+   * specified, the network is inferred.
+   *
+   * If you specify this property, you can specify the network as
+   * a full or partial URL. For example, the following are all valid URLs:
+   *
+   *
+   *       - https://www.googleapis.com/compute/v1/projects/project/global/networks/network
+   *       - projects/project/global/networks/network
+   *       - global/networks/default
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -1346,7 +1683,20 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * URL of the VPC network resource for this instance. When creating an instance, if neither the network nor the subnetwork is specified, the default network global/networks/default is used. If the selected project doesn't have the default network, you must specify a network or subnet. If the network is not specified but the subnetwork is specified, the network is inferred. If you specify this property, you can specify the network as a full or partial URL. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/global/networks/ network - projects/project/global/networks/network - global/networks/default
+   * URL of the VPC network resource for this instance. When creating an
+   * instance, if neither the network nor the subnetwork is specified, the
+   * default network global/networks/default is used. If the
+   * selected project doesn't have the default network, you must specify a
+   * network or subnet. If the network is not specified but the subnetwork is
+   * specified, the network is inferred.
+   *
+   * If you specify this property, you can specify the network as
+   * a full or partial URL. For example, the following are all valid URLs:
+   *
+   *
+   *       - https://www.googleapis.com/compute/v1/projects/project/global/networks/network
+   *       - projects/project/global/networks/network
+   *       - global/networks/default
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -1375,7 +1725,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The URL of the network attachment that this interface should connect to in the following format: projects/{project_number}/regions/{region_name}/networkAttachments/{network_attachment_name}.
+   * The URL of the network attachment that this interface should connect
+   * to in the following format:
+   * projects/{project_number}/regions/{region_name}/networkAttachments/{network_attachment_name}.
    * </pre>
    *
    * <code>optional string network_attachment = 224644052;</code>
@@ -1384,14 +1736,16 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasNetworkAttachment() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * The URL of the network attachment that this interface should connect to in the following format: projects/{project_number}/regions/{region_name}/networkAttachments/{network_attachment_name}.
+   * The URL of the network attachment that this interface should connect
+   * to in the following format:
+   * projects/{project_number}/regions/{region_name}/networkAttachments/{network_attachment_name}.
    * </pre>
    *
    * <code>optional string network_attachment = 224644052;</code>
@@ -1415,7 +1769,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The URL of the network attachment that this interface should connect to in the following format: projects/{project_number}/regions/{region_name}/networkAttachments/{network_attachment_name}.
+   * The URL of the network attachment that this interface should connect
+   * to in the following format:
+   * projects/{project_number}/regions/{region_name}/networkAttachments/{network_attachment_name}.
    * </pre>
    *
    * <code>optional string network_attachment = 224644052;</code>
@@ -1444,7 +1800,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * An IPv4 internal IP address to assign to the instance for this network interface. If not specified by the user, an unused internal IP is assigned by the system.
+   * An IPv4 internal IP address to assign to the instance for this network
+   * interface. If not specified by the user, an unused internal IP is
+   * assigned by the system.
    * </pre>
    *
    * <code>optional string network_i_p = 207181961;</code>
@@ -1453,14 +1811,16 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasNetworkIP() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * An IPv4 internal IP address to assign to the instance for this network interface. If not specified by the user, an unused internal IP is assigned by the system.
+   * An IPv4 internal IP address to assign to the instance for this network
+   * interface. If not specified by the user, an unused internal IP is
+   * assigned by the system.
    * </pre>
    *
    * <code>optional string network_i_p = 207181961;</code>
@@ -1484,7 +1844,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * An IPv4 internal IP address to assign to the instance for this network interface. If not specified by the user, an unused internal IP is assigned by the system.
+   * An IPv4 internal IP address to assign to the instance for this network
+   * interface. If not specified by the user, an unused internal IP is
+   * assigned by the system.
    * </pre>
    *
    * <code>optional string network_i_p = 207181961;</code>
@@ -1513,7 +1875,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+   * The type of vNIC to be used on this interface. This may be gVNIC or
+   * VirtioNet.
    * Check the NicType enum for the list of possible values.
    * </pre>
    *
@@ -1523,14 +1886,15 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasNicType() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+   * The type of vNIC to be used on this interface. This may be gVNIC or
+   * VirtioNet.
    * Check the NicType enum for the list of possible values.
    * </pre>
    *
@@ -1555,7 +1919,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+   * The type of vNIC to be used on this interface. This may be gVNIC or
+   * VirtioNet.
    * Check the NicType enum for the list of possible values.
    * </pre>
    *
@@ -1594,7 +1959,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasParentNicName() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
@@ -1652,7 +2017,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The networking queue count that's specified by users for the network interface. Both Rx and Tx queues will be set to this number. It'll be empty if not specified by the users.
+   * The networking queue count that's specified by users for the network
+   * interface. Both Rx and Tx queues will be set to this number. It'll be empty
+   * if not specified by the users.
    * </pre>
    *
    * <code>optional int32 queue_count = 503708769;</code>
@@ -1661,14 +2028,16 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasQueueCount() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * The networking queue count that's specified by users for the network interface. Both Rx and Tx queues will be set to this number. It'll be empty if not specified by the users.
+   * The networking queue count that's specified by users for the network
+   * interface. Both Rx and Tx queues will be set to this number. It'll be empty
+   * if not specified by the users.
    * </pre>
    *
    * <code>optional int32 queue_count = 503708769;</code>
@@ -1689,7 +2058,11 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The stack type for this network interface. To assign only IPv4 addresses, use IPV4_ONLY. To assign both IPv4 and IPv6 addresses, use IPV4_IPV6. If not specified, IPV4_ONLY is used. This field can be both set at instance creation and update network interface operations.
+   * The stack type for this network interface. To assign only IPv4 addresses,
+   * use IPV4_ONLY. To assign both IPv4 and IPv6 addresses, useIPV4_IPV6. If not specified, IPV4_ONLY is used.
+   *
+   * This field can be both set at instance creation and update network
+   * interface operations.
    * Check the StackType enum for the list of possible values.
    * </pre>
    *
@@ -1699,14 +2072,18 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasStackType() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * The stack type for this network interface. To assign only IPv4 addresses, use IPV4_ONLY. To assign both IPv4 and IPv6 addresses, use IPV4_IPV6. If not specified, IPV4_ONLY is used. This field can be both set at instance creation and update network interface operations.
+   * The stack type for this network interface. To assign only IPv4 addresses,
+   * use IPV4_ONLY. To assign both IPv4 and IPv6 addresses, useIPV4_IPV6. If not specified, IPV4_ONLY is used.
+   *
+   * This field can be both set at instance creation and update network
+   * interface operations.
    * Check the StackType enum for the list of possible values.
    * </pre>
    *
@@ -1731,7 +2108,11 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The stack type for this network interface. To assign only IPv4 addresses, use IPV4_ONLY. To assign both IPv4 and IPv6 addresses, use IPV4_IPV6. If not specified, IPV4_ONLY is used. This field can be both set at instance creation and update network interface operations.
+   * The stack type for this network interface. To assign only IPv4 addresses,
+   * use IPV4_ONLY. To assign both IPv4 and IPv6 addresses, useIPV4_IPV6. If not specified, IPV4_ONLY is used.
+   *
+   * This field can be both set at instance creation and update network
+   * interface operations.
    * Check the StackType enum for the list of possible values.
    * </pre>
    *
@@ -1761,7 +2142,17 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The URL of the Subnetwork resource for this instance. If the network resource is in legacy mode, do not specify this field. If the network is in auto subnet mode, specifying the subnetwork is optional. If the network is in custom subnet mode, specifying the subnetwork is required. If you specify this field, you can specify the subnetwork as a full or partial URL. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/regions/region /subnetworks/subnetwork - regions/region/subnetworks/subnetwork
+   * The URL of the Subnetwork resource for this instance. If the network
+   * resource is inlegacy
+   * mode, do not specify this field. If the network is in auto subnet
+   * mode, specifying the subnetwork is optional. If the network is in custom
+   * subnet mode, specifying the subnetwork is required. If you specify this
+   * field, you can specify the subnetwork as a full or partial URL. For
+   * example, the following are all valid URLs:
+   *
+   *
+   *       - https://www.googleapis.com/compute/v1/projects/project/regions/region/subnetworks/subnetwork
+   *    - regions/region/subnetworks/subnetwork
    * </pre>
    *
    * <code>optional string subnetwork = 307827694;</code>
@@ -1770,14 +2161,24 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSubnetwork() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * The URL of the Subnetwork resource for this instance. If the network resource is in legacy mode, do not specify this field. If the network is in auto subnet mode, specifying the subnetwork is optional. If the network is in custom subnet mode, specifying the subnetwork is required. If you specify this field, you can specify the subnetwork as a full or partial URL. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/regions/region /subnetworks/subnetwork - regions/region/subnetworks/subnetwork
+   * The URL of the Subnetwork resource for this instance. If the network
+   * resource is inlegacy
+   * mode, do not specify this field. If the network is in auto subnet
+   * mode, specifying the subnetwork is optional. If the network is in custom
+   * subnet mode, specifying the subnetwork is required. If you specify this
+   * field, you can specify the subnetwork as a full or partial URL. For
+   * example, the following are all valid URLs:
+   *
+   *
+   *       - https://www.googleapis.com/compute/v1/projects/project/regions/region/subnetworks/subnetwork
+   *    - regions/region/subnetworks/subnetwork
    * </pre>
    *
    * <code>optional string subnetwork = 307827694;</code>
@@ -1801,7 +2202,17 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The URL of the Subnetwork resource for this instance. If the network resource is in legacy mode, do not specify this field. If the network is in auto subnet mode, specifying the subnetwork is optional. If the network is in custom subnet mode, specifying the subnetwork is required. If you specify this field, you can specify the subnetwork as a full or partial URL. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/regions/region /subnetworks/subnetwork - regions/region/subnetworks/subnetwork
+   * The URL of the Subnetwork resource for this instance. If the network
+   * resource is inlegacy
+   * mode, do not specify this field. If the network is in auto subnet
+   * mode, specifying the subnetwork is optional. If the network is in custom
+   * subnet mode, specifying the subnetwork is required. If you specify this
+   * field, you can specify the subnetwork as a full or partial URL. For
+   * example, the following are all valid URLs:
+   *
+   *
+   *       - https://www.googleapis.com/compute/v1/projects/project/regions/region/subnetworks/subnetwork
+   *    - regions/region/subnetworks/subnetwork
    * </pre>
    *
    * <code>optional string subnetwork = 307827694;</code>
@@ -1828,7 +2239,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * VLAN tag of a dynamic network interface, must be an integer in the range from 2 to 255 inclusively.
+   * VLAN tag of a dynamic network interface, must be  an integer in the range
+   * from 2 to 255 inclusively.
    * </pre>
    *
    * <code>optional int32 vlan = 3622243;</code>
@@ -1837,14 +2249,15 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasVlan() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * VLAN tag of a dynamic network interface, must be an integer in the range from 2 to 255 inclusively.
+   * VLAN tag of a dynamic network interface, must be  an integer in the range
+   * from 2 to 255 inclusively.
    * </pre>
    *
    * <code>optional int32 vlan = 3622243;</code>
@@ -1870,16 +2283,19 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       output.writeInt32(3622243, vlan_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 30249546, igmpQuery_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 59810577, nicType_);
     }
     for (int i = 0; i < accessConfigs_.size(); i++) {
@@ -1888,40 +2304,40 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < aliasIpRanges_.size(); i++) {
       output.writeMessage(165085631, aliasIpRanges_.get(i));
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeInt32(203833757, internalIpv6PrefixLength_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 207181961, networkIP_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 224644052, networkAttachment_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 307827694, subnetwork_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 341563804, ipv6Address_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 418764375, parentNicName_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 425908881, stackType_);
     }
     for (int i = 0; i < ipv6AccessConfigs_.size(); i++) {
       output.writeMessage(483472110, ipv6AccessConfigs_.get(i));
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       output.writeInt32(503708769, queueCount_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 504658653, ipv6AccessType_);
     }
     getUnknownFields().writeTo(output);
@@ -1933,16 +2349,19 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3622243, vlan_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(30249546, igmpQuery_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(59810577, nicType_);
     }
     for (int i = 0; i < accessConfigs_.size(); i++) {
@@ -1955,34 +2374,34 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               165085631, aliasIpRanges_.get(i));
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(
               203833757, internalIpv6PrefixLength_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(207181961, networkIP_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(224644052, networkAttachment_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(307827694, subnetwork_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(341563804, ipv6Address_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(418764375, parentNicName_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(425908881, stackType_);
     }
     for (int i = 0; i < ipv6AccessConfigs_.size(); i++) {
@@ -1990,10 +2409,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               483472110, ipv6AccessConfigs_.get(i));
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(503708769, queueCount_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(504658653, ipv6AccessType_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -2017,6 +2436,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     if (hasFingerprint() != other.hasFingerprint()) return false;
     if (hasFingerprint()) {
       if (!getFingerprint().equals(other.getFingerprint())) return false;
+    }
+    if (hasIgmpQuery() != other.hasIgmpQuery()) return false;
+    if (hasIgmpQuery()) {
+      if (!getIgmpQuery().equals(other.getIgmpQuery())) return false;
     }
     if (hasInternalIpv6PrefixLength() != other.hasInternalIpv6PrefixLength()) return false;
     if (hasInternalIpv6PrefixLength()) {
@@ -2097,6 +2520,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     if (hasFingerprint()) {
       hash = (37 * hash) + FINGERPRINT_FIELD_NUMBER;
       hash = (53 * hash) + getFingerprint().hashCode();
+    }
+    if (hasIgmpQuery()) {
+      hash = (37 * hash) + IGMP_QUERY_FIELD_NUMBER;
+      hash = (53 * hash) + getIgmpQuery().hashCode();
     }
     if (hasInternalIpv6PrefixLength()) {
       hash = (37 * hash) + INTERNAL_IPV6_PREFIX_LENGTH_FIELD_NUMBER;
@@ -2313,6 +2740,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ = (bitField0_ & ~0x00000002);
       fingerprint_ = "";
+      igmpQuery_ = "";
       internalIpv6PrefixLength_ = 0;
       if (ipv6AccessConfigsBuilder_ == null) {
         ipv6AccessConfigs_ = java.util.Collections.emptyList();
@@ -2320,7 +2748,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         ipv6AccessConfigs_ = null;
         ipv6AccessConfigsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       ipv6AccessType_ = "";
       ipv6Address_ = "";
       kind_ = "";
@@ -2389,9 +2817,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         result.aliasIpRanges_ = aliasIpRangesBuilder_.build();
       }
       if (ipv6AccessConfigsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           ipv6AccessConfigs_ = java.util.Collections.unmodifiableList(ipv6AccessConfigs_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.ipv6AccessConfigs_ = ipv6AccessConfigs_;
       } else {
@@ -2407,60 +2835,64 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.internalIpv6PrefixLength_ = internalIpv6PrefixLength_;
+        result.igmpQuery_ = igmpQuery_;
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.ipv6AccessType_ = ipv6AccessType_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.internalIpv6PrefixLength_ = internalIpv6PrefixLength_;
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.ipv6Address_ = ipv6Address_;
+        result.ipv6AccessType_ = ipv6AccessType_;
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.kind_ = kind_;
+        result.ipv6Address_ = ipv6Address_;
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.name_ = name_;
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.network_ = network_;
+        result.name_ = name_;
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.networkAttachment_ = networkAttachment_;
+        result.network_ = network_;
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.networkIP_ = networkIP_;
+        result.networkAttachment_ = networkAttachment_;
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.nicType_ = nicType_;
+        result.networkIP_ = networkIP_;
         to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.parentNicName_ = parentNicName_;
+        result.nicType_ = nicType_;
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.queueCount_ = queueCount_;
+        result.parentNicName_ = parentNicName_;
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.stackType_ = stackType_;
+        result.queueCount_ = queueCount_;
         to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.subnetwork_ = subnetwork_;
+        result.stackType_ = stackType_;
         to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.vlan_ = vlan_;
+        result.subnetwork_ = subnetwork_;
         to_bitField0_ |= 0x00004000;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.vlan_ = vlan_;
+        to_bitField0_ |= 0x00008000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2569,6 +3001,11 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (other.hasIgmpQuery()) {
+        igmpQuery_ = other.igmpQuery_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       if (other.hasInternalIpv6PrefixLength()) {
         setInternalIpv6PrefixLength(other.getInternalIpv6PrefixLength());
       }
@@ -2576,7 +3013,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         if (!other.ipv6AccessConfigs_.isEmpty()) {
           if (ipv6AccessConfigs_.isEmpty()) {
             ipv6AccessConfigs_ = other.ipv6AccessConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureIpv6AccessConfigsIsMutable();
             ipv6AccessConfigs_.addAll(other.ipv6AccessConfigs_);
@@ -2589,7 +3026,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
             ipv6AccessConfigsBuilder_.dispose();
             ipv6AccessConfigsBuilder_ = null;
             ipv6AccessConfigs_ = other.ipv6AccessConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
             ipv6AccessConfigsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getIpv6AccessConfigsFieldBuilder()
@@ -2601,47 +3038,47 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasIpv6AccessType()) {
         ipv6AccessType_ = other.ipv6AccessType_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasIpv6Address()) {
         ipv6Address_ = other.ipv6Address_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasKind()) {
         kind_ = other.kind_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasNetwork()) {
         network_ = other.network_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasNetworkAttachment()) {
         networkAttachment_ = other.networkAttachment_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasNetworkIP()) {
         networkIP_ = other.networkIP_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.hasNicType()) {
         nicType_ = other.nicType_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.hasParentNicName()) {
         parentNicName_ = other.parentNicName_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (other.hasQueueCount()) {
@@ -2649,12 +3086,12 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasStackType()) {
         stackType_ = other.stackType_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (other.hasSubnetwork()) {
         subnetwork_ = other.subnetwork_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (other.hasVlan()) {
@@ -2689,25 +3126,31 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
             case 26336418:
               {
                 kind_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 26336418
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 26989658
             case 28977944:
               {
                 vlan_ = input.readInt32();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 28977944
+            case 241996370:
+              {
+                igmpQuery_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 241996370
             case 478484618:
               {
                 nicType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 478484618
             case 888466610:
@@ -2739,25 +3182,25 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
             case 1630670056:
               {
                 internalIpv6PrefixLength_ = input.readInt32();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 1630670056
             case 1657455690:
               {
                 networkIP_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 1657455690
             case 1797152418:
               {
                 networkAttachment_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 1797152418
             case 1862979954:
               {
                 network_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 1862979954
             case 1877428002:
@@ -2769,25 +3212,25 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
             case -1832345742:
               {
                 subnetwork_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case -1832345742
             case -1562456862:
               {
                 ipv6Address_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case -1562456862
             case -944852294:
               {
                 parentNicName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case -944852294
             case -887696246:
               {
                 stackType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case -887696246
             case -427190414:
@@ -2806,13 +3249,13 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
             case -265297144:
               {
                 queueCount_ = input.readInt32();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case -265297144
             case -257698070:
               {
                 ipv6AccessType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case -257698070
             default:
@@ -2855,7 +3298,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of configurations for this interface. Currently, only one access config, ONE_TO_ONE_NAT, is supported. If there are no accessConfigs specified, then this instance will have no external internet access.
+     * An array of configurations for this interface. Currently, only one access
+     * config, ONE_TO_ONE_NAT, is supported. If there are noaccessConfigs specified, then this instance will have
+     * no external internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig access_configs = 111058326;</code>
@@ -2872,7 +3317,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of configurations for this interface. Currently, only one access config, ONE_TO_ONE_NAT, is supported. If there are no accessConfigs specified, then this instance will have no external internet access.
+     * An array of configurations for this interface. Currently, only one access
+     * config, ONE_TO_ONE_NAT, is supported. If there are noaccessConfigs specified, then this instance will have
+     * no external internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig access_configs = 111058326;</code>
@@ -2889,7 +3336,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of configurations for this interface. Currently, only one access config, ONE_TO_ONE_NAT, is supported. If there are no accessConfigs specified, then this instance will have no external internet access.
+     * An array of configurations for this interface. Currently, only one access
+     * config, ONE_TO_ONE_NAT, is supported. If there are noaccessConfigs specified, then this instance will have
+     * no external internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig access_configs = 111058326;</code>
@@ -2906,7 +3355,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of configurations for this interface. Currently, only one access config, ONE_TO_ONE_NAT, is supported. If there are no accessConfigs specified, then this instance will have no external internet access.
+     * An array of configurations for this interface. Currently, only one access
+     * config, ONE_TO_ONE_NAT, is supported. If there are noaccessConfigs specified, then this instance will have
+     * no external internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig access_configs = 111058326;</code>
@@ -2929,7 +3380,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of configurations for this interface. Currently, only one access config, ONE_TO_ONE_NAT, is supported. If there are no accessConfigs specified, then this instance will have no external internet access.
+     * An array of configurations for this interface. Currently, only one access
+     * config, ONE_TO_ONE_NAT, is supported. If there are noaccessConfigs specified, then this instance will have
+     * no external internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig access_configs = 111058326;</code>
@@ -2950,7 +3403,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of configurations for this interface. Currently, only one access config, ONE_TO_ONE_NAT, is supported. If there are no accessConfigs specified, then this instance will have no external internet access.
+     * An array of configurations for this interface. Currently, only one access
+     * config, ONE_TO_ONE_NAT, is supported. If there are noaccessConfigs specified, then this instance will have
+     * no external internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig access_configs = 111058326;</code>
@@ -2973,7 +3428,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of configurations for this interface. Currently, only one access config, ONE_TO_ONE_NAT, is supported. If there are no accessConfigs specified, then this instance will have no external internet access.
+     * An array of configurations for this interface. Currently, only one access
+     * config, ONE_TO_ONE_NAT, is supported. If there are noaccessConfigs specified, then this instance will have
+     * no external internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig access_configs = 111058326;</code>
@@ -2996,7 +3453,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of configurations for this interface. Currently, only one access config, ONE_TO_ONE_NAT, is supported. If there are no accessConfigs specified, then this instance will have no external internet access.
+     * An array of configurations for this interface. Currently, only one access
+     * config, ONE_TO_ONE_NAT, is supported. If there are noaccessConfigs specified, then this instance will have
+     * no external internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig access_configs = 111058326;</code>
@@ -3017,7 +3476,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of configurations for this interface. Currently, only one access config, ONE_TO_ONE_NAT, is supported. If there are no accessConfigs specified, then this instance will have no external internet access.
+     * An array of configurations for this interface. Currently, only one access
+     * config, ONE_TO_ONE_NAT, is supported. If there are noaccessConfigs specified, then this instance will have
+     * no external internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig access_configs = 111058326;</code>
@@ -3038,7 +3499,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of configurations for this interface. Currently, only one access config, ONE_TO_ONE_NAT, is supported. If there are no accessConfigs specified, then this instance will have no external internet access.
+     * An array of configurations for this interface. Currently, only one access
+     * config, ONE_TO_ONE_NAT, is supported. If there are noaccessConfigs specified, then this instance will have
+     * no external internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig access_configs = 111058326;</code>
@@ -3059,7 +3522,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of configurations for this interface. Currently, only one access config, ONE_TO_ONE_NAT, is supported. If there are no accessConfigs specified, then this instance will have no external internet access.
+     * An array of configurations for this interface. Currently, only one access
+     * config, ONE_TO_ONE_NAT, is supported. If there are noaccessConfigs specified, then this instance will have
+     * no external internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig access_configs = 111058326;</code>
@@ -3079,7 +3544,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of configurations for this interface. Currently, only one access config, ONE_TO_ONE_NAT, is supported. If there are no accessConfigs specified, then this instance will have no external internet access.
+     * An array of configurations for this interface. Currently, only one access
+     * config, ONE_TO_ONE_NAT, is supported. If there are noaccessConfigs specified, then this instance will have
+     * no external internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig access_configs = 111058326;</code>
@@ -3099,7 +3566,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of configurations for this interface. Currently, only one access config, ONE_TO_ONE_NAT, is supported. If there are no accessConfigs specified, then this instance will have no external internet access.
+     * An array of configurations for this interface. Currently, only one access
+     * config, ONE_TO_ONE_NAT, is supported. If there are noaccessConfigs specified, then this instance will have
+     * no external internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig access_configs = 111058326;</code>
@@ -3112,7 +3581,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of configurations for this interface. Currently, only one access config, ONE_TO_ONE_NAT, is supported. If there are no accessConfigs specified, then this instance will have no external internet access.
+     * An array of configurations for this interface. Currently, only one access
+     * config, ONE_TO_ONE_NAT, is supported. If there are noaccessConfigs specified, then this instance will have
+     * no external internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig access_configs = 111058326;</code>
@@ -3129,7 +3600,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of configurations for this interface. Currently, only one access config, ONE_TO_ONE_NAT, is supported. If there are no accessConfigs specified, then this instance will have no external internet access.
+     * An array of configurations for this interface. Currently, only one access
+     * config, ONE_TO_ONE_NAT, is supported. If there are noaccessConfigs specified, then this instance will have
+     * no external internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig access_configs = 111058326;</code>
@@ -3147,7 +3620,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of configurations for this interface. Currently, only one access config, ONE_TO_ONE_NAT, is supported. If there are no accessConfigs specified, then this instance will have no external internet access.
+     * An array of configurations for this interface. Currently, only one access
+     * config, ONE_TO_ONE_NAT, is supported. If there are noaccessConfigs specified, then this instance will have
+     * no external internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig access_configs = 111058326;</code>
@@ -3161,7 +3636,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of configurations for this interface. Currently, only one access config, ONE_TO_ONE_NAT, is supported. If there are no accessConfigs specified, then this instance will have no external internet access.
+     * An array of configurations for this interface. Currently, only one access
+     * config, ONE_TO_ONE_NAT, is supported. If there are noaccessConfigs specified, then this instance will have
+     * no external internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig access_configs = 111058326;</code>
@@ -3175,7 +3652,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of configurations for this interface. Currently, only one access config, ONE_TO_ONE_NAT, is supported. If there are no accessConfigs specified, then this instance will have no external internet access.
+     * An array of configurations for this interface. Currently, only one access
+     * config, ONE_TO_ONE_NAT, is supported. If there are noaccessConfigs specified, then this instance will have
+     * no external internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig access_configs = 111058326;</code>
@@ -3226,7 +3705,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of alias IP ranges for this network interface. You can only specify this field for network interfaces in VPC networks.
+     * An array of alias IP ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ip_ranges = 165085631;</code>
@@ -3243,7 +3723,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of alias IP ranges for this network interface. You can only specify this field for network interfaces in VPC networks.
+     * An array of alias IP ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ip_ranges = 165085631;</code>
@@ -3260,7 +3741,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of alias IP ranges for this network interface. You can only specify this field for network interfaces in VPC networks.
+     * An array of alias IP ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ip_ranges = 165085631;</code>
@@ -3277,7 +3759,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of alias IP ranges for this network interface. You can only specify this field for network interfaces in VPC networks.
+     * An array of alias IP ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ip_ranges = 165085631;</code>
@@ -3300,7 +3783,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of alias IP ranges for this network interface. You can only specify this field for network interfaces in VPC networks.
+     * An array of alias IP ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ip_ranges = 165085631;</code>
@@ -3321,7 +3805,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of alias IP ranges for this network interface. You can only specify this field for network interfaces in VPC networks.
+     * An array of alias IP ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ip_ranges = 165085631;</code>
@@ -3344,7 +3829,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of alias IP ranges for this network interface. You can only specify this field for network interfaces in VPC networks.
+     * An array of alias IP ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ip_ranges = 165085631;</code>
@@ -3367,7 +3853,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of alias IP ranges for this network interface. You can only specify this field for network interfaces in VPC networks.
+     * An array of alias IP ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ip_ranges = 165085631;</code>
@@ -3388,7 +3875,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of alias IP ranges for this network interface. You can only specify this field for network interfaces in VPC networks.
+     * An array of alias IP ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ip_ranges = 165085631;</code>
@@ -3409,7 +3897,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of alias IP ranges for this network interface. You can only specify this field for network interfaces in VPC networks.
+     * An array of alias IP ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ip_ranges = 165085631;</code>
@@ -3430,7 +3919,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of alias IP ranges for this network interface. You can only specify this field for network interfaces in VPC networks.
+     * An array of alias IP ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ip_ranges = 165085631;</code>
@@ -3450,7 +3940,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of alias IP ranges for this network interface. You can only specify this field for network interfaces in VPC networks.
+     * An array of alias IP ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ip_ranges = 165085631;</code>
@@ -3470,7 +3961,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of alias IP ranges for this network interface. You can only specify this field for network interfaces in VPC networks.
+     * An array of alias IP ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ip_ranges = 165085631;</code>
@@ -3483,7 +3975,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of alias IP ranges for this network interface. You can only specify this field for network interfaces in VPC networks.
+     * An array of alias IP ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ip_ranges = 165085631;</code>
@@ -3500,7 +3993,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of alias IP ranges for this network interface. You can only specify this field for network interfaces in VPC networks.
+     * An array of alias IP ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ip_ranges = 165085631;</code>
@@ -3518,7 +4012,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of alias IP ranges for this network interface. You can only specify this field for network interfaces in VPC networks.
+     * An array of alias IP ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ip_ranges = 165085631;</code>
@@ -3532,7 +4027,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of alias IP ranges for this network interface. You can only specify this field for network interfaces in VPC networks.
+     * An array of alias IP ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ip_ranges = 165085631;</code>
@@ -3546,7 +4042,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of alias IP ranges for this network interface. You can only specify this field for network interfaces in VPC networks.
+     * An array of alias IP ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ip_ranges = 165085631;</code>
@@ -3582,7 +4079,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Fingerprint hash of contents stored in this network interface. This field will be ignored when inserting an Instance or adding a NetworkInterface. An up-to-date fingerprint must be provided in order to update the NetworkInterface. The request will fail with error 400 Bad Request if the fingerprint is not provided, or 412 Precondition Failed if the fingerprint is out of date.
+     * Fingerprint hash of contents stored in this network interface.
+     * This field will be ignored when inserting an Instance or
+     * adding a NetworkInterface. An up-to-date
+     * fingerprint must be provided in order to update theNetworkInterface. The request will fail with error400 Bad Request if the fingerprint is not provided, or412 Precondition Failed if the fingerprint is out of date.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -3597,7 +4097,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Fingerprint hash of contents stored in this network interface. This field will be ignored when inserting an Instance or adding a NetworkInterface. An up-to-date fingerprint must be provided in order to update the NetworkInterface. The request will fail with error 400 Bad Request if the fingerprint is not provided, or 412 Precondition Failed if the fingerprint is out of date.
+     * Fingerprint hash of contents stored in this network interface.
+     * This field will be ignored when inserting an Instance or
+     * adding a NetworkInterface. An up-to-date
+     * fingerprint must be provided in order to update theNetworkInterface. The request will fail with error400 Bad Request if the fingerprint is not provided, or412 Precondition Failed if the fingerprint is out of date.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -3620,7 +4123,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Fingerprint hash of contents stored in this network interface. This field will be ignored when inserting an Instance or adding a NetworkInterface. An up-to-date fingerprint must be provided in order to update the NetworkInterface. The request will fail with error 400 Bad Request if the fingerprint is not provided, or 412 Precondition Failed if the fingerprint is out of date.
+     * Fingerprint hash of contents stored in this network interface.
+     * This field will be ignored when inserting an Instance or
+     * adding a NetworkInterface. An up-to-date
+     * fingerprint must be provided in order to update theNetworkInterface. The request will fail with error400 Bad Request if the fingerprint is not provided, or412 Precondition Failed if the fingerprint is out of date.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -3643,7 +4149,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Fingerprint hash of contents stored in this network interface. This field will be ignored when inserting an Instance or adding a NetworkInterface. An up-to-date fingerprint must be provided in order to update the NetworkInterface. The request will fail with error 400 Bad Request if the fingerprint is not provided, or 412 Precondition Failed if the fingerprint is out of date.
+     * Fingerprint hash of contents stored in this network interface.
+     * This field will be ignored when inserting an Instance or
+     * adding a NetworkInterface. An up-to-date
+     * fingerprint must be provided in order to update theNetworkInterface. The request will fail with error400 Bad Request if the fingerprint is not provided, or412 Precondition Failed if the fingerprint is out of date.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -3665,7 +4174,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Fingerprint hash of contents stored in this network interface. This field will be ignored when inserting an Instance or adding a NetworkInterface. An up-to-date fingerprint must be provided in order to update the NetworkInterface. The request will fail with error 400 Bad Request if the fingerprint is not provided, or 412 Precondition Failed if the fingerprint is out of date.
+     * Fingerprint hash of contents stored in this network interface.
+     * This field will be ignored when inserting an Instance or
+     * adding a NetworkInterface. An up-to-date
+     * fingerprint must be provided in order to update theNetworkInterface. The request will fail with error400 Bad Request if the fingerprint is not provided, or412 Precondition Failed if the fingerprint is out of date.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -3683,7 +4195,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Fingerprint hash of contents stored in this network interface. This field will be ignored when inserting an Instance or adding a NetworkInterface. An up-to-date fingerprint must be provided in order to update the NetworkInterface. The request will fail with error 400 Bad Request if the fingerprint is not provided, or 412 Precondition Failed if the fingerprint is out of date.
+     * Fingerprint hash of contents stored in this network interface.
+     * This field will be ignored when inserting an Instance or
+     * adding a NetworkInterface. An up-to-date
+     * fingerprint must be provided in order to update theNetworkInterface. The request will fail with error400 Bad Request if the fingerprint is not provided, or412 Precondition Failed if the fingerprint is out of date.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -3698,6 +4213,144 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       fingerprint_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object igmpQuery_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicate whether igmp query is enabled on the network interface
+     * or not. If enabled, also indicates the version of IGMP supported.
+     * Check the IgmpQuery enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string igmp_query = 30249546;</code>
+     *
+     * @return Whether the igmpQuery field is set.
+     */
+    public boolean hasIgmpQuery() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicate whether igmp query is enabled on the network interface
+     * or not. If enabled, also indicates the version of IGMP supported.
+     * Check the IgmpQuery enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string igmp_query = 30249546;</code>
+     *
+     * @return The igmpQuery.
+     */
+    public java.lang.String getIgmpQuery() {
+      java.lang.Object ref = igmpQuery_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        igmpQuery_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicate whether igmp query is enabled on the network interface
+     * or not. If enabled, also indicates the version of IGMP supported.
+     * Check the IgmpQuery enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string igmp_query = 30249546;</code>
+     *
+     * @return The bytes for igmpQuery.
+     */
+    public com.google.protobuf.ByteString getIgmpQueryBytes() {
+      java.lang.Object ref = igmpQuery_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        igmpQuery_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicate whether igmp query is enabled on the network interface
+     * or not. If enabled, also indicates the version of IGMP supported.
+     * Check the IgmpQuery enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string igmp_query = 30249546;</code>
+     *
+     * @param value The igmpQuery to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIgmpQuery(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      igmpQuery_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicate whether igmp query is enabled on the network interface
+     * or not. If enabled, also indicates the version of IGMP supported.
+     * Check the IgmpQuery enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string igmp_query = 30249546;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIgmpQuery() {
+      igmpQuery_ = getDefaultInstance().getIgmpQuery();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicate whether igmp query is enabled on the network interface
+     * or not. If enabled, also indicates the version of IGMP supported.
+     * Check the IgmpQuery enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string igmp_query = 30249546;</code>
+     *
+     * @param value The bytes for igmpQuery to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIgmpQueryBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      igmpQuery_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3717,7 +4370,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasInternalIpv6PrefixLength() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -3751,7 +4404,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     public Builder setInternalIpv6PrefixLength(int value) {
 
       internalIpv6PrefixLength_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3768,7 +4421,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearInternalIpv6PrefixLength() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalIpv6PrefixLength_ = 0;
       onChanged();
       return this;
@@ -3778,10 +4431,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureIpv6AccessConfigsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         ipv6AccessConfigs_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.AccessConfig>(ipv6AccessConfigs_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -3795,7 +4448,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access.
+     * An array of IPv6 access configurations for this interface. Currently, only
+     * one IPv6 access config, DIRECT_IPV6, is supported. If there
+     * is no ipv6AccessConfig specified, then this instance will
+     * have no external IPv6 Internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig ipv6_access_configs = 483472110;</code>
@@ -3812,7 +4468,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access.
+     * An array of IPv6 access configurations for this interface. Currently, only
+     * one IPv6 access config, DIRECT_IPV6, is supported. If there
+     * is no ipv6AccessConfig specified, then this instance will
+     * have no external IPv6 Internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig ipv6_access_configs = 483472110;</code>
@@ -3829,7 +4488,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access.
+     * An array of IPv6 access configurations for this interface. Currently, only
+     * one IPv6 access config, DIRECT_IPV6, is supported. If there
+     * is no ipv6AccessConfig specified, then this instance will
+     * have no external IPv6 Internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig ipv6_access_configs = 483472110;</code>
@@ -3846,7 +4508,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access.
+     * An array of IPv6 access configurations for this interface. Currently, only
+     * one IPv6 access config, DIRECT_IPV6, is supported. If there
+     * is no ipv6AccessConfig specified, then this instance will
+     * have no external IPv6 Internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig ipv6_access_configs = 483472110;</code>
@@ -3869,7 +4534,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access.
+     * An array of IPv6 access configurations for this interface. Currently, only
+     * one IPv6 access config, DIRECT_IPV6, is supported. If there
+     * is no ipv6AccessConfig specified, then this instance will
+     * have no external IPv6 Internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig ipv6_access_configs = 483472110;</code>
@@ -3890,7 +4558,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access.
+     * An array of IPv6 access configurations for this interface. Currently, only
+     * one IPv6 access config, DIRECT_IPV6, is supported. If there
+     * is no ipv6AccessConfig specified, then this instance will
+     * have no external IPv6 Internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig ipv6_access_configs = 483472110;</code>
@@ -3913,7 +4584,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access.
+     * An array of IPv6 access configurations for this interface. Currently, only
+     * one IPv6 access config, DIRECT_IPV6, is supported. If there
+     * is no ipv6AccessConfig specified, then this instance will
+     * have no external IPv6 Internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig ipv6_access_configs = 483472110;</code>
@@ -3936,7 +4610,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access.
+     * An array of IPv6 access configurations for this interface. Currently, only
+     * one IPv6 access config, DIRECT_IPV6, is supported. If there
+     * is no ipv6AccessConfig specified, then this instance will
+     * have no external IPv6 Internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig ipv6_access_configs = 483472110;</code>
@@ -3957,7 +4634,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access.
+     * An array of IPv6 access configurations for this interface. Currently, only
+     * one IPv6 access config, DIRECT_IPV6, is supported. If there
+     * is no ipv6AccessConfig specified, then this instance will
+     * have no external IPv6 Internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig ipv6_access_configs = 483472110;</code>
@@ -3978,7 +4658,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access.
+     * An array of IPv6 access configurations for this interface. Currently, only
+     * one IPv6 access config, DIRECT_IPV6, is supported. If there
+     * is no ipv6AccessConfig specified, then this instance will
+     * have no external IPv6 Internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig ipv6_access_configs = 483472110;</code>
@@ -3999,7 +4682,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access.
+     * An array of IPv6 access configurations for this interface. Currently, only
+     * one IPv6 access config, DIRECT_IPV6, is supported. If there
+     * is no ipv6AccessConfig specified, then this instance will
+     * have no external IPv6 Internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig ipv6_access_configs = 483472110;</code>
@@ -4007,7 +4693,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     public Builder clearIpv6AccessConfigs() {
       if (ipv6AccessConfigsBuilder_ == null) {
         ipv6AccessConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         ipv6AccessConfigsBuilder_.clear();
@@ -4019,7 +4705,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access.
+     * An array of IPv6 access configurations for this interface. Currently, only
+     * one IPv6 access config, DIRECT_IPV6, is supported. If there
+     * is no ipv6AccessConfig specified, then this instance will
+     * have no external IPv6 Internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig ipv6_access_configs = 483472110;</code>
@@ -4039,7 +4728,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access.
+     * An array of IPv6 access configurations for this interface. Currently, only
+     * one IPv6 access config, DIRECT_IPV6, is supported. If there
+     * is no ipv6AccessConfig specified, then this instance will
+     * have no external IPv6 Internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig ipv6_access_configs = 483472110;</code>
@@ -4052,7 +4744,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access.
+     * An array of IPv6 access configurations for this interface. Currently, only
+     * one IPv6 access config, DIRECT_IPV6, is supported. If there
+     * is no ipv6AccessConfig specified, then this instance will
+     * have no external IPv6 Internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig ipv6_access_configs = 483472110;</code>
@@ -4070,7 +4765,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access.
+     * An array of IPv6 access configurations for this interface. Currently, only
+     * one IPv6 access config, DIRECT_IPV6, is supported. If there
+     * is no ipv6AccessConfig specified, then this instance will
+     * have no external IPv6 Internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig ipv6_access_configs = 483472110;</code>
@@ -4088,7 +4786,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access.
+     * An array of IPv6 access configurations for this interface. Currently, only
+     * one IPv6 access config, DIRECT_IPV6, is supported. If there
+     * is no ipv6AccessConfig specified, then this instance will
+     * have no external IPv6 Internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig ipv6_access_configs = 483472110;</code>
@@ -4102,7 +4803,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access.
+     * An array of IPv6 access configurations for this interface. Currently, only
+     * one IPv6 access config, DIRECT_IPV6, is supported. If there
+     * is no ipv6AccessConfig specified, then this instance will
+     * have no external IPv6 Internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig ipv6_access_configs = 483472110;</code>
@@ -4116,7 +4820,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access.
+     * An array of IPv6 access configurations for this interface. Currently, only
+     * one IPv6 access config, DIRECT_IPV6, is supported. If there
+     * is no ipv6AccessConfig specified, then this instance will
+     * have no external IPv6 Internet access.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AccessConfig ipv6_access_configs = 483472110;</code>
@@ -4138,7 +4845,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.compute.v1.AccessConfig.Builder,
                 com.google.cloud.compute.v1.AccessConfigOrBuilder>(
                 ipv6AccessConfigs_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         ipv6AccessConfigs_ = null;
@@ -4152,7 +4859,11 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be accessed from the Internet. This field is always inherited from its subnetwork. Valid only if stackType is IPV4_IPV6.
+     * Output only. [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be
+     * accessed from the Internet. This field is always inherited from its
+     * subnetwork.
+     *
+     * Valid only if stackType is IPV4_IPV6.
      * Check the Ipv6AccessType enum for the list of possible values.
      * </pre>
      *
@@ -4161,14 +4872,18 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the ipv6AccessType field is set.
      */
     public boolean hasIpv6AccessType() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be accessed from the Internet. This field is always inherited from its subnetwork. Valid only if stackType is IPV4_IPV6.
+     * Output only. [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be
+     * accessed from the Internet. This field is always inherited from its
+     * subnetwork.
+     *
+     * Valid only if stackType is IPV4_IPV6.
      * Check the Ipv6AccessType enum for the list of possible values.
      * </pre>
      *
@@ -4192,7 +4907,11 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be accessed from the Internet. This field is always inherited from its subnetwork. Valid only if stackType is IPV4_IPV6.
+     * Output only. [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be
+     * accessed from the Internet. This field is always inherited from its
+     * subnetwork.
+     *
+     * Valid only if stackType is IPV4_IPV6.
      * Check the Ipv6AccessType enum for the list of possible values.
      * </pre>
      *
@@ -4216,7 +4935,11 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be accessed from the Internet. This field is always inherited from its subnetwork. Valid only if stackType is IPV4_IPV6.
+     * Output only. [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be
+     * accessed from the Internet. This field is always inherited from its
+     * subnetwork.
+     *
+     * Valid only if stackType is IPV4_IPV6.
      * Check the Ipv6AccessType enum for the list of possible values.
      * </pre>
      *
@@ -4230,7 +4953,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       ipv6AccessType_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4239,7 +4962,11 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be accessed from the Internet. This field is always inherited from its subnetwork. Valid only if stackType is IPV4_IPV6.
+     * Output only. [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be
+     * accessed from the Internet. This field is always inherited from its
+     * subnetwork.
+     *
+     * Valid only if stackType is IPV4_IPV6.
      * Check the Ipv6AccessType enum for the list of possible values.
      * </pre>
      *
@@ -4249,7 +4976,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearIpv6AccessType() {
       ipv6AccessType_ = getDefaultInstance().getIpv6AccessType();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -4258,7 +4985,11 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be accessed from the Internet. This field is always inherited from its subnetwork. Valid only if stackType is IPV4_IPV6.
+     * Output only. [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be
+     * accessed from the Internet. This field is always inherited from its
+     * subnetwork.
+     *
+     * Valid only if stackType is IPV4_IPV6.
      * Check the Ipv6AccessType enum for the list of possible values.
      * </pre>
      *
@@ -4273,7 +5004,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       ipv6AccessType_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4284,7 +5015,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An IPv6 internal network address for this network interface. To use a static internal IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an internal IPv6 address from the instance's subnetwork.
+     * An IPv6 internal network address for this network interface. To
+     * use a static internal IP address, it must be unused and in the same region
+     * as the instance's zone. If not specified, Google Cloud will automatically
+     * assign an internal IPv6 address from the instance's subnetwork.
      * </pre>
      *
      * <code>optional string ipv6_address = 341563804;</code>
@@ -4292,14 +5026,17 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the ipv6Address field is set.
      */
     public boolean hasIpv6Address() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * An IPv6 internal network address for this network interface. To use a static internal IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an internal IPv6 address from the instance's subnetwork.
+     * An IPv6 internal network address for this network interface. To
+     * use a static internal IP address, it must be unused and in the same region
+     * as the instance's zone. If not specified, Google Cloud will automatically
+     * assign an internal IPv6 address from the instance's subnetwork.
      * </pre>
      *
      * <code>optional string ipv6_address = 341563804;</code>
@@ -4322,7 +5059,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An IPv6 internal network address for this network interface. To use a static internal IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an internal IPv6 address from the instance's subnetwork.
+     * An IPv6 internal network address for this network interface. To
+     * use a static internal IP address, it must be unused and in the same region
+     * as the instance's zone. If not specified, Google Cloud will automatically
+     * assign an internal IPv6 address from the instance's subnetwork.
      * </pre>
      *
      * <code>optional string ipv6_address = 341563804;</code>
@@ -4345,7 +5085,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An IPv6 internal network address for this network interface. To use a static internal IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an internal IPv6 address from the instance's subnetwork.
+     * An IPv6 internal network address for this network interface. To
+     * use a static internal IP address, it must be unused and in the same region
+     * as the instance's zone. If not specified, Google Cloud will automatically
+     * assign an internal IPv6 address from the instance's subnetwork.
      * </pre>
      *
      * <code>optional string ipv6_address = 341563804;</code>
@@ -4358,7 +5101,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       ipv6Address_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4367,7 +5110,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An IPv6 internal network address for this network interface. To use a static internal IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an internal IPv6 address from the instance's subnetwork.
+     * An IPv6 internal network address for this network interface. To
+     * use a static internal IP address, it must be unused and in the same region
+     * as the instance's zone. If not specified, Google Cloud will automatically
+     * assign an internal IPv6 address from the instance's subnetwork.
      * </pre>
      *
      * <code>optional string ipv6_address = 341563804;</code>
@@ -4376,7 +5122,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearIpv6Address() {
       ipv6Address_ = getDefaultInstance().getIpv6Address();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -4385,7 +5131,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An IPv6 internal network address for this network interface. To use a static internal IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an internal IPv6 address from the instance's subnetwork.
+     * An IPv6 internal network address for this network interface. To
+     * use a static internal IP address, it must be unused and in the same region
+     * as the instance's zone. If not specified, Google Cloud will automatically
+     * assign an internal IPv6 address from the instance's subnetwork.
      * </pre>
      *
      * <code>optional string ipv6_address = 341563804;</code>
@@ -4399,7 +5148,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       ipv6Address_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4410,7 +5159,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#networkInterface for network interfaces.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#networkInterface for network interfaces.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4418,14 +5167,14 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#networkInterface for network interfaces.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#networkInterface for network interfaces.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4448,7 +5197,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#networkInterface for network interfaces.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#networkInterface for network interfaces.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4471,7 +5220,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#networkInterface for network interfaces.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#networkInterface for network interfaces.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4484,7 +5233,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       kind_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4493,7 +5242,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#networkInterface for network interfaces.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#networkInterface for network interfaces.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4502,7 +5251,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearKind() {
       kind_ = getDefaultInstance().getKind();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -4511,7 +5260,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#networkInterface for network interfaces.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#networkInterface for network interfaces.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4525,7 +5274,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       kind_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4536,7 +5285,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The name of the network interface, which is generated by the server. For a VM, the network interface uses the nicN naming format. Where N is a value between 0 and 7. The default interface value is nic0.
+     * [Output Only] The name of the network interface, which is generated by the
+     * server. For a VM, the network interface uses the nicN naming
+     * format. Where N is a value between 0 and7. The default interface value is nic0.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -4544,14 +5295,16 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] The name of the network interface, which is generated by the server. For a VM, the network interface uses the nicN naming format. Where N is a value between 0 and 7. The default interface value is nic0.
+     * [Output Only] The name of the network interface, which is generated by the
+     * server. For a VM, the network interface uses the nicN naming
+     * format. Where N is a value between 0 and7. The default interface value is nic0.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -4574,7 +5327,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The name of the network interface, which is generated by the server. For a VM, the network interface uses the nicN naming format. Where N is a value between 0 and 7. The default interface value is nic0.
+     * [Output Only] The name of the network interface, which is generated by the
+     * server. For a VM, the network interface uses the nicN naming
+     * format. Where N is a value between 0 and7. The default interface value is nic0.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -4597,7 +5352,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The name of the network interface, which is generated by the server. For a VM, the network interface uses the nicN naming format. Where N is a value between 0 and 7. The default interface value is nic0.
+     * [Output Only] The name of the network interface, which is generated by the
+     * server. For a VM, the network interface uses the nicN naming
+     * format. Where N is a value between 0 and7. The default interface value is nic0.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -4610,7 +5367,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4619,7 +5376,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The name of the network interface, which is generated by the server. For a VM, the network interface uses the nicN naming format. Where N is a value between 0 and 7. The default interface value is nic0.
+     * [Output Only] The name of the network interface, which is generated by the
+     * server. For a VM, the network interface uses the nicN naming
+     * format. Where N is a value between 0 and7. The default interface value is nic0.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -4628,7 +5387,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -4637,7 +5396,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The name of the network interface, which is generated by the server. For a VM, the network interface uses the nicN naming format. Where N is a value between 0 and 7. The default interface value is nic0.
+     * [Output Only] The name of the network interface, which is generated by the
+     * server. For a VM, the network interface uses the nicN naming
+     * format. Where N is a value between 0 and7. The default interface value is nic0.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -4651,7 +5412,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4662,7 +5423,20 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URL of the VPC network resource for this instance. When creating an instance, if neither the network nor the subnetwork is specified, the default network global/networks/default is used. If the selected project doesn't have the default network, you must specify a network or subnet. If the network is not specified but the subnetwork is specified, the network is inferred. If you specify this property, you can specify the network as a full or partial URL. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/global/networks/ network - projects/project/global/networks/network - global/networks/default
+     * URL of the VPC network resource for this instance. When creating an
+     * instance, if neither the network nor the subnetwork is specified, the
+     * default network global/networks/default is used. If the
+     * selected project doesn't have the default network, you must specify a
+     * network or subnet. If the network is not specified but the subnetwork is
+     * specified, the network is inferred.
+     *
+     * If you specify this property, you can specify the network as
+     * a full or partial URL. For example, the following are all valid URLs:
+     *
+     *
+     *       - https://www.googleapis.com/compute/v1/projects/project/global/networks/network
+     *       - projects/project/global/networks/network
+     *       - global/networks/default
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -4670,14 +5444,27 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the network field is set.
      */
     public boolean hasNetwork() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * URL of the VPC network resource for this instance. When creating an instance, if neither the network nor the subnetwork is specified, the default network global/networks/default is used. If the selected project doesn't have the default network, you must specify a network or subnet. If the network is not specified but the subnetwork is specified, the network is inferred. If you specify this property, you can specify the network as a full or partial URL. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/global/networks/ network - projects/project/global/networks/network - global/networks/default
+     * URL of the VPC network resource for this instance. When creating an
+     * instance, if neither the network nor the subnetwork is specified, the
+     * default network global/networks/default is used. If the
+     * selected project doesn't have the default network, you must specify a
+     * network or subnet. If the network is not specified but the subnetwork is
+     * specified, the network is inferred.
+     *
+     * If you specify this property, you can specify the network as
+     * a full or partial URL. For example, the following are all valid URLs:
+     *
+     *
+     *       - https://www.googleapis.com/compute/v1/projects/project/global/networks/network
+     *       - projects/project/global/networks/network
+     *       - global/networks/default
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -4700,7 +5487,20 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URL of the VPC network resource for this instance. When creating an instance, if neither the network nor the subnetwork is specified, the default network global/networks/default is used. If the selected project doesn't have the default network, you must specify a network or subnet. If the network is not specified but the subnetwork is specified, the network is inferred. If you specify this property, you can specify the network as a full or partial URL. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/global/networks/ network - projects/project/global/networks/network - global/networks/default
+     * URL of the VPC network resource for this instance. When creating an
+     * instance, if neither the network nor the subnetwork is specified, the
+     * default network global/networks/default is used. If the
+     * selected project doesn't have the default network, you must specify a
+     * network or subnet. If the network is not specified but the subnetwork is
+     * specified, the network is inferred.
+     *
+     * If you specify this property, you can specify the network as
+     * a full or partial URL. For example, the following are all valid URLs:
+     *
+     *
+     *       - https://www.googleapis.com/compute/v1/projects/project/global/networks/network
+     *       - projects/project/global/networks/network
+     *       - global/networks/default
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -4723,7 +5523,20 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URL of the VPC network resource for this instance. When creating an instance, if neither the network nor the subnetwork is specified, the default network global/networks/default is used. If the selected project doesn't have the default network, you must specify a network or subnet. If the network is not specified but the subnetwork is specified, the network is inferred. If you specify this property, you can specify the network as a full or partial URL. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/global/networks/ network - projects/project/global/networks/network - global/networks/default
+     * URL of the VPC network resource for this instance. When creating an
+     * instance, if neither the network nor the subnetwork is specified, the
+     * default network global/networks/default is used. If the
+     * selected project doesn't have the default network, you must specify a
+     * network or subnet. If the network is not specified but the subnetwork is
+     * specified, the network is inferred.
+     *
+     * If you specify this property, you can specify the network as
+     * a full or partial URL. For example, the following are all valid URLs:
+     *
+     *
+     *       - https://www.googleapis.com/compute/v1/projects/project/global/networks/network
+     *       - projects/project/global/networks/network
+     *       - global/networks/default
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -4736,7 +5549,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       network_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4745,7 +5558,20 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URL of the VPC network resource for this instance. When creating an instance, if neither the network nor the subnetwork is specified, the default network global/networks/default is used. If the selected project doesn't have the default network, you must specify a network or subnet. If the network is not specified but the subnetwork is specified, the network is inferred. If you specify this property, you can specify the network as a full or partial URL. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/global/networks/ network - projects/project/global/networks/network - global/networks/default
+     * URL of the VPC network resource for this instance. When creating an
+     * instance, if neither the network nor the subnetwork is specified, the
+     * default network global/networks/default is used. If the
+     * selected project doesn't have the default network, you must specify a
+     * network or subnet. If the network is not specified but the subnetwork is
+     * specified, the network is inferred.
+     *
+     * If you specify this property, you can specify the network as
+     * a full or partial URL. For example, the following are all valid URLs:
+     *
+     *
+     *       - https://www.googleapis.com/compute/v1/projects/project/global/networks/network
+     *       - projects/project/global/networks/network
+     *       - global/networks/default
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -4754,7 +5580,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearNetwork() {
       network_ = getDefaultInstance().getNetwork();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -4763,7 +5589,20 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * URL of the VPC network resource for this instance. When creating an instance, if neither the network nor the subnetwork is specified, the default network global/networks/default is used. If the selected project doesn't have the default network, you must specify a network or subnet. If the network is not specified but the subnetwork is specified, the network is inferred. If you specify this property, you can specify the network as a full or partial URL. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/global/networks/ network - projects/project/global/networks/network - global/networks/default
+     * URL of the VPC network resource for this instance. When creating an
+     * instance, if neither the network nor the subnetwork is specified, the
+     * default network global/networks/default is used. If the
+     * selected project doesn't have the default network, you must specify a
+     * network or subnet. If the network is not specified but the subnetwork is
+     * specified, the network is inferred.
+     *
+     * If you specify this property, you can specify the network as
+     * a full or partial URL. For example, the following are all valid URLs:
+     *
+     *
+     *       - https://www.googleapis.com/compute/v1/projects/project/global/networks/network
+     *       - projects/project/global/networks/network
+     *       - global/networks/default
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -4777,7 +5616,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       network_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4788,7 +5627,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The URL of the network attachment that this interface should connect to in the following format: projects/{project_number}/regions/{region_name}/networkAttachments/{network_attachment_name}.
+     * The URL of the network attachment that this interface should connect
+     * to in the following format:
+     * projects/{project_number}/regions/{region_name}/networkAttachments/{network_attachment_name}.
      * </pre>
      *
      * <code>optional string network_attachment = 224644052;</code>
@@ -4796,14 +5637,16 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the networkAttachment field is set.
      */
     public boolean hasNetworkAttachment() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * The URL of the network attachment that this interface should connect to in the following format: projects/{project_number}/regions/{region_name}/networkAttachments/{network_attachment_name}.
+     * The URL of the network attachment that this interface should connect
+     * to in the following format:
+     * projects/{project_number}/regions/{region_name}/networkAttachments/{network_attachment_name}.
      * </pre>
      *
      * <code>optional string network_attachment = 224644052;</code>
@@ -4826,7 +5669,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The URL of the network attachment that this interface should connect to in the following format: projects/{project_number}/regions/{region_name}/networkAttachments/{network_attachment_name}.
+     * The URL of the network attachment that this interface should connect
+     * to in the following format:
+     * projects/{project_number}/regions/{region_name}/networkAttachments/{network_attachment_name}.
      * </pre>
      *
      * <code>optional string network_attachment = 224644052;</code>
@@ -4849,7 +5694,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The URL of the network attachment that this interface should connect to in the following format: projects/{project_number}/regions/{region_name}/networkAttachments/{network_attachment_name}.
+     * The URL of the network attachment that this interface should connect
+     * to in the following format:
+     * projects/{project_number}/regions/{region_name}/networkAttachments/{network_attachment_name}.
      * </pre>
      *
      * <code>optional string network_attachment = 224644052;</code>
@@ -4862,7 +5709,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       networkAttachment_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4871,7 +5718,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The URL of the network attachment that this interface should connect to in the following format: projects/{project_number}/regions/{region_name}/networkAttachments/{network_attachment_name}.
+     * The URL of the network attachment that this interface should connect
+     * to in the following format:
+     * projects/{project_number}/regions/{region_name}/networkAttachments/{network_attachment_name}.
      * </pre>
      *
      * <code>optional string network_attachment = 224644052;</code>
@@ -4880,7 +5729,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearNetworkAttachment() {
       networkAttachment_ = getDefaultInstance().getNetworkAttachment();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -4889,7 +5738,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The URL of the network attachment that this interface should connect to in the following format: projects/{project_number}/regions/{region_name}/networkAttachments/{network_attachment_name}.
+     * The URL of the network attachment that this interface should connect
+     * to in the following format:
+     * projects/{project_number}/regions/{region_name}/networkAttachments/{network_attachment_name}.
      * </pre>
      *
      * <code>optional string network_attachment = 224644052;</code>
@@ -4903,7 +5754,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       networkAttachment_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4914,7 +5765,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An IPv4 internal IP address to assign to the instance for this network interface. If not specified by the user, an unused internal IP is assigned by the system.
+     * An IPv4 internal IP address to assign to the instance for this network
+     * interface. If not specified by the user, an unused internal IP is
+     * assigned by the system.
      * </pre>
      *
      * <code>optional string network_i_p = 207181961;</code>
@@ -4922,14 +5775,16 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the networkIP field is set.
      */
     public boolean hasNetworkIP() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * An IPv4 internal IP address to assign to the instance for this network interface. If not specified by the user, an unused internal IP is assigned by the system.
+     * An IPv4 internal IP address to assign to the instance for this network
+     * interface. If not specified by the user, an unused internal IP is
+     * assigned by the system.
      * </pre>
      *
      * <code>optional string network_i_p = 207181961;</code>
@@ -4952,7 +5807,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An IPv4 internal IP address to assign to the instance for this network interface. If not specified by the user, an unused internal IP is assigned by the system.
+     * An IPv4 internal IP address to assign to the instance for this network
+     * interface. If not specified by the user, an unused internal IP is
+     * assigned by the system.
      * </pre>
      *
      * <code>optional string network_i_p = 207181961;</code>
@@ -4975,7 +5832,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An IPv4 internal IP address to assign to the instance for this network interface. If not specified by the user, an unused internal IP is assigned by the system.
+     * An IPv4 internal IP address to assign to the instance for this network
+     * interface. If not specified by the user, an unused internal IP is
+     * assigned by the system.
      * </pre>
      *
      * <code>optional string network_i_p = 207181961;</code>
@@ -4988,7 +5847,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       networkIP_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4997,7 +5856,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An IPv4 internal IP address to assign to the instance for this network interface. If not specified by the user, an unused internal IP is assigned by the system.
+     * An IPv4 internal IP address to assign to the instance for this network
+     * interface. If not specified by the user, an unused internal IP is
+     * assigned by the system.
      * </pre>
      *
      * <code>optional string network_i_p = 207181961;</code>
@@ -5006,7 +5867,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearNetworkIP() {
       networkIP_ = getDefaultInstance().getNetworkIP();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -5015,7 +5876,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An IPv4 internal IP address to assign to the instance for this network interface. If not specified by the user, an unused internal IP is assigned by the system.
+     * An IPv4 internal IP address to assign to the instance for this network
+     * interface. If not specified by the user, an unused internal IP is
+     * assigned by the system.
      * </pre>
      *
      * <code>optional string network_i_p = 207181961;</code>
@@ -5029,7 +5892,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       networkIP_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5040,7 +5903,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+     * The type of vNIC to be used on this interface. This may be gVNIC or
+     * VirtioNet.
      * Check the NicType enum for the list of possible values.
      * </pre>
      *
@@ -5049,14 +5913,15 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the nicType field is set.
      */
     public boolean hasNicType() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+     * The type of vNIC to be used on this interface. This may be gVNIC or
+     * VirtioNet.
      * Check the NicType enum for the list of possible values.
      * </pre>
      *
@@ -5080,7 +5945,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+     * The type of vNIC to be used on this interface. This may be gVNIC or
+     * VirtioNet.
      * Check the NicType enum for the list of possible values.
      * </pre>
      *
@@ -5104,7 +5970,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+     * The type of vNIC to be used on this interface. This may be gVNIC or
+     * VirtioNet.
      * Check the NicType enum for the list of possible values.
      * </pre>
      *
@@ -5118,7 +5985,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       nicType_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5127,7 +5994,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+     * The type of vNIC to be used on this interface. This may be gVNIC or
+     * VirtioNet.
      * Check the NicType enum for the list of possible values.
      * </pre>
      *
@@ -5137,7 +6005,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearNicType() {
       nicType_ = getDefaultInstance().getNicType();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -5146,7 +6014,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+     * The type of vNIC to be used on this interface. This may be gVNIC or
+     * VirtioNet.
      * Check the NicType enum for the list of possible values.
      * </pre>
      *
@@ -5161,7 +6030,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       nicType_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5180,7 +6049,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the parentNicName field is set.
      */
     public boolean hasParentNicName() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -5246,7 +6115,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       parentNicName_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5264,7 +6133,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearParentNicName() {
       parentNicName_ = getDefaultInstance().getParentNicName();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -5287,7 +6156,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       parentNicName_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5298,7 +6167,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The networking queue count that's specified by users for the network interface. Both Rx and Tx queues will be set to this number. It'll be empty if not specified by the users.
+     * The networking queue count that's specified by users for the network
+     * interface. Both Rx and Tx queues will be set to this number. It'll be empty
+     * if not specified by the users.
      * </pre>
      *
      * <code>optional int32 queue_count = 503708769;</code>
@@ -5307,14 +6178,16 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasQueueCount() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * The networking queue count that's specified by users for the network interface. Both Rx and Tx queues will be set to this number. It'll be empty if not specified by the users.
+     * The networking queue count that's specified by users for the network
+     * interface. Both Rx and Tx queues will be set to this number. It'll be empty
+     * if not specified by the users.
      * </pre>
      *
      * <code>optional int32 queue_count = 503708769;</code>
@@ -5330,7 +6203,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The networking queue count that's specified by users for the network interface. Both Rx and Tx queues will be set to this number. It'll be empty if not specified by the users.
+     * The networking queue count that's specified by users for the network
+     * interface. Both Rx and Tx queues will be set to this number. It'll be empty
+     * if not specified by the users.
      * </pre>
      *
      * <code>optional int32 queue_count = 503708769;</code>
@@ -5341,7 +6216,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     public Builder setQueueCount(int value) {
 
       queueCount_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5350,7 +6225,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The networking queue count that's specified by users for the network interface. Both Rx and Tx queues will be set to this number. It'll be empty if not specified by the users.
+     * The networking queue count that's specified by users for the network
+     * interface. Both Rx and Tx queues will be set to this number. It'll be empty
+     * if not specified by the users.
      * </pre>
      *
      * <code>optional int32 queue_count = 503708769;</code>
@@ -5358,7 +6235,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearQueueCount() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       queueCount_ = 0;
       onChanged();
       return this;
@@ -5370,7 +6247,11 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The stack type for this network interface. To assign only IPv4 addresses, use IPV4_ONLY. To assign both IPv4 and IPv6 addresses, use IPV4_IPV6. If not specified, IPV4_ONLY is used. This field can be both set at instance creation and update network interface operations.
+     * The stack type for this network interface. To assign only IPv4 addresses,
+     * use IPV4_ONLY. To assign both IPv4 and IPv6 addresses, useIPV4_IPV6. If not specified, IPV4_ONLY is used.
+     *
+     * This field can be both set at instance creation and update network
+     * interface operations.
      * Check the StackType enum for the list of possible values.
      * </pre>
      *
@@ -5379,14 +6260,18 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the stackType field is set.
      */
     public boolean hasStackType() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * The stack type for this network interface. To assign only IPv4 addresses, use IPV4_ONLY. To assign both IPv4 and IPv6 addresses, use IPV4_IPV6. If not specified, IPV4_ONLY is used. This field can be both set at instance creation and update network interface operations.
+     * The stack type for this network interface. To assign only IPv4 addresses,
+     * use IPV4_ONLY. To assign both IPv4 and IPv6 addresses, useIPV4_IPV6. If not specified, IPV4_ONLY is used.
+     *
+     * This field can be both set at instance creation and update network
+     * interface operations.
      * Check the StackType enum for the list of possible values.
      * </pre>
      *
@@ -5410,7 +6295,11 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The stack type for this network interface. To assign only IPv4 addresses, use IPV4_ONLY. To assign both IPv4 and IPv6 addresses, use IPV4_IPV6. If not specified, IPV4_ONLY is used. This field can be both set at instance creation and update network interface operations.
+     * The stack type for this network interface. To assign only IPv4 addresses,
+     * use IPV4_ONLY. To assign both IPv4 and IPv6 addresses, useIPV4_IPV6. If not specified, IPV4_ONLY is used.
+     *
+     * This field can be both set at instance creation and update network
+     * interface operations.
      * Check the StackType enum for the list of possible values.
      * </pre>
      *
@@ -5434,7 +6323,11 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The stack type for this network interface. To assign only IPv4 addresses, use IPV4_ONLY. To assign both IPv4 and IPv6 addresses, use IPV4_IPV6. If not specified, IPV4_ONLY is used. This field can be both set at instance creation and update network interface operations.
+     * The stack type for this network interface. To assign only IPv4 addresses,
+     * use IPV4_ONLY. To assign both IPv4 and IPv6 addresses, useIPV4_IPV6. If not specified, IPV4_ONLY is used.
+     *
+     * This field can be both set at instance creation and update network
+     * interface operations.
      * Check the StackType enum for the list of possible values.
      * </pre>
      *
@@ -5448,7 +6341,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       stackType_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5457,7 +6350,11 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The stack type for this network interface. To assign only IPv4 addresses, use IPV4_ONLY. To assign both IPv4 and IPv6 addresses, use IPV4_IPV6. If not specified, IPV4_ONLY is used. This field can be both set at instance creation and update network interface operations.
+     * The stack type for this network interface. To assign only IPv4 addresses,
+     * use IPV4_ONLY. To assign both IPv4 and IPv6 addresses, useIPV4_IPV6. If not specified, IPV4_ONLY is used.
+     *
+     * This field can be both set at instance creation and update network
+     * interface operations.
      * Check the StackType enum for the list of possible values.
      * </pre>
      *
@@ -5467,7 +6364,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearStackType() {
       stackType_ = getDefaultInstance().getStackType();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -5476,7 +6373,11 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The stack type for this network interface. To assign only IPv4 addresses, use IPV4_ONLY. To assign both IPv4 and IPv6 addresses, use IPV4_IPV6. If not specified, IPV4_ONLY is used. This field can be both set at instance creation and update network interface operations.
+     * The stack type for this network interface. To assign only IPv4 addresses,
+     * use IPV4_ONLY. To assign both IPv4 and IPv6 addresses, useIPV4_IPV6. If not specified, IPV4_ONLY is used.
+     *
+     * This field can be both set at instance creation and update network
+     * interface operations.
      * Check the StackType enum for the list of possible values.
      * </pre>
      *
@@ -5491,7 +6392,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       stackType_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5502,7 +6403,17 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The URL of the Subnetwork resource for this instance. If the network resource is in legacy mode, do not specify this field. If the network is in auto subnet mode, specifying the subnetwork is optional. If the network is in custom subnet mode, specifying the subnetwork is required. If you specify this field, you can specify the subnetwork as a full or partial URL. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/regions/region /subnetworks/subnetwork - regions/region/subnetworks/subnetwork
+     * The URL of the Subnetwork resource for this instance. If the network
+     * resource is inlegacy
+     * mode, do not specify this field. If the network is in auto subnet
+     * mode, specifying the subnetwork is optional. If the network is in custom
+     * subnet mode, specifying the subnetwork is required. If you specify this
+     * field, you can specify the subnetwork as a full or partial URL. For
+     * example, the following are all valid URLs:
+     *
+     *
+     *       - https://www.googleapis.com/compute/v1/projects/project/regions/region/subnetworks/subnetwork
+     *    - regions/region/subnetworks/subnetwork
      * </pre>
      *
      * <code>optional string subnetwork = 307827694;</code>
@@ -5510,14 +6421,24 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the subnetwork field is set.
      */
     public boolean hasSubnetwork() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * The URL of the Subnetwork resource for this instance. If the network resource is in legacy mode, do not specify this field. If the network is in auto subnet mode, specifying the subnetwork is optional. If the network is in custom subnet mode, specifying the subnetwork is required. If you specify this field, you can specify the subnetwork as a full or partial URL. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/regions/region /subnetworks/subnetwork - regions/region/subnetworks/subnetwork
+     * The URL of the Subnetwork resource for this instance. If the network
+     * resource is inlegacy
+     * mode, do not specify this field. If the network is in auto subnet
+     * mode, specifying the subnetwork is optional. If the network is in custom
+     * subnet mode, specifying the subnetwork is required. If you specify this
+     * field, you can specify the subnetwork as a full or partial URL. For
+     * example, the following are all valid URLs:
+     *
+     *
+     *       - https://www.googleapis.com/compute/v1/projects/project/regions/region/subnetworks/subnetwork
+     *    - regions/region/subnetworks/subnetwork
      * </pre>
      *
      * <code>optional string subnetwork = 307827694;</code>
@@ -5540,7 +6461,17 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The URL of the Subnetwork resource for this instance. If the network resource is in legacy mode, do not specify this field. If the network is in auto subnet mode, specifying the subnetwork is optional. If the network is in custom subnet mode, specifying the subnetwork is required. If you specify this field, you can specify the subnetwork as a full or partial URL. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/regions/region /subnetworks/subnetwork - regions/region/subnetworks/subnetwork
+     * The URL of the Subnetwork resource for this instance. If the network
+     * resource is inlegacy
+     * mode, do not specify this field. If the network is in auto subnet
+     * mode, specifying the subnetwork is optional. If the network is in custom
+     * subnet mode, specifying the subnetwork is required. If you specify this
+     * field, you can specify the subnetwork as a full or partial URL. For
+     * example, the following are all valid URLs:
+     *
+     *
+     *       - https://www.googleapis.com/compute/v1/projects/project/regions/region/subnetworks/subnetwork
+     *    - regions/region/subnetworks/subnetwork
      * </pre>
      *
      * <code>optional string subnetwork = 307827694;</code>
@@ -5563,7 +6494,17 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The URL of the Subnetwork resource for this instance. If the network resource is in legacy mode, do not specify this field. If the network is in auto subnet mode, specifying the subnetwork is optional. If the network is in custom subnet mode, specifying the subnetwork is required. If you specify this field, you can specify the subnetwork as a full or partial URL. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/regions/region /subnetworks/subnetwork - regions/region/subnetworks/subnetwork
+     * The URL of the Subnetwork resource for this instance. If the network
+     * resource is inlegacy
+     * mode, do not specify this field. If the network is in auto subnet
+     * mode, specifying the subnetwork is optional. If the network is in custom
+     * subnet mode, specifying the subnetwork is required. If you specify this
+     * field, you can specify the subnetwork as a full or partial URL. For
+     * example, the following are all valid URLs:
+     *
+     *
+     *       - https://www.googleapis.com/compute/v1/projects/project/regions/region/subnetworks/subnetwork
+     *    - regions/region/subnetworks/subnetwork
      * </pre>
      *
      * <code>optional string subnetwork = 307827694;</code>
@@ -5576,7 +6517,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       subnetwork_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5585,7 +6526,17 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The URL of the Subnetwork resource for this instance. If the network resource is in legacy mode, do not specify this field. If the network is in auto subnet mode, specifying the subnetwork is optional. If the network is in custom subnet mode, specifying the subnetwork is required. If you specify this field, you can specify the subnetwork as a full or partial URL. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/regions/region /subnetworks/subnetwork - regions/region/subnetworks/subnetwork
+     * The URL of the Subnetwork resource for this instance. If the network
+     * resource is inlegacy
+     * mode, do not specify this field. If the network is in auto subnet
+     * mode, specifying the subnetwork is optional. If the network is in custom
+     * subnet mode, specifying the subnetwork is required. If you specify this
+     * field, you can specify the subnetwork as a full or partial URL. For
+     * example, the following are all valid URLs:
+     *
+     *
+     *       - https://www.googleapis.com/compute/v1/projects/project/regions/region/subnetworks/subnetwork
+     *    - regions/region/subnetworks/subnetwork
      * </pre>
      *
      * <code>optional string subnetwork = 307827694;</code>
@@ -5594,7 +6545,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSubnetwork() {
       subnetwork_ = getDefaultInstance().getSubnetwork();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -5603,7 +6554,17 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The URL of the Subnetwork resource for this instance. If the network resource is in legacy mode, do not specify this field. If the network is in auto subnet mode, specifying the subnetwork is optional. If the network is in custom subnet mode, specifying the subnetwork is required. If you specify this field, you can specify the subnetwork as a full or partial URL. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/regions/region /subnetworks/subnetwork - regions/region/subnetworks/subnetwork
+     * The URL of the Subnetwork resource for this instance. If the network
+     * resource is inlegacy
+     * mode, do not specify this field. If the network is in auto subnet
+     * mode, specifying the subnetwork is optional. If the network is in custom
+     * subnet mode, specifying the subnetwork is required. If you specify this
+     * field, you can specify the subnetwork as a full or partial URL. For
+     * example, the following are all valid URLs:
+     *
+     *
+     *       - https://www.googleapis.com/compute/v1/projects/project/regions/region/subnetworks/subnetwork
+     *    - regions/region/subnetworks/subnetwork
      * </pre>
      *
      * <code>optional string subnetwork = 307827694;</code>
@@ -5617,7 +6578,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       subnetwork_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5628,7 +6589,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * VLAN tag of a dynamic network interface, must be an integer in the range from 2 to 255 inclusively.
+     * VLAN tag of a dynamic network interface, must be  an integer in the range
+     * from 2 to 255 inclusively.
      * </pre>
      *
      * <code>optional int32 vlan = 3622243;</code>
@@ -5637,14 +6599,15 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasVlan() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * VLAN tag of a dynamic network interface, must be an integer in the range from 2 to 255 inclusively.
+     * VLAN tag of a dynamic network interface, must be  an integer in the range
+     * from 2 to 255 inclusively.
      * </pre>
      *
      * <code>optional int32 vlan = 3622243;</code>
@@ -5660,7 +6623,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * VLAN tag of a dynamic network interface, must be an integer in the range from 2 to 255 inclusively.
+     * VLAN tag of a dynamic network interface, must be  an integer in the range
+     * from 2 to 255 inclusively.
      * </pre>
      *
      * <code>optional int32 vlan = 3622243;</code>
@@ -5671,7 +6635,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     public Builder setVlan(int value) {
 
       vlan_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5680,7 +6644,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * VLAN tag of a dynamic network interface, must be an integer in the range from 2 to 255 inclusively.
+     * VLAN tag of a dynamic network interface, must be  an integer in the range
+     * from 2 to 255 inclusively.
      * </pre>
      *
      * <code>optional int32 vlan = 3622243;</code>
@@ -5688,7 +6653,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearVlan() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       vlan_ = 0;
       onChanged();
       return this;

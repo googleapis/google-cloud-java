@@ -69,7 +69,7 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The number of virtual CPUs that are available to the instance.
+   * Output only. The number of virtual CPUs that are available to the instance.
    * </pre>
    *
    * <code>optional int32 guest_cpus = 393356754;</code>
@@ -85,7 +85,7 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The number of virtual CPUs that are available to the instance.
+   * Output only. The number of virtual CPUs that are available to the instance.
    * </pre>
    *
    * <code>optional int32 guest_cpus = 393356754;</code>
@@ -104,7 +104,8 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The amount of local SSD storage available to the instance, defined in GiB.
+   * Output only. The amount of local SSD storage available to the instance,
+   * defined in GiB.
    * </pre>
    *
    * <code>optional int32 local_ssd_gb = 329237578;</code>
@@ -120,7 +121,8 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The amount of local SSD storage available to the instance, defined in GiB.
+   * Output only. The amount of local SSD storage available to the instance,
+   * defined in GiB.
    * </pre>
    *
    * <code>optional int32 local_ssd_gb = 329237578;</code>
@@ -139,7 +141,8 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The amount of physical memory available to the instance, defined in MiB.
+   * Output only. The amount of physical memory available to the instance,
+   * defined in MiB.
    * </pre>
    *
    * <code>optional int32 memory_mb = 116001171;</code>
@@ -155,7 +158,8 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The amount of physical memory available to the instance, defined in MiB.
+   * Output only. The amount of physical memory available to the instance,
+   * defined in MiB.
    * </pre>
    *
    * <code>optional int32 memory_mb = 116001171;</code>
@@ -174,7 +178,7 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The minimal guaranteed number of virtual CPUs that are reserved.
+   * Output only. The minimal guaranteed number of virtual CPUs that are reserved.
    * </pre>
    *
    * <code>optional int32 min_node_cpus = 317231675;</code>
@@ -190,7 +194,7 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The minimal guaranteed number of virtual CPUs that are reserved.
+   * Output only. The minimal guaranteed number of virtual CPUs that are reserved.
    * </pre>
    *
    * <code>optional int32 min_node_cpus = 317231675;</code>
@@ -640,7 +644,7 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The number of virtual CPUs that are available to the instance.
+     * Output only. The number of virtual CPUs that are available to the instance.
      * </pre>
      *
      * <code>optional int32 guest_cpus = 393356754;</code>
@@ -656,7 +660,7 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The number of virtual CPUs that are available to the instance.
+     * Output only. The number of virtual CPUs that are available to the instance.
      * </pre>
      *
      * <code>optional int32 guest_cpus = 393356754;</code>
@@ -672,7 +676,7 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The number of virtual CPUs that are available to the instance.
+     * Output only. The number of virtual CPUs that are available to the instance.
      * </pre>
      *
      * <code>optional int32 guest_cpus = 393356754;</code>
@@ -692,7 +696,7 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The number of virtual CPUs that are available to the instance.
+     * Output only. The number of virtual CPUs that are available to the instance.
      * </pre>
      *
      * <code>optional int32 guest_cpus = 393356754;</code>
@@ -712,7 +716,8 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The amount of local SSD storage available to the instance, defined in GiB.
+     * Output only. The amount of local SSD storage available to the instance,
+     * defined in GiB.
      * </pre>
      *
      * <code>optional int32 local_ssd_gb = 329237578;</code>
@@ -728,7 +733,8 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The amount of local SSD storage available to the instance, defined in GiB.
+     * Output only. The amount of local SSD storage available to the instance,
+     * defined in GiB.
      * </pre>
      *
      * <code>optional int32 local_ssd_gb = 329237578;</code>
@@ -744,7 +750,8 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The amount of local SSD storage available to the instance, defined in GiB.
+     * Output only. The amount of local SSD storage available to the instance,
+     * defined in GiB.
      * </pre>
      *
      * <code>optional int32 local_ssd_gb = 329237578;</code>
@@ -764,7 +771,8 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The amount of local SSD storage available to the instance, defined in GiB.
+     * Output only. The amount of local SSD storage available to the instance,
+     * defined in GiB.
      * </pre>
      *
      * <code>optional int32 local_ssd_gb = 329237578;</code>
@@ -784,7 +792,8 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The amount of physical memory available to the instance, defined in MiB.
+     * Output only. The amount of physical memory available to the instance,
+     * defined in MiB.
      * </pre>
      *
      * <code>optional int32 memory_mb = 116001171;</code>
@@ -800,7 +809,8 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The amount of physical memory available to the instance, defined in MiB.
+     * Output only. The amount of physical memory available to the instance,
+     * defined in MiB.
      * </pre>
      *
      * <code>optional int32 memory_mb = 116001171;</code>
@@ -816,7 +826,8 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The amount of physical memory available to the instance, defined in MiB.
+     * Output only. The amount of physical memory available to the instance,
+     * defined in MiB.
      * </pre>
      *
      * <code>optional int32 memory_mb = 116001171;</code>
@@ -836,7 +847,8 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The amount of physical memory available to the instance, defined in MiB.
+     * Output only. The amount of physical memory available to the instance,
+     * defined in MiB.
      * </pre>
      *
      * <code>optional int32 memory_mb = 116001171;</code>
@@ -856,7 +868,7 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The minimal guaranteed number of virtual CPUs that are reserved.
+     * Output only. The minimal guaranteed number of virtual CPUs that are reserved.
      * </pre>
      *
      * <code>optional int32 min_node_cpus = 317231675;</code>
@@ -872,7 +884,7 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The minimal guaranteed number of virtual CPUs that are reserved.
+     * Output only. The minimal guaranteed number of virtual CPUs that are reserved.
      * </pre>
      *
      * <code>optional int32 min_node_cpus = 317231675;</code>
@@ -888,7 +900,7 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The minimal guaranteed number of virtual CPUs that are reserved.
+     * Output only. The minimal guaranteed number of virtual CPUs that are reserved.
      * </pre>
      *
      * <code>optional int32 min_node_cpus = 317231675;</code>
@@ -908,7 +920,7 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The minimal guaranteed number of virtual CPUs that are reserved.
+     * Output only. The minimal guaranteed number of virtual CPUs that are reserved.
      * </pre>
      *
      * <code>optional int32 min_node_cpus = 317231675;</code>

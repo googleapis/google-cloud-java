@@ -212,15 +212,24 @@ public class MemorystoreClientTest {
             .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
             .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
             .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
             .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
             .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
             .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
             .setBackupCollection(
                 BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
                     .toString())
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -282,15 +291,24 @@ public class MemorystoreClientTest {
             .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
             .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
             .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
             .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
             .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
             .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
             .setBackupCollection(
                 BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
                     .toString())
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -352,15 +370,24 @@ public class MemorystoreClientTest {
             .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
             .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
             .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
             .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
             .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
             .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
             .setBackupCollection(
                 BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
                     .toString())
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -431,15 +458,24 @@ public class MemorystoreClientTest {
             .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
             .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
             .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
             .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
             .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
             .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
             .setBackupCollection(
                 BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
                     .toString())
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -510,15 +546,24 @@ public class MemorystoreClientTest {
             .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
             .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
             .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
             .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
             .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
             .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
             .setBackupCollection(
                 BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
                     .toString())
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -548,15 +593,24 @@ public class MemorystoreClientTest {
             .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
             .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
             .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
             .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
             .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
             .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
             .setBackupCollection(
                 BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
                     .toString())
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -606,16 +660,25 @@ public class MemorystoreClientTest {
               .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
               .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
               .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+              .setSimulateMaintenanceEvent(true)
               .setOndemandMaintenance(true)
+              .setSatisfiesPzs(true)
+              .setSatisfiesPzi(true)
               .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
               .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
               .setCrossInstanceReplicationConfig(
                   CrossInstanceReplicationConfig.newBuilder().build())
               .setAsyncInstanceEndpointsDeletionEnabled(true)
+              .setKmsKey("kmsKey-1127483058")
+              .setEncryptionInfo(EncryptionInfo.newBuilder().build())
               .setBackupCollection(
                   BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
                       .toString())
               .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+              .setMaintenanceVersion("maintenanceVersion1355658821")
+              .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+              .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+              .setAllowFewerZonesDeployment(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateInstanceAsync(instance, updateMask).get();
@@ -820,15 +883,24 @@ public class MemorystoreClientTest {
             .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
             .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
             .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
             .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
             .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
             .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
             .setBackupCollection(
                 BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
                     .toString())
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -902,15 +974,24 @@ public class MemorystoreClientTest {
             .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
             .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
             .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
             .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
             .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
             .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
             .setBackupCollection(
                 BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
                     .toString())
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1074,6 +1155,9 @@ public class MemorystoreClientTest {
             .setKmsKey("kmsKey-1127483058")
             .setUid("uid115792")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setTotalBackupSizeBytes(-665105137)
+            .setTotalBackupCount(775900525)
+            .setLastBackupTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1127,6 +1211,9 @@ public class MemorystoreClientTest {
             .setKmsKey("kmsKey-1127483058")
             .setUid("uid115792")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setTotalBackupSizeBytes(-665105137)
+            .setTotalBackupCount(775900525)
+            .setLastBackupTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1288,6 +1375,7 @@ public class MemorystoreClientTest {
             .addAllBackupFiles(new ArrayList<BackupFile>())
             .setReplicaCount(564075208)
             .setShardCount(-495377042)
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
             .setUid("uid115792")
             .build();
     mockService.addResponse(expectedResponse);
@@ -1344,6 +1432,7 @@ public class MemorystoreClientTest {
             .addAllBackupFiles(new ArrayList<BackupFile>())
             .setReplicaCount(564075208)
             .setShardCount(-495377042)
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
             .setUid("uid115792")
             .build();
     mockService.addResponse(expectedResponse);
@@ -1494,6 +1583,7 @@ public class MemorystoreClientTest {
             .addAllBackupFiles(new ArrayList<BackupFile>())
             .setReplicaCount(564075208)
             .setShardCount(-495377042)
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
             .setUid("uid115792")
             .build();
     Operation resultOperation =
@@ -1571,15 +1661,24 @@ public class MemorystoreClientTest {
             .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
             .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
             .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
             .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
             .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
             .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
             .setBackupCollection(
                 BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
                     .toString())
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1646,15 +1745,24 @@ public class MemorystoreClientTest {
             .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
             .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
             .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
             .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
             .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
             .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
             .setBackupCollection(
                 BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
                     .toString())
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()

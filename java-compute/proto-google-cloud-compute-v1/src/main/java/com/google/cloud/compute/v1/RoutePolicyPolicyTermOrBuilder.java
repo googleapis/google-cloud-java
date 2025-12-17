@@ -83,7 +83,9 @@ public interface RoutePolicyPolicyTermOrBuilder
    *
    *
    * <pre>
-   * CEL expression evaluated against a route to determine if this term applies. When not set, the term applies to all routes.
+   * CEL expression evaluated against a route to determine if this term
+   * applies. When not set, the term applies to all
+   * routes.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Expr match = 103668165;</code>
@@ -96,7 +98,9 @@ public interface RoutePolicyPolicyTermOrBuilder
    *
    *
    * <pre>
-   * CEL expression evaluated against a route to determine if this term applies. When not set, the term applies to all routes.
+   * CEL expression evaluated against a route to determine if this term
+   * applies. When not set, the term applies to all
+   * routes.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Expr match = 103668165;</code>
@@ -109,7 +113,9 @@ public interface RoutePolicyPolicyTermOrBuilder
    *
    *
    * <pre>
-   * CEL expression evaluated against a route to determine if this term applies. When not set, the term applies to all routes.
+   * CEL expression evaluated against a route to determine if this term
+   * applies. When not set, the term applies to all
+   * routes.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Expr match = 103668165;</code>
@@ -120,7 +126,8 @@ public interface RoutePolicyPolicyTermOrBuilder
    *
    *
    * <pre>
-   * The evaluation priority for this term, which must be between 0 (inclusive) and 2^31 (exclusive), and unique within the list.
+   * The evaluation priority for this term, which must be between 0
+   * (inclusive) and 2^31 (exclusive), and unique within the list.
    * </pre>
    *
    * <code>optional int32 priority = 445151652;</code>
@@ -133,7 +140,8 @@ public interface RoutePolicyPolicyTermOrBuilder
    *
    *
    * <pre>
-   * The evaluation priority for this term, which must be between 0 (inclusive) and 2^31 (exclusive), and unique within the list.
+   * The evaluation priority for this term, which must be between 0
+   * (inclusive) and 2^31 (exclusive), and unique within the list.
    * </pre>
    *
    * <code>optional int32 priority = 445151652;</code>

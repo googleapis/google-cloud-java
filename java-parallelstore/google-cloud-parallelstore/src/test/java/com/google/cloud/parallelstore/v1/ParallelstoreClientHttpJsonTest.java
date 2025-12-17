@@ -636,6 +636,7 @@ public class ParallelstoreClientHttpJsonTest {
             .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
             .setRequestId("requestId693933066")
             .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+            .setMetadataOptions(TransferMetadataOptions.newBuilder().build())
             .build();
 
     ImportDataResponse actualResponse = client.importDataAsync(request).get();
@@ -669,6 +670,7 @@ public class ParallelstoreClientHttpJsonTest {
               .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
               .setRequestId("requestId693933066")
               .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+              .setMetadataOptions(TransferMetadataOptions.newBuilder().build())
               .build();
       client.importDataAsync(request).get();
       Assert.fail("No exception raised");
@@ -692,6 +694,7 @@ public class ParallelstoreClientHttpJsonTest {
             .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
             .setRequestId("requestId693933066")
             .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+            .setMetadataOptions(TransferMetadataOptions.newBuilder().build())
             .build();
 
     ExportDataResponse actualResponse = client.exportDataAsync(request).get();
@@ -725,6 +728,7 @@ public class ParallelstoreClientHttpJsonTest {
               .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
               .setRequestId("requestId693933066")
               .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+              .setMetadataOptions(TransferMetadataOptions.newBuilder().build())
               .build();
       client.exportDataAsync(request).get();
       Assert.fail("No exception raised");

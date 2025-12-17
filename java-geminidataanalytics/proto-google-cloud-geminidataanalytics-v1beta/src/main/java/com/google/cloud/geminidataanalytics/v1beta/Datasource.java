@@ -75,6 +75,9 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
     BIGQUERY_TABLE_REFERENCE(1),
     STUDIO_DATASOURCE_ID(2),
     LOOKER_EXPLORE_REFERENCE(4),
+    ALLOY_DB_REFERENCE(12),
+    SPANNER_REFERENCE(13),
+    CLOUD_SQL_REFERENCE(14),
     REFERENCE_NOT_SET(0);
     private final int value;
 
@@ -100,6 +103,12 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
           return STUDIO_DATASOURCE_ID;
         case 4:
           return LOOKER_EXPLORE_REFERENCE;
+        case 12:
+          return ALLOY_DB_REFERENCE;
+        case 13:
+          return SPANNER_REFERENCE;
+        case 14:
+          return CLOUD_SQL_REFERENCE;
         case 0:
           return REFERENCE_NOT_SET;
         default:
@@ -313,6 +322,174 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.geminidataanalytics.v1beta.LookerExploreReference.getDefaultInstance();
   }
 
+  public static final int ALLOY_DB_REFERENCE_FIELD_NUMBER = 12;
+
+  /**
+   *
+   *
+   * <pre>
+   * A reference to an AlloyDB database.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.AlloyDbReference alloy_db_reference = 12;</code>
+   *
+   * @return Whether the alloyDbReference field is set.
+   */
+  @java.lang.Override
+  public boolean hasAlloyDbReference() {
+    return referenceCase_ == 12;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A reference to an AlloyDB database.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.AlloyDbReference alloy_db_reference = 12;</code>
+   *
+   * @return The alloyDbReference.
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.AlloyDbReference getAlloyDbReference() {
+    if (referenceCase_ == 12) {
+      return (com.google.cloud.geminidataanalytics.v1beta.AlloyDbReference) reference_;
+    }
+    return com.google.cloud.geminidataanalytics.v1beta.AlloyDbReference.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A reference to an AlloyDB database.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.AlloyDbReference alloy_db_reference = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.AlloyDbReferenceOrBuilder
+      getAlloyDbReferenceOrBuilder() {
+    if (referenceCase_ == 12) {
+      return (com.google.cloud.geminidataanalytics.v1beta.AlloyDbReference) reference_;
+    }
+    return com.google.cloud.geminidataanalytics.v1beta.AlloyDbReference.getDefaultInstance();
+  }
+
+  public static final int SPANNER_REFERENCE_FIELD_NUMBER = 13;
+
+  /**
+   *
+   *
+   * <pre>
+   * A reference to a Spanner database.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.SpannerReference spanner_reference = 13;</code>
+   *
+   * @return Whether the spannerReference field is set.
+   */
+  @java.lang.Override
+  public boolean hasSpannerReference() {
+    return referenceCase_ == 13;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A reference to a Spanner database.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.SpannerReference spanner_reference = 13;</code>
+   *
+   * @return The spannerReference.
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.SpannerReference getSpannerReference() {
+    if (referenceCase_ == 13) {
+      return (com.google.cloud.geminidataanalytics.v1beta.SpannerReference) reference_;
+    }
+    return com.google.cloud.geminidataanalytics.v1beta.SpannerReference.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A reference to a Spanner database.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.SpannerReference spanner_reference = 13;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.SpannerReferenceOrBuilder
+      getSpannerReferenceOrBuilder() {
+    if (referenceCase_ == 13) {
+      return (com.google.cloud.geminidataanalytics.v1beta.SpannerReference) reference_;
+    }
+    return com.google.cloud.geminidataanalytics.v1beta.SpannerReference.getDefaultInstance();
+  }
+
+  public static final int CLOUD_SQL_REFERENCE_FIELD_NUMBER = 14;
+
+  /**
+   *
+   *
+   * <pre>
+   * A reference to a CloudSQL database.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.CloudSqlReference cloud_sql_reference = 14;
+   * </code>
+   *
+   * @return Whether the cloudSqlReference field is set.
+   */
+  @java.lang.Override
+  public boolean hasCloudSqlReference() {
+    return referenceCase_ == 14;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A reference to a CloudSQL database.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.CloudSqlReference cloud_sql_reference = 14;
+   * </code>
+   *
+   * @return The cloudSqlReference.
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference getCloudSqlReference() {
+    if (referenceCase_ == 14) {
+      return (com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference) reference_;
+    }
+    return com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A reference to a CloudSQL database.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.CloudSqlReference cloud_sql_reference = 14;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.CloudSqlReferenceOrBuilder
+      getCloudSqlReferenceOrBuilder() {
+    if (referenceCase_ == 14) {
+      return (com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference) reference_;
+    }
+    return com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference.getDefaultInstance();
+  }
+
   public static final int SCHEMA_FIELD_NUMBER = 7;
   private com.google.cloud.geminidataanalytics.v1beta.Schema schema_;
 
@@ -470,6 +647,18 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(10, getStructSchema());
     }
+    if (referenceCase_ == 12) {
+      output.writeMessage(
+          12, (com.google.cloud.geminidataanalytics.v1beta.AlloyDbReference) reference_);
+    }
+    if (referenceCase_ == 13) {
+      output.writeMessage(
+          13, (com.google.cloud.geminidataanalytics.v1beta.SpannerReference) reference_);
+    }
+    if (referenceCase_ == 14) {
+      output.writeMessage(
+          14, (com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference) reference_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -497,6 +686,21 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getStructSchema());
+    }
+    if (referenceCase_ == 12) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12, (com.google.cloud.geminidataanalytics.v1beta.AlloyDbReference) reference_);
+    }
+    if (referenceCase_ == 13) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13, (com.google.cloud.geminidataanalytics.v1beta.SpannerReference) reference_);
+    }
+    if (referenceCase_ == 14) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              14, (com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference) reference_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -533,6 +737,15 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
       case 4:
         if (!getLookerExploreReference().equals(other.getLookerExploreReference())) return false;
         break;
+      case 12:
+        if (!getAlloyDbReference().equals(other.getAlloyDbReference())) return false;
+        break;
+      case 13:
+        if (!getSpannerReference().equals(other.getSpannerReference())) return false;
+        break;
+      case 14:
+        if (!getCloudSqlReference().equals(other.getCloudSqlReference())) return false;
+        break;
       case 0:
       default:
     }
@@ -567,6 +780,18 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
       case 4:
         hash = (37 * hash) + LOOKER_EXPLORE_REFERENCE_FIELD_NUMBER;
         hash = (53 * hash) + getLookerExploreReference().hashCode();
+        break;
+      case 12:
+        hash = (37 * hash) + ALLOY_DB_REFERENCE_FIELD_NUMBER;
+        hash = (53 * hash) + getAlloyDbReference().hashCode();
+        break;
+      case 13:
+        hash = (37 * hash) + SPANNER_REFERENCE_FIELD_NUMBER;
+        hash = (53 * hash) + getSpannerReference().hashCode();
+        break;
+      case 14:
+        hash = (37 * hash) + CLOUD_SQL_REFERENCE_FIELD_NUMBER;
+        hash = (53 * hash) + getCloudSqlReference().hashCode();
         break;
       case 0:
       default:
@@ -728,6 +953,15 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
       if (lookerExploreReferenceBuilder_ != null) {
         lookerExploreReferenceBuilder_.clear();
       }
+      if (alloyDbReferenceBuilder_ != null) {
+        alloyDbReferenceBuilder_.clear();
+      }
+      if (spannerReferenceBuilder_ != null) {
+        spannerReferenceBuilder_.clear();
+      }
+      if (cloudSqlReferenceBuilder_ != null) {
+        cloudSqlReferenceBuilder_.clear();
+      }
       schema_ = null;
       if (schemaBuilder_ != null) {
         schemaBuilder_.dispose();
@@ -778,11 +1012,11 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
     private void buildPartial0(com.google.cloud.geminidataanalytics.v1beta.Datasource result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.schema_ = schemaBuilder_ == null ? schema_ : schemaBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.structSchema_ =
             structSchemaBuilder_ == null ? structSchema_ : structSchemaBuilder_.build();
         to_bitField0_ |= 0x00000002;
@@ -798,6 +1032,15 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
       }
       if (referenceCase_ == 4 && lookerExploreReferenceBuilder_ != null) {
         result.reference_ = lookerExploreReferenceBuilder_.build();
+      }
+      if (referenceCase_ == 12 && alloyDbReferenceBuilder_ != null) {
+        result.reference_ = alloyDbReferenceBuilder_.build();
+      }
+      if (referenceCase_ == 13 && spannerReferenceBuilder_ != null) {
+        result.reference_ = spannerReferenceBuilder_.build();
+      }
+      if (referenceCase_ == 14 && cloudSqlReferenceBuilder_ != null) {
+        result.reference_ = cloudSqlReferenceBuilder_.build();
       }
     }
 
@@ -871,6 +1114,21 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
             mergeLookerExploreReference(other.getLookerExploreReference());
             break;
           }
+        case ALLOY_DB_REFERENCE:
+          {
+            mergeAlloyDbReference(other.getAlloyDbReference());
+            break;
+          }
+        case SPANNER_REFERENCE:
+          {
+            mergeSpannerReference(other.getSpannerReference());
+            break;
+          }
+        case CLOUD_SQL_REFERENCE:
+          {
+            mergeCloudSqlReference(other.getCloudSqlReference());
+            break;
+          }
         case REFERENCE_NOT_SET:
           {
             break;
@@ -926,15 +1184,36 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
             case 58:
               {
                 input.readMessage(getSchemaFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 82:
               {
                 input.readMessage(getStructSchemaFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 82
+            case 98:
+              {
+                input.readMessage(
+                    getAlloyDbReferenceFieldBuilder().getBuilder(), extensionRegistry);
+                referenceCase_ = 12;
+                break;
+              } // case 98
+            case 106:
+              {
+                input.readMessage(
+                    getSpannerReferenceFieldBuilder().getBuilder(), extensionRegistry);
+                referenceCase_ = 13;
+                break;
+              } // case 106
+            case 114:
+              {
+                input.readMessage(
+                    getCloudSqlReferenceFieldBuilder().getBuilder(), extensionRegistry);
+                referenceCase_ = 14;
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1607,6 +1886,708 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
       return lookerExploreReferenceBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.geminidataanalytics.v1beta.AlloyDbReference,
+            com.google.cloud.geminidataanalytics.v1beta.AlloyDbReference.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.AlloyDbReferenceOrBuilder>
+        alloyDbReferenceBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to an AlloyDB database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.AlloyDbReference alloy_db_reference = 12;
+     * </code>
+     *
+     * @return Whether the alloyDbReference field is set.
+     */
+    @java.lang.Override
+    public boolean hasAlloyDbReference() {
+      return referenceCase_ == 12;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to an AlloyDB database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.AlloyDbReference alloy_db_reference = 12;
+     * </code>
+     *
+     * @return The alloyDbReference.
+     */
+    @java.lang.Override
+    public com.google.cloud.geminidataanalytics.v1beta.AlloyDbReference getAlloyDbReference() {
+      if (alloyDbReferenceBuilder_ == null) {
+        if (referenceCase_ == 12) {
+          return (com.google.cloud.geminidataanalytics.v1beta.AlloyDbReference) reference_;
+        }
+        return com.google.cloud.geminidataanalytics.v1beta.AlloyDbReference.getDefaultInstance();
+      } else {
+        if (referenceCase_ == 12) {
+          return alloyDbReferenceBuilder_.getMessage();
+        }
+        return com.google.cloud.geminidataanalytics.v1beta.AlloyDbReference.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to an AlloyDB database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.AlloyDbReference alloy_db_reference = 12;
+     * </code>
+     */
+    public Builder setAlloyDbReference(
+        com.google.cloud.geminidataanalytics.v1beta.AlloyDbReference value) {
+      if (alloyDbReferenceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        reference_ = value;
+        onChanged();
+      } else {
+        alloyDbReferenceBuilder_.setMessage(value);
+      }
+      referenceCase_ = 12;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to an AlloyDB database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.AlloyDbReference alloy_db_reference = 12;
+     * </code>
+     */
+    public Builder setAlloyDbReference(
+        com.google.cloud.geminidataanalytics.v1beta.AlloyDbReference.Builder builderForValue) {
+      if (alloyDbReferenceBuilder_ == null) {
+        reference_ = builderForValue.build();
+        onChanged();
+      } else {
+        alloyDbReferenceBuilder_.setMessage(builderForValue.build());
+      }
+      referenceCase_ = 12;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to an AlloyDB database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.AlloyDbReference alloy_db_reference = 12;
+     * </code>
+     */
+    public Builder mergeAlloyDbReference(
+        com.google.cloud.geminidataanalytics.v1beta.AlloyDbReference value) {
+      if (alloyDbReferenceBuilder_ == null) {
+        if (referenceCase_ == 12
+            && reference_
+                != com.google.cloud.geminidataanalytics.v1beta.AlloyDbReference
+                    .getDefaultInstance()) {
+          reference_ =
+              com.google.cloud.geminidataanalytics.v1beta.AlloyDbReference.newBuilder(
+                      (com.google.cloud.geminidataanalytics.v1beta.AlloyDbReference) reference_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          reference_ = value;
+        }
+        onChanged();
+      } else {
+        if (referenceCase_ == 12) {
+          alloyDbReferenceBuilder_.mergeFrom(value);
+        } else {
+          alloyDbReferenceBuilder_.setMessage(value);
+        }
+      }
+      referenceCase_ = 12;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to an AlloyDB database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.AlloyDbReference alloy_db_reference = 12;
+     * </code>
+     */
+    public Builder clearAlloyDbReference() {
+      if (alloyDbReferenceBuilder_ == null) {
+        if (referenceCase_ == 12) {
+          referenceCase_ = 0;
+          reference_ = null;
+          onChanged();
+        }
+      } else {
+        if (referenceCase_ == 12) {
+          referenceCase_ = 0;
+          reference_ = null;
+        }
+        alloyDbReferenceBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to an AlloyDB database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.AlloyDbReference alloy_db_reference = 12;
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.AlloyDbReference.Builder
+        getAlloyDbReferenceBuilder() {
+      return getAlloyDbReferenceFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to an AlloyDB database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.AlloyDbReference alloy_db_reference = 12;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.geminidataanalytics.v1beta.AlloyDbReferenceOrBuilder
+        getAlloyDbReferenceOrBuilder() {
+      if ((referenceCase_ == 12) && (alloyDbReferenceBuilder_ != null)) {
+        return alloyDbReferenceBuilder_.getMessageOrBuilder();
+      } else {
+        if (referenceCase_ == 12) {
+          return (com.google.cloud.geminidataanalytics.v1beta.AlloyDbReference) reference_;
+        }
+        return com.google.cloud.geminidataanalytics.v1beta.AlloyDbReference.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to an AlloyDB database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.AlloyDbReference alloy_db_reference = 12;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.geminidataanalytics.v1beta.AlloyDbReference,
+            com.google.cloud.geminidataanalytics.v1beta.AlloyDbReference.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.AlloyDbReferenceOrBuilder>
+        getAlloyDbReferenceFieldBuilder() {
+      if (alloyDbReferenceBuilder_ == null) {
+        if (!(referenceCase_ == 12)) {
+          reference_ =
+              com.google.cloud.geminidataanalytics.v1beta.AlloyDbReference.getDefaultInstance();
+        }
+        alloyDbReferenceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.geminidataanalytics.v1beta.AlloyDbReference,
+                com.google.cloud.geminidataanalytics.v1beta.AlloyDbReference.Builder,
+                com.google.cloud.geminidataanalytics.v1beta.AlloyDbReferenceOrBuilder>(
+                (com.google.cloud.geminidataanalytics.v1beta.AlloyDbReference) reference_,
+                getParentForChildren(),
+                isClean());
+        reference_ = null;
+      }
+      referenceCase_ = 12;
+      onChanged();
+      return alloyDbReferenceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.geminidataanalytics.v1beta.SpannerReference,
+            com.google.cloud.geminidataanalytics.v1beta.SpannerReference.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.SpannerReferenceOrBuilder>
+        spannerReferenceBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a Spanner database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.SpannerReference spanner_reference = 13;
+     * </code>
+     *
+     * @return Whether the spannerReference field is set.
+     */
+    @java.lang.Override
+    public boolean hasSpannerReference() {
+      return referenceCase_ == 13;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a Spanner database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.SpannerReference spanner_reference = 13;
+     * </code>
+     *
+     * @return The spannerReference.
+     */
+    @java.lang.Override
+    public com.google.cloud.geminidataanalytics.v1beta.SpannerReference getSpannerReference() {
+      if (spannerReferenceBuilder_ == null) {
+        if (referenceCase_ == 13) {
+          return (com.google.cloud.geminidataanalytics.v1beta.SpannerReference) reference_;
+        }
+        return com.google.cloud.geminidataanalytics.v1beta.SpannerReference.getDefaultInstance();
+      } else {
+        if (referenceCase_ == 13) {
+          return spannerReferenceBuilder_.getMessage();
+        }
+        return com.google.cloud.geminidataanalytics.v1beta.SpannerReference.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a Spanner database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.SpannerReference spanner_reference = 13;
+     * </code>
+     */
+    public Builder setSpannerReference(
+        com.google.cloud.geminidataanalytics.v1beta.SpannerReference value) {
+      if (spannerReferenceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        reference_ = value;
+        onChanged();
+      } else {
+        spannerReferenceBuilder_.setMessage(value);
+      }
+      referenceCase_ = 13;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a Spanner database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.SpannerReference spanner_reference = 13;
+     * </code>
+     */
+    public Builder setSpannerReference(
+        com.google.cloud.geminidataanalytics.v1beta.SpannerReference.Builder builderForValue) {
+      if (spannerReferenceBuilder_ == null) {
+        reference_ = builderForValue.build();
+        onChanged();
+      } else {
+        spannerReferenceBuilder_.setMessage(builderForValue.build());
+      }
+      referenceCase_ = 13;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a Spanner database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.SpannerReference spanner_reference = 13;
+     * </code>
+     */
+    public Builder mergeSpannerReference(
+        com.google.cloud.geminidataanalytics.v1beta.SpannerReference value) {
+      if (spannerReferenceBuilder_ == null) {
+        if (referenceCase_ == 13
+            && reference_
+                != com.google.cloud.geminidataanalytics.v1beta.SpannerReference
+                    .getDefaultInstance()) {
+          reference_ =
+              com.google.cloud.geminidataanalytics.v1beta.SpannerReference.newBuilder(
+                      (com.google.cloud.geminidataanalytics.v1beta.SpannerReference) reference_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          reference_ = value;
+        }
+        onChanged();
+      } else {
+        if (referenceCase_ == 13) {
+          spannerReferenceBuilder_.mergeFrom(value);
+        } else {
+          spannerReferenceBuilder_.setMessage(value);
+        }
+      }
+      referenceCase_ = 13;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a Spanner database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.SpannerReference spanner_reference = 13;
+     * </code>
+     */
+    public Builder clearSpannerReference() {
+      if (spannerReferenceBuilder_ == null) {
+        if (referenceCase_ == 13) {
+          referenceCase_ = 0;
+          reference_ = null;
+          onChanged();
+        }
+      } else {
+        if (referenceCase_ == 13) {
+          referenceCase_ = 0;
+          reference_ = null;
+        }
+        spannerReferenceBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a Spanner database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.SpannerReference spanner_reference = 13;
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.SpannerReference.Builder
+        getSpannerReferenceBuilder() {
+      return getSpannerReferenceFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a Spanner database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.SpannerReference spanner_reference = 13;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.geminidataanalytics.v1beta.SpannerReferenceOrBuilder
+        getSpannerReferenceOrBuilder() {
+      if ((referenceCase_ == 13) && (spannerReferenceBuilder_ != null)) {
+        return spannerReferenceBuilder_.getMessageOrBuilder();
+      } else {
+        if (referenceCase_ == 13) {
+          return (com.google.cloud.geminidataanalytics.v1beta.SpannerReference) reference_;
+        }
+        return com.google.cloud.geminidataanalytics.v1beta.SpannerReference.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a Spanner database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.SpannerReference spanner_reference = 13;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.geminidataanalytics.v1beta.SpannerReference,
+            com.google.cloud.geminidataanalytics.v1beta.SpannerReference.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.SpannerReferenceOrBuilder>
+        getSpannerReferenceFieldBuilder() {
+      if (spannerReferenceBuilder_ == null) {
+        if (!(referenceCase_ == 13)) {
+          reference_ =
+              com.google.cloud.geminidataanalytics.v1beta.SpannerReference.getDefaultInstance();
+        }
+        spannerReferenceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.geminidataanalytics.v1beta.SpannerReference,
+                com.google.cloud.geminidataanalytics.v1beta.SpannerReference.Builder,
+                com.google.cloud.geminidataanalytics.v1beta.SpannerReferenceOrBuilder>(
+                (com.google.cloud.geminidataanalytics.v1beta.SpannerReference) reference_,
+                getParentForChildren(),
+                isClean());
+        reference_ = null;
+      }
+      referenceCase_ = 13;
+      onChanged();
+      return spannerReferenceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference,
+            com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.CloudSqlReferenceOrBuilder>
+        cloudSqlReferenceBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a CloudSQL database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.CloudSqlReference cloud_sql_reference = 14;
+     * </code>
+     *
+     * @return Whether the cloudSqlReference field is set.
+     */
+    @java.lang.Override
+    public boolean hasCloudSqlReference() {
+      return referenceCase_ == 14;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a CloudSQL database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.CloudSqlReference cloud_sql_reference = 14;
+     * </code>
+     *
+     * @return The cloudSqlReference.
+     */
+    @java.lang.Override
+    public com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference getCloudSqlReference() {
+      if (cloudSqlReferenceBuilder_ == null) {
+        if (referenceCase_ == 14) {
+          return (com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference) reference_;
+        }
+        return com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference.getDefaultInstance();
+      } else {
+        if (referenceCase_ == 14) {
+          return cloudSqlReferenceBuilder_.getMessage();
+        }
+        return com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a CloudSQL database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.CloudSqlReference cloud_sql_reference = 14;
+     * </code>
+     */
+    public Builder setCloudSqlReference(
+        com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference value) {
+      if (cloudSqlReferenceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        reference_ = value;
+        onChanged();
+      } else {
+        cloudSqlReferenceBuilder_.setMessage(value);
+      }
+      referenceCase_ = 14;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a CloudSQL database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.CloudSqlReference cloud_sql_reference = 14;
+     * </code>
+     */
+    public Builder setCloudSqlReference(
+        com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference.Builder builderForValue) {
+      if (cloudSqlReferenceBuilder_ == null) {
+        reference_ = builderForValue.build();
+        onChanged();
+      } else {
+        cloudSqlReferenceBuilder_.setMessage(builderForValue.build());
+      }
+      referenceCase_ = 14;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a CloudSQL database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.CloudSqlReference cloud_sql_reference = 14;
+     * </code>
+     */
+    public Builder mergeCloudSqlReference(
+        com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference value) {
+      if (cloudSqlReferenceBuilder_ == null) {
+        if (referenceCase_ == 14
+            && reference_
+                != com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference
+                    .getDefaultInstance()) {
+          reference_ =
+              com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference.newBuilder(
+                      (com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference) reference_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          reference_ = value;
+        }
+        onChanged();
+      } else {
+        if (referenceCase_ == 14) {
+          cloudSqlReferenceBuilder_.mergeFrom(value);
+        } else {
+          cloudSqlReferenceBuilder_.setMessage(value);
+        }
+      }
+      referenceCase_ = 14;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a CloudSQL database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.CloudSqlReference cloud_sql_reference = 14;
+     * </code>
+     */
+    public Builder clearCloudSqlReference() {
+      if (cloudSqlReferenceBuilder_ == null) {
+        if (referenceCase_ == 14) {
+          referenceCase_ = 0;
+          reference_ = null;
+          onChanged();
+        }
+      } else {
+        if (referenceCase_ == 14) {
+          referenceCase_ = 0;
+          reference_ = null;
+        }
+        cloudSqlReferenceBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a CloudSQL database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.CloudSqlReference cloud_sql_reference = 14;
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference.Builder
+        getCloudSqlReferenceBuilder() {
+      return getCloudSqlReferenceFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a CloudSQL database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.CloudSqlReference cloud_sql_reference = 14;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.geminidataanalytics.v1beta.CloudSqlReferenceOrBuilder
+        getCloudSqlReferenceOrBuilder() {
+      if ((referenceCase_ == 14) && (cloudSqlReferenceBuilder_ != null)) {
+        return cloudSqlReferenceBuilder_.getMessageOrBuilder();
+      } else {
+        if (referenceCase_ == 14) {
+          return (com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference) reference_;
+        }
+        return com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a CloudSQL database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.CloudSqlReference cloud_sql_reference = 14;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference,
+            com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.CloudSqlReferenceOrBuilder>
+        getCloudSqlReferenceFieldBuilder() {
+      if (cloudSqlReferenceBuilder_ == null) {
+        if (!(referenceCase_ == 14)) {
+          reference_ =
+              com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference.getDefaultInstance();
+        }
+        cloudSqlReferenceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference,
+                com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference.Builder,
+                com.google.cloud.geminidataanalytics.v1beta.CloudSqlReferenceOrBuilder>(
+                (com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference) reference_,
+                getParentForChildren(),
+                isClean());
+        reference_ = null;
+      }
+      referenceCase_ = 14;
+      onChanged();
+      return cloudSqlReferenceBuilder_;
+    }
+
     private com.google.cloud.geminidataanalytics.v1beta.Schema schema_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.geminidataanalytics.v1beta.Schema,
@@ -1628,7 +2609,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the schema field is set.
      */
     public boolean hasSchema() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -1674,7 +2655,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
       } else {
         schemaBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1697,7 +2678,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
       } else {
         schemaBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1715,7 +2696,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSchema(com.google.cloud.geminidataanalytics.v1beta.Schema value) {
       if (schemaBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && schema_ != null
             && schema_ != com.google.cloud.geminidataanalytics.v1beta.Schema.getDefaultInstance()) {
           getSchemaBuilder().mergeFrom(value);
@@ -1726,7 +2707,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
         schemaBuilder_.mergeFrom(value);
       }
       if (schema_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -1744,7 +2725,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSchema() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000040);
       schema_ = null;
       if (schemaBuilder_ != null) {
         schemaBuilder_.dispose();
@@ -1766,7 +2747,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.geminidataanalytics.v1beta.Schema.Builder getSchemaBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getSchemaFieldBuilder().getBuilder();
     }
@@ -1845,7 +2826,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the structSchema field is set.
      */
     public boolean hasStructSchema() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -1899,7 +2880,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
       } else {
         structSchemaBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1925,7 +2906,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
       } else {
         structSchemaBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1947,7 +2928,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStructSchema(com.google.protobuf.Struct value) {
       if (structSchemaBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && structSchema_ != null
             && structSchema_ != com.google.protobuf.Struct.getDefaultInstance()) {
           getStructSchemaBuilder().mergeFrom(value);
@@ -1958,7 +2939,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
         structSchemaBuilder_.mergeFrom(value);
       }
       if (structSchema_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -1980,7 +2961,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearStructSchema() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000080);
       structSchema_ = null;
       if (structSchemaBuilder_ != null) {
         structSchemaBuilder_.dispose();
@@ -2006,7 +2987,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Struct.Builder getStructSchemaBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getStructSchemaFieldBuilder().getBuilder();
     }

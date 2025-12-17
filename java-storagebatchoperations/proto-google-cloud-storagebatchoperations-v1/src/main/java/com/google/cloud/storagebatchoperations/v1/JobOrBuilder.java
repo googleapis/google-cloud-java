@@ -586,6 +586,21 @@ public interface JobOrBuilder
    */
   com.google.cloud.storagebatchoperations.v1.Job.State getState();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, the job will run in dry run mode, returning the total
+   * object count and, if the object configuration is a prefix list, the bytes
+   * found from source. No transformations will be performed.
+   * </pre>
+   *
+   * <code>bool dry_run = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The dryRun.
+   */
+  boolean getDryRun();
+
   com.google.cloud.storagebatchoperations.v1.Job.SourceCase getSourceCase();
 
   com.google.cloud.storagebatchoperations.v1.Job.TransformationCase getTransformationCase();

@@ -28,7 +28,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Enable or disable the application awareness feature on this Cloud Interconnect.
+   * Enable or disable the application awareness feature on this Cloud
+   * Interconnect.
    * </pre>
    *
    * <code>optional bool aai_enabled = 388780363;</code>
@@ -41,7 +42,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Enable or disable the application awareness feature on this Cloud Interconnect.
+   * Enable or disable the application awareness feature on this Cloud
+   * Interconnect.
    * </pre>
    *
    * <code>optional bool aai_enabled = 388780363;</code>
@@ -54,7 +56,10 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Administrative status of the interconnect. When this is set to true, the Interconnect is functional and can carry traffic. When set to false, no packets can be carried over the interconnect and no BGP routes are exchanged over it. By default, the status is set to true.
+   * Administrative status of the interconnect. When this is set to true, the
+   * Interconnect is functional and can carry traffic.
+   * When set to false, no packets can be carried over the interconnect and
+   * no BGP routes are exchanged over it. By default, the status is set to true.
    * </pre>
    *
    * <code>optional bool admin_enabled = 445675089;</code>
@@ -67,7 +72,10 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Administrative status of the interconnect. When this is set to true, the Interconnect is functional and can carry traffic. When set to false, no packets can be carried over the interconnect and no BGP routes are exchanged over it. By default, the status is set to true.
+   * Administrative status of the interconnect. When this is set to true, the
+   * Interconnect is functional and can carry traffic.
+   * When set to false, no packets can be carried over the interconnect and
+   * no BGP routes are exchanged over it. By default, the status is set to true.
    * </pre>
    *
    * <code>optional bool admin_enabled = 445675089;</code>
@@ -80,7 +88,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Configuration information for application awareness on this Cloud Interconnect.
+   * Configuration information for application awareness on this Cloud
+   * Interconnect.
    * </pre>
    *
    * <code>
@@ -95,7 +104,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Configuration information for application awareness on this Cloud Interconnect.
+   * Configuration information for application awareness on this Cloud
+   * Interconnect.
    * </pre>
    *
    * <code>
@@ -111,7 +121,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Configuration information for application awareness on this Cloud Interconnect.
+   * Configuration information for application awareness on this Cloud
+   * Interconnect.
    * </pre>
    *
    * <code>
@@ -125,7 +136,18 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of features available for this Interconnect connection, which can take one of the following values: - IF_MACSEC If present then the Interconnect connection is provisioned on MACsec capable hardware ports. If not present then the Interconnect connection is provisioned on non-MACsec capable ports and MACsec isn't supported and enabling MACsec fails.
+   * [Output only] List of features available for this Interconnect connection,
+   * which can take one of the following values:
+   *
+   *    - IF_MACSEC: If present, then the Interconnect connection is
+   *    provisioned on MACsec capable hardware ports. If not present, then the
+   *    Interconnect connection is provisioned on non-MACsec capable ports. Any
+   *    attempt to enable MACsec will fail.
+   *    - IF_CROSS_SITE_NETWORK: If present, then the Interconnect connection is
+   *    provisioned exclusively for Cross-Site Networking. Any attempt to configure
+   *    VLAN attachments will fail. If not present, then the Interconnect
+   *    connection is not provisioned for Cross-Site Networking. Any attempt to use
+   *    it for Cross-Site Networking will fail.
    * Check the AvailableFeatures enum for the list of possible values.
    * </pre>
    *
@@ -139,7 +161,18 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of features available for this Interconnect connection, which can take one of the following values: - IF_MACSEC If present then the Interconnect connection is provisioned on MACsec capable hardware ports. If not present then the Interconnect connection is provisioned on non-MACsec capable ports and MACsec isn't supported and enabling MACsec fails.
+   * [Output only] List of features available for this Interconnect connection,
+   * which can take one of the following values:
+   *
+   *    - IF_MACSEC: If present, then the Interconnect connection is
+   *    provisioned on MACsec capable hardware ports. If not present, then the
+   *    Interconnect connection is provisioned on non-MACsec capable ports. Any
+   *    attempt to enable MACsec will fail.
+   *    - IF_CROSS_SITE_NETWORK: If present, then the Interconnect connection is
+   *    provisioned exclusively for Cross-Site Networking. Any attempt to configure
+   *    VLAN attachments will fail. If not present, then the Interconnect
+   *    connection is not provisioned for Cross-Site Networking. Any attempt to use
+   *    it for Cross-Site Networking will fail.
    * Check the AvailableFeatures enum for the list of possible values.
    * </pre>
    *
@@ -153,7 +186,18 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of features available for this Interconnect connection, which can take one of the following values: - IF_MACSEC If present then the Interconnect connection is provisioned on MACsec capable hardware ports. If not present then the Interconnect connection is provisioned on non-MACsec capable ports and MACsec isn't supported and enabling MACsec fails.
+   * [Output only] List of features available for this Interconnect connection,
+   * which can take one of the following values:
+   *
+   *    - IF_MACSEC: If present, then the Interconnect connection is
+   *    provisioned on MACsec capable hardware ports. If not present, then the
+   *    Interconnect connection is provisioned on non-MACsec capable ports. Any
+   *    attempt to enable MACsec will fail.
+   *    - IF_CROSS_SITE_NETWORK: If present, then the Interconnect connection is
+   *    provisioned exclusively for Cross-Site Networking. Any attempt to configure
+   *    VLAN attachments will fail. If not present, then the Interconnect
+   *    connection is not provisioned for Cross-Site Networking. Any attempt to use
+   *    it for Cross-Site Networking will fail.
    * Check the AvailableFeatures enum for the list of possible values.
    * </pre>
    *
@@ -168,7 +212,18 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of features available for this Interconnect connection, which can take one of the following values: - IF_MACSEC If present then the Interconnect connection is provisioned on MACsec capable hardware ports. If not present then the Interconnect connection is provisioned on non-MACsec capable ports and MACsec isn't supported and enabling MACsec fails.
+   * [Output only] List of features available for this Interconnect connection,
+   * which can take one of the following values:
+   *
+   *    - IF_MACSEC: If present, then the Interconnect connection is
+   *    provisioned on MACsec capable hardware ports. If not present, then the
+   *    Interconnect connection is provisioned on non-MACsec capable ports. Any
+   *    attempt to enable MACsec will fail.
+   *    - IF_CROSS_SITE_NETWORK: If present, then the Interconnect connection is
+   *    provisioned exclusively for Cross-Site Networking. Any attempt to configure
+   *    VLAN attachments will fail. If not present, then the Interconnect
+   *    connection is not provisioned for Cross-Site Networking. Any attempt to use
+   *    it for Cross-Site Networking will fail.
    * Check the AvailableFeatures enum for the list of possible values.
    * </pre>
    *
@@ -183,7 +238,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this LAG.
+   * Output only. [Output Only] A list of CircuitInfo objects, that describe the individual
+   * circuits in this LAG.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectCircuitInfo circuit_infos = 164839855;
@@ -195,7 +251,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this LAG.
+   * Output only. [Output Only] A list of CircuitInfo objects, that describe the individual
+   * circuits in this LAG.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectCircuitInfo circuit_infos = 164839855;
@@ -207,7 +264,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this LAG.
+   * Output only. [Output Only] A list of CircuitInfo objects, that describe the individual
+   * circuits in this LAG.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectCircuitInfo circuit_infos = 164839855;
@@ -219,7 +277,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this LAG.
+   * Output only. [Output Only] A list of CircuitInfo objects, that describe the individual
+   * circuits in this LAG.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectCircuitInfo circuit_infos = 164839855;
@@ -232,7 +291,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this LAG.
+   * Output only. [Output Only] A list of CircuitInfo objects, that describe the individual
+   * circuits in this LAG.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectCircuitInfo circuit_infos = 164839855;
@@ -244,7 +304,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -257,7 +318,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -270,7 +332,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -283,7 +346,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Customer name, to put in the Letter of Authorization as the party authorized to request a crossconnect.
+   * Customer name, to put in the Letter of Authorization as the party
+   * authorized to request a crossconnect.
    * </pre>
    *
    * <code>optional string customer_name = 3665484;</code>
@@ -296,7 +360,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Customer name, to put in the Letter of Authorization as the party authorized to request a crossconnect.
+   * Customer name, to put in the Letter of Authorization as the party
+   * authorized to request a crossconnect.
    * </pre>
    *
    * <code>optional string customer_name = 3665484;</code>
@@ -309,7 +374,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Customer name, to put in the Letter of Authorization as the party authorized to request a crossconnect.
+   * Customer name, to put in the Letter of Authorization as the party
+   * authorized to request a crossconnect.
    * </pre>
    *
    * <code>optional string customer_name = 3665484;</code>
@@ -322,7 +388,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -335,7 +402,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -348,7 +416,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -361,7 +430,7 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of outages expected for this Interconnect.
+   * Output only. [Output Only] A list of outages expected for this Interconnect.
    * </pre>
    *
    * <code>
@@ -375,7 +444,7 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of outages expected for this Interconnect.
+   * Output only. [Output Only] A list of outages expected for this Interconnect.
    * </pre>
    *
    * <code>
@@ -388,7 +457,7 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of outages expected for this Interconnect.
+   * Output only. [Output Only] A list of outages expected for this Interconnect.
    * </pre>
    *
    * <code>
@@ -401,7 +470,7 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of outages expected for this Interconnect.
+   * Output only. [Output Only] A list of outages expected for this Interconnect.
    * </pre>
    *
    * <code>
@@ -415,7 +484,7 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of outages expected for this Interconnect.
+   * Output only. [Output Only] A list of outages expected for this Interconnect.
    * </pre>
    *
    * <code>
@@ -429,7 +498,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] IP address configured on the Google side of the Interconnect link. This can be used only for ping tests.
+   * Output only. [Output Only] IP address configured on the Google side of the Interconnect
+   * link. This can be used only for ping tests.
    * </pre>
    *
    * <code>optional string google_ip_address = 443105954;</code>
@@ -442,7 +512,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] IP address configured on the Google side of the Interconnect link. This can be used only for ping tests.
+   * Output only. [Output Only] IP address configured on the Google side of the Interconnect
+   * link. This can be used only for ping tests.
    * </pre>
    *
    * <code>optional string google_ip_address = 443105954;</code>
@@ -455,7 +526,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] IP address configured on the Google side of the Interconnect link. This can be used only for ping tests.
+   * Output only. [Output Only] IP address configured on the Google side of the Interconnect
+   * link. This can be used only for ping tests.
    * </pre>
    *
    * <code>optional string google_ip_address = 443105954;</code>
@@ -468,7 +540,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Google reference ID to be used when raising support tickets with Google or otherwise to debug backend connectivity issues.
+   * Output only. [Output Only] Google reference ID to be used when raising support tickets
+   * with Google or otherwise to debug backend connectivity issues.
    * </pre>
    *
    * <code>optional string google_reference_id = 534944469;</code>
@@ -481,7 +554,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Google reference ID to be used when raising support tickets with Google or otherwise to debug backend connectivity issues.
+   * Output only. [Output Only] Google reference ID to be used when raising support tickets
+   * with Google or otherwise to debug backend connectivity issues.
    * </pre>
    *
    * <code>optional string google_reference_id = 534944469;</code>
@@ -494,7 +568,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Google reference ID to be used when raising support tickets with Google or otherwise to debug backend connectivity issues.
+   * Output only. [Output Only] Google reference ID to be used when raising support tickets
+   * with Google or otherwise to debug backend connectivity issues.
    * </pre>
    *
    * <code>optional string google_reference_id = 534944469;</code>
@@ -507,7 +582,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -520,7 +596,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -533,7 +610,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect.
+   * Output only. [Output Only] A list of the URLs of all InterconnectAttachments configured
+   * to use  this Interconnect.
    * </pre>
    *
    * <code>repeated string interconnect_attachments = 425388415;</code>
@@ -546,7 +624,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect.
+   * Output only. [Output Only] A list of the URLs of all InterconnectAttachments configured
+   * to use  this Interconnect.
    * </pre>
    *
    * <code>repeated string interconnect_attachments = 425388415;</code>
@@ -559,7 +638,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect.
+   * Output only. [Output Only] A list of the URLs of all InterconnectAttachments configured
+   * to use  this Interconnect.
    * </pre>
    *
    * <code>repeated string interconnect_attachments = 425388415;</code>
@@ -573,7 +653,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect.
+   * Output only. [Output Only] A list of the URLs of all InterconnectAttachments configured
+   * to use  this Interconnect.
    * </pre>
    *
    * <code>repeated string interconnect_attachments = 425388415;</code>
@@ -587,7 +668,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URLs of InterconnectGroups that include this Interconnect. Order is arbitrary and items are unique.
+   * Output only. [Output Only] URLs of InterconnectGroups that include this Interconnect.
+   * Order is arbitrary and items are unique.
    * </pre>
    *
    * <code>repeated string interconnect_groups = 237049509;</code>
@@ -600,7 +682,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URLs of InterconnectGroups that include this Interconnect. Order is arbitrary and items are unique.
+   * Output only. [Output Only] URLs of InterconnectGroups that include this Interconnect.
+   * Order is arbitrary and items are unique.
    * </pre>
    *
    * <code>repeated string interconnect_groups = 237049509;</code>
@@ -613,7 +696,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URLs of InterconnectGroups that include this Interconnect. Order is arbitrary and items are unique.
+   * Output only. [Output Only] URLs of InterconnectGroups that include this Interconnect.
+   * Order is arbitrary and items are unique.
    * </pre>
    *
    * <code>repeated string interconnect_groups = 237049509;</code>
@@ -627,7 +711,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URLs of InterconnectGroups that include this Interconnect. Order is arbitrary and items are unique.
+   * Output only. [Output Only] URLs of InterconnectGroups that include this Interconnect.
+   * Order is arbitrary and items are unique.
    * </pre>
    *
    * <code>repeated string interconnect_groups = 237049509;</code>
@@ -641,7 +726,15 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+   * Type of interconnect, which can take one of the following values:
+   *
+   *    - PARTNER: A partner-managed interconnection shared between customers
+   *    though a partner.
+   *    - DEDICATED: A dedicated physical interconnection with the
+   *    customer.
+   *
+   *
+   * Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
    * Check the InterconnectType enum for the list of possible values.
    * </pre>
    *
@@ -655,7 +748,15 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+   * Type of interconnect, which can take one of the following values:
+   *
+   *    - PARTNER: A partner-managed interconnection shared between customers
+   *    though a partner.
+   *    - DEDICATED: A dedicated physical interconnection with the
+   *    customer.
+   *
+   *
+   * Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
    * Check the InterconnectType enum for the list of possible values.
    * </pre>
    *
@@ -669,7 +770,15 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+   * Type of interconnect, which can take one of the following values:
+   *
+   *    - PARTNER: A partner-managed interconnection shared between customers
+   *    though a partner.
+   *    - DEDICATED: A dedicated physical interconnection with the
+   *    customer.
+   *
+   *
+   * Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
    * Check the InterconnectType enum for the list of possible values.
    * </pre>
    *
@@ -683,7 +792,7 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#interconnect for interconnects.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#interconnect for interconnects.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -696,7 +805,7 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#interconnect for interconnects.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#interconnect for interconnects.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -709,7 +818,7 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#interconnect for interconnects.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#interconnect for interconnects.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -722,7 +831,15 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this Interconnect, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an Interconnect.
+   * A fingerprint for the labels being applied to this Interconnect, which
+   * is essentially a hash of the labels set used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve an Interconnect.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -735,7 +852,15 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this Interconnect, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an Interconnect.
+   * A fingerprint for the labels being applied to this Interconnect, which
+   * is essentially a hash of the labels set used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve an Interconnect.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -748,7 +873,15 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this Interconnect, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an Interconnect.
+   * A fingerprint for the labels being applied to this Interconnect, which
+   * is essentially a hash of the labels set used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve an Interconnect.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -761,7 +894,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+   * Label values may be empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -772,7 +906,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+   * Label values may be empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -787,7 +922,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+   * Label values may be empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -798,7 +934,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+   * Label values may be empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -813,7 +950,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+   * Label values may be empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -824,7 +962,15 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+   * Type of link requested, which can take one of the following values:
+   *
+   *    - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics
+   *    - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics.
+   *    - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics.
+   *
+   *
+   *  Note that this field indicates the speed of each of
+   * the links in the bundle, not the speed of the entire bundle.
    * Check the LinkType enum for the list of possible values.
    * </pre>
    *
@@ -838,7 +984,15 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+   * Type of link requested, which can take one of the following values:
+   *
+   *    - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics
+   *    - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics.
+   *    - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics.
+   *
+   *
+   *  Note that this field indicates the speed of each of
+   * the links in the bundle, not the speed of the entire bundle.
    * Check the LinkType enum for the list of possible values.
    * </pre>
    *
@@ -852,7 +1006,15 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+   * Type of link requested, which can take one of the following values:
+   *
+   *    - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics
+   *    - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics.
+   *    - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics.
+   *
+   *
+   *  Note that this field indicates the speed of each of
+   * the links in the bundle, not the speed of the entire bundle.
    * Check the LinkType enum for the list of possible values.
    * </pre>
    *
@@ -866,7 +1028,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * URL of the InterconnectLocation object that represents where this connection is to be provisioned.
+   * URL of the InterconnectLocation object that represents where this
+   * connection is to be provisioned.
    * </pre>
    *
    * <code>optional string location = 290430901;</code>
@@ -879,7 +1042,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * URL of the InterconnectLocation object that represents where this connection is to be provisioned.
+   * URL of the InterconnectLocation object that represents where this
+   * connection is to be provisioned.
    * </pre>
    *
    * <code>optional string location = 290430901;</code>
@@ -892,7 +1056,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * URL of the InterconnectLocation object that represents where this connection is to be provisioned.
+   * URL of the InterconnectLocation object that represents where this
+   * connection is to be provisioned.
    * </pre>
    *
    * <code>optional string location = 290430901;</code>
@@ -905,7 +1070,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Configuration that enables Media Access Control security (MACsec) on the Cloud Interconnect connection between Google and your on-premises router.
+   * Configuration that enables Media Access Control security (MACsec) on the
+   * Cloud Interconnect connection between Google and your on-premises router.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InterconnectMacsec macsec = 528867490;</code>
@@ -918,7 +1084,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Configuration that enables Media Access Control security (MACsec) on the Cloud Interconnect connection between Google and your on-premises router.
+   * Configuration that enables Media Access Control security (MACsec) on the
+   * Cloud Interconnect connection between Google and your on-premises router.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InterconnectMacsec macsec = 528867490;</code>
@@ -931,7 +1098,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Configuration that enables Media Access Control security (MACsec) on the Cloud Interconnect connection between Google and your on-premises router.
+   * Configuration that enables Media Access Control security (MACsec) on the
+   * Cloud Interconnect connection between Google and your on-premises router.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InterconnectMacsec macsec = 528867490;</code>
@@ -942,7 +1110,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Enable or disable MACsec on this Interconnect connection. MACsec enablement fails if the MACsec object is not specified.
+   * Enable or disable MACsec on this Interconnect connection. MACsec enablement
+   * fails if the MACsec object is not specified.
    * </pre>
    *
    * <code>optional bool macsec_enabled = 194203812;</code>
@@ -955,7 +1124,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Enable or disable MACsec on this Interconnect connection. MACsec enablement fails if the MACsec object is not specified.
+   * Enable or disable MACsec on this Interconnect connection. MACsec enablement
+   * fails if the MACsec object is not specified.
    * </pre>
    *
    * <code>optional bool macsec_enabled = 194203812;</code>
@@ -968,7 +1138,13 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be
+   * a dash, lowercase letter, or digit, except the last character, which cannot
+   * be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -981,7 +1157,13 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be
+   * a dash, lowercase letter, or digit, except the last character, which cannot
+   * be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -994,7 +1176,13 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be
+   * a dash, lowercase letter, or digit, except the last character, which cannot
+   * be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1007,7 +1195,12 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Email address to contact the customer NOC for operations and maintenance notifications regarding this Interconnect. If specified, this will be used for notifications in addition to all other forms described, such as Cloud Monitoring logs alerting and Cloud Notifications. This field is required for users who sign up for Cloud Interconnect using workforce identity federation.
+   * Email address to contact the customer NOC for operations and maintenance
+   * notifications regarding this Interconnect. If specified, this will be used
+   * for notifications in addition to all other forms described, such as
+   * Cloud Monitoring logs alerting and Cloud Notifications. This field is
+   * required for users who sign up for Cloud Interconnect using
+   * workforce identity federation.
    * </pre>
    *
    * <code>optional string noc_contact_email = 14072832;</code>
@@ -1020,7 +1213,12 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Email address to contact the customer NOC for operations and maintenance notifications regarding this Interconnect. If specified, this will be used for notifications in addition to all other forms described, such as Cloud Monitoring logs alerting and Cloud Notifications. This field is required for users who sign up for Cloud Interconnect using workforce identity federation.
+   * Email address to contact the customer NOC for operations and maintenance
+   * notifications regarding this Interconnect. If specified, this will be used
+   * for notifications in addition to all other forms described, such as
+   * Cloud Monitoring logs alerting and Cloud Notifications. This field is
+   * required for users who sign up for Cloud Interconnect using
+   * workforce identity federation.
    * </pre>
    *
    * <code>optional string noc_contact_email = 14072832;</code>
@@ -1033,7 +1231,12 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Email address to contact the customer NOC for operations and maintenance notifications regarding this Interconnect. If specified, this will be used for notifications in addition to all other forms described, such as Cloud Monitoring logs alerting and Cloud Notifications. This field is required for users who sign up for Cloud Interconnect using workforce identity federation.
+   * Email address to contact the customer NOC for operations and maintenance
+   * notifications regarding this Interconnect. If specified, this will be used
+   * for notifications in addition to all other forms described, such as
+   * Cloud Monitoring logs alerting and Cloud Notifications. This field is
+   * required for users who sign up for Cloud Interconnect using
+   * workforce identity federation.
    * </pre>
    *
    * <code>optional string noc_contact_email = 14072832;</code>
@@ -1046,7 +1249,17 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * Output only. [Output Only] The current status of this Interconnect's functionality,
+   * which can take one of the following values:
+   *
+   *    - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to
+   *    use. Attachments may be provisioned on this Interconnect.
+   *
+   * - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No
+   * attachments may be provisioned on this Interconnect.
+   * - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal
+   * maintenance. No attachments may be provisioned or updated on this
+   * Interconnect.
    * Check the OperationalStatus enum for the list of possible values.
    * </pre>
    *
@@ -1060,7 +1273,17 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * Output only. [Output Only] The current status of this Interconnect's functionality,
+   * which can take one of the following values:
+   *
+   *    - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to
+   *    use. Attachments may be provisioned on this Interconnect.
+   *
+   * - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No
+   * attachments may be provisioned on this Interconnect.
+   * - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal
+   * maintenance. No attachments may be provisioned or updated on this
+   * Interconnect.
    * Check the OperationalStatus enum for the list of possible values.
    * </pre>
    *
@@ -1074,7 +1297,17 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * Output only. [Output Only] The current status of this Interconnect's functionality,
+   * which can take one of the following values:
+   *
+   *    - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to
+   *    use. Attachments may be provisioned on this Interconnect.
+   *
+   * - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No
+   * attachments may be provisioned on this Interconnect.
+   * - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal
+   * maintenance. No attachments may be provisioned or updated on this
+   * Interconnect.
    * Check the OperationalStatus enum for the list of possible values.
    * </pre>
    *
@@ -1088,7 +1321,49 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] IP address configured on the customer side of the Interconnect link. The customer should configure this IP address during turnup when prompted by Google NOC. This can be used only for ping tests.
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.InterconnectParams params = 78313862;</code>
+   *
+   * @return Whether the params field is set.
+   */
+  boolean hasParams();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.InterconnectParams params = 78313862;</code>
+   *
+   * @return The params.
+   */
+  com.google.cloud.compute.v1.InterconnectParams getParams();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.InterconnectParams params = 78313862;</code>
+   */
+  com.google.cloud.compute.v1.InterconnectParamsOrBuilder getParamsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] IP address configured on the customer side of the
+   * Interconnect link. The customer should configure this IP address during
+   * turnup when prompted by Google NOC. This can be used only for ping tests.
    * </pre>
    *
    * <code>optional string peer_ip_address = 207735769;</code>
@@ -1101,7 +1376,9 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] IP address configured on the customer side of the Interconnect link. The customer should configure this IP address during turnup when prompted by Google NOC. This can be used only for ping tests.
+   * Output only. [Output Only] IP address configured on the customer side of the
+   * Interconnect link. The customer should configure this IP address during
+   * turnup when prompted by Google NOC. This can be used only for ping tests.
    * </pre>
    *
    * <code>optional string peer_ip_address = 207735769;</code>
@@ -1114,7 +1391,9 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] IP address configured on the customer side of the Interconnect link. The customer should configure this IP address during turnup when prompted by Google NOC. This can be used only for ping tests.
+   * Output only. [Output Only] IP address configured on the customer side of the
+   * Interconnect link. The customer should configure this IP address during
+   * turnup when prompted by Google NOC. This can be used only for ping tests.
    * </pre>
    *
    * <code>optional string peer_ip_address = 207735769;</code>
@@ -1127,7 +1406,7 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Number of links actually provisioned in this interconnect.
+   * Output only. [Output Only] Number of links actually provisioned in this interconnect.
    * </pre>
    *
    * <code>optional int32 provisioned_link_count = 410888565;</code>
@@ -1140,7 +1419,7 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Number of links actually provisioned in this interconnect.
+   * Output only. [Output Only] Number of links actually provisioned in this interconnect.
    * </pre>
    *
    * <code>optional int32 provisioned_link_count = 410888565;</code>
@@ -1153,7 +1432,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Indicates that this is a Cross-Cloud Interconnect. This field specifies the location outside of Google's network that the interconnect is connected to.
+   * Indicates that this is a Cross-Cloud Interconnect. This field specifies the
+   * location outside of Google's network that the interconnect is connected to.
    * </pre>
    *
    * <code>optional string remote_location = 324388750;</code>
@@ -1166,7 +1446,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Indicates that this is a Cross-Cloud Interconnect. This field specifies the location outside of Google's network that the interconnect is connected to.
+   * Indicates that this is a Cross-Cloud Interconnect. This field specifies the
+   * location outside of Google's network that the interconnect is connected to.
    * </pre>
    *
    * <code>optional string remote_location = 324388750;</code>
@@ -1179,7 +1460,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Indicates that this is a Cross-Cloud Interconnect. This field specifies the location outside of Google's network that the interconnect is connected to.
+   * Indicates that this is a Cross-Cloud Interconnect. This field specifies the
+   * location outside of Google's network that the interconnect is connected to.
    * </pre>
    *
    * <code>optional string remote_location = 324388750;</code>
@@ -1192,7 +1474,16 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Optional. List of features requested for this Interconnect connection, which can take one of the following values: - IF_MACSEC If specified then the connection is created on MACsec capable hardware ports. If not specified, the default value is false, which allocates non-MACsec capable ports first if available. This parameter can be provided only with Interconnect INSERT. It isn't valid for Interconnect PATCH.
+   * Optional. This parameter can be provided only with Interconnect INSERT. It
+   * isn't valid for Interconnect PATCH. List of features requested for this
+   * Interconnect connection, which can take one of the following values:
+   *
+   *    - IF_MACSEC: If specified, then the connection is created on MACsec
+   *    capable hardware ports. If not specified, non-MACsec capable ports will
+   *    also be considered.
+   *    - IF_CROSS_SITE_NETWORK: If specified, then the connection is created
+   *    exclusively for Cross-Site Networking. The connection can not be used for
+   *    Cross-Site Networking unless this feature is specified.
    * Check the RequestedFeatures enum for the list of possible values.
    * </pre>
    *
@@ -1206,7 +1497,16 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Optional. List of features requested for this Interconnect connection, which can take one of the following values: - IF_MACSEC If specified then the connection is created on MACsec capable hardware ports. If not specified, the default value is false, which allocates non-MACsec capable ports first if available. This parameter can be provided only with Interconnect INSERT. It isn't valid for Interconnect PATCH.
+   * Optional. This parameter can be provided only with Interconnect INSERT. It
+   * isn't valid for Interconnect PATCH. List of features requested for this
+   * Interconnect connection, which can take one of the following values:
+   *
+   *    - IF_MACSEC: If specified, then the connection is created on MACsec
+   *    capable hardware ports. If not specified, non-MACsec capable ports will
+   *    also be considered.
+   *    - IF_CROSS_SITE_NETWORK: If specified, then the connection is created
+   *    exclusively for Cross-Site Networking. The connection can not be used for
+   *    Cross-Site Networking unless this feature is specified.
    * Check the RequestedFeatures enum for the list of possible values.
    * </pre>
    *
@@ -1220,7 +1520,16 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Optional. List of features requested for this Interconnect connection, which can take one of the following values: - IF_MACSEC If specified then the connection is created on MACsec capable hardware ports. If not specified, the default value is false, which allocates non-MACsec capable ports first if available. This parameter can be provided only with Interconnect INSERT. It isn't valid for Interconnect PATCH.
+   * Optional. This parameter can be provided only with Interconnect INSERT. It
+   * isn't valid for Interconnect PATCH. List of features requested for this
+   * Interconnect connection, which can take one of the following values:
+   *
+   *    - IF_MACSEC: If specified, then the connection is created on MACsec
+   *    capable hardware ports. If not specified, non-MACsec capable ports will
+   *    also be considered.
+   *    - IF_CROSS_SITE_NETWORK: If specified, then the connection is created
+   *    exclusively for Cross-Site Networking. The connection can not be used for
+   *    Cross-Site Networking unless this feature is specified.
    * Check the RequestedFeatures enum for the list of possible values.
    * </pre>
    *
@@ -1235,7 +1544,16 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Optional. List of features requested for this Interconnect connection, which can take one of the following values: - IF_MACSEC If specified then the connection is created on MACsec capable hardware ports. If not specified, the default value is false, which allocates non-MACsec capable ports first if available. This parameter can be provided only with Interconnect INSERT. It isn't valid for Interconnect PATCH.
+   * Optional. This parameter can be provided only with Interconnect INSERT. It
+   * isn't valid for Interconnect PATCH. List of features requested for this
+   * Interconnect connection, which can take one of the following values:
+   *
+   *    - IF_MACSEC: If specified, then the connection is created on MACsec
+   *    capable hardware ports. If not specified, non-MACsec capable ports will
+   *    also be considered.
+   *    - IF_CROSS_SITE_NETWORK: If specified, then the connection is created
+   *    exclusively for Cross-Site Networking. The connection can not be used for
+   *    Cross-Site Networking unless this feature is specified.
    * Check the RequestedFeatures enum for the list of possible values.
    * </pre>
    *
@@ -1250,7 +1568,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Target number of physical links in the link bundle, as requested by the customer.
+   * Target number of physical links in the link bundle, as requested by the
+   * customer.
    * </pre>
    *
    * <code>optional int32 requested_link_count = 45051387;</code>
@@ -1263,7 +1582,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Target number of physical links in the link bundle, as requested by the customer.
+   * Target number of physical links in the link bundle, as requested by the
+   * customer.
    * </pre>
    *
    * <code>optional int32 requested_link_count = 45051387;</code>
@@ -1276,7 +1596,7 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -1289,7 +1609,7 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -1302,7 +1622,7 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1315,7 +1635,7 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1328,7 +1648,7 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1341,7 +1661,16 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * Output only. [Output Only] The current state of Interconnect functionality, which can
+   * take one of the following values:
+   *
+   *    - ACTIVE: The Interconnect is valid, turned up and ready to use.
+   *    Attachments may be provisioned on this Interconnect.
+   *    - UNPROVISIONED: The Interconnect has not completed turnup. No
+   *    attachments may be provisioned on this Interconnect.
+   *    - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance.
+   *    No attachments may be provisioned or updated on this
+   *    Interconnect.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -1355,7 +1684,16 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * Output only. [Output Only] The current state of Interconnect functionality, which can
+   * take one of the following values:
+   *
+   *    - ACTIVE: The Interconnect is valid, turned up and ready to use.
+   *    Attachments may be provisioned on this Interconnect.
+   *    - UNPROVISIONED: The Interconnect has not completed turnup. No
+   *    attachments may be provisioned on this Interconnect.
+   *    - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance.
+   *    No attachments may be provisioned or updated on this
+   *    Interconnect.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -1369,7 +1707,16 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * Output only. [Output Only] The current state of Interconnect functionality, which can
+   * take one of the following values:
+   *
+   *    - ACTIVE: The Interconnect is valid, turned up and ready to use.
+   *    Attachments may be provisioned on this Interconnect.
+   *    - UNPROVISIONED: The Interconnect has not completed turnup. No
+   *    attachments may be provisioned on this Interconnect.
+   *    - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance.
+   *    No attachments may be provisioned or updated on this
+   *    Interconnect.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -1383,7 +1730,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Specific subzone in the InterconnectLocation that represents where this connection is to be provisioned.
+   * Specific subzone in the InterconnectLocation that represents where
+   * this connection is to be provisioned.
    * Check the Subzone enum for the list of possible values.
    * </pre>
    *
@@ -1397,7 +1745,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Specific subzone in the InterconnectLocation that represents where this connection is to be provisioned.
+   * Specific subzone in the InterconnectLocation that represents where
+   * this connection is to be provisioned.
    * Check the Subzone enum for the list of possible values.
    * </pre>
    *
@@ -1411,7 +1760,8 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Specific subzone in the InterconnectLocation that represents where this connection is to be provisioned.
+   * Specific subzone in the InterconnectLocation that represents where
+   * this connection is to be provisioned.
    * Check the Subzone enum for the list of possible values.
    * </pre>
    *
@@ -1420,4 +1770,66 @@ public interface InterconnectOrBuilder
    * @return The bytes for subzone.
    */
   com.google.protobuf.ByteString getSubzoneBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
+   * configured to use this Interconnect. The Interconnect cannot be deleted if
+   * this list is non-empty.
+   * </pre>
+   *
+   * <code>repeated string wire_groups = 40662734;</code>
+   *
+   * @return A list containing the wireGroups.
+   */
+  java.util.List<java.lang.String> getWireGroupsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
+   * configured to use this Interconnect. The Interconnect cannot be deleted if
+   * this list is non-empty.
+   * </pre>
+   *
+   * <code>repeated string wire_groups = 40662734;</code>
+   *
+   * @return The count of wireGroups.
+   */
+  int getWireGroupsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
+   * configured to use this Interconnect. The Interconnect cannot be deleted if
+   * this list is non-empty.
+   * </pre>
+   *
+   * <code>repeated string wire_groups = 40662734;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The wireGroups at the given index.
+   */
+  java.lang.String getWireGroups(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
+   * configured to use this Interconnect. The Interconnect cannot be deleted if
+   * this list is non-empty.
+   * </pre>
+   *
+   * <code>repeated string wire_groups = 40662734;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the wireGroups at the given index.
+   */
+  com.google.protobuf.ByteString getWireGroupsBytes(int index);
 }

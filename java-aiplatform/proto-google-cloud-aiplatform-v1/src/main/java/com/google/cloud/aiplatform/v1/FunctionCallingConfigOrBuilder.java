@@ -119,4 +119,19 @@ public interface FunctionCallingConfigOrBuilder
    * @return The bytes of the allowedFunctionNames at the given index.
    */
   com.google.protobuf.ByteString getAllowedFunctionNamesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When set to true, arguments of a single function call will be
+   * streamed out in multiple parts/contents/responses. Partial parameter
+   * results will be returned in the [FunctionCall.partial_args] field.
+   * </pre>
+   *
+   * <code>bool stream_function_call_arguments = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The streamFunctionCallArguments.
+   */
+  boolean getStreamFunctionCallArguments();
 }

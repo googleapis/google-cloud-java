@@ -70,7 +70,9 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The total number of instances in the managed instance group that are scheduled to be abandoned. Abandoning an instance removes it from the managed instance group without deleting it.
+   * Output only. [Output Only] The total number of instances in the managed instance group
+   * that are scheduled to be abandoned. Abandoning an instance removes it
+   * from the managed instance group without deleting it.
    * </pre>
    *
    * <code>optional int32 abandoning = 440023373;</code>
@@ -86,7 +88,9 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The total number of instances in the managed instance group that are scheduled to be abandoned. Abandoning an instance removes it from the managed instance group without deleting it.
+   * Output only. [Output Only] The total number of instances in the managed instance group
+   * that are scheduled to be abandoned. Abandoning an instance removes it
+   * from the managed instance group without deleting it.
    * </pre>
    *
    * <code>optional int32 abandoning = 440023373;</code>
@@ -105,7 +109,13 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The number of instances in the managed instance group that are scheduled to be created or are currently being created. If the group fails to create any of these instances, it tries again until it creates the instance successfully. If you have disabled creation retries, this field will not be populated; instead, the creatingWithoutRetries field will be populated.
+   * Output only. [Output Only] The number of instances in the managed instance group that
+   * are scheduled to be created or are currently being created. If the group
+   * fails to create any of these instances, it tries again until it creates
+   * the instance successfully.
+   *
+   * If you have disabled creation retries, this field will not be populated;
+   * instead, the creatingWithoutRetries field will be populated.
    * </pre>
    *
    * <code>optional int32 creating = 209809081;</code>
@@ -121,7 +131,13 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The number of instances in the managed instance group that are scheduled to be created or are currently being created. If the group fails to create any of these instances, it tries again until it creates the instance successfully. If you have disabled creation retries, this field will not be populated; instead, the creatingWithoutRetries field will be populated.
+   * Output only. [Output Only] The number of instances in the managed instance group that
+   * are scheduled to be created or are currently being created. If the group
+   * fails to create any of these instances, it tries again until it creates
+   * the instance successfully.
+   *
+   * If you have disabled creation retries, this field will not be populated;
+   * instead, the creatingWithoutRetries field will be populated.
    * </pre>
    *
    * <code>optional int32 creating = 209809081;</code>
@@ -140,7 +156,10 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The number of instances that the managed instance group will attempt to create. The group attempts to create each instance only once. If the group fails to create any of these instances, it decreases the group's targetSize value accordingly.
+   * Output only. [Output Only] The number of instances that the managed instance group
+   * will attempt to create. The group attempts to create each instance
+   * only once. If the group fails to create any of these instances, it
+   * decreases the group's targetSize value accordingly.
    * </pre>
    *
    * <code>optional int32 creating_without_retries = 369916745;</code>
@@ -156,7 +175,10 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The number of instances that the managed instance group will attempt to create. The group attempts to create each instance only once. If the group fails to create any of these instances, it decreases the group's targetSize value accordingly.
+   * Output only. [Output Only] The number of instances that the managed instance group
+   * will attempt to create. The group attempts to create each instance
+   * only once. If the group fails to create any of these instances, it
+   * decreases the group's targetSize value accordingly.
    * </pre>
    *
    * <code>optional int32 creating_without_retries = 369916745;</code>
@@ -175,7 +197,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The number of instances in the managed instance group that are scheduled to be deleted or are currently being deleted.
+   * Output only. [Output Only] The number of instances in the managed instance group that
+   * are scheduled to be deleted or are currently being deleted.
    * </pre>
    *
    * <code>optional int32 deleting = 282846120;</code>
@@ -191,7 +214,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The number of instances in the managed instance group that are scheduled to be deleted or are currently being deleted.
+   * Output only. [Output Only] The number of instances in the managed instance group that
+   * are scheduled to be deleted or are currently being deleted.
    * </pre>
    *
    * <code>optional int32 deleting = 282846120;</code>
@@ -210,7 +234,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The number of instances in the managed instance group that are running and have no scheduled actions.
+   * Output only. [Output Only] The number of instances in the managed instance group that
+   * are running and have no scheduled actions.
    * </pre>
    *
    * <code>optional int32 none = 3387192;</code>
@@ -226,7 +251,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The number of instances in the managed instance group that are running and have no scheduled actions.
+   * Output only. [Output Only] The number of instances in the managed instance group that
+   * are running and have no scheduled actions.
    * </pre>
    *
    * <code>optional int32 none = 3387192;</code>
@@ -245,7 +271,11 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The number of instances in the managed instance group that are scheduled to be recreated or are currently being being recreated. Recreating an instance deletes the existing root persistent disk and creates a new disk from the image that is defined in the instance template.
+   * Output only. [Output Only] The number of instances in the managed instance group that
+   * are scheduled to be recreated or are currently being being recreated.
+   * Recreating an instance deletes the existing root persistent disk
+   * and creates a new disk from the image that is defined in the
+   * instance template.
    * </pre>
    *
    * <code>optional int32 recreating = 339057132;</code>
@@ -261,7 +291,11 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The number of instances in the managed instance group that are scheduled to be recreated or are currently being being recreated. Recreating an instance deletes the existing root persistent disk and creates a new disk from the image that is defined in the instance template.
+   * Output only. [Output Only] The number of instances in the managed instance group that
+   * are scheduled to be recreated or are currently being being recreated.
+   * Recreating an instance deletes the existing root persistent disk
+   * and creates a new disk from the image that is defined in the
+   * instance template.
    * </pre>
    *
    * <code>optional int32 recreating = 339057132;</code>
@@ -280,7 +314,10 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The number of instances in the managed instance group that are being reconfigured with properties that do not require a restart or a recreate action. For example, setting or removing target pools for the instance.
+   * Output only. [Output Only] The number of instances in the managed instance group that
+   * are being reconfigured with properties that do not require a restart
+   * or a recreate action. For example, setting or removing target
+   * pools for the instance.
    * </pre>
    *
    * <code>optional int32 refreshing = 215044903;</code>
@@ -296,7 +333,10 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The number of instances in the managed instance group that are being reconfigured with properties that do not require a restart or a recreate action. For example, setting or removing target pools for the instance.
+   * Output only. [Output Only] The number of instances in the managed instance group that
+   * are being reconfigured with properties that do not require a restart
+   * or a recreate action. For example, setting or removing target
+   * pools for the instance.
    * </pre>
    *
    * <code>optional int32 refreshing = 215044903;</code>
@@ -315,7 +355,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The number of instances in the managed instance group that are scheduled to be restarted or are currently being restarted.
+   * Output only. [Output Only] The number of instances in the managed instance group that
+   * are scheduled to be restarted or are currently being restarted.
    * </pre>
    *
    * <code>optional int32 restarting = 372312947;</code>
@@ -331,7 +372,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The number of instances in the managed instance group that are scheduled to be restarted or are currently being restarted.
+   * Output only. [Output Only] The number of instances in the managed instance group that
+   * are scheduled to be restarted or are currently being restarted.
    * </pre>
    *
    * <code>optional int32 restarting = 372312947;</code>
@@ -350,7 +392,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The number of instances in the managed instance group that are scheduled to be resumed or are currently being resumed.
+   * Output only. [Output Only] The number of instances in the managed instance group that
+   * are scheduled to be resumed or are currently being resumed.
    * </pre>
    *
    * <code>optional int32 resuming = 201100714;</code>
@@ -366,7 +409,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The number of instances in the managed instance group that are scheduled to be resumed or are currently being resumed.
+   * Output only. [Output Only] The number of instances in the managed instance group that
+   * are scheduled to be resumed or are currently being resumed.
    * </pre>
    *
    * <code>optional int32 resuming = 201100714;</code>
@@ -385,7 +429,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The number of instances in the managed instance group that are scheduled to be started or are currently being started.
+   * Output only. [Output Only] The number of instances in the managed instance group that
+   * are scheduled to be started or are currently being started.
    * </pre>
    *
    * <code>optional int32 starting = 243064896;</code>
@@ -401,7 +446,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The number of instances in the managed instance group that are scheduled to be started or are currently being started.
+   * Output only. [Output Only] The number of instances in the managed instance group that
+   * are scheduled to be started or are currently being started.
    * </pre>
    *
    * <code>optional int32 starting = 243064896;</code>
@@ -420,7 +466,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The number of instances in the managed instance group that are scheduled to be stopped or are currently being stopped.
+   * Output only. [Output Only] The number of instances in the managed instance group that
+   * are scheduled to be stopped or are currently being stopped.
    * </pre>
    *
    * <code>optional int32 stopping = 105035892;</code>
@@ -436,7 +483,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The number of instances in the managed instance group that are scheduled to be stopped or are currently being stopped.
+   * Output only. [Output Only] The number of instances in the managed instance group that
+   * are scheduled to be stopped or are currently being stopped.
    * </pre>
    *
    * <code>optional int32 stopping = 105035892;</code>
@@ -455,7 +503,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The number of instances in the managed instance group that are scheduled to be suspended or are currently being suspended.
+   * Output only. [Output Only] The number of instances in the managed instance group that
+   * are scheduled to be suspended or are currently being suspended.
    * </pre>
    *
    * <code>optional int32 suspending = 29113894;</code>
@@ -471,7 +520,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The number of instances in the managed instance group that are scheduled to be suspended or are currently being suspended.
+   * Output only. [Output Only] The number of instances in the managed instance group that
+   * are scheduled to be suspended or are currently being suspended.
    * </pre>
    *
    * <code>optional int32 suspending = 29113894;</code>
@@ -490,7 +540,9 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The number of instances in the managed instance group that are being verified. See the managedInstances[].currentAction property in the listManagedInstances method documentation.
+   * Output only. [Output Only] The number of instances in the managed instance group that
+   * are being verified. See the managedInstances[].currentAction
+   * property in the listManagedInstances method documentation.
    * </pre>
    *
    * <code>optional int32 verifying = 451612873;</code>
@@ -506,7 +558,9 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The number of instances in the managed instance group that are being verified. See the managedInstances[].currentAction property in the listManagedInstances method documentation.
+   * Output only. [Output Only] The number of instances in the managed instance group that
+   * are being verified. See the managedInstances[].currentAction
+   * property in the listManagedInstances method documentation.
    * </pre>
    *
    * <code>optional int32 verifying = 451612873;</code>
@@ -1214,7 +1268,9 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The total number of instances in the managed instance group that are scheduled to be abandoned. Abandoning an instance removes it from the managed instance group without deleting it.
+     * Output only. [Output Only] The total number of instances in the managed instance group
+     * that are scheduled to be abandoned. Abandoning an instance removes it
+     * from the managed instance group without deleting it.
      * </pre>
      *
      * <code>optional int32 abandoning = 440023373;</code>
@@ -1230,7 +1286,9 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The total number of instances in the managed instance group that are scheduled to be abandoned. Abandoning an instance removes it from the managed instance group without deleting it.
+     * Output only. [Output Only] The total number of instances in the managed instance group
+     * that are scheduled to be abandoned. Abandoning an instance removes it
+     * from the managed instance group without deleting it.
      * </pre>
      *
      * <code>optional int32 abandoning = 440023373;</code>
@@ -1246,7 +1304,9 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The total number of instances in the managed instance group that are scheduled to be abandoned. Abandoning an instance removes it from the managed instance group without deleting it.
+     * Output only. [Output Only] The total number of instances in the managed instance group
+     * that are scheduled to be abandoned. Abandoning an instance removes it
+     * from the managed instance group without deleting it.
      * </pre>
      *
      * <code>optional int32 abandoning = 440023373;</code>
@@ -1266,7 +1326,9 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The total number of instances in the managed instance group that are scheduled to be abandoned. Abandoning an instance removes it from the managed instance group without deleting it.
+     * Output only. [Output Only] The total number of instances in the managed instance group
+     * that are scheduled to be abandoned. Abandoning an instance removes it
+     * from the managed instance group without deleting it.
      * </pre>
      *
      * <code>optional int32 abandoning = 440023373;</code>
@@ -1286,7 +1348,13 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are scheduled to be created or are currently being created. If the group fails to create any of these instances, it tries again until it creates the instance successfully. If you have disabled creation retries, this field will not be populated; instead, the creatingWithoutRetries field will be populated.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are scheduled to be created or are currently being created. If the group
+     * fails to create any of these instances, it tries again until it creates
+     * the instance successfully.
+     *
+     * If you have disabled creation retries, this field will not be populated;
+     * instead, the creatingWithoutRetries field will be populated.
      * </pre>
      *
      * <code>optional int32 creating = 209809081;</code>
@@ -1302,7 +1370,13 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are scheduled to be created or are currently being created. If the group fails to create any of these instances, it tries again until it creates the instance successfully. If you have disabled creation retries, this field will not be populated; instead, the creatingWithoutRetries field will be populated.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are scheduled to be created or are currently being created. If the group
+     * fails to create any of these instances, it tries again until it creates
+     * the instance successfully.
+     *
+     * If you have disabled creation retries, this field will not be populated;
+     * instead, the creatingWithoutRetries field will be populated.
      * </pre>
      *
      * <code>optional int32 creating = 209809081;</code>
@@ -1318,7 +1392,13 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are scheduled to be created or are currently being created. If the group fails to create any of these instances, it tries again until it creates the instance successfully. If you have disabled creation retries, this field will not be populated; instead, the creatingWithoutRetries field will be populated.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are scheduled to be created or are currently being created. If the group
+     * fails to create any of these instances, it tries again until it creates
+     * the instance successfully.
+     *
+     * If you have disabled creation retries, this field will not be populated;
+     * instead, the creatingWithoutRetries field will be populated.
      * </pre>
      *
      * <code>optional int32 creating = 209809081;</code>
@@ -1338,7 +1418,13 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are scheduled to be created or are currently being created. If the group fails to create any of these instances, it tries again until it creates the instance successfully. If you have disabled creation retries, this field will not be populated; instead, the creatingWithoutRetries field will be populated.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are scheduled to be created or are currently being created. If the group
+     * fails to create any of these instances, it tries again until it creates
+     * the instance successfully.
+     *
+     * If you have disabled creation retries, this field will not be populated;
+     * instead, the creatingWithoutRetries field will be populated.
      * </pre>
      *
      * <code>optional int32 creating = 209809081;</code>
@@ -1358,7 +1444,10 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances that the managed instance group will attempt to create. The group attempts to create each instance only once. If the group fails to create any of these instances, it decreases the group's targetSize value accordingly.
+     * Output only. [Output Only] The number of instances that the managed instance group
+     * will attempt to create. The group attempts to create each instance
+     * only once. If the group fails to create any of these instances, it
+     * decreases the group's targetSize value accordingly.
      * </pre>
      *
      * <code>optional int32 creating_without_retries = 369916745;</code>
@@ -1374,7 +1463,10 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances that the managed instance group will attempt to create. The group attempts to create each instance only once. If the group fails to create any of these instances, it decreases the group's targetSize value accordingly.
+     * Output only. [Output Only] The number of instances that the managed instance group
+     * will attempt to create. The group attempts to create each instance
+     * only once. If the group fails to create any of these instances, it
+     * decreases the group's targetSize value accordingly.
      * </pre>
      *
      * <code>optional int32 creating_without_retries = 369916745;</code>
@@ -1390,7 +1482,10 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances that the managed instance group will attempt to create. The group attempts to create each instance only once. If the group fails to create any of these instances, it decreases the group's targetSize value accordingly.
+     * Output only. [Output Only] The number of instances that the managed instance group
+     * will attempt to create. The group attempts to create each instance
+     * only once. If the group fails to create any of these instances, it
+     * decreases the group's targetSize value accordingly.
      * </pre>
      *
      * <code>optional int32 creating_without_retries = 369916745;</code>
@@ -1410,7 +1505,10 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances that the managed instance group will attempt to create. The group attempts to create each instance only once. If the group fails to create any of these instances, it decreases the group's targetSize value accordingly.
+     * Output only. [Output Only] The number of instances that the managed instance group
+     * will attempt to create. The group attempts to create each instance
+     * only once. If the group fails to create any of these instances, it
+     * decreases the group's targetSize value accordingly.
      * </pre>
      *
      * <code>optional int32 creating_without_retries = 369916745;</code>
@@ -1430,7 +1528,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are scheduled to be deleted or are currently being deleted.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are scheduled to be deleted or are currently being deleted.
      * </pre>
      *
      * <code>optional int32 deleting = 282846120;</code>
@@ -1446,7 +1545,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are scheduled to be deleted or are currently being deleted.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are scheduled to be deleted or are currently being deleted.
      * </pre>
      *
      * <code>optional int32 deleting = 282846120;</code>
@@ -1462,7 +1562,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are scheduled to be deleted or are currently being deleted.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are scheduled to be deleted or are currently being deleted.
      * </pre>
      *
      * <code>optional int32 deleting = 282846120;</code>
@@ -1482,7 +1583,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are scheduled to be deleted or are currently being deleted.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are scheduled to be deleted or are currently being deleted.
      * </pre>
      *
      * <code>optional int32 deleting = 282846120;</code>
@@ -1502,7 +1604,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are running and have no scheduled actions.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are running and have no scheduled actions.
      * </pre>
      *
      * <code>optional int32 none = 3387192;</code>
@@ -1518,7 +1621,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are running and have no scheduled actions.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are running and have no scheduled actions.
      * </pre>
      *
      * <code>optional int32 none = 3387192;</code>
@@ -1534,7 +1638,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are running and have no scheduled actions.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are running and have no scheduled actions.
      * </pre>
      *
      * <code>optional int32 none = 3387192;</code>
@@ -1554,7 +1659,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are running and have no scheduled actions.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are running and have no scheduled actions.
      * </pre>
      *
      * <code>optional int32 none = 3387192;</code>
@@ -1574,7 +1680,11 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are scheduled to be recreated or are currently being being recreated. Recreating an instance deletes the existing root persistent disk and creates a new disk from the image that is defined in the instance template.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are scheduled to be recreated or are currently being being recreated.
+     * Recreating an instance deletes the existing root persistent disk
+     * and creates a new disk from the image that is defined in the
+     * instance template.
      * </pre>
      *
      * <code>optional int32 recreating = 339057132;</code>
@@ -1590,7 +1700,11 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are scheduled to be recreated or are currently being being recreated. Recreating an instance deletes the existing root persistent disk and creates a new disk from the image that is defined in the instance template.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are scheduled to be recreated or are currently being being recreated.
+     * Recreating an instance deletes the existing root persistent disk
+     * and creates a new disk from the image that is defined in the
+     * instance template.
      * </pre>
      *
      * <code>optional int32 recreating = 339057132;</code>
@@ -1606,7 +1720,11 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are scheduled to be recreated or are currently being being recreated. Recreating an instance deletes the existing root persistent disk and creates a new disk from the image that is defined in the instance template.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are scheduled to be recreated or are currently being being recreated.
+     * Recreating an instance deletes the existing root persistent disk
+     * and creates a new disk from the image that is defined in the
+     * instance template.
      * </pre>
      *
      * <code>optional int32 recreating = 339057132;</code>
@@ -1626,7 +1744,11 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are scheduled to be recreated or are currently being being recreated. Recreating an instance deletes the existing root persistent disk and creates a new disk from the image that is defined in the instance template.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are scheduled to be recreated or are currently being being recreated.
+     * Recreating an instance deletes the existing root persistent disk
+     * and creates a new disk from the image that is defined in the
+     * instance template.
      * </pre>
      *
      * <code>optional int32 recreating = 339057132;</code>
@@ -1646,7 +1768,10 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are being reconfigured with properties that do not require a restart or a recreate action. For example, setting or removing target pools for the instance.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are being reconfigured with properties that do not require a restart
+     * or a recreate action. For example, setting or removing target
+     * pools for the instance.
      * </pre>
      *
      * <code>optional int32 refreshing = 215044903;</code>
@@ -1662,7 +1787,10 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are being reconfigured with properties that do not require a restart or a recreate action. For example, setting or removing target pools for the instance.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are being reconfigured with properties that do not require a restart
+     * or a recreate action. For example, setting or removing target
+     * pools for the instance.
      * </pre>
      *
      * <code>optional int32 refreshing = 215044903;</code>
@@ -1678,7 +1806,10 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are being reconfigured with properties that do not require a restart or a recreate action. For example, setting or removing target pools for the instance.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are being reconfigured with properties that do not require a restart
+     * or a recreate action. For example, setting or removing target
+     * pools for the instance.
      * </pre>
      *
      * <code>optional int32 refreshing = 215044903;</code>
@@ -1698,7 +1829,10 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are being reconfigured with properties that do not require a restart or a recreate action. For example, setting or removing target pools for the instance.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are being reconfigured with properties that do not require a restart
+     * or a recreate action. For example, setting or removing target
+     * pools for the instance.
      * </pre>
      *
      * <code>optional int32 refreshing = 215044903;</code>
@@ -1718,7 +1852,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are scheduled to be restarted or are currently being restarted.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are scheduled to be restarted or are currently being restarted.
      * </pre>
      *
      * <code>optional int32 restarting = 372312947;</code>
@@ -1734,7 +1869,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are scheduled to be restarted or are currently being restarted.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are scheduled to be restarted or are currently being restarted.
      * </pre>
      *
      * <code>optional int32 restarting = 372312947;</code>
@@ -1750,7 +1886,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are scheduled to be restarted or are currently being restarted.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are scheduled to be restarted or are currently being restarted.
      * </pre>
      *
      * <code>optional int32 restarting = 372312947;</code>
@@ -1770,7 +1907,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are scheduled to be restarted or are currently being restarted.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are scheduled to be restarted or are currently being restarted.
      * </pre>
      *
      * <code>optional int32 restarting = 372312947;</code>
@@ -1790,7 +1928,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are scheduled to be resumed or are currently being resumed.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are scheduled to be resumed or are currently being resumed.
      * </pre>
      *
      * <code>optional int32 resuming = 201100714;</code>
@@ -1806,7 +1945,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are scheduled to be resumed or are currently being resumed.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are scheduled to be resumed or are currently being resumed.
      * </pre>
      *
      * <code>optional int32 resuming = 201100714;</code>
@@ -1822,7 +1962,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are scheduled to be resumed or are currently being resumed.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are scheduled to be resumed or are currently being resumed.
      * </pre>
      *
      * <code>optional int32 resuming = 201100714;</code>
@@ -1842,7 +1983,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are scheduled to be resumed or are currently being resumed.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are scheduled to be resumed or are currently being resumed.
      * </pre>
      *
      * <code>optional int32 resuming = 201100714;</code>
@@ -1862,7 +2004,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are scheduled to be started or are currently being started.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are scheduled to be started or are currently being started.
      * </pre>
      *
      * <code>optional int32 starting = 243064896;</code>
@@ -1878,7 +2021,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are scheduled to be started or are currently being started.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are scheduled to be started or are currently being started.
      * </pre>
      *
      * <code>optional int32 starting = 243064896;</code>
@@ -1894,7 +2038,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are scheduled to be started or are currently being started.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are scheduled to be started or are currently being started.
      * </pre>
      *
      * <code>optional int32 starting = 243064896;</code>
@@ -1914,7 +2059,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are scheduled to be started or are currently being started.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are scheduled to be started or are currently being started.
      * </pre>
      *
      * <code>optional int32 starting = 243064896;</code>
@@ -1934,7 +2080,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are scheduled to be stopped or are currently being stopped.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are scheduled to be stopped or are currently being stopped.
      * </pre>
      *
      * <code>optional int32 stopping = 105035892;</code>
@@ -1950,7 +2097,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are scheduled to be stopped or are currently being stopped.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are scheduled to be stopped or are currently being stopped.
      * </pre>
      *
      * <code>optional int32 stopping = 105035892;</code>
@@ -1966,7 +2114,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are scheduled to be stopped or are currently being stopped.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are scheduled to be stopped or are currently being stopped.
      * </pre>
      *
      * <code>optional int32 stopping = 105035892;</code>
@@ -1986,7 +2135,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are scheduled to be stopped or are currently being stopped.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are scheduled to be stopped or are currently being stopped.
      * </pre>
      *
      * <code>optional int32 stopping = 105035892;</code>
@@ -2006,7 +2156,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are scheduled to be suspended or are currently being suspended.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are scheduled to be suspended or are currently being suspended.
      * </pre>
      *
      * <code>optional int32 suspending = 29113894;</code>
@@ -2022,7 +2173,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are scheduled to be suspended or are currently being suspended.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are scheduled to be suspended or are currently being suspended.
      * </pre>
      *
      * <code>optional int32 suspending = 29113894;</code>
@@ -2038,7 +2190,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are scheduled to be suspended or are currently being suspended.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are scheduled to be suspended or are currently being suspended.
      * </pre>
      *
      * <code>optional int32 suspending = 29113894;</code>
@@ -2058,7 +2211,8 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are scheduled to be suspended or are currently being suspended.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are scheduled to be suspended or are currently being suspended.
      * </pre>
      *
      * <code>optional int32 suspending = 29113894;</code>
@@ -2078,7 +2232,9 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are being verified. See the managedInstances[].currentAction property in the listManagedInstances method documentation.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are being verified. See the managedInstances[].currentAction
+     * property in the listManagedInstances method documentation.
      * </pre>
      *
      * <code>optional int32 verifying = 451612873;</code>
@@ -2094,7 +2250,9 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are being verified. See the managedInstances[].currentAction property in the listManagedInstances method documentation.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are being verified. See the managedInstances[].currentAction
+     * property in the listManagedInstances method documentation.
      * </pre>
      *
      * <code>optional int32 verifying = 451612873;</code>
@@ -2110,7 +2268,9 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are being verified. See the managedInstances[].currentAction property in the listManagedInstances method documentation.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are being verified. See the managedInstances[].currentAction
+     * property in the listManagedInstances method documentation.
      * </pre>
      *
      * <code>optional int32 verifying = 451612873;</code>
@@ -2130,7 +2290,9 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The number of instances in the managed instance group that are being verified. See the managedInstances[].currentAction property in the listManagedInstances method documentation.
+     * Output only. [Output Only] The number of instances in the managed instance group that
+     * are being verified. See the managedInstances[].currentAction
+     * property in the listManagedInstances method documentation.
      * </pre>
      *
      * <code>optional int32 verifying = 451612873;</code>

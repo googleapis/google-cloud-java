@@ -28,7 +28,8 @@ public interface SecurityPolicyAdvancedOptionsConfigOrBuilder
    *
    *
    * <pre>
-   * Custom configuration to apply the JSON parsing. Only applicable when json_parsing is set to STANDARD.
+   * Custom configuration to apply the JSON parsing. Only applicable when
+   * json_parsing is set to STANDARD.
    * </pre>
    *
    * <code>
@@ -43,7 +44,8 @@ public interface SecurityPolicyAdvancedOptionsConfigOrBuilder
    *
    *
    * <pre>
-   * Custom configuration to apply the JSON parsing. Only applicable when json_parsing is set to STANDARD.
+   * Custom configuration to apply the JSON parsing. Only applicable when
+   * json_parsing is set to STANDARD.
    * </pre>
    *
    * <code>
@@ -59,7 +61,8 @@ public interface SecurityPolicyAdvancedOptionsConfigOrBuilder
    *
    *
    * <pre>
-   * Custom configuration to apply the JSON parsing. Only applicable when json_parsing is set to STANDARD.
+   * Custom configuration to apply the JSON parsing. Only applicable when
+   * json_parsing is set to STANDARD.
    * </pre>
    *
    * <code>
@@ -157,7 +160,53 @@ public interface SecurityPolicyAdvancedOptionsConfigOrBuilder
    *
    *
    * <pre>
-   * An optional list of case-insensitive request header names to use for resolving the callers client IP address.
+   * The maximum request size chosen by the customer with Waf enabled.
+   * Values supported are "8KB", "16KB, "32KB", "48KB" and "64KB".
+   * Values are case insensitive.
+   * </pre>
+   *
+   * <code>optional string request_body_inspection_size = 191268607;</code>
+   *
+   * @return Whether the requestBodyInspectionSize field is set.
+   */
+  boolean hasRequestBodyInspectionSize();
+
+  /**
+   *
+   *
+   * <pre>
+   * The maximum request size chosen by the customer with Waf enabled.
+   * Values supported are "8KB", "16KB, "32KB", "48KB" and "64KB".
+   * Values are case insensitive.
+   * </pre>
+   *
+   * <code>optional string request_body_inspection_size = 191268607;</code>
+   *
+   * @return The requestBodyInspectionSize.
+   */
+  java.lang.String getRequestBodyInspectionSize();
+
+  /**
+   *
+   *
+   * <pre>
+   * The maximum request size chosen by the customer with Waf enabled.
+   * Values supported are "8KB", "16KB, "32KB", "48KB" and "64KB".
+   * Values are case insensitive.
+   * </pre>
+   *
+   * <code>optional string request_body_inspection_size = 191268607;</code>
+   *
+   * @return The bytes for requestBodyInspectionSize.
+   */
+  com.google.protobuf.ByteString getRequestBodyInspectionSizeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * An optional list of case-insensitive request header names to use for
+   * resolving the callers client IP address.
    * </pre>
    *
    * <code>repeated string user_ip_request_headers = 421050290;</code>
@@ -170,7 +219,8 @@ public interface SecurityPolicyAdvancedOptionsConfigOrBuilder
    *
    *
    * <pre>
-   * An optional list of case-insensitive request header names to use for resolving the callers client IP address.
+   * An optional list of case-insensitive request header names to use for
+   * resolving the callers client IP address.
    * </pre>
    *
    * <code>repeated string user_ip_request_headers = 421050290;</code>
@@ -183,7 +233,8 @@ public interface SecurityPolicyAdvancedOptionsConfigOrBuilder
    *
    *
    * <pre>
-   * An optional list of case-insensitive request header names to use for resolving the callers client IP address.
+   * An optional list of case-insensitive request header names to use for
+   * resolving the callers client IP address.
    * </pre>
    *
    * <code>repeated string user_ip_request_headers = 421050290;</code>
@@ -197,7 +248,8 @@ public interface SecurityPolicyAdvancedOptionsConfigOrBuilder
    *
    *
    * <pre>
-   * An optional list of case-insensitive request header names to use for resolving the callers client IP address.
+   * An optional list of case-insensitive request header names to use for
+   * resolving the callers client IP address.
    * </pre>
    *
    * <code>repeated string user_ip_request_headers = 421050290;</code>

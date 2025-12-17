@@ -579,6 +579,66 @@ public class DataChatServiceClientHttpJsonTest {
   }
 
   @Test
+  public void queryDataTest() throws Exception {
+    QueryDataResponse expectedResponse =
+        QueryDataResponse.newBuilder()
+            .setGeneratedQuery("generatedQuery-1655820167")
+            .setIntentExplanation("intentExplanation-258914851")
+            .setQueryResult(ExecutedQueryResult.newBuilder().build())
+            .setNaturalLanguageAnswer("naturalLanguageAnswer425313727")
+            .addAllDisambiguationQuestion(new ArrayList<String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    QueryDataRequest request =
+        QueryDataRequest.newBuilder()
+            .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setPrompt("prompt-979805852")
+            .setContext(QueryDataContext.newBuilder().build())
+            .setGenerationOptions(GenerationOptions.newBuilder().build())
+            .build();
+
+    QueryDataResponse actualResponse = client.queryData(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void queryDataExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      QueryDataRequest request =
+          QueryDataRequest.newBuilder()
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setPrompt("prompt-979805852")
+              .setContext(QueryDataContext.newBuilder().build())
+              .setGenerationOptions(GenerationOptions.newBuilder().build())
+              .build();
+      client.queryData(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listLocationsTest() throws Exception {
     Location responsesElement = Location.newBuilder().build();
     ListLocationsResponse expectedResponse =

@@ -54,7 +54,8 @@ public interface GetSslPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the SSL policy to update. The name must be 1-63 characters long, and comply with RFC1035.
+   * Name of the SSL policy to update. The name must be 1-63 characters long,
+   * and comply with RFC1035.
    * </pre>
    *
    * <code>string ssl_policy = 295190213 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -67,7 +68,8 @@ public interface GetSslPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the SSL policy to update. The name must be 1-63 characters long, and comply with RFC1035.
+   * Name of the SSL policy to update. The name must be 1-63 characters long,
+   * and comply with RFC1035.
    * </pre>
    *
    * <code>string ssl_policy = 295190213 [(.google.api.field_behavior) = REQUIRED];</code>

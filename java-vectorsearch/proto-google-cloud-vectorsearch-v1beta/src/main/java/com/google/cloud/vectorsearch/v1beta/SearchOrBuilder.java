@@ -98,5 +98,42 @@ public interface SearchOrBuilder
    */
   com.google.cloud.vectorsearch.v1beta.SemanticSearchOrBuilder getSemanticSearchOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * A text search operation.
+   * </pre>
+   *
+   * <code>.google.cloud.vectorsearch.v1beta.TextSearch text_search = 3;</code>
+   *
+   * @return Whether the textSearch field is set.
+   */
+  boolean hasTextSearch();
+
+  /**
+   *
+   *
+   * <pre>
+   * A text search operation.
+   * </pre>
+   *
+   * <code>.google.cloud.vectorsearch.v1beta.TextSearch text_search = 3;</code>
+   *
+   * @return The textSearch.
+   */
+  com.google.cloud.vectorsearch.v1beta.TextSearch getTextSearch();
+
+  /**
+   *
+   *
+   * <pre>
+   * A text search operation.
+   * </pre>
+   *
+   * <code>.google.cloud.vectorsearch.v1beta.TextSearch text_search = 3;</code>
+   */
+  com.google.cloud.vectorsearch.v1beta.TextSearchOrBuilder getTextSearchOrBuilder();
+
   com.google.cloud.vectorsearch.v1beta.Search.SearchTypeCase getSearchTypeCase();
 }

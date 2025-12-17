@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a match condition that incoming traffic is evaluated against. Exactly one field must be specified.
+ * Represents a match condition that incoming traffic is evaluated against.
+ * Exactly one field must be specified.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.FirewallPolicyRuleMatcher}
@@ -82,7 +83,12 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Network type of the traffic destination. Allowed values are: - UNSPECIFIED - INTERNET - NON_INTERNET
+   * Network type of the traffic destination. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - NON_INTERNET
    * Additional supported values which may be not listed in the enum directly due to technical reasons:
    * INTERNET
    * INTRA_VPC
@@ -205,7 +211,14 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Network type of the traffic source. Allowed values are: - UNSPECIFIED - INTERNET - INTRA_VPC - NON_INTERNET - VPC_NETWORKS
+   * Network type of the traffic source. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - INTRA_VPC
+   *      - NON_INTERNET
+   *      - VPC_NETWORKS
    * Additional supported values which may be not listed in the enum directly due to technical reasons:
    * INTERNET
    * INTRA_VPC
@@ -333,7 +346,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+   * Address groups which should be matched against the traffic destination.
+   * Maximum number of destination address groups is 10.
    * </pre>
    *
    * <code>repeated string dest_address_groups = 468760508;</code>
@@ -348,7 +362,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+   * Address groups which should be matched against the traffic destination.
+   * Maximum number of destination address groups is 10.
    * </pre>
    *
    * <code>repeated string dest_address_groups = 468760508;</code>
@@ -363,7 +378,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+   * Address groups which should be matched against the traffic destination.
+   * Maximum number of destination address groups is 10.
    * </pre>
    *
    * <code>repeated string dest_address_groups = 468760508;</code>
@@ -379,7 +395,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+   * Address groups which should be matched against the traffic destination.
+   * Maximum number of destination address groups is 10.
    * </pre>
    *
    * <code>repeated string dest_address_groups = 468760508;</code>
@@ -401,7 +418,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+   * Fully Qualified Domain Name (FQDN) which should be matched against
+   * traffic destination.
+   * Maximum number of destination fqdn allowed is 100.
    * </pre>
    *
    * <code>repeated string dest_fqdns = 370712737;</code>
@@ -416,7 +435,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+   * Fully Qualified Domain Name (FQDN) which should be matched against
+   * traffic destination.
+   * Maximum number of destination fqdn allowed is 100.
    * </pre>
    *
    * <code>repeated string dest_fqdns = 370712737;</code>
@@ -431,7 +452,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+   * Fully Qualified Domain Name (FQDN) which should be matched against
+   * traffic destination.
+   * Maximum number of destination fqdn allowed is 100.
    * </pre>
    *
    * <code>repeated string dest_fqdns = 370712737;</code>
@@ -447,7 +470,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+   * Fully Qualified Domain Name (FQDN) which should be matched against
+   * traffic destination.
+   * Maximum number of destination fqdn allowed is 100.
    * </pre>
    *
    * <code>repeated string dest_fqdns = 370712737;</code>
@@ -469,7 +494,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * CIDR IP address range. Maximum number of destination CIDR IP ranges allowed is 5000.
+   * CIDR IP address range.
+   * Maximum number of destination CIDR IP ranges allowed is 5000.
    * </pre>
    *
    * <code>repeated string dest_ip_ranges = 337357713;</code>
@@ -484,7 +510,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * CIDR IP address range. Maximum number of destination CIDR IP ranges allowed is 5000.
+   * CIDR IP address range.
+   * Maximum number of destination CIDR IP ranges allowed is 5000.
    * </pre>
    *
    * <code>repeated string dest_ip_ranges = 337357713;</code>
@@ -499,7 +526,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * CIDR IP address range. Maximum number of destination CIDR IP ranges allowed is 5000.
+   * CIDR IP address range.
+   * Maximum number of destination CIDR IP ranges allowed is 5000.
    * </pre>
    *
    * <code>repeated string dest_ip_ranges = 337357713;</code>
@@ -515,7 +543,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * CIDR IP address range. Maximum number of destination CIDR IP ranges allowed is 5000.
+   * CIDR IP address range.
+   * Maximum number of destination CIDR IP ranges allowed is 5000.
    * </pre>
    *
    * <code>repeated string dest_ip_ranges = 337357713;</code>
@@ -536,7 +565,12 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Network type of the traffic destination. Allowed values are: - UNSPECIFIED - INTERNET - NON_INTERNET
+   * Network type of the traffic destination. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - NON_INTERNET
    * Check the DestNetworkType enum for the list of possible values.
    * </pre>
    *
@@ -553,7 +587,12 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Network type of the traffic destination. Allowed values are: - UNSPECIFIED - INTERNET - NON_INTERNET
+   * Network type of the traffic destination. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - NON_INTERNET
    * Check the DestNetworkType enum for the list of possible values.
    * </pre>
    *
@@ -578,7 +617,12 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Network type of the traffic destination. Allowed values are: - UNSPECIFIED - INTERNET - NON_INTERNET
+   * Network type of the traffic destination. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - NON_INTERNET
    * Check the DestNetworkType enum for the list of possible values.
    * </pre>
    *
@@ -609,7 +653,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+   * Region codes whose IP addresses will be used to match for destination
+   * of traffic. Should be specified as 2 letter country code defined as per
+   * ISO 3166 alpha-2 country codes. ex."US"
+   * Maximum number of dest region codes allowed is 5000.
    * </pre>
    *
    * <code>repeated string dest_region_codes = 199120280;</code>
@@ -624,7 +671,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+   * Region codes whose IP addresses will be used to match for destination
+   * of traffic. Should be specified as 2 letter country code defined as per
+   * ISO 3166 alpha-2 country codes. ex."US"
+   * Maximum number of dest region codes allowed is 5000.
    * </pre>
    *
    * <code>repeated string dest_region_codes = 199120280;</code>
@@ -639,7 +689,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+   * Region codes whose IP addresses will be used to match for destination
+   * of traffic. Should be specified as 2 letter country code defined as per
+   * ISO 3166 alpha-2 country codes. ex."US"
+   * Maximum number of dest region codes allowed is 5000.
    * </pre>
    *
    * <code>repeated string dest_region_codes = 199120280;</code>
@@ -655,7 +708,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+   * Region codes whose IP addresses will be used to match for destination
+   * of traffic. Should be specified as 2 letter country code defined as per
+   * ISO 3166 alpha-2 country codes. ex."US"
+   * Maximum number of dest region codes allowed is 5000.
    * </pre>
    *
    * <code>repeated string dest_region_codes = 199120280;</code>
@@ -677,7 +733,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+   * Names of Network Threat Intelligence lists.
+   * The IPs in these lists will be matched against traffic destination.
    * </pre>
    *
    * <code>repeated string dest_threat_intelligences = 119896492;</code>
@@ -692,7 +749,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+   * Names of Network Threat Intelligence lists.
+   * The IPs in these lists will be matched against traffic destination.
    * </pre>
    *
    * <code>repeated string dest_threat_intelligences = 119896492;</code>
@@ -707,7 +765,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+   * Names of Network Threat Intelligence lists.
+   * The IPs in these lists will be matched against traffic destination.
    * </pre>
    *
    * <code>repeated string dest_threat_intelligences = 119896492;</code>
@@ -723,7 +782,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+   * Names of Network Threat Intelligence lists.
+   * The IPs in these lists will be matched against traffic destination.
    * </pre>
    *
    * <code>repeated string dest_threat_intelligences = 119896492;</code>
@@ -836,7 +896,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+   * Address groups which should be matched against the traffic source.
+   * Maximum number of source address groups is 10.
    * </pre>
    *
    * <code>repeated string src_address_groups = 436423738;</code>
@@ -851,7 +912,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+   * Address groups which should be matched against the traffic source.
+   * Maximum number of source address groups is 10.
    * </pre>
    *
    * <code>repeated string src_address_groups = 436423738;</code>
@@ -866,7 +928,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+   * Address groups which should be matched against the traffic source.
+   * Maximum number of source address groups is 10.
    * </pre>
    *
    * <code>repeated string src_address_groups = 436423738;</code>
@@ -882,7 +945,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+   * Address groups which should be matched against the traffic source.
+   * Maximum number of source address groups is 10.
    * </pre>
    *
    * <code>repeated string src_address_groups = 436423738;</code>
@@ -904,7 +968,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+   * Fully Qualified Domain Name (FQDN) which should be matched against
+   * traffic source.
+   * Maximum number of source fqdn allowed is 100.
    * </pre>
    *
    * <code>repeated string src_fqdns = 435906147;</code>
@@ -919,7 +985,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+   * Fully Qualified Domain Name (FQDN) which should be matched against
+   * traffic source.
+   * Maximum number of source fqdn allowed is 100.
    * </pre>
    *
    * <code>repeated string src_fqdns = 435906147;</code>
@@ -934,7 +1002,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+   * Fully Qualified Domain Name (FQDN) which should be matched against
+   * traffic source.
+   * Maximum number of source fqdn allowed is 100.
    * </pre>
    *
    * <code>repeated string src_fqdns = 435906147;</code>
@@ -950,7 +1020,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+   * Fully Qualified Domain Name (FQDN) which should be matched against
+   * traffic source.
+   * Maximum number of source fqdn allowed is 100.
    * </pre>
    *
    * <code>repeated string src_fqdns = 435906147;</code>
@@ -972,7 +1044,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 5000.
+   * CIDR IP address range.
+   * Maximum number of source CIDR IP ranges allowed is 5000.
    * </pre>
    *
    * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -987,7 +1060,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 5000.
+   * CIDR IP address range.
+   * Maximum number of source CIDR IP ranges allowed is 5000.
    * </pre>
    *
    * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -1002,7 +1076,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 5000.
+   * CIDR IP address range.
+   * Maximum number of source CIDR IP ranges allowed is 5000.
    * </pre>
    *
    * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -1018,7 +1093,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 5000.
+   * CIDR IP address range.
+   * Maximum number of source CIDR IP ranges allowed is 5000.
    * </pre>
    *
    * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -1039,7 +1115,14 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Network type of the traffic source. Allowed values are: - UNSPECIFIED - INTERNET - INTRA_VPC - NON_INTERNET - VPC_NETWORKS
+   * Network type of the traffic source. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - INTRA_VPC
+   *      - NON_INTERNET
+   *      - VPC_NETWORKS
    * Check the SrcNetworkType enum for the list of possible values.
    * </pre>
    *
@@ -1056,7 +1139,14 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Network type of the traffic source. Allowed values are: - UNSPECIFIED - INTERNET - INTRA_VPC - NON_INTERNET - VPC_NETWORKS
+   * Network type of the traffic source. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - INTRA_VPC
+   *      - NON_INTERNET
+   *      - VPC_NETWORKS
    * Check the SrcNetworkType enum for the list of possible values.
    * </pre>
    *
@@ -1081,7 +1171,14 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Network type of the traffic source. Allowed values are: - UNSPECIFIED - INTERNET - INTRA_VPC - NON_INTERNET - VPC_NETWORKS
+   * Network type of the traffic source. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - INTRA_VPC
+   *      - NON_INTERNET
+   *      - VPC_NETWORKS
    * Check the SrcNetworkType enum for the list of possible values.
    * </pre>
    *
@@ -1180,7 +1277,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+   * Region codes whose IP addresses will be used to match for source
+   * of traffic. Should be specified as 2 letter country code defined as per
+   * ISO 3166 alpha-2 country codes. ex."US"
+   * Maximum number of source region codes allowed is 5000.
    * </pre>
    *
    * <code>repeated string src_region_codes = 99086742;</code>
@@ -1195,7 +1295,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+   * Region codes whose IP addresses will be used to match for source
+   * of traffic. Should be specified as 2 letter country code defined as per
+   * ISO 3166 alpha-2 country codes. ex."US"
+   * Maximum number of source region codes allowed is 5000.
    * </pre>
    *
    * <code>repeated string src_region_codes = 99086742;</code>
@@ -1210,7 +1313,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+   * Region codes whose IP addresses will be used to match for source
+   * of traffic. Should be specified as 2 letter country code defined as per
+   * ISO 3166 alpha-2 country codes. ex."US"
+   * Maximum number of source region codes allowed is 5000.
    * </pre>
    *
    * <code>repeated string src_region_codes = 99086742;</code>
@@ -1226,7 +1332,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+   * Region codes whose IP addresses will be used to match for source
+   * of traffic. Should be specified as 2 letter country code defined as per
+   * ISO 3166 alpha-2 country codes. ex."US"
+   * Maximum number of source region codes allowed is 5000.
    * </pre>
    *
    * <code>repeated string src_region_codes = 99086742;</code>
@@ -1247,7 +1356,11 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+   * List of secure tag values, which should be matched at the source
+   * of the traffic.
+   * For INGRESS rule, if all the srcSecureTag are INEFFECTIVE,
+   * and there is no srcIpRange, this rule will be ignored.
+   * Maximum number of source tag values allowed is 256.
    * </pre>
    *
    * <code>
@@ -1264,7 +1377,11 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+   * List of secure tag values, which should be matched at the source
+   * of the traffic.
+   * For INGRESS rule, if all the srcSecureTag are INEFFECTIVE,
+   * and there is no srcIpRange, this rule will be ignored.
+   * Maximum number of source tag values allowed is 256.
    * </pre>
    *
    * <code>
@@ -1281,7 +1398,11 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+   * List of secure tag values, which should be matched at the source
+   * of the traffic.
+   * For INGRESS rule, if all the srcSecureTag are INEFFECTIVE,
+   * and there is no srcIpRange, this rule will be ignored.
+   * Maximum number of source tag values allowed is 256.
    * </pre>
    *
    * <code>
@@ -1297,7 +1418,11 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+   * List of secure tag values, which should be matched at the source
+   * of the traffic.
+   * For INGRESS rule, if all the srcSecureTag are INEFFECTIVE,
+   * and there is no srcIpRange, this rule will be ignored.
+   * Maximum number of source tag values allowed is 256.
    * </pre>
    *
    * <code>
@@ -1313,7 +1438,11 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+   * List of secure tag values, which should be matched at the source
+   * of the traffic.
+   * For INGRESS rule, if all the srcSecureTag are INEFFECTIVE,
+   * and there is no srcIpRange, this rule will be ignored.
+   * Maximum number of source tag values allowed is 256.
    * </pre>
    *
    * <code>
@@ -1336,7 +1465,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+   * Names of Network Threat Intelligence lists.
+   * The IPs in these lists will be matched against traffic source.
    * </pre>
    *
    * <code>repeated string src_threat_intelligences = 323631018;</code>
@@ -1351,7 +1481,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+   * Names of Network Threat Intelligence lists.
+   * The IPs in these lists will be matched against traffic source.
    * </pre>
    *
    * <code>repeated string src_threat_intelligences = 323631018;</code>
@@ -1366,7 +1497,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+   * Names of Network Threat Intelligence lists.
+   * The IPs in these lists will be matched against traffic source.
    * </pre>
    *
    * <code>repeated string src_threat_intelligences = 323631018;</code>
@@ -1382,7 +1514,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+   * Names of Network Threat Intelligence lists.
+   * The IPs in these lists will be matched against traffic source.
    * </pre>
    *
    * <code>repeated string src_threat_intelligences = 323631018;</code>
@@ -1789,7 +1922,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Represents a match condition that incoming traffic is evaluated against. Exactly one field must be specified.
+   * Represents a match condition that incoming traffic is evaluated against.
+   * Exactly one field must be specified.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.FirewallPolicyRuleMatcher}
@@ -2362,7 +2496,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+     * Address groups which should be matched against the traffic destination.
+     * Maximum number of destination address groups is 10.
      * </pre>
      *
      * <code>repeated string dest_address_groups = 468760508;</code>
@@ -2378,7 +2513,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+     * Address groups which should be matched against the traffic destination.
+     * Maximum number of destination address groups is 10.
      * </pre>
      *
      * <code>repeated string dest_address_groups = 468760508;</code>
@@ -2393,7 +2529,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+     * Address groups which should be matched against the traffic destination.
+     * Maximum number of destination address groups is 10.
      * </pre>
      *
      * <code>repeated string dest_address_groups = 468760508;</code>
@@ -2409,7 +2546,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+     * Address groups which should be matched against the traffic destination.
+     * Maximum number of destination address groups is 10.
      * </pre>
      *
      * <code>repeated string dest_address_groups = 468760508;</code>
@@ -2425,7 +2563,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+     * Address groups which should be matched against the traffic destination.
+     * Maximum number of destination address groups is 10.
      * </pre>
      *
      * <code>repeated string dest_address_groups = 468760508;</code>
@@ -2449,7 +2588,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+     * Address groups which should be matched against the traffic destination.
+     * Maximum number of destination address groups is 10.
      * </pre>
      *
      * <code>repeated string dest_address_groups = 468760508;</code>
@@ -2472,7 +2612,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+     * Address groups which should be matched against the traffic destination.
+     * Maximum number of destination address groups is 10.
      * </pre>
      *
      * <code>repeated string dest_address_groups = 468760508;</code>
@@ -2492,7 +2633,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+     * Address groups which should be matched against the traffic destination.
+     * Maximum number of destination address groups is 10.
      * </pre>
      *
      * <code>repeated string dest_address_groups = 468760508;</code>
@@ -2511,7 +2653,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+     * Address groups which should be matched against the traffic destination.
+     * Maximum number of destination address groups is 10.
      * </pre>
      *
      * <code>repeated string dest_address_groups = 468760508;</code>
@@ -2545,7 +2688,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+     * Fully Qualified Domain Name (FQDN) which should be matched against
+     * traffic destination.
+     * Maximum number of destination fqdn allowed is 100.
      * </pre>
      *
      * <code>repeated string dest_fqdns = 370712737;</code>
@@ -2561,7 +2706,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+     * Fully Qualified Domain Name (FQDN) which should be matched against
+     * traffic destination.
+     * Maximum number of destination fqdn allowed is 100.
      * </pre>
      *
      * <code>repeated string dest_fqdns = 370712737;</code>
@@ -2576,7 +2723,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+     * Fully Qualified Domain Name (FQDN) which should be matched against
+     * traffic destination.
+     * Maximum number of destination fqdn allowed is 100.
      * </pre>
      *
      * <code>repeated string dest_fqdns = 370712737;</code>
@@ -2592,7 +2741,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+     * Fully Qualified Domain Name (FQDN) which should be matched against
+     * traffic destination.
+     * Maximum number of destination fqdn allowed is 100.
      * </pre>
      *
      * <code>repeated string dest_fqdns = 370712737;</code>
@@ -2608,7 +2759,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+     * Fully Qualified Domain Name (FQDN) which should be matched against
+     * traffic destination.
+     * Maximum number of destination fqdn allowed is 100.
      * </pre>
      *
      * <code>repeated string dest_fqdns = 370712737;</code>
@@ -2632,7 +2785,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+     * Fully Qualified Domain Name (FQDN) which should be matched against
+     * traffic destination.
+     * Maximum number of destination fqdn allowed is 100.
      * </pre>
      *
      * <code>repeated string dest_fqdns = 370712737;</code>
@@ -2655,7 +2810,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+     * Fully Qualified Domain Name (FQDN) which should be matched against
+     * traffic destination.
+     * Maximum number of destination fqdn allowed is 100.
      * </pre>
      *
      * <code>repeated string dest_fqdns = 370712737;</code>
@@ -2675,7 +2832,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+     * Fully Qualified Domain Name (FQDN) which should be matched against
+     * traffic destination.
+     * Maximum number of destination fqdn allowed is 100.
      * </pre>
      *
      * <code>repeated string dest_fqdns = 370712737;</code>
@@ -2694,7 +2853,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+     * Fully Qualified Domain Name (FQDN) which should be matched against
+     * traffic destination.
+     * Maximum number of destination fqdn allowed is 100.
      * </pre>
      *
      * <code>repeated string dest_fqdns = 370712737;</code>
@@ -2728,7 +2889,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * CIDR IP address range. Maximum number of destination CIDR IP ranges allowed is 5000.
+     * CIDR IP address range.
+     * Maximum number of destination CIDR IP ranges allowed is 5000.
      * </pre>
      *
      * <code>repeated string dest_ip_ranges = 337357713;</code>
@@ -2744,7 +2906,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * CIDR IP address range. Maximum number of destination CIDR IP ranges allowed is 5000.
+     * CIDR IP address range.
+     * Maximum number of destination CIDR IP ranges allowed is 5000.
      * </pre>
      *
      * <code>repeated string dest_ip_ranges = 337357713;</code>
@@ -2759,7 +2922,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * CIDR IP address range. Maximum number of destination CIDR IP ranges allowed is 5000.
+     * CIDR IP address range.
+     * Maximum number of destination CIDR IP ranges allowed is 5000.
      * </pre>
      *
      * <code>repeated string dest_ip_ranges = 337357713;</code>
@@ -2775,7 +2939,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * CIDR IP address range. Maximum number of destination CIDR IP ranges allowed is 5000.
+     * CIDR IP address range.
+     * Maximum number of destination CIDR IP ranges allowed is 5000.
      * </pre>
      *
      * <code>repeated string dest_ip_ranges = 337357713;</code>
@@ -2791,7 +2956,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * CIDR IP address range. Maximum number of destination CIDR IP ranges allowed is 5000.
+     * CIDR IP address range.
+     * Maximum number of destination CIDR IP ranges allowed is 5000.
      * </pre>
      *
      * <code>repeated string dest_ip_ranges = 337357713;</code>
@@ -2815,7 +2981,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * CIDR IP address range. Maximum number of destination CIDR IP ranges allowed is 5000.
+     * CIDR IP address range.
+     * Maximum number of destination CIDR IP ranges allowed is 5000.
      * </pre>
      *
      * <code>repeated string dest_ip_ranges = 337357713;</code>
@@ -2838,7 +3005,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * CIDR IP address range. Maximum number of destination CIDR IP ranges allowed is 5000.
+     * CIDR IP address range.
+     * Maximum number of destination CIDR IP ranges allowed is 5000.
      * </pre>
      *
      * <code>repeated string dest_ip_ranges = 337357713;</code>
@@ -2858,7 +3026,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * CIDR IP address range. Maximum number of destination CIDR IP ranges allowed is 5000.
+     * CIDR IP address range.
+     * Maximum number of destination CIDR IP ranges allowed is 5000.
      * </pre>
      *
      * <code>repeated string dest_ip_ranges = 337357713;</code>
@@ -2877,7 +3046,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * CIDR IP address range. Maximum number of destination CIDR IP ranges allowed is 5000.
+     * CIDR IP address range.
+     * Maximum number of destination CIDR IP ranges allowed is 5000.
      * </pre>
      *
      * <code>repeated string dest_ip_ranges = 337357713;</code>
@@ -2903,7 +3073,12 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Network type of the traffic destination. Allowed values are: - UNSPECIFIED - INTERNET - NON_INTERNET
+     * Network type of the traffic destination. Allowed values are:
+     *
+     *
+     *      - UNSPECIFIED
+     *      - INTERNET
+     *      - NON_INTERNET
      * Check the DestNetworkType enum for the list of possible values.
      * </pre>
      *
@@ -2919,7 +3094,12 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Network type of the traffic destination. Allowed values are: - UNSPECIFIED - INTERNET - NON_INTERNET
+     * Network type of the traffic destination. Allowed values are:
+     *
+     *
+     *      - UNSPECIFIED
+     *      - INTERNET
+     *      - NON_INTERNET
      * Check the DestNetworkType enum for the list of possible values.
      * </pre>
      *
@@ -2943,7 +3123,12 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Network type of the traffic destination. Allowed values are: - UNSPECIFIED - INTERNET - NON_INTERNET
+     * Network type of the traffic destination. Allowed values are:
+     *
+     *
+     *      - UNSPECIFIED
+     *      - INTERNET
+     *      - NON_INTERNET
      * Check the DestNetworkType enum for the list of possible values.
      * </pre>
      *
@@ -2967,7 +3152,12 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Network type of the traffic destination. Allowed values are: - UNSPECIFIED - INTERNET - NON_INTERNET
+     * Network type of the traffic destination. Allowed values are:
+     *
+     *
+     *      - UNSPECIFIED
+     *      - INTERNET
+     *      - NON_INTERNET
      * Check the DestNetworkType enum for the list of possible values.
      * </pre>
      *
@@ -2990,7 +3180,12 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Network type of the traffic destination. Allowed values are: - UNSPECIFIED - INTERNET - NON_INTERNET
+     * Network type of the traffic destination. Allowed values are:
+     *
+     *
+     *      - UNSPECIFIED
+     *      - INTERNET
+     *      - NON_INTERNET
      * Check the DestNetworkType enum for the list of possible values.
      * </pre>
      *
@@ -3009,7 +3204,12 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Network type of the traffic destination. Allowed values are: - UNSPECIFIED - INTERNET - NON_INTERNET
+     * Network type of the traffic destination. Allowed values are:
+     *
+     *
+     *      - UNSPECIFIED
+     *      - INTERNET
+     *      - NON_INTERNET
      * Check the DestNetworkType enum for the list of possible values.
      * </pre>
      *
@@ -3043,7 +3243,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+     * Region codes whose IP addresses will be used to match for destination
+     * of traffic. Should be specified as 2 letter country code defined as per
+     * ISO 3166 alpha-2 country codes. ex."US"
+     * Maximum number of dest region codes allowed is 5000.
      * </pre>
      *
      * <code>repeated string dest_region_codes = 199120280;</code>
@@ -3059,7 +3262,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+     * Region codes whose IP addresses will be used to match for destination
+     * of traffic. Should be specified as 2 letter country code defined as per
+     * ISO 3166 alpha-2 country codes. ex."US"
+     * Maximum number of dest region codes allowed is 5000.
      * </pre>
      *
      * <code>repeated string dest_region_codes = 199120280;</code>
@@ -3074,7 +3280,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+     * Region codes whose IP addresses will be used to match for destination
+     * of traffic. Should be specified as 2 letter country code defined as per
+     * ISO 3166 alpha-2 country codes. ex."US"
+     * Maximum number of dest region codes allowed is 5000.
      * </pre>
      *
      * <code>repeated string dest_region_codes = 199120280;</code>
@@ -3090,7 +3299,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+     * Region codes whose IP addresses will be used to match for destination
+     * of traffic. Should be specified as 2 letter country code defined as per
+     * ISO 3166 alpha-2 country codes. ex."US"
+     * Maximum number of dest region codes allowed is 5000.
      * </pre>
      *
      * <code>repeated string dest_region_codes = 199120280;</code>
@@ -3106,7 +3318,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+     * Region codes whose IP addresses will be used to match for destination
+     * of traffic. Should be specified as 2 letter country code defined as per
+     * ISO 3166 alpha-2 country codes. ex."US"
+     * Maximum number of dest region codes allowed is 5000.
      * </pre>
      *
      * <code>repeated string dest_region_codes = 199120280;</code>
@@ -3130,7 +3345,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+     * Region codes whose IP addresses will be used to match for destination
+     * of traffic. Should be specified as 2 letter country code defined as per
+     * ISO 3166 alpha-2 country codes. ex."US"
+     * Maximum number of dest region codes allowed is 5000.
      * </pre>
      *
      * <code>repeated string dest_region_codes = 199120280;</code>
@@ -3153,7 +3371,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+     * Region codes whose IP addresses will be used to match for destination
+     * of traffic. Should be specified as 2 letter country code defined as per
+     * ISO 3166 alpha-2 country codes. ex."US"
+     * Maximum number of dest region codes allowed is 5000.
      * </pre>
      *
      * <code>repeated string dest_region_codes = 199120280;</code>
@@ -3173,7 +3394,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+     * Region codes whose IP addresses will be used to match for destination
+     * of traffic. Should be specified as 2 letter country code defined as per
+     * ISO 3166 alpha-2 country codes. ex."US"
+     * Maximum number of dest region codes allowed is 5000.
      * </pre>
      *
      * <code>repeated string dest_region_codes = 199120280;</code>
@@ -3192,7 +3416,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+     * Region codes whose IP addresses will be used to match for destination
+     * of traffic. Should be specified as 2 letter country code defined as per
+     * ISO 3166 alpha-2 country codes. ex."US"
+     * Maximum number of dest region codes allowed is 5000.
      * </pre>
      *
      * <code>repeated string dest_region_codes = 199120280;</code>
@@ -3227,7 +3454,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+     * Names of Network Threat Intelligence lists.
+     * The IPs in these lists will be matched against traffic destination.
      * </pre>
      *
      * <code>repeated string dest_threat_intelligences = 119896492;</code>
@@ -3243,7 +3471,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+     * Names of Network Threat Intelligence lists.
+     * The IPs in these lists will be matched against traffic destination.
      * </pre>
      *
      * <code>repeated string dest_threat_intelligences = 119896492;</code>
@@ -3258,7 +3487,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+     * Names of Network Threat Intelligence lists.
+     * The IPs in these lists will be matched against traffic destination.
      * </pre>
      *
      * <code>repeated string dest_threat_intelligences = 119896492;</code>
@@ -3274,7 +3504,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+     * Names of Network Threat Intelligence lists.
+     * The IPs in these lists will be matched against traffic destination.
      * </pre>
      *
      * <code>repeated string dest_threat_intelligences = 119896492;</code>
@@ -3290,7 +3521,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+     * Names of Network Threat Intelligence lists.
+     * The IPs in these lists will be matched against traffic destination.
      * </pre>
      *
      * <code>repeated string dest_threat_intelligences = 119896492;</code>
@@ -3314,7 +3546,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+     * Names of Network Threat Intelligence lists.
+     * The IPs in these lists will be matched against traffic destination.
      * </pre>
      *
      * <code>repeated string dest_threat_intelligences = 119896492;</code>
@@ -3337,7 +3570,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+     * Names of Network Threat Intelligence lists.
+     * The IPs in these lists will be matched against traffic destination.
      * </pre>
      *
      * <code>repeated string dest_threat_intelligences = 119896492;</code>
@@ -3357,7 +3591,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+     * Names of Network Threat Intelligence lists.
+     * The IPs in these lists will be matched against traffic destination.
      * </pre>
      *
      * <code>repeated string dest_threat_intelligences = 119896492;</code>
@@ -3376,7 +3611,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+     * Names of Network Threat Intelligence lists.
+     * The IPs in these lists will be matched against traffic destination.
      * </pre>
      *
      * <code>repeated string dest_threat_intelligences = 119896492;</code>
@@ -3837,7 +4073,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+     * Address groups which should be matched against the traffic source.
+     * Maximum number of source address groups is 10.
      * </pre>
      *
      * <code>repeated string src_address_groups = 436423738;</code>
@@ -3853,7 +4090,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+     * Address groups which should be matched against the traffic source.
+     * Maximum number of source address groups is 10.
      * </pre>
      *
      * <code>repeated string src_address_groups = 436423738;</code>
@@ -3868,7 +4106,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+     * Address groups which should be matched against the traffic source.
+     * Maximum number of source address groups is 10.
      * </pre>
      *
      * <code>repeated string src_address_groups = 436423738;</code>
@@ -3884,7 +4123,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+     * Address groups which should be matched against the traffic source.
+     * Maximum number of source address groups is 10.
      * </pre>
      *
      * <code>repeated string src_address_groups = 436423738;</code>
@@ -3900,7 +4140,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+     * Address groups which should be matched against the traffic source.
+     * Maximum number of source address groups is 10.
      * </pre>
      *
      * <code>repeated string src_address_groups = 436423738;</code>
@@ -3924,7 +4165,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+     * Address groups which should be matched against the traffic source.
+     * Maximum number of source address groups is 10.
      * </pre>
      *
      * <code>repeated string src_address_groups = 436423738;</code>
@@ -3947,7 +4189,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+     * Address groups which should be matched against the traffic source.
+     * Maximum number of source address groups is 10.
      * </pre>
      *
      * <code>repeated string src_address_groups = 436423738;</code>
@@ -3967,7 +4210,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+     * Address groups which should be matched against the traffic source.
+     * Maximum number of source address groups is 10.
      * </pre>
      *
      * <code>repeated string src_address_groups = 436423738;</code>
@@ -3986,7 +4230,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+     * Address groups which should be matched against the traffic source.
+     * Maximum number of source address groups is 10.
      * </pre>
      *
      * <code>repeated string src_address_groups = 436423738;</code>
@@ -4020,7 +4265,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+     * Fully Qualified Domain Name (FQDN) which should be matched against
+     * traffic source.
+     * Maximum number of source fqdn allowed is 100.
      * </pre>
      *
      * <code>repeated string src_fqdns = 435906147;</code>
@@ -4036,7 +4283,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+     * Fully Qualified Domain Name (FQDN) which should be matched against
+     * traffic source.
+     * Maximum number of source fqdn allowed is 100.
      * </pre>
      *
      * <code>repeated string src_fqdns = 435906147;</code>
@@ -4051,7 +4300,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+     * Fully Qualified Domain Name (FQDN) which should be matched against
+     * traffic source.
+     * Maximum number of source fqdn allowed is 100.
      * </pre>
      *
      * <code>repeated string src_fqdns = 435906147;</code>
@@ -4067,7 +4318,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+     * Fully Qualified Domain Name (FQDN) which should be matched against
+     * traffic source.
+     * Maximum number of source fqdn allowed is 100.
      * </pre>
      *
      * <code>repeated string src_fqdns = 435906147;</code>
@@ -4083,7 +4336,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+     * Fully Qualified Domain Name (FQDN) which should be matched against
+     * traffic source.
+     * Maximum number of source fqdn allowed is 100.
      * </pre>
      *
      * <code>repeated string src_fqdns = 435906147;</code>
@@ -4107,7 +4362,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+     * Fully Qualified Domain Name (FQDN) which should be matched against
+     * traffic source.
+     * Maximum number of source fqdn allowed is 100.
      * </pre>
      *
      * <code>repeated string src_fqdns = 435906147;</code>
@@ -4130,7 +4387,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+     * Fully Qualified Domain Name (FQDN) which should be matched against
+     * traffic source.
+     * Maximum number of source fqdn allowed is 100.
      * </pre>
      *
      * <code>repeated string src_fqdns = 435906147;</code>
@@ -4150,7 +4409,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+     * Fully Qualified Domain Name (FQDN) which should be matched against
+     * traffic source.
+     * Maximum number of source fqdn allowed is 100.
      * </pre>
      *
      * <code>repeated string src_fqdns = 435906147;</code>
@@ -4169,7 +4430,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+     * Fully Qualified Domain Name (FQDN) which should be matched against
+     * traffic source.
+     * Maximum number of source fqdn allowed is 100.
      * </pre>
      *
      * <code>repeated string src_fqdns = 435906147;</code>
@@ -4203,7 +4466,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 5000.
+     * CIDR IP address range.
+     * Maximum number of source CIDR IP ranges allowed is 5000.
      * </pre>
      *
      * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -4219,7 +4483,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 5000.
+     * CIDR IP address range.
+     * Maximum number of source CIDR IP ranges allowed is 5000.
      * </pre>
      *
      * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -4234,7 +4499,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 5000.
+     * CIDR IP address range.
+     * Maximum number of source CIDR IP ranges allowed is 5000.
      * </pre>
      *
      * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -4250,7 +4516,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 5000.
+     * CIDR IP address range.
+     * Maximum number of source CIDR IP ranges allowed is 5000.
      * </pre>
      *
      * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -4266,7 +4533,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 5000.
+     * CIDR IP address range.
+     * Maximum number of source CIDR IP ranges allowed is 5000.
      * </pre>
      *
      * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -4290,7 +4558,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 5000.
+     * CIDR IP address range.
+     * Maximum number of source CIDR IP ranges allowed is 5000.
      * </pre>
      *
      * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -4313,7 +4582,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 5000.
+     * CIDR IP address range.
+     * Maximum number of source CIDR IP ranges allowed is 5000.
      * </pre>
      *
      * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -4333,7 +4603,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 5000.
+     * CIDR IP address range.
+     * Maximum number of source CIDR IP ranges allowed is 5000.
      * </pre>
      *
      * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -4352,7 +4623,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 5000.
+     * CIDR IP address range.
+     * Maximum number of source CIDR IP ranges allowed is 5000.
      * </pre>
      *
      * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -4378,7 +4650,14 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Network type of the traffic source. Allowed values are: - UNSPECIFIED - INTERNET - INTRA_VPC - NON_INTERNET - VPC_NETWORKS
+     * Network type of the traffic source. Allowed values are:
+     *
+     *
+     *      - UNSPECIFIED
+     *      - INTERNET
+     *      - INTRA_VPC
+     *      - NON_INTERNET
+     *      - VPC_NETWORKS
      * Check the SrcNetworkType enum for the list of possible values.
      * </pre>
      *
@@ -4394,7 +4673,14 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Network type of the traffic source. Allowed values are: - UNSPECIFIED - INTERNET - INTRA_VPC - NON_INTERNET - VPC_NETWORKS
+     * Network type of the traffic source. Allowed values are:
+     *
+     *
+     *      - UNSPECIFIED
+     *      - INTERNET
+     *      - INTRA_VPC
+     *      - NON_INTERNET
+     *      - VPC_NETWORKS
      * Check the SrcNetworkType enum for the list of possible values.
      * </pre>
      *
@@ -4418,7 +4704,14 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Network type of the traffic source. Allowed values are: - UNSPECIFIED - INTERNET - INTRA_VPC - NON_INTERNET - VPC_NETWORKS
+     * Network type of the traffic source. Allowed values are:
+     *
+     *
+     *      - UNSPECIFIED
+     *      - INTERNET
+     *      - INTRA_VPC
+     *      - NON_INTERNET
+     *      - VPC_NETWORKS
      * Check the SrcNetworkType enum for the list of possible values.
      * </pre>
      *
@@ -4442,7 +4735,14 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Network type of the traffic source. Allowed values are: - UNSPECIFIED - INTERNET - INTRA_VPC - NON_INTERNET - VPC_NETWORKS
+     * Network type of the traffic source. Allowed values are:
+     *
+     *
+     *      - UNSPECIFIED
+     *      - INTERNET
+     *      - INTRA_VPC
+     *      - NON_INTERNET
+     *      - VPC_NETWORKS
      * Check the SrcNetworkType enum for the list of possible values.
      * </pre>
      *
@@ -4465,7 +4765,14 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Network type of the traffic source. Allowed values are: - UNSPECIFIED - INTERNET - INTRA_VPC - NON_INTERNET - VPC_NETWORKS
+     * Network type of the traffic source. Allowed values are:
+     *
+     *
+     *      - UNSPECIFIED
+     *      - INTERNET
+     *      - INTRA_VPC
+     *      - NON_INTERNET
+     *      - VPC_NETWORKS
      * Check the SrcNetworkType enum for the list of possible values.
      * </pre>
      *
@@ -4484,7 +4791,14 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Network type of the traffic source. Allowed values are: - UNSPECIFIED - INTERNET - INTRA_VPC - NON_INTERNET - VPC_NETWORKS
+     * Network type of the traffic source. Allowed values are:
+     *
+     *
+     *      - UNSPECIFIED
+     *      - INTERNET
+     *      - INTRA_VPC
+     *      - NON_INTERNET
+     *      - VPC_NETWORKS
      * Check the SrcNetworkType enum for the list of possible values.
      * </pre>
      *
@@ -4701,7 +5015,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+     * Region codes whose IP addresses will be used to match for source
+     * of traffic. Should be specified as 2 letter country code defined as per
+     * ISO 3166 alpha-2 country codes. ex."US"
+     * Maximum number of source region codes allowed is 5000.
      * </pre>
      *
      * <code>repeated string src_region_codes = 99086742;</code>
@@ -4717,7 +5034,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+     * Region codes whose IP addresses will be used to match for source
+     * of traffic. Should be specified as 2 letter country code defined as per
+     * ISO 3166 alpha-2 country codes. ex."US"
+     * Maximum number of source region codes allowed is 5000.
      * </pre>
      *
      * <code>repeated string src_region_codes = 99086742;</code>
@@ -4732,7 +5052,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+     * Region codes whose IP addresses will be used to match for source
+     * of traffic. Should be specified as 2 letter country code defined as per
+     * ISO 3166 alpha-2 country codes. ex."US"
+     * Maximum number of source region codes allowed is 5000.
      * </pre>
      *
      * <code>repeated string src_region_codes = 99086742;</code>
@@ -4748,7 +5071,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+     * Region codes whose IP addresses will be used to match for source
+     * of traffic. Should be specified as 2 letter country code defined as per
+     * ISO 3166 alpha-2 country codes. ex."US"
+     * Maximum number of source region codes allowed is 5000.
      * </pre>
      *
      * <code>repeated string src_region_codes = 99086742;</code>
@@ -4764,7 +5090,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+     * Region codes whose IP addresses will be used to match for source
+     * of traffic. Should be specified as 2 letter country code defined as per
+     * ISO 3166 alpha-2 country codes. ex."US"
+     * Maximum number of source region codes allowed is 5000.
      * </pre>
      *
      * <code>repeated string src_region_codes = 99086742;</code>
@@ -4788,7 +5117,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+     * Region codes whose IP addresses will be used to match for source
+     * of traffic. Should be specified as 2 letter country code defined as per
+     * ISO 3166 alpha-2 country codes. ex."US"
+     * Maximum number of source region codes allowed is 5000.
      * </pre>
      *
      * <code>repeated string src_region_codes = 99086742;</code>
@@ -4811,7 +5143,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+     * Region codes whose IP addresses will be used to match for source
+     * of traffic. Should be specified as 2 letter country code defined as per
+     * ISO 3166 alpha-2 country codes. ex."US"
+     * Maximum number of source region codes allowed is 5000.
      * </pre>
      *
      * <code>repeated string src_region_codes = 99086742;</code>
@@ -4831,7 +5166,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+     * Region codes whose IP addresses will be used to match for source
+     * of traffic. Should be specified as 2 letter country code defined as per
+     * ISO 3166 alpha-2 country codes. ex."US"
+     * Maximum number of source region codes allowed is 5000.
      * </pre>
      *
      * <code>repeated string src_region_codes = 99086742;</code>
@@ -4850,7 +5188,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+     * Region codes whose IP addresses will be used to match for source
+     * of traffic. Should be specified as 2 letter country code defined as per
+     * ISO 3166 alpha-2 country codes. ex."US"
+     * Maximum number of source region codes allowed is 5000.
      * </pre>
      *
      * <code>repeated string src_region_codes = 99086742;</code>
@@ -4892,7 +5233,11 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * List of secure tag values, which should be matched at the source
+     * of the traffic.
+     * For INGRESS rule, if all the srcSecureTag are INEFFECTIVE,
+     * and there is no srcIpRange, this rule will be ignored.
+     * Maximum number of source tag values allowed is 256.
      * </pre>
      *
      * <code>
@@ -4912,7 +5257,11 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * List of secure tag values, which should be matched at the source
+     * of the traffic.
+     * For INGRESS rule, if all the srcSecureTag are INEFFECTIVE,
+     * and there is no srcIpRange, this rule will be ignored.
+     * Maximum number of source tag values allowed is 256.
      * </pre>
      *
      * <code>
@@ -4931,7 +5280,11 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * List of secure tag values, which should be matched at the source
+     * of the traffic.
+     * For INGRESS rule, if all the srcSecureTag are INEFFECTIVE,
+     * and there is no srcIpRange, this rule will be ignored.
+     * Maximum number of source tag values allowed is 256.
      * </pre>
      *
      * <code>
@@ -4950,7 +5303,11 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * List of secure tag values, which should be matched at the source
+     * of the traffic.
+     * For INGRESS rule, if all the srcSecureTag are INEFFECTIVE,
+     * and there is no srcIpRange, this rule will be ignored.
+     * Maximum number of source tag values allowed is 256.
      * </pre>
      *
      * <code>
@@ -4976,7 +5333,11 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * List of secure tag values, which should be matched at the source
+     * of the traffic.
+     * For INGRESS rule, if all the srcSecureTag are INEFFECTIVE,
+     * and there is no srcIpRange, this rule will be ignored.
+     * Maximum number of source tag values allowed is 256.
      * </pre>
      *
      * <code>
@@ -5000,7 +5361,11 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * List of secure tag values, which should be matched at the source
+     * of the traffic.
+     * For INGRESS rule, if all the srcSecureTag are INEFFECTIVE,
+     * and there is no srcIpRange, this rule will be ignored.
+     * Maximum number of source tag values allowed is 256.
      * </pre>
      *
      * <code>
@@ -5025,7 +5390,11 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * List of secure tag values, which should be matched at the source
+     * of the traffic.
+     * For INGRESS rule, if all the srcSecureTag are INEFFECTIVE,
+     * and there is no srcIpRange, this rule will be ignored.
+     * Maximum number of source tag values allowed is 256.
      * </pre>
      *
      * <code>
@@ -5051,7 +5420,11 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * List of secure tag values, which should be matched at the source
+     * of the traffic.
+     * For INGRESS rule, if all the srcSecureTag are INEFFECTIVE,
+     * and there is no srcIpRange, this rule will be ignored.
+     * Maximum number of source tag values allowed is 256.
      * </pre>
      *
      * <code>
@@ -5074,7 +5447,11 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * List of secure tag values, which should be matched at the source
+     * of the traffic.
+     * For INGRESS rule, if all the srcSecureTag are INEFFECTIVE,
+     * and there is no srcIpRange, this rule will be ignored.
+     * Maximum number of source tag values allowed is 256.
      * </pre>
      *
      * <code>
@@ -5098,7 +5475,11 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * List of secure tag values, which should be matched at the source
+     * of the traffic.
+     * For INGRESS rule, if all the srcSecureTag are INEFFECTIVE,
+     * and there is no srcIpRange, this rule will be ignored.
+     * Maximum number of source tag values allowed is 256.
      * </pre>
      *
      * <code>
@@ -5122,7 +5503,11 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * List of secure tag values, which should be matched at the source
+     * of the traffic.
+     * For INGRESS rule, if all the srcSecureTag are INEFFECTIVE,
+     * and there is no srcIpRange, this rule will be ignored.
+     * Maximum number of source tag values allowed is 256.
      * </pre>
      *
      * <code>
@@ -5144,7 +5529,11 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * List of secure tag values, which should be matched at the source
+     * of the traffic.
+     * For INGRESS rule, if all the srcSecureTag are INEFFECTIVE,
+     * and there is no srcIpRange, this rule will be ignored.
+     * Maximum number of source tag values allowed is 256.
      * </pre>
      *
      * <code>
@@ -5166,7 +5555,11 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * List of secure tag values, which should be matched at the source
+     * of the traffic.
+     * For INGRESS rule, if all the srcSecureTag are INEFFECTIVE,
+     * and there is no srcIpRange, this rule will be ignored.
+     * Maximum number of source tag values allowed is 256.
      * </pre>
      *
      * <code>
@@ -5182,7 +5575,11 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * List of secure tag values, which should be matched at the source
+     * of the traffic.
+     * For INGRESS rule, if all the srcSecureTag are INEFFECTIVE,
+     * and there is no srcIpRange, this rule will be ignored.
+     * Maximum number of source tag values allowed is 256.
      * </pre>
      *
      * <code>
@@ -5202,7 +5599,11 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * List of secure tag values, which should be matched at the source
+     * of the traffic.
+     * For INGRESS rule, if all the srcSecureTag are INEFFECTIVE,
+     * and there is no srcIpRange, this rule will be ignored.
+     * Maximum number of source tag values allowed is 256.
      * </pre>
      *
      * <code>
@@ -5223,7 +5624,11 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * List of secure tag values, which should be matched at the source
+     * of the traffic.
+     * For INGRESS rule, if all the srcSecureTag are INEFFECTIVE,
+     * and there is no srcIpRange, this rule will be ignored.
+     * Maximum number of source tag values allowed is 256.
      * </pre>
      *
      * <code>
@@ -5240,7 +5645,11 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * List of secure tag values, which should be matched at the source
+     * of the traffic.
+     * For INGRESS rule, if all the srcSecureTag are INEFFECTIVE,
+     * and there is no srcIpRange, this rule will be ignored.
+     * Maximum number of source tag values allowed is 256.
      * </pre>
      *
      * <code>
@@ -5258,7 +5667,11 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+     * List of secure tag values, which should be matched at the source
+     * of the traffic.
+     * For INGRESS rule, if all the srcSecureTag are INEFFECTIVE,
+     * and there is no srcIpRange, this rule will be ignored.
+     * Maximum number of source tag values allowed is 256.
      * </pre>
      *
      * <code>
@@ -5305,7 +5718,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+     * Names of Network Threat Intelligence lists.
+     * The IPs in these lists will be matched against traffic source.
      * </pre>
      *
      * <code>repeated string src_threat_intelligences = 323631018;</code>
@@ -5321,7 +5735,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+     * Names of Network Threat Intelligence lists.
+     * The IPs in these lists will be matched against traffic source.
      * </pre>
      *
      * <code>repeated string src_threat_intelligences = 323631018;</code>
@@ -5336,7 +5751,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+     * Names of Network Threat Intelligence lists.
+     * The IPs in these lists will be matched against traffic source.
      * </pre>
      *
      * <code>repeated string src_threat_intelligences = 323631018;</code>
@@ -5352,7 +5768,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+     * Names of Network Threat Intelligence lists.
+     * The IPs in these lists will be matched against traffic source.
      * </pre>
      *
      * <code>repeated string src_threat_intelligences = 323631018;</code>
@@ -5368,7 +5785,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+     * Names of Network Threat Intelligence lists.
+     * The IPs in these lists will be matched against traffic source.
      * </pre>
      *
      * <code>repeated string src_threat_intelligences = 323631018;</code>
@@ -5392,7 +5810,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+     * Names of Network Threat Intelligence lists.
+     * The IPs in these lists will be matched against traffic source.
      * </pre>
      *
      * <code>repeated string src_threat_intelligences = 323631018;</code>
@@ -5415,7 +5834,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+     * Names of Network Threat Intelligence lists.
+     * The IPs in these lists will be matched against traffic source.
      * </pre>
      *
      * <code>repeated string src_threat_intelligences = 323631018;</code>
@@ -5435,7 +5855,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+     * Names of Network Threat Intelligence lists.
+     * The IPs in these lists will be matched against traffic source.
      * </pre>
      *
      * <code>repeated string src_threat_intelligences = 323631018;</code>
@@ -5454,7 +5875,8 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+     * Names of Network Threat Intelligence lists.
+     * The IPs in these lists will be matched against traffic source.
      * </pre>
      *
      * <code>repeated string src_threat_intelligences = 323631018;</code>

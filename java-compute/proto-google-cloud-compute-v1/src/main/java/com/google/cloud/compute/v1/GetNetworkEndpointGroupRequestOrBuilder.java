@@ -82,7 +82,8 @@ public interface GetNetworkEndpointGroupRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the zone where the network endpoint group is located. It should comply with RFC1035.
+   * The name of the zone where
+   * the network endpoint group is located. It should comply with RFC1035.
    * </pre>
    *
    * <code>string zone = 3744684 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -95,7 +96,8 @@ public interface GetNetworkEndpointGroupRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the zone where the network endpoint group is located. It should comply with RFC1035.
+   * The name of the zone where
+   * the network endpoint group is located. It should comply with RFC1035.
    * </pre>
    *
    * <code>string zone = 3744684 [(.google.api.field_behavior) = REQUIRED];</code>

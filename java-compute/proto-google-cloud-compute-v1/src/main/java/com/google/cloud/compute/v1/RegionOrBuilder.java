@@ -28,7 +28,8 @@ public interface RegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -41,7 +42,8 @@ public interface RegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -54,7 +56,8 @@ public interface RegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -143,7 +146,8 @@ public interface RegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -156,7 +160,8 @@ public interface RegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -169,7 +174,8 @@ public interface RegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#region for regions.
+   * Output only. [Output Only] Type of the resource. Always compute#region for
+   * regions.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -182,7 +188,8 @@ public interface RegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#region for regions.
+   * Output only. [Output Only] Type of the resource. Always compute#region for
+   * regions.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -195,7 +202,8 @@ public interface RegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#region for regions.
+   * Output only. [Output Only] Type of the resource. Always compute#region for
+   * regions.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -247,7 +255,8 @@ public interface RegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Warning of fetching the `quotas` field for this region. This field is populated only if fetching of the `quotas` field fails.
+   * Output only. [Output Only] Warning of fetching the `quotas` field for this region. This
+   * field is populated only if fetching of the `quotas` field fails.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.QuotaStatusWarning quota_status_warning = 302941430;
@@ -261,7 +270,8 @@ public interface RegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Warning of fetching the `quotas` field for this region. This field is populated only if fetching of the `quotas` field fails.
+   * Output only. [Output Only] Warning of fetching the `quotas` field for this region. This
+   * field is populated only if fetching of the `quotas` field fails.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.QuotaStatusWarning quota_status_warning = 302941430;
@@ -275,7 +285,8 @@ public interface RegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Warning of fetching the `quotas` field for this region. This field is populated only if fetching of the `quotas` field fails.
+   * Output only. [Output Only] Warning of fetching the `quotas` field for this region. This
+   * field is populated only if fetching of the `quotas` field fails.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.QuotaStatusWarning quota_status_warning = 302941430;
@@ -381,7 +392,7 @@ public interface RegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Status of the region, either UP or DOWN.
+   * [Output Only] Status of the region, either UP orDOWN.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -395,7 +406,7 @@ public interface RegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Status of the region, either UP or DOWN.
+   * [Output Only] Status of the region, either UP orDOWN.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -409,7 +420,7 @@ public interface RegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Status of the region, either UP or DOWN.
+   * [Output Only] Status of the region, either UP orDOWN.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -423,7 +434,7 @@ public interface RegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool supports_pzs = 83983214;</code>
@@ -436,7 +447,7 @@ public interface RegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool supports_pzs = 83983214;</code>
@@ -449,7 +460,8 @@ public interface RegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of zones available in this region, in the form of resource URLs.
+   * [Output Only] A list of zones available in this region, in the form of
+   * resource URLs.
    * </pre>
    *
    * <code>repeated string zones = 116085319;</code>
@@ -462,7 +474,8 @@ public interface RegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of zones available in this region, in the form of resource URLs.
+   * [Output Only] A list of zones available in this region, in the form of
+   * resource URLs.
    * </pre>
    *
    * <code>repeated string zones = 116085319;</code>
@@ -475,7 +488,8 @@ public interface RegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of zones available in this region, in the form of resource URLs.
+   * [Output Only] A list of zones available in this region, in the form of
+   * resource URLs.
    * </pre>
    *
    * <code>repeated string zones = 116085319;</code>
@@ -489,7 +503,8 @@ public interface RegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of zones available in this region, in the form of resource URLs.
+   * [Output Only] A list of zones available in this region, in the form of
+   * resource URLs.
    * </pre>
    *
    * <code>repeated string zones = 116085319;</code>

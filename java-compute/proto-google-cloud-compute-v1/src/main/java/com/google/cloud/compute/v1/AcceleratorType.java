@@ -23,7 +23,11 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents an Accelerator Type resource. Google Cloud Platform provides graphics processing units (accelerators) that you can add to VM instances to improve or accelerate performance when working with intensive workloads. For more information, read GPUs on Compute Engine.
+ * Represents an Accelerator Type resource.
+ *
+ * Google Cloud Platform provides graphics processing units (accelerators) that
+ * you can add to VM instances to improve or accelerate performance when working
+ * with intensive workloads. For more information, readGPUs on Compute Engine.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.AcceleratorType}
@@ -79,7 +83,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -95,7 +99,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -119,7 +123,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -268,7 +272,8 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -284,7 +289,8 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -305,7 +311,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Always compute#acceleratorType for accelerator types.
+   * Output only. [Output Only] The type of the resource. Alwayscompute#acceleratorType for accelerator types.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -321,7 +327,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Always compute#acceleratorType for accelerator types.
+   * Output only. [Output Only] The type of the resource. Alwayscompute#acceleratorType for accelerator types.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -345,7 +351,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Always compute#acceleratorType for accelerator types.
+   * Output only. [Output Only] The type of the resource. Alwayscompute#acceleratorType for accelerator types.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -478,7 +484,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Server-defined, fully qualified URL for this resource.
+   * Output only. [Output Only] Server-defined, fully qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -494,7 +500,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Server-defined, fully qualified URL for this resource.
+   * Output only. [Output Only] Server-defined, fully qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -518,7 +524,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Server-defined, fully qualified URL for this resource.
+   * Output only. [Output Only] Server-defined, fully qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -547,7 +553,10 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The name of the zone where the accelerator type resides, such as us-central1-a. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * [Output Only] The name of the zone where the accelerator type resides,
+   * such as us-central1-a.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -563,7 +572,10 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The name of the zone where the accelerator type resides, such as us-central1-a. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * [Output Only] The name of the zone where the accelerator type resides,
+   * such as us-central1-a.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -587,7 +599,10 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The name of the zone where the accelerator type resides, such as us-central1-a. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * [Output Only] The name of the zone where the accelerator type resides,
+   * such as us-central1-a.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -891,7 +906,11 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Represents an Accelerator Type resource. Google Cloud Platform provides graphics processing units (accelerators) that you can add to VM instances to improve or accelerate performance when working with intensive workloads. For more information, read GPUs on Compute Engine.
+   * Represents an Accelerator Type resource.
+   *
+   * Google Cloud Platform provides graphics processing units (accelerators) that
+   * you can add to VM instances to improve or accelerate performance when working
+   * with intensive workloads. For more information, readGPUs on Compute Engine.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.AcceleratorType}
@@ -1213,7 +1232,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1228,7 +1247,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1251,7 +1270,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1274,7 +1293,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1296,7 +1315,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1314,7 +1333,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1660,7 +1679,8 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -1676,7 +1696,8 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -1692,7 +1713,8 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -1712,7 +1734,8 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -1732,7 +1755,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Always compute#acceleratorType for accelerator types.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#acceleratorType for accelerator types.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1747,7 +1770,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Always compute#acceleratorType for accelerator types.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#acceleratorType for accelerator types.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1770,7 +1793,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Always compute#acceleratorType for accelerator types.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#acceleratorType for accelerator types.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1793,7 +1816,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Always compute#acceleratorType for accelerator types.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#acceleratorType for accelerator types.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1815,7 +1838,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Always compute#acceleratorType for accelerator types.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#acceleratorType for accelerator types.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1833,7 +1856,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Always compute#acceleratorType for accelerator types.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#acceleratorType for accelerator types.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2056,7 +2079,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined, fully qualified URL for this resource.
+     * Output only. [Output Only] Server-defined, fully qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2071,7 +2094,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined, fully qualified URL for this resource.
+     * Output only. [Output Only] Server-defined, fully qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2094,7 +2117,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined, fully qualified URL for this resource.
+     * Output only. [Output Only] Server-defined, fully qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2117,7 +2140,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined, fully qualified URL for this resource.
+     * Output only. [Output Only] Server-defined, fully qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2139,7 +2162,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined, fully qualified URL for this resource.
+     * Output only. [Output Only] Server-defined, fully qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2157,7 +2180,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined, fully qualified URL for this resource.
+     * Output only. [Output Only] Server-defined, fully qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2182,7 +2205,10 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The name of the zone where the accelerator type resides, such as us-central1-a. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * [Output Only] The name of the zone where the accelerator type resides,
+     * such as us-central1-a.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -2197,7 +2223,10 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The name of the zone where the accelerator type resides, such as us-central1-a. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * [Output Only] The name of the zone where the accelerator type resides,
+     * such as us-central1-a.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -2220,7 +2249,10 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The name of the zone where the accelerator type resides, such as us-central1-a. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * [Output Only] The name of the zone where the accelerator type resides,
+     * such as us-central1-a.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -2243,7 +2275,10 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The name of the zone where the accelerator type resides, such as us-central1-a. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * [Output Only] The name of the zone where the accelerator type resides,
+     * such as us-central1-a.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -2265,7 +2300,10 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The name of the zone where the accelerator type resides, such as us-central1-a. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * [Output Only] The name of the zone where the accelerator type resides,
+     * such as us-central1-a.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -2283,7 +2321,10 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The name of the zone where the accelerator type resides, such as us-central1-a. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * [Output Only] The name of the zone where the accelerator type resides,
+     * such as us-central1-a.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>

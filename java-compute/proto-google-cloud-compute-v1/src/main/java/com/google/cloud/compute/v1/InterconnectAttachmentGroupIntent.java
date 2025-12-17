@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * The user's intent for this AttachmentGroup. This is the only required field besides the name that must be specified on group creation.
+ * The user's intent for this AttachmentGroup. This is the only required field
+ * besides the name that must be specified on group creation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.InterconnectAttachmentGroupIntent}
@@ -452,7 +453,8 @@ public final class InterconnectAttachmentGroupIntent extends com.google.protobuf
    *
    *
    * <pre>
-   * The user's intent for this AttachmentGroup. This is the only required field besides the name that must be specified on group creation.
+   * The user's intent for this AttachmentGroup. This is the only required field
+   * besides the name that must be specified on group creation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.InterconnectAttachmentGroupIntent}

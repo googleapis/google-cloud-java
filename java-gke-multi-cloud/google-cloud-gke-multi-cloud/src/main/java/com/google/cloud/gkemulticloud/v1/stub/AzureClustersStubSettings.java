@@ -167,7 +167,10 @@ import javax.annotation.Generated;
  *     .setPollingAlgorithm(timedRetryAlgorithm)
  *     .build();
  * }</pre>
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@Deprecated
 @Generated("by gapic-generator-java")
 public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSettings> {
   /** The default scopes of the service. */
@@ -400,7 +403,12 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
             }
           };
 
-  /** Returns the object with the settings used for calls to createAzureClient. */
+  /**
+   * Returns the object with the settings used for calls to createAzureClient.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<CreateAzureClientRequest, Operation> createAzureClientSettings() {
     return createAzureClientSettings;
   }
@@ -411,19 +419,34 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     return createAzureClientOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to getAzureClient. */
+  /**
+   * Returns the object with the settings used for calls to getAzureClient.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetAzureClientRequest, AzureClient> getAzureClientSettings() {
     return getAzureClientSettings;
   }
 
-  /** Returns the object with the settings used for calls to listAzureClients. */
+  /**
+   * Returns the object with the settings used for calls to listAzureClients.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           ListAzureClientsRequest, ListAzureClientsResponse, ListAzureClientsPagedResponse>
       listAzureClientsSettings() {
     return listAzureClientsSettings;
   }
 
-  /** Returns the object with the settings used for calls to deleteAzureClient. */
+  /**
+   * Returns the object with the settings used for calls to deleteAzureClient.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<DeleteAzureClientRequest, Operation> deleteAzureClientSettings() {
     return deleteAzureClientSettings;
   }
@@ -434,7 +457,12 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     return deleteAzureClientOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to createAzureCluster. */
+  /**
+   * Returns the object with the settings used for calls to createAzureCluster.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<CreateAzureClusterRequest, Operation> createAzureClusterSettings() {
     return createAzureClusterSettings;
   }
@@ -445,7 +473,12 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     return createAzureClusterOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to updateAzureCluster. */
+  /**
+   * Returns the object with the settings used for calls to updateAzureCluster.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<UpdateAzureClusterRequest, Operation> updateAzureClusterSettings() {
     return updateAzureClusterSettings;
   }
@@ -456,19 +489,34 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     return updateAzureClusterOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to getAzureCluster. */
+  /**
+   * Returns the object with the settings used for calls to getAzureCluster.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetAzureClusterRequest, AzureCluster> getAzureClusterSettings() {
     return getAzureClusterSettings;
   }
 
-  /** Returns the object with the settings used for calls to listAzureClusters. */
+  /**
+   * Returns the object with the settings used for calls to listAzureClusters.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           ListAzureClustersRequest, ListAzureClustersResponse, ListAzureClustersPagedResponse>
       listAzureClustersSettings() {
     return listAzureClustersSettings;
   }
 
-  /** Returns the object with the settings used for calls to deleteAzureCluster. */
+  /**
+   * Returns the object with the settings used for calls to deleteAzureCluster.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<DeleteAzureClusterRequest, Operation> deleteAzureClusterSettings() {
     return deleteAzureClusterSettings;
   }
@@ -479,20 +527,35 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     return deleteAzureClusterOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to generateAzureClusterAgentToken. */
+  /**
+   * Returns the object with the settings used for calls to generateAzureClusterAgentToken.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<
           GenerateAzureClusterAgentTokenRequest, GenerateAzureClusterAgentTokenResponse>
       generateAzureClusterAgentTokenSettings() {
     return generateAzureClusterAgentTokenSettings;
   }
 
-  /** Returns the object with the settings used for calls to generateAzureAccessToken. */
+  /**
+   * Returns the object with the settings used for calls to generateAzureAccessToken.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GenerateAzureAccessTokenRequest, GenerateAzureAccessTokenResponse>
       generateAzureAccessTokenSettings() {
     return generateAzureAccessTokenSettings;
   }
 
-  /** Returns the object with the settings used for calls to createAzureNodePool. */
+  /**
+   * Returns the object with the settings used for calls to createAzureNodePool.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<CreateAzureNodePoolRequest, Operation> createAzureNodePoolSettings() {
     return createAzureNodePoolSettings;
   }
@@ -503,7 +566,12 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     return createAzureNodePoolOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to updateAzureNodePool. */
+  /**
+   * Returns the object with the settings used for calls to updateAzureNodePool.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<UpdateAzureNodePoolRequest, Operation> updateAzureNodePoolSettings() {
     return updateAzureNodePoolSettings;
   }
@@ -514,19 +582,34 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     return updateAzureNodePoolOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to getAzureNodePool. */
+  /**
+   * Returns the object with the settings used for calls to getAzureNodePool.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetAzureNodePoolRequest, AzureNodePool> getAzureNodePoolSettings() {
     return getAzureNodePoolSettings;
   }
 
-  /** Returns the object with the settings used for calls to listAzureNodePools. */
+  /**
+   * Returns the object with the settings used for calls to listAzureNodePools.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           ListAzureNodePoolsRequest, ListAzureNodePoolsResponse, ListAzureNodePoolsPagedResponse>
       listAzureNodePoolsSettings() {
     return listAzureNodePoolsSettings;
   }
 
-  /** Returns the object with the settings used for calls to deleteAzureNodePool. */
+  /**
+   * Returns the object with the settings used for calls to deleteAzureNodePool.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<DeleteAzureNodePoolRequest, Operation> deleteAzureNodePoolSettings() {
     return deleteAzureNodePoolSettings;
   }
@@ -537,19 +620,34 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     return deleteAzureNodePoolOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to getAzureOpenIdConfig. */
+  /**
+   * Returns the object with the settings used for calls to getAzureOpenIdConfig.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetAzureOpenIdConfigRequest, AzureOpenIdConfig>
       getAzureOpenIdConfigSettings() {
     return getAzureOpenIdConfigSettings;
   }
 
-  /** Returns the object with the settings used for calls to getAzureJsonWebKeys. */
+  /**
+   * Returns the object with the settings used for calls to getAzureJsonWebKeys.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetAzureJsonWebKeysRequest, AzureJsonWebKeys>
       getAzureJsonWebKeysSettings() {
     return getAzureJsonWebKeysSettings;
   }
 
-  /** Returns the object with the settings used for calls to getAzureServerConfig. */
+  /**
+   * Returns the object with the settings used for calls to getAzureServerConfig.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetAzureServerConfigRequest, AzureServerConfig>
       getAzureServerConfigSettings() {
     return getAzureServerConfigSettings;
@@ -1264,7 +1362,12 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
       return unaryMethodSettingsBuilders;
     }
 
-    /** Returns the builder for the settings used for calls to createAzureClient. */
+    /**
+     * Returns the builder for the settings used for calls to createAzureClient.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<CreateAzureClientRequest, Operation>
         createAzureClientSettings() {
       return createAzureClientSettings;
@@ -1276,19 +1379,34 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
       return createAzureClientOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getAzureClient. */
+    /**
+     * Returns the builder for the settings used for calls to getAzureClient.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetAzureClientRequest, AzureClient> getAzureClientSettings() {
       return getAzureClientSettings;
     }
 
-    /** Returns the builder for the settings used for calls to listAzureClients. */
+    /**
+     * Returns the builder for the settings used for calls to listAzureClients.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             ListAzureClientsRequest, ListAzureClientsResponse, ListAzureClientsPagedResponse>
         listAzureClientsSettings() {
       return listAzureClientsSettings;
     }
 
-    /** Returns the builder for the settings used for calls to deleteAzureClient. */
+    /**
+     * Returns the builder for the settings used for calls to deleteAzureClient.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<DeleteAzureClientRequest, Operation>
         deleteAzureClientSettings() {
       return deleteAzureClientSettings;
@@ -1300,7 +1418,12 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
       return deleteAzureClientOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to createAzureCluster. */
+    /**
+     * Returns the builder for the settings used for calls to createAzureCluster.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<CreateAzureClusterRequest, Operation>
         createAzureClusterSettings() {
       return createAzureClusterSettings;
@@ -1312,7 +1435,12 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
       return createAzureClusterOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to updateAzureCluster. */
+    /**
+     * Returns the builder for the settings used for calls to updateAzureCluster.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<UpdateAzureClusterRequest, Operation>
         updateAzureClusterSettings() {
       return updateAzureClusterSettings;
@@ -1324,20 +1452,35 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
       return updateAzureClusterOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getAzureCluster. */
+    /**
+     * Returns the builder for the settings used for calls to getAzureCluster.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetAzureClusterRequest, AzureCluster>
         getAzureClusterSettings() {
       return getAzureClusterSettings;
     }
 
-    /** Returns the builder for the settings used for calls to listAzureClusters. */
+    /**
+     * Returns the builder for the settings used for calls to listAzureClusters.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             ListAzureClustersRequest, ListAzureClustersResponse, ListAzureClustersPagedResponse>
         listAzureClustersSettings() {
       return listAzureClustersSettings;
     }
 
-    /** Returns the builder for the settings used for calls to deleteAzureCluster. */
+    /**
+     * Returns the builder for the settings used for calls to deleteAzureCluster.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<DeleteAzureClusterRequest, Operation>
         deleteAzureClusterSettings() {
       return deleteAzureClusterSettings;
@@ -1349,21 +1492,36 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
       return deleteAzureClusterOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to generateAzureClusterAgentToken. */
+    /**
+     * Returns the builder for the settings used for calls to generateAzureClusterAgentToken.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<
             GenerateAzureClusterAgentTokenRequest, GenerateAzureClusterAgentTokenResponse>
         generateAzureClusterAgentTokenSettings() {
       return generateAzureClusterAgentTokenSettings;
     }
 
-    /** Returns the builder for the settings used for calls to generateAzureAccessToken. */
+    /**
+     * Returns the builder for the settings used for calls to generateAzureAccessToken.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<
             GenerateAzureAccessTokenRequest, GenerateAzureAccessTokenResponse>
         generateAzureAccessTokenSettings() {
       return generateAzureAccessTokenSettings;
     }
 
-    /** Returns the builder for the settings used for calls to createAzureNodePool. */
+    /**
+     * Returns the builder for the settings used for calls to createAzureNodePool.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<CreateAzureNodePoolRequest, Operation>
         createAzureNodePoolSettings() {
       return createAzureNodePoolSettings;
@@ -1376,7 +1534,12 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
       return createAzureNodePoolOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to updateAzureNodePool. */
+    /**
+     * Returns the builder for the settings used for calls to updateAzureNodePool.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<UpdateAzureNodePoolRequest, Operation>
         updateAzureNodePoolSettings() {
       return updateAzureNodePoolSettings;
@@ -1389,20 +1552,35 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
       return updateAzureNodePoolOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getAzureNodePool. */
+    /**
+     * Returns the builder for the settings used for calls to getAzureNodePool.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetAzureNodePoolRequest, AzureNodePool>
         getAzureNodePoolSettings() {
       return getAzureNodePoolSettings;
     }
 
-    /** Returns the builder for the settings used for calls to listAzureNodePools. */
+    /**
+     * Returns the builder for the settings used for calls to listAzureNodePools.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             ListAzureNodePoolsRequest, ListAzureNodePoolsResponse, ListAzureNodePoolsPagedResponse>
         listAzureNodePoolsSettings() {
       return listAzureNodePoolsSettings;
     }
 
-    /** Returns the builder for the settings used for calls to deleteAzureNodePool. */
+    /**
+     * Returns the builder for the settings used for calls to deleteAzureNodePool.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<DeleteAzureNodePoolRequest, Operation>
         deleteAzureNodePoolSettings() {
       return deleteAzureNodePoolSettings;
@@ -1414,19 +1592,34 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
       return deleteAzureNodePoolOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getAzureOpenIdConfig. */
+    /**
+     * Returns the builder for the settings used for calls to getAzureOpenIdConfig.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetAzureOpenIdConfigRequest, AzureOpenIdConfig>
         getAzureOpenIdConfigSettings() {
       return getAzureOpenIdConfigSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getAzureJsonWebKeys. */
+    /**
+     * Returns the builder for the settings used for calls to getAzureJsonWebKeys.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetAzureJsonWebKeysRequest, AzureJsonWebKeys>
         getAzureJsonWebKeysSettings() {
       return getAzureJsonWebKeysSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getAzureServerConfig. */
+    /**
+     * Returns the builder for the settings used for calls to getAzureServerConfig.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetAzureServerConfigRequest, AzureServerConfig>
         getAzureServerConfigSettings() {
       return getAzureServerConfigSettings;

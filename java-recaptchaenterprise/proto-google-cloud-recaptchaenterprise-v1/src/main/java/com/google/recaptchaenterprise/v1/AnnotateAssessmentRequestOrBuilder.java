@@ -259,4 +259,51 @@ public interface AnnotateAssessmentRequestOrBuilder
    * </code>
    */
   com.google.recaptchaenterprise.v1.TransactionEventOrBuilder getTransactionEventOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If using an external multi-factor authentication provider,
+   * provide phone authentication details for fraud detection purposes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.PhoneAuthenticationEvent phone_authentication_event = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the phoneAuthenticationEvent field is set.
+   */
+  boolean hasPhoneAuthenticationEvent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If using an external multi-factor authentication provider,
+   * provide phone authentication details for fraud detection purposes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.PhoneAuthenticationEvent phone_authentication_event = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The phoneAuthenticationEvent.
+   */
+  com.google.recaptchaenterprise.v1.PhoneAuthenticationEvent getPhoneAuthenticationEvent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If using an external multi-factor authentication provider,
+   * provide phone authentication details for fraud detection purposes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.PhoneAuthenticationEvent phone_authentication_event = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.recaptchaenterprise.v1.PhoneAuthenticationEventOrBuilder
+      getPhoneAuthenticationEventOrBuilder();
 }

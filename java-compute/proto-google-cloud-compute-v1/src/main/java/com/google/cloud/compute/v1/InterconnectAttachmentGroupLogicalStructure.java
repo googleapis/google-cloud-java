@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * [Output Only] An analysis of the logical layout of Attachments in this group. Every Attachment in the group is shown once in this structure.
+ * [Output Only] An analysis of the logical layout of Attachments in this
+ * group. Every Attachment in the group is shown once in this structure.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.InterconnectAttachmentGroupLogicalStructure}
@@ -299,7 +300,8 @@ public final class InterconnectAttachmentGroupLogicalStructure
    *
    *
    * <pre>
-   * [Output Only] An analysis of the logical layout of Attachments in this group. Every Attachment in the group is shown once in this structure.
+   * [Output Only] An analysis of the logical layout of Attachments in this
+   * group. Every Attachment in the group is shown once in this structure.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.InterconnectAttachmentGroupLogicalStructure}

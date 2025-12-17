@@ -1770,15 +1770,16 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Input only. Tag keys/values directly bound to this resource.
+   * Optional. Input only. Tag keys and values directly bound to this resource.
    *
-   * Tag key must be specified in the format &lt;tag namespace&gt;/&lt;tag key name&gt;
+   * The tag key must be specified in the format
+   * `&lt;tag namespace&gt;/&lt;tag key name&gt;,`
    * where the tag namespace is the ID of the organization or name of the
-   * project that the tag key is defined in.
-   * The short name of a tag key or value can have a maximum length of 256
-   * characters. The permitted character set for the short name includes UTF-8
-   * encoded Unicode characters except single quotes ('), double quotes ("),
-   * backslashes (&#92;), and forward slashes (/).
+   * project that the tag key is defined in. The short name of a tag key or
+   * value can have a maximum length of 256 characters. The permitted character
+   * set for the short name includes UTF-8 encoded Unicode characters except
+   * single quotation marks (`'`), double quotation marks (`"`), backslashes
+   * (`&#92;`), and forward slashes (`/`).
    *
    * See
    * [Tags](https://cloud.google.com/resource-manager/docs/tags/tags-overview)
@@ -1808,15 +1809,16 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Input only. Tag keys/values directly bound to this resource.
+   * Optional. Input only. Tag keys and values directly bound to this resource.
    *
-   * Tag key must be specified in the format &lt;tag namespace&gt;/&lt;tag key name&gt;
+   * The tag key must be specified in the format
+   * `&lt;tag namespace&gt;/&lt;tag key name&gt;,`
    * where the tag namespace is the ID of the organization or name of the
-   * project that the tag key is defined in.
-   * The short name of a tag key or value can have a maximum length of 256
-   * characters. The permitted character set for the short name includes UTF-8
-   * encoded Unicode characters except single quotes ('), double quotes ("),
-   * backslashes (&#92;), and forward slashes (/).
+   * project that the tag key is defined in. The short name of a tag key or
+   * value can have a maximum length of 256 characters. The permitted character
+   * set for the short name includes UTF-8 encoded Unicode characters except
+   * single quotation marks (`'`), double quotation marks (`"`), backslashes
+   * (`&#92;`), and forward slashes (`/`).
    *
    * See
    * [Tags](https://cloud.google.com/resource-manager/docs/tags/tags-overview)
@@ -1836,15 +1838,16 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Input only. Tag keys/values directly bound to this resource.
+   * Optional. Input only. Tag keys and values directly bound to this resource.
    *
-   * Tag key must be specified in the format &lt;tag namespace&gt;/&lt;tag key name&gt;
+   * The tag key must be specified in the format
+   * `&lt;tag namespace&gt;/&lt;tag key name&gt;,`
    * where the tag namespace is the ID of the organization or name of the
-   * project that the tag key is defined in.
-   * The short name of a tag key or value can have a maximum length of 256
-   * characters. The permitted character set for the short name includes UTF-8
-   * encoded Unicode characters except single quotes ('), double quotes ("),
-   * backslashes (&#92;), and forward slashes (/).
+   * project that the tag key is defined in. The short name of a tag key or
+   * value can have a maximum length of 256 characters. The permitted character
+   * set for the short name includes UTF-8 encoded Unicode characters except
+   * single quotation marks (`'`), double quotation marks (`"`), backslashes
+   * (`&#92;`), and forward slashes (`/`).
    *
    * See
    * [Tags](https://cloud.google.com/resource-manager/docs/tags/tags-overview)
@@ -1871,15 +1874,16 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Input only. Tag keys/values directly bound to this resource.
+   * Optional. Input only. Tag keys and values directly bound to this resource.
    *
-   * Tag key must be specified in the format &lt;tag namespace&gt;/&lt;tag key name&gt;
+   * The tag key must be specified in the format
+   * `&lt;tag namespace&gt;/&lt;tag key name&gt;,`
    * where the tag namespace is the ID of the organization or name of the
-   * project that the tag key is defined in.
-   * The short name of a tag key or value can have a maximum length of 256
-   * characters. The permitted character set for the short name includes UTF-8
-   * encoded Unicode characters except single quotes ('), double quotes ("),
-   * backslashes (&#92;), and forward slashes (/).
+   * project that the tag key is defined in. The short name of a tag key or
+   * value can have a maximum length of 256 characters. The permitted character
+   * set for the short name includes UTF-8 encoded Unicode characters except
+   * single quotation marks (`'`), double quotation marks (`"`), backslashes
+   * (`&#92;`), and forward slashes (`/`).
    *
    * See
    * [Tags](https://cloud.google.com/resource-manager/docs/tags/tags-overview)
@@ -1900,6 +1904,69 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       throw new java.lang.IllegalArgumentException();
     }
     return map.get(key);
+  }
+
+  public static final int SYSTEM_COMPONENTS_CONFIG_FIELD_NUMBER = 28;
+  private com.google.cloud.gkemulticloud.v1.SystemComponentsConfig systemComponentsConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Kubernetes configurations for auto-installed components on the
+   * cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.SystemComponentsConfig system_components_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the systemComponentsConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasSystemComponentsConfig() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Kubernetes configurations for auto-installed components on the
+   * cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.SystemComponentsConfig system_components_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The systemComponentsConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.SystemComponentsConfig getSystemComponentsConfig() {
+    return systemComponentsConfig_ == null
+        ? com.google.cloud.gkemulticloud.v1.SystemComponentsConfig.getDefaultInstance()
+        : systemComponentsConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Kubernetes configurations for auto-installed components on the
+   * cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.SystemComponentsConfig system_components_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.SystemComponentsConfigOrBuilder
+      getSystemComponentsConfigOrBuilder() {
+    return systemComponentsConfig_ == null
+        ? com.google.cloud.gkemulticloud.v1.SystemComponentsConfig.getDefaultInstance()
+        : systemComponentsConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1987,6 +2054,9 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetTags(), TagsDefaultEntryHolder.defaultEntry, 27);
+    if (((bitField0_ & 0x00000800) != 0)) {
+      output.writeMessage(28, getSystemComponentsConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2086,6 +2156,10 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(27, tags__);
     }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(28, getSystemComponentsConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2159,6 +2233,10 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       if (!getSecurityPostureConfig().equals(other.getSecurityPostureConfig())) return false;
     }
     if (!internalGetTags().equals(other.internalGetTags())) return false;
+    if (hasSystemComponentsConfig() != other.hasSystemComponentsConfig()) return false;
+    if (hasSystemComponentsConfig()) {
+      if (!getSystemComponentsConfig().equals(other.getSystemComponentsConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2245,6 +2323,10 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     if (!internalGetTags().getMap().isEmpty()) {
       hash = (37 * hash) + TAGS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetTags().hashCode();
+    }
+    if (hasSystemComponentsConfig()) {
+      hash = (37 * hash) + SYSTEM_COMPONENTS_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getSystemComponentsConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2425,6 +2507,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         getProxyConfigFieldBuilder();
         getBinaryAuthorizationFieldBuilder();
         getSecurityPostureConfigFieldBuilder();
+        getSystemComponentsConfigFieldBuilder();
       }
     }
 
@@ -2506,6 +2589,11 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         securityPostureConfigBuilder_ = null;
       }
       internalGetMutableTags().clear();
+      systemComponentsConfig_ = null;
+      if (systemComponentsConfigBuilder_ != null) {
+        systemComponentsConfigBuilder_.dispose();
+        systemComponentsConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -2651,6 +2739,13 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       if (((from_bitField0_ & 0x00800000) != 0)) {
         result.tags_ = internalGetTags();
         result.tags_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.systemComponentsConfig_ =
+            systemComponentsConfigBuilder_ == null
+                ? systemComponentsConfig_
+                : systemComponentsConfigBuilder_.build();
+        to_bitField0_ |= 0x00000800;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2811,6 +2906,9 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       }
       internalGetMutableTags().mergeFrom(other.internalGetTags());
       bitField0_ |= 0x00800000;
+      if (other.hasSystemComponentsConfig()) {
+        mergeSystemComponentsConfig(other.getSystemComponentsConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -3002,6 +3100,13 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00800000;
                 break;
               } // case 218
+            case 226:
+              {
+                input.readMessage(
+                    getSystemComponentsConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x01000000;
+                break;
+              } // case 226
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7219,15 +7324,16 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Input only. Tag keys/values directly bound to this resource.
+     * Optional. Input only. Tag keys and values directly bound to this resource.
      *
-     * Tag key must be specified in the format &lt;tag namespace&gt;/&lt;tag key name&gt;
+     * The tag key must be specified in the format
+     * `&lt;tag namespace&gt;/&lt;tag key name&gt;,`
      * where the tag namespace is the ID of the organization or name of the
-     * project that the tag key is defined in.
-     * The short name of a tag key or value can have a maximum length of 256
-     * characters. The permitted character set for the short name includes UTF-8
-     * encoded Unicode characters except single quotes ('), double quotes ("),
-     * backslashes (&#92;), and forward slashes (/).
+     * project that the tag key is defined in. The short name of a tag key or
+     * value can have a maximum length of 256 characters. The permitted character
+     * set for the short name includes UTF-8 encoded Unicode characters except
+     * single quotation marks (`'`), double quotation marks (`"`), backslashes
+     * (`&#92;`), and forward slashes (`/`).
      *
      * See
      * [Tags](https://cloud.google.com/resource-manager/docs/tags/tags-overview)
@@ -7257,15 +7363,16 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Input only. Tag keys/values directly bound to this resource.
+     * Optional. Input only. Tag keys and values directly bound to this resource.
      *
-     * Tag key must be specified in the format &lt;tag namespace&gt;/&lt;tag key name&gt;
+     * The tag key must be specified in the format
+     * `&lt;tag namespace&gt;/&lt;tag key name&gt;,`
      * where the tag namespace is the ID of the organization or name of the
-     * project that the tag key is defined in.
-     * The short name of a tag key or value can have a maximum length of 256
-     * characters. The permitted character set for the short name includes UTF-8
-     * encoded Unicode characters except single quotes ('), double quotes ("),
-     * backslashes (&#92;), and forward slashes (/).
+     * project that the tag key is defined in. The short name of a tag key or
+     * value can have a maximum length of 256 characters. The permitted character
+     * set for the short name includes UTF-8 encoded Unicode characters except
+     * single quotation marks (`'`), double quotation marks (`"`), backslashes
+     * (`&#92;`), and forward slashes (`/`).
      *
      * See
      * [Tags](https://cloud.google.com/resource-manager/docs/tags/tags-overview)
@@ -7285,15 +7392,16 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Input only. Tag keys/values directly bound to this resource.
+     * Optional. Input only. Tag keys and values directly bound to this resource.
      *
-     * Tag key must be specified in the format &lt;tag namespace&gt;/&lt;tag key name&gt;
+     * The tag key must be specified in the format
+     * `&lt;tag namespace&gt;/&lt;tag key name&gt;,`
      * where the tag namespace is the ID of the organization or name of the
-     * project that the tag key is defined in.
-     * The short name of a tag key or value can have a maximum length of 256
-     * characters. The permitted character set for the short name includes UTF-8
-     * encoded Unicode characters except single quotes ('), double quotes ("),
-     * backslashes (&#92;), and forward slashes (/).
+     * project that the tag key is defined in. The short name of a tag key or
+     * value can have a maximum length of 256 characters. The permitted character
+     * set for the short name includes UTF-8 encoded Unicode characters except
+     * single quotation marks (`'`), double quotation marks (`"`), backslashes
+     * (`&#92;`), and forward slashes (`/`).
      *
      * See
      * [Tags](https://cloud.google.com/resource-manager/docs/tags/tags-overview)
@@ -7320,15 +7428,16 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Input only. Tag keys/values directly bound to this resource.
+     * Optional. Input only. Tag keys and values directly bound to this resource.
      *
-     * Tag key must be specified in the format &lt;tag namespace&gt;/&lt;tag key name&gt;
+     * The tag key must be specified in the format
+     * `&lt;tag namespace&gt;/&lt;tag key name&gt;,`
      * where the tag namespace is the ID of the organization or name of the
-     * project that the tag key is defined in.
-     * The short name of a tag key or value can have a maximum length of 256
-     * characters. The permitted character set for the short name includes UTF-8
-     * encoded Unicode characters except single quotes ('), double quotes ("),
-     * backslashes (&#92;), and forward slashes (/).
+     * project that the tag key is defined in. The short name of a tag key or
+     * value can have a maximum length of 256 characters. The permitted character
+     * set for the short name includes UTF-8 encoded Unicode characters except
+     * single quotation marks (`'`), double quotation marks (`"`), backslashes
+     * (`&#92;`), and forward slashes (`/`).
      *
      * See
      * [Tags](https://cloud.google.com/resource-manager/docs/tags/tags-overview)
@@ -7361,15 +7470,16 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Input only. Tag keys/values directly bound to this resource.
+     * Optional. Input only. Tag keys and values directly bound to this resource.
      *
-     * Tag key must be specified in the format &lt;tag namespace&gt;/&lt;tag key name&gt;
+     * The tag key must be specified in the format
+     * `&lt;tag namespace&gt;/&lt;tag key name&gt;,`
      * where the tag namespace is the ID of the organization or name of the
-     * project that the tag key is defined in.
-     * The short name of a tag key or value can have a maximum length of 256
-     * characters. The permitted character set for the short name includes UTF-8
-     * encoded Unicode characters except single quotes ('), double quotes ("),
-     * backslashes (&#92;), and forward slashes (/).
+     * project that the tag key is defined in. The short name of a tag key or
+     * value can have a maximum length of 256 characters. The permitted character
+     * set for the short name includes UTF-8 encoded Unicode characters except
+     * single quotation marks (`'`), double quotation marks (`"`), backslashes
+     * (`&#92;`), and forward slashes (`/`).
      *
      * See
      * [Tags](https://cloud.google.com/resource-manager/docs/tags/tags-overview)
@@ -7399,15 +7509,16 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Input only. Tag keys/values directly bound to this resource.
+     * Optional. Input only. Tag keys and values directly bound to this resource.
      *
-     * Tag key must be specified in the format &lt;tag namespace&gt;/&lt;tag key name&gt;
+     * The tag key must be specified in the format
+     * `&lt;tag namespace&gt;/&lt;tag key name&gt;,`
      * where the tag namespace is the ID of the organization or name of the
-     * project that the tag key is defined in.
-     * The short name of a tag key or value can have a maximum length of 256
-     * characters. The permitted character set for the short name includes UTF-8
-     * encoded Unicode characters except single quotes ('), double quotes ("),
-     * backslashes (&#92;), and forward slashes (/).
+     * project that the tag key is defined in. The short name of a tag key or
+     * value can have a maximum length of 256 characters. The permitted character
+     * set for the short name includes UTF-8 encoded Unicode characters except
+     * single quotation marks (`'`), double quotation marks (`"`), backslashes
+     * (`&#92;`), and forward slashes (`/`).
      *
      * See
      * [Tags](https://cloud.google.com/resource-manager/docs/tags/tags-overview)
@@ -7434,15 +7545,16 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Input only. Tag keys/values directly bound to this resource.
+     * Optional. Input only. Tag keys and values directly bound to this resource.
      *
-     * Tag key must be specified in the format &lt;tag namespace&gt;/&lt;tag key name&gt;
+     * The tag key must be specified in the format
+     * `&lt;tag namespace&gt;/&lt;tag key name&gt;,`
      * where the tag namespace is the ID of the organization or name of the
-     * project that the tag key is defined in.
-     * The short name of a tag key or value can have a maximum length of 256
-     * characters. The permitted character set for the short name includes UTF-8
-     * encoded Unicode characters except single quotes ('), double quotes ("),
-     * backslashes (&#92;), and forward slashes (/).
+     * project that the tag key is defined in. The short name of a tag key or
+     * value can have a maximum length of 256 characters. The permitted character
+     * set for the short name includes UTF-8 encoded Unicode characters except
+     * single quotation marks (`'`), double quotation marks (`"`), backslashes
+     * (`&#92;`), and forward slashes (`/`).
      *
      * See
      * [Tags](https://cloud.google.com/resource-manager/docs/tags/tags-overview)
@@ -7457,6 +7569,233 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       internalGetMutableTags().getMutableMap().putAll(values);
       bitField0_ |= 0x00800000;
       return this;
+    }
+
+    private com.google.cloud.gkemulticloud.v1.SystemComponentsConfig systemComponentsConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.SystemComponentsConfig,
+            com.google.cloud.gkemulticloud.v1.SystemComponentsConfig.Builder,
+            com.google.cloud.gkemulticloud.v1.SystemComponentsConfigOrBuilder>
+        systemComponentsConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Kubernetes configurations for auto-installed components on the
+     * cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.SystemComponentsConfig system_components_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the systemComponentsConfig field is set.
+     */
+    public boolean hasSystemComponentsConfig() {
+      return ((bitField0_ & 0x01000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Kubernetes configurations for auto-installed components on the
+     * cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.SystemComponentsConfig system_components_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The systemComponentsConfig.
+     */
+    public com.google.cloud.gkemulticloud.v1.SystemComponentsConfig getSystemComponentsConfig() {
+      if (systemComponentsConfigBuilder_ == null) {
+        return systemComponentsConfig_ == null
+            ? com.google.cloud.gkemulticloud.v1.SystemComponentsConfig.getDefaultInstance()
+            : systemComponentsConfig_;
+      } else {
+        return systemComponentsConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Kubernetes configurations for auto-installed components on the
+     * cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.SystemComponentsConfig system_components_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSystemComponentsConfig(
+        com.google.cloud.gkemulticloud.v1.SystemComponentsConfig value) {
+      if (systemComponentsConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        systemComponentsConfig_ = value;
+      } else {
+        systemComponentsConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Kubernetes configurations for auto-installed components on the
+     * cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.SystemComponentsConfig system_components_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSystemComponentsConfig(
+        com.google.cloud.gkemulticloud.v1.SystemComponentsConfig.Builder builderForValue) {
+      if (systemComponentsConfigBuilder_ == null) {
+        systemComponentsConfig_ = builderForValue.build();
+      } else {
+        systemComponentsConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Kubernetes configurations for auto-installed components on the
+     * cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.SystemComponentsConfig system_components_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSystemComponentsConfig(
+        com.google.cloud.gkemulticloud.v1.SystemComponentsConfig value) {
+      if (systemComponentsConfigBuilder_ == null) {
+        if (((bitField0_ & 0x01000000) != 0)
+            && systemComponentsConfig_ != null
+            && systemComponentsConfig_
+                != com.google.cloud.gkemulticloud.v1.SystemComponentsConfig.getDefaultInstance()) {
+          getSystemComponentsConfigBuilder().mergeFrom(value);
+        } else {
+          systemComponentsConfig_ = value;
+        }
+      } else {
+        systemComponentsConfigBuilder_.mergeFrom(value);
+      }
+      if (systemComponentsConfig_ != null) {
+        bitField0_ |= 0x01000000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Kubernetes configurations for auto-installed components on the
+     * cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.SystemComponentsConfig system_components_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSystemComponentsConfig() {
+      bitField0_ = (bitField0_ & ~0x01000000);
+      systemComponentsConfig_ = null;
+      if (systemComponentsConfigBuilder_ != null) {
+        systemComponentsConfigBuilder_.dispose();
+        systemComponentsConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Kubernetes configurations for auto-installed components on the
+     * cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.SystemComponentsConfig system_components_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.SystemComponentsConfig.Builder
+        getSystemComponentsConfigBuilder() {
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return getSystemComponentsConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Kubernetes configurations for auto-installed components on the
+     * cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.SystemComponentsConfig system_components_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.SystemComponentsConfigOrBuilder
+        getSystemComponentsConfigOrBuilder() {
+      if (systemComponentsConfigBuilder_ != null) {
+        return systemComponentsConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return systemComponentsConfig_ == null
+            ? com.google.cloud.gkemulticloud.v1.SystemComponentsConfig.getDefaultInstance()
+            : systemComponentsConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Kubernetes configurations for auto-installed components on the
+     * cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.SystemComponentsConfig system_components_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.SystemComponentsConfig,
+            com.google.cloud.gkemulticloud.v1.SystemComponentsConfig.Builder,
+            com.google.cloud.gkemulticloud.v1.SystemComponentsConfigOrBuilder>
+        getSystemComponentsConfigFieldBuilder() {
+      if (systemComponentsConfigBuilder_ == null) {
+        systemComponentsConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkemulticloud.v1.SystemComponentsConfig,
+                com.google.cloud.gkemulticloud.v1.SystemComponentsConfig.Builder,
+                com.google.cloud.gkemulticloud.v1.SystemComponentsConfigOrBuilder>(
+                getSystemComponentsConfig(), getParentForChildren(), isClean());
+        systemComponentsConfig_ = null;
+      }
+      return systemComponentsConfigBuilder_;
     }
 
     @java.lang.Override

@@ -28,7 +28,11 @@ public interface ScalingScheduleStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The last time the scaling schedule became active. Note: this is a timestamp when a schedule actually became active, not when it was planned to do so. The timestamp is in RFC3339 text format.
+   * [Output Only] The last time the scaling schedule became active.
+   * Note: this is a timestamp when a schedule actually became active, not when
+   * it was planned to do so.
+   * The timestamp is in RFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string last_start_time = 34545107;</code>
@@ -41,7 +45,11 @@ public interface ScalingScheduleStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The last time the scaling schedule became active. Note: this is a timestamp when a schedule actually became active, not when it was planned to do so. The timestamp is in RFC3339 text format.
+   * [Output Only] The last time the scaling schedule became active.
+   * Note: this is a timestamp when a schedule actually became active, not when
+   * it was planned to do so.
+   * The timestamp is in RFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string last_start_time = 34545107;</code>
@@ -54,7 +62,11 @@ public interface ScalingScheduleStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The last time the scaling schedule became active. Note: this is a timestamp when a schedule actually became active, not when it was planned to do so. The timestamp is in RFC3339 text format.
+   * [Output Only] The last time the scaling schedule became active.
+   * Note: this is a timestamp when a schedule actually became active, not when
+   * it was planned to do so.
+   * The timestamp is in RFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string last_start_time = 34545107;</code>
@@ -67,7 +79,11 @@ public interface ScalingScheduleStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The next time the scaling schedule is to become active. Note: this is a timestamp when a schedule is planned to run, but the actual time might be slightly different. The timestamp is in RFC3339 text format.
+   * [Output Only] The next time the scaling schedule is to become active.
+   * Note: this is a timestamp when a schedule is planned to run, but the actual
+   * time might be slightly different.
+   * The timestamp is in RFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string next_start_time = 97270102;</code>
@@ -80,7 +96,11 @@ public interface ScalingScheduleStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The next time the scaling schedule is to become active. Note: this is a timestamp when a schedule is planned to run, but the actual time might be slightly different. The timestamp is in RFC3339 text format.
+   * [Output Only] The next time the scaling schedule is to become active.
+   * Note: this is a timestamp when a schedule is planned to run, but the actual
+   * time might be slightly different.
+   * The timestamp is in RFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string next_start_time = 97270102;</code>
@@ -93,7 +113,11 @@ public interface ScalingScheduleStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The next time the scaling schedule is to become active. Note: this is a timestamp when a schedule is planned to run, but the actual time might be slightly different. The timestamp is in RFC3339 text format.
+   * [Output Only] The next time the scaling schedule is to become active.
+   * Note: this is a timestamp when a schedule is planned to run, but the actual
+   * time might be slightly different.
+   * The timestamp is in RFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string next_start_time = 97270102;</code>

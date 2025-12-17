@@ -429,7 +429,7 @@ public interface ToolOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the urlContext field is set.
@@ -444,7 +444,7 @@ public interface ToolOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The urlContext.
@@ -459,7 +459,7 @@ public interface ToolOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.UrlContextOrBuilder getUrlContextOrBuilder();

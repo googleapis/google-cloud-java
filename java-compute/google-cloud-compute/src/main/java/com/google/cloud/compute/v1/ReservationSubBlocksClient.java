@@ -88,6 +88,24 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> GetIamPolicy</td>
+ *      <td><p> Gets the access control policy for a resource. May be empty if no such policy or resource exists.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(GetIamPolicyReservationSubBlockRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(String project, String zone, String parentResource, String resource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> List</td>
  *      <td><p> Retrieves a list of reservation subBlocks under a single reservation.</td>
  *      <td>
@@ -141,6 +159,42 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> reportFaultyOperationCallable()
  *           <li><p> reportFaultyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetIamPolicy</td>
+ *      <td><p> Sets the access control policy on the specified resource. Replaces any existing policy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(SetIamPolicyReservationSubBlockRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(String project, String zone, String parentResource, String resource, ZoneSetNestedPolicyRequest zoneSetNestedPolicyRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> TestIamPermissions</td>
+ *      <td><p> Returns permissions that a caller has on the specified resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(TestIamPermissionsReservationSubBlockRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(String project, String zone, String parentResource, String resource, TestPermissionsRequest testPermissionsRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -299,6 +353,7 @@ public class ReservationSubBlocksClient implements BackgroundResource {
    *           .setParentName("parentName-244870571")
    *           .setProject("project-309310695")
    *           .setReservationSubBlock("reservationSubBlock-1816847847")
+   *           .setView("view3619493")
    *           .setZone("zone3744684")
    *           .build();
    *   ReservationSubBlocksGetResponse response = reservationSubBlocksClient.get(request);
@@ -331,6 +386,7 @@ public class ReservationSubBlocksClient implements BackgroundResource {
    *           .setParentName("parentName-244870571")
    *           .setProject("project-309310695")
    *           .setReservationSubBlock("reservationSubBlock-1816847847")
+   *           .setView("view3619493")
    *           .setZone("zone3744684")
    *           .build();
    *   ApiFuture<ReservationSubBlocksGetResponse> future =
@@ -343,6 +399,117 @@ public class ReservationSubBlocksClient implements BackgroundResource {
   public final UnaryCallable<GetReservationSubBlockRequest, ReservationSubBlocksGetResponse>
       getCallable() {
     return stub.getCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationSubBlocksClient reservationSubBlocksClient =
+   *     ReservationSubBlocksClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String parentResource = "parentResource1914365656";
+   *   String resource = "resource-341064690";
+   *   Policy response =
+   *       reservationSubBlocksClient.getIamPolicy(project, zone, parentResource, resource);
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone The name of the zone for this request.
+   * @param parentResource Name or id of parent resource of the resource for this request.
+   * @param resource Name or id of the resource for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(
+      String project, String zone, String parentResource, String resource) {
+    GetIamPolicyReservationSubBlockRequest request =
+        GetIamPolicyReservationSubBlockRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setParentResource(parentResource)
+            .setResource(resource)
+            .build();
+    return getIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationSubBlocksClient reservationSubBlocksClient =
+   *     ReservationSubBlocksClient.create()) {
+   *   GetIamPolicyReservationSubBlockRequest request =
+   *       GetIamPolicyReservationSubBlockRequest.newBuilder()
+   *           .setOptionsRequestedPolicyVersion(-574521795)
+   *           .setParentResource("parentResource1914365656")
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   Policy response = reservationSubBlocksClient.getIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(GetIamPolicyReservationSubBlockRequest request) {
+    return getIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationSubBlocksClient reservationSubBlocksClient =
+   *     ReservationSubBlocksClient.create()) {
+   *   GetIamPolicyReservationSubBlockRequest request =
+   *       GetIamPolicyReservationSubBlockRequest.newBuilder()
+   *           .setOptionsRequestedPolicyVersion(-574521795)
+   *           .setParentResource("parentResource1914365656")
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Policy> future =
+   *       reservationSubBlocksClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetIamPolicyReservationSubBlockRequest, Policy>
+      getIamPolicyCallable() {
+    return stub.getIamPolicyCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -820,6 +987,243 @@ public class ReservationSubBlocksClient implements BackgroundResource {
   public final UnaryCallable<ReportFaultyReservationSubBlockRequest, Operation>
       reportFaultyCallable() {
     return stub.reportFaultyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationSubBlocksClient reservationSubBlocksClient =
+   *     ReservationSubBlocksClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String parentResource = "parentResource1914365656";
+   *   String resource = "resource-341064690";
+   *   ZoneSetNestedPolicyRequest zoneSetNestedPolicyRequestResource =
+   *       ZoneSetNestedPolicyRequest.newBuilder().build();
+   *   Policy response =
+   *       reservationSubBlocksClient.setIamPolicy(
+   *           project, zone, parentResource, resource, zoneSetNestedPolicyRequestResource);
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone The name of the zone for this request.
+   * @param parentResource Name or id of parent resource of the resource for this request.
+   * @param resource Name or id of the resource for this request.
+   * @param zoneSetNestedPolicyRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(
+      String project,
+      String zone,
+      String parentResource,
+      String resource,
+      ZoneSetNestedPolicyRequest zoneSetNestedPolicyRequestResource) {
+    SetIamPolicyReservationSubBlockRequest request =
+        SetIamPolicyReservationSubBlockRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setParentResource(parentResource)
+            .setResource(resource)
+            .setZoneSetNestedPolicyRequestResource(zoneSetNestedPolicyRequestResource)
+            .build();
+    return setIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationSubBlocksClient reservationSubBlocksClient =
+   *     ReservationSubBlocksClient.create()) {
+   *   SetIamPolicyReservationSubBlockRequest request =
+   *       SetIamPolicyReservationSubBlockRequest.newBuilder()
+   *           .setParentResource("parentResource1914365656")
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setZone("zone3744684")
+   *           .setZoneSetNestedPolicyRequestResource(
+   *               ZoneSetNestedPolicyRequest.newBuilder().build())
+   *           .build();
+   *   Policy response = reservationSubBlocksClient.setIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(SetIamPolicyReservationSubBlockRequest request) {
+    return setIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationSubBlocksClient reservationSubBlocksClient =
+   *     ReservationSubBlocksClient.create()) {
+   *   SetIamPolicyReservationSubBlockRequest request =
+   *       SetIamPolicyReservationSubBlockRequest.newBuilder()
+   *           .setParentResource("parentResource1914365656")
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setZone("zone3744684")
+   *           .setZoneSetNestedPolicyRequestResource(
+   *               ZoneSetNestedPolicyRequest.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future =
+   *       reservationSubBlocksClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetIamPolicyReservationSubBlockRequest, Policy>
+      setIamPolicyCallable() {
+    return stub.setIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationSubBlocksClient reservationSubBlocksClient =
+   *     ReservationSubBlocksClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String parentResource = "parentResource1914365656";
+   *   String resource = "resource-341064690";
+   *   TestPermissionsRequest testPermissionsRequestResource =
+   *       TestPermissionsRequest.newBuilder().build();
+   *   TestPermissionsResponse response =
+   *       reservationSubBlocksClient.testIamPermissions(
+   *           project, zone, parentResource, resource, testPermissionsRequestResource);
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone The name of the zone for this request.
+   * @param parentResource Name or id of parent resource of the resource for this request.
+   * @param resource Name or id of the resource for this request.
+   * @param testPermissionsRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestPermissionsResponse testIamPermissions(
+      String project,
+      String zone,
+      String parentResource,
+      String resource,
+      TestPermissionsRequest testPermissionsRequestResource) {
+    TestIamPermissionsReservationSubBlockRequest request =
+        TestIamPermissionsReservationSubBlockRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setParentResource(parentResource)
+            .setResource(resource)
+            .setTestPermissionsRequestResource(testPermissionsRequestResource)
+            .build();
+    return testIamPermissions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationSubBlocksClient reservationSubBlocksClient =
+   *     ReservationSubBlocksClient.create()) {
+   *   TestIamPermissionsReservationSubBlockRequest request =
+   *       TestIamPermissionsReservationSubBlockRequest.newBuilder()
+   *           .setParentResource("parentResource1914365656")
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
+   *   TestPermissionsResponse response = reservationSubBlocksClient.testIamPermissions(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestPermissionsResponse testIamPermissions(
+      TestIamPermissionsReservationSubBlockRequest request) {
+    return testIamPermissionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationSubBlocksClient reservationSubBlocksClient =
+   *     ReservationSubBlocksClient.create()) {
+   *   TestIamPermissionsReservationSubBlockRequest request =
+   *       TestIamPermissionsReservationSubBlockRequest.newBuilder()
+   *           .setParentResource("parentResource1914365656")
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<TestPermissionsResponse> future =
+   *       reservationSubBlocksClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestPermissionsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TestIamPermissionsReservationSubBlockRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    return stub.testIamPermissionsCallable();
   }
 
   @Override

@@ -74,7 +74,17 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Form this outage is expected to take, which can take one of the following values: - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window. - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+   * Form this outage is expected to take, which can take one of the following
+   * values:
+   *
+   *    - OUTAGE: The Interconnect may be completely out of service for
+   *    some or all of the specified window.
+   *    - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole
+   *    should remain up, but with reduced bandwidth.
+   *
+   *
+   * Note that the versions of this enum prefixed with "IT_" have been
+   * deprecated in favor of the unprefixed values.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.InterconnectOutageNotification.IssueType}
@@ -94,7 +104,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Deprecated] The Interconnect may be completely out of service for some or all of the specified window.
+     * [Deprecated] The Interconnect may be completely out of service for some
+     * or all of the specified window.
      * </pre>
      *
      * <code>IT_OUTAGE = 175779973;</code>
@@ -104,7 +115,9 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Deprecated] Some circuits comprising the Interconnect will be out of service during the expected window. The interconnect as a whole should remain up, albeit with reduced bandwidth.
+     * [Deprecated] Some circuits comprising the Interconnect will be out of
+     * service during the expected window. The interconnect as a whole should
+     * remain up, albeit with reduced bandwidth.
      * </pre>
      *
      * <code>IT_PARTIAL_OUTAGE = 92103971;</code>
@@ -114,7 +127,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The Interconnect may be completely out of service for some or all of the specified window.
+     * The Interconnect may be completely out of service for some or all of
+     * the specified window.
      * </pre>
      *
      * <code>OUTAGE = 195285745;</code>
@@ -124,7 +138,9 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Some circuits comprising the Interconnect will be out of service during the expected window. The interconnect as a whole should remain up, albeit with reduced bandwidth.
+     * Some circuits comprising the Interconnect will be out of service during
+     * the expected window. The interconnect as a whole should remain
+     * up, albeit with reduced bandwidth.
      * </pre>
      *
      * <code>PARTIAL_OUTAGE = 147053455;</code>
@@ -148,7 +164,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Deprecated] The Interconnect may be completely out of service for some or all of the specified window.
+     * [Deprecated] The Interconnect may be completely out of service for some
+     * or all of the specified window.
      * </pre>
      *
      * <code>IT_OUTAGE = 175779973;</code>
@@ -159,7 +176,9 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Deprecated] Some circuits comprising the Interconnect will be out of service during the expected window. The interconnect as a whole should remain up, albeit with reduced bandwidth.
+     * [Deprecated] Some circuits comprising the Interconnect will be out of
+     * service during the expected window. The interconnect as a whole should
+     * remain up, albeit with reduced bandwidth.
      * </pre>
      *
      * <code>IT_PARTIAL_OUTAGE = 92103971;</code>
@@ -170,7 +189,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The Interconnect may be completely out of service for some or all of the specified window.
+     * The Interconnect may be completely out of service for some or all of
+     * the specified window.
      * </pre>
      *
      * <code>OUTAGE = 195285745;</code>
@@ -181,7 +201,9 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Some circuits comprising the Interconnect will be out of service during the expected window. The interconnect as a whole should remain up, albeit with reduced bandwidth.
+     * Some circuits comprising the Interconnect will be out of service during
+     * the expected window. The interconnect as a whole should remain
+     * up, albeit with reduced bandwidth.
      * </pre>
      *
      * <code>PARTIAL_OUTAGE = 147053455;</code>
@@ -281,7 +303,14 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The party that generated this notification, which can take the following value: - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+   * The party that generated this notification, which can take the following
+   * value:
+   *
+   *    - GOOGLE: this notification as generated by Google.
+   *
+   *
+   * Note that the value of NSRC_GOOGLE has been deprecated in favor of
+   * GOOGLE.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.InterconnectOutageNotification.Source}
@@ -442,7 +471,18 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * State of this notification, which can take one of the following values: - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling. - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. - COMPLETED: The outage associated with this notification is complete. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+   * State of this notification, which can take one of the following values:
+   *
+   *    - ACTIVE: This outage notification is active. The event could be in
+   *    the past, present, or future. See start_time and end_time for
+   *    scheduling.
+   *    - CANCELLED: The outage associated with this notification was cancelled
+   *    before the outage was due to start.
+   *    - COMPLETED: The outage associated with this notification is complete.
+   *
+   *
+   * Note that the versions of this enum prefixed with "NS_" have been
+   * deprecated in favor of the unprefixed values.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.InterconnectOutageNotification.State}
@@ -462,7 +502,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * This outage notification is active. The event could be in the future, present, or past. See start_time and end_time for scheduling.
+     * This outage notification is active. The event could be in the future,
+     * present, or past. See start_time and end_time for scheduling.
      * </pre>
      *
      * <code>ACTIVE = 314733318;</code>
@@ -472,7 +513,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The outage associated with this notification was cancelled before the outage was due to start.
+     * The outage associated with this notification was cancelled before the
+     * outage was due to start.
      * </pre>
      *
      * <code>CANCELLED = 41957681;</code>
@@ -492,7 +534,9 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Deprecated] This outage notification is active. The event could be in the future, present, or past. See start_time and end_time for scheduling.
+     * [Deprecated] This outage notification is active. The event could be in
+     * the future, present, or past. See start_time and end_time for
+     * scheduling.
      * </pre>
      *
      * <code>NS_ACTIVE = 252563136;</code>
@@ -502,7 +546,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Deprecated] The outage associated with this notification was canceled before the outage was due to start.
+     * [Deprecated] The outage associated with this notification was canceled
+     * before the outage was due to start.
      * </pre>
      *
      * <code>NS_CANCELED = 506579411;</code>
@@ -526,7 +571,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * This outage notification is active. The event could be in the future, present, or past. See start_time and end_time for scheduling.
+     * This outage notification is active. The event could be in the future,
+     * present, or past. See start_time and end_time for scheduling.
      * </pre>
      *
      * <code>ACTIVE = 314733318;</code>
@@ -537,7 +583,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The outage associated with this notification was cancelled before the outage was due to start.
+     * The outage associated with this notification was cancelled before the
+     * outage was due to start.
      * </pre>
      *
      * <code>CANCELLED = 41957681;</code>
@@ -559,7 +606,9 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Deprecated] This outage notification is active. The event could be in the future, present, or past. See start_time and end_time for scheduling.
+     * [Deprecated] This outage notification is active. The event could be in
+     * the future, present, or past. See start_time and end_time for
+     * scheduling.
      * </pre>
      *
      * <code>NS_ACTIVE = 252563136;</code>
@@ -570,7 +619,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Deprecated] The outage associated with this notification was canceled before the outage was due to start.
+     * [Deprecated] The outage associated with this notification was canceled
+     * before the outage was due to start.
      * </pre>
      *
      * <code>NS_CANCELED = 506579411;</code>
@@ -679,7 +729,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit IDs that will be affected.
+   * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit
+   * IDs that will be affected.
    * </pre>
    *
    * <code>repeated string affected_circuits = 177717013;</code>
@@ -694,7 +745,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit IDs that will be affected.
+   * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit
+   * IDs that will be affected.
    * </pre>
    *
    * <code>repeated string affected_circuits = 177717013;</code>
@@ -709,7 +761,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit IDs that will be affected.
+   * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit
+   * IDs that will be affected.
    * </pre>
    *
    * <code>repeated string affected_circuits = 177717013;</code>
@@ -725,7 +778,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit IDs that will be affected.
+   * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit
+   * IDs that will be affected.
    * </pre>
    *
    * <code>repeated string affected_circuits = 177717013;</code>
@@ -813,7 +867,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Scheduled end time for the outage (milliseconds since Unix epoch).
+   * Scheduled end time for the outage (milliseconds since Unix
+   * epoch).
    * </pre>
    *
    * <code>optional int64 end_time = 114938801;</code>
@@ -829,7 +884,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Scheduled end time for the outage (milliseconds since Unix epoch).
+   * Scheduled end time for the outage (milliseconds since Unix
+   * epoch).
    * </pre>
    *
    * <code>optional int64 end_time = 114938801;</code>
@@ -850,7 +906,17 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Form this outage is expected to take, which can take one of the following values: - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window. - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+   * Form this outage is expected to take, which can take one of the following
+   * values:
+   *
+   *    - OUTAGE: The Interconnect may be completely out of service for
+   *    some or all of the specified window.
+   *    - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole
+   *    should remain up, but with reduced bandwidth.
+   *
+   *
+   * Note that the versions of this enum prefixed with "IT_" have been
+   * deprecated in favor of the unprefixed values.
    * Check the IssueType enum for the list of possible values.
    * </pre>
    *
@@ -867,7 +933,17 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Form this outage is expected to take, which can take one of the following values: - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window. - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+   * Form this outage is expected to take, which can take one of the following
+   * values:
+   *
+   *    - OUTAGE: The Interconnect may be completely out of service for
+   *    some or all of the specified window.
+   *    - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole
+   *    should remain up, but with reduced bandwidth.
+   *
+   *
+   * Note that the versions of this enum prefixed with "IT_" have been
+   * deprecated in favor of the unprefixed values.
    * Check the IssueType enum for the list of possible values.
    * </pre>
    *
@@ -892,7 +968,17 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Form this outage is expected to take, which can take one of the following values: - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window. - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+   * Form this outage is expected to take, which can take one of the following
+   * values:
+   *
+   *    - OUTAGE: The Interconnect may be completely out of service for
+   *    some or all of the specified window.
+   *    - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole
+   *    should remain up, but with reduced bandwidth.
+   *
+   *
+   * Note that the versions of this enum prefixed with "IT_" have been
+   * deprecated in favor of the unprefixed values.
    * Check the IssueType enum for the list of possible values.
    * </pre>
    *
@@ -991,7 +1077,14 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The party that generated this notification, which can take the following value: - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+   * The party that generated this notification, which can take the following
+   * value:
+   *
+   *    - GOOGLE: this notification as generated by Google.
+   *
+   *
+   * Note that the value of NSRC_GOOGLE has been deprecated in favor of
+   * GOOGLE.
    * Check the Source enum for the list of possible values.
    * </pre>
    *
@@ -1008,7 +1101,14 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The party that generated this notification, which can take the following value: - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+   * The party that generated this notification, which can take the following
+   * value:
+   *
+   *    - GOOGLE: this notification as generated by Google.
+   *
+   *
+   * Note that the value of NSRC_GOOGLE has been deprecated in favor of
+   * GOOGLE.
    * Check the Source enum for the list of possible values.
    * </pre>
    *
@@ -1033,7 +1133,14 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The party that generated this notification, which can take the following value: - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+   * The party that generated this notification, which can take the following
+   * value:
+   *
+   *    - GOOGLE: this notification as generated by Google.
+   *
+   *
+   * Note that the value of NSRC_GOOGLE has been deprecated in favor of
+   * GOOGLE.
    * Check the Source enum for the list of possible values.
    * </pre>
    *
@@ -1061,7 +1168,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Scheduled start time for the outage (milliseconds since Unix epoch).
+   * Scheduled start time for the outage (milliseconds since Unix
+   * epoch).
    * </pre>
    *
    * <code>optional int64 start_time = 37467274;</code>
@@ -1077,7 +1185,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Scheduled start time for the outage (milliseconds since Unix epoch).
+   * Scheduled start time for the outage (milliseconds since Unix
+   * epoch).
    * </pre>
    *
    * <code>optional int64 start_time = 37467274;</code>
@@ -1098,7 +1207,18 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * State of this notification, which can take one of the following values: - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling. - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. - COMPLETED: The outage associated with this notification is complete. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+   * State of this notification, which can take one of the following values:
+   *
+   *    - ACTIVE: This outage notification is active. The event could be in
+   *    the past, present, or future. See start_time and end_time for
+   *    scheduling.
+   *    - CANCELLED: The outage associated with this notification was cancelled
+   *    before the outage was due to start.
+   *    - COMPLETED: The outage associated with this notification is complete.
+   *
+   *
+   * Note that the versions of this enum prefixed with "NS_" have been
+   * deprecated in favor of the unprefixed values.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -1115,7 +1235,18 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * State of this notification, which can take one of the following values: - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling. - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. - COMPLETED: The outage associated with this notification is complete. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+   * State of this notification, which can take one of the following values:
+   *
+   *    - ACTIVE: This outage notification is active. The event could be in
+   *    the past, present, or future. See start_time and end_time for
+   *    scheduling.
+   *    - CANCELLED: The outage associated with this notification was cancelled
+   *    before the outage was due to start.
+   *    - COMPLETED: The outage associated with this notification is complete.
+   *
+   *
+   * Note that the versions of this enum prefixed with "NS_" have been
+   * deprecated in favor of the unprefixed values.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -1140,7 +1271,18 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * State of this notification, which can take one of the following values: - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling. - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. - COMPLETED: The outage associated with this notification is complete. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+   * State of this notification, which can take one of the following values:
+   *
+   *    - ACTIVE: This outage notification is active. The event could be in
+   *    the past, present, or future. See start_time and end_time for
+   *    scheduling.
+   *    - CANCELLED: The outage associated with this notification was cancelled
+   *    before the outage was due to start.
+   *    - COMPLETED: The outage associated with this notification is complete.
+   *
+   *
+   * Note that the versions of this enum prefixed with "NS_" have been
+   * deprecated in favor of the unprefixed values.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -1742,7 +1884,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit IDs that will be affected.
+     * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit
+     * IDs that will be affected.
      * </pre>
      *
      * <code>repeated string affected_circuits = 177717013;</code>
@@ -1758,7 +1901,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit IDs that will be affected.
+     * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit
+     * IDs that will be affected.
      * </pre>
      *
      * <code>repeated string affected_circuits = 177717013;</code>
@@ -1773,7 +1917,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit IDs that will be affected.
+     * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit
+     * IDs that will be affected.
      * </pre>
      *
      * <code>repeated string affected_circuits = 177717013;</code>
@@ -1789,7 +1934,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit IDs that will be affected.
+     * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit
+     * IDs that will be affected.
      * </pre>
      *
      * <code>repeated string affected_circuits = 177717013;</code>
@@ -1805,7 +1951,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit IDs that will be affected.
+     * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit
+     * IDs that will be affected.
      * </pre>
      *
      * <code>repeated string affected_circuits = 177717013;</code>
@@ -1829,7 +1976,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit IDs that will be affected.
+     * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit
+     * IDs that will be affected.
      * </pre>
      *
      * <code>repeated string affected_circuits = 177717013;</code>
@@ -1852,7 +2000,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit IDs that will be affected.
+     * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit
+     * IDs that will be affected.
      * </pre>
      *
      * <code>repeated string affected_circuits = 177717013;</code>
@@ -1872,7 +2021,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit IDs that will be affected.
+     * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit
+     * IDs that will be affected.
      * </pre>
      *
      * <code>repeated string affected_circuits = 177717013;</code>
@@ -1891,7 +2041,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit IDs that will be affected.
+     * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit
+     * IDs that will be affected.
      * </pre>
      *
      * <code>repeated string affected_circuits = 177717013;</code>
@@ -2043,7 +2194,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Scheduled end time for the outage (milliseconds since Unix epoch).
+     * Scheduled end time for the outage (milliseconds since Unix
+     * epoch).
      * </pre>
      *
      * <code>optional int64 end_time = 114938801;</code>
@@ -2059,7 +2211,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Scheduled end time for the outage (milliseconds since Unix epoch).
+     * Scheduled end time for the outage (milliseconds since Unix
+     * epoch).
      * </pre>
      *
      * <code>optional int64 end_time = 114938801;</code>
@@ -2075,7 +2228,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Scheduled end time for the outage (milliseconds since Unix epoch).
+     * Scheduled end time for the outage (milliseconds since Unix
+     * epoch).
      * </pre>
      *
      * <code>optional int64 end_time = 114938801;</code>
@@ -2095,7 +2249,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Scheduled end time for the outage (milliseconds since Unix epoch).
+     * Scheduled end time for the outage (milliseconds since Unix
+     * epoch).
      * </pre>
      *
      * <code>optional int64 end_time = 114938801;</code>
@@ -2115,7 +2270,17 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Form this outage is expected to take, which can take one of the following values: - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window. - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+     * Form this outage is expected to take, which can take one of the following
+     * values:
+     *
+     *    - OUTAGE: The Interconnect may be completely out of service for
+     *    some or all of the specified window.
+     *    - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole
+     *    should remain up, but with reduced bandwidth.
+     *
+     *
+     * Note that the versions of this enum prefixed with "IT_" have been
+     * deprecated in favor of the unprefixed values.
      * Check the IssueType enum for the list of possible values.
      * </pre>
      *
@@ -2131,7 +2296,17 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Form this outage is expected to take, which can take one of the following values: - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window. - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+     * Form this outage is expected to take, which can take one of the following
+     * values:
+     *
+     *    - OUTAGE: The Interconnect may be completely out of service for
+     *    some or all of the specified window.
+     *    - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole
+     *    should remain up, but with reduced bandwidth.
+     *
+     *
+     * Note that the versions of this enum prefixed with "IT_" have been
+     * deprecated in favor of the unprefixed values.
      * Check the IssueType enum for the list of possible values.
      * </pre>
      *
@@ -2155,7 +2330,17 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Form this outage is expected to take, which can take one of the following values: - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window. - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+     * Form this outage is expected to take, which can take one of the following
+     * values:
+     *
+     *    - OUTAGE: The Interconnect may be completely out of service for
+     *    some or all of the specified window.
+     *    - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole
+     *    should remain up, but with reduced bandwidth.
+     *
+     *
+     * Note that the versions of this enum prefixed with "IT_" have been
+     * deprecated in favor of the unprefixed values.
      * Check the IssueType enum for the list of possible values.
      * </pre>
      *
@@ -2179,7 +2364,17 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Form this outage is expected to take, which can take one of the following values: - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window. - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+     * Form this outage is expected to take, which can take one of the following
+     * values:
+     *
+     *    - OUTAGE: The Interconnect may be completely out of service for
+     *    some or all of the specified window.
+     *    - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole
+     *    should remain up, but with reduced bandwidth.
+     *
+     *
+     * Note that the versions of this enum prefixed with "IT_" have been
+     * deprecated in favor of the unprefixed values.
      * Check the IssueType enum for the list of possible values.
      * </pre>
      *
@@ -2202,7 +2397,17 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Form this outage is expected to take, which can take one of the following values: - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window. - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+     * Form this outage is expected to take, which can take one of the following
+     * values:
+     *
+     *    - OUTAGE: The Interconnect may be completely out of service for
+     *    some or all of the specified window.
+     *    - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole
+     *    should remain up, but with reduced bandwidth.
+     *
+     *
+     * Note that the versions of this enum prefixed with "IT_" have been
+     * deprecated in favor of the unprefixed values.
      * Check the IssueType enum for the list of possible values.
      * </pre>
      *
@@ -2221,7 +2426,17 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Form this outage is expected to take, which can take one of the following values: - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window. - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+     * Form this outage is expected to take, which can take one of the following
+     * values:
+     *
+     *    - OUTAGE: The Interconnect may be completely out of service for
+     *    some or all of the specified window.
+     *    - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole
+     *    should remain up, but with reduced bandwidth.
+     *
+     *
+     * Note that the versions of this enum prefixed with "IT_" have been
+     * deprecated in favor of the unprefixed values.
      * Check the IssueType enum for the list of possible values.
      * </pre>
      *
@@ -2373,7 +2588,14 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The party that generated this notification, which can take the following value: - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+     * The party that generated this notification, which can take the following
+     * value:
+     *
+     *    - GOOGLE: this notification as generated by Google.
+     *
+     *
+     * Note that the value of NSRC_GOOGLE has been deprecated in favor of
+     * GOOGLE.
      * Check the Source enum for the list of possible values.
      * </pre>
      *
@@ -2389,7 +2611,14 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The party that generated this notification, which can take the following value: - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+     * The party that generated this notification, which can take the following
+     * value:
+     *
+     *    - GOOGLE: this notification as generated by Google.
+     *
+     *
+     * Note that the value of NSRC_GOOGLE has been deprecated in favor of
+     * GOOGLE.
      * Check the Source enum for the list of possible values.
      * </pre>
      *
@@ -2413,7 +2642,14 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The party that generated this notification, which can take the following value: - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+     * The party that generated this notification, which can take the following
+     * value:
+     *
+     *    - GOOGLE: this notification as generated by Google.
+     *
+     *
+     * Note that the value of NSRC_GOOGLE has been deprecated in favor of
+     * GOOGLE.
      * Check the Source enum for the list of possible values.
      * </pre>
      *
@@ -2437,7 +2673,14 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The party that generated this notification, which can take the following value: - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+     * The party that generated this notification, which can take the following
+     * value:
+     *
+     *    - GOOGLE: this notification as generated by Google.
+     *
+     *
+     * Note that the value of NSRC_GOOGLE has been deprecated in favor of
+     * GOOGLE.
      * Check the Source enum for the list of possible values.
      * </pre>
      *
@@ -2460,7 +2703,14 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The party that generated this notification, which can take the following value: - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+     * The party that generated this notification, which can take the following
+     * value:
+     *
+     *    - GOOGLE: this notification as generated by Google.
+     *
+     *
+     * Note that the value of NSRC_GOOGLE has been deprecated in favor of
+     * GOOGLE.
      * Check the Source enum for the list of possible values.
      * </pre>
      *
@@ -2479,7 +2729,14 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The party that generated this notification, which can take the following value: - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+     * The party that generated this notification, which can take the following
+     * value:
+     *
+     *    - GOOGLE: this notification as generated by Google.
+     *
+     *
+     * Note that the value of NSRC_GOOGLE has been deprecated in favor of
+     * GOOGLE.
      * Check the Source enum for the list of possible values.
      * </pre>
      *
@@ -2505,7 +2762,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Scheduled start time for the outage (milliseconds since Unix epoch).
+     * Scheduled start time for the outage (milliseconds since Unix
+     * epoch).
      * </pre>
      *
      * <code>optional int64 start_time = 37467274;</code>
@@ -2521,7 +2779,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Scheduled start time for the outage (milliseconds since Unix epoch).
+     * Scheduled start time for the outage (milliseconds since Unix
+     * epoch).
      * </pre>
      *
      * <code>optional int64 start_time = 37467274;</code>
@@ -2537,7 +2796,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Scheduled start time for the outage (milliseconds since Unix epoch).
+     * Scheduled start time for the outage (milliseconds since Unix
+     * epoch).
      * </pre>
      *
      * <code>optional int64 start_time = 37467274;</code>
@@ -2557,7 +2817,8 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Scheduled start time for the outage (milliseconds since Unix epoch).
+     * Scheduled start time for the outage (milliseconds since Unix
+     * epoch).
      * </pre>
      *
      * <code>optional int64 start_time = 37467274;</code>
@@ -2577,7 +2838,18 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * State of this notification, which can take one of the following values: - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling. - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. - COMPLETED: The outage associated with this notification is complete. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+     * State of this notification, which can take one of the following values:
+     *
+     *    - ACTIVE: This outage notification is active. The event could be in
+     *    the past, present, or future. See start_time and end_time for
+     *    scheduling.
+     *    - CANCELLED: The outage associated with this notification was cancelled
+     *    before the outage was due to start.
+     *    - COMPLETED: The outage associated with this notification is complete.
+     *
+     *
+     * Note that the versions of this enum prefixed with "NS_" have been
+     * deprecated in favor of the unprefixed values.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -2593,7 +2865,18 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * State of this notification, which can take one of the following values: - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling. - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. - COMPLETED: The outage associated with this notification is complete. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+     * State of this notification, which can take one of the following values:
+     *
+     *    - ACTIVE: This outage notification is active. The event could be in
+     *    the past, present, or future. See start_time and end_time for
+     *    scheduling.
+     *    - CANCELLED: The outage associated with this notification was cancelled
+     *    before the outage was due to start.
+     *    - COMPLETED: The outage associated with this notification is complete.
+     *
+     *
+     * Note that the versions of this enum prefixed with "NS_" have been
+     * deprecated in favor of the unprefixed values.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -2617,7 +2900,18 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * State of this notification, which can take one of the following values: - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling. - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. - COMPLETED: The outage associated with this notification is complete. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+     * State of this notification, which can take one of the following values:
+     *
+     *    - ACTIVE: This outage notification is active. The event could be in
+     *    the past, present, or future. See start_time and end_time for
+     *    scheduling.
+     *    - CANCELLED: The outage associated with this notification was cancelled
+     *    before the outage was due to start.
+     *    - COMPLETED: The outage associated with this notification is complete.
+     *
+     *
+     * Note that the versions of this enum prefixed with "NS_" have been
+     * deprecated in favor of the unprefixed values.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -2641,7 +2935,18 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * State of this notification, which can take one of the following values: - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling. - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. - COMPLETED: The outage associated with this notification is complete. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+     * State of this notification, which can take one of the following values:
+     *
+     *    - ACTIVE: This outage notification is active. The event could be in
+     *    the past, present, or future. See start_time and end_time for
+     *    scheduling.
+     *    - CANCELLED: The outage associated with this notification was cancelled
+     *    before the outage was due to start.
+     *    - COMPLETED: The outage associated with this notification is complete.
+     *
+     *
+     * Note that the versions of this enum prefixed with "NS_" have been
+     * deprecated in favor of the unprefixed values.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -2664,7 +2969,18 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * State of this notification, which can take one of the following values: - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling. - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. - COMPLETED: The outage associated with this notification is complete. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+     * State of this notification, which can take one of the following values:
+     *
+     *    - ACTIVE: This outage notification is active. The event could be in
+     *    the past, present, or future. See start_time and end_time for
+     *    scheduling.
+     *    - CANCELLED: The outage associated with this notification was cancelled
+     *    before the outage was due to start.
+     *    - COMPLETED: The outage associated with this notification is complete.
+     *
+     *
+     * Note that the versions of this enum prefixed with "NS_" have been
+     * deprecated in favor of the unprefixed values.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -2683,7 +2999,18 @@ public final class InterconnectOutageNotification extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * State of this notification, which can take one of the following values: - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling. - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. - COMPLETED: The outage associated with this notification is complete. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+     * State of this notification, which can take one of the following values:
+     *
+     *    - ACTIVE: This outage notification is active. The event could be in
+     *    the past, present, or future. See start_time and end_time for
+     *    scheduling.
+     *    - CANCELLED: The outage associated with this notification was cancelled
+     *    before the outage was due to start.
+     *    - COMPLETED: The outage associated with this notification is complete.
+     *
+     *
+     * Note that the versions of this enum prefixed with "NS_" have been
+     * deprecated in favor of the unprefixed values.
      * Check the State enum for the list of possible values.
      * </pre>
      *

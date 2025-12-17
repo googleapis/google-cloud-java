@@ -267,4 +267,38 @@ public interface MachineSpecOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.ReservationAffinityOrBuilder
       getReservationAffinityOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The minimum GPU driver version that this machine
+   * requires. For example, "535.104.06". If not specified, the default GPU
+   * driver version will be used by the underlying infrastructure.
+   * </pre>
+   *
+   * <code>
+   * string min_gpu_driver_version = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The minGpuDriverVersion.
+   */
+  java.lang.String getMinGpuDriverVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The minimum GPU driver version that this machine
+   * requires. For example, "535.104.06". If not specified, the default GPU
+   * driver version will be used by the underlying infrastructure.
+   * </pre>
+   *
+   * <code>
+   * string min_gpu_driver_version = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The bytes for minGpuDriverVersion.
+   */
+  com.google.protobuf.ByteString getMinGpuDriverVersionBytes();
 }

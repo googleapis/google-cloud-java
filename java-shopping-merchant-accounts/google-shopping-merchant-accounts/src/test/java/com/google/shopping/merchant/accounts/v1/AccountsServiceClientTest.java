@@ -190,6 +190,8 @@ public class AccountsServiceClientTest {
             .setAccount(Account.newBuilder().build())
             .addAllUser(new ArrayList<CreateAndConfigureAccountRequest.AddUser>())
             .addAllService(new ArrayList<CreateAndConfigureAccountRequest.AddAccountService>())
+            .addAllSetAlias(
+                new ArrayList<CreateAndConfigureAccountRequest.SetAliasForRelationship>())
             .build();
 
     Account actualResponse = client.createAndConfigureAccount(request);
@@ -203,6 +205,7 @@ public class AccountsServiceClientTest {
     Assert.assertEquals(request.getAccount(), actualRequest.getAccount());
     Assert.assertEquals(request.getUserList(), actualRequest.getUserList());
     Assert.assertEquals(request.getServiceList(), actualRequest.getServiceList());
+    Assert.assertEquals(request.getSetAliasList(), actualRequest.getSetAliasList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -220,6 +223,8 @@ public class AccountsServiceClientTest {
               .setAccount(Account.newBuilder().build())
               .addAllUser(new ArrayList<CreateAndConfigureAccountRequest.AddUser>())
               .addAllService(new ArrayList<CreateAndConfigureAccountRequest.AddAccountService>())
+              .addAllSetAlias(
+                  new ArrayList<CreateAndConfigureAccountRequest.SetAliasForRelationship>())
               .build();
       client.createAndConfigureAccount(request);
       Assert.fail("No exception raised");

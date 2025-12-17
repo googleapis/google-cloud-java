@@ -28,7 +28,17 @@ public interface InterconnectRemoteLocationConstraintsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Port pair remote location constraints, which can take one of the following values: PORT_PAIR_UNCONSTRAINED_REMOTE_LOCATION, PORT_PAIR_MATCHING_REMOTE_LOCATION. Google Cloud API refers only to individual ports, but the UI uses this field when ordering a pair of ports, to prevent users from accidentally ordering something that is incompatible with their cloud provider. Specifically, when ordering a redundant pair of Cross-Cloud Interconnect ports, and one of them uses a remote location with portPairMatchingRemoteLocation set to matching, the UI requires that both ports use the same remote location.
+   * Output only. [Output Only] Port pair remote location constraints, which can take one
+   * of the following values: PORT_PAIR_UNCONSTRAINED_REMOTE_LOCATION,
+   * PORT_PAIR_MATCHING_REMOTE_LOCATION.
+   *
+   * Google Cloud API refers only to individual ports, but the UI uses this
+   * field when ordering a pair of ports, to prevent users from accidentally
+   * ordering something that is incompatible with their cloud provider.
+   * Specifically, when ordering a redundant pair of Cross-Cloud Interconnect
+   * ports, and one of them uses a remote location with
+   * portPairMatchingRemoteLocation set to matching, the UI requires that
+   * both ports use the same remote location.
    * Check the PortPairRemoteLocation enum for the list of possible values.
    * </pre>
    *
@@ -42,7 +52,17 @@ public interface InterconnectRemoteLocationConstraintsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Port pair remote location constraints, which can take one of the following values: PORT_PAIR_UNCONSTRAINED_REMOTE_LOCATION, PORT_PAIR_MATCHING_REMOTE_LOCATION. Google Cloud API refers only to individual ports, but the UI uses this field when ordering a pair of ports, to prevent users from accidentally ordering something that is incompatible with their cloud provider. Specifically, when ordering a redundant pair of Cross-Cloud Interconnect ports, and one of them uses a remote location with portPairMatchingRemoteLocation set to matching, the UI requires that both ports use the same remote location.
+   * Output only. [Output Only] Port pair remote location constraints, which can take one
+   * of the following values: PORT_PAIR_UNCONSTRAINED_REMOTE_LOCATION,
+   * PORT_PAIR_MATCHING_REMOTE_LOCATION.
+   *
+   * Google Cloud API refers only to individual ports, but the UI uses this
+   * field when ordering a pair of ports, to prevent users from accidentally
+   * ordering something that is incompatible with their cloud provider.
+   * Specifically, when ordering a redundant pair of Cross-Cloud Interconnect
+   * ports, and one of them uses a remote location with
+   * portPairMatchingRemoteLocation set to matching, the UI requires that
+   * both ports use the same remote location.
    * Check the PortPairRemoteLocation enum for the list of possible values.
    * </pre>
    *
@@ -56,7 +76,17 @@ public interface InterconnectRemoteLocationConstraintsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Port pair remote location constraints, which can take one of the following values: PORT_PAIR_UNCONSTRAINED_REMOTE_LOCATION, PORT_PAIR_MATCHING_REMOTE_LOCATION. Google Cloud API refers only to individual ports, but the UI uses this field when ordering a pair of ports, to prevent users from accidentally ordering something that is incompatible with their cloud provider. Specifically, when ordering a redundant pair of Cross-Cloud Interconnect ports, and one of them uses a remote location with portPairMatchingRemoteLocation set to matching, the UI requires that both ports use the same remote location.
+   * Output only. [Output Only] Port pair remote location constraints, which can take one
+   * of the following values: PORT_PAIR_UNCONSTRAINED_REMOTE_LOCATION,
+   * PORT_PAIR_MATCHING_REMOTE_LOCATION.
+   *
+   * Google Cloud API refers only to individual ports, but the UI uses this
+   * field when ordering a pair of ports, to prevent users from accidentally
+   * ordering something that is incompatible with their cloud provider.
+   * Specifically, when ordering a redundant pair of Cross-Cloud Interconnect
+   * ports, and one of them uses a remote location with
+   * portPairMatchingRemoteLocation set to matching, the UI requires that
+   * both ports use the same remote location.
    * Check the PortPairRemoteLocation enum for the list of possible values.
    * </pre>
    *
@@ -70,7 +100,8 @@ public interface InterconnectRemoteLocationConstraintsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Port pair VLAN constraints, which can take one of the following values: PORT_PAIR_UNCONSTRAINED_VLAN, PORT_PAIR_MATCHING_VLAN
+   * Output only. [Output Only] Port pair VLAN constraints, which can take one of the
+   * following values: PORT_PAIR_UNCONSTRAINED_VLAN, PORT_PAIR_MATCHING_VLAN
    * Check the PortPairVlan enum for the list of possible values.
    * </pre>
    *
@@ -84,7 +115,8 @@ public interface InterconnectRemoteLocationConstraintsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Port pair VLAN constraints, which can take one of the following values: PORT_PAIR_UNCONSTRAINED_VLAN, PORT_PAIR_MATCHING_VLAN
+   * Output only. [Output Only] Port pair VLAN constraints, which can take one of the
+   * following values: PORT_PAIR_UNCONSTRAINED_VLAN, PORT_PAIR_MATCHING_VLAN
    * Check the PortPairVlan enum for the list of possible values.
    * </pre>
    *
@@ -98,7 +130,8 @@ public interface InterconnectRemoteLocationConstraintsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Port pair VLAN constraints, which can take one of the following values: PORT_PAIR_UNCONSTRAINED_VLAN, PORT_PAIR_MATCHING_VLAN
+   * Output only. [Output Only] Port pair VLAN constraints, which can take one of the
+   * following values: PORT_PAIR_UNCONSTRAINED_VLAN, PORT_PAIR_MATCHING_VLAN
    * Check the PortPairVlan enum for the list of possible values.
    * </pre>
    *
@@ -112,7 +145,21 @@ public interface InterconnectRemoteLocationConstraintsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] [min-length, max-length] The minimum and maximum value (inclusive) for the IPv4 subnet length. For example, an interconnectRemoteLocation for Azure has {min: 30, max: 30} because Azure requires /30 subnets. This range specifies the values supported by both cloud providers. Interconnect currently supports /29 and /30 IPv4 subnet lengths. If a remote cloud has no constraint on IPv4 subnet length, the range would thus be {min: 29, max: 30}.
+   * Output only. [Output Only]
+   *
+   * [min-length, max-length]
+   *
+   * The minimum and maximum value (inclusive) for the IPv4 subnet
+   * length.
+   *
+   *  For example, an  interconnectRemoteLocation for Azure has {min: 30,
+   * max:
+   * 30} because Azure requires /30 subnets.
+   *
+   * This range specifies the values supported by both cloud providers.
+   * Interconnect currently supports /29 and /30 IPv4 subnet lengths. If a
+   * remote cloud has no constraint on IPv4 subnet length, the range would
+   * thus be {min: 29, max: 30}.
    * </pre>
    *
    * <code>
@@ -127,7 +174,21 @@ public interface InterconnectRemoteLocationConstraintsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] [min-length, max-length] The minimum and maximum value (inclusive) for the IPv4 subnet length. For example, an interconnectRemoteLocation for Azure has {min: 30, max: 30} because Azure requires /30 subnets. This range specifies the values supported by both cloud providers. Interconnect currently supports /29 and /30 IPv4 subnet lengths. If a remote cloud has no constraint on IPv4 subnet length, the range would thus be {min: 29, max: 30}.
+   * Output only. [Output Only]
+   *
+   * [min-length, max-length]
+   *
+   * The minimum and maximum value (inclusive) for the IPv4 subnet
+   * length.
+   *
+   *  For example, an  interconnectRemoteLocation for Azure has {min: 30,
+   * max:
+   * 30} because Azure requires /30 subnets.
+   *
+   * This range specifies the values supported by both cloud providers.
+   * Interconnect currently supports /29 and /30 IPv4 subnet lengths. If a
+   * remote cloud has no constraint on IPv4 subnet length, the range would
+   * thus be {min: 29, max: 30}.
    * </pre>
    *
    * <code>
@@ -143,7 +204,21 @@ public interface InterconnectRemoteLocationConstraintsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] [min-length, max-length] The minimum and maximum value (inclusive) for the IPv4 subnet length. For example, an interconnectRemoteLocation for Azure has {min: 30, max: 30} because Azure requires /30 subnets. This range specifies the values supported by both cloud providers. Interconnect currently supports /29 and /30 IPv4 subnet lengths. If a remote cloud has no constraint on IPv4 subnet length, the range would thus be {min: 29, max: 30}.
+   * Output only. [Output Only]
+   *
+   * [min-length, max-length]
+   *
+   * The minimum and maximum value (inclusive) for the IPv4 subnet
+   * length.
+   *
+   *  For example, an  interconnectRemoteLocation for Azure has {min: 30,
+   * max:
+   * 30} because Azure requires /30 subnets.
+   *
+   * This range specifies the values supported by both cloud providers.
+   * Interconnect currently supports /29 and /30 IPv4 subnet lengths. If a
+   * remote cloud has no constraint on IPv4 subnet length, the range would
+   * thus be {min: 29, max: 30}.
    * </pre>
    *
    * <code>

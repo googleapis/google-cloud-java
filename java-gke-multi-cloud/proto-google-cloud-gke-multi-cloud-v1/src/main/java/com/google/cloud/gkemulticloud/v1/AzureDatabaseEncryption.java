@@ -31,6 +31,7 @@ package com.google.cloud.gkemulticloud.v1;
  *
  * Protobuf type {@code google.cloud.gkemulticloud.v1.AzureDatabaseEncryption}
  */
+@java.lang.Deprecated
 public final class AzureDatabaseEncryption extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.AzureDatabaseEncryption)

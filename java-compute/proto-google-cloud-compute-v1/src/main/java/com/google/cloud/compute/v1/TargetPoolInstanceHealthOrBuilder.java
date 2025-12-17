@@ -44,7 +44,8 @@ public interface TargetPoolInstanceHealthOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#targetPoolInstanceHealth when checking the health of an instance.
+   * Output only. [Output Only] Type of resource. Alwayscompute#targetPoolInstanceHealth when checking the health of
+   * an instance.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -57,7 +58,8 @@ public interface TargetPoolInstanceHealthOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#targetPoolInstanceHealth when checking the health of an instance.
+   * Output only. [Output Only] Type of resource. Alwayscompute#targetPoolInstanceHealth when checking the health of
+   * an instance.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -70,7 +72,8 @@ public interface TargetPoolInstanceHealthOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#targetPoolInstanceHealth when checking the health of an instance.
+   * Output only. [Output Only] Type of resource. Alwayscompute#targetPoolInstanceHealth when checking the health of
+   * an instance.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>

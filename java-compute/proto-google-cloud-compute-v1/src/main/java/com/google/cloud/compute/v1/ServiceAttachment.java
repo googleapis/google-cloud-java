@@ -23,7 +23,12 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a ServiceAttachment resource. A service attachment represents a service that a producer has exposed. It encapsulates the load balancer which fronts the service runs and a list of NAT IP ranges that the producers uses to represent the consumers connecting to the service.
+ * Represents a ServiceAttachment resource.
+ *
+ * A service attachment represents a service that a producer has exposed.
+ * It encapsulates the load balancer which fronts the service runs and
+ * a list of NAT IP ranges that the producers uses to represent
+ * the consumers connecting to the service.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.ServiceAttachment}
@@ -94,7 +99,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules.
+   * The connection preference of service attachment. The value can be set
+   * to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC
+   * service attachment is one that always accepts the connection from consumer
+   * forwarding rules.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.ServiceAttachment.ConnectionPreference}
@@ -238,7 +246,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] An array of connections for all the consumers connected to this service attachment.
+   * Output only. [Output Only] An array of connections for all the consumers connected to
+   * this service attachment.
    * </pre>
    *
    * <code>
@@ -255,7 +264,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] An array of connections for all the consumers connected to this service attachment.
+   * Output only. [Output Only] An array of connections for all the consumers connected to
+   * this service attachment.
    * </pre>
    *
    * <code>
@@ -273,7 +283,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] An array of connections for all the consumers connected to this service attachment.
+   * Output only. [Output Only] An array of connections for all the consumers connected to
+   * this service attachment.
    * </pre>
    *
    * <code>
@@ -289,7 +300,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] An array of connections for all the consumers connected to this service attachment.
+   * Output only. [Output Only] An array of connections for all the consumers connected to
+   * this service attachment.
    * </pre>
    *
    * <code>
@@ -306,7 +318,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] An array of connections for all the consumers connected to this service attachment.
+   * Output only. [Output Only] An array of connections for all the consumers connected to
+   * this service attachment.
    * </pre>
    *
    * <code>
@@ -328,7 +341,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules.
+   * The connection preference of service attachment. The value can be set
+   * to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC
+   * service attachment is one that always accepts the connection from consumer
+   * forwarding rules.
    * Check the ConnectionPreference enum for the list of possible values.
    * </pre>
    *
@@ -345,7 +361,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules.
+   * The connection preference of service attachment. The value can be set
+   * to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC
+   * service attachment is one that always accepts the connection from consumer
+   * forwarding rules.
    * Check the ConnectionPreference enum for the list of possible values.
    * </pre>
    *
@@ -370,7 +389,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules.
+   * The connection preference of service attachment. The value can be set
+   * to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC
+   * service attachment is one that always accepts the connection from consumer
+   * forwarding rules.
    * Check the ConnectionPreference enum for the list of possible values.
    * </pre>
    *
@@ -401,7 +423,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
+   * Specifies which consumer projects or networks are allowed to connect to the
+   * service attachment. Each project or network has a connection limit. A given
+   * service attachment can manage connections at either the project or network
+   * level. Therefore, both the accept and reject lists for a given service
+   * attachment must contain either only projects or only networks or only
+   * endpoints.
    * </pre>
    *
    * <code>
@@ -418,7 +445,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
+   * Specifies which consumer projects or networks are allowed to connect to the
+   * service attachment. Each project or network has a connection limit. A given
+   * service attachment can manage connections at either the project or network
+   * level. Therefore, both the accept and reject lists for a given service
+   * attachment must contain either only projects or only networks or only
+   * endpoints.
    * </pre>
    *
    * <code>
@@ -436,7 +468,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
+   * Specifies which consumer projects or networks are allowed to connect to the
+   * service attachment. Each project or network has a connection limit. A given
+   * service attachment can manage connections at either the project or network
+   * level. Therefore, both the accept and reject lists for a given service
+   * attachment must contain either only projects or only networks or only
+   * endpoints.
    * </pre>
    *
    * <code>
@@ -452,7 +489,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
+   * Specifies which consumer projects or networks are allowed to connect to the
+   * service attachment. Each project or network has a connection limit. A given
+   * service attachment can manage connections at either the project or network
+   * level. Therefore, both the accept and reject lists for a given service
+   * attachment must contain either only projects or only networks or only
+   * endpoints.
    * </pre>
    *
    * <code>
@@ -469,7 +511,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
+   * Specifies which consumer projects or networks are allowed to connect to the
+   * service attachment. Each project or network has a connection limit. A given
+   * service attachment can manage connections at either the project or network
+   * level. Therefore, both the accept and reject lists for a given service
+   * attachment must contain either only projects or only networks or only
+   * endpoints.
    * </pre>
    *
    * <code>
@@ -492,7 +539,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Specifies a list of projects or networks that are not allowed to connect to this service attachment. The project can be specified using its project ID or project number and the network can be specified using its URL. A given service attachment can manage connections at either the project or network level. Therefore, both the reject and accept lists for a given service attachment must contain either only projects or only networks.
+   * Specifies a list of projects or networks that are not allowed to connect to
+   * this service attachment. The project can be specified using its project ID
+   * or project number and the network can be specified using its URL. A given
+   * service attachment can manage connections at either the project or network
+   * level. Therefore, both the reject and accept lists for a given service
+   * attachment must contain either only projects or only networks.
    * </pre>
    *
    * <code>repeated string consumer_reject_lists = 204033182;</code>
@@ -507,7 +559,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Specifies a list of projects or networks that are not allowed to connect to this service attachment. The project can be specified using its project ID or project number and the network can be specified using its URL. A given service attachment can manage connections at either the project or network level. Therefore, both the reject and accept lists for a given service attachment must contain either only projects or only networks.
+   * Specifies a list of projects or networks that are not allowed to connect to
+   * this service attachment. The project can be specified using its project ID
+   * or project number and the network can be specified using its URL. A given
+   * service attachment can manage connections at either the project or network
+   * level. Therefore, both the reject and accept lists for a given service
+   * attachment must contain either only projects or only networks.
    * </pre>
    *
    * <code>repeated string consumer_reject_lists = 204033182;</code>
@@ -522,7 +579,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Specifies a list of projects or networks that are not allowed to connect to this service attachment. The project can be specified using its project ID or project number and the network can be specified using its URL. A given service attachment can manage connections at either the project or network level. Therefore, both the reject and accept lists for a given service attachment must contain either only projects or only networks.
+   * Specifies a list of projects or networks that are not allowed to connect to
+   * this service attachment. The project can be specified using its project ID
+   * or project number and the network can be specified using its URL. A given
+   * service attachment can manage connections at either the project or network
+   * level. Therefore, both the reject and accept lists for a given service
+   * attachment must contain either only projects or only networks.
    * </pre>
    *
    * <code>repeated string consumer_reject_lists = 204033182;</code>
@@ -538,7 +600,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Specifies a list of projects or networks that are not allowed to connect to this service attachment. The project can be specified using its project ID or project number and the network can be specified using its URL. A given service attachment can manage connections at either the project or network level. Therefore, both the reject and accept lists for a given service attachment must contain either only projects or only networks.
+   * Specifies a list of projects or networks that are not allowed to connect to
+   * this service attachment. The project can be specified using its project ID
+   * or project number and the network can be specified using its URL. A given
+   * service attachment can manage connections at either the project or network
+   * level. Therefore, both the reject and accept lists for a given service
+   * attachment must contain either only projects or only networks.
    * </pre>
    *
    * <code>repeated string consumer_reject_lists = 204033182;</code>
@@ -559,7 +626,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -575,7 +643,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -599,7 +668,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -628,7 +698,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -644,7 +715,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -668,7 +740,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -698,7 +771,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1.
+   * If specified, the domain name will be used during the integration between
+   * the PSC connected endpoints and the Cloud DNS. For example, this is a valid
+   * domain name: "p.mycompany.com.". Current max number of domain names
+   * supported is 1.
    * </pre>
    *
    * <code>repeated string domain_names = 6450189;</code>
@@ -713,7 +789,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1.
+   * If specified, the domain name will be used during the integration between
+   * the PSC connected endpoints and the Cloud DNS. For example, this is a valid
+   * domain name: "p.mycompany.com.". Current max number of domain names
+   * supported is 1.
    * </pre>
    *
    * <code>repeated string domain_names = 6450189;</code>
@@ -728,7 +807,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1.
+   * If specified, the domain name will be used during the integration between
+   * the PSC connected endpoints and the Cloud DNS. For example, this is a valid
+   * domain name: "p.mycompany.com.". Current max number of domain names
+   * supported is 1.
    * </pre>
    *
    * <code>repeated string domain_names = 6450189;</code>
@@ -744,7 +826,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1.
+   * If specified, the domain name will be used during the integration between
+   * the PSC connected endpoints and the Cloud DNS. For example, this is a valid
+   * domain name: "p.mycompany.com.". Current max number of domain names
+   * supported is 1.
    * </pre>
    *
    * <code>repeated string domain_names = 6450189;</code>
@@ -763,7 +848,9 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * If true, enable the proxy protocol which is for supplying client TCP/IP address data in TCP connections that traverse proxies on their way to destination servers.
+   * If true, enable the proxy protocol which is for supplying client TCP/IP
+   * address data in TCP connections that traverse proxies on their way to
+   * destination servers.
    * </pre>
    *
    * <code>optional bool enable_proxy_protocol = 363791237;</code>
@@ -779,7 +866,9 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * If true, enable the proxy protocol which is for supplying client TCP/IP address data in TCP connections that traverse proxies on their way to destination servers.
+   * If true, enable the proxy protocol which is for supplying client TCP/IP
+   * address data in TCP connections that traverse proxies on their way to
+   * destination servers.
    * </pre>
    *
    * <code>optional bool enable_proxy_protocol = 363791237;</code>
@@ -800,7 +889,13 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a ServiceAttachment. An up-to-date fingerprint must be provided in order to patch/update the ServiceAttachment; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the ServiceAttachment.
+   * Fingerprint of this resource. A hash of the contents stored in this object.
+   * This field is used in optimistic locking. This field will be ignored when
+   * inserting a ServiceAttachment. An up-to-date fingerprint must
+   * be provided in order to patch/update the ServiceAttachment; otherwise, the
+   * request will fail with error 412 conditionNotMet. To see the
+   * latest fingerprint, make a get() request to retrieve the
+   * ServiceAttachment.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -816,7 +911,13 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a ServiceAttachment. An up-to-date fingerprint must be provided in order to patch/update the ServiceAttachment; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the ServiceAttachment.
+   * Fingerprint of this resource. A hash of the contents stored in this object.
+   * This field is used in optimistic locking. This field will be ignored when
+   * inserting a ServiceAttachment. An up-to-date fingerprint must
+   * be provided in order to patch/update the ServiceAttachment; otherwise, the
+   * request will fail with error 412 conditionNotMet. To see the
+   * latest fingerprint, make a get() request to retrieve the
+   * ServiceAttachment.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -840,7 +941,13 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a ServiceAttachment. An up-to-date fingerprint must be provided in order to patch/update the ServiceAttachment; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the ServiceAttachment.
+   * Fingerprint of this resource. A hash of the contents stored in this object.
+   * This field is used in optimistic locking. This field will be ignored when
+   * inserting a ServiceAttachment. An up-to-date fingerprint must
+   * be provided in order to patch/update the ServiceAttachment; otherwise, the
+   * request will fail with error 412 conditionNotMet. To see the
+   * latest fingerprint, make a get() request to retrieve the
+   * ServiceAttachment.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -867,7 +974,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource type. The server generates this identifier.
+   * Output only. [Output Only] The unique identifier for the resource type. The server
+   * generates this identifier.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -883,7 +991,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource type. The server generates this identifier.
+   * Output only. [Output Only] The unique identifier for the resource type. The server
+   * generates this identifier.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -904,7 +1013,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#serviceAttachment for service attachments.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#serviceAttachment for service attachments.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -920,7 +1029,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#serviceAttachment for service attachments.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#serviceAttachment for service attachments.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -944,7 +1053,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#serviceAttachment for service attachments.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#serviceAttachment for service attachments.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1080,7 +1189,13 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1096,7 +1211,13 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1120,7 +1241,13 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1150,7 +1277,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * An array of URLs where each entry is the URL of a subnet provided by the service producer to use for NAT in this service attachment.
+   * An array of URLs where each entry is the URL of a subnet provided
+   * by the service producer to use for NAT in this service attachment.
    * </pre>
    *
    * <code>repeated string nat_subnets = 374785944;</code>
@@ -1165,7 +1293,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * An array of URLs where each entry is the URL of a subnet provided by the service producer to use for NAT in this service attachment.
+   * An array of URLs where each entry is the URL of a subnet provided
+   * by the service producer to use for NAT in this service attachment.
    * </pre>
    *
    * <code>repeated string nat_subnets = 374785944;</code>
@@ -1180,7 +1309,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * An array of URLs where each entry is the URL of a subnet provided by the service producer to use for NAT in this service attachment.
+   * An array of URLs where each entry is the URL of a subnet provided
+   * by the service producer to use for NAT in this service attachment.
    * </pre>
    *
    * <code>repeated string nat_subnets = 374785944;</code>
@@ -1196,7 +1326,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * An array of URLs where each entry is the URL of a subnet provided by the service producer to use for NAT in this service attachment.
+   * An array of URLs where each entry is the URL of a subnet provided
+   * by the service producer to use for NAT in this service attachment.
    * </pre>
    *
    * <code>repeated string nat_subnets = 374785944;</code>
@@ -1217,7 +1348,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The URL of a forwarding rule with loadBalancingScheme INTERNAL* that is serving the endpoint identified by this service attachment.
+   * The URL of a forwarding rule with loadBalancingScheme INTERNAL* that is
+   * serving the endpoint identified by this service attachment.
    * </pre>
    *
    * <code>optional string producer_forwarding_rule = 247927889;</code>
@@ -1233,7 +1365,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The URL of a forwarding rule with loadBalancingScheme INTERNAL* that is serving the endpoint identified by this service attachment.
+   * The URL of a forwarding rule with loadBalancingScheme INTERNAL* that is
+   * serving the endpoint identified by this service attachment.
    * </pre>
    *
    * <code>optional string producer_forwarding_rule = 247927889;</code>
@@ -1257,7 +1390,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The URL of a forwarding rule with loadBalancingScheme INTERNAL* that is serving the endpoint identified by this service attachment.
+   * The URL of a forwarding rule with loadBalancingScheme INTERNAL* that is
+   * serving the endpoint identified by this service attachment.
    * </pre>
    *
    * <code>optional string producer_forwarding_rule = 247927889;</code>
@@ -1284,7 +1418,19 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The number of consumer spokes that connected Private Service Connect endpoints can be propagated to through Network Connectivity Center. This limit lets the service producer limit how many propagated Private Service Connect connections can be established to this service attachment from a single consumer. If the connection preference of the service attachment is ACCEPT_MANUAL, the limit applies to each project or network that is listed in the consumer accept list. If the connection preference of the service attachment is ACCEPT_AUTOMATIC, the limit applies to each project that contains a connected endpoint. If unspecified, the default propagated connection limit is 250.
+   * The number of consumer spokes that connected Private Service Connect
+   * endpoints can be propagated to through Network Connectivity Center. This
+   * limit lets the service producer limit how many propagated Private Service
+   * Connect connections can be established to this service attachment from a
+   * single consumer.
+   *
+   * If the connection preference of the service attachment is ACCEPT_MANUAL,
+   * the limit applies to each project or network that is listed in the consumer
+   * accept list. If the connection preference of the service attachment is
+   * ACCEPT_AUTOMATIC, the limit applies to each project that contains a
+   * connected endpoint.
+   *
+   * If unspecified, the default propagated connection limit is 250.
    * </pre>
    *
    * <code>optional uint32 propagated_connection_limit = 332719230;</code>
@@ -1300,7 +1446,19 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The number of consumer spokes that connected Private Service Connect endpoints can be propagated to through Network Connectivity Center. This limit lets the service producer limit how many propagated Private Service Connect connections can be established to this service attachment from a single consumer. If the connection preference of the service attachment is ACCEPT_MANUAL, the limit applies to each project or network that is listed in the consumer accept list. If the connection preference of the service attachment is ACCEPT_AUTOMATIC, the limit applies to each project that contains a connected endpoint. If unspecified, the default propagated connection limit is 250.
+   * The number of consumer spokes that connected Private Service Connect
+   * endpoints can be propagated to through Network Connectivity Center. This
+   * limit lets the service producer limit how many propagated Private Service
+   * Connect connections can be established to this service attachment from a
+   * single consumer.
+   *
+   * If the connection preference of the service attachment is ACCEPT_MANUAL,
+   * the limit applies to each project or network that is listed in the consumer
+   * accept list. If the connection preference of the service attachment is
+   * ACCEPT_AUTOMATIC, the limit applies to each project that contains a
+   * connected endpoint.
+   *
+   * If unspecified, the default propagated connection limit is 250.
    * </pre>
    *
    * <code>optional uint32 propagated_connection_limit = 332719230;</code>
@@ -1319,7 +1477,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] An 128-bit global unique ID of the PSC service attachment.
+   * Output only. [Output Only] An 128-bit global unique ID of the PSC service attachment.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Uint128 psc_service_attachment_id = 527695214;</code>
@@ -1335,7 +1493,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] An 128-bit global unique ID of the PSC service attachment.
+   * Output only. [Output Only] An 128-bit global unique ID of the PSC service attachment.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Uint128 psc_service_attachment_id = 527695214;</code>
@@ -1353,7 +1511,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] An 128-bit global unique ID of the PSC service attachment.
+   * Output only. [Output Only] An 128-bit global unique ID of the PSC service attachment.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Uint128 psc_service_attachment_id = 527695214;</code>
@@ -1372,7 +1530,20 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * This flag determines whether a consumer accept/reject list change can reconcile the statuses of existing ACCEPTED or REJECTED PSC endpoints. - If false, connection policy update will only affect existing PENDING PSC endpoints. Existing ACCEPTED/REJECTED endpoints will remain untouched regardless how the connection policy is modified . - If true, update will affect both PENDING and ACCEPTED/REJECTED PSC endpoints. For example, an ACCEPTED PSC endpoint will be moved to REJECTED if its project is added to the reject list. For newly created service attachment, this boolean defaults to false.
+   * This flag determines whether a consumer accept/reject list change can
+   * reconcile the statuses of existing ACCEPTED or REJECTED PSC endpoints.
+   *
+   *
+   *     -  If false, connection policy update will only affect existing PENDING
+   *     PSC endpoints. Existing ACCEPTED/REJECTED endpoints will remain untouched
+   *     regardless how the connection policy is modified .
+   *    -  If true,
+   *     update will affect both PENDING and ACCEPTED/REJECTED PSC endpoints. For
+   *     example, an ACCEPTED PSC endpoint will be moved to REJECTED if its project
+   *     is added to the reject list.
+   *
+   *
+   * For newly created service attachment, this boolean defaults to false.
    * </pre>
    *
    * <code>optional bool reconcile_connections = 125493732;</code>
@@ -1388,7 +1559,20 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * This flag determines whether a consumer accept/reject list change can reconcile the statuses of existing ACCEPTED or REJECTED PSC endpoints. - If false, connection policy update will only affect existing PENDING PSC endpoints. Existing ACCEPTED/REJECTED endpoints will remain untouched regardless how the connection policy is modified . - If true, update will affect both PENDING and ACCEPTED/REJECTED PSC endpoints. For example, an ACCEPTED PSC endpoint will be moved to REJECTED if its project is added to the reject list. For newly created service attachment, this boolean defaults to false.
+   * This flag determines whether a consumer accept/reject list change can
+   * reconcile the statuses of existing ACCEPTED or REJECTED PSC endpoints.
+   *
+   *
+   *     -  If false, connection policy update will only affect existing PENDING
+   *     PSC endpoints. Existing ACCEPTED/REJECTED endpoints will remain untouched
+   *     regardless how the connection policy is modified .
+   *    -  If true,
+   *     update will affect both PENDING and ACCEPTED/REJECTED PSC endpoints. For
+   *     example, an ACCEPTED PSC endpoint will be moved to REJECTED if its project
+   *     is added to the reject list.
+   *
+   *
+   * For newly created service attachment, this boolean defaults to false.
    * </pre>
    *
    * <code>optional bool reconcile_connections = 125493732;</code>
@@ -1409,7 +1593,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the service attachment resides. This field applies only to the region resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * Output only. [Output Only] URL of the region where the service attachment resides.
+   * This field applies only to the region resource. You must specify this
+   * field as part of the HTTP request URL. It is not settable as a field in
+   * the request body.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -1425,7 +1612,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the service attachment resides. This field applies only to the region resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * Output only. [Output Only] URL of the region where the service attachment resides.
+   * This field applies only to the region resource. You must specify this
+   * field as part of the HTTP request URL. It is not settable as a field in
+   * the request body.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -1449,7 +1639,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the service attachment resides. This field applies only to the region resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * Output only. [Output Only] URL of the region where the service attachment resides.
+   * This field applies only to the region resource. You must specify this
+   * field as part of the HTTP request URL. It is not settable as a field in
+   * the request body.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -1478,7 +1671,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1494,7 +1687,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1518,7 +1711,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1547,7 +1740,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The URL of a service serving the endpoint identified by this service attachment.
+   * The URL of a service serving the endpoint identified by this service
+   * attachment.
    * </pre>
    *
    * <code>optional string target_service = 1293831;</code>
@@ -1563,7 +1757,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The URL of a service serving the endpoint identified by this service attachment.
+   * The URL of a service serving the endpoint identified by this service
+   * attachment.
    * </pre>
    *
    * <code>optional string target_service = 1293831;</code>
@@ -1587,7 +1782,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The URL of a service serving the endpoint identified by this service attachment.
+   * The URL of a service serving the endpoint identified by this service
+   * attachment.
    * </pre>
    *
    * <code>optional string target_service = 1293831;</code>
@@ -2076,7 +2272,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Represents a ServiceAttachment resource. A service attachment represents a service that a producer has exposed. It encapsulates the load balancer which fronts the service runs and a list of NAT IP ranges that the producers uses to represent the consumers connecting to the service.
+   * Represents a ServiceAttachment resource.
+   *
+   * A service attachment represents a service that a producer has exposed.
+   * It encapsulates the load balancer which fronts the service runs and
+   * a list of NAT IP ranges that the producers uses to represent
+   * the consumers connecting to the service.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.ServiceAttachment}
@@ -2737,7 +2938,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the consumers connected to this service attachment.
+     * Output only. [Output Only] An array of connections for all the consumers connected to
+     * this service attachment.
      * </pre>
      *
      * <code>
@@ -2757,7 +2959,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the consumers connected to this service attachment.
+     * Output only. [Output Only] An array of connections for all the consumers connected to
+     * this service attachment.
      * </pre>
      *
      * <code>
@@ -2776,7 +2979,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the consumers connected to this service attachment.
+     * Output only. [Output Only] An array of connections for all the consumers connected to
+     * this service attachment.
      * </pre>
      *
      * <code>
@@ -2796,7 +3000,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the consumers connected to this service attachment.
+     * Output only. [Output Only] An array of connections for all the consumers connected to
+     * this service attachment.
      * </pre>
      *
      * <code>
@@ -2822,7 +3027,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the consumers connected to this service attachment.
+     * Output only. [Output Only] An array of connections for all the consumers connected to
+     * this service attachment.
      * </pre>
      *
      * <code>
@@ -2846,7 +3052,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the consumers connected to this service attachment.
+     * Output only. [Output Only] An array of connections for all the consumers connected to
+     * this service attachment.
      * </pre>
      *
      * <code>
@@ -2872,7 +3079,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the consumers connected to this service attachment.
+     * Output only. [Output Only] An array of connections for all the consumers connected to
+     * this service attachment.
      * </pre>
      *
      * <code>
@@ -2898,7 +3106,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the consumers connected to this service attachment.
+     * Output only. [Output Only] An array of connections for all the consumers connected to
+     * this service attachment.
      * </pre>
      *
      * <code>
@@ -2921,7 +3130,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the consumers connected to this service attachment.
+     * Output only. [Output Only] An array of connections for all the consumers connected to
+     * this service attachment.
      * </pre>
      *
      * <code>
@@ -2945,7 +3155,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the consumers connected to this service attachment.
+     * Output only. [Output Only] An array of connections for all the consumers connected to
+     * this service attachment.
      * </pre>
      *
      * <code>
@@ -2969,7 +3180,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the consumers connected to this service attachment.
+     * Output only. [Output Only] An array of connections for all the consumers connected to
+     * this service attachment.
      * </pre>
      *
      * <code>
@@ -2991,7 +3203,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the consumers connected to this service attachment.
+     * Output only. [Output Only] An array of connections for all the consumers connected to
+     * this service attachment.
      * </pre>
      *
      * <code>
@@ -3013,7 +3226,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the consumers connected to this service attachment.
+     * Output only. [Output Only] An array of connections for all the consumers connected to
+     * this service attachment.
      * </pre>
      *
      * <code>
@@ -3029,7 +3243,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the consumers connected to this service attachment.
+     * Output only. [Output Only] An array of connections for all the consumers connected to
+     * this service attachment.
      * </pre>
      *
      * <code>
@@ -3049,7 +3264,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the consumers connected to this service attachment.
+     * Output only. [Output Only] An array of connections for all the consumers connected to
+     * this service attachment.
      * </pre>
      *
      * <code>
@@ -3070,7 +3286,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the consumers connected to this service attachment.
+     * Output only. [Output Only] An array of connections for all the consumers connected to
+     * this service attachment.
      * </pre>
      *
      * <code>
@@ -3088,7 +3305,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the consumers connected to this service attachment.
+     * Output only. [Output Only] An array of connections for all the consumers connected to
+     * this service attachment.
      * </pre>
      *
      * <code>
@@ -3107,7 +3325,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the consumers connected to this service attachment.
+     * Output only. [Output Only] An array of connections for all the consumers connected to
+     * this service attachment.
      * </pre>
      *
      * <code>
@@ -3145,7 +3364,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules.
+     * The connection preference of service attachment. The value can be set
+     * to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC
+     * service attachment is one that always accepts the connection from consumer
+     * forwarding rules.
      * Check the ConnectionPreference enum for the list of possible values.
      * </pre>
      *
@@ -3161,7 +3383,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules.
+     * The connection preference of service attachment. The value can be set
+     * to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC
+     * service attachment is one that always accepts the connection from consumer
+     * forwarding rules.
      * Check the ConnectionPreference enum for the list of possible values.
      * </pre>
      *
@@ -3185,7 +3410,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules.
+     * The connection preference of service attachment. The value can be set
+     * to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC
+     * service attachment is one that always accepts the connection from consumer
+     * forwarding rules.
      * Check the ConnectionPreference enum for the list of possible values.
      * </pre>
      *
@@ -3209,7 +3437,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules.
+     * The connection preference of service attachment. The value can be set
+     * to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC
+     * service attachment is one that always accepts the connection from consumer
+     * forwarding rules.
      * Check the ConnectionPreference enum for the list of possible values.
      * </pre>
      *
@@ -3232,7 +3463,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules.
+     * The connection preference of service attachment. The value can be set
+     * to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC
+     * service attachment is one that always accepts the connection from consumer
+     * forwarding rules.
      * Check the ConnectionPreference enum for the list of possible values.
      * </pre>
      *
@@ -3251,7 +3485,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules.
+     * The connection preference of service attachment. The value can be set
+     * to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC
+     * service attachment is one that always accepts the connection from consumer
+     * forwarding rules.
      * Check the ConnectionPreference enum for the list of possible values.
      * </pre>
      *
@@ -3294,7 +3531,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
+     * Specifies which consumer projects or networks are allowed to connect to the
+     * service attachment. Each project or network has a connection limit. A given
+     * service attachment can manage connections at either the project or network
+     * level. Therefore, both the accept and reject lists for a given service
+     * attachment must contain either only projects or only networks or only
+     * endpoints.
      * </pre>
      *
      * <code>
@@ -3314,7 +3556,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
+     * Specifies which consumer projects or networks are allowed to connect to the
+     * service attachment. Each project or network has a connection limit. A given
+     * service attachment can manage connections at either the project or network
+     * level. Therefore, both the accept and reject lists for a given service
+     * attachment must contain either only projects or only networks or only
+     * endpoints.
      * </pre>
      *
      * <code>
@@ -3333,7 +3580,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
+     * Specifies which consumer projects or networks are allowed to connect to the
+     * service attachment. Each project or network has a connection limit. A given
+     * service attachment can manage connections at either the project or network
+     * level. Therefore, both the accept and reject lists for a given service
+     * attachment must contain either only projects or only networks or only
+     * endpoints.
      * </pre>
      *
      * <code>
@@ -3353,7 +3605,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
+     * Specifies which consumer projects or networks are allowed to connect to the
+     * service attachment. Each project or network has a connection limit. A given
+     * service attachment can manage connections at either the project or network
+     * level. Therefore, both the accept and reject lists for a given service
+     * attachment must contain either only projects or only networks or only
+     * endpoints.
      * </pre>
      *
      * <code>
@@ -3379,7 +3636,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
+     * Specifies which consumer projects or networks are allowed to connect to the
+     * service attachment. Each project or network has a connection limit. A given
+     * service attachment can manage connections at either the project or network
+     * level. Therefore, both the accept and reject lists for a given service
+     * attachment must contain either only projects or only networks or only
+     * endpoints.
      * </pre>
      *
      * <code>
@@ -3403,7 +3665,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
+     * Specifies which consumer projects or networks are allowed to connect to the
+     * service attachment. Each project or network has a connection limit. A given
+     * service attachment can manage connections at either the project or network
+     * level. Therefore, both the accept and reject lists for a given service
+     * attachment must contain either only projects or only networks or only
+     * endpoints.
      * </pre>
      *
      * <code>
@@ -3429,7 +3696,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
+     * Specifies which consumer projects or networks are allowed to connect to the
+     * service attachment. Each project or network has a connection limit. A given
+     * service attachment can manage connections at either the project or network
+     * level. Therefore, both the accept and reject lists for a given service
+     * attachment must contain either only projects or only networks or only
+     * endpoints.
      * </pre>
      *
      * <code>
@@ -3455,7 +3727,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
+     * Specifies which consumer projects or networks are allowed to connect to the
+     * service attachment. Each project or network has a connection limit. A given
+     * service attachment can manage connections at either the project or network
+     * level. Therefore, both the accept and reject lists for a given service
+     * attachment must contain either only projects or only networks or only
+     * endpoints.
      * </pre>
      *
      * <code>
@@ -3478,7 +3755,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
+     * Specifies which consumer projects or networks are allowed to connect to the
+     * service attachment. Each project or network has a connection limit. A given
+     * service attachment can manage connections at either the project or network
+     * level. Therefore, both the accept and reject lists for a given service
+     * attachment must contain either only projects or only networks or only
+     * endpoints.
      * </pre>
      *
      * <code>
@@ -3502,7 +3784,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
+     * Specifies which consumer projects or networks are allowed to connect to the
+     * service attachment. Each project or network has a connection limit. A given
+     * service attachment can manage connections at either the project or network
+     * level. Therefore, both the accept and reject lists for a given service
+     * attachment must contain either only projects or only networks or only
+     * endpoints.
      * </pre>
      *
      * <code>
@@ -3527,7 +3814,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
+     * Specifies which consumer projects or networks are allowed to connect to the
+     * service attachment. Each project or network has a connection limit. A given
+     * service attachment can manage connections at either the project or network
+     * level. Therefore, both the accept and reject lists for a given service
+     * attachment must contain either only projects or only networks or only
+     * endpoints.
      * </pre>
      *
      * <code>
@@ -3549,7 +3841,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
+     * Specifies which consumer projects or networks are allowed to connect to the
+     * service attachment. Each project or network has a connection limit. A given
+     * service attachment can manage connections at either the project or network
+     * level. Therefore, both the accept and reject lists for a given service
+     * attachment must contain either only projects or only networks or only
+     * endpoints.
      * </pre>
      *
      * <code>
@@ -3571,7 +3868,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
+     * Specifies which consumer projects or networks are allowed to connect to the
+     * service attachment. Each project or network has a connection limit. A given
+     * service attachment can manage connections at either the project or network
+     * level. Therefore, both the accept and reject lists for a given service
+     * attachment must contain either only projects or only networks or only
+     * endpoints.
      * </pre>
      *
      * <code>
@@ -3587,7 +3889,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
+     * Specifies which consumer projects or networks are allowed to connect to the
+     * service attachment. Each project or network has a connection limit. A given
+     * service attachment can manage connections at either the project or network
+     * level. Therefore, both the accept and reject lists for a given service
+     * attachment must contain either only projects or only networks or only
+     * endpoints.
      * </pre>
      *
      * <code>
@@ -3607,7 +3914,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
+     * Specifies which consumer projects or networks are allowed to connect to the
+     * service attachment. Each project or network has a connection limit. A given
+     * service attachment can manage connections at either the project or network
+     * level. Therefore, both the accept and reject lists for a given service
+     * attachment must contain either only projects or only networks or only
+     * endpoints.
      * </pre>
      *
      * <code>
@@ -3628,7 +3940,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
+     * Specifies which consumer projects or networks are allowed to connect to the
+     * service attachment. Each project or network has a connection limit. A given
+     * service attachment can manage connections at either the project or network
+     * level. Therefore, both the accept and reject lists for a given service
+     * attachment must contain either only projects or only networks or only
+     * endpoints.
      * </pre>
      *
      * <code>
@@ -3647,7 +3964,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
+     * Specifies which consumer projects or networks are allowed to connect to the
+     * service attachment. Each project or network has a connection limit. A given
+     * service attachment can manage connections at either the project or network
+     * level. Therefore, both the accept and reject lists for a given service
+     * attachment must contain either only projects or only networks or only
+     * endpoints.
      * </pre>
      *
      * <code>
@@ -3667,7 +3989,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
+     * Specifies which consumer projects or networks are allowed to connect to the
+     * service attachment. Each project or network has a connection limit. A given
+     * service attachment can manage connections at either the project or network
+     * level. Therefore, both the accept and reject lists for a given service
+     * attachment must contain either only projects or only networks or only
+     * endpoints.
      * </pre>
      *
      * <code>
@@ -3713,7 +4040,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies a list of projects or networks that are not allowed to connect to this service attachment. The project can be specified using its project ID or project number and the network can be specified using its URL. A given service attachment can manage connections at either the project or network level. Therefore, both the reject and accept lists for a given service attachment must contain either only projects or only networks.
+     * Specifies a list of projects or networks that are not allowed to connect to
+     * this service attachment. The project can be specified using its project ID
+     * or project number and the network can be specified using its URL. A given
+     * service attachment can manage connections at either the project or network
+     * level. Therefore, both the reject and accept lists for a given service
+     * attachment must contain either only projects or only networks.
      * </pre>
      *
      * <code>repeated string consumer_reject_lists = 204033182;</code>
@@ -3729,7 +4061,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies a list of projects or networks that are not allowed to connect to this service attachment. The project can be specified using its project ID or project number and the network can be specified using its URL. A given service attachment can manage connections at either the project or network level. Therefore, both the reject and accept lists for a given service attachment must contain either only projects or only networks.
+     * Specifies a list of projects or networks that are not allowed to connect to
+     * this service attachment. The project can be specified using its project ID
+     * or project number and the network can be specified using its URL. A given
+     * service attachment can manage connections at either the project or network
+     * level. Therefore, both the reject and accept lists for a given service
+     * attachment must contain either only projects or only networks.
      * </pre>
      *
      * <code>repeated string consumer_reject_lists = 204033182;</code>
@@ -3744,7 +4081,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies a list of projects or networks that are not allowed to connect to this service attachment. The project can be specified using its project ID or project number and the network can be specified using its URL. A given service attachment can manage connections at either the project or network level. Therefore, both the reject and accept lists for a given service attachment must contain either only projects or only networks.
+     * Specifies a list of projects or networks that are not allowed to connect to
+     * this service attachment. The project can be specified using its project ID
+     * or project number and the network can be specified using its URL. A given
+     * service attachment can manage connections at either the project or network
+     * level. Therefore, both the reject and accept lists for a given service
+     * attachment must contain either only projects or only networks.
      * </pre>
      *
      * <code>repeated string consumer_reject_lists = 204033182;</code>
@@ -3760,7 +4102,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies a list of projects or networks that are not allowed to connect to this service attachment. The project can be specified using its project ID or project number and the network can be specified using its URL. A given service attachment can manage connections at either the project or network level. Therefore, both the reject and accept lists for a given service attachment must contain either only projects or only networks.
+     * Specifies a list of projects or networks that are not allowed to connect to
+     * this service attachment. The project can be specified using its project ID
+     * or project number and the network can be specified using its URL. A given
+     * service attachment can manage connections at either the project or network
+     * level. Therefore, both the reject and accept lists for a given service
+     * attachment must contain either only projects or only networks.
      * </pre>
      *
      * <code>repeated string consumer_reject_lists = 204033182;</code>
@@ -3776,7 +4123,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies a list of projects or networks that are not allowed to connect to this service attachment. The project can be specified using its project ID or project number and the network can be specified using its URL. A given service attachment can manage connections at either the project or network level. Therefore, both the reject and accept lists for a given service attachment must contain either only projects or only networks.
+     * Specifies a list of projects or networks that are not allowed to connect to
+     * this service attachment. The project can be specified using its project ID
+     * or project number and the network can be specified using its URL. A given
+     * service attachment can manage connections at either the project or network
+     * level. Therefore, both the reject and accept lists for a given service
+     * attachment must contain either only projects or only networks.
      * </pre>
      *
      * <code>repeated string consumer_reject_lists = 204033182;</code>
@@ -3800,7 +4152,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies a list of projects or networks that are not allowed to connect to this service attachment. The project can be specified using its project ID or project number and the network can be specified using its URL. A given service attachment can manage connections at either the project or network level. Therefore, both the reject and accept lists for a given service attachment must contain either only projects or only networks.
+     * Specifies a list of projects or networks that are not allowed to connect to
+     * this service attachment. The project can be specified using its project ID
+     * or project number and the network can be specified using its URL. A given
+     * service attachment can manage connections at either the project or network
+     * level. Therefore, both the reject and accept lists for a given service
+     * attachment must contain either only projects or only networks.
      * </pre>
      *
      * <code>repeated string consumer_reject_lists = 204033182;</code>
@@ -3823,7 +4180,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies a list of projects or networks that are not allowed to connect to this service attachment. The project can be specified using its project ID or project number and the network can be specified using its URL. A given service attachment can manage connections at either the project or network level. Therefore, both the reject and accept lists for a given service attachment must contain either only projects or only networks.
+     * Specifies a list of projects or networks that are not allowed to connect to
+     * this service attachment. The project can be specified using its project ID
+     * or project number and the network can be specified using its URL. A given
+     * service attachment can manage connections at either the project or network
+     * level. Therefore, both the reject and accept lists for a given service
+     * attachment must contain either only projects or only networks.
      * </pre>
      *
      * <code>repeated string consumer_reject_lists = 204033182;</code>
@@ -3843,7 +4205,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies a list of projects or networks that are not allowed to connect to this service attachment. The project can be specified using its project ID or project number and the network can be specified using its URL. A given service attachment can manage connections at either the project or network level. Therefore, both the reject and accept lists for a given service attachment must contain either only projects or only networks.
+     * Specifies a list of projects or networks that are not allowed to connect to
+     * this service attachment. The project can be specified using its project ID
+     * or project number and the network can be specified using its URL. A given
+     * service attachment can manage connections at either the project or network
+     * level. Therefore, both the reject and accept lists for a given service
+     * attachment must contain either only projects or only networks.
      * </pre>
      *
      * <code>repeated string consumer_reject_lists = 204033182;</code>
@@ -3862,7 +4229,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies a list of projects or networks that are not allowed to connect to this service attachment. The project can be specified using its project ID or project number and the network can be specified using its URL. A given service attachment can manage connections at either the project or network level. Therefore, both the reject and accept lists for a given service attachment must contain either only projects or only networks.
+     * Specifies a list of projects or networks that are not allowed to connect to
+     * this service attachment. The project can be specified using its project ID
+     * or project number and the network can be specified using its URL. A given
+     * service attachment can manage connections at either the project or network
+     * level. Therefore, both the reject and accept lists for a given service
+     * attachment must contain either only projects or only networks.
      * </pre>
      *
      * <code>repeated string consumer_reject_lists = 204033182;</code>
@@ -3888,7 +4260,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -3903,7 +4276,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -3926,7 +4300,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -3949,7 +4324,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -3971,7 +4347,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -3989,7 +4366,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -4014,7 +4392,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -4029,7 +4408,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -4052,7 +4432,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -4075,7 +4456,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -4097,7 +4479,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -4115,7 +4498,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -4148,7 +4532,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1.
+     * If specified, the domain name will be used during the integration between
+     * the PSC connected endpoints and the Cloud DNS. For example, this is a valid
+     * domain name: "p.mycompany.com.". Current max number of domain names
+     * supported is 1.
      * </pre>
      *
      * <code>repeated string domain_names = 6450189;</code>
@@ -4164,7 +4551,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1.
+     * If specified, the domain name will be used during the integration between
+     * the PSC connected endpoints and the Cloud DNS. For example, this is a valid
+     * domain name: "p.mycompany.com.". Current max number of domain names
+     * supported is 1.
      * </pre>
      *
      * <code>repeated string domain_names = 6450189;</code>
@@ -4179,7 +4569,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1.
+     * If specified, the domain name will be used during the integration between
+     * the PSC connected endpoints and the Cloud DNS. For example, this is a valid
+     * domain name: "p.mycompany.com.". Current max number of domain names
+     * supported is 1.
      * </pre>
      *
      * <code>repeated string domain_names = 6450189;</code>
@@ -4195,7 +4588,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1.
+     * If specified, the domain name will be used during the integration between
+     * the PSC connected endpoints and the Cloud DNS. For example, this is a valid
+     * domain name: "p.mycompany.com.". Current max number of domain names
+     * supported is 1.
      * </pre>
      *
      * <code>repeated string domain_names = 6450189;</code>
@@ -4211,7 +4607,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1.
+     * If specified, the domain name will be used during the integration between
+     * the PSC connected endpoints and the Cloud DNS. For example, this is a valid
+     * domain name: "p.mycompany.com.". Current max number of domain names
+     * supported is 1.
      * </pre>
      *
      * <code>repeated string domain_names = 6450189;</code>
@@ -4235,7 +4634,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1.
+     * If specified, the domain name will be used during the integration between
+     * the PSC connected endpoints and the Cloud DNS. For example, this is a valid
+     * domain name: "p.mycompany.com.". Current max number of domain names
+     * supported is 1.
      * </pre>
      *
      * <code>repeated string domain_names = 6450189;</code>
@@ -4258,7 +4660,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1.
+     * If specified, the domain name will be used during the integration between
+     * the PSC connected endpoints and the Cloud DNS. For example, this is a valid
+     * domain name: "p.mycompany.com.". Current max number of domain names
+     * supported is 1.
      * </pre>
      *
      * <code>repeated string domain_names = 6450189;</code>
@@ -4278,7 +4683,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1.
+     * If specified, the domain name will be used during the integration between
+     * the PSC connected endpoints and the Cloud DNS. For example, this is a valid
+     * domain name: "p.mycompany.com.". Current max number of domain names
+     * supported is 1.
      * </pre>
      *
      * <code>repeated string domain_names = 6450189;</code>
@@ -4297,7 +4705,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1.
+     * If specified, the domain name will be used during the integration between
+     * the PSC connected endpoints and the Cloud DNS. For example, this is a valid
+     * domain name: "p.mycompany.com.". Current max number of domain names
+     * supported is 1.
      * </pre>
      *
      * <code>repeated string domain_names = 6450189;</code>
@@ -4323,7 +4734,9 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * If true, enable the proxy protocol which is for supplying client TCP/IP address data in TCP connections that traverse proxies on their way to destination servers.
+     * If true, enable the proxy protocol which is for supplying client TCP/IP
+     * address data in TCP connections that traverse proxies on their way to
+     * destination servers.
      * </pre>
      *
      * <code>optional bool enable_proxy_protocol = 363791237;</code>
@@ -4339,7 +4752,9 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * If true, enable the proxy protocol which is for supplying client TCP/IP address data in TCP connections that traverse proxies on their way to destination servers.
+     * If true, enable the proxy protocol which is for supplying client TCP/IP
+     * address data in TCP connections that traverse proxies on their way to
+     * destination servers.
      * </pre>
      *
      * <code>optional bool enable_proxy_protocol = 363791237;</code>
@@ -4355,7 +4770,9 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * If true, enable the proxy protocol which is for supplying client TCP/IP address data in TCP connections that traverse proxies on their way to destination servers.
+     * If true, enable the proxy protocol which is for supplying client TCP/IP
+     * address data in TCP connections that traverse proxies on their way to
+     * destination servers.
      * </pre>
      *
      * <code>optional bool enable_proxy_protocol = 363791237;</code>
@@ -4375,7 +4792,9 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * If true, enable the proxy protocol which is for supplying client TCP/IP address data in TCP connections that traverse proxies on their way to destination servers.
+     * If true, enable the proxy protocol which is for supplying client TCP/IP
+     * address data in TCP connections that traverse proxies on their way to
+     * destination servers.
      * </pre>
      *
      * <code>optional bool enable_proxy_protocol = 363791237;</code>
@@ -4395,7 +4814,13 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a ServiceAttachment. An up-to-date fingerprint must be provided in order to patch/update the ServiceAttachment; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the ServiceAttachment.
+     * Fingerprint of this resource. A hash of the contents stored in this object.
+     * This field is used in optimistic locking. This field will be ignored when
+     * inserting a ServiceAttachment. An up-to-date fingerprint must
+     * be provided in order to patch/update the ServiceAttachment; otherwise, the
+     * request will fail with error 412 conditionNotMet. To see the
+     * latest fingerprint, make a get() request to retrieve the
+     * ServiceAttachment.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -4410,7 +4835,13 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a ServiceAttachment. An up-to-date fingerprint must be provided in order to patch/update the ServiceAttachment; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the ServiceAttachment.
+     * Fingerprint of this resource. A hash of the contents stored in this object.
+     * This field is used in optimistic locking. This field will be ignored when
+     * inserting a ServiceAttachment. An up-to-date fingerprint must
+     * be provided in order to patch/update the ServiceAttachment; otherwise, the
+     * request will fail with error 412 conditionNotMet. To see the
+     * latest fingerprint, make a get() request to retrieve the
+     * ServiceAttachment.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -4433,7 +4864,13 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a ServiceAttachment. An up-to-date fingerprint must be provided in order to patch/update the ServiceAttachment; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the ServiceAttachment.
+     * Fingerprint of this resource. A hash of the contents stored in this object.
+     * This field is used in optimistic locking. This field will be ignored when
+     * inserting a ServiceAttachment. An up-to-date fingerprint must
+     * be provided in order to patch/update the ServiceAttachment; otherwise, the
+     * request will fail with error 412 conditionNotMet. To see the
+     * latest fingerprint, make a get() request to retrieve the
+     * ServiceAttachment.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -4456,7 +4893,13 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a ServiceAttachment. An up-to-date fingerprint must be provided in order to patch/update the ServiceAttachment; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the ServiceAttachment.
+     * Fingerprint of this resource. A hash of the contents stored in this object.
+     * This field is used in optimistic locking. This field will be ignored when
+     * inserting a ServiceAttachment. An up-to-date fingerprint must
+     * be provided in order to patch/update the ServiceAttachment; otherwise, the
+     * request will fail with error 412 conditionNotMet. To see the
+     * latest fingerprint, make a get() request to retrieve the
+     * ServiceAttachment.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -4478,7 +4921,13 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a ServiceAttachment. An up-to-date fingerprint must be provided in order to patch/update the ServiceAttachment; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the ServiceAttachment.
+     * Fingerprint of this resource. A hash of the contents stored in this object.
+     * This field is used in optimistic locking. This field will be ignored when
+     * inserting a ServiceAttachment. An up-to-date fingerprint must
+     * be provided in order to patch/update the ServiceAttachment; otherwise, the
+     * request will fail with error 412 conditionNotMet. To see the
+     * latest fingerprint, make a get() request to retrieve the
+     * ServiceAttachment.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -4496,7 +4945,13 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a ServiceAttachment. An up-to-date fingerprint must be provided in order to patch/update the ServiceAttachment; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the ServiceAttachment.
+     * Fingerprint of this resource. A hash of the contents stored in this object.
+     * This field is used in optimistic locking. This field will be ignored when
+     * inserting a ServiceAttachment. An up-to-date fingerprint must
+     * be provided in order to patch/update the ServiceAttachment; otherwise, the
+     * request will fail with error 412 conditionNotMet. To see the
+     * latest fingerprint, make a get() request to retrieve the
+     * ServiceAttachment.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -4521,7 +4976,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource type. The server generates this identifier.
+     * Output only. [Output Only] The unique identifier for the resource type. The server
+     * generates this identifier.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -4537,7 +4993,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource type. The server generates this identifier.
+     * Output only. [Output Only] The unique identifier for the resource type. The server
+     * generates this identifier.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -4553,7 +5010,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource type. The server generates this identifier.
+     * Output only. [Output Only] The unique identifier for the resource type. The server
+     * generates this identifier.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -4573,7 +5031,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource type. The server generates this identifier.
+     * Output only. [Output Only] The unique identifier for the resource type. The server
+     * generates this identifier.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -4593,7 +5052,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#serviceAttachment for service attachments.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#serviceAttachment for service attachments.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4608,7 +5067,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#serviceAttachment for service attachments.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#serviceAttachment for service attachments.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4631,7 +5090,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#serviceAttachment for service attachments.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#serviceAttachment for service attachments.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4654,7 +5113,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#serviceAttachment for service attachments.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#serviceAttachment for service attachments.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4676,7 +5135,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#serviceAttachment for service attachments.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#serviceAttachment for service attachments.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4694,7 +5153,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#serviceAttachment for service attachments.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#serviceAttachment for service attachments.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4892,7 +5351,13 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -4907,7 +5372,13 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -4930,7 +5401,13 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -4953,7 +5430,13 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -4975,7 +5458,13 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -4993,7 +5482,13 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -5026,7 +5521,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * An array of URLs where each entry is the URL of a subnet provided by the service producer to use for NAT in this service attachment.
+     * An array of URLs where each entry is the URL of a subnet provided
+     * by the service producer to use for NAT in this service attachment.
      * </pre>
      *
      * <code>repeated string nat_subnets = 374785944;</code>
@@ -5042,7 +5538,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * An array of URLs where each entry is the URL of a subnet provided by the service producer to use for NAT in this service attachment.
+     * An array of URLs where each entry is the URL of a subnet provided
+     * by the service producer to use for NAT in this service attachment.
      * </pre>
      *
      * <code>repeated string nat_subnets = 374785944;</code>
@@ -5057,7 +5554,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * An array of URLs where each entry is the URL of a subnet provided by the service producer to use for NAT in this service attachment.
+     * An array of URLs where each entry is the URL of a subnet provided
+     * by the service producer to use for NAT in this service attachment.
      * </pre>
      *
      * <code>repeated string nat_subnets = 374785944;</code>
@@ -5073,7 +5571,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * An array of URLs where each entry is the URL of a subnet provided by the service producer to use for NAT in this service attachment.
+     * An array of URLs where each entry is the URL of a subnet provided
+     * by the service producer to use for NAT in this service attachment.
      * </pre>
      *
      * <code>repeated string nat_subnets = 374785944;</code>
@@ -5089,7 +5588,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * An array of URLs where each entry is the URL of a subnet provided by the service producer to use for NAT in this service attachment.
+     * An array of URLs where each entry is the URL of a subnet provided
+     * by the service producer to use for NAT in this service attachment.
      * </pre>
      *
      * <code>repeated string nat_subnets = 374785944;</code>
@@ -5113,7 +5613,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * An array of URLs where each entry is the URL of a subnet provided by the service producer to use for NAT in this service attachment.
+     * An array of URLs where each entry is the URL of a subnet provided
+     * by the service producer to use for NAT in this service attachment.
      * </pre>
      *
      * <code>repeated string nat_subnets = 374785944;</code>
@@ -5136,7 +5637,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * An array of URLs where each entry is the URL of a subnet provided by the service producer to use for NAT in this service attachment.
+     * An array of URLs where each entry is the URL of a subnet provided
+     * by the service producer to use for NAT in this service attachment.
      * </pre>
      *
      * <code>repeated string nat_subnets = 374785944;</code>
@@ -5156,7 +5658,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * An array of URLs where each entry is the URL of a subnet provided by the service producer to use for NAT in this service attachment.
+     * An array of URLs where each entry is the URL of a subnet provided
+     * by the service producer to use for NAT in this service attachment.
      * </pre>
      *
      * <code>repeated string nat_subnets = 374785944;</code>
@@ -5175,7 +5678,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * An array of URLs where each entry is the URL of a subnet provided by the service producer to use for NAT in this service attachment.
+     * An array of URLs where each entry is the URL of a subnet provided
+     * by the service producer to use for NAT in this service attachment.
      * </pre>
      *
      * <code>repeated string nat_subnets = 374785944;</code>
@@ -5201,7 +5705,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The URL of a forwarding rule with loadBalancingScheme INTERNAL* that is serving the endpoint identified by this service attachment.
+     * The URL of a forwarding rule with loadBalancingScheme INTERNAL* that is
+     * serving the endpoint identified by this service attachment.
      * </pre>
      *
      * <code>optional string producer_forwarding_rule = 247927889;</code>
@@ -5216,7 +5721,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The URL of a forwarding rule with loadBalancingScheme INTERNAL* that is serving the endpoint identified by this service attachment.
+     * The URL of a forwarding rule with loadBalancingScheme INTERNAL* that is
+     * serving the endpoint identified by this service attachment.
      * </pre>
      *
      * <code>optional string producer_forwarding_rule = 247927889;</code>
@@ -5239,7 +5745,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The URL of a forwarding rule with loadBalancingScheme INTERNAL* that is serving the endpoint identified by this service attachment.
+     * The URL of a forwarding rule with loadBalancingScheme INTERNAL* that is
+     * serving the endpoint identified by this service attachment.
      * </pre>
      *
      * <code>optional string producer_forwarding_rule = 247927889;</code>
@@ -5262,7 +5769,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The URL of a forwarding rule with loadBalancingScheme INTERNAL* that is serving the endpoint identified by this service attachment.
+     * The URL of a forwarding rule with loadBalancingScheme INTERNAL* that is
+     * serving the endpoint identified by this service attachment.
      * </pre>
      *
      * <code>optional string producer_forwarding_rule = 247927889;</code>
@@ -5284,7 +5792,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The URL of a forwarding rule with loadBalancingScheme INTERNAL* that is serving the endpoint identified by this service attachment.
+     * The URL of a forwarding rule with loadBalancingScheme INTERNAL* that is
+     * serving the endpoint identified by this service attachment.
      * </pre>
      *
      * <code>optional string producer_forwarding_rule = 247927889;</code>
@@ -5302,7 +5811,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The URL of a forwarding rule with loadBalancingScheme INTERNAL* that is serving the endpoint identified by this service attachment.
+     * The URL of a forwarding rule with loadBalancingScheme INTERNAL* that is
+     * serving the endpoint identified by this service attachment.
      * </pre>
      *
      * <code>optional string producer_forwarding_rule = 247927889;</code>
@@ -5327,7 +5837,19 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The number of consumer spokes that connected Private Service Connect endpoints can be propagated to through Network Connectivity Center. This limit lets the service producer limit how many propagated Private Service Connect connections can be established to this service attachment from a single consumer. If the connection preference of the service attachment is ACCEPT_MANUAL, the limit applies to each project or network that is listed in the consumer accept list. If the connection preference of the service attachment is ACCEPT_AUTOMATIC, the limit applies to each project that contains a connected endpoint. If unspecified, the default propagated connection limit is 250.
+     * The number of consumer spokes that connected Private Service Connect
+     * endpoints can be propagated to through Network Connectivity Center. This
+     * limit lets the service producer limit how many propagated Private Service
+     * Connect connections can be established to this service attachment from a
+     * single consumer.
+     *
+     * If the connection preference of the service attachment is ACCEPT_MANUAL,
+     * the limit applies to each project or network that is listed in the consumer
+     * accept list. If the connection preference of the service attachment is
+     * ACCEPT_AUTOMATIC, the limit applies to each project that contains a
+     * connected endpoint.
+     *
+     * If unspecified, the default propagated connection limit is 250.
      * </pre>
      *
      * <code>optional uint32 propagated_connection_limit = 332719230;</code>
@@ -5343,7 +5865,19 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The number of consumer spokes that connected Private Service Connect endpoints can be propagated to through Network Connectivity Center. This limit lets the service producer limit how many propagated Private Service Connect connections can be established to this service attachment from a single consumer. If the connection preference of the service attachment is ACCEPT_MANUAL, the limit applies to each project or network that is listed in the consumer accept list. If the connection preference of the service attachment is ACCEPT_AUTOMATIC, the limit applies to each project that contains a connected endpoint. If unspecified, the default propagated connection limit is 250.
+     * The number of consumer spokes that connected Private Service Connect
+     * endpoints can be propagated to through Network Connectivity Center. This
+     * limit lets the service producer limit how many propagated Private Service
+     * Connect connections can be established to this service attachment from a
+     * single consumer.
+     *
+     * If the connection preference of the service attachment is ACCEPT_MANUAL,
+     * the limit applies to each project or network that is listed in the consumer
+     * accept list. If the connection preference of the service attachment is
+     * ACCEPT_AUTOMATIC, the limit applies to each project that contains a
+     * connected endpoint.
+     *
+     * If unspecified, the default propagated connection limit is 250.
      * </pre>
      *
      * <code>optional uint32 propagated_connection_limit = 332719230;</code>
@@ -5359,7 +5893,19 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The number of consumer spokes that connected Private Service Connect endpoints can be propagated to through Network Connectivity Center. This limit lets the service producer limit how many propagated Private Service Connect connections can be established to this service attachment from a single consumer. If the connection preference of the service attachment is ACCEPT_MANUAL, the limit applies to each project or network that is listed in the consumer accept list. If the connection preference of the service attachment is ACCEPT_AUTOMATIC, the limit applies to each project that contains a connected endpoint. If unspecified, the default propagated connection limit is 250.
+     * The number of consumer spokes that connected Private Service Connect
+     * endpoints can be propagated to through Network Connectivity Center. This
+     * limit lets the service producer limit how many propagated Private Service
+     * Connect connections can be established to this service attachment from a
+     * single consumer.
+     *
+     * If the connection preference of the service attachment is ACCEPT_MANUAL,
+     * the limit applies to each project or network that is listed in the consumer
+     * accept list. If the connection preference of the service attachment is
+     * ACCEPT_AUTOMATIC, the limit applies to each project that contains a
+     * connected endpoint.
+     *
+     * If unspecified, the default propagated connection limit is 250.
      * </pre>
      *
      * <code>optional uint32 propagated_connection_limit = 332719230;</code>
@@ -5379,7 +5925,19 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The number of consumer spokes that connected Private Service Connect endpoints can be propagated to through Network Connectivity Center. This limit lets the service producer limit how many propagated Private Service Connect connections can be established to this service attachment from a single consumer. If the connection preference of the service attachment is ACCEPT_MANUAL, the limit applies to each project or network that is listed in the consumer accept list. If the connection preference of the service attachment is ACCEPT_AUTOMATIC, the limit applies to each project that contains a connected endpoint. If unspecified, the default propagated connection limit is 250.
+     * The number of consumer spokes that connected Private Service Connect
+     * endpoints can be propagated to through Network Connectivity Center. This
+     * limit lets the service producer limit how many propagated Private Service
+     * Connect connections can be established to this service attachment from a
+     * single consumer.
+     *
+     * If the connection preference of the service attachment is ACCEPT_MANUAL,
+     * the limit applies to each project or network that is listed in the consumer
+     * accept list. If the connection preference of the service attachment is
+     * ACCEPT_AUTOMATIC, the limit applies to each project that contains a
+     * connected endpoint.
+     *
+     * If unspecified, the default propagated connection limit is 250.
      * </pre>
      *
      * <code>optional uint32 propagated_connection_limit = 332719230;</code>
@@ -5404,7 +5962,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An 128-bit global unique ID of the PSC service attachment.
+     * Output only. [Output Only] An 128-bit global unique ID of the PSC service attachment.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Uint128 psc_service_attachment_id = 527695214;</code>
@@ -5419,7 +5977,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An 128-bit global unique ID of the PSC service attachment.
+     * Output only. [Output Only] An 128-bit global unique ID of the PSC service attachment.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Uint128 psc_service_attachment_id = 527695214;</code>
@@ -5440,7 +5998,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An 128-bit global unique ID of the PSC service attachment.
+     * Output only. [Output Only] An 128-bit global unique ID of the PSC service attachment.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Uint128 psc_service_attachment_id = 527695214;</code>
@@ -5463,7 +6021,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An 128-bit global unique ID of the PSC service attachment.
+     * Output only. [Output Only] An 128-bit global unique ID of the PSC service attachment.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Uint128 psc_service_attachment_id = 527695214;</code>
@@ -5484,7 +6042,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An 128-bit global unique ID of the PSC service attachment.
+     * Output only. [Output Only] An 128-bit global unique ID of the PSC service attachment.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Uint128 psc_service_attachment_id = 527695214;</code>
@@ -5513,7 +6071,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An 128-bit global unique ID of the PSC service attachment.
+     * Output only. [Output Only] An 128-bit global unique ID of the PSC service attachment.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Uint128 psc_service_attachment_id = 527695214;</code>
@@ -5533,7 +6091,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An 128-bit global unique ID of the PSC service attachment.
+     * Output only. [Output Only] An 128-bit global unique ID of the PSC service attachment.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Uint128 psc_service_attachment_id = 527695214;</code>
@@ -5548,7 +6106,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An 128-bit global unique ID of the PSC service attachment.
+     * Output only. [Output Only] An 128-bit global unique ID of the PSC service attachment.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Uint128 psc_service_attachment_id = 527695214;</code>
@@ -5567,7 +6125,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An 128-bit global unique ID of the PSC service attachment.
+     * Output only. [Output Only] An 128-bit global unique ID of the PSC service attachment.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Uint128 psc_service_attachment_id = 527695214;</code>
@@ -5595,7 +6153,20 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * This flag determines whether a consumer accept/reject list change can reconcile the statuses of existing ACCEPTED or REJECTED PSC endpoints. - If false, connection policy update will only affect existing PENDING PSC endpoints. Existing ACCEPTED/REJECTED endpoints will remain untouched regardless how the connection policy is modified . - If true, update will affect both PENDING and ACCEPTED/REJECTED PSC endpoints. For example, an ACCEPTED PSC endpoint will be moved to REJECTED if its project is added to the reject list. For newly created service attachment, this boolean defaults to false.
+     * This flag determines whether a consumer accept/reject list change can
+     * reconcile the statuses of existing ACCEPTED or REJECTED PSC endpoints.
+     *
+     *
+     *     -  If false, connection policy update will only affect existing PENDING
+     *     PSC endpoints. Existing ACCEPTED/REJECTED endpoints will remain untouched
+     *     regardless how the connection policy is modified .
+     *    -  If true,
+     *     update will affect both PENDING and ACCEPTED/REJECTED PSC endpoints. For
+     *     example, an ACCEPTED PSC endpoint will be moved to REJECTED if its project
+     *     is added to the reject list.
+     *
+     *
+     * For newly created service attachment, this boolean defaults to false.
      * </pre>
      *
      * <code>optional bool reconcile_connections = 125493732;</code>
@@ -5611,7 +6182,20 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * This flag determines whether a consumer accept/reject list change can reconcile the statuses of existing ACCEPTED or REJECTED PSC endpoints. - If false, connection policy update will only affect existing PENDING PSC endpoints. Existing ACCEPTED/REJECTED endpoints will remain untouched regardless how the connection policy is modified . - If true, update will affect both PENDING and ACCEPTED/REJECTED PSC endpoints. For example, an ACCEPTED PSC endpoint will be moved to REJECTED if its project is added to the reject list. For newly created service attachment, this boolean defaults to false.
+     * This flag determines whether a consumer accept/reject list change can
+     * reconcile the statuses of existing ACCEPTED or REJECTED PSC endpoints.
+     *
+     *
+     *     -  If false, connection policy update will only affect existing PENDING
+     *     PSC endpoints. Existing ACCEPTED/REJECTED endpoints will remain untouched
+     *     regardless how the connection policy is modified .
+     *    -  If true,
+     *     update will affect both PENDING and ACCEPTED/REJECTED PSC endpoints. For
+     *     example, an ACCEPTED PSC endpoint will be moved to REJECTED if its project
+     *     is added to the reject list.
+     *
+     *
+     * For newly created service attachment, this boolean defaults to false.
      * </pre>
      *
      * <code>optional bool reconcile_connections = 125493732;</code>
@@ -5627,7 +6211,20 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * This flag determines whether a consumer accept/reject list change can reconcile the statuses of existing ACCEPTED or REJECTED PSC endpoints. - If false, connection policy update will only affect existing PENDING PSC endpoints. Existing ACCEPTED/REJECTED endpoints will remain untouched regardless how the connection policy is modified . - If true, update will affect both PENDING and ACCEPTED/REJECTED PSC endpoints. For example, an ACCEPTED PSC endpoint will be moved to REJECTED if its project is added to the reject list. For newly created service attachment, this boolean defaults to false.
+     * This flag determines whether a consumer accept/reject list change can
+     * reconcile the statuses of existing ACCEPTED or REJECTED PSC endpoints.
+     *
+     *
+     *     -  If false, connection policy update will only affect existing PENDING
+     *     PSC endpoints. Existing ACCEPTED/REJECTED endpoints will remain untouched
+     *     regardless how the connection policy is modified .
+     *    -  If true,
+     *     update will affect both PENDING and ACCEPTED/REJECTED PSC endpoints. For
+     *     example, an ACCEPTED PSC endpoint will be moved to REJECTED if its project
+     *     is added to the reject list.
+     *
+     *
+     * For newly created service attachment, this boolean defaults to false.
      * </pre>
      *
      * <code>optional bool reconcile_connections = 125493732;</code>
@@ -5647,7 +6244,20 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * This flag determines whether a consumer accept/reject list change can reconcile the statuses of existing ACCEPTED or REJECTED PSC endpoints. - If false, connection policy update will only affect existing PENDING PSC endpoints. Existing ACCEPTED/REJECTED endpoints will remain untouched regardless how the connection policy is modified . - If true, update will affect both PENDING and ACCEPTED/REJECTED PSC endpoints. For example, an ACCEPTED PSC endpoint will be moved to REJECTED if its project is added to the reject list. For newly created service attachment, this boolean defaults to false.
+     * This flag determines whether a consumer accept/reject list change can
+     * reconcile the statuses of existing ACCEPTED or REJECTED PSC endpoints.
+     *
+     *
+     *     -  If false, connection policy update will only affect existing PENDING
+     *     PSC endpoints. Existing ACCEPTED/REJECTED endpoints will remain untouched
+     *     regardless how the connection policy is modified .
+     *    -  If true,
+     *     update will affect both PENDING and ACCEPTED/REJECTED PSC endpoints. For
+     *     example, an ACCEPTED PSC endpoint will be moved to REJECTED if its project
+     *     is added to the reject list.
+     *
+     *
+     * For newly created service attachment, this boolean defaults to false.
      * </pre>
      *
      * <code>optional bool reconcile_connections = 125493732;</code>
@@ -5667,7 +6277,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the service attachment resides. This field applies only to the region resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * Output only. [Output Only] URL of the region where the service attachment resides.
+     * This field applies only to the region resource. You must specify this
+     * field as part of the HTTP request URL. It is not settable as a field in
+     * the request body.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -5682,7 +6295,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the service attachment resides. This field applies only to the region resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * Output only. [Output Only] URL of the region where the service attachment resides.
+     * This field applies only to the region resource. You must specify this
+     * field as part of the HTTP request URL. It is not settable as a field in
+     * the request body.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -5705,7 +6321,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the service attachment resides. This field applies only to the region resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * Output only. [Output Only] URL of the region where the service attachment resides.
+     * This field applies only to the region resource. You must specify this
+     * field as part of the HTTP request URL. It is not settable as a field in
+     * the request body.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -5728,7 +6347,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the service attachment resides. This field applies only to the region resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * Output only. [Output Only] URL of the region where the service attachment resides.
+     * This field applies only to the region resource. You must specify this
+     * field as part of the HTTP request URL. It is not settable as a field in
+     * the request body.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -5750,7 +6372,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the service attachment resides. This field applies only to the region resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * Output only. [Output Only] URL of the region where the service attachment resides.
+     * This field applies only to the region resource. You must specify this
+     * field as part of the HTTP request URL. It is not settable as a field in
+     * the request body.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -5768,7 +6393,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the service attachment resides. This field applies only to the region resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * Output only. [Output Only] URL of the region where the service attachment resides.
+     * This field applies only to the region resource. You must specify this
+     * field as part of the HTTP request URL. It is not settable as a field in
+     * the request body.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -5793,7 +6421,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -5808,7 +6436,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -5831,7 +6459,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -5854,7 +6482,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -5876,7 +6504,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -5894,7 +6522,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -5919,7 +6547,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The URL of a service serving the endpoint identified by this service attachment.
+     * The URL of a service serving the endpoint identified by this service
+     * attachment.
      * </pre>
      *
      * <code>optional string target_service = 1293831;</code>
@@ -5934,7 +6563,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The URL of a service serving the endpoint identified by this service attachment.
+     * The URL of a service serving the endpoint identified by this service
+     * attachment.
      * </pre>
      *
      * <code>optional string target_service = 1293831;</code>
@@ -5957,7 +6587,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The URL of a service serving the endpoint identified by this service attachment.
+     * The URL of a service serving the endpoint identified by this service
+     * attachment.
      * </pre>
      *
      * <code>optional string target_service = 1293831;</code>
@@ -5980,7 +6611,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The URL of a service serving the endpoint identified by this service attachment.
+     * The URL of a service serving the endpoint identified by this service
+     * attachment.
      * </pre>
      *
      * <code>optional string target_service = 1293831;</code>
@@ -6002,7 +6634,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The URL of a service serving the endpoint identified by this service attachment.
+     * The URL of a service serving the endpoint identified by this service
+     * attachment.
      * </pre>
      *
      * <code>optional string target_service = 1293831;</code>
@@ -6020,7 +6653,8 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The URL of a service serving the endpoint identified by this service attachment.
+     * The URL of a service serving the endpoint identified by this service
+     * attachment.
      * </pre>
      *
      * <code>optional string target_service = 1293831;</code>

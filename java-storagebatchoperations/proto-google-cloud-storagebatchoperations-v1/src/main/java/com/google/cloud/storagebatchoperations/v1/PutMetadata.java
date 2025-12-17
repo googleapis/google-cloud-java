@@ -329,9 +329,8 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Updates objects Content-Type fixed metadata. Unset values will be
-   * ignored.
-   *  Set empty values to clear the metadata. Refer to documentation in
-   *  https://cloud.google.com/storage/docs/metadata#content-type
+   * ignored. Set empty values to clear the metadata. Refer to documentation in
+   * https://cloud.google.com/storage/docs/metadata#content-type
    * </pre>
    *
    * <code>optional string content_type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -348,9 +347,8 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Updates objects Content-Type fixed metadata. Unset values will be
-   * ignored.
-   *  Set empty values to clear the metadata. Refer to documentation in
-   *  https://cloud.google.com/storage/docs/metadata#content-type
+   * ignored. Set empty values to clear the metadata. Refer to documentation in
+   * https://cloud.google.com/storage/docs/metadata#content-type
    * </pre>
    *
    * <code>optional string content_type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -375,9 +373,8 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Updates objects Content-Type fixed metadata. Unset values will be
-   * ignored.
-   *  Set empty values to clear the metadata. Refer to documentation in
-   *  https://cloud.google.com/storage/docs/metadata#content-type
+   * ignored. Set empty values to clear the metadata. Refer to documentation in
+   * https://cloud.google.com/storage/docs/metadata#content-type
    * </pre>
    *
    * <code>optional string content_type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -407,10 +404,8 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Updates objects Cache-Control fixed metadata. Unset values will
-   * be
-   *  ignored. Set empty values to clear the metadata.
-   *  Additionally, the value for Custom-Time cannot decrease. Refer to
-   *  documentation in
+   * be ignored. Set empty values to clear the metadata. Additionally, the value
+   * for Custom-Time cannot decrease. Refer to documentation in
    * https://cloud.google.com/storage/docs/metadata#caching_data.
    * </pre>
    *
@@ -428,10 +423,8 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Updates objects Cache-Control fixed metadata. Unset values will
-   * be
-   *  ignored. Set empty values to clear the metadata.
-   *  Additionally, the value for Custom-Time cannot decrease. Refer to
-   *  documentation in
+   * be ignored. Set empty values to clear the metadata. Additionally, the value
+   * for Custom-Time cannot decrease. Refer to documentation in
    * https://cloud.google.com/storage/docs/metadata#caching_data.
    * </pre>
    *
@@ -457,10 +450,8 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Updates objects Cache-Control fixed metadata. Unset values will
-   * be
-   *  ignored. Set empty values to clear the metadata.
-   *  Additionally, the value for Custom-Time cannot decrease. Refer to
-   *  documentation in
+   * be ignored. Set empty values to clear the metadata. Additionally, the value
+   * for Custom-Time cannot decrease. Refer to documentation in
    * https://cloud.google.com/storage/docs/metadata#caching_data.
    * </pre>
    *
@@ -685,6 +676,78 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int OBJECT_RETENTION_FIELD_NUMBER = 8;
+  private com.google.cloud.storagebatchoperations.v1.ObjectRetention objectRetention_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Updates objects retention lock configuration. Unset values will
+   * be ignored. Set empty values to clear the retention for the object with
+   * existing `Unlocked` retention mode. Object with existing `Locked` retention
+   * mode cannot be cleared or reduce retain_until_time. Refer to documentation
+   * in https://cloud.google.com/storage/docs/object-lock
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.storagebatchoperations.v1.ObjectRetention object_retention = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the objectRetention field is set.
+   */
+  @java.lang.Override
+  public boolean hasObjectRetention() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Updates objects retention lock configuration. Unset values will
+   * be ignored. Set empty values to clear the retention for the object with
+   * existing `Unlocked` retention mode. Object with existing `Locked` retention
+   * mode cannot be cleared or reduce retain_until_time. Refer to documentation
+   * in https://cloud.google.com/storage/docs/object-lock
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.storagebatchoperations.v1.ObjectRetention object_retention = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The objectRetention.
+   */
+  @java.lang.Override
+  public com.google.cloud.storagebatchoperations.v1.ObjectRetention getObjectRetention() {
+    return objectRetention_ == null
+        ? com.google.cloud.storagebatchoperations.v1.ObjectRetention.getDefaultInstance()
+        : objectRetention_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Updates objects retention lock configuration. Unset values will
+   * be ignored. Set empty values to clear the retention for the object with
+   * existing `Unlocked` retention mode. Object with existing `Locked` retention
+   * mode cannot be cleared or reduce retain_until_time. Refer to documentation
+   * in https://cloud.google.com/storage/docs/object-lock
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.storagebatchoperations.v1.ObjectRetention object_retention = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.storagebatchoperations.v1.ObjectRetentionOrBuilder
+      getObjectRetentionOrBuilder() {
+    return objectRetention_ == null
+        ? com.google.cloud.storagebatchoperations.v1.ObjectRetention.getDefaultInstance()
+        : objectRetention_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -719,6 +782,9 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetCustomMetadata(), CustomMetadataDefaultEntryHolder.defaultEntry, 7);
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(8, getObjectRetention());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -755,6 +821,9 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
               .setValue(entry.getValue())
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, customMetadata__);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getObjectRetention());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -797,6 +866,10 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
       if (!getCustomTime().equals(other.getCustomTime())) return false;
     }
     if (!internalGetCustomMetadata().equals(other.internalGetCustomMetadata())) return false;
+    if (hasObjectRetention() != other.hasObjectRetention()) return false;
+    if (hasObjectRetention()) {
+      if (!getObjectRetention().equals(other.getObjectRetention())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -835,6 +908,10 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetCustomMetadata().getMap().isEmpty()) {
       hash = (37 * hash) + CUSTOM_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + internalGetCustomMetadata().hashCode();
+    }
+    if (hasObjectRetention()) {
+      hash = (37 * hash) + OBJECT_RETENTION_FIELD_NUMBER;
+      hash = (53 * hash) + getObjectRetention().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -989,10 +1066,19 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.storagebatchoperations.v1.PutMetadata.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getObjectRetentionFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -1006,6 +1092,11 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
       cacheControl_ = "";
       customTime_ = "";
       internalGetMutableCustomMetadata().clear();
+      objectRetention_ = null;
+      if (objectRetentionBuilder_ != null) {
+        objectRetentionBuilder_.dispose();
+        objectRetentionBuilder_ = null;
+      }
       return this;
     }
 
@@ -1070,6 +1161,11 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.customMetadata_ = internalGetCustomMetadata();
         result.customMetadata_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.objectRetention_ =
+            objectRetentionBuilder_ == null ? objectRetention_ : objectRetentionBuilder_.build();
+        to_bitField0_ |= 0x00000040;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1152,6 +1248,9 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableCustomMetadata().mergeFrom(other.internalGetCustomMetadata());
       bitField0_ |= 0x00000040;
+      if (other.hasObjectRetention()) {
+        mergeObjectRetention(other.getObjectRetention());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1226,6 +1325,12 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
+            case 66:
+              {
+                input.readMessage(getObjectRetentionFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1696,9 +1801,8 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Updates objects Content-Type fixed metadata. Unset values will be
-     * ignored.
-     *  Set empty values to clear the metadata. Refer to documentation in
-     *  https://cloud.google.com/storage/docs/metadata#content-type
+     * ignored. Set empty values to clear the metadata. Refer to documentation in
+     * https://cloud.google.com/storage/docs/metadata#content-type
      * </pre>
      *
      * <code>optional string content_type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1714,9 +1818,8 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Updates objects Content-Type fixed metadata. Unset values will be
-     * ignored.
-     *  Set empty values to clear the metadata. Refer to documentation in
-     *  https://cloud.google.com/storage/docs/metadata#content-type
+     * ignored. Set empty values to clear the metadata. Refer to documentation in
+     * https://cloud.google.com/storage/docs/metadata#content-type
      * </pre>
      *
      * <code>optional string content_type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1740,9 +1843,8 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Updates objects Content-Type fixed metadata. Unset values will be
-     * ignored.
-     *  Set empty values to clear the metadata. Refer to documentation in
-     *  https://cloud.google.com/storage/docs/metadata#content-type
+     * ignored. Set empty values to clear the metadata. Refer to documentation in
+     * https://cloud.google.com/storage/docs/metadata#content-type
      * </pre>
      *
      * <code>optional string content_type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1766,9 +1868,8 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Updates objects Content-Type fixed metadata. Unset values will be
-     * ignored.
-     *  Set empty values to clear the metadata. Refer to documentation in
-     *  https://cloud.google.com/storage/docs/metadata#content-type
+     * ignored. Set empty values to clear the metadata. Refer to documentation in
+     * https://cloud.google.com/storage/docs/metadata#content-type
      * </pre>
      *
      * <code>optional string content_type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1791,9 +1892,8 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Updates objects Content-Type fixed metadata. Unset values will be
-     * ignored.
-     *  Set empty values to clear the metadata. Refer to documentation in
-     *  https://cloud.google.com/storage/docs/metadata#content-type
+     * ignored. Set empty values to clear the metadata. Refer to documentation in
+     * https://cloud.google.com/storage/docs/metadata#content-type
      * </pre>
      *
      * <code>optional string content_type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1812,9 +1912,8 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Updates objects Content-Type fixed metadata. Unset values will be
-     * ignored.
-     *  Set empty values to clear the metadata. Refer to documentation in
-     *  https://cloud.google.com/storage/docs/metadata#content-type
+     * ignored. Set empty values to clear the metadata. Refer to documentation in
+     * https://cloud.google.com/storage/docs/metadata#content-type
      * </pre>
      *
      * <code>optional string content_type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1840,10 +1939,8 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Updates objects Cache-Control fixed metadata. Unset values will
-     * be
-     *  ignored. Set empty values to clear the metadata.
-     *  Additionally, the value for Custom-Time cannot decrease. Refer to
-     *  documentation in
+     * be ignored. Set empty values to clear the metadata. Additionally, the value
+     * for Custom-Time cannot decrease. Refer to documentation in
      * https://cloud.google.com/storage/docs/metadata#caching_data.
      * </pre>
      *
@@ -1860,10 +1957,8 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Updates objects Cache-Control fixed metadata. Unset values will
-     * be
-     *  ignored. Set empty values to clear the metadata.
-     *  Additionally, the value for Custom-Time cannot decrease. Refer to
-     *  documentation in
+     * be ignored. Set empty values to clear the metadata. Additionally, the value
+     * for Custom-Time cannot decrease. Refer to documentation in
      * https://cloud.google.com/storage/docs/metadata#caching_data.
      * </pre>
      *
@@ -1888,10 +1983,8 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Updates objects Cache-Control fixed metadata. Unset values will
-     * be
-     *  ignored. Set empty values to clear the metadata.
-     *  Additionally, the value for Custom-Time cannot decrease. Refer to
-     *  documentation in
+     * be ignored. Set empty values to clear the metadata. Additionally, the value
+     * for Custom-Time cannot decrease. Refer to documentation in
      * https://cloud.google.com/storage/docs/metadata#caching_data.
      * </pre>
      *
@@ -1916,10 +2009,8 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Updates objects Cache-Control fixed metadata. Unset values will
-     * be
-     *  ignored. Set empty values to clear the metadata.
-     *  Additionally, the value for Custom-Time cannot decrease. Refer to
-     *  documentation in
+     * be ignored. Set empty values to clear the metadata. Additionally, the value
+     * for Custom-Time cannot decrease. Refer to documentation in
      * https://cloud.google.com/storage/docs/metadata#caching_data.
      * </pre>
      *
@@ -1943,10 +2034,8 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Updates objects Cache-Control fixed metadata. Unset values will
-     * be
-     *  ignored. Set empty values to clear the metadata.
-     *  Additionally, the value for Custom-Time cannot decrease. Refer to
-     *  documentation in
+     * be ignored. Set empty values to clear the metadata. Additionally, the value
+     * for Custom-Time cannot decrease. Refer to documentation in
      * https://cloud.google.com/storage/docs/metadata#caching_data.
      * </pre>
      *
@@ -1966,10 +2055,8 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Updates objects Cache-Control fixed metadata. Unset values will
-     * be
-     *  ignored. Set empty values to clear the metadata.
-     *  Additionally, the value for Custom-Time cannot decrease. Refer to
-     *  documentation in
+     * be ignored. Set empty values to clear the metadata. Additionally, the value
+     * for Custom-Time cannot decrease. Refer to documentation in
      * https://cloud.google.com/storage/docs/metadata#caching_data.
      * </pre>
      *
@@ -2342,6 +2429,261 @@ public final class PutMetadata extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableCustomMetadata().getMutableMap().putAll(values);
       bitField0_ |= 0x00000040;
       return this;
+    }
+
+    private com.google.cloud.storagebatchoperations.v1.ObjectRetention objectRetention_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.storagebatchoperations.v1.ObjectRetention,
+            com.google.cloud.storagebatchoperations.v1.ObjectRetention.Builder,
+            com.google.cloud.storagebatchoperations.v1.ObjectRetentionOrBuilder>
+        objectRetentionBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Updates objects retention lock configuration. Unset values will
+     * be ignored. Set empty values to clear the retention for the object with
+     * existing `Unlocked` retention mode. Object with existing `Locked` retention
+     * mode cannot be cleared or reduce retain_until_time. Refer to documentation
+     * in https://cloud.google.com/storage/docs/object-lock
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.storagebatchoperations.v1.ObjectRetention object_retention = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the objectRetention field is set.
+     */
+    public boolean hasObjectRetention() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Updates objects retention lock configuration. Unset values will
+     * be ignored. Set empty values to clear the retention for the object with
+     * existing `Unlocked` retention mode. Object with existing `Locked` retention
+     * mode cannot be cleared or reduce retain_until_time. Refer to documentation
+     * in https://cloud.google.com/storage/docs/object-lock
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.storagebatchoperations.v1.ObjectRetention object_retention = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The objectRetention.
+     */
+    public com.google.cloud.storagebatchoperations.v1.ObjectRetention getObjectRetention() {
+      if (objectRetentionBuilder_ == null) {
+        return objectRetention_ == null
+            ? com.google.cloud.storagebatchoperations.v1.ObjectRetention.getDefaultInstance()
+            : objectRetention_;
+      } else {
+        return objectRetentionBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Updates objects retention lock configuration. Unset values will
+     * be ignored. Set empty values to clear the retention for the object with
+     * existing `Unlocked` retention mode. Object with existing `Locked` retention
+     * mode cannot be cleared or reduce retain_until_time. Refer to documentation
+     * in https://cloud.google.com/storage/docs/object-lock
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.storagebatchoperations.v1.ObjectRetention object_retention = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setObjectRetention(
+        com.google.cloud.storagebatchoperations.v1.ObjectRetention value) {
+      if (objectRetentionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        objectRetention_ = value;
+      } else {
+        objectRetentionBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Updates objects retention lock configuration. Unset values will
+     * be ignored. Set empty values to clear the retention for the object with
+     * existing `Unlocked` retention mode. Object with existing `Locked` retention
+     * mode cannot be cleared or reduce retain_until_time. Refer to documentation
+     * in https://cloud.google.com/storage/docs/object-lock
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.storagebatchoperations.v1.ObjectRetention object_retention = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setObjectRetention(
+        com.google.cloud.storagebatchoperations.v1.ObjectRetention.Builder builderForValue) {
+      if (objectRetentionBuilder_ == null) {
+        objectRetention_ = builderForValue.build();
+      } else {
+        objectRetentionBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Updates objects retention lock configuration. Unset values will
+     * be ignored. Set empty values to clear the retention for the object with
+     * existing `Unlocked` retention mode. Object with existing `Locked` retention
+     * mode cannot be cleared or reduce retain_until_time. Refer to documentation
+     * in https://cloud.google.com/storage/docs/object-lock
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.storagebatchoperations.v1.ObjectRetention object_retention = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeObjectRetention(
+        com.google.cloud.storagebatchoperations.v1.ObjectRetention value) {
+      if (objectRetentionBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && objectRetention_ != null
+            && objectRetention_
+                != com.google.cloud.storagebatchoperations.v1.ObjectRetention
+                    .getDefaultInstance()) {
+          getObjectRetentionBuilder().mergeFrom(value);
+        } else {
+          objectRetention_ = value;
+        }
+      } else {
+        objectRetentionBuilder_.mergeFrom(value);
+      }
+      if (objectRetention_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Updates objects retention lock configuration. Unset values will
+     * be ignored. Set empty values to clear the retention for the object with
+     * existing `Unlocked` retention mode. Object with existing `Locked` retention
+     * mode cannot be cleared or reduce retain_until_time. Refer to documentation
+     * in https://cloud.google.com/storage/docs/object-lock
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.storagebatchoperations.v1.ObjectRetention object_retention = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearObjectRetention() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      objectRetention_ = null;
+      if (objectRetentionBuilder_ != null) {
+        objectRetentionBuilder_.dispose();
+        objectRetentionBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Updates objects retention lock configuration. Unset values will
+     * be ignored. Set empty values to clear the retention for the object with
+     * existing `Unlocked` retention mode. Object with existing `Locked` retention
+     * mode cannot be cleared or reduce retain_until_time. Refer to documentation
+     * in https://cloud.google.com/storage/docs/object-lock
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.storagebatchoperations.v1.ObjectRetention object_retention = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.storagebatchoperations.v1.ObjectRetention.Builder
+        getObjectRetentionBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getObjectRetentionFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Updates objects retention lock configuration. Unset values will
+     * be ignored. Set empty values to clear the retention for the object with
+     * existing `Unlocked` retention mode. Object with existing `Locked` retention
+     * mode cannot be cleared or reduce retain_until_time. Refer to documentation
+     * in https://cloud.google.com/storage/docs/object-lock
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.storagebatchoperations.v1.ObjectRetention object_retention = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.storagebatchoperations.v1.ObjectRetentionOrBuilder
+        getObjectRetentionOrBuilder() {
+      if (objectRetentionBuilder_ != null) {
+        return objectRetentionBuilder_.getMessageOrBuilder();
+      } else {
+        return objectRetention_ == null
+            ? com.google.cloud.storagebatchoperations.v1.ObjectRetention.getDefaultInstance()
+            : objectRetention_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Updates objects retention lock configuration. Unset values will
+     * be ignored. Set empty values to clear the retention for the object with
+     * existing `Unlocked` retention mode. Object with existing `Locked` retention
+     * mode cannot be cleared or reduce retain_until_time. Refer to documentation
+     * in https://cloud.google.com/storage/docs/object-lock
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.storagebatchoperations.v1.ObjectRetention object_retention = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.storagebatchoperations.v1.ObjectRetention,
+            com.google.cloud.storagebatchoperations.v1.ObjectRetention.Builder,
+            com.google.cloud.storagebatchoperations.v1.ObjectRetentionOrBuilder>
+        getObjectRetentionFieldBuilder() {
+      if (objectRetentionBuilder_ == null) {
+        objectRetentionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.storagebatchoperations.v1.ObjectRetention,
+                com.google.cloud.storagebatchoperations.v1.ObjectRetention.Builder,
+                com.google.cloud.storagebatchoperations.v1.ObjectRetentionOrBuilder>(
+                getObjectRetention(), getParentForChildren(), isClean());
+        objectRetention_ = null;
+      }
+      return objectRetentionBuilder_;
     }
 
     @java.lang.Override

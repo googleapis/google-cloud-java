@@ -28,7 +28,8 @@ public interface InterconnectRemoteLocationPermittedConnectionsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of an Interconnect location that is permitted to connect to this Interconnect remote location.
+   * Output only. [Output Only] URL of an Interconnect location that is permitted to
+   * connect to this Interconnect remote location.
    * </pre>
    *
    * <code>optional string interconnect_location = 492235846;</code>
@@ -41,7 +42,8 @@ public interface InterconnectRemoteLocationPermittedConnectionsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of an Interconnect location that is permitted to connect to this Interconnect remote location.
+   * Output only. [Output Only] URL of an Interconnect location that is permitted to
+   * connect to this Interconnect remote location.
    * </pre>
    *
    * <code>optional string interconnect_location = 492235846;</code>
@@ -54,7 +56,8 @@ public interface InterconnectRemoteLocationPermittedConnectionsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of an Interconnect location that is permitted to connect to this Interconnect remote location.
+   * Output only. [Output Only] URL of an Interconnect location that is permitted to
+   * connect to this Interconnect remote location.
    * </pre>
    *
    * <code>optional string interconnect_location = 492235846;</code>

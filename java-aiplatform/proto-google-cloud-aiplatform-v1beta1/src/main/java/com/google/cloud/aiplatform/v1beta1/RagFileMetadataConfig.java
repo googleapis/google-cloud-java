@@ -178,7 +178,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
    * well as entire Google Cloud Storage directories. Sample formats:
    * - `gs://bucket_name/my_directory/object_name/metadata_schema.json`
    * - `gs://bucket_name/my_directory`
-   * If providing a directory, the metadata schema will be read from
+   * If the user provides a directory, the metadata schema will be read from
    * the files that ends with "metadata_schema.json" in the directory.
    * </pre>
    *
@@ -199,7 +199,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
    * well as entire Google Cloud Storage directories. Sample formats:
    * - `gs://bucket_name/my_directory/object_name/metadata_schema.json`
    * - `gs://bucket_name/my_directory`
-   * If providing a directory, the metadata schema will be read from
+   * If the user provides a directory, the metadata schema will be read from
    * the files that ends with "metadata_schema.json" in the directory.
    * </pre>
    *
@@ -223,7 +223,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
    * well as entire Google Cloud Storage directories. Sample formats:
    * - `gs://bucket_name/my_directory/object_name/metadata_schema.json`
    * - `gs://bucket_name/my_directory`
-   * If providing a directory, the metadata schema will be read from
+   * If the user provides a directory, the metadata schema will be read from
    * the files that ends with "metadata_schema.json" in the directory.
    * </pre>
    *
@@ -246,7 +246,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
    * <pre>
    * Google Drive location. Supports importing individual files as
    * well as Google Drive folders.
-   * If providing a folder, the metadata schema will be read from
+   * If the user provides a folder, the metadata schema will be read from
    * the files that ends with "metadata_schema.json" in the directory.
    * </pre>
    *
@@ -267,7 +267,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
    * <pre>
    * Google Drive location. Supports importing individual files as
    * well as Google Drive folders.
-   * If providing a folder, the metadata schema will be read from
+   * If the user provides a folder, the metadata schema will be read from
    * the files that ends with "metadata_schema.json" in the directory.
    * </pre>
    *
@@ -292,7 +292,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
    * <pre>
    * Google Drive location. Supports importing individual files as
    * well as Google Drive folders.
-   * If providing a folder, the metadata schema will be read from
+   * If the user provides a folder, the metadata schema will be read from
    * the files that ends with "metadata_schema.json" in the directory.
    * </pre>
    *
@@ -392,7 +392,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
    * well as entire Google Cloud Storage directories. Sample formats:
    * - `gs://bucket_name/my_directory/object_name/metadata.json`
    * - `gs://bucket_name/my_directory`
-   * If providing a directory, the metadata will be read from
+   * If the user provides a directory, the metadata will be read from
    * the files that ends with "metadata.json" in the directory.
    * </pre>
    *
@@ -413,7 +413,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
    * well as entire Google Cloud Storage directories. Sample formats:
    * - `gs://bucket_name/my_directory/object_name/metadata.json`
    * - `gs://bucket_name/my_directory`
-   * If providing a directory, the metadata will be read from
+   * If the user provides a directory, the metadata will be read from
    * the files that ends with "metadata.json" in the directory.
    * </pre>
    *
@@ -437,7 +437,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
    * well as entire Google Cloud Storage directories. Sample formats:
    * - `gs://bucket_name/my_directory/object_name/metadata.json`
    * - `gs://bucket_name/my_directory`
-   * If providing a directory, the metadata will be read from
+   * If the user provides a directory, the metadata will be read from
    * the files that ends with "metadata.json" in the directory.
    * </pre>
    *
@@ -459,7 +459,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
    * <pre>
    * Google Drive location. Supports importing individual files as
    * well as Google Drive folders.
-   * If providing a directory, the metadata will be read from
+   * If the user provides a directory, the metadata will be read from
    * the files that ends with "metadata.json" in the directory.
    * </pre>
    *
@@ -479,7 +479,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
    * <pre>
    * Google Drive location. Supports importing individual files as
    * well as Google Drive folders.
-   * If providing a directory, the metadata will be read from
+   * If the user provides a directory, the metadata will be read from
    * the files that ends with "metadata.json" in the directory.
    * </pre>
    *
@@ -502,7 +502,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
    * <pre>
    * Google Drive location. Supports importing individual files as
    * well as Google Drive folders.
-   * If providing a directory, the metadata will be read from
+   * If the user provides a directory, the metadata will be read from
    * the files that ends with "metadata.json" in the directory.
    * </pre>
    *
@@ -1188,7 +1188,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * well as entire Google Cloud Storage directories. Sample formats:
      * - `gs://bucket_name/my_directory/object_name/metadata_schema.json`
      * - `gs://bucket_name/my_directory`
-     * If providing a directory, the metadata schema will be read from
+     * If the user provides a directory, the metadata schema will be read from
      * the files that ends with "metadata_schema.json" in the directory.
      * </pre>
      *
@@ -1209,7 +1209,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * well as entire Google Cloud Storage directories. Sample formats:
      * - `gs://bucket_name/my_directory/object_name/metadata_schema.json`
      * - `gs://bucket_name/my_directory`
-     * If providing a directory, the metadata schema will be read from
+     * If the user provides a directory, the metadata schema will be read from
      * the files that ends with "metadata_schema.json" in the directory.
      * </pre>
      *
@@ -1240,7 +1240,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * well as entire Google Cloud Storage directories. Sample formats:
      * - `gs://bucket_name/my_directory/object_name/metadata_schema.json`
      * - `gs://bucket_name/my_directory`
-     * If providing a directory, the metadata schema will be read from
+     * If the user provides a directory, the metadata schema will be read from
      * the files that ends with "metadata_schema.json" in the directory.
      * </pre>
      *
@@ -1268,7 +1268,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * well as entire Google Cloud Storage directories. Sample formats:
      * - `gs://bucket_name/my_directory/object_name/metadata_schema.json`
      * - `gs://bucket_name/my_directory`
-     * If providing a directory, the metadata schema will be read from
+     * If the user provides a directory, the metadata schema will be read from
      * the files that ends with "metadata_schema.json" in the directory.
      * </pre>
      *
@@ -1294,7 +1294,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * well as entire Google Cloud Storage directories. Sample formats:
      * - `gs://bucket_name/my_directory/object_name/metadata_schema.json`
      * - `gs://bucket_name/my_directory`
-     * If providing a directory, the metadata schema will be read from
+     * If the user provides a directory, the metadata schema will be read from
      * the files that ends with "metadata_schema.json" in the directory.
      * </pre>
      *
@@ -1334,7 +1334,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * well as entire Google Cloud Storage directories. Sample formats:
      * - `gs://bucket_name/my_directory/object_name/metadata_schema.json`
      * - `gs://bucket_name/my_directory`
-     * If providing a directory, the metadata schema will be read from
+     * If the user provides a directory, the metadata schema will be read from
      * the files that ends with "metadata_schema.json" in the directory.
      * </pre>
      *
@@ -1365,7 +1365,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * well as entire Google Cloud Storage directories. Sample formats:
      * - `gs://bucket_name/my_directory/object_name/metadata_schema.json`
      * - `gs://bucket_name/my_directory`
-     * If providing a directory, the metadata schema will be read from
+     * If the user provides a directory, the metadata schema will be read from
      * the files that ends with "metadata_schema.json" in the directory.
      * </pre>
      *
@@ -1384,7 +1384,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * well as entire Google Cloud Storage directories. Sample formats:
      * - `gs://bucket_name/my_directory/object_name/metadata_schema.json`
      * - `gs://bucket_name/my_directory`
-     * If providing a directory, the metadata schema will be read from
+     * If the user provides a directory, the metadata schema will be read from
      * the files that ends with "metadata_schema.json" in the directory.
      * </pre>
      *
@@ -1411,7 +1411,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * well as entire Google Cloud Storage directories. Sample formats:
      * - `gs://bucket_name/my_directory/object_name/metadata_schema.json`
      * - `gs://bucket_name/my_directory`
-     * If providing a directory, the metadata schema will be read from
+     * If the user provides a directory, the metadata schema will be read from
      * the files that ends with "metadata_schema.json" in the directory.
      * </pre>
      *
@@ -1454,7 +1454,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * <pre>
      * Google Drive location. Supports importing individual files as
      * well as Google Drive folders.
-     * If providing a folder, the metadata schema will be read from
+     * If the user provides a folder, the metadata schema will be read from
      * the files that ends with "metadata_schema.json" in the directory.
      * </pre>
      *
@@ -1475,7 +1475,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * <pre>
      * Google Drive location. Supports importing individual files as
      * well as Google Drive folders.
-     * If providing a folder, the metadata schema will be read from
+     * If the user provides a folder, the metadata schema will be read from
      * the files that ends with "metadata_schema.json" in the directory.
      * </pre>
      *
@@ -1507,7 +1507,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * <pre>
      * Google Drive location. Supports importing individual files as
      * well as Google Drive folders.
-     * If providing a folder, the metadata schema will be read from
+     * If the user provides a folder, the metadata schema will be read from
      * the files that ends with "metadata_schema.json" in the directory.
      * </pre>
      *
@@ -1536,7 +1536,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * <pre>
      * Google Drive location. Supports importing individual files as
      * well as Google Drive folders.
-     * If providing a folder, the metadata schema will be read from
+     * If the user provides a folder, the metadata schema will be read from
      * the files that ends with "metadata_schema.json" in the directory.
      * </pre>
      *
@@ -1562,7 +1562,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * <pre>
      * Google Drive location. Supports importing individual files as
      * well as Google Drive folders.
-     * If providing a folder, the metadata schema will be read from
+     * If the user provides a folder, the metadata schema will be read from
      * the files that ends with "metadata_schema.json" in the directory.
      * </pre>
      *
@@ -1602,7 +1602,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * <pre>
      * Google Drive location. Supports importing individual files as
      * well as Google Drive folders.
-     * If providing a folder, the metadata schema will be read from
+     * If the user provides a folder, the metadata schema will be read from
      * the files that ends with "metadata_schema.json" in the directory.
      * </pre>
      *
@@ -1633,7 +1633,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * <pre>
      * Google Drive location. Supports importing individual files as
      * well as Google Drive folders.
-     * If providing a folder, the metadata schema will be read from
+     * If the user provides a folder, the metadata schema will be read from
      * the files that ends with "metadata_schema.json" in the directory.
      * </pre>
      *
@@ -1652,7 +1652,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * <pre>
      * Google Drive location. Supports importing individual files as
      * well as Google Drive folders.
-     * If providing a folder, the metadata schema will be read from
+     * If the user provides a folder, the metadata schema will be read from
      * the files that ends with "metadata_schema.json" in the directory.
      * </pre>
      *
@@ -1679,7 +1679,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * <pre>
      * Google Drive location. Supports importing individual files as
      * well as Google Drive folders.
-     * If providing a folder, the metadata schema will be read from
+     * If the user provides a folder, the metadata schema will be read from
      * the files that ends with "metadata_schema.json" in the directory.
      * </pre>
      *
@@ -1865,7 +1865,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * well as entire Google Cloud Storage directories. Sample formats:
      * - `gs://bucket_name/my_directory/object_name/metadata.json`
      * - `gs://bucket_name/my_directory`
-     * If providing a directory, the metadata will be read from
+     * If the user provides a directory, the metadata will be read from
      * the files that ends with "metadata.json" in the directory.
      * </pre>
      *
@@ -1886,7 +1886,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * well as entire Google Cloud Storage directories. Sample formats:
      * - `gs://bucket_name/my_directory/object_name/metadata.json`
      * - `gs://bucket_name/my_directory`
-     * If providing a directory, the metadata will be read from
+     * If the user provides a directory, the metadata will be read from
      * the files that ends with "metadata.json" in the directory.
      * </pre>
      *
@@ -1917,7 +1917,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * well as entire Google Cloud Storage directories. Sample formats:
      * - `gs://bucket_name/my_directory/object_name/metadata.json`
      * - `gs://bucket_name/my_directory`
-     * If providing a directory, the metadata will be read from
+     * If the user provides a directory, the metadata will be read from
      * the files that ends with "metadata.json" in the directory.
      * </pre>
      *
@@ -1945,7 +1945,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * well as entire Google Cloud Storage directories. Sample formats:
      * - `gs://bucket_name/my_directory/object_name/metadata.json`
      * - `gs://bucket_name/my_directory`
-     * If providing a directory, the metadata will be read from
+     * If the user provides a directory, the metadata will be read from
      * the files that ends with "metadata.json" in the directory.
      * </pre>
      *
@@ -1971,7 +1971,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * well as entire Google Cloud Storage directories. Sample formats:
      * - `gs://bucket_name/my_directory/object_name/metadata.json`
      * - `gs://bucket_name/my_directory`
-     * If providing a directory, the metadata will be read from
+     * If the user provides a directory, the metadata will be read from
      * the files that ends with "metadata.json" in the directory.
      * </pre>
      *
@@ -2010,7 +2010,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * well as entire Google Cloud Storage directories. Sample formats:
      * - `gs://bucket_name/my_directory/object_name/metadata.json`
      * - `gs://bucket_name/my_directory`
-     * If providing a directory, the metadata will be read from
+     * If the user provides a directory, the metadata will be read from
      * the files that ends with "metadata.json" in the directory.
      * </pre>
      *
@@ -2041,7 +2041,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * well as entire Google Cloud Storage directories. Sample formats:
      * - `gs://bucket_name/my_directory/object_name/metadata.json`
      * - `gs://bucket_name/my_directory`
-     * If providing a directory, the metadata will be read from
+     * If the user provides a directory, the metadata will be read from
      * the files that ends with "metadata.json" in the directory.
      * </pre>
      *
@@ -2059,7 +2059,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * well as entire Google Cloud Storage directories. Sample formats:
      * - `gs://bucket_name/my_directory/object_name/metadata.json`
      * - `gs://bucket_name/my_directory`
-     * If providing a directory, the metadata will be read from
+     * If the user provides a directory, the metadata will be read from
      * the files that ends with "metadata.json" in the directory.
      * </pre>
      *
@@ -2085,7 +2085,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * well as entire Google Cloud Storage directories. Sample formats:
      * - `gs://bucket_name/my_directory/object_name/metadata.json`
      * - `gs://bucket_name/my_directory`
-     * If providing a directory, the metadata will be read from
+     * If the user provides a directory, the metadata will be read from
      * the files that ends with "metadata.json" in the directory.
      * </pre>
      *
@@ -2127,7 +2127,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * <pre>
      * Google Drive location. Supports importing individual files as
      * well as Google Drive folders.
-     * If providing a directory, the metadata will be read from
+     * If the user provides a directory, the metadata will be read from
      * the files that ends with "metadata.json" in the directory.
      * </pre>
      *
@@ -2147,7 +2147,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * <pre>
      * Google Drive location. Supports importing individual files as
      * well as Google Drive folders.
-     * If providing a directory, the metadata will be read from
+     * If the user provides a directory, the metadata will be read from
      * the files that ends with "metadata.json" in the directory.
      * </pre>
      *
@@ -2177,7 +2177,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * <pre>
      * Google Drive location. Supports importing individual files as
      * well as Google Drive folders.
-     * If providing a directory, the metadata will be read from
+     * If the user provides a directory, the metadata will be read from
      * the files that ends with "metadata.json" in the directory.
      * </pre>
      *
@@ -2205,7 +2205,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * <pre>
      * Google Drive location. Supports importing individual files as
      * well as Google Drive folders.
-     * If providing a directory, the metadata will be read from
+     * If the user provides a directory, the metadata will be read from
      * the files that ends with "metadata.json" in the directory.
      * </pre>
      *
@@ -2230,7 +2230,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * <pre>
      * Google Drive location. Supports importing individual files as
      * well as Google Drive folders.
-     * If providing a directory, the metadata will be read from
+     * If the user provides a directory, the metadata will be read from
      * the files that ends with "metadata.json" in the directory.
      * </pre>
      *
@@ -2269,7 +2269,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * <pre>
      * Google Drive location. Supports importing individual files as
      * well as Google Drive folders.
-     * If providing a directory, the metadata will be read from
+     * If the user provides a directory, the metadata will be read from
      * the files that ends with "metadata.json" in the directory.
      * </pre>
      *
@@ -2299,7 +2299,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * <pre>
      * Google Drive location. Supports importing individual files as
      * well as Google Drive folders.
-     * If providing a directory, the metadata will be read from
+     * If the user provides a directory, the metadata will be read from
      * the files that ends with "metadata.json" in the directory.
      * </pre>
      *
@@ -2317,7 +2317,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * <pre>
      * Google Drive location. Supports importing individual files as
      * well as Google Drive folders.
-     * If providing a directory, the metadata will be read from
+     * If the user provides a directory, the metadata will be read from
      * the files that ends with "metadata.json" in the directory.
      * </pre>
      *
@@ -2343,7 +2343,7 @@ public final class RagFileMetadataConfig extends com.google.protobuf.GeneratedMe
      * <pre>
      * Google Drive location. Supports importing individual files as
      * well as Google Drive folders.
-     * If providing a directory, the metadata will be read from
+     * If the user provides a directory, the metadata will be read from
      * the files that ends with "metadata.json" in the directory.
      * </pre>
      *

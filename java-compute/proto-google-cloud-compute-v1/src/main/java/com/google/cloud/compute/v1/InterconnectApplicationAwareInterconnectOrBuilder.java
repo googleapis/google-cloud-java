@@ -56,7 +56,8 @@ public interface InterconnectApplicationAwareInterconnectOrBuilder
    *
    *
    * <pre>
-   * Description for the application awareness profile on this Cloud Interconnect.
+   * Description for the application awareness profile on this Cloud
+   * Interconnect.
    * </pre>
    *
    * <code>optional string profile_description = 262813286;</code>
@@ -69,7 +70,8 @@ public interface InterconnectApplicationAwareInterconnectOrBuilder
    *
    *
    * <pre>
-   * Description for the application awareness profile on this Cloud Interconnect.
+   * Description for the application awareness profile on this Cloud
+   * Interconnect.
    * </pre>
    *
    * <code>optional string profile_description = 262813286;</code>
@@ -82,7 +84,8 @@ public interface InterconnectApplicationAwareInterconnectOrBuilder
    *
    *
    * <pre>
-   * Description for the application awareness profile on this Cloud Interconnect.
+   * Description for the application awareness profile on this Cloud
+   * Interconnect.
    * </pre>
    *
    * <code>optional string profile_description = 262813286;</code>
@@ -95,7 +98,9 @@ public interface InterconnectApplicationAwareInterconnectOrBuilder
    *
    *
    * <pre>
-   * Optional field to specify a list of shape average percentages to be applied in conjunction with StrictPriorityPolicy or BandwidthPercentagePolicy.
+   * Optional field to specify a list of shape average percentages to be
+   * applied in conjunction with StrictPriorityPolicy or
+   * BandwidthPercentagePolicy.
    * </pre>
    *
    * <code>
@@ -110,7 +115,9 @@ public interface InterconnectApplicationAwareInterconnectOrBuilder
    *
    *
    * <pre>
-   * Optional field to specify a list of shape average percentages to be applied in conjunction with StrictPriorityPolicy or BandwidthPercentagePolicy.
+   * Optional field to specify a list of shape average percentages to be
+   * applied in conjunction with StrictPriorityPolicy or
+   * BandwidthPercentagePolicy.
    * </pre>
    *
    * <code>
@@ -124,7 +131,9 @@ public interface InterconnectApplicationAwareInterconnectOrBuilder
    *
    *
    * <pre>
-   * Optional field to specify a list of shape average percentages to be applied in conjunction with StrictPriorityPolicy or BandwidthPercentagePolicy.
+   * Optional field to specify a list of shape average percentages to be
+   * applied in conjunction with StrictPriorityPolicy or
+   * BandwidthPercentagePolicy.
    * </pre>
    *
    * <code>
@@ -137,7 +146,9 @@ public interface InterconnectApplicationAwareInterconnectOrBuilder
    *
    *
    * <pre>
-   * Optional field to specify a list of shape average percentages to be applied in conjunction with StrictPriorityPolicy or BandwidthPercentagePolicy.
+   * Optional field to specify a list of shape average percentages to be
+   * applied in conjunction with StrictPriorityPolicy or
+   * BandwidthPercentagePolicy.
    * </pre>
    *
    * <code>
@@ -154,7 +165,9 @@ public interface InterconnectApplicationAwareInterconnectOrBuilder
    *
    *
    * <pre>
-   * Optional field to specify a list of shape average percentages to be applied in conjunction with StrictPriorityPolicy or BandwidthPercentagePolicy.
+   * Optional field to specify a list of shape average percentages to be
+   * applied in conjunction with StrictPriorityPolicy or
+   * BandwidthPercentagePolicy.
    * </pre>
    *
    * <code>

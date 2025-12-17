@@ -1,0 +1,16 @@
+{
+  "api_shortname": "hypercomputecluster",
+  "name_pretty": "Cluster Director API",
+  "product_documentation": "https://cloud.google.com/blog/products/compute/managed-slurm-and-other-cluster-director-enhancements",
+  "api_description": "simplifies cluster management across compute, network, and storage",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-hypercomputecluster/latest/overview",
+  "release_level": "preview",
+  "transport": "both",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-hypercomputecluster",
+  "distribution_name": "com.google.cloud:google-cloud-hypercomputecluster",
+  "api_id": "hypercomputecluster.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}

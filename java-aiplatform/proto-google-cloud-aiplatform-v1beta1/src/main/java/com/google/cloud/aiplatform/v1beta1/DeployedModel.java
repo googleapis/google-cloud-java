@@ -1220,6 +1220,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     DEDICATED_RESOURCES(7),
     AUTOMATIC_RESOURCES(8),
     SHARED_RESOURCES(17),
+    FULL_FINE_TUNED_RESOURCES(36),
     PREDICTIONRESOURCES_NOT_SET(0);
     private final int value;
 
@@ -1245,6 +1246,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
           return AUTOMATIC_RESOURCES;
         case 17:
           return SHARED_RESOURCES;
+        case 36:
+          return FULL_FINE_TUNED_RESOURCES;
         case 0:
           return PREDICTIONRESOURCES_NOT_SET;
         default:
@@ -1454,6 +1457,67 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int FULL_FINE_TUNED_RESOURCES_FIELD_NUMBER = 36;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resources for a full fine tuned model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FullFineTunedResources full_fine_tuned_resources = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the fullFineTunedResources field is set.
+   */
+  @java.lang.Override
+  public boolean hasFullFineTunedResources() {
+    return predictionResourcesCase_ == 36;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resources for a full fine tuned model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FullFineTunedResources full_fine_tuned_resources = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The fullFineTunedResources.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.FullFineTunedResources getFullFineTunedResources() {
+    if (predictionResourcesCase_ == 36) {
+      return (com.google.cloud.aiplatform.v1beta1.FullFineTunedResources) predictionResources_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.FullFineTunedResources.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resources for a full fine tuned model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FullFineTunedResources full_fine_tuned_resources = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.FullFineTunedResourcesOrBuilder
+      getFullFineTunedResourcesOrBuilder() {
+    if (predictionResourcesCase_ == 36) {
+      return (com.google.cloud.aiplatform.v1beta1.FullFineTunedResources) predictionResources_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.FullFineTunedResources.getDefaultInstance();
   }
 
   public static final int ID_FIELD_NUMBER = 1;
@@ -2549,6 +2613,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(30, getSpeculativeDecodingSpec());
     }
+    if (predictionResourcesCase_ == 36) {
+      output.writeMessage(
+          36, (com.google.cloud.aiplatform.v1beta1.FullFineTunedResources) predictionResources_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2635,6 +2703,12 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               30, getSpeculativeDecodingSpec());
     }
+    if (predictionResourcesCase_ == 36) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              36,
+              (com.google.cloud.aiplatform.v1beta1.FullFineTunedResources) predictionResources_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2700,6 +2774,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         break;
       case 17:
         if (!getSharedResources().equals(other.getSharedResources())) return false;
+        break;
+      case 36:
+        if (!getFullFineTunedResources().equals(other.getFullFineTunedResources())) return false;
         break;
       case 0:
       default:
@@ -2779,6 +2856,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       case 17:
         hash = (37 * hash) + SHARED_RESOURCES_FIELD_NUMBER;
         hash = (53 * hash) + getSharedResources().hashCode();
+        break;
+      case 36:
+        hash = (37 * hash) + FULL_FINE_TUNED_RESOURCES_FIELD_NUMBER;
+        hash = (53 * hash) + getFullFineTunedResources().hashCode();
         break;
       case 0:
       default:
@@ -2966,6 +3047,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       if (automaticResourcesBuilder_ != null) {
         automaticResourcesBuilder_.clear();
       }
+      if (fullFineTunedResourcesBuilder_ != null) {
+        fullFineTunedResourcesBuilder_.clear();
+      }
       id_ = "";
       model_ = "";
       modelVersionId_ = "";
@@ -3051,72 +3135,72 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.DeployedModel result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.id_ = id_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.model_ = model_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.modelVersionId_ = modelVersionId_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.displayName_ = displayName_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.explanationSpec_ =
             explanationSpecBuilder_ == null ? explanationSpec_ : explanationSpecBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.disableExplanations_ = disableExplanations_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.serviceAccount_ = serviceAccount_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.enableContainerLogging_ = enableContainerLogging_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.disableContainerLogging_ = disableContainerLogging_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.enableAccessLogging_ = enableAccessLogging_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.privateEndpoints_ =
             privateEndpointsBuilder_ == null ? privateEndpoints_ : privateEndpointsBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.fasterDeploymentConfig_ =
             fasterDeploymentConfigBuilder_ == null
                 ? fasterDeploymentConfig_
                 : fasterDeploymentConfigBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.rolloutOptions_ =
             rolloutOptionsBuilder_ == null ? rolloutOptions_ : rolloutOptionsBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.systemLabels_ = internalGetSystemLabels();
         result.systemLabels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.checkpointId_ = checkpointId_;
       }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.speculativeDecodingSpec_ =
             speculativeDecodingSpecBuilder_ == null
                 ? speculativeDecodingSpec_
@@ -3134,6 +3218,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       }
       if (predictionResourcesCase_ == 8 && automaticResourcesBuilder_ != null) {
         result.predictionResources_ = automaticResourcesBuilder_.build();
+      }
+      if (predictionResourcesCase_ == 36 && fullFineTunedResourcesBuilder_ != null) {
+        result.predictionResources_ = fullFineTunedResourcesBuilder_.build();
       }
     }
 
@@ -3185,22 +3272,22 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getModel().isEmpty()) {
         model_ = other.model_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getModelVersionId().isEmpty()) {
         modelVersionId_ = other.modelVersionId_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -3214,7 +3301,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getServiceAccount().isEmpty()) {
         serviceAccount_ = other.serviceAccount_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.getEnableContainerLogging() != false) {
@@ -3239,10 +3326,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         mergeStatus(other.getStatus());
       }
       internalGetMutableSystemLabels().mergeFrom(other.internalGetSystemLabels());
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       if (!other.getCheckpointId().isEmpty()) {
         checkpointId_ = other.checkpointId_;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       if (other.hasSpeculativeDecodingSpec()) {
@@ -3264,6 +3351,11 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
             predictionResourcesCase_ = 17;
             predictionResources_ = other.predictionResources_;
             onChanged();
+            break;
+          }
+        case FULL_FINE_TUNED_RESOURCES:
+          {
+            mergeFullFineTunedResources(other.getFullFineTunedResources());
             break;
           }
         case PREDICTIONRESOURCES_NOT_SET:
@@ -3300,25 +3392,25 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 id_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 10
             case 18:
               {
                 model_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 18
             case 26:
               {
                 displayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 26
             case 50:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 50
             case 58:
@@ -3338,38 +3430,38 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
             case 74:
               {
                 input.readMessage(getExplanationSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 74
             case 90:
               {
                 serviceAccount_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 90
             case 96:
               {
                 enableContainerLogging_ = input.readBool();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 96
             case 104:
               {
                 enableAccessLogging_ = input.readBool();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 104
             case 114:
               {
                 input.readMessage(
                     getPrivateEndpointsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 114
             case 120:
               {
                 disableContainerLogging_ = input.readBool();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 120
             case 138:
@@ -3382,32 +3474,32 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
             case 146:
               {
                 modelVersionId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 146
             case 152:
               {
                 disableExplanations_ = input.readBool();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 152
             case 186:
               {
                 input.readMessage(
                     getFasterDeploymentConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 186
             case 202:
               {
                 input.readMessage(getRolloutOptionsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 202
             case 210:
               {
                 input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 210
             case 226:
@@ -3419,22 +3511,29 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableSystemLabels()
                     .getMutableMap()
                     .put(systemLabels__.getKey(), systemLabels__.getValue());
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 226
             case 234:
               {
                 checkpointId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 234
             case 242:
               {
                 input.readMessage(
                     getSpeculativeDecodingSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 242
+            case 290:
+              {
+                input.readMessage(
+                    getFullFineTunedResourcesFieldBuilder().getBuilder(), extensionRegistry);
+                predictionResourcesCase_ = 36;
+                break;
+              } // case 290
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4085,6 +4184,250 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.FullFineTunedResources,
+            com.google.cloud.aiplatform.v1beta1.FullFineTunedResources.Builder,
+            com.google.cloud.aiplatform.v1beta1.FullFineTunedResourcesOrBuilder>
+        fullFineTunedResourcesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resources for a full fine tuned model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FullFineTunedResources full_fine_tuned_resources = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the fullFineTunedResources field is set.
+     */
+    @java.lang.Override
+    public boolean hasFullFineTunedResources() {
+      return predictionResourcesCase_ == 36;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resources for a full fine tuned model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FullFineTunedResources full_fine_tuned_resources = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The fullFineTunedResources.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.FullFineTunedResources getFullFineTunedResources() {
+      if (fullFineTunedResourcesBuilder_ == null) {
+        if (predictionResourcesCase_ == 36) {
+          return (com.google.cloud.aiplatform.v1beta1.FullFineTunedResources) predictionResources_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.FullFineTunedResources.getDefaultInstance();
+      } else {
+        if (predictionResourcesCase_ == 36) {
+          return fullFineTunedResourcesBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.FullFineTunedResources.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resources for a full fine tuned model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FullFineTunedResources full_fine_tuned_resources = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFullFineTunedResources(
+        com.google.cloud.aiplatform.v1beta1.FullFineTunedResources value) {
+      if (fullFineTunedResourcesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        predictionResources_ = value;
+        onChanged();
+      } else {
+        fullFineTunedResourcesBuilder_.setMessage(value);
+      }
+      predictionResourcesCase_ = 36;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resources for a full fine tuned model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FullFineTunedResources full_fine_tuned_resources = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFullFineTunedResources(
+        com.google.cloud.aiplatform.v1beta1.FullFineTunedResources.Builder builderForValue) {
+      if (fullFineTunedResourcesBuilder_ == null) {
+        predictionResources_ = builderForValue.build();
+        onChanged();
+      } else {
+        fullFineTunedResourcesBuilder_.setMessage(builderForValue.build());
+      }
+      predictionResourcesCase_ = 36;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resources for a full fine tuned model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FullFineTunedResources full_fine_tuned_resources = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeFullFineTunedResources(
+        com.google.cloud.aiplatform.v1beta1.FullFineTunedResources value) {
+      if (fullFineTunedResourcesBuilder_ == null) {
+        if (predictionResourcesCase_ == 36
+            && predictionResources_
+                != com.google.cloud.aiplatform.v1beta1.FullFineTunedResources
+                    .getDefaultInstance()) {
+          predictionResources_ =
+              com.google.cloud.aiplatform.v1beta1.FullFineTunedResources.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.FullFineTunedResources)
+                          predictionResources_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          predictionResources_ = value;
+        }
+        onChanged();
+      } else {
+        if (predictionResourcesCase_ == 36) {
+          fullFineTunedResourcesBuilder_.mergeFrom(value);
+        } else {
+          fullFineTunedResourcesBuilder_.setMessage(value);
+        }
+      }
+      predictionResourcesCase_ = 36;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resources for a full fine tuned model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FullFineTunedResources full_fine_tuned_resources = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearFullFineTunedResources() {
+      if (fullFineTunedResourcesBuilder_ == null) {
+        if (predictionResourcesCase_ == 36) {
+          predictionResourcesCase_ = 0;
+          predictionResources_ = null;
+          onChanged();
+        }
+      } else {
+        if (predictionResourcesCase_ == 36) {
+          predictionResourcesCase_ = 0;
+          predictionResources_ = null;
+        }
+        fullFineTunedResourcesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resources for a full fine tuned model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FullFineTunedResources full_fine_tuned_resources = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.FullFineTunedResources.Builder
+        getFullFineTunedResourcesBuilder() {
+      return getFullFineTunedResourcesFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resources for a full fine tuned model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FullFineTunedResources full_fine_tuned_resources = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.FullFineTunedResourcesOrBuilder
+        getFullFineTunedResourcesOrBuilder() {
+      if ((predictionResourcesCase_ == 36) && (fullFineTunedResourcesBuilder_ != null)) {
+        return fullFineTunedResourcesBuilder_.getMessageOrBuilder();
+      } else {
+        if (predictionResourcesCase_ == 36) {
+          return (com.google.cloud.aiplatform.v1beta1.FullFineTunedResources) predictionResources_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.FullFineTunedResources.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resources for a full fine tuned model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FullFineTunedResources full_fine_tuned_resources = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.FullFineTunedResources,
+            com.google.cloud.aiplatform.v1beta1.FullFineTunedResources.Builder,
+            com.google.cloud.aiplatform.v1beta1.FullFineTunedResourcesOrBuilder>
+        getFullFineTunedResourcesFieldBuilder() {
+      if (fullFineTunedResourcesBuilder_ == null) {
+        if (!(predictionResourcesCase_ == 36)) {
+          predictionResources_ =
+              com.google.cloud.aiplatform.v1beta1.FullFineTunedResources.getDefaultInstance();
+        }
+        fullFineTunedResourcesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.FullFineTunedResources,
+                com.google.cloud.aiplatform.v1beta1.FullFineTunedResources.Builder,
+                com.google.cloud.aiplatform.v1beta1.FullFineTunedResourcesOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.FullFineTunedResources) predictionResources_,
+                getParentForChildren(),
+                isClean());
+        predictionResources_ = null;
+      }
+      predictionResourcesCase_ = 36;
+      onChanged();
+      return fullFineTunedResourcesBuilder_;
+    }
+
     private java.lang.Object id_ = "";
 
     /**
@@ -4159,7 +4502,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       id_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -4180,7 +4523,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearId() {
       id_ = getDefaultInstance().getId();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -4206,7 +4549,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       id_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -4300,7 +4643,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       model_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4326,7 +4669,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearModel() {
       model_ = getDefaultInstance().getModel();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -4357,7 +4700,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       model_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4427,7 +4770,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       modelVersionId_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4445,7 +4788,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearModelVersionId() {
       modelVersionId_ = getDefaultInstance().getModelVersionId();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -4468,7 +4811,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       modelVersionId_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4541,7 +4884,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       displayName_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4560,7 +4903,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDisplayName() {
       displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -4584,7 +4927,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       displayName_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4610,7 +4953,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -4656,7 +4999,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4678,7 +5021,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4696,7 +5039,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -4707,7 +5050,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -4725,7 +5068,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -4747,7 +5090,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -4836,7 +5179,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the explanationSpec field is set.
      */
     public boolean hasExplanationSpec() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -4910,7 +5253,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         explanationSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4947,7 +5290,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         explanationSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4979,7 +5322,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeExplanationSpec(com.google.cloud.aiplatform.v1beta1.ExplanationSpec value) {
       if (explanationSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && explanationSpec_ != null
             && explanationSpec_
                 != com.google.cloud.aiplatform.v1beta1.ExplanationSpec.getDefaultInstance()) {
@@ -4991,7 +5334,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         explanationSpecBuilder_.mergeFrom(value);
       }
       if (explanationSpec_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -5023,7 +5366,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 9;</code>
      */
     public Builder clearExplanationSpec() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       explanationSpec_ = null;
       if (explanationSpecBuilder_ != null) {
         explanationSpecBuilder_.dispose();
@@ -5059,7 +5402,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 9;</code>
      */
     public com.google.cloud.aiplatform.v1beta1.ExplanationSpec.Builder getExplanationSpecBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getExplanationSpecFieldBuilder().getBuilder();
     }
@@ -5183,7 +5526,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     public Builder setDisableExplanations(boolean value) {
 
       disableExplanations_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -5204,7 +5547,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisableExplanations() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       disableExplanations_ = false;
       onChanged();
       return this;
@@ -5293,7 +5636,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       serviceAccount_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5317,7 +5660,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearServiceAccount() {
       serviceAccount_ = getDefaultInstance().getServiceAccount();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -5346,7 +5689,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       serviceAccount_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5390,7 +5733,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableContainerLogging(boolean value) {
 
       enableContainerLogging_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5410,7 +5753,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableContainerLogging() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       enableContainerLogging_ = false;
       onChanged();
       return this;
@@ -5461,7 +5804,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     public Builder setDisableContainerLogging(boolean value) {
 
       disableContainerLogging_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5484,7 +5827,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisableContainerLogging() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       disableContainerLogging_ = false;
       onChanged();
       return this;
@@ -5537,7 +5880,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableAccessLogging(boolean value) {
 
       enableAccessLogging_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5561,7 +5904,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableAccessLogging() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       enableAccessLogging_ = false;
       onChanged();
       return this;
@@ -5591,7 +5934,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the privateEndpoints field is set.
      */
     public boolean hasPrivateEndpoints() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -5643,7 +5986,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         privateEndpointsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5669,7 +6012,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         privateEndpointsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5691,7 +6034,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     public Builder mergePrivateEndpoints(
         com.google.cloud.aiplatform.v1beta1.PrivateEndpoints value) {
       if (privateEndpointsBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && privateEndpoints_ != null
             && privateEndpoints_
                 != com.google.cloud.aiplatform.v1beta1.PrivateEndpoints.getDefaultInstance()) {
@@ -5703,7 +6046,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         privateEndpointsBuilder_.mergeFrom(value);
       }
       if (privateEndpoints_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -5724,7 +6067,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPrivateEndpoints() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       privateEndpoints_ = null;
       if (privateEndpointsBuilder_ != null) {
         privateEndpointsBuilder_.dispose();
@@ -5750,7 +6093,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.aiplatform.v1beta1.PrivateEndpoints.Builder
         getPrivateEndpointsBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return getPrivateEndpointsFieldBuilder().getBuilder();
     }
@@ -5831,7 +6174,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the fasterDeploymentConfig field is set.
      */
     public boolean hasFasterDeploymentConfig() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -5876,7 +6219,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         fasterDeploymentConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5898,7 +6241,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         fasterDeploymentConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5916,7 +6259,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFasterDeploymentConfig(
         com.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig value) {
       if (fasterDeploymentConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && fasterDeploymentConfig_ != null
             && fasterDeploymentConfig_
                 != com.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig
@@ -5929,7 +6272,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         fasterDeploymentConfigBuilder_.mergeFrom(value);
       }
       if (fasterDeploymentConfig_ != null) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -5946,7 +6289,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearFasterDeploymentConfig() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       fasterDeploymentConfig_ = null;
       if (fasterDeploymentConfigBuilder_ != null) {
         fasterDeploymentConfigBuilder_.dispose();
@@ -5968,7 +6311,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.aiplatform.v1beta1.FasterDeploymentConfig.Builder
         getFasterDeploymentConfigBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return getFasterDeploymentConfigFieldBuilder().getBuilder();
     }
@@ -6040,7 +6383,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the rolloutOptions field is set.
      */
     public boolean hasRolloutOptions() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -6082,7 +6425,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         rolloutOptionsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6103,7 +6446,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         rolloutOptionsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6119,7 +6462,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeRolloutOptions(com.google.cloud.aiplatform.v1beta1.RolloutOptions value) {
       if (rolloutOptionsBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00020000) != 0)
             && rolloutOptions_ != null
             && rolloutOptions_
                 != com.google.cloud.aiplatform.v1beta1.RolloutOptions.getDefaultInstance()) {
@@ -6131,7 +6474,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         rolloutOptionsBuilder_.mergeFrom(value);
       }
       if (rolloutOptions_ != null) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       return this;
@@ -6147,7 +6490,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1beta1.RolloutOptions rollout_options = 25;</code>
      */
     public Builder clearRolloutOptions() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       rolloutOptions_ = null;
       if (rolloutOptionsBuilder_ != null) {
         rolloutOptionsBuilder_.dispose();
@@ -6167,7 +6510,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1beta1.RolloutOptions rollout_options = 25;</code>
      */
     public com.google.cloud.aiplatform.v1beta1.RolloutOptions.Builder getRolloutOptionsBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return getRolloutOptionsFieldBuilder().getBuilder();
     }
@@ -6239,7 +6582,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -6285,7 +6628,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         statusBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6308,7 +6651,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         statusBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6326,7 +6669,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStatus(com.google.cloud.aiplatform.v1beta1.DeployedModel.Status value) {
       if (statusBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)
+        if (((bitField0_ & 0x00040000) != 0)
             && status_ != null
             && status_
                 != com.google.cloud.aiplatform.v1beta1.DeployedModel.Status.getDefaultInstance()) {
@@ -6338,7 +6681,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         statusBuilder_.mergeFrom(value);
       }
       if (status_ != null) {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       return this;
@@ -6356,7 +6699,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       status_ = null;
       if (statusBuilder_ != null) {
         statusBuilder_.dispose();
@@ -6378,7 +6721,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.DeployedModel.Status.Builder getStatusBuilder() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
@@ -6452,7 +6795,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       if (!systemLabels_.isMutable()) {
         systemLabels_ = systemLabels_.copy();
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return systemLabels_;
     }
@@ -6546,7 +6889,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearSystemLabels() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       internalGetMutableSystemLabels().getMutableMap().clear();
       return this;
     }
@@ -6572,7 +6915,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableSystemLabels() {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       return internalGetMutableSystemLabels().getMutableMap();
     }
 
@@ -6594,7 +6937,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableSystemLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       return this;
     }
 
@@ -6610,7 +6953,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllSystemLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableSystemLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       return this;
     }
 
@@ -6679,7 +7022,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkpointId_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6697,7 +7040,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearCheckpointId() {
       checkpointId_ = getDefaultInstance().getCheckpointId();
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -6720,7 +7063,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       checkpointId_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6746,7 +7089,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the speculativeDecodingSpec field is set.
      */
     public boolean hasSpeculativeDecodingSpec() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
 
     /**
@@ -6794,7 +7137,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         speculativeDecodingSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -6817,7 +7160,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         speculativeDecodingSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -6836,7 +7179,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSpeculativeDecodingSpec(
         com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec value) {
       if (speculativeDecodingSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00100000) != 0)
+        if (((bitField0_ & 0x00200000) != 0)
             && speculativeDecodingSpec_ != null
             && speculativeDecodingSpec_
                 != com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec
@@ -6849,7 +7192,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         speculativeDecodingSpecBuilder_.mergeFrom(value);
       }
       if (speculativeDecodingSpec_ != null) {
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       return this;
@@ -6867,7 +7210,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSpeculativeDecodingSpec() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       speculativeDecodingSpec_ = null;
       if (speculativeDecodingSpecBuilder_ != null) {
         speculativeDecodingSpecBuilder_.dispose();
@@ -6890,7 +7233,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec.Builder
         getSpeculativeDecodingSpecBuilder() {
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return getSpeculativeDecodingSpecFieldBuilder().getBuilder();
     }

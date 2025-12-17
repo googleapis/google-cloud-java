@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * DEPRECATED: Please use compute#savedDisk instead. An instance-attached disk resource.
+ * DEPRECATED: Please use compute#savedDisk instead.
+ * An instance-attached disk resource.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.SavedAttachedDisk}
@@ -77,7 +78,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME.
+   * Specifies the disk interface to use for attaching this disk, which is
+   * either SCSI or NVME.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.SavedAttachedDisk.Interface}
@@ -204,7 +206,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The mode in which this disk is attached to the source instance, either READ_WRITE or READ_ONLY.
+   * The mode in which this disk is attached to the source instance, eitherREAD_WRITE or READ_ONLY.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.SavedAttachedDisk.Mode}
@@ -224,7 +226,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Attaches this disk in read-only mode. Multiple virtual machines can use a disk in read-only mode at a time.
+     * Attaches this disk in read-only mode. Multiple virtual machines can use
+     * a disk in read-only mode at a time.
      * </pre>
      *
      * <code>READ_ONLY = 91950261;</code>
@@ -234,7 +237,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *[Default]* Attaches this disk in read-write mode. Only one virtual machine at a time can be attached to a disk in read-write mode.
+     * *[Default]* Attaches this disk in read-write mode. Only one
+     * virtual machine at a time can be attached to a disk in read-write mode.
      * </pre>
      *
      * <code>READ_WRITE = 173607894;</code>
@@ -258,7 +262,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Attaches this disk in read-only mode. Multiple virtual machines can use a disk in read-only mode at a time.
+     * Attaches this disk in read-only mode. Multiple virtual machines can use
+     * a disk in read-only mode at a time.
      * </pre>
      *
      * <code>READ_ONLY = 91950261;</code>
@@ -269,7 +274,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *[Default]* Attaches this disk in read-write mode. Only one virtual machine at a time can be attached to a disk in read-write mode.
+     * *[Default]* Attaches this disk in read-write mode. Only one
+     * virtual machine at a time can be attached to a disk in read-write mode.
      * </pre>
      *
      * <code>READ_WRITE = 173607894;</code>
@@ -363,7 +369,11 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+   * Output only. [Output Only] An indicator whether storageBytes is in a
+   * stable state or it is being adjusted as a result of shared storage
+   * reallocation. This status can either be UPDATING, meaning
+   * the size of the snapshot is being updated, or UP_TO_DATE,
+   * meaning the size of the snapshot is up-to-date.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.SavedAttachedDisk.StorageBytesStatus}
@@ -493,7 +503,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Specifies the type of the attached disk, either SCRATCH or PERSISTENT.
+   * Specifies the type of the attached disk, either SCRATCH orPERSISTENT.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.SavedAttachedDisk.Type}
@@ -624,7 +634,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
+   * Specifies whether the disk will be auto-deleted when the instance is
+   * deleted (but not when the disk is detached from the instance).
    * </pre>
    *
    * <code>optional bool auto_delete = 464761403;</code>
@@ -640,7 +651,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
+   * Specifies whether the disk will be auto-deleted when the instance is
+   * deleted (but not when the disk is detached from the instance).
    * </pre>
    *
    * <code>optional bool auto_delete = 464761403;</code>
@@ -659,7 +671,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Indicates that this is a boot disk. The virtual machine will use the first partition of the disk for its root filesystem.
+   * Indicates that this is a boot disk. The virtual machine will use the first
+   * partition of the disk for its root filesystem.
    * </pre>
    *
    * <code>optional bool boot = 3029746;</code>
@@ -675,7 +688,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Indicates that this is a boot disk. The virtual machine will use the first partition of the disk for its root filesystem.
+   * Indicates that this is a boot disk. The virtual machine will use the first
+   * partition of the disk for its root filesystem.
    * </pre>
    *
    * <code>optional bool boot = 3029746;</code>
@@ -857,7 +871,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] URL of the disk type resource. For example: projects/project /zones/zone/diskTypes/pd-standard or pd-ssd
+   * Output only. [Output Only] URL of the disk type resource. For example:projects/project/zones/zone/diskTypes/pd-standard or
+   * pd-ssd
    * </pre>
    *
    * <code>optional string disk_type = 93009052;</code>
@@ -873,7 +888,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] URL of the disk type resource. For example: projects/project /zones/zone/diskTypes/pd-standard or pd-ssd
+   * Output only. [Output Only] URL of the disk type resource. For example:projects/project/zones/zone/diskTypes/pd-standard or
+   * pd-ssd
    * </pre>
    *
    * <code>optional string disk_type = 93009052;</code>
@@ -897,7 +913,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] URL of the disk type resource. For example: projects/project /zones/zone/diskTypes/pd-standard or pd-ssd
+   * Output only. [Output Only] URL of the disk type resource. For example:projects/project/zones/zone/diskTypes/pd-standard or
+   * pd-ssd
    * </pre>
    *
    * <code>optional string disk_type = 93009052;</code>
@@ -926,7 +943,10 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable only
+   * for bootable images. Read
+   * Enabling guest operating system features to see a list of available
+   * options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -940,7 +960,10 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable only
+   * for bootable images. Read
+   * Enabling guest operating system features to see a list of available
+   * options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -955,7 +978,10 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable only
+   * for bootable images. Read
+   * Enabling guest operating system features to see a list of available
+   * options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -969,7 +995,10 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable only
+   * for bootable images. Read
+   * Enabling guest operating system features to see a list of available
+   * options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -983,7 +1012,10 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable only
+   * for bootable images. Read
+   * Enabling guest operating system features to see a list of available
+   * options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -1001,7 +1033,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Specifies zero-based index of the disk that is attached to the source instance.
+   * Output only. Specifies zero-based index of the disk that is attached to the source
+   * instance.
    * </pre>
    *
    * <code>optional int32 index = 100346066;</code>
@@ -1017,7 +1050,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Specifies zero-based index of the disk that is attached to the source instance.
+   * Output only. Specifies zero-based index of the disk that is attached to the source
+   * instance.
    * </pre>
    *
    * <code>optional int32 index = 100346066;</code>
@@ -1038,7 +1072,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME.
+   * Specifies the disk interface to use for attaching this disk, which is
+   * either SCSI or NVME.
    * Check the Interface enum for the list of possible values.
    * </pre>
    *
@@ -1055,7 +1090,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME.
+   * Specifies the disk interface to use for attaching this disk, which is
+   * either SCSI or NVME.
    * Check the Interface enum for the list of possible values.
    * </pre>
    *
@@ -1080,7 +1116,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME.
+   * Specifies the disk interface to use for attaching this disk, which is
+   * either SCSI or NVME.
    * Check the Interface enum for the list of possible values.
    * </pre>
    *
@@ -1110,7 +1147,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#attachedDisk for attached disks.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#attachedDisk for attached disks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1126,7 +1163,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#attachedDisk for attached disks.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#attachedDisk for attached disks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1150,7 +1187,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#attachedDisk for attached disks.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#attachedDisk for attached disks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1180,7 +1217,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Any valid publicly visible licenses.
+   * Output only. [Output Only] Any valid publicly visible licenses.
    * </pre>
    *
    * <code>repeated string licenses = 337642578;</code>
@@ -1195,7 +1232,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Any valid publicly visible licenses.
+   * Output only. [Output Only] Any valid publicly visible licenses.
    * </pre>
    *
    * <code>repeated string licenses = 337642578;</code>
@@ -1210,7 +1247,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Any valid publicly visible licenses.
+   * Output only. [Output Only] Any valid publicly visible licenses.
    * </pre>
    *
    * <code>repeated string licenses = 337642578;</code>
@@ -1226,7 +1263,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Any valid publicly visible licenses.
+   * Output only. [Output Only] Any valid publicly visible licenses.
    * </pre>
    *
    * <code>repeated string licenses = 337642578;</code>
@@ -1247,7 +1284,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The mode in which this disk is attached to the source instance, either READ_WRITE or READ_ONLY.
+   * The mode in which this disk is attached to the source instance, eitherREAD_WRITE or READ_ONLY.
    * Check the Mode enum for the list of possible values.
    * </pre>
    *
@@ -1264,7 +1301,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The mode in which this disk is attached to the source instance, either READ_WRITE or READ_ONLY.
+   * The mode in which this disk is attached to the source instance, eitherREAD_WRITE or READ_ONLY.
    * Check the Mode enum for the list of possible values.
    * </pre>
    *
@@ -1289,7 +1326,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The mode in which this disk is attached to the source instance, either READ_WRITE or READ_ONLY.
+   * The mode in which this disk is attached to the source instance, eitherREAD_WRITE or READ_ONLY.
    * Check the Mode enum for the list of possible values.
    * </pre>
    *
@@ -1386,7 +1423,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] A size of the storage used by the disk's snapshot by this machine image.
+   * Output only. [Output Only] A size of the storage used by the disk's snapshot by this
+   * machine image.
    * </pre>
    *
    * <code>optional int64 storage_bytes = 424631719;</code>
@@ -1402,7 +1440,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] A size of the storage used by the disk's snapshot by this machine image.
+   * Output only. [Output Only] A size of the storage used by the disk's snapshot by this
+   * machine image.
    * </pre>
    *
    * <code>optional int64 storage_bytes = 424631719;</code>
@@ -1423,7 +1462,11 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+   * Output only. [Output Only] An indicator whether storageBytes is in a
+   * stable state or it is being adjusted as a result of shared storage
+   * reallocation. This status can either be UPDATING, meaning
+   * the size of the snapshot is being updated, or UP_TO_DATE,
+   * meaning the size of the snapshot is up-to-date.
    * Check the StorageBytesStatus enum for the list of possible values.
    * </pre>
    *
@@ -1440,7 +1483,11 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+   * Output only. [Output Only] An indicator whether storageBytes is in a
+   * stable state or it is being adjusted as a result of shared storage
+   * reallocation. This status can either be UPDATING, meaning
+   * the size of the snapshot is being updated, or UP_TO_DATE,
+   * meaning the size of the snapshot is up-to-date.
    * Check the StorageBytesStatus enum for the list of possible values.
    * </pre>
    *
@@ -1465,7 +1512,11 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+   * Output only. [Output Only] An indicator whether storageBytes is in a
+   * stable state or it is being adjusted as a result of shared storage
+   * reallocation. This status can either be UPDATING, meaning
+   * the size of the snapshot is being updated, or UP_TO_DATE,
+   * meaning the size of the snapshot is up-to-date.
    * Check the StorageBytesStatus enum for the list of possible values.
    * </pre>
    *
@@ -1495,7 +1546,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Specifies the type of the attached disk, either SCRATCH or PERSISTENT.
+   * Specifies the type of the attached disk, either SCRATCH orPERSISTENT.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -1512,7 +1563,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Specifies the type of the attached disk, either SCRATCH or PERSISTENT.
+   * Specifies the type of the attached disk, either SCRATCH orPERSISTENT.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -1537,7 +1588,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Specifies the type of the attached disk, either SCRATCH or PERSISTENT.
+   * Specifies the type of the attached disk, either SCRATCH orPERSISTENT.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -1941,7 +1992,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * DEPRECATED: Please use compute#savedDisk instead. An instance-attached disk resource.
+   * DEPRECATED: Please use compute#savedDisk instead.
+   * An instance-attached disk resource.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.SavedAttachedDisk}
@@ -2424,7 +2476,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
+     * Specifies whether the disk will be auto-deleted when the instance is
+     * deleted (but not when the disk is detached from the instance).
      * </pre>
      *
      * <code>optional bool auto_delete = 464761403;</code>
@@ -2440,7 +2493,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
+     * Specifies whether the disk will be auto-deleted when the instance is
+     * deleted (but not when the disk is detached from the instance).
      * </pre>
      *
      * <code>optional bool auto_delete = 464761403;</code>
@@ -2456,7 +2510,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
+     * Specifies whether the disk will be auto-deleted when the instance is
+     * deleted (but not when the disk is detached from the instance).
      * </pre>
      *
      * <code>optional bool auto_delete = 464761403;</code>
@@ -2476,7 +2531,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
+     * Specifies whether the disk will be auto-deleted when the instance is
+     * deleted (but not when the disk is detached from the instance).
      * </pre>
      *
      * <code>optional bool auto_delete = 464761403;</code>
@@ -2496,7 +2552,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Indicates that this is a boot disk. The virtual machine will use the first partition of the disk for its root filesystem.
+     * Indicates that this is a boot disk. The virtual machine will use the first
+     * partition of the disk for its root filesystem.
      * </pre>
      *
      * <code>optional bool boot = 3029746;</code>
@@ -2512,7 +2569,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Indicates that this is a boot disk. The virtual machine will use the first partition of the disk for its root filesystem.
+     * Indicates that this is a boot disk. The virtual machine will use the first
+     * partition of the disk for its root filesystem.
      * </pre>
      *
      * <code>optional bool boot = 3029746;</code>
@@ -2528,7 +2586,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Indicates that this is a boot disk. The virtual machine will use the first partition of the disk for its root filesystem.
+     * Indicates that this is a boot disk. The virtual machine will use the first
+     * partition of the disk for its root filesystem.
      * </pre>
      *
      * <code>optional bool boot = 3029746;</code>
@@ -2548,7 +2607,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Indicates that this is a boot disk. The virtual machine will use the first partition of the disk for its root filesystem.
+     * Indicates that this is a boot disk. The virtual machine will use the first
+     * partition of the disk for its root filesystem.
      * </pre>
      *
      * <code>optional bool boot = 3029746;</code>
@@ -2981,7 +3041,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] URL of the disk type resource. For example: projects/project /zones/zone/diskTypes/pd-standard or pd-ssd
+     * Output only. [Output Only] URL of the disk type resource. For example:projects/project/zones/zone/diskTypes/pd-standard or
+     * pd-ssd
      * </pre>
      *
      * <code>optional string disk_type = 93009052;</code>
@@ -2996,7 +3057,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] URL of the disk type resource. For example: projects/project /zones/zone/diskTypes/pd-standard or pd-ssd
+     * Output only. [Output Only] URL of the disk type resource. For example:projects/project/zones/zone/diskTypes/pd-standard or
+     * pd-ssd
      * </pre>
      *
      * <code>optional string disk_type = 93009052;</code>
@@ -3019,7 +3081,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] URL of the disk type resource. For example: projects/project /zones/zone/diskTypes/pd-standard or pd-ssd
+     * Output only. [Output Only] URL of the disk type resource. For example:projects/project/zones/zone/diskTypes/pd-standard or
+     * pd-ssd
      * </pre>
      *
      * <code>optional string disk_type = 93009052;</code>
@@ -3042,7 +3105,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] URL of the disk type resource. For example: projects/project /zones/zone/diskTypes/pd-standard or pd-ssd
+     * Output only. [Output Only] URL of the disk type resource. For example:projects/project/zones/zone/diskTypes/pd-standard or
+     * pd-ssd
      * </pre>
      *
      * <code>optional string disk_type = 93009052;</code>
@@ -3064,7 +3128,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] URL of the disk type resource. For example: projects/project /zones/zone/diskTypes/pd-standard or pd-ssd
+     * Output only. [Output Only] URL of the disk type resource. For example:projects/project/zones/zone/diskTypes/pd-standard or
+     * pd-ssd
      * </pre>
      *
      * <code>optional string disk_type = 93009052;</code>
@@ -3082,7 +3147,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] URL of the disk type resource. For example: projects/project /zones/zone/diskTypes/pd-standard or pd-ssd
+     * Output only. [Output Only] URL of the disk type resource. For example:projects/project/zones/zone/diskTypes/pd-standard or
+     * pd-ssd
      * </pre>
      *
      * <code>optional string disk_type = 93009052;</code>
@@ -3122,7 +3188,10 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only
+     * for bootable images. Read
+     * Enabling guest operating system features to see a list of available
+     * options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -3139,7 +3208,10 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only
+     * for bootable images. Read
+     * Enabling guest operating system features to see a list of available
+     * options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -3156,7 +3228,10 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only
+     * for bootable images. Read
+     * Enabling guest operating system features to see a list of available
+     * options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -3173,7 +3248,10 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only
+     * for bootable images. Read
+     * Enabling guest operating system features to see a list of available
+     * options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -3196,7 +3274,10 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only
+     * for bootable images. Read
+     * Enabling guest operating system features to see a list of available
+     * options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -3217,7 +3298,10 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only
+     * for bootable images. Read
+     * Enabling guest operating system features to see a list of available
+     * options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -3240,7 +3324,10 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only
+     * for bootable images. Read
+     * Enabling guest operating system features to see a list of available
+     * options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -3263,7 +3350,10 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only
+     * for bootable images. Read
+     * Enabling guest operating system features to see a list of available
+     * options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -3284,7 +3374,10 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only
+     * for bootable images. Read
+     * Enabling guest operating system features to see a list of available
+     * options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -3305,7 +3398,10 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only
+     * for bootable images. Read
+     * Enabling guest operating system features to see a list of available
+     * options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -3326,7 +3422,10 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only
+     * for bootable images. Read
+     * Enabling guest operating system features to see a list of available
+     * options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -3346,7 +3445,10 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only
+     * for bootable images. Read
+     * Enabling guest operating system features to see a list of available
+     * options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -3366,7 +3468,10 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only
+     * for bootable images. Read
+     * Enabling guest operating system features to see a list of available
+     * options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -3379,7 +3484,10 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only
+     * for bootable images. Read
+     * Enabling guest operating system features to see a list of available
+     * options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -3397,7 +3505,10 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only
+     * for bootable images. Read
+     * Enabling guest operating system features to see a list of available
+     * options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -3415,7 +3526,10 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only
+     * for bootable images. Read
+     * Enabling guest operating system features to see a list of available
+     * options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -3429,7 +3543,10 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only
+     * for bootable images. Read
+     * Enabling guest operating system features to see a list of available
+     * options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -3443,7 +3560,10 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only
+     * for bootable images. Read
+     * Enabling guest operating system features to see a list of available
+     * options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -3479,7 +3599,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies zero-based index of the disk that is attached to the source instance.
+     * Output only. Specifies zero-based index of the disk that is attached to the source
+     * instance.
      * </pre>
      *
      * <code>optional int32 index = 100346066;</code>
@@ -3495,7 +3616,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies zero-based index of the disk that is attached to the source instance.
+     * Output only. Specifies zero-based index of the disk that is attached to the source
+     * instance.
      * </pre>
      *
      * <code>optional int32 index = 100346066;</code>
@@ -3511,7 +3633,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies zero-based index of the disk that is attached to the source instance.
+     * Output only. Specifies zero-based index of the disk that is attached to the source
+     * instance.
      * </pre>
      *
      * <code>optional int32 index = 100346066;</code>
@@ -3531,7 +3654,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies zero-based index of the disk that is attached to the source instance.
+     * Output only. Specifies zero-based index of the disk that is attached to the source
+     * instance.
      * </pre>
      *
      * <code>optional int32 index = 100346066;</code>
@@ -3551,7 +3675,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME.
+     * Specifies the disk interface to use for attaching this disk, which is
+     * either SCSI or NVME.
      * Check the Interface enum for the list of possible values.
      * </pre>
      *
@@ -3567,7 +3692,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME.
+     * Specifies the disk interface to use for attaching this disk, which is
+     * either SCSI or NVME.
      * Check the Interface enum for the list of possible values.
      * </pre>
      *
@@ -3591,7 +3717,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME.
+     * Specifies the disk interface to use for attaching this disk, which is
+     * either SCSI or NVME.
      * Check the Interface enum for the list of possible values.
      * </pre>
      *
@@ -3615,7 +3742,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME.
+     * Specifies the disk interface to use for attaching this disk, which is
+     * either SCSI or NVME.
      * Check the Interface enum for the list of possible values.
      * </pre>
      *
@@ -3638,7 +3766,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME.
+     * Specifies the disk interface to use for attaching this disk, which is
+     * either SCSI or NVME.
      * Check the Interface enum for the list of possible values.
      * </pre>
      *
@@ -3657,7 +3786,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME.
+     * Specifies the disk interface to use for attaching this disk, which is
+     * either SCSI or NVME.
      * Check the Interface enum for the list of possible values.
      * </pre>
      *
@@ -3683,7 +3813,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#attachedDisk for attached disks.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#attachedDisk for attached disks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3698,7 +3828,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#attachedDisk for attached disks.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#attachedDisk for attached disks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3721,7 +3851,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#attachedDisk for attached disks.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#attachedDisk for attached disks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3744,7 +3874,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#attachedDisk for attached disks.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#attachedDisk for attached disks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3766,7 +3896,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#attachedDisk for attached disks.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#attachedDisk for attached disks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3784,7 +3914,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#attachedDisk for attached disks.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#attachedDisk for attached disks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3817,7 +3947,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Any valid publicly visible licenses.
+     * Output only. [Output Only] Any valid publicly visible licenses.
      * </pre>
      *
      * <code>repeated string licenses = 337642578;</code>
@@ -3833,7 +3963,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Any valid publicly visible licenses.
+     * Output only. [Output Only] Any valid publicly visible licenses.
      * </pre>
      *
      * <code>repeated string licenses = 337642578;</code>
@@ -3848,7 +3978,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Any valid publicly visible licenses.
+     * Output only. [Output Only] Any valid publicly visible licenses.
      * </pre>
      *
      * <code>repeated string licenses = 337642578;</code>
@@ -3864,7 +3994,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Any valid publicly visible licenses.
+     * Output only. [Output Only] Any valid publicly visible licenses.
      * </pre>
      *
      * <code>repeated string licenses = 337642578;</code>
@@ -3880,7 +4010,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Any valid publicly visible licenses.
+     * Output only. [Output Only] Any valid publicly visible licenses.
      * </pre>
      *
      * <code>repeated string licenses = 337642578;</code>
@@ -3904,7 +4034,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Any valid publicly visible licenses.
+     * Output only. [Output Only] Any valid publicly visible licenses.
      * </pre>
      *
      * <code>repeated string licenses = 337642578;</code>
@@ -3927,7 +4057,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Any valid publicly visible licenses.
+     * Output only. [Output Only] Any valid publicly visible licenses.
      * </pre>
      *
      * <code>repeated string licenses = 337642578;</code>
@@ -3947,7 +4077,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Any valid publicly visible licenses.
+     * Output only. [Output Only] Any valid publicly visible licenses.
      * </pre>
      *
      * <code>repeated string licenses = 337642578;</code>
@@ -3966,7 +4096,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Any valid publicly visible licenses.
+     * Output only. [Output Only] Any valid publicly visible licenses.
      * </pre>
      *
      * <code>repeated string licenses = 337642578;</code>
@@ -3992,7 +4122,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The mode in which this disk is attached to the source instance, either READ_WRITE or READ_ONLY.
+     * The mode in which this disk is attached to the source instance, eitherREAD_WRITE or READ_ONLY.
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -4008,7 +4138,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The mode in which this disk is attached to the source instance, either READ_WRITE or READ_ONLY.
+     * The mode in which this disk is attached to the source instance, eitherREAD_WRITE or READ_ONLY.
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -4032,7 +4162,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The mode in which this disk is attached to the source instance, either READ_WRITE or READ_ONLY.
+     * The mode in which this disk is attached to the source instance, eitherREAD_WRITE or READ_ONLY.
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -4056,7 +4186,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The mode in which this disk is attached to the source instance, either READ_WRITE or READ_ONLY.
+     * The mode in which this disk is attached to the source instance, eitherREAD_WRITE or READ_ONLY.
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -4079,7 +4209,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The mode in which this disk is attached to the source instance, either READ_WRITE or READ_ONLY.
+     * The mode in which this disk is attached to the source instance, eitherREAD_WRITE or READ_ONLY.
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -4098,7 +4228,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The mode in which this disk is attached to the source instance, either READ_WRITE or READ_ONLY.
+     * The mode in which this disk is attached to the source instance, eitherREAD_WRITE or READ_ONLY.
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -4250,7 +4380,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] A size of the storage used by the disk's snapshot by this machine image.
+     * Output only. [Output Only] A size of the storage used by the disk's snapshot by this
+     * machine image.
      * </pre>
      *
      * <code>optional int64 storage_bytes = 424631719;</code>
@@ -4266,7 +4397,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] A size of the storage used by the disk's snapshot by this machine image.
+     * Output only. [Output Only] A size of the storage used by the disk's snapshot by this
+     * machine image.
      * </pre>
      *
      * <code>optional int64 storage_bytes = 424631719;</code>
@@ -4282,7 +4414,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] A size of the storage used by the disk's snapshot by this machine image.
+     * Output only. [Output Only] A size of the storage used by the disk's snapshot by this
+     * machine image.
      * </pre>
      *
      * <code>optional int64 storage_bytes = 424631719;</code>
@@ -4302,7 +4435,8 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] A size of the storage used by the disk's snapshot by this machine image.
+     * Output only. [Output Only] A size of the storage used by the disk's snapshot by this
+     * machine image.
      * </pre>
      *
      * <code>optional int64 storage_bytes = 424631719;</code>
@@ -4322,7 +4456,11 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+     * Output only. [Output Only] An indicator whether storageBytes is in a
+     * stable state or it is being adjusted as a result of shared storage
+     * reallocation. This status can either be UPDATING, meaning
+     * the size of the snapshot is being updated, or UP_TO_DATE,
+     * meaning the size of the snapshot is up-to-date.
      * Check the StorageBytesStatus enum for the list of possible values.
      * </pre>
      *
@@ -4338,7 +4476,11 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+     * Output only. [Output Only] An indicator whether storageBytes is in a
+     * stable state or it is being adjusted as a result of shared storage
+     * reallocation. This status can either be UPDATING, meaning
+     * the size of the snapshot is being updated, or UP_TO_DATE,
+     * meaning the size of the snapshot is up-to-date.
      * Check the StorageBytesStatus enum for the list of possible values.
      * </pre>
      *
@@ -4362,7 +4504,11 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+     * Output only. [Output Only] An indicator whether storageBytes is in a
+     * stable state or it is being adjusted as a result of shared storage
+     * reallocation. This status can either be UPDATING, meaning
+     * the size of the snapshot is being updated, or UP_TO_DATE,
+     * meaning the size of the snapshot is up-to-date.
      * Check the StorageBytesStatus enum for the list of possible values.
      * </pre>
      *
@@ -4386,7 +4532,11 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+     * Output only. [Output Only] An indicator whether storageBytes is in a
+     * stable state or it is being adjusted as a result of shared storage
+     * reallocation. This status can either be UPDATING, meaning
+     * the size of the snapshot is being updated, or UP_TO_DATE,
+     * meaning the size of the snapshot is up-to-date.
      * Check the StorageBytesStatus enum for the list of possible values.
      * </pre>
      *
@@ -4409,7 +4559,11 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+     * Output only. [Output Only] An indicator whether storageBytes is in a
+     * stable state or it is being adjusted as a result of shared storage
+     * reallocation. This status can either be UPDATING, meaning
+     * the size of the snapshot is being updated, or UP_TO_DATE,
+     * meaning the size of the snapshot is up-to-date.
      * Check the StorageBytesStatus enum for the list of possible values.
      * </pre>
      *
@@ -4428,7 +4582,11 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+     * Output only. [Output Only] An indicator whether storageBytes is in a
+     * stable state or it is being adjusted as a result of shared storage
+     * reallocation. This status can either be UPDATING, meaning
+     * the size of the snapshot is being updated, or UP_TO_DATE,
+     * meaning the size of the snapshot is up-to-date.
      * Check the StorageBytesStatus enum for the list of possible values.
      * </pre>
      *
@@ -4454,7 +4612,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies the type of the attached disk, either SCRATCH or PERSISTENT.
+     * Specifies the type of the attached disk, either SCRATCH orPERSISTENT.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -4470,7 +4628,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies the type of the attached disk, either SCRATCH or PERSISTENT.
+     * Specifies the type of the attached disk, either SCRATCH orPERSISTENT.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -4494,7 +4652,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies the type of the attached disk, either SCRATCH or PERSISTENT.
+     * Specifies the type of the attached disk, either SCRATCH orPERSISTENT.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -4518,7 +4676,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies the type of the attached disk, either SCRATCH or PERSISTENT.
+     * Specifies the type of the attached disk, either SCRATCH orPERSISTENT.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -4541,7 +4699,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies the type of the attached disk, either SCRATCH or PERSISTENT.
+     * Specifies the type of the attached disk, either SCRATCH orPERSISTENT.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -4560,7 +4718,7 @@ public final class SavedAttachedDisk extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Specifies the type of the attached disk, either SCRATCH or PERSISTENT.
+     * Specifies the type of the attached disk, either SCRATCH orPERSISTENT.
      * Check the Type enum for the list of possible values.
      * </pre>
      *

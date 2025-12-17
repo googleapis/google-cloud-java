@@ -73,7 +73,7 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Type of resource.
+   * Output only. Type of resource.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -89,7 +89,7 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Type of resource.
+   * Output only. Type of resource.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -113,7 +113,7 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Type of resource.
+   * Output only. Type of resource.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -563,7 +563,7 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Type of resource.
+     * Output only. Type of resource.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -578,7 +578,7 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Type of resource.
+     * Output only. Type of resource.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -601,7 +601,7 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Type of resource.
+     * Output only. Type of resource.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -624,7 +624,7 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Type of resource.
+     * Output only. Type of resource.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -646,7 +646,7 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Type of resource.
+     * Output only. Type of resource.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -664,7 +664,7 @@ public final class RouterStatusResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Type of resource.
+     * Output only. Type of resource.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>

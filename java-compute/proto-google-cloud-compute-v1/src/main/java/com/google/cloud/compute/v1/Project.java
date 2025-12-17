@@ -23,7 +23,11 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a Project resource. A project is used to organize resources in a Google Cloud Platform environment. For more information, read about the Resource Hierarchy.
+ * Represents a Project resource.
+ *
+ * A project is used to organize resources in a Google Cloud Platform
+ * environment. For more information, read about the
+ * Resource Hierarchy.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Project}
@@ -79,7 +83,10 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The Cloud Armor tier for this project. It can be one of the following values: CA_STANDARD, CA_ENTERPRISE_PAYGO. If this field is not specified, it is assumed to be CA_STANDARD.
+   * Output only. [Output Only] The Cloud Armor tier for this project. It can be one of the
+   * following values: CA_STANDARD,CA_ENTERPRISE_PAYGO.
+   *
+   * If this field is not specified, it is assumed to beCA_STANDARD.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Project.CloudArmorTier}
@@ -261,7 +268,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
+   * This signifies the default network tier used for configuring resources of
+   * the project and can only take the following values:PREMIUM, STANDARD. Initially the default network
+   * tier is PREMIUM.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Project.DefaultNetworkTier}
@@ -291,7 +300,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * High quality, Google-grade network tier, support for all networking products.
+     * High quality, Google-grade network tier, support for all networking
+     * products.
      * </pre>
      *
      * <code>PREMIUM = 399530551;</code>
@@ -301,7 +311,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Public internet quality, only limited support for other networking products.
+     * Public internet quality, only limited support for other networking
+     * products.
      * </pre>
      *
      * <code>STANDARD = 484642493;</code>
@@ -311,7 +322,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Output only) Temporary tier for FIXED_STANDARD when fixed standard tier is expired or not configured.
+     * (Output only) Temporary tier for FIXED_STANDARD when fixed standard tier
+     * is expired or not configured.
      * </pre>
      *
      * <code>STANDARD_OVERRIDES_FIXED_STANDARD = 465847234;</code>
@@ -346,7 +358,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * High quality, Google-grade network tier, support for all networking products.
+     * High quality, Google-grade network tier, support for all networking
+     * products.
      * </pre>
      *
      * <code>PREMIUM = 399530551;</code>
@@ -357,7 +370,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Public internet quality, only limited support for other networking products.
+     * Public internet quality, only limited support for other networking
+     * products.
      * </pre>
      *
      * <code>STANDARD = 484642493;</code>
@@ -368,7 +382,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Output only) Temporary tier for FIXED_STANDARD when fixed standard tier is expired or not configured.
+     * (Output only) Temporary tier for FIXED_STANDARD when fixed standard tier
+     * is expired or not configured.
      * </pre>
      *
      * <code>STANDARD_OVERRIDES_FIXED_STANDARD = 465847234;</code>
@@ -469,7 +484,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Default internal DNS setting used by VMs running in this project.
+   * Output only. [Output Only] Default internal DNS setting used by VMs running in
+   * this project.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Project.VmDnsSetting}
@@ -610,7 +626,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+   * [Output Only] The role this project has in a shared VPC configuration.
+   * Currently, only projects with the host role, which is specified by the
+   * value HOST, are differentiated.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Project.XpnProjectStatus}
@@ -745,7 +763,10 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The Cloud Armor tier for this project. It can be one of the following values: CA_STANDARD, CA_ENTERPRISE_PAYGO. If this field is not specified, it is assumed to be CA_STANDARD.
+   * Output only. [Output Only] The Cloud Armor tier for this project. It can be one of the
+   * following values: CA_STANDARD,CA_ENTERPRISE_PAYGO.
+   *
+   * If this field is not specified, it is assumed to beCA_STANDARD.
    * Check the CloudArmorTier enum for the list of possible values.
    * </pre>
    *
@@ -762,7 +783,10 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The Cloud Armor tier for this project. It can be one of the following values: CA_STANDARD, CA_ENTERPRISE_PAYGO. If this field is not specified, it is assumed to be CA_STANDARD.
+   * Output only. [Output Only] The Cloud Armor tier for this project. It can be one of the
+   * following values: CA_STANDARD,CA_ENTERPRISE_PAYGO.
+   *
+   * If this field is not specified, it is assumed to beCA_STANDARD.
    * Check the CloudArmorTier enum for the list of possible values.
    * </pre>
    *
@@ -787,7 +811,10 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The Cloud Armor tier for this project. It can be one of the following values: CA_STANDARD, CA_ENTERPRISE_PAYGO. If this field is not specified, it is assumed to be CA_STANDARD.
+   * Output only. [Output Only] The Cloud Armor tier for this project. It can be one of the
+   * following values: CA_STANDARD,CA_ENTERPRISE_PAYGO.
+   *
+   * If this field is not specified, it is assumed to beCA_STANDARD.
    * Check the CloudArmorTier enum for the list of possible values.
    * </pre>
    *
@@ -815,7 +842,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Metadata key/value pairs available to all instances contained in this project. See Custom metadata for more information.
+   * Metadata key/value pairs available to all instances contained in this
+   * project. See Custom
+   * metadata for more information.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
@@ -831,7 +860,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Metadata key/value pairs available to all instances contained in this project. See Custom metadata for more information.
+   * Metadata key/value pairs available to all instances contained in this
+   * project. See Custom
+   * metadata for more information.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
@@ -849,7 +880,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Metadata key/value pairs available to all instances contained in this project. See Custom metadata for more information.
+   * Metadata key/value pairs available to all instances contained in this
+   * project. See Custom
+   * metadata for more information.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
@@ -870,7 +903,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -886,7 +920,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -910,7 +945,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -939,7 +975,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
+   * This signifies the default network tier used for configuring resources of
+   * the project and can only take the following values:PREMIUM, STANDARD. Initially the default network
+   * tier is PREMIUM.
    * Check the DefaultNetworkTier enum for the list of possible values.
    * </pre>
    *
@@ -956,7 +994,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
+   * This signifies the default network tier used for configuring resources of
+   * the project and can only take the following values:PREMIUM, STANDARD. Initially the default network
+   * tier is PREMIUM.
    * Check the DefaultNetworkTier enum for the list of possible values.
    * </pre>
    *
@@ -981,7 +1021,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
+   * This signifies the default network tier used for configuring resources of
+   * the project and can only take the following values:PREMIUM, STANDARD. Initially the default network
+   * tier is PREMIUM.
    * Check the DefaultNetworkTier enum for the list of possible values.
    * </pre>
    *
@@ -1215,7 +1257,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is *not* the project ID, and is just a unique ID used by Compute Engine to identify resources.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server. This is *not* the project ID, and is
+   * just a unique ID used by Compute Engine to identify resources.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -1231,7 +1275,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is *not* the project ID, and is just a unique ID used by Compute Engine to identify resources.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server. This is *not* the project ID, and is
+   * just a unique ID used by Compute Engine to identify resources.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -1252,7 +1298,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#project for projects.
+   * Output only. [Output Only] Type of the resource. Always compute#project for
+   * projects.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1268,7 +1315,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#project for projects.
+   * Output only. [Output Only] Type of the resource. Always compute#project for
+   * projects.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1292,7 +1340,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#project for projects.
+   * Output only. [Output Only] Type of the resource. Always compute#project for
+   * projects.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1321,7 +1370,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The project ID. For example: my-example-project. Use the project ID to make requests to Compute Engine.
+   * The project ID. For example: my-example-project. Use the
+   * project ID to make requests to Compute Engine.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1337,7 +1387,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The project ID. For example: my-example-project. Use the project ID to make requests to Compute Engine.
+   * The project ID. For example: my-example-project. Use the
+   * project ID to make requests to Compute Engine.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1361,7 +1412,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The project ID. For example: my-example-project. Use the project ID to make requests to Compute Engine.
+   * The project ID. For example: my-example-project. Use the
+   * project ID to make requests to Compute Engine.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1533,7 +1585,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
+   * An optional naming prefix for daily usage reports and the Google Cloud
+   * Storage bucket where they are stored.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;
@@ -1550,7 +1603,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
+   * An optional naming prefix for daily usage reports and the Google Cloud
+   * Storage bucket where they are stored.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;
@@ -1569,7 +1623,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
+   * An optional naming prefix for daily usage reports and the Google Cloud
+   * Storage bucket where they are stored.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;
@@ -1592,7 +1647,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Default internal DNS setting used by VMs running in this project.
+   * Output only. [Output Only] Default internal DNS setting used by VMs running in
+   * this project.
    * Check the VmDnsSetting enum for the list of possible values.
    * </pre>
    *
@@ -1609,7 +1665,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Default internal DNS setting used by VMs running in this project.
+   * Output only. [Output Only] Default internal DNS setting used by VMs running in
+   * this project.
    * Check the VmDnsSetting enum for the list of possible values.
    * </pre>
    *
@@ -1634,7 +1691,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Default internal DNS setting used by VMs running in this project.
+   * Output only. [Output Only] Default internal DNS setting used by VMs running in
+   * this project.
    * Check the VmDnsSetting enum for the list of possible values.
    * </pre>
    *
@@ -1664,7 +1722,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+   * [Output Only] The role this project has in a shared VPC configuration.
+   * Currently, only projects with the host role, which is specified by the
+   * value HOST, are differentiated.
    * Check the XpnProjectStatus enum for the list of possible values.
    * </pre>
    *
@@ -1681,7 +1741,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+   * [Output Only] The role this project has in a shared VPC configuration.
+   * Currently, only projects with the host role, which is specified by the
+   * value HOST, are differentiated.
    * Check the XpnProjectStatus enum for the list of possible values.
    * </pre>
    *
@@ -1706,7 +1768,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+   * [Output Only] The role this project has in a shared VPC configuration.
+   * Currently, only projects with the host role, which is specified by the
+   * value HOST, are differentiated.
    * Check the XpnProjectStatus enum for the list of possible values.
    * </pre>
    *
@@ -2099,7 +2163,11 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a Project resource. A project is used to organize resources in a Google Cloud Platform environment. For more information, read about the Resource Hierarchy.
+   * Represents a Project resource.
+   *
+   * A project is used to organize resources in a Google Cloud Platform
+   * environment. For more information, read about the
+   * Resource Hierarchy.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Project}
@@ -2580,7 +2648,10 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The Cloud Armor tier for this project. It can be one of the following values: CA_STANDARD, CA_ENTERPRISE_PAYGO. If this field is not specified, it is assumed to be CA_STANDARD.
+     * Output only. [Output Only] The Cloud Armor tier for this project. It can be one of the
+     * following values: CA_STANDARD,CA_ENTERPRISE_PAYGO.
+     *
+     * If this field is not specified, it is assumed to beCA_STANDARD.
      * Check the CloudArmorTier enum for the list of possible values.
      * </pre>
      *
@@ -2596,7 +2667,10 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The Cloud Armor tier for this project. It can be one of the following values: CA_STANDARD, CA_ENTERPRISE_PAYGO. If this field is not specified, it is assumed to be CA_STANDARD.
+     * Output only. [Output Only] The Cloud Armor tier for this project. It can be one of the
+     * following values: CA_STANDARD,CA_ENTERPRISE_PAYGO.
+     *
+     * If this field is not specified, it is assumed to beCA_STANDARD.
      * Check the CloudArmorTier enum for the list of possible values.
      * </pre>
      *
@@ -2620,7 +2694,10 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The Cloud Armor tier for this project. It can be one of the following values: CA_STANDARD, CA_ENTERPRISE_PAYGO. If this field is not specified, it is assumed to be CA_STANDARD.
+     * Output only. [Output Only] The Cloud Armor tier for this project. It can be one of the
+     * following values: CA_STANDARD,CA_ENTERPRISE_PAYGO.
+     *
+     * If this field is not specified, it is assumed to beCA_STANDARD.
      * Check the CloudArmorTier enum for the list of possible values.
      * </pre>
      *
@@ -2644,7 +2721,10 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The Cloud Armor tier for this project. It can be one of the following values: CA_STANDARD, CA_ENTERPRISE_PAYGO. If this field is not specified, it is assumed to be CA_STANDARD.
+     * Output only. [Output Only] The Cloud Armor tier for this project. It can be one of the
+     * following values: CA_STANDARD,CA_ENTERPRISE_PAYGO.
+     *
+     * If this field is not specified, it is assumed to beCA_STANDARD.
      * Check the CloudArmorTier enum for the list of possible values.
      * </pre>
      *
@@ -2667,7 +2747,10 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The Cloud Armor tier for this project. It can be one of the following values: CA_STANDARD, CA_ENTERPRISE_PAYGO. If this field is not specified, it is assumed to be CA_STANDARD.
+     * Output only. [Output Only] The Cloud Armor tier for this project. It can be one of the
+     * following values: CA_STANDARD,CA_ENTERPRISE_PAYGO.
+     *
+     * If this field is not specified, it is assumed to beCA_STANDARD.
      * Check the CloudArmorTier enum for the list of possible values.
      * </pre>
      *
@@ -2686,7 +2769,10 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The Cloud Armor tier for this project. It can be one of the following values: CA_STANDARD, CA_ENTERPRISE_PAYGO. If this field is not specified, it is assumed to be CA_STANDARD.
+     * Output only. [Output Only] The Cloud Armor tier for this project. It can be one of the
+     * following values: CA_STANDARD,CA_ENTERPRISE_PAYGO.
+     *
+     * If this field is not specified, it is assumed to beCA_STANDARD.
      * Check the CloudArmorTier enum for the list of possible values.
      * </pre>
      *
@@ -2717,7 +2803,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metadata key/value pairs available to all instances contained in this project. See Custom metadata for more information.
+     * Metadata key/value pairs available to all instances contained in this
+     * project. See Custom
+     * metadata for more information.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
@@ -2732,7 +2820,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metadata key/value pairs available to all instances contained in this project. See Custom metadata for more information.
+     * Metadata key/value pairs available to all instances contained in this
+     * project. See Custom
+     * metadata for more information.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
@@ -2753,7 +2843,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metadata key/value pairs available to all instances contained in this project. See Custom metadata for more information.
+     * Metadata key/value pairs available to all instances contained in this
+     * project. See Custom
+     * metadata for more information.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
@@ -2776,7 +2868,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metadata key/value pairs available to all instances contained in this project. See Custom metadata for more information.
+     * Metadata key/value pairs available to all instances contained in this
+     * project. See Custom
+     * metadata for more information.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
@@ -2797,7 +2891,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metadata key/value pairs available to all instances contained in this project. See Custom metadata for more information.
+     * Metadata key/value pairs available to all instances contained in this
+     * project. See Custom
+     * metadata for more information.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
@@ -2826,7 +2922,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metadata key/value pairs available to all instances contained in this project. See Custom metadata for more information.
+     * Metadata key/value pairs available to all instances contained in this
+     * project. See Custom
+     * metadata for more information.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
@@ -2846,7 +2944,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metadata key/value pairs available to all instances contained in this project. See Custom metadata for more information.
+     * Metadata key/value pairs available to all instances contained in this
+     * project. See Custom
+     * metadata for more information.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
@@ -2861,7 +2961,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metadata key/value pairs available to all instances contained in this project. See Custom metadata for more information.
+     * Metadata key/value pairs available to all instances contained in this
+     * project. See Custom
+     * metadata for more information.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
@@ -2880,7 +2982,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metadata key/value pairs available to all instances contained in this project. See Custom metadata for more information.
+     * Metadata key/value pairs available to all instances contained in this
+     * project. See Custom
+     * metadata for more information.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Metadata common_instance_metadata = 185794117;</code>
@@ -2908,7 +3012,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2923,7 +3028,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2946,7 +3052,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2969,7 +3076,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2991,7 +3099,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -3009,7 +3118,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -3034,7 +3144,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
+     * This signifies the default network tier used for configuring resources of
+     * the project and can only take the following values:PREMIUM, STANDARD. Initially the default network
+     * tier is PREMIUM.
      * Check the DefaultNetworkTier enum for the list of possible values.
      * </pre>
      *
@@ -3050,7 +3162,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
+     * This signifies the default network tier used for configuring resources of
+     * the project and can only take the following values:PREMIUM, STANDARD. Initially the default network
+     * tier is PREMIUM.
      * Check the DefaultNetworkTier enum for the list of possible values.
      * </pre>
      *
@@ -3074,7 +3188,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
+     * This signifies the default network tier used for configuring resources of
+     * the project and can only take the following values:PREMIUM, STANDARD. Initially the default network
+     * tier is PREMIUM.
      * Check the DefaultNetworkTier enum for the list of possible values.
      * </pre>
      *
@@ -3098,7 +3214,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
+     * This signifies the default network tier used for configuring resources of
+     * the project and can only take the following values:PREMIUM, STANDARD. Initially the default network
+     * tier is PREMIUM.
      * Check the DefaultNetworkTier enum for the list of possible values.
      * </pre>
      *
@@ -3121,7 +3239,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
+     * This signifies the default network tier used for configuring resources of
+     * the project and can only take the following values:PREMIUM, STANDARD. Initially the default network
+     * tier is PREMIUM.
      * Check the DefaultNetworkTier enum for the list of possible values.
      * </pre>
      *
@@ -3140,7 +3260,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
+     * This signifies the default network tier used for configuring resources of
+     * the project and can only take the following values:PREMIUM, STANDARD. Initially the default network
+     * tier is PREMIUM.
      * Check the DefaultNetworkTier enum for the list of possible values.
      * </pre>
      *
@@ -3601,7 +3723,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is *not* the project ID, and is just a unique ID used by Compute Engine to identify resources.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server. This is *not* the project ID, and is
+     * just a unique ID used by Compute Engine to identify resources.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -3617,7 +3741,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is *not* the project ID, and is just a unique ID used by Compute Engine to identify resources.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server. This is *not* the project ID, and is
+     * just a unique ID used by Compute Engine to identify resources.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -3633,7 +3759,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is *not* the project ID, and is just a unique ID used by Compute Engine to identify resources.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server. This is *not* the project ID, and is
+     * just a unique ID used by Compute Engine to identify resources.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -3653,7 +3781,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is *not* the project ID, and is just a unique ID used by Compute Engine to identify resources.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server. This is *not* the project ID, and is
+     * just a unique ID used by Compute Engine to identify resources.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -3673,7 +3803,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#project for projects.
+     * Output only. [Output Only] Type of the resource. Always compute#project for
+     * projects.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3688,7 +3819,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#project for projects.
+     * Output only. [Output Only] Type of the resource. Always compute#project for
+     * projects.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3711,7 +3843,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#project for projects.
+     * Output only. [Output Only] Type of the resource. Always compute#project for
+     * projects.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3734,7 +3867,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#project for projects.
+     * Output only. [Output Only] Type of the resource. Always compute#project for
+     * projects.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3756,7 +3890,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#project for projects.
+     * Output only. [Output Only] Type of the resource. Always compute#project for
+     * projects.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3774,7 +3909,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#project for projects.
+     * Output only. [Output Only] Type of the resource. Always compute#project for
+     * projects.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3799,7 +3935,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The project ID. For example: my-example-project. Use the project ID to make requests to Compute Engine.
+     * The project ID. For example: my-example-project. Use the
+     * project ID to make requests to Compute Engine.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3814,7 +3951,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The project ID. For example: my-example-project. Use the project ID to make requests to Compute Engine.
+     * The project ID. For example: my-example-project. Use the
+     * project ID to make requests to Compute Engine.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3837,7 +3975,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The project ID. For example: my-example-project. Use the project ID to make requests to Compute Engine.
+     * The project ID. For example: my-example-project. Use the
+     * project ID to make requests to Compute Engine.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3860,7 +3999,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The project ID. For example: my-example-project. Use the project ID to make requests to Compute Engine.
+     * The project ID. For example: my-example-project. Use the
+     * project ID to make requests to Compute Engine.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3882,7 +4022,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The project ID. For example: my-example-project. Use the project ID to make requests to Compute Engine.
+     * The project ID. For example: my-example-project. Use the
+     * project ID to make requests to Compute Engine.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3900,7 +4041,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The project ID. For example: my-example-project. Use the project ID to make requests to Compute Engine.
+     * The project ID. For example: my-example-project. Use the
+     * project ID to make requests to Compute Engine.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -4419,7 +4561,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
+     * An optional naming prefix for daily usage reports and the Google Cloud
+     * Storage bucket where they are stored.
      * </pre>
      *
      * <code>
@@ -4436,7 +4579,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
+     * An optional naming prefix for daily usage reports and the Google Cloud
+     * Storage bucket where they are stored.
      * </pre>
      *
      * <code>
@@ -4459,7 +4603,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
+     * An optional naming prefix for daily usage reports and the Google Cloud
+     * Storage bucket where they are stored.
      * </pre>
      *
      * <code>
@@ -4484,7 +4629,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
+     * An optional naming prefix for daily usage reports and the Google Cloud
+     * Storage bucket where they are stored.
      * </pre>
      *
      * <code>
@@ -4507,7 +4653,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
+     * An optional naming prefix for daily usage reports and the Google Cloud
+     * Storage bucket where they are stored.
      * </pre>
      *
      * <code>
@@ -4538,7 +4685,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
+     * An optional naming prefix for daily usage reports and the Google Cloud
+     * Storage bucket where they are stored.
      * </pre>
      *
      * <code>
@@ -4560,7 +4708,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
+     * An optional naming prefix for daily usage reports and the Google Cloud
+     * Storage bucket where they are stored.
      * </pre>
      *
      * <code>
@@ -4577,7 +4726,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
+     * An optional naming prefix for daily usage reports and the Google Cloud
+     * Storage bucket where they are stored.
      * </pre>
      *
      * <code>
@@ -4599,7 +4749,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
+     * An optional naming prefix for daily usage reports and the Google Cloud
+     * Storage bucket where they are stored.
      * </pre>
      *
      * <code>
@@ -4629,7 +4780,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Default internal DNS setting used by VMs running in this project.
+     * Output only. [Output Only] Default internal DNS setting used by VMs running in
+     * this project.
      * Check the VmDnsSetting enum for the list of possible values.
      * </pre>
      *
@@ -4645,7 +4797,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Default internal DNS setting used by VMs running in this project.
+     * Output only. [Output Only] Default internal DNS setting used by VMs running in
+     * this project.
      * Check the VmDnsSetting enum for the list of possible values.
      * </pre>
      *
@@ -4669,7 +4822,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Default internal DNS setting used by VMs running in this project.
+     * Output only. [Output Only] Default internal DNS setting used by VMs running in
+     * this project.
      * Check the VmDnsSetting enum for the list of possible values.
      * </pre>
      *
@@ -4693,7 +4847,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Default internal DNS setting used by VMs running in this project.
+     * Output only. [Output Only] Default internal DNS setting used by VMs running in
+     * this project.
      * Check the VmDnsSetting enum for the list of possible values.
      * </pre>
      *
@@ -4716,7 +4871,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Default internal DNS setting used by VMs running in this project.
+     * Output only. [Output Only] Default internal DNS setting used by VMs running in
+     * this project.
      * Check the VmDnsSetting enum for the list of possible values.
      * </pre>
      *
@@ -4735,7 +4891,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Default internal DNS setting used by VMs running in this project.
+     * Output only. [Output Only] Default internal DNS setting used by VMs running in
+     * this project.
      * Check the VmDnsSetting enum for the list of possible values.
      * </pre>
      *
@@ -4761,7 +4918,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+     * [Output Only] The role this project has in a shared VPC configuration.
+     * Currently, only projects with the host role, which is specified by the
+     * value HOST, are differentiated.
      * Check the XpnProjectStatus enum for the list of possible values.
      * </pre>
      *
@@ -4777,7 +4936,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+     * [Output Only] The role this project has in a shared VPC configuration.
+     * Currently, only projects with the host role, which is specified by the
+     * value HOST, are differentiated.
      * Check the XpnProjectStatus enum for the list of possible values.
      * </pre>
      *
@@ -4801,7 +4962,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+     * [Output Only] The role this project has in a shared VPC configuration.
+     * Currently, only projects with the host role, which is specified by the
+     * value HOST, are differentiated.
      * Check the XpnProjectStatus enum for the list of possible values.
      * </pre>
      *
@@ -4825,7 +4988,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+     * [Output Only] The role this project has in a shared VPC configuration.
+     * Currently, only projects with the host role, which is specified by the
+     * value HOST, are differentiated.
      * Check the XpnProjectStatus enum for the list of possible values.
      * </pre>
      *
@@ -4848,7 +5013,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+     * [Output Only] The role this project has in a shared VPC configuration.
+     * Currently, only projects with the host role, which is specified by the
+     * value HOST, are differentiated.
      * Check the XpnProjectStatus enum for the list of possible values.
      * </pre>
      *
@@ -4867,7 +5034,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+     * [Output Only] The role this project has in a shared VPC configuration.
+     * Currently, only projects with the host role, which is specified by the
+     * value HOST, are differentiated.
      * Check the XpnProjectStatus enum for the list of possible values.
      * </pre>
      *

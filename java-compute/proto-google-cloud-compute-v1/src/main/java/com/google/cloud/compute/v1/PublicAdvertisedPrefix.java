@@ -23,7 +23,9 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * A public advertised prefix represents an aggregated IP prefix or netblock which customers bring to cloud. The IP prefix is a single unit of route advertisement and is announced globally to the internet.
+ * A public advertised prefix represents an aggregated IP prefix or netblock
+ * which customers bring to cloud. The IP prefix is a single unit of route
+ * advertisement and is announced globally to the internet.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.PublicAdvertisedPrefix}
@@ -46,6 +48,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     dnsVerificationIp_ = "";
     fingerprint_ = "";
     ipCidrRange_ = "";
+    ipv6AccessType_ = "";
     kind_ = "";
     name_ = "";
     pdpScope_ = "";
@@ -80,7 +83,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The version of BYOIP API.
+   * Output only. [Output Only] The version of BYOIP API.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.PublicAdvertisedPrefix.ByoipApiVersion}
@@ -100,7 +103,9 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * This public advertised prefix can be used to create both regional and global public delegated prefixes. It usually takes 4 weeks to create or delete a public delegated prefix. The BGP status cannot be changed.
+     * This public advertised prefix can be used to create both regional and
+     * global public delegated prefixes. It usually takes 4 weeks to create or
+     * delete a public delegated prefix. The BGP status cannot be changed.
      * </pre>
      *
      * <code>V1 = 2715;</code>
@@ -110,7 +115,9 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * This public advertised prefix can only be used to create regional public delegated prefixes. Public delegated prefix creation and deletion takes minutes and the BGP status can be modified.
+     * This public advertised prefix can only be used to create regional public
+     * delegated prefixes. Public delegated prefix creation and deletion takes
+     * minutes and the BGP status can be modified.
      * </pre>
      *
      * <code>V2 = 2716;</code>
@@ -134,7 +141,9 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * This public advertised prefix can be used to create both regional and global public delegated prefixes. It usually takes 4 weeks to create or delete a public delegated prefix. The BGP status cannot be changed.
+     * This public advertised prefix can be used to create both regional and
+     * global public delegated prefixes. It usually takes 4 weeks to create or
+     * delete a public delegated prefix. The BGP status cannot be changed.
      * </pre>
      *
      * <code>V1 = 2715;</code>
@@ -145,7 +154,9 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * This public advertised prefix can only be used to create regional public delegated prefixes. Public delegated prefix creation and deletion takes minutes and the BGP status can be modified.
+     * This public advertised prefix can only be used to create regional public
+     * delegated prefixes. Public delegated prefix creation and deletion takes
+     * minutes and the BGP status can be modified.
      * </pre>
      *
      * <code>V2 = 2716;</code>
@@ -243,7 +254,186 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Specifies how child public delegated prefix will be scoped. It could be one of following values: - `REGIONAL`: The public delegated prefix is regional only. The provisioning will take a few minutes. - `GLOBAL`: The public delegated prefix is global only. The provisioning will take ~4 weeks. - `GLOBAL_AND_REGIONAL` [output only]: The public delegated prefixes is BYOIP V1 legacy prefix. This is output only value and no longer supported in BYOIP V2.
+   * The internet access type for IPv6 Public Advertised Prefixes.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.PublicAdvertisedPrefix.Ipv6AccessType}
+   */
+  public enum Ipv6AccessType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_IPV6_ACCESS_TYPE = 0;</code>
+     */
+    UNDEFINED_IPV6_ACCESS_TYPE(0),
+    /**
+     *
+     *
+     * <pre>
+     * Default IPv6 access type. The prefix will be announced to the internet.
+     * All children Public Delegated Prefixes will have IPv6 access type as
+     * EXTERNAL.
+     * </pre>
+     *
+     * <code>EXTERNAL = 35607499;</code>
+     */
+    EXTERNAL(35607499),
+    /**
+     *
+     *
+     * <pre>
+     * The prefix will not be announced to the internet. Prefix will be used
+     * privately within Cloud. All children Public Delegated Prefixes
+     * will have IPv6 access type as INTERNAL.
+     * </pre>
+     *
+     * <code>INTERNAL = 279295677;</code>
+     */
+    INTERNAL(279295677),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_IPV6_ACCESS_TYPE = 0;</code>
+     */
+    public static final int UNDEFINED_IPV6_ACCESS_TYPE_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default IPv6 access type. The prefix will be announced to the internet.
+     * All children Public Delegated Prefixes will have IPv6 access type as
+     * EXTERNAL.
+     * </pre>
+     *
+     * <code>EXTERNAL = 35607499;</code>
+     */
+    public static final int EXTERNAL_VALUE = 35607499;
+
+    /**
+     *
+     *
+     * <pre>
+     * The prefix will not be announced to the internet. Prefix will be used
+     * privately within Cloud. All children Public Delegated Prefixes
+     * will have IPv6 access type as INTERNAL.
+     * </pre>
+     *
+     * <code>INTERNAL = 279295677;</code>
+     */
+    public static final int INTERNAL_VALUE = 279295677;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Ipv6AccessType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Ipv6AccessType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_IPV6_ACCESS_TYPE;
+        case 35607499:
+          return EXTERNAL;
+        case 279295677:
+          return INTERNAL;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Ipv6AccessType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Ipv6AccessType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Ipv6AccessType>() {
+          public Ipv6AccessType findValueByNumber(int number) {
+            return Ipv6AccessType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.PublicAdvertisedPrefix.getDescriptor()
+          .getEnumTypes()
+          .get(1);
+    }
+
+    private static final Ipv6AccessType[] VALUES = values();
+
+    public static Ipv6AccessType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Ipv6AccessType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.PublicAdvertisedPrefix.Ipv6AccessType)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies how child public delegated prefix will be scoped. It could
+   * be one of following values:
+   *
+   *
+   *      - `REGIONAL`: The public delegated prefix is regional only. The
+   *      provisioning will take a few minutes.
+   *      - `GLOBAL`: The public delegated prefix is global only. The
+   *      provisioning will take ~4 weeks.
+   *      - `GLOBAL_AND_REGIONAL` [output only]: The public delegated prefixes is
+   *       BYOIP V1 legacy prefix. This is output only value and no longer
+   *       supported in BYOIP V2.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.PublicAdvertisedPrefix.PdpScope}
@@ -263,7 +453,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The public delegated prefix is global only. The provisioning will take ~4 weeks.
+     * The public delegated prefix is global only. The provisioning will take ~4
+     * weeks.
      * </pre>
      *
      * <code>GLOBAL = 494663587;</code>
@@ -273,7 +464,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The public delegated prefixes is BYOIP V1 legacy prefix. This is output only value and no longer supported in BYOIP V2.
+     * The public delegated prefixes is BYOIP V1 legacy prefix. This is output
+     * only value and no longer supported in BYOIP V2.
      * </pre>
      *
      * <code>GLOBAL_AND_REGIONAL = 318053059;</code>
@@ -283,7 +475,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The public delegated prefix is regional only. The provisioning will take a few minutes.
+     * The public delegated prefix is regional only. The provisioning will take
+     * a few minutes.
      * </pre>
      *
      * <code>REGIONAL = 92288543;</code>
@@ -307,7 +500,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The public delegated prefix is global only. The provisioning will take ~4 weeks.
+     * The public delegated prefix is global only. The provisioning will take ~4
+     * weeks.
      * </pre>
      *
      * <code>GLOBAL = 494663587;</code>
@@ -318,7 +512,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The public delegated prefixes is BYOIP V1 legacy prefix. This is output only value and no longer supported in BYOIP V2.
+     * The public delegated prefixes is BYOIP V1 legacy prefix. This is output
+     * only value and no longer supported in BYOIP V2.
      * </pre>
      *
      * <code>GLOBAL_AND_REGIONAL = 318053059;</code>
@@ -329,7 +524,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The public delegated prefix is regional only. The provisioning will take a few minutes.
+     * The public delegated prefix is regional only. The provisioning will take
+     * a few minutes.
      * </pre>
      *
      * <code>REGIONAL = 92288543;</code>
@@ -399,7 +595,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.compute.v1.PublicAdvertisedPrefix.getDescriptor()
           .getEnumTypes()
-          .get(1);
+          .get(2);
     }
 
     private static final PdpScope[] VALUES = values();
@@ -427,7 +623,17 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The status of the public advertised prefix. Possible values include: - `INITIAL`: RPKI validation is complete. - `PTR_CONFIGURED`: User has configured the PTR. - `VALIDATED`: Reverse DNS lookup is successful. - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed. - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being configured. - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured. - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
+   * The status of the public advertised prefix. Possible values include:
+   *
+   *
+   *      - `INITIAL`: RPKI validation is complete.
+   *      - `PTR_CONFIGURED`: User has configured the PTR.
+   *      - `VALIDATED`: Reverse DNS lookup is successful.
+   *      - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed.
+   *      - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being
+   *      configured.
+   *      - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured.
+   *      - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.PublicAdvertisedPrefix.Status}
@@ -721,7 +927,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.compute.v1.PublicAdvertisedPrefix.getDescriptor()
           .getEnumTypes()
-          .get(2);
+          .get(3);
     }
 
     private static final Status[] VALUES = values();
@@ -755,7 +961,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The version of BYOIP API.
+   * Output only. [Output Only] The version of BYOIP API.
    * Check the ByoipApiVersion enum for the list of possible values.
    * </pre>
    *
@@ -772,7 +978,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The version of BYOIP API.
+   * Output only. [Output Only] The version of BYOIP API.
    * Check the ByoipApiVersion enum for the list of possible values.
    * </pre>
    *
@@ -797,7 +1003,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The version of BYOIP API.
+   * Output only. [Output Only] The version of BYOIP API.
    * Check the ByoipApiVersion enum for the list of possible values.
    * </pre>
    *
@@ -827,7 +1033,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -843,7 +1050,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -867,7 +1075,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -896,7 +1105,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -912,7 +1122,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -936,7 +1147,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -1034,7 +1246,14 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
+   * Fingerprint of this resource. A hash of the contents stored in this object.
+   * This field is used in optimistic locking. This field will be ignored when
+   * inserting a new PublicAdvertisedPrefix. An up-to-date
+   * fingerprint must be provided in order to update thePublicAdvertisedPrefix, otherwise the request will fail with
+   * error 412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve a PublicAdvertisedPrefix.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -1050,7 +1269,14 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
+   * Fingerprint of this resource. A hash of the contents stored in this object.
+   * This field is used in optimistic locking. This field will be ignored when
+   * inserting a new PublicAdvertisedPrefix. An up-to-date
+   * fingerprint must be provided in order to update thePublicAdvertisedPrefix, otherwise the request will fail with
+   * error 412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve a PublicAdvertisedPrefix.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -1074,7 +1300,14 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
+   * Fingerprint of this resource. A hash of the contents stored in this object.
+   * This field is used in optimistic locking. This field will be ignored when
+   * inserting a new PublicAdvertisedPrefix. An up-to-date
+   * fingerprint must be provided in order to update thePublicAdvertisedPrefix, otherwise the request will fail with
+   * error 412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve a PublicAdvertisedPrefix.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -1101,7 +1334,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource type. The server generates this identifier.
+   * Output only. [Output Only] The unique identifier for the resource type. The server
+   * generates this identifier.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -1117,7 +1351,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource type. The server generates this identifier.
+   * Output only. [Output Only] The unique identifier for the resource type. The server
+   * generates this identifier.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -1138,7 +1373,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The address range, in CIDR format, represented by this public advertised prefix.
+   * The address range, in CIDR format, represented by this public advertised
+   * prefix.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -1154,7 +1390,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The address range, in CIDR format, represented by this public advertised prefix.
+   * The address range, in CIDR format, represented by this public advertised
+   * prefix.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -1178,7 +1415,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The address range, in CIDR format, represented by this public advertised prefix.
+   * The address range, in CIDR format, represented by this public advertised
+   * prefix.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -1198,6 +1436,78 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     }
   }
 
+  public static final int IPV6_ACCESS_TYPE_FIELD_NUMBER = 504658653;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipv6AccessType_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The internet access type for IPv6 Public Advertised Prefixes.
+   * Check the Ipv6AccessType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_access_type = 504658653;</code>
+   *
+   * @return Whether the ipv6AccessType field is set.
+   */
+  @java.lang.Override
+  public boolean hasIpv6AccessType() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The internet access type for IPv6 Public Advertised Prefixes.
+   * Check the Ipv6AccessType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_access_type = 504658653;</code>
+   *
+   * @return The ipv6AccessType.
+   */
+  @java.lang.Override
+  public java.lang.String getIpv6AccessType() {
+    java.lang.Object ref = ipv6AccessType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ipv6AccessType_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The internet access type for IPv6 Public Advertised Prefixes.
+   * Check the Ipv6AccessType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_access_type = 504658653;</code>
+   *
+   * @return The bytes for ipv6AccessType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getIpv6AccessTypeBytes() {
+    java.lang.Object ref = ipv6AccessType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      ipv6AccessType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int KIND_FIELD_NUMBER = 3292052;
 
   @SuppressWarnings("serial")
@@ -1207,7 +1517,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#publicAdvertisedPrefix for public advertised prefixes.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1216,14 +1526,14 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasKind() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#publicAdvertisedPrefix for public advertised prefixes.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1247,7 +1557,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#publicAdvertisedPrefix for public advertised prefixes.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1276,7 +1586,13 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1285,14 +1601,20 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1316,7 +1638,13 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1345,7 +1673,17 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Specifies how child public delegated prefix will be scoped. It could be one of following values: - `REGIONAL`: The public delegated prefix is regional only. The provisioning will take a few minutes. - `GLOBAL`: The public delegated prefix is global only. The provisioning will take ~4 weeks. - `GLOBAL_AND_REGIONAL` [output only]: The public delegated prefixes is BYOIP V1 legacy prefix. This is output only value and no longer supported in BYOIP V2.
+   * Specifies how child public delegated prefix will be scoped. It could
+   * be one of following values:
+   *
+   *
+   *      - `REGIONAL`: The public delegated prefix is regional only. The
+   *      provisioning will take a few minutes.
+   *      - `GLOBAL`: The public delegated prefix is global only. The
+   *      provisioning will take ~4 weeks.
+   *      - `GLOBAL_AND_REGIONAL` [output only]: The public delegated prefixes is
+   *       BYOIP V1 legacy prefix. This is output only value and no longer
+   *       supported in BYOIP V2.
    * Check the PdpScope enum for the list of possible values.
    * </pre>
    *
@@ -1355,14 +1693,24 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasPdpScope() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * Specifies how child public delegated prefix will be scoped. It could be one of following values: - `REGIONAL`: The public delegated prefix is regional only. The provisioning will take a few minutes. - `GLOBAL`: The public delegated prefix is global only. The provisioning will take ~4 weeks. - `GLOBAL_AND_REGIONAL` [output only]: The public delegated prefixes is BYOIP V1 legacy prefix. This is output only value and no longer supported in BYOIP V2.
+   * Specifies how child public delegated prefix will be scoped. It could
+   * be one of following values:
+   *
+   *
+   *      - `REGIONAL`: The public delegated prefix is regional only. The
+   *      provisioning will take a few minutes.
+   *      - `GLOBAL`: The public delegated prefix is global only. The
+   *      provisioning will take ~4 weeks.
+   *      - `GLOBAL_AND_REGIONAL` [output only]: The public delegated prefixes is
+   *       BYOIP V1 legacy prefix. This is output only value and no longer
+   *       supported in BYOIP V2.
    * Check the PdpScope enum for the list of possible values.
    * </pre>
    *
@@ -1387,7 +1735,17 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Specifies how child public delegated prefix will be scoped. It could be one of following values: - `REGIONAL`: The public delegated prefix is regional only. The provisioning will take a few minutes. - `GLOBAL`: The public delegated prefix is global only. The provisioning will take ~4 weeks. - `GLOBAL_AND_REGIONAL` [output only]: The public delegated prefixes is BYOIP V1 legacy prefix. This is output only value and no longer supported in BYOIP V2.
+   * Specifies how child public delegated prefix will be scoped. It could
+   * be one of following values:
+   *
+   *
+   *      - `REGIONAL`: The public delegated prefix is regional only. The
+   *      provisioning will take a few minutes.
+   *      - `GLOBAL`: The public delegated prefix is global only. The
+   *      provisioning will take ~4 weeks.
+   *      - `GLOBAL_AND_REGIONAL` [output only]: The public delegated prefixes is
+   *       BYOIP V1 legacy prefix. This is output only value and no longer
+   *       supported in BYOIP V2.
    * Check the PdpScope enum for the list of possible values.
    * </pre>
    *
@@ -1418,7 +1776,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The list of public delegated prefixes that exist for this public advertised prefix.
+   * Output only. [Output Only] The list of public delegated prefixes that exist for this
+   * public advertised prefix.
    * </pre>
    *
    * <code>
@@ -1435,7 +1794,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The list of public delegated prefixes that exist for this public advertised prefix.
+   * Output only. [Output Only] The list of public delegated prefixes that exist for this
+   * public advertised prefix.
    * </pre>
    *
    * <code>
@@ -1454,7 +1814,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The list of public delegated prefixes that exist for this public advertised prefix.
+   * Output only. [Output Only] The list of public delegated prefixes that exist for this
+   * public advertised prefix.
    * </pre>
    *
    * <code>
@@ -1470,7 +1831,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The list of public delegated prefixes that exist for this public advertised prefix.
+   * Output only. [Output Only] The list of public delegated prefixes that exist for this
+   * public advertised prefix.
    * </pre>
    *
    * <code>
@@ -1487,7 +1849,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The list of public delegated prefixes that exist for this public advertised prefix.
+   * Output only. [Output Only] The list of public delegated prefixes that exist for this
+   * public advertised prefix.
    * </pre>
    *
    * <code>
@@ -1509,7 +1872,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1518,14 +1881,14 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1549,7 +1912,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1587,7 +1950,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasSharedSecret() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
@@ -1647,7 +2010,17 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The status of the public advertised prefix. Possible values include: - `INITIAL`: RPKI validation is complete. - `PTR_CONFIGURED`: User has configured the PTR. - `VALIDATED`: Reverse DNS lookup is successful. - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed. - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being configured. - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured. - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
+   * The status of the public advertised prefix. Possible values include:
+   *
+   *
+   *      - `INITIAL`: RPKI validation is complete.
+   *      - `PTR_CONFIGURED`: User has configured the PTR.
+   *      - `VALIDATED`: Reverse DNS lookup is successful.
+   *      - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed.
+   *      - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being
+   *      configured.
+   *      - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured.
+   *      - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -1657,14 +2030,24 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * The status of the public advertised prefix. Possible values include: - `INITIAL`: RPKI validation is complete. - `PTR_CONFIGURED`: User has configured the PTR. - `VALIDATED`: Reverse DNS lookup is successful. - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed. - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being configured. - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured. - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
+   * The status of the public advertised prefix. Possible values include:
+   *
+   *
+   *      - `INITIAL`: RPKI validation is complete.
+   *      - `PTR_CONFIGURED`: User has configured the PTR.
+   *      - `VALIDATED`: Reverse DNS lookup is successful.
+   *      - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed.
+   *      - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being
+   *      configured.
+   *      - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured.
+   *      - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -1689,7 +2072,17 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The status of the public advertised prefix. Possible values include: - `INITIAL`: RPKI validation is complete. - `PTR_CONFIGURED`: User has configured the PTR. - `VALIDATED`: Reverse DNS lookup is successful. - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed. - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being configured. - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured. - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
+   * The status of the public advertised prefix. Possible values include:
+   *
+   *
+   *      - `INITIAL`: RPKI validation is complete.
+   *      - `PTR_CONFIGURED`: User has configured the PTR.
+   *      - `VALIDATED`: Reverse DNS lookup is successful.
+   *      - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed.
+   *      - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being
+   *      configured.
+   *      - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured.
+   *      - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -1727,10 +2120,10 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeUInt64(3355, id_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -1742,7 +2135,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 162683283, byoipApiVersion_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
@@ -1751,7 +2144,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 241011381, dnsVerificationIp_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 381932490, sharedSecret_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
@@ -1760,10 +2153,13 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     for (int i = 0; i < publicDelegatedPrefixs_.size(); i++) {
       output.writeMessage(425811723, publicDelegatedPrefixs_.get(i));
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 504658653, ipv6AccessType_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 524264785, pdpScope_);
     }
     getUnknownFields().writeTo(output);
@@ -1778,10 +2174,10 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3355, id_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -1794,7 +2190,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(162683283, byoipApiVersion_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
@@ -1804,7 +2200,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(241011381, dnsVerificationIp_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(381932490, sharedSecret_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
@@ -1815,10 +2211,13 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               425811723, publicDelegatedPrefixs_.get(i));
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(504658653, ipv6AccessType_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(524264785, pdpScope_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -1864,6 +2263,10 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     if (hasIpCidrRange() != other.hasIpCidrRange()) return false;
     if (hasIpCidrRange()) {
       if (!getIpCidrRange().equals(other.getIpCidrRange())) return false;
+    }
+    if (hasIpv6AccessType() != other.hasIpv6AccessType()) return false;
+    if (hasIpv6AccessType()) {
+      if (!getIpv6AccessType().equals(other.getIpv6AccessType())) return false;
     }
     if (hasKind() != other.hasKind()) return false;
     if (hasKind()) {
@@ -1929,6 +2332,10 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     if (hasIpCidrRange()) {
       hash = (37 * hash) + IP_CIDR_RANGE_FIELD_NUMBER;
       hash = (53 * hash) + getIpCidrRange().hashCode();
+    }
+    if (hasIpv6AccessType()) {
+      hash = (37 * hash) + IPV6_ACCESS_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getIpv6AccessType().hashCode();
     }
     if (hasKind()) {
       hash = (37 * hash) + KIND_FIELD_NUMBER;
@@ -2063,7 +2470,9 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * A public advertised prefix represents an aggregated IP prefix or netblock which customers bring to cloud. The IP prefix is a single unit of route advertisement and is announced globally to the internet.
+   * A public advertised prefix represents an aggregated IP prefix or netblock
+   * which customers bring to cloud. The IP prefix is a single unit of route
+   * advertisement and is announced globally to the internet.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.PublicAdvertisedPrefix}
@@ -2105,6 +2514,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       fingerprint_ = "";
       id_ = 0L;
       ipCidrRange_ = "";
+      ipv6AccessType_ = "";
       kind_ = "";
       name_ = "";
       pdpScope_ = "";
@@ -2114,7 +2524,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         publicDelegatedPrefixs_ = null;
         publicDelegatedPrefixsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       selfLink_ = "";
       sharedSecret_ = "";
       status_ = "";
@@ -2156,9 +2566,9 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     private void buildPartialRepeatedFields(
         com.google.cloud.compute.v1.PublicAdvertisedPrefix result) {
       if (publicDelegatedPrefixsBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           publicDelegatedPrefixs_ = java.util.Collections.unmodifiableList(publicDelegatedPrefixs_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000800);
         }
         result.publicDelegatedPrefixs_ = publicDelegatedPrefixs_;
       } else {
@@ -2198,28 +2608,32 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.kind_ = kind_;
+        result.ipv6AccessType_ = ipv6AccessType_;
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.name_ = name_;
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.pdpScope_ = pdpScope_;
+        result.name_ = name_;
         to_bitField0_ |= 0x00000200;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.selfLink_ = selfLink_;
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.pdpScope_ = pdpScope_;
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.sharedSecret_ = sharedSecret_;
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.status_ = status_;
+        result.sharedSecret_ = sharedSecret_;
         to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.status_ = status_;
+        to_bitField0_ |= 0x00002000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2303,26 +2717,31 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         bitField0_ |= 0x00000040;
         onChanged();
       }
+      if (other.hasIpv6AccessType()) {
+        ipv6AccessType_ = other.ipv6AccessType_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
       if (other.hasKind()) {
         kind_ = other.kind_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasPdpScope()) {
         pdpScope_ = other.pdpScope_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (publicDelegatedPrefixsBuilder_ == null) {
         if (!other.publicDelegatedPrefixs_.isEmpty()) {
           if (publicDelegatedPrefixs_.isEmpty()) {
             publicDelegatedPrefixs_ = other.publicDelegatedPrefixs_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensurePublicDelegatedPrefixsIsMutable();
             publicDelegatedPrefixs_.addAll(other.publicDelegatedPrefixs_);
@@ -2335,7 +2754,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
             publicDelegatedPrefixsBuilder_.dispose();
             publicDelegatedPrefixsBuilder_ = null;
             publicDelegatedPrefixs_ = other.publicDelegatedPrefixs_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
             publicDelegatedPrefixsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPublicDelegatedPrefixsFieldBuilder()
@@ -2347,17 +2766,17 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.hasSharedSecret()) {
         sharedSecret_ = other.sharedSecret_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.hasStatus()) {
         status_ = other.status_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2395,13 +2814,13 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
             case 26336418:
               {
                 kind_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 26336418
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 26989658
             case 244202930:
@@ -2425,7 +2844,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
             case 1450082194:
               {
                 status_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 1450082194
             case 1877428002:
@@ -2443,7 +2862,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
             case -1239507374:
               {
                 sharedSecret_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case -1239507374
             case -911466526:
@@ -2470,13 +2889,19 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case -645248918
+            case -257698070:
+              {
+                ipv6AccessType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case -257698070
             case -100849014:
               {
                 pdpScope_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case -100849014
             default:
@@ -2504,7 +2929,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The version of BYOIP API.
+     * Output only. [Output Only] The version of BYOIP API.
      * Check the ByoipApiVersion enum for the list of possible values.
      * </pre>
      *
@@ -2520,7 +2945,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The version of BYOIP API.
+     * Output only. [Output Only] The version of BYOIP API.
      * Check the ByoipApiVersion enum for the list of possible values.
      * </pre>
      *
@@ -2544,7 +2969,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The version of BYOIP API.
+     * Output only. [Output Only] The version of BYOIP API.
      * Check the ByoipApiVersion enum for the list of possible values.
      * </pre>
      *
@@ -2568,7 +2993,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The version of BYOIP API.
+     * Output only. [Output Only] The version of BYOIP API.
      * Check the ByoipApiVersion enum for the list of possible values.
      * </pre>
      *
@@ -2591,7 +3016,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The version of BYOIP API.
+     * Output only. [Output Only] The version of BYOIP API.
      * Check the ByoipApiVersion enum for the list of possible values.
      * </pre>
      *
@@ -2610,7 +3035,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The version of BYOIP API.
+     * Output only. [Output Only] The version of BYOIP API.
      * Check the ByoipApiVersion enum for the list of possible values.
      * </pre>
      *
@@ -2636,7 +3061,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2651,7 +3077,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2674,7 +3101,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2697,7 +3125,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2719,7 +3148,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2737,7 +3167,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2762,7 +3193,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2777,7 +3209,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2800,7 +3233,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2823,7 +3257,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2845,7 +3280,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2863,7 +3299,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -3014,7 +3451,14 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
+     * Fingerprint of this resource. A hash of the contents stored in this object.
+     * This field is used in optimistic locking. This field will be ignored when
+     * inserting a new PublicAdvertisedPrefix. An up-to-date
+     * fingerprint must be provided in order to update thePublicAdvertisedPrefix, otherwise the request will fail with
+     * error 412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve a PublicAdvertisedPrefix.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -3029,7 +3473,14 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
+     * Fingerprint of this resource. A hash of the contents stored in this object.
+     * This field is used in optimistic locking. This field will be ignored when
+     * inserting a new PublicAdvertisedPrefix. An up-to-date
+     * fingerprint must be provided in order to update thePublicAdvertisedPrefix, otherwise the request will fail with
+     * error 412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve a PublicAdvertisedPrefix.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -3052,7 +3503,14 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
+     * Fingerprint of this resource. A hash of the contents stored in this object.
+     * This field is used in optimistic locking. This field will be ignored when
+     * inserting a new PublicAdvertisedPrefix. An up-to-date
+     * fingerprint must be provided in order to update thePublicAdvertisedPrefix, otherwise the request will fail with
+     * error 412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve a PublicAdvertisedPrefix.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -3075,7 +3533,14 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
+     * Fingerprint of this resource. A hash of the contents stored in this object.
+     * This field is used in optimistic locking. This field will be ignored when
+     * inserting a new PublicAdvertisedPrefix. An up-to-date
+     * fingerprint must be provided in order to update thePublicAdvertisedPrefix, otherwise the request will fail with
+     * error 412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve a PublicAdvertisedPrefix.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -3097,7 +3562,14 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
+     * Fingerprint of this resource. A hash of the contents stored in this object.
+     * This field is used in optimistic locking. This field will be ignored when
+     * inserting a new PublicAdvertisedPrefix. An up-to-date
+     * fingerprint must be provided in order to update thePublicAdvertisedPrefix, otherwise the request will fail with
+     * error 412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve a PublicAdvertisedPrefix.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -3115,7 +3587,14 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
+     * Fingerprint of this resource. A hash of the contents stored in this object.
+     * This field is used in optimistic locking. This field will be ignored when
+     * inserting a new PublicAdvertisedPrefix. An up-to-date
+     * fingerprint must be provided in order to update thePublicAdvertisedPrefix, otherwise the request will fail with
+     * error 412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve a PublicAdvertisedPrefix.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -3140,7 +3619,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource type. The server generates this identifier.
+     * Output only. [Output Only] The unique identifier for the resource type. The server
+     * generates this identifier.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -3156,7 +3636,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource type. The server generates this identifier.
+     * Output only. [Output Only] The unique identifier for the resource type. The server
+     * generates this identifier.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -3172,7 +3653,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource type. The server generates this identifier.
+     * Output only. [Output Only] The unique identifier for the resource type. The server
+     * generates this identifier.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -3192,7 +3674,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource type. The server generates this identifier.
+     * Output only. [Output Only] The unique identifier for the resource type. The server
+     * generates this identifier.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -3212,7 +3695,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The address range, in CIDR format, represented by this public advertised prefix.
+     * The address range, in CIDR format, represented by this public advertised
+     * prefix.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -3227,7 +3711,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The address range, in CIDR format, represented by this public advertised prefix.
+     * The address range, in CIDR format, represented by this public advertised
+     * prefix.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -3250,7 +3735,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The address range, in CIDR format, represented by this public advertised prefix.
+     * The address range, in CIDR format, represented by this public advertised
+     * prefix.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -3273,7 +3759,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The address range, in CIDR format, represented by this public advertised prefix.
+     * The address range, in CIDR format, represented by this public advertised
+     * prefix.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -3295,7 +3782,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The address range, in CIDR format, represented by this public advertised prefix.
+     * The address range, in CIDR format, represented by this public advertised
+     * prefix.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -3313,7 +3801,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The address range, in CIDR format, represented by this public advertised prefix.
+     * The address range, in CIDR format, represented by this public advertised
+     * prefix.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -3332,20 +3821,21 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       return this;
     }
 
-    private java.lang.Object kind_ = "";
+    private java.lang.Object ipv6AccessType_ = "";
 
     /**
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#publicAdvertisedPrefix for public advertised prefixes.
+     * The internet access type for IPv6 Public Advertised Prefixes.
+     * Check the Ipv6AccessType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional string kind = 3292052;</code>
+     * <code>optional string ipv6_access_type = 504658653;</code>
      *
-     * @return Whether the kind field is set.
+     * @return Whether the ipv6AccessType field is set.
      */
-    public boolean hasKind() {
+    public boolean hasIpv6AccessType() {
       return ((bitField0_ & 0x00000080) != 0);
     }
 
@@ -3353,7 +3843,138 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#publicAdvertisedPrefix for public advertised prefixes.
+     * The internet access type for IPv6 Public Advertised Prefixes.
+     * Check the Ipv6AccessType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ipv6_access_type = 504658653;</code>
+     *
+     * @return The ipv6AccessType.
+     */
+    public java.lang.String getIpv6AccessType() {
+      java.lang.Object ref = ipv6AccessType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ipv6AccessType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The internet access type for IPv6 Public Advertised Prefixes.
+     * Check the Ipv6AccessType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ipv6_access_type = 504658653;</code>
+     *
+     * @return The bytes for ipv6AccessType.
+     */
+    public com.google.protobuf.ByteString getIpv6AccessTypeBytes() {
+      java.lang.Object ref = ipv6AccessType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        ipv6AccessType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The internet access type for IPv6 Public Advertised Prefixes.
+     * Check the Ipv6AccessType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ipv6_access_type = 504658653;</code>
+     *
+     * @param value The ipv6AccessType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpv6AccessType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ipv6AccessType_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The internet access type for IPv6 Public Advertised Prefixes.
+     * Check the Ipv6AccessType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ipv6_access_type = 504658653;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIpv6AccessType() {
+      ipv6AccessType_ = getDefaultInstance().getIpv6AccessType();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The internet access type for IPv6 Public Advertised Prefixes.
+     * Check the Ipv6AccessType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ipv6_access_type = 504658653;</code>
+     *
+     * @param value The bytes for ipv6AccessType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpv6AccessTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ipv6AccessType_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object kind_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
+     * </pre>
+     *
+     * <code>optional string kind = 3292052;</code>
+     *
+     * @return Whether the kind field is set.
+     */
+    public boolean hasKind() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3376,7 +3997,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#publicAdvertisedPrefix for public advertised prefixes.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3399,7 +4020,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#publicAdvertisedPrefix for public advertised prefixes.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3412,7 +4033,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       kind_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3421,7 +4042,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#publicAdvertisedPrefix for public advertised prefixes.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3430,7 +4051,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      */
     public Builder clearKind() {
       kind_ = getDefaultInstance().getKind();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -3439,7 +4060,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#publicAdvertisedPrefix for public advertised prefixes.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3453,7 +4074,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       kind_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3464,7 +4085,13 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3472,14 +4099,20 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3502,7 +4135,13 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3525,7 +4164,13 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3538,7 +4183,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3547,7 +4192,13 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3556,7 +4207,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3565,7 +4216,13 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3579,7 +4236,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3590,7 +4247,17 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Specifies how child public delegated prefix will be scoped. It could be one of following values: - `REGIONAL`: The public delegated prefix is regional only. The provisioning will take a few minutes. - `GLOBAL`: The public delegated prefix is global only. The provisioning will take ~4 weeks. - `GLOBAL_AND_REGIONAL` [output only]: The public delegated prefixes is BYOIP V1 legacy prefix. This is output only value and no longer supported in BYOIP V2.
+     * Specifies how child public delegated prefix will be scoped. It could
+     * be one of following values:
+     *
+     *
+     *      - `REGIONAL`: The public delegated prefix is regional only. The
+     *      provisioning will take a few minutes.
+     *      - `GLOBAL`: The public delegated prefix is global only. The
+     *      provisioning will take ~4 weeks.
+     *      - `GLOBAL_AND_REGIONAL` [output only]: The public delegated prefixes is
+     *       BYOIP V1 legacy prefix. This is output only value and no longer
+     *       supported in BYOIP V2.
      * Check the PdpScope enum for the list of possible values.
      * </pre>
      *
@@ -3599,14 +4266,24 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * @return Whether the pdpScope field is set.
      */
     public boolean hasPdpScope() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Specifies how child public delegated prefix will be scoped. It could be one of following values: - `REGIONAL`: The public delegated prefix is regional only. The provisioning will take a few minutes. - `GLOBAL`: The public delegated prefix is global only. The provisioning will take ~4 weeks. - `GLOBAL_AND_REGIONAL` [output only]: The public delegated prefixes is BYOIP V1 legacy prefix. This is output only value and no longer supported in BYOIP V2.
+     * Specifies how child public delegated prefix will be scoped. It could
+     * be one of following values:
+     *
+     *
+     *      - `REGIONAL`: The public delegated prefix is regional only. The
+     *      provisioning will take a few minutes.
+     *      - `GLOBAL`: The public delegated prefix is global only. The
+     *      provisioning will take ~4 weeks.
+     *      - `GLOBAL_AND_REGIONAL` [output only]: The public delegated prefixes is
+     *       BYOIP V1 legacy prefix. This is output only value and no longer
+     *       supported in BYOIP V2.
      * Check the PdpScope enum for the list of possible values.
      * </pre>
      *
@@ -3630,7 +4307,17 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Specifies how child public delegated prefix will be scoped. It could be one of following values: - `REGIONAL`: The public delegated prefix is regional only. The provisioning will take a few minutes. - `GLOBAL`: The public delegated prefix is global only. The provisioning will take ~4 weeks. - `GLOBAL_AND_REGIONAL` [output only]: The public delegated prefixes is BYOIP V1 legacy prefix. This is output only value and no longer supported in BYOIP V2.
+     * Specifies how child public delegated prefix will be scoped. It could
+     * be one of following values:
+     *
+     *
+     *      - `REGIONAL`: The public delegated prefix is regional only. The
+     *      provisioning will take a few minutes.
+     *      - `GLOBAL`: The public delegated prefix is global only. The
+     *      provisioning will take ~4 weeks.
+     *      - `GLOBAL_AND_REGIONAL` [output only]: The public delegated prefixes is
+     *       BYOIP V1 legacy prefix. This is output only value and no longer
+     *       supported in BYOIP V2.
      * Check the PdpScope enum for the list of possible values.
      * </pre>
      *
@@ -3654,7 +4341,17 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Specifies how child public delegated prefix will be scoped. It could be one of following values: - `REGIONAL`: The public delegated prefix is regional only. The provisioning will take a few minutes. - `GLOBAL`: The public delegated prefix is global only. The provisioning will take ~4 weeks. - `GLOBAL_AND_REGIONAL` [output only]: The public delegated prefixes is BYOIP V1 legacy prefix. This is output only value and no longer supported in BYOIP V2.
+     * Specifies how child public delegated prefix will be scoped. It could
+     * be one of following values:
+     *
+     *
+     *      - `REGIONAL`: The public delegated prefix is regional only. The
+     *      provisioning will take a few minutes.
+     *      - `GLOBAL`: The public delegated prefix is global only. The
+     *      provisioning will take ~4 weeks.
+     *      - `GLOBAL_AND_REGIONAL` [output only]: The public delegated prefixes is
+     *       BYOIP V1 legacy prefix. This is output only value and no longer
+     *       supported in BYOIP V2.
      * Check the PdpScope enum for the list of possible values.
      * </pre>
      *
@@ -3668,7 +4365,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       pdpScope_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3677,7 +4374,17 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Specifies how child public delegated prefix will be scoped. It could be one of following values: - `REGIONAL`: The public delegated prefix is regional only. The provisioning will take a few minutes. - `GLOBAL`: The public delegated prefix is global only. The provisioning will take ~4 weeks. - `GLOBAL_AND_REGIONAL` [output only]: The public delegated prefixes is BYOIP V1 legacy prefix. This is output only value and no longer supported in BYOIP V2.
+     * Specifies how child public delegated prefix will be scoped. It could
+     * be one of following values:
+     *
+     *
+     *      - `REGIONAL`: The public delegated prefix is regional only. The
+     *      provisioning will take a few minutes.
+     *      - `GLOBAL`: The public delegated prefix is global only. The
+     *      provisioning will take ~4 weeks.
+     *      - `GLOBAL_AND_REGIONAL` [output only]: The public delegated prefixes is
+     *       BYOIP V1 legacy prefix. This is output only value and no longer
+     *       supported in BYOIP V2.
      * Check the PdpScope enum for the list of possible values.
      * </pre>
      *
@@ -3687,7 +4394,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      */
     public Builder clearPdpScope() {
       pdpScope_ = getDefaultInstance().getPdpScope();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3696,7 +4403,17 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Specifies how child public delegated prefix will be scoped. It could be one of following values: - `REGIONAL`: The public delegated prefix is regional only. The provisioning will take a few minutes. - `GLOBAL`: The public delegated prefix is global only. The provisioning will take ~4 weeks. - `GLOBAL_AND_REGIONAL` [output only]: The public delegated prefixes is BYOIP V1 legacy prefix. This is output only value and no longer supported in BYOIP V2.
+     * Specifies how child public delegated prefix will be scoped. It could
+     * be one of following values:
+     *
+     *
+     *      - `REGIONAL`: The public delegated prefix is regional only. The
+     *      provisioning will take a few minutes.
+     *      - `GLOBAL`: The public delegated prefix is global only. The
+     *      provisioning will take ~4 weeks.
+     *      - `GLOBAL_AND_REGIONAL` [output only]: The public delegated prefixes is
+     *       BYOIP V1 legacy prefix. This is output only value and no longer
+     *       supported in BYOIP V2.
      * Check the PdpScope enum for the list of possible values.
      * </pre>
      *
@@ -3711,7 +4428,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       pdpScope_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3720,12 +4437,12 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         publicDelegatedPrefixs_ = java.util.Collections.emptyList();
 
     private void ensurePublicDelegatedPrefixsIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         publicDelegatedPrefixs_ =
             new java.util.ArrayList<
                 com.google.cloud.compute.v1.PublicAdvertisedPrefixPublicDelegatedPrefix>(
                 publicDelegatedPrefixs_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
       }
     }
 
@@ -3739,7 +4456,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this public advertised prefix.
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
+     * public advertised prefix.
      * </pre>
      *
      * <code>
@@ -3759,7 +4477,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this public advertised prefix.
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
+     * public advertised prefix.
      * </pre>
      *
      * <code>
@@ -3778,7 +4497,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this public advertised prefix.
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
+     * public advertised prefix.
      * </pre>
      *
      * <code>
@@ -3798,7 +4518,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this public advertised prefix.
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
+     * public advertised prefix.
      * </pre>
      *
      * <code>
@@ -3824,7 +4545,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this public advertised prefix.
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
+     * public advertised prefix.
      * </pre>
      *
      * <code>
@@ -3849,7 +4571,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this public advertised prefix.
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
+     * public advertised prefix.
      * </pre>
      *
      * <code>
@@ -3875,7 +4598,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this public advertised prefix.
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
+     * public advertised prefix.
      * </pre>
      *
      * <code>
@@ -3901,7 +4625,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this public advertised prefix.
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
+     * public advertised prefix.
      * </pre>
      *
      * <code>
@@ -3925,7 +4650,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this public advertised prefix.
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
+     * public advertised prefix.
      * </pre>
      *
      * <code>
@@ -3950,7 +4676,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this public advertised prefix.
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
+     * public advertised prefix.
      * </pre>
      *
      * <code>
@@ -3975,7 +4702,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this public advertised prefix.
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
+     * public advertised prefix.
      * </pre>
      *
      * <code>
@@ -3985,7 +4713,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
     public Builder clearPublicDelegatedPrefixs() {
       if (publicDelegatedPrefixsBuilder_ == null) {
         publicDelegatedPrefixs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
       } else {
         publicDelegatedPrefixsBuilder_.clear();
@@ -3997,7 +4725,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this public advertised prefix.
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
+     * public advertised prefix.
      * </pre>
      *
      * <code>
@@ -4019,7 +4748,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this public advertised prefix.
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
+     * public advertised prefix.
      * </pre>
      *
      * <code>
@@ -4035,7 +4765,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this public advertised prefix.
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
+     * public advertised prefix.
      * </pre>
      *
      * <code>
@@ -4055,7 +4786,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this public advertised prefix.
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
+     * public advertised prefix.
      * </pre>
      *
      * <code>
@@ -4077,7 +4809,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this public advertised prefix.
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
+     * public advertised prefix.
      * </pre>
      *
      * <code>
@@ -4096,7 +4829,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this public advertised prefix.
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
+     * public advertised prefix.
      * </pre>
      *
      * <code>
@@ -4116,7 +4850,8 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this public advertised prefix.
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
+     * public advertised prefix.
      * </pre>
      *
      * <code>
@@ -4141,7 +4876,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
                 com.google.cloud.compute.v1.PublicAdvertisedPrefixPublicDelegatedPrefix.Builder,
                 com.google.cloud.compute.v1.PublicAdvertisedPrefixPublicDelegatedPrefixOrBuilder>(
                 publicDelegatedPrefixs_,
-                ((bitField0_ & 0x00000400) != 0),
+                ((bitField0_ & 0x00000800) != 0),
                 getParentForChildren(),
                 isClean());
         publicDelegatedPrefixs_ = null;
@@ -4155,7 +4890,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4163,14 +4898,14 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4193,7 +4928,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4216,7 +4951,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4229,7 +4964,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4238,7 +4973,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4247,7 +4982,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -4256,7 +4991,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4270,7 +5005,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4289,7 +5024,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * @return Whether the sharedSecret field is set.
      */
     public boolean hasSharedSecret() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -4355,7 +5090,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       sharedSecret_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4373,7 +5108,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      */
     public Builder clearSharedSecret() {
       sharedSecret_ = getDefaultInstance().getSharedSecret();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -4396,7 +5131,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       sharedSecret_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4407,7 +5142,17 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The status of the public advertised prefix. Possible values include: - `INITIAL`: RPKI validation is complete. - `PTR_CONFIGURED`: User has configured the PTR. - `VALIDATED`: Reverse DNS lookup is successful. - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed. - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being configured. - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured. - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
+     * The status of the public advertised prefix. Possible values include:
+     *
+     *
+     *      - `INITIAL`: RPKI validation is complete.
+     *      - `PTR_CONFIGURED`: User has configured the PTR.
+     *      - `VALIDATED`: Reverse DNS lookup is successful.
+     *      - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed.
+     *      - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being
+     *      configured.
+     *      - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured.
+     *      - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -4416,14 +5161,24 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * The status of the public advertised prefix. Possible values include: - `INITIAL`: RPKI validation is complete. - `PTR_CONFIGURED`: User has configured the PTR. - `VALIDATED`: Reverse DNS lookup is successful. - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed. - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being configured. - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured. - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
+     * The status of the public advertised prefix. Possible values include:
+     *
+     *
+     *      - `INITIAL`: RPKI validation is complete.
+     *      - `PTR_CONFIGURED`: User has configured the PTR.
+     *      - `VALIDATED`: Reverse DNS lookup is successful.
+     *      - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed.
+     *      - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being
+     *      configured.
+     *      - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured.
+     *      - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -4447,7 +5202,17 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The status of the public advertised prefix. Possible values include: - `INITIAL`: RPKI validation is complete. - `PTR_CONFIGURED`: User has configured the PTR. - `VALIDATED`: Reverse DNS lookup is successful. - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed. - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being configured. - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured. - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
+     * The status of the public advertised prefix. Possible values include:
+     *
+     *
+     *      - `INITIAL`: RPKI validation is complete.
+     *      - `PTR_CONFIGURED`: User has configured the PTR.
+     *      - `VALIDATED`: Reverse DNS lookup is successful.
+     *      - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed.
+     *      - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being
+     *      configured.
+     *      - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured.
+     *      - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -4471,7 +5236,17 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The status of the public advertised prefix. Possible values include: - `INITIAL`: RPKI validation is complete. - `PTR_CONFIGURED`: User has configured the PTR. - `VALIDATED`: Reverse DNS lookup is successful. - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed. - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being configured. - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured. - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
+     * The status of the public advertised prefix. Possible values include:
+     *
+     *
+     *      - `INITIAL`: RPKI validation is complete.
+     *      - `PTR_CONFIGURED`: User has configured the PTR.
+     *      - `VALIDATED`: Reverse DNS lookup is successful.
+     *      - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed.
+     *      - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being
+     *      configured.
+     *      - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured.
+     *      - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -4485,7 +5260,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       status_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4494,7 +5269,17 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The status of the public advertised prefix. Possible values include: - `INITIAL`: RPKI validation is complete. - `PTR_CONFIGURED`: User has configured the PTR. - `VALIDATED`: Reverse DNS lookup is successful. - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed. - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being configured. - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured. - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
+     * The status of the public advertised prefix. Possible values include:
+     *
+     *
+     *      - `INITIAL`: RPKI validation is complete.
+     *      - `PTR_CONFIGURED`: User has configured the PTR.
+     *      - `VALIDATED`: Reverse DNS lookup is successful.
+     *      - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed.
+     *      - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being
+     *      configured.
+     *      - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured.
+     *      - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -4504,7 +5289,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      */
     public Builder clearStatus() {
       status_ = getDefaultInstance().getStatus();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -4513,7 +5298,17 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The status of the public advertised prefix. Possible values include: - `INITIAL`: RPKI validation is complete. - `PTR_CONFIGURED`: User has configured the PTR. - `VALIDATED`: Reverse DNS lookup is successful. - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed. - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being configured. - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured. - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
+     * The status of the public advertised prefix. Possible values include:
+     *
+     *
+     *      - `INITIAL`: RPKI validation is complete.
+     *      - `PTR_CONFIGURED`: User has configured the PTR.
+     *      - `VALIDATED`: Reverse DNS lookup is successful.
+     *      - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed.
+     *      - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being
+     *      configured.
+     *      - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured.
+     *      - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -4528,7 +5323,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       status_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }

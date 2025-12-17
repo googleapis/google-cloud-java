@@ -28,7 +28,9 @@ public interface LocalizedMessageOrBuilder
    *
    *
    * <pre>
-   * The locale used following the specification defined at https://www.rfc-editor.org/rfc/bcp/bcp47.txt. Examples are: "en-US", "fr-CH", "es-MX"
+   * The locale used following the specification defined at
+   * https://www.rfc-editor.org/rfc/bcp/bcp47.txt.
+   * Examples are: "en-US", "fr-CH", "es-MX"
    * </pre>
    *
    * <code>optional string locale = 513150554;</code>
@@ -41,7 +43,9 @@ public interface LocalizedMessageOrBuilder
    *
    *
    * <pre>
-   * The locale used following the specification defined at https://www.rfc-editor.org/rfc/bcp/bcp47.txt. Examples are: "en-US", "fr-CH", "es-MX"
+   * The locale used following the specification defined at
+   * https://www.rfc-editor.org/rfc/bcp/bcp47.txt.
+   * Examples are: "en-US", "fr-CH", "es-MX"
    * </pre>
    *
    * <code>optional string locale = 513150554;</code>
@@ -54,7 +58,9 @@ public interface LocalizedMessageOrBuilder
    *
    *
    * <pre>
-   * The locale used following the specification defined at https://www.rfc-editor.org/rfc/bcp/bcp47.txt. Examples are: "en-US", "fr-CH", "es-MX"
+   * The locale used following the specification defined at
+   * https://www.rfc-editor.org/rfc/bcp/bcp47.txt.
+   * Examples are: "en-US", "fr-CH", "es-MX"
    * </pre>
    *
    * <code>optional string locale = 513150554;</code>

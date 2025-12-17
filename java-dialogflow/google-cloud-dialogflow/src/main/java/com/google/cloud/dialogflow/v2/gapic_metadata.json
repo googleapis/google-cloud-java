@@ -446,6 +446,33 @@
         }
       }
     },
+    "GeneratorEvaluations": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GeneratorEvaluationsClient",
+          "rpcs": {
+            "CreateGeneratorEvaluation": {
+              "methods": ["createGeneratorEvaluationAsync", "createGeneratorEvaluationAsync", "createGeneratorEvaluationAsync", "createGeneratorEvaluationOperationCallable", "createGeneratorEvaluationCallable"]
+            },
+            "DeleteGeneratorEvaluation": {
+              "methods": ["deleteGeneratorEvaluation", "deleteGeneratorEvaluation", "deleteGeneratorEvaluation", "deleteGeneratorEvaluationCallable"]
+            },
+            "GetGeneratorEvaluation": {
+              "methods": ["getGeneratorEvaluation", "getGeneratorEvaluation", "getGeneratorEvaluation", "getGeneratorEvaluationCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListGeneratorEvaluations": {
+              "methods": ["listGeneratorEvaluations", "listGeneratorEvaluations", "listGeneratorEvaluations", "listGeneratorEvaluationsPagedCallable", "listGeneratorEvaluationsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            }
+          }
+        }
+      }
+    },
     "Intents": {
       "clients": {
         "grpc": {
@@ -603,6 +630,66 @@
             },
             "UpdateSessionEntityType": {
               "methods": ["updateSessionEntityType", "updateSessionEntityType", "updateSessionEntityType", "updateSessionEntityTypeCallable"]
+            }
+          }
+        }
+      }
+    },
+    "SipTrunks": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SipTrunksClient",
+          "rpcs": {
+            "CreateSipTrunk": {
+              "methods": ["createSipTrunk", "createSipTrunk", "createSipTrunk", "createSipTrunkCallable"]
+            },
+            "DeleteSipTrunk": {
+              "methods": ["deleteSipTrunk", "deleteSipTrunk", "deleteSipTrunk", "deleteSipTrunkCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetSipTrunk": {
+              "methods": ["getSipTrunk", "getSipTrunk", "getSipTrunk", "getSipTrunkCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListSipTrunks": {
+              "methods": ["listSipTrunks", "listSipTrunks", "listSipTrunks", "listSipTrunksPagedCallable", "listSipTrunksCallable"]
+            },
+            "UpdateSipTrunk": {
+              "methods": ["updateSipTrunk", "updateSipTrunk", "updateSipTrunkCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Tools": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ToolsClient",
+          "rpcs": {
+            "CreateTool": {
+              "methods": ["createTool", "createTool", "createTool", "createToolCallable"]
+            },
+            "DeleteTool": {
+              "methods": ["deleteTool", "deleteTool", "deleteTool", "deleteToolCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetTool": {
+              "methods": ["getTool", "getTool", "getTool", "getToolCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListTools": {
+              "methods": ["listTools", "listTools", "listTools", "listToolsPagedCallable", "listToolsCallable"]
+            },
+            "UpdateTool": {
+              "methods": ["updateTool", "updateTool", "updateToolCallable"]
             }
           }
         }

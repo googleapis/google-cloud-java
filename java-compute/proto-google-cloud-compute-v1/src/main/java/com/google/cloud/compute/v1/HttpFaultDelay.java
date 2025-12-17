@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Specifies the delay introduced by the load balancer before forwarding the request to the backend service as part of fault injection.
+ * Specifies the delay introduced by the load balancer before forwarding the
+ * request to the backend service as part of fault injection.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.HttpFaultDelay}
@@ -123,7 +124,10 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The percentage of traffic for connections, operations, or requests for which a delay is introduced as part of fault injection. The value must be from 0.0 to 100.0 inclusive.
+   * The percentage of traffic for connections, operations, or requests for
+   * which a delay is introduced as part of fault injection.
+   *
+   * The value must be from 0.0 to 100.0 inclusive.
    * </pre>
    *
    * <code>optional double percentage = 151909018;</code>
@@ -139,7 +143,10 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The percentage of traffic for connections, operations, or requests for which a delay is introduced as part of fault injection. The value must be from 0.0 to 100.0 inclusive.
+   * The percentage of traffic for connections, operations, or requests for
+   * which a delay is introduced as part of fault injection.
+   *
+   * The value must be from 0.0 to 100.0 inclusive.
    * </pre>
    *
    * <code>optional double percentage = 151909018;</code>
@@ -338,7 +345,8 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the delay introduced by the load balancer before forwarding the request to the backend service as part of fault injection.
+   * Specifies the delay introduced by the load balancer before forwarding the
+   * request to the backend service as part of fault injection.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.HttpFaultDelay}
@@ -744,7 +752,10 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The percentage of traffic for connections, operations, or requests for which a delay is introduced as part of fault injection. The value must be from 0.0 to 100.0 inclusive.
+     * The percentage of traffic for connections, operations, or requests for
+     * which a delay is introduced as part of fault injection.
+     *
+     * The value must be from 0.0 to 100.0 inclusive.
      * </pre>
      *
      * <code>optional double percentage = 151909018;</code>
@@ -760,7 +771,10 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The percentage of traffic for connections, operations, or requests for which a delay is introduced as part of fault injection. The value must be from 0.0 to 100.0 inclusive.
+     * The percentage of traffic for connections, operations, or requests for
+     * which a delay is introduced as part of fault injection.
+     *
+     * The value must be from 0.0 to 100.0 inclusive.
      * </pre>
      *
      * <code>optional double percentage = 151909018;</code>
@@ -776,7 +790,10 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The percentage of traffic for connections, operations, or requests for which a delay is introduced as part of fault injection. The value must be from 0.0 to 100.0 inclusive.
+     * The percentage of traffic for connections, operations, or requests for
+     * which a delay is introduced as part of fault injection.
+     *
+     * The value must be from 0.0 to 100.0 inclusive.
      * </pre>
      *
      * <code>optional double percentage = 151909018;</code>
@@ -796,7 +813,10 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The percentage of traffic for connections, operations, or requests for which a delay is introduced as part of fault injection. The value must be from 0.0 to 100.0 inclusive.
+     * The percentage of traffic for connections, operations, or requests for
+     * which a delay is introduced as part of fault injection.
+     *
+     * The value must be from 0.0 to 100.0 inclusive.
      * </pre>
      *
      * <code>optional double percentage = 151909018;</code>

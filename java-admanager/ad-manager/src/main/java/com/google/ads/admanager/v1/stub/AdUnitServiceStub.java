@@ -20,11 +20,23 @@ import static com.google.ads.admanager.v1.AdUnitServiceClient.ListAdUnitSizesPag
 import static com.google.ads.admanager.v1.AdUnitServiceClient.ListAdUnitsPagedResponse;
 
 import com.google.ads.admanager.v1.AdUnit;
+import com.google.ads.admanager.v1.BatchActivateAdUnitsRequest;
+import com.google.ads.admanager.v1.BatchActivateAdUnitsResponse;
+import com.google.ads.admanager.v1.BatchArchiveAdUnitsRequest;
+import com.google.ads.admanager.v1.BatchArchiveAdUnitsResponse;
+import com.google.ads.admanager.v1.BatchCreateAdUnitsRequest;
+import com.google.ads.admanager.v1.BatchCreateAdUnitsResponse;
+import com.google.ads.admanager.v1.BatchDeactivateAdUnitsRequest;
+import com.google.ads.admanager.v1.BatchDeactivateAdUnitsResponse;
+import com.google.ads.admanager.v1.BatchUpdateAdUnitsRequest;
+import com.google.ads.admanager.v1.BatchUpdateAdUnitsResponse;
+import com.google.ads.admanager.v1.CreateAdUnitRequest;
 import com.google.ads.admanager.v1.GetAdUnitRequest;
 import com.google.ads.admanager.v1.ListAdUnitSizesRequest;
 import com.google.ads.admanager.v1.ListAdUnitSizesResponse;
 import com.google.ads.admanager.v1.ListAdUnitsRequest;
 import com.google.ads.admanager.v1.ListAdUnitsResponse;
+import com.google.ads.admanager.v1.UpdateAdUnitRequest;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import javax.annotation.Generated;
@@ -57,6 +69,39 @@ public abstract class AdUnitServiceStub implements BackgroundResource {
 
   public UnaryCallable<ListAdUnitSizesRequest, ListAdUnitSizesResponse> listAdUnitSizesCallable() {
     throw new UnsupportedOperationException("Not implemented: listAdUnitSizesCallable()");
+  }
+
+  public UnaryCallable<CreateAdUnitRequest, AdUnit> createAdUnitCallable() {
+    throw new UnsupportedOperationException("Not implemented: createAdUnitCallable()");
+  }
+
+  public UnaryCallable<UpdateAdUnitRequest, AdUnit> updateAdUnitCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateAdUnitCallable()");
+  }
+
+  public UnaryCallable<BatchCreateAdUnitsRequest, BatchCreateAdUnitsResponse>
+      batchCreateAdUnitsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchCreateAdUnitsCallable()");
+  }
+
+  public UnaryCallable<BatchUpdateAdUnitsRequest, BatchUpdateAdUnitsResponse>
+      batchUpdateAdUnitsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchUpdateAdUnitsCallable()");
+  }
+
+  public UnaryCallable<BatchActivateAdUnitsRequest, BatchActivateAdUnitsResponse>
+      batchActivateAdUnitsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchActivateAdUnitsCallable()");
+  }
+
+  public UnaryCallable<BatchDeactivateAdUnitsRequest, BatchDeactivateAdUnitsResponse>
+      batchDeactivateAdUnitsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchDeactivateAdUnitsCallable()");
+  }
+
+  public UnaryCallable<BatchArchiveAdUnitsRequest, BatchArchiveAdUnitsResponse>
+      batchArchiveAdUnitsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchArchiveAdUnitsCallable()");
   }
 
   @Override

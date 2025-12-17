@@ -82,7 +82,11 @@ public interface InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionO
    *
    *
    * <pre>
-   * Preference of this instance selection. Lower number means higher preference. MIG will first try to create a VM based on the machine-type with lowest rank and fallback to next rank based on availability. Machine types and instance selections with the same rank have the same preference.
+   * Preference of this instance selection. Lower number means higher
+   * preference. MIG will first try to create a VM based on the machine-type
+   * with lowest rank and fallback to next rank based on availability.
+   * Machine types and instance selections with the same rank have the same
+   * preference.
    * </pre>
    *
    * <code>optional int32 rank = 3492908;</code>
@@ -95,7 +99,11 @@ public interface InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionO
    *
    *
    * <pre>
-   * Preference of this instance selection. Lower number means higher preference. MIG will first try to create a VM based on the machine-type with lowest rank and fallback to next rank based on availability. Machine types and instance selections with the same rank have the same preference.
+   * Preference of this instance selection. Lower number means higher
+   * preference. MIG will first try to create a VM based on the machine-type
+   * with lowest rank and fallback to next rank based on availability.
+   * Machine types and instance selections with the same rank have the same
+   * preference.
    * </pre>
    *
    * <code>optional int32 rank = 3492908;</code>

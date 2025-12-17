@@ -54,7 +54,9 @@ public interface AllocationSpecificSKUAllocationAllocatedInstancePropertiesReser
    *
    *
    * <pre>
-   * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+   * Specifies the disk interface to use for attaching this disk, which is
+   * either SCSI or NVME. The default isSCSI.
+   * For performance characteristics of SCSI over NVMe, seeLocal SSD performance.
    * Check the Interface enum for the list of possible values.
    * </pre>
    *
@@ -68,7 +70,9 @@ public interface AllocationSpecificSKUAllocationAllocatedInstancePropertiesReser
    *
    *
    * <pre>
-   * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+   * Specifies the disk interface to use for attaching this disk, which is
+   * either SCSI or NVME. The default isSCSI.
+   * For performance characteristics of SCSI over NVMe, seeLocal SSD performance.
    * Check the Interface enum for the list of possible values.
    * </pre>
    *
@@ -82,7 +86,9 @@ public interface AllocationSpecificSKUAllocationAllocatedInstancePropertiesReser
    *
    *
    * <pre>
-   * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+   * Specifies the disk interface to use for attaching this disk, which is
+   * either SCSI or NVME. The default isSCSI.
+   * For performance characteristics of SCSI over NVMe, seeLocal SSD performance.
    * Check the Interface enum for the list of possible values.
    * </pre>
    *
