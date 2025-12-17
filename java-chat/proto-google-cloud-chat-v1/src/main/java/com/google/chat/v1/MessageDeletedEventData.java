@@ -72,7 +72,7 @@ public final class MessageDeletedEventData extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The deleted message. Only the `name`, `createTime`, `deleteTime`, and
+   * The deleted message. Only the `name`, `createTime`, and
    * `deletionMetadata` fields are populated.
    * </pre>
    *
@@ -89,7 +89,7 @@ public final class MessageDeletedEventData extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The deleted message. Only the `name`, `createTime`, `deleteTime`, and
+   * The deleted message. Only the `name`, `createTime`, and
    * `deletionMetadata` fields are populated.
    * </pre>
    *
@@ -106,7 +106,7 @@ public final class MessageDeletedEventData extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The deleted message. Only the `name`, `createTime`, `deleteTime`, and
+   * The deleted message. Only the `name`, `createTime`, and
    * `deletionMetadata` fields are populated.
    * </pre>
    *
@@ -491,7 +491,7 @@ public final class MessageDeletedEventData extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The deleted message. Only the `name`, `createTime`, `deleteTime`, and
+     * The deleted message. Only the `name`, `createTime`, and
      * `deletionMetadata` fields are populated.
      * </pre>
      *
@@ -507,7 +507,7 @@ public final class MessageDeletedEventData extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The deleted message. Only the `name`, `createTime`, `deleteTime`, and
+     * The deleted message. Only the `name`, `createTime`, and
      * `deletionMetadata` fields are populated.
      * </pre>
      *
@@ -527,7 +527,7 @@ public final class MessageDeletedEventData extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The deleted message. Only the `name`, `createTime`, `deleteTime`, and
+     * The deleted message. Only the `name`, `createTime`, and
      * `deletionMetadata` fields are populated.
      * </pre>
      *
@@ -551,7 +551,7 @@ public final class MessageDeletedEventData extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The deleted message. Only the `name`, `createTime`, `deleteTime`, and
+     * The deleted message. Only the `name`, `createTime`, and
      * `deletionMetadata` fields are populated.
      * </pre>
      *
@@ -572,7 +572,7 @@ public final class MessageDeletedEventData extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The deleted message. Only the `name`, `createTime`, `deleteTime`, and
+     * The deleted message. Only the `name`, `createTime`, and
      * `deletionMetadata` fields are populated.
      * </pre>
      *
@@ -601,7 +601,7 @@ public final class MessageDeletedEventData extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The deleted message. Only the `name`, `createTime`, `deleteTime`, and
+     * The deleted message. Only the `name`, `createTime`, and
      * `deletionMetadata` fields are populated.
      * </pre>
      *
@@ -622,7 +622,7 @@ public final class MessageDeletedEventData extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The deleted message. Only the `name`, `createTime`, `deleteTime`, and
+     * The deleted message. Only the `name`, `createTime`, and
      * `deletionMetadata` fields are populated.
      * </pre>
      *
@@ -638,7 +638,7 @@ public final class MessageDeletedEventData extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The deleted message. Only the `name`, `createTime`, `deleteTime`, and
+     * The deleted message. Only the `name`, `createTime`, and
      * `deletionMetadata` fields are populated.
      * </pre>
      *
@@ -656,7 +656,7 @@ public final class MessageDeletedEventData extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The deleted message. Only the `name`, `createTime`, `deleteTime`, and
+     * The deleted message. Only the `name`, `createTime`, and
      * `deletionMetadata` fields are populated.
      * </pre>
      *

@@ -176,6 +176,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
           .add("https://www.googleapis.com/auth/chat.admin.spaces.readonly")
           .add("https://www.googleapis.com/auth/chat.app.delete")
           .add("https://www.googleapis.com/auth/chat.app.memberships")
+          .add("https://www.googleapis.com/auth/chat.app.messages.readonly")
           .add("https://www.googleapis.com/auth/chat.app.spaces")
           .add("https://www.googleapis.com/auth/chat.app.spaces.create")
           .add("https://www.googleapis.com/auth/chat.bot")

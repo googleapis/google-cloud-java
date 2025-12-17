@@ -24,6 +24,7 @@ package com.google.cloud.geminidataanalytics.v1beta;
  *
  * <pre>
  * Message representing reference to an AlloyDB database and agent context.
+ * Only supported for the `QueryData` method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.geminidataanalytics.v1beta.AlloyDbReference}
@@ -374,6 +375,7 @@ public final class AlloyDbReference extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Message representing reference to an AlloyDB database and agent context.
+   * Only supported for the `QueryData` method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.geminidataanalytics.v1beta.AlloyDbReference}

@@ -306,7 +306,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The maximum job running time. The default is 7 days.
+   * Optional. The maximum job running time. The default is 7 days.
    * </pre>
    *
    * <code>.google.protobuf.Duration timeout = 1;</code>
@@ -322,7 +322,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The maximum job running time. The default is 7 days.
+   * Optional. The maximum job running time. The default is 7 days.
    * </pre>
    *
    * <code>.google.protobuf.Duration timeout = 1;</code>
@@ -338,7 +338,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The maximum job running time. The default is 7 days.
+   * Optional. The maximum job running time. The default is 7 days.
    * </pre>
    *
    * <code>.google.protobuf.Duration timeout = 1;</code>
@@ -355,7 +355,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Restarts the entire CustomJob if a worker gets restarted.
+   * Optional. Restarts the entire CustomJob if a worker gets restarted.
    * This feature can be used by distributed training jobs that are not
    * resilient to workers leaving and joining a job.
    * </pre>
@@ -977,7 +977,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The maximum job running time. The default is 7 days.
+     * Optional. The maximum job running time. The default is 7 days.
      * </pre>
      *
      * <code>.google.protobuf.Duration timeout = 1;</code>
@@ -992,7 +992,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The maximum job running time. The default is 7 days.
+     * Optional. The maximum job running time. The default is 7 days.
      * </pre>
      *
      * <code>.google.protobuf.Duration timeout = 1;</code>
@@ -1011,7 +1011,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The maximum job running time. The default is 7 days.
+     * Optional. The maximum job running time. The default is 7 days.
      * </pre>
      *
      * <code>.google.protobuf.Duration timeout = 1;</code>
@@ -1034,7 +1034,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The maximum job running time. The default is 7 days.
+     * Optional. The maximum job running time. The default is 7 days.
      * </pre>
      *
      * <code>.google.protobuf.Duration timeout = 1;</code>
@@ -1054,7 +1054,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The maximum job running time. The default is 7 days.
+     * Optional. The maximum job running time. The default is 7 days.
      * </pre>
      *
      * <code>.google.protobuf.Duration timeout = 1;</code>
@@ -1082,7 +1082,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The maximum job running time. The default is 7 days.
+     * Optional. The maximum job running time. The default is 7 days.
      * </pre>
      *
      * <code>.google.protobuf.Duration timeout = 1;</code>
@@ -1102,7 +1102,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The maximum job running time. The default is 7 days.
+     * Optional. The maximum job running time. The default is 7 days.
      * </pre>
      *
      * <code>.google.protobuf.Duration timeout = 1;</code>
@@ -1117,7 +1117,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The maximum job running time. The default is 7 days.
+     * Optional. The maximum job running time. The default is 7 days.
      * </pre>
      *
      * <code>.google.protobuf.Duration timeout = 1;</code>
@@ -1134,7 +1134,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The maximum job running time. The default is 7 days.
+     * Optional. The maximum job running time. The default is 7 days.
      * </pre>
      *
      * <code>.google.protobuf.Duration timeout = 1;</code>
@@ -1162,7 +1162,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Restarts the entire CustomJob if a worker gets restarted.
+     * Optional. Restarts the entire CustomJob if a worker gets restarted.
      * This feature can be used by distributed training jobs that are not
      * resilient to workers leaving and joining a job.
      * </pre>
@@ -1180,7 +1180,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Restarts the entire CustomJob if a worker gets restarted.
+     * Optional. Restarts the entire CustomJob if a worker gets restarted.
      * This feature can be used by distributed training jobs that are not
      * resilient to workers leaving and joining a job.
      * </pre>
@@ -1202,7 +1202,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Restarts the entire CustomJob if a worker gets restarted.
+     * Optional. Restarts the entire CustomJob if a worker gets restarted.
      * This feature can be used by distributed training jobs that are not
      * resilient to workers leaving and joining a job.
      * </pre>

@@ -24,6 +24,7 @@ package com.google.cloud.geminidataanalytics.v1beta;
  *
  * <pre>
  * Message representing reference to a CloudSQL database and agent context.
+ * Only supported for the `QueryData` method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.geminidataanalytics.v1beta.CloudSqlReference}
@@ -374,6 +375,7 @@ public final class CloudSqlReference extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Message representing reference to a CloudSQL database and agent context.
+   * Only supported for the `QueryData` method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.geminidataanalytics.v1beta.CloudSqlReference}

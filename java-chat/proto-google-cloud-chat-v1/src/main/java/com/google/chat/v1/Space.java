@@ -8621,7 +8621,8 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    * Private apps can also use the `customers/my_customer` alias to create
    * the space in the same Google Workspace organization as the app.
    *
-   * For DMs, this field isn't populated.
+   * This field isn't populated for direct messages (DMs) or when the space is
+   * created by non-Google Workspace users.
    * </pre>
    *
    * <code>
@@ -8650,7 +8651,8 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    * Private apps can also use the `customers/my_customer` alias to create
    * the space in the same Google Workspace organization as the app.
    *
-   * For DMs, this field isn't populated.
+   * This field isn't populated for direct messages (DMs) or when the space is
+   * created by non-Google Workspace users.
    * </pre>
    *
    * <code>
@@ -8687,7 +8689,8 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    * Private apps can also use the `customers/my_customer` alias to create
    * the space in the same Google Workspace organization as the app.
    *
-   * For DMs, this field isn't populated.
+   * This field isn't populated for direct messages (DMs) or when the space is
+   * created by non-Google Workspace users.
    * </pre>
    *
    * <code>
@@ -12267,7 +12270,8 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Private apps can also use the `customers/my_customer` alias to create
      * the space in the same Google Workspace organization as the app.
      *
-     * For DMs, this field isn't populated.
+     * This field isn't populated for direct messages (DMs) or when the space is
+     * created by non-Google Workspace users.
      * </pre>
      *
      * <code>
@@ -12295,7 +12299,8 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Private apps can also use the `customers/my_customer` alias to create
      * the space in the same Google Workspace organization as the app.
      *
-     * For DMs, this field isn't populated.
+     * This field isn't populated for direct messages (DMs) or when the space is
+     * created by non-Google Workspace users.
      * </pre>
      *
      * <code>
@@ -12331,7 +12336,8 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Private apps can also use the `customers/my_customer` alias to create
      * the space in the same Google Workspace organization as the app.
      *
-     * For DMs, this field isn't populated.
+     * This field isn't populated for direct messages (DMs) or when the space is
+     * created by non-Google Workspace users.
      * </pre>
      *
      * <code>
@@ -12367,7 +12373,8 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Private apps can also use the `customers/my_customer` alias to create
      * the space in the same Google Workspace organization as the app.
      *
-     * For DMs, this field isn't populated.
+     * This field isn't populated for direct messages (DMs) or when the space is
+     * created by non-Google Workspace users.
      * </pre>
      *
      * <code>
@@ -12402,7 +12409,8 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Private apps can also use the `customers/my_customer` alias to create
      * the space in the same Google Workspace organization as the app.
      *
-     * For DMs, this field isn't populated.
+     * This field isn't populated for direct messages (DMs) or when the space is
+     * created by non-Google Workspace users.
      * </pre>
      *
      * <code>
@@ -12433,7 +12441,8 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Private apps can also use the `customers/my_customer` alias to create
      * the space in the same Google Workspace organization as the app.
      *
-     * For DMs, this field isn't populated.
+     * This field isn't populated for direct messages (DMs) or when the space is
+     * created by non-Google Workspace users.
      * </pre>
      *
      * <code>

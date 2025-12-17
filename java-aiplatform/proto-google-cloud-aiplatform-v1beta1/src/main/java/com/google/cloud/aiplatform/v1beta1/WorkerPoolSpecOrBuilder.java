@@ -224,6 +224,72 @@ public interface WorkerPoolSpecOrBuilder
    *
    *
    * <pre>
+   * Optional. List of Lustre mounts.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.LustreMount lustre_mounts = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1beta1.LustreMount> getLustreMountsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of Lustre mounts.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.LustreMount lustre_mounts = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.LustreMount getLustreMounts(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of Lustre mounts.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.LustreMount lustre_mounts = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getLustreMountsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of Lustre mounts.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.LustreMount lustre_mounts = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.aiplatform.v1beta1.LustreMountOrBuilder>
+      getLustreMountsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of Lustre mounts.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.LustreMount lustre_mounts = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.LustreMountOrBuilder getLustreMountsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Disk spec.
    * </pre>
    *
