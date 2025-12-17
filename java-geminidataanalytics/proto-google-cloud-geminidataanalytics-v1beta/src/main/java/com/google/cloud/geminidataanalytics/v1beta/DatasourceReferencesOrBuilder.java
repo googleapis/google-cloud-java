@@ -140,7 +140,8 @@ public interface DatasourceReferencesOrBuilder
    *
    *
    * <pre>
-   * Reference to an AlloyDB database.
+   * Reference to an AlloyDB database. Only supported for the `QueryData`
+   * method.
    * </pre>
    *
    * <code>.google.cloud.geminidataanalytics.v1beta.AlloyDbReference alloydb = 8;</code>
@@ -153,7 +154,8 @@ public interface DatasourceReferencesOrBuilder
    *
    *
    * <pre>
-   * Reference to an AlloyDB database.
+   * Reference to an AlloyDB database. Only supported for the `QueryData`
+   * method.
    * </pre>
    *
    * <code>.google.cloud.geminidataanalytics.v1beta.AlloyDbReference alloydb = 8;</code>
@@ -166,7 +168,8 @@ public interface DatasourceReferencesOrBuilder
    *
    *
    * <pre>
-   * Reference to an AlloyDB database.
+   * Reference to an AlloyDB database. Only supported for the `QueryData`
+   * method.
    * </pre>
    *
    * <code>.google.cloud.geminidataanalytics.v1beta.AlloyDbReference alloydb = 8;</code>
@@ -177,7 +180,8 @@ public interface DatasourceReferencesOrBuilder
    *
    *
    * <pre>
-   * Reference to a Spanner database.
+   * Reference to a Spanner database. Only supported for the `QueryData`
+   * method.
    * </pre>
    *
    * <code>.google.cloud.geminidataanalytics.v1beta.SpannerReference spanner_reference = 9;</code>
@@ -190,7 +194,8 @@ public interface DatasourceReferencesOrBuilder
    *
    *
    * <pre>
-   * Reference to a Spanner database.
+   * Reference to a Spanner database. Only supported for the `QueryData`
+   * method.
    * </pre>
    *
    * <code>.google.cloud.geminidataanalytics.v1beta.SpannerReference spanner_reference = 9;</code>
@@ -203,7 +208,8 @@ public interface DatasourceReferencesOrBuilder
    *
    *
    * <pre>
-   * Reference to a Spanner database.
+   * Reference to a Spanner database. Only supported for the `QueryData`
+   * method.
    * </pre>
    *
    * <code>.google.cloud.geminidataanalytics.v1beta.SpannerReference spanner_reference = 9;</code>
@@ -215,7 +221,8 @@ public interface DatasourceReferencesOrBuilder
    *
    *
    * <pre>
-   * Reference to a CloudSql database.
+   * Reference to a CloudSql database. Only supported for the `QueryData`
+   * method.
    * </pre>
    *
    * <code>.google.cloud.geminidataanalytics.v1beta.CloudSqlReference cloud_sql_reference = 10;
@@ -229,7 +236,8 @@ public interface DatasourceReferencesOrBuilder
    *
    *
    * <pre>
-   * Reference to a CloudSql database.
+   * Reference to a CloudSql database. Only supported for the `QueryData`
+   * method.
    * </pre>
    *
    * <code>.google.cloud.geminidataanalytics.v1beta.CloudSqlReference cloud_sql_reference = 10;
@@ -243,7 +251,8 @@ public interface DatasourceReferencesOrBuilder
    *
    *
    * <pre>
-   * Reference to a CloudSql database.
+   * Reference to a CloudSql database. Only supported for the `QueryData`
+   * method.
    * </pre>
    *
    * <code>.google.cloud.geminidataanalytics.v1beta.CloudSqlReference cloud_sql_reference = 10;

@@ -131,7 +131,7 @@ public final class DatasourceProto {
           + "references\"y\n"
           + "\027BigQueryTableReferences\022^\n"
           + "\020table_references\030\001 \003"
-          + "(\0132?.google.cloud.geminidataanalytics.v1beta.BigQueryTableReferenceB\003\340A\002\"\247\001\n"
+          + "(\0132?.google.cloud.geminidataanalytics.v1beta.BigQueryTableReferenceB\003\340A\001\"\247\001\n"
           + "\026BigQueryTableReference\022\027\n\n"
           + "project_id\030\001 \001(\tB\003\340A\002\022\027\n\n"
           + "dataset_id\030\003 \001(\tB\003\340A\002\022\025\n"

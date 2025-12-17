@@ -28,7 +28,7 @@ public interface MessageDeletedEventDataOrBuilder
    *
    *
    * <pre>
-   * The deleted message. Only the `name`, `createTime`, `deleteTime`, and
+   * The deleted message. Only the `name`, `createTime`, and
    * `deletionMetadata` fields are populated.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface MessageDeletedEventDataOrBuilder
    *
    *
    * <pre>
-   * The deleted message. Only the `name`, `createTime`, `deleteTime`, and
+   * The deleted message. Only the `name`, `createTime`, and
    * `deletionMetadata` fields are populated.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface MessageDeletedEventDataOrBuilder
    *
    *
    * <pre>
-   * The deleted message. Only the `name`, `createTime`, `deleteTime`, and
+   * The deleted message. Only the `name`, `createTime`, and
    * `deletionMetadata` fields are populated.
    * </pre>
    *

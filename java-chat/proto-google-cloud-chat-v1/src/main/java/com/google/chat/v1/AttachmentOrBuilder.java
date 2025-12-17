@@ -28,11 +28,12 @@ public interface AttachmentOrBuilder
    *
    *
    * <pre>
-   * Optional. Resource name of the attachment, in the form
-   * `spaces/{space}/messages/{message}/attachments/{attachment}`.
+   * Identifier. Resource name of the attachment.
+   *
+   * Format: `spaces/{space}/messages/{message}/attachments/{attachment}`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -42,11 +43,12 @@ public interface AttachmentOrBuilder
    *
    *
    * <pre>
-   * Optional. Resource name of the attachment, in the form
-   * `spaces/{space}/messages/{message}/attachments/{attachment}`.
+   * Identifier. Resource name of the attachment.
+   *
+   * Format: `spaces/{space}/messages/{message}/attachments/{attachment}`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
