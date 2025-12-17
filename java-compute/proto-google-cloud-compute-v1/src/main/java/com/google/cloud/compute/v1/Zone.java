@@ -23,7 +23,11 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a Zone resource. A zone is a deployment area. These deployment areas are subsets of a region. For example the zone us-east1-b is located in the us-east1 region. For more information, read Regions and Zones.
+ * Represents a Zone resource.
+ *
+ * A zone is a deployment area. These deployment areas are subsets of a region.
+ * For example the zone us-east1-b is located in theus-east1 region. For more information, readRegions and
+ * Zones.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Zone}
@@ -74,7 +78,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status of the zone, either UP or DOWN.
+   * [Output Only] Status of the zone, either UP orDOWN.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Zone.Status}
@@ -275,7 +279,8 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -291,7 +296,8 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -315,7 +321,8 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -464,7 +471,8 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -480,7 +488,8 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -501,7 +510,8 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#zone for zones.
+   * Output only. [Output Only] Type of the resource. Always compute#zone for
+   * zones.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -517,7 +527,8 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#zone for zones.
+   * Output only. [Output Only] Type of the resource. Always compute#zone for
+   * zones.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -541,7 +552,8 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#zone for zones.
+   * Output only. [Output Only] Type of the resource. Always compute#zone for
+   * zones.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -777,7 +789,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status of the zone, either UP or DOWN.
+   * [Output Only] Status of the zone, either UP orDOWN.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -794,7 +806,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status of the zone, either UP or DOWN.
+   * [Output Only] Status of the zone, either UP orDOWN.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -819,7 +831,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status of the zone, either UP or DOWN.
+   * [Output Only] Status of the zone, either UP orDOWN.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -847,7 +859,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool supports_pzs = 83983214;</code>
@@ -863,7 +875,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool supports_pzs = 83983214;</code>
@@ -1186,7 +1198,11 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a Zone resource. A zone is a deployment area. These deployment areas are subsets of a region. For example the zone us-east1-b is located in the us-east1 region. For more information, read Regions and Zones.
+   * Represents a Zone resource.
+   *
+   * A zone is a deployment area. These deployment areas are subsets of a region.
+   * For example the zone us-east1-b is located in theus-east1 region. For more information, readRegions and
+   * Zones.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Zone}
@@ -1729,7 +1745,8 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1744,7 +1761,8 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1767,7 +1785,8 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1790,7 +1809,8 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1812,7 +1832,8 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1830,7 +1851,8 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2176,7 +2198,8 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2192,7 +2215,8 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2208,7 +2232,8 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2228,7 +2253,8 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2248,7 +2274,8 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#zone for zones.
+     * Output only. [Output Only] Type of the resource. Always compute#zone for
+     * zones.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2263,7 +2290,8 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#zone for zones.
+     * Output only. [Output Only] Type of the resource. Always compute#zone for
+     * zones.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2286,7 +2314,8 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#zone for zones.
+     * Output only. [Output Only] Type of the resource. Always compute#zone for
+     * zones.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2309,7 +2338,8 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#zone for zones.
+     * Output only. [Output Only] Type of the resource. Always compute#zone for
+     * zones.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2331,7 +2361,8 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#zone for zones.
+     * Output only. [Output Only] Type of the resource. Always compute#zone for
+     * zones.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2349,7 +2380,8 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#zone for zones.
+     * Output only. [Output Only] Type of the resource. Always compute#zone for
+     * zones.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2752,7 +2784,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status of the zone, either UP or DOWN.
+     * [Output Only] Status of the zone, either UP orDOWN.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -2768,7 +2800,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status of the zone, either UP or DOWN.
+     * [Output Only] Status of the zone, either UP orDOWN.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -2792,7 +2824,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status of the zone, either UP or DOWN.
+     * [Output Only] Status of the zone, either UP orDOWN.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -2816,7 +2848,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status of the zone, either UP or DOWN.
+     * [Output Only] Status of the zone, either UP orDOWN.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -2839,7 +2871,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status of the zone, either UP or DOWN.
+     * [Output Only] Status of the zone, either UP orDOWN.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -2858,7 +2890,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status of the zone, either UP or DOWN.
+     * [Output Only] Status of the zone, either UP orDOWN.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -2884,7 +2916,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool supports_pzs = 83983214;</code>
@@ -2900,7 +2932,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool supports_pzs = 83983214;</code>
@@ -2916,7 +2948,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool supports_pzs = 83983214;</code>
@@ -2936,7 +2968,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool supports_pzs = 83983214;</code>

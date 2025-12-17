@@ -41,6 +41,30 @@ public final class AdUnitServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_ads_admanager_v1_ListAdUnitsResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_CreateAdUnitRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_CreateAdUnitRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_UpdateAdUnitRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_UpdateAdUnitRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchCreateAdUnitsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchCreateAdUnitsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchCreateAdUnitsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchCreateAdUnitsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchUpdateAdUnitsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchUpdateAdUnitsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchUpdateAdUnitsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchUpdateAdUnitsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_ads_admanager_v1_ListAdUnitSizesRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_ads_admanager_v1_ListAdUnitSizesRequest_fieldAccessorTable;
@@ -48,6 +72,30 @@ public final class AdUnitServiceProto {
       internal_static_google_ads_admanager_v1_ListAdUnitSizesResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_ads_admanager_v1_ListAdUnitSizesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchActivateAdUnitsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchActivateAdUnitsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchActivateAdUnitsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchActivateAdUnitsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchDeactivateAdUnitsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchDeactivateAdUnitsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchDeactivateAdUnitsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchDeactivateAdUnitsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchArchiveAdUnitsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchArchiveAdUnitsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchArchiveAdUnitsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchArchiveAdUnitsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -62,7 +110,8 @@ public final class AdUnitServiceProto {
           + "e.proto\022\027google.ads.admanager.v1\032.google"
           + "/ads/admanager/v1/ad_unit_messages.proto"
           + "\032\034google/api/annotations.proto\032\027google/a"
-          + "pi/client.proto\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\"I\n"
+          + "pi/client.proto\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\032"
+          + " google/protobuf/field_mask.proto\"I\n"
           + "\020GetAdUnitRequest\0225\n"
           + "\004name\030\001 \001(\tB\'\340A\002\372A!\n"
           + "\037admanager.googleapis.com/AdUnit\"\276\001\n"
@@ -77,7 +126,30 @@ public final class AdUnitServiceProto {
           + "\023ListAdUnitsResponse\0221\n"
           + "\010ad_units\030\001 \003(\0132\037.google.ads.admanager.v1.AdUnit\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\022\n\n"
-          + "total_size\030\003 \001(\005\"\302\001\n"
+          + "total_size\030\003 \001(\005\"\206\001\n"
+          + "\023CreateAdUnitRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0225\n"
+          + "\007ad_unit\030\002"
+          + " \001(\0132\037.google.ads.admanager.v1.AdUnitB\003\340A\002\"\202\001\n"
+          + "\023UpdateAdUnitRequest\0225\n"
+          + "\007ad_unit\030\001 \001(\0132\037.google.ads.admanager.v1.AdUnitB\003\340A\002\0224\n"
+          + "\013update_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\"\232\001\n"
+          + "\031BatchCreateAdUnitsRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022C\n"
+          + "\010requests\030\002 \003(\0132,.googl"
+          + "e.ads.admanager.v1.CreateAdUnitRequestB\003\340A\002\"O\n"
+          + "\032BatchCreateAdUnitsResponse\0221\n"
+          + "\010ad_units\030\001 \003(\0132\037.google.ads.admanager.v1.AdUnit\"\232\001\n"
+          + "\031BatchUpdateAdUnitsRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022C\n"
+          + "\010requests\030\002 \003(\0132,.google."
+          + "ads.admanager.v1.UpdateAdUnitRequestB\003\340A\002\"O\n"
+          + "\032BatchUpdateAdUnitsResponse\0221\n"
+          + "\010ad_units\030\001 \003(\0132\037.google.ads.admanager.v1.AdUnit\"\302\001\n"
           + "\026ListAdUnitSizesRequest\0228\n"
           + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
           + " admanager.googleapis.com/Network\022\026\n"
@@ -89,23 +161,68 @@ public final class AdUnitServiceProto {
           + "\027ListAdUnitSizesResponse\022:\n\r"
           + "ad_unit_sizes\030\001 \003(\0132#.google.ads.admanager.v1.AdUnitSize\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\022\n\n"
-          + "total_size\030\003 \001(\0052\254\004\n\r"
+          + "total_size\030\003 \001(\005\"\217\001\n"
+          + "\033BatchActivateAdUnitsRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0226\n"
+          + "\005names\030\002 \003(\tB\'\340A\002\372A!\n"
+          + "\037admanager.googleapis.com/AdUnit\"\036\n"
+          + "\034BatchActivateAdUnitsResponse\"\221\001\n"
+          + "\035BatchDeactivateAdUnitsRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0226\n"
+          + "\005names\030\002 \003(\tB\'\340A\002\372A!\n"
+          + "\037admanager.googleapis.com/AdUnit\" \n"
+          + "\036BatchDeactivateAdUnitsResponse\"\216\001\n"
+          + "\032BatchArchiveAdUnitsRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0226\n"
+          + "\005names\030\002 \003(\tB\'\340A\002\372A!\n"
+          + "\037admanager.googleapis.com/AdUnit\"\035\n"
+          + "\033BatchArchiveAdUnitsResponse2\204\017\n\r"
           + "AdUnitService\022\207\001\n"
-          + "\tGetAdUnit\022).google.ads.admanager.v1.GetAdUnitRequest\032\037.google.ads"
-          + ".admanager.v1.AdUnit\".\332A\004name\202\323\344\223\002!\022\037/v1/{name=networks/*/adUnits/*}\022\232\001\n"
-          + "\013ListAdUnits\022+.google.ads.admanager.v1.ListAdUni"
-          + "tsRequest\032,.google.ads.admanager.v1.List"
-          + "AdUnitsResponse\"0\332A\006parent\202\323\344\223\002!\022\037/v1/{parent=networks/*}/adUnits\022\252\001\n"
-          + "\017ListAdUnitSizes\022/.google.ads.admanager.v1.ListAdUn"
-          + "itSizesRequest\0320.google.ads.admanager.v1"
-          + ".ListAdUnitSizesResponse\"4\332A\006parent\202\323\344\223\002"
-          + "%\022#/v1/{parent=networks/*}/adUnitSizes\032G"
-          + "\312A\030admanager.googleapis.com\322A)https://www.googleapis.com/auth/admanagerB\306\001\n"
-          + "\033com.google.ads.admanager.v1B\022AdUnitServicePr"
-          + "otoP\001Z@google.golang.org/genproto/google"
-          + "apis/ads/admanager/v1;admanager\252\002\027Google"
-          + ".Ads.AdManager.V1\312\002\027Google\\Ads\\AdManager"
-          + "\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
+          + "\tGetAdUnit\022).google.ads.admanager.v1.GetAdUnitRequest\032\037.google.ads.adm"
+          + "anager.v1.AdUnit\".\332A\004name\202\323\344\223\002!\022\037/v1/{name=networks/*/adUnits/*}\022\232\001\n"
+          + "\013ListAdUnits\022+.google.ads.admanager.v1.ListAdUnitsRe"
+          + "quest\032,.google.ads.admanager.v1.ListAdUn"
+          + "itsResponse\"0\332A\006parent\202\323\344\223\002!\022\037/v1/{parent=networks/*}/adUnits\022\252\001\n"
+          + "\017ListAdUnitSizes\022/.google.ads.admanager.v1.ListAdUnitSi"
+          + "zesRequest\0320.google.ads.admanager.v1.Lis"
+          + "tAdUnitSizesResponse\"4\332A\006parent\202\323\344\223\002%\022#/v1/{parent=networks/*}/adUnitSizes\022\240\001\n"
+          + "\014CreateAdUnit\022,.google.ads.admanager.v1.Cr"
+          + "eateAdUnitRequest\032\037.google.ads.admanager"
+          + ".v1.AdUnit\"A\332A\016parent,ad_unit\202\323\344\223\002*\"\037/v1"
+          + "/{parent=networks/*}/adUnits:\007ad_unit\022\255\001\n"
+          + "\014UpdateAdUnit\022,.google.ads.admanager.v1"
+          + ".UpdateAdUnitRequest\032\037.google.ads.admana"
+          + "ger.v1.AdUnit\"N\332A\023ad_unit,update_mask\202\323\344"
+          + "\223\00222\'/v1/{ad_unit.name=networks/*/adUnits/*}:\007ad_unit\022\307\001\n"
+          + "\022BatchCreateAdUnits\0222.google.ads.admanager.v1.BatchCreateAdUnit"
+          + "sRequest\0323.google.ads.admanager.v1.Batch"
+          + "CreateAdUnitsResponse\"H\332A\017parent,request"
+          + "s\202\323\344\223\0020\"+/v1/{parent=networks/*}/adUnits:batchCreate:\001*\022\307\001\n"
+          + "\022BatchUpdateAdUnits\0222.google.ads.admanager.v1.BatchUpdateAdUn"
+          + "itsRequest\0323.google.ads.admanager.v1.Bat"
+          + "chUpdateAdUnitsResponse\"H\332A\017parent,reque"
+          + "sts\202\323\344\223\0020\"+/v1/{parent=networks/*}/adUnits:batchUpdate:\001*\022\314\001\n"
+          + "\024BatchActivateAdUnits\0224.google.ads.admanager.v1.BatchActiva"
+          + "teAdUnitsRequest\0325.google.ads.admanager."
+          + "v1.BatchActivateAdUnitsResponse\"G\332A\014pare"
+          + "nt,names\202\323\344\223\0022\"-/v1/{parent=networks/*}/adUnits:batchActivate:\001*\022\324\001\n"
+          + "\026BatchDeactivateAdUnits\0226.google.ads.admanager.v1.Ba"
+          + "tchDeactivateAdUnitsRequest\0327.google.ads.admanager.v1.BatchDeactivateAdUnitsResp"
+          + "onse\"I\332A\014parent,names\202\323\344\223\0024\"//v1/{parent"
+          + "=networks/*}/adUnits:batchDeactivate:\001*\022\310\001\n"
+          + "\023BatchArchiveAdUnits\0223.google.ads.admanager.v1.BatchArchiveAdUnitsRequest\0324.g"
+          + "oogle.ads.admanager.v1.BatchArchiveAdUni"
+          + "tsResponse\"F\332A\014parent,names\202\323\344\223\0021\",/v1/{"
+          + "parent=networks/*}/adUnits:batchArchive:"
+          + "\001*\032G\312A\030admanager.googleapis.com\322A)https://www.googleapis.com/auth/admanagerB\306\001\n"
+          + "\033com.google.ads.admanager.v1B\022AdUnitServi"
+          + "ceProtoP\001Z@google.golang.org/genproto/go"
+          + "ogleapis/ads/admanager/v1;admanager\252\002\027Go"
+          + "ogle.Ads.AdManager.V1\312\002\027Google\\Ads\\AdMan"
+          + "ager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -116,6 +233,7 @@ public final class AdUnitServiceProto {
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
             });
     internal_static_google_ads_admanager_v1_GetAdUnitRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -141,8 +259,56 @@ public final class AdUnitServiceProto {
             new java.lang.String[] {
               "AdUnits", "NextPageToken", "TotalSize",
             });
-    internal_static_google_ads_admanager_v1_ListAdUnitSizesRequest_descriptor =
+    internal_static_google_ads_admanager_v1_CreateAdUnitRequest_descriptor =
         getDescriptor().getMessageTypes().get(3);
+    internal_static_google_ads_admanager_v1_CreateAdUnitRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_CreateAdUnitRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "AdUnit",
+            });
+    internal_static_google_ads_admanager_v1_UpdateAdUnitRequest_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_ads_admanager_v1_UpdateAdUnitRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_UpdateAdUnitRequest_descriptor,
+            new java.lang.String[] {
+              "AdUnit", "UpdateMask",
+            });
+    internal_static_google_ads_admanager_v1_BatchCreateAdUnitsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_ads_admanager_v1_BatchCreateAdUnitsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchCreateAdUnitsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Requests",
+            });
+    internal_static_google_ads_admanager_v1_BatchCreateAdUnitsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_ads_admanager_v1_BatchCreateAdUnitsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchCreateAdUnitsResponse_descriptor,
+            new java.lang.String[] {
+              "AdUnits",
+            });
+    internal_static_google_ads_admanager_v1_BatchUpdateAdUnitsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(7);
+    internal_static_google_ads_admanager_v1_BatchUpdateAdUnitsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchUpdateAdUnitsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Requests",
+            });
+    internal_static_google_ads_admanager_v1_BatchUpdateAdUnitsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_ads_admanager_v1_BatchUpdateAdUnitsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchUpdateAdUnitsResponse_descriptor,
+            new java.lang.String[] {
+              "AdUnits",
+            });
+    internal_static_google_ads_admanager_v1_ListAdUnitSizesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_ads_admanager_v1_ListAdUnitSizesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_ListAdUnitSizesRequest_descriptor,
@@ -150,13 +316,55 @@ public final class AdUnitServiceProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy", "Skip",
             });
     internal_static_google_ads_admanager_v1_ListAdUnitSizesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_ads_admanager_v1_ListAdUnitSizesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_ListAdUnitSizesResponse_descriptor,
             new java.lang.String[] {
               "AdUnitSizes", "NextPageToken", "TotalSize",
             });
+    internal_static_google_ads_admanager_v1_BatchActivateAdUnitsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_ads_admanager_v1_BatchActivateAdUnitsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchActivateAdUnitsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchActivateAdUnitsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_ads_admanager_v1_BatchActivateAdUnitsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchActivateAdUnitsResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchDeactivateAdUnitsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_ads_admanager_v1_BatchDeactivateAdUnitsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchDeactivateAdUnitsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchDeactivateAdUnitsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(14);
+    internal_static_google_ads_admanager_v1_BatchDeactivateAdUnitsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchDeactivateAdUnitsResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchArchiveAdUnitsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(15);
+    internal_static_google_ads_admanager_v1_BatchArchiveAdUnitsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchArchiveAdUnitsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchArchiveAdUnitsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(16);
+    internal_static_google_ads_admanager_v1_BatchArchiveAdUnitsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchArchiveAdUnitsResponse_descriptor,
+            new java.lang.String[] {});
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
@@ -172,6 +380,7 @@ public final class AdUnitServiceProto {
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

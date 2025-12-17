@@ -525,7 +525,7 @@ public interface RagFileOrBuilder
    *
    *
    * <pre>
-   * Output only. The metadata for metadata search. The contents will be
+   * Output only. The metadata for metadata search. The user_metadata Needs to
    * be in JSON format.
    * </pre>
    *
@@ -539,7 +539,7 @@ public interface RagFileOrBuilder
    *
    *
    * <pre>
-   * Output only. The metadata for metadata search. The contents will be
+   * Output only. The metadata for metadata search. The user_metadata Needs to
    * be in JSON format.
    * </pre>
    *

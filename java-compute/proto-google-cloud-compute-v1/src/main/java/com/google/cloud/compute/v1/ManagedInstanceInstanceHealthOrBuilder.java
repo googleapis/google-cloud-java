@@ -28,7 +28,7 @@ public interface ManagedInstanceInstanceHealthOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The current detailed instance health state.
+   * Output only. [Output Only] The current detailed instance health state.
    * Check the DetailedHealthState enum for the list of possible values.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface ManagedInstanceInstanceHealthOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The current detailed instance health state.
+   * Output only. [Output Only] The current detailed instance health state.
    * Check the DetailedHealthState enum for the list of possible values.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface ManagedInstanceInstanceHealthOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The current detailed instance health state.
+   * Output only. [Output Only] The current detailed instance health state.
    * Check the DetailedHealthState enum for the list of possible values.
    * </pre>
    *
@@ -70,7 +70,8 @@ public interface ManagedInstanceInstanceHealthOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL for the health check that verifies whether the instance is healthy.
+   * Output only. [Output Only] The URL for the health check that verifies whether the
+   * instance is healthy.
    * </pre>
    *
    * <code>optional string health_check = 308876645;</code>
@@ -83,7 +84,8 @@ public interface ManagedInstanceInstanceHealthOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL for the health check that verifies whether the instance is healthy.
+   * Output only. [Output Only] The URL for the health check that verifies whether the
+   * instance is healthy.
    * </pre>
    *
    * <code>optional string health_check = 308876645;</code>
@@ -96,7 +98,8 @@ public interface ManagedInstanceInstanceHealthOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL for the health check that verifies whether the instance is healthy.
+   * Output only. [Output Only] The URL for the health check that verifies whether the
+   * instance is healthy.
    * </pre>
    *
    * <code>optional string health_check = 308876645;</code>

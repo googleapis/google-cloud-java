@@ -87,7 +87,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> AggregatedList</td>
- *      <td><p> Retrieves an aggregated list of node groups. Note: use nodeGroups.listNodes for more details about each group. To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.</td>
+ *      <td><p> Retrieves an aggregated list of node groups. Note: use nodeGroups.listNodes for more details about each group.
+ * <p>  To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -582,8 +583,10 @@ public class NodeGroupsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of node groups. Note: use nodeGroups.listNodes for more details
-   * about each group. To prevent failure, Google recommends that you set the `returnPartialSuccess`
-   * parameter to `true`.
+   * about each group.
+   *
+   * <p>To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -614,8 +617,10 @@ public class NodeGroupsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of node groups. Note: use nodeGroups.listNodes for more details
-   * about each group. To prevent failure, Google recommends that you set the `returnPartialSuccess`
-   * parameter to `true`.
+   * about each group.
+   *
+   * <p>To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -654,8 +659,10 @@ public class NodeGroupsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of node groups. Note: use nodeGroups.listNodes for more details
-   * about each group. To prevent failure, Google recommends that you set the `returnPartialSuccess`
-   * parameter to `true`.
+   * about each group.
+   *
+   * <p>To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -694,8 +701,10 @@ public class NodeGroupsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of node groups. Note: use nodeGroups.listNodes for more details
-   * about each group. To prevent failure, Google recommends that you set the `returnPartialSuccess`
-   * parameter to `true`.
+   * about each group.
+   *
+   * <p>To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *

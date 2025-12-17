@@ -28,7 +28,7 @@ public interface HttpHeaderActionOrBuilder
    *
    *
    * <pre>
-   * Headers to add to a matching request before forwarding the request to the backendService.
+   * Headers to add to a matching request before forwarding the request to thebackendService.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HttpHeaderOption request_headers_to_add = 72111974;
@@ -40,7 +40,7 @@ public interface HttpHeaderActionOrBuilder
    *
    *
    * <pre>
-   * Headers to add to a matching request before forwarding the request to the backendService.
+   * Headers to add to a matching request before forwarding the request to thebackendService.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HttpHeaderOption request_headers_to_add = 72111974;
@@ -52,7 +52,7 @@ public interface HttpHeaderActionOrBuilder
    *
    *
    * <pre>
-   * Headers to add to a matching request before forwarding the request to the backendService.
+   * Headers to add to a matching request before forwarding the request to thebackendService.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HttpHeaderOption request_headers_to_add = 72111974;
@@ -64,7 +64,7 @@ public interface HttpHeaderActionOrBuilder
    *
    *
    * <pre>
-   * Headers to add to a matching request before forwarding the request to the backendService.
+   * Headers to add to a matching request before forwarding the request to thebackendService.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HttpHeaderOption request_headers_to_add = 72111974;
@@ -77,7 +77,7 @@ public interface HttpHeaderActionOrBuilder
    *
    *
    * <pre>
-   * Headers to add to a matching request before forwarding the request to the backendService.
+   * Headers to add to a matching request before forwarding the request to thebackendService.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HttpHeaderOption request_headers_to_add = 72111974;
@@ -89,7 +89,8 @@ public interface HttpHeaderActionOrBuilder
    *
    *
    * <pre>
-   * A list of header names for headers that need to be removed from the request before forwarding the request to the backendService.
+   * A list of header names for headers that need to be removed from the
+   * request before forwarding the request to the backendService.
    * </pre>
    *
    * <code>repeated string request_headers_to_remove = 218425247;</code>
@@ -102,7 +103,8 @@ public interface HttpHeaderActionOrBuilder
    *
    *
    * <pre>
-   * A list of header names for headers that need to be removed from the request before forwarding the request to the backendService.
+   * A list of header names for headers that need to be removed from the
+   * request before forwarding the request to the backendService.
    * </pre>
    *
    * <code>repeated string request_headers_to_remove = 218425247;</code>
@@ -115,7 +117,8 @@ public interface HttpHeaderActionOrBuilder
    *
    *
    * <pre>
-   * A list of header names for headers that need to be removed from the request before forwarding the request to the backendService.
+   * A list of header names for headers that need to be removed from the
+   * request before forwarding the request to the backendService.
    * </pre>
    *
    * <code>repeated string request_headers_to_remove = 218425247;</code>
@@ -129,7 +132,8 @@ public interface HttpHeaderActionOrBuilder
    *
    *
    * <pre>
-   * A list of header names for headers that need to be removed from the request before forwarding the request to the backendService.
+   * A list of header names for headers that need to be removed from the
+   * request before forwarding the request to the backendService.
    * </pre>
    *
    * <code>repeated string request_headers_to_remove = 218425247;</code>
@@ -143,7 +147,8 @@ public interface HttpHeaderActionOrBuilder
    *
    *
    * <pre>
-   * Headers to add the response before sending the response back to the client.
+   * Headers to add the response before sending the response back to the
+   * client.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HttpHeaderOption response_headers_to_add = 32136052;
@@ -155,7 +160,8 @@ public interface HttpHeaderActionOrBuilder
    *
    *
    * <pre>
-   * Headers to add the response before sending the response back to the client.
+   * Headers to add the response before sending the response back to the
+   * client.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HttpHeaderOption response_headers_to_add = 32136052;
@@ -167,7 +173,8 @@ public interface HttpHeaderActionOrBuilder
    *
    *
    * <pre>
-   * Headers to add the response before sending the response back to the client.
+   * Headers to add the response before sending the response back to the
+   * client.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HttpHeaderOption response_headers_to_add = 32136052;
@@ -179,7 +186,8 @@ public interface HttpHeaderActionOrBuilder
    *
    *
    * <pre>
-   * Headers to add the response before sending the response back to the client.
+   * Headers to add the response before sending the response back to the
+   * client.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HttpHeaderOption response_headers_to_add = 32136052;
@@ -192,7 +200,8 @@ public interface HttpHeaderActionOrBuilder
    *
    *
    * <pre>
-   * Headers to add the response before sending the response back to the client.
+   * Headers to add the response before sending the response back to the
+   * client.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HttpHeaderOption response_headers_to_add = 32136052;
@@ -204,7 +213,8 @@ public interface HttpHeaderActionOrBuilder
    *
    *
    * <pre>
-   * A list of header names for headers that need to be removed from the response before sending the response back to the client.
+   * A list of header names for headers that need to be removed from the
+   * response before sending the response back to the client.
    * </pre>
    *
    * <code>repeated string response_headers_to_remove = 75415761;</code>
@@ -217,7 +227,8 @@ public interface HttpHeaderActionOrBuilder
    *
    *
    * <pre>
-   * A list of header names for headers that need to be removed from the response before sending the response back to the client.
+   * A list of header names for headers that need to be removed from the
+   * response before sending the response back to the client.
    * </pre>
    *
    * <code>repeated string response_headers_to_remove = 75415761;</code>
@@ -230,7 +241,8 @@ public interface HttpHeaderActionOrBuilder
    *
    *
    * <pre>
-   * A list of header names for headers that need to be removed from the response before sending the response back to the client.
+   * A list of header names for headers that need to be removed from the
+   * response before sending the response back to the client.
    * </pre>
    *
    * <code>repeated string response_headers_to_remove = 75415761;</code>
@@ -244,7 +256,8 @@ public interface HttpHeaderActionOrBuilder
    *
    *
    * <pre>
-   * A list of header names for headers that need to be removed from the response before sending the response back to the client.
+   * A list of header names for headers that need to be removed from the
+   * response before sending the response back to the client.
    * </pre>
    *
    * <code>repeated string response_headers_to_remove = 75415761;</code>

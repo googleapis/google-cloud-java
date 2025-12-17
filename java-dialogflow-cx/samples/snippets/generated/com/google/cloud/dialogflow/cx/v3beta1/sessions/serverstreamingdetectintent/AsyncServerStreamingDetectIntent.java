@@ -20,6 +20,7 @@ package com.google.cloud.dialogflow.cx.v3beta1.samples;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse;
+import com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponseView;
 import com.google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig;
 import com.google.cloud.dialogflow.cx.v3beta1.QueryInput;
 import com.google.cloud.dialogflow.cx.v3beta1.QueryParameters;
@@ -48,6 +49,7 @@ public class AsyncServerStreamingDetectIntent {
               .setQueryParams(QueryParameters.newBuilder().build())
               .setQueryInput(QueryInput.newBuilder().build())
               .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
+              .setResponseView(DetectIntentResponseView.forNumber(0))
               .build();
       ServerStream<DetectIntentResponse> stream =
           sessionsClient.serverStreamingDetectIntentCallable().call(request);

@@ -77,7 +77,8 @@ public final class GetGlobalOrganizationOperationRequest
    *
    *
    * <pre>
-   * Name of the Operations resource to return. Parent is derived from this field.
+   * Name of the Operations resource to return. Parent is derived from this
+   * field.
    * </pre>
    *
    * <code>
@@ -103,7 +104,8 @@ public final class GetGlobalOrganizationOperationRequest
    *
    *
    * <pre>
-   * Name of the Operations resource to return. Parent is derived from this field.
+   * Name of the Operations resource to return. Parent is derived from this
+   * field.
    * </pre>
    *
    * <code>
@@ -582,7 +584,8 @@ public final class GetGlobalOrganizationOperationRequest
      *
      *
      * <pre>
-     * Name of the Operations resource to return. Parent is derived from this field.
+     * Name of the Operations resource to return. Parent is derived from this
+     * field.
      * </pre>
      *
      * <code>
@@ -607,7 +610,8 @@ public final class GetGlobalOrganizationOperationRequest
      *
      *
      * <pre>
-     * Name of the Operations resource to return. Parent is derived from this field.
+     * Name of the Operations resource to return. Parent is derived from this
+     * field.
      * </pre>
      *
      * <code>
@@ -632,7 +636,8 @@ public final class GetGlobalOrganizationOperationRequest
      *
      *
      * <pre>
-     * Name of the Operations resource to return. Parent is derived from this field.
+     * Name of the Operations resource to return. Parent is derived from this
+     * field.
      * </pre>
      *
      * <code>
@@ -656,7 +661,8 @@ public final class GetGlobalOrganizationOperationRequest
      *
      *
      * <pre>
-     * Name of the Operations resource to return. Parent is derived from this field.
+     * Name of the Operations resource to return. Parent is derived from this
+     * field.
      * </pre>
      *
      * <code>
@@ -676,7 +682,8 @@ public final class GetGlobalOrganizationOperationRequest
      *
      *
      * <pre>
-     * Name of the Operations resource to return. Parent is derived from this field.
+     * Name of the Operations resource to return. Parent is derived from this
+     * field.
      * </pre>
      *
      * <code>

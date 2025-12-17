@@ -28,7 +28,8 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An array of connections for all the producers connected to this network attachment.
+   * Output only. [Output Only] An array of connections for all the producers connected
+   * to this network attachment.
    * </pre>
    *
    * <code>
@@ -42,7 +43,8 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An array of connections for all the producers connected to this network attachment.
+   * Output only. [Output Only] An array of connections for all the producers connected
+   * to this network attachment.
    * </pre>
    *
    * <code>
@@ -55,7 +57,8 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An array of connections for all the producers connected to this network attachment.
+   * Output only. [Output Only] An array of connections for all the producers connected
+   * to this network attachment.
    * </pre>
    *
    * <code>
@@ -68,7 +71,8 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An array of connections for all the producers connected to this network attachment.
+   * Output only. [Output Only] An array of connections for all the producers connected
+   * to this network attachment.
    * </pre>
    *
    * <code>
@@ -82,7 +86,8 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An array of connections for all the producers connected to this network attachment.
+   * Output only. [Output Only] An array of connections for all the producers connected
+   * to this network attachment.
    * </pre>
    *
    * <code>
@@ -138,7 +143,8 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -151,7 +157,8 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -164,7 +171,8 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -177,7 +185,8 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -190,7 +199,8 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -203,7 +213,8 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -216,7 +227,9 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
+   * Fingerprint of this resource. A hash of the contents stored
+   * in this object. This field is used in optimistic locking. An up-to-date
+   * fingerprint must be provided in order to patch.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -229,7 +242,9 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
+   * Fingerprint of this resource. A hash of the contents stored
+   * in this object. This field is used in optimistic locking. An up-to-date
+   * fingerprint must be provided in order to patch.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -242,7 +257,9 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
+   * Fingerprint of this resource. A hash of the contents stored
+   * in this object. This field is used in optimistic locking. An up-to-date
+   * fingerprint must be provided in order to patch.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -255,7 +272,8 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource type. The server generates this identifier.
+   * Output only. [Output Only] The unique identifier for the resource type. The server
+   * generates this identifier.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -268,7 +286,8 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource type. The server generates this identifier.
+   * Output only. [Output Only] The unique identifier for the resource type. The server
+   * generates this identifier.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -281,7 +300,7 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource.
+   * Output only. [Output Only] Type of the resource.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -294,7 +313,7 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource.
+   * Output only. [Output Only] Type of the resource.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -307,7 +326,7 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource.
+   * Output only. [Output Only] Type of the resource.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -320,7 +339,13 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -333,7 +358,13 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -346,7 +377,13 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -359,7 +396,11 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the network which the Network Attachment belongs to. Practically it is inferred by fetching the network of the first subnetwork associated. Because it is required that all the subnetworks must be from the same network, it is assured that the Network Attachment belongs to the same network as all the subnetworks.
+   * Output only. [Output Only] The URL of the network which the Network Attachment
+   * belongs to. Practically it is inferred by fetching the network of the first
+   * subnetwork associated. Because it is required that all the subnetworks must
+   * be from the same network, it is assured that the Network Attachment belongs
+   * to the same network as all the subnetworks.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -372,7 +413,11 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the network which the Network Attachment belongs to. Practically it is inferred by fetching the network of the first subnetwork associated. Because it is required that all the subnetworks must be from the same network, it is assured that the Network Attachment belongs to the same network as all the subnetworks.
+   * Output only. [Output Only] The URL of the network which the Network Attachment
+   * belongs to. Practically it is inferred by fetching the network of the first
+   * subnetwork associated. Because it is required that all the subnetworks must
+   * be from the same network, it is assured that the Network Attachment belongs
+   * to the same network as all the subnetworks.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -385,7 +430,11 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the network which the Network Attachment belongs to. Practically it is inferred by fetching the network of the first subnetwork associated. Because it is required that all the subnetworks must be from the same network, it is assured that the Network Attachment belongs to the same network as all the subnetworks.
+   * Output only. [Output Only] The URL of the network which the Network Attachment
+   * belongs to. Practically it is inferred by fetching the network of the first
+   * subnetwork associated. Because it is required that all the subnetworks must
+   * be from the same network, it is assured that the Network Attachment belongs
+   * to the same network as all the subnetworks.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -398,7 +447,8 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * Projects that are allowed to connect to this network attachment. The project can be specified using its id or number.
+   * Projects that are allowed to connect to this network attachment.
+   * The project can be specified using its id or number.
    * </pre>
    *
    * <code>repeated string producer_accept_lists = 202804523;</code>
@@ -411,7 +461,8 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * Projects that are allowed to connect to this network attachment. The project can be specified using its id or number.
+   * Projects that are allowed to connect to this network attachment.
+   * The project can be specified using its id or number.
    * </pre>
    *
    * <code>repeated string producer_accept_lists = 202804523;</code>
@@ -424,7 +475,8 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * Projects that are allowed to connect to this network attachment. The project can be specified using its id or number.
+   * Projects that are allowed to connect to this network attachment.
+   * The project can be specified using its id or number.
    * </pre>
    *
    * <code>repeated string producer_accept_lists = 202804523;</code>
@@ -438,7 +490,8 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * Projects that are allowed to connect to this network attachment. The project can be specified using its id or number.
+   * Projects that are allowed to connect to this network attachment.
+   * The project can be specified using its id or number.
    * </pre>
    *
    * <code>repeated string producer_accept_lists = 202804523;</code>
@@ -452,7 +505,8 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * Projects that are not allowed to connect to this network attachment. The project can be specified using its id or number.
+   * Projects that are not allowed to connect to this network attachment.
+   * The project can be specified using its id or number.
    * </pre>
    *
    * <code>repeated string producer_reject_lists = 4112002;</code>
@@ -465,7 +519,8 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * Projects that are not allowed to connect to this network attachment. The project can be specified using its id or number.
+   * Projects that are not allowed to connect to this network attachment.
+   * The project can be specified using its id or number.
    * </pre>
    *
    * <code>repeated string producer_reject_lists = 4112002;</code>
@@ -478,7 +533,8 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * Projects that are not allowed to connect to this network attachment. The project can be specified using its id or number.
+   * Projects that are not allowed to connect to this network attachment.
+   * The project can be specified using its id or number.
    * </pre>
    *
    * <code>repeated string producer_reject_lists = 4112002;</code>
@@ -492,7 +548,8 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * Projects that are not allowed to connect to this network attachment. The project can be specified using its id or number.
+   * Projects that are not allowed to connect to this network attachment.
+   * The project can be specified using its id or number.
    * </pre>
    *
    * <code>repeated string producer_reject_lists = 4112002;</code>
@@ -506,7 +563,10 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the network attachment resides. This field applies only to the region resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * Output only. [Output Only] URL of the region where the network attachment resides.
+   * This field applies only to the region resource. You must specify this
+   * field as part of the HTTP request URL. It is not settable as a field in
+   * the request body.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -519,7 +579,10 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the network attachment resides. This field applies only to the region resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * Output only. [Output Only] URL of the region where the network attachment resides.
+   * This field applies only to the region resource. You must specify this
+   * field as part of the HTTP request URL. It is not settable as a field in
+   * the request body.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -532,7 +595,10 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the network attachment resides. This field applies only to the region resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * Output only. [Output Only] URL of the region where the network attachment resides.
+   * This field applies only to the region resource. You must specify this
+   * field as part of the HTTP request URL. It is not settable as a field in
+   * the request body.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -545,7 +611,7 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -558,7 +624,7 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -571,7 +637,7 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -584,7 +650,7 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource's resource id.
+   * Output only. [Output Only] Server-defined URL for this resource's resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -597,7 +663,7 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource's resource id.
+   * Output only. [Output Only] Server-defined URL for this resource's resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -610,7 +676,7 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource's resource id.
+   * Output only. [Output Only] Server-defined URL for this resource's resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -623,7 +689,9 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * An array of URLs where each entry is the URL of a subnet provided by the service consumer to use for endpoints in the producers that connect to this network attachment.
+   * An array of URLs where each entry is the URL of a subnet
+   * provided by the service consumer to use for
+   * endpoints in the producers that connect to this network attachment.
    * </pre>
    *
    * <code>repeated string subnetworks = 415853125;</code>
@@ -636,7 +704,9 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * An array of URLs where each entry is the URL of a subnet provided by the service consumer to use for endpoints in the producers that connect to this network attachment.
+   * An array of URLs where each entry is the URL of a subnet
+   * provided by the service consumer to use for
+   * endpoints in the producers that connect to this network attachment.
    * </pre>
    *
    * <code>repeated string subnetworks = 415853125;</code>
@@ -649,7 +719,9 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * An array of URLs where each entry is the URL of a subnet provided by the service consumer to use for endpoints in the producers that connect to this network attachment.
+   * An array of URLs where each entry is the URL of a subnet
+   * provided by the service consumer to use for
+   * endpoints in the producers that connect to this network attachment.
    * </pre>
    *
    * <code>repeated string subnetworks = 415853125;</code>
@@ -663,7 +735,9 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * An array of URLs where each entry is the URL of a subnet provided by the service consumer to use for endpoints in the producers that connect to this network attachment.
+   * An array of URLs where each entry is the URL of a subnet
+   * provided by the service consumer to use for
+   * endpoints in the producers that connect to this network attachment.
    * </pre>
    *
    * <code>repeated string subnetworks = 415853125;</code>

@@ -55,7 +55,9 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     additionalLicenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
     hostname_ = "";
     bootConversion_ = 0;
+    adaptationModifiers_ = java.util.Collections.emptyList();
     diskReplicaZones_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    storagePool_ = "";
   }
 
   @java.lang.Override
@@ -1279,6 +1281,99 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     return result == null ? com.google.cloud.vmmigration.v1.BootConversion.UNRECOGNIZED : result;
   }
 
+  public static final int ADAPTATION_MODIFIERS_FIELD_NUMBER = 23;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.vmmigration.v1.AdaptationModifier> adaptationModifiers_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Modifiers to be used as configuration of the OS adaptation
+   * process.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.vmmigration.v1.AdaptationModifier>
+      getAdaptationModifiersList() {
+    return adaptationModifiers_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Modifiers to be used as configuration of the OS adaptation
+   * process.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.vmmigration.v1.AdaptationModifierOrBuilder>
+      getAdaptationModifiersOrBuilderList() {
+    return adaptationModifiers_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Modifiers to be used as configuration of the OS adaptation
+   * process.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getAdaptationModifiersCount() {
+    return adaptationModifiers_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Modifiers to be used as configuration of the OS adaptation
+   * process.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.AdaptationModifier getAdaptationModifiers(int index) {
+    return adaptationModifiers_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Modifiers to be used as configuration of the OS adaptation
+   * process.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.AdaptationModifierOrBuilder
+      getAdaptationModifiersOrBuilder(int index) {
+    return adaptationModifiers_.get(index);
+  }
+
   public static final int DISK_REPLICA_ZONES_FIELD_NUMBER = 24;
 
   @SuppressWarnings("serial")
@@ -1379,6 +1474,69 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     return diskReplicaZones_.getByteString(index);
   }
 
+  public static final int STORAGE_POOL_FIELD_NUMBER = 25;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object storagePool_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The storage pool used for the VM disks.
+   * If specified this will be the storage pool in which the disk is created.
+   * This is the full path of the storage pool resource, for example:
+   * "projects/my-project/zones/us-central1-a/storagePools/my-storage-pool".
+   * The storage pool must be in the same project and zone as the target disks.
+   * The storage pool's type must match the disk type.
+   * </pre>
+   *
+   * <code>string storage_pool = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The storagePool.
+   */
+  @java.lang.Override
+  public java.lang.String getStoragePool() {
+    java.lang.Object ref = storagePool_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      storagePool_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The storage pool used for the VM disks.
+   * If specified this will be the storage pool in which the disk is created.
+   * This is the full path of the storage pool resource, for example:
+   * "projects/my-project/zones/us-central1-a/storagePools/my-storage-pool".
+   * The storage pool must be in the same project and zone as the target disks.
+   * The storage pool's type must match the disk type.
+   * </pre>
+   *
+   * <code>string storage_pool = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for storagePool.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getStoragePoolBytes() {
+    java.lang.Object ref = storagePool_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      storagePool_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1467,8 +1625,14 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     if (enableIntegrityMonitoring_ != false) {
       output.writeBool(22, enableIntegrityMonitoring_);
     }
+    for (int i = 0; i < adaptationModifiers_.size(); i++) {
+      output.writeMessage(23, adaptationModifiers_.get(i));
+    }
     for (int i = 0; i < diskReplicaZones_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 24, diskReplicaZones_.getRaw(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(storagePool_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 25, storagePool_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1580,6 +1744,10 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     if (enableIntegrityMonitoring_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(22, enableIntegrityMonitoring_);
     }
+    for (int i = 0; i < adaptationModifiers_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(23, adaptationModifiers_.get(i));
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < diskReplicaZones_.size(); i++) {
@@ -1587,6 +1755,9 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       }
       size += dataSize;
       size += 2 * getDiskReplicaZonesList().size();
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(storagePool_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(25, storagePool_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1635,7 +1806,9 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       if (!getEncryption().equals(other.getEncryption())) return false;
     }
     if (bootConversion_ != other.bootConversion_) return false;
+    if (!getAdaptationModifiersList().equals(other.getAdaptationModifiersList())) return false;
     if (!getDiskReplicaZonesList().equals(other.getDiskReplicaZonesList())) return false;
+    if (!getStoragePool().equals(other.getStoragePool())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1707,10 +1880,16 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     }
     hash = (37 * hash) + BOOT_CONVERSION_FIELD_NUMBER;
     hash = (53 * hash) + bootConversion_;
+    if (getAdaptationModifiersCount() > 0) {
+      hash = (37 * hash) + ADAPTATION_MODIFIERS_FIELD_NUMBER;
+      hash = (53 * hash) + getAdaptationModifiersList().hashCode();
+    }
     if (getDiskReplicaZonesCount() > 0) {
       hash = (37 * hash) + DISK_REPLICA_ZONES_FIELD_NUMBER;
       hash = (53 * hash) + getDiskReplicaZonesList().hashCode();
     }
+    hash = (37 * hash) + STORAGE_POOL_FIELD_NUMBER;
+    hash = (53 * hash) + getStoragePool().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1884,6 +2063,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
         getAppliedLicenseFieldBuilder();
         getComputeSchedulingFieldBuilder();
         getEncryptionFieldBuilder();
+        getAdaptationModifiersFieldBuilder();
       }
     }
 
@@ -1931,7 +2111,15 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
         encryptionBuilder_ = null;
       }
       bootConversion_ = 0;
+      if (adaptationModifiersBuilder_ == null) {
+        adaptationModifiers_ = java.util.Collections.emptyList();
+      } else {
+        adaptationModifiers_ = null;
+        adaptationModifiersBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00400000);
       diskReplicaZones_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      storagePool_ = "";
       return this;
     }
 
@@ -1977,6 +2165,15 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
         result.networkInterfaces_ = networkInterfaces_;
       } else {
         result.networkInterfaces_ = networkInterfacesBuilder_.build();
+      }
+      if (adaptationModifiersBuilder_ == null) {
+        if (((bitField0_ & 0x00400000) != 0)) {
+          adaptationModifiers_ = java.util.Collections.unmodifiableList(adaptationModifiers_);
+          bitField0_ = (bitField0_ & ~0x00400000);
+        }
+        result.adaptationModifiers_ = adaptationModifiers_;
+      } else {
+        result.adaptationModifiers_ = adaptationModifiersBuilder_.build();
       }
     }
 
@@ -2057,9 +2254,12 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       if (((from_bitField0_ & 0x00200000) != 0)) {
         result.bootConversion_ = bootConversion_;
       }
-      if (((from_bitField0_ & 0x00400000) != 0)) {
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         diskReplicaZones_.makeImmutable();
         result.diskReplicaZones_ = diskReplicaZones_;
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.storagePool_ = storagePool_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2226,14 +2426,46 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       if (other.bootConversion_ != 0) {
         setBootConversionValue(other.getBootConversionValue());
       }
+      if (adaptationModifiersBuilder_ == null) {
+        if (!other.adaptationModifiers_.isEmpty()) {
+          if (adaptationModifiers_.isEmpty()) {
+            adaptationModifiers_ = other.adaptationModifiers_;
+            bitField0_ = (bitField0_ & ~0x00400000);
+          } else {
+            ensureAdaptationModifiersIsMutable();
+            adaptationModifiers_.addAll(other.adaptationModifiers_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.adaptationModifiers_.isEmpty()) {
+          if (adaptationModifiersBuilder_.isEmpty()) {
+            adaptationModifiersBuilder_.dispose();
+            adaptationModifiersBuilder_ = null;
+            adaptationModifiers_ = other.adaptationModifiers_;
+            bitField0_ = (bitField0_ & ~0x00400000);
+            adaptationModifiersBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getAdaptationModifiersFieldBuilder()
+                    : null;
+          } else {
+            adaptationModifiersBuilder_.addAllMessages(other.adaptationModifiers_);
+          }
+        }
+      }
       if (!other.diskReplicaZones_.isEmpty()) {
         if (diskReplicaZones_.isEmpty()) {
           diskReplicaZones_ = other.diskReplicaZones_;
-          bitField0_ |= 0x00400000;
+          bitField0_ |= 0x00800000;
         } else {
           ensureDiskReplicaZonesIsMutable();
           diskReplicaZones_.addAll(other.diskReplicaZones_);
         }
+        onChanged();
+      }
+      if (!other.getStoragePool().isEmpty()) {
+        storagePool_ = other.storagePool_;
+        bitField0_ |= 0x01000000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2417,6 +2649,20 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
                 bitField0_ |= 0x00008000;
                 break;
               } // case 176
+            case 186:
+              {
+                com.google.cloud.vmmigration.v1.AdaptationModifier m =
+                    input.readMessage(
+                        com.google.cloud.vmmigration.v1.AdaptationModifier.parser(),
+                        extensionRegistry);
+                if (adaptationModifiersBuilder_ == null) {
+                  ensureAdaptationModifiersIsMutable();
+                  adaptationModifiers_.add(m);
+                } else {
+                  adaptationModifiersBuilder_.addMessage(m);
+                }
+                break;
+              } // case 186
             case 194:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -2424,6 +2670,12 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
                 diskReplicaZones_.add(s);
                 break;
               } // case 194
+            case 202:
+              {
+                storagePool_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x01000000;
+                break;
+              } // case 202
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5492,6 +5744,441 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       return this;
     }
 
+    private java.util.List<com.google.cloud.vmmigration.v1.AdaptationModifier>
+        adaptationModifiers_ = java.util.Collections.emptyList();
+
+    private void ensureAdaptationModifiersIsMutable() {
+      if (!((bitField0_ & 0x00400000) != 0)) {
+        adaptationModifiers_ =
+            new java.util.ArrayList<com.google.cloud.vmmigration.v1.AdaptationModifier>(
+                adaptationModifiers_);
+        bitField0_ |= 0x00400000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.AdaptationModifier,
+            com.google.cloud.vmmigration.v1.AdaptationModifier.Builder,
+            com.google.cloud.vmmigration.v1.AdaptationModifierOrBuilder>
+        adaptationModifiersBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.vmmigration.v1.AdaptationModifier>
+        getAdaptationModifiersList() {
+      if (adaptationModifiersBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(adaptationModifiers_);
+      } else {
+        return adaptationModifiersBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getAdaptationModifiersCount() {
+      if (adaptationModifiersBuilder_ == null) {
+        return adaptationModifiers_.size();
+      } else {
+        return adaptationModifiersBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.AdaptationModifier getAdaptationModifiers(int index) {
+      if (adaptationModifiersBuilder_ == null) {
+        return adaptationModifiers_.get(index);
+      } else {
+        return adaptationModifiersBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAdaptationModifiers(
+        int index, com.google.cloud.vmmigration.v1.AdaptationModifier value) {
+      if (adaptationModifiersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAdaptationModifiersIsMutable();
+        adaptationModifiers_.set(index, value);
+        onChanged();
+      } else {
+        adaptationModifiersBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAdaptationModifiers(
+        int index, com.google.cloud.vmmigration.v1.AdaptationModifier.Builder builderForValue) {
+      if (adaptationModifiersBuilder_ == null) {
+        ensureAdaptationModifiersIsMutable();
+        adaptationModifiers_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        adaptationModifiersBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAdaptationModifiers(
+        com.google.cloud.vmmigration.v1.AdaptationModifier value) {
+      if (adaptationModifiersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAdaptationModifiersIsMutable();
+        adaptationModifiers_.add(value);
+        onChanged();
+      } else {
+        adaptationModifiersBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAdaptationModifiers(
+        int index, com.google.cloud.vmmigration.v1.AdaptationModifier value) {
+      if (adaptationModifiersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAdaptationModifiersIsMutable();
+        adaptationModifiers_.add(index, value);
+        onChanged();
+      } else {
+        adaptationModifiersBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAdaptationModifiers(
+        com.google.cloud.vmmigration.v1.AdaptationModifier.Builder builderForValue) {
+      if (adaptationModifiersBuilder_ == null) {
+        ensureAdaptationModifiersIsMutable();
+        adaptationModifiers_.add(builderForValue.build());
+        onChanged();
+      } else {
+        adaptationModifiersBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAdaptationModifiers(
+        int index, com.google.cloud.vmmigration.v1.AdaptationModifier.Builder builderForValue) {
+      if (adaptationModifiersBuilder_ == null) {
+        ensureAdaptationModifiersIsMutable();
+        adaptationModifiers_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        adaptationModifiersBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllAdaptationModifiers(
+        java.lang.Iterable<? extends com.google.cloud.vmmigration.v1.AdaptationModifier> values) {
+      if (adaptationModifiersBuilder_ == null) {
+        ensureAdaptationModifiersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, adaptationModifiers_);
+        onChanged();
+      } else {
+        adaptationModifiersBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAdaptationModifiers() {
+      if (adaptationModifiersBuilder_ == null) {
+        adaptationModifiers_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00400000);
+        onChanged();
+      } else {
+        adaptationModifiersBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeAdaptationModifiers(int index) {
+      if (adaptationModifiersBuilder_ == null) {
+        ensureAdaptationModifiersIsMutable();
+        adaptationModifiers_.remove(index);
+        onChanged();
+      } else {
+        adaptationModifiersBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.AdaptationModifier.Builder getAdaptationModifiersBuilder(
+        int index) {
+      return getAdaptationModifiersFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.AdaptationModifierOrBuilder
+        getAdaptationModifiersOrBuilder(int index) {
+      if (adaptationModifiersBuilder_ == null) {
+        return adaptationModifiers_.get(index);
+      } else {
+        return adaptationModifiersBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.vmmigration.v1.AdaptationModifierOrBuilder>
+        getAdaptationModifiersOrBuilderList() {
+      if (adaptationModifiersBuilder_ != null) {
+        return adaptationModifiersBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(adaptationModifiers_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.AdaptationModifier.Builder
+        addAdaptationModifiersBuilder() {
+      return getAdaptationModifiersFieldBuilder()
+          .addBuilder(com.google.cloud.vmmigration.v1.AdaptationModifier.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.AdaptationModifier.Builder addAdaptationModifiersBuilder(
+        int index) {
+      return getAdaptationModifiersFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.vmmigration.v1.AdaptationModifier.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.vmmigration.v1.AdaptationModifier.Builder>
+        getAdaptationModifiersBuilderList() {
+      return getAdaptationModifiersFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.AdaptationModifier,
+            com.google.cloud.vmmigration.v1.AdaptationModifier.Builder,
+            com.google.cloud.vmmigration.v1.AdaptationModifierOrBuilder>
+        getAdaptationModifiersFieldBuilder() {
+      if (adaptationModifiersBuilder_ == null) {
+        adaptationModifiersBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.vmmigration.v1.AdaptationModifier,
+                com.google.cloud.vmmigration.v1.AdaptationModifier.Builder,
+                com.google.cloud.vmmigration.v1.AdaptationModifierOrBuilder>(
+                adaptationModifiers_,
+                ((bitField0_ & 0x00400000) != 0),
+                getParentForChildren(),
+                isClean());
+        adaptationModifiers_ = null;
+      }
+      return adaptationModifiersBuilder_;
+    }
+
     private com.google.protobuf.LazyStringArrayList diskReplicaZones_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
 
@@ -5499,7 +6186,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       if (!diskReplicaZones_.isModifiable()) {
         diskReplicaZones_ = new com.google.protobuf.LazyStringArrayList(diskReplicaZones_);
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
     }
 
     /**
@@ -5629,7 +6316,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       }
       ensureDiskReplicaZonesIsMutable();
       diskReplicaZones_.set(index, value);
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -5661,7 +6348,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       }
       ensureDiskReplicaZonesIsMutable();
       diskReplicaZones_.add(value);
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -5690,7 +6377,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     public Builder addAllDiskReplicaZones(java.lang.Iterable<java.lang.String> values) {
       ensureDiskReplicaZonesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, diskReplicaZones_);
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -5717,7 +6404,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
      */
     public Builder clearDiskReplicaZones() {
       diskReplicaZones_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       ;
       onChanged();
       return this;
@@ -5751,7 +6438,143 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       checkByteStringIsUtf8(value);
       ensureDiskReplicaZonesIsMutable();
       diskReplicaZones_.add(value);
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object storagePool_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The storage pool used for the VM disks.
+     * If specified this will be the storage pool in which the disk is created.
+     * This is the full path of the storage pool resource, for example:
+     * "projects/my-project/zones/us-central1-a/storagePools/my-storage-pool".
+     * The storage pool must be in the same project and zone as the target disks.
+     * The storage pool's type must match the disk type.
+     * </pre>
+     *
+     * <code>string storage_pool = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The storagePool.
+     */
+    public java.lang.String getStoragePool() {
+      java.lang.Object ref = storagePool_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        storagePool_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The storage pool used for the VM disks.
+     * If specified this will be the storage pool in which the disk is created.
+     * This is the full path of the storage pool resource, for example:
+     * "projects/my-project/zones/us-central1-a/storagePools/my-storage-pool".
+     * The storage pool must be in the same project and zone as the target disks.
+     * The storage pool's type must match the disk type.
+     * </pre>
+     *
+     * <code>string storage_pool = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for storagePool.
+     */
+    public com.google.protobuf.ByteString getStoragePoolBytes() {
+      java.lang.Object ref = storagePool_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        storagePool_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The storage pool used for the VM disks.
+     * If specified this will be the storage pool in which the disk is created.
+     * This is the full path of the storage pool resource, for example:
+     * "projects/my-project/zones/us-central1-a/storagePools/my-storage-pool".
+     * The storage pool must be in the same project and zone as the target disks.
+     * The storage pool's type must match the disk type.
+     * </pre>
+     *
+     * <code>string storage_pool = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The storagePool to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStoragePool(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      storagePool_ = value;
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The storage pool used for the VM disks.
+     * If specified this will be the storage pool in which the disk is created.
+     * This is the full path of the storage pool resource, for example:
+     * "projects/my-project/zones/us-central1-a/storagePools/my-storage-pool".
+     * The storage pool must be in the same project and zone as the target disks.
+     * The storage pool's type must match the disk type.
+     * </pre>
+     *
+     * <code>string storage_pool = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStoragePool() {
+      storagePool_ = getDefaultInstance().getStoragePool();
+      bitField0_ = (bitField0_ & ~0x01000000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The storage pool used for the VM disks.
+     * If specified this will be the storage pool in which the disk is created.
+     * This is the full path of the storage pool resource, for example:
+     * "projects/my-project/zones/us-central1-a/storagePools/my-storage-pool".
+     * The storage pool must be in the same project and zone as the target disks.
+     * The storage pool's type must match the disk type.
+     * </pre>
+     *
+     * <code>string storage_pool = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for storagePool to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStoragePoolBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      storagePool_ = value;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }

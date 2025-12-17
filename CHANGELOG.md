@@ -1,5 +1,82 @@
 # Changelog
 
+## [1.75.0](https://github.com/googleapis/google-cloud-java/compare/v1.74.0...v1.75.0) (2025-12-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* [admanager] Added proto3 optional to Network primitive fields
+* [aiplatform] fix issue when using UrlContext tool
+
+### Features
+
+* [aiplatform] A new field `min_gpu_driver_version` is added to message `.google.cloud.aiplatform.v1beta1.MachineSpec` ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* [aiplatform] add `gpu_partition_size` in `machine_spec` v1 api ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* [aiplatform] add `ReplicatedVoiceConfig` to `VoiceConfig` to enable Gemini TTS voice replication ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* [aiplatform] add `ReplicatedVoiceConfig` to `VoiceConfig` to enable Gemini TTS voice replication ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* [aiplatform] add streaming function call argument API changes ([ecb0b2a](https://github.com/googleapis/google-cloud-java/commit/ecb0b2aa4c83c8da51d0655cfa3811c5f8a4e6a4))
+* [aiplatform] Add support for developer connect based deployment ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* [aiplatform] Add support for developer connect based deployment ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* [aiplatform] Expose FullFineTunedResources for full fine tuned deployments ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* [aiplatform] Expose zone when creating a FeatureOnlineStore ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* [aiplatform] Introduce RagManagedVertexVectorSearch as a new vector db option ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* [artifact-registry] add ExportArtifact API ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* [artifact-registry] add image_manifest field in DockerImage ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* [backupdr] Adding new fields for CMEK and Retention Inheritance features ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* [batch] added new provisioning models ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* [chat] Addition of GMAIL_MESSAGE value for RichLinkType enum in the RichLinkMetadata proto ([02a9cd4](https://github.com/googleapis/google-cloud-java/commit/02a9cd49fcb54515e6094af962ef34f37740a498))
+* [cloudbuild] Update GCB with latest proto changes ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* [compute] [DIREGAPIC] Update v1 API definitions to revision 20251202 ([02a9cd4](https://github.com/googleapis/google-cloud-java/commit/02a9cd49fcb54515e6094af962ef34f37740a498))
+* [compute] Update Compute Engine v1 API to revision 20251031 ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* [dialogflow-cx] updated v3beta1 dialogflow client libraries ([02a9cd4](https://github.com/googleapis/google-cloud-java/commit/02a9cd49fcb54515e6094af962ef34f37740a498))
+* [dialogflow] updated v2 dialogflow client libraries ([02a9cd4](https://github.com/googleapis/google-cloud-java/commit/02a9cd49fcb54515e6094af962ef34f37740a498))
+* [dialogflow] updated v2beta1 dialogflow client libraries ([02a9cd4](https://github.com/googleapis/google-cloud-java/commit/02a9cd49fcb54515e6094af962ef34f37740a498))
+* [eventarc] add wide-scope Eventarc GoogleApiSource flags ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* [geminidataanalytics] add a QueryData API for NL2SQL conversion ([ecb0b2a](https://github.com/googleapis/google-cloud-java/commit/ecb0b2aa4c83c8da51d0655cfa3811c5f8a4e6a4))
+* [gke-multi-cloud] added custom tolerations and labels support for Attached Clusters ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* [gkerecommender] new module for gkerecommender ([#11828](https://github.com/googleapis/google-cloud-java/issues/11828)) ([c65852e](https://github.com/googleapis/google-cloud-java/commit/c65852e94987e9d0cbc03451f106a4b088ffeb3b))
+* [hypercomputecluster] new module for hypercomputecluster ([#11821](https://github.com/googleapis/google-cloud-java/issues/11821)) ([b3789bd](https://github.com/googleapis/google-cloud-java/commit/b3789bdbde94f55a0ddac72e2938d3c9eaf7a64b))
+* [java-shopping-merchant-issue-resolution] Added the `product_id_base64_url_encoded` field to `RenderProductIssuesRequest`. This allows for product IDs containing special characters to be correctly handled when unpadded base64url-encoded ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* [java-shopping-merchant-issue-resolution] Added the `product_id_base64_url_encoded` field to `RenderProductIssuesRequest`. This allows for product IDs containing special characters to be correctly handled when unpadded base64url-encoded ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* [netapp] Add Squash Mode to Export Policy ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* [network-security] publish networksecurity v1beta1 api ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* [parallelstore] add transfer metadata options proto definition ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* [recaptchaenterprise] add verifiedBots field to RiskAnalysis and definitions for a Bot object to store metadata for a detected bot ([02a9cd4](https://github.com/googleapis/google-cloud-java/commit/02a9cd49fcb54515e6094af962ef34f37740a498))
+* [run] add SourceCode proto to Run container config ([2f0f298](https://github.com/googleapis/google-cloud-java/commit/2f0f2982905cbbdccd4bce9bf5fb801512ee42c2))
+* [shopping-merchant-accounts] A new field `radius_area` is added to message `.google.shopping.merchant.accounts.v1.Region` ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* [shopping-merchant-inventories] Added the `product_id_base64_url_encoded` field to `ListLocalInventoriesRequest`, `InsertLocalInventoryRequest`, `DeleteLocalInventoryRequest`, `ListRegionalInventoriesRequest`, `InsertRegionalInventoryRequest`, and `DeleteRegionalInventoryRequest`. This allows for product IDs containing special characters to be correctly handled when base64url-encoded ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* [shopping-merchant-inventories] Added the `product_id_base64_url_encoded` field to `ListLocalInventoriesRequest`, `InsertLocalInventoryRequest`, `DeleteLocalInventoryRequest`, `ListRegionalInventoriesRequest`, `InsertRegionalInventoryRequest`, and `DeleteRegionalInventoryRequest`. This allows for product IDs containing special characters to be correctly handled when unpadded base64url-encoded ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* [shopping-merchant-products] Added the `product_id_base64_url_encoded` field to `InsertProductInputRequest`, `DeleteProductInputRequest`, and `GetProductRequest`. This allows for product IDs containing special characters to be correctly handled when unpadded base64url-encoded ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* [shopping-merchant-products] Added the `product_id_base64_url_encoded` field to `InsertProductInputRequest`, `DeleteProductInputRequest`, and `GetProductRequest`. This allows for product IDs containing special characters to be correctly handled when unpadded base64url-encoded ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* [shopping-merchant-quota] Add the AccountLimit resource and its service to the quota bundle ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* [storagebatchoperations] Add support for creating Job resource in dry-run mode ([02a9cd4](https://github.com/googleapis/google-cloud-java/commit/02a9cd49fcb54515e6094af962ef34f37740a498))
+* [valkey] A new field `Instance.simulate_maintenance_event` is added to message `.google.cloud.memorystore.v1.` ([02a9cd4](https://github.com/googleapis/google-cloud-java/commit/02a9cd49fcb54515e6094af962ef34f37740a498))
+* [vectorsearch] Added TextSearch support to the batch search API ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* [vmmigration] add adaptation modifiers and storage pools to MigratingVM target defaults ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* Generate Maintenance V1 library ([#11824](https://github.com/googleapis/google-cloud-java/issues/11824)) ([2eadab5](https://github.com/googleapis/google-cloud-java/commit/2eadab502590fc3beb367e8f3a47b47c3f8cc6ce))
+
+
+### Bug Fixes
+
+* [admanager] Added proto3 optional to Network primitive fields ([ecb0b2a](https://github.com/googleapis/google-cloud-java/commit/ecb0b2aa4c83c8da51d0655cfa3811c5f8a4e6a4))
+* [aiplatform] fix issue when using UrlContext tool ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* [channel] Changed field behavior for an existing field `entitlement_granularity` in message `.google.cloud.channel.v1.RepricingConfig` ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* **deps:** update dependency com.google.cloud:libraries-bom to v26.72.0 ([#11664](https://github.com/googleapis/google-cloud-java/issues/11664)) ([6854bbe](https://github.com/googleapis/google-cloud-java/commit/6854bbe08d3e785b9df14b43b3c1cbb105960c5e))
+* **deps:** update first-party storage dependencies ([#11657](https://github.com/googleapis/google-cloud-java/issues/11657)) ([f89945c](https://github.com/googleapis/google-cloud-java/commit/f89945c6ff6847a37dea304fa71eb080da2eb0dd))
+* **deps:** update the Java code generator (gapic-generator-java) to 2.64.2 ([ecb0b2a](https://github.com/googleapis/google-cloud-java/commit/ecb0b2aa4c83c8da51d0655cfa3811c5f8a4e6a4))
+* partial release of java-asset and gapic-libraries-bom ([ce3d3fb](https://github.com/googleapis/google-cloud-java/commit/ce3d3fbf5f0f205a38309afc827a7b3d4a230e3c))
+* update dependency com.google.cloud:sdk-platform-java-config to v3.54.2 ([#11819](https://github.com/googleapis/google-cloud-java/issues/11819)) ([f32924a](https://github.com/googleapis/google-cloud-java/commit/f32924af0899a0b34646e88ffa8c527163b3bb24))
+
+
+### Documentation
+
+* [aiplatform] update `ReplicatedVoiceConfig.mime_type` comment ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* [aiplatform] update `ReplicatedVoiceConfig.mime_type` comment ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* [alloydb] Clarify that [initial_user](http://_vscodecontentref_/3) is not required in Cluster ([2f0f298](https://github.com/googleapis/google-cloud-java/commit/2f0f2982905cbbdccd4bce9bf5fb801512ee42c2))
+* [dlp] add messages stating that Data Catalog actions are deprecated ([ecb0b2a](https://github.com/googleapis/google-cloud-java/commit/ecb0b2aa4c83c8da51d0655cfa3811c5f8a4e6a4))
+* [parallelstore] update tickets component number ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+* [shopping-merchant-accounts] A comment for enum `AccessRight` is changed ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+
 ## [1.74.0](https://github.com/googleapis/google-cloud-java/compare/v1.73.0...v1.74.0) (2025-11-14)
 
 

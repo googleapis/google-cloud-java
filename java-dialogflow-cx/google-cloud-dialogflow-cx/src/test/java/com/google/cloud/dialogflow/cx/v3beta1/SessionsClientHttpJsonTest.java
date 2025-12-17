@@ -104,6 +104,7 @@ public class SessionsClientHttpJsonTest {
             .setQueryParams(QueryParameters.newBuilder().build())
             .setQueryInput(QueryInput.newBuilder().build())
             .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
+            .setResponseView(DetectIntentResponseView.forNumber(0))
             .build();
 
     DetectIntentResponse actualResponse = client.detectIntent(request);
@@ -141,6 +142,7 @@ public class SessionsClientHttpJsonTest {
               .setQueryParams(QueryParameters.newBuilder().build())
               .setQueryInput(QueryInput.newBuilder().build())
               .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
+              .setResponseView(DetectIntentResponseView.forNumber(0))
               .build();
       client.detectIntent(request);
       Assert.fail("No exception raised");

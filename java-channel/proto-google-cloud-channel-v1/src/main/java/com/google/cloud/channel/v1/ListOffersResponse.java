@@ -75,6 +75,9 @@ public final class ListOffersResponse extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The list of Offers requested.
+   *
+   * The pricing information for each Offer only includes the base price.
+   * Effective prices and discounts aren't populated.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Offer offers = 1;</code>
@@ -89,6 +92,9 @@ public final class ListOffersResponse extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The list of Offers requested.
+   *
+   * The pricing information for each Offer only includes the base price.
+   * Effective prices and discounts aren't populated.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Offer offers = 1;</code>
@@ -104,6 +110,9 @@ public final class ListOffersResponse extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The list of Offers requested.
+   *
+   * The pricing information for each Offer only includes the base price.
+   * Effective prices and discounts aren't populated.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Offer offers = 1;</code>
@@ -118,6 +127,9 @@ public final class ListOffersResponse extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The list of Offers requested.
+   *
+   * The pricing information for each Offer only includes the base price.
+   * Effective prices and discounts aren't populated.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Offer offers = 1;</code>
@@ -132,6 +144,9 @@ public final class ListOffersResponse extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The list of Offers requested.
+   *
+   * The pricing information for each Offer only includes the base price.
+   * Effective prices and discounts aren't populated.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Offer offers = 1;</code>
@@ -628,6 +643,9 @@ public final class ListOffersResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The list of Offers requested.
+     *
+     * The pricing information for each Offer only includes the base price.
+     * Effective prices and discounts aren't populated.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Offer offers = 1;</code>
@@ -645,6 +663,9 @@ public final class ListOffersResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The list of Offers requested.
+     *
+     * The pricing information for each Offer only includes the base price.
+     * Effective prices and discounts aren't populated.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Offer offers = 1;</code>
@@ -662,6 +683,9 @@ public final class ListOffersResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The list of Offers requested.
+     *
+     * The pricing information for each Offer only includes the base price.
+     * Effective prices and discounts aren't populated.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Offer offers = 1;</code>
@@ -679,6 +703,9 @@ public final class ListOffersResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The list of Offers requested.
+     *
+     * The pricing information for each Offer only includes the base price.
+     * Effective prices and discounts aren't populated.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Offer offers = 1;</code>
@@ -702,6 +729,9 @@ public final class ListOffersResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The list of Offers requested.
+     *
+     * The pricing information for each Offer only includes the base price.
+     * Effective prices and discounts aren't populated.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Offer offers = 1;</code>
@@ -722,6 +752,9 @@ public final class ListOffersResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The list of Offers requested.
+     *
+     * The pricing information for each Offer only includes the base price.
+     * Effective prices and discounts aren't populated.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Offer offers = 1;</code>
@@ -745,6 +778,9 @@ public final class ListOffersResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The list of Offers requested.
+     *
+     * The pricing information for each Offer only includes the base price.
+     * Effective prices and discounts aren't populated.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Offer offers = 1;</code>
@@ -768,6 +804,9 @@ public final class ListOffersResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The list of Offers requested.
+     *
+     * The pricing information for each Offer only includes the base price.
+     * Effective prices and discounts aren't populated.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Offer offers = 1;</code>
@@ -788,6 +827,9 @@ public final class ListOffersResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The list of Offers requested.
+     *
+     * The pricing information for each Offer only includes the base price.
+     * Effective prices and discounts aren't populated.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Offer offers = 1;</code>
@@ -808,6 +850,9 @@ public final class ListOffersResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The list of Offers requested.
+     *
+     * The pricing information for each Offer only includes the base price.
+     * Effective prices and discounts aren't populated.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Offer offers = 1;</code>
@@ -829,6 +874,9 @@ public final class ListOffersResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The list of Offers requested.
+     *
+     * The pricing information for each Offer only includes the base price.
+     * Effective prices and discounts aren't populated.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Offer offers = 1;</code>
@@ -849,6 +897,9 @@ public final class ListOffersResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The list of Offers requested.
+     *
+     * The pricing information for each Offer only includes the base price.
+     * Effective prices and discounts aren't populated.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Offer offers = 1;</code>
@@ -869,6 +920,9 @@ public final class ListOffersResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The list of Offers requested.
+     *
+     * The pricing information for each Offer only includes the base price.
+     * Effective prices and discounts aren't populated.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Offer offers = 1;</code>
@@ -882,6 +936,9 @@ public final class ListOffersResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The list of Offers requested.
+     *
+     * The pricing information for each Offer only includes the base price.
+     * Effective prices and discounts aren't populated.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Offer offers = 1;</code>
@@ -899,6 +956,9 @@ public final class ListOffersResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The list of Offers requested.
+     *
+     * The pricing information for each Offer only includes the base price.
+     * Effective prices and discounts aren't populated.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Offer offers = 1;</code>
@@ -917,6 +977,9 @@ public final class ListOffersResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The list of Offers requested.
+     *
+     * The pricing information for each Offer only includes the base price.
+     * Effective prices and discounts aren't populated.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Offer offers = 1;</code>
@@ -931,6 +994,9 @@ public final class ListOffersResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The list of Offers requested.
+     *
+     * The pricing information for each Offer only includes the base price.
+     * Effective prices and discounts aren't populated.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Offer offers = 1;</code>
@@ -945,6 +1011,9 @@ public final class ListOffersResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The list of Offers requested.
+     *
+     * The pricing information for each Offer only includes the base price.
+     * Effective prices and discounts aren't populated.
      * </pre>
      *
      * <code>repeated .google.cloud.channel.v1.Offer offers = 1;</code>

@@ -83,7 +83,8 @@ public interface DisksScopedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Informational warning which replaces the list of disks when the list is empty.
+   * [Output Only] Informational warning which replaces the list of disks when
+   * the list is empty.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
@@ -96,7 +97,8 @@ public interface DisksScopedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Informational warning which replaces the list of disks when the list is empty.
+   * [Output Only] Informational warning which replaces the list of disks when
+   * the list is empty.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
@@ -109,7 +111,8 @@ public interface DisksScopedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Informational warning which replaces the list of disks when the list is empty.
+   * [Output Only] Informational warning which replaces the list of disks when
+   * the list is empty.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>

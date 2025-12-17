@@ -23,7 +23,9 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Specify bandwidth percentages [1-100] for various traffic classes in BandwidthPercentagePolicy. The sum of all percentages must equal 100. All traffic classes must have a percentage value specified.
+ * Specify bandwidth percentages [1-100] for various traffic classes in
+ * BandwidthPercentagePolicy. The sum of all percentages must equal 100.
+ * All traffic classes must have a percentage value specified.
  * </pre>
  *
  * Protobuf type {@code
@@ -638,7 +640,9 @@ public final class InterconnectApplicationAwareInterconnectBandwidthPercentage
    *
    *
    * <pre>
-   * Specify bandwidth percentages [1-100] for various traffic classes in BandwidthPercentagePolicy. The sum of all percentages must equal 100. All traffic classes must have a percentage value specified.
+   * Specify bandwidth percentages [1-100] for various traffic classes in
+   * BandwidthPercentagePolicy. The sum of all percentages must equal 100.
+   * All traffic classes must have a percentage value specified.
    * </pre>
    *
    * Protobuf type {@code

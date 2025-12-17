@@ -131,6 +131,11 @@ public class DataChatServiceSettings extends ClientSettings<DataChatServiceSetti
     return ((DataChatServiceStubSettings) getStubSettings()).listMessagesSettings();
   }
 
+  /** Returns the object with the settings used for calls to queryData. */
+  public UnaryCallSettings<QueryDataRequest, QueryDataResponse> queryDataSettings() {
+    return ((DataChatServiceStubSettings) getStubSettings()).queryDataSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -289,6 +294,11 @@ public class DataChatServiceSettings extends ClientSettings<DataChatServiceSetti
             ListMessagesRequest, ListMessagesResponse, ListMessagesPagedResponse>
         listMessagesSettings() {
       return getStubSettingsBuilder().listMessagesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to queryData. */
+    public UnaryCallSettings.Builder<QueryDataRequest, QueryDataResponse> queryDataSettings() {
+      return getStubSettingsBuilder().queryDataSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

@@ -28,7 +28,8 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -41,7 +42,8 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -54,7 +56,8 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -67,7 +70,8 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -80,7 +84,8 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -93,7 +98,8 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -106,7 +112,9 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
+   * [Output Only] A list of URLs to the ForwardingRule resources.
+   * ForwardingRules are created usingcompute.forwardingRules.insert and associated with a VPN
+   * gateway.
    * </pre>
    *
    * <code>repeated string forwarding_rules = 315821365;</code>
@@ -119,7 +127,9 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
+   * [Output Only] A list of URLs to the ForwardingRule resources.
+   * ForwardingRules are created usingcompute.forwardingRules.insert and associated with a VPN
+   * gateway.
    * </pre>
    *
    * <code>repeated string forwarding_rules = 315821365;</code>
@@ -132,7 +142,9 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
+   * [Output Only] A list of URLs to the ForwardingRule resources.
+   * ForwardingRules are created usingcompute.forwardingRules.insert and associated with a VPN
+   * gateway.
    * </pre>
    *
    * <code>repeated string forwarding_rules = 315821365;</code>
@@ -146,7 +158,9 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
+   * [Output Only] A list of URLs to the ForwardingRule resources.
+   * ForwardingRules are created usingcompute.forwardingRules.insert and associated with a VPN
+   * gateway.
    * </pre>
    *
    * <code>repeated string forwarding_rules = 315821365;</code>
@@ -160,7 +174,8 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -173,7 +188,8 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -186,7 +202,7 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#targetVpnGateway for target VPN gateways.
+   * Output only. [Output Only] Type of resource. Alwayscompute#targetVpnGateway for target VPN gateways.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -199,7 +215,7 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#targetVpnGateway for target VPN gateways.
+   * Output only. [Output Only] Type of resource. Alwayscompute#targetVpnGateway for target VPN gateways.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -212,7 +228,7 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#targetVpnGateway for target VPN gateways.
+   * Output only. [Output Only] Type of resource. Alwayscompute#targetVpnGateway for target VPN gateways.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -225,7 +241,15 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this TargetVpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a TargetVpnGateway.
+   * A fingerprint for the labels being applied to this TargetVpnGateway, which
+   * is essentially a hash of the labels set used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve a TargetVpnGateway.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -238,7 +262,15 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this TargetVpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a TargetVpnGateway.
+   * A fingerprint for the labels being applied to this TargetVpnGateway, which
+   * is essentially a hash of the labels set used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve a TargetVpnGateway.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -251,7 +283,15 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this TargetVpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a TargetVpnGateway.
+   * A fingerprint for the labels being applied to this TargetVpnGateway, which
+   * is essentially a hash of the labels set used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve a TargetVpnGateway.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -264,7 +304,8 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+   * Label values may be empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -275,7 +316,8 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+   * Label values may be empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -290,7 +332,8 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+   * Label values may be empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -301,7 +344,8 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+   * Label values may be empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -316,7 +360,8 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+   * Label values may be empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -327,7 +372,13 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -340,7 +391,13 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -353,7 +410,13 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -366,7 +429,8 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * URL of the network to which this VPN gateway is attached. Provided by the client when the VPN gateway is created.
+   * URL of the network to which this VPN gateway is attached. Provided by the
+   * client when the VPN gateway is created.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -379,7 +443,8 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * URL of the network to which this VPN gateway is attached. Provided by the client when the VPN gateway is created.
+   * URL of the network to which this VPN gateway is attached. Provided by the
+   * client when the VPN gateway is created.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -392,7 +457,8 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * URL of the network to which this VPN gateway is attached. Provided by the client when the VPN gateway is created.
+   * URL of the network to which this VPN gateway is attached. Provided by the
+   * client when the VPN gateway is created.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -405,7 +471,9 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the target VPN gateway resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * [Output Only] URL of the region where the target VPN gateway resides.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -418,7 +486,9 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the target VPN gateway resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * [Output Only] URL of the region where the target VPN gateway resides.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -431,7 +501,9 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the target VPN gateway resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * [Output Only] URL of the region where the target VPN gateway resides.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -483,7 +555,8 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the VPN gateway, which can be one of the following: CREATING, READY, FAILED, or DELETING.
+   * [Output Only] The status of the VPN gateway,
+   * which can be one of the following: CREATING, READY, FAILED, or DELETING.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -497,7 +570,8 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the VPN gateway, which can be one of the following: CREATING, READY, FAILED, or DELETING.
+   * [Output Only] The status of the VPN gateway,
+   * which can be one of the following: CREATING, READY, FAILED, or DELETING.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -511,7 +585,8 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the VPN gateway, which can be one of the following: CREATING, READY, FAILED, or DELETING.
+   * [Output Only] The status of the VPN gateway,
+   * which can be one of the following: CREATING, READY, FAILED, or DELETING.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -525,7 +600,9 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of URLs to VpnTunnel resources. VpnTunnels are created using the compute.vpntunnels.insert method and associated with a VPN gateway.
+   * [Output Only] A list of URLs to VpnTunnel resources. VpnTunnels are
+   * created using the compute.vpntunnels.insert method and
+   * associated with a VPN gateway.
    * </pre>
    *
    * <code>repeated string tunnels = 104561931;</code>
@@ -538,7 +615,9 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of URLs to VpnTunnel resources. VpnTunnels are created using the compute.vpntunnels.insert method and associated with a VPN gateway.
+   * [Output Only] A list of URLs to VpnTunnel resources. VpnTunnels are
+   * created using the compute.vpntunnels.insert method and
+   * associated with a VPN gateway.
    * </pre>
    *
    * <code>repeated string tunnels = 104561931;</code>
@@ -551,7 +630,9 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of URLs to VpnTunnel resources. VpnTunnels are created using the compute.vpntunnels.insert method and associated with a VPN gateway.
+   * [Output Only] A list of URLs to VpnTunnel resources. VpnTunnels are
+   * created using the compute.vpntunnels.insert method and
+   * associated with a VPN gateway.
    * </pre>
    *
    * <code>repeated string tunnels = 104561931;</code>
@@ -565,7 +646,9 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of URLs to VpnTunnel resources. VpnTunnels are created using the compute.vpntunnels.insert method and associated with a VPN gateway.
+   * [Output Only] A list of URLs to VpnTunnel resources. VpnTunnels are
+   * created using the compute.vpntunnels.insert method and
+   * associated with a VPN gateway.
    * </pre>
    *
    * <code>repeated string tunnels = 104561931;</code>

@@ -28,7 +28,8 @@ public interface DeletePerInstanceConfigsInstanceGroupManagerRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the managed instance group. It should conform to RFC1035.
+   * The name of the managed instance group.
+   * It should conform to RFC1035.
    * </pre>
    *
    * <code>string instance_group_manager = 249363395 [(.google.api.field_behavior) = REQUIRED];
@@ -42,7 +43,8 @@ public interface DeletePerInstanceConfigsInstanceGroupManagerRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the managed instance group. It should conform to RFC1035.
+   * The name of the managed instance group.
+   * It should conform to RFC1035.
    * </pre>
    *
    * <code>string instance_group_manager = 249363395 [(.google.api.field_behavior) = REQUIRED];
@@ -131,7 +133,10 @@ public interface DeletePerInstanceConfigsInstanceGroupManagerRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the zone where the managed instance group is located. It should conform to RFC1035.
+   * The name of thezone
+   * where the managed instance
+   * group is located.
+   * It should conform to RFC1035.
    * </pre>
    *
    * <code>
@@ -146,7 +151,10 @@ public interface DeletePerInstanceConfigsInstanceGroupManagerRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the zone where the managed instance group is located. It should conform to RFC1035.
+   * The name of thezone
+   * where the managed instance
+   * group is located.
+   * It should conform to RFC1035.
    * </pre>
    *
    * <code>

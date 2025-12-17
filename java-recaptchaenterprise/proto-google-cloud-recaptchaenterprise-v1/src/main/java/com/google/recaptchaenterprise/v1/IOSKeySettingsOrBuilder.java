@@ -41,8 +41,13 @@ public interface IOSKeySettingsOrBuilder
    *
    *
    * <pre>
-   * Optional. iOS bundle ids of apps allowed to use the key.
+   * Optional. iOS bundle IDs of apps allowed to use the key.
    * Example: 'com.companyname.productname.appname'
+   * Each key supports a maximum of 250 bundle IDs. To use a key on more
+   * apps, set `allow_all_bundle_ids` to true. When this is set, you
+   * are responsible for validating the bundle id by checking the
+   * `token_properties.ios_bundle_id` field in each assessment response
+   * against your list of allowed bundle IDs.
    * </pre>
    *
    * <code>repeated string allowed_bundle_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -55,8 +60,13 @@ public interface IOSKeySettingsOrBuilder
    *
    *
    * <pre>
-   * Optional. iOS bundle ids of apps allowed to use the key.
+   * Optional. iOS bundle IDs of apps allowed to use the key.
    * Example: 'com.companyname.productname.appname'
+   * Each key supports a maximum of 250 bundle IDs. To use a key on more
+   * apps, set `allow_all_bundle_ids` to true. When this is set, you
+   * are responsible for validating the bundle id by checking the
+   * `token_properties.ios_bundle_id` field in each assessment response
+   * against your list of allowed bundle IDs.
    * </pre>
    *
    * <code>repeated string allowed_bundle_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -69,8 +79,13 @@ public interface IOSKeySettingsOrBuilder
    *
    *
    * <pre>
-   * Optional. iOS bundle ids of apps allowed to use the key.
+   * Optional. iOS bundle IDs of apps allowed to use the key.
    * Example: 'com.companyname.productname.appname'
+   * Each key supports a maximum of 250 bundle IDs. To use a key on more
+   * apps, set `allow_all_bundle_ids` to true. When this is set, you
+   * are responsible for validating the bundle id by checking the
+   * `token_properties.ios_bundle_id` field in each assessment response
+   * against your list of allowed bundle IDs.
    * </pre>
    *
    * <code>repeated string allowed_bundle_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -84,8 +99,13 @@ public interface IOSKeySettingsOrBuilder
    *
    *
    * <pre>
-   * Optional. iOS bundle ids of apps allowed to use the key.
+   * Optional. iOS bundle IDs of apps allowed to use the key.
    * Example: 'com.companyname.productname.appname'
+   * Each key supports a maximum of 250 bundle IDs. To use a key on more
+   * apps, set `allow_all_bundle_ids` to true. When this is set, you
+   * are responsible for validating the bundle id by checking the
+   * `token_properties.ios_bundle_id` field in each assessment response
+   * against your list of allowed bundle IDs.
    * </pre>
    *
    * <code>repeated string allowed_bundle_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -283,6 +283,26 @@
  * }
  * }</pre>
  *
+ * <p>======================= GeneratorEvaluationsClient =======================
+ *
+ * <p>Service Description: Service for managing generator evaluations.
+ *
+ * <p>Sample for GeneratorEvaluationsClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (GeneratorEvaluationsClient generatorEvaluationsClient =
+ *     GeneratorEvaluationsClient.create()) {
+ *   GeneratorEvaluationName name =
+ *       GeneratorEvaluationName.of("[PROJECT]", "[LOCATION]", "[GENERATOR]", "[EVALUATION]");
+ *   GeneratorEvaluation response = generatorEvaluationsClient.getGeneratorEvaluation(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= IntentsClient =======================
  *
  * <p>Service Description: Service for managing [Intents][google.cloud.dialogflow.v2.Intent].
@@ -382,6 +402,46 @@
  *       SessionEntityTypeName.ofProjectSessionEntityTypeName(
  *           "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
  *   SessionEntityType response = sessionEntityTypesClient.getSessionEntityType(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= SipTrunksClient =======================
+ *
+ * <p>Service Description: Service for managing [SipTrunks][google.cloud.dialogflow.v2.SipTrunk].
+ *
+ * <p>Sample for SipTrunksClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (SipTrunksClient sipTrunksClient = SipTrunksClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   SipTrunk sipTrunk = SipTrunk.newBuilder().build();
+ *   SipTrunk response = sipTrunksClient.createSipTrunk(parent, sipTrunk);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ToolsClient =======================
+ *
+ * <p>Service Description: Tool Service for LLM powered Agent Assist. Tools can be used to interact
+ * with remote APIs (e.g. fetching orders) to retrieve additional information as input to LLM.
+ *
+ * <p>Sample for ToolsClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ToolsClient toolsClient = ToolsClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   Tool tool = Tool.newBuilder().build();
+ *   String toolId = "toolId-868061997";
+ *   Tool response = toolsClient.createTool(parent, tool, toolId);
  * }
  * }</pre>
  *

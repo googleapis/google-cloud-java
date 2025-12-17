@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Configuration of logging on a health check. If logging is enabled, logs will be exported to Stackdriver.
+ * Configuration of logging on a health check. If logging is enabled, logs
+ * will be exported to Stackdriver.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.HealthCheckLogConfig}
@@ -70,7 +71,8 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Indicates whether or not to export logs. This is false by default, which means no health check logging will be done.
+   * Indicates whether or not to export logs. This is false by default, which
+   * means no health check logging will be done.
    * </pre>
    *
    * <code>optional bool enable = 311764355;</code>
@@ -86,7 +88,8 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Indicates whether or not to export logs. This is false by default, which means no health check logging will be done.
+   * Indicates whether or not to export logs. This is false by default, which
+   * means no health check logging will be done.
    * </pre>
    *
    * <code>optional bool enable = 311764355;</code>
@@ -267,7 +270,8 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Configuration of logging on a health check. If logging is enabled, logs will be exported to Stackdriver.
+   * Configuration of logging on a health check. If logging is enabled, logs
+   * will be exported to Stackdriver.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.HealthCheckLogConfig}
@@ -453,7 +457,8 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Indicates whether or not to export logs. This is false by default, which means no health check logging will be done.
+     * Indicates whether or not to export logs. This is false by default, which
+     * means no health check logging will be done.
      * </pre>
      *
      * <code>optional bool enable = 311764355;</code>
@@ -469,7 +474,8 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Indicates whether or not to export logs. This is false by default, which means no health check logging will be done.
+     * Indicates whether or not to export logs. This is false by default, which
+     * means no health check logging will be done.
      * </pre>
      *
      * <code>optional bool enable = 311764355;</code>
@@ -485,7 +491,8 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Indicates whether or not to export logs. This is false by default, which means no health check logging will be done.
+     * Indicates whether or not to export logs. This is false by default, which
+     * means no health check logging will be done.
      * </pre>
      *
      * <code>optional bool enable = 311764355;</code>
@@ -505,7 +512,8 @@ public final class HealthCheckLogConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Indicates whether or not to export logs. This is false by default, which means no health check logging will be done.
+     * Indicates whether or not to export logs. This is false by default, which
+     * means no health check logging will be done.
      * </pre>
      *
      * <code>optional bool enable = 311764355;</code>

@@ -28,7 +28,8 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The number of resources that are allocated in this reservation block.
+   * Output only. [Output Only] The number of resources that are allocated in this
+   * reservation block.
    * </pre>
    *
    * <code>optional int32 count = 94851343;</code>
@@ -41,7 +42,8 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The number of resources that are allocated in this reservation block.
+   * Output only. [Output Only] The number of resources that are allocated in this
+   * reservation block.
    * </pre>
    *
    * <code>optional int32 count = 94851343;</code>
@@ -54,7 +56,7 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -67,7 +69,7 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -80,7 +82,7 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -93,7 +95,7 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Health information for the reservation block.
+   * Output only. [Output Only] Health information for the reservation block.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ReservationBlockHealthInfo health_info = 235287729;
@@ -107,7 +109,7 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Health information for the reservation block.
+   * Output only. [Output Only] Health information for the reservation block.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ReservationBlockHealthInfo health_info = 235287729;
@@ -121,7 +123,7 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Health information for the reservation block.
+   * Output only. [Output Only] Health information for the reservation block.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ReservationBlockHealthInfo health_info = 235287729;
@@ -133,7 +135,8 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -146,7 +149,8 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -159,7 +163,8 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The number of instances that are currently in use on this reservation block.
+   * Output only. [Output Only] The number of instances that are currently in use on this
+   * reservation block.
    * </pre>
    *
    * <code>optional int32 in_use_count = 493458877;</code>
@@ -172,7 +177,8 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The number of instances that are currently in use on this reservation block.
+   * Output only. [Output Only] The number of instances that are currently in use on this
+   * reservation block.
    * </pre>
    *
    * <code>optional int32 in_use_count = 493458877;</code>
@@ -185,7 +191,7 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#reservationBlock for reservation blocks.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#reservationBlock for reservation blocks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -198,7 +204,7 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#reservationBlock for reservation blocks.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#reservationBlock for reservation blocks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -211,7 +217,7 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#reservationBlock for reservation blocks.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#reservationBlock for reservation blocks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -224,7 +230,9 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of this reservation block generated by Google Compute Engine. The name must be 1-63 characters long, and comply with RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
+   * Output only. [Output Only] The name of this reservation block generated by Google
+   * Compute Engine. The name must be 1-63 characters long, and comply with
+   * RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -237,7 +245,9 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of this reservation block generated by Google Compute Engine. The name must be 1-63 characters long, and comply with RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
+   * Output only. [Output Only] The name of this reservation block generated by Google
+   * Compute Engine. The name must be 1-63 characters long, and comply with
+   * RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -250,7 +260,9 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of this reservation block generated by Google Compute Engine. The name must be 1-63 characters long, and comply with RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
+   * Output only. [Output Only] The name of this reservation block generated by Google
+   * Compute Engine. The name must be 1-63 characters long, and comply with
+   * RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -263,7 +275,7 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The physical topology of the reservation block.
+   * Output only. [Output Only] The physical topology of the reservation block.
    * </pre>
    *
    * <code>
@@ -278,7 +290,7 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The physical topology of the reservation block.
+   * Output only. [Output Only] The physical topology of the reservation block.
    * </pre>
    *
    * <code>
@@ -293,7 +305,7 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The physical topology of the reservation block.
+   * Output only. [Output Only] The physical topology of the reservation block.
    * </pre>
    *
    * <code>
@@ -307,7 +319,7 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Maintenance information for this reservation block.
+   * Output only. [Output Only] Maintenance information for this reservation block.
    * </pre>
    *
    * <code>
@@ -322,7 +334,7 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Maintenance information for this reservation block.
+   * Output only. [Output Only] Maintenance information for this reservation block.
    * </pre>
    *
    * <code>
@@ -337,7 +349,7 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Maintenance information for this reservation block.
+   * Output only. [Output Only] Maintenance information for this reservation block.
    * </pre>
    *
    * <code>
@@ -350,7 +362,8 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The number of reservation subBlocks associated with this reservation block.
+   * Output only. [Output Only] The number of reservation subBlocks associated with this
+   * reservation block.
    * </pre>
    *
    * <code>optional int32 reservation_sub_block_count = 330782955;</code>
@@ -363,7 +376,8 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The number of reservation subBlocks associated with this reservation block.
+   * Output only. [Output Only] The number of reservation subBlocks associated with this
+   * reservation block.
    * </pre>
    *
    * <code>optional int32 reservation_sub_block_count = 330782955;</code>
@@ -376,7 +390,9 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The number of in-use reservation subBlocks associated with this reservation block. If at least one VM is running on a subBlock, it is considered in-use.
+   * Output only. [Output Only] The number of in-use reservation subBlocks associated with
+   * this reservation block. If at least one VM is running on a subBlock, it is
+   * considered in-use.
    * </pre>
    *
    * <code>optional int32 reservation_sub_block_in_use_count = 186007137;</code>
@@ -389,7 +405,9 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The number of in-use reservation subBlocks associated with this reservation block. If at least one VM is running on a subBlock, it is considered in-use.
+   * Output only. [Output Only] The number of in-use reservation subBlocks associated with
+   * this reservation block. If at least one VM is running on a subBlock, it is
+   * considered in-use.
    * </pre>
    *
    * <code>optional int32 reservation_sub_block_in_use_count = 186007137;</code>
@@ -402,7 +420,7 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -415,7 +433,7 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -428,7 +446,7 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -441,7 +459,7 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -454,7 +472,7 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -467,7 +485,7 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -480,7 +498,7 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Status of the reservation block.
+   * Output only. [Output Only] Status of the reservation block.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -494,7 +512,7 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Status of the reservation block.
+   * Output only. [Output Only] Status of the reservation block.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -508,7 +526,7 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Status of the reservation block.
+   * Output only. [Output Only] Status of the reservation block.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -522,7 +540,7 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Zone in which the reservation block resides.
+   * Output only. [Output Only] Zone in which the reservation block resides.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -535,7 +553,7 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Zone in which the reservation block resides.
+   * Output only. [Output Only] Zone in which the reservation block resides.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -548,7 +566,7 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Zone in which the reservation block resides.
+   * Output only. [Output Only] Zone in which the reservation block resides.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>

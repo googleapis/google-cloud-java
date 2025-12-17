@@ -216,6 +216,7 @@ public class AddressesClientTest {
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
             .setId(3355)
+            .setIpCollection("ipCollection1525846821")
             .setIpVersion("ipVersion-1161634383")
             .setIpv6EndpointType("ipv6EndpointType399011318")
             .setKind("kind3292052")

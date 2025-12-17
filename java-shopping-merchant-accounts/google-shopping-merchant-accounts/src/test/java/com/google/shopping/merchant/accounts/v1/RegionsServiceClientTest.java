@@ -92,6 +92,7 @@ public class RegionsServiceClientTest {
             .setGeotargetArea(Region.GeoTargetArea.newBuilder().build())
             .setRegionalInventoryEligible(BoolValue.newBuilder().build())
             .setShippingEligible(BoolValue.newBuilder().build())
+            .setRadiusArea(Region.RadiusArea.newBuilder().build())
             .build();
     mockRegionsService.addResponse(expectedResponse);
 
@@ -135,6 +136,7 @@ public class RegionsServiceClientTest {
             .setGeotargetArea(Region.GeoTargetArea.newBuilder().build())
             .setRegionalInventoryEligible(BoolValue.newBuilder().build())
             .setShippingEligible(BoolValue.newBuilder().build())
+            .setRadiusArea(Region.RadiusArea.newBuilder().build())
             .build();
     mockRegionsService.addResponse(expectedResponse);
 
@@ -178,6 +180,7 @@ public class RegionsServiceClientTest {
             .setGeotargetArea(Region.GeoTargetArea.newBuilder().build())
             .setRegionalInventoryEligible(BoolValue.newBuilder().build())
             .setShippingEligible(BoolValue.newBuilder().build())
+            .setRadiusArea(Region.RadiusArea.newBuilder().build())
             .build();
     mockRegionsService.addResponse(expectedResponse);
 
@@ -227,6 +230,7 @@ public class RegionsServiceClientTest {
             .setGeotargetArea(Region.GeoTargetArea.newBuilder().build())
             .setRegionalInventoryEligible(BoolValue.newBuilder().build())
             .setShippingEligible(BoolValue.newBuilder().build())
+            .setRadiusArea(Region.RadiusArea.newBuilder().build())
             .build();
     mockRegionsService.addResponse(expectedResponse);
 
@@ -321,6 +325,7 @@ public class RegionsServiceClientTest {
             .setGeotargetArea(Region.GeoTargetArea.newBuilder().build())
             .setRegionalInventoryEligible(BoolValue.newBuilder().build())
             .setShippingEligible(BoolValue.newBuilder().build())
+            .setRadiusArea(Region.RadiusArea.newBuilder().build())
             .build();
     mockRegionsService.addResponse(expectedResponse);
 

@@ -283,7 +283,7 @@ import javax.annotation.Generated;
  *      <td><p> AddIpOverride</td>
  *      <td><p> Adds an IP override to a key. The following restrictions hold:
  * <ul>
- * <li>  The maximum number of IP overrides per key is 100.
+ * <li>  The maximum number of IP overrides per key is 1000.
  * <li>  For any conflict (such as IP already exists or IP part of an existing   IP range), an error is returned.
  * </ul></td>
  *      <td>
@@ -857,6 +857,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *           .setAccountId("accountId-1827029976")
    *           .setHashedAccountId(ByteString.EMPTY)
    *           .setTransactionEvent(TransactionEvent.newBuilder().build())
+   *           .setPhoneAuthenticationEvent(PhoneAuthenticationEvent.newBuilder().build())
    *           .build();
    *   AnnotateAssessmentResponse response =
    *       recaptchaEnterpriseServiceClient.annotateAssessment(request);
@@ -892,6 +893,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *           .setAccountId("accountId-1827029976")
    *           .setHashedAccountId(ByteString.EMPTY)
    *           .setTransactionEvent(TransactionEvent.newBuilder().build())
+   *           .setPhoneAuthenticationEvent(PhoneAuthenticationEvent.newBuilder().build())
    *           .build();
    *   ApiFuture<AnnotateAssessmentResponse> future =
    *       recaptchaEnterpriseServiceClient.annotateAssessmentCallable().futureCall(request);
@@ -1710,7 +1712,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * Adds an IP override to a key. The following restrictions hold:
    *
    * <ul>
-   *   <li>The maximum number of IP overrides per key is 100.
+   *   <li>The maximum number of IP overrides per key is 1000.
    *   <li>For any conflict (such as IP already exists or IP part of an existing IP range), an error
    *       is returned.
    * </ul>
@@ -1751,7 +1753,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * Adds an IP override to a key. The following restrictions hold:
    *
    * <ul>
-   *   <li>The maximum number of IP overrides per key is 100.
+   *   <li>The maximum number of IP overrides per key is 1000.
    *   <li>For any conflict (such as IP already exists or IP part of an existing IP range), an error
    *       is returned.
    * </ul>
@@ -1789,7 +1791,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * Adds an IP override to a key. The following restrictions hold:
    *
    * <ul>
-   *   <li>The maximum number of IP overrides per key is 100.
+   *   <li>The maximum number of IP overrides per key is 1000.
    *   <li>For any conflict (such as IP already exists or IP part of an existing IP range), an error
    *       is returned.
    * </ul>
@@ -1825,7 +1827,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * Adds an IP override to a key. The following restrictions hold:
    *
    * <ul>
-   *   <li>The maximum number of IP overrides per key is 100.
+   *   <li>The maximum number of IP overrides per key is 1000.
    *   <li>For any conflict (such as IP already exists or IP part of an existing IP range), an error
    *       is returned.
    * </ul>

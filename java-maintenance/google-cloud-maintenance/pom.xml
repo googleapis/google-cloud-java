@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-maintenance</artifactId>
-  <version>0.15.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-maintenance:current} -->
+  <version>0.16.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-maintenance:current} -->
   <packaging>jar</packaging>
   <name>Google Maintenance API</name>
   <description>Maintenance API The Maintenance API provides a centralized view of planned disruptive maintenance events across supported Google Cloud products.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-maintenance-parent</artifactId>
-    <version>0.15.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-maintenance:current} -->
+    <version>0.16.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-maintenance:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-maintenance</site.installationModule>
@@ -41,6 +41,10 @@
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
 
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-maintenance-v1</artifactId>
+    </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-maintenance-v1beta</artifactId>
@@ -74,6 +78,11 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-maintenance-v1</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>

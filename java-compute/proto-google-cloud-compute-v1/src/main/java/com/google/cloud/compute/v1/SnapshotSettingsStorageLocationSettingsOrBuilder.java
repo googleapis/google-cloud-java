@@ -28,7 +28,9 @@ public interface SnapshotSettingsStorageLocationSettingsOrBuilder
    *
    *
    * <pre>
-   * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored in the locations listed in this field. Keys are Cloud Storage bucket locations. Only one location can be specified.
+   * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored
+   * in the locations listed in this field. Keys are Cloud Storage bucket
+   * locations. Only one location can be specified.
    * </pre>
    *
    * <code>
@@ -41,7 +43,9 @@ public interface SnapshotSettingsStorageLocationSettingsOrBuilder
    *
    *
    * <pre>
-   * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored in the locations listed in this field. Keys are Cloud Storage bucket locations. Only one location can be specified.
+   * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored
+   * in the locations listed in this field. Keys are Cloud Storage bucket
+   * locations. Only one location can be specified.
    * </pre>
    *
    * <code>
@@ -62,7 +66,9 @@ public interface SnapshotSettingsStorageLocationSettingsOrBuilder
    *
    *
    * <pre>
-   * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored in the locations listed in this field. Keys are Cloud Storage bucket locations. Only one location can be specified.
+   * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored
+   * in the locations listed in this field. Keys are Cloud Storage bucket
+   * locations. Only one location can be specified.
    * </pre>
    *
    * <code>
@@ -79,7 +85,9 @@ public interface SnapshotSettingsStorageLocationSettingsOrBuilder
    *
    *
    * <pre>
-   * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored in the locations listed in this field. Keys are Cloud Storage bucket locations. Only one location can be specified.
+   * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored
+   * in the locations listed in this field. Keys are Cloud Storage bucket
+   * locations. Only one location can be specified.
    * </pre>
    *
    * <code>
@@ -99,7 +107,9 @@ public interface SnapshotSettingsStorageLocationSettingsOrBuilder
    *
    *
    * <pre>
-   * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored in the locations listed in this field. Keys are Cloud Storage bucket locations. Only one location can be specified.
+   * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored
+   * in the locations listed in this field. Keys are Cloud Storage bucket
+   * locations. Only one location can be specified.
    * </pre>
    *
    * <code>

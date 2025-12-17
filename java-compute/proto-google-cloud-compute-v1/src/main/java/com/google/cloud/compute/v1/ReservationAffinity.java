@@ -70,7 +70,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default), SPECIFIC_RESERVATION, or NO_RESERVATION. See Consuming reserved instances for examples.
+   * Specifies the type of reservation from which this instance can consume
+   * resources: ANY_RESERVATION (default),SPECIFIC_RESERVATION, or NO_RESERVATION. See
+   * Consuming reserved instances for examples.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType}
@@ -110,7 +112,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Must consume from a specific reservation. Must specify key value fields for specifying the reservations.
+     * Must consume from a specific reservation. Must specify key value fields
+     * for specifying the reservations.
      * </pre>
      *
      * <code>SPECIFIC_RESERVATION = 229889055;</code>
@@ -158,7 +161,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Must consume from a specific reservation. Must specify key value fields for specifying the reservations.
+     * Must consume from a specific reservation. Must specify key value fields
+     * for specifying the reservations.
      * </pre>
      *
      * <code>SPECIFIC_RESERVATION = 229889055;</code>
@@ -268,7 +272,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default), SPECIFIC_RESERVATION, or NO_RESERVATION. See Consuming reserved instances for examples.
+   * Specifies the type of reservation from which this instance can consume
+   * resources: ANY_RESERVATION (default),SPECIFIC_RESERVATION, or NO_RESERVATION. See
+   * Consuming reserved instances for examples.
    * Check the ConsumeReservationType enum for the list of possible values.
    * </pre>
    *
@@ -285,7 +291,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default), SPECIFIC_RESERVATION, or NO_RESERVATION. See Consuming reserved instances for examples.
+   * Specifies the type of reservation from which this instance can consume
+   * resources: ANY_RESERVATION (default),SPECIFIC_RESERVATION, or NO_RESERVATION. See
+   * Consuming reserved instances for examples.
    * Check the ConsumeReservationType enum for the list of possible values.
    * </pre>
    *
@@ -310,7 +318,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default), SPECIFIC_RESERVATION, or NO_RESERVATION. See Consuming reserved instances for examples.
+   * Specifies the type of reservation from which this instance can consume
+   * resources: ANY_RESERVATION (default),SPECIFIC_RESERVATION, or NO_RESERVATION. See
+   * Consuming reserved instances for examples.
    * Check the ConsumeReservationType enum for the list of possible values.
    * </pre>
    *
@@ -340,7 +350,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Corresponds to the label key of a reservation resource. To target a SPECIFIC_RESERVATION by name, specify googleapis.com/reservation-name as the key and specify the name of your reservation as its value.
+   * Corresponds to the label key of a reservation resource. To target aSPECIFIC_RESERVATION by name, specifygoogleapis.com/reservation-name as the key and specify
+   * the name of your reservation as its value.
    * </pre>
    *
    * <code>optional string key = 106079;</code>
@@ -356,7 +367,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Corresponds to the label key of a reservation resource. To target a SPECIFIC_RESERVATION by name, specify googleapis.com/reservation-name as the key and specify the name of your reservation as its value.
+   * Corresponds to the label key of a reservation resource. To target aSPECIFIC_RESERVATION by name, specifygoogleapis.com/reservation-name as the key and specify
+   * the name of your reservation as its value.
    * </pre>
    *
    * <code>optional string key = 106079;</code>
@@ -380,7 +392,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Corresponds to the label key of a reservation resource. To target a SPECIFIC_RESERVATION by name, specify googleapis.com/reservation-name as the key and specify the name of your reservation as its value.
+   * Corresponds to the label key of a reservation resource. To target aSPECIFIC_RESERVATION by name, specifygoogleapis.com/reservation-name as the key and specify
+   * the name of your reservation as its value.
    * </pre>
    *
    * <code>optional string key = 106079;</code>
@@ -410,7 +423,10 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Corresponds to the label values of a reservation resource. This can be either a name to a reservation in the same project or "projects/different-project/reservations/some-reservation-name" to target a shared reservation in the same zone but in a different project.
+   * Corresponds to the label values of a reservation resource. This can be
+   * either a name to a reservation in the same project or
+   * "projects/different-project/reservations/some-reservation-name" to target a
+   * shared reservation in the same zone but in a different project.
    * </pre>
    *
    * <code>repeated string values = 249928994;</code>
@@ -425,7 +441,10 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Corresponds to the label values of a reservation resource. This can be either a name to a reservation in the same project or "projects/different-project/reservations/some-reservation-name" to target a shared reservation in the same zone but in a different project.
+   * Corresponds to the label values of a reservation resource. This can be
+   * either a name to a reservation in the same project or
+   * "projects/different-project/reservations/some-reservation-name" to target a
+   * shared reservation in the same zone but in a different project.
    * </pre>
    *
    * <code>repeated string values = 249928994;</code>
@@ -440,7 +459,10 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Corresponds to the label values of a reservation resource. This can be either a name to a reservation in the same project or "projects/different-project/reservations/some-reservation-name" to target a shared reservation in the same zone but in a different project.
+   * Corresponds to the label values of a reservation resource. This can be
+   * either a name to a reservation in the same project or
+   * "projects/different-project/reservations/some-reservation-name" to target a
+   * shared reservation in the same zone but in a different project.
    * </pre>
    *
    * <code>repeated string values = 249928994;</code>
@@ -456,7 +478,10 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Corresponds to the label values of a reservation resource. This can be either a name to a reservation in the same project or "projects/different-project/reservations/some-reservation-name" to target a shared reservation in the same zone but in a different project.
+   * Corresponds to the label values of a reservation resource. This can be
+   * either a name to a reservation in the same project or
+   * "projects/different-project/reservations/some-reservation-name" to target a
+   * shared reservation in the same zone but in a different project.
    * </pre>
    *
    * <code>repeated string values = 249928994;</code>
@@ -896,7 +921,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default), SPECIFIC_RESERVATION, or NO_RESERVATION. See Consuming reserved instances for examples.
+     * Specifies the type of reservation from which this instance can consume
+     * resources: ANY_RESERVATION (default),SPECIFIC_RESERVATION, or NO_RESERVATION. See
+     * Consuming reserved instances for examples.
      * Check the ConsumeReservationType enum for the list of possible values.
      * </pre>
      *
@@ -912,7 +939,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default), SPECIFIC_RESERVATION, or NO_RESERVATION. See Consuming reserved instances for examples.
+     * Specifies the type of reservation from which this instance can consume
+     * resources: ANY_RESERVATION (default),SPECIFIC_RESERVATION, or NO_RESERVATION. See
+     * Consuming reserved instances for examples.
      * Check the ConsumeReservationType enum for the list of possible values.
      * </pre>
      *
@@ -936,7 +965,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default), SPECIFIC_RESERVATION, or NO_RESERVATION. See Consuming reserved instances for examples.
+     * Specifies the type of reservation from which this instance can consume
+     * resources: ANY_RESERVATION (default),SPECIFIC_RESERVATION, or NO_RESERVATION. See
+     * Consuming reserved instances for examples.
      * Check the ConsumeReservationType enum for the list of possible values.
      * </pre>
      *
@@ -960,7 +991,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default), SPECIFIC_RESERVATION, or NO_RESERVATION. See Consuming reserved instances for examples.
+     * Specifies the type of reservation from which this instance can consume
+     * resources: ANY_RESERVATION (default),SPECIFIC_RESERVATION, or NO_RESERVATION. See
+     * Consuming reserved instances for examples.
      * Check the ConsumeReservationType enum for the list of possible values.
      * </pre>
      *
@@ -983,7 +1016,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default), SPECIFIC_RESERVATION, or NO_RESERVATION. See Consuming reserved instances for examples.
+     * Specifies the type of reservation from which this instance can consume
+     * resources: ANY_RESERVATION (default),SPECIFIC_RESERVATION, or NO_RESERVATION. See
+     * Consuming reserved instances for examples.
      * Check the ConsumeReservationType enum for the list of possible values.
      * </pre>
      *
@@ -1002,7 +1037,9 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default), SPECIFIC_RESERVATION, or NO_RESERVATION. See Consuming reserved instances for examples.
+     * Specifies the type of reservation from which this instance can consume
+     * resources: ANY_RESERVATION (default),SPECIFIC_RESERVATION, or NO_RESERVATION. See
+     * Consuming reserved instances for examples.
      * Check the ConsumeReservationType enum for the list of possible values.
      * </pre>
      *
@@ -1028,7 +1065,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Corresponds to the label key of a reservation resource. To target a SPECIFIC_RESERVATION by name, specify googleapis.com/reservation-name as the key and specify the name of your reservation as its value.
+     * Corresponds to the label key of a reservation resource. To target aSPECIFIC_RESERVATION by name, specifygoogleapis.com/reservation-name as the key and specify
+     * the name of your reservation as its value.
      * </pre>
      *
      * <code>optional string key = 106079;</code>
@@ -1043,7 +1081,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Corresponds to the label key of a reservation resource. To target a SPECIFIC_RESERVATION by name, specify googleapis.com/reservation-name as the key and specify the name of your reservation as its value.
+     * Corresponds to the label key of a reservation resource. To target aSPECIFIC_RESERVATION by name, specifygoogleapis.com/reservation-name as the key and specify
+     * the name of your reservation as its value.
      * </pre>
      *
      * <code>optional string key = 106079;</code>
@@ -1066,7 +1105,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Corresponds to the label key of a reservation resource. To target a SPECIFIC_RESERVATION by name, specify googleapis.com/reservation-name as the key and specify the name of your reservation as its value.
+     * Corresponds to the label key of a reservation resource. To target aSPECIFIC_RESERVATION by name, specifygoogleapis.com/reservation-name as the key and specify
+     * the name of your reservation as its value.
      * </pre>
      *
      * <code>optional string key = 106079;</code>
@@ -1089,7 +1129,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Corresponds to the label key of a reservation resource. To target a SPECIFIC_RESERVATION by name, specify googleapis.com/reservation-name as the key and specify the name of your reservation as its value.
+     * Corresponds to the label key of a reservation resource. To target aSPECIFIC_RESERVATION by name, specifygoogleapis.com/reservation-name as the key and specify
+     * the name of your reservation as its value.
      * </pre>
      *
      * <code>optional string key = 106079;</code>
@@ -1111,7 +1152,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Corresponds to the label key of a reservation resource. To target a SPECIFIC_RESERVATION by name, specify googleapis.com/reservation-name as the key and specify the name of your reservation as its value.
+     * Corresponds to the label key of a reservation resource. To target aSPECIFIC_RESERVATION by name, specifygoogleapis.com/reservation-name as the key and specify
+     * the name of your reservation as its value.
      * </pre>
      *
      * <code>optional string key = 106079;</code>
@@ -1129,7 +1171,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Corresponds to the label key of a reservation resource. To target a SPECIFIC_RESERVATION by name, specify googleapis.com/reservation-name as the key and specify the name of your reservation as its value.
+     * Corresponds to the label key of a reservation resource. To target aSPECIFIC_RESERVATION by name, specifygoogleapis.com/reservation-name as the key and specify
+     * the name of your reservation as its value.
      * </pre>
      *
      * <code>optional string key = 106079;</code>
@@ -1162,7 +1205,10 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Corresponds to the label values of a reservation resource. This can be either a name to a reservation in the same project or "projects/different-project/reservations/some-reservation-name" to target a shared reservation in the same zone but in a different project.
+     * Corresponds to the label values of a reservation resource. This can be
+     * either a name to a reservation in the same project or
+     * "projects/different-project/reservations/some-reservation-name" to target a
+     * shared reservation in the same zone but in a different project.
      * </pre>
      *
      * <code>repeated string values = 249928994;</code>
@@ -1178,7 +1224,10 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Corresponds to the label values of a reservation resource. This can be either a name to a reservation in the same project or "projects/different-project/reservations/some-reservation-name" to target a shared reservation in the same zone but in a different project.
+     * Corresponds to the label values of a reservation resource. This can be
+     * either a name to a reservation in the same project or
+     * "projects/different-project/reservations/some-reservation-name" to target a
+     * shared reservation in the same zone but in a different project.
      * </pre>
      *
      * <code>repeated string values = 249928994;</code>
@@ -1193,7 +1242,10 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Corresponds to the label values of a reservation resource. This can be either a name to a reservation in the same project or "projects/different-project/reservations/some-reservation-name" to target a shared reservation in the same zone but in a different project.
+     * Corresponds to the label values of a reservation resource. This can be
+     * either a name to a reservation in the same project or
+     * "projects/different-project/reservations/some-reservation-name" to target a
+     * shared reservation in the same zone but in a different project.
      * </pre>
      *
      * <code>repeated string values = 249928994;</code>
@@ -1209,7 +1261,10 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Corresponds to the label values of a reservation resource. This can be either a name to a reservation in the same project or "projects/different-project/reservations/some-reservation-name" to target a shared reservation in the same zone but in a different project.
+     * Corresponds to the label values of a reservation resource. This can be
+     * either a name to a reservation in the same project or
+     * "projects/different-project/reservations/some-reservation-name" to target a
+     * shared reservation in the same zone but in a different project.
      * </pre>
      *
      * <code>repeated string values = 249928994;</code>
@@ -1225,7 +1280,10 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Corresponds to the label values of a reservation resource. This can be either a name to a reservation in the same project or "projects/different-project/reservations/some-reservation-name" to target a shared reservation in the same zone but in a different project.
+     * Corresponds to the label values of a reservation resource. This can be
+     * either a name to a reservation in the same project or
+     * "projects/different-project/reservations/some-reservation-name" to target a
+     * shared reservation in the same zone but in a different project.
      * </pre>
      *
      * <code>repeated string values = 249928994;</code>
@@ -1249,7 +1307,10 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Corresponds to the label values of a reservation resource. This can be either a name to a reservation in the same project or "projects/different-project/reservations/some-reservation-name" to target a shared reservation in the same zone but in a different project.
+     * Corresponds to the label values of a reservation resource. This can be
+     * either a name to a reservation in the same project or
+     * "projects/different-project/reservations/some-reservation-name" to target a
+     * shared reservation in the same zone but in a different project.
      * </pre>
      *
      * <code>repeated string values = 249928994;</code>
@@ -1272,7 +1333,10 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Corresponds to the label values of a reservation resource. This can be either a name to a reservation in the same project or "projects/different-project/reservations/some-reservation-name" to target a shared reservation in the same zone but in a different project.
+     * Corresponds to the label values of a reservation resource. This can be
+     * either a name to a reservation in the same project or
+     * "projects/different-project/reservations/some-reservation-name" to target a
+     * shared reservation in the same zone but in a different project.
      * </pre>
      *
      * <code>repeated string values = 249928994;</code>
@@ -1292,7 +1356,10 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Corresponds to the label values of a reservation resource. This can be either a name to a reservation in the same project or "projects/different-project/reservations/some-reservation-name" to target a shared reservation in the same zone but in a different project.
+     * Corresponds to the label values of a reservation resource. This can be
+     * either a name to a reservation in the same project or
+     * "projects/different-project/reservations/some-reservation-name" to target a
+     * shared reservation in the same zone but in a different project.
      * </pre>
      *
      * <code>repeated string values = 249928994;</code>
@@ -1311,7 +1378,10 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Corresponds to the label values of a reservation resource. This can be either a name to a reservation in the same project or "projects/different-project/reservations/some-reservation-name" to target a shared reservation in the same zone but in a different project.
+     * Corresponds to the label values of a reservation resource. This can be
+     * either a name to a reservation in the same project or
+     * "projects/different-project/reservations/some-reservation-name" to target a
+     * shared reservation in the same zone but in a different project.
      * </pre>
      *
      * <code>repeated string values = 249928994;</code>

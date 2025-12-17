@@ -28,7 +28,7 @@ public interface DataSourceTypeOrBuilder
    *
    *
    * <pre>
-   * Output only. An identifying string to the type of resource being profiled.
+   * A string that identifies the type of resource being profiled.
    * Current values:
    *
    * * google/bigquery/table
@@ -37,7 +37,7 @@ public interface DataSourceTypeOrBuilder
    * * google/gcs/bucket
    * </pre>
    *
-   * <code>string data_source = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string data_source = 1;</code>
    *
    * @return The dataSource.
    */
@@ -47,7 +47,7 @@ public interface DataSourceTypeOrBuilder
    *
    *
    * <pre>
-   * Output only. An identifying string to the type of resource being profiled.
+   * A string that identifies the type of resource being profiled.
    * Current values:
    *
    * * google/bigquery/table
@@ -56,7 +56,7 @@ public interface DataSourceTypeOrBuilder
    * * google/gcs/bucket
    * </pre>
    *
-   * <code>string data_source = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string data_source = 1;</code>
    *
    * @return The bytes for dataSource.
    */

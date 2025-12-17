@@ -18,7 +18,7 @@ package com.google.ads.admanager.v1.samples;
 
 // [START admanager_v1_generated_NetworkService_ListNetworks_async]
 import com.google.ads.admanager.v1.ListNetworksRequest;
-import com.google.ads.admanager.v1.ListNetworksResponse;
+import com.google.ads.admanager.v1.Network;
 import com.google.ads.admanager.v1.NetworkServiceClient;
 import com.google.api.core.ApiFuture;
 
@@ -35,11 +35,18 @@ public class AsyncListNetworks {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (NetworkServiceClient networkServiceClient = NetworkServiceClient.create()) {
-      ListNetworksRequest request = ListNetworksRequest.newBuilder().build();
-      ApiFuture<ListNetworksResponse> future =
-          networkServiceClient.listNetworksCallable().futureCall(request);
+      ListNetworksRequest request =
+          ListNetworksRequest.newBuilder()
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .setSkip(3532159)
+              .build();
+      ApiFuture<Network> future =
+          networkServiceClient.listNetworksPagedCallable().futureCall(request);
       // Do something.
-      ListNetworksResponse response = future.get();
+      for (Network element : future.get().iterateAll()) {
+        // doThingsWith(element);
+      }
     }
   }
 }

@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Per-instance properties to be set on individual instances. To be extended in the future.
+ * Per-instance properties to be set on individual instances.
+ * To be extended in the future.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.BulkInsertInstanceResourcePerInstanceProperties}
@@ -78,7 +79,8 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
    *
    *
    * <pre>
-   * Specifies the hostname of the instance. More details in: https://cloud.google.com/compute/docs/instances/custom-hostname-vm#naming_convention
+   * Specifies the hostname of the instance. More details in:
+   * https://cloud.google.com/compute/docs/instances/custom-hostname-vm#naming_convention
    * </pre>
    *
    * <code>optional string hostname = 237067315;</code>
@@ -94,7 +96,8 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
    *
    *
    * <pre>
-   * Specifies the hostname of the instance. More details in: https://cloud.google.com/compute/docs/instances/custom-hostname-vm#naming_convention
+   * Specifies the hostname of the instance. More details in:
+   * https://cloud.google.com/compute/docs/instances/custom-hostname-vm#naming_convention
    * </pre>
    *
    * <code>optional string hostname = 237067315;</code>
@@ -118,7 +121,8 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
    *
    *
    * <pre>
-   * Specifies the hostname of the instance. More details in: https://cloud.google.com/compute/docs/instances/custom-hostname-vm#naming_convention
+   * Specifies the hostname of the instance. More details in:
+   * https://cloud.google.com/compute/docs/instances/custom-hostname-vm#naming_convention
    * </pre>
    *
    * <code>optional string hostname = 237067315;</code>
@@ -147,7 +151,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
    *
    *
    * <pre>
-   * This field is only temporary. It will be removed. Do not use it.
+   * Output only. This field is only temporary. It will be removed. Do not use it.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -163,7 +167,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
    *
    *
    * <pre>
-   * This field is only temporary. It will be removed. Do not use it.
+   * Output only. This field is only temporary. It will be removed. Do not use it.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -187,7 +191,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
    *
    *
    * <pre>
-   * This field is only temporary. It will be removed. Do not use it.
+   * Output only. This field is only temporary. It will be removed. Do not use it.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -398,7 +402,8 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
    *
    *
    * <pre>
-   * Per-instance properties to be set on individual instances. To be extended in the future.
+   * Per-instance properties to be set on individual instances.
+   * To be extended in the future.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.BulkInsertInstanceResourcePerInstanceProperties}
@@ -613,7 +618,8 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
      *
      *
      * <pre>
-     * Specifies the hostname of the instance. More details in: https://cloud.google.com/compute/docs/instances/custom-hostname-vm#naming_convention
+     * Specifies the hostname of the instance. More details in:
+     * https://cloud.google.com/compute/docs/instances/custom-hostname-vm#naming_convention
      * </pre>
      *
      * <code>optional string hostname = 237067315;</code>
@@ -628,7 +634,8 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
      *
      *
      * <pre>
-     * Specifies the hostname of the instance. More details in: https://cloud.google.com/compute/docs/instances/custom-hostname-vm#naming_convention
+     * Specifies the hostname of the instance. More details in:
+     * https://cloud.google.com/compute/docs/instances/custom-hostname-vm#naming_convention
      * </pre>
      *
      * <code>optional string hostname = 237067315;</code>
@@ -651,7 +658,8 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
      *
      *
      * <pre>
-     * Specifies the hostname of the instance. More details in: https://cloud.google.com/compute/docs/instances/custom-hostname-vm#naming_convention
+     * Specifies the hostname of the instance. More details in:
+     * https://cloud.google.com/compute/docs/instances/custom-hostname-vm#naming_convention
      * </pre>
      *
      * <code>optional string hostname = 237067315;</code>
@@ -674,7 +682,8 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
      *
      *
      * <pre>
-     * Specifies the hostname of the instance. More details in: https://cloud.google.com/compute/docs/instances/custom-hostname-vm#naming_convention
+     * Specifies the hostname of the instance. More details in:
+     * https://cloud.google.com/compute/docs/instances/custom-hostname-vm#naming_convention
      * </pre>
      *
      * <code>optional string hostname = 237067315;</code>
@@ -696,7 +705,8 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
      *
      *
      * <pre>
-     * Specifies the hostname of the instance. More details in: https://cloud.google.com/compute/docs/instances/custom-hostname-vm#naming_convention
+     * Specifies the hostname of the instance. More details in:
+     * https://cloud.google.com/compute/docs/instances/custom-hostname-vm#naming_convention
      * </pre>
      *
      * <code>optional string hostname = 237067315;</code>
@@ -714,7 +724,8 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
      *
      *
      * <pre>
-     * Specifies the hostname of the instance. More details in: https://cloud.google.com/compute/docs/instances/custom-hostname-vm#naming_convention
+     * Specifies the hostname of the instance. More details in:
+     * https://cloud.google.com/compute/docs/instances/custom-hostname-vm#naming_convention
      * </pre>
      *
      * <code>optional string hostname = 237067315;</code>
@@ -739,7 +750,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
      *
      *
      * <pre>
-     * This field is only temporary. It will be removed. Do not use it.
+     * Output only. This field is only temporary. It will be removed. Do not use it.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -754,7 +765,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
      *
      *
      * <pre>
-     * This field is only temporary. It will be removed. Do not use it.
+     * Output only. This field is only temporary. It will be removed. Do not use it.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -777,7 +788,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
      *
      *
      * <pre>
-     * This field is only temporary. It will be removed. Do not use it.
+     * Output only. This field is only temporary. It will be removed. Do not use it.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -800,7 +811,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
      *
      *
      * <pre>
-     * This field is only temporary. It will be removed. Do not use it.
+     * Output only. This field is only temporary. It will be removed. Do not use it.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -822,7 +833,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
      *
      *
      * <pre>
-     * This field is only temporary. It will be removed. Do not use it.
+     * Output only. This field is only temporary. It will be removed. Do not use it.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -840,7 +851,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
      *
      *
      * <pre>
-     * This field is only temporary. It will be removed. Do not use it.
+     * Output only. This field is only temporary. It will be removed. Do not use it.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>

@@ -28,7 +28,7 @@ public interface InterconnectAttachmentGroupLogicalStructureRegionMetroFacilityO
    *
    *
    * <pre>
-   * [Output Only] The name of a facility, like "iad-1234".
+   * Output only. [Output Only] The name of a facility, like "iad-1234".
    * </pre>
    *
    * <code>optional string facility = 501116579;</code>
@@ -41,7 +41,7 @@ public interface InterconnectAttachmentGroupLogicalStructureRegionMetroFacilityO
    *
    *
    * <pre>
-   * [Output Only] The name of a facility, like "iad-1234".
+   * Output only. [Output Only] The name of a facility, like "iad-1234".
    * </pre>
    *
    * <code>optional string facility = 501116579;</code>
@@ -54,7 +54,7 @@ public interface InterconnectAttachmentGroupLogicalStructureRegionMetroFacilityO
    *
    *
    * <pre>
-   * [Output Only] The name of a facility, like "iad-1234".
+   * Output only. [Output Only] The name of a facility, like "iad-1234".
    * </pre>
    *
    * <code>optional string facility = 501116579;</code>

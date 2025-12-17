@@ -28,7 +28,7 @@ public interface InterconnectGroupsOperationalStatusInterconnectStatusOrBuilder
    *
    *
    * <pre>
-   * Whether the Interconnect is enabled.
+   * Output only. Whether the Interconnect is enabled.
    * </pre>
    *
    * <code>optional bool admin_enabled = 445675089;</code>
@@ -41,7 +41,7 @@ public interface InterconnectGroupsOperationalStatusInterconnectStatusOrBuilder
    *
    *
    * <pre>
-   * Whether the Interconnect is enabled.
+   * Output only. Whether the Interconnect is enabled.
    * </pre>
    *
    * <code>optional bool admin_enabled = 445675089;</code>
@@ -54,7 +54,8 @@ public interface InterconnectGroupsOperationalStatusInterconnectStatusOrBuilder
    *
    *
    * <pre>
-   * The diagnostics of the Interconnect, as returned by the existing get-diagnostics method.
+   * Output only. The diagnostics of the Interconnect, as returned by the existing
+   * get-diagnostics method.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InterconnectDiagnostics diagnostics = 333355436;</code>
@@ -67,7 +68,8 @@ public interface InterconnectGroupsOperationalStatusInterconnectStatusOrBuilder
    *
    *
    * <pre>
-   * The diagnostics of the Interconnect, as returned by the existing get-diagnostics method.
+   * Output only. The diagnostics of the Interconnect, as returned by the existing
+   * get-diagnostics method.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InterconnectDiagnostics diagnostics = 333355436;</code>
@@ -80,7 +82,8 @@ public interface InterconnectGroupsOperationalStatusInterconnectStatusOrBuilder
    *
    *
    * <pre>
-   * The diagnostics of the Interconnect, as returned by the existing get-diagnostics method.
+   * Output only. The diagnostics of the Interconnect, as returned by the existing
+   * get-diagnostics method.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InterconnectDiagnostics diagnostics = 333355436;</code>
@@ -91,7 +94,7 @@ public interface InterconnectGroupsOperationalStatusInterconnectStatusOrBuilder
    *
    *
    * <pre>
-   * The URL of the Interconnect being described.
+   * Output only. The URL of the Interconnect being described.
    * </pre>
    *
    * <code>optional string interconnect = 224601230;</code>
@@ -104,7 +107,7 @@ public interface InterconnectGroupsOperationalStatusInterconnectStatusOrBuilder
    *
    *
    * <pre>
-   * The URL of the Interconnect being described.
+   * Output only. The URL of the Interconnect being described.
    * </pre>
    *
    * <code>optional string interconnect = 224601230;</code>
@@ -117,7 +120,7 @@ public interface InterconnectGroupsOperationalStatusInterconnectStatusOrBuilder
    *
    *
    * <pre>
-   * The URL of the Interconnect being described.
+   * Output only. The URL of the Interconnect being described.
    * </pre>
    *
    * <code>optional string interconnect = 224601230;</code>
@@ -130,7 +133,8 @@ public interface InterconnectGroupsOperationalStatusInterconnectStatusOrBuilder
    *
    *
    * <pre>
-   * Whether this interconnect is participating in the redundant configuration.
+   * Output only. Whether this interconnect is participating in the redundant
+   * configuration.
    * Check the IsActive enum for the list of possible values.
    * </pre>
    *
@@ -144,7 +148,8 @@ public interface InterconnectGroupsOperationalStatusInterconnectStatusOrBuilder
    *
    *
    * <pre>
-   * Whether this interconnect is participating in the redundant configuration.
+   * Output only. Whether this interconnect is participating in the redundant
+   * configuration.
    * Check the IsActive enum for the list of possible values.
    * </pre>
    *
@@ -158,7 +163,8 @@ public interface InterconnectGroupsOperationalStatusInterconnectStatusOrBuilder
    *
    *
    * <pre>
-   * Whether this interconnect is participating in the redundant configuration.
+   * Output only. Whether this interconnect is participating in the redundant
+   * configuration.
    * Check the IsActive enum for the list of possible values.
    * </pre>
    *

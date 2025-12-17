@@ -110,5 +110,117 @@ public interface GeneratorSuggestionOrBuilder
    */
   com.google.cloud.dialogflow.v2.SummarySuggestionOrBuilder getSummarySuggestionOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Suggestion to coach the agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.AgentCoachingSuggestion agent_coaching_suggestion = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the agentCoachingSuggestion field is set.
+   */
+  boolean hasAgentCoachingSuggestion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Suggestion to coach the agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.AgentCoachingSuggestion agent_coaching_suggestion = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The agentCoachingSuggestion.
+   */
+  com.google.cloud.dialogflow.v2.AgentCoachingSuggestion getAgentCoachingSuggestion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Suggestion to coach the agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.AgentCoachingSuggestion agent_coaching_suggestion = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.AgentCoachingSuggestionOrBuilder
+      getAgentCoachingSuggestionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of request and response for tool calls executed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.GeneratorSuggestion.ToolCallInfo tool_call_info = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.dialogflow.v2.GeneratorSuggestion.ToolCallInfo>
+      getToolCallInfoList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of request and response for tool calls executed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.GeneratorSuggestion.ToolCallInfo tool_call_info = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.GeneratorSuggestion.ToolCallInfo getToolCallInfo(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of request and response for tool calls executed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.GeneratorSuggestion.ToolCallInfo tool_call_info = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getToolCallInfoCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of request and response for tool calls executed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.GeneratorSuggestion.ToolCallInfo tool_call_info = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.dialogflow.v2.GeneratorSuggestion.ToolCallInfoOrBuilder>
+      getToolCallInfoOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of request and response for tool calls executed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.GeneratorSuggestion.ToolCallInfo tool_call_info = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.GeneratorSuggestion.ToolCallInfoOrBuilder getToolCallInfoOrBuilder(
+      int index);
+
   com.google.cloud.dialogflow.v2.GeneratorSuggestion.SuggestionCase getSuggestionCase();
 }

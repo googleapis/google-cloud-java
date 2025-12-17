@@ -111,6 +111,7 @@ public class AttachedClustersClientHttpJsonTest {
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setSystemComponentsConfig(SystemComponentsConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -188,6 +189,7 @@ public class AttachedClustersClientHttpJsonTest {
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setSystemComponentsConfig(SystemComponentsConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -265,6 +267,7 @@ public class AttachedClustersClientHttpJsonTest {
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setSystemComponentsConfig(SystemComponentsConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -300,6 +303,7 @@ public class AttachedClustersClientHttpJsonTest {
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setSystemComponentsConfig(SystemComponentsConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -357,6 +361,7 @@ public class AttachedClustersClientHttpJsonTest {
               .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
               .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
               .putAllTags(new HashMap<String, String>())
+              .setSystemComponentsConfig(SystemComponentsConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateAttachedClusterAsync(attachedCluster, updateMask).get();
@@ -393,6 +398,7 @@ public class AttachedClustersClientHttpJsonTest {
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setSystemComponentsConfig(SystemComponentsConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -468,6 +474,7 @@ public class AttachedClustersClientHttpJsonTest {
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setSystemComponentsConfig(SystemComponentsConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -543,6 +550,7 @@ public class AttachedClustersClientHttpJsonTest {
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setSystemComponentsConfig(SystemComponentsConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -612,6 +620,7 @@ public class AttachedClustersClientHttpJsonTest {
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setSystemComponentsConfig(SystemComponentsConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

@@ -624,7 +624,7 @@ public interface RepositoryOrBuilder
    *
    *
    * <pre>
-   * Output only. If set, the repository satisfies physical zone separation.
+   * Output only. Whether or not this repository satisfies PZS.
    * </pre>
    *
    * <code>bool satisfies_pzs = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -713,7 +713,7 @@ public interface RepositoryOrBuilder
    *
    *
    * <pre>
-   * Output only. If set, the repository satisfies physical zone isolation.
+   * Output only. Whether or not this repository satisfies PZI.
    * </pre>
    *
    * <code>bool satisfies_pzi = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

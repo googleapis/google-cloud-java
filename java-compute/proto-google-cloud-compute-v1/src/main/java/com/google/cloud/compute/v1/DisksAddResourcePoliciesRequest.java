@@ -74,7 +74,8 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Full or relative path to the resource policy to be added to this disk. You can only specify one resource policy.
+   * Full or relative path to the resource policy to be added to this disk. You
+   * can only specify one resource policy.
    * </pre>
    *
    * <code>repeated string resource_policies = 22220385;</code>
@@ -89,7 +90,8 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Full or relative path to the resource policy to be added to this disk. You can only specify one resource policy.
+   * Full or relative path to the resource policy to be added to this disk. You
+   * can only specify one resource policy.
    * </pre>
    *
    * <code>repeated string resource_policies = 22220385;</code>
@@ -104,7 +106,8 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Full or relative path to the resource policy to be added to this disk. You can only specify one resource policy.
+   * Full or relative path to the resource policy to be added to this disk. You
+   * can only specify one resource policy.
    * </pre>
    *
    * <code>repeated string resource_policies = 22220385;</code>
@@ -120,7 +123,8 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Full or relative path to the resource policy to be added to this disk. You can only specify one resource policy.
+   * Full or relative path to the resource policy to be added to this disk. You
+   * can only specify one resource policy.
    * </pre>
    *
    * <code>repeated string resource_policies = 22220385;</code>
@@ -504,7 +508,8 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Full or relative path to the resource policy to be added to this disk. You can only specify one resource policy.
+     * Full or relative path to the resource policy to be added to this disk. You
+     * can only specify one resource policy.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -520,7 +525,8 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Full or relative path to the resource policy to be added to this disk. You can only specify one resource policy.
+     * Full or relative path to the resource policy to be added to this disk. You
+     * can only specify one resource policy.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -535,7 +541,8 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Full or relative path to the resource policy to be added to this disk. You can only specify one resource policy.
+     * Full or relative path to the resource policy to be added to this disk. You
+     * can only specify one resource policy.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -551,7 +558,8 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Full or relative path to the resource policy to be added to this disk. You can only specify one resource policy.
+     * Full or relative path to the resource policy to be added to this disk. You
+     * can only specify one resource policy.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -567,7 +575,8 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Full or relative path to the resource policy to be added to this disk. You can only specify one resource policy.
+     * Full or relative path to the resource policy to be added to this disk. You
+     * can only specify one resource policy.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -591,7 +600,8 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Full or relative path to the resource policy to be added to this disk. You can only specify one resource policy.
+     * Full or relative path to the resource policy to be added to this disk. You
+     * can only specify one resource policy.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -614,7 +624,8 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Full or relative path to the resource policy to be added to this disk. You can only specify one resource policy.
+     * Full or relative path to the resource policy to be added to this disk. You
+     * can only specify one resource policy.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -634,7 +645,8 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Full or relative path to the resource policy to be added to this disk. You can only specify one resource policy.
+     * Full or relative path to the resource policy to be added to this disk. You
+     * can only specify one resource policy.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -653,7 +665,8 @@ public final class DisksAddResourcePoliciesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Full or relative path to the resource policy to be added to this disk. You can only specify one resource policy.
+     * Full or relative path to the resource policy to be added to this disk. You
+     * can only specify one resource policy.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>

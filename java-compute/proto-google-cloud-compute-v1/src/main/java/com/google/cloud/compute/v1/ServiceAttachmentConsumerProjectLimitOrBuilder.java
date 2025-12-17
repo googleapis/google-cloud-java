@@ -28,7 +28,8 @@ public interface ServiceAttachmentConsumerProjectLimitOrBuilder
    *
    *
    * <pre>
-   * The value of the limit to set. For endpoint_url, the limit should be no more than 1.
+   * The value of the limit to set. For endpoint_url, the limit should be no
+   * more than 1.
    * </pre>
    *
    * <code>optional uint32 connection_limit = 131403546;</code>
@@ -41,7 +42,8 @@ public interface ServiceAttachmentConsumerProjectLimitOrBuilder
    *
    *
    * <pre>
-   * The value of the limit to set. For endpoint_url, the limit should be no more than 1.
+   * The value of the limit to set. For endpoint_url, the limit should be no
+   * more than 1.
    * </pre>
    *
    * <code>optional uint32 connection_limit = 131403546;</code>

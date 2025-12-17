@@ -194,6 +194,7 @@ public class StorageBatchOperationsClientTest {
             .setCompleteTime(Timestamp.newBuilder().build())
             .setCounters(Counters.newBuilder().build())
             .addAllErrorSummaries(new ArrayList<ErrorSummary>())
+            .setDryRun(true)
             .build();
     mockStorageBatchOperations.addResponse(expectedResponse);
 
@@ -239,6 +240,7 @@ public class StorageBatchOperationsClientTest {
             .setCompleteTime(Timestamp.newBuilder().build())
             .setCounters(Counters.newBuilder().build())
             .addAllErrorSummaries(new ArrayList<ErrorSummary>())
+            .setDryRun(true)
             .build();
     mockStorageBatchOperations.addResponse(expectedResponse);
 
@@ -284,6 +286,7 @@ public class StorageBatchOperationsClientTest {
             .setCompleteTime(Timestamp.newBuilder().build())
             .setCounters(Counters.newBuilder().build())
             .addAllErrorSummaries(new ArrayList<ErrorSummary>())
+            .setDryRun(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -343,6 +346,7 @@ public class StorageBatchOperationsClientTest {
             .setCompleteTime(Timestamp.newBuilder().build())
             .setCounters(Counters.newBuilder().build())
             .addAllErrorSummaries(new ArrayList<ErrorSummary>())
+            .setDryRun(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()

@@ -718,7 +718,7 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Input only. Initial user to setup during cluster creation. Required.
+   * Input only. Initial user to setup during cluster creation.
    * If used in `RestoreCluster` this is ignored.
    * </pre>
    *
@@ -734,7 +734,7 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Input only. Initial user to setup during cluster creation. Required.
+   * Input only. Initial user to setup during cluster creation.
    * If used in `RestoreCluster` this is ignored.
    * </pre>
    *
@@ -750,7 +750,7 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Input only. Initial user to setup during cluster creation. Required.
+   * Input only. Initial user to setup during cluster creation.
    * If used in `RestoreCluster` this is ignored.
    * </pre>
    *

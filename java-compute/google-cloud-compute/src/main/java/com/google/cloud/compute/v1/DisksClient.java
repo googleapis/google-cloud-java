@@ -87,7 +87,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> AggregatedList</td>
- *      <td><p> Retrieves an aggregated list of persistent disks. To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.</td>
+ *      <td><p> Retrieves an aggregated list of persistent disks.
+ * <p>  To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to `true`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -125,7 +126,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> BulkSetLabels</td>
- *      <td><p> Sets the labels on many disks at once. To learn more about labels, read the Labeling Resources documentation.</td>
+ *      <td><p> Sets the labels on many disks at once. To learn more about labels, read theLabeling Resources documentation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -163,7 +164,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Delete</td>
- *      <td><p> Deletes the specified persistent disk. Deleting a disk removes its data permanently and is irreversible. However, deleting a disk does not delete any snapshots previously made from the disk. You must separately delete snapshots.</td>
+ *      <td><p> Deletes the specified persistent disk. Deleting a disk removes its data permanently and is irreversible. However, deleting a disk does not delete any snapshots previously made from the disk. You must separatelydelete snapshots.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -218,7 +219,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Insert</td>
- *      <td><p> Creates a persistent disk in the specified project using the data in the request. You can create a disk from a source (sourceImage, sourceSnapshot, or sourceDisk) or create an empty 500 GB data disk by omitting all properties. You can also create a disk that is larger than the default size by specifying the sizeGb property.</td>
+ *      <td><p> Creates a persistent disk in the specified project using the data in the request. You can create a disk from a source (sourceImage, sourceSnapshot, orsourceDisk) or create an empty 500 GB data disk by omitting all properties. You can also create a disk that is larger than the default size by specifying the sizeGb property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -312,7 +313,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> SetLabels</td>
- *      <td><p> Sets the labels on a disk. To learn more about labels, read the Labeling Resources documentation.</td>
+ *      <td><p> Sets the labels on a disk. To learn more about labels, read theLabeling Resources documentation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -665,8 +666,10 @@ public class DisksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of persistent disks. To prevent failure, Google recommends that
-   * you set the `returnPartialSuccess` parameter to `true`.
+   * Retrieves an aggregated list of persistent disks.
+   *
+   * <p>To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -696,8 +699,10 @@ public class DisksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of persistent disks. To prevent failure, Google recommends that
-   * you set the `returnPartialSuccess` parameter to `true`.
+   * Retrieves an aggregated list of persistent disks.
+   *
+   * <p>To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -735,8 +740,10 @@ public class DisksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of persistent disks. To prevent failure, Google recommends that
-   * you set the `returnPartialSuccess` parameter to `true`.
+   * Retrieves an aggregated list of persistent disks.
+   *
+   * <p>To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -774,8 +781,10 @@ public class DisksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of persistent disks. To prevent failure, Google recommends that
-   * you set the `returnPartialSuccess` parameter to `true`.
+   * Retrieves an aggregated list of persistent disks.
+   *
+   * <p>To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -951,7 +960,7 @@ public class DisksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the labels on many disks at once. To learn more about labels, read the Labeling Resources
+   * Sets the labels on many disks at once. To learn more about labels, read theLabeling Resources
    * documentation.
    *
    * <p>Sample code:
@@ -990,7 +999,7 @@ public class DisksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the labels on many disks at once. To learn more about labels, read the Labeling Resources
+   * Sets the labels on many disks at once. To learn more about labels, read theLabeling Resources
    * documentation.
    *
    * <p>Sample code:
@@ -1024,7 +1033,7 @@ public class DisksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the labels on many disks at once. To learn more about labels, read the Labeling Resources
+   * Sets the labels on many disks at once. To learn more about labels, read theLabeling Resources
    * documentation.
    *
    * <p>Sample code:
@@ -1058,7 +1067,7 @@ public class DisksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the labels on many disks at once. To learn more about labels, read the Labeling Resources
+   * Sets the labels on many disks at once. To learn more about labels, read theLabeling Resources
    * documentation.
    *
    * <p>Sample code:
@@ -1240,7 +1249,7 @@ public class DisksClient implements BackgroundResource {
   /**
    * Deletes the specified persistent disk. Deleting a disk removes its data permanently and is
    * irreversible. However, deleting a disk does not delete any snapshots previously made from the
-   * disk. You must separately delete snapshots.
+   * disk. You must separatelydelete snapshots.
    *
    * <p>Sample code:
    *
@@ -1274,7 +1283,7 @@ public class DisksClient implements BackgroundResource {
   /**
    * Deletes the specified persistent disk. Deleting a disk removes its data permanently and is
    * irreversible. However, deleting a disk does not delete any snapshots previously made from the
-   * disk. You must separately delete snapshots.
+   * disk. You must separatelydelete snapshots.
    *
    * <p>Sample code:
    *
@@ -1307,7 +1316,7 @@ public class DisksClient implements BackgroundResource {
   /**
    * Deletes the specified persistent disk. Deleting a disk removes its data permanently and is
    * irreversible. However, deleting a disk does not delete any snapshots previously made from the
-   * disk. You must separately delete snapshots.
+   * disk. You must separatelydelete snapshots.
    *
    * <p>Sample code:
    *
@@ -1341,7 +1350,7 @@ public class DisksClient implements BackgroundResource {
   /**
    * Deletes the specified persistent disk. Deleting a disk removes its data permanently and is
    * irreversible. However, deleting a disk does not delete any snapshots previously made from the
-   * disk. You must separately delete snapshots.
+   * disk. You must separatelydelete snapshots.
    *
    * <p>Sample code:
    *
@@ -1561,7 +1570,7 @@ public class DisksClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a persistent disk in the specified project using the data in the request. You can
-   * create a disk from a source (sourceImage, sourceSnapshot, or sourceDisk) or create an empty 500
+   * create a disk from a source (sourceImage, sourceSnapshot, orsourceDisk) or create an empty 500
    * GB data disk by omitting all properties. You can also create a disk that is larger than the
    * default size by specifying the sizeGb property.
    *
@@ -1600,7 +1609,7 @@ public class DisksClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a persistent disk in the specified project using the data in the request. You can
-   * create a disk from a source (sourceImage, sourceSnapshot, or sourceDisk) or create an empty 500
+   * create a disk from a source (sourceImage, sourceSnapshot, orsourceDisk) or create an empty 500
    * GB data disk by omitting all properties. You can also create a disk that is larger than the
    * default size by specifying the sizeGb property.
    *
@@ -1635,7 +1644,7 @@ public class DisksClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a persistent disk in the specified project using the data in the request. You can
-   * create a disk from a source (sourceImage, sourceSnapshot, or sourceDisk) or create an empty 500
+   * create a disk from a source (sourceImage, sourceSnapshot, orsourceDisk) or create an empty 500
    * GB data disk by omitting all properties. You can also create a disk that is larger than the
    * default size by specifying the sizeGb property.
    *
@@ -1671,7 +1680,7 @@ public class DisksClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a persistent disk in the specified project using the data in the request. You can
-   * create a disk from a source (sourceImage, sourceSnapshot, or sourceDisk) or create an empty 500
+   * create a disk from a source (sourceImage, sourceSnapshot, orsourceDisk) or create an empty 500
    * GB data disk by omitting all properties. You can also create a disk that is larger than the
    * default size by specifying the sizeGb property.
    *
@@ -2238,7 +2247,7 @@ public class DisksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the labels on a disk. To learn more about labels, read the Labeling Resources
+   * Sets the labels on a disk. To learn more about labels, read theLabeling Resources
    * documentation.
    *
    * <p>Sample code:
@@ -2282,7 +2291,7 @@ public class DisksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the labels on a disk. To learn more about labels, read the Labeling Resources
+   * Sets the labels on a disk. To learn more about labels, read theLabeling Resources
    * documentation.
    *
    * <p>Sample code:
@@ -2315,7 +2324,7 @@ public class DisksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the labels on a disk. To learn more about labels, read the Labeling Resources
+   * Sets the labels on a disk. To learn more about labels, read theLabeling Resources
    * documentation.
    *
    * <p>Sample code:
@@ -2349,7 +2358,7 @@ public class DisksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the labels on a disk. To learn more about labels, read the Labeling Resources
+   * Sets the labels on a disk. To learn more about labels, read theLabeling Resources
    * documentation.
    *
    * <p>Sample code:

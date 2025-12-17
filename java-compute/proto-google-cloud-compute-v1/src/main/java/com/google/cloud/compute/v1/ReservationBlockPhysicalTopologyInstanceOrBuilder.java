@@ -54,7 +54,7 @@ public interface ReservationBlockPhysicalTopologyInstanceOrBuilder
    *
    *
    * <pre>
-   * The PhysicalHostTopology of instances within a Block resource.
+   * Output only. The PhysicalHostTopology of instances within a Block resource.
    * </pre>
    *
    * <code>
@@ -69,7 +69,7 @@ public interface ReservationBlockPhysicalTopologyInstanceOrBuilder
    *
    *
    * <pre>
-   * The PhysicalHostTopology of instances within a Block resource.
+   * Output only. The PhysicalHostTopology of instances within a Block resource.
    * </pre>
    *
    * <code>
@@ -85,7 +85,7 @@ public interface ReservationBlockPhysicalTopologyInstanceOrBuilder
    *
    *
    * <pre>
-   * The PhysicalHostTopology of instances within a Block resource.
+   * Output only. The PhysicalHostTopology of instances within a Block resource.
    * </pre>
    *
    * <code>

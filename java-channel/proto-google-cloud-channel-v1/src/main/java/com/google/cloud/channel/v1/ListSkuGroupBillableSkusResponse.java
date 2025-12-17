@@ -152,8 +152,9 @@ public final class ListSkuGroupBillableSkusResponse extends com.google.protobuf.
    *
    * <pre>
    * A token to retrieve the next page of results.
-   * Pass to [ListSkuGroupBillableSkus.page_token][] to obtain that
-   * page.
+   * Pass to
+   * [ListSkuGroupBillableSkusRequest.page_token][google.cloud.channel.v1.ListSkuGroupBillableSkusRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -178,8 +179,9 @@ public final class ListSkuGroupBillableSkusResponse extends com.google.protobuf.
    *
    * <pre>
    * A token to retrieve the next page of results.
-   * Pass to [ListSkuGroupBillableSkus.page_token][] to obtain that
-   * page.
+   * Pass to
+   * [ListSkuGroupBillableSkusRequest.page_token][google.cloud.channel.v1.ListSkuGroupBillableSkusRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -993,8 +995,9 @@ public final class ListSkuGroupBillableSkusResponse extends com.google.protobuf.
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListSkuGroupBillableSkus.page_token][] to obtain that
-     * page.
+     * Pass to
+     * [ListSkuGroupBillableSkusRequest.page_token][google.cloud.channel.v1.ListSkuGroupBillableSkusRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1018,8 +1021,9 @@ public final class ListSkuGroupBillableSkusResponse extends com.google.protobuf.
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListSkuGroupBillableSkus.page_token][] to obtain that
-     * page.
+     * Pass to
+     * [ListSkuGroupBillableSkusRequest.page_token][google.cloud.channel.v1.ListSkuGroupBillableSkusRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1043,8 +1047,9 @@ public final class ListSkuGroupBillableSkusResponse extends com.google.protobuf.
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListSkuGroupBillableSkus.page_token][] to obtain that
-     * page.
+     * Pass to
+     * [ListSkuGroupBillableSkusRequest.page_token][google.cloud.channel.v1.ListSkuGroupBillableSkusRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1067,8 +1072,9 @@ public final class ListSkuGroupBillableSkusResponse extends com.google.protobuf.
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListSkuGroupBillableSkus.page_token][] to obtain that
-     * page.
+     * Pass to
+     * [ListSkuGroupBillableSkusRequest.page_token][google.cloud.channel.v1.ListSkuGroupBillableSkusRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1087,8 +1093,9 @@ public final class ListSkuGroupBillableSkusResponse extends com.google.protobuf.
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListSkuGroupBillableSkus.page_token][] to obtain that
-     * page.
+     * Pass to
+     * [ListSkuGroupBillableSkusRequest.page_token][google.cloud.channel.v1.ListSkuGroupBillableSkusRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

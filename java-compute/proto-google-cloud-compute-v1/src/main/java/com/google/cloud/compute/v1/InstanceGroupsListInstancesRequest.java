@@ -68,7 +68,9 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
    *
    *
    * <pre>
-   * A filter for the state of the instances in the instance group. Valid options are ALL or RUNNING. If you do not specify this parameter the list includes all instances regardless of their state.
+   * A filter for the state of the instances in the instance group. Valid
+   * options are ALL or RUNNING. If you do not specify
+   * this parameter the list includes all instances regardless of their state.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.InstanceGroupsListInstancesRequest.InstanceState}
@@ -98,7 +100,8 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Includes instances in the generated list only if they have a RUNNING state.
+     * Includes instances in the generated list only if they have a RUNNING
+     * state.
      * </pre>
      *
      * <code>RUNNING = 121282975;</code>
@@ -133,7 +136,8 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Includes instances in the generated list only if they have a RUNNING state.
+     * Includes instances in the generated list only if they have a RUNNING
+     * state.
      * </pre>
      *
      * <code>RUNNING = 121282975;</code>
@@ -235,7 +239,9 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
    *
    *
    * <pre>
-   * A filter for the state of the instances in the instance group. Valid options are ALL or RUNNING. If you do not specify this parameter the list includes all instances regardless of their state.
+   * A filter for the state of the instances in the instance group. Valid
+   * options are ALL or RUNNING. If you do not specify
+   * this parameter the list includes all instances regardless of their state.
    * Check the InstanceState enum for the list of possible values.
    * </pre>
    *
@@ -252,7 +258,9 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
    *
    *
    * <pre>
-   * A filter for the state of the instances in the instance group. Valid options are ALL or RUNNING. If you do not specify this parameter the list includes all instances regardless of their state.
+   * A filter for the state of the instances in the instance group. Valid
+   * options are ALL or RUNNING. If you do not specify
+   * this parameter the list includes all instances regardless of their state.
    * Check the InstanceState enum for the list of possible values.
    * </pre>
    *
@@ -277,7 +285,9 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
    *
    *
    * <pre>
-   * A filter for the state of the instances in the instance group. Valid options are ALL or RUNNING. If you do not specify this parameter the list includes all instances regardless of their state.
+   * A filter for the state of the instances in the instance group. Valid
+   * options are ALL or RUNNING. If you do not specify
+   * this parameter the list includes all instances regardless of their state.
    * Check the InstanceState enum for the list of possible values.
    * </pre>
    *
@@ -658,7 +668,9 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
      *
      *
      * <pre>
-     * A filter for the state of the instances in the instance group. Valid options are ALL or RUNNING. If you do not specify this parameter the list includes all instances regardless of their state.
+     * A filter for the state of the instances in the instance group. Valid
+     * options are ALL or RUNNING. If you do not specify
+     * this parameter the list includes all instances regardless of their state.
      * Check the InstanceState enum for the list of possible values.
      * </pre>
      *
@@ -674,7 +686,9 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
      *
      *
      * <pre>
-     * A filter for the state of the instances in the instance group. Valid options are ALL or RUNNING. If you do not specify this parameter the list includes all instances regardless of their state.
+     * A filter for the state of the instances in the instance group. Valid
+     * options are ALL or RUNNING. If you do not specify
+     * this parameter the list includes all instances regardless of their state.
      * Check the InstanceState enum for the list of possible values.
      * </pre>
      *
@@ -698,7 +712,9 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
      *
      *
      * <pre>
-     * A filter for the state of the instances in the instance group. Valid options are ALL or RUNNING. If you do not specify this parameter the list includes all instances regardless of their state.
+     * A filter for the state of the instances in the instance group. Valid
+     * options are ALL or RUNNING. If you do not specify
+     * this parameter the list includes all instances regardless of their state.
      * Check the InstanceState enum for the list of possible values.
      * </pre>
      *
@@ -722,7 +738,9 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
      *
      *
      * <pre>
-     * A filter for the state of the instances in the instance group. Valid options are ALL or RUNNING. If you do not specify this parameter the list includes all instances regardless of their state.
+     * A filter for the state of the instances in the instance group. Valid
+     * options are ALL or RUNNING. If you do not specify
+     * this parameter the list includes all instances regardless of their state.
      * Check the InstanceState enum for the list of possible values.
      * </pre>
      *
@@ -745,7 +763,9 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
      *
      *
      * <pre>
-     * A filter for the state of the instances in the instance group. Valid options are ALL or RUNNING. If you do not specify this parameter the list includes all instances regardless of their state.
+     * A filter for the state of the instances in the instance group. Valid
+     * options are ALL or RUNNING. If you do not specify
+     * this parameter the list includes all instances regardless of their state.
      * Check the InstanceState enum for the list of possible values.
      * </pre>
      *
@@ -764,7 +784,9 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
      *
      *
      * <pre>
-     * A filter for the state of the instances in the instance group. Valid options are ALL or RUNNING. If you do not specify this parameter the list includes all instances regardless of their state.
+     * A filter for the state of the instances in the instance group. Valid
+     * options are ALL or RUNNING. If you do not specify
+     * this parameter the list includes all instances regardless of their state.
      * Check the InstanceState enum for the list of possible values.
      * </pre>
      *

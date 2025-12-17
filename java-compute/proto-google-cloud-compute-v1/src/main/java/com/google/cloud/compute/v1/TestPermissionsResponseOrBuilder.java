@@ -28,7 +28,8 @@ public interface TestPermissionsResponseOrBuilder
    *
    *
    * <pre>
-   * A subset of `TestPermissionsRequest.permissions` that the caller is allowed.
+   * A subset of `TestPermissionsRequest.permissions` that the caller is
+   * allowed.
    * </pre>
    *
    * <code>repeated string permissions = 59962500;</code>
@@ -41,7 +42,8 @@ public interface TestPermissionsResponseOrBuilder
    *
    *
    * <pre>
-   * A subset of `TestPermissionsRequest.permissions` that the caller is allowed.
+   * A subset of `TestPermissionsRequest.permissions` that the caller is
+   * allowed.
    * </pre>
    *
    * <code>repeated string permissions = 59962500;</code>
@@ -54,7 +56,8 @@ public interface TestPermissionsResponseOrBuilder
    *
    *
    * <pre>
-   * A subset of `TestPermissionsRequest.permissions` that the caller is allowed.
+   * A subset of `TestPermissionsRequest.permissions` that the caller is
+   * allowed.
    * </pre>
    *
    * <code>repeated string permissions = 59962500;</code>
@@ -68,7 +71,8 @@ public interface TestPermissionsResponseOrBuilder
    *
    *
    * <pre>
-   * A subset of `TestPermissionsRequest.permissions` that the caller is allowed.
+   * A subset of `TestPermissionsRequest.permissions` that the caller is
+   * allowed.
    * </pre>
    *
    * <code>repeated string permissions = 59962500;</code>

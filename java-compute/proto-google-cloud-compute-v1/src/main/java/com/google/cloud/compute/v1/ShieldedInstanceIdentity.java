@@ -65,6 +65,132 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
   }
 
   private int bitField0_;
+  public static final int ECC_P256_ENCRYPTION_KEY_FIELD_NUMBER = 469607365;
+  private com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry eccP256EncryptionKey_;
+
+  /**
+   *
+   *
+   * <pre>
+   * An Endorsement Key (EK) made by the ECC P256 algorithm
+   * issued to the Shielded Instance's vTPM.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry ecc_p256_encryption_key = 469607365;
+   * </code>
+   *
+   * @return Whether the eccP256EncryptionKey field is set.
+   */
+  @java.lang.Override
+  public boolean hasEccP256EncryptionKey() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * An Endorsement Key (EK) made by the ECC P256 algorithm
+   * issued to the Shielded Instance's vTPM.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry ecc_p256_encryption_key = 469607365;
+   * </code>
+   *
+   * @return The eccP256EncryptionKey.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry getEccP256EncryptionKey() {
+    return eccP256EncryptionKey_ == null
+        ? com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.getDefaultInstance()
+        : eccP256EncryptionKey_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * An Endorsement Key (EK) made by the ECC P256 algorithm
+   * issued to the Shielded Instance's vTPM.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry ecc_p256_encryption_key = 469607365;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ShieldedInstanceIdentityEntryOrBuilder
+      getEccP256EncryptionKeyOrBuilder() {
+    return eccP256EncryptionKey_ == null
+        ? com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.getDefaultInstance()
+        : eccP256EncryptionKey_;
+  }
+
+  public static final int ECC_P256_SIGNING_KEY_FIELD_NUMBER = 477678403;
+  private com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry eccP256SigningKey_;
+
+  /**
+   *
+   *
+   * <pre>
+   * An Attestation Key (AK) made by the ECC P256 algorithm
+   * issued to the Shielded Instance's vTPM.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry ecc_p256_signing_key = 477678403;
+   * </code>
+   *
+   * @return Whether the eccP256SigningKey field is set.
+   */
+  @java.lang.Override
+  public boolean hasEccP256SigningKey() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * An Attestation Key (AK) made by the ECC P256 algorithm
+   * issued to the Shielded Instance's vTPM.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry ecc_p256_signing_key = 477678403;
+   * </code>
+   *
+   * @return The eccP256SigningKey.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry getEccP256SigningKey() {
+    return eccP256SigningKey_ == null
+        ? com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.getDefaultInstance()
+        : eccP256SigningKey_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * An Attestation Key (AK) made by the ECC P256 algorithm
+   * issued to the Shielded Instance's vTPM.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry ecc_p256_signing_key = 477678403;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ShieldedInstanceIdentityEntryOrBuilder
+      getEccP256SigningKeyOrBuilder() {
+    return eccP256SigningKey_ == null
+        ? com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.getDefaultInstance()
+        : eccP256SigningKey_;
+  }
+
   public static final int ENCRYPTION_KEY_FIELD_NUMBER = 488268707;
   private com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry encryptionKey_;
 
@@ -72,7 +198,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
+   * An Endorsement Key (EK) made by the RSA 2048 algorithm
+   * issued to the Shielded Instance's vTPM.
    * </pre>
    *
    * <code>
@@ -83,14 +210,15 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public boolean hasEncryptionKey() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
+   * An Endorsement Key (EK) made by the RSA 2048 algorithm
+   * issued to the Shielded Instance's vTPM.
    * </pre>
    *
    * <code>
@@ -110,7 +238,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
+   * An Endorsement Key (EK) made by the RSA 2048 algorithm
+   * issued to the Shielded Instance's vTPM.
    * </pre>
    *
    * <code>
@@ -134,7 +263,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#shieldedInstanceIdentity for shielded Instance identity entry.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
+   * identity entry.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -143,14 +273,15 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public boolean hasKind() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#shieldedInstanceIdentity for shielded Instance identity entry.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
+   * identity entry.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -174,7 +305,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#shieldedInstanceIdentity for shielded Instance identity entry.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
+   * identity entry.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -201,7 +333,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
+   * An Attestation Key (AK) made by the RSA 2048 algorithm
+   * issued to the Shielded Instance's vTPM.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 320948261;
@@ -211,14 +344,15 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public boolean hasSigningKey() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
+   * An Attestation Key (AK) made by the RSA 2048 algorithm
+   * issued to the Shielded Instance's vTPM.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 320948261;
@@ -237,7 +371,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
+   * An Attestation Key (AK) made by the RSA 2048 algorithm
+   * issued to the Shielded Instance's vTPM.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 320948261;
@@ -265,13 +400,19 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(320948261, getSigningKey());
     }
     if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(469607365, getEccP256EncryptionKey());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(477678403, getEccP256SigningKey());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(488268707, getEncryptionKey());
     }
     getUnknownFields().writeTo(output);
@@ -283,13 +424,23 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(320948261, getSigningKey());
     }
     if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              469607365, getEccP256EncryptionKey());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              477678403, getEccP256SigningKey());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(488268707, getEncryptionKey());
     }
@@ -309,6 +460,14 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
     com.google.cloud.compute.v1.ShieldedInstanceIdentity other =
         (com.google.cloud.compute.v1.ShieldedInstanceIdentity) obj;
 
+    if (hasEccP256EncryptionKey() != other.hasEccP256EncryptionKey()) return false;
+    if (hasEccP256EncryptionKey()) {
+      if (!getEccP256EncryptionKey().equals(other.getEccP256EncryptionKey())) return false;
+    }
+    if (hasEccP256SigningKey() != other.hasEccP256SigningKey()) return false;
+    if (hasEccP256SigningKey()) {
+      if (!getEccP256SigningKey().equals(other.getEccP256SigningKey())) return false;
+    }
     if (hasEncryptionKey() != other.hasEncryptionKey()) return false;
     if (hasEncryptionKey()) {
       if (!getEncryptionKey().equals(other.getEncryptionKey())) return false;
@@ -332,6 +491,14 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasEccP256EncryptionKey()) {
+      hash = (37 * hash) + ECC_P256_ENCRYPTION_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getEccP256EncryptionKey().hashCode();
+    }
+    if (hasEccP256SigningKey()) {
+      hash = (37 * hash) + ECC_P256_SIGNING_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getEccP256SigningKey().hashCode();
+    }
     if (hasEncryptionKey()) {
       hash = (37 * hash) + ENCRYPTION_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getEncryptionKey().hashCode();
@@ -485,6 +652,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getEccP256EncryptionKeyFieldBuilder();
+        getEccP256SigningKeyFieldBuilder();
         getEncryptionKeyFieldBuilder();
         getSigningKeyFieldBuilder();
       }
@@ -494,6 +663,16 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      eccP256EncryptionKey_ = null;
+      if (eccP256EncryptionKeyBuilder_ != null) {
+        eccP256EncryptionKeyBuilder_.dispose();
+        eccP256EncryptionKeyBuilder_ = null;
+      }
+      eccP256SigningKey_ = null;
+      if (eccP256SigningKeyBuilder_ != null) {
+        eccP256SigningKeyBuilder_.dispose();
+        eccP256SigningKeyBuilder_ = null;
+      }
       encryptionKey_ = null;
       if (encryptionKeyBuilder_ != null) {
         encryptionKeyBuilder_.dispose();
@@ -543,17 +722,31 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.encryptionKey_ =
-            encryptionKeyBuilder_ == null ? encryptionKey_ : encryptionKeyBuilder_.build();
+        result.eccP256EncryptionKey_ =
+            eccP256EncryptionKeyBuilder_ == null
+                ? eccP256EncryptionKey_
+                : eccP256EncryptionKeyBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.kind_ = kind_;
+        result.eccP256SigningKey_ =
+            eccP256SigningKeyBuilder_ == null
+                ? eccP256SigningKey_
+                : eccP256SigningKeyBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.signingKey_ = signingKeyBuilder_ == null ? signingKey_ : signingKeyBuilder_.build();
+        result.encryptionKey_ =
+            encryptionKeyBuilder_ == null ? encryptionKey_ : encryptionKeyBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.kind_ = kind_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.signingKey_ = signingKeyBuilder_ == null ? signingKey_ : signingKeyBuilder_.build();
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -604,12 +797,18 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
     public Builder mergeFrom(com.google.cloud.compute.v1.ShieldedInstanceIdentity other) {
       if (other == com.google.cloud.compute.v1.ShieldedInstanceIdentity.getDefaultInstance())
         return this;
+      if (other.hasEccP256EncryptionKey()) {
+        mergeEccP256EncryptionKey(other.getEccP256EncryptionKey());
+      }
+      if (other.hasEccP256SigningKey()) {
+        mergeEccP256SigningKey(other.getEccP256SigningKey());
+      }
       if (other.hasEncryptionKey()) {
         mergeEncryptionKey(other.getEncryptionKey());
       }
       if (other.hasKind()) {
         kind_ = other.kind_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasSigningKey()) {
@@ -644,19 +843,33 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
             case 26336418:
               {
                 kind_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26336418
             case -1727381206:
               {
                 input.readMessage(getSigningKeyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case -1727381206
+            case -538108374:
+              {
+                input.readMessage(
+                    getEccP256EncryptionKeyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case -538108374
+            case -473540070:
+              {
+                input.readMessage(
+                    getEccP256SigningKeyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case -473540070
             case -388817638:
               {
                 input.readMessage(getEncryptionKeyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case -388817638
             default:
@@ -678,6 +891,460 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
 
     private int bitField0_;
 
+    private com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry eccP256EncryptionKey_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry,
+            com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.Builder,
+            com.google.cloud.compute.v1.ShieldedInstanceIdentityEntryOrBuilder>
+        eccP256EncryptionKeyBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * An Endorsement Key (EK) made by the ECC P256 algorithm
+     * issued to the Shielded Instance's vTPM.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry ecc_p256_encryption_key = 469607365;
+     * </code>
+     *
+     * @return Whether the eccP256EncryptionKey field is set.
+     */
+    public boolean hasEccP256EncryptionKey() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An Endorsement Key (EK) made by the ECC P256 algorithm
+     * issued to the Shielded Instance's vTPM.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry ecc_p256_encryption_key = 469607365;
+     * </code>
+     *
+     * @return The eccP256EncryptionKey.
+     */
+    public com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry getEccP256EncryptionKey() {
+      if (eccP256EncryptionKeyBuilder_ == null) {
+        return eccP256EncryptionKey_ == null
+            ? com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.getDefaultInstance()
+            : eccP256EncryptionKey_;
+      } else {
+        return eccP256EncryptionKeyBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An Endorsement Key (EK) made by the ECC P256 algorithm
+     * issued to the Shielded Instance's vTPM.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry ecc_p256_encryption_key = 469607365;
+     * </code>
+     */
+    public Builder setEccP256EncryptionKey(
+        com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry value) {
+      if (eccP256EncryptionKeyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        eccP256EncryptionKey_ = value;
+      } else {
+        eccP256EncryptionKeyBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An Endorsement Key (EK) made by the ECC P256 algorithm
+     * issued to the Shielded Instance's vTPM.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry ecc_p256_encryption_key = 469607365;
+     * </code>
+     */
+    public Builder setEccP256EncryptionKey(
+        com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.Builder builderForValue) {
+      if (eccP256EncryptionKeyBuilder_ == null) {
+        eccP256EncryptionKey_ = builderForValue.build();
+      } else {
+        eccP256EncryptionKeyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An Endorsement Key (EK) made by the ECC P256 algorithm
+     * issued to the Shielded Instance's vTPM.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry ecc_p256_encryption_key = 469607365;
+     * </code>
+     */
+    public Builder mergeEccP256EncryptionKey(
+        com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry value) {
+      if (eccP256EncryptionKeyBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && eccP256EncryptionKey_ != null
+            && eccP256EncryptionKey_
+                != com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.getDefaultInstance()) {
+          getEccP256EncryptionKeyBuilder().mergeFrom(value);
+        } else {
+          eccP256EncryptionKey_ = value;
+        }
+      } else {
+        eccP256EncryptionKeyBuilder_.mergeFrom(value);
+      }
+      if (eccP256EncryptionKey_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An Endorsement Key (EK) made by the ECC P256 algorithm
+     * issued to the Shielded Instance's vTPM.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry ecc_p256_encryption_key = 469607365;
+     * </code>
+     */
+    public Builder clearEccP256EncryptionKey() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      eccP256EncryptionKey_ = null;
+      if (eccP256EncryptionKeyBuilder_ != null) {
+        eccP256EncryptionKeyBuilder_.dispose();
+        eccP256EncryptionKeyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An Endorsement Key (EK) made by the ECC P256 algorithm
+     * issued to the Shielded Instance's vTPM.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry ecc_p256_encryption_key = 469607365;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.Builder
+        getEccP256EncryptionKeyBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return getEccP256EncryptionKeyFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An Endorsement Key (EK) made by the ECC P256 algorithm
+     * issued to the Shielded Instance's vTPM.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry ecc_p256_encryption_key = 469607365;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.ShieldedInstanceIdentityEntryOrBuilder
+        getEccP256EncryptionKeyOrBuilder() {
+      if (eccP256EncryptionKeyBuilder_ != null) {
+        return eccP256EncryptionKeyBuilder_.getMessageOrBuilder();
+      } else {
+        return eccP256EncryptionKey_ == null
+            ? com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.getDefaultInstance()
+            : eccP256EncryptionKey_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An Endorsement Key (EK) made by the ECC P256 algorithm
+     * issued to the Shielded Instance's vTPM.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry ecc_p256_encryption_key = 469607365;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry,
+            com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.Builder,
+            com.google.cloud.compute.v1.ShieldedInstanceIdentityEntryOrBuilder>
+        getEccP256EncryptionKeyFieldBuilder() {
+      if (eccP256EncryptionKeyBuilder_ == null) {
+        eccP256EncryptionKeyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry,
+                com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.Builder,
+                com.google.cloud.compute.v1.ShieldedInstanceIdentityEntryOrBuilder>(
+                getEccP256EncryptionKey(), getParentForChildren(), isClean());
+        eccP256EncryptionKey_ = null;
+      }
+      return eccP256EncryptionKeyBuilder_;
+    }
+
+    private com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry eccP256SigningKey_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry,
+            com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.Builder,
+            com.google.cloud.compute.v1.ShieldedInstanceIdentityEntryOrBuilder>
+        eccP256SigningKeyBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * An Attestation Key (AK) made by the ECC P256 algorithm
+     * issued to the Shielded Instance's vTPM.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry ecc_p256_signing_key = 477678403;
+     * </code>
+     *
+     * @return Whether the eccP256SigningKey field is set.
+     */
+    public boolean hasEccP256SigningKey() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An Attestation Key (AK) made by the ECC P256 algorithm
+     * issued to the Shielded Instance's vTPM.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry ecc_p256_signing_key = 477678403;
+     * </code>
+     *
+     * @return The eccP256SigningKey.
+     */
+    public com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry getEccP256SigningKey() {
+      if (eccP256SigningKeyBuilder_ == null) {
+        return eccP256SigningKey_ == null
+            ? com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.getDefaultInstance()
+            : eccP256SigningKey_;
+      } else {
+        return eccP256SigningKeyBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An Attestation Key (AK) made by the ECC P256 algorithm
+     * issued to the Shielded Instance's vTPM.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry ecc_p256_signing_key = 477678403;
+     * </code>
+     */
+    public Builder setEccP256SigningKey(
+        com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry value) {
+      if (eccP256SigningKeyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        eccP256SigningKey_ = value;
+      } else {
+        eccP256SigningKeyBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An Attestation Key (AK) made by the ECC P256 algorithm
+     * issued to the Shielded Instance's vTPM.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry ecc_p256_signing_key = 477678403;
+     * </code>
+     */
+    public Builder setEccP256SigningKey(
+        com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.Builder builderForValue) {
+      if (eccP256SigningKeyBuilder_ == null) {
+        eccP256SigningKey_ = builderForValue.build();
+      } else {
+        eccP256SigningKeyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An Attestation Key (AK) made by the ECC P256 algorithm
+     * issued to the Shielded Instance's vTPM.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry ecc_p256_signing_key = 477678403;
+     * </code>
+     */
+    public Builder mergeEccP256SigningKey(
+        com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry value) {
+      if (eccP256SigningKeyBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && eccP256SigningKey_ != null
+            && eccP256SigningKey_
+                != com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.getDefaultInstance()) {
+          getEccP256SigningKeyBuilder().mergeFrom(value);
+        } else {
+          eccP256SigningKey_ = value;
+        }
+      } else {
+        eccP256SigningKeyBuilder_.mergeFrom(value);
+      }
+      if (eccP256SigningKey_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An Attestation Key (AK) made by the ECC P256 algorithm
+     * issued to the Shielded Instance's vTPM.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry ecc_p256_signing_key = 477678403;
+     * </code>
+     */
+    public Builder clearEccP256SigningKey() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      eccP256SigningKey_ = null;
+      if (eccP256SigningKeyBuilder_ != null) {
+        eccP256SigningKeyBuilder_.dispose();
+        eccP256SigningKeyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An Attestation Key (AK) made by the ECC P256 algorithm
+     * issued to the Shielded Instance's vTPM.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry ecc_p256_signing_key = 477678403;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.Builder
+        getEccP256SigningKeyBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getEccP256SigningKeyFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An Attestation Key (AK) made by the ECC P256 algorithm
+     * issued to the Shielded Instance's vTPM.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry ecc_p256_signing_key = 477678403;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.ShieldedInstanceIdentityEntryOrBuilder
+        getEccP256SigningKeyOrBuilder() {
+      if (eccP256SigningKeyBuilder_ != null) {
+        return eccP256SigningKeyBuilder_.getMessageOrBuilder();
+      } else {
+        return eccP256SigningKey_ == null
+            ? com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.getDefaultInstance()
+            : eccP256SigningKey_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An Attestation Key (AK) made by the ECC P256 algorithm
+     * issued to the Shielded Instance's vTPM.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry ecc_p256_signing_key = 477678403;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry,
+            com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.Builder,
+            com.google.cloud.compute.v1.ShieldedInstanceIdentityEntryOrBuilder>
+        getEccP256SigningKeyFieldBuilder() {
+      if (eccP256SigningKeyBuilder_ == null) {
+        eccP256SigningKeyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry,
+                com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.Builder,
+                com.google.cloud.compute.v1.ShieldedInstanceIdentityEntryOrBuilder>(
+                getEccP256SigningKey(), getParentForChildren(), isClean());
+        eccP256SigningKey_ = null;
+      }
+      return eccP256SigningKeyBuilder_;
+    }
+
     private com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry encryptionKey_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry,
@@ -689,7 +1356,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
+     * An Endorsement Key (EK) made by the RSA 2048 algorithm
+     * issued to the Shielded Instance's vTPM.
      * </pre>
      *
      * <code>
@@ -699,14 +1367,15 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      * @return Whether the encryptionKey field is set.
      */
     public boolean hasEncryptionKey() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
+     * An Endorsement Key (EK) made by the RSA 2048 algorithm
+     * issued to the Shielded Instance's vTPM.
      * </pre>
      *
      * <code>
@@ -729,7 +1398,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
+     * An Endorsement Key (EK) made by the RSA 2048 algorithm
+     * issued to the Shielded Instance's vTPM.
      * </pre>
      *
      * <code>
@@ -746,7 +1416,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
       } else {
         encryptionKeyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -755,7 +1425,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
+     * An Endorsement Key (EK) made by the RSA 2048 algorithm
+     * issued to the Shielded Instance's vTPM.
      * </pre>
      *
      * <code>
@@ -769,7 +1440,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
       } else {
         encryptionKeyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -778,7 +1449,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
+     * An Endorsement Key (EK) made by the RSA 2048 algorithm
+     * issued to the Shielded Instance's vTPM.
      * </pre>
      *
      * <code>
@@ -788,7 +1460,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
     public Builder mergeEncryptionKey(
         com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry value) {
       if (encryptionKeyBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)
+        if (((bitField0_ & 0x00000004) != 0)
             && encryptionKey_ != null
             && encryptionKey_
                 != com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.getDefaultInstance()) {
@@ -800,7 +1472,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
         encryptionKeyBuilder_.mergeFrom(value);
       }
       if (encryptionKey_ != null) {
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -810,7 +1482,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
+     * An Endorsement Key (EK) made by the RSA 2048 algorithm
+     * issued to the Shielded Instance's vTPM.
      * </pre>
      *
      * <code>
@@ -818,7 +1491,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearEncryptionKey() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       encryptionKey_ = null;
       if (encryptionKeyBuilder_ != null) {
         encryptionKeyBuilder_.dispose();
@@ -832,7 +1505,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
+     * An Endorsement Key (EK) made by the RSA 2048 algorithm
+     * issued to the Shielded Instance's vTPM.
      * </pre>
      *
      * <code>
@@ -841,7 +1515,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      */
     public com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.Builder
         getEncryptionKeyBuilder() {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return getEncryptionKeyFieldBuilder().getBuilder();
     }
@@ -850,7 +1524,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
+     * An Endorsement Key (EK) made by the RSA 2048 algorithm
+     * issued to the Shielded Instance's vTPM.
      * </pre>
      *
      * <code>
@@ -872,7 +1547,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
+     * An Endorsement Key (EK) made by the RSA 2048 algorithm
+     * issued to the Shielded Instance's vTPM.
      * </pre>
      *
      * <code>
@@ -902,7 +1578,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#shieldedInstanceIdentity for shielded Instance identity entry.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
+     * identity entry.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -910,14 +1587,15 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#shieldedInstanceIdentity for shielded Instance identity entry.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
+     * identity entry.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -940,7 +1618,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#shieldedInstanceIdentity for shielded Instance identity entry.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
+     * identity entry.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -963,7 +1642,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#shieldedInstanceIdentity for shielded Instance identity entry.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
+     * identity entry.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -976,7 +1656,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       kind_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -985,7 +1665,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#shieldedInstanceIdentity for shielded Instance identity entry.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
+     * identity entry.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -994,7 +1675,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      */
     public Builder clearKind() {
       kind_ = getDefaultInstance().getKind();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1003,7 +1684,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#shieldedInstanceIdentity for shielded Instance identity entry.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
+     * identity entry.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1017,7 +1699,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
       }
       checkByteStringIsUtf8(value);
       kind_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1033,7 +1715,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
+     * An Attestation Key (AK) made by the RSA 2048 algorithm
+     * issued to the Shielded Instance's vTPM.
      * </pre>
      *
      * <code>
@@ -1043,14 +1726,15 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      * @return Whether the signingKey field is set.
      */
     public boolean hasSigningKey() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
+     * An Attestation Key (AK) made by the RSA 2048 algorithm
+     * issued to the Shielded Instance's vTPM.
      * </pre>
      *
      * <code>
@@ -1073,7 +1757,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
+     * An Attestation Key (AK) made by the RSA 2048 algorithm
+     * issued to the Shielded Instance's vTPM.
      * </pre>
      *
      * <code>
@@ -1089,7 +1774,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
       } else {
         signingKeyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1098,7 +1783,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
+     * An Attestation Key (AK) made by the RSA 2048 algorithm
+     * issued to the Shielded Instance's vTPM.
      * </pre>
      *
      * <code>
@@ -1112,7 +1798,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
       } else {
         signingKeyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1121,7 +1807,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
+     * An Attestation Key (AK) made by the RSA 2048 algorithm
+     * issued to the Shielded Instance's vTPM.
      * </pre>
      *
      * <code>
@@ -1131,7 +1818,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
     public Builder mergeSigningKey(
         com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry value) {
       if (signingKeyBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && signingKey_ != null
             && signingKey_
                 != com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.getDefaultInstance()) {
@@ -1143,7 +1830,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
         signingKeyBuilder_.mergeFrom(value);
       }
       if (signingKey_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -1153,7 +1840,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
+     * An Attestation Key (AK) made by the RSA 2048 algorithm
+     * issued to the Shielded Instance's vTPM.
      * </pre>
      *
      * <code>
@@ -1161,7 +1849,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearSigningKey() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       signingKey_ = null;
       if (signingKeyBuilder_ != null) {
         signingKeyBuilder_.dispose();
@@ -1175,7 +1863,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
+     * An Attestation Key (AK) made by the RSA 2048 algorithm
+     * issued to the Shielded Instance's vTPM.
      * </pre>
      *
      * <code>
@@ -1184,7 +1873,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      */
     public com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.Builder
         getSigningKeyBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getSigningKeyFieldBuilder().getBuilder();
     }
@@ -1193,7 +1882,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
+     * An Attestation Key (AK) made by the RSA 2048 algorithm
+     * issued to the Shielded Instance's vTPM.
      * </pre>
      *
      * <code>
@@ -1215,7 +1905,8 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
+     * An Attestation Key (AK) made by the RSA 2048 algorithm
+     * issued to the Shielded Instance's vTPM.
      * </pre>
      *
      * <code>

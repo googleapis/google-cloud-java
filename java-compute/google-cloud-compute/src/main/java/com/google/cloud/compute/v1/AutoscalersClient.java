@@ -68,7 +68,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> AggregatedList</td>
- *      <td><p> Retrieves an aggregated list of autoscalers. To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.</td>
+ *      <td><p> Retrieves an aggregated list of autoscalers.
+ * <p>  To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to `true`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -162,7 +163,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Patch</td>
- *      <td><p> Updates an autoscaler in the specified project using the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.</td>
+ *      <td><p> Updates an autoscaler in the specified project using the data included in the request. This method supportsPATCH semantics and uses theJSON merge patch format and processing rules.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -290,8 +291,10 @@ public class AutoscalersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of autoscalers. To prevent failure, Google recommends that you set
-   * the `returnPartialSuccess` parameter to `true`.
+   * Retrieves an aggregated list of autoscalers.
+   *
+   * <p>To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -321,8 +324,10 @@ public class AutoscalersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of autoscalers. To prevent failure, Google recommends that you set
-   * the `returnPartialSuccess` parameter to `true`.
+   * Retrieves an aggregated list of autoscalers.
+   *
+   * <p>To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -361,8 +366,10 @@ public class AutoscalersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of autoscalers. To prevent failure, Google recommends that you set
-   * the `returnPartialSuccess` parameter to `true`.
+   * Retrieves an aggregated list of autoscalers.
+   *
+   * <p>To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -400,8 +407,10 @@ public class AutoscalersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of autoscalers. To prevent failure, Google recommends that you set
-   * the `returnPartialSuccess` parameter to `true`.
+   * Retrieves an aggregated list of autoscalers.
+   *
+   * <p>To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -943,7 +952,7 @@ public class AutoscalersClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an autoscaler in the specified project using the data included in the request. This
-   * method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+   * method supportsPATCH semantics and uses theJSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -980,7 +989,7 @@ public class AutoscalersClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an autoscaler in the specified project using the data included in the request. This
-   * method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+   * method supportsPATCH semantics and uses theJSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -1013,7 +1022,7 @@ public class AutoscalersClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an autoscaler in the specified project using the data included in the request. This
-   * method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+   * method supportsPATCH semantics and uses theJSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -1047,7 +1056,7 @@ public class AutoscalersClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an autoscaler in the specified project using the data included in the request. This
-   * method supports PATCH semantics and uses the JSON merge patch format and processing rules.
+   * method supportsPATCH semantics and uses theJSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *

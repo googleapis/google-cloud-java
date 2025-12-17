@@ -1257,7 +1257,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Applies the repricing configuration at the entitlement level.
+   * Required. Applies the repricing configuration at the entitlement level.
    *
    * Note: If a
    * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
@@ -1274,7 +1274,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>
-   * .google.cloud.channel.v1.RepricingConfig.EntitlementGranularity entitlement_granularity = 4;
+   * .google.cloud.channel.v1.RepricingConfig.EntitlementGranularity entitlement_granularity = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the entitlementGranularity field is set.
@@ -1288,7 +1288,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Applies the repricing configuration at the entitlement level.
+   * Required. Applies the repricing configuration at the entitlement level.
    *
    * Note: If a
    * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
@@ -1305,7 +1305,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>
-   * .google.cloud.channel.v1.RepricingConfig.EntitlementGranularity entitlement_granularity = 4;
+   * .google.cloud.channel.v1.RepricingConfig.EntitlementGranularity entitlement_granularity = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The entitlementGranularity.
@@ -1323,7 +1323,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Applies the repricing configuration at the entitlement level.
+   * Required. Applies the repricing configuration at the entitlement level.
    *
    * Note: If a
    * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
@@ -1340,7 +1340,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>
-   * .google.cloud.channel.v1.RepricingConfig.EntitlementGranularity entitlement_granularity = 4;
+   * .google.cloud.channel.v1.RepricingConfig.EntitlementGranularity entitlement_granularity = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -1371,7 +1371,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
    * </code>
    *
    * @deprecated google.cloud.channel.v1.RepricingConfig.channel_partner_granularity is deprecated.
-   *     See google/cloud/channel/v1/repricing.proto;l=139
+   *     See google/cloud/channel/v1/repricing.proto;l=140
    * @return Whether the channelPartnerGranularity field is set.
    */
   @java.lang.Override
@@ -1397,7 +1397,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
    * </code>
    *
    * @deprecated google.cloud.channel.v1.RepricingConfig.channel_partner_granularity is deprecated.
-   *     See google/cloud/channel/v1/repricing.proto;l=139
+   *     See google/cloud/channel/v1/repricing.proto;l=140
    * @return The channelPartnerGranularity.
    */
   @java.lang.Override
@@ -2303,7 +2303,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Applies the repricing configuration at the entitlement level.
+     * Required. Applies the repricing configuration at the entitlement level.
      *
      * Note: If a
      * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
@@ -2320,7 +2320,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * .google.cloud.channel.v1.RepricingConfig.EntitlementGranularity entitlement_granularity = 4;
+     * .google.cloud.channel.v1.RepricingConfig.EntitlementGranularity entitlement_granularity = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the entitlementGranularity field is set.
@@ -2334,7 +2334,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Applies the repricing configuration at the entitlement level.
+     * Required. Applies the repricing configuration at the entitlement level.
      *
      * Note: If a
      * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
@@ -2351,7 +2351,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * .google.cloud.channel.v1.RepricingConfig.EntitlementGranularity entitlement_granularity = 4;
+     * .google.cloud.channel.v1.RepricingConfig.EntitlementGranularity entitlement_granularity = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The entitlementGranularity.
@@ -2378,7 +2378,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Applies the repricing configuration at the entitlement level.
+     * Required. Applies the repricing configuration at the entitlement level.
      *
      * Note: If a
      * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
@@ -2395,7 +2395,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * .google.cloud.channel.v1.RepricingConfig.EntitlementGranularity entitlement_granularity = 4;
+     * .google.cloud.channel.v1.RepricingConfig.EntitlementGranularity entitlement_granularity = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setEntitlementGranularity(
@@ -2417,7 +2417,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Applies the repricing configuration at the entitlement level.
+     * Required. Applies the repricing configuration at the entitlement level.
      *
      * Note: If a
      * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
@@ -2434,7 +2434,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * .google.cloud.channel.v1.RepricingConfig.EntitlementGranularity entitlement_granularity = 4;
+     * .google.cloud.channel.v1.RepricingConfig.EntitlementGranularity entitlement_granularity = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setEntitlementGranularity(
@@ -2454,7 +2454,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Applies the repricing configuration at the entitlement level.
+     * Required. Applies the repricing configuration at the entitlement level.
      *
      * Note: If a
      * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
@@ -2471,7 +2471,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * .google.cloud.channel.v1.RepricingConfig.EntitlementGranularity entitlement_granularity = 4;
+     * .google.cloud.channel.v1.RepricingConfig.EntitlementGranularity entitlement_granularity = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeEntitlementGranularity(
@@ -2506,7 +2506,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Applies the repricing configuration at the entitlement level.
+     * Required. Applies the repricing configuration at the entitlement level.
      *
      * Note: If a
      * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
@@ -2523,7 +2523,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * .google.cloud.channel.v1.RepricingConfig.EntitlementGranularity entitlement_granularity = 4;
+     * .google.cloud.channel.v1.RepricingConfig.EntitlementGranularity entitlement_granularity = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearEntitlementGranularity() {
@@ -2547,7 +2547,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Applies the repricing configuration at the entitlement level.
+     * Required. Applies the repricing configuration at the entitlement level.
      *
      * Note: If a
      * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
@@ -2564,7 +2564,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * .google.cloud.channel.v1.RepricingConfig.EntitlementGranularity entitlement_granularity = 4;
+     * .google.cloud.channel.v1.RepricingConfig.EntitlementGranularity entitlement_granularity = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.Builder
@@ -2576,7 +2576,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Applies the repricing configuration at the entitlement level.
+     * Required. Applies the repricing configuration at the entitlement level.
      *
      * Note: If a
      * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
@@ -2593,7 +2593,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * .google.cloud.channel.v1.RepricingConfig.EntitlementGranularity entitlement_granularity = 4;
+     * .google.cloud.channel.v1.RepricingConfig.EntitlementGranularity entitlement_granularity = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     @java.lang.Override
@@ -2614,7 +2614,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Applies the repricing configuration at the entitlement level.
+     * Required. Applies the repricing configuration at the entitlement level.
      *
      * Note: If a
      * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
@@ -2631,7 +2631,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * .google.cloud.channel.v1.RepricingConfig.EntitlementGranularity entitlement_granularity = 4;
+     * .google.cloud.channel.v1.RepricingConfig.EntitlementGranularity entitlement_granularity = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2683,7 +2683,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      * </code>
      *
      * @deprecated google.cloud.channel.v1.RepricingConfig.channel_partner_granularity is
-     *     deprecated. See google/cloud/channel/v1/repricing.proto;l=139
+     *     deprecated. See google/cloud/channel/v1/repricing.proto;l=140
      * @return Whether the channelPartnerGranularity field is set.
      */
     @java.lang.Override
@@ -2709,7 +2709,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      * </code>
      *
      * @deprecated google.cloud.channel.v1.RepricingConfig.channel_partner_granularity is
-     *     deprecated. See google/cloud/channel/v1/repricing.proto;l=139
+     *     deprecated. See google/cloud/channel/v1/repricing.proto;l=140
      * @return The channelPartnerGranularity.
      */
     @java.lang.Override

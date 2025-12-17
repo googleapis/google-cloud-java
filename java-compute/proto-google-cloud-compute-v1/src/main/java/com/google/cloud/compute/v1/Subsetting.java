@@ -23,7 +23,9 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Subsetting configuration for this BackendService. Currently this is applicable only for Internal TCP/UDP load balancing, Internal HTTP(S) load balancing and Traffic Director.
+ * Subsetting configuration for this BackendService.
+ * Currently this is applicable only for Internal TCP/UDP load balancing,
+ * Internal HTTP(S) load balancing and Traffic Director.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Subsetting}
@@ -87,7 +89,18 @@ public final class Subsetting extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Subsetting based on consistent hashing. For Traffic Director, the number of backends per backend group (the subset size) is based on the `subset_size` parameter. For Internal HTTP(S) load balancing, the number of backends per backend group (the subset size) is dynamically adjusted in two cases: - As the number of proxy instances participating in Internal HTTP(S) load balancing increases, the subset size decreases. - When the total number of backends in a network exceeds the capacity of a single proxy instance, subset sizes are reduced automatically for each service that has backend subsetting enabled.
+     * Subsetting based on consistent hashing.
+     *
+     * For Traffic Director, the number of backends per backend group
+     * (the subset size) is based on the `subset_size` parameter.
+     *
+     * For Internal HTTP(S) load balancing, the number of backends per backend
+     * group (the subset size) is dynamically adjusted in two cases:
+     * - As the number of proxy instances participating in Internal HTTP(S) load
+     *   balancing increases, the subset size decreases.
+     * - When the total number of backends in a network exceeds the capacity of
+     *   a single proxy instance, subset sizes are reduced automatically for
+     *   each service that has backend subsetting enabled.
      * </pre>
      *
      * <code>CONSISTENT_HASH_SUBSETTING = 108989492;</code>
@@ -97,7 +110,11 @@ public final class Subsetting extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * No Subsetting. Clients may open connections and send traffic to all backends of this backend service. This can lead to performance issues if there is substantial imbalance in the count of clients and backends.
+     * No Subsetting.
+     *
+     * Clients may open connections and send traffic to all backends of this
+     * backend service. This can lead to performance issues if there is
+     * substantial imbalance in the count of clients and backends.
      * </pre>
      *
      * <code>NONE = 2402104;</code>
@@ -121,7 +138,18 @@ public final class Subsetting extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Subsetting based on consistent hashing. For Traffic Director, the number of backends per backend group (the subset size) is based on the `subset_size` parameter. For Internal HTTP(S) load balancing, the number of backends per backend group (the subset size) is dynamically adjusted in two cases: - As the number of proxy instances participating in Internal HTTP(S) load balancing increases, the subset size decreases. - When the total number of backends in a network exceeds the capacity of a single proxy instance, subset sizes are reduced automatically for each service that has backend subsetting enabled.
+     * Subsetting based on consistent hashing.
+     *
+     * For Traffic Director, the number of backends per backend group
+     * (the subset size) is based on the `subset_size` parameter.
+     *
+     * For Internal HTTP(S) load balancing, the number of backends per backend
+     * group (the subset size) is dynamically adjusted in two cases:
+     * - As the number of proxy instances participating in Internal HTTP(S) load
+     *   balancing increases, the subset size decreases.
+     * - When the total number of backends in a network exceeds the capacity of
+     *   a single proxy instance, subset sizes are reduced automatically for
+     *   each service that has backend subsetting enabled.
      * </pre>
      *
      * <code>CONSISTENT_HASH_SUBSETTING = 108989492;</code>
@@ -132,7 +160,11 @@ public final class Subsetting extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * No Subsetting. Clients may open connections and send traffic to all backends of this backend service. This can lead to performance issues if there is substantial imbalance in the count of clients and backends.
+     * No Subsetting.
+     *
+     * Clients may open connections and send traffic to all backends of this
+     * backend service. This can lead to performance issues if there is
+     * substantial imbalance in the count of clients and backends.
      * </pre>
      *
      * <code>NONE = 2402104;</code>
@@ -463,7 +495,9 @@ public final class Subsetting extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Subsetting configuration for this BackendService. Currently this is applicable only for Internal TCP/UDP load balancing, Internal HTTP(S) load balancing and Traffic Director.
+   * Subsetting configuration for this BackendService.
+   * Currently this is applicable only for Internal TCP/UDP load balancing,
+   * Internal HTTP(S) load balancing and Traffic Director.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Subsetting}

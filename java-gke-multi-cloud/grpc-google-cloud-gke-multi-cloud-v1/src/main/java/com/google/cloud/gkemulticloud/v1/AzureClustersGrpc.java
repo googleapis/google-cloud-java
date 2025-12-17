@@ -26,6 +26,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * </pre>
  */
 @io.grpc.stub.annotations.GrpcGenerated
+@java.lang.Deprecated
 public final class AzureClustersGrpc {
 
   private AzureClustersGrpc() {}
@@ -999,6 +1000,7 @@ public final class AzureClustersGrpc {
    * to create and manage Anthos clusters that run on Azure infrastructure.
    * </pre>
    */
+  @java.lang.Deprecated
   public interface AsyncService {
 
     /**
@@ -1015,6 +1017,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     default void createAzureClient(
         com.google.cloud.gkemulticloud.v1.CreateAzureClientRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1030,6 +1033,7 @@ public final class AzureClustersGrpc {
      * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource.
      * </pre>
      */
+    @java.lang.Deprecated
     default void getAzureClient(
         com.google.cloud.gkemulticloud.v1.GetAzureClientRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AzureClient>
@@ -1046,6 +1050,7 @@ public final class AzureClustersGrpc {
      * resources on a given Google Cloud project and region.
      * </pre>
      */
+    @java.lang.Deprecated
     default void listAzureClients(
         com.google.cloud.gkemulticloud.v1.ListAzureClientsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.ListAzureClientsResponse>
@@ -1067,6 +1072,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     default void deleteAzureClient(
         com.google.cloud.gkemulticloud.v1.DeleteAzureClientRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1085,6 +1091,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     default void createAzureCluster(
         com.google.cloud.gkemulticloud.v1.CreateAzureClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1099,6 +1106,7 @@ public final class AzureClustersGrpc {
      * Updates an [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].
      * </pre>
      */
+    @java.lang.Deprecated
     default void updateAzureCluster(
         com.google.cloud.gkemulticloud.v1.UpdateAzureClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1114,6 +1122,7 @@ public final class AzureClustersGrpc {
      * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
      * </pre>
      */
+    @java.lang.Deprecated
     default void getAzureCluster(
         com.google.cloud.gkemulticloud.v1.GetAzureClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AzureCluster>
@@ -1130,6 +1139,7 @@ public final class AzureClustersGrpc {
      * resources on a given Google Cloud project and region.
      * </pre>
      */
+    @java.lang.Deprecated
     default void listAzureClusters(
         com.google.cloud.gkemulticloud.v1.ListAzureClustersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.ListAzureClustersResponse>
@@ -1151,6 +1161,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     default void deleteAzureCluster(
         com.google.cloud.gkemulticloud.v1.DeleteAzureClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1165,6 +1176,7 @@ public final class AzureClustersGrpc {
      * Generates an access token for a cluster agent.
      * </pre>
      */
+    @java.lang.Deprecated
     default void generateAzureClusterAgentToken(
         com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenRequest request,
         io.grpc.stub.StreamObserver<
@@ -1182,6 +1194,7 @@ public final class AzureClustersGrpc {
      * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
      * </pre>
      */
+    @java.lang.Deprecated
     default void generateAzureAccessToken(
         com.google.cloud.gkemulticloud.v1.GenerateAzureAccessTokenRequest request,
         io.grpc.stub.StreamObserver<
@@ -1203,6 +1216,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     default void createAzureNodePool(
         com.google.cloud.gkemulticloud.v1.CreateAzureNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1217,6 +1231,7 @@ public final class AzureClustersGrpc {
      * Updates an [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool].
      * </pre>
      */
+    @java.lang.Deprecated
     default void updateAzureNodePool(
         com.google.cloud.gkemulticloud.v1.UpdateAzureNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1232,6 +1247,7 @@ public final class AzureClustersGrpc {
      * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource.
      * </pre>
      */
+    @java.lang.Deprecated
     default void getAzureNodePool(
         com.google.cloud.gkemulticloud.v1.GetAzureNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AzureNodePool>
@@ -1249,6 +1265,7 @@ public final class AzureClustersGrpc {
      * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].
      * </pre>
      */
+    @java.lang.Deprecated
     default void listAzureNodePools(
         com.google.cloud.gkemulticloud.v1.ListAzureNodePoolsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.ListAzureNodePoolsResponse>
@@ -1268,6 +1285,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     default void deleteAzureNodePool(
         com.google.cloud.gkemulticloud.v1.DeleteAzureNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1286,6 +1304,7 @@ public final class AzureClustersGrpc {
      * for details.
      * </pre>
      */
+    @java.lang.Deprecated
     default void getAzureOpenIdConfig(
         com.google.cloud.gkemulticloud.v1.GetAzureOpenIdConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AzureOpenIdConfig>
@@ -1302,6 +1321,7 @@ public final class AzureClustersGrpc {
      * JSON Web Key format.
      * </pre>
      */
+    @java.lang.Deprecated
     default void getAzureJsonWebKeys(
         com.google.cloud.gkemulticloud.v1.GetAzureJsonWebKeysRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AzureJsonWebKeys>
@@ -1318,6 +1338,7 @@ public final class AzureClustersGrpc {
      * versions, on a given Google Cloud location.
      * </pre>
      */
+    @java.lang.Deprecated
     default void getAzureServerConfig(
         com.google.cloud.gkemulticloud.v1.GetAzureServerConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AzureServerConfig>
@@ -1335,6 +1356,7 @@ public final class AzureClustersGrpc {
    * to create and manage Anthos clusters that run on Azure infrastructure.
    * </pre>
    */
+  @java.lang.Deprecated
   public abstract static class AzureClustersImplBase
       implements io.grpc.BindableService, AsyncService {
 
@@ -1352,6 +1374,7 @@ public final class AzureClustersGrpc {
    * to create and manage Anthos clusters that run on Azure infrastructure.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class AzureClustersStub
       extends io.grpc.stub.AbstractAsyncStub<AzureClustersStub> {
     private AzureClustersStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -1377,6 +1400,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public void createAzureClient(
         com.google.cloud.gkemulticloud.v1.CreateAzureClientRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1394,6 +1418,7 @@ public final class AzureClustersGrpc {
      * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public void getAzureClient(
         com.google.cloud.gkemulticloud.v1.GetAzureClientRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AzureClient>
@@ -1412,6 +1437,7 @@ public final class AzureClustersGrpc {
      * resources on a given Google Cloud project and region.
      * </pre>
      */
+    @java.lang.Deprecated
     public void listAzureClients(
         com.google.cloud.gkemulticloud.v1.ListAzureClientsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.ListAzureClientsResponse>
@@ -1435,6 +1461,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public void deleteAzureClient(
         com.google.cloud.gkemulticloud.v1.DeleteAzureClientRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1455,6 +1482,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public void createAzureCluster(
         com.google.cloud.gkemulticloud.v1.CreateAzureClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1471,6 +1499,7 @@ public final class AzureClustersGrpc {
      * Updates an [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].
      * </pre>
      */
+    @java.lang.Deprecated
     public void updateAzureCluster(
         com.google.cloud.gkemulticloud.v1.UpdateAzureClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1488,6 +1517,7 @@ public final class AzureClustersGrpc {
      * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public void getAzureCluster(
         com.google.cloud.gkemulticloud.v1.GetAzureClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AzureCluster>
@@ -1506,6 +1536,7 @@ public final class AzureClustersGrpc {
      * resources on a given Google Cloud project and region.
      * </pre>
      */
+    @java.lang.Deprecated
     public void listAzureClusters(
         com.google.cloud.gkemulticloud.v1.ListAzureClustersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.ListAzureClustersResponse>
@@ -1529,6 +1560,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public void deleteAzureCluster(
         com.google.cloud.gkemulticloud.v1.DeleteAzureClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1545,6 +1577,7 @@ public final class AzureClustersGrpc {
      * Generates an access token for a cluster agent.
      * </pre>
      */
+    @java.lang.Deprecated
     public void generateAzureClusterAgentToken(
         com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenRequest request,
         io.grpc.stub.StreamObserver<
@@ -1564,6 +1597,7 @@ public final class AzureClustersGrpc {
      * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public void generateAzureAccessToken(
         com.google.cloud.gkemulticloud.v1.GenerateAzureAccessTokenRequest request,
         io.grpc.stub.StreamObserver<
@@ -1587,6 +1621,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public void createAzureNodePool(
         com.google.cloud.gkemulticloud.v1.CreateAzureNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1603,6 +1638,7 @@ public final class AzureClustersGrpc {
      * Updates an [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool].
      * </pre>
      */
+    @java.lang.Deprecated
     public void updateAzureNodePool(
         com.google.cloud.gkemulticloud.v1.UpdateAzureNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1620,6 +1656,7 @@ public final class AzureClustersGrpc {
      * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public void getAzureNodePool(
         com.google.cloud.gkemulticloud.v1.GetAzureNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AzureNodePool>
@@ -1639,6 +1676,7 @@ public final class AzureClustersGrpc {
      * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].
      * </pre>
      */
+    @java.lang.Deprecated
     public void listAzureNodePools(
         com.google.cloud.gkemulticloud.v1.ListAzureNodePoolsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.ListAzureNodePoolsResponse>
@@ -1660,6 +1698,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public void deleteAzureNodePool(
         com.google.cloud.gkemulticloud.v1.DeleteAzureNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1680,6 +1719,7 @@ public final class AzureClustersGrpc {
      * for details.
      * </pre>
      */
+    @java.lang.Deprecated
     public void getAzureOpenIdConfig(
         com.google.cloud.gkemulticloud.v1.GetAzureOpenIdConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AzureOpenIdConfig>
@@ -1698,6 +1738,7 @@ public final class AzureClustersGrpc {
      * JSON Web Key format.
      * </pre>
      */
+    @java.lang.Deprecated
     public void getAzureJsonWebKeys(
         com.google.cloud.gkemulticloud.v1.GetAzureJsonWebKeysRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AzureJsonWebKeys>
@@ -1716,6 +1757,7 @@ public final class AzureClustersGrpc {
      * versions, on a given Google Cloud location.
      * </pre>
      */
+    @java.lang.Deprecated
     public void getAzureServerConfig(
         com.google.cloud.gkemulticloud.v1.GetAzureServerConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AzureServerConfig>
@@ -1735,6 +1777,7 @@ public final class AzureClustersGrpc {
    * to create and manage Anthos clusters that run on Azure infrastructure.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class AzureClustersBlockingV2Stub
       extends io.grpc.stub.AbstractBlockingStub<AzureClustersBlockingV2Stub> {
     private AzureClustersBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -1761,6 +1804,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation createAzureClient(
         com.google.cloud.gkemulticloud.v1.CreateAzureClientRequest request)
         throws io.grpc.StatusException {
@@ -1776,6 +1820,7 @@ public final class AzureClustersGrpc {
      * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.AzureClient getAzureClient(
         com.google.cloud.gkemulticloud.v1.GetAzureClientRequest request)
         throws io.grpc.StatusException {
@@ -1791,6 +1836,7 @@ public final class AzureClustersGrpc {
      * resources on a given Google Cloud project and region.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.ListAzureClientsResponse listAzureClients(
         com.google.cloud.gkemulticloud.v1.ListAzureClientsRequest request)
         throws io.grpc.StatusException {
@@ -1811,6 +1857,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation deleteAzureClient(
         com.google.cloud.gkemulticloud.v1.DeleteAzureClientRequest request)
         throws io.grpc.StatusException {
@@ -1829,6 +1876,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation createAzureCluster(
         com.google.cloud.gkemulticloud.v1.CreateAzureClusterRequest request)
         throws io.grpc.StatusException {
@@ -1843,6 +1891,7 @@ public final class AzureClustersGrpc {
      * Updates an [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation updateAzureCluster(
         com.google.cloud.gkemulticloud.v1.UpdateAzureClusterRequest request)
         throws io.grpc.StatusException {
@@ -1858,6 +1907,7 @@ public final class AzureClustersGrpc {
      * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.AzureCluster getAzureCluster(
         com.google.cloud.gkemulticloud.v1.GetAzureClusterRequest request)
         throws io.grpc.StatusException {
@@ -1873,6 +1923,7 @@ public final class AzureClustersGrpc {
      * resources on a given Google Cloud project and region.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.ListAzureClustersResponse listAzureClusters(
         com.google.cloud.gkemulticloud.v1.ListAzureClustersRequest request)
         throws io.grpc.StatusException {
@@ -1893,6 +1944,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation deleteAzureCluster(
         com.google.cloud.gkemulticloud.v1.DeleteAzureClusterRequest request)
         throws io.grpc.StatusException {
@@ -1907,6 +1959,7 @@ public final class AzureClustersGrpc {
      * Generates an access token for a cluster agent.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenResponse
         generateAzureClusterAgentToken(
             com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenRequest request)
@@ -1923,6 +1976,7 @@ public final class AzureClustersGrpc {
      * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.GenerateAzureAccessTokenResponse
         generateAzureAccessToken(
             com.google.cloud.gkemulticloud.v1.GenerateAzureAccessTokenRequest request)
@@ -1943,6 +1997,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation createAzureNodePool(
         com.google.cloud.gkemulticloud.v1.CreateAzureNodePoolRequest request)
         throws io.grpc.StatusException {
@@ -1957,6 +2012,7 @@ public final class AzureClustersGrpc {
      * Updates an [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool].
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation updateAzureNodePool(
         com.google.cloud.gkemulticloud.v1.UpdateAzureNodePoolRequest request)
         throws io.grpc.StatusException {
@@ -1972,6 +2028,7 @@ public final class AzureClustersGrpc {
      * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.AzureNodePool getAzureNodePool(
         com.google.cloud.gkemulticloud.v1.GetAzureNodePoolRequest request)
         throws io.grpc.StatusException {
@@ -1988,6 +2045,7 @@ public final class AzureClustersGrpc {
      * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.ListAzureNodePoolsResponse listAzureNodePools(
         com.google.cloud.gkemulticloud.v1.ListAzureNodePoolsRequest request)
         throws io.grpc.StatusException {
@@ -2006,6 +2064,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation deleteAzureNodePool(
         com.google.cloud.gkemulticloud.v1.DeleteAzureNodePoolRequest request)
         throws io.grpc.StatusException {
@@ -2024,6 +2083,7 @@ public final class AzureClustersGrpc {
      * for details.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.AzureOpenIdConfig getAzureOpenIdConfig(
         com.google.cloud.gkemulticloud.v1.GetAzureOpenIdConfigRequest request)
         throws io.grpc.StatusException {
@@ -2039,6 +2099,7 @@ public final class AzureClustersGrpc {
      * JSON Web Key format.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.AzureJsonWebKeys getAzureJsonWebKeys(
         com.google.cloud.gkemulticloud.v1.GetAzureJsonWebKeysRequest request)
         throws io.grpc.StatusException {
@@ -2054,6 +2115,7 @@ public final class AzureClustersGrpc {
      * versions, on a given Google Cloud location.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.AzureServerConfig getAzureServerConfig(
         com.google.cloud.gkemulticloud.v1.GetAzureServerConfigRequest request)
         throws io.grpc.StatusException {
@@ -2070,6 +2132,7 @@ public final class AzureClustersGrpc {
    * to create and manage Anthos clusters that run on Azure infrastructure.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class AzureClustersBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<AzureClustersBlockingStub> {
     private AzureClustersBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -2096,6 +2159,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation createAzureClient(
         com.google.cloud.gkemulticloud.v1.CreateAzureClientRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -2110,6 +2174,7 @@ public final class AzureClustersGrpc {
      * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.AzureClient getAzureClient(
         com.google.cloud.gkemulticloud.v1.GetAzureClientRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -2124,6 +2189,7 @@ public final class AzureClustersGrpc {
      * resources on a given Google Cloud project and region.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.ListAzureClientsResponse listAzureClients(
         com.google.cloud.gkemulticloud.v1.ListAzureClientsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -2143,6 +2209,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation deleteAzureClient(
         com.google.cloud.gkemulticloud.v1.DeleteAzureClientRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -2160,6 +2227,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation createAzureCluster(
         com.google.cloud.gkemulticloud.v1.CreateAzureClusterRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -2173,6 +2241,7 @@ public final class AzureClustersGrpc {
      * Updates an [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation updateAzureCluster(
         com.google.cloud.gkemulticloud.v1.UpdateAzureClusterRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -2187,6 +2256,7 @@ public final class AzureClustersGrpc {
      * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.AzureCluster getAzureCluster(
         com.google.cloud.gkemulticloud.v1.GetAzureClusterRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -2201,6 +2271,7 @@ public final class AzureClustersGrpc {
      * resources on a given Google Cloud project and region.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.ListAzureClustersResponse listAzureClusters(
         com.google.cloud.gkemulticloud.v1.ListAzureClustersRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -2220,6 +2291,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation deleteAzureCluster(
         com.google.cloud.gkemulticloud.v1.DeleteAzureClusterRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -2233,6 +2305,7 @@ public final class AzureClustersGrpc {
      * Generates an access token for a cluster agent.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenResponse
         generateAzureClusterAgentToken(
             com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenRequest request) {
@@ -2248,6 +2321,7 @@ public final class AzureClustersGrpc {
      * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.GenerateAzureAccessTokenResponse
         generateAzureAccessToken(
             com.google.cloud.gkemulticloud.v1.GenerateAzureAccessTokenRequest request) {
@@ -2267,6 +2341,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation createAzureNodePool(
         com.google.cloud.gkemulticloud.v1.CreateAzureNodePoolRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -2280,6 +2355,7 @@ public final class AzureClustersGrpc {
      * Updates an [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool].
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation updateAzureNodePool(
         com.google.cloud.gkemulticloud.v1.UpdateAzureNodePoolRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -2294,6 +2370,7 @@ public final class AzureClustersGrpc {
      * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.AzureNodePool getAzureNodePool(
         com.google.cloud.gkemulticloud.v1.GetAzureNodePoolRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -2309,6 +2386,7 @@ public final class AzureClustersGrpc {
      * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.ListAzureNodePoolsResponse listAzureNodePools(
         com.google.cloud.gkemulticloud.v1.ListAzureNodePoolsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -2326,6 +2404,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation deleteAzureNodePool(
         com.google.cloud.gkemulticloud.v1.DeleteAzureNodePoolRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -2343,6 +2422,7 @@ public final class AzureClustersGrpc {
      * for details.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.AzureOpenIdConfig getAzureOpenIdConfig(
         com.google.cloud.gkemulticloud.v1.GetAzureOpenIdConfigRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -2357,6 +2437,7 @@ public final class AzureClustersGrpc {
      * JSON Web Key format.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.AzureJsonWebKeys getAzureJsonWebKeys(
         com.google.cloud.gkemulticloud.v1.GetAzureJsonWebKeysRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -2371,6 +2452,7 @@ public final class AzureClustersGrpc {
      * versions, on a given Google Cloud location.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.AzureServerConfig getAzureServerConfig(
         com.google.cloud.gkemulticloud.v1.GetAzureServerConfigRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -2386,6 +2468,7 @@ public final class AzureClustersGrpc {
    * to create and manage Anthos clusters that run on Azure infrastructure.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class AzureClustersFutureStub
       extends io.grpc.stub.AbstractFutureStub<AzureClustersFutureStub> {
     private AzureClustersFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -2412,6 +2495,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createAzureClient(com.google.cloud.gkemulticloud.v1.CreateAzureClientRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -2426,6 +2510,7 @@ public final class AzureClustersGrpc {
      * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gkemulticloud.v1.AzureClient>
         getAzureClient(com.google.cloud.gkemulticloud.v1.GetAzureClientRequest request) {
@@ -2441,6 +2526,7 @@ public final class AzureClustersGrpc {
      * resources on a given Google Cloud project and region.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gkemulticloud.v1.ListAzureClientsResponse>
         listAzureClients(com.google.cloud.gkemulticloud.v1.ListAzureClientsRequest request) {
@@ -2461,6 +2547,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteAzureClient(com.google.cloud.gkemulticloud.v1.DeleteAzureClientRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -2478,6 +2565,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createAzureCluster(com.google.cloud.gkemulticloud.v1.CreateAzureClusterRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -2491,6 +2579,7 @@ public final class AzureClustersGrpc {
      * Updates an [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         updateAzureCluster(com.google.cloud.gkemulticloud.v1.UpdateAzureClusterRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -2505,6 +2594,7 @@ public final class AzureClustersGrpc {
      * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gkemulticloud.v1.AzureCluster>
         getAzureCluster(com.google.cloud.gkemulticloud.v1.GetAzureClusterRequest request) {
@@ -2520,6 +2610,7 @@ public final class AzureClustersGrpc {
      * resources on a given Google Cloud project and region.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gkemulticloud.v1.ListAzureClustersResponse>
         listAzureClusters(com.google.cloud.gkemulticloud.v1.ListAzureClustersRequest request) {
@@ -2540,6 +2631,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteAzureCluster(com.google.cloud.gkemulticloud.v1.DeleteAzureClusterRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -2553,6 +2645,7 @@ public final class AzureClustersGrpc {
      * Generates an access token for a cluster agent.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenResponse>
         generateAzureClusterAgentToken(
@@ -2570,6 +2663,7 @@ public final class AzureClustersGrpc {
      * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gkemulticloud.v1.GenerateAzureAccessTokenResponse>
         generateAzureAccessToken(
@@ -2590,6 +2684,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createAzureNodePool(com.google.cloud.gkemulticloud.v1.CreateAzureNodePoolRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -2603,6 +2698,7 @@ public final class AzureClustersGrpc {
      * Updates an [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool].
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         updateAzureNodePool(com.google.cloud.gkemulticloud.v1.UpdateAzureNodePoolRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -2617,6 +2713,7 @@ public final class AzureClustersGrpc {
      * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gkemulticloud.v1.AzureNodePool>
         getAzureNodePool(com.google.cloud.gkemulticloud.v1.GetAzureNodePoolRequest request) {
@@ -2633,6 +2730,7 @@ public final class AzureClustersGrpc {
      * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gkemulticloud.v1.ListAzureNodePoolsResponse>
         listAzureNodePools(com.google.cloud.gkemulticloud.v1.ListAzureNodePoolsRequest request) {
@@ -2651,6 +2749,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteAzureNodePool(com.google.cloud.gkemulticloud.v1.DeleteAzureNodePoolRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -2668,6 +2767,7 @@ public final class AzureClustersGrpc {
      * for details.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gkemulticloud.v1.AzureOpenIdConfig>
         getAzureOpenIdConfig(
@@ -2684,6 +2784,7 @@ public final class AzureClustersGrpc {
      * JSON Web Key format.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gkemulticloud.v1.AzureJsonWebKeys>
         getAzureJsonWebKeys(com.google.cloud.gkemulticloud.v1.GetAzureJsonWebKeysRequest request) {
@@ -2699,6 +2800,7 @@ public final class AzureClustersGrpc {
      * versions, on a given Google Cloud location.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gkemulticloud.v1.AzureServerConfig>
         getAzureServerConfig(

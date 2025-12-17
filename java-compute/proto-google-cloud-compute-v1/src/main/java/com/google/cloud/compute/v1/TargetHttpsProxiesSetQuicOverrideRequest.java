@@ -110,7 +110,8 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
      *
      *
      * <pre>
-     * No overrides to the default QUIC policy. This option is implicit if no QUIC override has been specified in the request.
+     * No overrides to the default QUIC policy. This option is implicit if
+     * no QUIC override has been specified in the request.
      * </pre>
      *
      * <code>NONE = 2402104;</code>
@@ -156,7 +157,8 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
      *
      *
      * <pre>
-     * No overrides to the default QUIC policy. This option is implicit if no QUIC override has been specified in the request.
+     * No overrides to the default QUIC policy. This option is implicit if
+     * no QUIC override has been specified in the request.
      * </pre>
      *
      * <code>NONE = 2402104;</code>

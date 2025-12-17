@@ -28,7 +28,9 @@ public interface InstanceGroupManagerStatusStatefulPerInstanceConfigsOrBuilder
    *
    *
    * <pre>
-   * A bit indicating if all of the group's per-instance configurations (listed in the output of a listPerInstanceConfigs API call) have status EFFECTIVE or there are no per-instance-configs.
+   * Output only. A bit indicating if all of the group's per-instance configurations
+   * (listed in the output of a listPerInstanceConfigs API call) have
+   * status EFFECTIVE or there are no per-instance-configs.
    * </pre>
    *
    * <code>optional bool all_effective = 516540553;</code>
@@ -41,7 +43,9 @@ public interface InstanceGroupManagerStatusStatefulPerInstanceConfigsOrBuilder
    *
    *
    * <pre>
-   * A bit indicating if all of the group's per-instance configurations (listed in the output of a listPerInstanceConfigs API call) have status EFFECTIVE or there are no per-instance-configs.
+   * Output only. A bit indicating if all of the group's per-instance configurations
+   * (listed in the output of a listPerInstanceConfigs API call) have
+   * status EFFECTIVE or there are no per-instance-configs.
    * </pre>
    *
    * <code>optional bool all_effective = 516540553;</code>

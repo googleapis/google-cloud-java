@@ -212,4 +212,38 @@ public interface AgentCoachingInstructionOrBuilder
    */
   com.google.cloud.dialogflow.v2beta1.AgentCoachingInstruction.DuplicateCheckResultOrBuilder
       getDuplicateCheckResultOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The event that should trigger this instruction.
+   * If UNSPECIFIED, the instruction triggering will be same as the generator's
+   * trigger_event.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.AgentCoachingInstruction.TriggerEvent triggering_event = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for triggeringEvent.
+   */
+  int getTriggeringEventValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The event that should trigger this instruction.
+   * If UNSPECIFIED, the instruction triggering will be same as the generator's
+   * trigger_event.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.AgentCoachingInstruction.TriggerEvent triggering_event = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The triggeringEvent.
+   */
+  com.google.cloud.dialogflow.v2beta1.AgentCoachingInstruction.TriggerEvent getTriggeringEvent();
 }
