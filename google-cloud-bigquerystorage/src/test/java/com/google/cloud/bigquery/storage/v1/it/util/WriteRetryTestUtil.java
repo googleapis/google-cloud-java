@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.bigquery.storage.v1.it;
+package com.google.cloud.bigquery.storage.v1.it.util;
 
 import static org.junit.Assert.assertFalse;
 

@@ -41,6 +41,8 @@ import com.google.cloud.bigquery.storage.v1.Exceptions.OffsetAlreadyExists;
 import com.google.cloud.bigquery.storage.v1.Exceptions.OffsetOutOfRange;
 import com.google.cloud.bigquery.storage.v1.Exceptions.SchemaMismatchedException;
 import com.google.cloud.bigquery.storage.v1.Exceptions.StreamFinalizedException;
+import com.google.cloud.bigquery.storage.v1.it.util.BigQueryResource;
+import com.google.cloud.bigquery.storage.v1.it.util.Helper;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
@@ -65,6 +67,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 import org.apache.arrow.memory.BufferAllocator;
 import org.apache.arrow.memory.RootAllocator;
 import org.apache.arrow.vector.*;
@@ -75,6 +78,7 @@ import org.apache.arrow.vector.ipc.WriteChannel;
 import org.apache.arrow.vector.ipc.message.MessageSerializer;
 import org.apache.arrow.vector.types.pojo.ArrowType;
 import org.apache.arrow.vector.types.pojo.FieldType;
+import org.apache.avro.generic.GenericData;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.AfterClass;
@@ -83,8 +87,9 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 /** Integration tests for BigQuery Write API. */
-public class ITBigQueryWriteClientTest {
-  private static final Logger LOG = Logger.getLogger(ITBigQueryWriteClientTest.class.getName());
+public class ITBigQueryStorageWriteClientTest {
+  private static final Logger LOG =
+      Logger.getLogger(ITBigQueryStorageWriteClientTest.class.getName());
   private static final String DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final String DATASET_EU = RemoteBigQueryHelper.generateDatasetName();
   private static final String TABLE = "testtable";
@@ -94,7 +99,9 @@ public class ITBigQueryWriteClientTest {
 
   private static final String DESCRIPTION = "BigQuery Write Java manual client test dataset";
 
-  private static BigQueryWriteClient client;
+  private static BigQueryReadClient readClient;
+  private static BigQueryWriteClient writeClient;
+  private static String parentProjectId;
   private static TableInfo tableInfo;
   private static TableInfo tableInfo2;
 
@@ -126,9 +133,12 @@ public class ITBigQueryWriteClientTest {
 
   @BeforeClass
   public static void beforeClass() throws IOException {
+    readClient = BigQueryReadClient.create();
+
     BigQueryWriteSettings settings =
         BigQueryWriteSettings.newBuilder().setHeaderProvider(USER_AGENT_HEADER_PROVIDER).build();
-    client = BigQueryWriteClient.create(settings);
+    writeClient = BigQueryWriteClient.create(settings);
+    parentProjectId = String.format("projects/%s", ServiceOptions.getDefaultProjectId());
 
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     bigquery = bigqueryHelper.getOptions().getService();
@@ -217,9 +227,14 @@ public class ITBigQueryWriteClientTest {
 
   @AfterClass
   public static void afterClass() throws InterruptedException {
-    if (client != null) {
-      client.close();
-      client.awaitTermination(10, TimeUnit.SECONDS);
+    if (writeClient != null) {
+      writeClient.close();
+      writeClient.awaitTermination(10, TimeUnit.SECONDS);
+    }
+
+    if (readClient != null) {
+      readClient.close();
+      readClient.awaitTermination(10, TimeUnit.SECONDS);
     }
 
     if (bigquery != null) {
@@ -303,7 +318,7 @@ public class ITBigQueryWriteClientTest {
   public void testBatchWriteWithCommittedStreamEU()
       throws IOException, InterruptedException, ExecutionException {
     WriteStream writeStream =
-        client.createWriteStream(
+        writeClient.createWriteStream(
             CreateWriteStreamRequest.newBuilder()
                 .setParent(tableIdEU)
                 .setWriteStream(
@@ -333,7 +348,7 @@ public class ITBigQueryWriteClientTest {
   public void testProto3OptionalBatchWriteWithCommittedStream()
       throws IOException, InterruptedException, ExecutionException {
     WriteStream writeStream =
-        client.createWriteStream(
+        writeClient.createWriteStream(
             CreateWriteStreamRequest.newBuilder()
                 .setParent(tableId)
                 .setWriteStream(
@@ -385,7 +400,7 @@ public class ITBigQueryWriteClientTest {
     bigquery.create(tableInfo);
     TableName parent = TableName.of(ServiceOptions.getDefaultProjectId(), DATASET, tableName);
     WriteStream writeStream =
-        client.createWriteStream(
+        writeClient.createWriteStream(
             CreateWriteStreamRequest.newBuilder()
                 .setParent(parent.toString())
                 .setWriteStream(
@@ -555,7 +570,7 @@ public class ITBigQueryWriteClientTest {
     TableName parent = TableName.of(ServiceOptions.getDefaultProjectId(), DATASET, tableName);
 
     WriteStream writeStream =
-        client.createWriteStream(
+        writeClient.createWriteStream(
             CreateWriteStreamRequest.newBuilder()
                 .setParent(parent.toString())
                 .setWriteStream(
@@ -635,7 +650,7 @@ public class ITBigQueryWriteClientTest {
 
     // Create JsonStreamWriter with newBuilder(streamOrTable, client)
     try (JsonStreamWriter jsonStreamWriter =
-        JsonStreamWriter.newBuilder(parent.toString(), client)
+        JsonStreamWriter.newBuilder(parent.toString(), writeClient)
             .setIgnoreUnknownFields(true)
             .build()) {
       LOG.info("Sending one message");
@@ -729,7 +744,7 @@ public class ITBigQueryWriteClientTest {
 
     // Create JsonStreamWriter with newBuilder(streamOrTable, client)
     try (JsonStreamWriter ignore =
-        JsonStreamWriter.newBuilder(parent.toString(), client)
+        JsonStreamWriter.newBuilder(parent.toString(), writeClient)
             .setIgnoreUnknownFields(true)
             .build()) {
       // Do nothing
@@ -920,7 +935,7 @@ public class ITBigQueryWriteClientTest {
         TableInfo.newBuilder(TableId.of(DATASET, tableName), defaultValueTableDefinition).build();
     bigquery.create(tableInfo);
     try (JsonStreamWriter jsonStreamWriter =
-        JsonStreamWriter.newBuilder(defaultTableId, client)
+        JsonStreamWriter.newBuilder(defaultTableId, writeClient)
             .setDefaultMissingValueInterpretation(MissingValueInterpretation.DEFAULT_VALUE)
             .build()) {
       testJsonStreamWriterForDefaultValue(jsonStreamWriter);
@@ -943,7 +958,7 @@ public class ITBigQueryWriteClientTest {
         TableInfo.newBuilder(TableId.of(DATASET, tableName), defaultValueTableDefinition).build();
     bigquery.create(tableInfo);
     WriteStream writeStream =
-        client.createWriteStream(
+        writeClient.createWriteStream(
             CreateWriteStreamRequest.newBuilder()
                 .setParent(exclusiveTableId)
                 .setWriteStream(
@@ -1180,7 +1195,7 @@ public class ITBigQueryWriteClientTest {
     }
     if (serializedInput) {
       try (StreamWriter streamWriter =
-          StreamWriter.newBuilder(tableId + "/_default", client)
+          StreamWriter.newBuilder(tableId + "/_default", writeClient)
               .setWriterSchema(v1ArrowSchema)
               .setTraceId(TEST_TRACE_ID)
               .setMaxRetryDuration(java.time.Duration.ofSeconds(5))
@@ -1197,7 +1212,7 @@ public class ITBigQueryWriteClientTest {
       }
     } else {
       try (StreamWriter streamWriter =
-          StreamWriter.newBuilder(tableId + "/_default", client)
+          StreamWriter.newBuilder(tableId + "/_default", writeClient)
               .setWriterSchema(arrowSchema)
               .setTraceId(TEST_TRACE_ID)
               .setMaxRetryDuration(java.time.Duration.ofSeconds(5))
@@ -1248,7 +1263,7 @@ public class ITBigQueryWriteClientTest {
     TableName parent = TableName.of(ServiceOptions.getDefaultProjectId(), DATASET, tableName);
 
     WriteStream writeStream =
-        client.createWriteStream(
+        writeClient.createWriteStream(
             CreateWriteStreamRequest.newBuilder()
                 .setParent(parent.toString())
                 .setWriteStream(
@@ -1296,14 +1311,14 @@ public class ITBigQueryWriteClientTest {
     bigquery.create(tableInfo);
     TableName parent = TableName.of(ServiceOptions.getDefaultProjectId(), DATASET, tableName);
     WriteStream writeStream =
-        client.createWriteStream(
+        writeClient.createWriteStream(
             CreateWriteStreamRequest.newBuilder()
                 .setParent(parent.toString())
                 .setWriteStream(
                     WriteStream.newBuilder().setType(WriteStream.Type.COMMITTED).build())
                 .build());
     try (JsonStreamWriter jsonStreamWriter =
-        JsonStreamWriter.newBuilder(writeStream.getName(), client).build()) {
+        JsonStreamWriter.newBuilder(writeStream.getName(), writeClient).build()) {
       // write the 1st row
       JSONObject foo = new JSONObject();
       foo.put("col1", "aaa");
@@ -1381,7 +1396,7 @@ public class ITBigQueryWriteClientTest {
     bigquery.create(tableInfo);
     TableName parent = TableName.of(ServiceOptions.getDefaultProjectId(), DATASET, tableName);
     WriteStream writeStream =
-        client.createWriteStream(
+        writeClient.createWriteStream(
             CreateWriteStreamRequest.newBuilder()
                 .setParent(parent.toString())
                 .setWriteStream(
@@ -1413,7 +1428,7 @@ public class ITBigQueryWriteClientTest {
 
     // Start writing using the JsonWriter
     try (JsonStreamWriter jsonStreamWriter =
-        JsonStreamWriter.newBuilder(writeStream.getName(), client).build()) {
+        JsonStreamWriter.newBuilder(writeStream.getName(), writeClient).build()) {
       int numberOfThreads = 5;
       CountDownLatch latch;
       AtomicInteger next;
@@ -1505,7 +1520,7 @@ public class ITBigQueryWriteClientTest {
     bigquery.create(tableInfo);
     TableName parent = TableName.of(ServiceOptions.getDefaultProjectId(), DATASET, tableName);
     WriteStream writeStream =
-        client.createWriteStream(
+        writeClient.createWriteStream(
             CreateWriteStreamRequest.newBuilder()
                 .setParent(parent.toString())
                 .setWriteStream(
@@ -1518,7 +1533,7 @@ public class ITBigQueryWriteClientTest {
         "date_with_default_to_current", AppendRowsRequest.MissingValueInterpretation.DEFAULT_VALUE);
 
     try (JsonStreamWriter jsonStreamWriter =
-        JsonStreamWriter.newBuilder(writeStream.getName(), client)
+        JsonStreamWriter.newBuilder(writeStream.getName(), writeClient)
             .setMissingValueInterpretationMap(missingValueMap)
             .build()) {
       // Verify the missing value map
@@ -1644,7 +1659,7 @@ public class ITBigQueryWriteClientTest {
     bigquery.create(tableInfo);
     TableName parent = TableName.of(ServiceOptions.getDefaultProjectId(), DATASET, tableName);
     WriteStream writeStream =
-        client.createWriteStream(
+        writeClient.createWriteStream(
             CreateWriteStreamRequest.newBuilder()
                 .setParent(parent.toString())
                 .setWriteStream(
@@ -1737,7 +1752,7 @@ public class ITBigQueryWriteClientTest {
     bigquery.create(tableInfo);
     TableName parent = TableName.of(ServiceOptions.getDefaultProjectId(), DATASET, tableName);
     WriteStream writeStream =
-        client.createWriteStream(
+        writeClient.createWriteStream(
             CreateWriteStreamRequest.newBuilder()
                 .setParent(parent.toString())
                 .setWriteStream(
@@ -1814,14 +1829,14 @@ public class ITBigQueryWriteClientTest {
     bigquery.create(tableInfo);
     TableName parent = TableName.of(ServiceOptions.getDefaultProjectId(), DATASET, tableName);
     WriteStream writeStream =
-        client.createWriteStream(
+        writeClient.createWriteStream(
             CreateWriteStreamRequest.newBuilder()
                 .setParent(parent.toString())
                 .setWriteStream(
                     WriteStream.newBuilder().setType(WriteStream.Type.COMMITTED).build())
                 .build());
     try (JsonStreamWriter jsonStreamWriter =
-        JsonStreamWriter.newBuilder(writeStream.getName(), client).build()) {
+        JsonStreamWriter.newBuilder(writeStream.getName(), writeClient).build()) {
       // write the 1st row
       JSONObject foo = new JSONObject();
       foo.put("col1-列", "aaa");
@@ -1891,7 +1906,7 @@ public class ITBigQueryWriteClientTest {
       throws IOException, InterruptedException, ExecutionException {
     LOG.info("Create a write stream");
     WriteStream writeStream =
-        client.createWriteStream(
+        writeClient.createWriteStream(
             CreateWriteStreamRequest.newBuilder()
                 .setParent(tableId2)
                 .setWriteStream(WriteStream.newBuilder().setType(WriteStream.Type.PENDING).build())
@@ -1919,7 +1934,7 @@ public class ITBigQueryWriteClientTest {
 
       LOG.info("Finalize a write stream");
       finalizeResponse =
-          client.finalizeWriteStream(
+          writeClient.finalizeWriteStream(
               FinalizeWriteStreamRequest.newBuilder().setName(writeStream.getName()).build());
 
       ApiFuture<AppendRowsResponse> response3 =
@@ -1934,7 +1949,7 @@ public class ITBigQueryWriteClientTest {
     assertEquals(2, finalizeResponse.getRowCount());
     LOG.info("Commit a write stream");
     BatchCommitWriteStreamsResponse batchCommitWriteStreamsResponse =
-        client.batchCommitWriteStreams(
+        writeClient.batchCommitWriteStreams(
             BatchCommitWriteStreamsRequest.newBuilder()
                 .setParent(tableId2)
                 .addWriteStreams(writeStream.getName())
@@ -1961,7 +1976,7 @@ public class ITBigQueryWriteClientTest {
   @Test
   public void testStreamError() throws IOException, InterruptedException, ExecutionException {
     WriteStream writeStream =
-        client.createWriteStream(
+        writeClient.createWriteStream(
             CreateWriteStreamRequest.newBuilder()
                 .setParent(tableId)
                 .setWriteStream(
@@ -1995,7 +2010,7 @@ public class ITBigQueryWriteClientTest {
   @Test
   public void testStreamSchemaMisMatchError() throws IOException, InterruptedException {
     WriteStream writeStream =
-        client.createWriteStream(
+        writeClient.createWriteStream(
             CreateWriteStreamRequest.newBuilder()
                 .setParent(tableId)
                 .setWriteStream(
@@ -2027,7 +2042,7 @@ public class ITBigQueryWriteClientTest {
   public void testStreamFinalizedError()
       throws IOException, InterruptedException, ExecutionException {
     WriteStream writeStream =
-        client.createWriteStream(
+        writeClient.createWriteStream(
             CreateWriteStreamRequest.newBuilder()
                 .setParent(tableId)
                 .setWriteStream(
@@ -2042,7 +2057,7 @@ public class ITBigQueryWriteClientTest {
           streamWriter.append(createProtoRowsMultipleColumns(new String[] {"a"}), /* offset= */ 0);
       response.get();
       // Finalize the stream in order to trigger STREAM_FINALIZED error
-      client.finalizeWriteStream(
+      writeClient.finalizeWriteStream(
           FinalizeWriteStreamRequest.newBuilder().setName(writeStream.getName()).build());
       // Try to append to a finalized stream
       ApiFuture<AppendRowsResponse> response2 =
@@ -2065,7 +2080,7 @@ public class ITBigQueryWriteClientTest {
   public void testOffsetAlreadyExistsError()
       throws IOException, ExecutionException, InterruptedException {
     WriteStream writeStream =
-        client.createWriteStream(
+        writeClient.createWriteStream(
             CreateWriteStreamRequest.newBuilder()
                 .setParent(tableId)
                 .setWriteStream(
@@ -2101,7 +2116,7 @@ public class ITBigQueryWriteClientTest {
   @Test
   public void testOffsetOutOfRangeError() throws IOException, InterruptedException {
     WriteStream writeStream =
-        client.createWriteStream(
+        writeClient.createWriteStream(
             CreateWriteStreamRequest.newBuilder()
                 .setParent(tableId)
                 .setWriteStream(
@@ -2133,7 +2148,7 @@ public class ITBigQueryWriteClientTest {
   @Test
   public void testStreamReconnect() throws IOException, InterruptedException, ExecutionException {
     WriteStream writeStream =
-        client.createWriteStream(
+        writeClient.createWriteStream(
             CreateWriteStreamRequest.newBuilder()
                 .setParent(tableId)
                 .setWriteStream(
@@ -2254,6 +2269,116 @@ public class ITBigQueryWriteClientTest {
       Iterator<FieldValueList> queryIter = queryResult.getValues().iterator();
       assertTrue(queryIter.hasNext());
       assertEquals("50", queryIter.next().get(0).getStringValue());
+    }
+  }
+
+  @Test
+  public void timestamp_arrowWrite() throws IOException {
+    String timestampFieldName = "timestamp";
+    com.google.cloud.bigquery.Schema tableSchema =
+        com.google.cloud.bigquery.Schema.of(
+            Field.newBuilder(timestampFieldName, StandardSQLTypeName.TIMESTAMP)
+                .setMode(Mode.REQUIRED)
+                .build());
+
+    String tableName = "bqstorage_timestamp_write_arrow";
+    TableId testTableId = TableId.of(DATASET, tableName);
+    bigquery.create(
+        TableInfo.of(
+            testTableId, StandardTableDefinition.newBuilder().setSchema(tableSchema).build()));
+
+    List<org.apache.arrow.vector.types.pojo.Field> fields =
+        ImmutableList.of(
+            new org.apache.arrow.vector.types.pojo.Field(
+                timestampFieldName,
+                FieldType.nullable(
+                    new ArrowType.Timestamp(
+                        org.apache.arrow.vector.types.TimeUnit.MICROSECOND, "UTC")),
+                null));
+    org.apache.arrow.vector.types.pojo.Schema schema =
+        new org.apache.arrow.vector.types.pojo.Schema(fields, null);
+
+    TableName parent = TableName.of(ServiceOptions.getDefaultProjectId(), DATASET, tableName);
+    try (StreamWriter streamWriter =
+        StreamWriter.newBuilder(parent.toString() + "/_default").setWriterSchema(schema).build()) {
+      try (VectorSchemaRoot root = VectorSchemaRoot.create(schema, allocator)) {
+        TimeStampMicroTZVector timestampVector =
+            (TimeStampMicroTZVector) root.getVector(timestampFieldName);
+        timestampVector.allocateNew(Helper.INPUT_TIMESTAMPS_MICROS.length);
+
+        for (int i = 0; i < Helper.INPUT_TIMESTAMPS_MICROS.length; i++) {
+          timestampVector.set(i, Helper.INPUT_TIMESTAMPS_MICROS[i]);
+        }
+        root.setRowCount(Helper.INPUT_TIMESTAMPS_MICROS.length);
+
+        CompressionCodec codec =
+            NoCompressionCodec.Factory.INSTANCE.createCodec(
+                CompressionUtil.CodecType.NO_COMPRESSION);
+        VectorUnloader vectorUnloader =
+            new VectorUnloader(root, /* includeNullCount= */ true, codec, /* alignBuffers= */ true);
+        org.apache.arrow.vector.ipc.message.ArrowRecordBatch batch =
+            vectorUnloader.getRecordBatch();
+        // Asynchronous append.
+        streamWriter.append(batch, -1);
+      }
+    }
+    String table =
+        BigQueryResource.formatTableResource(
+            ServiceOptions.getDefaultProjectId(), DATASET, tableName);
+    List<GenericData.Record> rows = Helper.readAllRows(readClient, parentProjectId, table, null);
+    List<Long> timestamps =
+        rows.stream().map(x -> (Long) x.get(timestampFieldName)).collect(Collectors.toList());
+    assertEquals(timestamps.size(), Helper.EXPECTED_TIMESTAMPS_MICROS.length);
+    for (int i = 0; i < timestamps.size(); i++) {
+      assertEquals(timestamps.get(i), Helper.EXPECTED_TIMESTAMPS_MICROS[i]);
+    }
+  }
+
+  @Test
+  public void timestamp_protobufWrite()
+      throws IOException, DescriptorValidationException, InterruptedException {
+    String timestampFieldName = "timestamp";
+    com.google.cloud.bigquery.Schema bqTableSchema =
+        com.google.cloud.bigquery.Schema.of(
+            Field.newBuilder(timestampFieldName, StandardSQLTypeName.TIMESTAMP)
+                .setMode(Mode.REQUIRED)
+                .build());
+
+    String tableName = "bqstorage_timestamp_write_avro";
+    TableId testTableId = TableId.of(DATASET, tableName);
+    bigquery.create(
+        TableInfo.of(
+            testTableId, StandardTableDefinition.newBuilder().setSchema(bqTableSchema).build()));
+
+    TableFieldSchema TEST_TIMESTAMP =
+        TableFieldSchema.newBuilder()
+            .setName(timestampFieldName)
+            .setType(TableFieldSchema.Type.TIMESTAMP)
+            .setMode(TableFieldSchema.Mode.NULLABLE)
+            .build();
+    TableSchema tableSchema = TableSchema.newBuilder().addFields(TEST_TIMESTAMP).build();
+
+    TableName parent = TableName.of(ServiceOptions.getDefaultProjectId(), DATASET, tableName);
+    try (JsonStreamWriter jsonStreamWriter =
+        JsonStreamWriter.newBuilder(parent.toString(), tableSchema).build()) {
+      for (long timestampMicro : Helper.INPUT_TIMESTAMPS_MICROS) {
+        JSONArray jsonArray = new JSONArray();
+        JSONObject row = new JSONObject();
+        row.put(timestampFieldName, timestampMicro);
+        jsonArray.put(row);
+        jsonStreamWriter.append(jsonArray);
+      }
+    }
+
+    String table =
+        BigQueryResource.formatTableResource(
+            ServiceOptions.getDefaultProjectId(), DATASET, tableName);
+    List<GenericData.Record> rows = Helper.readAllRows(readClient, parentProjectId, table, null);
+    List<Long> timestamps =
+        rows.stream().map(x -> (Long) x.get(timestampFieldName)).collect(Collectors.toList());
+    assertEquals(timestamps.size(), Helper.EXPECTED_TIMESTAMPS_MICROS.length);
+    for (int i = 0; i < timestamps.size(); i++) {
+      assertEquals(timestamps.get(i), Helper.EXPECTED_TIMESTAMPS_MICROS[i]);
     }
   }
 }

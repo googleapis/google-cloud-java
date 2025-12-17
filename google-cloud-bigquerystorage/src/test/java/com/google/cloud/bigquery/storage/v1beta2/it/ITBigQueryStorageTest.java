@@ -244,7 +244,7 @@ public class ITBigQueryStorageTest {
   @Test
   public void testSimpleReadArrow() {
     String table =
-        com.google.cloud.bigquery.storage.v1.it.BigQueryResource.formatTableResource(
+        com.google.cloud.bigquery.storage.v1.it.util.BigQueryResource.formatTableResource(
             /* projectId= */ "bigquery-public-data",
             /* datasetId= */ "samples",
             /* tableId= */ "shakespeare");
@@ -308,7 +308,7 @@ public class ITBigQueryStorageTest {
     bigquery.query(createTable);
 
     String table =
-        com.google.cloud.bigquery.storage.v1.it.BigQueryResource.formatTableResource(
+        com.google.cloud.bigquery.storage.v1.it.util.BigQueryResource.formatTableResource(
             /* projectId= */ ServiceOptions.getDefaultProjectId(),
             /* datasetId= */ DATASET,
             /* tableId= */ tableId.getTable());

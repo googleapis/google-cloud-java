@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.bigquery.storage.v1.it;
+package com.google.cloud.bigquery.storage.v1.it.util;
 
 import static com.google.common.truth.Truth.assertThat;
 
@@ -23,7 +23,6 @@ import com.google.cloud.bigquery.Range;
 import com.google.cloud.bigquery.storage.v1.ArrowRecordBatch;
 import com.google.cloud.bigquery.storage.v1.ArrowSchema;
 import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -50,17 +49,34 @@ public class SimpleRowReaderArrow implements AutoCloseable {
     void accept(VectorSchemaRoot root);
   }
 
+  public static class ArrowTimestampBatchConsumer implements ArrowBatchConsumer {
+    private final List<Long> expectedTimestampValues;
+
+    public ArrowTimestampBatchConsumer(List<Long> expectedTimestampValues) {
+      this.expectedTimestampValues = expectedTimestampValues;
+    }
+
+    @Override
+    public void accept(VectorSchemaRoot root) {
+      FieldVector timestampFieldVector = root.getVector("timestamp");
+      int count = timestampFieldVector.getValueCount();
+      for (int i = 0; i < count; i++) {
+        long value = (Long) timestampFieldVector.getObject(i);
+        assertThat(value).isEqualTo(expectedTimestampValues.get(i));
+      }
+    }
+  }
+
   /** ArrowRangeBatchConsumer accepts batch Arrow data and validate the range values. */
   public static class ArrowRangeBatchConsumer implements ArrowBatchConsumer {
-
-    private final ImmutableMap<String, Range> expectedRangeDateValues;
-    private final ImmutableMap<String, Range> expectedRangeDatetimeValues;
-    private final ImmutableMap<String, Range> expectedRangeTimestampValues;
+    private final Map<String, Range> expectedRangeDateValues;
+    private final Map<String, Range> expectedRangeDatetimeValues;
+    private final Map<String, Range> expectedRangeTimestampValues;
 
     public ArrowRangeBatchConsumer(
-        ImmutableMap<String, Range> expectedRangeDateValues,
-        ImmutableMap<String, Range> expectedRangeDatetimeValues,
-        ImmutableMap<String, Range> expectedRangeTimestampValues) {
+        Map<String, Range> expectedRangeDateValues,
+        Map<String, Range> expectedRangeDatetimeValues,
+        Map<String, Range> expectedRangeTimestampValues) {
       this.expectedRangeDateValues = expectedRangeDateValues;
       this.expectedRangeDatetimeValues = expectedRangeDatetimeValues;
       this.expectedRangeTimestampValues = expectedRangeTimestampValues;
