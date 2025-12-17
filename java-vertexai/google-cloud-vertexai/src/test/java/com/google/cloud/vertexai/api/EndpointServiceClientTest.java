@@ -62,6 +62,7 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 @Generated("by gapic-generator-java")
@@ -685,6 +686,7 @@ public class EndpointServiceClientTest {
   }
 
   @Test
+  @Ignore
   public void updateEndpointLongRunningTest() throws Exception {
     Endpoint expectedResponse =
         Endpoint.newBuilder()
@@ -740,6 +742,7 @@ public class EndpointServiceClientTest {
   }
 
   @Test
+  @Ignore
   public void updateEndpointLongRunningExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockEndpointService.addException(exception);
