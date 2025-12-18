@@ -16,6 +16,8 @@
 
 package com.google.cloud.bigquery.storage.v1.it;
 
+import static com.google.cloud.bigquery.storage.v1.it.util.Helper.TIMESTAMP_COLUMN_NAME;
+import static com.google.cloud.bigquery.storage.v1.it.util.Helper.TIMESTAMP_HIGHER_PRECISION_COLUMN_NAME;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
 import static org.junit.Assert.assertArrayEquals;
@@ -53,6 +55,7 @@ import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
 import com.google.cloud.bigquery.TimePartitioning;
 import com.google.cloud.bigquery.storage.v1.AppendRowsResponse;
+import com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadSettings;
 import com.google.cloud.bigquery.storage.v1.CreateReadSessionRequest;
@@ -77,6 +80,7 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
+import com.google.protobuf.Int64Value;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
@@ -123,10 +127,8 @@ public class ITBigQueryStorageReadClientTest {
   private static final String DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final String DESCRIPTION = "BigQuery Storage Java client test dataset";
   private static final String BQSTORAGE_TIMESTAMP_READ_TABLE = "bqstorage_timestamp_read";
-
   private static final int SHAKESPEARE_SAMPLE_ROW_COUNT = 164_656;
   private static final int SHAKESPEARE_SAMPELS_ROWS_MORE_THAN_100_WORDS = 1_333;
-
   private static final int MAX_STREAM_COUNT = 1;
 
   private static BigQueryReadClient readClient;
@@ -526,43 +528,49 @@ public class ITBigQueryStorageReadClientTest {
 
   private static void setupTimestampTable()
       throws DescriptorValidationException, IOException, InterruptedException {
+    // Schema to create a BQ table
     com.google.cloud.bigquery.Schema timestampSchema =
         com.google.cloud.bigquery.Schema.of(
-            Field.newBuilder("timestamp", StandardSQLTypeName.TIMESTAMP)
+            Field.newBuilder(TIMESTAMP_COLUMN_NAME, StandardSQLTypeName.TIMESTAMP)
+                .setMode(Mode.NULLABLE)
+                .build(),
+            Field.newBuilder(TIMESTAMP_HIGHER_PRECISION_COLUMN_NAME, StandardSQLTypeName.TIMESTAMP)
+                .setTimestampPrecision(Helper.PICOSECOND_PRECISION)
                 .setMode(Mode.NULLABLE)
                 .build());
 
+    // Create BQ table with timestamps
+    TableId tableId = TableId.of(DATASET, BQSTORAGE_TIMESTAMP_READ_TABLE);
+    bigquery.create(TableInfo.of(tableId, StandardTableDefinition.of(timestampSchema)));
+
+    TableName parentTable = TableName.of(projectName, DATASET, BQSTORAGE_TIMESTAMP_READ_TABLE);
+
+    // Define the BQStorage schema to write to
     TableSchema timestampTableSchema =
         TableSchema.newBuilder()
             .addFields(
                 TableFieldSchema.newBuilder()
-                    .setName("timestamp")
+                    .setName(TIMESTAMP_COLUMN_NAME)
+                    .setType(TableFieldSchema.Type.TIMESTAMP)
+                    .setMode(TableFieldSchema.Mode.NULLABLE)
+                    .build())
+            .addFields(
+                TableFieldSchema.newBuilder()
+                    .setName(TIMESTAMP_HIGHER_PRECISION_COLUMN_NAME)
+                    .setTimestampPrecision(
+                        Int64Value.newBuilder().setValue(Helper.PICOSECOND_PRECISION).build())
                     .setType(TableFieldSchema.Type.TIMESTAMP)
                     .setMode(TableFieldSchema.Mode.NULLABLE)
                     .build())
             .build();
 
-    // Create table with Range fields.
-    TableId tableId = TableId.of(DATASET, BQSTORAGE_TIMESTAMP_READ_TABLE);
-    bigquery.create(TableInfo.of(tableId, StandardTableDefinition.of(timestampSchema)));
-
-    TableName parentTable = TableName.of(projectName, DATASET, BQSTORAGE_TIMESTAMP_READ_TABLE);
-    RetrySettings retrySettings =
-        RetrySettings.newBuilder()
-            .setInitialRetryDelayDuration(Duration.ofMillis(500))
-            .setRetryDelayMultiplier(1.1)
-            .setMaxAttempts(5)
-            .setMaxRetryDelayDuration(Duration.ofSeconds(10))
-            .build();
-
     try (JsonStreamWriter writer =
-        JsonStreamWriter.newBuilder(parentTable.toString(), timestampTableSchema)
-            .setRetrySettings(retrySettings)
-            .build()) {
+        JsonStreamWriter.newBuilder(parentTable.toString(), timestampTableSchema).build()) {
       JSONArray data = new JSONArray();
-      for (long timestampMicro : Helper.INPUT_TIMESTAMPS_MICROS) {
+      for (Object[] timestampData : Helper.INPUT_TIMESTAMPS) {
         JSONObject row = new JSONObject();
-        row.put("timestamp", timestampMicro);
+        row.put(TIMESTAMP_COLUMN_NAME, timestampData[0]);
+        row.put(TIMESTAMP_HIGHER_PRECISION_COLUMN_NAME, timestampData[1]);
         data.put(row);
       }
 
@@ -858,6 +866,7 @@ public class ITBigQueryStorageReadClientTest {
     }
   }
 
+  // Tests that inputs for micros and picos can be read properly via Arrow
   @Test
   public void timestamp_readArrow() throws IOException {
     String table =
@@ -865,7 +874,21 @@ public class ITBigQueryStorageReadClientTest {
     ReadSession session =
         readClient.createReadSession(
             parentProjectId,
-            ReadSession.newBuilder().setTable(table).setDataFormat(DataFormat.ARROW).build(),
+            ReadSession.newBuilder()
+                .setTable(table)
+                .setDataFormat(DataFormat.ARROW)
+                .setReadOptions(
+                    TableReadOptions.newBuilder()
+                        .setArrowSerializationOptions(
+                            ArrowSerializationOptions.newBuilder()
+                                // This serialization option only impacts columns that are type
+                                // `TIMESTAMP_PICOS` and has no impact on other columns types
+                                .setPicosTimestampPrecision(
+                                    ArrowSerializationOptions.PicosTimestampPrecision
+                                        .TIMESTAMP_PRECISION_PICOS)
+                                .build())
+                        .build())
+                .build(),
             MAX_STREAM_COUNT);
     assertEquals(
         String.format(
@@ -896,22 +919,32 @@ public class ITBigQueryStorageReadClientTest {
         reader.processRows(
             response.getArrowRecordBatch(),
             new SimpleRowReaderArrow.ArrowTimestampBatchConsumer(
-                Arrays.asList(Helper.INPUT_TIMESTAMPS_MICROS)));
+                Helper.EXPECTED_TIMESTAMPS_HIGHER_PRECISION_ISO_OUTPUT));
         rowCount += response.getRowCount();
       }
-      assertEquals(Helper.EXPECTED_TIMESTAMPS_MICROS.length, rowCount);
+      assertEquals(Helper.EXPECTED_TIMESTAMPS_HIGHER_PRECISION_ISO_OUTPUT.length, rowCount);
     }
   }
 
+  // Tests that inputs for micros and picos can be read properly via Avro
   @Test
   public void timestamp_readAvro() throws IOException {
     String table =
         BigQueryResource.formatTableResource(projectName, DATASET, BQSTORAGE_TIMESTAMP_READ_TABLE);
     List<GenericData.Record> rows = Helper.readAllRows(readClient, parentProjectId, table, null);
     List<Long> timestamps =
-        rows.stream().map(x -> (Long) x.get("timestamp")).collect(Collectors.toList());
+        rows.stream().map(x -> (Long) x.get(TIMESTAMP_COLUMN_NAME)).collect(Collectors.toList());
+    List<String> timestampHigherPrecision =
+        rows.stream()
+            .map(x -> x.get(TIMESTAMP_HIGHER_PRECISION_COLUMN_NAME).toString())
+            .collect(Collectors.toList());
     for (int i = 0; i < timestamps.size(); i++) {
-      assertEquals(Helper.EXPECTED_TIMESTAMPS_MICROS[i], timestamps.get(i));
+      assertEquals(Helper.EXPECTED_TIMESTAMPS_HIGHER_PRECISION_ISO_OUTPUT[i][0], timestamps.get(i));
+    }
+    for (int i = 0; i < timestampHigherPrecision.size(); i++) {
+      assertEquals(
+          Helper.EXPECTED_TIMESTAMPS_HIGHER_PRECISION_ISO_OUTPUT[i][1],
+          timestampHigherPrecision.get(i));
     }
   }
 

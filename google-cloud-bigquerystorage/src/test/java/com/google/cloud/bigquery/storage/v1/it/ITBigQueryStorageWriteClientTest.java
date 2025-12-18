@@ -16,6 +16,9 @@
 
 package com.google.cloud.bigquery.storage.v1.it;
 
+import static com.google.cloud.bigquery.storage.v1.it.util.Helper.EXPECTED_TIMESTAMPS_HIGHER_PRECISION_ISO_OUTPUT;
+import static com.google.cloud.bigquery.storage.v1.it.util.Helper.TIMESTAMP_COLUMN_NAME;
+import static com.google.cloud.bigquery.storage.v1.it.util.Helper.TIMESTAMP_HIGHER_PRECISION_COLUMN_NAME;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -25,6 +28,7 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.api.client.util.Sleeper;
 import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.FixedHeaderProvider;
 import com.google.api.gax.rpc.HeaderProvider;
@@ -45,11 +49,13 @@ import com.google.cloud.bigquery.storage.v1.it.util.BigQueryResource;
 import com.google.cloud.bigquery.storage.v1.it.util.Helper;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
 import com.google.common.collect.ImmutableList;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.DescriptorProtos.DescriptorProto;
 import com.google.protobuf.DescriptorProtos.FieldDescriptorProto;
 import com.google.protobuf.Descriptors;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
+import com.google.protobuf.Int64Value;
 import io.grpc.Status;
 import io.grpc.Status.Code;
 import java.io.ByteArrayOutputStream;
@@ -115,6 +121,26 @@ public class ITBigQueryStorageWriteClientTest {
   private static BigQuery bigquery;
 
   private static final BufferAllocator allocator = new RootAllocator();
+
+  // Arrow is a bit special in that timestamps are limited to nanoseconds precision.
+  // The data will be padded to fit into the higher precision columns.
+  public static final Object[][] INPUT_ARROW_WRITE_TIMESTAMPS =
+      new Object[][] {
+        {1735734896123456L /* 2025-01-01T12:34:56.123456Z */, 1735734896123456789L},
+        {1580646896123456L /* 2020-02-02T12:34:56.123456Z */, 1580646896123456789L},
+        {636467696123456L /* 1990-03-03T12:34:56.123456Z */, 636467696123456789L},
+        {165846896123456L /* 1975-04-04T12:34:56.123456Z */, 165846896123456789L}
+      };
+
+  // Arrow's higher precision column is padded with extra 0's if configured to return
+  // ISO as output for any picosecond enabled column.
+  public static final Object[][] EXPECTED_ARROW_WRITE_TIMESTAMPS_ISO_OUTPUT =
+      new Object[][] {
+        {1735734896123456L /* 2025-01-01T12:34:56.123456Z */, "2025-01-01T12:34:56.123456789000Z"},
+        {1580646896123456L /* 2020-02-02T12:34:56.123456Z */, "2020-02-02T12:34:56.123456789000Z"},
+        {636467696123456L /* 1990-03-03T12:34:56.123456Z */, "1990-03-03T12:34:56.123456789000Z"},
+        {165846896123456L /* 1975-04-04T12:34:56.123456Z */, "1975-04-04T12:34:56.123456789000Z"}
+      };
 
   public static class StringWithSecondsNanos {
     public String foo;
@@ -2272,44 +2298,54 @@ public class ITBigQueryStorageWriteClientTest {
     }
   }
 
+  // Tests that inputs for micro and picos are able to use Arrow to write
+  // to BQ
   @Test
   public void timestamp_arrowWrite() throws IOException {
-    String timestampFieldName = "timestamp";
-    com.google.cloud.bigquery.Schema tableSchema =
-        com.google.cloud.bigquery.Schema.of(
-            Field.newBuilder(timestampFieldName, StandardSQLTypeName.TIMESTAMP)
-                .setMode(Mode.REQUIRED)
-                .build());
-
     String tableName = "bqstorage_timestamp_write_arrow";
-    TableId testTableId = TableId.of(DATASET, tableName);
-    bigquery.create(
-        TableInfo.of(
-            testTableId, StandardTableDefinition.newBuilder().setSchema(tableSchema).build()));
+    // Opt to create a new table to write to instead of re-using table to prevent
+    // the test from failing due to any issues with deleting data after test.
+    // Increases the test time duration, but would be more resilient to transient
+    // failures
+    createTimestampTable(tableName);
 
+    // Define the fields as Arrow types that are compatible with BQ Schema types
     List<org.apache.arrow.vector.types.pojo.Field> fields =
         ImmutableList.of(
             new org.apache.arrow.vector.types.pojo.Field(
-                timestampFieldName,
+                TIMESTAMP_COLUMN_NAME,
                 FieldType.nullable(
                     new ArrowType.Timestamp(
                         org.apache.arrow.vector.types.TimeUnit.MICROSECOND, "UTC")),
+                null),
+            new org.apache.arrow.vector.types.pojo.Field(
+                TIMESTAMP_HIGHER_PRECISION_COLUMN_NAME,
+                FieldType.nullable(
+                    new ArrowType.Timestamp(
+                        org.apache.arrow.vector.types.TimeUnit.NANOSECOND, "UTC")),
                 null));
-    org.apache.arrow.vector.types.pojo.Schema schema =
+    org.apache.arrow.vector.types.pojo.Schema arrowSchema =
         new org.apache.arrow.vector.types.pojo.Schema(fields, null);
 
+    int numRows = INPUT_ARROW_WRITE_TIMESTAMPS.length;
     TableName parent = TableName.of(ServiceOptions.getDefaultProjectId(), DATASET, tableName);
     try (StreamWriter streamWriter =
-        StreamWriter.newBuilder(parent.toString() + "/_default").setWriterSchema(schema).build()) {
-      try (VectorSchemaRoot root = VectorSchemaRoot.create(schema, allocator)) {
+        StreamWriter.newBuilder(parent.toString() + "/_default")
+            .setWriterSchema(arrowSchema)
+            .build()) {
+      try (VectorSchemaRoot root = VectorSchemaRoot.create(arrowSchema, allocator)) {
         TimeStampMicroTZVector timestampVector =
-            (TimeStampMicroTZVector) root.getVector(timestampFieldName);
-        timestampVector.allocateNew(Helper.INPUT_TIMESTAMPS_MICROS.length);
+            (TimeStampMicroTZVector) root.getVector(TIMESTAMP_COLUMN_NAME);
+        TimeStampNanoTZVector timestampHigherPrecisionVector =
+            (TimeStampNanoTZVector) root.getVector(TIMESTAMP_HIGHER_PRECISION_COLUMN_NAME);
+        timestampVector.allocateNew(numRows);
+        timestampHigherPrecisionVector.allocateNew(numRows);
 
-        for (int i = 0; i < Helper.INPUT_TIMESTAMPS_MICROS.length; i++) {
-          timestampVector.set(i, Helper.INPUT_TIMESTAMPS_MICROS[i]);
+        for (int i = 0; i < numRows; i++) {
+          timestampVector.set(i, (Long) INPUT_ARROW_WRITE_TIMESTAMPS[i][0]);
+          timestampHigherPrecisionVector.set(i, (Long) INPUT_ARROW_WRITE_TIMESTAMPS[i][1]);
         }
-        root.setRowCount(Helper.INPUT_TIMESTAMPS_MICROS.length);
+        root.setRowCount(numRows);
 
         CompressionCodec codec =
             NoCompressionCodec.Factory.INSTANCE.createCodec(
@@ -2319,66 +2355,107 @@ public class ITBigQueryStorageWriteClientTest {
         org.apache.arrow.vector.ipc.message.ArrowRecordBatch batch =
             vectorUnloader.getRecordBatch();
         // Asynchronous append.
-        streamWriter.append(batch, -1);
+        ApiFuture<AppendRowsResponse> future = streamWriter.append(batch);
+        ApiFutures.addCallback(
+            future, new Helper.AppendCompleteCallback(), MoreExecutors.directExecutor());
       }
     }
-    String table =
-        BigQueryResource.formatTableResource(
-            ServiceOptions.getDefaultProjectId(), DATASET, tableName);
-    List<GenericData.Record> rows = Helper.readAllRows(readClient, parentProjectId, table, null);
-    List<Long> timestamps =
-        rows.stream().map(x -> (Long) x.get(timestampFieldName)).collect(Collectors.toList());
-    assertEquals(timestamps.size(), Helper.EXPECTED_TIMESTAMPS_MICROS.length);
-    for (int i = 0; i < timestamps.size(); i++) {
-      assertEquals(timestamps.get(i), Helper.EXPECTED_TIMESTAMPS_MICROS[i]);
-    }
+    assertTimestamps(tableName, EXPECTED_ARROW_WRITE_TIMESTAMPS_ISO_OUTPUT);
   }
 
+  // Tests that inputs for micro and picos are able to converted to protobuf
+  // and written to BQ
   @Test
   public void timestamp_protobufWrite()
       throws IOException, DescriptorValidationException, InterruptedException {
-    String timestampFieldName = "timestamp";
-    com.google.cloud.bigquery.Schema bqTableSchema =
-        com.google.cloud.bigquery.Schema.of(
-            Field.newBuilder(timestampFieldName, StandardSQLTypeName.TIMESTAMP)
-                .setMode(Mode.REQUIRED)
-                .build());
+    String tableName = "bqstorage_timestamp_write_protobuf";
+    // Opt to create a new table to write to instead of re-using table to prevent
+    // the test from failing due to any issues with deleting data after test.
+    // Increases the test time duration, but would be more resilient to transient
+    // failures
+    createTimestampTable(tableName);
 
-    String tableName = "bqstorage_timestamp_write_avro";
-    TableId testTableId = TableId.of(DATASET, tableName);
-    bigquery.create(
-        TableInfo.of(
-            testTableId, StandardTableDefinition.newBuilder().setSchema(bqTableSchema).build()));
-
-    TableFieldSchema TEST_TIMESTAMP =
+    // Define the table schema so that the automatic converter is able to
+    // determine how to convert from Json -> Protobuf
+    TableFieldSchema testTimestamp =
         TableFieldSchema.newBuilder()
-            .setName(timestampFieldName)
+            .setName(TIMESTAMP_COLUMN_NAME)
             .setType(TableFieldSchema.Type.TIMESTAMP)
             .setMode(TableFieldSchema.Mode.NULLABLE)
             .build();
-    TableSchema tableSchema = TableSchema.newBuilder().addFields(TEST_TIMESTAMP).build();
+    TableFieldSchema testTimestampHighPrecision =
+        TableFieldSchema.newBuilder()
+            .setName(TIMESTAMP_HIGHER_PRECISION_COLUMN_NAME)
+            .setTimestampPrecision(
+                Int64Value.newBuilder().setValue(Helper.PICOSECOND_PRECISION).build())
+            .setType(TableFieldSchema.Type.TIMESTAMP)
+            .setMode(TableFieldSchema.Mode.NULLABLE)
+            .build();
+    TableSchema tableSchema =
+        TableSchema.newBuilder()
+            .addFields(testTimestamp)
+            .addFields(testTimestampHighPrecision)
+            .build();
 
     TableName parent = TableName.of(ServiceOptions.getDefaultProjectId(), DATASET, tableName);
     try (JsonStreamWriter jsonStreamWriter =
         JsonStreamWriter.newBuilder(parent.toString(), tableSchema).build()) {
-      for (long timestampMicro : Helper.INPUT_TIMESTAMPS_MICROS) {
-        JSONArray jsonArray = new JSONArray();
-        JSONObject row = new JSONObject();
-        row.put(timestampFieldName, timestampMicro);
-        jsonArray.put(row);
-        jsonStreamWriter.append(jsonArray);
-      }
-    }
 
+      // Creates a single payload to append (JsonArray with multiple JsonObjects)
+      // Each JsonObject contains a row (one micros, one picos)
+      JSONArray jsonArray = new JSONArray();
+      for (Object[] timestampData : Helper.INPUT_TIMESTAMPS) {
+        JSONObject row = new JSONObject();
+        row.put(TIMESTAMP_COLUMN_NAME, timestampData[0]);
+        row.put(TIMESTAMP_HIGHER_PRECISION_COLUMN_NAME, timestampData[1]);
+        jsonArray.put(row);
+      }
+      ApiFuture<AppendRowsResponse> future = jsonStreamWriter.append(jsonArray);
+      ApiFutures.addCallback(
+          future, new Helper.AppendCompleteCallback(), MoreExecutors.directExecutor());
+    }
+    assertTimestamps(tableName, EXPECTED_TIMESTAMPS_HIGHER_PRECISION_ISO_OUTPUT);
+  }
+
+  private void createTimestampTable(String tableName) {
+    Schema bqTableSchema =
+        Schema.of(
+            Field.newBuilder(TIMESTAMP_COLUMN_NAME, StandardSQLTypeName.TIMESTAMP)
+                .setMode(Mode.NULLABLE)
+                .build(),
+            Field.newBuilder(TIMESTAMP_HIGHER_PRECISION_COLUMN_NAME, StandardSQLTypeName.TIMESTAMP)
+                .setMode(Mode.NULLABLE)
+                .setTimestampPrecision(Helper.PICOSECOND_PRECISION)
+                .build());
+
+    TableId testTableId = TableId.of(DATASET, tableName);
+    bigquery.create(
+        TableInfo.of(
+            testTableId, StandardTableDefinition.newBuilder().setSchema(bqTableSchema).build()));
+  }
+
+  private void assertTimestamps(String tableName, Object[][] expected) throws IOException {
     String table =
         BigQueryResource.formatTableResource(
             ServiceOptions.getDefaultProjectId(), DATASET, tableName);
+
+    // Read all the data as Avro GenericRecords
     List<GenericData.Record> rows = Helper.readAllRows(readClient, parentProjectId, table, null);
+
+    // Each timestamp response is expected to contain two fields:
+    // 1. Micros from timestamp as a Long and 2. ISO8601 instant with picos precision
     List<Long> timestamps =
-        rows.stream().map(x -> (Long) x.get(timestampFieldName)).collect(Collectors.toList());
-    assertEquals(timestamps.size(), Helper.EXPECTED_TIMESTAMPS_MICROS.length);
-    for (int i = 0; i < timestamps.size(); i++) {
-      assertEquals(timestamps.get(i), Helper.EXPECTED_TIMESTAMPS_MICROS[i]);
+        rows.stream().map(x -> (Long) x.get(TIMESTAMP_COLUMN_NAME)).collect(Collectors.toList());
+    List<String> timestampHigherPrecision =
+        rows.stream()
+            .map(x -> x.get(TIMESTAMP_HIGHER_PRECISION_COLUMN_NAME).toString())
+            .collect(Collectors.toList());
+
+    assertEquals(expected.length, timestamps.size());
+    assertEquals(expected.length, timestampHigherPrecision.size());
+    for (int i = 0; i < timestampHigherPrecision.size(); i++) {
+      assertEquals(expected[i][0], timestamps.get(i));
+      assertEquals(expected[i][1], timestampHigherPrecision.get(i));
     }
   }
 }

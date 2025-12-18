@@ -23,6 +23,7 @@ import com.google.api.core.ApiFutureCallback;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.bigquery.storage.v1.AppendRowsResponse;
+import com.google.cloud.bigquery.storage.v1.AvroSerializationOptions;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
 import com.google.cloud.bigquery.storage.v1.CreateReadSessionRequest;
 import com.google.cloud.bigquery.storage.v1.DataFormat;
@@ -42,20 +43,28 @@ import org.apache.avro.generic.GenericRecordBuilder;
 
 public class Helper {
 
-  public static final Long[] INPUT_TIMESTAMPS_MICROS =
-      new Long[] {
-        1735734896123456L, // 2025-01-01T12:34:56.123456Z
-        1580646896123456L, // 2020-02-02T12:34:56.123456Z
-        636467696123456L, // 1990-03-03T12:34:56.123456Z
-        165846896123456L // 1975-04-04T12:34:56.123456Z
+  public static final long PICOSECOND_PRECISION = 12;
+  public static final String TIMESTAMP_COLUMN_NAME = "timestamp";
+  public static final String TIMESTAMP_HIGHER_PRECISION_COLUMN_NAME = "timestampHigherPrecision";
+
+  // Sample test cases for timestamps. First element is micros from epcoh and the second element
+  // is the ISO format in with picosecond precision
+  public static final Object[][] INPUT_TIMESTAMPS =
+      new Object[][] {
+        {1735734896123456L /* 2025-01-01T12:34:56.123456Z */, "2025-01-01T12:34:56.123456789123Z"},
+        {1580646896123456L /* 2020-02-02T12:34:56.123456Z */, "2020-02-02T12:34:56.123456789123Z"},
+        {636467696123456L /* 1990-03-03T12:34:56.123456Z */, "1990-03-03T12:34:56.123456789123Z"},
+        {165846896123456L /* 1975-04-04T12:34:56.123456Z */, "1975-04-04T12:34:56.123456789123Z"}
       };
 
-  public static final Long[] EXPECTED_TIMESTAMPS_MICROS =
-      new Long[] {
-        1735734896123456L, // 2025-01-01T12:34:56.123456Z
-        1580646896123456L, // 2020-02-02T12:34:56.123456Z
-        636467696123456L, // 1990-03-03T12:34:56.123456Z
-        165846896123456L // 1975-04-04T12:34:56.123456Z
+  // Expected response for timestamps from the input. If enabled with ISO as output, it will
+  // ISO8601 format for any picosecond enabled column.
+  public static final Object[][] EXPECTED_TIMESTAMPS_HIGHER_PRECISION_ISO_OUTPUT =
+      new Object[][] {
+        {1735734896123456L /* 2025-01-01T12:34:56.123456Z */, "2025-01-01T12:34:56.123456789123Z"},
+        {1580646896123456L /* 2020-02-02T12:34:56.123456Z */, "2020-02-02T12:34:56.123456789123Z"},
+        {636467696123456L /* 1990-03-03T12:34:56.123456Z */, "1990-03-03T12:34:56.123456789123Z"},
+        {165846896123456L /* 1975-04-04T12:34:56.123456Z */, "1975-04-04T12:34:56.123456789123Z"}
       };
 
   public static ServiceAccountCredentials loadCredentials(String credentialFile) {
@@ -114,7 +123,22 @@ public class Helper {
             .setParent(parentProjectId)
             .setMaxStreamCount(1)
             .setReadSession(
-                ReadSession.newBuilder().setTable(table).setDataFormat(DataFormat.AVRO).build());
+                ReadSession.newBuilder()
+                    .setTable(table)
+                    .setDataFormat(DataFormat.AVRO)
+                    .setReadOptions(
+                        ReadSession.TableReadOptions.newBuilder()
+                            .setAvroSerializationOptions(
+                                AvroSerializationOptions.newBuilder()
+                                    .setPicosTimestampPrecision(
+                                        // This serialization option only impacts columns that are
+                                        // type. `TIMESTAMP_PICOS` and has no impact on other
+                                        // columns types.
+                                        AvroSerializationOptions.PicosTimestampPrecision
+                                            .TIMESTAMP_PRECISION_PICOS)
+                                    .build())
+                            .build())
+                    .build());
 
     if (snapshotInMillis != null) {
       createSessionRequestBuilder

@@ -16,6 +16,8 @@
 
 package com.google.cloud.bigquery.storage.v1.it.util;
 
+import static com.google.cloud.bigquery.storage.v1.it.util.Helper.TIMESTAMP_COLUMN_NAME;
+import static com.google.cloud.bigquery.storage.v1.it.util.Helper.TIMESTAMP_HIGHER_PRECISION_COLUMN_NAME;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.bigquery.FieldElementType;
@@ -50,19 +52,29 @@ public class SimpleRowReaderArrow implements AutoCloseable {
   }
 
   public static class ArrowTimestampBatchConsumer implements ArrowBatchConsumer {
-    private final List<Long> expectedTimestampValues;
+    private final Object[][] expectedTimestampValues;
 
-    public ArrowTimestampBatchConsumer(List<Long> expectedTimestampValues) {
+    public ArrowTimestampBatchConsumer(Object[][] expectedTimestampValues) {
       this.expectedTimestampValues = expectedTimestampValues;
     }
 
     @Override
     public void accept(VectorSchemaRoot root) {
-      FieldVector timestampFieldVector = root.getVector("timestamp");
+      FieldVector timestampFieldVector = root.getVector(TIMESTAMP_COLUMN_NAME);
+      FieldVector timestampHigherPrecisionFieldVector =
+          root.getVector(TIMESTAMP_HIGHER_PRECISION_COLUMN_NAME);
+      assertThat(timestampFieldVector.getValueCount())
+          .isEqualTo(timestampHigherPrecisionFieldVector.getValueCount());
       int count = timestampFieldVector.getValueCount();
       for (int i = 0; i < count; i++) {
-        long value = (Long) timestampFieldVector.getObject(i);
-        assertThat(value).isEqualTo(expectedTimestampValues.get(i));
+        long timestampMicros = (Long) timestampFieldVector.getObject(i);
+        assertThat(timestampMicros).isEqualTo(expectedTimestampValues[i][0]);
+
+        // The Object comes back as `Text` which cannot be cast to String
+        // (use `toString()` instead)
+        String timestampHigherPrecisionISO =
+            timestampHigherPrecisionFieldVector.getObject(i).toString();
+        assertThat(timestampHigherPrecisionISO).isEqualTo(expectedTimestampValues[i][1]);
       }
     }
   }
