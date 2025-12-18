@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-gkerecommender</artifactId>
-  <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-gkerecommender:current} -->
+  <version>0.2.0-rc1</version><!-- {x-version-update:google-cloud-gkerecommender:current} -->
   <packaging>jar</packaging>
   <name>Google GKE Recommender API</name>
   <description>GKE Recommender API lets you analyze the performance and cost-efficiency of your inference workloads, and make data-driven decisions about resource allocation and model deployment strategies.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-gkerecommender-parent</artifactId>
-    <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-gkerecommender:current} -->
+    <version>0.2.0-rc1</version><!-- {x-version-update:google-cloud-gkerecommender:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-gkerecommender</site.installationModule>
