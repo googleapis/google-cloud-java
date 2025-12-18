@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.76.0-rc1](https://github.com/googleapis/google-cloud-java/compare/v1.75.0...v1.76.0-rc1) (2025-12-17)
+
+
+### Features
+
+* [vertexai] Upgrade to protobuf 4.33.0 gencode ([#11840](https://github.com/googleapis/google-cloud-java/pull/11840)) ([e9c2bbe](https://github.com/googleapis/google-cloud-java/commit/e9c2bbe4f497b321d76cabf55bc4490ea4e382da))
+
+### Dependencies
+
+* update sdk-platform-java-config to 3.55.0-rc1 ([#11836](https://github.com/googleapis/google-cloud-java/pull/11836)) ([65af7bd](https://github.com/googleapis/google-cloud-java/commit/65af7bd33840d8b40672d5a6f03f02e306d68155))
+* update the Java code generator (gapic-generator-java) to 2.65.0-rc1 ([5bd22f9](https://github.com/googleapis/google-cloud-java/commit/5bd22f99df85ceb77611707908324969498be835))
+
+
 ## [1.75.0](https://github.com/googleapis/google-cloud-java/compare/v1.74.0...v1.75.0) (2025-12-16)
 
 
