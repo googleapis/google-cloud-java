@@ -281,6 +281,7 @@ public abstract class ITTracingTest {
     // All Firestore-generated spans have the settings attributes.
     List<String> expectedAttributes =
         Arrays.asList(
+            "gcp.resource.name",
             "gcp.firestore.memory_utilization",
             "gcp.firestore.settings.host",
             "gcp.firestore.settings.project_id",

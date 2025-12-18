@@ -284,6 +284,12 @@ public class EnabledTraceUtil implements TraceUtil {
         spanBuilder.setAllAttributes(
             Attributes.builder()
                 .put(
+                    ATTRIBUTE_GCP_RESOURCE_NAME,
+                    String.format(
+                        ATTRIBUTE_GCP_RESOURCE_NAME_FORMAT,
+                        firestoreOptions.getProjectId(),
+                        firestoreOptions.getDatabaseId()))
+                .put(
                     ATTRIBUTE_SERVICE_PREFIX + "settings.project_id",
                     firestoreOptions.getProjectId())
                 .put(

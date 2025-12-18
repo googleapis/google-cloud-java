@@ -40,6 +40,8 @@ public interface TraceUtil {
   String ATTRIBUTE_KEY_TRANSACTION_TYPE = "transaction_type";
   String ATTRIBUTE_KEY_ATTEMPTS_ALLOWED = "attempts_allowed";
   String ATTRIBUTE_KEY_ATTEMPTS_REMAINING = "attempts_remaining";
+  String ATTRIBUTE_GCP_RESOURCE_NAME = "gcp.resource.name";
+  String ATTRIBUTE_GCP_RESOURCE_NAME_FORMAT = "//firestore.googleapis.com/projects/%s/databases/%s";
 
   String ENABLE_TRACING_ENV_VAR = "FIRESTORE_ENABLE_TRACING";
   String LIBRARY_NAME = "com.google.cloud.firestore";
