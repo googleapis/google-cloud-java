@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-hypercomputecluster-v1beta</artifactId>
-  <version>0.2.0-rc1</version><!-- {x-version-update:grpc-google-cloud-hypercomputecluster-v1beta:current} -->
+  <version>0.2.0-rc2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-hypercomputecluster-v1beta:current} -->
   <name>grpc-google-cloud-hypercomputecluster-v1beta</name>
   <description>GRPC library for google-cloud-hypercomputecluster</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-hypercomputecluster-parent</artifactId>
-    <version>0.2.0-rc1</version><!-- {x-version-update:google-cloud-hypercomputecluster:current} -->
+    <version>0.2.0-rc2-SNAPSHOT</version><!-- {x-version-update:google-cloud-hypercomputecluster:current} -->
   </parent>
   <dependencies>
     <dependency>
