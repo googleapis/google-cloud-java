@@ -36,6 +36,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.List;
 import java.util.logging.Logger;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
@@ -46,6 +47,7 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class BigtableMaterializedViewIT {
+
   @ClassRule public static final TestEnvRule testEnvRule = new TestEnvRule();
   @Rule public final PrefixGenerator prefixGenerator = new PrefixGenerator();
   private static final Logger LOGGER = Logger.getLogger(BigtableMaterializedViewIT.class.getName());
@@ -69,6 +71,13 @@ public class BigtableMaterializedViewIT {
   public void setUp() throws InterruptedException, IOException {
     client = testEnvRule.env().getInstanceAdminClient();
     testTable = createTestTable(testEnvRule.env().getTableAdminClient());
+  }
+
+  @After
+  public void tearDown() throws InterruptedException {
+    if (testTable != null) {
+      testEnvRule.env().getTableAdminClient().deleteTable(testTable.getId());
+    }
   }
 
   @Test
