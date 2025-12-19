@@ -41,6 +41,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
 
   private WorkerPoolSpec() {
     nfsMounts_ = java.util.Collections.emptyList();
+    lustreMounts_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -387,6 +388,92 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     return nfsMounts_.get(index);
   }
 
+  public static final int LUSTRE_MOUNTS_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.aiplatform.v1.LustreMount> lustreMounts_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of Lustre mounts.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.LustreMount lustre_mounts = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.aiplatform.v1.LustreMount> getLustreMountsList() {
+    return lustreMounts_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of Lustre mounts.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.LustreMount lustre_mounts = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.aiplatform.v1.LustreMountOrBuilder>
+      getLustreMountsOrBuilderList() {
+    return lustreMounts_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of Lustre mounts.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.LustreMount lustre_mounts = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getLustreMountsCount() {
+    return lustreMounts_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of Lustre mounts.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.LustreMount lustre_mounts = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.LustreMount getLustreMounts(int index) {
+    return lustreMounts_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of Lustre mounts.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.LustreMount lustre_mounts = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.LustreMountOrBuilder getLustreMountsOrBuilder(int index) {
+    return lustreMounts_.get(index);
+  }
+
   public static final int DISK_SPEC_FIELD_NUMBER = 5;
   private com.google.cloud.aiplatform.v1.DiskSpec diskSpec_;
 
@@ -472,6 +559,9 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     if (taskCase_ == 7) {
       output.writeMessage(7, (com.google.cloud.aiplatform.v1.PythonPackageSpec) task_);
     }
+    for (int i = 0; i < lustreMounts_.size(); i++) {
+      output.writeMessage(9, lustreMounts_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -503,6 +593,9 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               7, (com.google.cloud.aiplatform.v1.PythonPackageSpec) task_);
     }
+    for (int i = 0; i < lustreMounts_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, lustreMounts_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -525,6 +618,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     }
     if (getReplicaCount() != other.getReplicaCount()) return false;
     if (!getNfsMountsList().equals(other.getNfsMountsList())) return false;
+    if (!getLustreMountsList().equals(other.getLustreMountsList())) return false;
     if (hasDiskSpec() != other.hasDiskSpec()) return false;
     if (hasDiskSpec()) {
       if (!getDiskSpec().equals(other.getDiskSpec())) return false;
@@ -560,6 +654,10 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     if (getNfsMountsCount() > 0) {
       hash = (37 * hash) + NFS_MOUNTS_FIELD_NUMBER;
       hash = (53 * hash) + getNfsMountsList().hashCode();
+    }
+    if (getLustreMountsCount() > 0) {
+      hash = (37 * hash) + LUSTRE_MOUNTS_FIELD_NUMBER;
+      hash = (53 * hash) + getLustreMountsList().hashCode();
     }
     if (hasDiskSpec()) {
       hash = (37 * hash) + DISK_SPEC_FIELD_NUMBER;
@@ -720,6 +818,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getMachineSpecFieldBuilder();
         getNfsMountsFieldBuilder();
+        getLustreMountsFieldBuilder();
         getDiskSpecFieldBuilder();
       }
     }
@@ -747,6 +846,13 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
         nfsMountsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000010);
+      if (lustreMountsBuilder_ == null) {
+        lustreMounts_ = java.util.Collections.emptyList();
+      } else {
+        lustreMounts_ = null;
+        lustreMountsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000020);
       diskSpec_ = null;
       if (diskSpecBuilder_ != null) {
         diskSpecBuilder_.dispose();
@@ -800,6 +906,15 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.nfsMounts_ = nfsMountsBuilder_.build();
       }
+      if (lustreMountsBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          lustreMounts_ = java.util.Collections.unmodifiableList(lustreMounts_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.lustreMounts_ = lustreMounts_;
+      } else {
+        result.lustreMounts_ = lustreMountsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.aiplatform.v1.WorkerPoolSpec result) {
@@ -813,7 +928,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.replicaCount_ = replicaCount_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.diskSpec_ = diskSpecBuilder_ == null ? diskSpec_ : diskSpecBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
@@ -909,6 +1024,33 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (lustreMountsBuilder_ == null) {
+        if (!other.lustreMounts_.isEmpty()) {
+          if (lustreMounts_.isEmpty()) {
+            lustreMounts_ = other.lustreMounts_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureLustreMountsIsMutable();
+            lustreMounts_.addAll(other.lustreMounts_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.lustreMounts_.isEmpty()) {
+          if (lustreMountsBuilder_.isEmpty()) {
+            lustreMountsBuilder_.dispose();
+            lustreMountsBuilder_ = null;
+            lustreMounts_ = other.lustreMounts_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            lustreMountsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getLustreMountsFieldBuilder()
+                    : null;
+          } else {
+            lustreMountsBuilder_.addAllMessages(other.lustreMounts_);
+          }
+        }
+      }
       if (other.hasDiskSpec()) {
         mergeDiskSpec(other.getDiskSpec());
       }
@@ -982,7 +1124,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 input.readMessage(getDiskSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 42
             case 50:
@@ -998,6 +1140,19 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
                 taskCase_ = 7;
                 break;
               } // case 58
+            case 74:
+              {
+                com.google.cloud.aiplatform.v1.LustreMount m =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1.LustreMount.parser(), extensionRegistry);
+                if (lustreMountsBuilder_ == null) {
+                  ensureLustreMountsIsMutable();
+                  lustreMounts_.add(m);
+                } else {
+                  lustreMountsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2139,6 +2294,410 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       return nfsMountsBuilder_;
     }
 
+    private java.util.List<com.google.cloud.aiplatform.v1.LustreMount> lustreMounts_ =
+        java.util.Collections.emptyList();
+
+    private void ensureLustreMountsIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        lustreMounts_ =
+            new java.util.ArrayList<com.google.cloud.aiplatform.v1.LustreMount>(lustreMounts_);
+        bitField0_ |= 0x00000020;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.LustreMount,
+            com.google.cloud.aiplatform.v1.LustreMount.Builder,
+            com.google.cloud.aiplatform.v1.LustreMountOrBuilder>
+        lustreMountsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Lustre mounts.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.LustreMount lustre_mounts = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1.LustreMount> getLustreMountsList() {
+      if (lustreMountsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(lustreMounts_);
+      } else {
+        return lustreMountsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Lustre mounts.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.LustreMount lustre_mounts = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getLustreMountsCount() {
+      if (lustreMountsBuilder_ == null) {
+        return lustreMounts_.size();
+      } else {
+        return lustreMountsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Lustre mounts.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.LustreMount lustre_mounts = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.LustreMount getLustreMounts(int index) {
+      if (lustreMountsBuilder_ == null) {
+        return lustreMounts_.get(index);
+      } else {
+        return lustreMountsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Lustre mounts.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.LustreMount lustre_mounts = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLustreMounts(int index, com.google.cloud.aiplatform.v1.LustreMount value) {
+      if (lustreMountsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLustreMountsIsMutable();
+        lustreMounts_.set(index, value);
+        onChanged();
+      } else {
+        lustreMountsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Lustre mounts.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.LustreMount lustre_mounts = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLustreMounts(
+        int index, com.google.cloud.aiplatform.v1.LustreMount.Builder builderForValue) {
+      if (lustreMountsBuilder_ == null) {
+        ensureLustreMountsIsMutable();
+        lustreMounts_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        lustreMountsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Lustre mounts.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.LustreMount lustre_mounts = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addLustreMounts(com.google.cloud.aiplatform.v1.LustreMount value) {
+      if (lustreMountsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLustreMountsIsMutable();
+        lustreMounts_.add(value);
+        onChanged();
+      } else {
+        lustreMountsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Lustre mounts.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.LustreMount lustre_mounts = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addLustreMounts(int index, com.google.cloud.aiplatform.v1.LustreMount value) {
+      if (lustreMountsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLustreMountsIsMutable();
+        lustreMounts_.add(index, value);
+        onChanged();
+      } else {
+        lustreMountsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Lustre mounts.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.LustreMount lustre_mounts = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addLustreMounts(
+        com.google.cloud.aiplatform.v1.LustreMount.Builder builderForValue) {
+      if (lustreMountsBuilder_ == null) {
+        ensureLustreMountsIsMutable();
+        lustreMounts_.add(builderForValue.build());
+        onChanged();
+      } else {
+        lustreMountsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Lustre mounts.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.LustreMount lustre_mounts = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addLustreMounts(
+        int index, com.google.cloud.aiplatform.v1.LustreMount.Builder builderForValue) {
+      if (lustreMountsBuilder_ == null) {
+        ensureLustreMountsIsMutable();
+        lustreMounts_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        lustreMountsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Lustre mounts.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.LustreMount lustre_mounts = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllLustreMounts(
+        java.lang.Iterable<? extends com.google.cloud.aiplatform.v1.LustreMount> values) {
+      if (lustreMountsBuilder_ == null) {
+        ensureLustreMountsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, lustreMounts_);
+        onChanged();
+      } else {
+        lustreMountsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Lustre mounts.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.LustreMount lustre_mounts = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearLustreMounts() {
+      if (lustreMountsBuilder_ == null) {
+        lustreMounts_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+      } else {
+        lustreMountsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Lustre mounts.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.LustreMount lustre_mounts = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeLustreMounts(int index) {
+      if (lustreMountsBuilder_ == null) {
+        ensureLustreMountsIsMutable();
+        lustreMounts_.remove(index);
+        onChanged();
+      } else {
+        lustreMountsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Lustre mounts.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.LustreMount lustre_mounts = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.LustreMount.Builder getLustreMountsBuilder(int index) {
+      return getLustreMountsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Lustre mounts.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.LustreMount lustre_mounts = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.LustreMountOrBuilder getLustreMountsOrBuilder(int index) {
+      if (lustreMountsBuilder_ == null) {
+        return lustreMounts_.get(index);
+      } else {
+        return lustreMountsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Lustre mounts.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.LustreMount lustre_mounts = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.aiplatform.v1.LustreMountOrBuilder>
+        getLustreMountsOrBuilderList() {
+      if (lustreMountsBuilder_ != null) {
+        return lustreMountsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(lustreMounts_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Lustre mounts.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.LustreMount lustre_mounts = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.LustreMount.Builder addLustreMountsBuilder() {
+      return getLustreMountsFieldBuilder()
+          .addBuilder(com.google.cloud.aiplatform.v1.LustreMount.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Lustre mounts.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.LustreMount lustre_mounts = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.LustreMount.Builder addLustreMountsBuilder(int index) {
+      return getLustreMountsFieldBuilder()
+          .addBuilder(index, com.google.cloud.aiplatform.v1.LustreMount.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of Lustre mounts.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.LustreMount lustre_mounts = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1.LustreMount.Builder>
+        getLustreMountsBuilderList() {
+      return getLustreMountsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.LustreMount,
+            com.google.cloud.aiplatform.v1.LustreMount.Builder,
+            com.google.cloud.aiplatform.v1.LustreMountOrBuilder>
+        getLustreMountsFieldBuilder() {
+      if (lustreMountsBuilder_ == null) {
+        lustreMountsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.LustreMount,
+                com.google.cloud.aiplatform.v1.LustreMount.Builder,
+                com.google.cloud.aiplatform.v1.LustreMountOrBuilder>(
+                lustreMounts_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
+        lustreMounts_ = null;
+      }
+      return lustreMountsBuilder_;
+    }
+
     private com.google.cloud.aiplatform.v1.DiskSpec diskSpec_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1.DiskSpec,
@@ -2158,7 +2717,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the diskSpec field is set.
      */
     public boolean hasDiskSpec() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -2200,7 +2759,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       } else {
         diskSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2220,7 +2779,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       } else {
         diskSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2236,7 +2795,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDiskSpec(com.google.cloud.aiplatform.v1.DiskSpec value) {
       if (diskSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && diskSpec_ != null
             && diskSpec_ != com.google.cloud.aiplatform.v1.DiskSpec.getDefaultInstance()) {
           getDiskSpecBuilder().mergeFrom(value);
@@ -2247,7 +2806,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
         diskSpecBuilder_.mergeFrom(value);
       }
       if (diskSpec_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -2263,7 +2822,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1.DiskSpec disk_spec = 5;</code>
      */
     public Builder clearDiskSpec() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       diskSpec_ = null;
       if (diskSpecBuilder_ != null) {
         diskSpecBuilder_.dispose();
@@ -2283,7 +2842,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1.DiskSpec disk_spec = 5;</code>
      */
     public com.google.cloud.aiplatform.v1.DiskSpec.Builder getDiskSpecBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getDiskSpecFieldBuilder().getBuilder();
     }

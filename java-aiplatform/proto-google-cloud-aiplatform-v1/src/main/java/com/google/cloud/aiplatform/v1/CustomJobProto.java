@@ -132,7 +132,7 @@ public final class CustomJobProto {
           + "\016experiment_run\030\022 \001(\tB)\340A\001\372A#\n"
           + "!aiplatform.googleapis.com/Context\0227\n"
           + "\006models\030\024 \003(\tB\'\340A\001\372A!\n"
-          + "\037aiplatform.googleapis.com/Model\"\206\003\n"
+          + "\037aiplatform.googleapis.com/Model\"\313\003\n"
           + "\016WorkerPoolSpec\022C\n"
           + "\016container_spec\030\006"
           + " \001(\0132).google.cloud.aiplatform.v1.ContainerSpecH\000\022L\n"
@@ -142,7 +142,9 @@ public final class CustomJobProto {
           + " \001(\0132\'.google.cloud.aiplatform.v1.MachineSpecB\006\340A\001\340A\005\022\032\n\r"
           + "replica_count\030\002 \001(\003B\003\340A\001\022=\n\n"
           + "nfs_mounts\030\004"
-          + " \003(\0132$.google.cloud.aiplatform.v1.NfsMountB\003\340A\001\0227\n"
+          + " \003(\0132$.google.cloud.aiplatform.v1.NfsMountB\003\340A\001\022C\n\r"
+          + "lustre_mounts\030\t"
+          + " \003(\0132\'.google.cloud.aiplatform.v1.LustreMountB\003\340A\001\0227\n"
           + "\tdisk_spec\030\005 \001(\0132$.google.cloud.aiplatform.v1.DiskSpecB\006\n"
           + "\004task\"w\n\r"
           + "ContainerSpec\022\026\n"
@@ -159,8 +161,8 @@ public final class CustomJobProto {
           + "Scheduling\022*\n"
           + "\007timeout\030\001 \001(\0132\031.google.protobuf.Duration\022%\n"
           + "\035restart_job_on_worker_restart\030\003 \001(\010\022F\n"
-          + "\010strategy\030\004 \001(\0162/.google.clou"
-          + "d.aiplatform.v1.Scheduling.StrategyB\003\340A\001\022\034\n"
+          + "\010strategy\030\004"
+          + " \001(\0162/.google.cloud.aiplatform.v1.Scheduling.StrategyB\003\340A\001\022\034\n"
           + "\017disable_retries\030\005 \001(\010B\003\340A\001\0229\n"
           + "\021max_wait_duration\030\006"
           + " \001(\0132\031.google.protobuf.DurationB\003\340A\001\"q\n"
@@ -171,10 +173,11 @@ public final class CustomJobProto {
           + "\010STANDARD\020\003\022\010\n"
           + "\004SPOT\020\004\022\016\n\n"
           + "FLEX_START\020\006B\314\001\n"
-          + "\036com.google.cloud.aiplatform.v1B\016CustomJobProtoP\001Z>cloud.google.com/go/a"
-          + "iplatform/apiv1/aiplatformpb;aiplatformp"
-          + "b\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Google\\"
-          + "Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006proto3"
+          + "\036com.google.cloud.aiplatform.v1B\016CustomJobP"
+          + "rotoP\001Z>cloud.google.com/go/aiplatform/a"
+          + "piv1/aiplatformpb;aiplatformpb\252\002\032Google."
+          + "Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\AIPla"
+          + "tform\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -262,6 +265,7 @@ public final class CustomJobProto {
               "MachineSpec",
               "ReplicaCount",
               "NfsMounts",
+              "LustreMounts",
               "DiskSpec",
               "Task",
             });
