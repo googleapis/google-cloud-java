@@ -210,6 +210,9 @@ public class Job extends JobInfo {
    */
   public boolean isDone() {
     checkNotDryRun("isDone");
+    if (hasDoneState()) {
+      return true;
+    }
     Span isDone = null;
     if (options.isOpenTelemetryTracingEnabled() && options.getOpenTelemetryTracer() != null) {
       isDone =
@@ -220,12 +223,16 @@ public class Job extends JobInfo {
     }
     try (Scope isDoneScope = isDone != null ? isDone.makeCurrent() : null) {
       Job job = bigquery.getJob(getJobId(), JobOption.fields(BigQuery.JobField.STATUS));
-      return job == null || JobStatus.State.DONE.equals(job.getStatus().getState());
+      return job == null || job.hasDoneState();
     } finally {
       if (isDone != null) {
         isDone.end();
       }
     }
+  }
+
+  private boolean hasDoneState() {
+    return getStatus() != null && JobStatus.State.DONE.equals(getStatus().getState());
   }
 
   /** See {@link #waitFor(BigQueryRetryConfig, RetryOption...)} */

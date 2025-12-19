@@ -157,11 +157,9 @@ public class JobTest {
 
   @Test
   public void testIsDone_True() {
-    BigQuery.JobOption[] expectedOptions = {BigQuery.JobOption.fields(BigQuery.JobField.STATUS)};
     Job job = expectedJob.toBuilder().setStatus(new JobStatus(JobStatus.State.DONE)).build();
-    when(bigquery.getJob(JOB_INFO.getJobId(), expectedOptions)).thenReturn(job);
     assertTrue(job.isDone());
-    verify(bigquery).getJob(JOB_INFO.getJobId(), expectedOptions);
+    verify(bigquery, times(0)).getJob(eq(JOB_INFO.getJobId()), any());
   }
 
   @Test
@@ -176,8 +174,10 @@ public class JobTest {
   @Test
   public void testIsDone_NotExists() {
     BigQuery.JobOption[] expectedOptions = {BigQuery.JobOption.fields(BigQuery.JobField.STATUS)};
+    Job jobWithRunningState =
+        expectedJob.toBuilder().setStatus(new JobStatus(JobStatus.State.RUNNING)).build();
     when(bigquery.getJob(JOB_INFO.getJobId(), expectedOptions)).thenReturn(null);
-    assertTrue(job.isDone());
+    assertTrue(jobWithRunningState.isDone());
     verify(bigquery).getJob(JOB_INFO.getJobId(), expectedOptions);
   }
 
