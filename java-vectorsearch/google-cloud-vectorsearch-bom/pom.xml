@@ -3,12 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-vectorsearch-bom</artifactId>
-  <version>0.3.0-rc1</version><!-- {x-version-update:google-cloud-vectorsearch:current} -->
+  <version>0.3.0-rc2-SNAPSHOT</version><!-- {x-version-update:google-cloud-vectorsearch:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>1.76.0-rc1</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.76.0-rc2-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -26,17 +26,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-vectorsearch</artifactId>
-        <version>0.3.0-rc1</version><!-- {x-version-update:google-cloud-vectorsearch:current} -->
+        <version>0.3.0-rc2-SNAPSHOT</version><!-- {x-version-update:google-cloud-vectorsearch:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-vectorsearch-v1beta</artifactId>
-        <version>0.3.0-rc1</version><!-- {x-version-update:grpc-google-cloud-vectorsearch-v1beta:current} -->
+        <version>0.3.0-rc2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-vectorsearch-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-vectorsearch-v1beta</artifactId>
-        <version>0.3.0-rc1</version><!-- {x-version-update:proto-google-cloud-vectorsearch-v1beta:current} -->
+        <version>0.3.0-rc2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-vectorsearch-v1beta:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
