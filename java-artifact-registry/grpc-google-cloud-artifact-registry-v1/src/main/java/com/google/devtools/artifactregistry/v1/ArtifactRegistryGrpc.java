@@ -3149,7 +3149,7 @@ public final class ArtifactRegistryGrpc {
      *
      *
      * <pre>
-     * Exports an artifact.
+     * Exports an artifact to a Cloud Storage bucket.
      * </pre>
      */
     default void exportArtifact(
@@ -4021,7 +4021,7 @@ public final class ArtifactRegistryGrpc {
      *
      *
      * <pre>
-     * Exports an artifact.
+     * Exports an artifact to a Cloud Storage bucket.
      * </pre>
      */
     public void exportArtifact(
@@ -4767,7 +4767,7 @@ public final class ArtifactRegistryGrpc {
      *
      *
      * <pre>
-     * Exports an artifact.
+     * Exports an artifact to a Cloud Storage bucket.
      * </pre>
      */
     public com.google.longrunning.Operation exportArtifact(
@@ -5462,7 +5462,7 @@ public final class ArtifactRegistryGrpc {
      *
      *
      * <pre>
-     * Exports an artifact.
+     * Exports an artifact to a Cloud Storage bucket.
      * </pre>
      */
     public com.google.longrunning.Operation exportArtifact(
@@ -6201,7 +6201,7 @@ public final class ArtifactRegistryGrpc {
      *
      *
      * <pre>
-     * Exports an artifact.
+     * Exports an artifact to a Cloud Storage bucket.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

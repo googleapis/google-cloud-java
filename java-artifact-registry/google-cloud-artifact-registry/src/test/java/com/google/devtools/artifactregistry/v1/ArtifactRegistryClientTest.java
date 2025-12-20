@@ -1682,6 +1682,7 @@ public class ArtifactRegistryClientTest {
             .addAllRelatedTags(new ArrayList<Tag>())
             .setMetadata(Struct.newBuilder().build())
             .putAllAnnotations(new HashMap<String, String>())
+            .addAllFingerprints(new ArrayList<Hash>())
             .build();
     mockArtifactRegistry.addResponse(expectedResponse);
 
@@ -1860,6 +1861,7 @@ public class ArtifactRegistryClientTest {
             .addAllRelatedTags(new ArrayList<Tag>())
             .setMetadata(Struct.newBuilder().build())
             .putAllAnnotations(new HashMap<String, String>())
+            .addAllFingerprints(new ArrayList<Hash>())
             .build();
     mockArtifactRegistry.addResponse(expectedResponse);
 

@@ -333,4 +333,80 @@ public interface VersionOrBuilder
    * </code>
    */
   java.lang.String getAnnotationsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Immutable reference for the version, calculated based on the
+   * version's content. Currently we only support dirsum_sha256 hash algorithm.
+   * Additional hash algorithms may be added in the future.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.artifactregistry.v1.Hash fingerprints = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.devtools.artifactregistry.v1.Hash> getFingerprintsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Immutable reference for the version, calculated based on the
+   * version's content. Currently we only support dirsum_sha256 hash algorithm.
+   * Additional hash algorithms may be added in the future.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.artifactregistry.v1.Hash fingerprints = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.devtools.artifactregistry.v1.Hash getFingerprints(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Immutable reference for the version, calculated based on the
+   * version's content. Currently we only support dirsum_sha256 hash algorithm.
+   * Additional hash algorithms may be added in the future.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.artifactregistry.v1.Hash fingerprints = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getFingerprintsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Immutable reference for the version, calculated based on the
+   * version's content. Currently we only support dirsum_sha256 hash algorithm.
+   * Additional hash algorithms may be added in the future.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.artifactregistry.v1.Hash fingerprints = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.devtools.artifactregistry.v1.HashOrBuilder>
+      getFingerprintsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Immutable reference for the version, calculated based on the
+   * version's content. Currently we only support dirsum_sha256 hash algorithm.
+   * Additional hash algorithms may be added in the future.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.artifactregistry.v1.Hash fingerprints = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.devtools.artifactregistry.v1.HashOrBuilder getFingerprintsOrBuilder(int index);
 }

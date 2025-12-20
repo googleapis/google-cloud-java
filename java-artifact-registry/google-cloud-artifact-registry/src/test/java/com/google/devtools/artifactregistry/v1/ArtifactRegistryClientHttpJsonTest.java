@@ -1902,6 +1902,7 @@ public class ArtifactRegistryClientHttpJsonTest {
             .addAllRelatedTags(new ArrayList<Tag>())
             .setMetadata(Struct.newBuilder().build())
             .putAllAnnotations(new HashMap<String, String>())
+            .addAllFingerprints(new ArrayList<Hash>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2099,6 +2100,7 @@ public class ArtifactRegistryClientHttpJsonTest {
             .addAllRelatedTags(new ArrayList<Tag>())
             .setMetadata(Struct.newBuilder().build())
             .putAllAnnotations(new HashMap<String, String>())
+            .addAllFingerprints(new ArrayList<Hash>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2113,6 +2115,7 @@ public class ArtifactRegistryClientHttpJsonTest {
             .addAllRelatedTags(new ArrayList<Tag>())
             .setMetadata(Struct.newBuilder().build())
             .putAllAnnotations(new HashMap<String, String>())
+            .addAllFingerprints(new ArrayList<Hash>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -2154,6 +2157,7 @@ public class ArtifactRegistryClientHttpJsonTest {
               .addAllRelatedTags(new ArrayList<Tag>())
               .setMetadata(Struct.newBuilder().build())
               .putAllAnnotations(new HashMap<String, String>())
+              .addAllFingerprints(new ArrayList<Hash>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateVersion(version, updateMask);
