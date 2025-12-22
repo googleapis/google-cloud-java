@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.46.0 (2025-12-22)
+
+### Features
+
+* Improve documentation of attachment.proto, event_payload.proto and space.proto ([c70c873](https://github.com/googleapis/google-cloud-java/commit/c70c8739f2caffdc87535f2e729c1d967d550e8c))
+
+
+
 ## 0.45.0 (2025-12-16)
 
 ### Features
