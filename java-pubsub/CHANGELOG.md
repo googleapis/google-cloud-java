@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.144.1](https://github.com/googleapis/java-pubsub/compare/v1.144.0...v1.144.1) (2025-12-22)
+
+
+### Bug Fixes
+
+* Lower the Subscriber protocol version to disable the streaming pull keepalive feature ([#2652](https://github.com/googleapis/java-pubsub/issues/2652)) ([ca99c2a](https://github.com/googleapis/java-pubsub/commit/ca99c2a2cea8201ea6f71e7383bd6123ec32ebdc))
+
 ## [1.144.0](https://github.com/googleapis/java-pubsub/compare/v1.143.1...v1.144.0) (2025-12-11)
 
 
