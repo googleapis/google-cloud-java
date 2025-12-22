@@ -12,7 +12,7 @@ SOURCE_REPO_NAME="${SOURCE_REPO_URL##*/}"
 MONOREPO_NAME="${MONOREPO_URL##*/}"
 
 # Use a temporary working directory sibling to the current monorepo
-WORKING_DIR="../../../migration-work"
+WORKING_DIR="../../migration-work"
 SOURCE_DIR="$WORKING_DIR/$SOURCE_REPO_NAME-source"
 TARGET_DIR="$WORKING_DIR/$MONOREPO_NAME-target"
 
