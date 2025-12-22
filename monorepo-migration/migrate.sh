@@ -60,9 +60,9 @@ git checkout -f main
 git reset --hard origin/main
 
 # 2.5 Create a new feature branch for the migration
-BRANCH_NAME="feat/migrate-$SOURCE_REPO_NAME"
+BRANCH_NAME="migrate-$SOURCE_REPO_NAME"
 echo "Creating feature branch: $BRANCH_NAME"
-if git branch | grep -q "$BRANCH_NAME"; then
+if git rev-parse --verify "$BRANCH_NAME" >/dev/null 2>&1; then
     git branch -D "$BRANCH_NAME"
 fi
 git checkout -b "$BRANCH_NAME"
@@ -80,7 +80,7 @@ git fetch "$SOURCE_REPO_NAME"
 
 # 5. Merge the histories using 'ours' strategy to keep monorepo content
 echo "Merging histories (strategy: ours)..."
-git merge --allow-unrelated-histories --no-ff "$SOURCE_REPO_NAME/main" -s ours --no-commit -m "feat($SOURCE_REPO_NAME): migrate $SOURCE_REPO_NAME into monorepo"
+git merge --allow-unrelated-histories --no-ff "$SOURCE_REPO_NAME/main" -s ours --no-commit -m "chore($SOURCE_REPO_NAME): migrate $SOURCE_REPO_NAME into monorepo"
 
 # 6. Read the tree from the source repo into the desired subdirectory
 echo "Reading tree into prefix $SOURCE_REPO_NAME/..."
@@ -89,9 +89,9 @@ if [ -d "$SOURCE_REPO_NAME" ]; then
 fi
 git read-tree --prefix="$SOURCE_REPO_NAME/" -u "$SOURCE_REPO_NAME/main"
 
-# 7. Commit the changes
+# 7. Commit the migration
 echo "Committing migration..."
-git commit -n --no-gpg-sign -m "feat($SOURCE_REPO_NAME): migrate $SOURCE_REPO_NAME into monorepo"
+git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): migrate $SOURCE_REPO_NAME into monorepo"
 
 # 8. Update the root pom.xml to include the new module
 echo "Updating root pom.xml..."
@@ -105,6 +105,8 @@ if [ -f "pom.xml" ]; then
 \\    <module>$SOURCE_REPO_NAME</module>
 " pom.xml
         echo "Added $SOURCE_REPO_NAME to pom.xml"
+        git add pom.xml
+        git commit -n --no-gpg-sign -m "chore: add $SOURCE_REPO_NAME module to root pom.xml"
     fi
 else
     echo "Warning: root pom.xml not found"
