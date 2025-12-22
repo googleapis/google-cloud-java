@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.76.0](https://github.com/googleapis/google-cloud-java/compare/v1.75.0...v1.76.0) (2025-12-22)
+
+
+### Features
+
+* [aiplatform] Add Lustre support to the Vertex Training Custom Job API ([c70c873](https://github.com/googleapis/google-cloud-java/commit/c70c8739f2caffdc87535f2e729c1d967d550e8c))
+
+
+### Documentation
+
+* [chat] Improve documentation of attachment.proto, event_payload.proto and space.proto ([c70c873](https://github.com/googleapis/google-cloud-java/commit/c70c8739f2caffdc87535f2e729c1d967d550e8c))
+* [geminidataanalytics] specify the data sources supported only by the QueryData API ([c70c873](https://github.com/googleapis/google-cloud-java/commit/c70c8739f2caffdc87535f2e729c1d967d550e8c))
+
 ## [1.75.0](https://github.com/googleapis/google-cloud-java/compare/v1.74.0...v1.75.0) (2025-12-16)
 
 
