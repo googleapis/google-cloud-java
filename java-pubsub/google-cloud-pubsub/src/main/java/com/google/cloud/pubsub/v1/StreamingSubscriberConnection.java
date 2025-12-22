@@ -519,7 +519,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
                 }
 
                 logger.log(
-                    Level.WARNING,
+                    Level.INFO,
                     "No response from server for {0} seconds since last ping. Closing stream.",
                     elapsedSincePing.getSeconds());
 
