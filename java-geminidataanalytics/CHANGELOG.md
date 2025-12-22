@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.10.0 (2025-12-22)
+
+### Features
+
+* specify the data sources supported only by the QueryData API ([c70c873](https://github.com/googleapis/google-cloud-java/commit/c70c8739f2caffdc87535f2e729c1d967d550e8c))
+
+
+
 ## 0.9.0 (2025-12-16)
 
 ### Features

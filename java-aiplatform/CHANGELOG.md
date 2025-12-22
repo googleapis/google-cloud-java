@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.83.0 (2025-12-22)
+
+### Features
+
+* Add Lustre support to the Vertex Training Custom Job API ([c70c873](https://github.com/googleapis/google-cloud-java/commit/c70c8739f2caffdc87535f2e729c1d967d550e8c))
+
+
+
 ## 3.82.0 (2025-12-16)
 
 ### ⚠ BREAKING CHANGES
