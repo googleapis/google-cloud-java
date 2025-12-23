@@ -156,12 +156,16 @@ EOF
     for workflow in "$SOURCE_REPO_NAME/.github/workflows/"*; do
         if [ -f "$workflow" ]; then
             filename=$(basename "$workflow")
-            
+
             # Skip redundant workflows as requested by user
-            if [ "$filename" == "hermetic_library_generation.yaml" ] || [ "$filename" == "update_generation_config.yaml" ]; then
-                echo "Skipping redundant workflow: $filename"
-                continue
-            fi
+            case "$filename" in
+                "hermetic_library_generation.yaml" | "update_generation_config.yaml" | \
+                "approve-readme.yaml" | "auto-release.yaml" | "renovate_config_check.yaml" | \
+                "samples.yaml" | "unmanaged_dependency_check.yaml")
+                    echo "Skipping redundant workflow: $filename"
+                    continue
+                    ;;
+            esac
             
             new_filename="${SOURCE_REPO_NAME}-${filename}"
             target_path=".github/workflows/$new_filename"
