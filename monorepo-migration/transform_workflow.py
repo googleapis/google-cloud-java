@@ -20,6 +20,7 @@ def transform(content, lib_name):
             - '{lib_name}/**'"""
 
     in_jobs = False
+    skip_current_job = False
     for line in lines:
         if line.startswith('name:') and not in_jobs:
             name_match = re.match(r'^name:\s*(.*)', line)
@@ -45,13 +46,20 @@ def transform(content, lib_name):
             job_match = re.match(r'^  ([\w-]+):', line)
             if job_match:
                 job_name = job_match.group(1)
+                if job_name == 'clirr':
+                    skip_current_job = True
+                    continue
+                else:
+                    skip_current_job = False
+                
                 if job_name != 'filter':
                     new_lines.append(line)
                     new_lines.append("    needs: filter")
                     new_lines.append(f"    if: ${{{{ needs.filter.outputs.library == 'true' }}}}")
                     continue
         
-        new_lines.append(line)
+        if not skip_current_job:
+            new_lines.append(line)
     return "\n".join(new_lines)
 
 if __name__ == "__main__":
