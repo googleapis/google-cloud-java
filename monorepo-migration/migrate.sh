@@ -154,6 +154,21 @@ if [ -f "$SOURCE_CONFIG" ]; then
     git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): add library to generation_config.yaml"
 fi
 
+# 7.7 Consolidate versions.txt
+echo "Consolidating versions.txt..."
+SOURCE_VERSIONS="$SOURCE_REPO_NAME/versions.txt"
+if [ -f "$SOURCE_VERSIONS" ]; then
+    # Append data lines only to root versions.txt (exclude comments/headers)
+    grep "^[a-zA-Z0-9]" "$SOURCE_VERSIONS" >> versions.txt
+    
+    # Remove the migrated subdirectory's versions.txt
+    rm "$SOURCE_VERSIONS"
+    
+    echo "Committing versions.txt update..."
+    git add versions.txt "$SOURCE_VERSIONS"
+    git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): consolidate versions.txt into root"
+fi
+
 # 8. Cleanup
 echo "Cleaning up temporary source clone..."
 rm -rf "$SOURCE_DIR"
