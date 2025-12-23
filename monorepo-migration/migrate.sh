@@ -156,6 +156,13 @@ EOF
     for workflow in "$SOURCE_REPO_NAME/.github/workflows/"*; do
         if [ -f "$workflow" ]; then
             filename=$(basename "$workflow")
+            
+            # Skip redundant workflows as requested by user
+            if [ "$filename" == "hermetic_library_generation.yaml" ] || [ "$filename" == "update_generation_config.yaml" ]; then
+                echo "Skipping redundant workflow: $filename"
+                continue
+            fi
+            
             new_filename="${SOURCE_REPO_NAME}-${filename}"
             target_path=".github/workflows/$new_filename"
             
@@ -172,6 +179,27 @@ EOF
     echo "Committing workflow migration..."
     git add .github/workflows
     git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): migrate and adapt GitHub Actions workflows"
+fi
+
+# 7.6 Update generation_config.yaml
+echo "Updating generation_config.yaml..."
+SOURCE_CONFIG="$SOURCE_REPO_NAME/generation_config.yaml"
+if [ -f "$SOURCE_CONFIG" ]; then
+    # Extract the library entry (starts with - api_shortname)
+    # This assumes the source config only has one library or we want the first one
+    ENTRY=$(awk '/^  - api_shortname:/{flag=1; print $0; next} /^  - / && flag{flag=0} flag' "$SOURCE_CONFIG")
+    
+    # Simple cleanup: remove repo and repo_short if they exist
+    # Adjust indentation to match monorepo (0 spaces for -)
+    CLEAN_ENTRY=$(echo "$ENTRY" | sed '/repo:/d' | sed '/repo_short:/d' | sed 's/^  //')
+    
+    # Append to target generation_config.yaml
+    echo "" >> generation_config.yaml
+    echo "$CLEAN_ENTRY" >> generation_config.yaml
+    
+    echo "Committing generation_config.yaml update..."
+    git add generation_config.yaml
+    git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): add library to generation_config.yaml"
 fi
 
 # 8. Cleanup
