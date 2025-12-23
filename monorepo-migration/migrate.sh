@@ -93,26 +93,7 @@ git read-tree --prefix="$SOURCE_REPO_NAME/" -u "$SOURCE_REPO_NAME/main"
 echo "Committing migration..."
 git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): migrate $SOURCE_REPO_NAME into monorepo"
 
-# 8. Update the root pom.xml to include the new module
-echo "Updating root pom.xml..."
-if [ -f "pom.xml" ]; then
-    # Check if module already exists
-    if grep -q "<module>$SOURCE_REPO_NAME</module>" pom.xml; then
-        echo "Module $SOURCE_REPO_NAME already exists in pom.xml"
-    else
-        # Insert the module before the closing </modules> tag
-        sed -i '' "/<\/modules>/i\\
-\\    <module>$SOURCE_REPO_NAME</module>
-" pom.xml
-        echo "Added $SOURCE_REPO_NAME to pom.xml"
-        git add pom.xml
-        git commit -n --no-gpg-sign -m "chore: add $SOURCE_REPO_NAME module to root pom.xml"
-    fi
-else
-    echo "Warning: root pom.xml not found"
-fi
-
-# 9. Cleanup
+# 8. Cleanup
 echo "Cleaning up temporary source clone..."
 rm -rf "$SOURCE_DIR"
 
