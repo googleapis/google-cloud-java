@@ -36,7 +36,6 @@ public interface ExamplesRestrictionsNamespaceOrBuilder
    * @return The namespaceName.
    */
   java.lang.String getNamespaceName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ExamplesRestrictionsNamespaceOrBuilder
    * @return A list containing the allow.
    */
   java.util.List<java.lang.String> getAllowList();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ExamplesRestrictionsNamespaceOrBuilder
    * @return The count of allow.
    */
   int getAllowCount();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface ExamplesRestrictionsNamespaceOrBuilder
    * @return The allow at the given index.
    */
   java.lang.String getAllow(int index);
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface ExamplesRestrictionsNamespaceOrBuilder
    * @return A list containing the deny.
    */
   java.util.List<java.lang.String> getDenyList();
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public interface ExamplesRestrictionsNamespaceOrBuilder
    * @return The count of deny.
    */
   int getDenyCount();
-
   /**
    *
    *
@@ -143,7 +137,6 @@ public interface ExamplesRestrictionsNamespaceOrBuilder
    * @return The deny at the given index.
    */
   java.lang.String getDeny(int index);
-
   /**
    *
    *

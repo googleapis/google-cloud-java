@@ -39,7 +39,6 @@ public interface ContentOrBuilder
    * @return The role.
    */
   java.lang.String getRole();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface ContentOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vertexai.api.Part> getPartsList();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface ContentOrBuilder
    * </code>
    */
   com.google.cloud.vertexai.api.Part getParts(int index);
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface ContentOrBuilder
    * </code>
    */
   int getPartsCount();
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public interface ContentOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.cloud.vertexai.api.PartOrBuilder> getPartsOrBuilderList();
-
   /**
    *
    *

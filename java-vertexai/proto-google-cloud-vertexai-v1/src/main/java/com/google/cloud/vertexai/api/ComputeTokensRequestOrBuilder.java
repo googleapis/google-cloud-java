@@ -39,7 +39,6 @@ public interface ComputeTokensRequestOrBuilder
    * @return The endpoint.
    */
   java.lang.String getEndpoint();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface ComputeTokensRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.protobuf.Value> getInstancesList();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface ComputeTokensRequestOrBuilder
    * </code>
    */
   com.google.protobuf.Value getInstances(int index);
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface ComputeTokensRequestOrBuilder
    * </code>
    */
   int getInstancesCount();
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public interface ComputeTokensRequestOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.protobuf.ValueOrBuilder> getInstancesOrBuilderList();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface ComputeTokensRequestOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public interface ComputeTokensRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vertexai.api.Content> getContentsList();
-
   /**
    *
    *
@@ -181,7 +174,6 @@ public interface ComputeTokensRequestOrBuilder
    * </code>
    */
   com.google.cloud.vertexai.api.Content getContents(int index);
-
   /**
    *
    *
@@ -194,7 +186,6 @@ public interface ComputeTokensRequestOrBuilder
    * </code>
    */
   int getContentsCount();
-
   /**
    *
    *
@@ -208,7 +199,6 @@ public interface ComputeTokensRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.vertexai.api.ContentOrBuilder>
       getContentsOrBuilderList();
-
   /**
    *
    *

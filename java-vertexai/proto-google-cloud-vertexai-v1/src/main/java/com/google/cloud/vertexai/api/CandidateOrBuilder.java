@@ -51,7 +51,6 @@ public interface CandidateOrBuilder
    * @return Whether the content field is set.
    */
   boolean hasContent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface CandidateOrBuilder
    * @return The content.
    */
   com.google.cloud.vertexai.api.Content getContent();
-
   /**
    *
    *
@@ -120,7 +118,6 @@ public interface CandidateOrBuilder
    * @return Whether the logprobsResult field is set.
    */
   boolean hasLogprobsResult();
-
   /**
    *
    *
@@ -135,7 +132,6 @@ public interface CandidateOrBuilder
    * @return The logprobsResult.
    */
   com.google.cloud.vertexai.api.LogprobsResult getLogprobsResult();
-
   /**
    *
    *
@@ -164,7 +160,6 @@ public interface CandidateOrBuilder
    * @return The enum numeric value on the wire for finishReason.
    */
   int getFinishReasonValue();
-
   /**
    *
    *
@@ -195,7 +190,6 @@ public interface CandidateOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vertexai.api.SafetyRating> getSafetyRatingsList();
-
   /**
    *
    *
@@ -210,7 +204,6 @@ public interface CandidateOrBuilder
    * </code>
    */
   com.google.cloud.vertexai.api.SafetyRating getSafetyRatings(int index);
-
   /**
    *
    *
@@ -225,7 +218,6 @@ public interface CandidateOrBuilder
    * </code>
    */
   int getSafetyRatingsCount();
-
   /**
    *
    *
@@ -241,7 +233,6 @@ public interface CandidateOrBuilder
    */
   java.util.List<? extends com.google.cloud.vertexai.api.SafetyRatingOrBuilder>
       getSafetyRatingsOrBuilderList();
-
   /**
    *
    *
@@ -270,7 +261,6 @@ public interface CandidateOrBuilder
    * @return Whether the finishMessage field is set.
    */
   boolean hasFinishMessage();
-
   /**
    *
    *
@@ -284,7 +274,6 @@ public interface CandidateOrBuilder
    * @return The finishMessage.
    */
   java.lang.String getFinishMessage();
-
   /**
    *
    *
@@ -313,7 +302,6 @@ public interface CandidateOrBuilder
    * @return Whether the citationMetadata field is set.
    */
   boolean hasCitationMetadata();
-
   /**
    *
    *
@@ -328,7 +316,6 @@ public interface CandidateOrBuilder
    * @return The citationMetadata.
    */
   com.google.cloud.vertexai.api.CitationMetadata getCitationMetadata();
-
   /**
    *
    *
@@ -356,7 +343,6 @@ public interface CandidateOrBuilder
    * @return Whether the groundingMetadata field is set.
    */
   boolean hasGroundingMetadata();
-
   /**
    *
    *
@@ -371,7 +357,6 @@ public interface CandidateOrBuilder
    * @return The groundingMetadata.
    */
   com.google.cloud.vertexai.api.GroundingMetadata getGroundingMetadata();
-
   /**
    *
    *

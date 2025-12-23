@@ -36,7 +36,6 @@ public interface DeleteOperationMetadataOrBuilder
    * @return Whether the genericMetadata field is set.
    */
   boolean hasGenericMetadata();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DeleteOperationMetadataOrBuilder
    * @return The genericMetadata.
    */
   com.google.cloud.vertexai.api.GenericOperationMetadata getGenericMetadata();
-
   /**
    *
    *

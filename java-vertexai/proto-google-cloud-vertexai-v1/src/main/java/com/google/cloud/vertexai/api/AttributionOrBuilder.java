@@ -112,7 +112,6 @@ public interface AttributionOrBuilder
    * @return Whether the featureAttributions field is set.
    */
   boolean hasFeatureAttributions();
-
   /**
    *
    *
@@ -158,7 +157,6 @@ public interface AttributionOrBuilder
    * @return The featureAttributions.
    */
   com.google.protobuf.Value getFeatureAttributions();
-
   /**
    *
    *
@@ -221,7 +219,6 @@ public interface AttributionOrBuilder
    * @return A list containing the outputIndex.
    */
   java.util.List<java.lang.Integer> getOutputIndexList();
-
   /**
    *
    *
@@ -240,7 +237,6 @@ public interface AttributionOrBuilder
    * @return The count of outputIndex.
    */
   int getOutputIndexCount();
-
   /**
    *
    *
@@ -280,7 +276,6 @@ public interface AttributionOrBuilder
    * @return The outputDisplayName.
    */
   java.lang.String getOutputDisplayName();
-
   /**
    *
    *
@@ -349,7 +344,6 @@ public interface AttributionOrBuilder
    * @return The outputName.
    */
   java.lang.String getOutputName();
-
   /**
    *
    *

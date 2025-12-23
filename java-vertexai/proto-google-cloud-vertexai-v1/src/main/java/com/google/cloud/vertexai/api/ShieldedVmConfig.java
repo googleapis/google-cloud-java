@@ -35,7 +35,6 @@ public final class ShieldedVmConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.ShieldedVmConfig)
     ShieldedVmConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ShieldedVmConfig.newBuilder() to construct.
   private ShieldedVmConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class ShieldedVmConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int ENABLE_SECURE_BOOT_FIELD_NUMBER = 1;
   private boolean enableSecureBoot_ = false;
-
   /**
    *
    *
@@ -248,7 +246,6 @@ public final class ShieldedVmConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -432,7 +429,6 @@ public final class ShieldedVmConfig extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private boolean enableSecureBoot_;
-
     /**
      *
      *
@@ -454,7 +450,6 @@ public final class ShieldedVmConfig extends com.google.protobuf.GeneratedMessage
     public boolean getEnableSecureBoot() {
       return enableSecureBoot_;
     }
-
     /**
      *
      *
@@ -480,7 +475,6 @@ public final class ShieldedVmConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

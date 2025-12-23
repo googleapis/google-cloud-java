@@ -50,7 +50,6 @@ public interface ExplanationMetadataOrBuilder
    * </code>
    */
   int getInputsCount();
-
   /**
    *
    *
@@ -77,12 +76,10 @@ public interface ExplanationMetadataOrBuilder
    * </code>
    */
   boolean containsInputs(java.lang.String key);
-
   /** Use {@link #getInputsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.vertexai.api.ExplanationMetadata.InputMetadata>
       getInputs();
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface ExplanationMetadataOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.vertexai.api.ExplanationMetadata.InputMetadata>
       getInputsMap();
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public interface ExplanationMetadataOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.vertexai.api.ExplanationMetadata.InputMetadata defaultValue);
-
   /**
    *
    *
@@ -190,7 +185,6 @@ public interface ExplanationMetadataOrBuilder
    * </code>
    */
   int getOutputsCount();
-
   /**
    *
    *
@@ -211,12 +205,10 @@ public interface ExplanationMetadataOrBuilder
    * </code>
    */
   boolean containsOutputs(java.lang.String key);
-
   /** Use {@link #getOutputsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.vertexai.api.ExplanationMetadata.OutputMetadata>
       getOutputs();
-
   /**
    *
    *
@@ -238,7 +230,6 @@ public interface ExplanationMetadataOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.vertexai.api.ExplanationMetadata.OutputMetadata>
       getOutputsMap();
-
   /**
    *
    *
@@ -263,7 +254,6 @@ public interface ExplanationMetadataOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.vertexai.api.ExplanationMetadata.OutputMetadata defaultValue);
-
   /**
    *
    *
@@ -306,7 +296,6 @@ public interface ExplanationMetadataOrBuilder
    * @return The featureAttributionsSchemaUri.
    */
   java.lang.String getFeatureAttributionsSchemaUri();
-
   /**
    *
    *
@@ -340,7 +329,6 @@ public interface ExplanationMetadataOrBuilder
    * @return The latentSpaceSource.
    */
   java.lang.String getLatentSpaceSource();
-
   /**
    *
    *

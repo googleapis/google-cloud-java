@@ -36,7 +36,6 @@ public interface SlackSourceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vertexai.api.SlackSource.SlackChannels> getChannelsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SlackSourceOrBuilder
    * </code>
    */
   com.google.cloud.vertexai.api.SlackSource.SlackChannels getChannels(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface SlackSourceOrBuilder
    * </code>
    */
   int getChannelsCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface SlackSourceOrBuilder
    */
   java.util.List<? extends com.google.cloud.vertexai.api.SlackSource.SlackChannelsOrBuilder>
       getChannelsOrBuilderList();
-
   /**
    *
    *

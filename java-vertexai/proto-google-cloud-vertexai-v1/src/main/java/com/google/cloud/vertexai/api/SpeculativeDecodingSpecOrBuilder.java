@@ -38,7 +38,6 @@ public interface SpeculativeDecodingSpecOrBuilder
    * @return Whether the draftModelSpeculation field is set.
    */
   boolean hasDraftModelSpeculation();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface SpeculativeDecodingSpecOrBuilder
    */
   com.google.cloud.vertexai.api.SpeculativeDecodingSpec.DraftModelSpeculation
       getDraftModelSpeculation();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface SpeculativeDecodingSpecOrBuilder
    * @return Whether the ngramSpeculation field is set.
    */
   boolean hasNgramSpeculation();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface SpeculativeDecodingSpecOrBuilder
    * @return The ngramSpeculation.
    */
   com.google.cloud.vertexai.api.SpeculativeDecodingSpec.NgramSpeculation getNgramSpeculation();
-
   /**
    *
    *

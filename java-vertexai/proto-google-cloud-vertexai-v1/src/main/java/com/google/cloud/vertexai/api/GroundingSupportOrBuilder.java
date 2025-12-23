@@ -36,7 +36,6 @@ public interface GroundingSupportOrBuilder
    * @return Whether the segment field is set.
    */
   boolean hasSegment();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface GroundingSupportOrBuilder
    * @return The segment.
    */
   com.google.cloud.vertexai.api.Segment getSegment();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface GroundingSupportOrBuilder
    * @return A list containing the groundingChunkIndices.
    */
   java.util.List<java.lang.Integer> getGroundingChunkIndicesList();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface GroundingSupportOrBuilder
    * @return The count of groundingChunkIndices.
    */
   int getGroundingChunkIndicesCount();
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface GroundingSupportOrBuilder
    * @return A list containing the confidenceScores.
    */
   java.util.List<java.lang.Float> getConfidenceScoresList();
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public interface GroundingSupportOrBuilder
    * @return The count of confidenceScores.
    */
   int getConfidenceScoresCount();
-
   /**
    *
    *

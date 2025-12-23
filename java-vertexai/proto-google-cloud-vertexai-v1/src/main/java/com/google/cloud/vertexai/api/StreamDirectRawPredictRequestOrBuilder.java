@@ -40,7 +40,6 @@ public interface StreamDirectRawPredictRequestOrBuilder
    * @return The endpoint.
    */
   java.lang.String getEndpoint();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface StreamDirectRawPredictRequestOrBuilder
    * @return The methodName.
    */
   java.lang.String getMethodName();
-
   /**
    *
    *

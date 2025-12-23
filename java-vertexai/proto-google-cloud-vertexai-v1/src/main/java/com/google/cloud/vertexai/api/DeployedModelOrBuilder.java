@@ -37,7 +37,6 @@ public interface DeployedModelOrBuilder
    * @return Whether the dedicatedResources field is set.
    */
   boolean hasDedicatedResources();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface DeployedModelOrBuilder
    * @return The dedicatedResources.
    */
   com.google.cloud.vertexai.api.DedicatedResources getDedicatedResources();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface DeployedModelOrBuilder
    * @return Whether the automaticResources field is set.
    */
   boolean hasAutomaticResources();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface DeployedModelOrBuilder
    * @return The automaticResources.
    */
   com.google.cloud.vertexai.api.AutomaticResources getAutomaticResources();
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface DeployedModelOrBuilder
    * @return Whether the sharedResources field is set.
    */
   boolean hasSharedResources();
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public interface DeployedModelOrBuilder
    * @return The sharedResources.
    */
   java.lang.String getSharedResources();
-
   /**
    *
    *
@@ -164,7 +158,6 @@ public interface DeployedModelOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -204,7 +197,6 @@ public interface DeployedModelOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
-
   /**
    *
    *
@@ -241,7 +233,6 @@ public interface DeployedModelOrBuilder
    * @return The modelVersionId.
    */
   java.lang.String getModelVersionId();
-
   /**
    *
    *
@@ -268,7 +259,6 @@ public interface DeployedModelOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -296,7 +286,6 @@ public interface DeployedModelOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -310,7 +299,6 @@ public interface DeployedModelOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -351,7 +339,6 @@ public interface DeployedModelOrBuilder
    * @return Whether the explanationSpec field is set.
    */
   boolean hasExplanationSpec();
-
   /**
    *
    *
@@ -380,7 +367,6 @@ public interface DeployedModelOrBuilder
    * @return The explanationSpec.
    */
   com.google.cloud.vertexai.api.ExplanationSpec getExplanationSpec();
-
   /**
    *
    *
@@ -443,7 +429,6 @@ public interface DeployedModelOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
-
   /**
    *
    *
@@ -519,7 +504,6 @@ public interface DeployedModelOrBuilder
    * @return Whether the privateEndpoints field is set.
    */
   boolean hasPrivateEndpoints();
-
   /**
    *
    *
@@ -537,7 +521,6 @@ public interface DeployedModelOrBuilder
    * @return The privateEndpoints.
    */
   com.google.cloud.vertexai.api.PrivateEndpoints getPrivateEndpoints();
-
   /**
    *
    *
@@ -566,7 +549,6 @@ public interface DeployedModelOrBuilder
    * @return Whether the fasterDeploymentConfig field is set.
    */
   boolean hasFasterDeploymentConfig();
-
   /**
    *
    *
@@ -579,7 +561,6 @@ public interface DeployedModelOrBuilder
    * @return The fasterDeploymentConfig.
    */
   com.google.cloud.vertexai.api.FasterDeploymentConfig getFasterDeploymentConfig();
-
   /**
    *
    *
@@ -606,7 +587,6 @@ public interface DeployedModelOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
-
   /**
    *
    *
@@ -621,7 +601,6 @@ public interface DeployedModelOrBuilder
    * @return The status.
    */
   com.google.cloud.vertexai.api.DeployedModel.Status getStatus();
-
   /**
    *
    *
@@ -646,7 +625,6 @@ public interface DeployedModelOrBuilder
    * <code>map&lt;string, string&gt; system_labels = 28;</code>
    */
   int getSystemLabelsCount();
-
   /**
    *
    *
@@ -658,11 +636,9 @@ public interface DeployedModelOrBuilder
    * <code>map&lt;string, string&gt; system_labels = 28;</code>
    */
   boolean containsSystemLabels(java.lang.String key);
-
   /** Use {@link #getSystemLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getSystemLabels();
-
   /**
    *
    *
@@ -674,7 +650,6 @@ public interface DeployedModelOrBuilder
    * <code>map&lt;string, string&gt; system_labels = 28;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getSystemLabelsMap();
-
   /**
    *
    *
@@ -690,7 +665,6 @@ public interface DeployedModelOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -717,7 +691,6 @@ public interface DeployedModelOrBuilder
    * @return Whether the speculativeDecodingSpec field is set.
    */
   boolean hasSpeculativeDecodingSpec();
-
   /**
    *
    *
@@ -732,7 +705,6 @@ public interface DeployedModelOrBuilder
    * @return The speculativeDecodingSpec.
    */
   com.google.cloud.vertexai.api.SpeculativeDecodingSpec getSpeculativeDecodingSpec();
-
   /**
    *
    *

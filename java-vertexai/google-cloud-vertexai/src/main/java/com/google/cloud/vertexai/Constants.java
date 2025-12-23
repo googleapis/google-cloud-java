@@ -20,6 +20,7 @@ package com.google.cloud.vertexai;
 public final class Constants {
   // Constants for VertexAI class
   public static final String USER_AGENT_HEADER = "model-builder";
+  static final String DEFAULT_LOCATION_FAKE = "us-central1-fake";
   static final String DEFAULT_LOCATION = "us-central1";
   static final String GOOGLE_CLOUD_REGION = "GOOGLE_CLOUD_REGION";
   static final String CLOUD_ML_REGION = "CLOUD_ML_REGION";

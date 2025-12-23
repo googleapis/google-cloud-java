@@ -33,7 +33,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.Tensor)
     TensorOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Tensor.newBuilder() to construct.
   private Tensor(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -156,7 +155,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      * <code>DATA_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int DATA_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -168,37 +166,26 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      * <code>BOOL = 1;</code>
      */
     public static final int BOOL_VALUE = 1;
-
     /** <code>STRING = 2;</code> */
     public static final int STRING_VALUE = 2;
-
     /** <code>FLOAT = 3;</code> */
     public static final int FLOAT_VALUE = 3;
-
     /** <code>DOUBLE = 4;</code> */
     public static final int DOUBLE_VALUE = 4;
-
     /** <code>INT8 = 5;</code> */
     public static final int INT8_VALUE = 5;
-
     /** <code>INT16 = 6;</code> */
     public static final int INT16_VALUE = 6;
-
     /** <code>INT32 = 7;</code> */
     public static final int INT32_VALUE = 7;
-
     /** <code>INT64 = 8;</code> */
     public static final int INT64_VALUE = 8;
-
     /** <code>UINT8 = 9;</code> */
     public static final int UINT8_VALUE = 9;
-
     /** <code>UINT16 = 10;</code> */
     public static final int UINT16_VALUE = 10;
-
     /** <code>UINT32 = 11;</code> */
     public static final int UINT32_VALUE = 11;
-
     /** <code>UINT64 = 12;</code> */
     public static final int UINT64_VALUE = 12;
 
@@ -307,7 +294,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DTYPE_FIELD_NUMBER = 1;
   private int dtype_ = 0;
-
   /**
    *
    *
@@ -323,7 +309,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
   public int getDtypeValue() {
     return dtype_;
   }
-
   /**
    *
    *
@@ -346,7 +331,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.LongList shape_ = emptyLongList();
-
   /**
    *
    *
@@ -362,7 +346,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Long> getShapeList() {
     return shape_;
   }
-
   /**
    *
    *
@@ -377,7 +360,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
   public int getShapeCount() {
     return shape_.size();
   }
-
   /**
    *
    *
@@ -400,7 +382,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.BooleanList boolVal_ = emptyBooleanList();
-
   /**
    *
    *
@@ -421,7 +402,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Boolean> getBoolValList() {
     return boolVal_;
   }
-
   /**
    *
    *
@@ -441,7 +421,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
   public int getBoolValCount() {
     return boolVal_.size();
   }
-
   /**
    *
    *
@@ -470,7 +449,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList stringVal_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -485,7 +463,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getStringValList() {
     return stringVal_;
   }
-
   /**
    *
    *
@@ -500,7 +477,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
   public int getStringValCount() {
     return stringVal_.size();
   }
-
   /**
    *
    *
@@ -516,7 +492,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getStringVal(int index) {
     return stringVal_.get(index);
   }
-
   /**
    *
    *
@@ -538,7 +513,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.ProtobufList<com.google.protobuf.ByteString> bytesVal_ =
       emptyList(com.google.protobuf.ByteString.class);
-
   /**
    *
    *
@@ -554,7 +528,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.protobuf.ByteString> getBytesValList() {
     return bytesVal_;
   }
-
   /**
    *
    *
@@ -569,7 +542,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
   public int getBytesValCount() {
     return bytesVal_.size();
   }
-
   /**
    *
    *
@@ -590,7 +562,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.FloatList floatVal_ = emptyFloatList();
-
   /**
    *
    *
@@ -606,7 +577,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Float> getFloatValList() {
     return floatVal_;
   }
-
   /**
    *
    *
@@ -621,7 +591,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
   public int getFloatValCount() {
     return floatVal_.size();
   }
-
   /**
    *
    *
@@ -644,7 +613,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.DoubleList doubleVal_ = emptyDoubleList();
-
   /**
    *
    *
@@ -660,7 +628,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Double> getDoubleValList() {
     return doubleVal_;
   }
-
   /**
    *
    *
@@ -675,7 +642,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
   public int getDoubleValCount() {
     return doubleVal_.size();
   }
-
   /**
    *
    *
@@ -698,7 +664,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.IntList intVal_ = emptyIntList();
-
   /**
    *
    *
@@ -716,7 +681,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getIntValList() {
     return intVal_;
   }
-
   /**
    *
    *
@@ -733,7 +697,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
   public int getIntValCount() {
     return intVal_.size();
   }
-
   /**
    *
    *
@@ -758,7 +721,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.LongList int64Val_ = emptyLongList();
-
   /**
    *
    *
@@ -774,7 +736,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Long> getInt64ValList() {
     return int64Val_;
   }
-
   /**
    *
    *
@@ -789,7 +750,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
   public int getInt64ValCount() {
     return int64Val_.size();
   }
-
   /**
    *
    *
@@ -812,7 +772,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.IntList uintVal_ = emptyIntList();
-
   /**
    *
    *
@@ -830,7 +789,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getUintValList() {
     return uintVal_;
   }
-
   /**
    *
    *
@@ -847,7 +805,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
   public int getUintValCount() {
     return uintVal_.size();
   }
-
   /**
    *
    *
@@ -872,7 +829,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.LongList uint64Val_ = emptyLongList();
-
   /**
    *
    *
@@ -888,7 +844,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Long> getUint64ValList() {
     return uint64Val_;
   }
-
   /**
    *
    *
@@ -903,7 +858,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
   public int getUint64ValCount() {
     return uint64Val_.size();
   }
-
   /**
    *
    *
@@ -926,7 +880,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vertexai.api.Tensor> listVal_;
-
   /**
    *
    *
@@ -940,7 +893,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.vertexai.api.Tensor> getListValList() {
     return listVal_;
   }
-
   /**
    *
    *
@@ -955,7 +907,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       getListValOrBuilderList() {
     return listVal_;
   }
-
   /**
    *
    *
@@ -969,7 +920,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
   public int getListValCount() {
     return listVal_.size();
   }
-
   /**
    *
    *
@@ -983,7 +933,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.vertexai.api.Tensor getListVal(int index) {
     return listVal_.get(index);
   }
-
   /**
    *
    *
@@ -1029,7 +978,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
   public int getStructValCount() {
     return internalGetStructVal().getMap().size();
   }
-
   /**
    *
    *
@@ -1046,14 +994,12 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetStructVal().getMap().containsKey(key);
   }
-
   /** Use {@link #getStructValMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.cloud.vertexai.api.Tensor> getStructVal() {
     return getStructValMap();
   }
-
   /**
    *
    *
@@ -1067,7 +1013,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, com.google.cloud.vertexai.api.Tensor> getStructValMap() {
     return internalGetStructVal().getMap();
   }
-
   /**
    *
    *
@@ -1089,7 +1034,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
         internalGetStructVal().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -1114,7 +1058,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TENSOR_VAL_FIELD_NUMBER = 13;
   private com.google.protobuf.ByteString tensorVal_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -1548,7 +1491,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2163,7 +2105,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int dtype_ = 0;
-
     /**
      *
      *
@@ -2179,7 +2120,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
     public int getDtypeValue() {
       return dtype_;
     }
-
     /**
      *
      *
@@ -2198,7 +2138,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2216,7 +2155,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.vertexai.api.Tensor.DataType.forNumber(dtype_);
       return result == null ? com.google.cloud.vertexai.api.Tensor.DataType.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -2238,7 +2176,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2265,7 +2202,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -2281,7 +2217,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       shape_.makeImmutable();
       return shape_;
     }
-
     /**
      *
      *
@@ -2296,7 +2231,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
     public int getShapeCount() {
       return shape_.size();
     }
-
     /**
      *
      *
@@ -2312,7 +2246,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
     public long getShape(int index) {
       return shape_.getLong(index);
     }
-
     /**
      *
      *
@@ -2334,7 +2267,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2355,7 +2287,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2375,7 +2306,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2409,7 +2339,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -2430,7 +2359,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       boolVal_.makeImmutable();
       return boolVal_;
     }
-
     /**
      *
      *
@@ -2450,7 +2378,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
     public int getBoolValCount() {
       return boolVal_.size();
     }
-
     /**
      *
      *
@@ -2471,7 +2398,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
     public boolean getBoolVal(int index) {
       return boolVal_.getBoolean(index);
     }
-
     /**
      *
      *
@@ -2498,7 +2424,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2524,7 +2449,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2549,7 +2473,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2582,7 +2505,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -2598,7 +2520,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       stringVal_.makeImmutable();
       return stringVal_;
     }
-
     /**
      *
      *
@@ -2613,7 +2534,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
     public int getStringValCount() {
       return stringVal_.size();
     }
-
     /**
      *
      *
@@ -2629,7 +2549,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getStringVal(int index) {
       return stringVal_.get(index);
     }
-
     /**
      *
      *
@@ -2645,7 +2564,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getStringValBytes(int index) {
       return stringVal_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2669,7 +2587,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2692,7 +2609,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2712,7 +2628,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2731,7 +2646,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2765,7 +2679,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000010;
     }
-
     /**
      *
      *
@@ -2781,7 +2694,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       bytesVal_.makeImmutable();
       return bytesVal_;
     }
-
     /**
      *
      *
@@ -2796,7 +2708,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
     public int getBytesValCount() {
       return bytesVal_.size();
     }
-
     /**
      *
      *
@@ -2812,7 +2723,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getBytesVal(int index) {
       return bytesVal_.get(index);
     }
-
     /**
      *
      *
@@ -2836,7 +2746,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2859,7 +2768,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2880,7 +2788,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2914,7 +2821,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000020;
     }
-
     /**
      *
      *
@@ -2930,7 +2836,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       floatVal_.makeImmutable();
       return floatVal_;
     }
-
     /**
      *
      *
@@ -2945,7 +2850,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
     public int getFloatValCount() {
       return floatVal_.size();
     }
-
     /**
      *
      *
@@ -2961,7 +2865,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
     public float getFloatVal(int index) {
       return floatVal_.getFloat(index);
     }
-
     /**
      *
      *
@@ -2983,7 +2886,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3004,7 +2906,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3024,7 +2925,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3058,7 +2958,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000040;
     }
-
     /**
      *
      *
@@ -3074,7 +2973,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       doubleVal_.makeImmutable();
       return doubleVal_;
     }
-
     /**
      *
      *
@@ -3089,7 +2987,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
     public int getDoubleValCount() {
       return doubleVal_.size();
     }
-
     /**
      *
      *
@@ -3105,7 +3002,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
     public double getDoubleVal(int index) {
       return doubleVal_.getDouble(index);
     }
-
     /**
      *
      *
@@ -3127,7 +3023,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3148,7 +3043,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3168,7 +3062,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3195,7 +3088,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000080;
     }
-
     /**
      *
      *
@@ -3213,7 +3105,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       intVal_.makeImmutable();
       return intVal_;
     }
-
     /**
      *
      *
@@ -3230,7 +3121,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
     public int getIntValCount() {
       return intVal_.size();
     }
-
     /**
      *
      *
@@ -3248,7 +3138,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
     public int getIntVal(int index) {
       return intVal_.getInt(index);
     }
-
     /**
      *
      *
@@ -3272,7 +3161,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3295,7 +3183,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3317,7 +3204,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3346,7 +3232,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000100;
     }
-
     /**
      *
      *
@@ -3362,7 +3247,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       int64Val_.makeImmutable();
       return int64Val_;
     }
-
     /**
      *
      *
@@ -3377,7 +3261,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
     public int getInt64ValCount() {
       return int64Val_.size();
     }
-
     /**
      *
      *
@@ -3393,7 +3276,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
     public long getInt64Val(int index) {
       return int64Val_.getLong(index);
     }
-
     /**
      *
      *
@@ -3415,7 +3297,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3436,7 +3317,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3456,7 +3336,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3483,7 +3362,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000200;
     }
-
     /**
      *
      *
@@ -3501,7 +3379,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       uintVal_.makeImmutable();
       return uintVal_;
     }
-
     /**
      *
      *
@@ -3518,7 +3395,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
     public int getUintValCount() {
       return uintVal_.size();
     }
-
     /**
      *
      *
@@ -3536,7 +3412,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
     public int getUintVal(int index) {
       return uintVal_.getInt(index);
     }
-
     /**
      *
      *
@@ -3560,7 +3435,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3583,7 +3457,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3605,7 +3478,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3634,7 +3506,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000400;
     }
-
     /**
      *
      *
@@ -3650,7 +3521,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       uint64Val_.makeImmutable();
       return uint64Val_;
     }
-
     /**
      *
      *
@@ -3665,7 +3535,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
     public int getUint64ValCount() {
       return uint64Val_.size();
     }
-
     /**
      *
      *
@@ -3681,7 +3550,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
     public long getUint64Val(int index) {
       return uint64Val_.getLong(index);
     }
-
     /**
      *
      *
@@ -3703,7 +3571,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3724,7 +3591,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3744,7 +3610,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3795,7 +3660,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
         return listValBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3812,7 +3676,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
         return listValBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3829,7 +3692,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
         return listValBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3852,7 +3714,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3873,7 +3734,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3896,7 +3756,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3919,7 +3778,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3939,7 +3797,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3960,7 +3817,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3981,7 +3837,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4001,7 +3856,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4021,7 +3875,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4034,7 +3887,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vertexai.api.Tensor.Builder getListValBuilder(int index) {
       return getListValFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4051,7 +3903,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
         return listValBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4069,7 +3920,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(listVal_);
       }
     }
-
     /**
      *
      *
@@ -4083,7 +3933,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       return getListValFieldBuilder()
           .addBuilder(com.google.cloud.vertexai.api.Tensor.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4097,7 +3946,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       return getListValFieldBuilder()
           .addBuilder(index, com.google.cloud.vertexai.api.Tensor.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4147,8 +3995,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return StructValDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final StructValConverter structValConverter = new StructValConverter();
 
@@ -4188,7 +4035,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
     public int getStructValCount() {
       return internalGetStructVal().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -4205,14 +4051,12 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetStructVal().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getStructValMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.vertexai.api.Tensor> getStructVal() {
       return getStructValMap();
     }
-
     /**
      *
      *
@@ -4226,7 +4070,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, com.google.cloud.vertexai.api.Tensor> getStructValMap() {
       return internalGetStructVal().getImmutableMap();
     }
-
     /**
      *
      *
@@ -4248,7 +4091,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
           internalGetMutableStructVal().ensureBuilderMap();
       return map.containsKey(key) ? structValConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -4276,7 +4118,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableStructVal().clear();
       return this;
     }
-
     /**
      *
      *
@@ -4293,7 +4134,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableStructVal().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.vertexai.api.Tensor>
@@ -4301,7 +4141,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00001000;
       return internalGetMutableStructVal().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -4322,7 +4161,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00001000;
       return this;
     }
-
     /**
      *
      *
@@ -4344,7 +4182,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00001000;
       return this;
     }
-
     /**
      *
      *
@@ -4371,7 +4208,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.ByteString tensorVal_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -4387,7 +4223,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getTensorVal() {
       return tensorVal_;
     }
-
     /**
      *
      *
@@ -4409,7 +4244,6 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

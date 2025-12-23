@@ -38,7 +38,6 @@ public interface ExplanationSpecOverrideOrBuilder
    * @return Whether the parameters field is set.
    */
   boolean hasParameters();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ExplanationSpecOverrideOrBuilder
    * @return The parameters.
    */
   com.google.cloud.vertexai.api.ExplanationParameters getParameters();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface ExplanationSpecOverrideOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface ExplanationSpecOverrideOrBuilder
    * @return The metadata.
    */
   com.google.cloud.vertexai.api.ExplanationMetadataOverride getMetadata();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface ExplanationSpecOverrideOrBuilder
    * @return Whether the examplesOverride field is set.
    */
   boolean hasExamplesOverride();
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public interface ExplanationSpecOverrideOrBuilder
    * @return The examplesOverride.
    */
   com.google.cloud.vertexai.api.ExamplesOverride getExamplesOverride();
-
   /**
    *
    *

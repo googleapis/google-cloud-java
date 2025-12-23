@@ -36,7 +36,6 @@ public interface GroundingChunkOrBuilder
    * @return Whether the web field is set.
    */
   boolean hasWeb();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface GroundingChunkOrBuilder
    * @return The web.
    */
   com.google.cloud.vertexai.api.GroundingChunk.Web getWeb();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface GroundingChunkOrBuilder
    * @return Whether the retrievedContext field is set.
    */
   boolean hasRetrievedContext();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface GroundingChunkOrBuilder
    * @return The retrievedContext.
    */
   com.google.cloud.vertexai.api.GroundingChunk.RetrievedContext getRetrievedContext();
-
   /**
    *
    *
