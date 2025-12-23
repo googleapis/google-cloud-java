@@ -16,6 +16,10 @@ WORKING_DIR="../../migration-work"
 SOURCE_DIR="$WORKING_DIR/$SOURCE_REPO_NAME-source"
 TARGET_DIR="$WORKING_DIR/$MONOREPO_NAME-target"
 
+# Get absolute path to the transformation script before any cd
+TRANSFORM_SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+TRANSFORM_SCRIPT="$TRANSFORM_SCRIPT_DIR/transform_workflow.py"
+
 echo "Starting migration using git read-tree with isolated clones..."
 
 # 0. Create working directory
@@ -99,60 +103,6 @@ if [ -d "$SOURCE_REPO_NAME/.github/workflows" ]; then
     echo "Migrating workflows to root .github/workflows/..."
     mkdir -p .github/workflows
     
-    # Create a temporary python script for robust YAML transformation
-    cat << 'EOF' > transform_workflow.py
-import sys
-import re
-
-def transform(content, lib_name):
-    lines = content.splitlines()
-    new_lines = []
-    inserted_defaults = False
-    
-    filter_job = f"""  filter:
-    runs-on: ubuntu-latest
-    outputs:
-      library: ${{{{ steps.filter.outputs.library }}}}
-    steps:
-    - uses: actions/checkout@v4
-    - uses: dorny/paths-filter@v3
-      id: filter
-      with:
-        filters: |
-          library:
-            - '{lib_name}/**'"""
-
-    in_jobs = False
-    for line in lines:
-        if line.startswith('jobs:'):
-            if not inserted_defaults:
-                new_lines.append("defaults:")
-                new_lines.append("  run:")
-                new_lines.append(f"    working-directory: {lib_name}")
-                inserted_defaults = True
-            new_lines.append(line)
-            new_lines.append(filter_job)
-            in_jobs = True
-            continue
-            
-        if in_jobs and line.startswith('  ') and not line.startswith('    ') and line.strip() and not line.strip().startswith('#'):
-            job_match = re.match(r'^  ([\w-]+):', line)
-            if job_match:
-                job_name = job_match.group(1)
-                if job_name != 'filter':
-                    new_lines.append(line)
-                    new_lines.append("    needs: filter")
-                    new_lines.append(f"    if: ${{{{ needs.filter.outputs.library == 'true' }}}}")
-                    continue
-        
-        new_lines.append(line)
-    return "\n".join(new_lines)
-
-if __name__ == "__main__":
-    lib = sys.argv[1]
-    print(transform(sys.stdin.read(), lib))
-EOF
-
     for workflow in "$SOURCE_REPO_NAME/.github/workflows/"*; do
         if [ -f "$workflow" ]; then
             filename=$(basename "$workflow")
@@ -171,11 +121,9 @@ EOF
             target_path=".github/workflows/$new_filename"
             
             echo "Migrating and adapting $filename to $target_path"
-            python3 transform_workflow.py "$SOURCE_REPO_NAME" < "$workflow" > "$target_path"
+            python3 "$TRANSFORM_SCRIPT" "$SOURCE_REPO_NAME" < "$workflow" > "$target_path"
         fi
     done
-    
-    rm transform_workflow.py
     
     # Cleanup empty .github directory if it exists
     rm -rf "$SOURCE_REPO_NAME/.github"
