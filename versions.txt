@@ -934,3 +934,6 @@ grpc-google-cloud-maintenance-v1:0.15.0:0.16.0-SNAPSHOT
 google-cloud-gkerecommender:0.1.0:0.2.0-SNAPSHOT
 proto-google-cloud-gkerecommender-v1:0.1.0:0.2.0-SNAPSHOT
 grpc-google-cloud-gkerecommender-v1:0.1.0:0.2.0-SNAPSHOT
+google-cloud-logging:3.23.9:3.23.10-SNAPSHOT
+grpc-google-cloud-logging-v2:0.112.9:0.112.10-SNAPSHOT
+proto-google-cloud-logging-v2:0.112.9:0.112.10-SNAPSHOT
