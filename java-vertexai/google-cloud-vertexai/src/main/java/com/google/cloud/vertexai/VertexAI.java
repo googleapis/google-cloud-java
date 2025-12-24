@@ -166,8 +166,15 @@ public class VertexAI implements AutoCloseable {
     this.llmClientSupplier =
         Suppliers.memoize(llmClientSupplierOpt.orElse(this::newLlmUtilityClient));
 
-    this.apiEndpoint =
-        apiEndpoint.orElse(String.format("%s-aiplatform.googleapis.com", this.location));
+    if (apiEndpoint.isPresent()) {
+      this.apiEndpoint = apiEndpoint.get();
+    } else {
+      if ("global".equals(this.location)) {
+        this.apiEndpoint = "aiplatform.googleapis.com";
+      } else {
+        this.apiEndpoint = String.format("%s-aiplatform.googleapis.com", this.location);
+      }
+    }
   }
 
   /** Builder for {@link VertexAI}. */
