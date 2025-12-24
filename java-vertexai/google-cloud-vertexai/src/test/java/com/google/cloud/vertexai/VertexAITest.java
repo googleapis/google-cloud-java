@@ -48,7 +48,9 @@ import org.mockito.junit.MockitoRule;
 public final class VertexAITest {
   private static final String TEST_PROJECT = "test_project";
   private static final String TEST_LOCATION = "test_location";
+  private static final String GLOBAL_LOCATION = "global";
   private static final String TEST_ENDPOINT = "test_endpoint";
+  private static final String GLOBAL_ENDPOINT = "aiplatform.googleapis.com";
   private static final String TEST_DEFAULT_ENDPOINT =
       String.format("%s-aiplatform.googleapis.com", TEST_LOCATION);
   private static final Optional<String> EMPTY_ENV_VAR_OPTIONAL = Optional.ofNullable(null);
@@ -341,6 +343,27 @@ public final class VertexAITest {
       assertThat(vertexAi.getLocation()).isEqualTo("us-central2");
       assertThat(vertexAi.getTransport()).isEqualTo(Transport.GRPC);
       assertThat(vertexAi.getApiEndpoint()).isEqualTo("us-central2-aiplatform.googleapis.com");
+    }
+  }
+
+  @Test
+  public void testInstantiateVertexAI_builderLocationFromGLOBAL_REGION_shouldContainRightFields() {
+    try (MockedStatic mockedStaticVertexAI = mockStatic(VertexAI.class)) {
+      mockedStaticVertexAI
+          .when(() -> VertexAI.getEnvironmentVariable("GOOGLE_CLOUD_REGION"))
+          .thenReturn(Optional.of(GLOBAL_LOCATION));
+      mockedStaticVertexAI
+          .when(() -> VertexAI.getEnvironmentVariable("CLOUD_ML_REGION"))
+          .thenReturn(Optional.empty());
+      mockedStaticVertexAI
+          .when(() -> VertexAI.getEnvironmentVariable("GOOGLE_CLOUD_PROJECT"))
+          .thenReturn(Optional.of(TEST_PROJECT));
+
+      vertexAi = new VertexAI.Builder().build();
+
+      assertThat(vertexAi.getProjectId()).isEqualTo(TEST_PROJECT);
+      assertThat(vertexAi.getLocation()).isEqualTo(GLOBAL_LOCATION);
+      assertThat(vertexAi.getApiEndpoint()).isEqualTo(GLOBAL_ENDPOINT);
     }
   }
 
