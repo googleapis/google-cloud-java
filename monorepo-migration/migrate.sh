@@ -19,6 +19,7 @@ TARGET_DIR="$WORKING_DIR/$MONOREPO_NAME-target"
 # Get absolute path to the transformation script before any cd
 TRANSFORM_SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 TRANSFORM_SCRIPT="$TRANSFORM_SCRIPT_DIR/transform_workflow.py"
+MODERNIZE_POM_SCRIPT="$TRANSFORM_SCRIPT_DIR/modernize_pom.py"
 
 echo "Starting migration using git read-tree with isolated clones..."
 
@@ -176,6 +177,19 @@ find "$SOURCE_REPO_NAME" -name "*.java" -exec python3 -c "import sys, re; p = sy
 echo "Committing copyright header fixes..."
 git add "$SOURCE_REPO_NAME"
 git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): update copyright headers to 2025 Google LLC"
+
+# 7.9 Modernize root pom.xml
+echo "Modernizing root pom.xml..."
+PARENT_VERSION=$(grep -m 1 "<version>.*{x-version-update:google-cloud-java:current}" google-cloud-jar-parent/pom.xml | sed -E 's/.*<version>(.*)<\/version>.*/\1/')
+python3 "$MODERNIZE_POM_SCRIPT" "$SOURCE_REPO_NAME/pom.xml" "$PARENT_VERSION"
+
+echo "Committing root pom.xml modernization..."
+git add "$SOURCE_REPO_NAME/pom.xml"
+git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): modernize root pom.xml"
+
+# 7.10 Verify compilation
+echo "Verifying compilation..."
+(cd "$SOURCE_REPO_NAME" && mvn compile -DskipTests -T 1C)
 
 # 8. Cleanup
 echo "Cleaning up temporary source clone..."
