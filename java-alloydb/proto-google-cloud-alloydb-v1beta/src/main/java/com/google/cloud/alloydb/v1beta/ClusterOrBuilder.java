@@ -570,7 +570,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=675
+   *     google/cloud/alloydb/v1beta/resources.proto;l=678
    * @return The network.
    */
   @java.lang.Deprecated
@@ -592,7 +592,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=675
+   *     google/cloud/alloydb/v1beta/resources.proto;l=678
    * @return The bytes for network.
    */
   @java.lang.Deprecated
@@ -826,7 +826,7 @@ public interface ClusterOrBuilder
    * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=710
+   *     google/cloud/alloydb/v1beta/resources.proto;l=713
    * @return Whether the sslConfig field is set.
    */
   @java.lang.Deprecated
@@ -842,7 +842,7 @@ public interface ClusterOrBuilder
    * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=710
+   *     google/cloud/alloydb/v1beta/resources.proto;l=713
    * @return The sslConfig.
    */
   @java.lang.Deprecated
@@ -1290,7 +1290,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.gemini_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=757
+   *     google/cloud/alloydb/v1beta/resources.proto;l=760
    * @return Whether the geminiConfig field is set.
    */
   @java.lang.Deprecated
@@ -1309,7 +1309,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.gemini_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=757
+   *     google/cloud/alloydb/v1beta/resources.proto;l=760
    * @return The geminiConfig.
    */
   @java.lang.Deprecated

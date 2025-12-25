@@ -228,6 +228,84 @@ public interface ContextOrBuilder
    *
    *
    * <pre>
+   * Optional. A list of golden queries, providing examples of relevant and
+   * commonly used Looker queries and their corresponding natural language
+   * queries optionally present.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery looker_golden_queries = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery>
+      getLookerGoldenQueriesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of golden queries, providing examples of relevant and
+   * commonly used Looker queries and their corresponding natural language
+   * queries optionally present.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery looker_golden_queries = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery getLookerGoldenQueries(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of golden queries, providing examples of relevant and
+   * commonly used Looker queries and their corresponding natural language
+   * queries optionally present.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery looker_golden_queries = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getLookerGoldenQueriesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of golden queries, providing examples of relevant and
+   * commonly used Looker queries and their corresponding natural language
+   * queries optionally present.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery looker_golden_queries = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQueryOrBuilder>
+      getLookerGoldenQueriesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of golden queries, providing examples of relevant and
+   * commonly used Looker queries and their corresponding natural language
+   * queries optionally present.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery looker_golden_queries = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQueryOrBuilder
+      getLookerGoldenQueriesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Term definitions (currently, only user authored)
    * </pre>
    *

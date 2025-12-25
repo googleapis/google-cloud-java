@@ -1005,7 +1005,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ExportArtifact</td>
- *      <td><p> Exports an artifact.</td>
+ *      <td><p> Exports an artifact to a Cloud Storage bucket.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -7000,7 +7000,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Exports an artifact.
+   * Exports an artifact to a Cloud Storage bucket.
    *
    * <p>Sample code:
    *
@@ -7030,7 +7030,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Exports an artifact.
+   * Exports an artifact to a Cloud Storage bucket.
    *
    * <p>Sample code:
    *
@@ -7061,7 +7061,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Exports an artifact.
+   * Exports an artifact to a Cloud Storage bucket.
    *
    * <p>Sample code:
    *
