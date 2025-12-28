@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.9.1 (2025-12-27)
+
+### Fixes
+
+* Fix race for metrics values (#228)
+
 ## 1.9.0 (2025-12-15)
 
 ### Features
