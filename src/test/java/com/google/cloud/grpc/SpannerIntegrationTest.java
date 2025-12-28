@@ -827,6 +827,13 @@ public final class SpannerIntegrationTest {
     // New leader endpoint should be unavailable first because it is connecting.
     assertThat(getEndpointState(metricReader, newLeaderEndpoint))
         .isEqualTo(GcpMetricsConstants.STATUS_UNAVAILABLE);
+
+    // As it takes some time to connect to the new leader endpoint, RPC will fall back to the
+    // follower until we connect to leader.
+    assertThat(getOkCallsCount(metricReader, followerEndpoint)).isEqualTo(1);
+    readQuery.run();
+    assertThat(getOkCallsCount(metricReader, followerEndpoint)).isEqualTo(2);
+
     assertThat(getEndpointState(metricReader, followerEndpoint))
         .isEqualTo(GcpMetricsConstants.STATUS_AVAILABLE);
 
@@ -842,12 +849,6 @@ public final class SpannerIntegrationTest {
         .isEqualTo(0);
     assertThat(getSwitchCount(metricReader, newFollowerME, GcpMetricsConstants.TYPE_RECOVER))
         .isEqualTo(0);
-
-    // As it takes some time to connect to the new leader endpoint, RPC will fall back to the
-    // follower until we connect to leader.
-    assertThat(getOkCallsCount(metricReader, followerEndpoint)).isEqualTo(1);
-    readQuery.run();
-    assertThat(getOkCallsCount(metricReader, followerEndpoint)).isEqualTo(2);
 
     sleep(500);
 

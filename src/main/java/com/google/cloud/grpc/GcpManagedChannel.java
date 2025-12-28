@@ -181,22 +181,22 @@ public class GcpManagedChannel extends ManagedChannel {
 
   // Metrics counters.
   private final AtomicInteger readyChannels = new AtomicInteger();
-  private int minChannels = 0;
-  private int maxChannels = 0;
-  private int minReadyChannels = 0;
-  private int maxReadyChannels = 0;
+  private AtomicInteger minChannels = new AtomicInteger();
+  private AtomicInteger maxChannels = new AtomicInteger();
+  private AtomicInteger minReadyChannels = new AtomicInteger();
+  private AtomicInteger maxReadyChannels = new AtomicInteger();
   private final AtomicLong numChannelConnect = new AtomicLong();
   private final AtomicLong numChannelDisconnect = new AtomicLong();
-  private long minReadinessTime = 0;
-  private long maxReadinessTime = 0;
+  private AtomicLong minReadinessTime = new AtomicLong();
+  private AtomicLong maxReadinessTime = new AtomicLong();
   private final AtomicLong totalReadinessTime = new AtomicLong();
   private final AtomicLong readinessTimeOccurrences = new AtomicLong();
   private final AtomicInteger totalActiveStreams = new AtomicInteger();
-  private int minActiveStreams = 0;
-  private int maxActiveStreams = 0;
-  private int minTotalActiveStreams = 0;
-  private int maxTotalActiveStreams = 0;
-  private int maxTotalActiveStreamsForScaleDown = 0;
+  private AtomicInteger minActiveStreams = new AtomicInteger();
+  private AtomicInteger maxActiveStreams = new AtomicInteger();
+  private AtomicInteger minTotalActiveStreams = new AtomicInteger();
+  private AtomicInteger maxTotalActiveStreams = new AtomicInteger();
+  private AtomicInteger maxTotalActiveStreamsForScaleDown = new AtomicInteger();
   private long minOkCalls = 0;
   private long maxOkCalls = 0;
   private final AtomicLong totalOkCalls = new AtomicLong();
@@ -213,12 +213,12 @@ public class GcpManagedChannel extends ManagedChannel {
   private final AtomicLong fallbacksSucceeded = new AtomicLong();
   private final AtomicLong fallbacksFailed = new AtomicLong();
   private final AtomicLong unresponsiveDetectionCount = new AtomicLong();
-  private long minUnresponsiveMs = 0;
-  private long maxUnresponsiveMs = 0;
-  private long minUnresponsiveDrops = 0;
-  private long maxUnresponsiveDrops = 0;
-  private long scaleUpCount = 0;
-  private long scaleDownCount = 0;
+  private AtomicLong minUnresponsiveMs = new AtomicLong();
+  private AtomicLong maxUnresponsiveMs = new AtomicLong();
+  private AtomicLong minUnresponsiveDrops = new AtomicLong();
+  private AtomicLong maxUnresponsiveDrops = new AtomicLong();
+  private AtomicLong scaleUpCount = new AtomicLong();
+  private AtomicLong scaleDownCount = new AtomicLong();
 
   /**
    * Constructor for GcpManagedChannel.
@@ -299,14 +299,14 @@ public class GcpManagedChannel extends ManagedChannel {
       return;
     }
 
+    // Use and reset maxTotalActiveStreamsForScaleDown.
+    int maxTotalActiveStreamsCount =
+        maxTotalActiveStreamsForScaleDown.getAndSet(totalActiveStreams.get());
     // Number of channels to support maximum seen (since last check) concurrent streams
     // with lowest desired utilization (minRpcPerChannel).
     int desiredSize =
-        maxTotalActiveStreamsForScaleDown / minRpcPerChannel
-            + ((maxTotalActiveStreamsForScaleDown % minRpcPerChannel == 0) ? 0 : 1);
-
-    // Reset maxTotalActiveStreamsForScaleDown.
-    maxTotalActiveStreamsForScaleDown = totalActiveStreams.get();
+        maxTotalActiveStreamsCount / minRpcPerChannel
+            + ((maxTotalActiveStreamsCount % minRpcPerChannel == 0) ? 0 : 1);
 
     int scaleDownTo = Math.max(minSize, desiredSize);
     // Remove those extra channels that are the oldest.
@@ -356,8 +356,8 @@ public class GcpManagedChannel extends ManagedChannel {
     removedChannelRefs.addAll(channelsToRemove);
 
     // Track minimum number of channels for metrics.
-    minChannels = Math.min(minChannels, channelRefs.size());
-    scaleDownCount += channelsToRemove.size();
+    minChannels.accumulateAndGet(getNumberOfChannels(), Math::min);
+    scaleDownCount.addAndGet(channelsToRemove.size());
 
     // Removing a channel may change channel pool state.
     executeStateChangeCallbacks();
@@ -466,7 +466,6 @@ public class GcpManagedChannel extends ManagedChannel {
       setupOtelCommonAttributes(metricsOptions);
       metricPrefix = metricsOptions.getNamePrefix();
       initOtelMetrics(metricsOptions.getOpenTelemetryMeter());
-      initLogMetrics();
       return;
     }
     if (metricsOptions.getMetricRegistry() == null) {
@@ -742,63 +741,63 @@ public class GcpManagedChannel extends ManagedChannel {
         .ofLongs()
         .setDescription("The number of channels currently in the pool.")
         .setUnit(GcpMetricsConstants.COUNT)
-        .buildWithCallback(m -> m.record(getNumberOfChannels(), otelCommonAttributes));
+        .buildWithCallback(m -> m.record(reportNumChannels(), otelCommonAttributes));
 
     meter
         .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MIN_CHANNELS)
         .ofLongs()
         .setDescription("The minimum number of channels in the pool.")
         .setUnit(GcpMetricsConstants.COUNT)
-        .buildWithCallback(m -> m.record(minChannels, otelCommonAttributes));
+        .buildWithCallback(m -> m.record(reportMinChannels(), otelCommonAttributes));
 
     meter
         .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MAX_CHANNELS)
         .ofLongs()
         .setDescription("The maximum number of channels in the pool.")
         .setUnit(GcpMetricsConstants.COUNT)
-        .buildWithCallback(m -> m.record(maxChannels, otelCommonAttributes));
+        .buildWithCallback(m -> m.record(reportMaxChannels(), otelCommonAttributes));
 
     meter
         .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MAX_ALLOWED_CHANNELS)
         .ofLongs()
         .setDescription("The maximum number of channels allowed in the pool. (The pool max size)")
         .setUnit(GcpMetricsConstants.COUNT)
-        .buildWithCallback(m -> m.record(maxSize, otelCommonAttributes));
+        .buildWithCallback(m -> m.record(reportMaxAllowedChannels(), otelCommonAttributes));
 
     meter
         .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MIN_READY_CHANNELS)
         .ofLongs()
         .setDescription("The minimum number of channels simultaneously in the READY state.")
         .setUnit(GcpMetricsConstants.COUNT)
-        .buildWithCallback(m -> m.record(minReadyChannels, otelCommonAttributes));
+        .buildWithCallback(m -> m.record(reportMinReadyChannels(), otelCommonAttributes));
 
     meter
         .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MAX_READY_CHANNELS)
         .ofLongs()
         .setDescription("The maximum number of channels simultaneously in the READY state.")
         .setUnit(GcpMetricsConstants.COUNT)
-        .buildWithCallback(m -> m.record(maxReadyChannels, otelCommonAttributes));
+        .buildWithCallback(m -> m.record(reportMaxReadyChannels(), otelCommonAttributes));
 
     meter
         .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_NUM_CHANNEL_CONNECT)
         .ofLongs()
         .setDescription("The number of times when a channel reached the READY state.")
         .setUnit(GcpMetricsConstants.COUNT)
-        .buildWithCallback(m -> m.record(numChannelConnect.get(), otelCommonAttributes));
+        .buildWithCallback(m -> m.record(reportNumChannelConnect(), otelCommonAttributes));
 
     meter
         .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_NUM_CHANNEL_DISCONNECT)
         .ofLongs()
         .setDescription("The number of disconnections (deviations from READY state)")
         .setUnit(GcpMetricsConstants.COUNT)
-        .buildWithCallback(m -> m.record(numChannelDisconnect.get(), otelCommonAttributes));
+        .buildWithCallback(m -> m.record(reportNumChannelDisconnect(), otelCommonAttributes));
 
     meter
         .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MIN_CHANNEL_READINESS_TIME)
         .ofLongs()
         .setDescription("The minimum time it took to transition a channel to READY (us).")
         .setUnit(GcpMetricsConstants.MICROSECOND)
-        .buildWithCallback(m -> m.record(minReadinessTime, otelCommonAttributes));
+        .buildWithCallback(m -> m.record(reportMinReadinessTime(), otelCommonAttributes));
 
     meter
         .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_AVG_CHANNEL_READINESS_TIME)
@@ -807,10 +806,7 @@ public class GcpManagedChannel extends ManagedChannel {
         .setUnit(GcpMetricsConstants.MICROSECOND)
         .buildWithCallback(
             m -> {
-              long occ = readinessTimeOccurrences.get();
-              long total = totalReadinessTime.get();
-              long avg = occ == 0 ? 0 : total / occ;
-              m.record(avg, otelCommonAttributes);
+              m.record(reportAvgReadinessTime(), otelCommonAttributes);
             });
 
     meter
@@ -818,56 +814,56 @@ public class GcpManagedChannel extends ManagedChannel {
         .ofLongs()
         .setDescription("The maximum time it took to transition a channel to READY (us).")
         .setUnit(GcpMetricsConstants.MICROSECOND)
-        .buildWithCallback(m -> m.record(maxReadinessTime, otelCommonAttributes));
+        .buildWithCallback(m -> m.record(reportMaxReadinessTime(), otelCommonAttributes));
 
     meter
         .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MIN_ACTIVE_STREAMS)
         .ofLongs()
         .setDescription("The minimum number of active streams on any channel.")
         .setUnit(GcpMetricsConstants.COUNT)
-        .buildWithCallback(m -> m.record(minActiveStreams, otelCommonAttributes));
+        .buildWithCallback(m -> m.record(reportMinActiveStreams(), otelCommonAttributes));
 
     meter
         .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MAX_ACTIVE_STREAMS)
         .ofLongs()
         .setDescription("The maximum number of active streams on any channel.")
         .setUnit(GcpMetricsConstants.COUNT)
-        .buildWithCallback(m -> m.record(maxActiveStreams, otelCommonAttributes));
+        .buildWithCallback(m -> m.record(reportMaxActiveStreams(), otelCommonAttributes));
 
     meter
         .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MIN_TOTAL_ACTIVE_STREAMS)
         .ofLongs()
         .setDescription("The minimum total number of active streams across all channels.")
         .setUnit(GcpMetricsConstants.COUNT)
-        .buildWithCallback(m -> m.record(minTotalActiveStreams, otelCommonAttributes));
+        .buildWithCallback(m -> m.record(reportMinTotalActiveStreams(), otelCommonAttributes));
 
     meter
         .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MAX_TOTAL_ACTIVE_STREAMS)
         .ofLongs()
         .setDescription("The maximum total number of active streams across all channels.")
         .setUnit(GcpMetricsConstants.COUNT)
-        .buildWithCallback(m -> m.record(maxTotalActiveStreams, otelCommonAttributes));
+        .buildWithCallback(m -> m.record(reportMaxTotalActiveStreams(), otelCommonAttributes));
 
     meter
         .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MIN_AFFINITY)
         .ofLongs()
         .setDescription("The minimum affinity count on any channel.")
         .setUnit(GcpMetricsConstants.COUNT)
-        .buildWithCallback(m -> m.record(minAffinity.get(), otelCommonAttributes));
+        .buildWithCallback(m -> m.record(reportMinAffinity(), otelCommonAttributes));
 
     meter
         .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MAX_AFFINITY)
         .ofLongs()
         .setDescription("The maximum affinity count on any channel.")
         .setUnit(GcpMetricsConstants.COUNT)
-        .buildWithCallback(m -> m.record(maxAffinity.get(), otelCommonAttributes));
+        .buildWithCallback(m -> m.record(reportMaxAffinity(), otelCommonAttributes));
 
     meter
         .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_NUM_AFFINITY)
         .ofLongs()
         .setDescription("The total affinity count across all channels.")
         .setUnit(GcpMetricsConstants.COUNT)
-        .buildWithCallback(m -> m.record(totalAffinityCount.get(), otelCommonAttributes));
+        .buildWithCallback(m -> m.record(reportNumAffinity(), otelCommonAttributes));
 
     meter
         .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_NUM_CALLS_COMPLETED)
@@ -876,8 +872,8 @@ public class GcpManagedChannel extends ManagedChannel {
         .setUnit(GcpMetricsConstants.COUNT)
         .buildWithCallback(
             m -> {
-              m.record(totalOkCalls.get(), withResult(GcpMetricsConstants.RESULT_SUCCESS));
-              m.record(totalErrCalls.get(), withResult(GcpMetricsConstants.RESULT_ERROR));
+              m.record(reportTotalOkCalls(), withResult(GcpMetricsConstants.RESULT_SUCCESS));
+              m.record(reportTotalErrCalls(), withResult(GcpMetricsConstants.RESULT_ERROR));
             });
 
     meter
@@ -887,8 +883,8 @@ public class GcpManagedChannel extends ManagedChannel {
         .setUnit(GcpMetricsConstants.COUNT)
         .buildWithCallback(
             m -> {
-              m.record(minOkCalls, withResult(GcpMetricsConstants.RESULT_SUCCESS));
-              m.record(minErrCalls, withResult(GcpMetricsConstants.RESULT_ERROR));
+              m.record(reportMinOkCalls(), withResult(GcpMetricsConstants.RESULT_SUCCESS));
+              m.record(reportMinErrCalls(), withResult(GcpMetricsConstants.RESULT_ERROR));
             });
 
     meter
@@ -898,8 +894,8 @@ public class GcpManagedChannel extends ManagedChannel {
         .setUnit(GcpMetricsConstants.COUNT)
         .buildWithCallback(
             m -> {
-              m.record(maxOkCalls, withResult(GcpMetricsConstants.RESULT_SUCCESS));
-              m.record(maxErrCalls, withResult(GcpMetricsConstants.RESULT_ERROR));
+              m.record(reportMaxOkCalls(), withResult(GcpMetricsConstants.RESULT_SUCCESS));
+              m.record(reportMaxErrCalls(), withResult(GcpMetricsConstants.RESULT_ERROR));
             });
 
     meter
@@ -909,8 +905,8 @@ public class GcpManagedChannel extends ManagedChannel {
         .setUnit(GcpMetricsConstants.COUNT)
         .buildWithCallback(
             m -> {
-              m.record(fallbacksSucceeded.get(), withResult(GcpMetricsConstants.RESULT_SUCCESS));
-              m.record(fallbacksFailed.get(), withResult(GcpMetricsConstants.RESULT_ERROR));
+              m.record(reportSucceededFallbacks(), withResult(GcpMetricsConstants.RESULT_SUCCESS));
+              m.record(reportFailedFallbacks(), withResult(GcpMetricsConstants.RESULT_ERROR));
             });
 
     meter
@@ -918,35 +914,35 @@ public class GcpManagedChannel extends ManagedChannel {
         .ofLongs()
         .setDescription("The number of unresponsive connections detected.")
         .setUnit(GcpMetricsConstants.COUNT)
-        .buildWithCallback(m -> m.record(unresponsiveDetectionCount.get(), otelCommonAttributes));
+        .buildWithCallback(m -> m.record(reportUnresponsiveDetectionCount(), otelCommonAttributes));
 
     meter
         .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MIN_UNRESPONSIVE_DETECTION_TIME)
         .ofLongs()
         .setDescription("Min time to detect an unresponsive connection (ms).")
         .setUnit(GcpMetricsConstants.MILLISECOND)
-        .buildWithCallback(m -> m.record(minUnresponsiveMs, otelCommonAttributes));
+        .buildWithCallback(m -> m.record(reportMinUnresponsiveMs(), otelCommonAttributes));
 
     meter
         .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MAX_UNRESPONSIVE_DETECTION_TIME)
         .ofLongs()
         .setDescription("Max time to detect an unresponsive connection (ms).")
         .setUnit(GcpMetricsConstants.MILLISECOND)
-        .buildWithCallback(m -> m.record(maxUnresponsiveMs, otelCommonAttributes));
+        .buildWithCallback(m -> m.record(reportMaxUnresponsiveMs(), otelCommonAttributes));
 
     meter
         .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MIN_UNRESPONSIVE_DROPPED_CALLS)
         .ofLongs()
         .setDescription("Min calls dropped before unresponsive detection.")
         .setUnit(GcpMetricsConstants.COUNT)
-        .buildWithCallback(m -> m.record(minUnresponsiveDrops, otelCommonAttributes));
+        .buildWithCallback(m -> m.record(reportMinUnresponsiveDrops(), otelCommonAttributes));
 
     meter
         .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MAX_UNRESPONSIVE_DROPPED_CALLS)
         .ofLongs()
         .setDescription("Max calls dropped before unresponsive detection.")
         .setUnit(GcpMetricsConstants.COUNT)
-        .buildWithCallback(m -> m.record(maxUnresponsiveDrops, otelCommonAttributes));
+        .buildWithCallback(m -> m.record(reportMaxUnresponsiveDrops(), otelCommonAttributes));
 
     meter
         .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_CHANNEL_POOL_SCALING)
@@ -955,8 +951,8 @@ public class GcpManagedChannel extends ManagedChannel {
         .setUnit(GcpMetricsConstants.COUNT)
         .buildWithCallback(
             m -> {
-              m.record(scaleUpCount, withDirection(GcpMetricsConstants.DIRECTION_UP));
-              m.record(scaleDownCount, withDirection(GcpMetricsConstants.DIRECTION_DOWN));
+              m.record(reportScaleUp(), withDirection(GcpMetricsConstants.DIRECTION_UP));
+              m.record(reportScaleDown(), withDirection(GcpMetricsConstants.DIRECTION_DOWN));
             });
   }
 
@@ -1100,15 +1096,13 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   private long reportMinChannels() {
-    int value = minChannels;
-    minChannels = getNumberOfChannels();
+    int value = minChannels.getAndSet(getNumberOfChannels());
     logGauge(GcpMetricsConstants.METRIC_MIN_CHANNELS, value);
     return value;
   }
 
   private long reportMaxChannels() {
-    int value = maxChannels;
-    maxChannels = getNumberOfChannels();
+    int value = maxChannels.getAndSet(getNumberOfChannels());
     logGauge(GcpMetricsConstants.METRIC_MAX_CHANNELS, value);
     return value;
   }
@@ -1119,15 +1113,13 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   private long reportMinReadyChannels() {
-    int value = minReadyChannels;
-    minReadyChannels = readyChannels.get();
+    int value = minReadyChannels.getAndSet(readyChannels.get());
     logGauge(GcpMetricsConstants.METRIC_MIN_READY_CHANNELS, value);
     return value;
   }
 
   private long reportMaxReadyChannels() {
-    int value = maxReadyChannels;
-    maxReadyChannels = readyChannels.get();
+    int value = maxReadyChannels.getAndSet(readyChannels.get());
     logGauge(GcpMetricsConstants.METRIC_MAX_READY_CHANNELS, value);
     return value;
   }
@@ -1145,8 +1137,7 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   private long reportMinReadinessTime() {
-    long value = minReadinessTime;
-    minReadinessTime = 0;
+    long value = minReadinessTime.getAndSet(0);
     logGauge(GcpMetricsConstants.METRIC_MIN_CHANNEL_READINESS_TIME, value);
     return value;
   }
@@ -1163,38 +1154,35 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   private long reportMaxReadinessTime() {
-    long value = maxReadinessTime;
-    maxReadinessTime = 0;
+    long value = maxReadinessTime.getAndSet(0);
     logGauge(GcpMetricsConstants.METRIC_MAX_CHANNEL_READINESS_TIME, value);
     return value;
   }
 
   private int reportMinActiveStreams() {
-    int value = minActiveStreams;
-    minActiveStreams =
-        channelRefs.stream().mapToInt(ChannelRef::getActiveStreamsCount).min().orElse(0);
+    int value =
+        minActiveStreams.getAndSet(
+            channelRefs.stream().mapToInt(ChannelRef::getActiveStreamsCount).min().orElse(0));
     logGauge(GcpMetricsConstants.METRIC_MIN_ACTIVE_STREAMS, value);
     return value;
   }
 
   private int reportMaxActiveStreams() {
-    int value = maxActiveStreams;
-    maxActiveStreams =
-        channelRefs.stream().mapToInt(ChannelRef::getActiveStreamsCount).max().orElse(0);
+    int value =
+        maxActiveStreams.getAndSet(
+            channelRefs.stream().mapToInt(ChannelRef::getActiveStreamsCount).max().orElse(0));
     logGauge(GcpMetricsConstants.METRIC_MAX_ACTIVE_STREAMS, value);
     return value;
   }
 
   private int reportMinTotalActiveStreams() {
-    int value = minTotalActiveStreams;
-    minTotalActiveStreams = totalActiveStreams.get();
+    int value = minTotalActiveStreams.getAndSet(totalActiveStreams.get());
     logGauge(GcpMetricsConstants.METRIC_MIN_TOTAL_ACTIVE_STREAMS, value);
     return value;
   }
 
   private int reportMaxTotalActiveStreams() {
-    int value = maxTotalActiveStreams;
-    maxTotalActiveStreams = totalActiveStreams.get();
+    int value = maxTotalActiveStreams.getAndSet(totalActiveStreams.get());
     logGauge(GcpMetricsConstants.METRIC_MAX_TOTAL_ACTIVE_STREAMS, value);
     return value;
   }
@@ -1323,41 +1311,37 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   private long reportMinUnresponsiveMs() {
-    long value = minUnresponsiveMs;
-    minUnresponsiveMs = 0;
+    long value = minUnresponsiveMs.getAndSet(0);
     logGauge(GcpMetricsConstants.METRIC_MIN_UNRESPONSIVE_DETECTION_TIME, value);
     return value;
   }
 
   private long reportMaxUnresponsiveMs() {
-    long value = maxUnresponsiveMs;
-    maxUnresponsiveMs = 0;
+    long value = maxUnresponsiveMs.getAndSet(0);
     logGauge(GcpMetricsConstants.METRIC_MAX_UNRESPONSIVE_DETECTION_TIME, value);
     return value;
   }
 
   private long reportMinUnresponsiveDrops() {
-    long value = minUnresponsiveDrops;
-    minUnresponsiveDrops = 0;
+    long value = minUnresponsiveDrops.getAndSet(0);
     logGauge(GcpMetricsConstants.METRIC_MIN_UNRESPONSIVE_DROPPED_CALLS, value);
     return value;
   }
 
   private long reportMaxUnresponsiveDrops() {
-    long value = maxUnresponsiveDrops;
-    maxUnresponsiveDrops = 0;
+    long value = maxUnresponsiveDrops.getAndSet(0);
     logGauge(GcpMetricsConstants.METRIC_MAX_UNRESPONSIVE_DROPPED_CALLS, value);
     return value;
   }
 
   private long reportScaleUp() {
-    long value = scaleUpCount;
+    long value = scaleUpCount.get();
     logCumulative(GcpMetricsConstants.METRIC_CHANNEL_POOL_SCALING + "_up", value);
     return value;
   }
 
   private long reportScaleDown() {
-    long value = scaleDownCount;
+    long value = scaleDownCount.get();
     logCumulative(GcpMetricsConstants.METRIC_CHANNEL_POOL_SCALING + "_down", value);
     return value;
   }
@@ -1367,9 +1351,7 @@ public class GcpManagedChannel extends ManagedChannel {
       numChannelConnect.incrementAndGet();
     }
     final int newReady = readyChannels.incrementAndGet();
-    if (maxReadyChannels < newReady) {
-      maxReadyChannels = newReady;
-    }
+    maxReadyChannels.accumulateAndGet(newReady, Math::max);
   }
 
   private void decReadyChannels(boolean disconnected) {
@@ -1377,19 +1359,14 @@ public class GcpManagedChannel extends ManagedChannel {
       numChannelDisconnect.incrementAndGet();
     }
     final int newReady = readyChannels.decrementAndGet();
-    if (minReadyChannels > newReady) {
-      minReadyChannels = newReady;
-    }
+    minReadyChannels.accumulateAndGet(newReady, Math::min);
   }
 
   private void saveReadinessTime(long readinessNanos) {
     long readinessTimeUs = readinessNanos / 1000;
-    if (minReadinessTime == 0 || readinessTimeUs < minReadinessTime) {
-      minReadinessTime = readinessTimeUs;
-    }
-    if (readinessTimeUs > maxReadinessTime) {
-      maxReadinessTime = readinessTimeUs;
-    }
+    minReadinessTime.compareAndSet(0, readinessTimeUs);
+    minReadinessTime.accumulateAndGet(readinessTimeUs, Math::min);
+    maxReadinessTime.accumulateAndGet(readinessTimeUs, Math::max);
     totalReadinessTime.addAndGet(readinessTimeUs);
     readinessTimeOccurrences.incrementAndGet();
   }
@@ -1397,18 +1374,12 @@ public class GcpManagedChannel extends ManagedChannel {
   private void recordUnresponsiveDetection(long nanos, long dropCount) {
     unresponsiveDetectionCount.incrementAndGet();
     final long ms = nanos / 1000000;
-    if (minUnresponsiveMs == 0 || minUnresponsiveMs > ms) {
-      minUnresponsiveMs = ms;
-    }
-    if (maxUnresponsiveMs < ms) {
-      maxUnresponsiveMs = ms;
-    }
-    if (minUnresponsiveDrops == 0 || minUnresponsiveDrops > dropCount) {
-      minUnresponsiveDrops = dropCount;
-    }
-    if (maxUnresponsiveDrops < dropCount) {
-      maxUnresponsiveDrops = dropCount;
-    }
+    minUnresponsiveMs.compareAndSet(0, ms);
+    minUnresponsiveMs.accumulateAndGet(ms, Math::min);
+    maxUnresponsiveMs.accumulateAndGet(ms, Math::max);
+    minUnresponsiveDrops.compareAndSet(0, dropCount);
+    minUnresponsiveDrops.accumulateAndGet(dropCount, Math::min);
+    maxUnresponsiveDrops.accumulateAndGet(dropCount, Math::max);
   }
 
   @Override
@@ -1685,14 +1656,14 @@ public class GcpManagedChannel extends ManagedChannel {
       removedChannelRefs.remove(chRef);
       logger.finer(log("Channel %d reused.", chRef.getId()));
       incReadyChannels(false);
-      maxChannels = Math.max(maxChannels, channelRefs.size());
+      maxChannels.accumulateAndGet(getNumberOfChannels(), Math::max);
       return chRef;
     }
 
     ChannelRef channelRef = new ChannelRef(delegateChannelBuilder.build());
     channelRefs.add(channelRef);
     logger.finer(log("Channel %d created.", channelRef.getId()));
-    maxChannels = Math.max(maxChannels, channelRefs.size());
+    maxChannels.accumulateAndGet(getNumberOfChannels(), Math::max);
     return channelRef;
   }
 
@@ -1755,7 +1726,7 @@ public class GcpManagedChannel extends ManagedChannel {
 
     if ((totalActiveStreams.get() / channelRefs.size()) >= maxRpcPerChannel) {
       createNewChannel();
-      scaleUpCount++;
+      scaleUpCount.incrementAndGet();
     }
   }
 
@@ -1808,7 +1779,7 @@ public class GcpManagedChannel extends ManagedChannel {
       if (shouldScaleUp(minStreams)) {
         ChannelRef newChannel = tryCreateNewChannel();
         if (newChannel != null) {
-          scaleUpCount++;
+          scaleUpCount.incrementAndGet();
           return newChannel;
         }
       }
@@ -1818,7 +1789,7 @@ public class GcpManagedChannel extends ManagedChannel {
     if (shouldScaleUp(readyMinStreams)) {
       ChannelRef newChannel = tryCreateNewChannel();
       if (newChannel != null) {
-        scaleUpCount++;
+        scaleUpCount.incrementAndGet();
         if (!forFallback && readyCandidate == null) {
           if (logger.isLoggable(Level.FINEST)) {
             logger.finest(log("Fallback to newly created channel %d", newChannel.getId()));
@@ -2249,13 +2220,13 @@ public class GcpManagedChannel extends ManagedChannel {
 
     protected void affinityCountIncr() {
       int count = affinityCount.incrementAndGet();
-      maxAffinity.getAndUpdate(currentMax -> Math.max(currentMax, count));
+      maxAffinity.accumulateAndGet(count, Math::max);
       totalAffinityCount.incrementAndGet();
     }
 
     protected void affinityCountDecr() {
       int count = affinityCount.decrementAndGet();
-      minAffinity.getAndUpdate(currentMin -> Math.min(currentMin, count));
+      minAffinity.accumulateAndGet(count, Math::min);
       totalAffinityCount.decrementAndGet();
     }
 
@@ -2265,27 +2236,17 @@ public class GcpManagedChannel extends ManagedChannel {
 
     protected void activeStreamsCountIncr() {
       int actStreams = activeStreamsCount.incrementAndGet();
-      if (maxActiveStreams < actStreams) {
-        maxActiveStreams = actStreams;
-      }
+      maxActiveStreams.accumulateAndGet(actStreams, Math::max);
       int totalActStreams = totalActiveStreams.incrementAndGet();
-      if (maxTotalActiveStreams < totalActStreams) {
-        maxTotalActiveStreams = totalActStreams;
-      }
-      if (maxTotalActiveStreamsForScaleDown < totalActStreams) {
-        maxTotalActiveStreamsForScaleDown = totalActStreams;
-      }
+      maxTotalActiveStreams.accumulateAndGet(totalActStreams, Math::max);
+      maxTotalActiveStreamsForScaleDown.accumulateAndGet(totalActStreams, Math::max);
     }
 
     protected void activeStreamsCountDecr(long startNanos, Status status, boolean fromClientSide) {
       int actStreams = activeStreamsCount.decrementAndGet();
-      if (minActiveStreams > actStreams) {
-        minActiveStreams = actStreams;
-      }
+      minActiveStreams.accumulateAndGet(actStreams, Math::min);
       int totalActStreams = totalActiveStreams.decrementAndGet();
-      if (minTotalActiveStreams > totalActStreams) {
-        minTotalActiveStreams = totalActStreams;
-      }
+      minTotalActiveStreams.accumulateAndGet(totalActStreams, Math::min);
       if (status.isOk()) {
         okCalls.incrementAndGet();
         totalOkCalls.incrementAndGet();
