@@ -16,6 +16,7 @@
 
 package com.google.cloud.databasecenter.v1beta.stub;
 
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryDatabaseResourceGroupsPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryProductsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -44,7 +45,10 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.databasecenter.v1beta.DatabaseResourceGroup;
 import com.google.cloud.databasecenter.v1beta.Product;
+import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsRequest;
+import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsResponse;
 import com.google.cloud.databasecenter.v1beta.QueryProductsRequest;
 import com.google.cloud.databasecenter.v1beta.QueryProductsResponse;
 import com.google.common.collect.ImmutableList;
@@ -116,6 +120,11 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
   private final PagedCallSettings<
           QueryProductsRequest, QueryProductsResponse, QueryProductsPagedResponse>
       queryProductsSettings;
+  private final PagedCallSettings<
+          QueryDatabaseResourceGroupsRequest,
+          QueryDatabaseResourceGroupsResponse,
+          QueryDatabaseResourceGroupsPagedResponse>
+      queryDatabaseResourceGroupsSettings;
 
   private static final PagedListDescriptor<QueryProductsRequest, QueryProductsResponse, Product>
       QUERY_PRODUCTS_PAGE_STR_DESC =
@@ -151,6 +160,53 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
             }
           };
 
+  private static final PagedListDescriptor<
+          QueryDatabaseResourceGroupsRequest,
+          QueryDatabaseResourceGroupsResponse,
+          DatabaseResourceGroup>
+      QUERY_DATABASE_RESOURCE_GROUPS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              QueryDatabaseResourceGroupsRequest,
+              QueryDatabaseResourceGroupsResponse,
+              DatabaseResourceGroup>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public QueryDatabaseResourceGroupsRequest injectToken(
+                QueryDatabaseResourceGroupsRequest payload, String token) {
+              return QueryDatabaseResourceGroupsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public QueryDatabaseResourceGroupsRequest injectPageSize(
+                QueryDatabaseResourceGroupsRequest payload, int pageSize) {
+              return QueryDatabaseResourceGroupsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(QueryDatabaseResourceGroupsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(QueryDatabaseResourceGroupsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DatabaseResourceGroup> extractResources(
+                QueryDatabaseResourceGroupsResponse payload) {
+              return payload.getResourceGroupsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           QueryProductsRequest, QueryProductsResponse, QueryProductsPagedResponse>
       QUERY_PRODUCTS_PAGE_STR_FACT =
@@ -168,10 +224,48 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
             }
           };
 
+  private static final PagedListResponseFactory<
+          QueryDatabaseResourceGroupsRequest,
+          QueryDatabaseResourceGroupsResponse,
+          QueryDatabaseResourceGroupsPagedResponse>
+      QUERY_DATABASE_RESOURCE_GROUPS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              QueryDatabaseResourceGroupsRequest,
+              QueryDatabaseResourceGroupsResponse,
+              QueryDatabaseResourceGroupsPagedResponse>() {
+            @Override
+            public ApiFuture<QueryDatabaseResourceGroupsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsResponse>
+                    callable,
+                QueryDatabaseResourceGroupsRequest request,
+                ApiCallContext context,
+                ApiFuture<QueryDatabaseResourceGroupsResponse> futureResponse) {
+              PageContext<
+                      QueryDatabaseResourceGroupsRequest,
+                      QueryDatabaseResourceGroupsResponse,
+                      DatabaseResourceGroup>
+                  pageContext =
+                      PageContext.create(
+                          callable, QUERY_DATABASE_RESOURCE_GROUPS_PAGE_STR_DESC, request, context);
+              return QueryDatabaseResourceGroupsPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to queryProducts. */
   public PagedCallSettings<QueryProductsRequest, QueryProductsResponse, QueryProductsPagedResponse>
       queryProductsSettings() {
     return queryProductsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to queryDatabaseResourceGroups. */
+  public PagedCallSettings<
+          QueryDatabaseResourceGroupsRequest,
+          QueryDatabaseResourceGroupsResponse,
+          QueryDatabaseResourceGroupsPagedResponse>
+      queryDatabaseResourceGroupsSettings() {
+    return queryDatabaseResourceGroupsSettings;
   }
 
   public DatabaseCenterStub createStub() throws IOException {
@@ -286,6 +380,8 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
     super(settingsBuilder);
 
     queryProductsSettings = settingsBuilder.queryProductsSettings().build();
+    queryDatabaseResourceGroupsSettings =
+        settingsBuilder.queryDatabaseResourceGroupsSettings().build();
   }
 
   /** Builder for DatabaseCenterStubSettings. */
@@ -294,6 +390,11 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
     private final PagedCallSettings.Builder<
             QueryProductsRequest, QueryProductsResponse, QueryProductsPagedResponse>
         queryProductsSettings;
+    private final PagedCallSettings.Builder<
+            QueryDatabaseResourceGroupsRequest,
+            QueryDatabaseResourceGroupsResponse,
+            QueryDatabaseResourceGroupsPagedResponse>
+        queryDatabaseResourceGroupsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -322,9 +423,12 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
       super(clientContext);
 
       queryProductsSettings = PagedCallSettings.newBuilder(QUERY_PRODUCTS_PAGE_STR_FACT);
+      queryDatabaseResourceGroupsSettings =
+          PagedCallSettings.newBuilder(QUERY_DATABASE_RESOURCE_GROUPS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(queryProductsSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              queryProductsSettings, queryDatabaseResourceGroupsSettings);
       initDefaults(this);
     }
 
@@ -332,9 +436,12 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
       super(settings);
 
       queryProductsSettings = settings.queryProductsSettings.toBuilder();
+      queryDatabaseResourceGroupsSettings =
+          settings.queryDatabaseResourceGroupsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(queryProductsSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              queryProductsSettings, queryDatabaseResourceGroupsSettings);
     }
 
     private static Builder createDefault() {
@@ -367,6 +474,11 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
+      builder
+          .queryDatabaseResourceGroupsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
       return builder;
     }
 
@@ -390,6 +502,15 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
             QueryProductsRequest, QueryProductsResponse, QueryProductsPagedResponse>
         queryProductsSettings() {
       return queryProductsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to queryDatabaseResourceGroups. */
+    public PagedCallSettings.Builder<
+            QueryDatabaseResourceGroupsRequest,
+            QueryDatabaseResourceGroupsResponse,
+            QueryDatabaseResourceGroupsPagedResponse>
+        queryDatabaseResourceGroupsSettings() {
+      return queryDatabaseResourceGroupsSettings;
     }
 
     @Override

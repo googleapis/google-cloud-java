@@ -16,6 +16,7 @@
 
 package com.google.cloud.databasecenter.v1beta;
 
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryDatabaseResourceGroupsPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryProductsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -94,6 +95,15 @@ public class DatabaseCenterSettings extends ClientSettings<DatabaseCenterSetting
   public PagedCallSettings<QueryProductsRequest, QueryProductsResponse, QueryProductsPagedResponse>
       queryProductsSettings() {
     return ((DatabaseCenterStubSettings) getStubSettings()).queryProductsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to queryDatabaseResourceGroups. */
+  public PagedCallSettings<
+          QueryDatabaseResourceGroupsRequest,
+          QueryDatabaseResourceGroupsResponse,
+          QueryDatabaseResourceGroupsPagedResponse>
+      queryDatabaseResourceGroupsSettings() {
+    return ((DatabaseCenterStubSettings) getStubSettings()).queryDatabaseResourceGroupsSettings();
   }
 
   public static final DatabaseCenterSettings create(DatabaseCenterStubSettings stub)
@@ -213,6 +223,15 @@ public class DatabaseCenterSettings extends ClientSettings<DatabaseCenterSetting
             QueryProductsRequest, QueryProductsResponse, QueryProductsPagedResponse>
         queryProductsSettings() {
       return getStubSettingsBuilder().queryProductsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to queryDatabaseResourceGroups. */
+    public PagedCallSettings.Builder<
+            QueryDatabaseResourceGroupsRequest,
+            QueryDatabaseResourceGroupsResponse,
+            QueryDatabaseResourceGroupsPagedResponse>
+        queryDatabaseResourceGroupsSettings() {
+      return getStubSettingsBuilder().queryDatabaseResourceGroupsSettings();
     }
 
     @Override

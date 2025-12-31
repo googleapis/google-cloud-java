@@ -16,11 +16,14 @@
 
 package com.google.cloud.databasecenter.v1beta.stub;
 
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryDatabaseResourceGroupsPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryProductsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsRequest;
+import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsResponse;
 import com.google.cloud.databasecenter.v1beta.QueryProductsRequest;
 import com.google.cloud.databasecenter.v1beta.QueryProductsResponse;
 import javax.annotation.Generated;
@@ -42,6 +45,18 @@ public abstract class DatabaseCenterStub implements BackgroundResource {
 
   public UnaryCallable<QueryProductsRequest, QueryProductsResponse> queryProductsCallable() {
     throw new UnsupportedOperationException("Not implemented: queryProductsCallable()");
+  }
+
+  public UnaryCallable<QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsPagedResponse>
+      queryDatabaseResourceGroupsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: queryDatabaseResourceGroupsPagedCallable()");
+  }
+
+  public UnaryCallable<QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsResponse>
+      queryDatabaseResourceGroupsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: queryDatabaseResourceGroupsCallable()");
   }
 
   @Override

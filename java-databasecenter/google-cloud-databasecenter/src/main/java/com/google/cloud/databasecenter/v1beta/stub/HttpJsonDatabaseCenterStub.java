@@ -16,6 +16,7 @@
 
 package com.google.cloud.databasecenter.v1beta.stub;
 
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryDatabaseResourceGroupsPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryProductsPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -30,6 +31,8 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsRequest;
+import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsResponse;
 import com.google.cloud.databasecenter.v1beta.QueryProductsRequest;
 import com.google.cloud.databasecenter.v1beta.QueryProductsResponse;
 import com.google.protobuf.TypeRegistry;
@@ -88,9 +91,54 @@ public class HttpJsonDatabaseCenterStub extends DatabaseCenterStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsResponse>
+      queryDatabaseResourceGroupsMethodDescriptor =
+          ApiMethodDescriptor
+              .<QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.databasecenter.v1beta.DatabaseCenter/QueryDatabaseResourceGroups")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<QueryDatabaseResourceGroupsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta:queryDatabaseResourceGroups",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<QueryDatabaseResourceGroupsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<QueryDatabaseResourceGroupsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<QueryDatabaseResourceGroupsResponse>newBuilder()
+                      .setDefaultInstance(QueryDatabaseResourceGroupsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<QueryProductsRequest, QueryProductsResponse> queryProductsCallable;
   private final UnaryCallable<QueryProductsRequest, QueryProductsPagedResponse>
       queryProductsPagedCallable;
+  private final UnaryCallable<
+          QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsResponse>
+      queryDatabaseResourceGroupsCallable;
+  private final UnaryCallable<
+          QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsPagedResponse>
+      queryDatabaseResourceGroupsPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -140,6 +188,14 @@ public class HttpJsonDatabaseCenterStub extends DatabaseCenterStub {
                 .setMethodDescriptor(queryProductsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsResponse>
+        queryDatabaseResourceGroupsTransportSettings =
+            HttpJsonCallSettings
+                .<QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsResponse>
+                    newBuilder()
+                .setMethodDescriptor(queryDatabaseResourceGroupsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
 
     this.queryProductsCallable =
         callableFactory.createUnaryCallable(
@@ -147,6 +203,16 @@ public class HttpJsonDatabaseCenterStub extends DatabaseCenterStub {
     this.queryProductsPagedCallable =
         callableFactory.createPagedCallable(
             queryProductsTransportSettings, settings.queryProductsSettings(), clientContext);
+    this.queryDatabaseResourceGroupsCallable =
+        callableFactory.createUnaryCallable(
+            queryDatabaseResourceGroupsTransportSettings,
+            settings.queryDatabaseResourceGroupsSettings(),
+            clientContext);
+    this.queryDatabaseResourceGroupsPagedCallable =
+        callableFactory.createPagedCallable(
+            queryDatabaseResourceGroupsTransportSettings,
+            settings.queryDatabaseResourceGroupsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -156,6 +222,7 @@ public class HttpJsonDatabaseCenterStub extends DatabaseCenterStub {
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(queryProductsMethodDescriptor);
+    methodDescriptors.add(queryDatabaseResourceGroupsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -168,6 +235,18 @@ public class HttpJsonDatabaseCenterStub extends DatabaseCenterStub {
   public UnaryCallable<QueryProductsRequest, QueryProductsPagedResponse>
       queryProductsPagedCallable() {
     return queryProductsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsResponse>
+      queryDatabaseResourceGroupsCallable() {
+    return queryDatabaseResourceGroupsCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsPagedResponse>
+      queryDatabaseResourceGroupsPagedCallable() {
+    return queryDatabaseResourceGroupsPagedCallable;
   }
 
   @Override
