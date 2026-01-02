@@ -30,15 +30,12 @@ import com.google.cloud.bigquery.storage.v1.ReadSession;
 import com.google.cloud.bigquery.storage.v1.SplitReadStreamRequest;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-@RunWith(JUnit4.class)
 public class ResourceHeaderTest {
 
   private static final String TEST_TABLE_REFERENCE =
@@ -69,14 +66,14 @@ public class ResourceHeaderTest {
   private LocalChannelProvider channelProvider;
   private BigQueryReadClient client;
 
-  @BeforeClass
+  @BeforeAll
   public static void setUpClass() throws Exception {
     server = new InProcessServer<>(new BigQueryReadImplBase() {}, NAME);
     server.start();
   }
 
-  @Before
-  public void setUp() throws Exception {
+  @BeforeEach
+  void setUp() throws Exception {
     channelProvider = LocalChannelProvider.create(NAME);
     BigQueryReadSettings.Builder settingsBuilder =
         BigQueryReadSettings.newBuilder()
@@ -86,20 +83,20 @@ public class ResourceHeaderTest {
     client = BigQueryReadClient.create(settingsBuilder.build());
   }
 
-  @After
-  public void tearDown() throws Exception {
+  @AfterEach
+  void tearDown() throws Exception {
     client.close();
     client.awaitTermination(10, TimeUnit.SECONDS);
   }
 
-  @AfterClass
-  public static void tearDownClass() throws Exception {
+  @AfterAll
+  static void tearDownClass() throws Exception {
     server.stop();
     server.blockUntilShutdown();
   }
 
   @Test
-  public void createReadSessionTest() {
+  void createReadSessionTest() {
     try {
       client.createReadSession(
           "parents/project", ReadSession.newBuilder().setTable(TEST_TABLE_REFERENCE).build(), 1);
@@ -110,7 +107,7 @@ public class ResourceHeaderTest {
   }
 
   @Test
-  public void readRowsTest() {
+  void readRowsTest() {
     try {
       ReadRowsRequest request =
           ReadRowsRequest.newBuilder().setReadStream(TEST_STREAM_NAME).setOffset(125).build();
@@ -123,7 +120,7 @@ public class ResourceHeaderTest {
   }
 
   @Test
-  public void splitReadStreamTest() {
+  void splitReadStreamTest() {
     try {
       client.splitReadStream(SplitReadStreamRequest.newBuilder().setName(TEST_STREAM_NAME).build());
     } catch (UnimplementedException e) {

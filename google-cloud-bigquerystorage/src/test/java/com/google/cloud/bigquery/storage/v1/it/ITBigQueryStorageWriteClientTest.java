@@ -20,11 +20,13 @@ import static com.google.cloud.bigquery.storage.v1.it.util.Helper.EXPECTED_TIMES
 import static com.google.cloud.bigquery.storage.v1.it.util.Helper.TIMESTAMP_COLUMN_NAME;
 import static com.google.cloud.bigquery.storage.v1.it.util.Helper.TIMESTAMP_HIGHER_PRECISION_COLUMN_NAME;
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import com.google.api.client.util.Sleeper;
 import com.google.api.core.ApiFuture;
@@ -90,13 +92,12 @@ import org.apache.arrow.vector.types.pojo.FieldType;
 import org.apache.avro.generic.GenericData;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 /** Integration tests for BigQuery Write API. */
-public class ITBigQueryStorageWriteClientTest {
+class ITBigQueryStorageWriteClientTest {
   private static final Logger LOG =
       Logger.getLogger(ITBigQueryStorageWriteClientTest.class.getName());
   private static final String DATASET = RemoteBigQueryHelper.generateDatasetName();
@@ -166,7 +167,7 @@ public class ITBigQueryStorageWriteClientTest {
             "1975-04-04T12:34:56.123456789123Z"
           };
 
-  public static class StringWithSecondsNanos {
+  static class StringWithSecondsNanos {
     public String foo;
     public long seconds;
     public int nanos;
@@ -181,8 +182,8 @@ public class ITBigQueryStorageWriteClientTest {
   private static final HeaderProvider USER_AGENT_HEADER_PROVIDER =
       FixedHeaderProvider.create("User-Agent", "my_product_name/1.0 (GPN:Samples;test)");
 
-  @BeforeClass
-  public static void beforeClass() throws IOException {
+  @BeforeAll
+  static void beforeAll() throws IOException {
     readClient = BigQueryReadClient.create();
 
     BigQueryWriteSettings settings =
@@ -275,8 +276,8 @@ public class ITBigQueryStorageWriteClientTest {
     bigquery.create(tableInfoEU);
   }
 
-  @AfterClass
-  public static void afterClass() throws InterruptedException {
+  @AfterAll
+  static void afterAll() throws InterruptedException {
     if (writeClient != null) {
       writeClient.close();
       writeClient.awaitTermination(10, TimeUnit.SECONDS);
@@ -365,7 +366,7 @@ public class ITBigQueryStorageWriteClientTest {
   }
 
   @Test
-  public void testBatchWriteWithCommittedStreamEU()
+  void testBatchWriteWithCommittedStreamEU()
       throws IOException, InterruptedException, ExecutionException {
     WriteStream writeStream =
         writeClient.createWriteStream(
@@ -395,7 +396,7 @@ public class ITBigQueryStorageWriteClientTest {
   }
 
   @Test
-  public void testProto3OptionalBatchWriteWithCommittedStream()
+  void testProto3OptionalBatchWriteWithCommittedStream()
       throws IOException, InterruptedException, ExecutionException {
     WriteStream writeStream =
         writeClient.createWriteStream(
@@ -425,7 +426,7 @@ public class ITBigQueryStorageWriteClientTest {
   }
 
   @Test
-  public void testJsonStreamWriterCommittedStream()
+  void testJsonStreamWriterCommittedStream()
       throws IOException,
           InterruptedException,
           ExecutionException,
@@ -516,7 +517,7 @@ public class ITBigQueryStorageWriteClientTest {
   }
 
   @Test
-  public void testRowErrors()
+  void testRowErrors()
       throws IOException,
           InterruptedException,
           ExecutionException,
@@ -609,7 +610,7 @@ public class ITBigQueryStorageWriteClientTest {
   }
 
   @Test
-  public void testRequestProfilerWithCommittedStream()
+  void testRequestProfilerWithCommittedStream()
       throws DescriptorValidationException, IOException, InterruptedException {
     String tableName = "TestProfiler";
     TableId tableId = TableId.of(DATASET, tableName);
@@ -652,17 +653,17 @@ public class ITBigQueryStorageWriteClientTest {
     LOG.info("Waiting for all responses to come back");
     for (int i = 0; i < totalRequest; i++) {
       try {
-        Assert.assertEquals(
+        assertEquals(
             allResponses.get(i).get().getAppendResult().getOffset().getValue(), i * rowBatch);
       } catch (ExecutionException ex) {
-        Assert.fail("Unexpected error " + ex);
+        fail("Unexpected error " + ex);
       }
     }
     RequestProfiler.disableAndResetProfiler();
   }
 
   @Test
-  public void testJsonStreamWriterWithDefaultSchema()
+  void testJsonStreamWriterWithDefaultSchema()
       throws IOException,
           InterruptedException,
           ExecutionException,
@@ -763,9 +764,9 @@ public class ITBigQueryStorageWriteClientTest {
       ApiFuture<AppendRowsResponse> response3 = jsonStreamWriter.append(jsonArr3, -1);
       LOG.info("Sending one more message");
       ApiFuture<AppendRowsResponse> response4 = jsonStreamWriter.append(jsonArr4, -1);
-      Assert.assertFalse(response2.get().getAppendResult().hasOffset());
-      Assert.assertFalse(response3.get().getAppendResult().hasOffset());
-      Assert.assertFalse(response4.get().getAppendResult().hasOffset());
+      assertFalse(response2.get().getAppendResult().hasOffset());
+      assertFalse(response3.get().getAppendResult().hasOffset());
+      assertFalse(response4.get().getAppendResult().hasOffset());
 
       TableResult result =
           bigquery.listTableData(
@@ -788,7 +789,7 @@ public class ITBigQueryStorageWriteClientTest {
   }
 
   @Test
-  public void testJsonStreamWriterWithDefaultSchemaNoTable() {
+  void testJsonStreamWriterWithDefaultSchemaNoTable() {
     String tableName = "JsonStreamWriterWithDefaultSchemaNoTable";
     TableName parent = TableName.of(ServiceOptions.getDefaultProjectId(), DATASET, tableName);
 
@@ -804,7 +805,7 @@ public class ITBigQueryStorageWriteClientTest {
   }
 
   @Test
-  public void testJsonStreamWriterWithDefaultStream()
+  void testJsonStreamWriterWithDefaultStream()
       throws IOException,
           InterruptedException,
           ExecutionException,
@@ -937,9 +938,9 @@ public class ITBigQueryStorageWriteClientTest {
       ApiFuture<AppendRowsResponse> response3 = jsonStreamWriter.append(jsonArr3, -1);
       LOG.info("Sending one more message");
       ApiFuture<AppendRowsResponse> response4 = jsonStreamWriter.append(jsonArr4, -1);
-      Assert.assertFalse(response2.get().getAppendResult().hasOffset());
-      Assert.assertFalse(response3.get().getAppendResult().hasOffset());
-      Assert.assertFalse(response4.get().getAppendResult().hasOffset());
+      assertFalse(response2.get().getAppendResult().hasOffset());
+      assertFalse(response3.get().getAppendResult().hasOffset());
+      assertFalse(response4.get().getAppendResult().hasOffset());
 
       TableResult result =
           bigquery.listTableData(
@@ -970,7 +971,7 @@ public class ITBigQueryStorageWriteClientTest {
   }
 
   @Test
-  public void testJsonDefaultStreamOnTableWithDefaultValue_SchemaNotGiven()
+  void testJsonDefaultStreamOnTableWithDefaultValue_SchemaNotGiven()
       throws IOException,
           InterruptedException,
           ExecutionException,
@@ -993,7 +994,7 @@ public class ITBigQueryStorageWriteClientTest {
   }
 
   @Test
-  public void testJsonExclusiveStreamOnTableWithDefaultValue_GiveTableSchema()
+  void testJsonExclusiveStreamOnTableWithDefaultValue_GiveTableSchema()
       throws IOException,
           InterruptedException,
           ExecutionException,
@@ -1083,7 +1084,7 @@ public class ITBigQueryStorageWriteClientTest {
   }
 
   @Test
-  public void testStreamWriterWithDefaultValue() throws ExecutionException, InterruptedException {
+  void testStreamWriterWithDefaultValue() throws ExecutionException, InterruptedException {
     String tableName = "streamWriterWithDefaultValue";
     String exclusiveTableId =
         String.format(
@@ -1150,13 +1151,13 @@ public class ITBigQueryStorageWriteClientTest {
   }
 
   @Test
-  public void testArrowIngestionWithSerializedInput()
+  void testArrowIngestionWithSerializedInput()
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
     testArrowIngestion(/* serializedInput= */ true);
   }
 
   @Test
-  public void testArrowIngestionWithUnSerializedInput()
+  void testArrowIngestionWithUnSerializedInput()
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
     testArrowIngestion(/* serializedInput= */ false);
   }
@@ -1299,7 +1300,7 @@ public class ITBigQueryStorageWriteClientTest {
 
   // This test runs about 1 min.
   @Test
-  public void testJsonStreamWriterWithMessagesOver10M()
+  void testJsonStreamWriterWithMessagesOver10M()
       throws IOException,
           InterruptedException,
           ExecutionException,
@@ -1341,16 +1342,16 @@ public class ITBigQueryStorageWriteClientTest {
     LOG.info("Waiting for all responses to come back");
     for (int i = 0; i < totalRequest; i++) {
       try {
-        Assert.assertEquals(
+        assertEquals(
             allResponses.get(i).get().getAppendResult().getOffset().getValue(), i * rowBatch);
       } catch (ExecutionException ex) {
-        Assert.fail("Unexpected error " + ex);
+        fail("Unexpected error " + ex);
       }
     }
   }
 
   @Test
-  public void testJsonStreamWriterSchemaUpdate()
+  void testJsonStreamWriterSchemaUpdate()
       throws DescriptorValidationException, IOException, InterruptedException, ExecutionException {
     String tableName = "SchemaUpdateTestTable";
     TableId tableId = TableId.of(DATASET, tableName);
@@ -1434,7 +1435,7 @@ public class ITBigQueryStorageWriteClientTest {
   }
 
   @Test
-  public void testJsonStreamWriterSchemaUpdateConcurrent()
+  void testJsonStreamWriterSchemaUpdateConcurrent()
       throws DescriptorValidationException, IOException, InterruptedException {
     // Create test table and test stream
     String tableName = "ConcurrentSchemaUpdateTestTable";
@@ -1562,7 +1563,7 @@ public class ITBigQueryStorageWriteClientTest {
   }
 
   @Test
-  public void testJsonStreamWriterSchemaUpdateWithMissingValueInterpretationMap()
+  void testJsonStreamWriterSchemaUpdateWithMissingValueInterpretationMap()
       throws DescriptorValidationException, ExecutionException, IOException, InterruptedException {
     String tableName = "SchemaUpdateMissingValueMapTestTable";
     TableId tableId = TableId.of(DATASET, tableName);
@@ -1684,7 +1685,7 @@ public class ITBigQueryStorageWriteClientTest {
   }
 
   @Test
-  public void testJsonStreamWriterWithFlexibleColumnName()
+  void testJsonStreamWriterWithFlexibleColumnName()
       throws IOException,
           InterruptedException,
           ExecutionException,
@@ -1775,7 +1776,7 @@ public class ITBigQueryStorageWriteClientTest {
   }
 
   @Test
-  public void testJsonStreamWriterWithNestedFlexibleColumnName()
+  void testJsonStreamWriterWithNestedFlexibleColumnName()
       throws IOException,
           InterruptedException,
           ExecutionException,
@@ -1868,7 +1869,7 @@ public class ITBigQueryStorageWriteClientTest {
   }
 
   @Test
-  public void testJsonStreamWriterSchemaUpdateWithFlexibleColumnName()
+  void testJsonStreamWriterSchemaUpdateWithFlexibleColumnName()
       throws DescriptorValidationException, IOException, InterruptedException, ExecutionException {
     String tableName = "SchemaUpdateFlexColumnTestTable";
     TableId tableId = TableId.of(DATASET, tableName);
@@ -1952,7 +1953,7 @@ public class ITBigQueryStorageWriteClientTest {
   }
 
   @Test
-  public void testComplicateSchemaWithPendingStream()
+  void testComplicateSchemaWithPendingStream()
       throws IOException, InterruptedException, ExecutionException {
     LOG.info("Create a write stream");
     WriteStream writeStream =
@@ -1989,12 +1990,8 @@ public class ITBigQueryStorageWriteClientTest {
 
       ApiFuture<AppendRowsResponse> response3 =
           streamWriter.append(createProtoRows(new String[] {"ccc"}), 2L);
-      try {
-        response3.get();
-        Assert.fail("Append to finalized stream should fail.");
-      } catch (Exception expected) {
-        LOG.info("Got exception: " + expected.toString());
-      }
+      ExecutionException expected = assertThrows(ExecutionException.class, () -> response3.get());
+      LOG.info("Got exception: " + expected.toString());
     }
     assertEquals(2, finalizeResponse.getRowCount());
     LOG.info("Commit a write stream");
@@ -2024,7 +2021,7 @@ public class ITBigQueryStorageWriteClientTest {
   }
 
   @Test
-  public void testStreamError() throws IOException, InterruptedException, ExecutionException {
+  void testStreamError() throws IOException, InterruptedException, ExecutionException {
     WriteStream writeStream =
         writeClient.createWriteStream(
             CreateWriteStreamRequest.newBuilder()
@@ -2042,13 +2039,9 @@ public class ITBigQueryStorageWriteClientTest {
       // Send in a bogus stream name should cause in connection error.
       ApiFuture<AppendRowsResponse> response2 =
           streamWriter.append(createProtoRows(new String[] {"aaa"}), 100L);
-      try {
-        response2.get();
-        Assert.fail("Should fail");
-      } catch (ExecutionException e) {
-        assertThat(e.getCause().getMessage())
-            .contains("OUT_OF_RANGE: The offset is beyond stream, expected offset 1, received 100");
-      }
+      ExecutionException e = assertThrows(ExecutionException.class, () -> response2.get());
+      assertThat(e.getCause().getMessage())
+          .contains("OUT_OF_RANGE: The offset is beyond stream, expected offset 1, received 100");
       // We can keep sending requests on the same stream.
       ApiFuture<AppendRowsResponse> response3 =
           streamWriter.append(createProtoRows(new String[] {"aaa"}), -1L);
@@ -2058,7 +2051,7 @@ public class ITBigQueryStorageWriteClientTest {
   }
 
   @Test
-  public void testStreamSchemaMisMatchError() throws IOException, InterruptedException {
+  void testStreamSchemaMisMatchError() throws IOException, InterruptedException {
     WriteStream writeStream =
         writeClient.createWriteStream(
             CreateWriteStreamRequest.newBuilder()
@@ -2075,22 +2068,17 @@ public class ITBigQueryStorageWriteClientTest {
       // the SCHEMA_MISMATCH_EXTRA_FIELDS error
       ApiFuture<AppendRowsResponse> response =
           streamWriter.append(createProtoRowsMultipleColumns(new String[] {"a"}), /* offset= */ 0);
-      try {
-        response.get();
-        Assert.fail("Should fail");
-      } catch (ExecutionException e) {
-        assertEquals(Exceptions.SchemaMismatchedException.class, e.getCause().getClass());
-        Exceptions.SchemaMismatchedException actualError = (SchemaMismatchedException) e.getCause();
-        assertNotNull(actualError.getStreamName());
-        // This verifies that the Beam connector can consume this custom exception's grpc StatusCode
-        assertEquals(Code.INVALID_ARGUMENT, Status.fromThrowable(e.getCause()).getCode());
-      }
+      ExecutionException e = assertThrows(ExecutionException.class, () -> response.get());
+      assertEquals(Exceptions.SchemaMismatchedException.class, e.getCause().getClass());
+      Exceptions.SchemaMismatchedException actualError = (SchemaMismatchedException) e.getCause();
+      assertNotNull(actualError.getStreamName());
+      // This verifies that the Beam connector can consume this custom exception's grpc StatusCode
+      assertEquals(Code.INVALID_ARGUMENT, Status.fromThrowable(e.getCause()).getCode());
     }
   }
 
   @Test
-  public void testStreamFinalizedError()
-      throws IOException, InterruptedException, ExecutionException {
+  void testStreamFinalizedError() throws IOException, InterruptedException, ExecutionException {
     WriteStream writeStream =
         writeClient.createWriteStream(
             CreateWriteStreamRequest.newBuilder()
@@ -2112,23 +2100,18 @@ public class ITBigQueryStorageWriteClientTest {
       // Try to append to a finalized stream
       ApiFuture<AppendRowsResponse> response2 =
           streamWriter.append(createProtoRowsMultipleColumns(new String[] {"a"}), /* offset= */ 1);
-      try {
-        response2.get();
-        Assert.fail("Should fail");
-      } catch (ExecutionException e) {
-        assertEquals(Exceptions.StreamFinalizedException.class, e.getCause().getClass());
-        Exceptions.StreamFinalizedException actualError = (StreamFinalizedException) e.getCause();
-        assertNotNull(actualError.getStreamName());
-        // This verifies that the Beam connector can consume this custom exception's grpc StatusCode
-        assertEquals(Code.INVALID_ARGUMENT, Status.fromThrowable(e.getCause()).getCode());
-        assertThat(e.getCause().getMessage()).contains("Stream has been finalized");
-      }
+      ExecutionException e = assertThrows(ExecutionException.class, () -> response2.get());
+      assertEquals(Exceptions.StreamFinalizedException.class, e.getCause().getClass());
+      Exceptions.StreamFinalizedException actualError = (StreamFinalizedException) e.getCause();
+      assertNotNull(actualError.getStreamName());
+      // This verifies that the Beam connector can consume this custom exception's grpc StatusCode
+      assertEquals(Code.INVALID_ARGUMENT, Status.fromThrowable(e.getCause()).getCode());
+      assertThat(e.getCause().getMessage()).contains("Stream has been finalized");
     }
   }
 
   @Test
-  public void testOffsetAlreadyExistsError()
-      throws IOException, ExecutionException, InterruptedException {
+  void testOffsetAlreadyExistsError() throws IOException, ExecutionException, InterruptedException {
     WriteStream writeStream =
         writeClient.createWriteStream(
             CreateWriteStreamRequest.newBuilder()
@@ -2147,24 +2130,20 @@ public class ITBigQueryStorageWriteClientTest {
       // Append again with the same offset
       ApiFuture<AppendRowsResponse> response2 =
           streamWriter.append(createProtoRowsMultipleColumns(new String[] {"a"}), /* offset= */ 0);
-      try {
-        response2.get();
-        Assert.fail("Should fail");
-      } catch (ExecutionException e) {
-        assertEquals(Exceptions.OffsetAlreadyExists.class, e.getCause().getClass());
-        Exceptions.OffsetAlreadyExists actualError = (OffsetAlreadyExists) e.getCause();
-        assertNotNull(actualError.getStreamName());
-        assertEquals(1, actualError.getExpectedOffset());
-        assertEquals(0, actualError.getActualOffset());
-        assertEquals(Code.ALREADY_EXISTS, Status.fromThrowable(e.getCause()).getCode());
-        assertThat(e.getCause().getMessage())
-            .contains("The offset is within stream, expected offset 1, received 0");
-      }
+      ExecutionException e = assertThrows(ExecutionException.class, () -> response2.get());
+      assertEquals(Exceptions.OffsetAlreadyExists.class, e.getCause().getClass());
+      Exceptions.OffsetAlreadyExists actualError = (OffsetAlreadyExists) e.getCause();
+      assertNotNull(actualError.getStreamName());
+      assertEquals(1, actualError.getExpectedOffset());
+      assertEquals(0, actualError.getActualOffset());
+      assertEquals(Code.ALREADY_EXISTS, Status.fromThrowable(e.getCause()).getCode());
+      assertThat(e.getCause().getMessage())
+          .contains("The offset is within stream, expected offset 1, received 0");
     }
   }
 
   @Test
-  public void testOffsetOutOfRangeError() throws IOException, InterruptedException {
+  void testOffsetOutOfRangeError() throws IOException, InterruptedException {
     WriteStream writeStream =
         writeClient.createWriteStream(
             CreateWriteStreamRequest.newBuilder()
@@ -2179,24 +2158,20 @@ public class ITBigQueryStorageWriteClientTest {
       // Append with an out of range offset
       ApiFuture<AppendRowsResponse> response =
           streamWriter.append(createProtoRowsMultipleColumns(new String[] {"a"}), /* offset= */ 10);
-      try {
-        response.get();
-        Assert.fail("Should fail");
-      } catch (ExecutionException e) {
-        assertEquals(Exceptions.OffsetOutOfRange.class, e.getCause().getClass());
-        Exceptions.OffsetOutOfRange actualError = (OffsetOutOfRange) e.getCause();
-        assertNotNull(actualError.getStreamName());
-        assertEquals(0, actualError.getExpectedOffset());
-        assertEquals(10, actualError.getActualOffset());
-        assertEquals(Code.OUT_OF_RANGE, Status.fromThrowable(e.getCause()).getCode());
-        assertThat(e.getCause().getMessage())
-            .contains("The offset is beyond stream, expected offset 0, received 10");
-      }
+      ExecutionException e = assertThrows(ExecutionException.class, () -> response.get());
+      assertEquals(Exceptions.OffsetOutOfRange.class, e.getCause().getClass());
+      Exceptions.OffsetOutOfRange actualError = (OffsetOutOfRange) e.getCause();
+      assertNotNull(actualError.getStreamName());
+      assertEquals(0, actualError.getExpectedOffset());
+      assertEquals(10, actualError.getActualOffset());
+      assertEquals(Code.OUT_OF_RANGE, Status.fromThrowable(e.getCause()).getCode());
+      assertThat(e.getCause().getMessage())
+          .contains("The offset is beyond stream, expected offset 0, received 10");
     }
   }
 
   @Test
-  public void testStreamReconnect() throws IOException, InterruptedException, ExecutionException {
+  void testStreamReconnect() throws IOException, InterruptedException, ExecutionException {
     WriteStream writeStream =
         writeClient.createWriteStream(
             CreateWriteStreamRequest.newBuilder()
@@ -2226,7 +2201,7 @@ public class ITBigQueryStorageWriteClientTest {
   }
 
   @Test
-  public void testMultiplexingMixedLocation()
+  void testMultiplexingMixedLocation()
       throws IOException, InterruptedException, ExecutionException {
     ConnectionWorkerPool.setOptions(
         ConnectionWorkerPool.Settings.builder()
@@ -2282,7 +2257,7 @@ public class ITBigQueryStorageWriteClientTest {
   }
 
   @Test
-  public void testLargeRequest() throws IOException, InterruptedException, ExecutionException {
+  void testLargeRequest() throws IOException, InterruptedException, ExecutionException {
     String tableName = "largeRequestTable";
     TableId tableId = TableId.of(DATASET, tableName);
     Field col1 = Field.newBuilder("col1", StandardSQLTypeName.STRING).build();
@@ -2325,7 +2300,7 @@ public class ITBigQueryStorageWriteClientTest {
   // Tests that inputs for micro and picos are able to use Arrow to write
   // to BQ
   @Test
-  public void timestamp_arrowWrite() throws IOException {
+  void timestamp_arrowWrite() throws IOException {
     String tableName = "bqstorage_timestamp_write_arrow";
     // Opt to create a new table to write to instead of re-using table to prevent
     // the test from failing due to any issues with deleting data after test.
@@ -2390,7 +2365,7 @@ public class ITBigQueryStorageWriteClientTest {
   // Tests that inputs for micro and picos are able to converted to protobuf
   // and written to BQ
   @Test
-  public void timestamp_protobufWrite()
+  void timestamp_protobufWrite()
       throws IOException, DescriptorValidationException, InterruptedException {
     String tableName = "bqstorage_timestamp_write_protobuf_schema_aware";
     // Opt to create a new table to write to instead of re-using table to prevent
@@ -2444,7 +2419,7 @@ public class ITBigQueryStorageWriteClientTest {
   // Tests that users can use a Protobuf message that contains second a fractional
   // part (pico) to be written to BQ
   @Test
-  public void timestamp_protobufWrite_customMessage_higherPrecision()
+  void timestamp_protobufWrite_customMessage_higherPrecision()
       throws IOException, DescriptorValidationException {
     String tableName = "bqstorage_timestamp_write_protobuf_custom_descriptor";
     // Opt to create a new table to write to instead of re-using table to prevent

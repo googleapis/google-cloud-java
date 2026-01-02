@@ -147,7 +147,7 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
     }
   }
 
-  public void waitForResponseScheduled() throws InterruptedException {
+  void waitForResponseScheduled() throws InterruptedException {
     responseSemaphore.acquire();
   }
 
@@ -156,7 +156,7 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
     return connectionCount;
   }
 
-  public void setFailedStatus(Status failedStatus) {
+  void setFailedStatus(Status failedStatus) {
     this.failedStatus = failedStatus;
   }
 
@@ -304,7 +304,7 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
    * Add a response to end of list. Response can be either an record, or an exception. All repsones
    * must be set up before any rows are appended.
    */
-  public void addResponse(AppendRowsResponse appendRowsResponse) {
+  void addResponse(AppendRowsResponse appendRowsResponse) {
     responses.add(() -> new Response(appendRowsResponse));
   }
 
@@ -312,7 +312,7 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
    * Add a response supplier to end of list. This supplier can be used to simulate retries or other
    * forms of behavior.
    */
-  public void addResponse(Supplier<Response> response) {
+  void addResponse(Supplier<Response> response) {
     responses.add(response);
   }
 
@@ -335,7 +335,7 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
    * Returns the given status, instead of a valid response. This should be treated as an exception
    * on the other side. This will not stop processing.
    */
-  public void addException(com.google.rpc.Status status) {
+  void addException(com.google.rpc.Status status) {
     responses.add(() -> new Response(AppendRowsResponse.newBuilder().setError(status).build()));
   }
 
@@ -343,15 +343,15 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
    * Will abort the connection instead of return a valid response. This should NOT be used to return
    * a retriable error (as that will cause an infinite loop.)
    */
-  public void addNonRetriableError(com.google.rpc.Status status) {
+  void addNonRetriableError(com.google.rpc.Status status) {
     responses.add(() -> new Response(AppendRowsResponse.newBuilder().setError(status).build()));
   }
 
-  public void setVerifyOffset(boolean verifyOffset) {
+  void setVerifyOffset(boolean verifyOffset) {
     this.verifyOffset = verifyOffset;
   }
 
-  public void setReturnErrorDuringExclusiveStreamRetry(boolean retryOnError) {
+  void setReturnErrorDuringExclusiveStreamRetry(boolean retryOnError) {
     this.returnErrorDuringExclusiveStreamRetry = retryOnError;
   }
 
@@ -363,7 +363,7 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
     return new ArrayList<GetWriteStreamRequest>(writeRequests);
   }
 
-  public void reset() {
+  void reset() {
     requests.clear();
     responses.clear();
   }
@@ -377,7 +377,7 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
    * closeAfter should be large enough to give the client some opportunity to receive some of the
    * messages.
    **/
-  public void setCloseEveryNAppends(long closeAfter) {
+  void setCloseEveryNAppends(long closeAfter) {
     this.closeAfter = closeAfter;
   }
 
@@ -390,13 +390,13 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
    * infinite loop. Therefore set the times to close to 1. This will send the two records, force
    * an abort an retry, and then reprocess the records to completion.
    **/
-  public void setTimesToClose(long numberTimesToClose) {
+  void setTimesToClose(long numberTimesToClose) {
     this.numberTimesToClose = numberTimesToClose;
   }
 
   /* The connection will forever return failure after numberTimesToClose. This option shouldn't
    * be used together with setCloseEveryNAppends and setTimesToClose*/
-  public void setCloseForeverAfter(long closeForeverAfter) {
+  void setCloseForeverAfter(long closeForeverAfter) {
     this.closeForeverAfter = closeForeverAfter;
   }
 }

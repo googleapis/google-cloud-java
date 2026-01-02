@@ -32,15 +32,12 @@ import com.google.cloud.bigquery.storage.v1beta2.ReadSession;
 import com.google.cloud.bigquery.storage.v1beta2.SplitReadStreamRequest;
 import com.google.cloud.bigquery.storage.v1beta2.WriteStream;
 import java.util.regex.Pattern;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-@RunWith(JUnit4.class)
 public class ResourceHeaderTest {
 
   private static final String TEST_TABLE_REFERENCE =
@@ -92,14 +89,14 @@ public class ResourceHeaderTest {
   private BigQueryReadClient client;
   private BigQueryWriteClient writeClient;
 
-  @BeforeClass
+  @BeforeAll
   public static void setUpClass() throws Exception {
     server = new InProcessServer<>(new BigQueryReadImplBase() {}, NAME);
     server.start();
   }
 
-  @Before
-  public void setUp() throws Exception {
+  @BeforeEach
+  void setUp() throws Exception {
     channelProvider = LocalChannelProvider.create(NAME);
     BigQueryReadSettings.Builder settingsBuilder =
         BigQueryReadSettings.newBuilder()
@@ -115,19 +112,19 @@ public class ResourceHeaderTest {
     writeClient = BigQueryWriteClient.create(writeSettingsBuilder.build());
   }
 
-  @After
-  public void tearDown() throws Exception {
+  @AfterEach
+  void tearDown() throws Exception {
     client.close();
   }
 
-  @AfterClass
-  public static void tearDownClass() throws Exception {
+  @AfterAll
+  static void tearDownClass() throws Exception {
     server.stop();
     server.blockUntilShutdown();
   }
 
   @Test
-  public void createReadSessionTest() {
+  void createReadSessionTest() {
     try {
       client.createReadSession(
           "parents/project", ReadSession.newBuilder().setTable(TEST_TABLE_REFERENCE).build(), 1);
@@ -138,7 +135,7 @@ public class ResourceHeaderTest {
   }
 
   @Test
-  public void readRowsTest() {
+  void readRowsTest() {
     try {
       ReadRowsRequest request =
           ReadRowsRequest.newBuilder().setReadStream(TEST_STREAM_NAME).setOffset(125).build();
@@ -151,7 +148,7 @@ public class ResourceHeaderTest {
   }
 
   @Test
-  public void splitReadStreamTest() {
+  void splitReadStreamTest() {
     try {
       client.splitReadStream(SplitReadStreamRequest.newBuilder().setName(TEST_STREAM_NAME).build());
     } catch (UnimplementedException e) {
@@ -162,7 +159,7 @@ public class ResourceHeaderTest {
   }
 
   @Test
-  public void createWriteStreamTest() {
+  void createWriteStreamTest() {
     try {
       writeClient.createWriteStream(
           "projects/project/datasets/dataset/tables/table",
@@ -175,7 +172,7 @@ public class ResourceHeaderTest {
   }
 
   @Test
-  public void getWriteStreamTest() {
+  void getWriteStreamTest() {
     try {
       writeClient.getWriteStream(WRITE_STREAM_NAME);
     } catch (UnimplementedException e) {
@@ -187,7 +184,7 @@ public class ResourceHeaderTest {
 
   // Following tests will work after b/185842996 is fixed.
   //  @Test
-  //  public void appendRowsTest() {
+  //  void appendRowsTest() {
   //    try {
   //      AppendRowsRequest req =
   //          AppendRowsRequest.newBuilder().setWriteStream(WRITE_STREAM_NAME).build();
@@ -202,7 +199,7 @@ public class ResourceHeaderTest {
   //  }
   //
   //  @Test
-  //  public void appendRowsManualTest() {
+  //  void appendRowsManualTest() {
   //    try {
   //      StreamWriterV2 streamWriter =
   //          StreamWriterV2.newBuilder(WRITE_STREAM_NAME, writeClient)

@@ -30,15 +30,12 @@ import com.google.api.gax.rpc.UnimplementedException;
 import com.google.cloud.bigquery.storage.v1.*;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteGrpc.BigQueryWriteImplBase;
 import java.util.regex.Pattern;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-@RunWith(JUnit4.class)
 public class WriteHeaderTest {
 
   private static final String TEST_TABLE_REFERENCE =
@@ -61,14 +58,14 @@ public class WriteHeaderTest {
   private LocalChannelProvider channelProvider;
   private BigQueryWriteClient client;
 
-  @BeforeClass
+  @BeforeAll
   public static void setUpClass() throws Exception {
     server = new InProcessServer<>(new BigQueryWriteImplBase() {}, NAME);
     server.start();
   }
 
-  @Before
-  public void setUp() throws Exception {
+  @BeforeEach
+  void setUp() throws Exception {
     channelProvider = LocalChannelProvider.create(NAME);
     BigQueryWriteSettings.Builder settingsBuilder =
         BigQueryWriteSettings.newBuilder()
@@ -83,19 +80,19 @@ public class WriteHeaderTest {
     client = BigQueryWriteClient.create(settingsBuilder.build());
   }
 
-  @After
-  public void tearDown() throws Exception {
+  @AfterEach
+  void tearDown() throws Exception {
     client.close();
   }
 
-  @AfterClass
-  public static void tearDownClass() throws Exception {
+  @AfterAll
+  static void tearDownClass() throws Exception {
     server.stop();
     server.blockUntilShutdown();
   }
 
   @Test
-  public void createWriteStreamTest() {
+  void createWriteStreamTest() {
     CreateWriteStreamRequest request =
         CreateWriteStreamRequest.newBuilder()
             .setParent(TEST_TABLE_REFERENCE)
@@ -110,7 +107,7 @@ public class WriteHeaderTest {
   }
 
   @Test
-  public void writeRowsTest() {
+  void writeRowsTest() {
     BidiStreamingCallable<AppendRowsRequest, AppendRowsResponse> callable =
         client.appendRowsCallable();
     ApiCallContext apiCallContext = null;

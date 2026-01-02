@@ -32,9 +32,9 @@ import com.google.protobuf.Descriptors.DescriptorValidationException;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 /** Integration tests for BigQuery Write API. */
 public class ITBigQueryWriteQuotaRetryTest {
@@ -48,8 +48,8 @@ public class ITBigQueryWriteQuotaRetryTest {
   private static BigQueryWriteClient client;
   private static BigQuery bigquery;
 
-  @BeforeClass
-  public static void beforeClass() throws IOException {
+  @BeforeAll
+  static void beforeAll() throws IOException {
     client = BigQueryWriteClient.create();
 
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
@@ -70,8 +70,8 @@ public class ITBigQueryWriteQuotaRetryTest {
     bigquery.create(tableInfo);
   }
 
-  @AfterClass
-  public static void afterClass() throws InterruptedException {
+  @AfterAll
+  static void afterAll() throws InterruptedException {
     if (client != null) {
       client.close();
       client.awaitTermination(10, TimeUnit.SECONDS);
@@ -84,7 +84,7 @@ public class ITBigQueryWriteQuotaRetryTest {
   }
 
   @Test
-  public void testJsonStreamWriterCommittedStreamWithQuotaRetry()
+  void testJsonStreamWriterCommittedStreamWithQuotaRetry()
       throws IOException, InterruptedException, DescriptorValidationException {
     WriteRetryTestUtil.runExclusiveRetryTest(
         bigquery,
@@ -97,7 +97,7 @@ public class ITBigQueryWriteQuotaRetryTest {
   }
 
   @Test
-  public void testJsonStreamWriterDefaultStreamWithQuotaRetry()
+  void testJsonStreamWriterDefaultStreamWithQuotaRetry()
       throws IOException, InterruptedException, DescriptorValidationException {
     WriteRetryTestUtil.runDefaultRetryTest(
         bigquery,

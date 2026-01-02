@@ -31,15 +31,12 @@ import com.google.cloud.bigquery.storage.v1beta1.Storage.Stream;
 import com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition;
 import com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference;
 import java.util.regex.Pattern;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-@RunWith(JUnit4.class)
 public class ResourceHeaderTest {
 
   private static final TableReference TEST_TABLE_REFERENCE =
@@ -80,14 +77,14 @@ public class ResourceHeaderTest {
   private LocalChannelProvider channelProvider;
   private BigQueryStorageClient client;
 
-  @BeforeClass
+  @BeforeAll
   public static void setUpClass() throws Exception {
     server = new InProcessServer<>(new BigQueryStorageImplBase() {}, NAME);
     server.start();
   }
 
-  @Before
-  public void setUp() throws Exception {
+  @BeforeEach
+  void setUp() throws Exception {
     channelProvider = LocalChannelProvider.create(NAME);
     BigQueryStorageSettings.Builder settingsBuilder =
         BigQueryStorageSettings.newBuilder()
@@ -97,19 +94,19 @@ public class ResourceHeaderTest {
     client = BigQueryStorageClient.create(settingsBuilder.build());
   }
 
-  @After
-  public void tearDown() throws Exception {
+  @AfterEach
+  void tearDown() throws Exception {
     client.close();
   }
 
-  @AfterClass
-  public static void tearDownClass() throws Exception {
+  @AfterAll
+  static void tearDownClass() throws Exception {
     server.stop();
     server.blockUntilShutdown();
   }
 
   @Test
-  public void createReadSessionTest() {
+  void createReadSessionTest() {
     try {
       client.createReadSession(TEST_TABLE_REFERENCE, "parents/project", 1);
     } catch (UnimplementedException e) {
@@ -119,7 +116,7 @@ public class ResourceHeaderTest {
   }
 
   @Test
-  public void readRowsTest() {
+  void readRowsTest() {
     try {
       ReadRowsRequest request =
           ReadRowsRequest.newBuilder()
@@ -134,7 +131,7 @@ public class ResourceHeaderTest {
   }
 
   @Test
-  public void batchCreateReadStreamsForSessionTest() {
+  void batchCreateReadStreamsForSessionTest() {
     try {
       client.batchCreateReadSessionStreams(TEST_SESSION, 1);
     } catch (UnimplementedException e) {
@@ -145,7 +142,7 @@ public class ResourceHeaderTest {
   }
 
   @Test
-  public void finalizeStreamTest() {
+  void finalizeStreamTest() {
     try {
       client.finalizeStream(TEST_STREAM);
     } catch (UnimplementedException e) {
@@ -156,7 +153,7 @@ public class ResourceHeaderTest {
   }
 
   @Test
-  public void splitReadStreamTest() {
+  void splitReadStreamTest() {
     try {
       client.splitReadStream(TEST_STREAM);
     } catch (UnimplementedException e) {

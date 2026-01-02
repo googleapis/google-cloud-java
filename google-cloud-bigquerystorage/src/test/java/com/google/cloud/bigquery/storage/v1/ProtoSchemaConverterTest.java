@@ -15,18 +15,21 @@
  */
 package com.google.cloud.bigquery.storage.v1;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.cloud.bigquery.storage.test.Test.*;
 import com.google.protobuf.DescriptorProtos.FileDescriptorProto;
 import com.google.protobuf.Descriptors;
-import org.junit.*;
+import org.junit.jupiter.api.Test;
 
 public class ProtoSchemaConverterTest {
   @Test
-  public void convertSimple() {
+  void convertSimple() {
     AllSupportedTypes testProto = AllSupportedTypes.newBuilder().setStringValue("abc").build();
     ProtoSchema protoSchema = ProtoSchemaConverter.convert(testProto.getDescriptorForType());
-    Assert.assertEquals(
+    assertEquals(
         "name: \"com_google_cloud_bigquery_storage_test_AllSupportedTypes\"\n"
             + "field {\n"
             + "  name: \"int32_value\"\n"
@@ -101,10 +104,10 @@ public class ProtoSchemaConverterTest {
   }
 
   @Test
-  public void convertNested() {
+  void convertNested() {
     ComplicateType testProto = ComplicateType.newBuilder().build();
     ProtoSchema protoSchema = ProtoSchemaConverter.convert(testProto.getDescriptorForType());
-    Assert.assertEquals(
+    assertEquals(
         "name: \"com_google_cloud_bigquery_storage_test_ComplicateType\"\n"
             + "field {\n"
             + "  name: \"nested_repeated_type\"\n"
@@ -143,34 +146,32 @@ public class ProtoSchemaConverterTest {
   }
 
   @Test
-  public void convertRecursive() {
-    try {
-      RecursiveType testProto = RecursiveType.newBuilder().build();
-      ProtoSchema protoSchema = ProtoSchemaConverter.convert(testProto.getDescriptorForType());
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      Assert.assertEquals(
-          "Recursive type is not supported:com.google.cloud.bigquery.storage.test.RecursiveType",
-          e.getMessage());
-    }
+  void convertRecursive() {
+    RecursiveType testProto = RecursiveType.newBuilder().build();
+    InvalidArgumentException e =
+        assertThrows(
+            InvalidArgumentException.class,
+            () -> ProtoSchemaConverter.convert(testProto.getDescriptorForType()));
+    assertEquals(
+        "Recursive type is not supported:com.google.cloud.bigquery.storage.test.RecursiveType",
+        e.getMessage());
   }
 
   @Test
-  public void convertRecursiveTopMessage() {
-    try {
-      RecursiveTypeTopMessage testProto = RecursiveTypeTopMessage.newBuilder().build();
-      ProtoSchema protoSchema = ProtoSchemaConverter.convert(testProto.getDescriptorForType());
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      Assert.assertEquals(
-          "Recursive type is not"
-              + " supported:com.google.cloud.bigquery.storage.test.RecursiveTypeTopMessage",
-          e.getMessage());
-    }
+  void convertRecursiveTopMessage() {
+    RecursiveTypeTopMessage testProto = RecursiveTypeTopMessage.newBuilder().build();
+    InvalidArgumentException e =
+        assertThrows(
+            InvalidArgumentException.class,
+            () -> ProtoSchemaConverter.convert(testProto.getDescriptorForType()));
+    assertEquals(
+        "Recursive type is not"
+            + " supported:com.google.cloud.bigquery.storage.test.RecursiveTypeTopMessage",
+        e.getMessage());
   }
 
   @Test
-  public void convertDuplicateType() {
+  void convertDuplicateType() throws Descriptors.DescriptorValidationException {
     DuplicateType testProto = DuplicateType.newBuilder().build();
     ProtoSchema protoSchema = ProtoSchemaConverter.convert(testProto.getDescriptorForType());
 
@@ -179,15 +180,11 @@ public class ProtoSchemaConverterTest {
             .setName("foo.proto")
             .addMessageType(protoSchema.getProtoDescriptor())
             .build();
-    try {
-      Descriptors.FileDescriptor fs =
-          Descriptors.FileDescriptor.buildFrom(
-              fileDescriptorProto, new Descriptors.FileDescriptor[0]);
-      Descriptors.Descriptor type =
-          fs.findMessageTypeByName(protoSchema.getProtoDescriptor().getName());
-      Assert.assertEquals(4, type.getFields().size());
-    } catch (Descriptors.DescriptorValidationException ex) {
-      Assert.fail("Got unexpected exception: " + ex.getMessage());
-    }
+    Descriptors.FileDescriptor fs =
+        Descriptors.FileDescriptor.buildFrom(
+            fileDescriptorProto, new Descriptors.FileDescriptor[0]);
+    Descriptors.Descriptor type =
+        fs.findMessageTypeByName(protoSchema.getProtoDescriptor().getName());
+    assertEquals(4, type.getFields().size());
   }
 }

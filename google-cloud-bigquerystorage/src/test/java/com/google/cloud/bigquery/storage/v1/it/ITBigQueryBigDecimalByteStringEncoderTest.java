@@ -16,7 +16,7 @@
 
 package com.google.cloud.bigquery.storage.v1.it;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.google.api.core.ApiFuture;
 import com.google.cloud.ServiceOptions;
@@ -48,11 +48,11 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
-public class ITBigQueryBigDecimalByteStringEncoderTest {
+class ITBigQueryBigDecimalByteStringEncoderTest {
   private static final Logger LOG =
       Logger.getLogger(ITBigQueryBigDecimalByteStringEncoderTest.class.getName());
   private static final String DATASET = RemoteBigQueryHelper.generateDatasetName();
@@ -63,8 +63,8 @@ public class ITBigQueryBigDecimalByteStringEncoderTest {
   private static TableInfo tableInfo;
   private static BigQuery bigquery;
 
-  @BeforeClass
-  public static void beforeClass() throws IOException {
+  @BeforeAll
+  static void beforeAll() throws IOException {
     client = BigQueryWriteClient.create();
 
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
@@ -91,8 +91,8 @@ public class ITBigQueryBigDecimalByteStringEncoderTest {
     bigquery.create(tableInfo);
   }
 
-  @AfterClass
-  public static void afterClass() throws InterruptedException {
+  @AfterAll
+  static void afterAll() throws InterruptedException {
     if (client != null) {
       client.close();
       client.awaitTermination(10, TimeUnit.SECONDS);
@@ -103,7 +103,7 @@ public class ITBigQueryBigDecimalByteStringEncoderTest {
   }
 
   @Test
-  public void TestBigDecimalEncoding()
+  void TestBigDecimalEncoding()
       throws IOException,
           InterruptedException,
           ExecutionException,

@@ -43,7 +43,7 @@ public class FakeBigQueryWrite implements MockGrpcService {
     return new LinkedList<AbstractMessage>(serviceImpl.getCapturedRequests());
   }
 
-  public void waitForResponseScheduled() throws InterruptedException {
+  void waitForResponseScheduled() throws InterruptedException {
     serviceImpl.waitForResponseScheduled();
   }
 
@@ -72,7 +72,7 @@ public class FakeBigQueryWrite implements MockGrpcService {
    * Add a response supplier to end of list. This supplier can be used to simulate retries or other
    * forms of behavior.
    */
-  public void addResponse(Supplier<FakeBigQueryWriteImpl.Response> response) {
+  void addResponse(Supplier<FakeBigQueryWriteImpl.Response> response) {
     serviceImpl.addResponse(response);
   }
 
@@ -81,7 +81,7 @@ public class FakeBigQueryWrite implements MockGrpcService {
     serviceImpl.addConnectionError(exception);
   }
 
-  public void addStatusException(com.google.rpc.Status status) {
+  void addStatusException(com.google.rpc.Status status) {
     serviceImpl.addException(status);
   }
 
@@ -95,19 +95,19 @@ public class FakeBigQueryWrite implements MockGrpcService {
     serviceImpl.reset();
   }
 
-  public void setResponseSleep(Duration sleep) {
+  void setResponseSleep(Duration sleep) {
     serviceImpl.setResponseSleep(sleep);
   }
 
-  public void setCloseEveryNAppends(long closeAfter) {
+  void setCloseEveryNAppends(long closeAfter) {
     serviceImpl.setCloseEveryNAppends(closeAfter);
   }
 
-  public void setTimesToClose(long numberTimesToClose) {
+  void setTimesToClose(long numberTimesToClose) {
     serviceImpl.setTimesToClose(numberTimesToClose);
   }
 
-  public void setCloseForeverAfter(long closeForeverAfter) {
+  void setCloseForeverAfter(long closeForeverAfter) {
     serviceImpl.setCloseForeverAfter(closeForeverAfter);
   }
 
@@ -115,19 +115,19 @@ public class FakeBigQueryWrite implements MockGrpcService {
     return serviceImpl.getConnectionCount();
   }
 
-  public void setExecutor(ScheduledExecutorService executor) {
+  void setExecutor(ScheduledExecutorService executor) {
     serviceImpl.setExecutor(executor);
   }
 
-  public void setFailedStatus(Status failedStatus) {
+  void setFailedStatus(Status failedStatus) {
     serviceImpl.setFailedStatus(failedStatus);
   }
 
-  public void setReturnErrorDuringExclusiveStreamRetry(boolean retryOnError) {
+  void setReturnErrorDuringExclusiveStreamRetry(boolean retryOnError) {
     serviceImpl.setReturnErrorDuringExclusiveStreamRetry(retryOnError);
   }
 
-  public void setVerifyOffset(boolean verifyOffset) {
+  void setVerifyOffset(boolean verifyOffset) {
     serviceImpl.setVerifyOffset(verifyOffset);
   }
 

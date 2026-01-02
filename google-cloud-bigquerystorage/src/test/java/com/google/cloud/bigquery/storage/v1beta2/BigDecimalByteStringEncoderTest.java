@@ -16,47 +16,40 @@
 
 package com.google.cloud.bigquery.storage.v1beta2;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import com.google.protobuf.ByteString;
 import java.math.BigDecimal;
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.jupiter.api.Test;
 
-@RunWith(JUnit4.class)
-public class BigDecimalByteStringEncoderTest {
+class BigDecimalByteStringEncoderTest {
   @Test
-  public void testEncodeBigDecimalandEncodeByteString() {
+  void testEncodeBigDecimalandEncodeByteString() {
     BigDecimal testBD = new BigDecimal("0"); // expected result bd
     ByteString testBS =
         BigDecimalByteStringEncoder.encodeToNumericByteString(testBD); // convert expected to bs
     BigDecimal resultBD =
         BigDecimalByteStringEncoder.decodeNumericByteString(testBS); // convert bs to bd
-    Assert.assertEquals(
-        0, resultBD.compareTo(testBD)); // ensure converted bd is equal to expected bd
+    assertEquals(0, resultBD.compareTo(testBD)); // ensure converted bd is equal to expected bd
 
     testBD = new BigDecimal("1.2");
     testBS = BigDecimalByteStringEncoder.encodeToNumericByteString(testBD);
     resultBD = BigDecimalByteStringEncoder.decodeNumericByteString(testBS);
-    Assert.assertEquals(
-        0, resultBD.compareTo(testBD)); // ensure converted bd is equal to expected bd
+    assertEquals(0, resultBD.compareTo(testBD)); // ensure converted bd is equal to expected bd
 
     testBD = new BigDecimal("-1.2");
     testBS = BigDecimalByteStringEncoder.encodeToNumericByteString(testBD);
     resultBD = BigDecimalByteStringEncoder.decodeNumericByteString(testBS);
-    Assert.assertEquals(
-        0, resultBD.compareTo(testBD)); // ensure converted bd is equal to expected bd
+    assertEquals(0, resultBD.compareTo(testBD)); // ensure converted bd is equal to expected bd
 
     testBD = new BigDecimal("99999999999999999999999999999.999999999");
     testBS = BigDecimalByteStringEncoder.encodeToNumericByteString(testBD);
     resultBD = BigDecimalByteStringEncoder.decodeNumericByteString(testBS);
-    Assert.assertEquals(
-        0, resultBD.compareTo(testBD)); // ensure converted bd is equal to expected bd
+    assertEquals(0, resultBD.compareTo(testBD)); // ensure converted bd is equal to expected bd
 
     testBD = new BigDecimal("-99999999999999999999999999999.999999999");
     testBS = BigDecimalByteStringEncoder.encodeToNumericByteString(testBD);
     resultBD = BigDecimalByteStringEncoder.decodeNumericByteString(testBS);
-    Assert.assertEquals(
-        0, resultBD.compareTo(testBD)); // ensure converted bd is equal to expected bd
+    assertEquals(0, resultBD.compareTo(testBD)); // ensure converted bd is equal to expected bd
   }
 }

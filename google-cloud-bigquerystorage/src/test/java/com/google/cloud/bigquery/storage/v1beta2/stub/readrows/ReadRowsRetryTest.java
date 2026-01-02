@@ -15,9 +15,12 @@
  */
 package com.google.cloud.bigquery.storage.v1beta2.stub.readrows;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GrpcTransportChannel;
-import com.google.api.gax.rpc.FixedTransportChannelProvider;
+import com.google.api.gax.grpc.testing.InProcessServer;
+import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.cloud.bigquery.storage.v1beta2.BigQueryReadClient;
 import com.google.cloud.bigquery.storage.v1beta2.BigQueryReadGrpc.BigQueryReadImplBase;
@@ -27,50 +30,47 @@ import com.google.cloud.bigquery.storage.v1beta2.ReadRowsResponse;
 import com.google.common.collect.Queues;
 import io.grpc.Status.Code;
 import io.grpc.stub.StreamObserver;
-import io.grpc.testing.GrpcServerRule;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.runners.MockitoJUnitRunner;
+import java.util.UUID;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-@RunWith(MockitoJUnitRunner.class)
-public class ReadRowsRetryTest {
-
-  @Rule public GrpcServerRule serverRule = new GrpcServerRule();
+class ReadRowsRetryTest {
 
   private TestBigQueryStorageService service;
   private BigQueryReadClient client;
+  private InProcessServer<?> server;
+  private LocalChannelProvider channelProvider;
 
-  @Before
-  public void setUp() throws IOException {
+  @BeforeEach
+  void setUp() throws Exception {
     service = new TestBigQueryStorageService();
-    serverRule.getServiceRegistry().addService(service);
+    String serverName = UUID.randomUUID().toString();
+    server = new InProcessServer<>(service, serverName);
+    server.start();
+    channelProvider = LocalChannelProvider.create(serverName);
 
     BigQueryReadSettings settings =
         BigQueryReadSettings.newBuilder()
             .setCredentialsProvider(NoCredentialsProvider.create())
-            .setTransportChannelProvider(
-                FixedTransportChannelProvider.create(
-                    GrpcTransportChannel.create(serverRule.getChannel())))
+            .setTransportChannelProvider(channelProvider)
             .build();
 
     client = BigQueryReadClient.create(settings);
   }
 
-  @After
-  public void tearDown() throws Exception {
+  @AfterEach
+  void tearDown() throws Exception {
     client.close();
+    server.stop();
+    server.blockUntilShutdown();
   }
 
   @Test
-  public void happyPathTest() {
+  void happyPathTest() {
     ReadRowsRequest request = RpcExpectation.createRequest("fake-stream", 0);
     service.expectations.add(
         RpcExpectation.create()
@@ -78,11 +78,11 @@ public class ReadRowsRetryTest {
             .respondWithNumberOfRows(10)
             .respondWithNumberOfRows(7));
 
-    Assert.assertEquals(17, getRowCount(request));
+    assertEquals(17, getRowCount(request));
   }
 
   @Test
-  public void immediateRetryTest() {
+  void immediateRetryTest() {
     ReadRowsRequest request = RpcExpectation.createRequest("fake-stream", 0);
     service.expectations.add(
         RpcExpectation.create()
@@ -95,11 +95,11 @@ public class ReadRowsRetryTest {
             .respondWithNumberOfRows(10)
             .respondWithNumberOfRows(7));
 
-    Assert.assertEquals(17, getRowCount(request));
+    assertEquals(17, getRowCount(request));
   }
 
   @Test
-  public void multipleRetryTestWithZeroInitialOffset() {
+  void multipleRetryTestWithZeroInitialOffset() {
     ReadRowsRequest request = RpcExpectation.createRequest("fake-stream", 0);
     service.expectations.add(
         RpcExpectation.create()
@@ -117,11 +117,11 @@ public class ReadRowsRetryTest {
     service.expectations.add(
         RpcExpectation.create().expectRequest("fake-stream", 22).respondWithNumberOfRows(6));
 
-    Assert.assertEquals(28, getRowCount(request));
+    assertEquals(28, getRowCount(request));
   }
 
   @Test
-  public void multipleRetryTestWithNonZeroInitialOffset() {
+  void multipleRetryTestWithNonZeroInitialOffset() {
     ReadRowsRequest request = RpcExpectation.createRequest("fake-stream", 17);
     service.expectations.add(
         RpcExpectation.create()
@@ -139,11 +139,11 @@ public class ReadRowsRetryTest {
     service.expectations.add(
         RpcExpectation.create().expectRequest("fake-stream", 39).respondWithNumberOfRows(3));
 
-    Assert.assertEquals(25, getRowCount(request));
+    assertEquals(25, getRowCount(request));
   }
 
   @Test
-  public void errorAtTheVeryEndTest() {
+  void errorAtTheVeryEndTest() {
     ReadRowsRequest request = RpcExpectation.createRequest("fake-stream", 0);
     service.expectations.add(
         RpcExpectation.create()
@@ -155,7 +155,7 @@ public class ReadRowsRetryTest {
     service.expectations.add(
         RpcExpectation.create().expectRequest("fake-stream", 17).respondWithNumberOfRows(0));
 
-    Assert.assertEquals(17, getRowCount(request));
+    assertEquals(17, getRowCount(request));
   }
 
   private int getRowCount(ReadRowsRequest request) {
@@ -179,17 +179,15 @@ public class ReadRowsRetryTest {
       RpcExpectation expectedRpc = expectations.poll();
       currentRequestIndex++;
 
-      Assert.assertNotNull(
-          "Unexpected request #" + currentRequestIndex + ": " + request.toString(), expectedRpc);
-
-      Assert.assertEquals(
+      assertNotNull(
+          expectedRpc, "Unexpected request #" + currentRequestIndex + ": " + request.toString());
+      assertEquals(
+          expectedRpc.expectedRequest,
+          request,
           "Expected request #"
               + currentRequestIndex
               + " does not match actual request: "
-              + request.toString(),
-          expectedRpc.expectedRequest,
-          request);
-
+              + request.toString());
       for (ReadRowsResponse response : expectedRpc.responses) {
         responseObserver.onNext(response);
       }

@@ -15,6 +15,10 @@
  */
 package com.google.cloud.bigquery.storage.v1beta1;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcStatusCode;
@@ -54,14 +58,13 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-public class BigQueryStorageClientTest {
+class BigQueryStorageClientTest {
   private static MockBigQueryStorage mockBigQueryStorage;
   private static MockServiceHelper serviceHelper;
   private BigQueryStorageClient client;
@@ -69,21 +72,21 @@ public class BigQueryStorageClientTest {
   private int retryCount;
   private Code lastRetryStatusCode;
 
-  @BeforeClass
-  public static void startStaticServer() {
+  @BeforeAll
+  static void startStaticServer() {
     mockBigQueryStorage = new MockBigQueryStorage();
     serviceHelper =
         new MockServiceHelper("in-process-1", Arrays.<MockGrpcService>asList(mockBigQueryStorage));
     serviceHelper.start();
   }
 
-  @AfterClass
-  public static void stopServer() {
+  @AfterAll
+  static void stopServer() {
     serviceHelper.stop();
   }
 
-  @Before
-  public void setUp() throws IOException {
+  @BeforeEach
+  void setUp() throws IOException {
     serviceHelper.reset();
     channelProvider = serviceHelper.createChannelProvider();
     retryCount = 0;
@@ -106,14 +109,14 @@ public class BigQueryStorageClientTest {
     client = BigQueryStorageClient.create(settings);
   }
 
-  @After
-  public void tearDown() throws Exception {
+  @AfterEach
+  void tearDown() throws Exception {
     client.close();
   }
 
   @Test
   @SuppressWarnings("all")
-  public void createReadSessionTest() {
+  void createReadSessionTest() {
     String name = "name3373707";
     ReadSession expectedResponse = ReadSession.newBuilder().setName(name).build();
     mockBigQueryStorage.addResponse(expectedResponse);
@@ -123,16 +126,16 @@ public class BigQueryStorageClientTest {
     int requestedStreams = 1017221410;
 
     ReadSession actualResponse = client.createReadSession(tableReference, parent, requestedStreams);
-    Assert.assertEquals(expectedResponse, actualResponse);
+    assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockBigQueryStorage.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
+    assertEquals(1, actualRequests.size());
     CreateReadSessionRequest actualRequest = (CreateReadSessionRequest) actualRequests.get(0);
 
-    Assert.assertEquals(tableReference, actualRequest.getTableReference());
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertEquals(requestedStreams, actualRequest.getRequestedStreams());
-    Assert.assertTrue(
+    assertEquals(tableReference, actualRequest.getTableReference());
+    assertEquals(parent, actualRequest.getParent());
+    assertEquals(requestedStreams, actualRequest.getRequestedStreams());
+    assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
             GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
@@ -140,25 +143,22 @@ public class BigQueryStorageClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void createReadSessionExceptionTest() throws Exception {
+  void createReadSessionExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockBigQueryStorage.addException(exception);
 
-    try {
-      TableReference tableReference = TableReference.newBuilder().build();
-      String parent = "parent-995424086";
-      int requestedStreams = 1017221410;
+    TableReference tableReference = TableReference.newBuilder().build();
+    String parent = "parent-995424086";
+    int requestedStreams = 1017221410;
 
-      client.createReadSession(tableReference, parent, requestedStreams);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
+    assertThrows(
+        InvalidArgumentException.class,
+        () -> client.createReadSession(tableReference, parent, requestedStreams));
   }
 
   @Test
   @SuppressWarnings("all")
-  public void readRowsTest() throws Exception {
+  void readRowsTest() throws Exception {
     ReadRowsResponse expectedResponse = ReadRowsResponse.newBuilder().build();
     mockBigQueryStorage.addResponse(expectedResponse);
     StreamPosition readPosition = StreamPosition.newBuilder().build();
@@ -170,16 +170,16 @@ public class BigQueryStorageClientTest {
     callable.serverStreamingCall(request, responseObserver);
 
     List<ReadRowsResponse> actualResponses = responseObserver.future().get();
-    Assert.assertEquals(1, actualResponses.size());
-    Assert.assertEquals(expectedResponse, actualResponses.get(0));
+    assertEquals(1, actualResponses.size());
+    assertEquals(expectedResponse, actualResponses.get(0));
 
-    Assert.assertEquals(retryCount, 0);
-    Assert.assertEquals(lastRetryStatusCode, Code.OK);
+    assertEquals(retryCount, 0);
+    assertEquals(lastRetryStatusCode, Code.OK);
   }
 
   @Test
   @SuppressWarnings("all")
-  public void readRowsExceptionTest() throws Exception {
+  void readRowsExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockBigQueryStorage.addException(exception);
     StreamPosition readPosition = StreamPosition.newBuilder().build();
@@ -190,22 +190,19 @@ public class BigQueryStorageClientTest {
     ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> callable = client.readRowsCallable();
     callable.serverStreamingCall(request, responseObserver);
 
-    try {
-      List<ReadRowsResponse> actualResponses = responseObserver.future().get();
-      Assert.fail("No exception thrown");
-    } catch (ExecutionException e) {
-      Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
-    }
+    ExecutionException e =
+        assertThrows(ExecutionException.class, () -> responseObserver.future().get());
+    assertTrue(e.getCause() instanceof InvalidArgumentException);
+    InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+    assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
 
-    Assert.assertEquals(retryCount, 0);
-    Assert.assertEquals(lastRetryStatusCode, Code.OK);
+    assertEquals(retryCount, 0);
+    assertEquals(lastRetryStatusCode, Code.OK);
   }
 
   @Test
   @SuppressWarnings("all")
-  public void batchCreateReadSessionStreamsTest() {
+  void batchCreateReadSessionStreamsTest() {
     BatchCreateReadSessionStreamsResponse expectedResponse =
         BatchCreateReadSessionStreamsResponse.newBuilder().build();
     mockBigQueryStorage.addResponse(expectedResponse);
@@ -215,16 +212,16 @@ public class BigQueryStorageClientTest {
 
     BatchCreateReadSessionStreamsResponse actualResponse =
         client.batchCreateReadSessionStreams(session, requestedStreams);
-    Assert.assertEquals(expectedResponse, actualResponse);
+    assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockBigQueryStorage.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
+    assertEquals(1, actualRequests.size());
     BatchCreateReadSessionStreamsRequest actualRequest =
         (BatchCreateReadSessionStreamsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(session, actualRequest.getSession());
-    Assert.assertEquals(requestedStreams, actualRequest.getRequestedStreams());
-    Assert.assertTrue(
+    assertEquals(session, actualRequest.getSession());
+    assertEquals(requestedStreams, actualRequest.getRequestedStreams());
+    assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
             GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
@@ -232,24 +229,21 @@ public class BigQueryStorageClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void batchCreateReadSessionStreamsExceptionTest() throws Exception {
+  void batchCreateReadSessionStreamsExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockBigQueryStorage.addException(exception);
 
-    try {
-      ReadSession session = ReadSession.newBuilder().build();
-      int requestedStreams = 1017221410;
+    ReadSession session = ReadSession.newBuilder().build();
+    int requestedStreams = 1017221410;
 
-      client.batchCreateReadSessionStreams(session, requestedStreams);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
+    assertThrows(
+        InvalidArgumentException.class,
+        () -> client.batchCreateReadSessionStreams(session, requestedStreams));
   }
 
   @Test
   @SuppressWarnings("all")
-  public void finalizeStreamTest() {
+  void finalizeStreamTest() {
     Empty expectedResponse = Empty.newBuilder().build();
     mockBigQueryStorage.addResponse(expectedResponse);
 
@@ -258,11 +252,11 @@ public class BigQueryStorageClientTest {
     client.finalizeStream(stream);
 
     List<AbstractMessage> actualRequests = mockBigQueryStorage.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
+    assertEquals(1, actualRequests.size());
     FinalizeStreamRequest actualRequest = (FinalizeStreamRequest) actualRequests.get(0);
 
-    Assert.assertEquals(stream, actualRequest.getStream());
-    Assert.assertTrue(
+    assertEquals(stream, actualRequest.getStream());
+    assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
             GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
@@ -270,37 +264,32 @@ public class BigQueryStorageClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void finalizeStreamExceptionTest() throws Exception {
+  void finalizeStreamExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockBigQueryStorage.addException(exception);
 
-    try {
-      Stream stream = Stream.newBuilder().build();
+    Stream stream = Stream.newBuilder().build();
 
-      client.finalizeStream(stream);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
+    assertThrows(InvalidArgumentException.class, () -> client.finalizeStream(stream));
   }
 
   @Test
   @SuppressWarnings("all")
-  public void splitReadStreamTest() {
+  void splitReadStreamTest() {
     SplitReadStreamResponse expectedResponse = SplitReadStreamResponse.newBuilder().build();
     mockBigQueryStorage.addResponse(expectedResponse);
 
     Stream originalStream = Stream.newBuilder().build();
 
     SplitReadStreamResponse actualResponse = client.splitReadStream(originalStream);
-    Assert.assertEquals(expectedResponse, actualResponse);
+    assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockBigQueryStorage.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
+    assertEquals(1, actualRequests.size());
     SplitReadStreamRequest actualRequest = (SplitReadStreamRequest) actualRequests.get(0);
 
-    Assert.assertEquals(originalStream, actualRequest.getOriginalStream());
-    Assert.assertTrue(
+    assertEquals(originalStream, actualRequest.getOriginalStream());
+    assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
             GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
@@ -308,23 +297,18 @@ public class BigQueryStorageClientTest {
 
   @Test
   @SuppressWarnings("all")
-  public void splitReadStreamExceptionTest() throws Exception {
+  void splitReadStreamExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockBigQueryStorage.addException(exception);
 
-    try {
-      Stream originalStream = Stream.newBuilder().build();
+    Stream originalStream = Stream.newBuilder().build();
 
-      client.splitReadStream(originalStream);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
+    assertThrows(InvalidArgumentException.class, () -> client.splitReadStream(originalStream));
   }
 
   @Test
   @SuppressWarnings("all")
-  public void readRowsRetryingEOSExceptionTest() throws ExecutionException, InterruptedException {
+  void readRowsRetryingEOSExceptionTest() throws ExecutionException, InterruptedException {
     ApiException exception =
         new InternalException(
             new StatusRuntimeException(
@@ -343,15 +327,15 @@ public class BigQueryStorageClientTest {
     ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> callable = client.readRowsCallable();
     callable.serverStreamingCall(request, responseObserver);
     List<ReadRowsResponse> actualResponses = responseObserver.future().get();
-    Assert.assertEquals(1, actualResponses.size());
+    assertEquals(1, actualResponses.size());
 
-    Assert.assertEquals(retryCount, 1);
-    Assert.assertEquals(lastRetryStatusCode, Code.INTERNAL);
+    assertEquals(retryCount, 1);
+    assertEquals(lastRetryStatusCode, Code.INTERNAL);
   }
 
   @Test
   @SuppressWarnings("all")
-  public void readRowsRetryingHttp2StreamRstTest() throws ExecutionException, InterruptedException {
+  void readRowsRetryingHttp2StreamRstTest() throws ExecutionException, InterruptedException {
     ApiException exception =
         new InternalException(
             new StatusRuntimeException(
@@ -370,15 +354,15 @@ public class BigQueryStorageClientTest {
     ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> callable = client.readRowsCallable();
     callable.serverStreamingCall(request, responseObserver);
     List<ReadRowsResponse> actualResponses = responseObserver.future().get();
-    Assert.assertEquals(1, actualResponses.size());
+    assertEquals(1, actualResponses.size());
 
-    Assert.assertEquals(retryCount, 1);
-    Assert.assertEquals(lastRetryStatusCode, Code.INTERNAL);
+    assertEquals(retryCount, 1);
+    assertEquals(lastRetryStatusCode, Code.INTERNAL);
   }
 
   @Test
   @SuppressWarnings("all")
-  public void readRowsNoRetryForResourceExhaustedWithoutRetryInfo()
+  void readRowsNoRetryForResourceExhaustedWithoutRetryInfo()
       throws ExecutionException, InterruptedException {
     ApiException exception =
         new ResourceExhaustedException(
@@ -397,23 +381,19 @@ public class BigQueryStorageClientTest {
     ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> callable = client.readRowsCallable();
     callable.serverStreamingCall(request, responseObserver);
 
-    try {
-      List<ReadRowsResponse> actualResponses = responseObserver.future().get();
-      Assert.fail("No exception thrown");
-    } catch (ExecutionException e) {
-      Assert.assertTrue(e.getCause() instanceof ResourceExhaustedException);
-      ResourceExhaustedException apiException = (ResourceExhaustedException) e.getCause();
-      Assert.assertEquals(
-          StatusCode.Code.RESOURCE_EXHAUSTED, apiException.getStatusCode().getCode());
-    }
+    ExecutionException e =
+        assertThrows(ExecutionException.class, () -> responseObserver.future().get());
+    assertTrue(e.getCause() instanceof ResourceExhaustedException);
+    ResourceExhaustedException apiException = (ResourceExhaustedException) e.getCause();
+    assertEquals(StatusCode.Code.RESOURCE_EXHAUSTED, apiException.getStatusCode().getCode());
 
-    Assert.assertEquals(retryCount, 0);
-    Assert.assertEquals(lastRetryStatusCode, Code.OK);
+    assertEquals(retryCount, 0);
+    assertEquals(lastRetryStatusCode, Code.OK);
   }
 
   @Test
   @SuppressWarnings("all")
-  public void readRowsNoRetryForResourceExhaustedWithRetryInfo()
+  void readRowsNoRetryForResourceExhaustedWithRetryInfo()
       throws ExecutionException, InterruptedException {
     RetryInfo retryInfo =
         RetryInfo.newBuilder()
@@ -459,9 +439,9 @@ public class BigQueryStorageClientTest {
     ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> callable = client.readRowsCallable();
     callable.serverStreamingCall(request, responseObserver);
     List<ReadRowsResponse> actualResponses = responseObserver.future().get();
-    Assert.assertEquals(1, actualResponses.size());
+    assertEquals(1, actualResponses.size());
 
-    Assert.assertEquals(retryCount, 1);
-    Assert.assertEquals(lastRetryStatusCode, Code.RESOURCE_EXHAUSTED);
+    assertEquals(retryCount, 1);
+    assertEquals(lastRetryStatusCode, Code.RESOURCE_EXHAUSTED);
   }
 }

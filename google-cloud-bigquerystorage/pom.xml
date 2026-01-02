@@ -74,10 +74,6 @@
       <artifactId>grpc-protobuf</artifactId>
     </dependency>
     <dependency>
-      <groupId>io.grpc</groupId>
-      <artifactId>grpc-util</artifactId>
-    </dependency>
-    <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>api-common</artifactId>
     </dependency>
@@ -198,6 +194,23 @@
       <scope>test</scope>
     </dependency>
     <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <!-- The generated tests from gapic-generator are still generated with JUnit4. -->
+    <!-- Remove once they are migrated to JUnit 5.x+ -->
+    <dependency>
+      <groupId>org.junit.vintage</groupId>
+      <artifactId>junit-vintage-engine</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
       <groupId>com.google.http-client</groupId>
       <artifactId>google-http-client</artifactId>
       <version>1.47.1</version>
@@ -235,12 +248,6 @@
     <dependency>
       <groupId>com.google.protobuf</groupId>
       <artifactId>protobuf-java-util</artifactId>
-      <scope>test</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>io.grpc</groupId>
-      <artifactId>grpc-testing</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -333,6 +340,10 @@
           <version>${opentest4j.version}</version>
         </dependency>
         <dependency>
+          <groupId>org.junit.jupiter</groupId>
+          <artifactId>junit-jupiter-engine</artifactId>
+        </dependency>
+        <dependency>
           <groupId>org.junit.vintage</groupId>
           <artifactId>junit-vintage-engine</artifactId>
           <version>${junit-vintage-engine.version}</version>
@@ -345,6 +356,11 @@
             <artifactId>maven-surefire-plugin</artifactId>
             <version>${surefire.version}</version>
             <dependencies>
+              <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-engine</artifactId>
+                <version>${junit-vintage-engine.version}</version>
+              </dependency>
               <dependency>
                 <groupId>org.junit.vintage</groupId>
                 <artifactId>junit-vintage-engine</artifactId>

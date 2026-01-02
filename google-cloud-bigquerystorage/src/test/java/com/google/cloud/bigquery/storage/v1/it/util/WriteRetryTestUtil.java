@@ -16,7 +16,9 @@
 
 package com.google.cloud.bigquery.storage.v1.it.util;
 
-import static org.junit.Assert.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.retrying.RetrySettings;
@@ -43,7 +45,6 @@ import java.util.concurrent.ExecutionException;
 import java.util.logging.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.junit.Assert;
 
 public class WriteRetryTestUtil {
   private static final Logger LOG =
@@ -100,10 +101,10 @@ public class WriteRetryTestUtil {
       for (int i = 0; i < requestCount; i++) {
         LOG.info("Waiting for request " + i);
         try {
-          Assert.assertEquals(
+          assertEquals(
               allResponses.get(i).get().getAppendResult().getOffset().getValue(), i * rowBatchSize);
         } catch (ExecutionException ex) {
-          Assert.fail("Unexpected error " + ex);
+          fail("Unexpected error " + ex);
         }
       }
     }
@@ -151,7 +152,7 @@ public class WriteRetryTestUtil {
         try {
           assertFalse(allResponses.get(i).get().hasError());
         } catch (Exception ex) {
-          Assert.fail("Unexpected error " + ex);
+          fail("Unexpected error " + ex);
         }
       }
     }

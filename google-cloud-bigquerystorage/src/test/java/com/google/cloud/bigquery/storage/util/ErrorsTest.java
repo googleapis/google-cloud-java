@@ -15,25 +15,22 @@
  */
 package com.google.cloud.bigquery.storage.util;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.protobuf.Duration;
 import com.google.protobuf.Parser;
 import com.google.rpc.RetryInfo;
 import io.grpc.Metadata;
 import io.grpc.Status;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.jupiter.api.Test;
 
-@RunWith(JUnit4.class)
-public class ErrorsTest {
+class ErrorsTest {
 
   @Test
-  public void testRetryableInternalForRstErrors() {
+  void testRetryableInternalForRstErrors() {
     assertTrue(
         Errors.isRetryableInternalStatus(
             Status.INTERNAL.withDescription(
@@ -46,13 +43,13 @@ public class ErrorsTest {
   }
 
   @Test
-  public void testNonRetryableInternalError() {
+  void testNonRetryableInternalError() {
     assertFalse(Errors.isRetryableInternalStatus(Status.INTERNAL));
     assertFalse(Errors.isRetryableInternalStatus(Status.INTERNAL.withDescription("Server error.")));
   }
 
   @Test
-  public void testNonRetryableOtherError() {
+  void testNonRetryableOtherError() {
     assertFalse(
         Errors.isRetryableInternalStatus(
             Status.DATA_LOSS.withDescription(
@@ -60,7 +57,7 @@ public class ErrorsTest {
   }
 
   @Test
-  public void testIsRetryableStatus() {
+  void testIsRetryableStatus() {
     Errors.IsRetryableStatusResult result =
         Errors.isRetryableStatus(
             Status.INTERNAL.withDescription(

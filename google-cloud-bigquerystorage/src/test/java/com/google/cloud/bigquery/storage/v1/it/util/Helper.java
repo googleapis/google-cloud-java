@@ -16,8 +16,8 @@
 
 package com.google.cloud.bigquery.storage.v1.it.util;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.gax.rpc.ServerStream;
@@ -158,12 +158,12 @@ public class Helper {
 
     ReadSession session = client.createReadSession(createSessionRequestBuilder.build());
     assertEquals(
+        1,
+        session.getStreamsCount(),
         String.format(
             "Did not receive expected number of streams for table '%s' CreateReadSession"
                 + " response:%n%s",
-            table, session.toString()),
-        1,
-        session.getStreamsCount());
+            table, session.toString()));
 
     ReadRowsRequest readRowsRequest =
         ReadRowsRequest.newBuilder().setReadStream(session.getStreams(0).getName()).build();

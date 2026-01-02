@@ -142,6 +142,8 @@
       </dependency>
 
       <!-- Test dependencies -->
+      <!-- JUnit 4.x is still needed as the gapic-generator still generates tests with it -->
+      <!-- Remove once the gapic-generator is able to generate JUnit 5.x tests -->
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
@@ -185,6 +187,10 @@
             <ignoredUnusedDeclaredDependencies>
               <ignoredUnusedDeclaredDependency>org.objenesis:objenesis</ignoredUnusedDeclaredDependency>
               <ignoredUnusedDeclaredDependency>javax.annotation:javax.annotation-api</ignoredUnusedDeclaredDependency>
+              <!-- maven-dependency-plugin cannot detect the runtime usage of junit-jupiter-engine for executing JUnit 5+ tests. -->
+              <ignoredUnusedDeclaredDependency>org.junit.jupiter:junit-jupiter-engine</ignoredUnusedDeclaredDependency>
+              <!-- maven-dependency-plugin cannot detect the runtime usage of junit-vintage-engine for executing JUnit 4.x tests. -->
+              <ignoredUnusedDeclaredDependency>org.junit.vintage:junit-vintage-engine</ignoredUnusedDeclaredDependency>
             </ignoredUnusedDeclaredDependencies>
           </configuration>
         </plugin>

@@ -36,16 +36,13 @@ import com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamResponse
 import com.google.protobuf.Empty;
 import java.time.Duration;
 import java.util.Set;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-@RunWith(JUnit4.class)
 public class EnhancedBigQueryStorageStubSettingsTest {
 
   @Test
-  public void testSettingsArePreserved() {
+  void testSettingsArePreserved() {
     String endpoint = "some.other.host:123";
     CredentialsProvider credentialsProvider = Mockito.mock(CredentialsProvider.class);
     Duration watchdogInterval = Duration.ofSeconds(12);
@@ -104,14 +101,14 @@ public class EnhancedBigQueryStorageStubSettingsTest {
   }
 
   @Test
-  public void testCreateReadSessionSettings() {
+  void testCreateReadSessionSettings() {
     UnaryCallSettings.Builder<CreateReadSessionRequest, ReadSession> builder =
         EnhancedBigQueryStorageStubSettings.newBuilder().createReadSessionSettings();
     verifyRetrySettings(builder.getRetryableCodes(), builder.getRetrySettings());
   }
 
   @Test
-  public void testReadRowsSettings() {
+  void testReadRowsSettings() {
     ServerStreamingCallSettings.Builder<ReadRowsRequest, ReadRowsResponse> builder =
         EnhancedBigQueryStorageStubSettings.newBuilder().readRowsSettings();
     assertThat(builder.getRetryableCodes()).contains(Code.UNAVAILABLE);
@@ -127,7 +124,7 @@ public class EnhancedBigQueryStorageStubSettingsTest {
   }
 
   @Test
-  public void testBatchCreateReadSessionStreamsSettings() {
+  void testBatchCreateReadSessionStreamsSettings() {
     UnaryCallSettings.Builder<
             BatchCreateReadSessionStreamsRequest, BatchCreateReadSessionStreamsResponse>
         builder =
@@ -137,14 +134,14 @@ public class EnhancedBigQueryStorageStubSettingsTest {
   }
 
   @Test
-  public void testFinalizeStreamSettings() {
+  void testFinalizeStreamSettings() {
     UnaryCallSettings.Builder<FinalizeStreamRequest, Empty> builder =
         EnhancedBigQueryStorageStubSettings.newBuilder().finalizeStreamSettings();
     verifyRetrySettings(builder.getRetryableCodes(), builder.getRetrySettings());
   }
 
   @Test
-  public void testSplitReadStreamSettings() {
+  void testSplitReadStreamSettings() {
     UnaryCallSettings.Builder<SplitReadStreamRequest, SplitReadStreamResponse> builder =
         EnhancedBigQueryStorageStubSettings.newBuilder().splitReadStreamSettings();
     verifyRetrySettings(builder.getRetryableCodes(), builder.getRetrySettings());

@@ -91,7 +91,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
    * This will advance the reference time of the executor and execute (in the same thread) any
    * outstanding callable which execution time has passed.
    */
-  public void advanceTime(Duration toAdvance) {
+  void advanceTime(Duration toAdvance) {
     LOG.info(
         "Advance to time to:"
             + Instant.ofEpochMilli(clock.millisTime() + toAdvance.toMillis()).toString());

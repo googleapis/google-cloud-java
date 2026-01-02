@@ -25,7 +25,7 @@ public class FakeClock implements ApiClock {
   private final AtomicLong millis = new AtomicLong();
 
   // Advances the clock value by {@code time} in {@code timeUnit}.
-  public void advance(long time, TimeUnit timeUnit) {
+  void advance(long time, TimeUnit timeUnit) {
     millis.addAndGet(timeUnit.toMillis(time));
   }
 

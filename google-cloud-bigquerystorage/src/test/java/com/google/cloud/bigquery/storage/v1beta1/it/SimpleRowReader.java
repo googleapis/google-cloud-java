@@ -62,7 +62,7 @@ public class SimpleRowReader {
    * @param avroRows object returned from the ReadRowsResponse.
    * @param rowConsumer consumer that accepts GenericRecord.
    */
-  public void processRows(AvroRows avroRows, AvroRowConsumer rowConsumer) throws IOException {
+  void processRows(AvroRows avroRows, AvroRowConsumer rowConsumer) throws IOException {
     Preconditions.checkNotNull(avroRows);
     Preconditions.checkNotNull(rowConsumer);
     decoder =

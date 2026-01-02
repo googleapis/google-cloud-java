@@ -15,9 +15,9 @@
  */
 package com.google.cloud.bigquery.storage.v1;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.cloud.bigquery.storage.test.JsonTest;
 import com.google.cloud.bigquery.storage.test.SchemaTest;
@@ -29,12 +29,9 @@ import com.google.protobuf.Descriptors.FieldDescriptor;
 import com.google.protobuf.Int64Value;
 import java.util.HashMap;
 import java.util.Map;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.jupiter.api.Test;
 
-@RunWith(JUnit4.class)
-public class BQTableSchemaToProtoDescriptorTest {
+class BQTableSchemaToProtoDescriptorTest {
   // This is a map between the TableFieldSchema.Type and the descriptor it is supposed to
   // produce. The produced descriptor will be used to check against the entry values here.
   private static Map<TableFieldSchema.Type, Descriptor> BQTableTypeToCorrectProtoDescriptorTest =
@@ -82,7 +79,7 @@ public class BQTableSchemaToProtoDescriptorTest {
       // Check type
       FieldDescriptor.Type convertedType = convertedField.getType();
       FieldDescriptor.Type originalType = expectedField.getType();
-      assertEquals(convertedField.getName(), convertedType, originalType);
+      assertEquals(convertedType, originalType, convertedField.getName());
       // Check mode
       assertEquals(expectedField.isRepeated(), convertedField.isRepeated());
       assertEquals(expectedField.isRequired(), convertedField.isRequired());
@@ -95,7 +92,7 @@ public class BQTableSchemaToProtoDescriptorTest {
   }
 
   @Test
-  public void testSimpleTypes() throws Exception {
+  void testSimpleTypes() throws Exception {
     for (Map.Entry<TableFieldSchema.Type, Descriptor> entry :
         BQTableTypeToCorrectProtoDescriptorTest.entrySet()) {
       final TableFieldSchema tableFieldSchema =
@@ -114,7 +111,7 @@ public class BQTableSchemaToProtoDescriptorTest {
 
   // BQ Timestamp field with higher precision (12) is mapped to a String protobuf type (not int64)
   @Test
-  public void testTimestampType_higherTimestampPrecision()
+  void testTimestampType_higherTimestampPrecision()
       throws Descriptors.DescriptorValidationException {
     TableFieldSchema tableFieldSchema =
         TableFieldSchema.newBuilder()
@@ -130,7 +127,7 @@ public class BQTableSchemaToProtoDescriptorTest {
   }
 
   @Test
-  public void testRange() throws Exception {
+  void testRange() throws Exception {
     final TableSchema tableSchema =
         TableSchema.newBuilder()
             .addFields(
@@ -200,7 +197,7 @@ public class BQTableSchemaToProtoDescriptorTest {
   }
 
   @Test
-  public void testStructSimple() throws Exception {
+  void testStructSimple() throws Exception {
     final TableFieldSchema stringType =
         TableFieldSchema.newBuilder()
             .setType(TableFieldSchema.Type.STRING)
@@ -221,7 +218,7 @@ public class BQTableSchemaToProtoDescriptorTest {
   }
 
   @Test
-  public void testStructComplex() throws Exception {
+  void testStructComplex() throws Exception {
     final TableFieldSchema test_int =
         TableFieldSchema.newBuilder()
             .setType(TableFieldSchema.Type.INT64)
@@ -467,7 +464,7 @@ public class BQTableSchemaToProtoDescriptorTest {
   }
 
   @Test
-  public void testCasingComplexStruct() throws Exception {
+  void testCasingComplexStruct() throws Exception {
     final TableFieldSchema required =
         TableFieldSchema.newBuilder()
             .setType(TableFieldSchema.Type.INT64)
@@ -547,7 +544,7 @@ public class BQTableSchemaToProtoDescriptorTest {
   }
 
   @Test
-  public void testOptions() throws Exception {
+  void testOptions() throws Exception {
     final TableFieldSchema required =
         TableFieldSchema.newBuilder()
             .setType(TableFieldSchema.Type.INT64)
@@ -578,7 +575,7 @@ public class BQTableSchemaToProtoDescriptorTest {
   }
 
   @Test
-  public void testDescriptorReuseDuringCreation() throws Exception {
+  void testDescriptorReuseDuringCreation() throws Exception {
     final TableFieldSchema test_int =
         TableFieldSchema.newBuilder()
             .setType(TableFieldSchema.Type.INT64)
@@ -635,7 +632,7 @@ public class BQTableSchemaToProtoDescriptorTest {
   }
 
   @Test
-  public void testNestedFlexibleFieldName() throws Exception {
+  void testNestedFlexibleFieldName() throws Exception {
     final TableFieldSchema stringField =
         TableFieldSchema.newBuilder()
             .setType(TableFieldSchema.Type.STRING)
@@ -663,7 +660,7 @@ public class BQTableSchemaToProtoDescriptorTest {
   }
 
   @Test
-  public void timestampField_defaultPrecision() throws Exception {
+  void timestampField_defaultPrecision() throws Exception {
     TableFieldSchema timestampField =
         TableFieldSchema.newBuilder()
             .setType(TableFieldSchema.Type.TIMESTAMP)
@@ -676,7 +673,7 @@ public class BQTableSchemaToProtoDescriptorTest {
   }
 
   @Test
-  public void timestampField_picosecondPrecision() throws Exception {
+  void timestampField_picosecondPrecision() throws Exception {
     TableFieldSchema timestampField =
         TableFieldSchema.newBuilder()
             .setType(TableFieldSchema.Type.TIMESTAMP)
@@ -690,7 +687,7 @@ public class BQTableSchemaToProtoDescriptorTest {
   }
 
   @Test
-  public void timestampField_unexpectedPrecision() throws Exception {
+  void timestampField_unexpectedPrecision() throws Exception {
     TableFieldSchema timestampField =
         TableFieldSchema.newBuilder()
             .setType(TableFieldSchema.Type.TIMESTAMP)

@@ -17,9 +17,9 @@ package com.google.cloud.bigquery.storage.v1;
 
 import static com.google.common.truth.Truth.assertThat;
 import static java.nio.charset.StandardCharsets.UTF_8;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.FlowController;
@@ -61,14 +61,11 @@ import org.apache.arrow.vector.types.pojo.ArrowType;
 import org.apache.arrow.vector.types.pojo.Field;
 import org.apache.arrow.vector.types.pojo.FieldType;
 import org.apache.arrow.vector.types.pojo.Schema;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-@RunWith(JUnit4.class)
-public class ConnectionWorkerTest {
+class ConnectionWorkerTest {
   private static final Logger log = Logger.getLogger(StreamWriter.class.getName());
   private static final String TEST_STREAM_1 = "projects/p1/datasets/d1/tables/t1/streams/s1";
   private static final String TEST_STREAM_2 = "projects/p2/datasets/d2/tables/t2/streams/s2";
@@ -86,8 +83,8 @@ public class ConnectionWorkerTest {
   private static MockServiceHelper serviceHelper;
   private BigQueryWriteClient client;
 
-  @Before
-  public void setUp() throws Exception {
+  @BeforeEach
+  void setUp() throws Exception {
     testBigQueryWrite = new FakeBigQueryWrite();
     ConnectionWorker.setMaxInflightQueueWaitTime(300000);
     ConnectionWorker.setMaxInflightRequestWaitTime(Duration.ofMinutes(10));
@@ -105,8 +102,8 @@ public class ConnectionWorkerTest {
                 .build());
   }
 
-  @After
-  public void cleanUp() throws InterruptedException {
+  @AfterEach
+  void cleanUp() throws InterruptedException {
     serviceHelper.stop();
 
     client.close();
@@ -114,7 +111,7 @@ public class ConnectionWorkerTest {
   }
 
   @Test
-  public void testMultiplexedAppendSuccess_NonNullTraceId() throws Exception {
+  void testMultiplexedAppendSuccess_NonNullTraceId() throws Exception {
     testMultiplexedIngestion(
         /* sw1TraceId= */ "header_1:trailer_1",
         /* sw2TraceId= */ "header_2:trailer_2",
@@ -123,7 +120,7 @@ public class ConnectionWorkerTest {
   }
 
   @Test
-  public void testMultiplexedAppendSuccess_EmptyTraceId() throws Exception {
+  void testMultiplexedAppendSuccess_EmptyTraceId() throws Exception {
     testMultiplexedIngestion(
         /* sw1TraceId= */ "header_1:trailer_1",
         /* sw2TraceId= */ "",
@@ -252,10 +249,10 @@ public class ConnectionWorkerTest {
   }
 
   @Test
-  public void testMultiplexedAppendSuccess_MixEmptyAndNonEmptyTraceId() throws Exception {}
+  void testMultiplexedAppendSuccess_MixEmptyAndNonEmptyTraceId() throws Exception {}
 
   @Test
-  public void testAppendInSameStream_switchSchema() throws Exception {
+  void testAppendInSameStream_switchSchema() throws Exception {
     try (ConnectionWorker connectionWorker = createMultiplexedConnectionWorker()) {
       long appendCount = 20;
       for (long i = 0; i < appendCount; i++) {
@@ -377,7 +374,7 @@ public class ConnectionWorkerTest {
   }
 
   @Test
-  public void testAppendInSameStreamSwitchArrowSchema() throws Exception {
+  void testAppendInSameStreamSwitchArrowSchema() throws Exception {
     try (ConnectionWorker connectionWorker = createMultiplexedConnectionWorker()) {
       long appendCount = 60;
       for (long i = 0; i < appendCount; i++) {
@@ -495,7 +492,7 @@ public class ConnectionWorkerTest {
   }
 
   @Test
-  public void testAppendButInflightQueueFull() throws Exception {
+  void testAppendButInflightQueueFull() throws Exception {
     ProtoSchema schema1 = createProtoSchema("foo");
     StreamWriter sw1 =
         StreamWriter.newBuilder(TEST_STREAM_1, client)
@@ -555,7 +552,7 @@ public class ConnectionWorkerTest {
   }
 
   @Test
-  public void testThrowExceptionWhileWithinAppendLoop() throws Exception {
+  void testThrowExceptionWhileWithinAppendLoop() throws Exception {
     ProtoSchema schema1 = createProtoSchema("foo");
     StreamWriter sw1 =
         StreamWriter.newBuilder(TEST_STREAM_1, client)
@@ -627,7 +624,7 @@ public class ConnectionWorkerTest {
   }
 
   @Test
-  public void testLocationMismatch() throws Exception {
+  void testLocationMismatch() throws Exception {
     ProtoSchema schema1 = createProtoSchema("foo");
     StreamWriter sw1 =
         StreamWriter.newBuilder(TEST_STREAM_1, client)
@@ -666,7 +663,7 @@ public class ConnectionWorkerTest {
   }
 
   @Test
-  public void testStreamNameMismatch() throws Exception {
+  void testStreamNameMismatch() throws Exception {
     ProtoSchema schema1 = createProtoSchema("foo");
     StreamWriter sw1 =
         StreamWriter.newBuilder(TEST_STREAM_1, client).setWriterSchema(schema1).build();
@@ -703,7 +700,7 @@ public class ConnectionWorkerTest {
   }
 
   @Test
-  public void testExponentialBackoff() throws Exception {
+  void testExponentialBackoff() throws Exception {
     assertThat(ConnectionWorker.calculateSleepTimeMilli(0)).isEqualTo(50);
     assertThat(ConnectionWorker.calculateSleepTimeMilli(5)).isEqualTo(1600);
     assertThat(ConnectionWorker.calculateSleepTimeMilli(100)).isEqualTo(60000);
@@ -852,7 +849,7 @@ public class ConnectionWorkerTest {
   }
 
   @Test
-  public void testLoadCompare_compareLoad() {
+  void testLoadCompare_compareLoad() {
     // In flight bytes bucket is split as per 1024 requests per bucket.
     // When in flight bytes is in lower bucket, even destination count is higher and request count
     // is higher, the load is still smaller.
@@ -872,7 +869,7 @@ public class ConnectionWorkerTest {
   }
 
   @Test
-  public void testLoadIsOverWhelmed() {
+  void testLoadIsOverWhelmed() {
     // Only in flight request is considered in current overwhelmed calculation.
     Load load1 = ConnectionWorker.Load.create(60, 10, 100, 90, 100);
     assertThat(load1.isOverwhelmed()).isTrue();
@@ -882,7 +879,7 @@ public class ConnectionWorkerTest {
   }
 
   @Test
-  public void testThrowExceptionWhileWithinAppendLoop_MaxWaitTimeExceed() throws Exception {
+  void testThrowExceptionWhileWithinAppendLoop_MaxWaitTimeExceed() throws Exception {
     ProtoSchema schema1 = createProtoSchema("foo");
     ConnectionWorker.setMaxInflightRequestWaitTime(Duration.ofSeconds(1));
     StreamWriter sw1 =
@@ -951,16 +948,16 @@ public class ConnectionWorkerTest {
     connectionWorker.close();
     long timeDiff = System.currentTimeMillis() - startCloseTime;
     assertTrue(
+        timeDiff <= (appendCount * durationSleep.toMillis()),
         "timeDiff: "
             + timeDiff
             + " is more than total durationSleep: "
-            + (appendCount * durationSleep.toMillis()),
-        timeDiff <= (appendCount * durationSleep.toMillis()));
+            + (appendCount * durationSleep.toMillis()));
     assertTrue(connectionWorker.isUserClosed());
   }
 
   @Test
-  public void testLongTimeIdleWontFail() throws Exception {
+  void testLongTimeIdleWontFail() throws Exception {
     ProtoSchema schema1 = createProtoSchema("foo");
     ConnectionWorker.setMaxInflightRequestWaitTime(Duration.ofSeconds(1));
     StreamWriter sw1 =
@@ -1035,7 +1032,7 @@ public class ConnectionWorkerTest {
   }
 
   @Test
-  public void testOpenTelemetryAttributesWithStreamNames() throws Exception {
+  void testOpenTelemetryAttributesWithStreamNames() throws Exception {
     exerciseOpenTelemetryAttributesWithStreamNames(
         "projects/my_project/datasets/my_dataset/tables/my_table/streams/my_stream",
         "projects/my_project/datasets/my_dataset/tables/my_table");
@@ -1078,7 +1075,7 @@ public class ConnectionWorkerTest {
   }
 
   @Test
-  public void testOpenTelemetryAttributesWithTraceId() throws Exception {
+  void testOpenTelemetryAttributesWithTraceId() throws Exception {
     exerciseOpenTelemetryAttributesWithTraceId(null, null, null, null);
     exerciseOpenTelemetryAttributesWithTraceId("a:b:c", null, null, null);
     exerciseOpenTelemetryAttributesWithTraceId(
@@ -1108,7 +1105,7 @@ public class ConnectionWorkerTest {
   }
 
   @Test
-  public void testDoubleDisconnectWithShorterRetryDuration() throws Exception {
+  void testDoubleDisconnectWithShorterRetryDuration() throws Exception {
     // simulate server disconnect due to idle stream
     testBigQueryWrite.setFailedStatus(
         Status.ABORTED.withDescription(
@@ -1151,7 +1148,7 @@ public class ConnectionWorkerTest {
   }
 
   @Test
-  public void testLocationName() throws Exception {
+  void testLocationName() throws Exception {
     assertEquals(
         "projects/p1/locations/us", ConnectionWorker.getRoutingHeader(TEST_STREAM_1, "us"));
   }

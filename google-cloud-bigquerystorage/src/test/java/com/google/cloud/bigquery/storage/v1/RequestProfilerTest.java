@@ -15,7 +15,7 @@
  */
 package com.google.cloud.bigquery.storage.v1;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.cloud.bigquery.storage.v1.RequestProfiler.OperationName;
 import com.google.common.collect.ImmutableSet;
@@ -28,32 +28,29 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-@RunWith(JUnit4.class)
-public class RequestProfilerTest {
+class RequestProfilerTest {
   private static final Logger log = Logger.getLogger(RequestProfiler.class.getName());
 
   private RequestProfiler.RequestProfilerHook profilerHook =
       new RequestProfiler.RequestProfilerHook(true);
 
-  @Before
-  public void setup() {
+  @BeforeEach
+  void setup() {
     RequestProfiler.disableAndResetProfiler();
     profilerHook.enableProfiler();
   }
 
-  @After
-  public void close() {
+  @AfterEach
+  void close() {
     RequestProfiler.disableAndResetProfiler();
   }
 
   @Test
-  public void testNormalCase() throws Exception {
+  void testNormalCase() throws Exception {
     profilerHook.startOperation(OperationName.TOTAL_LATENCY, "request_1");
     profilerHook.startOperation(OperationName.JSON_TO_PROTO_CONVERSION, "request_1");
     profilerHook.endOperation(OperationName.JSON_TO_PROTO_CONVERSION, "request_1");
@@ -89,7 +86,7 @@ public class RequestProfilerTest {
   }
 
   @Test
-  public void mixFinishedAndUnfinishedRequest() throws Exception {
+  void mixFinishedAndUnfinishedRequest() throws Exception {
     // Start request 1.
     profilerHook.startOperation(OperationName.TOTAL_LATENCY, "request_1");
     profilerHook.startOperation(OperationName.JSON_TO_PROTO_CONVERSION, "request_1");
@@ -121,7 +118,7 @@ public class RequestProfilerTest {
   }
 
   @Test
-  public void concurrentProfilingTest_1000ReqsRunTogether() throws Exception {
+  void concurrentProfilingTest_1000ReqsRunTogether() throws Exception {
     int totalRequest = 1000;
     ListeningExecutorService threadPool =
         MoreExecutors.listeningDecorator(
@@ -170,7 +167,7 @@ public class RequestProfilerTest {
   }
 
   @Test
-  public void concurrentProfilingTest_RunWhileFlushing() throws Exception {
+  void concurrentProfilingTest_RunWhileFlushing() throws Exception {
     int totalRequest = 1000;
     ListeningExecutorService threadPool =
         MoreExecutors.listeningDecorator(

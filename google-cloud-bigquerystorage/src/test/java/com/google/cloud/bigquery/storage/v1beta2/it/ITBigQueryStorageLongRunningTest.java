@@ -16,7 +16,7 @@
 
 package com.google.cloud.bigquery.storage.v1beta2.it;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.google.api.gax.rpc.ServerStream;
 import com.google.cloud.ServiceOptions;
@@ -35,16 +35,16 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.logging.Logger;
-import org.junit.AfterClass;
-import org.junit.Assume;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assumptions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 /**
  * Integration tests for BigQuery Storage API which target long running sessions. These tests can be
  * enabled by setting the system property 'bigquery.storage.enable_long_running_tests' to true.
  */
-public class ITBigQueryStorageLongRunningTest {
+class ITBigQueryStorageLongRunningTest {
 
   private static final Logger LOG =
       Logger.getLogger(ITBigQueryStorageLongRunningTest.class.getName());
@@ -61,9 +61,10 @@ public class ITBigQueryStorageLongRunningTest {
   private static BigQueryReadClient client;
   private static String parentProjectId;
 
-  @BeforeClass
-  public static void beforeClass() throws IOException {
-    Assume.assumeTrue(LONG_TESTS_DISABLED_MESSAGE, Boolean.getBoolean(LONG_TESTS_ENABLED_PROPERTY));
+  @BeforeAll
+  static void beforeAll() throws IOException {
+    Assumptions.assumeTrue(
+        Boolean.getBoolean(LONG_TESTS_ENABLED_PROPERTY), LONG_TESTS_DISABLED_MESSAGE);
     client = BigQueryReadClient.create();
     parentProjectId = String.format("projects/%s", ServiceOptions.getDefaultProjectId());
 
@@ -73,15 +74,15 @@ public class ITBigQueryStorageLongRunningTest {
             ITBigQueryStorageLongRunningTest.class.getSimpleName(), parentProjectId));
   }
 
-  @AfterClass
-  public static void afterClass() {
+  @AfterAll
+  static void afterAll() {
     if (client != null) {
       client.close();
     }
   }
 
   @Test
-  public void testLongRunningReadSession() throws InterruptedException, ExecutionException {
+  void testLongRunningReadSession() throws InterruptedException, ExecutionException {
     // This test reads a larger table with the goal of doing a simple validation of timeout settings
     // for a longer running session.
 
@@ -101,22 +102,16 @@ public class ITBigQueryStorageLongRunningTest {
             /* maxStreamCount= */ 5);
 
     assertEquals(
+        5,
+        session.getStreamsCount(),
         String.format(
             "Did not receive expected number of streams for table '%s' CreateReadSession"
                 + " response:%n%s",
-            table, session.toString()),
-        5,
-        session.getStreamsCount());
+            table, session.toString()));
 
     List<Callable<Long>> tasks = new ArrayList<>(session.getStreamsCount());
     for (final ReadStream stream : session.getStreamsList()) {
-      tasks.add(
-          new Callable<Long>() {
-            @Override
-            public Long call() throws Exception {
-              return readAllRowsFromStream(stream);
-            }
-          });
+      tasks.add(() -> readAllRowsFromStream(stream));
     }
 
     ExecutorService executor = Executors.newFixedThreadPool(tasks.size());

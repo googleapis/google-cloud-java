@@ -20,13 +20,12 @@ import static com.google.cloud.bigquery.storage.v1.it.util.Helper.TIMESTAMP_COLU
 import static com.google.cloud.bigquery.storage.v1.it.util.Helper.TIMESTAMP_HIGHER_PRECISION_COLUMN_NAME;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertThrows;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -106,6 +105,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
@@ -116,12 +116,12 @@ import org.apache.avro.generic.GenericData;
 import org.apache.avro.util.Utf8;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 /** Integration tests for BigQuery Storage API. */
-public class ITBigQueryStorageReadClientTest {
+class ITBigQueryStorageReadClientTest {
   private static final Logger LOG =
       Logger.getLogger(ITBigQueryStorageReadClientTest.class.getName());
   private static final String DATASET = RemoteBigQueryHelper.generateDatasetName();
@@ -502,9 +502,8 @@ public class ITBigQueryStorageReadClientTest {
     }
   }
 
-  @BeforeClass
-  public static void beforeClass()
-      throws IOException, DescriptorValidationException, InterruptedException {
+  @BeforeAll
+  static void beforeAll() throws IOException, DescriptorValidationException, InterruptedException {
     readClient = BigQueryReadClient.create();
     projectName = ServiceOptions.getDefaultProjectId();
     parentProjectId = String.format("projects/%s", projectName);
@@ -582,8 +581,8 @@ public class ITBigQueryStorageReadClientTest {
     }
   }
 
-  @AfterClass
-  public static void afterClass() throws InterruptedException {
+  @AfterAll
+  static void afterAll() throws InterruptedException {
     if (readClient != null) {
       readClient.close();
       readClient.awaitTermination(10, TimeUnit.SECONDS);
@@ -596,7 +595,7 @@ public class ITBigQueryStorageReadClientTest {
   }
 
   @Test
-  public void testSimpleReadAvro() {
+  void testSimpleReadAvro() {
     String table =
         BigQueryResource.formatTableResource(
             /* projectId= */ "bigquery-public-data",
@@ -612,12 +611,12 @@ public class ITBigQueryStorageReadClientTest {
                 .build(),
             /* maxStreamCount= */ 1);
     assertEquals(
+        1,
+        session.getStreamsCount(),
         String.format(
             "Did not receive expected number of streams for table '%s' CreateReadSession"
                 + " response:%n%s",
-            table, session.toString()),
-        1,
-        session.getStreamsCount());
+            table, session.toString()));
 
     ReadRowsRequest readRowsRequest =
         ReadRowsRequest.newBuilder().setReadStream(session.getStreams(0).getName()).build();
@@ -632,7 +631,7 @@ public class ITBigQueryStorageReadClientTest {
   }
 
   @Test
-  public void testSimpleReadArrow() {
+  void testSimpleReadArrow() {
     String table =
         BigQueryResource.formatTableResource(
             /* projectId= */ "bigquery-public-data",
@@ -648,12 +647,12 @@ public class ITBigQueryStorageReadClientTest {
                 .build(),
             /* maxStreamCount= */ 1);
     assertEquals(
+        1,
+        session.getStreamsCount(),
         String.format(
             "Did not receive expected number of streams for table '%s' CreateReadSession"
                 + " response:%n%s",
-            table, session.toString()),
-        1,
-        session.getStreamsCount());
+            table, session.toString()));
 
     // Assert that there are streams available in the session.  An empty table may not have
     // data available.  If no sessions are available for an anonymous (cached) table, consider
@@ -678,9 +677,9 @@ public class ITBigQueryStorageReadClientTest {
   }
 
   @Test
-  public void testRangeTypeSimple() throws InterruptedException {
+  void testRangeTypeSimple() throws InterruptedException {
     // Create table with Range values.
-    String tableName = "test_range_type_read";
+    String tableName = "test_range_type_read" + UUID.randomUUID().toString().substring(0, 8);
     TableId tableId = TableId.of(DATASET, tableName);
     QueryJobConfiguration createTable =
         QueryJobConfiguration.newBuilder(
@@ -712,12 +711,12 @@ public class ITBigQueryStorageReadClientTest {
                 .build(),
             /* maxStreamCount= */ 1);
     assertEquals(
+        1,
+        session.getStreamsCount(),
         String.format(
             "Did not receive expected number of streams for table '%s' CreateReadSession"
                 + " response:%n%s",
-            table, session.toString()),
-        1,
-        session.getStreamsCount());
+            table, session.toString()));
 
     // Assert that there are streams available in the session.  An empty table may not have
     // data available.  If no sessions are available for an anonymous (cached) table, consider
@@ -741,10 +740,10 @@ public class ITBigQueryStorageReadClientTest {
   }
 
   @Test
-  public void testRangeTypeWrite()
+  void testRangeTypeWrite()
       throws InterruptedException, IOException, DescriptorValidationException {
-    // Create table with Range fields.
-    String tableName = "test_range_type_write";
+    // Create table with Range values.
+    String tableName = "test_range_type_write" + UUID.randomUUID().toString().substring(0, 8);
     TableId tableId = TableId.of(DATASET, tableName);
     bigquery.create(TableInfo.of(tableId, StandardTableDefinition.of(RANGE_SCHEMA)));
 
@@ -821,13 +820,12 @@ public class ITBigQueryStorageReadClientTest {
                 .build(),
             /* maxStreamCount= */ 1);
     assertEquals(
+        1,
+        session.getStreamsCount(),
         String.format(
             "Did not receive expected number of streams for table '%s' CreateReadSession"
                 + " response:%n%s",
-            table, session.toString()),
-        1,
-        session.getStreamsCount());
-
+            table, session.toString()));
     // Assert that there are streams available in the session.  An empty table may not have
     // data available.  If no sessions are available for an anonymous (cached) table, consider
     // writing results of a query to a named table rather than consuming cached results
@@ -868,7 +866,7 @@ public class ITBigQueryStorageReadClientTest {
 
   // Tests that inputs for micros and picos can be read properly via Arrow
   @Test
-  public void timestamp_readArrow() throws IOException {
+  void timestamp_readArrow() throws IOException {
     String table =
         BigQueryResource.formatTableResource(projectName, DATASET, BQSTORAGE_TIMESTAMP_READ_TABLE);
     ReadSession session =
@@ -891,14 +889,14 @@ public class ITBigQueryStorageReadClientTest {
                 .build(),
             MAX_STREAM_COUNT);
     assertEquals(
+        MAX_STREAM_COUNT,
+        session.getStreamsCount(),
         String.format(
             "Did not receive expected number of streams for table '%s' CreateReadSession"
                 + " response:%n%s",
-            table, session.toString()),
-        MAX_STREAM_COUNT,
-        session.getStreamsCount());
+            table, session.toString()));
 
-    // Assert that there are streams available in the session. An empty table may not have
+    // that there are streams available in the session. An empty table may not have
     // data available. If no sessions are available for an anonymous (cached) table, consider
     // writing results of a query to a named table rather than consuming cached results
     // directly.
@@ -928,7 +926,7 @@ public class ITBigQueryStorageReadClientTest {
 
   // Tests that inputs for micros and picos can be read properly via Avro
   @Test
-  public void timestamp_readAvro() throws IOException {
+  void timestamp_readAvro() throws IOException {
     String table =
         BigQueryResource.formatTableResource(projectName, DATASET, BQSTORAGE_TIMESTAMP_READ_TABLE);
     List<GenericData.Record> rows = Helper.readAllRows(readClient, parentProjectId, table, null);
@@ -949,7 +947,7 @@ public class ITBigQueryStorageReadClientTest {
   }
 
   @Test
-  public void testSimpleReadAndResume() {
+  void testSimpleReadAndResume() {
     String table =
         BigQueryResource.formatTableResource(
             /* projectId= */ "bigquery-public-data",
@@ -965,14 +963,12 @@ public class ITBigQueryStorageReadClientTest {
                 .build(),
             /* maxStreamCount= */ 1);
     assertEquals(
+        1,
+        session.getStreamsCount(),
         String.format(
             "Did not receive expected number of streams for table '%s' CreateReadSession"
                 + " response:%n%s",
-            table, session.toString()),
-        1,
-        session.getStreamsCount());
-
-    // We have to read some number of rows in order to be able to resume. More details:
+            table, session.toString()));
 
     long rowCount = readStreamToOffset(session.getStreams(0), /* rowOffset= */ 34_846);
 
@@ -994,7 +990,7 @@ public class ITBigQueryStorageReadClientTest {
   }
 
   @Test
-  public void testFilter() throws IOException {
+  void testFilter() throws IOException {
     String table =
         BigQueryResource.formatTableResource(
             /* projectId= */ "bigquery-public-data",
@@ -1018,12 +1014,12 @@ public class ITBigQueryStorageReadClientTest {
 
     ReadSession session = readClient.createReadSession(request);
     assertEquals(
+        1,
+        session.getStreamsCount(),
         String.format(
             "Did not receive expected number of streams for table '%s' CreateReadSession"
                 + " response:%n%s",
-            table, session.toString()),
-        1,
-        session.getStreamsCount());
+            table, session.toString()));
 
     ReadRowsRequest readRowsRequest =
         ReadRowsRequest.newBuilder().setReadStream(session.getStreams(0).getName()).build();
@@ -1040,10 +1036,14 @@ public class ITBigQueryStorageReadClientTest {
           response.getAvroRows(),
           (AvroRowConsumer)
               record -> {
+                String rowAssertMessage =
+                    String.format("Row not matching expectations: %s", record.toString());
+
                 Long wordCount = (Long) record.get("word_count");
-                assertWithMessage("Row not matching expectations: %s", record.toString())
-                    .that(wordCount)
-                    .isGreaterThan(100L);
+                assertWithMessage(rowAssertMessage).that(wordCount).isGreaterThan(100L);
+
+                Utf8 word = (Utf8) record.get("word");
+                assertWithMessage(rowAssertMessage).that(word.length()).isGreaterThan(0);
               });
     }
 
@@ -1051,7 +1051,7 @@ public class ITBigQueryStorageReadClientTest {
   }
 
   @Test
-  public void testColumnSelection() throws IOException {
+  void testColumnSelection() throws IOException {
     String table =
         BigQueryResource.formatTableResource(
             /* projectId= */ "bigquery-public-data",
@@ -1079,12 +1079,12 @@ public class ITBigQueryStorageReadClientTest {
 
     ReadSession session = readClient.createReadSession(request);
     assertEquals(
+        1,
+        session.getStreamsCount(),
         String.format(
             "Did not receive expected number of streams for table '%s' CreateReadSession"
                 + " response:%n%s",
-            table, session.toString()),
-        1,
-        session.getStreamsCount());
+            table, session.toString()));
 
     ReadRowsRequest readRowsRequest =
         ReadRowsRequest.newBuilder().setReadStream(session.getStreams(0).getName()).build();
@@ -1094,16 +1094,16 @@ public class ITBigQueryStorageReadClientTest {
     String actualSchemaMessage =
         String.format(
             "Unexpected schema. Actual schema:%n%s", avroSchema.toString(/* pretty= */ true));
-    assertEquals(actualSchemaMessage, Schema.Type.RECORD, avroSchema.getType());
-    assertEquals(actualSchemaMessage, "__root__", avroSchema.getName());
+    assertEquals(Schema.Type.RECORD, avroSchema.getType(), actualSchemaMessage);
+    assertEquals("__root__", avroSchema.getName(), actualSchemaMessage);
 
-    assertEquals(actualSchemaMessage, 2, avroSchema.getFields().size());
+    assertEquals(2, avroSchema.getFields().size(), actualSchemaMessage);
     assertEquals(
-        actualSchemaMessage, Schema.Type.STRING, avroSchema.getField("word").schema().getType());
+        Schema.Type.STRING, avroSchema.getField("word").schema().getType(), actualSchemaMessage);
     assertEquals(
-        actualSchemaMessage,
         Schema.Type.LONG,
-        avroSchema.getField("word_count").schema().getType());
+        avroSchema.getField("word_count").schema().getType(),
+        actualSchemaMessage);
 
     SimpleRowReaderAvro reader = new SimpleRowReaderAvro(avroSchema);
 
@@ -1130,7 +1130,7 @@ public class ITBigQueryStorageReadClientTest {
   }
 
   @Test
-  public void testReadAtSnapshot() throws InterruptedException, IOException {
+  void testReadAtSnapshot() throws InterruptedException, IOException {
     Field intFieldSchema =
         Field.newBuilder("col", LegacySQLTypeName.INTEGER)
             .setMode(Mode.REQUIRED)
@@ -1189,8 +1189,9 @@ public class ITBigQueryStorageReadClientTest {
   }
 
   @Test
-  public void testColumnPartitionedTableByDateField() throws InterruptedException, IOException {
-    String partitionedTableName = "test_column_partition_table_by_date";
+  void testColumnPartitionedTableByDateField() throws InterruptedException, IOException {
+    String partitionedTableName =
+        "test_column_partition_table_by_date" + UUID.randomUUID().toString().substring(0, 8);
     String createTableStatement =
         String.format(
             " CREATE TABLE %s.%s (num_field INT64, date_field DATE) "
@@ -1216,7 +1217,7 @@ public class ITBigQueryStorageReadClientTest {
 
     List<GenericData.Record> unfilteredRows =
         Helper.readAllRows(readClient, parentProjectId, /* table= */ table, /* filter= */ null);
-    assertEquals("Actual rows read: " + unfilteredRows.toString(), 3, unfilteredRows.size());
+    assertEquals(3, unfilteredRows.size(), "Actual rows read: " + unfilteredRows.toString());
 
     List<GenericData.Record> partitionFilteredRows =
         Helper.readAllRows(
@@ -1225,12 +1226,12 @@ public class ITBigQueryStorageReadClientTest {
             /* table= */ table,
             /* filter= */ "date_field = CAST(\"2019-01-02\" AS DATE)");
     assertEquals(
-        "Actual rows read: " + partitionFilteredRows.toString(), 1, partitionFilteredRows.size());
+        1, partitionFilteredRows.size(), "Actual rows read: " + partitionFilteredRows.toString());
     assertEquals(2L, partitionFilteredRows.get(0).get("num_field"));
   }
 
   @Test
-  public void testIngestionTimePartitionedTable() throws InterruptedException, IOException {
+  void testIngestionTimePartitionedTable() throws InterruptedException, IOException {
     Field intFieldSchema =
         Field.newBuilder("num_field", LegacySQLTypeName.INTEGER)
             .setMode(Mode.REQUIRED)
@@ -1269,7 +1270,7 @@ public class ITBigQueryStorageReadClientTest {
 
     List<GenericData.Record> unfilteredRows =
         Helper.readAllRows(readClient, parentProjectId, /* table= */ table, /* filter= */ null);
-    assertEquals("Actual rows read: " + unfilteredRows.toString(), 2, unfilteredRows.size());
+    assertEquals(2, unfilteredRows.size(), "Actual rows read: " + unfilteredRows.toString());
 
     List<GenericData.Record> partitionFilteredRows =
         Helper.readAllRows(
@@ -1278,13 +1279,13 @@ public class ITBigQueryStorageReadClientTest {
             /* table= */ table,
             /* filter= */ "_PARTITIONDATE > \"2019-01-01\"");
     assertEquals(
-        "Actual rows read: " + partitionFilteredRows.toString(), 1, partitionFilteredRows.size());
+        1, partitionFilteredRows.size(), "Actual rows read: " + partitionFilteredRows.toString());
     assertEquals(2L, partitionFilteredRows.get(0).get("num_field"));
   }
 
   @Test
-  public void testBasicSqlTypes() throws InterruptedException, IOException {
-    String tableName = "test_basic_sql_types";
+  void testBasicSqlTypes() throws InterruptedException, IOException {
+    String tableName = "test_basic_sql_types" + UUID.randomUUID().toString().substring(0, 8);
     String createTableStatement =
         String.format(
             " CREATE TABLE %s.%s "
@@ -1315,7 +1316,7 @@ public class ITBigQueryStorageReadClientTest {
 
     List<GenericData.Record> rows =
         Helper.readAllRows(readClient, parentProjectId, /* table= */ table, /* filter= */ null);
-    assertEquals("Actual rows read: " + rows.toString(), 1, rows.size());
+    assertEquals(1, rows.size(), "Actual rows read: \" + rows.toString()");
 
     GenericData.Record record = rows.get(0);
     Schema avroSchema = record.getSchema();
@@ -1325,22 +1326,22 @@ public class ITBigQueryStorageReadClientTest {
             "Unexpected schema. Actual schema:%n%s", avroSchema.toString(/* pretty= */ true));
     String rowAssertMessage = String.format("Row not matching expectations: %s", record.toString());
 
-    assertEquals(actualSchemaMessage, Schema.Type.RECORD, avroSchema.getType());
-    assertEquals(actualSchemaMessage, "__root__", avroSchema.getName());
-    assertEquals(actualSchemaMessage, 6, avroSchema.getFields().size());
+    assertEquals(Schema.Type.RECORD, avroSchema.getType(), actualSchemaMessage);
+    assertEquals("__root__", avroSchema.getName(), actualSchemaMessage);
+    assertEquals(6, avroSchema.getFields().size(), actualSchemaMessage);
 
     assertEquals(
-        actualSchemaMessage, Schema.Type.LONG, avroSchema.getField("int_field").schema().getType());
-    assertEquals(rowAssertMessage, 17L, (long) record.get("int_field"));
+        Schema.Type.LONG, avroSchema.getField("int_field").schema().getType(), actualSchemaMessage);
+    assertEquals(17L, (long) record.get("int_field"), rowAssertMessage);
 
     assertEquals(
-        actualSchemaMessage,
         Schema.Type.BYTES,
-        avroSchema.getField("num_field").schema().getType());
+        avroSchema.getField("num_field").schema().getType(),
+        actualSchemaMessage);
     assertEquals(
-        actualSchemaMessage,
         LogicalTypes.decimal(/* precision= */ 38, /* scale= */ 9),
-        avroSchema.getField("num_field").schema().getLogicalType());
+        avroSchema.getField("num_field").schema().getLogicalType(),
+        actualSchemaMessage);
     BigDecimal actual_num_field =
         new Conversions.DecimalConversion()
             .fromBytes(
@@ -1348,45 +1349,42 @@ public class ITBigQueryStorageReadClientTest {
                 avroSchema,
                 avroSchema.getField("num_field").schema().getLogicalType());
     assertEquals(
-        rowAssertMessage,
         BigDecimal.valueOf(/* unscaledVal= */ 1_234_560_000_000L, /* scale= */ 9),
-        actual_num_field);
+        actual_num_field,
+        rowAssertMessage);
 
     assertEquals(
-        actualSchemaMessage,
         Schema.Type.DOUBLE,
-        avroSchema.getField("float_field").schema().getType());
-    assertEquals(
-        rowAssertMessage,
-        /* expected= */ 6.547678d,
-        /* actual= */ (double) record.get("float_field"),
-        /* delta= */ 0.0001);
+        avroSchema.getField("float_field").schema().getType(),
+        actualSchemaMessage);
+    assertEquals(6.547678d, (double) record.get("float_field"), 0.0001, rowAssertMessage);
 
     assertEquals(
-        actualSchemaMessage,
         Schema.Type.BOOLEAN,
-        avroSchema.getField("bool_field").schema().getType());
-    assertEquals(rowAssertMessage, true, record.get("bool_field"));
+        avroSchema.getField("bool_field").schema().getType(),
+        actualSchemaMessage);
+    assertEquals(true, record.get("bool_field"), rowAssertMessage);
 
     assertEquals(
-        actualSchemaMessage,
         Schema.Type.STRING,
-        avroSchema.getField("str_field").schema().getType());
-    assertEquals(rowAssertMessage, new Utf8("String field value"), record.get("str_field"));
+        avroSchema.getField("str_field").schema().getType(),
+        actualSchemaMessage);
+    assertEquals(new Utf8("String field value"), record.get("str_field"), rowAssertMessage);
 
     assertEquals(
-        actualSchemaMessage,
         Schema.Type.BYTES,
-        avroSchema.getField("bytes_field").schema().getType());
+        avroSchema.getField("bytes_field").schema().getType(),
+        actualSchemaMessage);
     assertArrayEquals(
-        rowAssertMessage,
         Utf8.getBytesFor("абвгд"),
-        ((ByteBuffer) (record.get("bytes_field"))).array());
+        ((ByteBuffer) (record.get("bytes_field"))).array(),
+        rowAssertMessage);
   }
 
   @Test
-  public void testDateAndTimeSqlTypes() throws InterruptedException, IOException {
-    String tableName = "test_date_and_time_sql_types";
+  void testDateAndTimeSqlTypes() throws InterruptedException, IOException {
+    String tableName =
+        "test_date_and_time_sql_types" + UUID.randomUUID().toString().substring(0, 8);
     String createTableStatement =
         String.format(
             " CREATE TABLE %s.%s "
@@ -1413,7 +1411,7 @@ public class ITBigQueryStorageReadClientTest {
 
     List<GenericData.Record> rows =
         Helper.readAllRows(readClient, parentProjectId, /* table= */ table, /* filter= */ null);
-    assertEquals("Actual rows read: " + rows.toString(), 1, rows.size());
+    assertEquals(1, rows.size(), "Actual rows read: " + rows.toString());
 
     GenericData.Record record = rows.get(0);
     Schema avroSchema = record.getSchema();
@@ -1423,56 +1421,54 @@ public class ITBigQueryStorageReadClientTest {
             "Unexpected schema. Actual schema:%n%s", avroSchema.toString(/* pretty= */ true));
     String rowAssertMessage = String.format("Row not matching expectations: %s", record.toString());
 
-    assertEquals(actualSchemaMessage, Schema.Type.RECORD, avroSchema.getType());
-    assertEquals(actualSchemaMessage, "__root__", avroSchema.getName());
-    assertEquals(actualSchemaMessage, 4, avroSchema.getFields().size());
+    assertEquals(Schema.Type.RECORD, avroSchema.getType(), actualSchemaMessage);
+    assertEquals("__root__", avroSchema.getName(), actualSchemaMessage);
+    assertEquals(4, avroSchema.getFields().size(), actualSchemaMessage);
 
     assertEquals(
-        actualSchemaMessage, Schema.Type.INT, avroSchema.getField("date_field").schema().getType());
+        Schema.Type.INT, avroSchema.getField("date_field").schema().getType(), actualSchemaMessage);
     assertEquals(
-        actualSchemaMessage,
         LogicalTypes.date(),
-        avroSchema.getField("date_field").schema().getLogicalType());
+        avroSchema.getField("date_field").schema().getLogicalType(),
+        actualSchemaMessage);
     assertEquals(
-        rowAssertMessage,
         LocalDate.of(/* year= */ 2019, /* month= */ 5, /* dayOfMonth= */ 31),
-        LocalDate.ofEpochDay((int) record.get("date_field")));
+        LocalDate.ofEpochDay((int) record.get("date_field")),
+        rowAssertMessage);
 
     assertEquals(
-        actualSchemaMessage,
         Schema.Type.STRING,
-        avroSchema.getField("datetime_field").schema().getType());
+        avroSchema.getField("datetime_field").schema().getType(),
+        actualSchemaMessage);
     assertEquals(
-        actualSchemaMessage,
         "datetime",
-        avroSchema.getField("datetime_field").schema().getObjectProp("logicalType"));
+        avroSchema.getField("datetime_field").schema().getObjectProp("logicalType"),
+        actualSchemaMessage);
     assertEquals(
-        rowAssertMessage,
-        new Utf8("2019-04-30T21:47:59.999999"),
-        (Utf8) record.get("datetime_field"));
+        new Utf8("2019-04-30T21:47:59.999999"), record.get("datetime_field"), rowAssertMessage);
 
     assertEquals(
-        actualSchemaMessage,
         Schema.Type.LONG,
-        avroSchema.getField("time_field").schema().getType());
+        avroSchema.getField("time_field").schema().getType(),
+        actualSchemaMessage);
     assertEquals(
-        actualSchemaMessage,
         LogicalTypes.timeMicros(),
-        avroSchema.getField("time_field").schema().getLogicalType());
+        avroSchema.getField("time_field").schema().getLogicalType(),
+        actualSchemaMessage);
     assertEquals(
-        rowAssertMessage,
         LocalTime.of(
             /* hour= */ 21, /* minute= */ 47, /* second= */ 59, /* nanoOfSecond= */ 999_999_000),
-        LocalTime.ofNanoOfDay(1_000L * (long) record.get("time_field")));
+        LocalTime.ofNanoOfDay(1_000L * (long) record.get("time_field")),
+        rowAssertMessage);
 
     assertEquals(
-        actualSchemaMessage,
         Schema.Type.LONG,
-        avroSchema.getField("timestamp_field").schema().getType());
+        avroSchema.getField("timestamp_field").schema().getType(),
+        actualSchemaMessage);
     assertEquals(
-        actualSchemaMessage,
         LogicalTypes.timestampMicros(),
-        avroSchema.getField("timestamp_field").schema().getLogicalType());
+        avroSchema.getField("timestamp_field").schema().getLogicalType(),
+        actualSchemaMessage);
     ZonedDateTime expected_timestamp =
         ZonedDateTime.parse(
                 "2019-04-30T19:24:19Z", DateTimeFormatter.ISO_INSTANT.withZone(ZoneOffset.UTC))
@@ -1484,12 +1480,12 @@ public class ITBigQueryStorageReadClientTest {
                 /* epochSecond= */ actual_timestamp_micros / 1_000_000,
                 (actual_timestamp_micros % 1_000_000) * 1_000),
             ZoneOffset.UTC);
-    assertEquals(rowAssertMessage, expected_timestamp, actual_timestamp);
+    assertEquals(expected_timestamp, actual_timestamp, rowAssertMessage);
   }
 
   @Test
-  public void testGeographySqlType() throws InterruptedException, IOException {
-    String tableName = "test_geography_sql_type";
+  void testGeographySqlType() throws InterruptedException, IOException {
+    String tableName = "test_geography_sql_type" + UUID.randomUUID().toString().substring(0, 8);
     String createTableStatement =
         String.format(
             " CREATE TABLE %s.%s "
@@ -1509,7 +1505,7 @@ public class ITBigQueryStorageReadClientTest {
 
     List<GenericData.Record> rows =
         Helper.readAllRows(readClient, parentProjectId, /* table= */ table, /* filter= */ null);
-    assertEquals("Actual rows read: " + rows.toString(), 1, rows.size());
+    assertEquals(1, rows.size(), "Actual rows read: " + rows.toString());
 
     GenericData.Record record = rows.get(0);
     Schema avroSchema = record.getSchema();
@@ -1519,30 +1515,31 @@ public class ITBigQueryStorageReadClientTest {
             "Unexpected schema. Actual schema:%n%s", avroSchema.toString(/* pretty= */ true));
     String rowAssertMessage = String.format("Row not matching expectations: %s", record.toString());
 
-    assertEquals(actualSchemaMessage, Schema.Type.RECORD, avroSchema.getType());
-    assertEquals(actualSchemaMessage, "__root__", avroSchema.getName());
-    assertEquals(actualSchemaMessage, 1, avroSchema.getFields().size());
+    assertEquals(Schema.Type.RECORD, avroSchema.getType(), actualSchemaMessage);
+    assertEquals("__root__", avroSchema.getName(), actualSchemaMessage);
+    assertEquals(1, avroSchema.getFields().size(), actualSchemaMessage);
 
     assertEquals(
-        actualSchemaMessage,
         Schema.Type.STRING,
-        avroSchema.getField("geo_field").schema().getType());
+        avroSchema.getField("geo_field").schema().getType(),
+        actualSchemaMessage);
     assertEquals(
-        actualSchemaMessage,
         "GEOGRAPHY",
-        avroSchema.getField("geo_field").schema().getObjectProp("sqlType"));
-    assertEquals(rowAssertMessage, new Utf8("POINT(1.1 2.2)"), (Utf8) record.get("geo_field"));
+        avroSchema.getField("geo_field").schema().getObjectProp("sqlType"),
+        actualSchemaMessage);
+    assertEquals(new Utf8("POINT(1.1 2.2)"), record.get("geo_field"), rowAssertMessage);
   }
 
   @Test
-  public void testStructAndArraySqlTypes() throws InterruptedException, IOException {
-    String tableName = "test_struct_and_array_sql_types";
+  void testStructAndArraySqlTypes() throws InterruptedException, IOException {
+    String tableName =
+        "test_struct_and_array_sql_types" + UUID.randomUUID().toString().substring(0, 8);
     String createTableStatement =
         String.format(
             " CREATE TABLE %s.%s  (array_field ARRAY<INT64>,  struct_field STRUCT<int_field INT64"
                 + " NOT NULL, str_field STRING NOT NULL> NOT NULL) OPTIONS(    description=\"a"
                 + " table with array and time column types\"  ) AS    SELECT      [1, 2, 3],    "
-                + " (10, 'abc')",
+                + "    (10, 'abc')",
             DATASET, tableName);
 
     runQueryJobAndExpectSuccess(QueryJobConfiguration.newBuilder(createTableStatement).build());
@@ -1553,7 +1550,7 @@ public class ITBigQueryStorageReadClientTest {
 
     List<GenericData.Record> rows =
         Helper.readAllRows(readClient, parentProjectId, /* table= */ table, /* filter= */ null);
-    assertEquals("Actual rows read: " + rows.toString(), 1, rows.size());
+    assertEquals(1, rows.size(), "Actual rows read: " + rows.toString());
 
     GenericData.Record record = rows.get(0);
     Schema avroSchema = record.getSchema();
@@ -1563,43 +1560,43 @@ public class ITBigQueryStorageReadClientTest {
             "Unexpected schema. Actual schema:%n%s", avroSchema.toString(/* pretty= */ true));
     String rowAssertMessage = String.format("Row not matching expectations: %s", record.toString());
 
-    assertEquals(actualSchemaMessage, Schema.Type.RECORD, avroSchema.getType());
-    assertEquals(actualSchemaMessage, "__root__", avroSchema.getName());
-    assertEquals(actualSchemaMessage, 2, avroSchema.getFields().size());
+    assertEquals(Schema.Type.RECORD, avroSchema.getType(), actualSchemaMessage);
+    assertEquals("__root__", avroSchema.getName(), actualSchemaMessage);
+    assertEquals(2, avroSchema.getFields().size(), actualSchemaMessage);
 
     assertEquals(
-        actualSchemaMessage,
         Schema.Type.ARRAY,
-        avroSchema.getField("array_field").schema().getType());
+        avroSchema.getField("array_field").schema().getType(),
+        actualSchemaMessage);
     assertEquals(
-        actualSchemaMessage,
         Schema.Type.LONG,
-        avroSchema.getField("array_field").schema().getElementType().getType());
+        avroSchema.getField("array_field").schema().getElementType().getType(),
+        actualSchemaMessage);
     assertArrayEquals(
-        rowAssertMessage,
         new Long[] {1L, 2L, 3L},
-        ((GenericData.Array<Long>) record.get("array_field")).toArray(new Long[0]));
+        ((GenericData.Array<Long>) record.get("array_field")).toArray(new Long[0]),
+        rowAssertMessage);
 
     // Validate the STRUCT field and its members.
     Schema structSchema = avroSchema.getField("struct_field").schema();
-    assertEquals(actualSchemaMessage, Schema.Type.RECORD, structSchema.getType());
+    assertEquals(Schema.Type.RECORD, structSchema.getType(), actualSchemaMessage);
     GenericData.Record structRecord = (GenericData.Record) record.get("struct_field");
 
     assertEquals(
-        actualSchemaMessage,
         Schema.Type.LONG,
-        structSchema.getField("int_field").schema().getType());
-    assertEquals(rowAssertMessage, 10L, (long) structRecord.get("int_field"));
+        structSchema.getField("int_field").schema().getType(),
+        actualSchemaMessage);
+    assertEquals(10L, (long) structRecord.get("int_field"), rowAssertMessage);
 
     assertEquals(
-        actualSchemaMessage,
         Schema.Type.STRING,
-        structSchema.getField("str_field").schema().getType());
-    assertEquals(rowAssertMessage, new Utf8("abc"), structRecord.get("str_field"));
+        structSchema.getField("str_field").schema().getType(),
+        actualSchemaMessage);
+    assertEquals(new Utf8("abc"), structRecord.get("str_field"), rowAssertMessage);
   }
 
   @Test
-  public void testSimpleReadWithBackgroundExecutorProvider() throws IOException {
+  void testSimpleReadWithBackgroundExecutorProvider() throws IOException {
     BigQueryReadSettings bigQueryReadSettings =
         BigQueryReadSettings.newBuilder()
             .setBackgroundExecutorProvider(
@@ -1630,12 +1627,12 @@ public class ITBigQueryStorageReadClientTest {
                 .build(),
             /* maxStreamCount= */ 1);
     assertEquals(
+        1,
+        session.getStreamsCount(),
         String.format(
             "Did not receive expected number of streams for table '%s' CreateReadSession"
                 + " response:%n%s",
-            table, session.toString()),
-        1,
-        session.getStreamsCount());
+            table, session.toString()));
 
     ReadRowsRequest readRowsRequest =
         ReadRowsRequest.newBuilder().setReadStream(session.getStreams(0).getName()).build();
@@ -1650,7 +1647,7 @@ public class ITBigQueryStorageReadClientTest {
   }
 
   @Test
-  public void testUniverseDomainWithInvalidUniverseDomain() throws IOException {
+  void testUniverseDomainWithInvalidUniverseDomain() throws IOException {
     BigQueryReadSettings bigQueryReadSettings =
         BigQueryReadSettings.newBuilder()
             .setCredentialsProvider(
@@ -1666,26 +1663,27 @@ public class ITBigQueryStorageReadClientTest {
             /* datasetId= */ "samples",
             /* tableId= */ "shakespeare");
 
-    try {
-      localClient.createReadSession(
-          /* parent= */ parentProjectId,
-          /* readSession= */ ReadSession.newBuilder()
-              .setTable(table)
-              .setDataFormat(DataFormat.AVRO)
-              .build(),
-          /* maxStreamCount= */ 1);
-      fail("RPCs to invalid universe domain should fail");
-    } catch (UnauthenticatedException e) {
-      assertThat(
-              (e.getMessage()
-                  .contains("does not match the universe domain found in the credentials")))
-          .isTrue();
-    }
+    UnauthenticatedException e =
+        assertThrows(
+            UnauthenticatedException.class,
+            () ->
+                localClient.createReadSession(
+                    /* parent= */ parentProjectId,
+                    /* readSession= */ ReadSession.newBuilder()
+                        .setTable(table)
+                        .setDataFormat(DataFormat.AVRO)
+                        .build(),
+                    /* maxStreamCount= */ 1),
+            "RPCs to invalid universe domain should fail");
+    assertThat(
+            (e.getMessage()
+                .contains("does not match the universe domain found in the credentials")))
+        .isTrue();
     localClient.close();
   }
 
   @Test
-  public void testInvalidUniverseDomainWithMismatchCredentials() throws IOException {
+  void testInvalidUniverseDomainWithMismatchCredentials() throws IOException {
     BigQueryReadSettings bigQueryReadSettings =
         BigQueryReadSettings.newBuilder()
             .setCredentialsProvider(
@@ -1703,24 +1701,23 @@ public class ITBigQueryStorageReadClientTest {
 
     UnauthenticatedException e =
         assertThrows(
-            "RPCs to invalid universe domain should fail",
             UnauthenticatedException.class,
-            () -> {
-              localClient.createReadSession(
-                  /* parent= */ parentProjectId,
-                  /* readSession= */ ReadSession.newBuilder()
-                      .setTable(table)
-                      .setDataFormat(DataFormat.AVRO)
-                      .build(),
-                  /* maxStreamCount= */ 1);
-            });
+            () ->
+                localClient.createReadSession(
+                    /* parent= */ parentProjectId,
+                    /* readSession= */ ReadSession.newBuilder()
+                        .setTable(table)
+                        .setDataFormat(DataFormat.AVRO)
+                        .build(),
+                    /* maxStreamCount= */ 1),
+            "RPCs to invalid universe domain should fail");
     assertTrue(
         e.getMessage().contains("does not match the universe domain found in the credentials"));
     localClient.close();
   }
 
   @Test
-  public void testUniverseDomainWithMatchingDomain() throws IOException {
+  void testUniverseDomainWithMatchingDomain() throws IOException {
     // Test a valid domain using the default credentials and Google default universe domain.
     BigQueryReadSettings bigQueryReadSettings =
         BigQueryReadSettings.newBuilder().setUniverseDomain("googleapis.com").build();
@@ -1755,7 +1752,7 @@ public class ITBigQueryStorageReadClientTest {
   }
 
   @Test
-  public void testSimpleReadWithOtelTracing() throws IOException {
+  void testSimpleReadWithOtelTracing() throws IOException {
     SdkTracerProvider tracerProvider =
         SdkTracerProvider.builder()
             .addSpanProcessor(SimpleSpanProcessor.create(new TestSpanExporter()))
@@ -1804,10 +1801,10 @@ public class ITBigQueryStorageReadClientTest {
 
     // createReadSession is the parent span of createReadSessionCallable
     assertEquals(
+        "com.google.cloud.bigquery.storage.v1.read.createReadSession",
         OTEL_SPAN_IDS_TO_NAMES.get(
             OTEL_PARENT_SPAN_IDS.get(
-                "com.google.cloud.bigquery.storage.v1.read.createReadSessionCallable")),
-        "com.google.cloud.bigquery.storage.v1.read.createReadSession");
+                "com.google.cloud.bigquery.storage.v1.read.createReadSessionCallable")));
 
     Map<AttributeKey<?>, Object> createReadSessionMap =
         OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.storage.v1.read.createReadSession");
@@ -1821,10 +1818,10 @@ public class ITBigQueryStorageReadClientTest {
             AttributeKey.longKey("bq.storage.read_session.request.max_stream_count")));
   }
 
-  public void testUniverseDomain() throws IOException {
+  void testUniverseDomain() throws IOException {
     // This test is not yet part presubmit integration test as it requires the apis-tpclp.goog
     // universe domain credentials.
-    // Test a valid read session in the universe domain gdutst.
+    // Test a valid domain using the default credentials and Google default universe domain.
     BigQueryReadSettings bigQueryReadSettings =
         BigQueryReadSettings.newBuilder().setUniverseDomain("apis-tpclp.goog").build();
     BigQueryReadClient localClient = BigQueryReadClient.create(bigQueryReadSettings);
@@ -1920,9 +1917,9 @@ public class ITBigQueryStorageReadClientTest {
 
     assertNotNull(completedJob);
     assertNull(
+        /* object= */ completedJob.getStatus().getError(),
         /* message= */ "Received a job status that is not a success: "
-            + completedJob.getStatus().toString(),
-        /* object= */ completedJob.getStatus().getError());
+            + completedJob.getStatus().toString());
 
     return completedJob;
   }

@@ -16,7 +16,7 @@
 package com.google.cloud.bigquery.storage.v1;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.FlowController;
@@ -45,13 +45,10 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Supplier;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-@RunWith(JUnit4.class)
-public class ConnectionWorkerPoolTest {
+class ConnectionWorkerPoolTest {
 
   private FakeBigQueryWrite testBigQueryWrite;
   private FakeScheduledExecutorService fakeExecutor;
@@ -73,8 +70,8 @@ public class ConnectionWorkerPoolTest {
           .setMaxRetryDelay(org.threeten.bp.Duration.ofMinutes(MAX_RETRY_DELAY_MINUTES))
           .build();
 
-  @Before
-  public void setUp() throws Exception {
+  @BeforeEach
+  void setUp() throws Exception {
     testBigQueryWrite = new FakeBigQueryWrite();
     serviceHelper =
         new MockServiceHelper(
@@ -92,7 +89,7 @@ public class ConnectionWorkerPoolTest {
   }
 
   @Test
-  public void testSingleTableConnection_noOverwhelmedConnection() throws Exception {
+  void testSingleTableConnection_noOverwhelmedConnection() throws Exception {
     // Set the max requests count to a large value so we will not scaling up.
     testSendRequestsToMultiTable(
         /* requestToSend= */ 100,
@@ -103,7 +100,7 @@ public class ConnectionWorkerPoolTest {
   }
 
   @Test
-  public void testSingleTableConnections_overwhelmed() throws Exception {
+  void testSingleTableConnections_overwhelmed() throws Exception {
     // A connection will be considered overwhelmed when the requests count reach 5 (max 10).
     testSendRequestsToMultiTable(
         /* requestToSend= */ 100,
@@ -114,7 +111,7 @@ public class ConnectionWorkerPoolTest {
   }
 
   @Test
-  public void testMultiTableConnection_noOverwhelmedConnection() throws Exception {
+  void testMultiTableConnection_noOverwhelmedConnection() throws Exception {
     // Set the max requests count to a large value so we will not scaling up.
     // All tables will share the two connections (2 becasue we set the min connections to be 2).
     testSendRequestsToMultiTable(
@@ -126,7 +123,7 @@ public class ConnectionWorkerPoolTest {
   }
 
   @Test
-  public void testMultiTableConnections_overwhelmed_reachingMaximum() throws Exception {
+  void testMultiTableConnections_overwhelmed_reachingMaximum() throws Exception {
     // A connection will be considered overwhelmed when the requests count reach 5 (max 10).
     testSendRequestsToMultiTable(
         /* requestToSend= */ 100,
@@ -137,7 +134,7 @@ public class ConnectionWorkerPoolTest {
   }
 
   @Test
-  public void testMultiTableConnections_overwhelmed_overTotalLimit() throws Exception {
+  void testMultiTableConnections_overwhelmed_overTotalLimit() throws Exception {
     // A connection will be considered overwhelmed when the requests count reach 5 (max 10).
     testSendRequestsToMultiTable(
         /* requestToSend= */ 200,
@@ -148,7 +145,7 @@ public class ConnectionWorkerPoolTest {
   }
 
   @Test
-  public void testMultiTableConnections_overwhelmed_notReachingMaximum() throws Exception {
+  void testMultiTableConnections_overwhelmed_notReachingMaximum() throws Exception {
     // A connection will be considered overwhelmed when the requests count reach 5 (max 10).
     testSendRequestsToMultiTable(
         /* requestToSend= */ 20,
@@ -221,7 +218,7 @@ public class ConnectionWorkerPoolTest {
   }
 
   @Test
-  public void testMultiStreamClosed_multiplexingEnabled() throws Exception {
+  void testMultiStreamClosed_multiplexingEnabled() throws Exception {
     ConnectionWorkerPool.setOptions(
         Settings.builder().setMaxConnectionsPerRegion(10).setMinConnectionsPerRegion(5).build());
     ConnectionWorkerPool connectionWorkerPool =
@@ -271,7 +268,7 @@ public class ConnectionWorkerPoolTest {
   }
 
   @Test
-  public void testMultiStreamAppend_appendWhileClosing() throws Exception {
+  void testMultiStreamAppend_appendWhileClosing() throws Exception {
     ConnectionWorkerPool.setOptions(
         Settings.builder().setMaxConnectionsPerRegion(10).setMinConnectionsPerRegion(5).build());
     ConnectionWorkerPool connectionWorkerPool =
@@ -334,7 +331,7 @@ public class ConnectionWorkerPoolTest {
   }
 
   @Test
-  public void testCloseWhileAppending_noDeadlockHappen() throws Exception {
+  void testCloseWhileAppending_noDeadlockHappen() throws Exception {
     ConnectionWorkerPool.setOptions(
         Settings.builder().setMaxConnectionsPerRegion(10).setMinConnectionsPerRegion(5).build());
     ConnectionWorkerPool connectionWorkerPool =
@@ -400,7 +397,7 @@ public class ConnectionWorkerPoolTest {
   }
 
   @Test
-  public void testAppendWithRetry() throws Exception {
+  void testAppendWithRetry() throws Exception {
     ConnectionWorkerPool connectionWorkerPool =
         createConnectionWorkerPool(
             /* maxRequests= */ 1500, /* maxBytes= */ 100000, java.time.Duration.ofSeconds(5));
@@ -432,7 +429,7 @@ public class ConnectionWorkerPoolTest {
   }
 
   @Test
-  public void testToTableName() {
+  void testToTableName() {
     assertThat(ConnectionWorkerPool.toTableName("projects/p/datasets/d/tables/t/streams/s"))
         .isEqualTo("projects/p/datasets/d/tables/t");
 
@@ -442,8 +439,7 @@ public class ConnectionWorkerPoolTest {
   }
 
   @Test
-  public void testCloseExternalClient()
-      throws IOException, InterruptedException, ExecutionException {
+  void testCloseExternalClient() throws IOException, InterruptedException, ExecutionException {
     StreamWriter.clearConnectionPool();
     // Try append 100 requests.
     long appendCount = 100L;

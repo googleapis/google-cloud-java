@@ -17,7 +17,8 @@
 package com.google.cloud.bigquery.storage.v1.it;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.api.core.ApiFuture;
 import com.google.cloud.bigquery.BigQuery;
@@ -48,13 +49,12 @@ import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
-import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 /** Integration tests for BigQuery Write API. */
-public class ITBigQueryWriteNonQuotaRetryTest {
+class ITBigQueryWriteNonQuotaRetryTest {
   private static final Logger LOG = Logger.getLogger(ITBigQueryWriteQuotaRetryTest.class.getName());
   private static final String DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final String TABLE = "testtable";
@@ -65,8 +65,8 @@ public class ITBigQueryWriteNonQuotaRetryTest {
   private static BigQueryWriteClient client;
   private static BigQuery bigquery;
 
-  @BeforeClass
-  public static void beforeClass() throws IOException {
+  @BeforeAll
+  static void beforeAll() throws IOException {
     client = BigQueryWriteClient.create();
 
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
@@ -87,8 +87,8 @@ public class ITBigQueryWriteNonQuotaRetryTest {
     bigquery.create(tableInfo);
   }
 
-  @AfterClass
-  public static void afterClass() throws InterruptedException {
+  @AfterAll
+  static void afterAll() throws InterruptedException {
     if (client != null) {
       client.close();
       client.awaitTermination(10, TimeUnit.SECONDS);
@@ -110,7 +110,7 @@ public class ITBigQueryWriteNonQuotaRetryTest {
   }
 
   @Test
-  public void testJsonStreamWriterCommittedStreamWithNonQuotaRetry()
+  void testJsonStreamWriterCommittedStreamWithNonQuotaRetry()
       throws IOException, InterruptedException, DescriptorValidationException {
     WriteRetryTestUtil.runExclusiveRetryTest(
         bigquery,
@@ -123,7 +123,7 @@ public class ITBigQueryWriteNonQuotaRetryTest {
   }
 
   @Test
-  public void testJsonStreamWriterDefaultStreamWithNonQuotaRetry()
+  void testJsonStreamWriterDefaultStreamWithNonQuotaRetry()
       throws IOException, InterruptedException, DescriptorValidationException {
     WriteRetryTestUtil.runDefaultRetryTest(
         bigquery,
@@ -137,8 +137,7 @@ public class ITBigQueryWriteNonQuotaRetryTest {
   // Moved to ITBigQueryWriteNonQuotaRetryTest from ITBigQueryWriteClientTest, as it requires
   // usage of the project this file uses to inject errors (bq-write-api-java-retry-test).
   @Test
-  public void testDefaultRequestLimit()
-      throws IOException, InterruptedException, ExecutionException {
+  void testDefaultRequestLimit() throws IOException, InterruptedException, ExecutionException {
     DatasetId datasetId =
         DatasetId.of(NON_QUOTA_RETRY_PROJECT_ID, RemoteBigQueryHelper.generateDatasetName());
     DatasetInfo datasetInfo = DatasetInfo.newBuilder(datasetId).build();
@@ -173,44 +172,28 @@ public class ITBigQueryWriteNonQuotaRetryTest {
             streamWriter.append(
                 CreateProtoRows(
                     new String[] {new String(new char[19 * 1024 * 1024]).replace("\0", "a")}));
-        try {
-          AppendRowsResponse resp = response.get();
-          LOG.info(
-              "Message succeded.  Dataset info: "
-                  + datasetInfo.toString()
-                  + " tableinfo: "
-                  + tableInfo.toString()
-                  + " parent: "
-                  + parent
-                  + "streamWriter: "
-                  + streamWriter.toString()
-                  + "response: "
-                  + resp);
-          Assert.fail("Large request should fail with InvalidArgumentError");
-        } catch (ExecutionException ex) {
-          LOG.info(
-              "Message failed.  Dataset info: "
-                  + datasetInfo.toString()
-                  + " tableinfo: "
-                  + tableInfo.toString()
-                  + " parent: "
-                  + parent
-                  + "streamWriter: "
-                  + streamWriter);
-          assertEquals(io.grpc.StatusRuntimeException.class, ex.getCause().getClass());
-          io.grpc.StatusRuntimeException actualError =
-              (io.grpc.StatusRuntimeException) ex.getCause();
-          // This verifies that the Beam connector can consume this custom exception's grpc
-          // StatusCode
-          // TODO(yiru): temp fix to unblock test, while final fix is being rolled out.
-          if (actualError.getStatus().getCode() != Code.INTERNAL) {
-            assertEquals(Code.INVALID_ARGUMENT, actualError.getStatus().getCode());
-            assertThat(
-                actualError
-                    .getStatus()
-                    .getDescription()
-                    .contains("AppendRows request too large: 19923131 limit 10485760"));
-          }
+        ExecutionException ex = assertThrows(ExecutionException.class, () -> response.get());
+        LOG.info(
+            "Message failed.  Dataset info: "
+                + datasetInfo.toString()
+                + " tableinfo: "
+                + tableInfo.toString()
+                + " parent: "
+                + parent
+                + "streamWriter: "
+                + streamWriter);
+        assertEquals(io.grpc.StatusRuntimeException.class, ex.getCause().getClass());
+        io.grpc.StatusRuntimeException actualError = (io.grpc.StatusRuntimeException) ex.getCause();
+        // This verifies that the Beam connector can consume this custom exception's grpc
+        // StatusCode
+        // TODO(yiru): temp fix to unblock test, while final fix is being rolled out.
+        if (actualError.getStatus().getCode() != Code.INTERNAL) {
+          assertEquals(Code.INVALID_ARGUMENT, actualError.getStatus().getCode());
+          assertThat(
+              actualError
+                  .getStatus()
+                  .getDescription()
+                  .contains("AppendRows request too large: 19923131 limit 10485760"));
         }
       }
     } finally {

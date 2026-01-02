@@ -32,16 +32,13 @@ import com.google.cloud.bigquery.storage.v1beta2.SplitReadStreamRequest;
 import com.google.cloud.bigquery.storage.v1beta2.SplitReadStreamResponse;
 import java.time.Duration;
 import java.util.Set;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-@RunWith(JUnit4.class)
 public class EnhancedBigQueryReadStubSettingsTest {
 
   @Test
-  public void testSettingsArePreserved() {
+  void testSettingsArePreserved() {
     String endpoint = "some.other.host:123";
     CredentialsProvider credentialsProvider = Mockito.mock(CredentialsProvider.class);
     Duration watchdogInterval = Duration.ofSeconds(12);
@@ -100,14 +97,14 @@ public class EnhancedBigQueryReadStubSettingsTest {
   }
 
   @Test
-  public void testCreateReadSessionSettings() {
+  void testCreateReadSessionSettings() {
     UnaryCallSettings.Builder<CreateReadSessionRequest, ReadSession> builder =
         EnhancedBigQueryReadStubSettings.newBuilder().createReadSessionSettings();
     verifyRetrySettings(builder.getRetryableCodes(), builder.getRetrySettings());
   }
 
   @Test
-  public void testReadRowsSettings() {
+  void testReadRowsSettings() {
     ServerStreamingCallSettings.Builder<ReadRowsRequest, ReadRowsResponse> builder =
         EnhancedBigQueryReadStubSettings.newBuilder().readRowsSettings();
     assertThat(builder.getRetryableCodes()).contains(Code.UNAVAILABLE);
@@ -123,7 +120,7 @@ public class EnhancedBigQueryReadStubSettingsTest {
   }
 
   @Test
-  public void testSplitReadStreamSettings() {
+  void testSplitReadStreamSettings() {
     UnaryCallSettings.Builder<SplitReadStreamRequest, SplitReadStreamResponse> builder =
         EnhancedBigQueryReadStubSettings.newBuilder().splitReadStreamSettings();
     verifyRetrySettings(builder.getRetryableCodes(), builder.getRetrySettings());

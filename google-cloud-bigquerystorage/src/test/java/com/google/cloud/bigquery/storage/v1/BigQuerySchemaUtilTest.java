@@ -15,20 +15,21 @@
  */
 package com.google.cloud.bigquery.storage.v1;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import com.google.cloud.bigquery.storage.test.SchemaTest.SupportedTypes;
 import com.google.cloud.bigquery.storage.test.SchemaTest.TestNestedFlexibleFieldName;
 import com.google.protobuf.Descriptors.Descriptor;
 import java.util.Arrays;
 import java.util.List;
-import junit.framework.TestCase;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.jupiter.api.Test;
 
-@RunWith(JUnit4.class)
-public class BigQuerySchemaUtilTest extends TestCase {
+class BigQuerySchemaUtilTest {
 
   @Test
-  public void testIsProtoCompatible() {
+  void testIsProtoCompatible() {
     List<String> protoCompatibleNames = Arrays.asList("col_1", "name", "_0_");
     List<String> protoIncompatibleNames = Arrays.asList("0_col", "()", "列", "a-1");
     protoCompatibleNames.stream()
@@ -43,13 +44,15 @@ public class BigQuerySchemaUtilTest extends TestCase {
             });
   }
 
-  public void testGeneratePlaceholderFieldName() {
+  @Test
+  void testGeneratePlaceholderFieldName() {
     assertEquals("col_c3RyLeWIlw", BigQuerySchemaUtil.generatePlaceholderFieldName("str-列"));
     // Base64 url encodes "~/~/" to "fi9-Lw", we replaced - with _ to be proto compatible.
     assertEquals("col_fi9_Lw", BigQuerySchemaUtil.generatePlaceholderFieldName("~/~/"));
   }
 
-  public void testGetFieldName() {
+  @Test
+  void testGetFieldName() {
     // Test get name from annotations.
     Descriptor flexibleDescriptor = TestNestedFlexibleFieldName.getDescriptor();
     assertEquals("str-列", BigQuerySchemaUtil.getFieldName(flexibleDescriptor.getFields().get(0)));
@@ -57,7 +60,7 @@ public class BigQuerySchemaUtilTest extends TestCase {
         "nested-列", BigQuerySchemaUtil.getFieldName(flexibleDescriptor.getFields().get(1)));
 
     // Test get name without annotations.
-    Descriptor descriptor = TestNestedFlexibleFieldName.getDescriptor();
+    Descriptor descriptor = SupportedTypes.getDescriptor();
     assertEquals("int32_value", BigQuerySchemaUtil.getFieldName(descriptor.getFields().get(0)));
     assertEquals("int64_value", BigQuerySchemaUtil.getFieldName(descriptor.getFields().get(1)));
   }
