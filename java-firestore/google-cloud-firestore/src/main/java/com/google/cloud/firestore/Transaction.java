@@ -17,7 +17,9 @@
 package com.google.cloud.firestore;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.core.BetaApi;
 import com.google.api.core.InternalExtensionOnly;
+import com.google.cloud.firestore.pipeline.stages.PipelineExecuteOptions;
 import com.google.cloud.firestore.telemetry.MetricsUtil;
 import com.google.cloud.firestore.telemetry.TraceUtil;
 import com.google.cloud.firestore.telemetry.TraceUtil.Context;
@@ -141,4 +143,23 @@ public abstract class Transaction extends UpdateBuilder<Transaction> {
    */
   @Nonnull
   public abstract ApiFuture<AggregateQuerySnapshot> get(@Nonnull AggregateQuery query);
+
+  /**
+   * Executes the provided pipeline within the transaction context.
+   *
+   * @return The result of the execution.
+   */
+  @Nonnull
+  @BetaApi
+  public abstract ApiFuture<Pipeline.Snapshot> execute(@Nonnull Pipeline pipeline);
+
+  /**
+   * Executes the provided pipeline with specified options, within the transaction context.
+   *
+   * @return The result of the execution.
+   */
+  @Nonnull
+  @BetaApi
+  public abstract ApiFuture<Pipeline.Snapshot> execute(
+      @Nonnull Pipeline pipeline, @Nonnull PipelineExecuteOptions options);
 }

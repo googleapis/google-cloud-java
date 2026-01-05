@@ -20,27 +20,24 @@ import static com.google.cloud.firestore.it.TestHelper.isRunningAgainstFirestore
 import static com.google.common.primitives.Ints.asList;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 import static org.junit.Assume.assumeTrue;
 
-import com.google.api.core.ApiFuture;
-import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.cloud.firestore.*;
 import com.google.cloud.firestore.Query.Direction;
-import java.time.Duration;
+import com.google.common.collect.Sets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.stream.Collectors;
-import javax.annotation.Nullable;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
@@ -75,14 +72,75 @@ public class ITQueryTest extends ITBaseTest {
     return collection;
   }
 
-  public static void checkQuerySnapshotContainsDocuments(Query query, String... docs)
+  public static void checkResultContainsDocumentsInOrder(Query query, String... docs)
+      throws ExecutionException, InterruptedException {
+    checkResultContainsDocumentsInOrder(query, getFirestoreEdition(), docs);
+  }
+
+  public static void checkResultContainsDocumentsInOrder(
+      Query query, FirestoreEdition edition, String... docs)
+      throws ExecutionException, InterruptedException {
+    switch (edition) {
+      case STANDARD:
+        {
+          QuerySnapshot snapshot = query.get().get();
+          List<String> result =
+              snapshot.getDocuments().stream()
+                  .map(queryDocumentSnapshot -> queryDocumentSnapshot.getReference().getId())
+                  .collect(Collectors.toList());
+          assertThat(result).isEqualTo(Arrays.asList(docs));
+
+          break;
+        }
+      case ENTERPRISE:
+        {
+          QuerySnapshot snapshot = query.get().get();
+          List<String> result =
+              snapshot.getDocuments().stream()
+                  .map(queryDocumentSnapshot -> queryDocumentSnapshot.getReference().getId())
+                  .collect(Collectors.toList());
+          // Implicit orderby is not enforced with enterprise
+          assertThat(result).containsExactlyElementsIn(Arrays.asList(docs));
+
+          List<PipelineResult> pipelineResults =
+              query.getFirestore().pipeline().createFrom(query).execute().get().getResults();
+          result =
+              pipelineResults.stream()
+                  .map(
+                      pipelineResult ->
+                          Objects.requireNonNull(pipelineResult.getReference()).getId())
+                  .collect(Collectors.toList());
+          assertThat(result).containsExactlyElementsIn(Arrays.asList(docs));
+
+          break;
+        }
+    }
+  }
+
+  public static void checkResultContainsDocuments(Query query, String... docs)
+      throws ExecutionException, InterruptedException {
+    checkResultContainsDocuments(query, getFirestoreEdition(), docs);
+  }
+
+  public static void checkResultContainsDocuments(
+      Query query, FirestoreEdition edition, String... docs)
       throws ExecutionException, InterruptedException {
     QuerySnapshot snapshot = query.get().get();
-    List<String> result =
+    Set<String> result =
         snapshot.getDocuments().stream()
             .map(queryDocumentSnapshot -> queryDocumentSnapshot.getReference().getId())
-            .collect(Collectors.toList());
-    assertThat(result).isEqualTo(Arrays.asList(docs));
+            .collect(Collectors.toSet());
+    assertThat(result).isEqualTo(Sets.newHashSet(docs));
+
+    if (edition == FirestoreEdition.ENTERPRISE) {
+      List<PipelineResult> pipelineResults =
+          query.getFirestore().pipeline().createFrom(query).execute().get().getResults();
+      result =
+          pipelineResults.stream()
+              .map(pipelineResult -> Objects.requireNonNull(pipelineResult.getReference()).getId())
+              .collect(Collectors.toSet());
+      assertThat(result).isEqualTo(Sets.newHashSet(docs));
+    }
   }
 
   @Test
@@ -98,7 +156,7 @@ public class ITQueryTest extends ITBaseTest {
     CollectionReference collection = testCollectionWithDocs(testDocs);
 
     // Two equalities: a==1 || b==1.
-    checkQuerySnapshotContainsDocuments(
+    checkResultContainsDocumentsInOrder(
         collection.where(Filter.or(Filter.equalTo("a", 1), Filter.equalTo("b", 1))),
         "doc1",
         "doc2",
@@ -106,7 +164,7 @@ public class ITQueryTest extends ITBaseTest {
         "doc5");
 
     // (a==1 && b==0) || (a==3 && b==2)
-    checkQuerySnapshotContainsDocuments(
+    checkResultContainsDocumentsInOrder(
         collection.where(
             Filter.or(
                 Filter.and(Filter.equalTo("a", 1), Filter.equalTo("b", 0)),
@@ -115,7 +173,7 @@ public class ITQueryTest extends ITBaseTest {
         "doc3");
 
     // a==1 && (b==0 || b==3).
-    checkQuerySnapshotContainsDocuments(
+    checkResultContainsDocumentsInOrder(
         collection.where(
             Filter.and(
                 Filter.equalTo("a", 1), Filter.or(Filter.equalTo("b", 0), Filter.equalTo("b", 3)))),
@@ -123,7 +181,7 @@ public class ITQueryTest extends ITBaseTest {
         "doc4");
 
     // (a==2 || b==2) && (a==3 || b==3)
-    checkQuerySnapshotContainsDocuments(
+    checkResultContainsDocumentsInOrder(
         collection.where(
             Filter.and(
                 Filter.or(Filter.equalTo("a", 2), Filter.equalTo("b", 2)),
@@ -131,7 +189,7 @@ public class ITQueryTest extends ITBaseTest {
         "doc3");
 
     // Test with limits without orderBy (the __name__ ordering is the tiebreaker).
-    checkQuerySnapshotContainsDocuments(
+    checkResultContainsDocumentsInOrder(
         collection.where(Filter.or(Filter.equalTo("a", 2), Filter.equalTo("b", 1))).limit(1),
         "doc2");
   }
@@ -153,21 +211,21 @@ public class ITQueryTest extends ITBaseTest {
     CollectionReference collection = testCollectionWithDocs(testDocs);
 
     // with one inequality: a>2 || b==1.
-    checkQuerySnapshotContainsDocuments(
+    checkResultContainsDocuments(
         collection.where(Filter.or(Filter.greaterThan("a", 2), Filter.equalTo("b", 1))),
         "doc5",
         "doc2",
         "doc3");
 
     // Test with limits (implicit order by ASC): (a==1) || (b > 0) LIMIT 2
-    checkQuerySnapshotContainsDocuments(
+    checkResultContainsDocumentsInOrder(
         collection.where(Filter.or(Filter.equalTo("a", 1), Filter.greaterThan("b", 0))).limit(2),
         "doc1",
         "doc2");
 
     // Test with limits (explicit order by): (a==1) || (b > 0) LIMIT_TO_LAST 2
     // Note: The public query API does not allow implicit ordering when limitToLast is used.
-    checkQuerySnapshotContainsDocuments(
+    checkResultContainsDocumentsInOrder(
         collection
             .where(Filter.or(Filter.equalTo("a", 1), Filter.greaterThan("b", 0)))
             .limitToLast(2)
@@ -176,7 +234,7 @@ public class ITQueryTest extends ITBaseTest {
         "doc4");
 
     // Test with limits (explicit order by ASC): (a==2) || (b == 1) ORDER BY a LIMIT 1
-    checkQuerySnapshotContainsDocuments(
+    checkResultContainsDocumentsInOrder(
         collection
             .where(Filter.or(Filter.equalTo("a", 2), Filter.equalTo("b", 1)))
             .limit(1)
@@ -184,7 +242,7 @@ public class ITQueryTest extends ITBaseTest {
         "doc5");
 
     // Test with limits (explicit order by DESC): (a==2) || (b == 1) ORDER BY a LIMIT_TO_LAST 1
-    checkQuerySnapshotContainsDocuments(
+    checkResultContainsDocumentsInOrder(
         collection
             .where(Filter.or(Filter.equalTo("a", 2), Filter.equalTo("b", 1)))
             .limitToLast(1)
@@ -192,7 +250,7 @@ public class ITQueryTest extends ITBaseTest {
         "doc2");
 
     // Test with limits (explicit order by DESC): (a==2) || (b == 1) ORDER BY a DESC LIMIT 1
-    checkQuerySnapshotContainsDocuments(
+    checkResultContainsDocumentsInOrder(
         collection
             .where(Filter.or(Filter.equalTo("a", 2), Filter.equalTo("b", 1)))
             .limit(1)
@@ -217,7 +275,7 @@ public class ITQueryTest extends ITBaseTest {
     // There's no explicit nor implicit orderBy. Documents with missing 'a' or missing 'b' should be
     // allowed if the document matches at least one disjunction term.
     Query query = collection.where(Filter.or(Filter.equalTo("a", 1), Filter.equalTo("b", 1)));
-    checkQuerySnapshotContainsDocuments(query, "doc1", "doc2", "doc4", "doc5");
+    checkResultContainsDocumentsInOrder(query, "doc1", "doc2", "doc4", "doc5");
   }
 
   @Test
@@ -241,19 +299,19 @@ public class ITQueryTest extends ITBaseTest {
     // doc2 should not be included because it's missing the field 'a', and we have "orderBy a".
     Query query1 =
         collection.where(Filter.or(Filter.equalTo("a", 1), Filter.equalTo("b", 1))).orderBy("a");
-    checkQuerySnapshotContainsDocuments(query1, "doc1", "doc4", "doc5");
+    checkResultContainsDocumentsInOrder(query1, "doc1", "doc4", "doc5");
 
     // Query: a==1 || b==1 order by b.
     // doc5 should not be included because it's missing the field 'b', and we have "orderBy b".
     Query query2 =
         collection.where(Filter.or(Filter.equalTo("a", 1), Filter.equalTo("b", 1))).orderBy("b");
-    checkQuerySnapshotContainsDocuments(query2, "doc1", "doc2", "doc4");
+    checkResultContainsDocumentsInOrder(query2, "doc1", "doc2", "doc4");
 
     // Query: a>2 || b==1.
     // This query has an implicit 'order by a'.
     // doc2 should not be included because it's missing the field 'a'.
     Query query3 = collection.where(Filter.or(Filter.greaterThan("a", 2), Filter.equalTo("b", 1)));
-    checkQuerySnapshotContainsDocuments(query3, "doc3");
+    checkResultContainsDocumentsInOrder(query3, "doc3");
 
     // Query: a>1 || b==1 order by a order by b.
     // doc6 should not be included because it's missing the field 'b'.
@@ -263,7 +321,7 @@ public class ITQueryTest extends ITBaseTest {
             .where(Filter.or(Filter.greaterThan("a", 1), Filter.equalTo("b", 1)))
             .orderBy("a")
             .orderBy("b");
-    checkQuerySnapshotContainsDocuments(query4, "doc3");
+    checkResultContainsDocumentsInOrder(query4, "doc3");
   }
 
   @Test
@@ -279,7 +337,7 @@ public class ITQueryTest extends ITBaseTest {
     CollectionReference collection = testCollectionWithDocs(testDocs);
 
     // a==2 || b in [2,3]
-    checkQuerySnapshotContainsDocuments(
+    checkResultContainsDocumentsInOrder(
         collection.where(Filter.or(Filter.equalTo("a", 2), Filter.inArray("b", asList(2, 3)))),
         "doc3",
         "doc4",
@@ -290,7 +348,8 @@ public class ITQueryTest extends ITBaseTest {
   public void orQueriesWithNotIn()
       throws ExecutionException, InterruptedException, TimeoutException {
     assumeTrue(
-        "Skip this test when running against production because it is currently not supported.",
+        "Skip this test when running against production because it requires composite index"
+            + " creation.",
         isRunningAgainstFirestoreEmulator(firestore));
     Map<String, Map<String, Object>> testDocs =
         map(
@@ -304,7 +363,7 @@ public class ITQueryTest extends ITBaseTest {
 
     // a==2 || b not-in [2,3]
     // Has implicit orderBy b.
-    checkQuerySnapshotContainsDocuments(
+    checkResultContainsDocumentsInOrder(
         collection.where(Filter.or(Filter.equalTo("a", 2), Filter.notInArray("b", asList(2, 3)))),
         "doc1",
         "doc2");
@@ -324,14 +383,14 @@ public class ITQueryTest extends ITBaseTest {
     CollectionReference collection = testCollectionWithDocs(testDocs);
 
     // a==2 || b array-contains 7
-    checkQuerySnapshotContainsDocuments(
+    checkResultContainsDocumentsInOrder(
         collection.where(Filter.or(Filter.equalTo("a", 2), Filter.arrayContains("b", 7))),
         "doc3",
         "doc4",
         "doc6");
 
     // a==2 || b array-contains-any [0, 3]
-    checkQuerySnapshotContainsDocuments(
+    checkResultContainsDocumentsInOrder(
         collection.where(
             Filter.or(Filter.equalTo("a", 2), Filter.arrayContainsAny("b", asList(0, 3)))),
         "doc1",
@@ -355,35 +414,31 @@ public class ITQueryTest extends ITBaseTest {
     Query query1 =
         collection.where(
             Filter.or(Filter.inArray("a", asList(2, 3)), Filter.arrayContains("b", 3)));
-    checkQuerySnapshotContainsDocuments(query1, "doc3", "doc4", "doc6");
+    checkResultContainsDocumentsInOrder(query1, "doc3", "doc4", "doc6");
 
     Query query2 =
         collection.where(
             Filter.and(Filter.inArray("a", asList(2, 3)), Filter.arrayContains("b", 7)));
-    checkQuerySnapshotContainsDocuments(query2, "doc3");
+    checkResultContainsDocumentsInOrder(query2, "doc3");
 
     Query query3 =
         collection.where(
             Filter.or(
                 Filter.inArray("a", asList(2, 3)),
                 Filter.and(Filter.arrayContains("b", 3), Filter.equalTo("a", 1))));
-    checkQuerySnapshotContainsDocuments(query3, "doc3", "doc4", "doc6");
+    checkResultContainsDocumentsInOrder(query3, "doc3", "doc4", "doc6");
 
     Query query4 =
         collection.where(
             Filter.and(
                 Filter.inArray("a", asList(2, 3)),
                 Filter.or(Filter.arrayContains("b", 7), Filter.equalTo("a", 1))));
-    checkQuerySnapshotContainsDocuments(query4, "doc3");
+    checkResultContainsDocumentsInOrder(query4, "doc3");
   }
 
   @Test
   public void testOrderByEquality()
       throws ExecutionException, InterruptedException, TimeoutException {
-    assumeTrue(
-        "Skip this test if running against production because order-by-equality is "
-            + "not supported yet.",
-        isRunningAgainstFirestoreEmulator(firestore));
     Map<String, Map<String, Object>> testDocs =
         map(
             "doc1", map("a", 1, "b", asList(0)),
@@ -395,20 +450,18 @@ public class ITQueryTest extends ITBaseTest {
     CollectionReference collection = testCollectionWithDocs(testDocs);
 
     Query query1 = collection.where(Filter.equalTo("a", 1)).orderBy("a");
-    checkQuerySnapshotContainsDocuments(query1, "doc1", "doc4", "doc5");
+    checkResultContainsDocumentsInOrder(query1, "doc1", "doc4", "doc5");
 
     Query query2 = collection.where(Filter.inArray("a", asList(2, 3))).orderBy("a");
-    checkQuerySnapshotContainsDocuments(query2, "doc6", "doc3");
+    checkResultContainsDocumentsInOrder(query2, "doc6", "doc3");
   }
 
   /** Multiple Inequality */
   @Test
   public void multipleInequalityOnDifferentFields() throws Exception {
-    // TODO(MIEQ): Enable this test against production when possible.
     assumeTrue(
-        "Skip this test if running against production because multiple inequality is "
-            + "not supported yet.",
-        isRunningAgainstFirestoreEmulator(firestore));
+        "Standard edition requires index setup, but this is a dynamic collection",
+        getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
 
     CollectionReference collection =
         testCollectionWithDocs(
@@ -423,7 +476,7 @@ public class ITQueryTest extends ITBaseTest {
             .whereNotEqualTo("key", "a")
             .whereLessThanOrEqualTo("sort", 2)
             .whereGreaterThan("v", 2);
-    checkQuerySnapshotContainsDocuments(query1, "doc3");
+    checkResultContainsDocumentsInOrder(query1, "doc3");
 
     // Duplicate inequality fields
     Query query2 =
@@ -431,7 +484,7 @@ public class ITQueryTest extends ITBaseTest {
             .whereNotEqualTo("key", "a")
             .whereLessThanOrEqualTo("sort", 2)
             .whereGreaterThan("sort", 1);
-    checkQuerySnapshotContainsDocuments(query2, "doc4");
+    checkResultContainsDocumentsInOrder(query2, "doc4");
 
     // With multiple IN
     Query query3 =
@@ -440,7 +493,7 @@ public class ITQueryTest extends ITBaseTest {
             .whereLessThanOrEqualTo("sort", 2)
             .whereIn("v", asList(2, 3, 4))
             .whereIn("sort", asList(2, 3));
-    checkQuerySnapshotContainsDocuments(query3, "doc4");
+    checkResultContainsDocumentsInOrder(query3, "doc4");
 
     // With NOT-IN
     Query query4 =
@@ -448,7 +501,7 @@ public class ITQueryTest extends ITBaseTest {
             .whereGreaterThanOrEqualTo("key", "a")
             .whereLessThanOrEqualTo("sort", 2)
             .whereNotIn("v", asList(2, 4, 5));
-    checkQuerySnapshotContainsDocuments(query4, "doc1", "doc3");
+    checkResultContainsDocumentsInOrder(query4, "doc1", "doc3");
 
     // With orderby
     Query query5 =
@@ -456,7 +509,7 @@ public class ITQueryTest extends ITBaseTest {
             .whereGreaterThanOrEqualTo("key", "a")
             .whereLessThanOrEqualTo("sort", 2)
             .orderBy("v", Direction.DESCENDING);
-    checkQuerySnapshotContainsDocuments(query5, "doc3", "doc4", "doc1");
+    checkResultContainsDocumentsInOrder(query5, "doc3", "doc4", "doc1");
 
     // With limit
     Query query6 =
@@ -465,7 +518,7 @@ public class ITQueryTest extends ITBaseTest {
             .whereLessThanOrEqualTo("sort", 2)
             .orderBy("v", Direction.DESCENDING)
             .limit(2);
-    checkQuerySnapshotContainsDocuments(query6, "doc3", "doc4");
+    checkResultContainsDocumentsInOrder(query6, "doc3", "doc4");
 
     // With limitToLast
     Query query7 =
@@ -474,17 +527,14 @@ public class ITQueryTest extends ITBaseTest {
             .whereLessThanOrEqualTo("sort", 2)
             .orderBy("v", Direction.DESCENDING)
             .limitToLast(2);
-    checkQuerySnapshotContainsDocuments(query7, "doc4", "doc1");
+    checkResultContainsDocumentsInOrder(query7, "doc4", "doc1");
   }
 
   @Test
   public void multipleInequalityOnSpecialValues() throws Exception {
-    // TODO(MIEQ): Enable this test against production when possible.
     assumeTrue(
-        "Skip this test if running against production because multiple inequality is "
-            + "not supported yet.",
-        isRunningAgainstFirestoreEmulator(firestore));
-
+        "Standard edition requires index setup, but this is a dynamic collection",
+        getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
     CollectionReference collection =
         testCollectionWithDocs(
             map(
@@ -496,23 +546,21 @@ public class ITQueryTest extends ITBaseTest {
                 "doc6", map("key", "f", "sort", 1, "v", 1)));
 
     Query query1 = collection.whereNotEqualTo("key", "a").whereLessThanOrEqualTo("sort", 2);
-    checkQuerySnapshotContainsDocuments(query1, "doc5", "doc6");
+    checkResultContainsDocumentsInOrder(query1, "doc5", "doc6");
 
     Query query2 =
         collection
             .whereNotEqualTo("key", "a")
             .whereLessThanOrEqualTo("sort", 2)
             .whereLessThanOrEqualTo("v", 1);
-    checkQuerySnapshotContainsDocuments(query2, "doc6");
+    checkResultContainsDocumentsInOrder(query2, "doc6");
   }
 
   @Test
   public void multipleInequalityWithArrayMembership() throws Exception {
-    // TODO(MIEQ): Enable this test against production when possible.
     assumeTrue(
-        "Skip this test if running against production because multiple inequality is "
-            + "not supported yet.",
-        isRunningAgainstFirestoreEmulator(firestore));
+        "Standard edition requires index setup, but this is a dynamic collection",
+        getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
 
     CollectionReference collection =
         testCollectionWithDocs(
@@ -537,14 +585,14 @@ public class ITQueryTest extends ITBaseTest {
             .whereNotEqualTo("key", "a")
             .whereGreaterThanOrEqualTo("sort", 1)
             .whereArrayContains("v", 0);
-    checkQuerySnapshotContainsDocuments(query1, "doc2");
+    checkResultContainsDocumentsInOrder(query1, "doc2");
 
     Query query2 =
         collection
             .whereNotEqualTo("key", "a")
             .whereGreaterThanOrEqualTo("sort", 1)
             .whereArrayContainsAny("v", asList(0, 1));
-    checkQuerySnapshotContainsDocuments(query2, "doc2", "doc4");
+    checkResultContainsDocumentsInOrder(query2, "doc2", "doc4");
   }
 
   private static Map<String, Object> nestedObject(int number) {
@@ -565,11 +613,9 @@ public class ITQueryTest extends ITBaseTest {
   // result with the query fields normalized in the server.
   @Test
   public void multipleInequalityWithNestedField() throws Exception {
-    // TODO(MIEQ): Enable this test against production when possible.
     assumeTrue(
-        "Skip this test if running against production because multiple inequality is "
-            + "not supported yet.",
-        isRunningAgainstFirestoreEmulator(firestore));
+        "Standard edition requires index setup, but this is a dynamic collection",
+        getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
 
     CollectionReference collection =
         testCollectionWithDocs(
@@ -588,8 +634,8 @@ public class ITQueryTest extends ITBaseTest {
             .orderBy("name");
     DocumentSnapshot docSnap = collection.document("doc4").get().get();
     Query query1WithCursor = query1.startAt(docSnap);
-    checkQuerySnapshotContainsDocuments(query1, "doc4", "doc1");
-    checkQuerySnapshotContainsDocuments(query1WithCursor, "doc4", "doc1");
+    checkResultContainsDocumentsInOrder(query1, "doc4", "doc1");
+    checkResultContainsDocumentsInOrder(query1WithCursor, "doc4", "doc1");
 
     // ordered by: name desc, field desc, field.dot desc, field\\slash desc, __name__ desc
     Query query2 =
@@ -600,17 +646,15 @@ public class ITQueryTest extends ITBaseTest {
             .orderBy("name", Direction.DESCENDING);
     docSnap = collection.document("doc2").get().get();
     Query query2WithCursor = query2.startAt(docSnap);
-    checkQuerySnapshotContainsDocuments(query2, "doc2", "doc3");
-    checkQuerySnapshotContainsDocuments(query2WithCursor, "doc2", "doc3");
+    checkResultContainsDocumentsInOrder(query2, "doc2", "doc3");
+    checkResultContainsDocumentsInOrder(query2WithCursor, "doc2", "doc3");
   }
 
   @Test
   public void multipleInequalityWithCompositeFilters() throws Exception {
-    // TODO(MIEQ): Enable this test against production when possible.
     assumeTrue(
-        "Skip this test if running against production because multiple inequality is "
-            + "not supported yet.",
-        isRunningAgainstFirestoreEmulator(firestore));
+        "Standard edition requires index setup, but this is a dynamic collection",
+        getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
 
     CollectionReference collection =
         testCollectionWithDocs(
@@ -636,8 +680,8 @@ public class ITQueryTest extends ITBaseTest {
                 Filter.and(Filter.notEqualTo("key", "b"), Filter.greaterThan("v", 4))));
     DocumentSnapshot docSnap = collection.document("doc1").get().get();
     Query query1WithCursor = query1.startAt(docSnap);
-    checkQuerySnapshotContainsDocuments(query1, "doc1", "doc6", "doc5", "doc4");
-    checkQuerySnapshotContainsDocuments(query1WithCursor, "doc1", "doc6", "doc5", "doc4");
+    checkResultContainsDocumentsInOrder(query1, "doc1", "doc6", "doc5", "doc4");
+    checkResultContainsDocumentsInOrder(query1WithCursor, "doc1", "doc6", "doc5", "doc4");
 
     // Ordered by: 'sort' desc, 'key' asc, 'v' asc, __name__ asc
     Query query2 =
@@ -650,8 +694,8 @@ public class ITQueryTest extends ITBaseTest {
             .orderBy("key");
     docSnap = collection.document("doc5").get().get();
     Query query2WithCursor = query2.startAt(docSnap);
-    checkQuerySnapshotContainsDocuments(query2, "doc5", "doc4", "doc1", "doc6");
-    checkQuerySnapshotContainsDocuments(query2WithCursor, "doc5", "doc4", "doc1", "doc6");
+    checkResultContainsDocumentsInOrder(query2, "doc5", "doc4", "doc1", "doc6");
+    checkResultContainsDocumentsInOrder(query2WithCursor, "doc5", "doc4", "doc1", "doc6");
 
     // Implicitly ordered by: 'key' asc, 'sort' asc, 'v' asc, __name__ asc
     Query query3 =
@@ -666,19 +710,16 @@ public class ITQueryTest extends ITBaseTest {
                     Filter.and(Filter.lessThan("key", "b"), Filter.greaterThan("v", 0)))));
     docSnap = collection.document("doc1").get().get();
     Query query3WithCursor = query3.startAt(docSnap);
-    checkQuerySnapshotContainsDocuments(query3, "doc1", "doc2");
-    checkQuerySnapshotContainsDocuments(query3WithCursor, "doc1", "doc2");
+    checkResultContainsDocumentsInOrder(query3, "doc1", "doc2");
+    checkResultContainsDocumentsInOrder(query3WithCursor, "doc1", "doc2");
   }
 
   @Test
   public void multipleInequalityFieldsWillBeImplicitlyOrderedLexicographicallyByServer()
       throws Exception {
-    // TODO(MIEQ): Enable this test against production when possible.
     assumeTrue(
-        "Skip this test if running against production because multiple inequality is "
-            + "not supported yet.",
-        isRunningAgainstFirestoreEmulator(firestore));
-
+        "Standard edition requires index setup, but this is a dynamic collection",
+        getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
     CollectionReference collection =
         testCollectionWithDocs(
             map(
@@ -704,8 +745,8 @@ public class ITQueryTest extends ITBaseTest {
             .whereGreaterThan("sort", 1)
             .whereIn("v", asList(1, 2, 3, 4));
     Query query1WithCursor = query1.startAt(docSnap);
-    checkQuerySnapshotContainsDocuments(query1, "doc2", "doc4", "doc5", "doc3");
-    checkQuerySnapshotContainsDocuments(query1WithCursor, "doc2", "doc4", "doc5", "doc3");
+    checkResultContainsDocumentsInOrder(query1, "doc2", "doc4", "doc5", "doc3");
+    checkResultContainsDocumentsInOrder(query1WithCursor, "doc2", "doc4", "doc5", "doc3");
 
     // Implicitly ordered by: 'key' asc, 'sort' asc, __name__ asc
     Query query2 =
@@ -714,17 +755,15 @@ public class ITQueryTest extends ITBaseTest {
             .whereNotEqualTo("key", "a")
             .whereIn("v", asList(1, 2, 3, 4));
     Query query2WithCursor = query2.startAt(docSnap);
-    checkQuerySnapshotContainsDocuments(query2, "doc2", "doc4", "doc5", "doc3");
-    checkQuerySnapshotContainsDocuments(query2WithCursor, "doc2", "doc4", "doc5", "doc3");
+    checkResultContainsDocumentsInOrder(query2, "doc2", "doc4", "doc5", "doc3");
+    checkResultContainsDocumentsInOrder(query2WithCursor, "doc2", "doc4", "doc5", "doc3");
   }
 
   @Test
   public void multipleInequalityWithMultipleExplicitOrderBy() throws Exception {
-    // TODO(MIEQ): Enable this test against production when possible.
     assumeTrue(
-        "Skip this test if running against production because multiple inequality is "
-            + "not supported yet.",
-        isRunningAgainstFirestoreEmulator(firestore));
+        "Standard edition requires index setup, but this is a dynamic collection",
+        getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
 
     CollectionReference collection =
         testCollectionWithDocs(
@@ -748,8 +787,8 @@ public class ITQueryTest extends ITBaseTest {
     Query query1 =
         collection.whereGreaterThan("key", "a").whereGreaterThanOrEqualTo("sort", 1).orderBy("v");
     Query query1WithCursor = query1.startAt(docSnap);
-    checkQuerySnapshotContainsDocuments(query1, "doc2", "doc4", "doc3", "doc5");
-    checkQuerySnapshotContainsDocuments(query1WithCursor, "doc2", "doc4", "doc3", "doc5");
+    checkResultContainsDocumentsInOrder(query1, "doc2", "doc4", "doc3", "doc5");
+    checkResultContainsDocumentsInOrder(query1WithCursor, "doc2", "doc4", "doc3", "doc5");
 
     // Ordered by: 'v asc, 'sort' asc, 'key' asc,  __name__ asc
     Query query2 =
@@ -759,8 +798,8 @@ public class ITQueryTest extends ITBaseTest {
             .orderBy("v")
             .orderBy("sort");
     Query query2WithCursor = query2.startAt(docSnap);
-    checkQuerySnapshotContainsDocuments(query2, "doc2", "doc5", "doc4", "doc3");
-    checkQuerySnapshotContainsDocuments(query2WithCursor, "doc2", "doc5", "doc4", "doc3");
+    checkResultContainsDocumentsInOrder(query2, "doc2", "doc5", "doc4", "doc3");
+    checkResultContainsDocumentsInOrder(query2WithCursor, "doc2", "doc5", "doc4", "doc3");
 
     docSnap = collection.document("doc5").get().get();
 
@@ -772,8 +811,8 @@ public class ITQueryTest extends ITBaseTest {
             .whereGreaterThanOrEqualTo("sort", 1)
             .orderBy("v", Direction.DESCENDING);
     Query query3WithCursor = query3.startAt(docSnap);
-    checkQuerySnapshotContainsDocuments(query3, "doc5", "doc3", "doc4", "doc2");
-    checkQuerySnapshotContainsDocuments(query3WithCursor, "doc5", "doc3", "doc4", "doc2");
+    checkResultContainsDocumentsInOrder(query3, "doc5", "doc3", "doc4", "doc2");
+    checkResultContainsDocumentsInOrder(query3WithCursor, "doc5", "doc3", "doc4", "doc2");
 
     // Ordered by: 'v desc, 'sort' asc, 'key' asc,  __name__ asc
     Query query4 =
@@ -783,18 +822,12 @@ public class ITQueryTest extends ITBaseTest {
             .orderBy("v", Direction.DESCENDING)
             .orderBy("sort");
     Query query4WithCursor = query4.startAt(docSnap);
-    checkQuerySnapshotContainsDocuments(query4, "doc5", "doc4", "doc3", "doc2");
-    checkQuerySnapshotContainsDocuments(query4WithCursor, "doc5", "doc4", "doc3", "doc2");
+    checkResultContainsDocumentsInOrder(query4, "doc5", "doc4", "doc3", "doc2");
+    checkResultContainsDocumentsInOrder(query4WithCursor, "doc5", "doc4", "doc3", "doc2");
   }
 
   @Test
   public void multipleInequalityFieldsInAggregateQuery() throws Exception {
-    // TODO(MIEQ): Enable this test against production when possible.
-    assumeTrue(
-        "Skip this test if running against production because multiple inequality is "
-            + "not supported yet.",
-        isRunningAgainstFirestoreEmulator(firestore));
-
     CollectionReference collection =
         testCollectionWithDocs(
             map(
@@ -815,17 +848,30 @@ public class ITQueryTest extends ITBaseTest {
             .whereGreaterThanOrEqualTo("sort", 1)
             .orderBy("v")
             .count();
-    assertThat(query.get().get().getCount()).isEqualTo(4);
+    if (isRunningAgainstFirestoreEmulator(firestore)) {
+      assertThat(query.get().get().getCount()).isEqualTo(4);
+    }
+
+    if (getFirestoreEdition() == FirestoreEdition.ENTERPRISE) {
+      assertThat(
+              query
+                  .getQuery()
+                  .getFirestore()
+                  .pipeline()
+                  .createFrom(query)
+                  .execute()
+                  .get()
+                  .getResults())
+          .isNotEmpty();
+    }
     // TODO(MIEQ): Add sum and average when they are public.
   }
 
   @Test
   public void multipleInequalityFieldsWithDocumentKey() throws Exception {
-    // TODO(MIEQ): Enable this test against production when possible.
     assumeTrue(
-        "Skip this test if running against production because multiple inequality is "
-            + "not supported yet.",
-        isRunningAgainstFirestoreEmulator(firestore));
+        "Standard edition requires index setup, but this is a dynamic collection",
+        getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
 
     CollectionReference collection =
         testCollectionWithDocs(
@@ -851,8 +897,8 @@ public class ITQueryTest extends ITBaseTest {
             .whereNotEqualTo("key", "a")
             .whereLessThan(FieldPath.documentId(), "doc5");
     Query query1WithCursor = query1.startAt(docSnap);
-    checkQuerySnapshotContainsDocuments(query1, "doc2", "doc4", "doc3");
-    checkQuerySnapshotContainsDocuments(query1WithCursor, "doc2", "doc4", "doc3");
+    checkResultContainsDocumentsInOrder(query1, "doc2", "doc4", "doc3");
+    checkResultContainsDocumentsInOrder(query1WithCursor, "doc2", "doc4", "doc3");
 
     // Changing filters order will not affect implicit order.
     // Implicitly ordered by: 'key' asc, 'sort' asc, __name__ asc
@@ -862,8 +908,8 @@ public class ITQueryTest extends ITBaseTest {
             .whereGreaterThan("sort", 1)
             .whereNotEqualTo("key", "a");
     Query query2WithCursor = query2.startAt(docSnap);
-    checkQuerySnapshotContainsDocuments(query2, "doc2", "doc4", "doc3");
-    checkQuerySnapshotContainsDocuments(query2WithCursor, "doc2", "doc4", "doc3");
+    checkResultContainsDocumentsInOrder(query2, "doc2", "doc4", "doc3");
+    checkResultContainsDocumentsInOrder(query2WithCursor, "doc2", "doc4", "doc3");
 
     // Ordered by: 'sort' desc, 'key' desc, __name__ desc
     Query query3 =
@@ -873,249 +919,8 @@ public class ITQueryTest extends ITBaseTest {
             .whereNotEqualTo("key", "a")
             .orderBy("sort", Direction.DESCENDING);
     Query query3WithCursor = query3.startAt(docSnap);
-    checkQuerySnapshotContainsDocuments(query3, "doc2", "doc3", "doc4");
-    checkQuerySnapshotContainsDocuments(query3WithCursor, "doc2", "doc3", "doc4");
-  }
-
-  @Test
-  public void testQueryPlan() throws Exception {
-    Map<String, Map<String, Object>> testDocs =
-        map(
-            "doc1", map("a", 1, "b", asList(0)),
-            "doc2", map("b", asList(1)),
-            "doc3", map("a", 3, "b", asList(2, 7), "c", 10),
-            "doc4", map("a", 1, "b", asList(3, 7)),
-            "doc5", map("a", 1),
-            "doc6", map("a", 2, "c", 20));
-    CollectionReference collection = testCollectionWithDocs(testDocs);
-
-    Query query = collection.where(Filter.equalTo("a", 1)).orderBy("a");
-    ExplainResults<QuerySnapshot> explainResults =
-        query.explain(ExplainOptions.builder().setAnalyze(false).build()).get();
-
-    @Nullable QuerySnapshot snapshot = explainResults.getSnapshot();
-    assertThat(snapshot).isNull();
-
-    ExplainMetrics metrics = explainResults.getMetrics();
-    assertThat(metrics).isNotNull();
-
-    PlanSummary planSummary = metrics.getPlanSummary();
-    assertThat(planSummary).isNotNull();
-    assertThat(planSummary.getIndexesUsed()).isNotEmpty();
-
-    ExecutionStats stats = metrics.getExecutionStats();
-    assertThat(stats).isNull();
-  }
-
-  @Test
-  public void testQueryProfile() throws Exception {
-    Map<String, Map<String, Object>> testDocs =
-        map(
-            "doc1", map("a", 1, "b", asList(0)),
-            "doc2", map("b", asList(1)),
-            "doc3", map("a", 3, "b", asList(2, 7), "c", 10),
-            "doc4", map("a", 1, "b", asList(3, 7)),
-            "doc5", map("a", 1),
-            "doc6", map("a", 2, "c", 20));
-    CollectionReference collection = testCollectionWithDocs(testDocs);
-
-    Query query = collection.where(Filter.equalTo("a", 1)).orderBy("a");
-    ExplainResults<QuerySnapshot> explainResults =
-        query.explain(ExplainOptions.builder().setAnalyze(true).build()).get();
-
-    @Nullable QuerySnapshot snapshot = explainResults.getSnapshot();
-    assertThat(snapshot).isNotNull();
-    assertThat(snapshot.size()).isEqualTo(3);
-
-    ExplainMetrics metrics = explainResults.getMetrics();
-    assertThat(metrics).isNotNull();
-
-    PlanSummary planSummary = metrics.getPlanSummary();
-    assertThat(planSummary).isNotNull();
-    assertThat(planSummary.getIndexesUsed()).isNotEmpty();
-
-    ExecutionStats stats = metrics.getExecutionStats();
-    assertThat(stats).isNotNull();
-    assertThat(stats.getDebugStats()).isNotEmpty();
-    assertThat(stats.getReadOperations()).isEqualTo(3);
-    assertThat(stats.getResultsReturned()).isEqualTo(3);
-    assertThat(stats.getExecutionDuration()).isGreaterThan(Duration.ZERO);
-  }
-
-  @Test
-  public void testQueryProfileForQueryWithNoResultSet() throws Exception {
-    Map<String, Map<String, Object>> testDocs =
-        map(
-            "doc1", map("a", 1, "b", asList(0)),
-            "doc2", map("b", asList(1)),
-            "doc3", map("a", 3, "b", asList(2, 7), "c", 10),
-            "doc4", map("a", 1, "b", asList(3, 7)),
-            "doc5", map("a", 1),
-            "doc6", map("a", 2, "c", 20));
-    CollectionReference collection = testCollectionWithDocs(testDocs);
-
-    Query query = collection.where(Filter.equalTo("a", 100)).orderBy("a");
-
-    // Regular query execution (get).
-    QuerySnapshot getSnapshot = query.get().get();
-    assertThat(getSnapshot.size()).isEqualTo(0);
-
-    // Explain.
-    ExplainResults<QuerySnapshot> explainResults =
-        query.explain(ExplainOptions.builder().setAnalyze(true).build()).get();
-
-    @Nullable QuerySnapshot snapshot = explainResults.getSnapshot();
-    assertThat(snapshot).isNotNull();
-    assertThat(snapshot.size()).isEqualTo(0);
-
-    ExplainMetrics metrics = explainResults.getMetrics();
-    assertThat(metrics).isNotNull();
-
-    PlanSummary planSummary = metrics.getPlanSummary();
-    assertThat(planSummary).isNotNull();
-    assertThat(planSummary.getIndexesUsed()).isNotEmpty();
-
-    ExecutionStats stats = metrics.getExecutionStats();
-    assertThat(stats).isNotNull();
-    assertThat(stats.getDebugStats()).isNotEmpty();
-    assertThat(stats.getReadOperations()).isGreaterThan(0);
-    assertThat(stats.getResultsReturned()).isEqualTo(0);
-    assertThat(stats.getExecutionDuration()).isGreaterThan(Duration.ZERO);
-  }
-
-  @Test
-  public void testExplainStreamWithoutAnalyze() throws Exception {
-    CollectionReference collection = testCollectionWithDocs(Collections.emptyMap());
-    Query query = collection.where(Filter.equalTo("a", 1)).orderBy("a");
-
-    ApiFuture<ExplainMetrics> metricsFuture =
-        query.explainStream(
-            ExplainOptions.builder().setAnalyze(false).build(),
-            new ApiStreamObserver<DocumentSnapshot>() {
-              @Override
-              public void onNext(DocumentSnapshot documentSnapshot) {
-                fail("No DocumentSnapshot should be received because analyze option was disabled.");
-              }
-
-              @Override
-              public void onError(Throwable throwable) {
-                fail(throwable.getMessage());
-              }
-
-              @Override
-              public void onCompleted() {}
-            });
-
-    ExplainMetrics metrics = metricsFuture.get();
-    assertThat(metrics.getPlanSummary().getIndexesUsed().size()).isGreaterThan(0);
-    assertThat(metrics.getExecutionStats()).isNull();
-  }
-
-  @Test
-  public void testExplainStreamWithAnalyze() throws Exception {
-    Map<String, Map<String, Object>> testDocs =
-        map(
-            "doc1", map("a", 1, "b", asList(0)),
-            "doc2", map("b", asList(1)),
-            "doc3", map("a", 3, "b", asList(2, 7), "c", 10),
-            "doc4", map("a", 1, "b", asList(3, 7)),
-            "doc5", map("a", 1),
-            "doc6", map("a", 2, "c", 20));
-    CollectionReference collection = testCollectionWithDocs(testDocs);
-
-    Query query = collection.where(Filter.equalTo("a", 1)).orderBy("a");
-
-    final Iterator<String> iterator = Arrays.asList("doc1", "doc4", "doc5").iterator();
-
-    ApiFuture<ExplainMetrics> metricsFuture =
-        query.explainStream(
-            ExplainOptions.builder().setAnalyze(true).build(),
-            new ApiStreamObserver<DocumentSnapshot>() {
-              @Override
-              public void onNext(DocumentSnapshot documentSnapshot) {
-                assertEquals(iterator.next(), documentSnapshot.getId());
-              }
-
-              @Override
-              public void onError(Throwable throwable) {
-                fail(throwable.getMessage());
-              }
-
-              @Override
-              public void onCompleted() {}
-            });
-
-    ExplainMetrics metrics = metricsFuture.get();
-    assertThat(metrics.getPlanSummary().getIndexesUsed().size()).isGreaterThan(0);
-    assertThat(metrics.getExecutionStats()).isNotNull();
-    assertThat(metrics.getExecutionStats().getResultsReturned()).isEqualTo(3);
-  }
-
-  @Test
-  public void testAggregateQueryPlan() throws Exception {
-    Map<String, Map<String, Object>> testDocs =
-        map(
-            "doc1", map("a", 1, "b", asList(0)),
-            "doc2", map("b", asList(1)),
-            "doc3", map("a", 3, "b", asList(2, 7), "c", 10),
-            "doc4", map("a", 1, "b", asList(3, 7)),
-            "doc5", map("a", 1),
-            "doc6", map("a", 2, "c", 20));
-    CollectionReference collection = testCollectionWithDocs(testDocs);
-
-    AggregateQuery query = collection.where(Filter.equalTo("a", 1)).orderBy("a").count();
-
-    ExplainResults<AggregateQuerySnapshot> explainResults =
-        query.explain(ExplainOptions.builder().setAnalyze(false).build()).get();
-
-    @Nullable AggregateQuerySnapshot snapshot = explainResults.getSnapshot();
-    assertThat(snapshot).isNull();
-
-    ExplainMetrics metrics = explainResults.getMetrics();
-    assertThat(metrics).isNotNull();
-
-    PlanSummary planSummary = metrics.getPlanSummary();
-    assertThat(planSummary).isNotNull();
-    assertThat(planSummary.getIndexesUsed()).isNotEmpty();
-
-    ExecutionStats stats = metrics.getExecutionStats();
-    assertThat(stats).isNull();
-  }
-
-  @Test
-  public void testAggregateQueryProfile() throws Exception {
-    Map<String, Map<String, Object>> testDocs =
-        map(
-            "doc1", map("a", 1, "b", asList(0)),
-            "doc2", map("b", asList(1)),
-            "doc3", map("a", 3, "b", asList(2, 7), "c", 10),
-            "doc4", map("a", 1, "b", asList(3, 7)),
-            "doc5", map("a", 1),
-            "doc6", map("a", 2, "c", 20));
-    CollectionReference collection = testCollectionWithDocs(testDocs);
-
-    AggregateQuery query = collection.where(Filter.equalTo("a", 1)).orderBy("a").count();
-
-    ExplainResults<AggregateQuerySnapshot> explainResults =
-        query.explain(ExplainOptions.builder().setAnalyze(true).build()).get();
-
-    @Nullable AggregateQuerySnapshot snapshot = explainResults.getSnapshot();
-    assertThat(snapshot).isNotNull();
-    assertThat(snapshot.getCount()).isEqualTo(3);
-
-    ExplainMetrics metrics = explainResults.getMetrics();
-    assertThat(metrics).isNotNull();
-
-    PlanSummary planSummary = metrics.getPlanSummary();
-    assertThat(planSummary).isNotNull();
-    assertThat(planSummary.getIndexesUsed()).isNotEmpty();
-
-    ExecutionStats stats = metrics.getExecutionStats();
-    assertThat(stats).isNotNull();
-    assertThat(stats.getDebugStats()).isNotEmpty();
-    assertThat(stats.getReadOperations()).isEqualTo(1);
-    assertThat(stats.getResultsReturned()).isEqualTo(1);
-    assertThat(stats.getExecutionDuration()).isGreaterThan(Duration.ZERO);
+    checkResultContainsDocumentsInOrder(query3, "doc2", "doc3", "doc4");
+    checkResultContainsDocumentsInOrder(query3WithCursor, "doc2", "doc3", "doc4");
   }
 
   @Test
@@ -1418,7 +1223,16 @@ public class ITQueryTest extends ITBaseTest {
     latch.await();
     registration.remove();
 
-    assertEquals(queryOrder, Arrays.asList("a", "d", "e", "f", "g", "b", "c"));
-    assertEquals(queryOrder, listenerOrder);
+    switch (getFirestoreEdition()) {
+      case STANDARD:
+        assertEquals(queryOrder, Arrays.asList("a", "d", "e", "f", "g", "b", "c"));
+        assertEquals(queryOrder, listenerOrder);
+        break;
+      case ENTERPRISE:
+        assertThat(queryOrder)
+            .containsExactlyElementsIn(Arrays.asList("a", "d", "e", "f", "g", "c", "b"));
+        assertEquals(listenerOrder, Arrays.asList("a", "d", "e", "f", "g", "b", "c"));
+        break;
+    }
   }
 }

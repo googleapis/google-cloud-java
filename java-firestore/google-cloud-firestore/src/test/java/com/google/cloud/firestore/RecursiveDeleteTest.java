@@ -327,7 +327,7 @@ public class RecursiveDeleteTest {
   }
 
   @Test
-  @Ignore
+  @Ignore("b/323498886")
   public void createsSecondQueryWithCorrectStartAfter() throws Exception {
     // This test checks that the second query is created with the correct startAfter() once the
     // RecursiveDelete instance is below the MIN_PENDING_OPS threshold to send the next batch.

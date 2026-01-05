@@ -50,6 +50,8 @@ import com.google.firestore.v1.BeginTransactionResponse;
 import com.google.firestore.v1.CommitRequest;
 import com.google.firestore.v1.CommitResponse;
 import com.google.firestore.v1.DatabaseRootName;
+import com.google.firestore.v1.ExecutePipelineRequest;
+import com.google.firestore.v1.ExecutePipelineResponse;
 import com.google.firestore.v1.ListCollectionIdsRequest;
 import com.google.firestore.v1.ListDocumentsRequest;
 import com.google.firestore.v1.ListenRequest;
@@ -234,6 +236,12 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
   @Override
   public ServerStreamingCallable<RunQueryRequest, RunQueryResponse> runQueryCallable() {
     return firestoreStub.runQueryCallable();
+  }
+
+  @Override
+  public ServerStreamingCallable<ExecutePipelineRequest, ExecutePipelineResponse>
+      executePipelineCallable() {
+    return firestoreStub.executePipelineCallable();
   }
 
   @Override

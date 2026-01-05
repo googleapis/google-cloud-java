@@ -16,6 +16,7 @@
 
 package com.google.cloud.firestore;
 
+import com.google.api.core.InternalApi;
 import com.google.auto.value.AutoValue;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
@@ -79,7 +80,8 @@ public abstract class FieldPath extends BasePath<FieldPath> implements Comparabl
   }
 
   /** Returns a field path from a dot separated string. Does not support escaping. */
-  static FieldPath fromDotSeparatedString(String field) {
+  @InternalApi
+  public static FieldPath fromDotSeparatedString(String field) {
     if (PROHIBITED_CHARACTERS.matcher(field).matches()) {
       throw new IllegalArgumentException("Use FieldPath.of() for field names containing '˜*/[]'.");
     }

@@ -59,6 +59,9 @@ public interface TelemetryConstants {
   String METHOD_NAME_PARTITION_QUERY = "PartitionQuery";
   String METHOD_NAME_BULK_WRITER_COMMIT = "BulkWriter.Commit";
   String METHOD_NAME_RUN_TRANSACTION = "RunTransaction";
+  String METHOD_NAME_PIPELINE_EXECUTE = "Pipeline.Execute";
+  String METHOD_NAME_EXECUTE_PIPELINE = "ExecutePipeline";
+  String METHOD_NAME_EXECUTE_PIPELINE_EXECUTE = "ExecutePipeline.Execute";
 
   // OpenTelemetry built-in metrics constants
   String FIRESTORE_RESOURCE_TYPE = "firestore_client_raw";

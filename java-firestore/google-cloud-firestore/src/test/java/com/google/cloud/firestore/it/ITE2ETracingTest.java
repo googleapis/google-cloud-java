@@ -39,6 +39,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assume.assumeFalse;
 import static org.junit.Assume.assumeTrue;
 
 import com.google.api.gax.rpc.NotFoundException;
@@ -338,6 +339,10 @@ public abstract class ITE2ETracingTest extends ITBaseTest {
         firestore,
         "Error instantiating Firestore. Check that the service account credentials "
             + "were properly set.");
+
+    assumeFalse(
+        "ITTracingTest is not supported against the emulator.",
+        "EMULATOR".equals(getTargetBackend()));
 
     // Set up the tracer for custom TraceID injection
     rootSpanName =

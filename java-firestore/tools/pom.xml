@@ -24,8 +24,13 @@
     <dependency>
       <groupId>com.android.tools.metalava</groupId>
       <artifactId>metalava</artifactId>
-      <version>1.0.0-alpha12</version>
+      <version>1.0.0-alpha13</version>
       <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>jsr305</artifactId>
+      <version>3.0.2</version>
     </dependency>
   </dependencies>
 

@@ -31,6 +31,8 @@ import com.google.firestore.v1.BeginTransactionRequest;
 import com.google.firestore.v1.BeginTransactionResponse;
 import com.google.firestore.v1.CommitRequest;
 import com.google.firestore.v1.CommitResponse;
+import com.google.firestore.v1.ExecutePipelineRequest;
+import com.google.firestore.v1.ExecutePipelineResponse;
 import com.google.firestore.v1.ListCollectionIdsRequest;
 import com.google.firestore.v1.ListDocumentsRequest;
 import com.google.firestore.v1.ListenRequest;
@@ -61,6 +63,10 @@ public interface FirestoreRpc extends AutoCloseable, ServiceRpc {
 
   /** Runs a query. */
   ServerStreamingCallable<RunQueryRequest, RunQueryResponse> runQueryCallable();
+
+  /** Executes a pipeline. */
+  ServerStreamingCallable<ExecutePipelineRequest, ExecutePipelineResponse>
+      executePipelineCallable();
 
   /** Runs an aggregation query. */
   ServerStreamingCallable<RunAggregationQueryRequest, RunAggregationQueryResponse>

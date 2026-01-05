@@ -16,6 +16,7 @@
 
 package com.google.cloud.firestore;
 
+import com.google.api.core.InternalApi;
 import com.google.api.core.InternalExtensionOnly;
 import com.google.cloud.Timestamp;
 import com.google.firestore.v1.Value;
@@ -188,5 +189,10 @@ public class AggregateQuerySnapshot {
   @Override
   public int hashCode() {
     return Objects.hash(query, data);
+  }
+
+  @InternalApi
+  Map<String, Value> getData() {
+    return data;
   }
 }

@@ -171,6 +171,7 @@ public class WatchTest {
   public void after() {
     Object[] emptyArray = new Object[0];
     assertArrayEquals(exceptions.toArray(), emptyArray);
+    // TODO(b/460778179): Re-enable, this line is flaky
     // assertArrayEquals(requests.toArray(), emptyArray);
     assertArrayEquals(documentSnapshots.toArray(), emptyArray);
     assertArrayEquals(querySnapshots.toArray(), emptyArray);

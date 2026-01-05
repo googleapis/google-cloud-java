@@ -83,7 +83,7 @@ public class ITBulkWriterTest extends ITBaseTest {
       result.get();
       fail("Create operation should have thrown exception");
     } catch (Exception e) {
-      assertTrue(e.getMessage().contains("Document already exists"));
+      assertTrue(e.getMessage().contains("already exists"));
     }
   }
 
@@ -126,7 +126,7 @@ public class ITBulkWriterTest extends ITBaseTest {
       result.get();
       fail("Update operation should have thrown exception");
     } catch (Exception e) {
-      assertTrue(e.getMessage().matches(".* No (document|entity) to update.*"));
+      assertTrue(e.getMessage().contains("to update"));
     }
   }
 

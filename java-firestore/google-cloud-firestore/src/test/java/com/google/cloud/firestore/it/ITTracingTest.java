@@ -21,6 +21,7 @@ import static com.google.cloud.firestore.telemetry.TraceUtil.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assume.assumeFalse;
 
 import com.google.cloud.firestore.BulkWriter;
 import com.google.cloud.firestore.BulkWriterOptions;
@@ -146,6 +147,10 @@ public abstract class ITTracingTest {
               "Integration test using default database for test %s", testName.getMethodName()));
     }
     firestore = optionsBuilder.build().getService();
+
+    assumeFalse(
+        "ITTracingTest is not supported against the emulator.",
+        "EMULATOR".equals(ITBaseTest.getTargetBackend()));
 
     // Clean up existing maps.
     spanNameToSpanId.clear();

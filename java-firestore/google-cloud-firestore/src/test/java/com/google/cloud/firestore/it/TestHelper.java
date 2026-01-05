@@ -28,7 +28,7 @@ public final class TestHelper {
 
   /** Returns whether the tests are running against the Firestore emulator. */
   static boolean isRunningAgainstFirestoreEmulator(Firestore firestore) {
-    return firestore.getOptions().getHost().startsWith("localhost:");
+    return firestore.getOptions().getEmulatorHost() != null;
   }
 
   /**

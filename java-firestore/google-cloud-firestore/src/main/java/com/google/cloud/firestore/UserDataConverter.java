@@ -16,7 +16,12 @@
 
 package com.google.cloud.firestore;
 
+import static com.google.cloud.firestore.pipeline.expressions.FunctionUtils.aggregateFunctionToValue;
+import static com.google.cloud.firestore.pipeline.expressions.FunctionUtils.exprToValue;
+
 import com.google.cloud.Timestamp;
+import com.google.cloud.firestore.pipeline.expressions.AggregateFunction;
+import com.google.cloud.firestore.pipeline.expressions.Expression;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -38,6 +43,9 @@ import javax.annotation.Nullable;
 
 /** Converts user input into the Firestore Value representation. */
 class UserDataConverter {
+
+  static final Value NULL_VALUE = Value.newBuilder().setNullValue(NullValue.NULL_VALUE).build();
+
   private static final Logger LOGGER = Logger.getLogger(UserDataConverter.class.getName());
 
   /** Controls the behavior for field deletes. */
@@ -117,8 +125,9 @@ class UserDataConverter {
               + " as an argument at field '%s'.",
           path);
       return null;
+
     } else if (sanitizedObject == null) {
-      return Value.newBuilder().setNullValue(NullValue.NULL_VALUE).build();
+      return NULL_VALUE;
     } else if (sanitizedObject instanceof String) {
       return Value.newBuilder().setStringValue((String) sanitizedObject).build();
     } else if (sanitizedObject instanceof Integer) {
@@ -159,6 +168,10 @@ class UserDataConverter {
     } else if (sanitizedObject instanceof Blob) {
       Blob blob = (Blob) sanitizedObject;
       return Value.newBuilder().setBytesValue(blob.toByteString()).build();
+    } else if (sanitizedObject instanceof Expression) {
+      return exprToValue((Expression) sanitizedObject);
+    } else if (sanitizedObject instanceof AggregateFunction) {
+      return aggregateFunctionToValue((AggregateFunction) sanitizedObject);
     } else if (sanitizedObject instanceof Value) {
       return (Value) sanitizedObject;
     } else if (sanitizedObject instanceof DocumentReference) {

@@ -21,6 +21,7 @@ import static com.google.cloud.firestore.telemetry.TraceUtil.*;
 
 import com.google.api.core.ApiClock;
 import com.google.api.core.ApiFuture;
+import com.google.api.core.BetaApi;
 import com.google.api.core.NanoClock;
 import com.google.api.core.ObsoleteApi;
 import com.google.api.core.SettableApiFuture;
@@ -414,6 +415,13 @@ class FirestoreImpl implements Firestore, FirestoreRpcContext<FirestoreImpl> {
         "Invalid collectionId '%s'. Collection IDs must not contain '/'.",
         collectionId);
     return new CollectionGroup(this, collectionId);
+  }
+
+  @Nonnull
+  @Override
+  @BetaApi
+  public PipelineSource pipeline() {
+    return new PipelineSource(this);
   }
 
   @Nonnull

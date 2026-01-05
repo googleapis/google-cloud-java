@@ -67,6 +67,37 @@ public interface Firestore extends Service<FirestoreOptions>, AutoCloseable {
   CollectionGroup collectionGroup(@Nonnull String collectionId);
 
   /**
+   * Creates a new {@link PipelineSource} to build and execute a data pipeline.
+   *
+   * <p>A pipeline is composed of a sequence of stages. Each stage processes the output from the
+   * previous one, and the final stage's output is the result of the pipeline's execution.
+   *
+   * <p><b>Example usage:</b>
+   *
+   * <pre>{@code
+   * Pipeline pipeline = firestore.pipeline()
+   * .collection("books")
+   * .where(Field("rating").isGreaterThan(4.5))
+   * .sort(Field("rating").descending())
+   * .limit(2);
+   * }</pre>
+   *
+   * <p><b>Note on Execution:</b> The stages are conceptual. The Firestore backend may optimize
+   * execution (e.g., reordering or merging stages) as long as the final result remains the same.
+   *
+   * <p><b>Important Limitations:</b>
+   *
+   * <ul>
+   *   <li>Pipelines operate on a <b>request/response basis only</b>.
+   *   <li>They do <b>not</b> utilize or update the local SDK cache.
+   *   <li>They do <b>not</b> support realtime snapshot listeners.
+   * </ul>
+   *
+   * @return A {@code PipelineSource} to begin defining the pipeline's stages.
+   */
+  PipelineSource pipeline();
+
+  /**
    * Executes the given updateFunction and then attempts to commit the changes applied within the
    * transaction. If any document read within the transaction has changed, the updateFunction will
    * be retried. If it fails to commit after 5 attempts, the transaction will fail.

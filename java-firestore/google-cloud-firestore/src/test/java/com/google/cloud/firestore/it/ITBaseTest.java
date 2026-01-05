@@ -51,6 +51,34 @@ public abstract class ITBaseTest {
   private FirestoreOptions firestoreOptions;
   private boolean backendPrimed = false;
 
+  protected enum FirestoreEdition {
+    STANDARD,
+    ENTERPRISE
+  }
+
+  static String getTargetBackend() {
+    String targetPropertyName = "FIRESTORE_TARGET_BACKEND";
+    String targetBackend = System.getProperty(targetPropertyName);
+    if (targetBackend == null) {
+      targetBackend = System.getenv(targetPropertyName);
+    }
+
+    return targetBackend;
+  }
+
+  static FirestoreEdition getFirestoreEdition() {
+    String editionPropertyName = "FIRESTORE_EDITION";
+    String firestoreEdition = System.getProperty(editionPropertyName);
+    if (firestoreEdition == null) {
+      firestoreEdition = System.getenv(editionPropertyName);
+    }
+
+    if (firestoreEdition == null) {
+      return FirestoreEdition.STANDARD;
+    }
+    return FirestoreEdition.valueOf(firestoreEdition.toUpperCase());
+  }
+
   @Before
   public void before() throws Exception {
     FirestoreOptions.Builder optionsBuilder = FirestoreOptions.newBuilder();
@@ -67,11 +95,7 @@ public abstract class ITBaseTest {
       logger.log(Level.INFO, "Integration test using default database.");
     }
 
-    String targetPropertyName = "FIRESTORE_TARGET_BACKEND";
-    String targetBackend = System.getProperty(targetPropertyName);
-    if (targetBackend == null) {
-      targetBackend = System.getenv(targetPropertyName);
-    }
+    String targetBackend = getTargetBackend();
     TransportChannelProvider defaultProvider = optionsBuilder.build().getTransportChannelProvider();
     if (targetBackend != null) {
       if (targetBackend.equals("PROD")) {
@@ -82,8 +106,8 @@ public abstract class ITBaseTest {
       } else if (targetBackend.equals("NIGHTLY")) {
         optionsBuilder.setChannelProvider(
             defaultProvider.withEndpoint("test-firestore.sandbox.googleapis.com:443"));
-      } else {
-        throw new IllegalArgumentException("Illegal target backend: " + targetBackend);
+      } else if (targetBackend.equals("EMULATOR")) {
+        optionsBuilder.setEmulatorHost("localhost:8080");
       }
     }
 

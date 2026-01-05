@@ -18,6 +18,7 @@ package com.google.cloud.firestore;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.cloud.firestore.pipeline.stages.PipelineExecuteOptions;
 import com.google.cloud.firestore.telemetry.TelemetryConstants;
 import com.google.cloud.firestore.telemetry.TraceUtil;
 import com.google.common.base.Preconditions;
@@ -126,6 +127,21 @@ final class ReadTimeTransaction extends Transaction {
   public ApiFuture<AggregateQuerySnapshot> get(@Nonnull AggregateQuery query) {
     try (TraceUtil.Scope ignored = transactionTraceContext.makeCurrent()) {
       return query.get(null, readTime);
+    }
+  }
+
+  @Nonnull
+  @Override
+  public ApiFuture<Pipeline.Snapshot> execute(@Nonnull Pipeline pipeline) {
+    return execute(pipeline, new PipelineExecuteOptions());
+  }
+
+  @Nonnull
+  @Override
+  public ApiFuture<Pipeline.Snapshot> execute(
+      @Nonnull Pipeline pipeline, @Nonnull PipelineExecuteOptions options) {
+    try (TraceUtil.Scope ignored = transactionTraceContext.makeCurrent()) {
+      return pipeline.execute(options, null, readTime);
     }
   }
 

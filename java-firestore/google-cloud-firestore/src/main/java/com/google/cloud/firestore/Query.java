@@ -16,6 +16,10 @@
 
 package com.google.cloud.firestore;
 
+import static com.google.cloud.firestore.PipelineUtils.toPipelineBooleanExpr;
+import static com.google.cloud.firestore.pipeline.expressions.Expression.and;
+import static com.google.cloud.firestore.pipeline.expressions.Expression.or;
+import static com.google.cloud.firestore.telemetry.TraceUtil.*;
 import static com.google.firestore.v1.StructuredQuery.FieldFilter.Operator.ARRAY_CONTAINS;
 import static com.google.firestore.v1.StructuredQuery.FieldFilter.Operator.ARRAY_CONTAINS_ANY;
 import static com.google.firestore.v1.StructuredQuery.FieldFilter.Operator.EQUAL;
@@ -35,6 +39,11 @@ import com.google.auto.value.AutoValue;
 import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.Query.QueryOptions.Builder;
 import com.google.cloud.firestore.encoding.CustomClassMapper;
+import com.google.cloud.firestore.pipeline.expressions.BooleanExpression;
+import com.google.cloud.firestore.pipeline.expressions.Expression;
+import com.google.cloud.firestore.pipeline.expressions.Field;
+import com.google.cloud.firestore.pipeline.expressions.Ordering;
+import com.google.cloud.firestore.pipeline.expressions.Selectable;
 import com.google.cloud.firestore.telemetry.MetricsUtil.MetricsContext;
 import com.google.cloud.firestore.telemetry.TelemetryConstants;
 import com.google.common.base.Preconditions;
@@ -51,6 +60,7 @@ import com.google.firestore.v1.StructuredQuery.FieldFilter.Operator;
 import com.google.firestore.v1.StructuredQuery.FieldReference;
 import com.google.firestore.v1.StructuredQuery.Filter;
 import com.google.firestore.v1.StructuredQuery.Order;
+import com.google.firestore.v1.StructuredQuery.UnaryFilter;
 import com.google.firestore.v1.Value;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Int32Value;
@@ -161,6 +171,11 @@ public class Query extends StreamableQuery<QuerySnapshot> {
       return filters;
     }
 
+    @Nonnull
+    CompositeFilter.Operator getOperator() {
+      return this.operator;
+    }
+
     @Nullable
     @Override
     public FieldReference getFirstInequalityField() {
@@ -226,7 +241,7 @@ public class Query extends StreamableQuery<QuerySnapshot> {
     }
   }
 
-  private static class UnaryFilterInternal extends FieldFilterInternal {
+  static class UnaryFilterInternal extends FieldFilterInternal {
 
     private final StructuredQuery.UnaryFilter.Operator operator;
 
@@ -251,6 +266,11 @@ public class Query extends StreamableQuery<QuerySnapshot> {
       Filter.Builder result = Filter.newBuilder();
       result.getUnaryFilterBuilder().setField(fieldReference).setOp(operator);
       return result.build();
+    }
+
+    @Nonnull
+    UnaryFilter.Operator getOperator() {
+      return this.operator;
     }
 
     @Override
@@ -2001,6 +2021,148 @@ public class Query extends StreamableQuery<QuerySnapshot> {
 
     return new VectorQuery(
         this, vectorField, queryVector, limit, distanceMeasure, vectorQueryOptions);
+  }
+
+  Pipeline pipeline() {
+    // From
+    Pipeline ppl =
+        this.options.getAllDescendants()
+            ? new PipelineSource(this.rpcContext).collectionGroup(this.options.getCollectionId())
+            : new PipelineSource(this.rpcContext)
+                .collection(
+                    this.options.getParentPath().append(this.options.getCollectionId()).getPath());
+
+    // Filters
+    for (FilterInternal f : this.options.getFilters()) {
+      ppl = ppl.where(toPipelineBooleanExpr(f));
+    }
+
+    // Projections
+    if (this.options.getFieldProjections() != null
+        && !this.options.getFieldProjections().isEmpty()) {
+      Selectable[] fields =
+          this.options.getFieldProjections().stream()
+              .map(fieldReference -> Field.ofServerPath(fieldReference.getFieldPath()))
+              .toArray(Selectable[]::new);
+      if (fields.length > 0) {
+        ppl = ppl.select(fields[0], Arrays.copyOfRange(fields, 1, fields.length));
+      } else {
+        ppl = ppl.select(fields[0]);
+      }
+    }
+
+    // Orders
+    List<FieldOrder> normalizedOrderBy = createImplicitOrderBy();
+    int size = normalizedOrderBy.size();
+    List<Field> fields = new ArrayList<>(size);
+    List<Ordering> orderings = new ArrayList<>(size);
+    for (FieldOrder order : normalizedOrderBy) {
+      Field field = Field.ofServerPath(order.fieldReference.getFieldPath());
+      fields.add(field);
+      if (order.direction == Direction.ASCENDING) {
+        orderings.add(field.ascending());
+      } else {
+        orderings.add(field.descending());
+      }
+    }
+
+    if (fields.size() == 1) {
+      ppl = ppl.where(fields.get(0).exists());
+    } else {
+      ppl =
+          ppl.where(
+              and(
+                  fields.get(0).exists(),
+                  fields.subList(1, fields.size()).stream()
+                      .map((Field field) -> field.exists())
+                      .toArray(BooleanExpression[]::new)));
+    }
+
+    // Cursors, Limit, Offset
+    if (this.options.getStartCursor() != null) {
+      ppl = ppl.where(whereConditionsFromCursor(options.getStartCursor(), orderings, true));
+    }
+
+    if (this.options.getEndCursor() != null) {
+      ppl = ppl.where(whereConditionsFromCursor(options.getEndCursor(), orderings, false));
+    }
+
+    if (options.getLimit() != null) {
+      // TODO: Handle situation where user enters limit larger than integer.
+      if (options.getLimitType() == LimitType.First) {
+        ppl = ppl.sort(orderings.toArray(new Ordering[0]));
+        ppl = ppl.limit(options.getLimit());
+      } else {
+        if (options.getFieldOrders().isEmpty()) {
+          throw new IllegalStateException(
+              "limitToLast() queries require specifying at least one orderBy() clause");
+        }
+
+        List<Ordering> reversedOrderings = new ArrayList<>();
+        for (Ordering ordering : orderings) {
+          reversedOrderings.add(reverseOrdering(ordering));
+        }
+        ppl = ppl.sort(reversedOrderings.toArray(new Ordering[0]));
+        ppl = ppl.limit(options.getLimit());
+        ppl = ppl.sort(orderings.toArray(new Ordering[0]));
+      }
+    } else {
+      ppl = ppl.sort(orderings.toArray(new Ordering[0]));
+    }
+
+    return ppl;
+  }
+
+  private static Ordering reverseOrdering(Ordering ordering) {
+    if (ordering.getDir() == Ordering.Direction.ASCENDING) {
+      return ordering.getExpr().descending();
+    } else {
+      return ordering.getExpr().ascending();
+    }
+  }
+
+  private static BooleanExpression getCursorExclusiveCondition(
+      boolean isStart, Ordering ordering, Value value) {
+    if (isStart && ordering.getDir() == Ordering.Direction.ASCENDING
+        || !isStart && ordering.getDir() == Ordering.Direction.DESCENDING) {
+      return ordering.getExpr().greaterThan(value);
+    } else {
+      return ordering.getExpr().lessThan(value);
+    }
+  }
+
+  private static BooleanExpression whereConditionsFromCursor(
+      Cursor bound, List<Ordering> orderings, boolean isStart) {
+    List<Value> boundPosition = bound.getValuesList();
+    int size = boundPosition.size();
+    if (size > orderings.size()) {
+      throw new IllegalArgumentException("Bound positions must not exceed order fields.");
+    }
+
+    int last = size - 1;
+    BooleanExpression condition =
+        getCursorExclusiveCondition(isStart, orderings.get(last), boundPosition.get(last));
+    if (isBoundInclusive(bound, isStart)) {
+      condition =
+          or(condition, Expression.equal(orderings.get(last).getExpr(), boundPosition.get(last)));
+    }
+    for (int i = size - 2; i >= 0; i--) {
+      final Ordering ordering = orderings.get(i);
+      final Value value = boundPosition.get(i);
+      condition =
+          or(
+              getCursorExclusiveCondition(isStart, ordering, value),
+              and(ordering.getExpr().equal(value), condition));
+    }
+    return condition;
+  }
+
+  private static boolean isBoundInclusive(Cursor bound, boolean isStart) {
+    if (isStart) {
+      return bound.getBefore();
+    } else {
+      return !bound.getBefore();
+    }
   }
 
   /**

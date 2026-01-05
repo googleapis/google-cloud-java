@@ -346,4 +346,26 @@
     <method>void internalStream(*)</method>
     <to>*</to>
   </difference>
+
+  <!-- Pipeline Queries -->
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/firestore/Firestore</className>
+    <method>com.google.cloud.firestore.PipelineSource pipeline()</method>
+  </difference>
+  <difference>
+    <differenceType>7013</differenceType>
+    <className>com/google/cloud/firestore/Transaction</className>
+    <method>com.google.api.core.ApiFuture execute(com.google.cloud.firestore.Pipeline)</method>
+  </difference>
+  <difference>
+    <differenceType>7013</differenceType>
+    <className>com/google/cloud/firestore/Transaction</className>
+    <method>com.google.api.core.ApiFuture execute(com.google.cloud.firestore.Pipeline, com.google.cloud.firestore.pipeline.stages.PipelineExecuteOptions)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/firestore/spi/v1/FirestoreRpc</className>
+    <method>com.google.api.gax.rpc.ServerStreamingCallable executePipelineCallable()</method>
+  </difference>
 </differences>

@@ -1280,7 +1280,7 @@ public class BulkWriterTest {
   }
 
   @Test
-  @Ignore
+  @Ignore("b/329596806")
   public void sendsBackoffBatchAfterOtherEnqueuedBatches() throws Exception {
     ResponseStubber responseStubber =
         new ResponseStubber() {
