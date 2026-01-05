@@ -3,6 +3,19 @@
 # Exit on error
 set -e
 
+# Function to check if a command exists
+check_command() {
+    if ! command -v "$1" >/dev/null 2>&1; then
+        echo "Error: $1 is not installed or not in PATH." >&2
+        exit 1
+    fi
+}
+
+# Check for necessary CLI binaries
+check_command git
+check_command python3
+check_command mvn
+
 # Configuration
 MONOREPO_URL="https://github.com/googleapis/google-cloud-java"
 SOURCE_REPO_URL="https://github.com/googleapis/java-logging"
