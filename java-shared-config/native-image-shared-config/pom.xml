@@ -71,7 +71,7 @@
       <dependency>
         <groupId>org.graalvm.sdk</groupId>
         <artifactId>graal-sdk</artifactId>
-        <version>${graal-sdk.version}</version>
+        <version>${graal-sdk-nativeimage.version}</version>
       </dependency>
       <dependency>
         <groupId>org.graalvm.sdk</groupId>
