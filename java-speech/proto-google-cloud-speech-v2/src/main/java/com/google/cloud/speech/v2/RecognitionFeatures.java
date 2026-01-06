@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -390,14 +390,8 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Configuration to enable speaker diarization and set additional
-   * parameters to make diarization better suited for your application.
-   * When this is enabled, we send all the words from the beginning of the
-   * audio for the top alternative in every consecutive STREAMING responses.
-   * This is done in order to improve our speaker tags as our models learn to
-   * identify the speakers in the conversation over time.
-   * For non-streaming requests, the diarization results will be provided only
-   * in the top alternative of the FINAL SpeechRecognitionResult.
+   * Configuration to enable speaker diarization. To enable diarization, set
+   * this field to an empty SpeakerDiarizationConfig message.
    * </pre>
    *
    * <code>.google.cloud.speech.v2.SpeakerDiarizationConfig diarization_config = 9;</code>
@@ -413,14 +407,8 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Configuration to enable speaker diarization and set additional
-   * parameters to make diarization better suited for your application.
-   * When this is enabled, we send all the words from the beginning of the
-   * audio for the top alternative in every consecutive STREAMING responses.
-   * This is done in order to improve our speaker tags as our models learn to
-   * identify the speakers in the conversation over time.
-   * For non-streaming requests, the diarization results will be provided only
-   * in the top alternative of the FINAL SpeechRecognitionResult.
+   * Configuration to enable speaker diarization. To enable diarization, set
+   * this field to an empty SpeakerDiarizationConfig message.
    * </pre>
    *
    * <code>.google.cloud.speech.v2.SpeakerDiarizationConfig diarization_config = 9;</code>
@@ -438,14 +426,8 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Configuration to enable speaker diarization and set additional
-   * parameters to make diarization better suited for your application.
-   * When this is enabled, we send all the words from the beginning of the
-   * audio for the top alternative in every consecutive STREAMING responses.
-   * This is done in order to improve our speaker tags as our models learn to
-   * identify the speakers in the conversation over time.
-   * For non-streaming requests, the diarization results will be provided only
-   * in the top alternative of the FINAL SpeechRecognitionResult.
+   * Configuration to enable speaker diarization. To enable diarization, set
+   * this field to an empty SpeakerDiarizationConfig message.
    * </pre>
    *
    * <code>.google.cloud.speech.v2.SpeakerDiarizationConfig diarization_config = 9;</code>
@@ -478,6 +460,65 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public int getMaxAlternatives() {
     return maxAlternatives_;
+  }
+
+  public static final int CUSTOM_PROMPT_CONFIG_FIELD_NUMBER = 18;
+  private com.google.cloud.speech.v2.CustomPromptConfig customPromptConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration to enable custom prompt for chirp3.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v2.CustomPromptConfig custom_prompt_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the customPromptConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomPromptConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration to enable custom prompt for chirp3.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v2.CustomPromptConfig custom_prompt_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The customPromptConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.speech.v2.CustomPromptConfig getCustomPromptConfig() {
+    return customPromptConfig_ == null
+        ? com.google.cloud.speech.v2.CustomPromptConfig.getDefaultInstance()
+        : customPromptConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration to enable custom prompt for chirp3.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v2.CustomPromptConfig custom_prompt_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.speech.v2.CustomPromptConfigOrBuilder getCustomPromptConfigOrBuilder() {
+    return customPromptConfig_ == null
+        ? com.google.cloud.speech.v2.CustomPromptConfig.getDefaultInstance()
+        : customPromptConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -524,6 +565,9 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
             .getNumber()) {
       output.writeEnum(17, multiChannelMode_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(18, getCustomPromptConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -563,6 +607,9 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(17, multiChannelMode_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getCustomPromptConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -591,6 +638,10 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
       if (!getDiarizationConfig().equals(other.getDiarizationConfig())) return false;
     }
     if (getMaxAlternatives() != other.getMaxAlternatives()) return false;
+    if (hasCustomPromptConfig() != other.hasCustomPromptConfig()) return false;
+    if (hasCustomPromptConfig()) {
+      if (!getCustomPromptConfig().equals(other.getCustomPromptConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -622,6 +673,10 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     }
     hash = (37 * hash) + MAX_ALTERNATIVES_FIELD_NUMBER;
     hash = (53 * hash) + getMaxAlternatives();
+    if (hasCustomPromptConfig()) {
+      hash = (37 * hash) + CUSTOM_PROMPT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomPromptConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -764,6 +819,7 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getDiarizationConfigFieldBuilder();
+        getCustomPromptConfigFieldBuilder();
       }
     }
 
@@ -784,6 +840,11 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
         diarizationConfigBuilder_ = null;
       }
       maxAlternatives_ = 0;
+      customPromptConfig_ = null;
+      if (customPromptConfigBuilder_ != null) {
+        customPromptConfigBuilder_.dispose();
+        customPromptConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -851,6 +912,13 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.maxAlternatives_ = maxAlternatives_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.customPromptConfig_ =
+            customPromptConfigBuilder_ == null
+                ? customPromptConfig_
+                : customPromptConfigBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -926,6 +994,9 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
       }
       if (other.getMaxAlternatives() != 0) {
         setMaxAlternatives(other.getMaxAlternatives());
+      }
+      if (other.hasCustomPromptConfig()) {
+        mergeCustomPromptConfig(other.getCustomPromptConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1008,6 +1079,13 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000040;
                 break;
               } // case 136
+            case 146:
+              {
+                input.readMessage(
+                    getCustomPromptConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 146
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1526,14 +1604,8 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Configuration to enable speaker diarization and set additional
-     * parameters to make diarization better suited for your application.
-     * When this is enabled, we send all the words from the beginning of the
-     * audio for the top alternative in every consecutive STREAMING responses.
-     * This is done in order to improve our speaker tags as our models learn to
-     * identify the speakers in the conversation over time.
-     * For non-streaming requests, the diarization results will be provided only
-     * in the top alternative of the FINAL SpeechRecognitionResult.
+     * Configuration to enable speaker diarization. To enable diarization, set
+     * this field to an empty SpeakerDiarizationConfig message.
      * </pre>
      *
      * <code>.google.cloud.speech.v2.SpeakerDiarizationConfig diarization_config = 9;</code>
@@ -1548,14 +1620,8 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Configuration to enable speaker diarization and set additional
-     * parameters to make diarization better suited for your application.
-     * When this is enabled, we send all the words from the beginning of the
-     * audio for the top alternative in every consecutive STREAMING responses.
-     * This is done in order to improve our speaker tags as our models learn to
-     * identify the speakers in the conversation over time.
-     * For non-streaming requests, the diarization results will be provided only
-     * in the top alternative of the FINAL SpeechRecognitionResult.
+     * Configuration to enable speaker diarization. To enable diarization, set
+     * this field to an empty SpeakerDiarizationConfig message.
      * </pre>
      *
      * <code>.google.cloud.speech.v2.SpeakerDiarizationConfig diarization_config = 9;</code>
@@ -1576,14 +1642,8 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Configuration to enable speaker diarization and set additional
-     * parameters to make diarization better suited for your application.
-     * When this is enabled, we send all the words from the beginning of the
-     * audio for the top alternative in every consecutive STREAMING responses.
-     * This is done in order to improve our speaker tags as our models learn to
-     * identify the speakers in the conversation over time.
-     * For non-streaming requests, the diarization results will be provided only
-     * in the top alternative of the FINAL SpeechRecognitionResult.
+     * Configuration to enable speaker diarization. To enable diarization, set
+     * this field to an empty SpeakerDiarizationConfig message.
      * </pre>
      *
      * <code>.google.cloud.speech.v2.SpeakerDiarizationConfig diarization_config = 9;</code>
@@ -1606,14 +1666,8 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Configuration to enable speaker diarization and set additional
-     * parameters to make diarization better suited for your application.
-     * When this is enabled, we send all the words from the beginning of the
-     * audio for the top alternative in every consecutive STREAMING responses.
-     * This is done in order to improve our speaker tags as our models learn to
-     * identify the speakers in the conversation over time.
-     * For non-streaming requests, the diarization results will be provided only
-     * in the top alternative of the FINAL SpeechRecognitionResult.
+     * Configuration to enable speaker diarization. To enable diarization, set
+     * this field to an empty SpeakerDiarizationConfig message.
      * </pre>
      *
      * <code>.google.cloud.speech.v2.SpeakerDiarizationConfig diarization_config = 9;</code>
@@ -1634,14 +1688,8 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Configuration to enable speaker diarization and set additional
-     * parameters to make diarization better suited for your application.
-     * When this is enabled, we send all the words from the beginning of the
-     * audio for the top alternative in every consecutive STREAMING responses.
-     * This is done in order to improve our speaker tags as our models learn to
-     * identify the speakers in the conversation over time.
-     * For non-streaming requests, the diarization results will be provided only
-     * in the top alternative of the FINAL SpeechRecognitionResult.
+     * Configuration to enable speaker diarization. To enable diarization, set
+     * this field to an empty SpeakerDiarizationConfig message.
      * </pre>
      *
      * <code>.google.cloud.speech.v2.SpeakerDiarizationConfig diarization_config = 9;</code>
@@ -1671,14 +1719,8 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Configuration to enable speaker diarization and set additional
-     * parameters to make diarization better suited for your application.
-     * When this is enabled, we send all the words from the beginning of the
-     * audio for the top alternative in every consecutive STREAMING responses.
-     * This is done in order to improve our speaker tags as our models learn to
-     * identify the speakers in the conversation over time.
-     * For non-streaming requests, the diarization results will be provided only
-     * in the top alternative of the FINAL SpeechRecognitionResult.
+     * Configuration to enable speaker diarization. To enable diarization, set
+     * this field to an empty SpeakerDiarizationConfig message.
      * </pre>
      *
      * <code>.google.cloud.speech.v2.SpeakerDiarizationConfig diarization_config = 9;</code>
@@ -1698,14 +1740,8 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Configuration to enable speaker diarization and set additional
-     * parameters to make diarization better suited for your application.
-     * When this is enabled, we send all the words from the beginning of the
-     * audio for the top alternative in every consecutive STREAMING responses.
-     * This is done in order to improve our speaker tags as our models learn to
-     * identify the speakers in the conversation over time.
-     * For non-streaming requests, the diarization results will be provided only
-     * in the top alternative of the FINAL SpeechRecognitionResult.
+     * Configuration to enable speaker diarization. To enable diarization, set
+     * this field to an empty SpeakerDiarizationConfig message.
      * </pre>
      *
      * <code>.google.cloud.speech.v2.SpeakerDiarizationConfig diarization_config = 9;</code>
@@ -1721,14 +1757,8 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Configuration to enable speaker diarization and set additional
-     * parameters to make diarization better suited for your application.
-     * When this is enabled, we send all the words from the beginning of the
-     * audio for the top alternative in every consecutive STREAMING responses.
-     * This is done in order to improve our speaker tags as our models learn to
-     * identify the speakers in the conversation over time.
-     * For non-streaming requests, the diarization results will be provided only
-     * in the top alternative of the FINAL SpeechRecognitionResult.
+     * Configuration to enable speaker diarization. To enable diarization, set
+     * this field to an empty SpeakerDiarizationConfig message.
      * </pre>
      *
      * <code>.google.cloud.speech.v2.SpeakerDiarizationConfig diarization_config = 9;</code>
@@ -1748,14 +1778,8 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Configuration to enable speaker diarization and set additional
-     * parameters to make diarization better suited for your application.
-     * When this is enabled, we send all the words from the beginning of the
-     * audio for the top alternative in every consecutive STREAMING responses.
-     * This is done in order to improve our speaker tags as our models learn to
-     * identify the speakers in the conversation over time.
-     * For non-streaming requests, the diarization results will be provided only
-     * in the top alternative of the FINAL SpeechRecognitionResult.
+     * Configuration to enable speaker diarization. To enable diarization, set
+     * this field to an empty SpeakerDiarizationConfig message.
      * </pre>
      *
      * <code>.google.cloud.speech.v2.SpeakerDiarizationConfig diarization_config = 9;</code>
@@ -1840,6 +1864,220 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
       maxAlternatives_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.speech.v2.CustomPromptConfig customPromptConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v2.CustomPromptConfig,
+            com.google.cloud.speech.v2.CustomPromptConfig.Builder,
+            com.google.cloud.speech.v2.CustomPromptConfigOrBuilder>
+        customPromptConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to enable custom prompt for chirp3.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.CustomPromptConfig custom_prompt_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the customPromptConfig field is set.
+     */
+    public boolean hasCustomPromptConfig() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to enable custom prompt for chirp3.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.CustomPromptConfig custom_prompt_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The customPromptConfig.
+     */
+    public com.google.cloud.speech.v2.CustomPromptConfig getCustomPromptConfig() {
+      if (customPromptConfigBuilder_ == null) {
+        return customPromptConfig_ == null
+            ? com.google.cloud.speech.v2.CustomPromptConfig.getDefaultInstance()
+            : customPromptConfig_;
+      } else {
+        return customPromptConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to enable custom prompt for chirp3.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.CustomPromptConfig custom_prompt_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCustomPromptConfig(com.google.cloud.speech.v2.CustomPromptConfig value) {
+      if (customPromptConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        customPromptConfig_ = value;
+      } else {
+        customPromptConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to enable custom prompt for chirp3.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.CustomPromptConfig custom_prompt_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCustomPromptConfig(
+        com.google.cloud.speech.v2.CustomPromptConfig.Builder builderForValue) {
+      if (customPromptConfigBuilder_ == null) {
+        customPromptConfig_ = builderForValue.build();
+      } else {
+        customPromptConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to enable custom prompt for chirp3.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.CustomPromptConfig custom_prompt_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeCustomPromptConfig(com.google.cloud.speech.v2.CustomPromptConfig value) {
+      if (customPromptConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && customPromptConfig_ != null
+            && customPromptConfig_
+                != com.google.cloud.speech.v2.CustomPromptConfig.getDefaultInstance()) {
+          getCustomPromptConfigBuilder().mergeFrom(value);
+        } else {
+          customPromptConfig_ = value;
+        }
+      } else {
+        customPromptConfigBuilder_.mergeFrom(value);
+      }
+      if (customPromptConfig_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to enable custom prompt for chirp3.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.CustomPromptConfig custom_prompt_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCustomPromptConfig() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      customPromptConfig_ = null;
+      if (customPromptConfigBuilder_ != null) {
+        customPromptConfigBuilder_.dispose();
+        customPromptConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to enable custom prompt for chirp3.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.CustomPromptConfig custom_prompt_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.speech.v2.CustomPromptConfig.Builder getCustomPromptConfigBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getCustomPromptConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to enable custom prompt for chirp3.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.CustomPromptConfig custom_prompt_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.speech.v2.CustomPromptConfigOrBuilder getCustomPromptConfigOrBuilder() {
+      if (customPromptConfigBuilder_ != null) {
+        return customPromptConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return customPromptConfig_ == null
+            ? com.google.cloud.speech.v2.CustomPromptConfig.getDefaultInstance()
+            : customPromptConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to enable custom prompt for chirp3.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.CustomPromptConfig custom_prompt_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v2.CustomPromptConfig,
+            com.google.cloud.speech.v2.CustomPromptConfig.Builder,
+            com.google.cloud.speech.v2.CustomPromptConfigOrBuilder>
+        getCustomPromptConfigFieldBuilder() {
+      if (customPromptConfigBuilder_ == null) {
+        customPromptConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.speech.v2.CustomPromptConfig,
+                com.google.cloud.speech.v2.CustomPromptConfig.Builder,
+                com.google.cloud.speech.v2.CustomPromptConfigOrBuilder>(
+                getCustomPromptConfig(), getParentForChildren(), isClean());
+        customPromptConfig_ = null;
+      }
+      return customPromptConfigBuilder_;
     }
 
     @java.lang.Override

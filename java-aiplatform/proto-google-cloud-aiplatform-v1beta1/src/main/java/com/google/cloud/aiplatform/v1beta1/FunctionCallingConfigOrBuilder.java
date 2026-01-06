@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -119,4 +119,19 @@ public interface FunctionCallingConfigOrBuilder
    * @return The bytes of the allowedFunctionNames at the given index.
    */
   com.google.protobuf.ByteString getAllowedFunctionNamesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When set to true, arguments of a single function call will be
+   * streamed out in multiple parts/contents/responses. Partial parameter
+   * results will be returned in the [FunctionCall.partial_args] field.
+   * </pre>
+   *
+   * <code>bool stream_function_call_arguments = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The streamFunctionCallArguments.
+   */
+  boolean getStreamFunctionCallArguments();
 }
