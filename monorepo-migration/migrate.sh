@@ -18,7 +18,7 @@ check_command mvn
 
 # Configuration
 MONOREPO_URL="https://github.com/googleapis/google-cloud-java"
-SOURCE_REPO_URL="https://github.com/googleapis/java-logging"
+SOURCE_REPO_URL="${SOURCE_REPO_URL:-https://github.com/googleapis/java-logging}"
 
 # Derive names from URLs to avoid duplication
 SOURCE_REPO_NAME="${SOURCE_REPO_URL##*/}"
