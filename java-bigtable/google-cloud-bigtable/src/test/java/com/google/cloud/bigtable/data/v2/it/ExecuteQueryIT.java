@@ -19,6 +19,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.TruthJUnit.assume;
 import static org.junit.Assert.assertThrows;
 
+import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.cloud.Date;
 import com.google.cloud.bigtable.admin.v2.models.CreateSchemaBundleRequest;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
@@ -44,6 +45,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
 import org.junit.Test;
@@ -59,6 +62,7 @@ public class ExecuteQueryIT {
   private static String schemaBundleId;
   private static String cf;
   private static String uniquePrefix;
+  private static final Logger logger = Logger.getLogger(ExecuteQueryIT.class.getName());
 
   @BeforeClass
   public static void setUpAll() throws IOException {
@@ -164,24 +168,43 @@ public class ExecuteQueryIT {
   public void allTypes() throws Exception {
     createTestSchemaBundle();
     Album album = Album.newBuilder().setTitle("Lover").build();
-    PreparedStatement preparedStatement =
-        dataClient.prepareStatement(
-            "SELECT 'stringVal' AS strCol, b'foo' as bytesCol, 1 AS intCol, CAST(1.2 AS FLOAT32) as"
-                + " f32Col, CAST(1.3 AS FLOAT64) as f64Col, true as boolCol,"
-                + " TIMESTAMP_FROM_UNIX_MILLIS(1000) AS tsCol, DATE(2024, 06, 01) as dateCol,"
-                + " STRUCT(1 as a, \"foo\" as b) AS structCol, [1,2,3] AS arrCol, "
-                + cf
-                + " as mapCol, "
-                + " CAST(b'\022\005Lover' AS `"
-                + schemaBundleId
-                + ".com.google.cloud.bigtable.data.v2.test.Album`) as protoCol, CAST('JAZZ' AS `"
-                + schemaBundleId
-                + ".com.google.cloud.bigtable.data.v2.test.Genre`) as enumCol FROM `"
-                + tableId
-                + "` WHERE _key='"
-                + uniquePrefix
-                + "a' LIMIT 1",
-            new HashMap<>());
+
+    // For some reason the ExecuteQuery data path sometimes cannot resolve a newly-created schema
+    // bundle immediately after its creation. To avoid test flakiness, we wrap query preparation
+    // with a retry loop.
+    PreparedStatement preparedStatement;
+    int retryCount = 0;
+    int maxRetries = 10;
+    while (true) {
+      try {
+        preparedStatement =
+            dataClient.prepareStatement(
+                "SELECT 'stringVal' AS strCol, b'foo' as bytesCol, 1 AS intCol, CAST(1.2 AS FLOAT32) as"
+                    + " f32Col, CAST(1.3 AS FLOAT64) as f64Col, true as boolCol,"
+                    + " TIMESTAMP_FROM_UNIX_MILLIS(1000) AS tsCol, DATE(2024, 06, 01) as dateCol,"
+                    + " STRUCT(1 as a, \"foo\" as b) AS structCol, [1,2,3] AS arrCol, "
+                    + cf
+                    + " as mapCol, "
+                    + " CAST(b'\022\005Lover' AS `"
+                    + schemaBundleId
+                    + ".com.google.cloud.bigtable.data.v2.test.Album`) as protoCol, CAST('JAZZ' AS `"
+                    + schemaBundleId
+                    + ".com.google.cloud.bigtable.data.v2.test.Genre`) as enumCol FROM `"
+                    + tableId
+                    + "` WHERE _key='"
+                    + uniquePrefix
+                    + "a' LIMIT 1",
+                new HashMap<>());
+        break;
+      } catch (InvalidArgumentException e) {
+        if (++retryCount == maxRetries) {
+          throw e;
+        }
+        logger.log(Level.INFO, "Retrying prepareStatement, retryCount: " + retryCount);
+        Thread.sleep(5000);
+      }
+    }
+
     BoundStatement statement = preparedStatement.bind().build();
     try (ResultSet rs = dataClient.executeQuery(statement)) {
       assertThat(rs.next()).isTrue();
@@ -416,10 +439,5 @@ public class ExecuteQueryIT {
         CreateSchemaBundleRequest.of(tableId, schemaBundleId)
             .setProtoSchema(fileDescriptorSet.toByteString());
     testEnvRule.env().getTableAdminClient().createSchemaBundle(request);
-
-    // For some reason the ExecuteQuery data path sometimes cannot resolve a newly-created schema
-    // bundle immediately after its creation. Adding a manual sleep to avoid test flakiness until
-    // the underlying issue is resolved.
-    Thread.sleep(5000);
   }
 }
