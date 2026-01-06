@@ -77,6 +77,14 @@ git clean -fd
 git checkout -f main
 git reset --hard origin/main
 
+# Check if the repository is already migrated
+if [ -d "$SOURCE_REPO_NAME" ]; then
+    echo "Error: Directory $SOURCE_REPO_NAME already exists in the monorepo." >&2
+    echo "This repository seems to have already been migrated." >&2
+    exit 1
+fi
+
+
 # 2.5 Create a new feature branch for the migration
 BRANCH_NAME="migrate-$SOURCE_REPO_NAME"
 echo "Creating feature branch: $BRANCH_NAME"
@@ -102,9 +110,6 @@ git merge --allow-unrelated-histories --no-ff "$SOURCE_REPO_NAME/main" -s ours -
 
 # 6. Read the tree from the source repo into the desired subdirectory
 echo "Reading tree into prefix $SOURCE_REPO_NAME/..."
-if [ -d "$SOURCE_REPO_NAME" ]; then
-    rm -rf "$SOURCE_REPO_NAME"
-fi
 git read-tree --prefix="$SOURCE_REPO_NAME/" -u "$SOURCE_REPO_NAME/main"
 
 # 7. Commit the migration
