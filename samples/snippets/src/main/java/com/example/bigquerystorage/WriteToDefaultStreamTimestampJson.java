@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,11 @@
 
 package com.example.bigquerystorage;
 
-// [START bigquerystorage_jsonstreamwriter_export]
+// [START bigquerystorage_timestamp_jsonstreamwriter_default]
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
+import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.core.FixedExecutorProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.bigquery.BigQuery;
@@ -31,16 +32,13 @@ import com.google.cloud.bigquery.storage.v1.AppendRowsResponse;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteSettings;
 import com.google.cloud.bigquery.storage.v1.Exceptions;
-import com.google.cloud.bigquery.storage.v1.Exceptions.AppendSerializationError;
-import com.google.cloud.bigquery.storage.v1.Exceptions.MaximumRequestCallbackWaitTimeExceededException;
-import com.google.cloud.bigquery.storage.v1.Exceptions.StorageException;
-import com.google.cloud.bigquery.storage.v1.Exceptions.StreamWriterClosedException;
 import com.google.cloud.bigquery.storage.v1.JsonStreamWriter;
 import com.google.cloud.bigquery.storage.v1.TableName;
 import com.google.common.util.concurrent.MoreExecutors;
-import com.google.protobuf.ByteString;
+import com.google.protobuf.Descriptors;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
 import java.io.IOException;
+import java.time.Instant;
 import java.util.Map;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Phaser;
@@ -50,40 +48,26 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.threeten.bp.Duration;
 
-public class ExportOpenTelemetry {
+public class WriteToDefaultStreamTimestampJson {
 
-  public static void runExportToOpenTelemetry()
-      throws DescriptorValidationException, InterruptedException, IOException {
+  public static void runWriteToDefaultStream()
+      throws Descriptors.DescriptorValidationException, InterruptedException, IOException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "MY_PROJECT_ID";
     String datasetName = "MY_DATASET_NAME";
     String tableName = "MY_TABLE_NAME";
-    exportToOpenTelemetry(projectId, datasetName, tableName);
-  }
-
-  private static ByteString buildByteString() {
-    byte[] bytes = new byte[] {1, 2, 3, 4, 5};
-    return ByteString.copyFrom(bytes);
+    writeToDefaultStream(projectId, datasetName, tableName);
   }
 
   // Create a JSON object that is compatible with the table schema.
-  private static JSONObject buildRecord(int i, int j) {
+  private static JSONObject buildRecord() {
     JSONObject record = new JSONObject();
-    StringBuilder sbSuffix = new StringBuilder();
-    for (int k = 0; k < j; k++) {
-      sbSuffix.append(k);
-    }
-    record.put("test_string", String.format("record %03d-%03d %s", i, j, sbSuffix.toString()));
-    ByteString byteString = buildByteString();
-    record.put("test_bytes", byteString);
-    record.put(
-        "test_geo",
-        "POLYGON((-124.49 47.35,-124.49 40.73,-116.49 40.73,-116.49 47.35,-124.49 47.35))");
+    record.put("timestampField", Instant.now().toString());
     return record;
   }
 
-  public static void exportToOpenTelemetry(String projectId, String datasetName, String tableName)
-      throws DescriptorValidationException, InterruptedException, IOException {
+  public static void writeToDefaultStream(String projectId, String datasetName, String tableName)
+      throws Descriptors.DescriptorValidationException, InterruptedException, IOException {
     TableName parentTable = TableName.of(projectId, datasetName, tableName);
 
     DataWriter writer = new DataWriter();
@@ -96,8 +80,7 @@ public class ExportOpenTelemetry {
     for (int i = 0; i < 2; i++) {
       JSONArray jsonArr = new JSONArray();
       for (int j = 0; j < 10; j++) {
-        JSONObject record = buildRecord(i, j);
-        jsonArr.put(record);
+        jsonArr.put(buildRecord());
       }
 
       writer.append(new AppendContext(jsonArr));
@@ -105,7 +88,7 @@ public class ExportOpenTelemetry {
 
     // Final cleanup for the stream during worker teardown.
     writer.cleanup();
-    verifyExpectedRowCount(parentTable, 12L);
+    verifyExpectedRowCount(parentTable, 20L);
     System.out.println("Appended records successfully.");
   }
 
@@ -131,7 +114,6 @@ public class ExportOpenTelemetry {
   }
 
   private static class AppendContext {
-
     JSONArray data;
 
     AppendContext(JSONArray data) {
@@ -153,10 +135,10 @@ public class ExportOpenTelemetry {
     @GuardedBy("lock")
     private RuntimeException error = null;
 
-    private AtomicInteger recreateCount = new AtomicInteger(0);
+    private final AtomicInteger recreateCount = new AtomicInteger(0);
 
     private JsonStreamWriter createStreamWriter(String tableName)
-        throws DescriptorValidationException, IOException, InterruptedException {
+        throws Descriptors.DescriptorValidationException, IOException, InterruptedException {
       // Configure in-stream automatic retry settings.
       // Error codes that are immediately retried:
       // * ABORTED, UNAVAILABLE, CANCELLED, INTERNAL, DEADLINE_EXCEEDED
@@ -181,10 +163,11 @@ public class ExportOpenTelemetry {
                   .setKeepAliveTime(org.threeten.bp.Duration.ofMinutes(1))
                   .setKeepAliveTimeout(org.threeten.bp.Duration.ofMinutes(1))
                   .setKeepAliveWithoutCalls(true)
-                  .setChannelsPerCpu(2)
                   .build())
           .setEnableConnectionPool(true)
-          .setEnableOpenTelemetry(true)
+          // This will allow connection pool to scale up better.
+          .setFlowControlSettings(
+              FlowControlSettings.newBuilder().setMaxOutstandingElementCount(100L).build())
           // If value is missing in json and there is a default value configured on bigquery
           // column, apply the default value to the missing value field.
           .setDefaultMissingValueInterpretation(
@@ -194,7 +177,7 @@ public class ExportOpenTelemetry {
     }
 
     public void initialize(TableName parentTable)
-        throws DescriptorValidationException, IOException, InterruptedException {
+        throws Descriptors.DescriptorValidationException, IOException, InterruptedException {
       // Initialize client without settings, internally within stream writer a new client will be
       // created with full settings.
       client = BigQueryWriteClient.create();
@@ -203,7 +186,7 @@ public class ExportOpenTelemetry {
     }
 
     public void append(AppendContext appendContext)
-        throws DescriptorValidationException, IOException, InterruptedException {
+        throws Descriptors.DescriptorValidationException, IOException, InterruptedException {
       synchronized (this.lock) {
         if (!streamWriter.isUserClosed()
             && streamWriter.isClosed()
@@ -252,16 +235,16 @@ public class ExportOpenTelemetry {
       }
 
       public void onSuccess(AppendRowsResponse response) {
-        System.out.format("Append success\n");
+        System.out.println("Append success");
         this.parent.recreateCount.set(0);
         done();
       }
 
       public void onFailure(Throwable throwable) {
-        if (throwable instanceof AppendSerializationError) {
-          AppendSerializationError ase = (AppendSerializationError) throwable;
+        if (throwable instanceof Exceptions.AppendSerializationError) {
+          Exceptions.AppendSerializationError ase = (Exceptions.AppendSerializationError) throwable;
           Map<Integer, String> rowIndexToErrorMessage = ase.getRowIndexToErrorMessage();
-          if (rowIndexToErrorMessage.size() > 0) {
+          if (!rowIndexToErrorMessage.isEmpty()) {
             // Omit the faulty rows
             JSONArray dataNew = new JSONArray();
             for (int i = 0; i < appendContext.data.length(); i++) {
@@ -274,14 +257,10 @@ public class ExportOpenTelemetry {
 
             // Retry the remaining valid rows, but using a separate thread to
             // avoid potentially blocking while we are in a callback.
-            if (dataNew.length() > 0) {
+            if (!dataNew.isEmpty()) {
               try {
                 this.parent.append(new AppendContext(dataNew));
-              } catch (DescriptorValidationException e) {
-                throw new RuntimeException(e);
-              } catch (IOException e) {
-                throw new RuntimeException(e);
-              } catch (InterruptedException e) {
+              } catch (DescriptorValidationException | IOException | InterruptedException e) {
                 throw new RuntimeException(e);
               }
             }
@@ -292,9 +271,9 @@ public class ExportOpenTelemetry {
         }
 
         boolean resendRequest = false;
-        if (throwable instanceof MaximumRequestCallbackWaitTimeExceededException) {
+        if (throwable instanceof Exceptions.MaximumRequestCallbackWaitTimeExceededException) {
           resendRequest = true;
-        } else if (throwable instanceof StreamWriterClosedException) {
+        } else if (throwable instanceof Exceptions.StreamWriterClosedException) {
           if (!parent.streamWriter.isUserClosed()) {
             resendRequest = true;
           }
@@ -303,11 +282,9 @@ public class ExportOpenTelemetry {
           // Retry this request.
           try {
             this.parent.append(new AppendContext(appendContext.data));
-          } catch (DescriptorValidationException e) {
-            throw new RuntimeException(e);
-          } catch (IOException e) {
-            throw new RuntimeException(e);
-          } catch (InterruptedException e) {
+          } catch (Descriptors.DescriptorValidationException
+              | IOException
+              | InterruptedException e) {
             throw new RuntimeException(e);
           }
           // Mark the existing attempt as done since we got a response for it
@@ -317,7 +294,7 @@ public class ExportOpenTelemetry {
 
         synchronized (this.parent.lock) {
           if (this.parent.error == null) {
-            StorageException storageException = Exceptions.toStorageException(throwable);
+            Exceptions.StorageException storageException = Exceptions.toStorageException(throwable);
             this.parent.error =
                 (storageException != null) ? storageException : new RuntimeException(throwable);
           }
@@ -332,4 +309,4 @@ public class ExportOpenTelemetry {
     }
   }
 }
-// [END bigquerystorage_jsonstreamwriter_export]
+// [END bigquerystorage_timestamp_jsonstreamwriter_default]

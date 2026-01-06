@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 
 package com.example.bigquerystorage;
 
-// [START bigquerystorage_streamwriter_default_arrow]
+// [START bigquerystorage_timestamp_streamwriter_default_arrow]
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
@@ -31,16 +31,12 @@ import com.google.cloud.bigquery.storage.v1.AppendRowsResponse;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteSettings;
 import com.google.cloud.bigquery.storage.v1.Exceptions;
-import com.google.cloud.bigquery.storage.v1.Exceptions.AppendSerializationError;
-import com.google.cloud.bigquery.storage.v1.Exceptions.MaximumRequestCallbackWaitTimeExceededException;
-import com.google.cloud.bigquery.storage.v1.Exceptions.StorageException;
-import com.google.cloud.bigquery.storage.v1.Exceptions.StreamWriterClosedException;
 import com.google.cloud.bigquery.storage.v1.StreamWriter;
 import com.google.cloud.bigquery.storage.v1.TableName;
 import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.MoreExecutors;
-import com.google.protobuf.Descriptors.DescriptorValidationException;
 import java.io.IOException;
+import java.time.Instant;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Executors;
@@ -49,14 +45,14 @@ import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.concurrent.GuardedBy;
 import org.apache.arrow.memory.BufferAllocator;
 import org.apache.arrow.memory.RootAllocator;
-import org.apache.arrow.vector.BigIntVector;
-import org.apache.arrow.vector.VarCharVector;
+import org.apache.arrow.vector.TimeStampNanoTZVector;
 import org.apache.arrow.vector.VectorSchemaRoot;
 import org.apache.arrow.vector.VectorUnloader;
 import org.apache.arrow.vector.compression.CompressionCodec;
 import org.apache.arrow.vector.compression.CompressionUtil;
 import org.apache.arrow.vector.compression.NoCompressionCodec;
 import org.apache.arrow.vector.ipc.message.ArrowRecordBatch;
+import org.apache.arrow.vector.types.TimeUnit;
 import org.apache.arrow.vector.types.pojo.ArrowType;
 import org.apache.arrow.vector.types.pojo.Field;
 import org.apache.arrow.vector.types.pojo.FieldType;
@@ -67,10 +63,17 @@ import org.threeten.bp.Duration;
  * This class demonstrates how to ingest data using Arrow format into BigQuery via the default
  * stream. It initiates a DataWriter to establish a connection to BigQuery and reuses this
  * connection to continuously ingest data.
+ *
+ * <p>Depending on the JDK version, you may need to include this into your VM options: {@code
+ * --add-opens=java.base/java.nio=org.apache.arrow.memory.core,ALL-UNNAMED}. See the <a
+ * href="https://arrow.apache.org/docs/java/install.html#java-compatibility">documentation</a> for
+ * more information.
  */
-public class WriteToDefaultStreamWithArrow {
-  public static void main(String[] args)
-      throws DescriptorValidationException, InterruptedException, IOException {
+public class WriteToDefaultStreamTimestampWithArrow {
+
+  public static final long NANOS = 1000000000L;
+
+  public static void main(String[] args) throws InterruptedException, IOException {
     if (args.length < 3) {
       System.out.println(
           "Usage: WriteToDefaultStreamWithArrow <projectId> <datasetName> <tableName>");
@@ -79,37 +82,29 @@ public class WriteToDefaultStreamWithArrow {
     String projectId = args[0];
     String datasetName = args[1];
     String tableName = args[2];
-    // Table schema should contain 3 fields:
-    // ['test_string': STRING, 'test_int': INTEGER, 'test_geo':GEOGRAPHY]
+    // For this sample, the table schema should contain 3 fields:
+    // ['timestampField': TIMESTAMP]
     writeToDefaultStreamWithArrow(projectId, datasetName, tableName);
   }
 
   private static Schema createArrowSchema() {
     List<Field> fields =
         ImmutableList.of(
-            new Field("test_string", FieldType.nullable(new ArrowType.Utf8()), null),
-            new Field("test_int", FieldType.nullable(new ArrowType.Int(64, true)), null),
-            new Field("test_geo", FieldType.nullable(new ArrowType.Utf8()), null));
+            new Field(
+                "timestampField",
+                FieldType.nullable(new ArrowType.Timestamp(TimeUnit.NANOSECOND, "UTC")),
+                null));
     return new Schema(fields, null);
   }
 
   // Create an ArrowRecordBatch object that is compatible with the table schema.
   private static ArrowRecordBatch buildRecordBatch(VectorSchemaRoot root, int rowCount) {
-    VarCharVector testString = (VarCharVector) root.getVector("test_string");
-    BigIntVector testInt = (BigIntVector) root.getVector("test_int");
-    VarCharVector testGeo = (VarCharVector) root.getVector("test_geo");
+    TimeStampNanoTZVector timestampField = (TimeStampNanoTZVector) root.getVector("timestampField");
+    timestampField.allocateNew(rowCount);
 
-    testString.allocateNew(rowCount);
-    testInt.allocateNew(rowCount);
-    testGeo.allocateNew(rowCount);
-
+    Instant now = Instant.now();
     for (int i = 0; i < rowCount; i++) {
-      testString.set(i, ("A" + i).getBytes());
-      testInt.set(i, i + 100);
-      testGeo.set(
-          i,
-          "POLYGON((-124.49 47.35,-124.49 40.73,-116.49 40.73,-113.49 47.35,-124.49 47.35))"
-              .getBytes());
+      timestampField.set(i, now.getEpochSecond() * NANOS + now.getNano());
     }
     root.setRowCount(rowCount);
 
@@ -122,7 +117,7 @@ public class WriteToDefaultStreamWithArrow {
 
   public static void writeToDefaultStreamWithArrow(
       String projectId, String datasetName, String tableName)
-      throws DescriptorValidationException, InterruptedException, IOException {
+      throws InterruptedException, IOException {
     TableName parentTable = TableName.of(projectId, datasetName, tableName);
     Schema arrowSchema = createArrowSchema();
     DataWriter writer = new DataWriter();
@@ -180,8 +175,8 @@ public class WriteToDefaultStreamWithArrow {
     BigQuery bigquery =
         BigQueryOptions.newBuilder().setProjectId(parentTable.getProject()).build().getService();
     TableResult results = bigquery.query(queryConfig);
-    long countRowsActual =
-        Long.parseLong(results.getValues().iterator().next().get("f0_").getStringValue());
+    int countRowsActual =
+        Integer.parseInt(results.getValues().iterator().next().get("f0_").getStringValue());
     if (countRowsActual != expectedRowCount) {
       throw new RuntimeException(
           "Unexpected row count. Expected: " + expectedRowCount + ". Actual: " + countRowsActual);
@@ -242,7 +237,6 @@ public class WriteToDefaultStreamWithArrow {
                   .setKeepAliveTime(org.threeten.bp.Duration.ofMinutes(1))
                   .setKeepAliveTimeout(org.threeten.bp.Duration.ofMinutes(1))
                   .setKeepAliveWithoutCalls(true)
-                  .setChannelsPerCpu(2)
                   .build())
           .setEnableConnectionPool(true)
           // If value is missing in ArrowRecordBatch and there is a default value configured on
@@ -257,8 +251,7 @@ public class WriteToDefaultStreamWithArrow {
           .build();
     }
 
-    public void initialize(TableName parentTable, Schema arrowSchema)
-        throws DescriptorValidationException, IOException, InterruptedException {
+    public void initialize(TableName parentTable, Schema arrowSchema) throws IOException {
       // Initialize client without settings, internally within stream writer a new client will be
       // created with full settings.
       client = BigQueryWriteClient.create();
@@ -266,8 +259,7 @@ public class WriteToDefaultStreamWithArrow {
       streamWriter = createStreamWriter(parentTable.toString() + "/_default", arrowSchema);
     }
 
-    public void append(ArrowData arrowData)
-        throws DescriptorValidationException, IOException, InterruptedException {
+    public void append(ArrowData arrowData) throws IOException {
       synchronized (this.lock) {
         if (!streamWriter.isUserClosed()
             && streamWriter.isClosed()
@@ -316,18 +308,18 @@ public class WriteToDefaultStreamWithArrow {
       }
 
       public void onSuccess(AppendRowsResponse response) {
-        System.out.format("Append success\n");
+        System.out.println("Append success");
         this.parent.recreateCount.set(0);
         done();
       }
 
       public void onFailure(Throwable throwable) {
-        System.out.format("Append failed: " + throwable.toString());
-        if (throwable instanceof AppendSerializationError) {
-          AppendSerializationError ase = (AppendSerializationError) throwable;
+        System.out.println("Append failed: " + throwable.toString());
+        if (throwable instanceof Exceptions.AppendSerializationError) {
+          Exceptions.AppendSerializationError ase = (Exceptions.AppendSerializationError) throwable;
           Map<Integer, String> rowIndexToErrorMessage = ase.getRowIndexToErrorMessage();
-          if (rowIndexToErrorMessage.size() > 0) {
-            System.out.format("row level errors: " + rowIndexToErrorMessage.toString());
+          if (!rowIndexToErrorMessage.isEmpty()) {
+            System.out.println("row level errors: " + rowIndexToErrorMessage);
             // The append returned failure with indices for faulty rows.
             // Fix the faulty rows or remove them from the appended data and retry the append.
             done();
@@ -336,9 +328,9 @@ public class WriteToDefaultStreamWithArrow {
         }
 
         boolean resendRequest = false;
-        if (throwable instanceof MaximumRequestCallbackWaitTimeExceededException) {
+        if (throwable instanceof Exceptions.MaximumRequestCallbackWaitTimeExceededException) {
           resendRequest = true;
-        } else if (throwable instanceof StreamWriterClosedException) {
+        } else if (throwable instanceof Exceptions.StreamWriterClosedException) {
           if (!parent.streamWriter.isUserClosed()) {
             resendRequest = true;
           }
@@ -347,11 +339,7 @@ public class WriteToDefaultStreamWithArrow {
           // Retry this request.
           try {
             this.parent.append(new ArrowData(arrowData.arrowSchema, arrowData.data));
-          } catch (DescriptorValidationException e) {
-            throw new RuntimeException(e);
           } catch (IOException e) {
-            throw new RuntimeException(e);
-          } catch (InterruptedException e) {
             throw new RuntimeException(e);
           }
           // Mark the existing attempt as done since we got a response for it
@@ -361,7 +349,7 @@ public class WriteToDefaultStreamWithArrow {
 
         synchronized (this.parent.lock) {
           if (this.parent.error == null) {
-            StorageException storageException = Exceptions.toStorageException(throwable);
+            Exceptions.StorageException storageException = Exceptions.toStorageException(throwable);
             this.parent.error =
                 (storageException != null) ? storageException : new RuntimeException(throwable);
           }
@@ -376,4 +364,4 @@ public class WriteToDefaultStreamWithArrow {
     }
   }
 }
-// [END bigquerystorage_streamwriter_default_arrow]
+// [END bigquerystorage_timestamp_streamwriter_default_arrow]

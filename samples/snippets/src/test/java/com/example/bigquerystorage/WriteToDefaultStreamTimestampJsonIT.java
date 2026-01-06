@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,11 +20,10 @@ import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
 import com.google.cloud.bigquery.BigQuery;
-import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.DatasetInfo;
-import com.google.cloud.bigquery.FieldList;
+import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.StandardTableDefinition;
@@ -41,31 +40,29 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
-public class WriteNestedProtoIT {
-
+public class WriteToDefaultStreamTimestampJsonIT {
   private static final String GOOGLE_CLOUD_PROJECT = System.getenv("GOOGLE_CLOUD_PROJECT");
 
   private ByteArrayOutputStream bout;
-  private PrintStream out;
   private BigQuery bigquery;
   private String datasetName;
   private String tableName;
 
-  private static void requireEnvVar(String varName) {
+  private static void requireEnvVar() {
     assertNotNull(
-        "Environment variable " + varName + " is required to perform these tests.",
-        System.getenv(varName));
+        "Environment variable " + "GOOGLE_CLOUD_PROJECT" + " is required to perform these tests.",
+        System.getenv("GOOGLE_CLOUD_PROJECT"));
   }
 
   @BeforeClass
   public static void checkRequirements() {
-    requireEnvVar("GOOGLE_CLOUD_PROJECT");
+    requireEnvVar();
   }
 
   @Before
   public void setUp() {
     bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
+    PrintStream out = new PrintStream(bout);
     System.setOut(out);
 
     bigquery = BigQueryOptions.getDefaultInstance().getService();
@@ -74,19 +71,7 @@ public class WriteNestedProtoIT {
     datasetName = "WRITE_STREAM_TEST" + UUID.randomUUID().toString().substring(0, 8);
     tableName = "DEFAULT_STREAM_TEST" + UUID.randomUUID().toString().substring(0, 8);
     Schema schema =
-        Schema.of(
-            com.google.cloud.bigquery.Field.newBuilder("foo", StandardSQLTypeName.STRING).build(),
-            com.google.cloud.bigquery.Field.newBuilder(
-                    "bar",
-                    StandardSQLTypeName.STRUCT,
-                    FieldList.of(
-                        com.google.cloud.bigquery.Field.newBuilder(
-                                "my_int", StandardSQLTypeName.INT64)
-                            .build(),
-                        com.google.cloud.bigquery.Field.newBuilder(
-                                "my_string", StandardSQLTypeName.STRING)
-                            .build()))
-                .build());
+        Schema.of(Field.newBuilder("timestampField", StandardSQLTypeName.TIMESTAMP).build());
     bigquery.create(DatasetInfo.newBuilder(datasetName).build());
     TableInfo tableInfo =
         TableInfo.newBuilder(TableId.of(datasetName, tableName), StandardTableDefinition.of(schema))
@@ -97,13 +82,15 @@ public class WriteNestedProtoIT {
   @After
   public void tearDown() {
     bigquery.delete(
-        DatasetId.of(GOOGLE_CLOUD_PROJECT, datasetName), DatasetDeleteOption.deleteContents());
+        DatasetId.of(GOOGLE_CLOUD_PROJECT, datasetName),
+        BigQuery.DatasetDeleteOption.deleteContents());
     System.setOut(null);
   }
 
   @Test
-  public void testWriteNestedProto() throws Exception {
-    WriteNestedProto.runWriteNestedProto(GOOGLE_CLOUD_PROJECT, datasetName, tableName);
+  public void testWriteToDefaultStream() throws Exception {
+    WriteToDefaultStreamTimestampJson.writeToDefaultStream(
+        GOOGLE_CLOUD_PROJECT, datasetName, tableName);
     assertThat(bout.toString()).contains("Appended records successfully.");
   }
 }
