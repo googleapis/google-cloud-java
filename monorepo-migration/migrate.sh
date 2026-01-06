@@ -19,6 +19,7 @@ check_command mvn
 # Configuration
 MONOREPO_URL="https://github.com/googleapis/google-cloud-java"
 SOURCE_REPO_URL="${SOURCE_REPO_URL:-https://github.com/googleapis/java-logging}"
+CODEOWNER="${CODEOWNER:-}"
 
 # Derive names from URLs to avoid duplication
 SOURCE_REPO_NAME="${SOURCE_REPO_URL##*/}"
@@ -115,6 +116,17 @@ git read-tree --prefix="$SOURCE_REPO_NAME/" -u "$SOURCE_REPO_NAME/main"
 # 7. Commit the migration
 echo "Committing migration..."
 git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): migrate $SOURCE_REPO_NAME into monorepo"
+
+# 7.1 Update CODEOWNERS
+if [ -n "$CODEOWNER" ]; then
+    echo "Updating .github/CODEOWNERS..."
+    mkdir -p .github
+    echo "/$SOURCE_REPO_NAME/ $CODEOWNER @googleapis/cloud-java-team-teamsync" >> .github/CODEOWNERS
+
+    echo "Committing CODEOWNERS update..."
+    git add .github/CODEOWNERS
+    git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): add code owners for $SOURCE_REPO_NAME"
+fi
 
 # 7.5 Migrate GitHub Actions workflows
 echo "Checking for GitHub Actions workflows..."
