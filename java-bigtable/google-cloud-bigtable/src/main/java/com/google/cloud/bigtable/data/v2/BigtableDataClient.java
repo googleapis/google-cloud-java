@@ -25,7 +25,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.Batcher;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.rpc.ApiExceptions;
-import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.api.gax.rpc.ServerStreamingCallable;
@@ -55,6 +54,7 @@ import com.google.cloud.bigtable.data.v2.models.sql.BoundStatement;
 import com.google.cloud.bigtable.data.v2.models.sql.PreparedStatement;
 import com.google.cloud.bigtable.data.v2.models.sql.ResultSet;
 import com.google.cloud.bigtable.data.v2.models.sql.SqlType;
+import com.google.cloud.bigtable.data.v2.stub.BigtableClientContext;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.cloud.bigtable.data.v2.stub.sql.SqlServerStream;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -186,7 +186,7 @@ public class BigtableDataClient implements AutoCloseable {
    * BigtableDataClientFactory#close()} is called.
    */
   static BigtableDataClient createWithClientContext(
-      BigtableDataSettings settings, ClientContext context) throws IOException {
+      BigtableDataSettings settings, BigtableClientContext context) throws IOException {
     EnhancedBigtableStub stub =
         EnhancedBigtableStub.createWithClientContext(settings.getStubSettings(), context);
     return new BigtableDataClient(stub);

@@ -27,7 +27,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.Batcher;
 import com.google.api.gax.batching.BatcherImpl;
 import com.google.api.gax.batching.FlowController;
-import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -170,7 +169,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
   private static final String CLIENT_NAME = "Bigtable";
   private static final long FLOW_CONTROL_ADJUSTING_INTERVAL_MS = TimeUnit.SECONDS.toMillis(20);
   private final EnhancedBigtableStubSettings settings;
-  private final ClientContext clientContext;
+  private final BigtableClientContext bigtableClientContext;
 
   private final boolean closeClientContext;
   private final RequestContext requestContext;
@@ -209,11 +208,13 @@ public class EnhancedBigtableStub implements AutoCloseable {
         bigtableClientContext.getClientContext().toBuilder()
             .setTracerFactory(createBigtableTracerFactory(settings, openTelemetry))
             .build();
-    return new EnhancedBigtableStub(settings, contextWithTracer);
+    bigtableClientContext = bigtableClientContext.withClientContext(contextWithTracer);
+    return new EnhancedBigtableStub(settings, bigtableClientContext);
   }
 
   public static EnhancedBigtableStub createWithClientContext(
-      EnhancedBigtableStubSettings settings, ClientContext clientContext) throws IOException {
+      EnhancedBigtableStubSettings settings, BigtableClientContext clientContext)
+      throws IOException {
 
     return new EnhancedBigtableStub(settings, clientContext, false);
   }
@@ -289,16 +290,17 @@ public class EnhancedBigtableStub implements AutoCloseable {
         "bigtable-java/" + Version.VERSION);
   }
 
-  public EnhancedBigtableStub(EnhancedBigtableStubSettings settings, ClientContext clientContext) {
+  public EnhancedBigtableStub(
+      EnhancedBigtableStubSettings settings, BigtableClientContext clientContext) {
     this(settings, clientContext, true);
   }
 
   public EnhancedBigtableStub(
       EnhancedBigtableStubSettings settings,
-      ClientContext clientContext,
+      BigtableClientContext clientContext,
       boolean closeClientContext) {
     this.settings = settings;
-    this.clientContext = clientContext;
+    this.bigtableClientContext = clientContext;
     this.closeClientContext = closeClientContext;
     this.requestContext =
         RequestContext.create(
@@ -347,7 +349,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
   public <RowT> ServerStreamingCallable<ReadRowsRequest, RowT> createReadRowsRawCallable(
       RowAdapter<RowT> rowAdapter) {
     return createReadRowsBaseCallable(settings.readRowsSettings(), rowAdapter)
-        .withDefaultCallContext(clientContext.getDefaultCallContext());
+        .withDefaultCallContext(bigtableClientContext.getClientContext().getDefaultCallContext());
   }
 
   /**
@@ -375,10 +377,13 @@ public class EnhancedBigtableStub implements AutoCloseable {
     SpanName span = getSpanName("ReadRows");
     ServerStreamingCallable<Query, RowT> traced =
         new TracedServerStreamingCallable<>(
-            readRowsUserCallable, clientContext.getTracerFactory(), span);
+            readRowsUserCallable,
+            bigtableClientContext.getClientContext().getTracerFactory(),
+            span);
 
     return traced.withDefaultCallContext(
-        clientContext
+        bigtableClientContext
+            .getClientContext()
             .getDefaultCallContext()
             .withRetrySettings(settings.readRowsSettings().getRetrySettings()));
   }
@@ -398,6 +403,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
    * </ul>
    */
   public <RowT> UnaryCallable<Query, RowT> createReadRowCallable(RowAdapter<RowT> rowAdapter) {
+    ClientContext clientContext = bigtableClientContext.getClientContext();
     if (!settings.getEnableSkipTrailers()) {
       ServerStreamingCallable<ReadRowsRequest, RowT> readRowsCallable =
           createReadRowsBaseCallable(
@@ -506,7 +512,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
             .build();
 
     ServerStreamingCallable<ReadRowsRequest, RowT> watched =
-        Callables.watched(merging, innerSettings, clientContext);
+        Callables.watched(merging, innerSettings, bigtableClientContext.getClientContext());
 
     ServerStreamingCallable<ReadRowsRequest, RowT> withBigtableTracer =
         new BigtableTracerStreamingCallable<>(watched);
@@ -582,7 +588,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
             .build();
 
     ServerStreamingCallable<ReadRowsRequest, RowT> watched =
-        Callables.watched(merging, innerSettings, clientContext);
+        Callables.watched(merging, innerSettings, bigtableClientContext.getClientContext());
 
     ServerStreamingCallable<ReadRowsRequest, RowT> withBigtableTracer =
         new BigtableTracerStreamingCallable<>(watched);
@@ -604,10 +610,13 @@ public class EnhancedBigtableStub implements AutoCloseable {
     SpanName span = getSpanName("ReadRows");
     ServerStreamingCallable<Query, RowT> traced =
         new TracedServerStreamingCallable<>(
-            readRowsUserCallable, clientContext.getTracerFactory(), span);
+            readRowsUserCallable,
+            bigtableClientContext.getClientContext().getTracerFactory(),
+            span);
 
     return traced.withDefaultCallContext(
-        clientContext
+        bigtableClientContext
+            .getClientContext()
             .getDefaultCallContext()
             .withRetrySettings(readRowsSettings.getRetrySettings()));
   }
@@ -644,10 +653,12 @@ public class EnhancedBigtableStub implements AutoCloseable {
         new TracedBatcherUnaryCallable<>(readRowsUserCallable.all());
 
     UnaryCallable<Query, List<RowT>> traced =
-        new TracedUnaryCallable<>(tracedBatcher, clientContext.getTracerFactory(), span);
+        new TracedUnaryCallable<>(
+            tracedBatcher, bigtableClientContext.getClientContext().getTracerFactory(), span);
 
     return traced.withDefaultCallContext(
-        clientContext
+        bigtableClientContext
+            .getClientContext()
             .getDefaultCallContext()
             .withRetrySettings(settings.readRowsSettings().getRetrySettings()));
   }
@@ -717,7 +728,8 @@ public class EnhancedBigtableStub implements AutoCloseable {
         methodName,
         new SampleRowKeysCallableWithRequest(retryable, requestContext)
             .withDefaultCallContext(
-                clientContext
+                bigtableClientContext
+                    .getClientContext()
                     .getDefaultCallContext()
                     .withRetrySettings(settings.sampleRowKeysSettings().getRetrySettings())));
   }
@@ -760,6 +772,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
    * <p>This function should not be exposed to external users, as it could cause a data loss.
    */
   private UnaryCallable<BulkMutation, MutateRowsAttemptResult> createMutateRowsBaseCallable() {
+    ClientContext clientContext = bigtableClientContext.getClientContext();
     ServerStreamingCallable<MutateRowsRequest, MutateRowsResponse> base =
         GrpcRawCallableFactory.createServerStreamingCallable(
             GrpcCallSettings.<MutateRowsRequest, MutateRowsResponse>newBuilder()
@@ -874,9 +887,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
         bulkMutateRowsCallable,
         BulkMutation.create(tableId),
         settings.bulkMutateRowsSettings().getBatchingSettings(),
-        clientContext.getExecutor(),
+        bigtableClientContext.getClientContext().getExecutor(),
         bulkMutationFlowController,
-        MoreObjects.firstNonNull(ctx, clientContext.getDefaultCallContext()));
+        MoreObjects.firstNonNull(
+            ctx, bigtableClientContext.getClientContext().getDefaultCallContext()));
   }
 
   /**
@@ -905,9 +919,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
         bulkMutateRowsCallable,
         BulkMutation.create(targetId),
         settings.bulkMutateRowsSettings().getBatchingSettings(),
-        clientContext.getExecutor(),
+        bigtableClientContext.getClientContext().getExecutor(),
         bulkMutationFlowController,
-        MoreObjects.firstNonNull(ctx, clientContext.getDefaultCallContext()));
+        MoreObjects.firstNonNull(
+            ctx, bigtableClientContext.getClientContext().getDefaultCallContext()));
   }
 
   /**
@@ -933,9 +948,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
         bulkReadRowsCallable,
         query,
         settings.bulkReadRowsSettings().getBatchingSettings(),
-        clientContext.getExecutor(),
+        bigtableClientContext.getClientContext().getExecutor(),
         null,
-        MoreObjects.firstNonNull(ctx, clientContext.getDefaultCallContext()));
+        MoreObjects.firstNonNull(
+            ctx, bigtableClientContext.getClientContext().getDefaultCallContext()));
   }
 
   /**
@@ -995,6 +1011,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
    */
   private ServerStreamingCallable<String, ByteStringRange>
       createGenerateInitialChangeStreamPartitionsCallable() {
+    ClientContext clientContext = bigtableClientContext.getClientContext();
     ServerStreamingCallable<
             GenerateInitialChangeStreamPartitionsRequest,
             GenerateInitialChangeStreamPartitionsResponse>
@@ -1075,6 +1092,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
       ServerStreamingCallable<ReadChangeStreamQuery, ChangeStreamRecordT>
           createReadChangeStreamCallable(
               ChangeStreamRecordAdapter<ChangeStreamRecordT> changeStreamRecordAdapter) {
+    ClientContext clientContext = bigtableClientContext.getClientContext();
     ServerStreamingCallable<ReadChangeStreamRequest, ReadChangeStreamResponse> base =
         GrpcRawCallableFactory.createServerStreamingCallable(
             GrpcCallSettings.<ReadChangeStreamRequest, ReadChangeStreamResponse>newBuilder()
@@ -1151,6 +1169,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
    */
   @InternalApi("For internal use only")
   public ExecuteQueryCallable createExecuteQueryCallable() {
+    ClientContext clientContext = bigtableClientContext.getClientContext();
     ServerStreamingCallable<ExecuteQueryRequest, ExecuteQueryResponse> base =
         GrpcRawCallableFactory.createServerStreamingCallable(
             GrpcCallSettings.<ExecuteQueryRequest, ExecuteQueryResponse>newBuilder()
@@ -1245,9 +1264,13 @@ public class EnhancedBigtableStub implements AutoCloseable {
       String methodName, UnaryCallable<RequestT, ResponseT> inner) {
 
     UnaryCallable<RequestT, ResponseT> traced =
-        new TracedUnaryCallable<>(inner, clientContext.getTracerFactory(), getSpanName(methodName));
+        new TracedUnaryCallable<>(
+            inner,
+            bigtableClientContext.getClientContext().getTracerFactory(),
+            getSpanName(methodName));
 
-    return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
+    return traced.withDefaultCallContext(
+        bigtableClientContext.getClientContext().getDefaultCallContext());
   }
 
   private Map<String, String> composeRequestParams(
@@ -1314,11 +1337,14 @@ public class EnhancedBigtableStub implements AutoCloseable {
     UnaryCallable<ReqT, RespT> traced =
         new TracedUnaryCallable<>(
             transformed,
-            clientContext.getTracerFactory(),
+            bigtableClientContext.getClientContext().getTracerFactory(),
             getSpanName(methodDescriptor.getBareMethodName()));
 
     return traced.withDefaultCallContext(
-        clientContext.getDefaultCallContext().withRetrySettings(callSettings.getRetrySettings()));
+        bigtableClientContext
+            .getClientContext()
+            .getDefaultCallContext()
+            .withRetrySettings(callSettings.getRetrySettings()));
   }
 
   private <BaseReqT, BaseRespT, ReqT, RespT> UnaryCallable<ReqT, RespT> createUnaryCallableNew(
@@ -1347,8 +1373,11 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
     return new BigtableUnaryOperationCallable<>(
         transformed,
-        clientContext.getDefaultCallContext().withRetrySettings(callSettings.getRetrySettings()),
-        clientContext.getTracerFactory(),
+        bigtableClientContext
+            .getClientContext()
+            .getDefaultCallContext()
+            .withRetrySettings(callSettings.getRetrySettings()),
+        bigtableClientContext.getClientContext().getTracerFactory(),
         getSpanName(methodDescriptor.getBareMethodName()),
         /* allowNoResponse= */ false);
   }
@@ -1371,9 +1400,11 @@ public class EnhancedBigtableStub implements AutoCloseable {
     if (settings.getEnableRetryInfo()) {
       retrying =
           com.google.cloud.bigtable.gaxx.retrying.Callables.retrying(
-              innerCallable, unaryCallSettings, clientContext);
+              innerCallable, unaryCallSettings, bigtableClientContext.getClientContext());
     } else {
-      retrying = Callables.retrying(innerCallable, unaryCallSettings, clientContext);
+      retrying =
+          Callables.retrying(
+              innerCallable, unaryCallSettings, bigtableClientContext.getClientContext());
     }
     if (settings.getEnableRoutingCookie()) {
       return new CookiesUnaryCallable<>(retrying);
@@ -1389,9 +1420,11 @@ public class EnhancedBigtableStub implements AutoCloseable {
     if (settings.getEnableRetryInfo()) {
       retrying =
           com.google.cloud.bigtable.gaxx.retrying.Callables.retrying(
-              innerCallable, serverStreamingCallSettings, clientContext);
+              innerCallable, serverStreamingCallSettings, bigtableClientContext.getClientContext());
     } else {
-      retrying = Callables.retrying(innerCallable, serverStreamingCallSettings, clientContext);
+      retrying =
+          Callables.retrying(
+              innerCallable, serverStreamingCallSettings, bigtableClientContext.getClientContext());
     }
     if (settings.getEnableRoutingCookie()) {
       return new CookiesServerStreamingCallable<>(retrying);
@@ -1408,7 +1441,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
     ServerStreamingCallable<RequestT, ResponseT> retrying;
     retrying =
         com.google.cloud.bigtable.gaxx.retrying.Callables.retryingForLargeRows(
-            innerCallable, serverStreamingCallSettings, clientContext);
+            innerCallable, serverStreamingCallSettings, bigtableClientContext.getClientContext());
     if (settings.getEnableRoutingCookie()) {
       return new CookiesServerStreamingCallable<>(retrying);
     }
@@ -1507,12 +1540,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
   @Override
   public void close() {
     if (closeClientContext) {
-      for (BackgroundResource backgroundResource : clientContext.getBackgroundResources()) {
-        try {
-          backgroundResource.close();
-        } catch (Exception e) {
-          throw new IllegalStateException("Failed to close resource", e);
-        }
+      try {
+        bigtableClientContext.close();
+      } catch (Exception e) {
+        throw new IllegalStateException("failed to close client context", e);
       }
     }
   }

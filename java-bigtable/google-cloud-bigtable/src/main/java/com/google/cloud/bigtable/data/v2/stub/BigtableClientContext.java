@@ -197,6 +197,11 @@ public class BigtableClientContext {
     return this.clientContext;
   }
 
+  public BigtableClientContext withClientContext(ClientContext clientContext) {
+    return new BigtableClientContext(
+        clientContext, openTelemetry, internalOpenTelemetry, metricsProvider);
+  }
+
   public void close() throws Exception {
     for (BackgroundResource resource : clientContext.getBackgroundResources()) {
       resource.close();

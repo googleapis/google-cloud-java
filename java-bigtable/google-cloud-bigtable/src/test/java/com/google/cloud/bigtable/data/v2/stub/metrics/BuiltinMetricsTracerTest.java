@@ -50,7 +50,6 @@ import com.google.api.gax.batching.BatchingException;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
-import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.StreamController;
@@ -71,6 +70,7 @@ import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.cloud.bigtable.data.v2.models.TableId;
+import com.google.cloud.bigtable.data.v2.stub.BigtableClientContext;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
 import com.google.common.base.Stopwatch;
@@ -276,7 +276,7 @@ public class BuiltinMetricsTracerTest {
         });
     stubSettingsBuilder.setTransportChannelProvider(channelProvider.build());
     EnhancedBigtableStubSettings stubSettings = stubSettingsBuilder.build();
-    stub = new EnhancedBigtableStub(stubSettings, ClientContext.create(stubSettings));
+    stub = new EnhancedBigtableStub(stubSettings, BigtableClientContext.create(stubSettings));
   }
 
   @After
