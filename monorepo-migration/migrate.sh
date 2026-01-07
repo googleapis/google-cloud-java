@@ -114,6 +114,15 @@ git merge --allow-unrelated-histories --no-ff "$SOURCE_REPO_NAME/main" -s ours -
 echo "Reading tree into prefix $SOURCE_REPO_NAME/..."
 git read-tree --prefix="$SOURCE_REPO_NAME/" -u "$SOURCE_REPO_NAME/main"
 
+# 6.5 Remove common files from the root of the migrated library
+echo "Removing common files from the root of $SOURCE_REPO_NAME/..."
+rm -f "$SOURCE_REPO_NAME/.gitignore"
+rm -f "$SOURCE_REPO_NAME/renovate.json"
+rm -f "$SOURCE_REPO_NAME/LICENSE"
+rm -f "$SOURCE_REPO_NAME/java.header"
+rm -f "$SOURCE_REPO_NAME/license-checks.xml"
+find "$SOURCE_REPO_NAME" -maxdepth 1 -name "*.md" ! -name "CHANGELOG.md" ! -name "README.md" -delete
+
 # 7. Commit the migration
 echo "Committing migration..."
 git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): migrate $SOURCE_REPO_NAME into monorepo"
