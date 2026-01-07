@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -180,7 +180,7 @@ public interface SubnetworkOrBuilder
    * explicitly set, it will not appear in get listings. If not set
    * the default behavior is determined by the org policy, if there is no org
    * policy specified, then it will default to disabled. This field isn't
-   * supported if the subnet purpose field is set toREGIONAL_MANAGED_PROXY.
+   * supported if the subnet purpose field is set toREGIONAL_MANAGED_PROXY. It is recommended to uselogConfig.enable field instead.
    * </pre>
    *
    * <code>optional bool enable_flow_logs = 151544420;</code>
@@ -197,7 +197,7 @@ public interface SubnetworkOrBuilder
    * explicitly set, it will not appear in get listings. If not set
    * the default behavior is determined by the org policy, if there is no org
    * policy specified, then it will default to disabled. This field isn't
-   * supported if the subnet purpose field is set toREGIONAL_MANAGED_PROXY.
+   * supported if the subnet purpose field is set toREGIONAL_MANAGED_PROXY. It is recommended to uselogConfig.enable field instead.
    * </pre>
    *
    * <code>optional bool enable_flow_logs = 151544420;</code>

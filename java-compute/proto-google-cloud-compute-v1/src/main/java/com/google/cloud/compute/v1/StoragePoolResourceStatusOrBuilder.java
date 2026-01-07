@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,6 +49,114 @@ public interface StoragePoolResourceStatusOrBuilder
    * @return The diskCount.
    */
   long getDiskCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Maximum allowed read IOPS for this Exapool.
+   * </pre>
+   *
+   * <code>optional int64 exapool_max_read_iops = 59241794;</code>
+   *
+   * @return Whether the exapoolMaxReadIops field is set.
+   */
+  boolean hasExapoolMaxReadIops();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Maximum allowed read IOPS for this Exapool.
+   * </pre>
+   *
+   * <code>optional int64 exapool_max_read_iops = 59241794;</code>
+   *
+   * @return The exapoolMaxReadIops.
+   */
+  long getExapoolMaxReadIops();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Maximum allowed read throughput in MiB/s for
+   * this Exapool.
+   * </pre>
+   *
+   * <code>optional int64 exapool_max_read_throughput = 390933251;</code>
+   *
+   * @return Whether the exapoolMaxReadThroughput field is set.
+   */
+  boolean hasExapoolMaxReadThroughput();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Maximum allowed read throughput in MiB/s for
+   * this Exapool.
+   * </pre>
+   *
+   * <code>optional int64 exapool_max_read_throughput = 390933251;</code>
+   *
+   * @return The exapoolMaxReadThroughput.
+   */
+  long getExapoolMaxReadThroughput();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Maximum allowed write IOPS for this Exapool.
+   * </pre>
+   *
+   * <code>optional int64 exapool_max_write_iops = 293212537;</code>
+   *
+   * @return Whether the exapoolMaxWriteIops field is set.
+   */
+  boolean hasExapoolMaxWriteIops();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Maximum allowed write IOPS for this Exapool.
+   * </pre>
+   *
+   * <code>optional int64 exapool_max_write_iops = 293212537;</code>
+   *
+   * @return The exapoolMaxWriteIops.
+   */
+  long getExapoolMaxWriteIops();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Maximum allowed write throughput in MiB/s
+   * for this Exapool.
+   * </pre>
+   *
+   * <code>optional int64 exapool_max_write_throughput = 330367482;</code>
+   *
+   * @return Whether the exapoolMaxWriteThroughput field is set.
+   */
+  boolean hasExapoolMaxWriteThroughput();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Maximum allowed write throughput in MiB/s
+   * for this Exapool.
+   * </pre>
+   *
+   * <code>optional int64 exapool_max_write_throughput = 330367482;</code>
+   *
+   * @return The exapoolMaxWriteThroughput.
+   */
+  long getExapoolMaxWriteThroughput();
 
   /**
    *

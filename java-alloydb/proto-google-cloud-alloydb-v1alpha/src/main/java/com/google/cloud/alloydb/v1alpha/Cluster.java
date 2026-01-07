@@ -6318,7 +6318,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=675
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=678
    * @return The network.
    */
   @java.lang.Override
@@ -6351,7 +6351,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=675
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=678
    * @return The bytes for network.
    */
   @java.lang.Override
@@ -6707,7 +6707,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.alloydb.v1alpha.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=710
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=713
    * @return Whether the sslConfig field is set.
    */
   @java.lang.Override
@@ -6726,7 +6726,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.alloydb.v1alpha.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=710
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=713
    * @return The sslConfig.
    */
   @java.lang.Override
@@ -7360,7 +7360,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Cluster.gemini_config is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=760
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=763
    * @return Whether the geminiConfig field is set.
    */
   @java.lang.Override
@@ -7382,7 +7382,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Cluster.gemini_config is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=760
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=763
    * @return The geminiConfig.
    */
   @java.lang.Override
@@ -11670,7 +11670,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1alpha/resources.proto;l=675
+     *     google/cloud/alloydb/v1alpha/resources.proto;l=678
      * @return The network.
      */
     @java.lang.Deprecated
@@ -11702,7 +11702,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1alpha/resources.proto;l=675
+     *     google/cloud/alloydb/v1alpha/resources.proto;l=678
      * @return The bytes for network.
      */
     @java.lang.Deprecated
@@ -11734,7 +11734,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1alpha/resources.proto;l=675
+     *     google/cloud/alloydb/v1alpha/resources.proto;l=678
      * @param value The network to set.
      * @return This builder for chaining.
      */
@@ -11765,7 +11765,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1alpha/resources.proto;l=675
+     *     google/cloud/alloydb/v1alpha/resources.proto;l=678
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -11792,7 +11792,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1alpha/resources.proto;l=675
+     *     google/cloud/alloydb/v1alpha/resources.proto;l=678
      * @param value The bytes for network to set.
      * @return This builder for chaining.
      */
@@ -12678,7 +12678,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.alloydb.v1alpha.SslConfig ssl_config = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.Cluster.ssl_config is deprecated. See
-     *     google/cloud/alloydb/v1alpha/resources.proto;l=710
+     *     google/cloud/alloydb/v1alpha/resources.proto;l=713
      * @return Whether the sslConfig field is set.
      */
     @java.lang.Deprecated
@@ -12696,7 +12696,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.alloydb.v1alpha.SslConfig ssl_config = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.Cluster.ssl_config is deprecated. See
-     *     google/cloud/alloydb/v1alpha/resources.proto;l=710
+     *     google/cloud/alloydb/v1alpha/resources.proto;l=713
      * @return The sslConfig.
      */
     @java.lang.Deprecated
@@ -14995,7 +14995,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.Cluster.gemini_config is deprecated. See
-     *     google/cloud/alloydb/v1alpha/resources.proto;l=760
+     *     google/cloud/alloydb/v1alpha/resources.proto;l=763
      * @return Whether the geminiConfig field is set.
      */
     @java.lang.Deprecated
@@ -15016,7 +15016,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.Cluster.gemini_config is deprecated. See
-     *     google/cloud/alloydb/v1alpha/resources.proto;l=760
+     *     google/cloud/alloydb/v1alpha/resources.proto;l=763
      * @return The geminiConfig.
      */
     @java.lang.Deprecated

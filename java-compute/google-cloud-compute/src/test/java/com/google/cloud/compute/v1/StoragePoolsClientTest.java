@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -216,6 +216,8 @@ public class StoragePoolsClientTest {
             .setCapacityProvisioningType("capacityProvisioningType1353661601")
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
+            .setExapoolProvisionedCapacityGb(
+                StoragePoolExapoolProvisionedCapacityGb.newBuilder().build())
             .setId(3355)
             .setKind("kind3292052")
             .setLabelFingerprint("labelFingerprint379449680")
