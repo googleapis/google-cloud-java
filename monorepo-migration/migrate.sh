@@ -77,6 +77,7 @@ git reset --hard HEAD
 git clean -fd
 git checkout -f main
 git reset --hard origin/main
+git clean -fdx
 
 # Check if the repository is already migrated
 if [ -d "$SOURCE_REPO_NAME" ]; then
@@ -127,6 +128,46 @@ if [ -n "$CODEOWNER" ]; then
     git add .github/CODEOWNERS
     git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): add code owners for $SOURCE_REPO_NAME"
 fi
+
+# 7.2 Update root pom.xml modules
+echo "Updating root pom.xml modules..."
+python3 -c "
+import sys
+pom_path = sys.argv[1]
+module_name = sys.argv[2]
+new_module = f'    <module>{module_name}</module>\n'
+with open(pom_path, 'r') as f:
+    content = f.read()
+start_tag = '<modules>'
+end_tag = '</modules>'
+start_idx = content.find(start_tag)
+end_idx = content.find(end_tag)
+if start_idx != -1 and end_idx != -1:
+    modules_section = content[start_idx + len(start_tag):end_idx]
+    lines = [l for l in modules_section.splitlines(keepends=True) if l.strip()]
+
+    java_indices = [i for i, l in enumerate(lines) if '<module>java-' in l]
+    if java_indices:
+        start_java = java_indices[0]
+        end_java = java_indices[-1] + 1
+        java_lines = lines[start_java:end_java]
+        if not any(f'<module>{module_name}</module>' in l for l in java_lines):
+            java_lines.append(new_module)
+            java_lines.sort()
+            lines = lines[:start_java] + java_lines + lines[end_java:]
+    else:
+        if not any(f'<module>{module_name}</module>' in l for l in lines):
+            lines.append(new_module)
+
+    new_content = content[:start_idx + len(start_tag)] + '\n' + ''.join(lines) + '  ' + content[end_idx:]
+    with open(pom_path, 'w') as f:
+        f.write(new_content)
+" "pom.xml" "$SOURCE_REPO_NAME"
+
+echo "Committing root pom.xml modules update..."
+git add pom.xml
+git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): add module to root pom.xml"
+
 
 # 7.5 Migrate GitHub Actions workflows
 echo "Checking for GitHub Actions workflows..."
