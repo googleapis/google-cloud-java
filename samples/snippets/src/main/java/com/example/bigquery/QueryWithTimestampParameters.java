@@ -30,8 +30,36 @@ import org.threeten.bp.ZonedDateTime;
 // Sample to running a query with timestamp query parameters.
 public class QueryWithTimestampParameters {
 
-  public static void main(String[] args) {
-    queryWithTimestampParameters();
+  public static void queryFromTableTimestampParameters() {
+    try {
+      // Initialize client that will be used to send requests. This client only needs to be created
+      // once, and can be reused for multiple requests.
+      BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
+
+      ZonedDateTime timestamp = LocalDateTime.of(2016, 12, 7, 8, 0, 0).atZone(ZoneOffset.UTC);
+      String query = "SELECT last_reported FROM "
+          + "`bigquery-public-data`.new_york_citibike.citibike_stations"
+          + " WHERE last_reported >= @ts_value LIMIT 5";
+      // Note: Standard SQL is required to use query parameters.
+      QueryJobConfiguration queryConfig =
+          QueryJobConfiguration.newBuilder(query)
+              .addNamedParameter(
+                  "ts_value",
+                  QueryParameterValue.timestamp(
+                      // Timestamp takes microseconds since 1970-01-01T00:00:00 UTC
+                      timestamp.toInstant().toEpochMilli() * 1000))
+              .build();
+
+      TableResult results = bigquery.query(queryConfig);
+
+      results
+          .iterateAll()
+          .forEach(row -> row.forEach(val -> System.out.printf("%s\n", val.toString())));
+
+      System.out.println("Query with timestamp parameter performed successfully.");
+    } catch (BigQueryException | InterruptedException e) {
+      System.out.println("Query not performed \n" + e);
+    }
   }
 
   public static void queryWithTimestampParameters() {
@@ -60,7 +88,7 @@ public class QueryWithTimestampParameters {
 
       System.out.println("Query with timestamp parameter performed successfully.");
     } catch (BigQueryException | InterruptedException e) {
-      System.out.println("Query not performed \n" + e.toString());
+      System.out.println("Query not performed \n" + e);
     }
   }
 }

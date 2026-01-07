@@ -30,13 +30,12 @@ public class QueryWithTimestampParametersIT {
 
   private final Logger log = Logger.getLogger(this.getClass().getName());
   private ByteArrayOutputStream bout;
-  private PrintStream out;
   private PrintStream originalPrintStream;
 
   @Before
   public void setUp() {
     bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
+    PrintStream out = new PrintStream(bout);
     originalPrintStream = System.out;
     System.setOut(out);
   }
@@ -52,6 +51,12 @@ public class QueryWithTimestampParametersIT {
   @Test
   public void testQueryWithTimestampParameters() {
     QueryWithTimestampParameters.queryWithTimestampParameters();
+    assertThat(bout.toString()).contains("Query with timestamp parameter performed successfully.");
+  }
+
+  @Test
+  public void testQueryFromTableTimestampParameters() {
+    QueryWithTimestampParameters.queryFromTableTimestampParameters();
     assertThat(bout.toString()).contains("Query with timestamp parameter performed successfully.");
   }
 }

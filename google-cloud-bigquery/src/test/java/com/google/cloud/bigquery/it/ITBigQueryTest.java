@@ -5980,9 +5980,11 @@ public class ITBigQueryTest {
 
   @Test
   public void testCopyJobWithLabelsAndExpTime() throws InterruptedException {
-    String destExpiryTime = "2025-12-31T23:59:59.999999999Z";
-    String sourceTableName = "test_copy_job_source_table_label";
-    String destinationTableName = "test_copy_job_destination_table_label";
+    String destExpiryTime = "2099-12-31T23:59:59.999999999Z";
+    String sourceTableName =
+        "test_copy_job_source_table_label" + UUID.randomUUID().toString().substring(0, 8);
+    String destinationTableName =
+        "test_copy_job_destination_table_label" + UUID.randomUUID().toString().substring(0, 8);
     Map<String, String> labels = ImmutableMap.of("test_job_name", "test_copy_job");
     TableId sourceTable = TableId.of(DATASET, sourceTableName);
     StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
