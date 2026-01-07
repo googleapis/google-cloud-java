@@ -167,7 +167,7 @@ public class BigtableDataClientFactoryTest {
         .stubSettings()
         .setTransportChannelProvider(transportChannelProvider)
         .setCredentialsProvider(credentialsProvider)
-        .setExecutorProvider(executorProvider)
+        .setBackgroundExecutorProvider(executorProvider)
         .setStreamWatchdogProvider(watchdogProvider)
         .setClock(apiClock);
 

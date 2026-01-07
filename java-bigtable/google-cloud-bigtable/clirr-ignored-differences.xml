@@ -499,4 +499,16 @@
         <className>com/google/cloud/bigtable/gaxx/grpc/BigtableChannelPoolSettings$Builder</className>
         <method>com.google.cloud.bigtable.gaxx.grpc.BigtableChannelPoolSettings$Builder setLoadBalancingStrategy(com.google.cloud.bigtable.gaxx.grpc.BigtableChannelPoolSettings$LoadBalancingStrategy)</method>
     </difference>
+    <difference>
+        <!-- InternalApi was updated -->
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/EnhancedBigtableStubSettings$InternalMetricsProvider</className>
+        <method>*</method>
+    </difference>
+    <difference>
+        <!-- InternalApi was updated -->
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/Util</className>
+        <method>*</method>
+    </difference>
 </differences>

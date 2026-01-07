@@ -69,6 +69,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.logging.Logger;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -1388,11 +1389,14 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   public interface InternalMetricsProvider {
     @Nullable
     OpenTelemetrySdk createOtelProvider(
-        EnhancedBigtableStubSettings userSettings, Credentials creds) throws IOException;
+        EnhancedBigtableStubSettings userSettings,
+        Credentials creds,
+        ScheduledExecutorService executor)
+        throws IOException;
   }
 
   private static final InternalMetricsProvider DEFAULT_INTERNAL_OTEL_PROVIDER =
       Util::newInternalOpentelemetry;
   private static final InternalMetricsProvider DISABLED_INTERNAL_OTEL_PROVIDER =
-      (ignored1, ignored2) -> null;
+      (ignored1, ignored2, ignored3) -> null;
 }

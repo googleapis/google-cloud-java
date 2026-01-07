@@ -22,6 +22,7 @@ import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
 import java.io.IOException;
+import java.util.concurrent.ScheduledExecutorService;
 import javax.annotation.Nullable;
 
 /**
@@ -39,11 +40,14 @@ public final class DefaultMetricsProvider implements MetricsProvider {
 
   @InternalApi
   public OpenTelemetry getOpenTelemetry(
-      @Nullable String metricsEndpoint, String universeDomain, @Nullable Credentials credentials)
+      @Nullable String metricsEndpoint,
+      String universeDomain,
+      @Nullable Credentials credentials,
+      ScheduledExecutorService executor)
       throws IOException {
     SdkMeterProviderBuilder meterProvider = SdkMeterProvider.builder();
     BuiltinMetricsView.registerBuiltinMetricsWithUniverseDomain(
-        credentials, meterProvider, metricsEndpoint, universeDomain);
+        credentials, meterProvider, metricsEndpoint, universeDomain, executor);
     return OpenTelemetrySdk.builder().setMeterProvider(meterProvider.build()).build();
   }
 

@@ -35,6 +35,7 @@ import com.google.api.core.ApiFutures;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.FixedCredentialsProvider;
+import com.google.api.gax.core.FixedExecutorProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.rpc.PermissionDeniedException;
 import com.google.auth.Credentials;
@@ -65,6 +66,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Level;
@@ -115,7 +117,8 @@ public final class BigtableCloudMonitoringExporter implements MetricExporter {
       @Nullable Credentials credentials,
       @Nullable String endpoint,
       String universeDomain,
-      TimeSeriesConverter converter)
+      TimeSeriesConverter converter,
+      @Nullable ScheduledExecutorService executorService)
       throws IOException {
     Preconditions.checkNotNull(universeDomain);
     MetricServiceSettings.Builder settingsBuilder = MetricServiceSettings.newBuilder();
@@ -126,6 +129,15 @@ public final class BigtableCloudMonitoringExporter implements MetricExporter {
     settingsBuilder.setCredentialsProvider(credentialsProvider);
 
     settingsBuilder.setUniverseDomain(universeDomain);
+
+    // If background executor is not null, use it for the monitoring client. This allows us to
+    // share the same background executor with the data client. When it's null, the monitoring
+    // client will create a new executor service from InstantiatingExecutorProvider. It could be
+    // null if someone uses a CustomOpenTelemetryMetricsProvider#setupSdkMeterProvider without
+    // the executor.
+    if (executorService != null) {
+      settingsBuilder.setBackgroundExecutorProvider(FixedExecutorProvider.create(executorService));
+    }
 
     if (MONITORING_ENDPOINT_OVERRIDE_SYS_PROP != null) {
       logger.warning(
