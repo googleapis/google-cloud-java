@@ -34,6 +34,9 @@ check_command mvn
 MONOREPO_URL="https://github.com/googleapis/google-cloud-java"
 SOURCE_REPO_URL="${SOURCE_REPO_URL:-https://github.com/googleapis/java-logging}"
 CODEOWNER="${CODEOWNER:-}"
+if [ -z "$CODEOWNER" ]; then
+    read -p "Enter CODEOWNER (e.g., @chingor13): " CODEOWNER
+fi
 
 # Derive names from URLs to avoid duplication
 SOURCE_REPO_NAME="${SOURCE_REPO_URL##*/}"
