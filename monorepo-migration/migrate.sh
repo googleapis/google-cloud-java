@@ -246,7 +246,7 @@ git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): update copyright heade
 # 7.9 Modernize root pom.xml
 echo "Modernizing root pom.xml..."
 PARENT_VERSION=$(grep -m 1 "<version>.*{x-version-update:google-cloud-java:current}" google-cloud-jar-parent/pom.xml | sed -E 's/.*<version>(.*)<\/version>.*/\1/')
-python3 "$MODERNIZE_POM_SCRIPT" "$SOURCE_REPO_NAME/pom.xml" "$PARENT_VERSION"
+python3 "$MODERNIZE_POM_SCRIPT" "$SOURCE_REPO_NAME/pom.xml" "$PARENT_VERSION" "$SOURCE_REPO_NAME"
 
 echo "Committing root pom.xml modernization..."
 git add "$SOURCE_REPO_NAME/pom.xml"
