@@ -15,7 +15,7 @@
 import sys
 import re
 
-def modernize_pom(file_path, parent_version):
+def modernize_pom(file_path, parent_version, source_repo_name=None):
     with open(file_path, 'r') as f:
         lines = f.readlines()
 
@@ -29,6 +29,33 @@ def modernize_pom(file_path, parent_version):
     has_x_version_update = False
 
     for line in lines:
+        # URL Modernization
+        if any(tag in line for tag in ['<url>', '<connection>', '<developerConnection>']):
+            if 'github.com' in line and 'googleapis/' in line:
+                if source_repo_name:
+                    repo_pattern = re.escape(source_repo_name)
+                else:
+                    repo_pattern = r'[a-zA-Z0-9-]+'
+                
+                # Replace HTTPS URLs
+                line = re.sub(
+                    r'https://github\.com/googleapis/' + repo_pattern,
+                    'https://github.com/googleapis/google-cloud-java',
+                    line
+                )
+                # Replace Git SSH URLs
+                line = re.sub(
+                    r'git@github\.com:googleapis/' + repo_pattern + r'(\.git)?',
+                    'git@github.com:googleapis/google-cloud-java.git',
+                    line
+                )
+                # Handle scm:git: prefix if it has https
+                line = re.sub(
+                    r'scm:git:https://github\.com/googleapis/' + repo_pattern,
+                    'scm:git:https://github.com/googleapis/google-cloud-java.git',
+                    line
+                )
+
         # Parent section modernization
         if '<parent>' in line and not in_parent:
             in_parent = True
@@ -110,7 +137,8 @@ def modernize_pom(file_path, parent_version):
 
 if __name__ == "__main__":
     if len(sys.argv) > 2:
-        modernize_pom(sys.argv[1], sys.argv[2])
+        source_repo = sys.argv[3] if len(sys.argv) > 3 else None
+        modernize_pom(sys.argv[1], sys.argv[2], source_repo)
     else:
-        print("Usage: python3 modernize_pom.py <file_path> <parent_version>")
+        print("Usage: python3 modernize_pom.py <file_path> <parent_version> [source_repo_name]")
         sys.exit(1)
