@@ -26,7 +26,9 @@ def modernize_pom(file_path, parent_version, source_repo_name=None):
     in_dependency = False
     in_reporting = False
     current_dependency_lines = []
-    has_x_version_update = False
+    should_preserve = False
+    current_group_id = None
+    has_version = False
 
     for line in lines:
         # URL Modernization
@@ -36,7 +38,7 @@ def modernize_pom(file_path, parent_version, source_repo_name=None):
                     repo_pattern = re.escape(source_repo_name)
                 else:
                     repo_pattern = r'[a-zA-Z0-9-]+'
-                
+
                 # Replace HTTPS URLs
                 line = re.sub(
                     r'https://github\.com/googleapis/' + repo_pattern,
@@ -82,7 +84,7 @@ def modernize_pom(file_path, parent_version, source_repo_name=None):
             in_dep_mgmt = False
             new_lines.append(line)
             continue
-        
+
         if in_dep_mgmt:
             if '<dependencies>' in line:
                 in_dependencies = True
@@ -92,26 +94,39 @@ def modernize_pom(file_path, parent_version, source_repo_name=None):
                 in_dependencies = False
                 new_lines.append(line)
                 continue
-            
+
             if in_dependencies:
                 if '<dependency>' in line:
                     in_dependency = True
                     current_dependency_lines = [line]
-                    has_x_version_update = False
+                    should_preserve = False
+                    current_group_id = None
+                    has_version = False
                     continue
                 if '</dependency>' in line:
                     in_dependency = False
                     current_dependency_lines.append(line)
-                    if has_x_version_update:
+
+                    # Preservation logic:
+                    # 1. Has x-version-update comment
+                    # 2. Is NOT com.google group AND has a version tag
+                    is_external = current_group_id and not current_group_id.startswith('com.google')
+                    if should_preserve or (is_external and has_version):
                         new_lines.extend(current_dependency_lines)
                     continue
-                
+
                 if in_dependency:
                     current_dependency_lines.append(line)
                     if '{x-version-update:' in line:
-                        has_x_version_update = True
+                        should_preserve = True
+                    if '<groupId>' in line:
+                        match = re.search(r'<groupId>(.*?)</groupId>', line)
+                        if match:
+                            current_group_id = match.group(1).strip()
+                    if '<version>' in line:
+                        has_version = True
                     continue
-                
+
                 # Prune comments and extra whitespace in depMgmt for a cleaner result
                 if not line.strip():
                     new_lines.append(line)
