@@ -236,11 +236,11 @@ fi
 
 # 7.8 Fix copyright headers in Java files
 echo "Fixing copyright headers in Java files..."
-find "$SOURCE_REPO_NAME" -name "*.java" -exec python3 -c "import sys, re; p = sys.argv[1]; c = open(p).read(); new_c = re.sub(r'Copyright \d{4} Google (Inc\.|LLC)', 'Copyright 2025 Google LLC', c); open(p, 'w').write(new_c)" {} \;
+find "$SOURCE_REPO_NAME" -name "*.java" -exec python3 -c "import sys, re; p = sys.argv[1]; c = open(p).read(); new_c = re.sub(r'Copyright \d{4} Google (Inc\.|LLC)', 'Copyright 2026 Google LLC', c); open(p, 'w').write(new_c)" {} \;
 
 echo "Committing copyright header fixes..."
 git add "$SOURCE_REPO_NAME"
-git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): update copyright headers to 2025 Google LLC"
+git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): update copyright headers to 2026 Google LLC"
 
 # 7.9 Modernize root pom.xml
 echo "Modernizing root pom.xml..."
