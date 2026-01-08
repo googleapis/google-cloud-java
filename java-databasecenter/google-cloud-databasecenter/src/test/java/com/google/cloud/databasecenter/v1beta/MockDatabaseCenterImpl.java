@@ -80,6 +80,27 @@ public class MockDatabaseCenterImpl extends DatabaseCenterImplBase {
   }
 
   @Override
+  public void aggregateFleet(
+      AggregateFleetRequest request, StreamObserver<AggregateFleetResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AggregateFleetResponse) {
+      requests.add(request);
+      responseObserver.onNext(((AggregateFleetResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AggregateFleet, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AggregateFleetResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void queryDatabaseResourceGroups(
       QueryDatabaseResourceGroupsRequest request,
       StreamObserver<QueryDatabaseResourceGroupsResponse> responseObserver) {

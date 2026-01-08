@@ -16,6 +16,7 @@
 
 package com.google.cloud.databasecenter.v1beta.stub;
 
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.AggregateFleetPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryDatabaseResourceGroupsPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryProductsPagedResponse;
 
@@ -26,6 +27,8 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.databasecenter.v1beta.AggregateFleetRequest;
+import com.google.cloud.databasecenter.v1beta.AggregateFleetResponse;
 import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsRequest;
 import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsResponse;
 import com.google.cloud.databasecenter.v1beta.QueryProductsRequest;
@@ -58,6 +61,18 @@ public class GrpcDatabaseCenterStub extends DatabaseCenterStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<AggregateFleetRequest, AggregateFleetResponse>
+      aggregateFleetMethodDescriptor =
+          MethodDescriptor.<AggregateFleetRequest, AggregateFleetResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.databasecenter.v1beta.DatabaseCenter/AggregateFleet")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AggregateFleetRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AggregateFleetResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<
           QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsResponse>
       queryDatabaseResourceGroupsMethodDescriptor =
@@ -76,6 +91,9 @@ public class GrpcDatabaseCenterStub extends DatabaseCenterStub {
   private final UnaryCallable<QueryProductsRequest, QueryProductsResponse> queryProductsCallable;
   private final UnaryCallable<QueryProductsRequest, QueryProductsPagedResponse>
       queryProductsPagedCallable;
+  private final UnaryCallable<AggregateFleetRequest, AggregateFleetResponse> aggregateFleetCallable;
+  private final UnaryCallable<AggregateFleetRequest, AggregateFleetPagedResponse>
+      aggregateFleetPagedCallable;
   private final UnaryCallable<
           QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsResponse>
       queryDatabaseResourceGroupsCallable;
@@ -131,6 +149,11 @@ public class GrpcDatabaseCenterStub extends DatabaseCenterStub {
         GrpcCallSettings.<QueryProductsRequest, QueryProductsResponse>newBuilder()
             .setMethodDescriptor(queryProductsMethodDescriptor)
             .build();
+    GrpcCallSettings<AggregateFleetRequest, AggregateFleetResponse>
+        aggregateFleetTransportSettings =
+            GrpcCallSettings.<AggregateFleetRequest, AggregateFleetResponse>newBuilder()
+                .setMethodDescriptor(aggregateFleetMethodDescriptor)
+                .build();
     GrpcCallSettings<QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsResponse>
         queryDatabaseResourceGroupsTransportSettings =
             GrpcCallSettings
@@ -145,6 +168,12 @@ public class GrpcDatabaseCenterStub extends DatabaseCenterStub {
     this.queryProductsPagedCallable =
         callableFactory.createPagedCallable(
             queryProductsTransportSettings, settings.queryProductsSettings(), clientContext);
+    this.aggregateFleetCallable =
+        callableFactory.createUnaryCallable(
+            aggregateFleetTransportSettings, settings.aggregateFleetSettings(), clientContext);
+    this.aggregateFleetPagedCallable =
+        callableFactory.createPagedCallable(
+            aggregateFleetTransportSettings, settings.aggregateFleetSettings(), clientContext);
     this.queryDatabaseResourceGroupsCallable =
         callableFactory.createUnaryCallable(
             queryDatabaseResourceGroupsTransportSettings,
@@ -173,6 +202,17 @@ public class GrpcDatabaseCenterStub extends DatabaseCenterStub {
   public UnaryCallable<QueryProductsRequest, QueryProductsPagedResponse>
       queryProductsPagedCallable() {
     return queryProductsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<AggregateFleetRequest, AggregateFleetResponse> aggregateFleetCallable() {
+    return aggregateFleetCallable;
+  }
+
+  @Override
+  public UnaryCallable<AggregateFleetRequest, AggregateFleetPagedResponse>
+      aggregateFleetPagedCallable() {
+    return aggregateFleetPagedCallable;
   }
 
   @Override

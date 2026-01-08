@@ -85,6 +85,21 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> AggregateFleet</td>
+ *      <td><p> AggregateFleet provides statistics about the fleet grouped by various fields.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> aggregateFleet(AggregateFleetRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> aggregateFleetPagedCallable()
+ *           <li><p> aggregateFleetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> QueryDatabaseResourceGroups</td>
  *      <td><p> QueryDatabaseResourceGroups returns paginated results of database groups.</td>
  *      <td>
@@ -313,6 +328,123 @@ public class DatabaseCenterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * AggregateFleet provides statistics about the fleet grouped by various fields.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatabaseCenterClient databaseCenterClient = DatabaseCenterClient.create()) {
+   *   AggregateFleetRequest request =
+   *       AggregateFleetRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setGroupBy("groupBy293428022")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setBaselineDate(Date.newBuilder().build())
+   *           .build();
+   *   for (AggregateFleetRow element : databaseCenterClient.aggregateFleet(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AggregateFleetPagedResponse aggregateFleet(AggregateFleetRequest request) {
+    return aggregateFleetPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * AggregateFleet provides statistics about the fleet grouped by various fields.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatabaseCenterClient databaseCenterClient = DatabaseCenterClient.create()) {
+   *   AggregateFleetRequest request =
+   *       AggregateFleetRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setGroupBy("groupBy293428022")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setBaselineDate(Date.newBuilder().build())
+   *           .build();
+   *   ApiFuture<AggregateFleetRow> future =
+   *       databaseCenterClient.aggregateFleetPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (AggregateFleetRow element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AggregateFleetRequest, AggregateFleetPagedResponse>
+      aggregateFleetPagedCallable() {
+    return stub.aggregateFleetPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * AggregateFleet provides statistics about the fleet grouped by various fields.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatabaseCenterClient databaseCenterClient = DatabaseCenterClient.create()) {
+   *   AggregateFleetRequest request =
+   *       AggregateFleetRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setGroupBy("groupBy293428022")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setBaselineDate(Date.newBuilder().build())
+   *           .build();
+   *   while (true) {
+   *     AggregateFleetResponse response =
+   *         databaseCenterClient.aggregateFleetCallable().call(request);
+   *     for (AggregateFleetRow element : response.getRowsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AggregateFleetRequest, AggregateFleetResponse>
+      aggregateFleetCallable() {
+    return stub.aggregateFleetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * QueryDatabaseResourceGroups returns paginated results of database groups.
    *
    * <p>Sample code:
@@ -535,6 +667,82 @@ public class DatabaseCenterClient implements BackgroundResource {
     protected QueryProductsFixedSizeCollection createCollection(
         List<QueryProductsPage> pages, int collectionSize) {
       return new QueryProductsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class AggregateFleetPagedResponse
+      extends AbstractPagedListResponse<
+          AggregateFleetRequest,
+          AggregateFleetResponse,
+          AggregateFleetRow,
+          AggregateFleetPage,
+          AggregateFleetFixedSizeCollection> {
+
+    public static ApiFuture<AggregateFleetPagedResponse> createAsync(
+        PageContext<AggregateFleetRequest, AggregateFleetResponse, AggregateFleetRow> context,
+        ApiFuture<AggregateFleetResponse> futureResponse) {
+      ApiFuture<AggregateFleetPage> futurePage =
+          AggregateFleetPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new AggregateFleetPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private AggregateFleetPagedResponse(AggregateFleetPage page) {
+      super(page, AggregateFleetFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class AggregateFleetPage
+      extends AbstractPage<
+          AggregateFleetRequest, AggregateFleetResponse, AggregateFleetRow, AggregateFleetPage> {
+
+    private AggregateFleetPage(
+        PageContext<AggregateFleetRequest, AggregateFleetResponse, AggregateFleetRow> context,
+        AggregateFleetResponse response) {
+      super(context, response);
+    }
+
+    private static AggregateFleetPage createEmptyPage() {
+      return new AggregateFleetPage(null, null);
+    }
+
+    @Override
+    protected AggregateFleetPage createPage(
+        PageContext<AggregateFleetRequest, AggregateFleetResponse, AggregateFleetRow> context,
+        AggregateFleetResponse response) {
+      return new AggregateFleetPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<AggregateFleetPage> createPageAsync(
+        PageContext<AggregateFleetRequest, AggregateFleetResponse, AggregateFleetRow> context,
+        ApiFuture<AggregateFleetResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class AggregateFleetFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          AggregateFleetRequest,
+          AggregateFleetResponse,
+          AggregateFleetRow,
+          AggregateFleetPage,
+          AggregateFleetFixedSizeCollection> {
+
+    private AggregateFleetFixedSizeCollection(List<AggregateFleetPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static AggregateFleetFixedSizeCollection createEmptyCollection() {
+      return new AggregateFleetFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected AggregateFleetFixedSizeCollection createCollection(
+        List<AggregateFleetPage> pages, int collectionSize) {
+      return new AggregateFleetFixedSizeCollection(pages, collectionSize);
     }
   }
 

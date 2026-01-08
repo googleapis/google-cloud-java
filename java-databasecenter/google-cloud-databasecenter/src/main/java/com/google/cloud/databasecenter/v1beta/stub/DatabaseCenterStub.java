@@ -16,12 +16,15 @@
 
 package com.google.cloud.databasecenter.v1beta.stub;
 
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.AggregateFleetPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryDatabaseResourceGroupsPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryProductsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.databasecenter.v1beta.AggregateFleetRequest;
+import com.google.cloud.databasecenter.v1beta.AggregateFleetResponse;
 import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsRequest;
 import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsResponse;
 import com.google.cloud.databasecenter.v1beta.QueryProductsRequest;
@@ -45,6 +48,15 @@ public abstract class DatabaseCenterStub implements BackgroundResource {
 
   public UnaryCallable<QueryProductsRequest, QueryProductsResponse> queryProductsCallable() {
     throw new UnsupportedOperationException("Not implemented: queryProductsCallable()");
+  }
+
+  public UnaryCallable<AggregateFleetRequest, AggregateFleetPagedResponse>
+      aggregateFleetPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: aggregateFleetPagedCallable()");
+  }
+
+  public UnaryCallable<AggregateFleetRequest, AggregateFleetResponse> aggregateFleetCallable() {
+    throw new UnsupportedOperationException("Not implemented: aggregateFleetCallable()");
   }
 
   public UnaryCallable<QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsPagedResponse>

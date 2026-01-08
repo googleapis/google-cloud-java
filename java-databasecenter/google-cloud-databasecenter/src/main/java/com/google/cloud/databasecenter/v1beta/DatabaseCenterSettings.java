@@ -16,6 +16,7 @@
 
 package com.google.cloud.databasecenter.v1beta;
 
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.AggregateFleetPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryDatabaseResourceGroupsPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryProductsPagedResponse;
 
@@ -95,6 +96,13 @@ public class DatabaseCenterSettings extends ClientSettings<DatabaseCenterSetting
   public PagedCallSettings<QueryProductsRequest, QueryProductsResponse, QueryProductsPagedResponse>
       queryProductsSettings() {
     return ((DatabaseCenterStubSettings) getStubSettings()).queryProductsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to aggregateFleet. */
+  public PagedCallSettings<
+          AggregateFleetRequest, AggregateFleetResponse, AggregateFleetPagedResponse>
+      aggregateFleetSettings() {
+    return ((DatabaseCenterStubSettings) getStubSettings()).aggregateFleetSettings();
   }
 
   /** Returns the object with the settings used for calls to queryDatabaseResourceGroups. */
@@ -223,6 +231,13 @@ public class DatabaseCenterSettings extends ClientSettings<DatabaseCenterSetting
             QueryProductsRequest, QueryProductsResponse, QueryProductsPagedResponse>
         queryProductsSettings() {
       return getStubSettingsBuilder().queryProductsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to aggregateFleet. */
+    public PagedCallSettings.Builder<
+            AggregateFleetRequest, AggregateFleetResponse, AggregateFleetPagedResponse>
+        aggregateFleetSettings() {
+      return getStubSettingsBuilder().aggregateFleetSettings();
     }
 
     /** Returns the builder for the settings used for calls to queryDatabaseResourceGroups. */
