@@ -101,6 +101,7 @@ def modernize_pom(file_path, parent_version, source_repo_name=None):
                     current_dependency_lines = [line]
                     should_preserve = False
                     current_group_id = None
+                    current_artifact_id = None
                     has_version = False
                     continue
                 if '</dependency>' in line:
@@ -110,8 +111,11 @@ def modernize_pom(file_path, parent_version, source_repo_name=None):
                     # Preservation logic:
                     # 1. Has x-version-update comment
                     # 2. Is NOT com.google group AND has a version tag
+                    # 3. Is com.google.cloud group AND artifactId starts with google-cloud- AND has a version tag
                     is_external = current_group_id and not current_group_id.startswith('com.google')
-                    if should_preserve or (is_external and has_version):
+                    is_google_cloud_lib = current_group_id == 'com.google.cloud' and current_artifact_id and current_artifact_id.startswith('google-cloud-')
+                    
+                    if should_preserve or (is_external and has_version) or (is_google_cloud_lib and has_version):
                         new_lines.extend(current_dependency_lines)
                     continue
 
@@ -123,6 +127,10 @@ def modernize_pom(file_path, parent_version, source_repo_name=None):
                         match = re.search(r'<groupId>(.*?)</groupId>', line)
                         if match:
                             current_group_id = match.group(1).strip()
+                    if '<artifactId>' in line:
+                        match = re.search(r'<artifactId>(.*?)</artifactId>', line)
+                        if match:
+                            current_artifact_id = match.group(1).strip()
                     if '<version>' in line:
                         has_version = True
                     continue
