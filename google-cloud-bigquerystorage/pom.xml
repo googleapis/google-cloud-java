@@ -39,6 +39,20 @@
       </extension>
     </extensions>
     <plugins>
+      <!-- Declare `surefire-junit-platform` here as shared-configs pulls in surefire-junit47 -->
+      <!-- which is for JUnit4 and not JUnit5. Declare this here until upstream is fixed -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <version>3.5.2</version>
+        <dependencies>
+          <dependency>
+            <groupId>org.apache.maven.surefire</groupId>
+            <artifactId>surefire-junit-platform</artifactId>
+            <version>${surefire.version}</version>
+          </dependency>
+        </dependencies>
+      </plugin>
       <plugin>
         <groupId>org.xolstice.maven.plugins</groupId>
         <artifactId>protobuf-maven-plugin</artifactId>
