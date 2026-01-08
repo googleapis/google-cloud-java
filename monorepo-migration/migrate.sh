@@ -49,6 +49,7 @@ TRANSFORM_SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 TRANSFORM_SCRIPT="$TRANSFORM_SCRIPT_DIR/transform_workflow.py"
 MODERNIZE_POM_SCRIPT="$TRANSFORM_SCRIPT_DIR/modernize_pom.py"
 UPDATE_ROOT_POM_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_root_pom.py"
+FIX_COPYRIGHT_SCRIPT="$TRANSFORM_SCRIPT_DIR/fix_copyright_headers.py"
 
 echo "Starting migration using git read-tree with isolated clones..."
 
@@ -236,7 +237,7 @@ fi
 
 # 7.8 Fix copyright headers in Java files
 echo "Fixing copyright headers in Java files..."
-find "$SOURCE_REPO_NAME" -name "*.java" -exec python3 -c "import sys, re; p = sys.argv[1]; c = open(p).read(); new_c = re.sub(r'Copyright \d{4} Google (Inc\.|LLC)', 'Copyright 2026 Google LLC', c); open(p, 'w').write(new_c)" {} \;
+python3 "$FIX_COPYRIGHT_SCRIPT" "$SOURCE_REPO_NAME"
 
 echo "Committing copyright header fixes..."
 git add "$SOURCE_REPO_NAME"
