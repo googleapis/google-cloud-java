@@ -16,14 +16,26 @@
 
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.*;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
-import com.google.api.services.bigquery.model.*;
+import com.google.api.services.bigquery.model.GetQueryResultsResponse;
+import com.google.api.services.bigquery.model.QueryParameter;
+import com.google.api.services.bigquery.model.QueryParameterType;
+import com.google.api.services.bigquery.model.QueryRequest;
 import com.google.api.services.bigquery.model.QueryResponse;
+import com.google.api.services.bigquery.model.TableCell;
+import com.google.api.services.bigquery.model.TableDataList;
+import com.google.api.services.bigquery.model.TableRow;
+import com.google.api.services.bigquery.model.TableSchema;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
@@ -41,14 +53,14 @@ import java.util.Map;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.LinkedBlockingDeque;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.junit.jupiter.MockitoExtension;
 
-@RunWith(MockitoJUnitRunner.class)
-public class ConnectionImplTest {
+@ExtendWith(MockitoExtension.class)
+class ConnectionImplTest {
   private BigQueryOptions options;
   private BigQueryRpcFactory rpcFactoryMock;
   private HttpBigQueryRpc bigqueryRpcMock;
@@ -140,8 +152,8 @@ public class ConnectionImplTest {
         .build();
   }
 
-  @Before
-  public void setUp() {
+  @BeforeEach
+  void setUp() {
     rpcFactoryMock = mock(BigQueryRpcFactory.class);
     bigqueryRpcMock = mock(HttpBigQueryRpc.class);
     connectionMock = mock(Connection.class);
@@ -164,7 +176,7 @@ public class ConnectionImplTest {
   }
 
   @Test
-  public void testFastQuerySinglePage() throws BigQuerySQLException, IOException {
+  void testFastQuerySinglePage() throws BigQuerySQLException, IOException {
     com.google.api.services.bigquery.model.QueryResponse mockQueryRes =
         new QueryResponse().setSchema(FAST_QUERY_TABLESCHEMA).setJobComplete(true);
     when(bigqueryRpcMock.queryRpcSkipExceptionTranslation(
@@ -186,7 +198,7 @@ public class ConnectionImplTest {
   @Test
   // NOTE: This doesn't truly paginates. Returns a response while mocking
   // processQueryResponseResults
-  public void testFastQueryMultiplePages() throws BigQuerySQLException, IOException {
+  void testFastQueryMultiplePages() throws BigQuerySQLException, IOException {
     com.google.api.services.bigquery.model.QueryResponse mockQueryRes =
         new QueryResponse()
             .setSchema(FAST_QUERY_TABLESCHEMA)
@@ -211,13 +223,13 @@ public class ConnectionImplTest {
   }
 
   @Test
-  public void testClose() throws BigQuerySQLException {
+  void testClose() throws BigQuerySQLException {
     boolean cancelled = connection.close();
     assertTrue(cancelled);
   }
 
   @Test
-  public void testQueryDryRun() throws BigQuerySQLException, IOException {
+  void testQueryDryRun() throws BigQuerySQLException, IOException {
     List<QueryParameter> queryParametersMock =
         ImmutableList.of(
             new QueryParameter().setParameterType(new QueryParameterType().setType("STRING")));
@@ -251,7 +263,7 @@ public class ConnectionImplTest {
   }
 
   @Test
-  public void testQueryDryRunNoQueryParameters() throws BigQuerySQLException, IOException {
+  void testQueryDryRunNoQueryParameters() throws BigQuerySQLException, IOException {
     com.google.api.services.bigquery.model.JobStatistics2 queryMock =
         new com.google.api.services.bigquery.model.JobStatistics2()
             .setSchema(FAST_QUERY_TABLESCHEMA);
@@ -281,7 +293,7 @@ public class ConnectionImplTest {
   }
 
   @Test
-  public void testParseDataTask() throws InterruptedException {
+  void testParseDataTask() throws InterruptedException {
     BlockingQueue<Tuple<Iterable<FieldValueList>, Boolean>> pageCache =
         new LinkedBlockingDeque<>(2);
     BlockingQueue<Tuple<TableDataList, Boolean>> rpcResponseQueue = new LinkedBlockingDeque<>(2);
@@ -306,7 +318,7 @@ public class ConnectionImplTest {
   }
 
   @Test
-  public void testPopulateBuffer() throws InterruptedException {
+  void testPopulateBuffer() throws InterruptedException {
 
     BlockingQueue<Tuple<Iterable<FieldValueList>, Boolean>> pageCache =
         new LinkedBlockingDeque<>(2);
@@ -341,7 +353,7 @@ public class ConnectionImplTest {
   }
 
   @Test
-  public void testNextPageTask() throws InterruptedException {
+  void testNextPageTask() throws InterruptedException {
     BlockingQueue<Tuple<TableDataList, Boolean>> rpcResponseQueue = new LinkedBlockingDeque<>(2);
     TableDataList mockTabledataList =
         new TableDataList()
@@ -364,7 +376,7 @@ public class ConnectionImplTest {
   }
 
   @Test
-  public void testGetQueryResultsFirstPage() throws IOException {
+  void testGetQueryResultsFirstPage() throws IOException {
     when(bigqueryRpcMock.getQueryResultsWithRowLimitSkipExceptionTranslation(
             any(String.class),
             any(String.class),
@@ -386,7 +398,7 @@ public class ConnectionImplTest {
 
   // calls executeSelect with a nonFast query and exercises createQueryJob
   @Test
-  public void testLegacyQuerySinglePage() throws BigQuerySQLException, IOException {
+  void testLegacyQuerySinglePage() throws BigQuerySQLException, IOException {
     ConnectionImpl connectionSpy = Mockito.spy(connection);
     com.google.api.services.bigquery.model.Job jobResponseMock =
         new com.google.api.services.bigquery.model.Job()
@@ -419,7 +431,7 @@ public class ConnectionImplTest {
 
   // calls executeSelect with a nonFast query where the query returns an empty result.
   @Test
-  public void testLegacyQuerySinglePageEmptyResults() throws SQLException, IOException {
+  void testLegacyQuerySinglePageEmptyResults() throws SQLException, IOException {
     ConnectionImpl connectionSpy = Mockito.spy(connection);
     com.google.api.services.bigquery.model.Job jobResponseMock =
         new com.google.api.services.bigquery.model.Job()
@@ -448,7 +460,7 @@ public class ConnectionImplTest {
 
   // exercises getSubsequentQueryResultsWithJob for fast running queries
   @Test
-  public void testFastQueryLongRunning() throws SQLException, IOException {
+  void testFastQueryLongRunning() throws SQLException, IOException {
     ConnectionImpl connectionSpy = Mockito.spy(connection);
     // emulating a fast query
     doReturn(true).when(connectionSpy).isFastQuerySupported();
@@ -479,7 +491,7 @@ public class ConnectionImplTest {
   }
 
   @Test
-  public void testFastQueryLongRunningAsync()
+  void testFastQueryLongRunningAsync()
       throws SQLException, ExecutionException, InterruptedException, IOException {
     ConnectionImpl connectionSpy = Mockito.spy(connection);
     // emulating a fast query
@@ -515,7 +527,7 @@ public class ConnectionImplTest {
   }
 
   @Test
-  public void testFastQuerySinglePageAsync()
+  void testFastQuerySinglePageAsync()
       throws BigQuerySQLException, ExecutionException, InterruptedException, IOException {
     com.google.api.services.bigquery.model.QueryResponse mockQueryRes =
         new QueryResponse().setSchema(FAST_QUERY_TABLESCHEMA).setJobComplete(true);
@@ -540,7 +552,7 @@ public class ConnectionImplTest {
   }
 
   @Test
-  public void testExecuteSelectSlowWithParamsAsync()
+  void testExecuteSelectSlowWithParamsAsync()
       throws BigQuerySQLException, ExecutionException, InterruptedException {
     ConnectionImpl connectionSpy = Mockito.spy(connection);
     List<Parameter> parameters = new ArrayList<>();
@@ -584,7 +596,7 @@ public class ConnectionImplTest {
   }
 
   @Test
-  public void testFastQueryMultiplePagesAsync()
+  void testFastQueryMultiplePagesAsync()
       throws BigQuerySQLException, ExecutionException, InterruptedException, IOException {
     com.google.api.services.bigquery.model.QueryResponse mockQueryRes =
         new QueryResponse()
@@ -616,7 +628,7 @@ public class ConnectionImplTest {
   @Test
   // Emulates first page response using getQueryResultsFirstPage(jobId) and then subsequent pages
   // using getQueryResultsFirstPage(jobId) getSubsequentQueryResultsWithJob(
-  public void testLegacyQueryMultiplePages() throws SQLException, IOException {
+  void testLegacyQueryMultiplePages() throws SQLException, IOException {
     ConnectionImpl connectionSpy = Mockito.spy(connection);
     com.google.api.services.bigquery.model.JobStatistics jobStatistics =
         new com.google.api.services.bigquery.model.JobStatistics();
@@ -649,7 +661,7 @@ public class ConnectionImplTest {
   }
 
   @Test
-  public void testExecuteSelectSlow() throws BigQuerySQLException {
+  void testExecuteSelectSlow() throws BigQuerySQLException {
     ConnectionImpl connectionSpy = Mockito.spy(connection);
     doReturn(false).when(connectionSpy).isFastQuerySupported();
     com.google.api.services.bigquery.model.JobStatistics jobStatistics =
@@ -686,7 +698,7 @@ public class ConnectionImplTest {
   }
 
   @Test
-  public void testExecuteSelectSlowWithParams() throws BigQuerySQLException {
+  void testExecuteSelectSlowWithParams() throws BigQuerySQLException {
     ConnectionImpl connectionSpy = Mockito.spy(connection);
     List<Parameter> parameters = new ArrayList<>();
     Map<String, String> labels = new HashMap<>();
@@ -725,7 +737,7 @@ public class ConnectionImplTest {
   }
 
   @Test
-  public void testGetSubsequentQueryResultsWithJob() {
+  void testGetSubsequentQueryResultsWithJob() {
     ConnectionImpl connectionSpy = Mockito.spy(connection);
     JobId jobId = mock(JobId.class);
     BigQueryResultStats bqRsStats = mock(BigQueryResultStats.class);
@@ -749,7 +761,7 @@ public class ConnectionImplTest {
   }
 
   @Test
-  public void testUseReadApi() {
+  void testUseReadApi() {
     ConnectionSettings connectionSettingsSpy = Mockito.spy(ConnectionSettings.class);
     doReturn(true).when(connectionSettingsSpy).getUseReadAPI();
     doReturn(2).when(connectionSettingsSpy).getTotalToPageRowCountRatio();
@@ -775,7 +787,7 @@ public class ConnectionImplTest {
   }
 
   @Test
-  public void testGetPageCacheSize() {
+  void testGetPageCacheSize() {
     ConnectionImpl connectionSpy = Mockito.spy(connection);
     // number of cached pages should be within a range
     assertTrue(connectionSpy.getPageCacheSize(10000, QUERY_SCHEMA) >= 3);

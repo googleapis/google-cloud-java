@@ -16,10 +16,10 @@
 
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class ExternalDatasetReferenceTest {
   private static final String EXTERNAL_SOURCE = "test_source";
@@ -31,7 +31,7 @@ public class ExternalDatasetReferenceTest {
           .build();
 
   @Test
-  public void testToBuilder() {
+  void testToBuilder() {
     compareExternalDatasetReference(
         EXTERNAL_DATASET_REFERENCE, EXTERNAL_DATASET_REFERENCE.toBuilder().build());
     ExternalDatasetReference externalDatasetReference =
@@ -40,7 +40,7 @@ public class ExternalDatasetReferenceTest {
   }
 
   @Test
-  public void testBuilder() {
+  void testBuilder() {
     assertEquals(EXTERNAL_SOURCE, EXTERNAL_DATASET_REFERENCE.getExternalSource());
     assertEquals(CONNECTION, EXTERNAL_DATASET_REFERENCE.getConnection());
     ExternalDatasetReference externalDatasetReference =
@@ -52,7 +52,7 @@ public class ExternalDatasetReferenceTest {
   }
 
   @Test
-  public void testToAndFromPb() {
+  void testToAndFromPb() {
     ExternalDatasetReference externalDatasetReference =
         EXTERNAL_DATASET_REFERENCE.toBuilder().build();
     assertTrue(

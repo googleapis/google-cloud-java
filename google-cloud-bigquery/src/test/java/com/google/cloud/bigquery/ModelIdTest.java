@@ -16,17 +16,17 @@
 
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class ModelIdTest {
+class ModelIdTest {
 
   public static final ModelId MODEL = ModelId.of("dataset", "model");
   public static final ModelId MODEL_COMPLETE = ModelId.of("project", "dataset", "model");
 
   @Test
-  public void testOf() {
+  void testOf() {
     assertEquals(null, MODEL.getProject());
     assertEquals("dataset", MODEL.getDataset());
     assertEquals("model", MODEL.getModel());
@@ -37,19 +37,19 @@ public class ModelIdTest {
   }
 
   @Test
-  public void testEquals() {
+  void testEquals() {
     compareModelIds(MODEL, ModelId.of("dataset", "model"));
     compareModelIds(MODEL_COMPLETE, ModelId.of("project", "dataset", "model"));
   }
 
   @Test
-  public void testToPbAndFromPb() {
+  void testToPbAndFromPb() {
     compareModelIds(MODEL, ModelId.fromPb(MODEL.toPb()));
     compareModelIds(MODEL_COMPLETE, ModelId.fromPb(MODEL_COMPLETE.toPb()));
   }
 
   @Test
-  public void testSetProjectId() {
+  void testSetProjectId() {
     ModelId differentProjectTable = ModelId.of("differentProject", "dataset", "model");
     assertEquals(differentProjectTable, MODEL.setProjectId("differentProject"));
   }

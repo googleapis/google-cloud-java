@@ -16,11 +16,11 @@
 
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class BigLakeConfigurationTest {
+class BigLakeConfigurationTest {
 
   private static final String STORAGE_URI = "gs://storage-uri";
   private static final String FILE_FORMAT = "PARQUET";
@@ -43,7 +43,7 @@ public class BigLakeConfigurationTest {
               .setConnectionId(CONNECTION_ID);
 
   @Test
-  public void testToBuilder() {
+  void testToBuilder() {
     assertEquals(STORAGE_URI, BIG_LAKE_CONFIGURATION.getStorageUri());
     assertEquals(FILE_FORMAT, BIG_LAKE_CONFIGURATION.getFileFormat());
     assertEquals(TABLE_FORMAT, BIG_LAKE_CONFIGURATION.getTableFormat());
@@ -51,12 +51,12 @@ public class BigLakeConfigurationTest {
   }
 
   @Test
-  public void testToPb() {
+  void testToPb() {
     assertBigLakeConfiguration(BIG_LAKE_CONFIGURATION_PB, BIG_LAKE_CONFIGURATION.toPb());
   }
 
   @Test
-  public void testFromPb() {
+  void testFromPb() {
     assertBigLakeConfiguration(
         BIG_LAKE_CONFIGURATION, BigLakeConfiguration.fromPb(BIG_LAKE_CONFIGURATION_PB));
   }

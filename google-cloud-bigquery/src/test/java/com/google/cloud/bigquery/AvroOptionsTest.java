@@ -16,9 +16,9 @@
 
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class AvroOptionsTest {
 
@@ -27,7 +27,7 @@ public class AvroOptionsTest {
       AvroOptions.newBuilder().setUseAvroLogicalTypes(USE_AVRO_LOGICAL_TYPES).build();
 
   @Test
-  public void testToBuilder() {
+  void testToBuilder() {
     compareAvroOptions(AVRO_OPTIONS, AVRO_OPTIONS.toBuilder().build());
     AvroOptions avroOptions = AVRO_OPTIONS.toBuilder().setUseAvroLogicalTypes(false).build();
     assertEquals(false, avroOptions.useAvroLogicalTypes());
@@ -36,13 +36,13 @@ public class AvroOptionsTest {
   }
 
   @Test
-  public void testBuilder() {
+  void testBuilder() {
     assertEquals(FormatOptions.AVRO, AVRO_OPTIONS.getType());
     assertEquals(USE_AVRO_LOGICAL_TYPES, AVRO_OPTIONS.useAvroLogicalTypes());
   }
 
   @Test
-  public void testToAndFromPb() {
+  void testToAndFromPb() {
     compareAvroOptions(AVRO_OPTIONS, AvroOptions.fromPb(AVRO_OPTIONS.toPb()));
     AvroOptions avroOptions =
         AvroOptions.newBuilder().setUseAvroLogicalTypes(USE_AVRO_LOGICAL_TYPES).build();

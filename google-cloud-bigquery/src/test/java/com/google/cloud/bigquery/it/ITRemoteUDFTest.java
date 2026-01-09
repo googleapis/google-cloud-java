@@ -15,8 +15,8 @@
  */
 package com.google.cloud.bigquery.it;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.BigQuery;
@@ -39,11 +39,11 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-public class ITRemoteUDFTest {
+class ITRemoteUDFTest {
 
   private static final String ID = UUID.randomUUID().toString().substring(0, 8);
   private static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
@@ -56,8 +56,8 @@ public class ITRemoteUDFTest {
   private static Connection connection;
   private static BigQuery bigquery;
 
-  @Before
-  public void setUp() throws IOException {
+  @BeforeEach
+  void setUp() throws IOException {
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     bigquery = bigqueryHelper.getOptions().getService();
     client = ConnectionServiceClient.create();
@@ -76,8 +76,8 @@ public class ITRemoteUDFTest {
     connection = client.createConnection(request);
   }
 
-  @AfterClass
-  public static void afterClass() {
+  @AfterAll
+  static void afterClass() {
     if (bigquery != null) {
       RemoteBigQueryHelper.forceDelete(bigquery, ROUTINE_DATASET);
     }
@@ -89,7 +89,7 @@ public class ITRemoteUDFTest {
   }
 
   @Test
-  public void testRoutineRemoteUDF() {
+  void testRoutineRemoteUDF() {
     String routineName = RemoteBigQueryHelper.generateRoutineName();
     RoutineId routineId = RoutineId.of(ROUTINE_DATASET, routineName);
     Map<String, String> userDefinedContext =

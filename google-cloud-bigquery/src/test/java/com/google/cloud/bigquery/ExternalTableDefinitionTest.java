@@ -16,16 +16,15 @@
 
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import com.google.cloud.bigquery.ExternalTableDefinition.SourceColumnMatch;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class ExternalTableDefinitionTest {
+class ExternalTableDefinitionTest {
 
   private static final List<String> SOURCE_URIS = ImmutableList.of("uri1", "uri2");
   private static final List<String> DECIMAL_TARGET_TYPES =
@@ -98,7 +97,7 @@ public class ExternalTableDefinitionTest {
       ExternalTableDefinition.newBuilder(SOURCE_URIS, TABLE_SCHEMA, PARQUET_OPTIONS).build();
 
   @Test
-  public void testToBuilder() {
+  void testToBuilder() {
     compareExternalTableDefinition(
         EXTERNAL_TABLE_DEFINITION, EXTERNAL_TABLE_DEFINITION.toBuilder().build());
     ExternalTableDefinition externalTableDefinition =
@@ -117,23 +116,21 @@ public class ExternalTableDefinitionTest {
   }
 
   @Test
-  public void testToBuilderIncomplete() {
+  void testToBuilderIncomplete() {
     ExternalTableDefinition externalTableDefinition =
         ExternalTableDefinition.of(SOURCE_URIS, TABLE_SCHEMA, FormatOptions.json());
     assertEquals(externalTableDefinition, externalTableDefinition.toBuilder().build());
   }
 
   @Test
-  public void testTypeNullPointerException() {
-    try {
-      EXTERNAL_TABLE_DEFINITION.toBuilder().setType(null).build();
-    } catch (NullPointerException ex) {
-      assertNotNull(ex.getMessage());
-    }
+  void testTypeNullPointerException() {
+    org.junit.jupiter.api.Assertions.assertThrows(
+        NullPointerException.class,
+        () -> EXTERNAL_TABLE_DEFINITION.toBuilder().setType(null).build());
   }
 
   @Test
-  public void testBuilder() {
+  void testBuilder() {
     assertEquals(TableDefinition.Type.EXTERNAL, EXTERNAL_TABLE_DEFINITION.getType());
     assertEquals(COMPRESSION, EXTERNAL_TABLE_DEFINITION.getCompression());
     assertEquals(CONNECTION_ID, EXTERNAL_TABLE_DEFINITION.getConnectionId());
@@ -157,7 +154,7 @@ public class ExternalTableDefinitionTest {
   }
 
   @Test
-  public void testToAndFromPb() {
+  void testToAndFromPb() {
     compareExternalTableDefinition(
         EXTERNAL_TABLE_DEFINITION,
         ExternalTableDefinition.fromPb(EXTERNAL_TABLE_DEFINITION.toPb()));
@@ -168,7 +165,7 @@ public class ExternalTableDefinitionTest {
   }
 
   @Test
-  public void testToAndFromPbParquet() {
+  void testToAndFromPbParquet() {
     compareExternalTableDefinition(
         EXTERNAL_TABLE_DEFINITION_PARQUET,
         ExternalTableDefinition.fromPb(EXTERNAL_TABLE_DEFINITION_PARQUET.toPb()));

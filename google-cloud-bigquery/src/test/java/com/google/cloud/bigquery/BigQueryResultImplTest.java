@@ -37,9 +37,9 @@ import java.util.Map;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
 import org.apache.arrow.vector.util.Text;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class BigQueryResultImplTest {
+class BigQueryResultImplTest {
 
   private static final Schema SCHEMA =
       Schema.of(
@@ -97,7 +97,7 @@ public class BigQueryResultImplTest {
   private static final int BUFFER_SIZE = 10;
 
   @Test
-  public void testResultSetFieldValueList() throws InterruptedException, SQLException {
+  void testResultSetFieldValueList() throws InterruptedException, SQLException {
     BlockingQueue<AbstractList<FieldValue>> buffer = new LinkedBlockingDeque<>(BUFFER_SIZE);
     FieldValueList fieldValues =
         FieldValueList.of(
@@ -199,7 +199,7 @@ public class BigQueryResultImplTest {
   }
 
   @Test
-  public void testResultSetReadApi() throws InterruptedException, SQLException {
+  void testResultSetReadApi() throws InterruptedException, SQLException {
     BlockingQueue<BigQueryResultImpl.Row> buffer = new LinkedBlockingDeque<>(BUFFER_SIZE);
 
     Map<String, Object> rowValues = new HashMap<>();

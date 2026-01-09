@@ -16,13 +16,13 @@
 
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class OptionTest {
 
@@ -54,11 +54,6 @@ public class OptionTest {
     Option option = new Option(RPC_OPTION, null) {};
     assertEquals(RPC_OPTION, option.getRpcOption());
     assertNull(option.getValue());
-    try {
-      new Option(null, VALUE) {};
-      Assert.fail();
-    } catch (NullPointerException expected) {
-
-    }
+    Assertions.assertThrows(NullPointerException.class, () -> new Option(null, VALUE) {});
   }
 }

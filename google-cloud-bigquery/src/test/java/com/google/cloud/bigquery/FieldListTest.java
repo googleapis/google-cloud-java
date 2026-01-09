@@ -16,13 +16,14 @@
 
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class FieldListTest {
+class FieldListTest {
   private static final String FIELD_NAME1 = "StringField";
   private static final String FIELD_NAME2 = "IntegerField";
   private static final String FIELD_NAME3 = "RecordField";
@@ -63,7 +64,7 @@ public class FieldListTest {
   private final FieldList fieldsSchema = FieldList.of(fieldSchema1, fieldSchema2, fieldSchema3);
 
   @Test
-  public void testGetByName() {
+  void testGetByName() {
     assertEquals(fieldSchema1, fieldsSchema.get(FIELD_NAME1));
     assertEquals(fieldSchema2, fieldsSchema.get(FIELD_NAME2));
     assertEquals(fieldSchema3, fieldsSchema.get(FIELD_NAME3));
@@ -76,34 +77,26 @@ public class FieldListTest {
 
     assertEquals(3, fieldsSchema.size());
 
-    IllegalArgumentException exception = null;
-    try {
-      fieldsSchema.get(FIELD_NAME4);
-    } catch (IllegalArgumentException e) {
-      exception = e;
-    }
+    IllegalArgumentException exception =
+        assertThrows(IllegalArgumentException.class, () -> fieldsSchema.get(FIELD_NAME4));
     assertNotNull(exception);
   }
 
   @Test
-  public void testGetByIndex() {
+  void testGetByIndex() {
     assertEquals(fieldSchema1, fieldsSchema.get(0));
     assertEquals(fieldSchema2, fieldsSchema.get(1));
     assertEquals(fieldSchema3, fieldsSchema.get(2));
 
     assertEquals(3, fieldsSchema.size());
 
-    IndexOutOfBoundsException exception = null;
-    try {
-      fieldsSchema.get(4);
-    } catch (IndexOutOfBoundsException e) {
-      exception = e;
-    }
+    IndexOutOfBoundsException exception =
+        assertThrows(IndexOutOfBoundsException.class, () -> fieldsSchema.get(4));
     assertNotNull(exception);
   }
 
   @Test
-  public void testGetRecordSchema() {
+  void testGetRecordSchema() {
     assertEquals(2, fieldSchema3.getSubFields().size());
     assertEquals(fieldSchema1, fieldSchema3.getSubFields().get(FIELD_NAME1));
     assertEquals(fieldSchema2, fieldSchema3.getSubFields().get(FIELD_NAME2));
@@ -122,7 +115,7 @@ public class FieldListTest {
   }
 
   @Test
-  public void testToAndFromPb() {
+  void testToAndFromPb() {
     assertEquals(fieldsSchema, FieldList.of(fieldSchema1, fieldSchema2, fieldSchema3));
     assertNotEquals(fieldsSchema, FieldList.of(fieldSchema1, fieldSchema3));
 

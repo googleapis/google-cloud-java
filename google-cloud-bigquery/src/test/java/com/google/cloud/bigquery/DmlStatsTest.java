@@ -16,9 +16,9 @@
 
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class DmlStatsTest {
 
@@ -33,14 +33,14 @@ public class DmlStatsTest {
           .build();
 
   @Test
-  public void testBuilder() {
+  void testBuilder() {
     assertEquals(DELETED_ROW_COUNT, DML_STATS.getDeletedRowCount());
     assertEquals(UPDATED_ROW_COUNT, DML_STATS.getUpdatedRowCount());
     assertEquals(INSERTED_ROW_COUNT, DML_STATS.getInsertedRowCount());
   }
 
   @Test
-  public void testToPbAndFromPb() {
+  void testToPbAndFromPb() {
     compareDmlStats(DML_STATS, DmlStats.fromPb(DML_STATS.toPb()));
   }
 

@@ -16,16 +16,16 @@
 
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class TableConstraintsTest {
+class TableConstraintsTest {
   private static final List<String> COLUMNS_PK = Arrays.asList("column1", "column2");
   private static final PrimaryKey PRIMARY_KEY =
       PrimaryKey.newBuilder().setColumns(COLUMNS_PK).build();
@@ -50,7 +50,7 @@ public class TableConstraintsTest {
           .build();
 
   @Test
-  public void testToBuilder() {
+  void testToBuilder() {
     compareTableConstraintsDefinition(TABLE_CONSTRAINTS, TABLE_CONSTRAINTS.toBuilder().build());
     List<String> columnsPk = Arrays.asList("col1", "col2", "col3");
     PrimaryKey primaryKey = PrimaryKey.newBuilder().setColumns(columnsPk).build();
@@ -90,7 +90,7 @@ public class TableConstraintsTest {
   }
 
   @Test
-  public void testBuilder() {
+  void testBuilder() {
     assertEquals(Collections.singletonList(FOREIGN_KEY), TABLE_CONSTRAINTS.getForeignKeys());
     assertEquals(PRIMARY_KEY, TABLE_CONSTRAINTS.getPrimaryKey());
     TableConstraints tableConstraints =
@@ -103,7 +103,7 @@ public class TableConstraintsTest {
   }
 
   @Test
-  public void testToAndFromPb() {
+  void testToAndFromPb() {
     TableConstraints tableConstraints = TABLE_CONSTRAINTS.toBuilder().build();
     assertTrue(TableConstraints.fromPb(tableConstraints.toPb()) instanceof TableConstraints);
     compareTableConstraintsDefinition(

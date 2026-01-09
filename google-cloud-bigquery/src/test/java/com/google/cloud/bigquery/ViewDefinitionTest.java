@@ -16,19 +16,18 @@
 
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.common.collect.ImmutableList;
 import java.util.List;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class ViewDefinitionTest {
+class ViewDefinitionTest {
 
   private static final String VIEW_QUERY = "VIEW QUERY";
   private static final List<UserDefinedFunction> USER_DEFINED_FUNCTIONS =
@@ -37,7 +36,7 @@ public class ViewDefinitionTest {
       ViewDefinition.newBuilder(VIEW_QUERY, USER_DEFINED_FUNCTIONS).setSchema(Schema.of()).build();
 
   @Test
-  public void testToBuilder() {
+  void testToBuilder() {
     compareViewDefinition(VIEW_DEFINITION, VIEW_DEFINITION.toBuilder().build());
     ViewDefinition viewDefinition = VIEW_DEFINITION.toBuilder().setQuery("NEW QUERY").build();
     assertEquals("NEW QUERY", viewDefinition.getQuery());
@@ -50,23 +49,21 @@ public class ViewDefinitionTest {
   }
 
   @Test
-  public void testTypeNullPointerException() {
-    try {
-      VIEW_DEFINITION.toBuilder().setType(null).build();
-      fail();
-    } catch (NullPointerException ex) {
-      assertNotNull(ex.getMessage());
-    }
+  void testTypeNullPointerException() {
+    NullPointerException ex =
+        org.junit.jupiter.api.Assertions.assertThrows(
+            NullPointerException.class, () -> VIEW_DEFINITION.toBuilder().setType(null).build());
+    assertNotNull(ex.getMessage());
   }
 
   @Test
-  public void testToBuilderIncomplete() {
+  void testToBuilderIncomplete() {
     TableDefinition viewDefinition = ViewDefinition.of(VIEW_QUERY);
     assertEquals(viewDefinition, viewDefinition.toBuilder().build());
   }
 
   @Test
-  public void testBuilder() {
+  void testBuilder() {
     assertEquals(VIEW_QUERY, VIEW_DEFINITION.getQuery());
     assertEquals(TableDefinition.Type.VIEW, VIEW_DEFINITION.getType());
     assertEquals(USER_DEFINED_FUNCTIONS, VIEW_DEFINITION.getUserDefinedFunctions());
@@ -106,7 +103,7 @@ public class ViewDefinitionTest {
   }
 
   @Test
-  public void testToAndFromPb() {
+  void testToAndFromPb() {
     ViewDefinition viewDefinition = VIEW_DEFINITION.toBuilder().setUseLegacySql(false).build();
     assertTrue(TableDefinition.fromPb(viewDefinition.toPb()) instanceof ViewDefinition);
     compareViewDefinition(

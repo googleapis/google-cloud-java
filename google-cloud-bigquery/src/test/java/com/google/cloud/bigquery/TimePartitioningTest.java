@@ -16,16 +16,16 @@
 
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.cloud.bigquery.TimePartitioning.Type;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class TimePartitioningTest {
+class TimePartitioningTest {
 
   private static final Type TYPE_DAY = Type.DAY;
   private static final Type TYPE_HOUR = Type.HOUR;
@@ -60,7 +60,7 @@ public class TimePartitioningTest {
           .build();
 
   @Test
-  public void testOf() {
+  void testOf() {
     assertEquals(TYPE_DAY, TIME_PARTITIONING_DAY.getType());
     assertEquals(TYPE_HOUR, TIME_PARTITIONING_HOUR.getType());
     assertEquals(TYPE_MONTH, TIME_PARTITIONING_MONTH.getType());
@@ -74,7 +74,7 @@ public class TimePartitioningTest {
   }
 
   @Test
-  public void testBuilder() {
+  void testBuilder() {
     TimePartitioning partitioning = TimePartitioning.newBuilder(TYPE_DAY).build();
     assertEquals(TYPE_DAY, partitioning.getType());
     assertNull(partitioning.getExpirationMs());
@@ -90,27 +90,21 @@ public class TimePartitioningTest {
   }
 
   @Test
-  public void testTypeOf_Npe() {
-    try {
-      TimePartitioning.of(null);
-      Assert.fail();
-    } catch (NullPointerException ex) {
-      assertNotNull(ex.getMessage());
-    }
+  void testTypeOf_Npe() {
+    NullPointerException ex =
+        assertThrows(NullPointerException.class, () -> TimePartitioning.of(null));
+    assertNotNull(ex.getMessage());
   }
 
   @Test
-  public void testTypeAndExpirationOf_Npe() {
-    try {
-      TimePartitioning.of(null, EXPIRATION_MS);
-      Assert.fail();
-    } catch (NullPointerException ex) {
-      assertNotNull(ex.getMessage());
-    }
+  void testTypeAndExpirationOf_Npe() {
+    NullPointerException ex =
+        assertThrows(NullPointerException.class, () -> TimePartitioning.of(null, EXPIRATION_MS));
+    assertNotNull(ex.getMessage());
   }
 
   @Test
-  public void testToAndFromPb() {
+  void testToAndFromPb() {
     compareTimePartitioning(
         TIME_PARTITIONING_DAY, TimePartitioning.fromPb(TIME_PARTITIONING_DAY.toPb()));
     TimePartitioning partitioning = TimePartitioning.of(TYPE_DAY);

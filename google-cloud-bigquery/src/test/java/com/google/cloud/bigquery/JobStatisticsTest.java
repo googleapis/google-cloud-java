@@ -17,7 +17,7 @@
 package com.google.cloud.bigquery;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.google.cloud.bigquery.JobStatistics.CopyStatistics;
 import com.google.cloud.bigquery.JobStatistics.ExtractStatistics;
@@ -33,7 +33,7 @@ import com.google.cloud.bigquery.QueryStage.QueryStep;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
 import java.util.UUID;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class JobStatisticsTest {
 

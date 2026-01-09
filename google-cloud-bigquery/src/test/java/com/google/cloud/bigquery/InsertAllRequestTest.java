@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -24,7 +25,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class InsertAllRequestTest {
 
@@ -214,11 +215,11 @@ public class InsertAllRequestTest {
     compareInsertAllRequest(INSERT_ALL_REQUEST11, INSERT_ALL_REQUEST11);
   }
 
-  @Test(expected = UnsupportedOperationException.class)
+  @Test
   public void testImmutable() {
-    InsertAllRequest.RowToInsert row =
-        InsertAllRequest.RowToInsert.of(new HashMap<String, Object>());
-    row.getContent().put("zip", "zap");
+    InsertAllRequest.RowToInsert row = InsertAllRequest.RowToInsert.of(new HashMap<>());
+
+    assertThrows(UnsupportedOperationException.class, () -> row.getContent().put("zip", "zap"));
   }
 
   @Test

@@ -15,13 +15,13 @@
  */
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.HashMap;
 import java.util.Map;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class RemoteFunctionOptionsTest {
+class RemoteFunctionOptionsTest {
   private static final String endpoint = "https://aaabbbccc-uc.a.run.app";
   private static final String connection =
       "projects/{projectId}/locations/{locationId}/connections/{connectionId}";
@@ -43,13 +43,13 @@ public class RemoteFunctionOptionsTest {
           .build();
 
   @Test
-  public void testToBuilder() {
+  void testToBuilder() {
     compareRemoteFunctionOptions(
         REMOTE_FUNCTION_OPTIONS, REMOTE_FUNCTION_OPTIONS.toBuilder().build());
   }
 
   @Test
-  public void testBuilder() {
+  void testBuilder() {
     assertEquals(endpoint, REMOTE_FUNCTION_OPTIONS.getEndpoint());
     assertEquals(connection, REMOTE_FUNCTION_OPTIONS.getConnection());
     assertEquals(userDefinedContext, REMOTE_FUNCTION_OPTIONS.getUserDefinedContext());
@@ -57,7 +57,7 @@ public class RemoteFunctionOptionsTest {
   }
 
   @Test
-  public void testToAndFromPb() {
+  void testToAndFromPb() {
     compareRemoteFunctionOptions(
         REMOTE_FUNCTION_OPTIONS, RemoteFunctionOptions.fromPb(REMOTE_FUNCTION_OPTIONS.toPb()));
   }

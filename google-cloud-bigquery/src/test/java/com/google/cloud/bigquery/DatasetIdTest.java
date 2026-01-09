@@ -16,17 +16,17 @@
 
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class DatasetIdTest {
+class DatasetIdTest {
 
   private static final DatasetId DATASET = DatasetId.of("dataset");
   private static final DatasetId DATASET_COMPLETE = DatasetId.of("project", "dataset");
 
   @Test
-  public void testOf() {
+  void testOf() {
     assertEquals(null, DATASET.getProject());
     assertEquals("dataset", DATASET.getDataset());
     assertEquals("project", DATASET_COMPLETE.getProject());
@@ -34,19 +34,19 @@ public class DatasetIdTest {
   }
 
   @Test
-  public void testEquals() {
+  void testEquals() {
     compareDatasetIds(DATASET, DatasetId.of("dataset"));
     compareDatasetIds(DATASET_COMPLETE, DatasetId.of("project", "dataset"));
   }
 
   @Test
-  public void testToPbAndFromPb() {
+  void testToPbAndFromPb() {
     compareDatasetIds(DATASET, DatasetId.fromPb(DATASET.toPb()));
     compareDatasetIds(DATASET_COMPLETE, DatasetId.fromPb(DATASET_COMPLETE.toPb()));
   }
 
   @Test
-  public void testSetProjectId() {
+  void testSetProjectId() {
     assertEquals(DATASET_COMPLETE, DATASET.setProjectId("project"));
   }
 

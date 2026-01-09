@@ -16,14 +16,14 @@
 
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.google.api.services.bigquery.model.TableSchema;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class SchemaTest {
+class SchemaTest {
 
   private static PolicyTags POLICY_TAGS =
       PolicyTags.newBuilder().setNames(ImmutableList.of("someTag")).build();
@@ -53,12 +53,12 @@ public class SchemaTest {
   private static final Schema TABLE_SCHEMA = Schema.of(FIELDS);
 
   @Test
-  public void testOf() {
+  void testOf() {
     compareTableSchema(TABLE_SCHEMA, Schema.of(FIELDS));
   }
 
   @Test
-  public void testToAndFromPb() {
+  void testToAndFromPb() {
     compareTableSchema(TABLE_SCHEMA, Schema.fromPb(TABLE_SCHEMA.toPb()));
   }
 
@@ -68,7 +68,7 @@ public class SchemaTest {
   }
 
   @Test
-  public void testEmptySchema() {
+  void testEmptySchema() {
     TableSchema tableSchema = new TableSchema();
     Schema schema = Schema.fromPb(tableSchema);
     assertEquals(0, schema.getFields().size());

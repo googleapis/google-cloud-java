@@ -15,16 +15,16 @@
  */
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 import com.google.api.services.bigquery.model.TrainingOptions;
 import com.google.api.services.bigquery.model.TrainingRun;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class ModelInfoTest {
+class ModelInfoTest {
 
   private static final ModelId MODEL_ID = ModelId.of("dataset", "model");
   private static final String ETAG = "etag";
@@ -57,18 +57,18 @@ public class ModelInfoTest {
           .build();
 
   @Test
-  public void testToBuilder() {
+  void testToBuilder() {
     compareModelInfo(MODEL_INFO, MODEL_INFO.toBuilder().build());
   }
 
   @Test
-  public void testToBuilderIncomplete() {
+  void testToBuilderIncomplete() {
     ModelInfo modelInfo = ModelInfo.of(MODEL_ID);
     assertEquals(modelInfo, modelInfo.toBuilder().build());
   }
 
   @Test
-  public void testBuilder() {
+  void testBuilder() {
     assertEquals(ETAG, MODEL_INFO.getEtag());
     assertEquals(CREATION_TIME, MODEL_INFO.getCreationTime());
     assertEquals(LAST_MODIFIED_TIME, MODEL_INFO.getLastModifiedTime());
@@ -81,7 +81,7 @@ public class ModelInfoTest {
   }
 
   @Test
-  public void testOf() {
+  void testOf() {
     ModelInfo modelInfo = ModelInfo.of(MODEL_ID);
     assertEquals(MODEL_ID, modelInfo.getModelId());
     assertNull(modelInfo.getEtag());
@@ -98,12 +98,12 @@ public class ModelInfoTest {
   }
 
   @Test
-  public void testToAndFromPb() {
+  void testToAndFromPb() {
     compareModelInfo(MODEL_INFO, ModelInfo.fromPb(MODEL_INFO.toPb()));
   }
 
   @Test
-  public void testSetProjectId() {
+  void testSetProjectId() {
     assertEquals("project", MODEL_INFO.setProjectId("project").getModelId().getProject());
   }
 

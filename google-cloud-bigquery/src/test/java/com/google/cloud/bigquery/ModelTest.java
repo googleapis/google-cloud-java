@@ -16,25 +16,23 @@
 
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.eq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.junit.MockitoJUnitRunner;
-import org.mockito.junit.MockitoRule;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
 
-@RunWith(MockitoJUnitRunner.class)
-public class ModelTest {
+@ExtendWith(MockitoExtension.class)
+class ModelTest {
 
   private static final ModelId MODEL_ID = ModelId.of("dataset", "model");
   private static final String ETAG = "etag";
@@ -54,15 +52,13 @@ public class ModelTest {
           .setFriendlyName(FRIENDLY_NAME)
           .build();
 
-  @Rule public MockitoRule rule;
-
   private BigQuery bigquery;
   private BigQueryOptions mockOptions;
   private Model expectedModel;
   private Model model;
 
-  @Before
-  public void setUp() {
+  @BeforeEach
+  void setUp() {
     bigquery = mock(BigQuery.class);
     mockOptions = mock(BigQueryOptions.class);
     when(bigquery.getOptions()).thenReturn(mockOptions);
@@ -71,7 +67,7 @@ public class ModelTest {
   }
 
   @Test
-  public void testBuilder() {
+  void testBuilder() {
     Model builtModel =
         new Model.Builder(bigquery, MODEL_ID)
             .setEtag(ETAG)
@@ -86,12 +82,12 @@ public class ModelTest {
   }
 
   @Test
-  public void testToBuilder() {
+  void testToBuilder() {
     compareModelInfo(expectedModel, expectedModel.toBuilder().build());
   }
 
   @Test
-  public void testExists_True() {
+  void testExists_True() {
     BigQuery.ModelOption[] expectedOptions = {BigQuery.ModelOption.fields()};
     when(bigquery.getModel(MODEL_INFO.getModelId(), expectedOptions)).thenReturn(expectedModel);
     assertTrue(model.exists());
@@ -99,7 +95,7 @@ public class ModelTest {
   }
 
   @Test
-  public void testExists_False() {
+  void testExists_False() {
     BigQuery.ModelOption[] expectedOptions = {BigQuery.ModelOption.fields()};
     when(bigquery.getModel(MODEL_INFO.getModelId(), expectedOptions)).thenReturn(null);
     assertFalse(model.exists());
@@ -107,7 +103,7 @@ public class ModelTest {
   }
 
   @Test
-  public void testReload() {
+  void testReload() {
     ModelInfo updatedInfo = MODEL_INFO.toBuilder().setDescription("Description").build();
     Model expectedModel = new Model(bigquery, new ModelInfo.BuilderImpl(updatedInfo));
     when(bigquery.getModel(MODEL_INFO.getModelId())).thenReturn(expectedModel);
@@ -117,14 +113,14 @@ public class ModelTest {
   }
 
   @Test
-  public void testReloadNull() {
+  void testReloadNull() {
     when(bigquery.getModel(MODEL_INFO.getModelId())).thenReturn(null);
     assertNull(model.reload());
     verify(bigquery).getModel(MODEL_INFO.getModelId());
   }
 
   @Test
-  public void testUpdate() {
+  void testUpdate() {
     Model expectedUpdatedModel = expectedModel.toBuilder().setDescription("Description").build();
     when(bigquery.update(eq(expectedModel))).thenReturn(expectedUpdatedModel);
     Model actualUpdatedModel = model.update();
@@ -133,7 +129,7 @@ public class ModelTest {
   }
 
   @Test
-  public void testUpdateWithOptions() {
+  void testUpdateWithOptions() {
     Model expectedUpdatedModel = expectedModel.toBuilder().setDescription("Description").build();
     when(bigquery.update(eq(expectedModel), eq(BigQuery.ModelOption.fields())))
         .thenReturn(expectedUpdatedModel);
@@ -143,14 +139,14 @@ public class ModelTest {
   }
 
   @Test
-  public void testDeleteTrue() {
+  void testDeleteTrue() {
     when(bigquery.delete(MODEL_INFO.getModelId())).thenReturn(true);
     assertTrue(model.delete());
     verify(bigquery).delete(MODEL_INFO.getModelId());
   }
 
   @Test
-  public void testDeleteFalse() {
+  void testDeleteFalse() {
     when(bigquery.delete(MODEL_INFO.getModelId())).thenReturn(false);
     assertFalse(model.delete());
     verify(bigquery).delete(MODEL_INFO.getModelId());

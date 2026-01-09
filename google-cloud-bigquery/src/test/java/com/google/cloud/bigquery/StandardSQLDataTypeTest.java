@@ -15,13 +15,13 @@
  */
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.google.common.collect.ImmutableList;
 import java.util.List;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class StandardSQLDataTypeTest {
+class StandardSQLDataTypeTest {
   private static final String STRING_TYPEKIND = "STRING";
   private static final String ARRAY_TYPEKIND = "ARRAY";
   private static final String STRUCT_TYPEKIND = "STRUCT";
@@ -42,7 +42,7 @@ public class StandardSQLDataTypeTest {
       StandardSQLDataType.newBuilder(STRUCT_TYPEKIND).setStructType(STRUCT_TYPE).build();
 
   @Test
-  public void testToBuilder() {
+  void testToBuilder() {
     compareStandardSQLDataType(STRING_DATA_TYPE, STRING_DATA_TYPE.toBuilder().build());
     compareStandardSQLDataType(
         ARRAY_OF_STRING_DATA_TYPE, ARRAY_OF_STRING_DATA_TYPE.toBuilder().build());
@@ -50,7 +50,7 @@ public class StandardSQLDataTypeTest {
   }
 
   @Test
-  public void testBuilder() {
+  void testBuilder() {
     assertEquals(STRING_TYPEKIND, STRING_DATA_TYPE.getTypeKind());
     assertEquals(ARRAY_TYPEKIND, ARRAY_OF_STRING_DATA_TYPE.getTypeKind());
     assertEquals(STRING_DATA_TYPE, ARRAY_OF_STRING_DATA_TYPE.getArrayElementType());
@@ -58,7 +58,7 @@ public class StandardSQLDataTypeTest {
   }
 
   @Test
-  public void testToAndFromPb() {
+  void testToAndFromPb() {
     compareStandardSQLDataType(
         ARRAY_OF_STRING_DATA_TYPE, StandardSQLDataType.fromPb(ARRAY_OF_STRING_DATA_TYPE.toPb()));
   }

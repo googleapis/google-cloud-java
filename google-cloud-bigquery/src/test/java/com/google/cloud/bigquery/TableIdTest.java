@@ -16,11 +16,11 @@
 
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class TableIdTest {
+class TableIdTest {
 
   private static final TableId TABLE = TableId.of("dataset", "table");
   private static final TableId TABLE_COMPLETE = TableId.of("project", "dataset", "table");
@@ -28,7 +28,7 @@ public class TableIdTest {
       "projects/project/datasets/dataset/tables/table";
 
   @Test
-  public void testOf() {
+  void testOf() {
     assertEquals(null, TABLE.getProject());
     assertEquals("dataset", TABLE.getDataset());
     assertEquals("table", TABLE.getTable());
@@ -39,19 +39,19 @@ public class TableIdTest {
   }
 
   @Test
-  public void testEquals() {
+  void testEquals() {
     compareTableIds(TABLE, TableId.of("dataset", "table"));
     compareTableIds(TABLE_COMPLETE, TableId.of("project", "dataset", "table"));
   }
 
   @Test
-  public void testToPbAndFromPb() {
+  void testToPbAndFromPb() {
     compareTableIds(TABLE, TableId.fromPb(TABLE.toPb()));
     compareTableIds(TABLE_COMPLETE, TableId.fromPb(TABLE_COMPLETE.toPb()));
   }
 
   @Test
-  public void testSetProjectId() {
+  void testSetProjectId() {
     TableId differentProjectTable = TableId.of("differentProject", "dataset", "table");
     assertEquals(differentProjectTable, TABLE.setProjectId("differentProject"));
   }

@@ -16,7 +16,7 @@
 
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.google.api.services.bigquery.model.Dataset;
 import com.google.cloud.bigquery.Acl.DatasetAclEntity;
@@ -31,12 +31,12 @@ import com.google.cloud.bigquery.Acl.User;
 import com.google.cloud.bigquery.Acl.View;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class AclTest {
+class AclTest {
 
   @Test
-  public void testDatasetEntity() {
+  void testDatasetEntity() {
     DatasetId datasetId = DatasetId.of("dataset");
     List<String> targetTypes = ImmutableList.of("VIEWS");
     DatasetAclEntity entity = new DatasetAclEntity(datasetId, targetTypes);
@@ -47,7 +47,7 @@ public class AclTest {
   }
 
   @Test
-  public void testDomainEntity() {
+  void testDomainEntity() {
     Domain entity = new Domain("d1");
     assertEquals("d1", entity.getDomain());
     assertEquals(Type.DOMAIN, entity.getType());
@@ -56,7 +56,7 @@ public class AclTest {
   }
 
   @Test
-  public void testGroupEntity() {
+  void testGroupEntity() {
     Group entity = new Group("g1");
     assertEquals("g1", entity.getIdentifier());
     assertEquals(Type.GROUP, entity.getType());
@@ -65,7 +65,7 @@ public class AclTest {
   }
 
   @Test
-  public void testSpecialGroupEntity() {
+  void testSpecialGroupEntity() {
     Group entity = Group.ofAllAuthenticatedUsers();
     assertEquals("allAuthenticatedUsers", entity.getIdentifier());
     Dataset.Access pb = entity.toPb();
@@ -85,7 +85,7 @@ public class AclTest {
   }
 
   @Test
-  public void testUserEntity() {
+  void testUserEntity() {
     User entity = new User("u1");
     assertEquals("u1", entity.getEmail());
     assertEquals(Type.USER, entity.getType());
@@ -94,7 +94,7 @@ public class AclTest {
   }
 
   @Test
-  public void testViewEntity() {
+  void testViewEntity() {
     TableId viewId = TableId.of("project", "dataset", "view");
     View entity = new View(viewId);
     assertEquals(viewId, entity.getId());
@@ -104,7 +104,7 @@ public class AclTest {
   }
 
   @Test
-  public void testRoutineEntity() {
+  void testRoutineEntity() {
     RoutineId routineId = RoutineId.of("project", "dataset", "routine");
     Acl.Routine entity = new Acl.Routine(routineId);
     assertEquals(routineId, entity.getId());
@@ -114,7 +114,7 @@ public class AclTest {
   }
 
   @Test
-  public void testIamMemberEntity() {
+  void testIamMemberEntity() {
     IamMember entity = new IamMember("member1");
     assertEquals("member1", entity.getIamMember());
     Dataset.Access pb = entity.toPb();
@@ -122,7 +122,7 @@ public class AclTest {
   }
 
   @Test
-  public void testOf() {
+  void testOf() {
     Acl acl = Acl.of(Group.ofAllAuthenticatedUsers(), Role.READER);
     assertEquals(Group.ofAllAuthenticatedUsers(), acl.getEntity());
     assertEquals(Role.READER, acl.getRole());
@@ -139,7 +139,7 @@ public class AclTest {
   }
 
   @Test
-  public void testOfWithCondition() {
+  void testOfWithCondition() {
     Expr expr = new Expr("expression", "title", "description", "location");
     Acl acl = Acl.of(Group.ofAllAuthenticatedUsers(), Role.READER, expr);
     Dataset.Access pb = acl.toPb();

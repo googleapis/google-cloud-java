@@ -16,16 +16,16 @@
 
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import com.google.api.services.bigquery.model.ExplainQueryStep;
 import com.google.cloud.bigquery.QueryStage.QueryStep;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class QueryStageTest {
+class QueryStageTest {
 
   private static final List<String> SUBSTEPS1 = ImmutableList.of("substep1", "substep2");
   private static final List<String> SUBSTEPS2 = ImmutableList.of("substep3", "substep4");
@@ -96,7 +96,7 @@ public class QueryStageTest {
           .build();
 
   @Test
-  public void testQueryStepConstructor() {
+  void testQueryStepConstructor() {
     assertEquals("KIND", QUERY_STEP1.getName());
     assertEquals("KIND", QUERY_STEP2.getName());
     assertEquals(SUBSTEPS1, QUERY_STEP1.getSubsteps());
@@ -104,7 +104,7 @@ public class QueryStageTest {
   }
 
   @Test
-  public void testBuilder() {
+  void testBuilder() {
     assertEquals(COMPLETED_PARALLEL_INPUTS, QUERY_STAGE.getCompletedParallelInputs());
     assertEquals(COMPUTE_MS_AVG, QUERY_STAGE.getComputeMsAvg());
     assertEquals(COMPUTE_MS_MAX, QUERY_STAGE.getComputeMsMax());
@@ -138,7 +138,7 @@ public class QueryStageTest {
   }
 
   @Test
-  public void testToAndFromPb() {
+  void testToAndFromPb() {
     compareQueryStep(QUERY_STEP1, QueryStep.fromPb(QUERY_STEP1.toPb()));
     compareQueryStep(QUERY_STEP2, QueryStep.fromPb(QUERY_STEP2.toPb()));
     compareQueryStage(QUERY_STAGE, QueryStage.fromPb(QUERY_STAGE.toPb()));
@@ -149,14 +149,14 @@ public class QueryStageTest {
   }
 
   @Test
-  public void testEquals() {
+  void testEquals() {
     compareQueryStep(QUERY_STEP1, QUERY_STEP1);
     compareQueryStep(QUERY_STEP2, QUERY_STEP2);
     compareQueryStage(QUERY_STAGE, QUERY_STAGE);
   }
 
   @Test
-  public void testNotEquals() {
+  void testNotEquals() {
     assertNotEquals(QUERY_STAGE, QUERY_STEP1);
     assertNotEquals(QUERY_STEP1, QUERY_STAGE);
   }

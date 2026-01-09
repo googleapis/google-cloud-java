@@ -16,13 +16,13 @@
 
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.google.api.services.bigquery.model.TableReference;
 import com.google.cloud.bigquery.TableMetadataCacheUsage.UnusedReason;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class TableMetadataCacheUsageTest {
+class TableMetadataCacheUsageTest {
 
   private static final String EXPLANATION = "test explanation";
 
@@ -51,7 +51,7 @@ public class TableMetadataCacheUsageTest {
               .setUnusedReason(UNUSED_REASON.toString());
 
   @Test
-  public void testToPbAndFromPb() {
+  void testToPbAndFromPb() {
     assertEquals(TABLE_METADATA_CACHE_USAGE_PB, TABLE_METADATA_CACHE_USAGE.toPb());
     compareTableMetadataCacheUsage(
         TABLE_METADATA_CACHE_USAGE, TableMetadataCacheUsage.fromPb(TABLE_METADATA_CACHE_USAGE_PB));

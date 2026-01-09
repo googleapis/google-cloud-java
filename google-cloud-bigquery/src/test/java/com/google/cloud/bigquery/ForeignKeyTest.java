@@ -16,14 +16,14 @@
 
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class ForeignKeyTest {
+class ForeignKeyTest {
   private static final TableId TABLE_ID = TableId.of("project", "dataset", "table");
 
   private static final ColumnReference COLUMN_REFERENCE =
@@ -39,7 +39,7 @@ public class ForeignKeyTest {
           .build();
 
   @Test
-  public void testToBuilder() {
+  void testToBuilder() {
     compareForeignKeyDefinition(FOREIGN_KEY, FOREIGN_KEY.toBuilder().build());
     TableId referencedTable = TableId.of("project1", "dataset1", "table1");
     ArrayList<ColumnReference> columnReferences = new ArrayList<>();
@@ -65,7 +65,7 @@ public class ForeignKeyTest {
   }
 
   @Test
-  public void testBuilder() {
+  void testBuilder() {
     assertEquals("foreign_key", FOREIGN_KEY.getName());
     assertEquals(TABLE_ID, FOREIGN_KEY.getReferencedTable());
     assertEquals(Collections.singletonList(COLUMN_REFERENCE), FOREIGN_KEY.getColumnReferences());
@@ -80,7 +80,7 @@ public class ForeignKeyTest {
   }
 
   @Test
-  public void testToAndFromPb() {
+  void testToAndFromPb() {
     ForeignKey foreignKey = FOREIGN_KEY.toBuilder().build();
     assertTrue(ForeignKey.fromPb(foreignKey.toPb()) instanceof ForeignKey);
     compareForeignKeyDefinition(foreignKey, ForeignKey.fromPb(foreignKey.toPb()));

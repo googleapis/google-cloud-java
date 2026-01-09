@@ -16,11 +16,11 @@
 
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
@@ -40,15 +40,15 @@ import java.io.IOException;
 import java.net.SocketTimeoutException;
 import java.util.HashMap;
 import java.util.Map;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.junit.MockitoJUnitRunner;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
 
-@RunWith(MockitoJUnitRunner.class)
+@ExtendWith(MockitoExtension.class)
 public class BigQueryExceptionTest {
 
   @Test
-  public void testBigQueryException() {
+  void testBigQueryException() {
     BigQueryException exception = new BigQueryException(500, "message");
     assertEquals(500, exception.getCode());
     assertEquals("message", exception.getMessage());
@@ -137,7 +137,7 @@ public class BigQueryExceptionTest {
   }
 
   @Test
-  public void testTranslateAndThrow() throws Exception {
+  void testTranslateAndThrow() throws Exception {
     Exception cause = new BigQueryException(503, "message");
     RetryHelperException exceptionMock = mock(RetryHelperException.class);
     when(exceptionMock.getCause()).thenReturn(cause);
@@ -168,7 +168,7 @@ public class BigQueryExceptionTest {
   }
 
   @Test
-  public void testDefaultExceptionHandler() throws java.io.IOException {
+  void testDefaultExceptionHandler() throws java.io.IOException {
     BigQueryOptions defaultOptions =
         BigQueryOptions.newBuilder().setProjectId("project-id").build();
     DatasetInfo info = DatasetInfo.newBuilder("dataset").build();
@@ -198,7 +198,7 @@ public class BigQueryExceptionTest {
   }
 
   @Test
-  public void testCustomExceptionHandler() throws java.io.IOException {
+  void testCustomExceptionHandler() throws java.io.IOException {
     BigQueryOptions defaultOptions =
         BigQueryOptions.newBuilder()
             .setProjectId("project-id")

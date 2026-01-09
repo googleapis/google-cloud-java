@@ -16,16 +16,16 @@
 
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 import com.google.common.collect.ImmutableList;
 import java.math.BigInteger;
 import java.util.Collections;
 import java.util.List;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class TableInfoTest {
+class TableInfoTest {
 
   private static final String ETAG = "etag";
   private static final String GENERATED_ID = "project:dataset:table";
@@ -153,7 +153,7 @@ public class TableInfoTest {
           .build();
 
   @Test
-  public void testToBuilder() {
+  void testToBuilder() {
     compareTableInfo(TABLE_INFO, TABLE_INFO.toBuilder().build());
     compareTableInfo(VIEW_INFO, VIEW_INFO.toBuilder().build());
     compareTableInfo(EXTERNAL_TABLE_INFO, EXTERNAL_TABLE_INFO.toBuilder().build());
@@ -164,7 +164,7 @@ public class TableInfoTest {
   }
 
   @Test
-  public void testToBuilderIncomplete() {
+  void testToBuilderIncomplete() {
     TableInfo tableInfo = TableInfo.of(TABLE_ID, TABLE_DEFINITION);
     assertEquals(tableInfo, tableInfo.toBuilder().build());
     tableInfo = TableInfo.of(TABLE_ID, VIEW_DEFINITION);
@@ -174,7 +174,7 @@ public class TableInfoTest {
   }
 
   @Test
-  public void testBuilder() {
+  void testBuilder() {
     assertEquals(TABLE_ID, TABLE_INFO.getTableId());
     assertEquals(CREATION_TIME, TABLE_INFO.getCreationTime());
     assertEquals(DESCRIPTION, TABLE_INFO.getDescription());
@@ -223,7 +223,7 @@ public class TableInfoTest {
   }
 
   @Test
-  public void testOf() {
+  void testOf() {
     TableInfo tableInfo = TableInfo.of(TABLE_ID, TABLE_DEFINITION);
     assertEquals(TABLE_ID, tableInfo.getTableId());
     assertNull(tableInfo.getCreationTime());
@@ -266,21 +266,21 @@ public class TableInfoTest {
   }
 
   @Test
-  public void testToAndFromPb() {
+  void testToAndFromPb() {
     compareTableInfo(TABLE_INFO, TableInfo.fromPb(TABLE_INFO.toPb()));
     compareTableInfo(VIEW_INFO, TableInfo.fromPb(VIEW_INFO.toPb()));
     compareTableInfo(EXTERNAL_TABLE_INFO, TableInfo.fromPb(EXTERNAL_TABLE_INFO.toPb()));
   }
 
   @Test
-  public void testSetProjectId() {
+  void testSetProjectId() {
     assertEquals("project", TABLE_INFO.setProjectId("project").getTableId().getProject());
     assertEquals("project", EXTERNAL_TABLE_INFO.setProjectId("project").getTableId().getProject());
     assertEquals("project", VIEW_INFO.setProjectId("project").getTableId().getProject());
   }
 
   @Test
-  public void testSetProjectIdDoNotOverride() {
+  void testSetProjectIdDoNotOverride() {
     TableInfo tableInfo = TableInfo.of(TABLE_ID, TABLE_DEFINITION).setProjectId("project");
     tableInfo.setProjectId("not-override-project").toBuilder();
     assertEquals("project", tableInfo.getTableId().getProject());

@@ -16,10 +16,10 @@
 
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class ColumnReferenceTest {
   private static final ColumnReference COLUMN_REFERENCE =
@@ -29,7 +29,7 @@ public class ColumnReferenceTest {
           .build();
 
   @Test
-  public void testToBuilder() {
+  void testToBuilder() {
     compareColumnReferenceDefinition(COLUMN_REFERENCE, COLUMN_REFERENCE.toBuilder().build());
     ColumnReference columnReference =
         COLUMN_REFERENCE.toBuilder()
@@ -41,7 +41,7 @@ public class ColumnReferenceTest {
   }
 
   @Test
-  public void testBuilder() {
+  void testBuilder() {
     assertEquals("column1", COLUMN_REFERENCE.getReferencingColumn());
     assertEquals("column2", COLUMN_REFERENCE.getReferencedColumn());
     ColumnReference columnReference =
@@ -54,7 +54,7 @@ public class ColumnReferenceTest {
   }
 
   @Test
-  public void testToAndFromPb() {
+  void testToAndFromPb() {
     ColumnReference columnReference = COLUMN_REFERENCE.toBuilder().build();
     assertTrue(ColumnReference.fromPb(columnReference.toPb()) instanceof ColumnReference);
     compareColumnReferenceDefinition(

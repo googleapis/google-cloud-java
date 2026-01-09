@@ -15,14 +15,14 @@
  */
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 import com.google.common.collect.ImmutableList;
 import java.util.List;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class RoutineInfoTest {
+class RoutineInfoTest {
 
   private static final RoutineId ROUTINE_ID = RoutineId.of("dataset", "routine");
   private static final String ETAG = "etag";
@@ -68,18 +68,18 @@ public class RoutineInfoTest {
           .build();
 
   @Test
-  public void testToBuilder() {
+  void testToBuilder() {
     compareRoutineInfo(ROUTINE_INFO, ROUTINE_INFO.toBuilder().build());
   }
 
   @Test
-  public void testBuilderIncomplete() {
+  void testBuilderIncomplete() {
     RoutineInfo routineInfo = RoutineInfo.of(ROUTINE_ID);
     assertEquals(routineInfo, routineInfo.toBuilder().build());
   }
 
   @Test
-  public void testBuilder() {
+  void testBuilder() {
     assertEquals(ROUTINE_ID, ROUTINE_INFO.getRoutineId());
     assertEquals(ETAG, ROUTINE_INFO.getEtag());
     assertEquals(ROUTINE_TYPE, ROUTINE_INFO.getRoutineType());
@@ -96,7 +96,7 @@ public class RoutineInfoTest {
   }
 
   @Test
-  public void testOf() {
+  void testOf() {
     RoutineInfo routineInfo = RoutineInfo.of(ROUTINE_ID);
     assertEquals(ROUTINE_ID, ROUTINE_INFO.getRoutineId());
     assertNull(routineInfo.getEtag());
@@ -114,12 +114,12 @@ public class RoutineInfoTest {
   }
 
   @Test
-  public void testToAndFromPb() {
+  void testToAndFromPb() {
     compareRoutineInfo(ROUTINE_INFO, RoutineInfo.fromPb(ROUTINE_INFO.toPb()));
   }
 
   @Test
-  public void testSetProjectId() {
+  void testSetProjectId() {
     assertEquals("project", ROUTINE_INFO.setProjectId("project").getRoutineId().getProject());
   }
 

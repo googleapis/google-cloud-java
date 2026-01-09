@@ -18,7 +18,7 @@ package com.google.cloud.bigquery;
 
 import static com.google.cloud.bigquery.QueryParameterValue.TIMESTAMP_FORMATTER;
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.api.services.bigquery.model.QueryParameterType;
 import com.google.common.collect.ImmutableMap;
@@ -32,8 +32,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.threeten.extra.PeriodDuration;
 
 public class QueryParameterValueTest {
@@ -58,12 +57,11 @@ public class QueryParameterValueTest {
 
   @Test
   public void testTypeNullPointerException() {
-    try {
-      QUERY_PARAMETER_VALUE.toBuilder().setType(null).build();
-      Assert.fail();
-    } catch (NullPointerException ex) {
-      assertThat(ex).isNotNull();
-    }
+    NullPointerException ex =
+        assertThrows(
+            NullPointerException.class,
+            () -> QUERY_PARAMETER_VALUE.toBuilder().setType(null).build());
+    assertThat(ex).isNotNull();
   }
 
   @Test
@@ -407,10 +405,12 @@ public class QueryParameterValueTest {
     assertThat(value.getArrayValues()).isNull();
   }
 
-  @Test(expected = IllegalArgumentException.class)
+  @Test
   public void testInvalidDate() {
     // not supposed to have the time
-    QueryParameterValue.date("2014-08-19 12:41:35.220000");
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> QueryParameterValue.date("2014-08-19 12:41:35.220000"));
   }
 
   @Test
@@ -422,10 +422,12 @@ public class QueryParameterValueTest {
     assertThat(value.getArrayValues()).isNull();
   }
 
-  @Test(expected = IllegalArgumentException.class)
+  @Test
   public void testInvalidTime() {
     // not supposed to have the date
-    QueryParameterValue.time("2014-08-19 12:41:35.220000");
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> QueryParameterValue.time("2014-08-19 12:41:35.220000"));
   }
 
   @Test
@@ -437,10 +439,10 @@ public class QueryParameterValueTest {
     assertThat(value.getArrayValues()).isNull();
   }
 
-  @Test(expected = IllegalArgumentException.class)
+  @Test
   public void testInvalidDateTime() {
     // missing the time
-    QueryParameterValue.dateTime("2014-08-19");
+    assertThrows(IllegalArgumentException.class, () -> QueryParameterValue.dateTime("2014-08-19"));
   }
 
   @Test

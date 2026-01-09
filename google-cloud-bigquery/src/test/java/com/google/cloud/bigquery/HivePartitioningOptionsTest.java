@@ -20,9 +20,9 @@ import static com.google.common.truth.Truth.assertThat;
 
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class HivePartitioningOptionsTest {
+class HivePartitioningOptionsTest {
 
   private static final String MODE = "STRING";
   private static final String SOURCE_URI_PREFIX = "gs://bucket/path_to_table";
@@ -37,7 +37,7 @@ public class HivePartitioningOptionsTest {
           .build();
 
   @Test
-  public void testToBuilder() {
+  void testToBuilder() {
     compareHivePartitioningOptions(
         HIVE_PARTITIONING_OPTIONS, HIVE_PARTITIONING_OPTIONS.toBuilder().build());
     HivePartitioningOptions options = HIVE_PARTITIONING_OPTIONS.toBuilder().setMode("AUTO").build();
@@ -47,13 +47,13 @@ public class HivePartitioningOptionsTest {
   }
 
   @Test
-  public void testToBuilderIncomplete() {
+  void testToBuilderIncomplete() {
     HivePartitioningOptions options = HivePartitioningOptions.newBuilder().build();
     compareHivePartitioningOptions(options, options.toBuilder().build());
   }
 
   @Test
-  public void testBuilder() {
+  void testBuilder() {
     assertThat(HIVE_PARTITIONING_OPTIONS.getMode()).isEqualTo(MODE);
     assertThat(HIVE_PARTITIONING_OPTIONS.getRequirePartitionFilter())
         .isEqualTo(REQUIRE_PARTITION_FILTER);
@@ -61,7 +61,7 @@ public class HivePartitioningOptionsTest {
   }
 
   @Test
-  public void testToAndFromPb() {
+  void testToAndFromPb() {
     compareHivePartitioningOptions(
         HIVE_PARTITIONING_OPTIONS,
         HivePartitioningOptions.fromPb(HIVE_PARTITIONING_OPTIONS.toPb()));

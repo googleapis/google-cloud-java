@@ -16,7 +16,7 @@
 
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.google.cloud.bigquery.JobInfo.CreateDisposition;
 import com.google.cloud.bigquery.JobInfo.SchemaUpdateOption;
@@ -28,9 +28,9 @@ import com.google.common.collect.ImmutableMap;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Map;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class LoadJobConfigurationTest {
+class LoadJobConfigurationTest {
 
   private static final String TEST_PROJECT_ID = "test-project-id";
   private static final CsvOptions CSV_OPTIONS =
@@ -168,7 +168,7 @@ public class LoadJobConfigurationTest {
           .build();
 
   @Test
-  public void testToBuilder() {
+  void testToBuilder() {
     compareLoadJobConfiguration(LOAD_CONFIGURATION_CSV, LOAD_CONFIGURATION_CSV.toBuilder().build());
     LoadJobConfiguration configurationCSV =
         LOAD_CONFIGURATION_CSV.toBuilder()
@@ -200,7 +200,7 @@ public class LoadJobConfigurationTest {
   }
 
   @Test
-  public void testOf() {
+  void testOf() {
     LoadJobConfiguration configuration = LoadJobConfiguration.of(TABLE_ID, SOURCE_URIS);
     assertEquals(TABLE_ID, configuration.getDestinationTable());
     assertEquals(SOURCE_URIS, configuration.getSourceUris());
@@ -220,13 +220,13 @@ public class LoadJobConfigurationTest {
   }
 
   @Test
-  public void testToBuilderIncomplete() {
+  void testToBuilderIncomplete() {
     LoadJobConfiguration configuration = LoadJobConfiguration.of(TABLE_ID, SOURCE_URIS);
     compareLoadJobConfiguration(configuration, configuration.toBuilder().build());
   }
 
   @Test
-  public void testToPbAndFromPb() {
+  void testToPbAndFromPb() {
     compareLoadJobConfiguration(
         LOAD_CONFIGURATION_CSV, LoadJobConfiguration.fromPb(LOAD_CONFIGURATION_CSV.toPb()));
     LoadJobConfiguration configuration = LoadJobConfiguration.of(TABLE_ID, SOURCE_URIS);
@@ -234,13 +234,13 @@ public class LoadJobConfigurationTest {
   }
 
   @Test
-  public void testSetProjectId() {
+  void testSetProjectId() {
     LoadConfiguration configuration = LOAD_CONFIGURATION_CSV.setProjectId(TEST_PROJECT_ID);
     assertEquals(TEST_PROJECT_ID, configuration.getDestinationTable().getProject());
   }
 
   @Test
-  public void testSetProjectIdDoNotOverride() {
+  void testSetProjectIdDoNotOverride() {
     LoadConfiguration configuration =
         LOAD_CONFIGURATION_CSV.toBuilder()
             .setDestinationTable(TABLE_ID.setProjectId(TEST_PROJECT_ID))
@@ -250,7 +250,7 @@ public class LoadJobConfigurationTest {
   }
 
   @Test
-  public void testGetType() {
+  void testGetType() {
     assertEquals(JobConfiguration.Type.LOAD, LOAD_CONFIGURATION_CSV.getType());
   }
 

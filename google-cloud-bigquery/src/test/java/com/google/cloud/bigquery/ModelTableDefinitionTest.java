@@ -16,14 +16,14 @@
 
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
-public class ModelTableDefinitionTest {
+class ModelTableDefinitionTest {
 
   private static final String LOCATION = "US";
   private static final Long NUM_BYTES = 14L;
@@ -52,34 +52,33 @@ public class ModelTableDefinitionTest {
           .build();
 
   @Test
-  public void testToBuilder() {
+  void testToBuilder() {
     compareModelTableDefinition(MODEL_TABLE_DEFINITION, MODEL_TABLE_DEFINITION.toBuilder().build());
   }
 
   @Test
-  public void testTypeNullPointerException() {
-    try {
-      MODEL_TABLE_DEFINITION.toBuilder().setType(null).build();
-      fail();
-    } catch (NullPointerException ex) {
-      assertNotNull(ex.getMessage());
-    }
+  void testTypeNullPointerException() {
+    NullPointerException ex =
+        Assertions.assertThrows(
+            NullPointerException.class,
+            () -> MODEL_TABLE_DEFINITION.toBuilder().setType(null).build());
+    assertNotNull(ex.getMessage());
   }
 
   @Test
-  public void testToBuilderIncomplete() {
+  void testToBuilderIncomplete() {
     ModelTableDefinition modelTableDefinition = ModelTableDefinition.newBuilder().build();
     assertEquals(modelTableDefinition, modelTableDefinition.toBuilder().build());
   }
 
   @Test
-  public void testToAndFromPb() {
+  void testToAndFromPb() {
     assertEquals(
         MODEL_TABLE_DEFINITION, ModelTableDefinition.fromPb(MODEL_TABLE_DEFINITION.toPb()));
   }
 
   @Test
-  public void testBuilder() {
+  void testBuilder() {
     assertEquals(MODEL_TABLE_DEFINITION.getSchema(), TABLE_SCHEMA);
     assertEquals(MODEL_TABLE_DEFINITION.getType(), TableDefinition.Type.MODEL);
     assertEquals(MODEL_TABLE_DEFINITION.getLocation(), LOCATION);
@@ -87,12 +86,12 @@ public class ModelTableDefinitionTest {
   }
 
   @Test
-  public void testEquals() {
+  void testEquals() {
     assertEquals(MODEL_TABLE_DEFINITION, MODEL_TABLE_DEFINITION);
   }
 
   @Test
-  public void testNotEquals() {
+  void testNotEquals() {
     assertNotEquals(MODEL_TABLE_DEFINITION, LOCATION);
   }
 

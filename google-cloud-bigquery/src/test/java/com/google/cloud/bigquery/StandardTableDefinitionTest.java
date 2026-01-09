@@ -16,12 +16,12 @@
 
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.api.services.bigquery.model.Streamingbuffer;
 import com.google.api.services.bigquery.model.Table;
@@ -29,7 +29,7 @@ import com.google.api.services.bigquery.model.TableReference;
 import com.google.cloud.bigquery.StandardTableDefinition.StreamingBuffer;
 import com.google.common.collect.ImmutableList;
 import com.google.common.truth.Truth;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class StandardTableDefinitionTest {
 
@@ -131,12 +131,10 @@ public class StandardTableDefinitionTest {
 
   @Test
   public void testTypeNullPointerException() {
-    try {
-      TABLE_DEFINITION.toBuilder().setType(null).build();
-      fail();
-    } catch (NullPointerException ex) {
-      assertNotNull(ex.getMessage());
-    }
+    NullPointerException ex =
+        assertThrows(
+            NullPointerException.class, () -> TABLE_DEFINITION.toBuilder().setType(null).build());
+    assertNotNull(ex.getMessage());
   }
 
   @Test
@@ -183,15 +181,12 @@ public class StandardTableDefinitionTest {
                     .setTableId("ILLEGAL_ARG_TEST_TABLE"))
             .setTimePartitioning(
                 new com.google.api.services.bigquery.model.TimePartitioning().setType("GHURRY"));
-    try {
-      StandardTableDefinition.fromPb(invalidTable);
-    } catch (IllegalArgumentException ie) {
-      Truth.assertThat(ie.getMessage())
-          .contains(
-              "Illegal Argument - Got unexpected time partitioning GHURRY in project ILLEGAL_ARG_TEST_PROJECT in dataset ILLEGAL_ARG_TEST_DATASET in table ILLEGAL_ARG_TEST_TABLE");
-      return;
-    }
-    fail("testFromPb illegal argument exception did not throw!");
+    IllegalArgumentException ie =
+        assertThrows(
+            IllegalArgumentException.class, () -> StandardTableDefinition.fromPb(invalidTable));
+    Truth.assertThat(ie.getMessage())
+        .contains(
+            "Illegal Argument - Got unexpected time partitioning GHURRY in project ILLEGAL_ARG_TEST_PROJECT in dataset ILLEGAL_ARG_TEST_DATASET in table ILLEGAL_ARG_TEST_TABLE");
   }
 
   @Test

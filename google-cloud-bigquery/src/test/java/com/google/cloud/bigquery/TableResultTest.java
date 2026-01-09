@@ -22,9 +22,9 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.PageImpl;
 import com.google.common.collect.ImmutableList;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class TableResultTest {
+class TableResultTest {
   private static final Page<FieldValueList> INNER_PAGE_0 =
       new PageImpl<>(
           new PageImpl.NextPageFetcher<FieldValueList>() {
@@ -52,7 +52,7 @@ public class TableResultTest {
   }
 
   @Test
-  public void testNullSchema() {
+  void testNullSchema() {
     TableResult result =
         TableResult.newBuilder().setTotalRows(3L).setPageNoSchema(INNER_PAGE_0).build();
     assertThat(result.getSchema()).isNull();
@@ -75,7 +75,7 @@ public class TableResultTest {
   }
 
   @Test
-  public void testSchema() {
+  void testSchema() {
     TableResult result =
         TableResult.newBuilder()
             .setSchema(SCHEMA)

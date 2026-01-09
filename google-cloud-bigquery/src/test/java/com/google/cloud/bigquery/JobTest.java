@@ -18,14 +18,14 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.collect.ObjectArrays.concat;
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.eq;
 import static org.mockito.Mockito.mock;
@@ -42,16 +42,13 @@ import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
 import com.google.cloud.bigquery.JobStatus.State;
 import com.google.common.collect.ImmutableList;
 import java.time.Duration;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.junit.MockitoJUnitRunner;
-import org.mockito.junit.MockitoRule;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
 
-@RunWith(MockitoJUnitRunner.class)
-public class JobTest {
+@ExtendWith(MockitoExtension.class)
+class JobTest {
 
   private static final JobId JOB_ID = JobId.of("project", "job");
   private static final TableId TABLE_ID1 = TableId.of("dataset", "table1");
@@ -94,15 +91,13 @@ public class JobTest {
           .retryOnMessage(BigQueryErrorMessages.RATE_LIMIT_EXCEEDED_MSG)
           .build();
 
-  @Rule public MockitoRule rule;
-
   private BigQuery bigquery;
   private BigQueryOptions mockOptions;
   private Job expectedJob;
   private Job job;
 
-  @Before
-  public void setUp() {
+  @BeforeEach
+  void setUp() {
     bigquery = mock(BigQuery.class);
     mockOptions = mock(BigQueryOptions.class);
     when(bigquery.getOptions()).thenReturn(mockOptions);
@@ -111,7 +106,7 @@ public class JobTest {
   }
 
   @Test
-  public void testBuilder() {
+  void testBuilder() {
     Job builtJob =
         new Job.Builder(bigquery, COPY_CONFIGURATION)
             .setJobId(JOB_ID)
@@ -135,12 +130,12 @@ public class JobTest {
   }
 
   @Test
-  public void testToBuilder() {
+  void testToBuilder() {
     compareJob(expectedJob, expectedJob.toBuilder().build());
   }
 
   @Test
-  public void testExists_True() {
+  void testExists_True() {
     BigQuery.JobOption[] expectedOptions = {BigQuery.JobOption.fields()};
     when(bigquery.getJob(JOB_INFO.getJobId(), expectedOptions)).thenReturn(expectedJob);
     assertTrue(job.exists());
@@ -148,7 +143,7 @@ public class JobTest {
   }
 
   @Test
-  public void testExists_False() {
+  void testExists_False() {
     BigQuery.JobOption[] expectedOptions = {BigQuery.JobOption.fields()};
     when(bigquery.getJob(JOB_INFO.getJobId(), expectedOptions)).thenReturn(null);
     assertFalse(job.exists());
@@ -156,14 +151,14 @@ public class JobTest {
   }
 
   @Test
-  public void testIsDone_True() {
+  void testIsDone_True() {
     Job job = expectedJob.toBuilder().setStatus(new JobStatus(JobStatus.State.DONE)).build();
     assertTrue(job.isDone());
     verify(bigquery, times(0)).getJob(eq(JOB_INFO.getJobId()), any());
   }
 
   @Test
-  public void testIsDone_False() {
+  void testIsDone_False() {
     BigQuery.JobOption[] expectedOptions = {BigQuery.JobOption.fields(BigQuery.JobField.STATUS)};
     Job job = expectedJob.toBuilder().setStatus(new JobStatus(JobStatus.State.RUNNING)).build();
     when(bigquery.getJob(JOB_INFO.getJobId(), expectedOptions)).thenReturn(job);
@@ -172,7 +167,7 @@ public class JobTest {
   }
 
   @Test
-  public void testIsDone_NotExists() {
+  void testIsDone_NotExists() {
     BigQuery.JobOption[] expectedOptions = {BigQuery.JobOption.fields(BigQuery.JobField.STATUS)};
     Job jobWithRunningState =
         expectedJob.toBuilder().setStatus(new JobStatus(JobStatus.State.RUNNING)).build();
@@ -182,7 +177,7 @@ public class JobTest {
   }
 
   @Test
-  public void testWaitFor() throws InterruptedException {
+  void testWaitFor() throws InterruptedException {
     BigQuery.JobOption[] expectedOptions = {BigQuery.JobOption.fields(BigQuery.JobField.STATUS)};
     JobStatus status = mock(JobStatus.class);
     when(status.getState()).thenReturn(JobStatus.State.DONE);
@@ -199,7 +194,7 @@ public class JobTest {
   }
 
   @Test
-  public void testWaitForAndGetQueryResultsEmpty() throws InterruptedException {
+  void testWaitForAndGetQueryResultsEmpty() throws InterruptedException {
     QueryStatistics jobStatistics =
         QueryStatistics.newBuilder()
             .setCreationTimestamp(1L)
@@ -243,7 +238,7 @@ public class JobTest {
   }
 
   @Test
-  public void testWaitForAndGetQueryResultsEmptyWithSchema() throws InterruptedException {
+  void testWaitForAndGetQueryResultsEmptyWithSchema() throws InterruptedException {
     QueryStatistics jobStatistics =
         QueryStatistics.newBuilder()
             .setCreationTimestamp(1L)
@@ -288,7 +283,7 @@ public class JobTest {
   }
 
   @Test
-  public void testWaitForAndGetQueryResults() throws InterruptedException {
+  void testWaitForAndGetQueryResults() throws InterruptedException {
     QueryStatistics jobStatistics =
         QueryStatistics.newBuilder()
             .setCreationTimestamp(1L)
@@ -340,17 +335,14 @@ public class JobTest {
   }
 
   @Test
-  public void testWaitForAndGetQueryResults_Unsupported() throws InterruptedException {
-    try {
-      job.getQueryResults();
-      Assert.fail();
-    } catch (UnsupportedOperationException expected) {
-      Assert.assertNotNull(expected.getMessage());
-    }
+  void testWaitForAndGetQueryResults_Unsupported() throws InterruptedException {
+    UnsupportedOperationException expected =
+        assertThrows(UnsupportedOperationException.class, () -> job.getQueryResults());
+    assertNotNull(expected.getMessage());
   }
 
   @Test
-  public void testWaitFor_Null() throws InterruptedException {
+  void testWaitFor_Null() throws InterruptedException {
     BigQuery.JobOption[] expectedOptions = {BigQuery.JobOption.fields(BigQuery.JobField.STATUS)};
     when(mockOptions.getClock()).thenReturn(CurrentMillisClock.getDefaultClock());
     when(bigquery.getJob(JOB_INFO.getJobId(), expectedOptions)).thenReturn(null);
@@ -359,7 +351,7 @@ public class JobTest {
   }
 
   @Test
-  public void testWaitForWithCheckingPeriod() throws InterruptedException {
+  void testWaitForWithCheckingPeriod() throws InterruptedException {
     BigQuery.JobOption[] expectedOptions = {BigQuery.JobOption.fields(BigQuery.JobField.STATUS)};
     JobStatus status = mock(JobStatus.class);
     when(status.getState()).thenReturn(JobStatus.State.RUNNING);
@@ -381,7 +373,7 @@ public class JobTest {
   }
 
   @Test
-  public void testWaitForWithCheckingPeriod_Null() throws InterruptedException {
+  void testWaitForWithCheckingPeriod_Null() throws InterruptedException {
     BigQuery.JobOption[] expectedOptions = {BigQuery.JobOption.fields(BigQuery.JobField.STATUS)};
     when(mockOptions.getClock()).thenReturn(CurrentMillisClock.getDefaultClock());
     Job runningJob =
@@ -394,24 +386,26 @@ public class JobTest {
   }
 
   @Test
-  public void testWaitForWithTimeout() throws InterruptedException {
+  void testWaitForWithTimeout() throws InterruptedException {
     BigQuery.JobOption[] expectedOptions = {BigQuery.JobOption.fields(BigQuery.JobField.STATUS)};
     when(mockOptions.getClock()).thenReturn(CurrentMillisClock.getDefaultClock());
     Job runningJob =
         expectedJob.toBuilder().setStatus(new JobStatus(JobStatus.State.RUNNING)).build();
     when(bigquery.getJob(JOB_INFO.getJobId(), expectedOptions)).thenReturn(runningJob);
     when(bigquery.getJob(JOB_INFO.getJobId(), expectedOptions)).thenReturn(runningJob);
-    try {
-      job.waitFor(
-          concat(TEST_RETRY_OPTIONS, RetryOption.totalTimeoutDuration(Duration.ofMillis(3))));
-      Assert.fail();
-    } catch (BigQueryException expected) {
-      Assert.assertNotNull(expected.getMessage());
-    }
+    BigQueryException expected =
+        assertThrows(
+            BigQueryException.class,
+            () ->
+                job.waitFor(
+                    concat(
+                        TEST_RETRY_OPTIONS,
+                        RetryOption.totalTimeoutDuration(Duration.ofMillis(3)))));
+    assertNotNull(expected.getMessage());
   }
 
   @Test
-  public void testWaitForWithBigQueryRetryConfig() throws InterruptedException {
+  void testWaitForWithBigQueryRetryConfig() throws InterruptedException {
     QueryStatistics jobStatistics =
         QueryStatistics.newBuilder()
             .setCreationTimestamp(1L)
@@ -453,7 +447,7 @@ public class JobTest {
   }
 
   @Test
-  public void testWaitForWithBigQueryRetryConfigShouldRetry() throws InterruptedException {
+  void testWaitForWithBigQueryRetryConfigShouldRetry() throws InterruptedException {
     QueryStatistics jobStatistics =
         QueryStatistics.newBuilder()
             .setCreationTimestamp(1L)
@@ -504,7 +498,7 @@ public class JobTest {
   }
 
   @Test
-  public void testWaitForWithBigQueryRetryConfigErrorShouldNotRetry() throws InterruptedException {
+  void testWaitForWithBigQueryRetryConfigErrorShouldNotRetry() throws InterruptedException {
     QueryStatistics jobStatistics =
         QueryStatistics.newBuilder()
             .setCreationTimestamp(1L)
@@ -542,19 +536,18 @@ public class JobTest {
         .thenThrow(bigQueryException)
         .thenReturn(completedQuery);
     job = this.job.toBuilder().setConfiguration(DRL_QUERY_CONFIGURATION).build();
-    try {
-      job.waitFor(TEST_BIGQUERY_RETRY_CONFIG, TEST_RETRY_OPTIONS);
-      fail("JobException expected");
-    } catch (BigQueryException e) {
-      assertNotNull(e.getErrors());
-    }
+    BigQueryException e =
+        assertThrows(
+            BigQueryException.class,
+            () -> job.waitFor(TEST_BIGQUERY_RETRY_CONFIG, TEST_RETRY_OPTIONS));
+    assertNotNull(e.getErrors());
     // Verify that getQueryResults is attempted only once and not retried since the error message
     // does not match.
     verify(bigquery, times(1)).getQueryResults(jobInfo.getJobId(), Job.DEFAULT_QUERY_WAIT_OPTIONS);
   }
 
   @Test
-  public void testReload() {
+  void testReload() {
     JobInfo updatedInfo = JOB_INFO.toBuilder().setEtag("etag").build();
     Job expectedJob = new Job(bigquery, new JobInfo.BuilderImpl(updatedInfo));
     when(bigquery.getJob(JOB_INFO.getJobId())).thenReturn(expectedJob);
@@ -564,7 +557,7 @@ public class JobTest {
   }
 
   @Test
-  public void testReloadJobException() {
+  void testReloadJobException() {
     JobInfo updatedInfo = JOB_INFO.toBuilder().setEtag("etag").build();
     Job expectedJob = new Job(bigquery, new JobInfo.BuilderImpl(updatedInfo));
     BigQueryError bigQueryError = new BigQueryError("invalidQuery", "US", "invalidQuery");
@@ -573,23 +566,19 @@ public class JobTest {
     ImmutableList<BigQueryError> bigQueryErrorList = ImmutableList.of(bigQueryError);
     BigQueryException bigQueryException = new BigQueryException(bigQueryErrorList);
     when(bigquery.getJob(JOB_INFO.getJobId())).thenReturn(expectedJob).thenThrow(bigQueryException);
-    try {
-      job.reload();
-      fail("JobException expected");
-    } catch (BigQueryException e) {
-      assertNotNull(e.getErrors());
-    }
+    BigQueryException e = assertThrows(BigQueryException.class, () -> job.reload());
+    assertNotNull(e.getErrors());
   }
 
   @Test
-  public void testReloadNull() {
+  void testReloadNull() {
     when(bigquery.getJob(JOB_INFO.getJobId())).thenReturn(null);
     assertNull(job.reload());
     verify(bigquery).getJob(JOB_INFO.getJobId());
   }
 
   @Test
-  public void testReloadWithOptions() {
+  void testReloadWithOptions() {
     JobInfo updatedInfo = JOB_INFO.toBuilder().setEtag("etag").build();
     Job expectedJob = new Job(bigquery, new JobInfo.BuilderImpl(updatedInfo));
     when(bigquery.getJob(JOB_INFO.getJobId(), BigQuery.JobOption.fields())).thenReturn(expectedJob);
@@ -599,24 +588,24 @@ public class JobTest {
   }
 
   @Test
-  public void testCancel() {
+  void testCancel() {
     when(bigquery.cancel(JOB_INFO.getJobId())).thenReturn(true);
     assertTrue(job.cancel());
     verify(bigquery).cancel(JOB_INFO.getJobId());
   }
 
   @Test
-  public void testBigQuery() {
+  void testBigQuery() {
     assertSame(bigquery, expectedJob.getBigQuery());
   }
 
   @Test
-  public void testToAndFromPb() {
+  void testToAndFromPb() {
     compareJob(expectedJob, Job.fromPb(bigquery, expectedJob.toPb()));
   }
 
   @Test
-  public void testToAndFromPbWithoutConfiguration() {
+  void testToAndFromPbWithoutConfiguration() {
     assertNotEquals(expectedJob, bigquery);
     compareJob(expectedJob, Job.fromPb(bigquery, expectedJob.toPb()));
   }

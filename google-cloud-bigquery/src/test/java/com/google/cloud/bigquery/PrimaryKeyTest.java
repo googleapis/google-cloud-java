@@ -16,19 +16,19 @@
 
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class PrimaryKeyTest {
+class PrimaryKeyTest {
   private static final List<String> COLUMNS = Arrays.asList("column1", "column2");
   private static final PrimaryKey PRIMARY_KEY = PrimaryKey.newBuilder().setColumns(COLUMNS).build();
 
   @Test
-  public void testToBuilder() {
+  void testToBuilder() {
     comparePrimaryKeyDefinition(PRIMARY_KEY, PRIMARY_KEY.toBuilder().build());
     PrimaryKey primaryKey =
         PRIMARY_KEY.toBuilder().setColumns(Arrays.asList("col1", "col2", "col3")).build();
@@ -36,14 +36,14 @@ public class PrimaryKeyTest {
   }
 
   @Test
-  public void testBuilder() {
+  void testBuilder() {
     assertEquals(COLUMNS, PRIMARY_KEY.getColumns());
     PrimaryKey primaryKey = PRIMARY_KEY.newBuilder().setColumns(COLUMNS).build();
     assertEquals(PRIMARY_KEY, primaryKey);
   }
 
   @Test
-  public void testToAndFromPb() {
+  void testToAndFromPb() {
     PrimaryKey primaryKey = PRIMARY_KEY.toBuilder().build();
     assertTrue(PrimaryKey.fromPb(primaryKey.toPb()) instanceof PrimaryKey);
     comparePrimaryKeyDefinition(primaryKey, PrimaryKey.fromPb(primaryKey.toPb()));

@@ -18,7 +18,7 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class ConnectionPropertyTest {
 
@@ -28,7 +28,7 @@ public class ConnectionPropertyTest {
       ConnectionProperty.newBuilder().setKey(KEY).setValue(VALUE).build();
 
   @Test
-  public void testToBuilder() {
+  void testToBuilder() {
     compareConnectionProperty(CONNECTION_PROPERTY, CONNECTION_PROPERTY.toBuilder().build());
     ConnectionProperty property = CONNECTION_PROPERTY.toBuilder().setKey("time-zone").build();
     assertThat(property.getKey()).isEqualTo("time-zone");
@@ -37,19 +37,19 @@ public class ConnectionPropertyTest {
   }
 
   @Test
-  public void testToBuilderIncomplete() {
+  void testToBuilderIncomplete() {
     ConnectionProperty connectionProperty = ConnectionProperty.of(KEY, VALUE);
     compareConnectionProperty(connectionProperty, connectionProperty.toBuilder().build());
   }
 
   @Test
-  public void testBuilder() {
+  void testBuilder() {
     assertThat(CONNECTION_PROPERTY.getKey()).isEqualTo(KEY);
     assertThat(CONNECTION_PROPERTY.getValue()).isEqualTo(VALUE);
   }
 
   @Test
-  public void testToAndFromPb() {
+  void testToAndFromPb() {
     compareConnectionProperty(
         CONNECTION_PROPERTY, ConnectionProperty.fromPb(CONNECTION_PROPERTY.toPb()));
   }

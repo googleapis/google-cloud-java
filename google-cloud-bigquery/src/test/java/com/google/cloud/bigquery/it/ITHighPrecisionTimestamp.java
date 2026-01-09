@@ -15,11 +15,11 @@
  */
 package com.google.cloud.bigquery.it;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertThrows;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryException;
@@ -47,9 +47,9 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 public class ITHighPrecisionTimestamp {
 
@@ -69,7 +69,7 @@ public class ITHighPrecisionTimestamp {
   private static final String TIMESTAMP2 = "1970-01-01T12:34:56.123456789123Z";
   private static final String TIMESTAMP3 = "2000-01-01T12:34:56.123456789123Z";
 
-  @BeforeClass
+  @BeforeAll
   public static void beforeClass() {
     BigQueryOptions.Builder builder =
         BigQueryOptions.newBuilder()
@@ -110,7 +110,7 @@ public class ITHighPrecisionTimestamp {
     assertEquals(0, response.getInsertErrors().size());
   }
 
-  @AfterClass
+  @AfterAll
   public static void afterClass() {
     if (bigquery != null) {
       bigquery.delete(defaultTableId);

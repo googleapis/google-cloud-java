@@ -16,11 +16,11 @@
 
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class CsvOptionsTest {
 
@@ -46,7 +46,7 @@ public class CsvOptionsTest {
           .build();
 
   @Test
-  public void testToBuilder() {
+  void testToBuilder() {
     compareCsvOptions(CSV_OPTIONS, CSV_OPTIONS.toBuilder().build());
     CsvOptions csvOptions = CSV_OPTIONS.toBuilder().setFieldDelimiter(";").build();
     assertEquals(";", csvOptions.getFieldDelimiter());
@@ -55,13 +55,13 @@ public class CsvOptionsTest {
   }
 
   @Test
-  public void testToBuilderIncomplete() {
+  void testToBuilderIncomplete() {
     CsvOptions csvOptions = CsvOptions.newBuilder().setFieldDelimiter("|").build();
     assertEquals(csvOptions, csvOptions.toBuilder().build());
   }
 
   @Test
-  public void testBuilder() {
+  void testBuilder() {
     assertEquals(FormatOptions.CSV, CSV_OPTIONS.getType());
     assertEquals(ALLOW_JAGGED_ROWS, CSV_OPTIONS.allowJaggedRows());
     assertEquals(ALLOW_QUOTED_NEWLINE, CSV_OPTIONS.allowQuotedNewLines());
@@ -75,7 +75,7 @@ public class CsvOptionsTest {
   }
 
   @Test
-  public void testToAndFromPb() {
+  void testToAndFromPb() {
     compareCsvOptions(CSV_OPTIONS, CsvOptions.fromPb(CSV_OPTIONS.toPb()));
     CsvOptions csvOptions = CsvOptions.newBuilder().setAllowJaggedRows(ALLOW_JAGGED_ROWS).build();
     compareCsvOptions(csvOptions, CsvOptions.fromPb(csvOptions.toPb()));

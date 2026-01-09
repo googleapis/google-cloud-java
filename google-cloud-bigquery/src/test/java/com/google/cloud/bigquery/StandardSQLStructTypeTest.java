@@ -15,13 +15,13 @@
  */
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.google.common.collect.ImmutableList;
 import java.util.List;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class StandardSQLStructTypeTest {
+class StandardSQLStructTypeTest {
 
   private static final StandardSQLField FIELD_1 =
       StandardSQLField.newBuilder("FIELD_1", StandardSQLDataType.newBuilder("STRING").build())
@@ -35,18 +35,18 @@ public class StandardSQLStructTypeTest {
       StandardSQLStructType.newBuilder(FIELD_LIST).build();
 
   @Test
-  public void testToBuilder() {
+  void testToBuilder() {
     compareStandardSQLStructType(STRUCT_TYPE, STRUCT_TYPE.toBuilder().build());
   }
 
   @Test
-  public void testBuilder() {
+  void testBuilder() {
     assertEquals(FIELD_1, STRUCT_TYPE.getFields().get(0));
     assertEquals(FIELD_2, STRUCT_TYPE.getFields().get(1));
   }
 
   @Test
-  public void testToAndFromPb() {
+  void testToAndFromPb() {
     compareStandardSQLStructType(STRUCT_TYPE, StandardSQLStructType.fromPb(STRUCT_TYPE.toPb()));
   }
 

@@ -162,8 +162,18 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-junit-jupiter</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -207,6 +217,20 @@
 
   <build>
     <plugins>
+      <!-- Declare `surefire-junit-platform` here as shared-configs pulls in surefire-junit47 -->
+      <!-- which is for JUnit4 and not JUnit5. Declare this here until upstream is fixed -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <version>3.5.2</version>
+        <dependencies>
+          <dependency>
+            <groupId>org.apache.maven.surefire</groupId>
+            <artifactId>surefire-junit-platform</artifactId>
+            <version>${surefire.version}</version>
+          </dependency>
+        </dependencies>
+      </plugin>
       <plugin>
         <!-- Allow script to run, so we can run benchmarks. -->
         <groupId>org.codehaus.mojo</groupId>

@@ -16,12 +16,12 @@
 
 package com.google.cloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class SnapshotTableDefinitionTest {
+class SnapshotTableDefinitionTest {
 
   private static final TableId BASE_TABLE_ID = TableId.of("DATASET_NAME", "BASE_TABLE_NAME");
   private static final String SNAPSHOT_TIME = "2021-05-19T11:32:26.553Z";
@@ -32,7 +32,7 @@ public class SnapshotTableDefinitionTest {
           .build();
 
   @Test
-  public void testToBuilder() {
+  void testToBuilder() {
     compareSnapshotTableDefinition(
         SNAPSHOTTABLE_DEFINITION, SNAPSHOTTABLE_DEFINITION.toBuilder().build());
     SnapshotTableDefinition snapshotTableDefinition =
@@ -41,7 +41,7 @@ public class SnapshotTableDefinitionTest {
   }
 
   @Test
-  public void testBuilder() {
+  void testBuilder() {
     assertEquals(TableDefinition.Type.SNAPSHOT, SNAPSHOTTABLE_DEFINITION.getType());
     assertEquals(BASE_TABLE_ID, SNAPSHOTTABLE_DEFINITION.getBaseTableId());
     assertEquals(SNAPSHOT_TIME, SNAPSHOTTABLE_DEFINITION.getSnapshotTime());
@@ -54,7 +54,7 @@ public class SnapshotTableDefinitionTest {
   }
 
   @Test
-  public void testToAndFromPb() {
+  void testToAndFromPb() {
     SnapshotTableDefinition snapshotTableDefinition = SNAPSHOTTABLE_DEFINITION.toBuilder().build();
     assertTrue(
         TableDefinition.fromPb(snapshotTableDefinition.toPb()) instanceof SnapshotTableDefinition);

@@ -17,11 +17,11 @@
 package com.google.cloud.bigquery;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.eq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
@@ -34,14 +34,12 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import java.math.BigInteger;
 import java.util.List;
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.junit.MockitoJUnitRunner;
-import org.mockito.junit.MockitoRule;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
 
-@RunWith(MockitoJUnitRunner.class)
+@ExtendWith(MockitoExtension.class)
 public class TableTest {
 
   private static final String ETAG = "etag";
@@ -97,14 +95,12 @@ public class TableTest {
           FieldValueList.of(ImmutableList.of(FIELD_VALUE1)).withSchema(SCHEMA.getFields()),
           FieldValueList.of(ImmutableList.of(FIELD_VALUE2)).withSchema(SCHEMA.getFields()));
 
-  @Rule public MockitoRule rule;
-
   private BigQuery bigquery;
   private BigQueryOptions mockOptions;
   private Table expectedTable;
   private Table table;
 
-  @Before
+  @BeforeEach
   public void setUp() {
     bigquery = mock(BigQuery.class);
     mockOptions = mock(BigQueryOptions.class);

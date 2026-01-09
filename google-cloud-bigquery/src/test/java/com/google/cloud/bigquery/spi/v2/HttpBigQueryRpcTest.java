@@ -21,7 +21,7 @@ import com.google.api.services.bigquery.model.Dataset;
 import com.google.api.services.bigquery.model.DatasetList;
 import com.google.api.services.bigquery.model.DatasetReference;
 import java.util.Collections;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class HttpBigQueryRpcTest {
   @Test
