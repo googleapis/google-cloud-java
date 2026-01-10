@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,6 +55,7 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.config.v1.AutoMigrationConfig;
 import com.google.cloud.config.v1.CreateDeploymentRequest;
 import com.google.cloud.config.v1.CreatePreviewRequest;
 import com.google.cloud.config.v1.DeleteDeploymentRequest;
@@ -66,6 +67,7 @@ import com.google.cloud.config.v1.ExportLockInfoRequest;
 import com.google.cloud.config.v1.ExportPreviewResultRequest;
 import com.google.cloud.config.v1.ExportPreviewResultResponse;
 import com.google.cloud.config.v1.ExportRevisionStatefileRequest;
+import com.google.cloud.config.v1.GetAutoMigrationConfigRequest;
 import com.google.cloud.config.v1.GetDeploymentRequest;
 import com.google.cloud.config.v1.GetPreviewRequest;
 import com.google.cloud.config.v1.GetResourceChangeRequest;
@@ -99,6 +101,7 @@ import com.google.cloud.config.v1.Revision;
 import com.google.cloud.config.v1.Statefile;
 import com.google.cloud.config.v1.TerraformVersion;
 import com.google.cloud.config.v1.UnlockDeploymentRequest;
+import com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest;
 import com.google.cloud.config.v1.UpdateDeploymentRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -262,6 +265,13 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
           ListResourceDriftsRequest, ListResourceDriftsResponse, ListResourceDriftsPagedResponse>
       listResourceDriftsSettings;
   private final UnaryCallSettings<GetResourceDriftRequest, ResourceDrift> getResourceDriftSettings;
+  private final UnaryCallSettings<GetAutoMigrationConfigRequest, AutoMigrationConfig>
+      getAutoMigrationConfigSettings;
+  private final UnaryCallSettings<UpdateAutoMigrationConfigRequest, Operation>
+      updateAutoMigrationConfigSettings;
+  private final OperationCallSettings<
+          UpdateAutoMigrationConfigRequest, AutoMigrationConfig, OperationMetadata>
+      updateAutoMigrationConfigOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -904,6 +914,25 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     return getResourceDriftSettings;
   }
 
+  /** Returns the object with the settings used for calls to getAutoMigrationConfig. */
+  public UnaryCallSettings<GetAutoMigrationConfigRequest, AutoMigrationConfig>
+      getAutoMigrationConfigSettings() {
+    return getAutoMigrationConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAutoMigrationConfig. */
+  public UnaryCallSettings<UpdateAutoMigrationConfigRequest, Operation>
+      updateAutoMigrationConfigSettings() {
+    return updateAutoMigrationConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAutoMigrationConfig. */
+  public OperationCallSettings<
+          UpdateAutoMigrationConfigRequest, AutoMigrationConfig, OperationMetadata>
+      updateAutoMigrationConfigOperationSettings() {
+    return updateAutoMigrationConfigOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -1074,6 +1103,10 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     getResourceChangeSettings = settingsBuilder.getResourceChangeSettings().build();
     listResourceDriftsSettings = settingsBuilder.listResourceDriftsSettings().build();
     getResourceDriftSettings = settingsBuilder.getResourceDriftSettings().build();
+    getAutoMigrationConfigSettings = settingsBuilder.getAutoMigrationConfigSettings().build();
+    updateAutoMigrationConfigSettings = settingsBuilder.updateAutoMigrationConfigSettings().build();
+    updateAutoMigrationConfigOperationSettings =
+        settingsBuilder.updateAutoMigrationConfigOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -1160,6 +1193,13 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
         listResourceDriftsSettings;
     private final UnaryCallSettings.Builder<GetResourceDriftRequest, ResourceDrift>
         getResourceDriftSettings;
+    private final UnaryCallSettings.Builder<GetAutoMigrationConfigRequest, AutoMigrationConfig>
+        getAutoMigrationConfigSettings;
+    private final UnaryCallSettings.Builder<UpdateAutoMigrationConfigRequest, Operation>
+        updateAutoMigrationConfigSettings;
+    private final OperationCallSettings.Builder<
+            UpdateAutoMigrationConfigRequest, AutoMigrationConfig, OperationMetadata>
+        updateAutoMigrationConfigOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -1242,6 +1282,9 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
       getResourceChangeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listResourceDriftsSettings = PagedCallSettings.newBuilder(LIST_RESOURCE_DRIFTS_PAGE_STR_FACT);
       getResourceDriftSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getAutoMigrationConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateAutoMigrationConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateAutoMigrationConfigOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1277,6 +1320,8 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
               getResourceChangeSettings,
               listResourceDriftsSettings,
               getResourceDriftSettings,
+              getAutoMigrationConfigSettings,
+              updateAutoMigrationConfigSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -1322,6 +1367,10 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
       getResourceChangeSettings = settings.getResourceChangeSettings.toBuilder();
       listResourceDriftsSettings = settings.listResourceDriftsSettings.toBuilder();
       getResourceDriftSettings = settings.getResourceDriftSettings.toBuilder();
+      getAutoMigrationConfigSettings = settings.getAutoMigrationConfigSettings.toBuilder();
+      updateAutoMigrationConfigSettings = settings.updateAutoMigrationConfigSettings.toBuilder();
+      updateAutoMigrationConfigOperationSettings =
+          settings.updateAutoMigrationConfigOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -1357,6 +1406,8 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
               getResourceChangeSettings,
               listResourceDriftsSettings,
               getResourceDriftSettings,
+              getAutoMigrationConfigSettings,
+              updateAutoMigrationConfigSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -1521,6 +1572,16 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
 
       builder
           .getResourceDriftSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getAutoMigrationConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateAutoMigrationConfigSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1715,6 +1776,31 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
                       .setRpcTimeoutMultiplier(1.0)
                       .setMaxRpcTimeoutDuration(Duration.ZERO)
                       .setTotalTimeoutDuration(Duration.ofMillis(43200000L))
+                      .build()));
+
+      builder
+          .updateAutoMigrationConfigOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateAutoMigrationConfigRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(AutoMigrationConfig.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -1938,6 +2024,25 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     public UnaryCallSettings.Builder<GetResourceDriftRequest, ResourceDrift>
         getResourceDriftSettings() {
       return getResourceDriftSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAutoMigrationConfig. */
+    public UnaryCallSettings.Builder<GetAutoMigrationConfigRequest, AutoMigrationConfig>
+        getAutoMigrationConfigSettings() {
+      return getAutoMigrationConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAutoMigrationConfig. */
+    public UnaryCallSettings.Builder<UpdateAutoMigrationConfigRequest, Operation>
+        updateAutoMigrationConfigSettings() {
+      return updateAutoMigrationConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAutoMigrationConfig. */
+    public OperationCallSettings.Builder<
+            UpdateAutoMigrationConfigRequest, AutoMigrationConfig, OperationMetadata>
+        updateAutoMigrationConfigOperationSettings() {
+      return updateAutoMigrationConfigOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */
