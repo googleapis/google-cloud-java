@@ -56,6 +56,7 @@ TRANSFORM_SCRIPT="$TRANSFORM_SCRIPT_DIR/transform_workflow.py"
 MODERNIZE_POM_SCRIPT="$TRANSFORM_SCRIPT_DIR/modernize_pom.py"
 UPDATE_ROOT_POM_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_root_pom.py"
 FIX_COPYRIGHT_SCRIPT="$TRANSFORM_SCRIPT_DIR/fix_copyright_headers.py"
+UPDATE_GENERATION_CONFIG_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_generation_config.py"
 
 echo "Starting migration using git read-tree with isolated clones..."
 
@@ -209,17 +210,7 @@ fi
 echo "Updating generation_config.yaml..."
 SOURCE_CONFIG="$SOURCE_REPO_NAME/generation_config.yaml"
 if [ -f "$SOURCE_CONFIG" ]; then
-    # Extract the library entry (starts with - api_shortname)
-    # This assumes the source config only has one library or we want the first one
-    ENTRY=$(awk '/^  - api_shortname:/{flag=1; print $0; next} /^  - / && flag{flag=0} flag' "$SOURCE_CONFIG")
-    
-    # Simple cleanup: remove repo and repo_short if they exist
-    # Adjust indentation to match monorepo (0 spaces for -)
-    CLEAN_ENTRY=$(echo "$ENTRY" | sed '/repo:/d' | sed '/repo_short:/d' | sed 's/^  //')
-    
-    # Append to target generation_config.yaml
-    echo "" >> generation_config.yaml
-    echo "$CLEAN_ENTRY" >> generation_config.yaml
+    python3 "$UPDATE_GENERATION_CONFIG_SCRIPT" "generation_config.yaml" "$SOURCE_CONFIG"
     
     echo "Committing generation_config.yaml update..."
     git add generation_config.yaml
