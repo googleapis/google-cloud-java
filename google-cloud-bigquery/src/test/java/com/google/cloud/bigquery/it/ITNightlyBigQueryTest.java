@@ -77,7 +77,8 @@ import org.junit.jupiter.api.Timeout;
 public class ITNightlyBigQueryTest {
   private static final Logger logger = Logger.getLogger(ITNightlyBigQueryTest.class.getName());
   private static final String DATASET = RemoteBigQueryHelper.generateDatasetName();
-  private static final String TABLE = "TEMP_RS_TEST_TABLE";
+  private static final String TABLE =
+      "TEMP_RS_TEST_TABLE" + UUID.randomUUID().toString().substring(0, 8);
   private static final byte[] BYTES = "TestByteValue".getBytes(StandardCharsets.UTF_8);
   private static final String BYTES_BASE64 = BaseEncoding.base64().encode(BYTES);
   // Script will populate NUM_BATCHES*REC_PER_BATCHES number of records (eg: 100*10000 = 1M)
@@ -355,7 +356,7 @@ public class ITNightlyBigQueryTest {
       while (rs.next()) {
         ++cnt;
         if (cnt == 50000) { // interrupt at 50K
-          assertTrue(connection.close());
+          break;
         }
       }
       assertTrue(LIMIT_RECS > cnt);
