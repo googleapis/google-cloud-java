@@ -51,7 +51,7 @@ public class ResourceHeaderTest {
 
   private static final Stream TEST_STREAM = Stream.newBuilder().setName("streamName").build();
 
-  private static final String NAME = "resource-header-test:123";
+  private static final String NAME = "resource-header-test:123-v1beta1";
 
   private static final String HEADER_NAME = "x-goog-request-params";
 

@@ -48,7 +48,7 @@ public class ResourceHeaderTest {
 
   private static final String TEST_STREAM_NAME = "streamName";
 
-  private static final String NAME = "resource-header-test:123";
+  private static final String NAME = "resource-header-test:123-v1beta2";
 
   private static final String HEADER_NAME = "x-goog-request-params";
 

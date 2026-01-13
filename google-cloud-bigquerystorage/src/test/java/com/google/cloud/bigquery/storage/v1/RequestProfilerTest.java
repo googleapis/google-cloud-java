@@ -31,7 +31,10 @@ import java.util.logging.Logger;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
 
+@Execution(ExecutionMode.SAME_THREAD)
 class RequestProfilerTest {
   private static final Logger log = Logger.getLogger(RequestProfiler.class.getName());
 
@@ -164,6 +167,9 @@ class RequestProfilerTest {
     assertTrue(reportText.contains("Request uuid: request_30 with total time"));
     assertTrue(reportText.contains("Request uuid: request_25 with total time"));
     assertTrue(reportText.contains("Request uuid: request_20 with total time"));
+
+    threadPool.shutdown();
+    threadPool.awaitTermination(10, TimeUnit.SECONDS);
   }
 
   @Test
@@ -208,5 +214,8 @@ class RequestProfilerTest {
     }
     String reportText = profilerHook.flushAndGenerateReportText();
     assertTrue(reportText.contains("0 requests finished during"));
+
+    threadPool.shutdown();
+    threadPool.awaitTermination(10, TimeUnit.SECONDS);
   }
 }

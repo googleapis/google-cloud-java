@@ -64,7 +64,10 @@ import org.apache.arrow.vector.types.pojo.Schema;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
 
+@Execution(ExecutionMode.SAME_THREAD)
 class ConnectionWorkerTest {
   private static final Logger log = Logger.getLogger(StreamWriter.class.getName());
   private static final String TEST_STREAM_1 = "projects/p1/datasets/d1/tables/t1/streams/s1";
