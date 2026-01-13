@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 The Grafeas Authors. All rights reserved.
+ * Copyright 2026 The Grafeas Authors. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -122,4 +122,21 @@ public interface ListOccurrencesRequestOrBuilder
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, the request will return all reachable Occurrences
+   * and report all unreachable regions in the `unreachable` field in
+   * the response.
+   *
+   * Only applicable for requests in the global region.
+   * </pre>
+   *
+   * <code>bool return_partial_success = 5;</code>
+   *
+   * @return The returnPartialSuccess.
+   */
+  boolean getReturnPartialSuccess();
 }

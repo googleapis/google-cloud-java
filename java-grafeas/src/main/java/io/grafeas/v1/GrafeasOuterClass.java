@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 The Grafeas Authors. All rights reserved.
+ * Copyright 2026 The Grafeas Authors. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -197,16 +197,18 @@ public final class GrafeasOuterClass {
           + "\004type\"C\n"
           + "\024GetOccurrenceRequest\022+\n"
           + "\004name\030\001 \001(\tB\035\340A\002\372A\027\n"
-          + "\025grafeas.io/Occurrence\"{\n"
+          + "\025grafeas.io/Occurrence\"\233\001\n"
           + "\026ListOccurrencesRequest\022*\n"
           + "\006parent\030\001 \001(\tB\032\340A\002\372A\024\n"
           + "\022grafeas.io/Project\022\016\n"
           + "\006filter\030\002 \001(\t\022\021\n"
           + "\tpage_size\030\003 \001(\005\022\022\n\n"
-          + "page_token\030\004 \001(\t\"_\n"
+          + "page_token\030\004 \001(\t\022\036\n"
+          + "\026return_partial_success\030\005 \001(\010\"y\n"
           + "\027ListOccurrencesResponse\022+\n"
           + "\013occurrences\030\001 \003(\0132\026.grafeas.v1.Occurrence\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"F\n"
+          + "\017next_page_token\030\002 \001(\t\022\030\n"
+          + "\013unreachable\030\003 \003(\tB\003\340A\006\"F\n"
           + "\027DeleteOccurrenceRequest\022+\n"
           + "\004name\030\001 \001(\tB\035\340A\002\372A\027\n"
           + "\025grafeas.io/Occurrence\"v\n"
@@ -224,16 +226,18 @@ public final class GrafeasOuterClass {
           + "\017grafeas.io/Note\"G\n"
           + "\030GetOccurrenceNoteRequest\022+\n"
           + "\004name\030\001 \001(\tB\035\340A\002\372A\027\n"
-          + "\025grafeas.io/Occurrence\"u\n"
+          + "\025grafeas.io/Occurrence\"\225\001\n"
           + "\020ListNotesRequest\022*\n"
           + "\006parent\030\001 \001(\tB\032\340A\002\372A\024\n"
           + "\022grafeas.io/Project\022\016\n"
           + "\006filter\030\002 \001(\t\022\021\n"
           + "\tpage_size\030\003 \001(\005\022\022\n\n"
-          + "page_token\030\004 \001(\t\"M\n"
+          + "page_token\030\004 \001(\t\022\036\n"
+          + "\026return_partial_success\030\005 \001(\010\"g\n"
           + "\021ListNotesResponse\022\037\n"
           + "\005notes\030\001 \003(\0132\020.grafeas.v1.Note\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\":\n"
+          + "\017next_page_token\030\002 \001(\t\022\030\n"
+          + "\013unreachable\030\003 \003(\tB\003\340A\006\":\n"
           + "\021DeleteNoteRequest\022%\n"
           + "\004name\030\001 \001(\tB\027\340A\002\372A\021\n"
           + "\017grafeas.io/Note\"z\n"
@@ -259,8 +263,8 @@ public final class GrafeasOuterClass {
           + "\027BatchCreateNotesRequest\022*\n"
           + "\006parent\030\001 \001(\tB\032\340A\002\372A\024\n"
           + "\022grafeas.io/Project\022B\n"
-          + "\005notes\030\002 \003(\0132.."
-          + "grafeas.v1.BatchCreateNotesRequest.NotesEntryB\003\340A\002\032>\n\n"
+          + "\005notes\030\002 \003(\0132..gr"
+          + "afeas.v1.BatchCreateNotesRequest.NotesEntryB\003\340A\002\032>\n\n"
           + "NotesEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\037\n"
           + "\005value\030\002 \001(\0132\020.grafeas.v1.Note:\0028\001\";\n"
@@ -273,69 +277,70 @@ public final class GrafeasOuterClass {
           + "\036BatchCreateOccurrencesResponse\022+\n"
           + "\013occurrences\030\001 \003(\0132\026.grafeas.v1.Occurrence2\215\026\n"
           + "\007Grafeas\022\260\001\n\r"
-          + "GetOccurrence\022 .grafeas.v1.GetOccurrenceRe"
-          + "quest\032\026.grafeas.v1.Occurrence\"e\332A\004name\202\323"
-          + "\344\223\002X\022#/v1/{name=projects/*/occurrences/*"
-          + "}Z1\022//v1/{name=projects/*/locations/*/occurrences/*}\022\312\001\n"
-          + "\017ListOccurrences\022\".grafe"
-          + "as.v1.ListOccurrencesRequest\032#.grafeas.v1.ListOccurrencesResponse\"n\332A\r"
-          + "parent,filter\202\323\344\223\002X\022#/v1/{parent=projects/*}/occur"
-          + "rencesZ1\022//v1/{parent=projects/*/locations/*}/occurrences\022\266\001\n"
-          + "\020DeleteOccurrence\022#.grafeas.v1.DeleteOccurrenceRequest\032\026.go"
-          + "ogle.protobuf.Empty\"e\332A\004name\202\323\344\223\002X*#/v1/"
-          + "{name=projects/*/occurrences/*}Z1*//v1/{"
-          + "name=projects/*/locations/*/occurrences/*}\022\334\001\n"
-          + "\020CreateOccurrence\022#.grafeas.v1.CreateOccurrenceRequest\032\026.grafeas.v1.Occurr"
-          + "ence\"\212\001\332A\021parent,occurrence\202\323\344\223\002p\"#/v1/{parent=projects/*}/occurrences:\n"
+          + "GetOccurrence\022 .grafeas.v1.GetOccurrenceRequ"
+          + "est\032\026.grafeas.v1.Occurrence\"e\332A\004name\202\323\344\223"
+          + "\002X\022#/v1/{name=projects/*/occurrences/*}Z"
+          + "1\022//v1/{name=projects/*/locations/*/occurrences/*}\022\312\001\n"
+          + "\017ListOccurrences\022\".grafeas"
+          + ".v1.ListOccurrencesRequest\032#.grafeas.v1.ListOccurrencesResponse\"n\332A\r"
+          + "parent,filter\202\323\344\223\002X\022#/v1/{parent=projects/*}/occurre"
+          + "ncesZ1\022//v1/{parent=projects/*/locations/*}/occurrences\022\266\001\n"
+          + "\020DeleteOccurrence\022#.grafeas.v1.DeleteOccurrenceRequest\032\026.goog"
+          + "le.protobuf.Empty\"e\332A\004name\202\323\344\223\002X*#/v1/{n"
+          + "ame=projects/*/occurrences/*}Z1*//v1/{na"
+          + "me=projects/*/locations/*/occurrences/*}\022\334\001\n"
+          + "\020CreateOccurrence\022#.grafeas.v1.Creat"
+          + "eOccurrenceRequest\032\026.grafeas.v1.Occurren"
+          + "ce\"\212\001\332A\021parent,occurrence\202\323\344\223\002p\"#/v1/{parent=projects/*}/occurrences:\n"
           + "occurrenceZ=\"//v1/{parent=projects/*/locations/*}/occurrences:\n"
           + "occurrence\022\203\002\n"
-          + "\026BatchCreateOccurrences\022).grafeas.v1.BatchCreateOcc"
-          + "urrencesRequest\032*.grafeas.v1.BatchCreate"
-          + "OccurrencesResponse\"\221\001\332A\022parent,occurren"
-          + "ces\202\323\344\223\002v\"//v1/{parent=projects/*}/occur"
-          + "rences:batchCreate:\001*Z@\";/v1/{parent=pro"
-          + "jects/*/locations/*}/occurrences:batchCreate:\001*\022\346\001\n"
-          + "\020UpdateOccurrence\022#.grafeas.v1.UpdateOccurrenceRequest\032\026.grafeas.v1.O"
-          + "ccurrence\"\224\001\332A\033name,occurrence,update_ma"
-          + "sk\202\323\344\223\002p2#/v1/{name=projects/*/occurrences/*}:\n"
+          + "\026BatchCreateOccurrences\022).grafeas.v1.BatchCreateOccur"
+          + "rencesRequest\032*.grafeas.v1.BatchCreateOc"
+          + "currencesResponse\"\221\001\332A\022parent,occurrence"
+          + "s\202\323\344\223\002v\"//v1/{parent=projects/*}/occurre"
+          + "nces:batchCreate:\001*Z@\";/v1/{parent=proje"
+          + "cts/*/locations/*}/occurrences:batchCreate:\001*\022\346\001\n"
+          + "\020UpdateOccurrence\022#.grafeas.v1.UpdateOccurrenceRequest\032\026.grafeas.v1.Occ"
+          + "urrence\"\224\001\332A\033name,occurrence,update_mask"
+          + "\202\323\344\223\002p2#/v1/{name=projects/*/occurrences/*}:\n"
           + "occurrenceZ=2//v1/{name=projects/*/locations/*/occurrences/*}:\n"
           + "occurrence\022\276\001\n"
-          + "\021GetOccurrenceNote\022$.grafeas.v1.GetO"
-          + "ccurrenceNoteRequest\032\020.grafeas.v1.Note\"q"
-          + "\332A\004name\202\323\344\223\002d\022)/v1/{name=projects/*/occu"
-          + "rrences/*}/notesZ7\0225/v1/{name=projects/*/locations/*/occurrences/*}/notes\022\222\001\n"
-          + "\007GetNote\022\032.grafeas.v1.GetNoteRequest\032\020.graf"
-          + "eas.v1.Note\"Y\332A\004name\202\323\344\223\002L\022\035/v1/{name=pr"
-          + "ojects/*/notes/*}Z+\022)/v1/{name=projects/*/locations/*/notes/*}\022\254\001\n"
-          + "\tListNotes\022\034.g"
-          + "rafeas.v1.ListNotesRequest\032\035.grafeas.v1.ListNotesResponse\"b\332A\r"
-          + "parent,filter\202\323\344\223\002L\022\035/v1/{parent=projects/*}/notesZ+\022)/v1/"
-          + "{parent=projects/*/locations/*}/notes\022\236\001\n\n"
-          + "DeleteNote\022\035.grafeas.v1.DeleteNoteRequ"
-          + "est\032\026.google.protobuf.Empty\"Y\332A\004name\202\323\344\223"
-          + "\002L*\035/v1/{name=projects/*/notes/*}Z+*)/v1"
-          + "/{name=projects/*/locations/*/notes/*}\022\263\001\n\n"
-          + "CreateNote\022\035.grafeas.v1.CreateNoteReq"
-          + "uest\032\020.grafeas.v1.Note\"t\332A\023parent,note_i"
-          + "d,note\202\323\344\223\002X\"\035/v1/{parent=projects/*}/no"
-          + "tes:\004noteZ1\")/v1/{parent=projects/*/locations/*}/notes:\004note\022\336\001\n"
-          + "\020BatchCreateNotes\022#.grafeas.v1.BatchCreateNotesRequest\032$"
-          + ".grafeas.v1.BatchCreateNotesResponse\"\177\332A"
-          + "\014parent,notes\202\323\344\223\002j\")/v1/{parent=project"
-          + "s/*}/notes:batchCreate:\001*Z:\"5/v1/{parent"
-          + "=projects/*/locations/*}/notes:batchCreate:\001*\022\265\001\n\n"
-          + "UpdateNote\022\035.grafeas.v1.Update"
-          + "NoteRequest\032\020.grafeas.v1.Note\"v\332A\025name,n"
-          + "ote,update_mask\202\323\344\223\002X2\035/v1/{name=project"
-          + "s/*/notes/*}:\004noteZ12)/v1/{name=projects/*/locations/*/notes/*}:\004note\022\340\001\n"
-          + "\023ListNoteOccurrences\022&.grafeas.v1.ListNoteOccur"
-          + "rencesRequest\032\'.grafeas.v1.ListNoteOccur"
-          + "rencesResponse\"x\332A\013name,filter\202\323\344\223\002d\022)/v"
-          + "1/{name=projects/*/notes/*}/occurrencesZ"
-          + "7\0225/v1/{name=projects/*/locations/*/notes/*}/occurrences\032#\312A"
+          + "\021GetOccurrenceNote\022$.grafeas.v1.GetOcc"
+          + "urrenceNoteRequest\032\020.grafeas.v1.Note\"q\332A"
+          + "\004name\202\323\344\223\002d\022)/v1/{name=projects/*/occurr"
+          + "ences/*}/notesZ7\0225/v1/{name=projects/*/locations/*/occurrences/*}/notes\022\222\001\n"
+          + "\007GetNote\022\032.grafeas.v1.GetNoteRequest\032\020.grafea"
+          + "s.v1.Note\"Y\332A\004name\202\323\344\223\002L\022\035/v1/{name=proj"
+          + "ects/*/notes/*}Z+\022)/v1/{name=projects/*/locations/*/notes/*}\022\254\001\n"
+          + "\tListNotes\022\034.gra"
+          + "feas.v1.ListNotesRequest\032\035.grafeas.v1.ListNotesResponse\"b\332A\r"
+          + "parent,filter\202\323\344\223\002L\022"
+          + "\035/v1/{parent=projects/*}/notesZ+\022)/v1/{parent=projects/*/locations/*}/notes\022\236\001\n\n"
+          + "DeleteNote\022\035.grafeas.v1.DeleteNoteReques"
+          + "t\032\026.google.protobuf.Empty\"Y\332A\004name\202\323\344\223\002L"
+          + "*\035/v1/{name=projects/*/notes/*}Z+*)/v1/{name=projects/*/locations/*/notes/*}\022\263\001\n"
+          + "\n"
+          + "CreateNote\022\035.grafeas.v1.CreateNoteReque"
+          + "st\032\020.grafeas.v1.Note\"t\332A\023parent,note_id,"
+          + "note\202\323\344\223\002X\"\035/v1/{parent=projects/*}/note"
+          + "s:\004noteZ1\")/v1/{parent=projects/*/locations/*}/notes:\004note\022\336\001\n"
+          + "\020BatchCreateNotes\022#.grafeas.v1.BatchCreateNotesRequest\032$.g"
+          + "rafeas.v1.BatchCreateNotesResponse\"\177\332A\014p"
+          + "arent,notes\202\323\344\223\002j\")/v1/{parent=projects/"
+          + "*}/notes:batchCreate:\001*Z:\"5/v1/{parent=p"
+          + "rojects/*/locations/*}/notes:batchCreate:\001*\022\265\001\n\n"
+          + "UpdateNote\022\035.grafeas.v1.UpdateNo"
+          + "teRequest\032\020.grafeas.v1.Note\"v\332A\025name,not"
+          + "e,update_mask\202\323\344\223\002X2\035/v1/{name=projects/"
+          + "*/notes/*}:\004noteZ12)/v1/{name=projects/*/locations/*/notes/*}:\004note\022\340\001\n"
+          + "\023ListNoteOccurrences\022&.grafeas.v1.ListNoteOccurre"
+          + "ncesRequest\032\'.grafeas.v1.ListNoteOccurre"
+          + "ncesResponse\"x\332A\013name,filter\202\323\344\223\002d\022)/v1/"
+          + "{name=projects/*/notes/*}/occurrencesZ7\022"
+          + "5/v1/{name=projects/*/locations/*/notes/*}/occurrences\032#\312A"
           + " containeranalysis.googleapis.comB|\n\r"
-          + "io.grafeas.v1P\001Z8google"
-          + ".golang.org/genproto/googleapis/grafeas/v1;grafeas\242\002\003GRA\352A(\n"
+          + "io.grafeas.v1P\001Z8google.g"
+          + "olang.org/genproto/googleapis/grafeas/v1;grafeas\242\002\003GRA\352A(\n"
           + "\022grafeas.io/Project\022\022projects/{project}b\006proto3"
     };
     descriptor =
@@ -434,7 +439,7 @@ public final class GrafeasOuterClass {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_grafeas_v1_ListOccurrencesRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "Filter", "PageSize", "PageToken",
+              "Parent", "Filter", "PageSize", "PageToken", "ReturnPartialSuccess",
             });
     internal_static_grafeas_v1_ListOccurrencesResponse_descriptor =
         getDescriptor().getMessageTypes().get(4);
@@ -442,7 +447,7 @@ public final class GrafeasOuterClass {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_grafeas_v1_ListOccurrencesResponse_descriptor,
             new java.lang.String[] {
-              "Occurrences", "NextPageToken",
+              "Occurrences", "NextPageToken", "Unreachable",
             });
     internal_static_grafeas_v1_DeleteOccurrenceRequest_descriptor =
         getDescriptor().getMessageTypes().get(5);
@@ -489,7 +494,7 @@ public final class GrafeasOuterClass {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_grafeas_v1_ListNotesRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "Filter", "PageSize", "PageToken",
+              "Parent", "Filter", "PageSize", "PageToken", "ReturnPartialSuccess",
             });
     internal_static_grafeas_v1_ListNotesResponse_descriptor =
         getDescriptor().getMessageTypes().get(11);
@@ -497,7 +502,7 @@ public final class GrafeasOuterClass {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_grafeas_v1_ListNotesResponse_descriptor,
             new java.lang.String[] {
-              "Notes", "NextPageToken",
+              "Notes", "NextPageToken", "Unreachable",
             });
     internal_static_grafeas_v1_DeleteNoteRequest_descriptor =
         getDescriptor().getMessageTypes().get(12);

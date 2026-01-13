@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 The Grafeas Authors. All rights reserved.
+ * Copyright 2026 The Grafeas Authors. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -252,6 +252,29 @@ public final class ListOccurrencesRequest extends com.google.protobuf.GeneratedM
     }
   }
 
+  public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 5;
+  private boolean returnPartialSuccess_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, the request will return all reachable Occurrences
+   * and report all unreachable regions in the `unreachable` field in
+   * the response.
+   *
+   * Only applicable for requests in the global region.
+   * </pre>
+   *
+   * <code>bool return_partial_success = 5;</code>
+   *
+   * @return The returnPartialSuccess.
+   */
+  @java.lang.Override
+  public boolean getReturnPartialSuccess() {
+    return returnPartialSuccess_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -278,6 +301,9 @@ public final class ListOccurrencesRequest extends com.google.protobuf.GeneratedM
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, pageToken_);
     }
+    if (returnPartialSuccess_ != false) {
+      output.writeBool(5, returnPartialSuccess_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -299,6 +325,9 @@ public final class ListOccurrencesRequest extends com.google.protobuf.GeneratedM
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, pageToken_);
     }
+    if (returnPartialSuccess_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, returnPartialSuccess_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -318,6 +347,7 @@ public final class ListOccurrencesRequest extends com.google.protobuf.GeneratedM
     if (!getFilter().equals(other.getFilter())) return false;
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
+    if (getReturnPartialSuccess() != other.getReturnPartialSuccess()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -337,6 +367,8 @@ public final class ListOccurrencesRequest extends com.google.protobuf.GeneratedM
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getPageToken().hashCode();
+    hash = (37 * hash) + RETURN_PARTIAL_SUCCESS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnPartialSuccess());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -480,6 +512,7 @@ public final class ListOccurrencesRequest extends com.google.protobuf.GeneratedM
       filter_ = "";
       pageSize_ = 0;
       pageToken_ = "";
+      returnPartialSuccess_ = false;
       return this;
     }
 
@@ -526,6 +559,9 @@ public final class ListOccurrencesRequest extends com.google.protobuf.GeneratedM
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.returnPartialSuccess_ = returnPartialSuccess_;
       }
     }
 
@@ -592,6 +628,9 @@ public final class ListOccurrencesRequest extends com.google.protobuf.GeneratedM
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (other.getReturnPartialSuccess() != false) {
+        setReturnPartialSuccess(other.getReturnPartialSuccess());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -642,6 +681,12 @@ public final class ListOccurrencesRequest extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 40:
+              {
+                returnPartialSuccess_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1064,6 +1109,74 @@ public final class ListOccurrencesRequest extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       pageToken_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private boolean returnPartialSuccess_;
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, the request will return all reachable Occurrences
+     * and report all unreachable regions in the `unreachable` field in
+     * the response.
+     *
+     * Only applicable for requests in the global region.
+     * </pre>
+     *
+     * <code>bool return_partial_success = 5;</code>
+     *
+     * @return The returnPartialSuccess.
+     */
+    @java.lang.Override
+    public boolean getReturnPartialSuccess() {
+      return returnPartialSuccess_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, the request will return all reachable Occurrences
+     * and report all unreachable regions in the `unreachable` field in
+     * the response.
+     *
+     * Only applicable for requests in the global region.
+     * </pre>
+     *
+     * <code>bool return_partial_success = 5;</code>
+     *
+     * @param value The returnPartialSuccess to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReturnPartialSuccess(boolean value) {
+
+      returnPartialSuccess_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, the request will return all reachable Occurrences
+     * and report all unreachable regions in the `unreachable` field in
+     * the response.
+     *
+     * Only applicable for requests in the global region.
+     * </pre>
+     *
+     * <code>bool return_partial_success = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReturnPartialSuccess() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      returnPartialSuccess_ = false;
       onChanged();
       return this;
     }

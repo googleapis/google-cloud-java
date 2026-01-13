@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 The Grafeas Authors. All rights reserved.
+ * Copyright 2026 The Grafeas Authors. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -109,4 +109,70 @@ public interface ListOccurrencesResponseOrBuilder
    * @return The bytes for nextPageToken.
    */
   com.google.protobuf.ByteString getNextPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Unreachable regions. Populated for requests from the global region
+   * when `return_partial_success` is set.
+   *
+   * Format: `projects/[PROJECT_ID]/locations/[LOCATION]`
+   * </pre>
+   *
+   * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+   *
+   * @return A list containing the unreachable.
+   */
+  java.util.List<java.lang.String> getUnreachableList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Unreachable regions. Populated for requests from the global region
+   * when `return_partial_success` is set.
+   *
+   * Format: `projects/[PROJECT_ID]/locations/[LOCATION]`
+   * </pre>
+   *
+   * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+   *
+   * @return The count of unreachable.
+   */
+  int getUnreachableCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Unreachable regions. Populated for requests from the global region
+   * when `return_partial_success` is set.
+   *
+   * Format: `projects/[PROJECT_ID]/locations/[LOCATION]`
+   * </pre>
+   *
+   * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The unreachable at the given index.
+   */
+  java.lang.String getUnreachable(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Unreachable regions. Populated for requests from the global region
+   * when `return_partial_success` is set.
+   *
+   * Format: `projects/[PROJECT_ID]/locations/[LOCATION]`
+   * </pre>
+   *
+   * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = UNORDERED_LIST];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the unreachable at the given index.
+   */
+  com.google.protobuf.ByteString getUnreachableBytes(int index);
 }

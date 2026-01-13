@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 The Grafeas Authors. All rights reserved.
+ * Copyright 2026 The Grafeas Authors. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,32 +55,56 @@ public final class Secret {
   static {
     java.lang.String[] descriptorData = {
       "\n\027grafeas/v1/secret.proto\022\ngrafeas.v1\032\037g"
-          + "oogle/api/field_behavior.proto\032\037google/p"
-          + "rotobuf/timestamp.proto\032\027grafeas/v1/comm"
-          + "on.proto\"\014\n\nSecretNote\"\242\001\n\020SecretOccurre"
-          + "nce\022)\n\004kind\030\001 \001(\0162\026.grafeas.v1.SecretKin"
-          + "dB\003\340A\002\0222\n\tlocations\030\002 \003(\0132\032.grafeas.v1.S"
-          + "ecretLocationB\003\340A\001\022/\n\010statuses\030\003 \003(\0132\030.g"
-          + "rafeas.v1.SecretStatusB\003\340A\001\"O\n\016SecretLoc"
-          + "ation\0221\n\rfile_location\030\001 \001(\0132\030.grafeas.v"
-          + "1.FileLocationH\000B\n\n\010location\"\327\001\n\014SecretS"
-          + "tatus\0224\n\006status\030\001 \001(\0162\037.grafeas.v1.Secre"
-          + "tStatus.StatusB\003\340A\001\0224\n\013update_time\030\002 \001(\013"
-          + "2\032.google.protobuf.TimestampB\003\340A\001\022\024\n\007mes"
-          + "sage\030\003 \001(\tB\003\340A\001\"E\n\006Status\022\026\n\022STATUS_UNSP"
-          + "ECIFIED\020\000\022\013\n\007UNKNOWN\020\001\022\t\n\005VALID\020\002\022\013\n\007INV"
-          + "ALID\020\003*k\n\nSecretKind\022\033\n\027SECRET_KIND_UNSP"
-          + "ECIFIED\020\000\022\027\n\023SECRET_KIND_UNKNOWN\020\001\022\'\n#SE"
-          + "CRET_KIND_GCP_SERVICE_ACCOUNT_KEY\020\002BQ\n\ri"
-          + "o.grafeas.v1P\001Z8google.golang.org/genpro"
-          + "to/googleapis/grafeas/v1;grafeas\242\002\003GRAb\006"
-          + "proto3"
+          + "oogle/api/field_behavior.proto\032\031google/p"
+          + "rotobuf/any.proto\032\037google/protobuf/times"
+          + "tamp.proto\032\027grafeas/v1/common.proto\"\014\n\nS"
+          + "ecretNote\"\352\001\n\020SecretOccurrence\022)\n\004kind\030\001"
+          + " \001(\0162\026.grafeas.v1.SecretKindB\003\340A\002\0222\n\tloc"
+          + "ations\030\002 \003(\0132\032.grafeas.v1.SecretLocation"
+          + "B\003\340A\001\022/\n\010statuses\030\003 \003(\0132\030.grafeas.v1.Sec"
+          + "retStatusB\003\340A\001\022\"\n\004data\030\004 \001(\0132\024.google.pr"
+          + "otobuf.Any\022\"\n\006digest\030\005 \001(\0132\022.grafeas.v1."
+          + "Digest\"O\n\016SecretLocation\0221\n\rfile_locatio"
+          + "n\030\001 \001(\0132\030.grafeas.v1.FileLocationH\000B\n\n\010l"
+          + "ocation\"\327\001\n\014SecretStatus\0224\n\006status\030\001 \001(\016"
+          + "2\037.grafeas.v1.SecretStatus.StatusB\003\340A\001\0224"
+          + "\n\013update_time\030\002 \001(\0132\032.google.protobuf.Ti"
+          + "mestampB\003\340A\001\022\024\n\007message\030\003 \001(\tB\003\340A\001\"E\n\006St"
+          + "atus\022\026\n\022STATUS_UNSPECIFIED\020\000\022\013\n\007UNKNOWN\020"
+          + "\001\022\t\n\005VALID\020\002\022\013\n\007INVALID\020\003*\245\007\n\nSecretKind"
+          + "\022\033\n\027SECRET_KIND_UNSPECIFIED\020\000\022\027\n\023SECRET_"
+          + "KIND_UNKNOWN\020\001\022\'\n#SECRET_KIND_GCP_SERVIC"
+          + "E_ACCOUNT_KEY\020\002\022\033\n\027SECRET_KIND_GCP_API_K"
+          + "EY\020\003\022-\n)SECRET_KIND_GCP_OAUTH2_CLIENT_CR"
+          + "EDENTIALS\020\004\022\'\n#SECRET_KIND_GCP_OAUTH2_AC"
+          + "CESS_TOKEN\020\005\022\'\n#SECRET_KIND_ANTHROPIC_AD"
+          + "MIN_API_KEY\020\006\022!\n\035SECRET_KIND_ANTHROPIC_A"
+          + "PI_KEY\020\007\022\"\n\036SECRET_KIND_AZURE_ACCESS_TOK"
+          + "EN\020\010\022$\n SECRET_KIND_AZURE_IDENTITY_TOKEN"
+          + "\020\t\0220\n,SECRET_KIND_DOCKER_HUB_PERSONAL_AC"
+          + "CESS_TOKEN\020\n\022(\n$SECRET_KIND_GITHUB_APP_R"
+          + "EFRESH_TOKEN\020\013\0221\n-SECRET_KIND_GITHUB_APP"
+          + "_SERVER_TO_SERVER_TOKEN\020\014\022/\n+SECRET_KIND"
+          + "_GITHUB_APP_USER_TO_SERVER_TOKEN\020\r\0224\n0SE"
+          + "CRET_KIND_GITHUB_CLASSIC_PERSONAL_ACCESS"
+          + "_TOKEN\020\016\0229\n5SECRET_KIND_GITHUB_FINE_GRAI"
+          + "NED_PERSONAL_ACCESS_TOKEN\020\017\022\"\n\036SECRET_KI"
+          + "ND_GITHUB_OAUTH_TOKEN\020\020\022#\n\037SECRET_KIND_H"
+          + "UGGINGFACE_API_KEY\020\021\022\036\n\032SECRET_KIND_OPEN"
+          + "AI_API_KEY\020\022\022\"\n\036SECRET_KIND_PERPLEXITY_A"
+          + "PI_KEY\020\023\022!\n\035SECRET_KIND_STRIPE_SECRET_KE"
+          + "Y\020\024\022%\n!SECRET_KIND_STRIPE_RESTRICTED_KEY"
+          + "\020\025\022%\n!SECRET_KIND_STRIPE_WEBHOOK_SECRET\020"
+          + "\026BQ\n\rio.grafeas.v1P\001Z8google.golang.org/"
+          + "genproto/googleapis/grafeas/v1;grafeas\242\002"
+          + "\003GRAb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.protobuf.AnyProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               io.grafeas.v1.Common.getDescriptor(),
             });
@@ -94,7 +118,7 @@ public final class Secret {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_grafeas_v1_SecretOccurrence_descriptor,
             new java.lang.String[] {
-              "Kind", "Locations", "Statuses",
+              "Kind", "Locations", "Statuses", "Data", "Digest",
             });
     internal_static_grafeas_v1_SecretLocation_descriptor = getDescriptor().getMessageTypes().get(2);
     internal_static_grafeas_v1_SecretLocation_fieldAccessorTable =
@@ -116,6 +140,7 @@ public final class Secret {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.protobuf.AnyProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     io.grafeas.v1.Common.getDescriptor();
   }
