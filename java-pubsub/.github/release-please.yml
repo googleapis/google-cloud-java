@@ -2,55 +2,28 @@ bumpMinorPreMajor: true
 handleGHRelease: true
 releaseType: java-yoshi
 branches:
-  - releaseType: java-lts
-    bumpMinorPreMajor: true
-    handleGHRelease: true
-    branch: 1.111.0-sp
-  - bumpMinorPreMajor: true
-    handleGHRelease: true
-    releaseType: java-yoshi
-    branch: java7
-  - bumpMinorPreMajor: true
-    handleGHRelease: true
-    releaseType: java-backport
-    branch: 1.114.x
-  - bumpMinorPreMajor: true
-    handleGHRelease: true
-    releaseType: java-backport
-    branch: 1.116.x
-  - bumpMinorPreMajor: true
-    handleGHRelease: true
-    releaseType: java-backport
-    branch: 1.117.x
-  - bumpMinorPreMajor: true
-    handleGHRelease: true
-    releaseType: java-backport
-    branch: 1.120.x
-  - bumpMinorPreMajor: true
-    handleGHRelease: true
-    releaseType: java-backport
-    branch: 1.121.x
-  - bumpMinorPreMajor: true
-    handleGHRelease: true
-    releaseType: java-backport
-    branch: 1.123.x
-  - bumpMinorPreMajor: true
-    handleGHRelease: true
-    releaseType: java-backport
-    branch: 1.125.x
-  - bumpMinorPreMajor: true
-    handleGHRelease: true
-    releaseType: java-backport
-    branch: 1.129.x
-  - bumpMinorPreMajor: true
-    handleGHRelease: true
-    releaseType: java-backport
-    branch: 1.137.x
-  - bumpMinorPreMajor: true
-    handleGHRelease: true
-    releaseType: java-backport
-    branch: 1.140.x
-  - handleGHRelease: true
-    releaseType: java-yoshi
-    branch: protobuf-4.x-rc
-    manifest: true
+    - branch: 1.111.0-sp
+      releaseType: java-lts
+    - branch: java7
+    - branch: 1.114.x
+      releaseType: java-backport
+    - branch: 1.116.x
+      releaseType: java-backport
+    - branch: 1.117.x
+      releaseType: java-backport
+    - branch: 1.120.x
+      releaseType: java-backport
+    - branch: 1.121.x
+      releaseType: java-backport
+    - branch: 1.123.x
+      releaseType: java-backport
+    - branch: 1.125.x
+      releaseType: java-backport
+    - branch: 1.129.x
+      releaseType: java-backport
+    - branch: 1.137.x
+      releaseType: java-backport
+    - branch: 1.140.x
+      releaseType: java-backport
+    - branch: protobuf-4.x-rc
+      manifest: true
