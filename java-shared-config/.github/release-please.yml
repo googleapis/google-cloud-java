@@ -1,13 +1,9 @@
 releaseType: java-yoshi
 handleGHRelease: true
-extraFiles: [".cloudbuild/cloudbuild.yaml", ".cloudbuild/cloudbuild-test-a.yaml", ".cloudbuild/cloudbuild-test-b.yaml", ".cloudbuild/cloudbuild-test-c.yaml" ]
+extraFiles: [".cloudbuild/cloudbuild.yaml", ".cloudbuild/cloudbuild-test-a.yaml", ".cloudbuild/cloudbuild-test-b.yaml", ".cloudbuild/cloudbuild-test-c.yaml"]
 branches:
-- bumpMinorPreMajor: true
-  handleGHRelease: true
-  releaseType: java-yoshi
-  branch: java7
-- bumpMinorPreMajor: true
-  handleGHRelease: true
-  releaseType: java-yoshi
-  branch: protobuf-4.x-rc
-  manifest: true
+    - branch: java7
+      bumpMinorPreMajor: true
+    - branch: protobuf-4.x-rc
+      bumpMinorPreMajor: true
+      manifest: true
