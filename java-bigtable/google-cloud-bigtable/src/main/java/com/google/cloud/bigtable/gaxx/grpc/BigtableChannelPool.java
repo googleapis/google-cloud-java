@@ -37,8 +37,8 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -75,14 +75,16 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
   private final String authority;
   private final Random rng = new Random();
   private final Supplier<Integer> picker;
+  private ScheduledFuture<?> resizeFuture = null;
+  private ScheduledFuture<?> refreshFuture = null;
 
   public static BigtableChannelPool create(
       BigtableChannelPoolSettings settings,
       ChannelFactory channelFactory,
-      ChannelPrimer channelPrimer)
+      ChannelPrimer channelPrimer,
+      ScheduledExecutorService backgroundExecutor)
       throws IOException {
-    return new BigtableChannelPool(
-        settings, channelFactory, channelPrimer, Executors.newSingleThreadScheduledExecutor());
+    return new BigtableChannelPool(settings, channelFactory, channelPrimer, backgroundExecutor);
   }
 
   /**
@@ -137,18 +139,20 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
     this.executor = executor;
 
     if (!settings.isStaticSize()) {
-      executor.scheduleAtFixedRate(
-          this::resizeSafely,
-          BigtableChannelPoolSettings.RESIZE_INTERVAL.getSeconds(),
-          BigtableChannelPoolSettings.RESIZE_INTERVAL.getSeconds(),
-          TimeUnit.SECONDS);
+      this.resizeFuture =
+          executor.scheduleAtFixedRate(
+              this::resizeSafely,
+              BigtableChannelPoolSettings.RESIZE_INTERVAL.getSeconds(),
+              BigtableChannelPoolSettings.RESIZE_INTERVAL.getSeconds(),
+              TimeUnit.SECONDS);
     }
     if (settings.isPreemptiveRefreshEnabled()) {
-      executor.scheduleAtFixedRate(
-          this::refreshSafely,
-          REFRESH_PERIOD.getSeconds(),
-          REFRESH_PERIOD.getSeconds(),
-          TimeUnit.SECONDS);
+      this.refreshFuture =
+          executor.scheduleAtFixedRate(
+              this::refreshSafely,
+              REFRESH_PERIOD.getSeconds(),
+              REFRESH_PERIOD.getSeconds(),
+              TimeUnit.SECONDS);
     }
   }
 
@@ -234,13 +238,20 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
   public ManagedChannel shutdown() {
     LOG.fine("Initiating graceful shutdown due to explicit request");
 
+    // Resize and refresh tasks can block on channel priming. We don't need
+    // to wait for the channels to be ready since we're shutting down the
+    // pool. Allowing interrupt to speed it up.
+    // Background executor lifecycle is managed by BigtableClientContext.
+    // Do not shut it down here.
+    if (resizeFuture != null) {
+      resizeFuture.cancel(true);
+    }
+    if (refreshFuture != null) {
+      refreshFuture.cancel(true);
+    }
     List<Entry> localEntries = entries.get();
     for (Entry entry : localEntries) {
       entry.channel.shutdown();
-    }
-    if (executor != null) {
-      // shutdownNow will cancel scheduled tasks
-      executor.shutdownNow();
     }
     return this;
   }
@@ -254,7 +265,7 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
         return false;
       }
     }
-    return executor == null || executor.isShutdown();
+    return true;
   }
 
   /** {@inheritDoc} */
@@ -267,7 +278,7 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
       }
     }
 
-    return executor == null || executor.isTerminated();
+    return true;
   }
 
   /** {@inheritDoc} */
@@ -275,13 +286,18 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
   public ManagedChannel shutdownNow() {
     LOG.fine("Initiating immediate shutdown due to explicit request");
 
+    if (resizeFuture != null) {
+      resizeFuture.cancel(true);
+    }
+    if (refreshFuture != null) {
+      refreshFuture.cancel(true);
+    }
+
     List<Entry> localEntries = entries.get();
     for (Entry entry : localEntries) {
       entry.channel.shutdownNow();
     }
-    if (executor != null) {
-      executor.shutdownNow();
-    }
+
     return this;
   }
 
@@ -296,10 +312,6 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
         break;
       }
       entry.channel.awaitTermination(awaitTimeNanos, TimeUnit.NANOSECONDS);
-    }
-    if (executor != null) {
-      long awaitTimeNanos = endTimeNanos - System.nanoTime();
-      executor.awaitTermination(awaitTimeNanos, TimeUnit.NANOSECONDS);
     }
     return isTerminated();
   }

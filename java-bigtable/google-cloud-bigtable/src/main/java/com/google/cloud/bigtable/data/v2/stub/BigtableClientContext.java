@@ -21,6 +21,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.FixedCredentialsProvider;
+import com.google.api.gax.core.FixedExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.auth.Credentials;
@@ -83,9 +84,8 @@ public class BigtableClientContext {
     boolean shouldAutoClose = settings.getBackgroundExecutorProvider().shouldAutoClose();
     ScheduledExecutorService backgroundExecutor =
         settings.getBackgroundExecutorProvider().getExecutor();
-    // TODO: after gax change is merged, migrate to use gax's FixedExecutorProvider
-    BigtableExecutorProvider executorProvider =
-        BigtableExecutorProvider.create(backgroundExecutor, shouldAutoClose);
+    FixedExecutorProvider executorProvider =
+        FixedExecutorProvider.create(backgroundExecutor, shouldAutoClose);
     builder.setBackgroundExecutorProvider(executorProvider);
 
     // Set up OpenTelemetry
@@ -153,7 +153,8 @@ public class BigtableClientContext {
           BigtableTransportChannelProvider.create(
               (InstantiatingGrpcChannelProvider) transportProvider.build(),
               channelPrimer,
-              channelPoolMetricsTracer);
+              channelPoolMetricsTracer,
+              backgroundExecutor);
 
       builder.setTransportChannelProvider(btTransportProvider);
     }
