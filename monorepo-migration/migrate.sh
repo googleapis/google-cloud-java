@@ -54,6 +54,7 @@ MODERNIZE_POM_SCRIPT="$TRANSFORM_SCRIPT_DIR/modernize_pom.py"
 UPDATE_ROOT_POM_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_root_pom.py"
 FIX_COPYRIGHT_SCRIPT="$TRANSFORM_SCRIPT_DIR/fix_copyright_headers.py"
 UPDATE_GENERATION_CONFIG_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_generation_config.py"
+UPDATE_OWLBOT_HERMETIC_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_owlbot_hermetic.py"
 
 echo "Starting migration using git read-tree with isolated clones..."
 
@@ -258,7 +259,24 @@ if [ -f "$SOURCE_VERSIONS" ]; then
     git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): consolidate versions.txt into root"
 fi
 
-# 7.8 Fix copyright headers in Java files
+# 7.8 Migrate .OwlBot-hermetic.yaml
+echo "Migrating .OwlBot-hermetic.yaml..."
+if [ -f "$SOURCE_DIR/.github/.OwlBot-hermetic.yaml" ]; then
+    SOURCE_OWLBOT="$SOURCE_DIR/.github/.OwlBot-hermetic.yaml"
+else
+    SOURCE_OWLBOT=""
+fi
+
+if [ -n "$SOURCE_OWLBOT" ]; then
+    TARGET_OWLBOT="$SOURCE_REPO_NAME/.OwlBot-hermetic.yaml"
+    python3 "$UPDATE_OWLBOT_HERMETIC_SCRIPT" "$TARGET_OWLBOT" "$SOURCE_OWLBOT" "$SOURCE_REPO_NAME"
+    
+    echo "Committing .OwlBot-hermetic.yaml migration..."
+    git add "$TARGET_OWLBOT"
+    git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): migrate .OwlBot-hermetic.yaml"
+fi
+
+# 7.9 Fix copyright headers in Java files
 echo "Fixing copyright headers in Java files..."
 python3 "$FIX_COPYRIGHT_SCRIPT" "$SOURCE_REPO_NAME"
 
@@ -266,7 +284,7 @@ echo "Committing copyright header fixes..."
 git add "$SOURCE_REPO_NAME"
 git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): update copyright headers to 2026 Google LLC"
 
-# 7.9 Modernize root pom.xml
+# 7.10 Modernize root pom.xml
 echo "Modernizing root pom.xml..."
 PARENT_VERSION=$(grep -m 1 "<version>.*{x-version-update:google-cloud-java:current}" google-cloud-jar-parent/pom.xml | sed -E 's/.*<version>(.*)<\/version>.*/\1/')
 python3 "$MODERNIZE_POM_SCRIPT" "$SOURCE_REPO_NAME/pom.xml" "$PARENT_VERSION" "$SOURCE_REPO_NAME"
@@ -275,7 +293,7 @@ echo "Committing root pom.xml modernization..."
 git add "$SOURCE_REPO_NAME/pom.xml"
 git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): modernize root pom.xml"
 
-# 7.10 Verify compilation
+# 7.11 Verify compilation
 echo "Verifying compilation..."
 (cd "$SOURCE_REPO_NAME" && mvn compile -DskipTests -T 1C)
 
