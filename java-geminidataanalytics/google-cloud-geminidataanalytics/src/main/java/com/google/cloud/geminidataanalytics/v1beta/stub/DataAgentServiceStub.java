@@ -97,6 +97,10 @@ public abstract class DataAgentServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createDataAgentCallable()");
   }
 
+  public UnaryCallable<CreateDataAgentRequest, DataAgent> createDataAgentSyncCallable() {
+    throw new UnsupportedOperationException("Not implemented: createDataAgentSyncCallable()");
+  }
+
   public OperationCallable<UpdateDataAgentRequest, DataAgent, OperationMetadata>
       updateDataAgentOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: updateDataAgentOperationCallable()");
@@ -106,6 +110,10 @@ public abstract class DataAgentServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateDataAgentCallable()");
   }
 
+  public UnaryCallable<UpdateDataAgentRequest, DataAgent> updateDataAgentSyncCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateDataAgentSyncCallable()");
+  }
+
   public OperationCallable<DeleteDataAgentRequest, Empty, OperationMetadata>
       deleteDataAgentOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteDataAgentOperationCallable()");
@@ -113,6 +121,10 @@ public abstract class DataAgentServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteDataAgentRequest, Operation> deleteDataAgentCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteDataAgentCallable()");
+  }
+
+  public UnaryCallable<DeleteDataAgentRequest, Empty> deleteDataAgentSyncCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteDataAgentSyncCallable()");
   }
 
   public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {

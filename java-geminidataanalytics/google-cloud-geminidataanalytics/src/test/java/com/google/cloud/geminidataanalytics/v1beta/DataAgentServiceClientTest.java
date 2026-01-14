@@ -492,6 +492,108 @@ public class DataAgentServiceClientTest {
   }
 
   @Test
+  public void createDataAgentSyncTest() throws Exception {
+    DataAgent expectedResponse =
+        DataAgent.newBuilder()
+            .setName(DataAgentName.of("[PROJECT]", "[LOCATION]", "[DATA_AGENT]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setPurgeTime(Timestamp.newBuilder().build())
+            .build();
+    mockDataAgentService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    DataAgent dataAgent = DataAgent.newBuilder().build();
+    String dataAgentId = "dataAgentId1752773622";
+
+    DataAgent actualResponse = client.createDataAgentSync(parent, dataAgent, dataAgentId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataAgentService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateDataAgentRequest actualRequest = ((CreateDataAgentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(dataAgent, actualRequest.getDataAgent());
+    Assert.assertEquals(dataAgentId, actualRequest.getDataAgentId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createDataAgentSyncExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataAgentService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      DataAgent dataAgent = DataAgent.newBuilder().build();
+      String dataAgentId = "dataAgentId1752773622";
+      client.createDataAgentSync(parent, dataAgent, dataAgentId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createDataAgentSyncTest2() throws Exception {
+    DataAgent expectedResponse =
+        DataAgent.newBuilder()
+            .setName(DataAgentName.of("[PROJECT]", "[LOCATION]", "[DATA_AGENT]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setPurgeTime(Timestamp.newBuilder().build())
+            .build();
+    mockDataAgentService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    DataAgent dataAgent = DataAgent.newBuilder().build();
+    String dataAgentId = "dataAgentId1752773622";
+
+    DataAgent actualResponse = client.createDataAgentSync(parent, dataAgent, dataAgentId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataAgentService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateDataAgentRequest actualRequest = ((CreateDataAgentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(dataAgent, actualRequest.getDataAgent());
+    Assert.assertEquals(dataAgentId, actualRequest.getDataAgentId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createDataAgentSyncExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataAgentService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      DataAgent dataAgent = DataAgent.newBuilder().build();
+      String dataAgentId = "dataAgentId1752773622";
+      client.createDataAgentSync(parent, dataAgent, dataAgentId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void updateDataAgentTest() throws Exception {
     DataAgent expectedResponse =
         DataAgent.newBuilder()
@@ -544,6 +646,54 @@ public class DataAgentServiceClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateDataAgentSyncTest() throws Exception {
+    DataAgent expectedResponse =
+        DataAgent.newBuilder()
+            .setName(DataAgentName.of("[PROJECT]", "[LOCATION]", "[DATA_AGENT]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setPurgeTime(Timestamp.newBuilder().build())
+            .build();
+    mockDataAgentService.addResponse(expectedResponse);
+
+    DataAgent dataAgent = DataAgent.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    DataAgent actualResponse = client.updateDataAgentSync(dataAgent, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataAgentService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateDataAgentRequest actualRequest = ((UpdateDataAgentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(dataAgent, actualRequest.getDataAgent());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateDataAgentSyncExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataAgentService.addException(exception);
+
+    try {
+      DataAgent dataAgent = DataAgent.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateDataAgentSync(dataAgent, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 
@@ -628,6 +778,74 @@ public class DataAgentServiceClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteDataAgentSyncTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataAgentService.addResponse(expectedResponse);
+
+    DataAgentName name = DataAgentName.of("[PROJECT]", "[LOCATION]", "[DATA_AGENT]");
+
+    client.deleteDataAgentSync(name);
+
+    List<AbstractMessage> actualRequests = mockDataAgentService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDataAgentRequest actualRequest = ((DeleteDataAgentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteDataAgentSyncExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataAgentService.addException(exception);
+
+    try {
+      DataAgentName name = DataAgentName.of("[PROJECT]", "[LOCATION]", "[DATA_AGENT]");
+      client.deleteDataAgentSync(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteDataAgentSyncTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataAgentService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteDataAgentSync(name);
+
+    List<AbstractMessage> actualRequests = mockDataAgentService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDataAgentRequest actualRequest = ((DeleteDataAgentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteDataAgentSyncExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataAgentService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteDataAgentSync(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

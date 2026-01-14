@@ -23,6 +23,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -149,6 +150,27 @@ public class MockDataAgentServiceImpl extends DataAgentServiceImplBase {
   }
 
   @Override
+  public void createDataAgentSync(
+      CreateDataAgentRequest request, StreamObserver<DataAgent> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DataAgent) {
+      requests.add(request);
+      responseObserver.onNext(((DataAgent) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateDataAgentSync, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DataAgent.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void updateDataAgent(
       UpdateDataAgentRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
@@ -170,6 +192,27 @@ public class MockDataAgentServiceImpl extends DataAgentServiceImplBase {
   }
 
   @Override
+  public void updateDataAgentSync(
+      UpdateDataAgentRequest request, StreamObserver<DataAgent> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DataAgent) {
+      requests.add(request);
+      responseObserver.onNext(((DataAgent) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateDataAgentSync, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DataAgent.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void deleteDataAgent(
       DeleteDataAgentRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
@@ -186,6 +229,27 @@ public class MockDataAgentServiceImpl extends DataAgentServiceImplBase {
                   "Unrecognized response type %s for method DeleteDataAgent, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteDataAgentSync(
+      DeleteDataAgentRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteDataAgentSync, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
                   Exception.class.getName())));
     }
   }

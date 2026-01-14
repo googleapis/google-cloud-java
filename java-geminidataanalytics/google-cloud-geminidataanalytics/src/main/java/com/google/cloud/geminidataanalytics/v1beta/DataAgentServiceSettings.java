@@ -95,8 +95,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -160,6 +160,11 @@ public class DataAgentServiceSettings extends ClientSettings<DataAgentServiceSet
     return ((DataAgentServiceStubSettings) getStubSettings()).createDataAgentOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to createDataAgentSync. */
+  public UnaryCallSettings<CreateDataAgentRequest, DataAgent> createDataAgentSyncSettings() {
+    return ((DataAgentServiceStubSettings) getStubSettings()).createDataAgentSyncSettings();
+  }
+
   /** Returns the object with the settings used for calls to updateDataAgent. */
   public UnaryCallSettings<UpdateDataAgentRequest, Operation> updateDataAgentSettings() {
     return ((DataAgentServiceStubSettings) getStubSettings()).updateDataAgentSettings();
@@ -171,6 +176,11 @@ public class DataAgentServiceSettings extends ClientSettings<DataAgentServiceSet
     return ((DataAgentServiceStubSettings) getStubSettings()).updateDataAgentOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateDataAgentSync. */
+  public UnaryCallSettings<UpdateDataAgentRequest, DataAgent> updateDataAgentSyncSettings() {
+    return ((DataAgentServiceStubSettings) getStubSettings()).updateDataAgentSyncSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteDataAgent. */
   public UnaryCallSettings<DeleteDataAgentRequest, Operation> deleteDataAgentSettings() {
     return ((DataAgentServiceStubSettings) getStubSettings()).deleteDataAgentSettings();
@@ -180,6 +190,11 @@ public class DataAgentServiceSettings extends ClientSettings<DataAgentServiceSet
   public OperationCallSettings<DeleteDataAgentRequest, Empty, OperationMetadata>
       deleteDataAgentOperationSettings() {
     return ((DataAgentServiceStubSettings) getStubSettings()).deleteDataAgentOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteDataAgentSync. */
+  public UnaryCallSettings<DeleteDataAgentRequest, Empty> deleteDataAgentSyncSettings() {
+    return ((DataAgentServiceStubSettings) getStubSettings()).deleteDataAgentSyncSettings();
   }
 
   /** Returns the object with the settings used for calls to getIamPolicy. */
@@ -347,6 +362,12 @@ public class DataAgentServiceSettings extends ClientSettings<DataAgentServiceSet
       return getStubSettingsBuilder().createDataAgentOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to createDataAgentSync. */
+    public UnaryCallSettings.Builder<CreateDataAgentRequest, DataAgent>
+        createDataAgentSyncSettings() {
+      return getStubSettingsBuilder().createDataAgentSyncSettings();
+    }
+
     /** Returns the builder for the settings used for calls to updateDataAgent. */
     public UnaryCallSettings.Builder<UpdateDataAgentRequest, Operation> updateDataAgentSettings() {
       return getStubSettingsBuilder().updateDataAgentSettings();
@@ -358,6 +379,12 @@ public class DataAgentServiceSettings extends ClientSettings<DataAgentServiceSet
       return getStubSettingsBuilder().updateDataAgentOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to updateDataAgentSync. */
+    public UnaryCallSettings.Builder<UpdateDataAgentRequest, DataAgent>
+        updateDataAgentSyncSettings() {
+      return getStubSettingsBuilder().updateDataAgentSyncSettings();
+    }
+
     /** Returns the builder for the settings used for calls to deleteDataAgent. */
     public UnaryCallSettings.Builder<DeleteDataAgentRequest, Operation> deleteDataAgentSettings() {
       return getStubSettingsBuilder().deleteDataAgentSettings();
@@ -367,6 +394,11 @@ public class DataAgentServiceSettings extends ClientSettings<DataAgentServiceSet
     public OperationCallSettings.Builder<DeleteDataAgentRequest, Empty, OperationMetadata>
         deleteDataAgentOperationSettings() {
       return getStubSettingsBuilder().deleteDataAgentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDataAgentSync. */
+    public UnaryCallSettings.Builder<DeleteDataAgentRequest, Empty> deleteDataAgentSyncSettings() {
+      return getStubSettingsBuilder().deleteDataAgentSyncSettings();
     }
 
     /** Returns the builder for the settings used for calls to getIamPolicy. */

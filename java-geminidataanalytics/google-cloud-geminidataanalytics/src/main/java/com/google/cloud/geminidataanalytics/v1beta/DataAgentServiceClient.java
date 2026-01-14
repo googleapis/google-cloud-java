@@ -157,6 +157,25 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> CreateDataAgentSync</td>
+ *      <td><p> Creates a new DataAgent in a given project and location synchronously.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createDataAgentSync(CreateDataAgentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createDataAgentSync(LocationName parent, DataAgent dataAgent, String dataAgentId)
+ *           <li><p> createDataAgentSync(String parent, DataAgent dataAgent, String dataAgentId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createDataAgentSyncCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> UpdateDataAgent</td>
  *      <td><p> Updates the parameters of a single DataAgent.</td>
  *      <td>
@@ -172,6 +191,24 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> updateDataAgentOperationCallable()
  *           <li><p> updateDataAgentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateDataAgentSync</td>
+ *      <td><p> Updates the parameters of a single DataAgent synchronously.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateDataAgentSync(UpdateDataAgentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateDataAgentSync(DataAgent dataAgent, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateDataAgentSyncCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -192,6 +229,25 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> deleteDataAgentOperationCallable()
  *           <li><p> deleteDataAgentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteDataAgentSync</td>
+ *      <td><p> Deletes a single DataAgent synchronously.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteDataAgentSync(DeleteDataAgentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteDataAgentSync(DataAgentName name)
+ *           <li><p> deleteDataAgentSync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteDataAgentSyncCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1031,6 +1087,146 @@ public class DataAgentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Creates a new DataAgent in a given project and location synchronously.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataAgentServiceClient dataAgentServiceClient = DataAgentServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   DataAgent dataAgent = DataAgent.newBuilder().build();
+   *   String dataAgentId = "dataAgentId1752773622";
+   *   DataAgent response =
+   *       dataAgentServiceClient.createDataAgentSync(parent, dataAgent, dataAgentId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Value for parent.
+   * @param dataAgent Required. The resource being created.
+   * @param dataAgentId Optional. Id of the requesting object. Must be unique within the parent. The
+   *     allowed format is: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`. If not provided, the server will
+   *     auto-generate a value for the id.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DataAgent createDataAgentSync(
+      LocationName parent, DataAgent dataAgent, String dataAgentId) {
+    CreateDataAgentRequest request =
+        CreateDataAgentRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setDataAgent(dataAgent)
+            .setDataAgentId(dataAgentId)
+            .build();
+    return createDataAgentSync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new DataAgent in a given project and location synchronously.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataAgentServiceClient dataAgentServiceClient = DataAgentServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   DataAgent dataAgent = DataAgent.newBuilder().build();
+   *   String dataAgentId = "dataAgentId1752773622";
+   *   DataAgent response =
+   *       dataAgentServiceClient.createDataAgentSync(parent, dataAgent, dataAgentId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Value for parent.
+   * @param dataAgent Required. The resource being created.
+   * @param dataAgentId Optional. Id of the requesting object. Must be unique within the parent. The
+   *     allowed format is: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`. If not provided, the server will
+   *     auto-generate a value for the id.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DataAgent createDataAgentSync(
+      String parent, DataAgent dataAgent, String dataAgentId) {
+    CreateDataAgentRequest request =
+        CreateDataAgentRequest.newBuilder()
+            .setParent(parent)
+            .setDataAgent(dataAgent)
+            .setDataAgentId(dataAgentId)
+            .build();
+    return createDataAgentSync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new DataAgent in a given project and location synchronously.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataAgentServiceClient dataAgentServiceClient = DataAgentServiceClient.create()) {
+   *   CreateDataAgentRequest request =
+   *       CreateDataAgentRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setDataAgentId("dataAgentId1752773622")
+   *           .setDataAgent(DataAgent.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   DataAgent response = dataAgentServiceClient.createDataAgentSync(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DataAgent createDataAgentSync(CreateDataAgentRequest request) {
+    return createDataAgentSyncCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new DataAgent in a given project and location synchronously.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataAgentServiceClient dataAgentServiceClient = DataAgentServiceClient.create()) {
+   *   CreateDataAgentRequest request =
+   *       CreateDataAgentRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setDataAgentId("dataAgentId1752773622")
+   *           .setDataAgent(DataAgent.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<DataAgent> future =
+   *       dataAgentServiceClient.createDataAgentSyncCallable().futureCall(request);
+   *   // Do something.
+   *   DataAgent response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateDataAgentRequest, DataAgent> createDataAgentSyncCallable() {
+    return stub.createDataAgentSyncCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Updates the parameters of a single DataAgent.
    *
    * <p>Sample code:
@@ -1157,6 +1353,103 @@ public class DataAgentServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateDataAgentRequest, Operation> updateDataAgentCallable() {
     return stub.updateDataAgentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single DataAgent synchronously.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataAgentServiceClient dataAgentServiceClient = DataAgentServiceClient.create()) {
+   *   DataAgent dataAgent = DataAgent.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   DataAgent response = dataAgentServiceClient.updateDataAgentSync(dataAgent, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param dataAgent Required. The resource being updated.
+   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
+   *     DataAgent resource by the update. The fields specified in the update_mask are relative to
+   *     the resource, not the full request. A field will be overwritten if it is in the mask. If
+   *     the user does not provide a mask then all fields with non-default values present in the
+   *     request will be overwritten. If a wildcard mask is provided, all fields will be
+   *     overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DataAgent updateDataAgentSync(DataAgent dataAgent, FieldMask updateMask) {
+    UpdateDataAgentRequest request =
+        UpdateDataAgentRequest.newBuilder()
+            .setDataAgent(dataAgent)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateDataAgentSync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single DataAgent synchronously.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataAgentServiceClient dataAgentServiceClient = DataAgentServiceClient.create()) {
+   *   UpdateDataAgentRequest request =
+   *       UpdateDataAgentRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setDataAgent(DataAgent.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   DataAgent response = dataAgentServiceClient.updateDataAgentSync(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DataAgent updateDataAgentSync(UpdateDataAgentRequest request) {
+    return updateDataAgentSyncCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single DataAgent synchronously.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataAgentServiceClient dataAgentServiceClient = DataAgentServiceClient.create()) {
+   *   UpdateDataAgentRequest request =
+   *       UpdateDataAgentRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setDataAgent(DataAgent.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<DataAgent> future =
+   *       dataAgentServiceClient.updateDataAgentSyncCallable().futureCall(request);
+   *   // Do something.
+   *   DataAgent response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateDataAgentRequest, DataAgent> updateDataAgentSyncCallable() {
+    return stub.updateDataAgentSyncCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1299,6 +1592,117 @@ public class DataAgentServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteDataAgentRequest, Operation> deleteDataAgentCallable() {
     return stub.deleteDataAgentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single DataAgent synchronously.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataAgentServiceClient dataAgentServiceClient = DataAgentServiceClient.create()) {
+   *   DataAgentName name = DataAgentName.of("[PROJECT]", "[LOCATION]", "[DATA_AGENT]");
+   *   dataAgentServiceClient.deleteDataAgentSync(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteDataAgentSync(DataAgentName name) {
+    DeleteDataAgentRequest request =
+        DeleteDataAgentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteDataAgentSync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single DataAgent synchronously.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataAgentServiceClient dataAgentServiceClient = DataAgentServiceClient.create()) {
+   *   String name = DataAgentName.of("[PROJECT]", "[LOCATION]", "[DATA_AGENT]").toString();
+   *   dataAgentServiceClient.deleteDataAgentSync(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteDataAgentSync(String name) {
+    DeleteDataAgentRequest request = DeleteDataAgentRequest.newBuilder().setName(name).build();
+    deleteDataAgentSync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single DataAgent synchronously.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataAgentServiceClient dataAgentServiceClient = DataAgentServiceClient.create()) {
+   *   DeleteDataAgentRequest request =
+   *       DeleteDataAgentRequest.newBuilder()
+   *           .setName(DataAgentName.of("[PROJECT]", "[LOCATION]", "[DATA_AGENT]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   dataAgentServiceClient.deleteDataAgentSync(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteDataAgentSync(DeleteDataAgentRequest request) {
+    deleteDataAgentSyncCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single DataAgent synchronously.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataAgentServiceClient dataAgentServiceClient = DataAgentServiceClient.create()) {
+   *   DeleteDataAgentRequest request =
+   *       DeleteDataAgentRequest.newBuilder()
+   *           .setName(DataAgentName.of("[PROJECT]", "[LOCATION]", "[DATA_AGENT]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       dataAgentServiceClient.deleteDataAgentSyncCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteDataAgentRequest, Empty> deleteDataAgentSyncCallable() {
+    return stub.deleteDataAgentSyncCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

@@ -115,6 +115,18 @@ public class GrpcDataAgentServiceStub extends DataAgentServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<CreateDataAgentRequest, DataAgent>
+      createDataAgentSyncMethodDescriptor =
+          MethodDescriptor.<CreateDataAgentRequest, DataAgent>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.geminidataanalytics.v1beta.DataAgentService/CreateDataAgentSync")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateDataAgentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(DataAgent.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<UpdateDataAgentRequest, Operation>
       updateDataAgentMethodDescriptor =
           MethodDescriptor.<UpdateDataAgentRequest, Operation>newBuilder()
@@ -127,6 +139,18 @@ public class GrpcDataAgentServiceStub extends DataAgentServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<UpdateDataAgentRequest, DataAgent>
+      updateDataAgentSyncMethodDescriptor =
+          MethodDescriptor.<UpdateDataAgentRequest, DataAgent>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.geminidataanalytics.v1beta.DataAgentService/UpdateDataAgentSync")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateDataAgentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(DataAgent.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<DeleteDataAgentRequest, Operation>
       deleteDataAgentMethodDescriptor =
           MethodDescriptor.<DeleteDataAgentRequest, Operation>newBuilder()
@@ -136,6 +160,18 @@ public class GrpcDataAgentServiceStub extends DataAgentServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDataAgentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteDataAgentRequest, Empty>
+      deleteDataAgentSyncMethodDescriptor =
+          MethodDescriptor.<DeleteDataAgentRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.geminidataanalytics.v1beta.DataAgentService/DeleteDataAgentSync")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteDataAgentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -192,12 +228,15 @@ public class GrpcDataAgentServiceStub extends DataAgentServiceStub {
   private final UnaryCallable<CreateDataAgentRequest, Operation> createDataAgentCallable;
   private final OperationCallable<CreateDataAgentRequest, DataAgent, OperationMetadata>
       createDataAgentOperationCallable;
+  private final UnaryCallable<CreateDataAgentRequest, DataAgent> createDataAgentSyncCallable;
   private final UnaryCallable<UpdateDataAgentRequest, Operation> updateDataAgentCallable;
   private final OperationCallable<UpdateDataAgentRequest, DataAgent, OperationMetadata>
       updateDataAgentOperationCallable;
+  private final UnaryCallable<UpdateDataAgentRequest, DataAgent> updateDataAgentSyncCallable;
   private final UnaryCallable<DeleteDataAgentRequest, Operation> deleteDataAgentCallable;
   private final OperationCallable<DeleteDataAgentRequest, Empty, OperationMetadata>
       deleteDataAgentOperationCallable;
+  private final UnaryCallable<DeleteDataAgentRequest, Empty> deleteDataAgentSyncCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
@@ -292,6 +331,16 @@ public class GrpcDataAgentServiceStub extends DataAgentServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<CreateDataAgentRequest, DataAgent> createDataAgentSyncTransportSettings =
+        GrpcCallSettings.<CreateDataAgentRequest, DataAgent>newBuilder()
+            .setMethodDescriptor(createDataAgentSyncMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<UpdateDataAgentRequest, Operation> updateDataAgentTransportSettings =
         GrpcCallSettings.<UpdateDataAgentRequest, Operation>newBuilder()
             .setMethodDescriptor(updateDataAgentMethodDescriptor)
@@ -302,9 +351,29 @@ public class GrpcDataAgentServiceStub extends DataAgentServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<UpdateDataAgentRequest, DataAgent> updateDataAgentSyncTransportSettings =
+        GrpcCallSettings.<UpdateDataAgentRequest, DataAgent>newBuilder()
+            .setMethodDescriptor(updateDataAgentSyncMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("data_agent.name", String.valueOf(request.getDataAgent().getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<DeleteDataAgentRequest, Operation> deleteDataAgentTransportSettings =
         GrpcCallSettings.<DeleteDataAgentRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteDataAgentMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteDataAgentRequest, Empty> deleteDataAgentSyncTransportSettings =
+        GrpcCallSettings.<DeleteDataAgentRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteDataAgentSyncMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -381,6 +450,11 @@ public class GrpcDataAgentServiceStub extends DataAgentServiceStub {
             settings.createDataAgentOperationSettings(),
             clientContext,
             operationsStub);
+    this.createDataAgentSyncCallable =
+        callableFactory.createUnaryCallable(
+            createDataAgentSyncTransportSettings,
+            settings.createDataAgentSyncSettings(),
+            clientContext);
     this.updateDataAgentCallable =
         callableFactory.createUnaryCallable(
             updateDataAgentTransportSettings, settings.updateDataAgentSettings(), clientContext);
@@ -390,6 +464,11 @@ public class GrpcDataAgentServiceStub extends DataAgentServiceStub {
             settings.updateDataAgentOperationSettings(),
             clientContext,
             operationsStub);
+    this.updateDataAgentSyncCallable =
+        callableFactory.createUnaryCallable(
+            updateDataAgentSyncTransportSettings,
+            settings.updateDataAgentSyncSettings(),
+            clientContext);
     this.deleteDataAgentCallable =
         callableFactory.createUnaryCallable(
             deleteDataAgentTransportSettings, settings.deleteDataAgentSettings(), clientContext);
@@ -399,6 +478,11 @@ public class GrpcDataAgentServiceStub extends DataAgentServiceStub {
             settings.deleteDataAgentOperationSettings(),
             clientContext,
             operationsStub);
+    this.deleteDataAgentSyncCallable =
+        callableFactory.createUnaryCallable(
+            deleteDataAgentSyncTransportSettings,
+            settings.deleteDataAgentSyncSettings(),
+            clientContext);
     this.getIamPolicyCallable =
         callableFactory.createUnaryCallable(
             getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
@@ -463,6 +547,11 @@ public class GrpcDataAgentServiceStub extends DataAgentServiceStub {
   }
 
   @Override
+  public UnaryCallable<CreateDataAgentRequest, DataAgent> createDataAgentSyncCallable() {
+    return createDataAgentSyncCallable;
+  }
+
+  @Override
   public UnaryCallable<UpdateDataAgentRequest, Operation> updateDataAgentCallable() {
     return updateDataAgentCallable;
   }
@@ -474,6 +563,11 @@ public class GrpcDataAgentServiceStub extends DataAgentServiceStub {
   }
 
   @Override
+  public UnaryCallable<UpdateDataAgentRequest, DataAgent> updateDataAgentSyncCallable() {
+    return updateDataAgentSyncCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteDataAgentRequest, Operation> deleteDataAgentCallable() {
     return deleteDataAgentCallable;
   }
@@ -482,6 +576,11 @@ public class GrpcDataAgentServiceStub extends DataAgentServiceStub {
   public OperationCallable<DeleteDataAgentRequest, Empty, OperationMetadata>
       deleteDataAgentOperationCallable() {
     return deleteDataAgentOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteDataAgentRequest, Empty> deleteDataAgentSyncCallable() {
+    return deleteDataAgentSyncCallable;
   }
 
   @Override

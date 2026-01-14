@@ -126,8 +126,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -174,12 +174,15 @@ public class DataAgentServiceStubSettings extends StubSettings<DataAgentServiceS
   private final UnaryCallSettings<CreateDataAgentRequest, Operation> createDataAgentSettings;
   private final OperationCallSettings<CreateDataAgentRequest, DataAgent, OperationMetadata>
       createDataAgentOperationSettings;
+  private final UnaryCallSettings<CreateDataAgentRequest, DataAgent> createDataAgentSyncSettings;
   private final UnaryCallSettings<UpdateDataAgentRequest, Operation> updateDataAgentSettings;
   private final OperationCallSettings<UpdateDataAgentRequest, DataAgent, OperationMetadata>
       updateDataAgentOperationSettings;
+  private final UnaryCallSettings<UpdateDataAgentRequest, DataAgent> updateDataAgentSyncSettings;
   private final UnaryCallSettings<DeleteDataAgentRequest, Operation> deleteDataAgentSettings;
   private final OperationCallSettings<DeleteDataAgentRequest, Empty, OperationMetadata>
       deleteDataAgentOperationSettings;
+  private final UnaryCallSettings<DeleteDataAgentRequest, Empty> deleteDataAgentSyncSettings;
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
   private final PagedCallSettings<
@@ -389,6 +392,11 @@ public class DataAgentServiceStubSettings extends StubSettings<DataAgentServiceS
     return createDataAgentOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to createDataAgentSync. */
+  public UnaryCallSettings<CreateDataAgentRequest, DataAgent> createDataAgentSyncSettings() {
+    return createDataAgentSyncSettings;
+  }
+
   /** Returns the object with the settings used for calls to updateDataAgent. */
   public UnaryCallSettings<UpdateDataAgentRequest, Operation> updateDataAgentSettings() {
     return updateDataAgentSettings;
@@ -400,6 +408,11 @@ public class DataAgentServiceStubSettings extends StubSettings<DataAgentServiceS
     return updateDataAgentOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateDataAgentSync. */
+  public UnaryCallSettings<UpdateDataAgentRequest, DataAgent> updateDataAgentSyncSettings() {
+    return updateDataAgentSyncSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteDataAgent. */
   public UnaryCallSettings<DeleteDataAgentRequest, Operation> deleteDataAgentSettings() {
     return deleteDataAgentSettings;
@@ -409,6 +422,11 @@ public class DataAgentServiceStubSettings extends StubSettings<DataAgentServiceS
   public OperationCallSettings<DeleteDataAgentRequest, Empty, OperationMetadata>
       deleteDataAgentOperationSettings() {
     return deleteDataAgentOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteDataAgentSync. */
+  public UnaryCallSettings<DeleteDataAgentRequest, Empty> deleteDataAgentSyncSettings() {
+    return deleteDataAgentSyncSettings;
   }
 
   /** Returns the object with the settings used for calls to getIamPolicy. */
@@ -548,10 +566,13 @@ public class DataAgentServiceStubSettings extends StubSettings<DataAgentServiceS
     getDataAgentSettings = settingsBuilder.getDataAgentSettings().build();
     createDataAgentSettings = settingsBuilder.createDataAgentSettings().build();
     createDataAgentOperationSettings = settingsBuilder.createDataAgentOperationSettings().build();
+    createDataAgentSyncSettings = settingsBuilder.createDataAgentSyncSettings().build();
     updateDataAgentSettings = settingsBuilder.updateDataAgentSettings().build();
     updateDataAgentOperationSettings = settingsBuilder.updateDataAgentOperationSettings().build();
+    updateDataAgentSyncSettings = settingsBuilder.updateDataAgentSyncSettings().build();
     deleteDataAgentSettings = settingsBuilder.deleteDataAgentSettings().build();
     deleteDataAgentOperationSettings = settingsBuilder.deleteDataAgentOperationSettings().build();
+    deleteDataAgentSyncSettings = settingsBuilder.deleteDataAgentSyncSettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
@@ -575,15 +596,21 @@ public class DataAgentServiceStubSettings extends StubSettings<DataAgentServiceS
     private final OperationCallSettings.Builder<
             CreateDataAgentRequest, DataAgent, OperationMetadata>
         createDataAgentOperationSettings;
+    private final UnaryCallSettings.Builder<CreateDataAgentRequest, DataAgent>
+        createDataAgentSyncSettings;
     private final UnaryCallSettings.Builder<UpdateDataAgentRequest, Operation>
         updateDataAgentSettings;
     private final OperationCallSettings.Builder<
             UpdateDataAgentRequest, DataAgent, OperationMetadata>
         updateDataAgentOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateDataAgentRequest, DataAgent>
+        updateDataAgentSyncSettings;
     private final UnaryCallSettings.Builder<DeleteDataAgentRequest, Operation>
         deleteDataAgentSettings;
     private final OperationCallSettings.Builder<DeleteDataAgentRequest, Empty, OperationMetadata>
         deleteDataAgentOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteDataAgentRequest, Empty>
+        deleteDataAgentSyncSettings;
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
     private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
     private final PagedCallSettings.Builder<
@@ -634,10 +661,13 @@ public class DataAgentServiceStubSettings extends StubSettings<DataAgentServiceS
       getDataAgentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createDataAgentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createDataAgentOperationSettings = OperationCallSettings.newBuilder();
+      createDataAgentSyncSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateDataAgentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateDataAgentOperationSettings = OperationCallSettings.newBuilder();
+      updateDataAgentSyncSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteDataAgentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteDataAgentOperationSettings = OperationCallSettings.newBuilder();
+      deleteDataAgentSyncSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
@@ -649,8 +679,11 @@ public class DataAgentServiceStubSettings extends StubSettings<DataAgentServiceS
               listAccessibleDataAgentsSettings,
               getDataAgentSettings,
               createDataAgentSettings,
+              createDataAgentSyncSettings,
               updateDataAgentSettings,
+              updateDataAgentSyncSettings,
               deleteDataAgentSettings,
+              deleteDataAgentSyncSettings,
               getIamPolicySettings,
               setIamPolicySettings,
               listLocationsSettings,
@@ -666,10 +699,13 @@ public class DataAgentServiceStubSettings extends StubSettings<DataAgentServiceS
       getDataAgentSettings = settings.getDataAgentSettings.toBuilder();
       createDataAgentSettings = settings.createDataAgentSettings.toBuilder();
       createDataAgentOperationSettings = settings.createDataAgentOperationSettings.toBuilder();
+      createDataAgentSyncSettings = settings.createDataAgentSyncSettings.toBuilder();
       updateDataAgentSettings = settings.updateDataAgentSettings.toBuilder();
       updateDataAgentOperationSettings = settings.updateDataAgentOperationSettings.toBuilder();
+      updateDataAgentSyncSettings = settings.updateDataAgentSyncSettings.toBuilder();
       deleteDataAgentSettings = settings.deleteDataAgentSettings.toBuilder();
       deleteDataAgentOperationSettings = settings.deleteDataAgentOperationSettings.toBuilder();
+      deleteDataAgentSyncSettings = settings.deleteDataAgentSyncSettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
@@ -681,8 +717,11 @@ public class DataAgentServiceStubSettings extends StubSettings<DataAgentServiceS
               listAccessibleDataAgentsSettings,
               getDataAgentSettings,
               createDataAgentSettings,
+              createDataAgentSyncSettings,
               updateDataAgentSettings,
+              updateDataAgentSyncSettings,
               deleteDataAgentSettings,
+              deleteDataAgentSyncSettings,
               getIamPolicySettings,
               setIamPolicySettings,
               listLocationsSettings,
@@ -735,12 +774,27 @@ public class DataAgentServiceStubSettings extends StubSettings<DataAgentServiceS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .createDataAgentSyncSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .updateDataAgentSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .updateDataAgentSyncSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .deleteDataAgentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteDataAgentSyncSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -886,6 +940,12 @@ public class DataAgentServiceStubSettings extends StubSettings<DataAgentServiceS
       return createDataAgentOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to createDataAgentSync. */
+    public UnaryCallSettings.Builder<CreateDataAgentRequest, DataAgent>
+        createDataAgentSyncSettings() {
+      return createDataAgentSyncSettings;
+    }
+
     /** Returns the builder for the settings used for calls to updateDataAgent. */
     public UnaryCallSettings.Builder<UpdateDataAgentRequest, Operation> updateDataAgentSettings() {
       return updateDataAgentSettings;
@@ -897,6 +957,12 @@ public class DataAgentServiceStubSettings extends StubSettings<DataAgentServiceS
       return updateDataAgentOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to updateDataAgentSync. */
+    public UnaryCallSettings.Builder<UpdateDataAgentRequest, DataAgent>
+        updateDataAgentSyncSettings() {
+      return updateDataAgentSyncSettings;
+    }
+
     /** Returns the builder for the settings used for calls to deleteDataAgent. */
     public UnaryCallSettings.Builder<DeleteDataAgentRequest, Operation> deleteDataAgentSettings() {
       return deleteDataAgentSettings;
@@ -906,6 +972,11 @@ public class DataAgentServiceStubSettings extends StubSettings<DataAgentServiceS
     public OperationCallSettings.Builder<DeleteDataAgentRequest, Empty, OperationMetadata>
         deleteDataAgentOperationSettings() {
       return deleteDataAgentOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDataAgentSync. */
+    public UnaryCallSettings.Builder<DeleteDataAgentRequest, Empty> deleteDataAgentSyncSettings() {
+      return deleteDataAgentSyncSettings;
     }
 
     /** Returns the builder for the settings used for calls to getIamPolicy. */
