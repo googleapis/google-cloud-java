@@ -37,9 +37,6 @@ if [ -z "$SOURCE_REPO_URL" ]; then
     SOURCE_REPO_URL="${input_url:-https://github.com/googleapis/java-logging}"
 fi
 CODEOWNER="${CODEOWNER:-}"
-if [ -z "$CODEOWNER" ]; then
-    read -p "Enter CODEOWNER (e.g., @chingor13): " CODEOWNER
-fi
 
 # Derive names from URLs to avoid duplication
 SOURCE_REPO_NAME="${SOURCE_REPO_URL##*/}"
@@ -75,6 +72,35 @@ else
     git reset --hard origin/main
     git clean -fd
     cd - > /dev/null
+fi
+
+# 1.5 Extract CODEOWNERS from source repository as default
+if [ -z "$CODEOWNER" ]; then
+    echo "Attempting to find default CODEOWNER from source repository..."
+    CODEOWNERS_FILE=""
+    if [ -f "$SOURCE_DIR/.github/CODEOWNERS" ]; then
+        CODEOWNERS_FILE="$SOURCE_DIR/.github/CODEOWNERS"
+    elif [ -f "$SOURCE_DIR/CODEOWNERS" ]; then
+        CODEOWNERS_FILE="$SOURCE_DIR/CODEOWNERS"
+    fi
+
+    DEFAULT_CODEOWNER=""
+    if [ -n "$CODEOWNERS_FILE" ]; then
+        # Extract the line(s) starting with * (global owners)
+        # Use grep to find the line, then sed to remove the '*' and standard team handle
+        EXTRACTED_OWNERS=$(grep "^\*" "$CODEOWNERS_FILE" | sed 's/^\*[[:space:]]*//' | sed 's/@googleapis\/cloud-java-team-teamsync//g' | xargs)
+        if [ -n "$EXTRACTED_OWNERS" ]; then
+            DEFAULT_CODEOWNER="$EXTRACTED_OWNERS"
+            echo "Found default CODEOWNER: $DEFAULT_CODEOWNER"
+        fi
+    fi
+
+    if [ -n "$DEFAULT_CODEOWNER" ]; then
+        read -p "Enter CODEOWNER [$DEFAULT_CODEOWNER]: " input_owner
+        CODEOWNER="${input_owner:-$DEFAULT_CODEOWNER}"
+    else
+        read -p "Enter CODEOWNER (e.g., @chingor13): " CODEOWNER
+    fi
 fi
 
 # 2. Clone the target monorepo (the "isolated clone")
