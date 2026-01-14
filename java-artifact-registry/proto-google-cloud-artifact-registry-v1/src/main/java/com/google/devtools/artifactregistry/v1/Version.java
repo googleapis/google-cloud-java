@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,6 +45,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     description_ = "";
     relatedTags_ = java.util.Collections.emptyList();
+    fingerprints_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -545,6 +546,102 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int FINGERPRINTS_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.devtools.artifactregistry.v1.Hash> fingerprints_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Immutable reference for the version, calculated based on the
+   * version's content. Currently we only support dirsum_sha256 hash algorithm.
+   * Additional hash algorithms may be added in the future.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.artifactregistry.v1.Hash fingerprints = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.devtools.artifactregistry.v1.Hash> getFingerprintsList() {
+    return fingerprints_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Immutable reference for the version, calculated based on the
+   * version's content. Currently we only support dirsum_sha256 hash algorithm.
+   * Additional hash algorithms may be added in the future.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.artifactregistry.v1.Hash fingerprints = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.devtools.artifactregistry.v1.HashOrBuilder>
+      getFingerprintsOrBuilderList() {
+    return fingerprints_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Immutable reference for the version, calculated based on the
+   * version's content. Currently we only support dirsum_sha256 hash algorithm.
+   * Additional hash algorithms may be added in the future.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.artifactregistry.v1.Hash fingerprints = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getFingerprintsCount() {
+    return fingerprints_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Immutable reference for the version, calculated based on the
+   * version's content. Currently we only support dirsum_sha256 hash algorithm.
+   * Additional hash algorithms may be added in the future.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.artifactregistry.v1.Hash fingerprints = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.devtools.artifactregistry.v1.Hash getFingerprints(int index) {
+    return fingerprints_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Immutable reference for the version, calculated based on the
+   * version's content. Currently we only support dirsum_sha256 hash algorithm.
+   * Additional hash algorithms may be added in the future.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.artifactregistry.v1.Hash fingerprints = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.devtools.artifactregistry.v1.HashOrBuilder getFingerprintsOrBuilder(int index) {
+    return fingerprints_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -579,6 +676,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetAnnotations(), AnnotationsDefaultEntryHolder.defaultEntry, 9);
+    for (int i = 0; i < fingerprints_.size(); i++) {
+      output.writeMessage(10, fingerprints_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -616,6 +716,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, annotations__);
     }
+    for (int i = 0; i < fingerprints_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, fingerprints_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -648,6 +751,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       if (!getMetadata().equals(other.getMetadata())) return false;
     }
     if (!internalGetAnnotations().equals(other.internalGetAnnotations())) return false;
+    if (!getFingerprintsList().equals(other.getFingerprintsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -682,6 +786,10 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetAnnotations().getMap().isEmpty()) {
       hash = (37 * hash) + ANNOTATIONS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetAnnotations().hashCode();
+    }
+    if (getFingerprintsCount() > 0) {
+      hash = (37 * hash) + FINGERPRINTS_FIELD_NUMBER;
+      hash = (53 * hash) + getFingerprintsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -852,6 +960,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
         getUpdateTimeFieldBuilder();
         getRelatedTagsFieldBuilder();
         getMetadataFieldBuilder();
+        getFingerprintsFieldBuilder();
       }
     }
 
@@ -884,6 +993,13 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
         metadataBuilder_ = null;
       }
       internalGetMutableAnnotations().clear();
+      if (fingerprintsBuilder_ == null) {
+        fingerprints_ = java.util.Collections.emptyList();
+      } else {
+        fingerprints_ = null;
+        fingerprintsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000080);
       return this;
     }
 
@@ -929,6 +1045,15 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
         result.relatedTags_ = relatedTags_;
       } else {
         result.relatedTags_ = relatedTagsBuilder_.build();
+      }
+      if (fingerprintsBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)) {
+          fingerprints_ = java.util.Collections.unmodifiableList(fingerprints_);
+          bitField0_ = (bitField0_ & ~0x00000080);
+        }
+        result.fingerprints_ = fingerprints_;
+      } else {
+        result.fingerprints_ = fingerprintsBuilder_.build();
       }
     }
 
@@ -1054,6 +1179,33 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
       bitField0_ |= 0x00000040;
+      if (fingerprintsBuilder_ == null) {
+        if (!other.fingerprints_.isEmpty()) {
+          if (fingerprints_.isEmpty()) {
+            fingerprints_ = other.fingerprints_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+          } else {
+            ensureFingerprintsIsMutable();
+            fingerprints_.addAll(other.fingerprints_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.fingerprints_.isEmpty()) {
+          if (fingerprintsBuilder_.isEmpty()) {
+            fingerprintsBuilder_.dispose();
+            fingerprintsBuilder_ = null;
+            fingerprints_ = other.fingerprints_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+            fingerprintsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getFingerprintsFieldBuilder()
+                    : null;
+          } else {
+            fingerprintsBuilder_.addAllMessages(other.fingerprints_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1135,6 +1287,19 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000040;
                 break;
               } // case 74
+            case 82:
+              {
+                com.google.devtools.artifactregistry.v1.Hash m =
+                    input.readMessage(
+                        com.google.devtools.artifactregistry.v1.Hash.parser(), extensionRegistry);
+                if (fingerprintsBuilder_ == null) {
+                  ensureFingerprintsIsMutable();
+                  fingerprints_.add(m);
+                } else {
+                  fingerprintsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2580,6 +2745,447 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAnnotations().getMutableMap().putAll(values);
       bitField0_ |= 0x00000040;
       return this;
+    }
+
+    private java.util.List<com.google.devtools.artifactregistry.v1.Hash> fingerprints_ =
+        java.util.Collections.emptyList();
+
+    private void ensureFingerprintsIsMutable() {
+      if (!((bitField0_ & 0x00000080) != 0)) {
+        fingerprints_ =
+            new java.util.ArrayList<com.google.devtools.artifactregistry.v1.Hash>(fingerprints_);
+        bitField0_ |= 0x00000080;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.devtools.artifactregistry.v1.Hash,
+            com.google.devtools.artifactregistry.v1.Hash.Builder,
+            com.google.devtools.artifactregistry.v1.HashOrBuilder>
+        fingerprintsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Immutable reference for the version, calculated based on the
+     * version's content. Currently we only support dirsum_sha256 hash algorithm.
+     * Additional hash algorithms may be added in the future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.Hash fingerprints = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.devtools.artifactregistry.v1.Hash> getFingerprintsList() {
+      if (fingerprintsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(fingerprints_);
+      } else {
+        return fingerprintsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Immutable reference for the version, calculated based on the
+     * version's content. Currently we only support dirsum_sha256 hash algorithm.
+     * Additional hash algorithms may be added in the future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.Hash fingerprints = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getFingerprintsCount() {
+      if (fingerprintsBuilder_ == null) {
+        return fingerprints_.size();
+      } else {
+        return fingerprintsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Immutable reference for the version, calculated based on the
+     * version's content. Currently we only support dirsum_sha256 hash algorithm.
+     * Additional hash algorithms may be added in the future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.Hash fingerprints = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.devtools.artifactregistry.v1.Hash getFingerprints(int index) {
+      if (fingerprintsBuilder_ == null) {
+        return fingerprints_.get(index);
+      } else {
+        return fingerprintsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Immutable reference for the version, calculated based on the
+     * version's content. Currently we only support dirsum_sha256 hash algorithm.
+     * Additional hash algorithms may be added in the future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.Hash fingerprints = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setFingerprints(int index, com.google.devtools.artifactregistry.v1.Hash value) {
+      if (fingerprintsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFingerprintsIsMutable();
+        fingerprints_.set(index, value);
+        onChanged();
+      } else {
+        fingerprintsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Immutable reference for the version, calculated based on the
+     * version's content. Currently we only support dirsum_sha256 hash algorithm.
+     * Additional hash algorithms may be added in the future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.Hash fingerprints = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setFingerprints(
+        int index, com.google.devtools.artifactregistry.v1.Hash.Builder builderForValue) {
+      if (fingerprintsBuilder_ == null) {
+        ensureFingerprintsIsMutable();
+        fingerprints_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        fingerprintsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Immutable reference for the version, calculated based on the
+     * version's content. Currently we only support dirsum_sha256 hash algorithm.
+     * Additional hash algorithms may be added in the future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.Hash fingerprints = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addFingerprints(com.google.devtools.artifactregistry.v1.Hash value) {
+      if (fingerprintsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFingerprintsIsMutable();
+        fingerprints_.add(value);
+        onChanged();
+      } else {
+        fingerprintsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Immutable reference for the version, calculated based on the
+     * version's content. Currently we only support dirsum_sha256 hash algorithm.
+     * Additional hash algorithms may be added in the future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.Hash fingerprints = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addFingerprints(int index, com.google.devtools.artifactregistry.v1.Hash value) {
+      if (fingerprintsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFingerprintsIsMutable();
+        fingerprints_.add(index, value);
+        onChanged();
+      } else {
+        fingerprintsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Immutable reference for the version, calculated based on the
+     * version's content. Currently we only support dirsum_sha256 hash algorithm.
+     * Additional hash algorithms may be added in the future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.Hash fingerprints = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addFingerprints(
+        com.google.devtools.artifactregistry.v1.Hash.Builder builderForValue) {
+      if (fingerprintsBuilder_ == null) {
+        ensureFingerprintsIsMutable();
+        fingerprints_.add(builderForValue.build());
+        onChanged();
+      } else {
+        fingerprintsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Immutable reference for the version, calculated based on the
+     * version's content. Currently we only support dirsum_sha256 hash algorithm.
+     * Additional hash algorithms may be added in the future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.Hash fingerprints = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addFingerprints(
+        int index, com.google.devtools.artifactregistry.v1.Hash.Builder builderForValue) {
+      if (fingerprintsBuilder_ == null) {
+        ensureFingerprintsIsMutable();
+        fingerprints_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        fingerprintsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Immutable reference for the version, calculated based on the
+     * version's content. Currently we only support dirsum_sha256 hash algorithm.
+     * Additional hash algorithms may be added in the future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.Hash fingerprints = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllFingerprints(
+        java.lang.Iterable<? extends com.google.devtools.artifactregistry.v1.Hash> values) {
+      if (fingerprintsBuilder_ == null) {
+        ensureFingerprintsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, fingerprints_);
+        onChanged();
+      } else {
+        fingerprintsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Immutable reference for the version, calculated based on the
+     * version's content. Currently we only support dirsum_sha256 hash algorithm.
+     * Additional hash algorithms may be added in the future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.Hash fingerprints = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearFingerprints() {
+      if (fingerprintsBuilder_ == null) {
+        fingerprints_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+      } else {
+        fingerprintsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Immutable reference for the version, calculated based on the
+     * version's content. Currently we only support dirsum_sha256 hash algorithm.
+     * Additional hash algorithms may be added in the future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.Hash fingerprints = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeFingerprints(int index) {
+      if (fingerprintsBuilder_ == null) {
+        ensureFingerprintsIsMutable();
+        fingerprints_.remove(index);
+        onChanged();
+      } else {
+        fingerprintsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Immutable reference for the version, calculated based on the
+     * version's content. Currently we only support dirsum_sha256 hash algorithm.
+     * Additional hash algorithms may be added in the future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.Hash fingerprints = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.devtools.artifactregistry.v1.Hash.Builder getFingerprintsBuilder(int index) {
+      return getFingerprintsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Immutable reference for the version, calculated based on the
+     * version's content. Currently we only support dirsum_sha256 hash algorithm.
+     * Additional hash algorithms may be added in the future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.Hash fingerprints = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.devtools.artifactregistry.v1.HashOrBuilder getFingerprintsOrBuilder(
+        int index) {
+      if (fingerprintsBuilder_ == null) {
+        return fingerprints_.get(index);
+      } else {
+        return fingerprintsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Immutable reference for the version, calculated based on the
+     * version's content. Currently we only support dirsum_sha256 hash algorithm.
+     * Additional hash algorithms may be added in the future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.Hash fingerprints = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.devtools.artifactregistry.v1.HashOrBuilder>
+        getFingerprintsOrBuilderList() {
+      if (fingerprintsBuilder_ != null) {
+        return fingerprintsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(fingerprints_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Immutable reference for the version, calculated based on the
+     * version's content. Currently we only support dirsum_sha256 hash algorithm.
+     * Additional hash algorithms may be added in the future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.Hash fingerprints = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.devtools.artifactregistry.v1.Hash.Builder addFingerprintsBuilder() {
+      return getFingerprintsFieldBuilder()
+          .addBuilder(com.google.devtools.artifactregistry.v1.Hash.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Immutable reference for the version, calculated based on the
+     * version's content. Currently we only support dirsum_sha256 hash algorithm.
+     * Additional hash algorithms may be added in the future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.Hash fingerprints = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.devtools.artifactregistry.v1.Hash.Builder addFingerprintsBuilder(int index) {
+      return getFingerprintsFieldBuilder()
+          .addBuilder(index, com.google.devtools.artifactregistry.v1.Hash.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Immutable reference for the version, calculated based on the
+     * version's content. Currently we only support dirsum_sha256 hash algorithm.
+     * Additional hash algorithms may be added in the future.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.Hash fingerprints = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.devtools.artifactregistry.v1.Hash.Builder>
+        getFingerprintsBuilderList() {
+      return getFingerprintsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.devtools.artifactregistry.v1.Hash,
+            com.google.devtools.artifactregistry.v1.Hash.Builder,
+            com.google.devtools.artifactregistry.v1.HashOrBuilder>
+        getFingerprintsFieldBuilder() {
+      if (fingerprintsBuilder_ == null) {
+        fingerprintsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.devtools.artifactregistry.v1.Hash,
+                com.google.devtools.artifactregistry.v1.Hash.Builder,
+                com.google.devtools.artifactregistry.v1.HashOrBuilder>(
+                fingerprints_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
+        fingerprints_ = null;
+      }
+      return fingerprintsBuilder_;
     }
 
     @java.lang.Override

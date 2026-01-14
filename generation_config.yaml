@@ -1,5 +1,5 @@
-gapic_generator_version: 2.64.2
-googleapis_commitish: 1496716325adf01af70ffca9161dd62d7bebbd50
+gapic_generator_version: 2.65.1
+googleapis_commitish: e006e1c8b69c0594e6f872316a3543b3b37ad81b
 libraries_bom_version: 26.73.0
 
 # the libraries are ordered with respect to library name, which is

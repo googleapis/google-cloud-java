@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19251,7 +19251,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Instance.gemini_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=1311
+   *     google/cloud/alloydb/v1beta/resources.proto;l=1314
    * @return Whether the geminiConfig field is set.
    */
   @java.lang.Override
@@ -19273,7 +19273,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Instance.gemini_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=1311
+   *     google/cloud/alloydb/v1beta/resources.proto;l=1314
    * @return The geminiConfig.
    */
   @java.lang.Override
@@ -26007,7 +26007,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Instance.gemini_config is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=1311
+     *     google/cloud/alloydb/v1beta/resources.proto;l=1314
      * @return Whether the geminiConfig field is set.
      */
     @java.lang.Deprecated
@@ -26028,7 +26028,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Instance.gemini_config is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=1311
+     *     google/cloud/alloydb/v1beta/resources.proto;l=1314
      * @return The geminiConfig.
      */
     @java.lang.Deprecated

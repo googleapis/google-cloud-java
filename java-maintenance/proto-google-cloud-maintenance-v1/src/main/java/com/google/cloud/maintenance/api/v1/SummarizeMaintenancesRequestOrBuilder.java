@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -104,21 +104,9 @@ public interface SummarizeMaintenancesRequestOrBuilder
    * <pre>
    * Filter the list as specified in https://google.aip.dev/160.
    * Supported fields include:
-   * - `state`
-   * - `resource.location`
-   * - `resource.resourceName`
-   * - `resource.type`
    * - `maintenance.maintenanceName`
-   * - `maintenanceStartTime`
-   * - `maintenanceCompleteTime`
    * Examples:
-   * - `state="SCHEDULED"`
-   * - `resource.location="us-central1-c"`
-   * - `resource.resourceName=~"*&#47;instance-20241212-211259"`
-   * - `maintenanceStartTime&gt;"2000-10-11T20:44:51Z"`
-   * - `state="SCHEDULED" OR resource.type="compute.googleapis.com/Instance"`
-   * - `maintenance.maitenanceName="eb3b709c-9ca1-5472-9fb6-800a3849eda1" AND
-   * maintenanceCompleteTime&gt;"2000-10-11T20:44:51Z"`
+   * - `maintenance.maintenanceName="eb3b709c-9ca1-5472-9fb6-800a3849eda1"`
    * </pre>
    *
    * <code>string filter = 10507;</code>
@@ -133,21 +121,9 @@ public interface SummarizeMaintenancesRequestOrBuilder
    * <pre>
    * Filter the list as specified in https://google.aip.dev/160.
    * Supported fields include:
-   * - `state`
-   * - `resource.location`
-   * - `resource.resourceName`
-   * - `resource.type`
    * - `maintenance.maintenanceName`
-   * - `maintenanceStartTime`
-   * - `maintenanceCompleteTime`
    * Examples:
-   * - `state="SCHEDULED"`
-   * - `resource.location="us-central1-c"`
-   * - `resource.resourceName=~"*&#47;instance-20241212-211259"`
-   * - `maintenanceStartTime&gt;"2000-10-11T20:44:51Z"`
-   * - `state="SCHEDULED" OR resource.type="compute.googleapis.com/Instance"`
-   * - `maintenance.maitenanceName="eb3b709c-9ca1-5472-9fb6-800a3849eda1" AND
-   * maintenanceCompleteTime&gt;"2000-10-11T20:44:51Z"`
+   * - `maintenance.maintenanceName="eb3b709c-9ca1-5472-9fb6-800a3849eda1"`
    * </pre>
    *
    * <code>string filter = 10507;</code>

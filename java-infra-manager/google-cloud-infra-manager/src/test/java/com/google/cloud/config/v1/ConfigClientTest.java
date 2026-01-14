@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2635,6 +2635,141 @@ public class ConfigClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAutoMigrationConfigTest() throws Exception {
+    AutoMigrationConfig expectedResponse =
+        AutoMigrationConfig.newBuilder()
+            .setName(AutoMigrationConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setAutoMigrationEnabled(true)
+            .build();
+    mockConfig.addResponse(expectedResponse);
+
+    AutoMigrationConfigName name = AutoMigrationConfigName.of("[PROJECT]", "[LOCATION]");
+
+    AutoMigrationConfig actualResponse = client.getAutoMigrationConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAutoMigrationConfigRequest actualRequest =
+        ((GetAutoMigrationConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAutoMigrationConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      AutoMigrationConfigName name = AutoMigrationConfigName.of("[PROJECT]", "[LOCATION]");
+      client.getAutoMigrationConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAutoMigrationConfigTest2() throws Exception {
+    AutoMigrationConfig expectedResponse =
+        AutoMigrationConfig.newBuilder()
+            .setName(AutoMigrationConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setAutoMigrationEnabled(true)
+            .build();
+    mockConfig.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    AutoMigrationConfig actualResponse = client.getAutoMigrationConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAutoMigrationConfigRequest actualRequest =
+        ((GetAutoMigrationConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAutoMigrationConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getAutoMigrationConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateAutoMigrationConfigTest() throws Exception {
+    AutoMigrationConfig expectedResponse =
+        AutoMigrationConfig.newBuilder()
+            .setName(AutoMigrationConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setAutoMigrationEnabled(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateAutoMigrationConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockConfig.addResponse(resultOperation);
+
+    AutoMigrationConfig autoMigrationConfig = AutoMigrationConfig.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    AutoMigrationConfig actualResponse =
+        client.updateAutoMigrationConfigAsync(autoMigrationConfig, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateAutoMigrationConfigRequest actualRequest =
+        ((UpdateAutoMigrationConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(autoMigrationConfig, actualRequest.getAutoMigrationConfig());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateAutoMigrationConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      AutoMigrationConfig autoMigrationConfig = AutoMigrationConfig.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateAutoMigrationConfigAsync(autoMigrationConfig, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

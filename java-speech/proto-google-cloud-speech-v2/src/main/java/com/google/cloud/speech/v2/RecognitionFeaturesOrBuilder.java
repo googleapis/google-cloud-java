@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -150,14 +150,8 @@ public interface RecognitionFeaturesOrBuilder
    *
    *
    * <pre>
-   * Configuration to enable speaker diarization and set additional
-   * parameters to make diarization better suited for your application.
-   * When this is enabled, we send all the words from the beginning of the
-   * audio for the top alternative in every consecutive STREAMING responses.
-   * This is done in order to improve our speaker tags as our models learn to
-   * identify the speakers in the conversation over time.
-   * For non-streaming requests, the diarization results will be provided only
-   * in the top alternative of the FINAL SpeechRecognitionResult.
+   * Configuration to enable speaker diarization. To enable diarization, set
+   * this field to an empty SpeakerDiarizationConfig message.
    * </pre>
    *
    * <code>.google.cloud.speech.v2.SpeakerDiarizationConfig diarization_config = 9;</code>
@@ -170,14 +164,8 @@ public interface RecognitionFeaturesOrBuilder
    *
    *
    * <pre>
-   * Configuration to enable speaker diarization and set additional
-   * parameters to make diarization better suited for your application.
-   * When this is enabled, we send all the words from the beginning of the
-   * audio for the top alternative in every consecutive STREAMING responses.
-   * This is done in order to improve our speaker tags as our models learn to
-   * identify the speakers in the conversation over time.
-   * For non-streaming requests, the diarization results will be provided only
-   * in the top alternative of the FINAL SpeechRecognitionResult.
+   * Configuration to enable speaker diarization. To enable diarization, set
+   * this field to an empty SpeakerDiarizationConfig message.
    * </pre>
    *
    * <code>.google.cloud.speech.v2.SpeakerDiarizationConfig diarization_config = 9;</code>
@@ -190,14 +178,8 @@ public interface RecognitionFeaturesOrBuilder
    *
    *
    * <pre>
-   * Configuration to enable speaker diarization and set additional
-   * parameters to make diarization better suited for your application.
-   * When this is enabled, we send all the words from the beginning of the
-   * audio for the top alternative in every consecutive STREAMING responses.
-   * This is done in order to improve our speaker tags as our models learn to
-   * identify the speakers in the conversation over time.
-   * For non-streaming requests, the diarization results will be provided only
-   * in the top alternative of the FINAL SpeechRecognitionResult.
+   * Configuration to enable speaker diarization. To enable diarization, set
+   * this field to an empty SpeakerDiarizationConfig message.
    * </pre>
    *
    * <code>.google.cloud.speech.v2.SpeakerDiarizationConfig diarization_config = 9;</code>
@@ -219,4 +201,47 @@ public interface RecognitionFeaturesOrBuilder
    * @return The maxAlternatives.
    */
   int getMaxAlternatives();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration to enable custom prompt for chirp3.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v2.CustomPromptConfig custom_prompt_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the customPromptConfig field is set.
+   */
+  boolean hasCustomPromptConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration to enable custom prompt for chirp3.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v2.CustomPromptConfig custom_prompt_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The customPromptConfig.
+   */
+  com.google.cloud.speech.v2.CustomPromptConfig getCustomPromptConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration to enable custom prompt for chirp3.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v2.CustomPromptConfig custom_prompt_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.speech.v2.CustomPromptConfigOrBuilder getCustomPromptConfigOrBuilder();
 }

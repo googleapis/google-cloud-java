@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 The Grafeas Authors. All rights reserved.
+ * Copyright 2026 The Grafeas Authors. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,6 +64,7 @@ public final class SecretOccurrence extends com.google.protobuf.GeneratedMessage
             io.grafeas.v1.SecretOccurrence.class, io.grafeas.v1.SecretOccurrence.Builder.class);
   }
 
+  private int bitField0_;
   public static final int KIND_FIELD_NUMBER = 1;
   private int kind_ = 0;
 
@@ -266,6 +267,107 @@ public final class SecretOccurrence extends com.google.protobuf.GeneratedMessage
     return statuses_.get(index);
   }
 
+  public static final int DATA_FIELD_NUMBER = 4;
+  private com.google.protobuf.Any data_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Scan result of the secret.
+   * </pre>
+   *
+   * <code>.google.protobuf.Any data = 4;</code>
+   *
+   * @return Whether the data field is set.
+   */
+  @java.lang.Override
+  public boolean hasData() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Scan result of the secret.
+   * </pre>
+   *
+   * <code>.google.protobuf.Any data = 4;</code>
+   *
+   * @return The data.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Any getData() {
+    return data_ == null ? com.google.protobuf.Any.getDefaultInstance() : data_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Scan result of the secret.
+   * </pre>
+   *
+   * <code>.google.protobuf.Any data = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.AnyOrBuilder getDataOrBuilder() {
+    return data_ == null ? com.google.protobuf.Any.getDefaultInstance() : data_;
+  }
+
+  public static final int DIGEST_FIELD_NUMBER = 5;
+  private io.grafeas.v1.Digest digest_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Hash value, typically a digest for the secret data, that allows unique
+   * identification of a specific secret.
+   * </pre>
+   *
+   * <code>.grafeas.v1.Digest digest = 5;</code>
+   *
+   * @return Whether the digest field is set.
+   */
+  @java.lang.Override
+  public boolean hasDigest() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Hash value, typically a digest for the secret data, that allows unique
+   * identification of a specific secret.
+   * </pre>
+   *
+   * <code>.grafeas.v1.Digest digest = 5;</code>
+   *
+   * @return The digest.
+   */
+  @java.lang.Override
+  public io.grafeas.v1.Digest getDigest() {
+    return digest_ == null ? io.grafeas.v1.Digest.getDefaultInstance() : digest_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Hash value, typically a digest for the secret data, that allows unique
+   * identification of a specific secret.
+   * </pre>
+   *
+   * <code>.grafeas.v1.Digest digest = 5;</code>
+   */
+  @java.lang.Override
+  public io.grafeas.v1.DigestOrBuilder getDigestOrBuilder() {
+    return digest_ == null ? io.grafeas.v1.Digest.getDefaultInstance() : digest_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -289,6 +391,12 @@ public final class SecretOccurrence extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < statuses_.size(); i++) {
       output.writeMessage(3, statuses_.get(i));
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(4, getData());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(5, getDigest());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -306,6 +414,12 @@ public final class SecretOccurrence extends com.google.protobuf.GeneratedMessage
     }
     for (int i = 0; i < statuses_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, statuses_.get(i));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getData());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getDigest());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -325,6 +439,14 @@ public final class SecretOccurrence extends com.google.protobuf.GeneratedMessage
     if (kind_ != other.kind_) return false;
     if (!getLocationsList().equals(other.getLocationsList())) return false;
     if (!getStatusesList().equals(other.getStatusesList())) return false;
+    if (hasData() != other.hasData()) return false;
+    if (hasData()) {
+      if (!getData().equals(other.getData())) return false;
+    }
+    if (hasDigest() != other.hasDigest()) return false;
+    if (hasDigest()) {
+      if (!getDigest().equals(other.getDigest())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -345,6 +467,14 @@ public final class SecretOccurrence extends com.google.protobuf.GeneratedMessage
     if (getStatusesCount() > 0) {
       hash = (37 * hash) + STATUSES_FIELD_NUMBER;
       hash = (53 * hash) + getStatusesList().hashCode();
+    }
+    if (hasData()) {
+      hash = (37 * hash) + DATA_FIELD_NUMBER;
+      hash = (53 * hash) + getData().hashCode();
+    }
+    if (hasDigest()) {
+      hash = (37 * hash) + DIGEST_FIELD_NUMBER;
+      hash = (53 * hash) + getDigest().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -472,10 +602,22 @@ public final class SecretOccurrence extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using io.grafeas.v1.SecretOccurrence.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getLocationsFieldBuilder();
+        getStatusesFieldBuilder();
+        getDataFieldBuilder();
+        getDigestFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -497,6 +639,16 @@ public final class SecretOccurrence extends com.google.protobuf.GeneratedMessage
         statusesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000004);
+      data_ = null;
+      if (dataBuilder_ != null) {
+        dataBuilder_.dispose();
+        dataBuilder_ = null;
+      }
+      digest_ = null;
+      if (digestBuilder_ != null) {
+        digestBuilder_.dispose();
+        digestBuilder_ = null;
+      }
       return this;
     }
 
@@ -556,6 +708,16 @@ public final class SecretOccurrence extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.kind_ = kind_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.data_ = dataBuilder_ == null ? data_ : dataBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.digest_ = digestBuilder_ == null ? digest_ : digestBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -660,6 +822,12 @@ public final class SecretOccurrence extends com.google.protobuf.GeneratedMessage
           }
         }
       }
+      if (other.hasData()) {
+        mergeData(other.getData());
+      }
+      if (other.hasDigest()) {
+        mergeDigest(other.getDigest());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -716,6 +884,18 @@ public final class SecretOccurrence extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(getDataFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getDigestFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1623,6 +1803,388 @@ public final class SecretOccurrence extends com.google.protobuf.GeneratedMessage
         statuses_ = null;
       }
       return statusesBuilder_;
+    }
+
+    private com.google.protobuf.Any data_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Any,
+            com.google.protobuf.Any.Builder,
+            com.google.protobuf.AnyOrBuilder>
+        dataBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Scan result of the secret.
+     * </pre>
+     *
+     * <code>.google.protobuf.Any data = 4;</code>
+     *
+     * @return Whether the data field is set.
+     */
+    public boolean hasData() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Scan result of the secret.
+     * </pre>
+     *
+     * <code>.google.protobuf.Any data = 4;</code>
+     *
+     * @return The data.
+     */
+    public com.google.protobuf.Any getData() {
+      if (dataBuilder_ == null) {
+        return data_ == null ? com.google.protobuf.Any.getDefaultInstance() : data_;
+      } else {
+        return dataBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Scan result of the secret.
+     * </pre>
+     *
+     * <code>.google.protobuf.Any data = 4;</code>
+     */
+    public Builder setData(com.google.protobuf.Any value) {
+      if (dataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        data_ = value;
+      } else {
+        dataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Scan result of the secret.
+     * </pre>
+     *
+     * <code>.google.protobuf.Any data = 4;</code>
+     */
+    public Builder setData(com.google.protobuf.Any.Builder builderForValue) {
+      if (dataBuilder_ == null) {
+        data_ = builderForValue.build();
+      } else {
+        dataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Scan result of the secret.
+     * </pre>
+     *
+     * <code>.google.protobuf.Any data = 4;</code>
+     */
+    public Builder mergeData(com.google.protobuf.Any value) {
+      if (dataBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && data_ != null
+            && data_ != com.google.protobuf.Any.getDefaultInstance()) {
+          getDataBuilder().mergeFrom(value);
+        } else {
+          data_ = value;
+        }
+      } else {
+        dataBuilder_.mergeFrom(value);
+      }
+      if (data_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Scan result of the secret.
+     * </pre>
+     *
+     * <code>.google.protobuf.Any data = 4;</code>
+     */
+    public Builder clearData() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      data_ = null;
+      if (dataBuilder_ != null) {
+        dataBuilder_.dispose();
+        dataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Scan result of the secret.
+     * </pre>
+     *
+     * <code>.google.protobuf.Any data = 4;</code>
+     */
+    public com.google.protobuf.Any.Builder getDataBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getDataFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Scan result of the secret.
+     * </pre>
+     *
+     * <code>.google.protobuf.Any data = 4;</code>
+     */
+    public com.google.protobuf.AnyOrBuilder getDataOrBuilder() {
+      if (dataBuilder_ != null) {
+        return dataBuilder_.getMessageOrBuilder();
+      } else {
+        return data_ == null ? com.google.protobuf.Any.getDefaultInstance() : data_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Scan result of the secret.
+     * </pre>
+     *
+     * <code>.google.protobuf.Any data = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Any,
+            com.google.protobuf.Any.Builder,
+            com.google.protobuf.AnyOrBuilder>
+        getDataFieldBuilder() {
+      if (dataBuilder_ == null) {
+        dataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Any,
+                com.google.protobuf.Any.Builder,
+                com.google.protobuf.AnyOrBuilder>(getData(), getParentForChildren(), isClean());
+        data_ = null;
+      }
+      return dataBuilder_;
+    }
+
+    private io.grafeas.v1.Digest digest_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.Digest, io.grafeas.v1.Digest.Builder, io.grafeas.v1.DigestOrBuilder>
+        digestBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Hash value, typically a digest for the secret data, that allows unique
+     * identification of a specific secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.Digest digest = 5;</code>
+     *
+     * @return Whether the digest field is set.
+     */
+    public boolean hasDigest() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Hash value, typically a digest for the secret data, that allows unique
+     * identification of a specific secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.Digest digest = 5;</code>
+     *
+     * @return The digest.
+     */
+    public io.grafeas.v1.Digest getDigest() {
+      if (digestBuilder_ == null) {
+        return digest_ == null ? io.grafeas.v1.Digest.getDefaultInstance() : digest_;
+      } else {
+        return digestBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Hash value, typically a digest for the secret data, that allows unique
+     * identification of a specific secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.Digest digest = 5;</code>
+     */
+    public Builder setDigest(io.grafeas.v1.Digest value) {
+      if (digestBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        digest_ = value;
+      } else {
+        digestBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Hash value, typically a digest for the secret data, that allows unique
+     * identification of a specific secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.Digest digest = 5;</code>
+     */
+    public Builder setDigest(io.grafeas.v1.Digest.Builder builderForValue) {
+      if (digestBuilder_ == null) {
+        digest_ = builderForValue.build();
+      } else {
+        digestBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Hash value, typically a digest for the secret data, that allows unique
+     * identification of a specific secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.Digest digest = 5;</code>
+     */
+    public Builder mergeDigest(io.grafeas.v1.Digest value) {
+      if (digestBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && digest_ != null
+            && digest_ != io.grafeas.v1.Digest.getDefaultInstance()) {
+          getDigestBuilder().mergeFrom(value);
+        } else {
+          digest_ = value;
+        }
+      } else {
+        digestBuilder_.mergeFrom(value);
+      }
+      if (digest_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Hash value, typically a digest for the secret data, that allows unique
+     * identification of a specific secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.Digest digest = 5;</code>
+     */
+    public Builder clearDigest() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      digest_ = null;
+      if (digestBuilder_ != null) {
+        digestBuilder_.dispose();
+        digestBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Hash value, typically a digest for the secret data, that allows unique
+     * identification of a specific secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.Digest digest = 5;</code>
+     */
+    public io.grafeas.v1.Digest.Builder getDigestBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getDigestFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Hash value, typically a digest for the secret data, that allows unique
+     * identification of a specific secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.Digest digest = 5;</code>
+     */
+    public io.grafeas.v1.DigestOrBuilder getDigestOrBuilder() {
+      if (digestBuilder_ != null) {
+        return digestBuilder_.getMessageOrBuilder();
+      } else {
+        return digest_ == null ? io.grafeas.v1.Digest.getDefaultInstance() : digest_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Hash value, typically a digest for the secret data, that allows unique
+     * identification of a specific secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.Digest digest = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.Digest, io.grafeas.v1.Digest.Builder, io.grafeas.v1.DigestOrBuilder>
+        getDigestFieldBuilder() {
+      if (digestBuilder_ == null) {
+        digestBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.Digest, io.grafeas.v1.Digest.Builder, io.grafeas.v1.DigestOrBuilder>(
+                getDigest(), getParentForChildren(), isClean());
+        digest_ = null;
+      }
+      return digestBuilder_;
     }
 
     @java.lang.Override

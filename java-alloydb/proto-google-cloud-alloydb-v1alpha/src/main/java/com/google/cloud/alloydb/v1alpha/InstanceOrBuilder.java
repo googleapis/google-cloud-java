@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1256,7 +1256,7 @@ public interface InstanceOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Instance.gemini_config is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=1317
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=1320
    * @return Whether the geminiConfig field is set.
    */
   @java.lang.Deprecated
@@ -1275,7 +1275,7 @@ public interface InstanceOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Instance.gemini_config is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=1317
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=1320
    * @return The geminiConfig.
    */
   @java.lang.Deprecated

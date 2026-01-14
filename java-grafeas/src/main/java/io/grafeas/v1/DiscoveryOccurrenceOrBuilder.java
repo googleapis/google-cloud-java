@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 The Grafeas Authors. All rights reserved.
+ * Copyright 2026 The Grafeas Authors. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -377,4 +377,59 @@ public interface DiscoveryOccurrenceOrBuilder
    */
   io.grafeas.v1.DiscoveryOccurrence.VulnerabilityAttestationOrBuilder
       getVulnerabilityAttestationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Files that make up the resource described by the occurrence.
+   * </pre>
+   *
+   * <code>repeated .grafeas.v1.DiscoveryOccurrence.File files = 11;</code>
+   */
+  java.util.List<io.grafeas.v1.DiscoveryOccurrence.File> getFilesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Files that make up the resource described by the occurrence.
+   * </pre>
+   *
+   * <code>repeated .grafeas.v1.DiscoveryOccurrence.File files = 11;</code>
+   */
+  io.grafeas.v1.DiscoveryOccurrence.File getFiles(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Files that make up the resource described by the occurrence.
+   * </pre>
+   *
+   * <code>repeated .grafeas.v1.DiscoveryOccurrence.File files = 11;</code>
+   */
+  int getFilesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Files that make up the resource described by the occurrence.
+   * </pre>
+   *
+   * <code>repeated .grafeas.v1.DiscoveryOccurrence.File files = 11;</code>
+   */
+  java.util.List<? extends io.grafeas.v1.DiscoveryOccurrence.FileOrBuilder> getFilesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Files that make up the resource described by the occurrence.
+   * </pre>
+   *
+   * <code>repeated .grafeas.v1.DiscoveryOccurrence.File files = 11;</code>
+   */
+  io.grafeas.v1.DiscoveryOccurrence.FileOrBuilder getFilesOrBuilder(int index);
 }

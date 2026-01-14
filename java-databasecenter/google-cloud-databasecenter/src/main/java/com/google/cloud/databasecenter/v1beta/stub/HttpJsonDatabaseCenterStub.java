@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,8 @@
 
 package com.google.cloud.databasecenter.v1beta.stub;
 
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.AggregateFleetPagedResponse;
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryDatabaseResourceGroupsPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryProductsPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -30,6 +32,10 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.databasecenter.v1beta.AggregateFleetRequest;
+import com.google.cloud.databasecenter.v1beta.AggregateFleetResponse;
+import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsRequest;
+import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsResponse;
 import com.google.cloud.databasecenter.v1beta.QueryProductsRequest;
 import com.google.cloud.databasecenter.v1beta.QueryProductsResponse;
 import com.google.protobuf.TypeRegistry;
@@ -88,9 +94,100 @@ public class HttpJsonDatabaseCenterStub extends DatabaseCenterStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<AggregateFleetRequest, AggregateFleetResponse>
+      aggregateFleetMethodDescriptor =
+          ApiMethodDescriptor.<AggregateFleetRequest, AggregateFleetResponse>newBuilder()
+              .setFullMethodName("google.cloud.databasecenter.v1beta.DatabaseCenter/AggregateFleet")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AggregateFleetRequest>newBuilder()
+                      .setPath(
+                          "/v1beta:aggregateFleet",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregateFleetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregateFleetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasBaselineDate()) {
+                              serializer.putQueryParam(
+                                  fields, "baselineDate", request.getBaselineDate());
+                            }
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "groupBy", request.getGroupBy());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "parent", request.getParent());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AggregateFleetResponse>newBuilder()
+                      .setDefaultInstance(AggregateFleetResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsResponse>
+      queryDatabaseResourceGroupsMethodDescriptor =
+          ApiMethodDescriptor
+              .<QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.databasecenter.v1beta.DatabaseCenter/QueryDatabaseResourceGroups")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<QueryDatabaseResourceGroupsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta:queryDatabaseResourceGroups",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<QueryDatabaseResourceGroupsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<QueryDatabaseResourceGroupsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<QueryDatabaseResourceGroupsResponse>newBuilder()
+                      .setDefaultInstance(QueryDatabaseResourceGroupsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<QueryProductsRequest, QueryProductsResponse> queryProductsCallable;
   private final UnaryCallable<QueryProductsRequest, QueryProductsPagedResponse>
       queryProductsPagedCallable;
+  private final UnaryCallable<AggregateFleetRequest, AggregateFleetResponse> aggregateFleetCallable;
+  private final UnaryCallable<AggregateFleetRequest, AggregateFleetPagedResponse>
+      aggregateFleetPagedCallable;
+  private final UnaryCallable<
+          QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsResponse>
+      queryDatabaseResourceGroupsCallable;
+  private final UnaryCallable<
+          QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsPagedResponse>
+      queryDatabaseResourceGroupsPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -140,6 +237,20 @@ public class HttpJsonDatabaseCenterStub extends DatabaseCenterStub {
                 .setMethodDescriptor(queryProductsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<AggregateFleetRequest, AggregateFleetResponse>
+        aggregateFleetTransportSettings =
+            HttpJsonCallSettings.<AggregateFleetRequest, AggregateFleetResponse>newBuilder()
+                .setMethodDescriptor(aggregateFleetMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsResponse>
+        queryDatabaseResourceGroupsTransportSettings =
+            HttpJsonCallSettings
+                .<QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsResponse>
+                    newBuilder()
+                .setMethodDescriptor(queryDatabaseResourceGroupsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
 
     this.queryProductsCallable =
         callableFactory.createUnaryCallable(
@@ -147,6 +258,22 @@ public class HttpJsonDatabaseCenterStub extends DatabaseCenterStub {
     this.queryProductsPagedCallable =
         callableFactory.createPagedCallable(
             queryProductsTransportSettings, settings.queryProductsSettings(), clientContext);
+    this.aggregateFleetCallable =
+        callableFactory.createUnaryCallable(
+            aggregateFleetTransportSettings, settings.aggregateFleetSettings(), clientContext);
+    this.aggregateFleetPagedCallable =
+        callableFactory.createPagedCallable(
+            aggregateFleetTransportSettings, settings.aggregateFleetSettings(), clientContext);
+    this.queryDatabaseResourceGroupsCallable =
+        callableFactory.createUnaryCallable(
+            queryDatabaseResourceGroupsTransportSettings,
+            settings.queryDatabaseResourceGroupsSettings(),
+            clientContext);
+    this.queryDatabaseResourceGroupsPagedCallable =
+        callableFactory.createPagedCallable(
+            queryDatabaseResourceGroupsTransportSettings,
+            settings.queryDatabaseResourceGroupsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -156,6 +283,8 @@ public class HttpJsonDatabaseCenterStub extends DatabaseCenterStub {
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(queryProductsMethodDescriptor);
+    methodDescriptors.add(aggregateFleetMethodDescriptor);
+    methodDescriptors.add(queryDatabaseResourceGroupsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -168,6 +297,29 @@ public class HttpJsonDatabaseCenterStub extends DatabaseCenterStub {
   public UnaryCallable<QueryProductsRequest, QueryProductsPagedResponse>
       queryProductsPagedCallable() {
     return queryProductsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<AggregateFleetRequest, AggregateFleetResponse> aggregateFleetCallable() {
+    return aggregateFleetCallable;
+  }
+
+  @Override
+  public UnaryCallable<AggregateFleetRequest, AggregateFleetPagedResponse>
+      aggregateFleetPagedCallable() {
+    return aggregateFleetPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsResponse>
+      queryDatabaseResourceGroupsCallable() {
+    return queryDatabaseResourceGroupsCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsPagedResponse>
+      queryDatabaseResourceGroupsPagedCallable() {
+    return queryDatabaseResourceGroupsPagedCallable;
   }
 
   @Override

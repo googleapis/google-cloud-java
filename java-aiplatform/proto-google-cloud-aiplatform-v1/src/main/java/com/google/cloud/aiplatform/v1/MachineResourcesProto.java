@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,6 +61,10 @@ public final class MachineResourcesProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_NfsMount_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_LustreMount_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_LustreMount_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1_AutoscalingMetricSpec_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_AutoscalingMetricSpec_fieldAccessorTable;
@@ -119,7 +123,12 @@ public final class MachineResourcesProto {
           + "\010NfsMount\022\023\n"
           + "\006server\030\001 \001(\tB\003\340A\002\022\021\n"
           + "\004path\030\002 \001(\tB\003\340A\002\022\030\n"
-          + "\013mount_point\030\003 \001(\tB\003\340A\002\"A\n"
+          + "\013mount_point\030\003 \001(\tB\003\340A\002\"v\n"
+          + "\013LustreMount\022\030\n"
+          + "\013instance_ip\030\001 \001(\tB\003\340A\002\022\032\n\r"
+          + "volume_handle\030\002 \001(\tB\003\340A\002\022\027\n\n"
+          + "filesystem\030\003 \001(\tB\003\340A\002\022\030\n"
+          + "\013mount_point\030\004 \001(\tB\003\340A\002\"A\n"
           + "\025AutoscalingMetricSpec\022\030\n"
           + "\013metric_name\030\001 \001(\tB\003\340A\002\022\016\n"
           + "\006target\030\002 \001(\005\".\n"
@@ -212,8 +221,16 @@ public final class MachineResourcesProto {
             new java.lang.String[] {
               "Server", "Path", "MountPoint",
             });
-    internal_static_google_cloud_aiplatform_v1_AutoscalingMetricSpec_descriptor =
+    internal_static_google_cloud_aiplatform_v1_LustreMount_descriptor =
         getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_aiplatform_v1_LustreMount_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_LustreMount_descriptor,
+            new java.lang.String[] {
+              "InstanceIp", "VolumeHandle", "Filesystem", "MountPoint",
+            });
+    internal_static_google_cloud_aiplatform_v1_AutoscalingMetricSpec_descriptor =
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_aiplatform_v1_AutoscalingMetricSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_AutoscalingMetricSpec_descriptor,
@@ -221,7 +238,7 @@ public final class MachineResourcesProto {
               "MetricName", "Target",
             });
     internal_static_google_cloud_aiplatform_v1_ShieldedVmConfig_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_aiplatform_v1_ShieldedVmConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_ShieldedVmConfig_descriptor,

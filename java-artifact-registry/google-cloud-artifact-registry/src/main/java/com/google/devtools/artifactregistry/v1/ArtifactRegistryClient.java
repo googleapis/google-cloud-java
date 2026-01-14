@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1005,7 +1005,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ExportArtifact</td>
- *      <td><p> Exports an artifact.</td>
+ *      <td><p> Exports an artifact to a Cloud Storage bucket.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -7000,7 +7000,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Exports an artifact.
+   * Exports an artifact to a Cloud Storage bucket.
    *
    * <p>Sample code:
    *
@@ -7030,7 +7030,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Exports an artifact.
+   * Exports an artifact to a Cloud Storage bucket.
    *
    * <p>Sample code:
    *
@@ -7061,7 +7061,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Exports an artifact.
+   * Exports an artifact to a Cloud Storage bucket.
    *
    * <p>Sample code:
    *

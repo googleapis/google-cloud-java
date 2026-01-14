@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -812,31 +812,33 @@ public final class ResourcesProto {
           + "\013ClusterView\022\034\n"
           + "\030CLUSTER_VIEW_UNSPECIFIED\020\000\022\026\n"
           + "\022CLUSTER_VIEW_BASIC\020\001\022\"\n"
-          + "\036CLUSTER_VIEW_CONTINUOUS_BACKUP\020\002*\214\001\n"
+          + "\036CLUSTER_VIEW_CONTINUOUS_BACKUP\020\002*\235\001\n"
           + "\017DatabaseVersion\022 \n"
           + "\034DATABASE_VERSION_UNSPECIFIED\020\000\022\023\n"
           + "\013POSTGRES_13\020\001\032\002\010\001\022\017\n"
           + "\013POSTGRES_14\020\002\022\017\n"
           + "\013POSTGRES_15\020\003\022\017\n"
           + "\013POSTGRES_16\020\004\022\017\n"
-          + "\013POSTGRES_17\020\005*N\n"
+          + "\013POSTGRES_17\020\005\022\017\n"
+          + "\013POSTGRES_18\020\006*N\n"
           + "\020SubscriptionType\022!\n"
           + "\035SUBSCRIPTION_TYPE_UNSPECIFIED\020\000\022\014\n"
           + "\010STANDARD\020\001\022\t\n"
           + "\005TRIAL\020\002B\300\005\n"
-          + " com.google.cloud.alloydb.v1alphaB\016ResourcesProtoP\001Z:cloud.google"
-          + ".com/go/alloydb/apiv1alpha/alloydbpb;all"
-          + "oydbpb\252\002\034Google.Cloud.AlloyDb.V1Alpha\312\002\034"
-          + "Google\\Cloud\\AlloyDb\\V1alpha\352\002\037Google::Cloud::AlloyDB::V1alpha\352A\246\001\n"
-          + "(cloudkms.googleapis.com/CryptoKeyVersion\022zprojects/{"
-          + "project}/locations/{location}/keyRings/{"
-          + "key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}\352AN\n"
-          + "\036com"
-          + "pute.googleapis.com/Network\022,projects/{project}/global/networks/{network}\352Ax\n"
-          + "!cloudkms.googleapis.com/CryptoKey\022Sproject"
-          + "s/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}\352Aw\n"
-          + "(compute.googleapis.com/ServiceAttachment\022Kprojects/{project}/regions/{region}/s"
-          + "erviceAttachments/{service_attachment}b\006proto3"
+          + " com.google.cloud.alloydb.v1alphaB\016ResourcesProt"
+          + "oP\001Z:cloud.google.com/go/alloydb/apiv1al"
+          + "pha/alloydbpb;alloydbpb\252\002\034Google.Cloud.A"
+          + "lloyDb.V1Alpha\312\002\034Google\\Cloud\\AlloyDb\\V1"
+          + "alpha\352\002\037Google::Cloud::AlloyDB::V1alpha\352A\246\001\n"
+          + "(cloudkms.googleapis.com/CryptoKeyVersion\022zprojects/{project}/locations/{loc"
+          + "ation}/keyRings/{key_ring}/cryptoKeys/{c"
+          + "rypto_key}/cryptoKeyVersions/{crypto_key_version}\352AN\n"
+          + "\036compute.googleapis.com/Net"
+          + "work\022,projects/{project}/global/networks/{network}\352Ax\n"
+          + "!cloudkms.googleapis.com/CryptoKey\022Sprojects/{project}/locations/{"
+          + "location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}\352Aw\n"
+          + "(compute.googleapis.com/ServiceAttachment\022Kprojects/{project}/r"
+          + "egions/{region}/serviceAttachments/{service_attachment}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

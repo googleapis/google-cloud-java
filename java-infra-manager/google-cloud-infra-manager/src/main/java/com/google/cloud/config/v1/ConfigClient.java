@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -586,6 +586,44 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> getResourceDriftCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAutoMigrationConfig</td>
+ *      <td><p> Get the AutoMigrationConfig for a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAutoMigrationConfig(GetAutoMigrationConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAutoMigrationConfig(AutoMigrationConfigName name)
+ *           <li><p> getAutoMigrationConfig(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAutoMigrationConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateAutoMigrationConfig</td>
+ *      <td><p> Updates the AutoMigrationConfig for a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateAutoMigrationConfigAsync(UpdateAutoMigrationConfigRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateAutoMigrationConfigAsync(AutoMigrationConfig autoMigrationConfig, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateAutoMigrationConfigOperationCallable()
+ *           <li><p> updateAutoMigrationConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -4385,6 +4423,248 @@ public class ConfigClient implements BackgroundResource {
    */
   public final UnaryCallable<GetResourceDriftRequest, ResourceDrift> getResourceDriftCallable() {
     return stub.getResourceDriftCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get the AutoMigrationConfig for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   AutoMigrationConfigName name = AutoMigrationConfigName.of("[PROJECT]", "[LOCATION]");
+   *   AutoMigrationConfig response = configClient.getAutoMigrationConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the AutoMigrationConfig. Format:
+   *     'projects/{project_id}/locations/{location}/AutoMigrationConfig'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AutoMigrationConfig getAutoMigrationConfig(AutoMigrationConfigName name) {
+    GetAutoMigrationConfigRequest request =
+        GetAutoMigrationConfigRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getAutoMigrationConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get the AutoMigrationConfig for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   String name = AutoMigrationConfigName.of("[PROJECT]", "[LOCATION]").toString();
+   *   AutoMigrationConfig response = configClient.getAutoMigrationConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the AutoMigrationConfig. Format:
+   *     'projects/{project_id}/locations/{location}/AutoMigrationConfig'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AutoMigrationConfig getAutoMigrationConfig(String name) {
+    GetAutoMigrationConfigRequest request =
+        GetAutoMigrationConfigRequest.newBuilder().setName(name).build();
+    return getAutoMigrationConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get the AutoMigrationConfig for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   GetAutoMigrationConfigRequest request =
+   *       GetAutoMigrationConfigRequest.newBuilder()
+   *           .setName(AutoMigrationConfigName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   AutoMigrationConfig response = configClient.getAutoMigrationConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AutoMigrationConfig getAutoMigrationConfig(GetAutoMigrationConfigRequest request) {
+    return getAutoMigrationConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get the AutoMigrationConfig for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   GetAutoMigrationConfigRequest request =
+   *       GetAutoMigrationConfigRequest.newBuilder()
+   *           .setName(AutoMigrationConfigName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   ApiFuture<AutoMigrationConfig> future =
+   *       configClient.getAutoMigrationConfigCallable().futureCall(request);
+   *   // Do something.
+   *   AutoMigrationConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAutoMigrationConfigRequest, AutoMigrationConfig>
+      getAutoMigrationConfigCallable() {
+    return stub.getAutoMigrationConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the AutoMigrationConfig for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   AutoMigrationConfig autoMigrationConfig = AutoMigrationConfig.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   AutoMigrationConfig response =
+   *       configClient.updateAutoMigrationConfigAsync(autoMigrationConfig, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param autoMigrationConfig Required. The AutoMigrationConfig to update.
+   * @param updateMask Optional. The update mask applies to the resource. See
+   *     [google.protobuf.FieldMask][google.protobuf.FieldMask].
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutoMigrationConfig, OperationMetadata>
+      updateAutoMigrationConfigAsync(
+          AutoMigrationConfig autoMigrationConfig, FieldMask updateMask) {
+    UpdateAutoMigrationConfigRequest request =
+        UpdateAutoMigrationConfigRequest.newBuilder()
+            .setAutoMigrationConfig(autoMigrationConfig)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateAutoMigrationConfigAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the AutoMigrationConfig for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   UpdateAutoMigrationConfigRequest request =
+   *       UpdateAutoMigrationConfigRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setAutoMigrationConfig(AutoMigrationConfig.newBuilder().build())
+   *           .build();
+   *   AutoMigrationConfig response = configClient.updateAutoMigrationConfigAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutoMigrationConfig, OperationMetadata>
+      updateAutoMigrationConfigAsync(UpdateAutoMigrationConfigRequest request) {
+    return updateAutoMigrationConfigOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the AutoMigrationConfig for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   UpdateAutoMigrationConfigRequest request =
+   *       UpdateAutoMigrationConfigRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setAutoMigrationConfig(AutoMigrationConfig.newBuilder().build())
+   *           .build();
+   *   OperationFuture<AutoMigrationConfig, OperationMetadata> future =
+   *       configClient.updateAutoMigrationConfigOperationCallable().futureCall(request);
+   *   // Do something.
+   *   AutoMigrationConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UpdateAutoMigrationConfigRequest, AutoMigrationConfig, OperationMetadata>
+      updateAutoMigrationConfigOperationCallable() {
+    return stub.updateAutoMigrationConfigOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the AutoMigrationConfig for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   UpdateAutoMigrationConfigRequest request =
+   *       UpdateAutoMigrationConfigRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setAutoMigrationConfig(AutoMigrationConfig.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       configClient.updateAutoMigrationConfigCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateAutoMigrationConfigRequest, Operation>
+      updateAutoMigrationConfigCallable() {
+    return stub.updateAutoMigrationConfigCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

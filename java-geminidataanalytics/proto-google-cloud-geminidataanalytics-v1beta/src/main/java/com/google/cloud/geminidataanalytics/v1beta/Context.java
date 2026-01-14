@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +42,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
   private Context() {
     systemInstruction_ = "";
     exampleQueries_ = java.util.Collections.emptyList();
+    lookerGoldenQueries_ = java.util.Collections.emptyList();
     glossaryTerms_ = java.util.Collections.emptyList();
     schemaRelationships_ = java.util.Collections.emptyList();
   }
@@ -3582,6 +3583,107 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
     return exampleQueries_.get(index);
   }
 
+  public static final int LOOKER_GOLDEN_QUERIES_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery>
+      lookerGoldenQueries_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of golden queries, providing examples of relevant and
+   * commonly used Looker queries and their corresponding natural language
+   * queries optionally present.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery looker_golden_queries = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery>
+      getLookerGoldenQueriesList() {
+    return lookerGoldenQueries_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of golden queries, providing examples of relevant and
+   * commonly used Looker queries and their corresponding natural language
+   * queries optionally present.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery looker_golden_queries = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQueryOrBuilder>
+      getLookerGoldenQueriesOrBuilderList() {
+    return lookerGoldenQueries_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of golden queries, providing examples of relevant and
+   * commonly used Looker queries and their corresponding natural language
+   * queries optionally present.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery looker_golden_queries = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getLookerGoldenQueriesCount() {
+    return lookerGoldenQueries_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of golden queries, providing examples of relevant and
+   * commonly used Looker queries and their corresponding natural language
+   * queries optionally present.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery looker_golden_queries = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery getLookerGoldenQueries(
+      int index) {
+    return lookerGoldenQueries_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of golden queries, providing examples of relevant and
+   * commonly used Looker queries and their corresponding natural language
+   * queries optionally present.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery looker_golden_queries = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQueryOrBuilder
+      getLookerGoldenQueriesOrBuilder(int index) {
+    return lookerGoldenQueries_.get(index);
+  }
+
   public static final int GLOSSARY_TERMS_FIELD_NUMBER = 8;
 
   @SuppressWarnings("serial")
@@ -3798,6 +3900,9 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < schemaRelationships_.size(); i++) {
       output.writeMessage(9, schemaRelationships_.get(i));
     }
+    for (int i = 0; i < lookerGoldenQueries_.size(); i++) {
+      output.writeMessage(11, lookerGoldenQueries_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -3827,6 +3932,10 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(9, schemaRelationships_.get(i));
     }
+    for (int i = 0; i < lookerGoldenQueries_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(11, lookerGoldenQueries_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3853,6 +3962,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
       if (!getOptions().equals(other.getOptions())) return false;
     }
     if (!getExampleQueriesList().equals(other.getExampleQueriesList())) return false;
+    if (!getLookerGoldenQueriesList().equals(other.getLookerGoldenQueriesList())) return false;
     if (!getGlossaryTermsList().equals(other.getGlossaryTermsList())) return false;
     if (!getSchemaRelationshipsList().equals(other.getSchemaRelationshipsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -3879,6 +3989,10 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
     if (getExampleQueriesCount() > 0) {
       hash = (37 * hash) + EXAMPLE_QUERIES_FIELD_NUMBER;
       hash = (53 * hash) + getExampleQueriesList().hashCode();
+    }
+    if (getLookerGoldenQueriesCount() > 0) {
+      hash = (37 * hash) + LOOKER_GOLDEN_QUERIES_FIELD_NUMBER;
+      hash = (53 * hash) + getLookerGoldenQueriesList().hashCode();
     }
     if (getGlossaryTermsCount() > 0) {
       hash = (37 * hash) + GLOSSARY_TERMS_FIELD_NUMBER;
@@ -4032,6 +4146,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
         getDatasourceReferencesFieldBuilder();
         getOptionsFieldBuilder();
         getExampleQueriesFieldBuilder();
+        getLookerGoldenQueriesFieldBuilder();
         getGlossaryTermsFieldBuilder();
         getSchemaRelationshipsFieldBuilder();
       }
@@ -4059,20 +4174,27 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
         exampleQueriesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000008);
+      if (lookerGoldenQueriesBuilder_ == null) {
+        lookerGoldenQueries_ = java.util.Collections.emptyList();
+      } else {
+        lookerGoldenQueries_ = null;
+        lookerGoldenQueriesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000010);
       if (glossaryTermsBuilder_ == null) {
         glossaryTerms_ = java.util.Collections.emptyList();
       } else {
         glossaryTerms_ = null;
         glossaryTermsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       if (schemaRelationshipsBuilder_ == null) {
         schemaRelationships_ = java.util.Collections.emptyList();
       } else {
         schemaRelationships_ = null;
         schemaRelationshipsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -4119,19 +4241,28 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.exampleQueries_ = exampleQueriesBuilder_.build();
       }
-      if (glossaryTermsBuilder_ == null) {
+      if (lookerGoldenQueriesBuilder_ == null) {
         if (((bitField0_ & 0x00000010) != 0)) {
-          glossaryTerms_ = java.util.Collections.unmodifiableList(glossaryTerms_);
+          lookerGoldenQueries_ = java.util.Collections.unmodifiableList(lookerGoldenQueries_);
           bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.lookerGoldenQueries_ = lookerGoldenQueries_;
+      } else {
+        result.lookerGoldenQueries_ = lookerGoldenQueriesBuilder_.build();
+      }
+      if (glossaryTermsBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          glossaryTerms_ = java.util.Collections.unmodifiableList(glossaryTerms_);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.glossaryTerms_ = glossaryTerms_;
       } else {
         result.glossaryTerms_ = glossaryTermsBuilder_.build();
       }
       if (schemaRelationshipsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           schemaRelationships_ = java.util.Collections.unmodifiableList(schemaRelationships_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.schemaRelationships_ = schemaRelationships_;
       } else {
@@ -4243,11 +4374,38 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (lookerGoldenQueriesBuilder_ == null) {
+        if (!other.lookerGoldenQueries_.isEmpty()) {
+          if (lookerGoldenQueries_.isEmpty()) {
+            lookerGoldenQueries_ = other.lookerGoldenQueries_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureLookerGoldenQueriesIsMutable();
+            lookerGoldenQueries_.addAll(other.lookerGoldenQueries_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.lookerGoldenQueries_.isEmpty()) {
+          if (lookerGoldenQueriesBuilder_.isEmpty()) {
+            lookerGoldenQueriesBuilder_.dispose();
+            lookerGoldenQueriesBuilder_ = null;
+            lookerGoldenQueries_ = other.lookerGoldenQueries_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+            lookerGoldenQueriesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getLookerGoldenQueriesFieldBuilder()
+                    : null;
+          } else {
+            lookerGoldenQueriesBuilder_.addAllMessages(other.lookerGoldenQueries_);
+          }
+        }
+      }
       if (glossaryTermsBuilder_ == null) {
         if (!other.glossaryTerms_.isEmpty()) {
           if (glossaryTerms_.isEmpty()) {
             glossaryTerms_ = other.glossaryTerms_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureGlossaryTermsIsMutable();
             glossaryTerms_.addAll(other.glossaryTerms_);
@@ -4260,7 +4418,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
             glossaryTermsBuilder_.dispose();
             glossaryTermsBuilder_ = null;
             glossaryTerms_ = other.glossaryTerms_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
             glossaryTermsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getGlossaryTermsFieldBuilder()
@@ -4274,7 +4432,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
         if (!other.schemaRelationships_.isEmpty()) {
           if (schemaRelationships_.isEmpty()) {
             schemaRelationships_ = other.schemaRelationships_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureSchemaRelationshipsIsMutable();
             schemaRelationships_.addAll(other.schemaRelationships_);
@@ -4287,7 +4445,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
             schemaRelationshipsBuilder_.dispose();
             schemaRelationshipsBuilder_ = null;
             schemaRelationships_ = other.schemaRelationships_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
             schemaRelationshipsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSchemaRelationshipsFieldBuilder()
@@ -4385,6 +4543,20 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 74
+            case 90:
+              {
+                com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery m =
+                    input.readMessage(
+                        com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery.parser(),
+                        extensionRegistry);
+                if (lookerGoldenQueriesBuilder_ == null) {
+                  ensureLookerGoldenQueriesIsMutable();
+                  lookerGoldenQueries_.add(m);
+                } else {
+                  lookerGoldenQueriesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5437,15 +5609,475 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
       return exampleQueriesBuilder_;
     }
 
+    private java.util.List<com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery>
+        lookerGoldenQueries_ = java.util.Collections.emptyList();
+
+    private void ensureLookerGoldenQueriesIsMutable() {
+      if (!((bitField0_ & 0x00000010) != 0)) {
+        lookerGoldenQueries_ =
+            new java.util.ArrayList<com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery>(
+                lookerGoldenQueries_);
+        bitField0_ |= 0x00000010;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery,
+            com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQueryOrBuilder>
+        lookerGoldenQueriesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of golden queries, providing examples of relevant and
+     * commonly used Looker queries and their corresponding natural language
+     * queries optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery looker_golden_queries = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery>
+        getLookerGoldenQueriesList() {
+      if (lookerGoldenQueriesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(lookerGoldenQueries_);
+      } else {
+        return lookerGoldenQueriesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of golden queries, providing examples of relevant and
+     * commonly used Looker queries and their corresponding natural language
+     * queries optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery looker_golden_queries = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getLookerGoldenQueriesCount() {
+      if (lookerGoldenQueriesBuilder_ == null) {
+        return lookerGoldenQueries_.size();
+      } else {
+        return lookerGoldenQueriesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of golden queries, providing examples of relevant and
+     * commonly used Looker queries and their corresponding natural language
+     * queries optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery looker_golden_queries = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery getLookerGoldenQueries(
+        int index) {
+      if (lookerGoldenQueriesBuilder_ == null) {
+        return lookerGoldenQueries_.get(index);
+      } else {
+        return lookerGoldenQueriesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of golden queries, providing examples of relevant and
+     * commonly used Looker queries and their corresponding natural language
+     * queries optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery looker_golden_queries = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLookerGoldenQueries(
+        int index, com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery value) {
+      if (lookerGoldenQueriesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLookerGoldenQueriesIsMutable();
+        lookerGoldenQueries_.set(index, value);
+        onChanged();
+      } else {
+        lookerGoldenQueriesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of golden queries, providing examples of relevant and
+     * commonly used Looker queries and their corresponding natural language
+     * queries optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery looker_golden_queries = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLookerGoldenQueries(
+        int index,
+        com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery.Builder builderForValue) {
+      if (lookerGoldenQueriesBuilder_ == null) {
+        ensureLookerGoldenQueriesIsMutable();
+        lookerGoldenQueries_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        lookerGoldenQueriesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of golden queries, providing examples of relevant and
+     * commonly used Looker queries and their corresponding natural language
+     * queries optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery looker_golden_queries = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addLookerGoldenQueries(
+        com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery value) {
+      if (lookerGoldenQueriesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLookerGoldenQueriesIsMutable();
+        lookerGoldenQueries_.add(value);
+        onChanged();
+      } else {
+        lookerGoldenQueriesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of golden queries, providing examples of relevant and
+     * commonly used Looker queries and their corresponding natural language
+     * queries optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery looker_golden_queries = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addLookerGoldenQueries(
+        int index, com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery value) {
+      if (lookerGoldenQueriesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLookerGoldenQueriesIsMutable();
+        lookerGoldenQueries_.add(index, value);
+        onChanged();
+      } else {
+        lookerGoldenQueriesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of golden queries, providing examples of relevant and
+     * commonly used Looker queries and their corresponding natural language
+     * queries optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery looker_golden_queries = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addLookerGoldenQueries(
+        com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery.Builder builderForValue) {
+      if (lookerGoldenQueriesBuilder_ == null) {
+        ensureLookerGoldenQueriesIsMutable();
+        lookerGoldenQueries_.add(builderForValue.build());
+        onChanged();
+      } else {
+        lookerGoldenQueriesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of golden queries, providing examples of relevant and
+     * commonly used Looker queries and their corresponding natural language
+     * queries optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery looker_golden_queries = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addLookerGoldenQueries(
+        int index,
+        com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery.Builder builderForValue) {
+      if (lookerGoldenQueriesBuilder_ == null) {
+        ensureLookerGoldenQueriesIsMutable();
+        lookerGoldenQueries_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        lookerGoldenQueriesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of golden queries, providing examples of relevant and
+     * commonly used Looker queries and their corresponding natural language
+     * queries optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery looker_golden_queries = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllLookerGoldenQueries(
+        java.lang.Iterable<? extends com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery>
+            values) {
+      if (lookerGoldenQueriesBuilder_ == null) {
+        ensureLookerGoldenQueriesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, lookerGoldenQueries_);
+        onChanged();
+      } else {
+        lookerGoldenQueriesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of golden queries, providing examples of relevant and
+     * commonly used Looker queries and their corresponding natural language
+     * queries optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery looker_golden_queries = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearLookerGoldenQueries() {
+      if (lookerGoldenQueriesBuilder_ == null) {
+        lookerGoldenQueries_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+      } else {
+        lookerGoldenQueriesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of golden queries, providing examples of relevant and
+     * commonly used Looker queries and their corresponding natural language
+     * queries optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery looker_golden_queries = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeLookerGoldenQueries(int index) {
+      if (lookerGoldenQueriesBuilder_ == null) {
+        ensureLookerGoldenQueriesIsMutable();
+        lookerGoldenQueries_.remove(index);
+        onChanged();
+      } else {
+        lookerGoldenQueriesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of golden queries, providing examples of relevant and
+     * commonly used Looker queries and their corresponding natural language
+     * queries optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery looker_golden_queries = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery.Builder
+        getLookerGoldenQueriesBuilder(int index) {
+      return getLookerGoldenQueriesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of golden queries, providing examples of relevant and
+     * commonly used Looker queries and their corresponding natural language
+     * queries optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery looker_golden_queries = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQueryOrBuilder
+        getLookerGoldenQueriesOrBuilder(int index) {
+      if (lookerGoldenQueriesBuilder_ == null) {
+        return lookerGoldenQueries_.get(index);
+      } else {
+        return lookerGoldenQueriesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of golden queries, providing examples of relevant and
+     * commonly used Looker queries and their corresponding natural language
+     * queries optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery looker_golden_queries = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQueryOrBuilder>
+        getLookerGoldenQueriesOrBuilderList() {
+      if (lookerGoldenQueriesBuilder_ != null) {
+        return lookerGoldenQueriesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(lookerGoldenQueries_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of golden queries, providing examples of relevant and
+     * commonly used Looker queries and their corresponding natural language
+     * queries optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery looker_golden_queries = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery.Builder
+        addLookerGoldenQueriesBuilder() {
+      return getLookerGoldenQueriesFieldBuilder()
+          .addBuilder(
+              com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of golden queries, providing examples of relevant and
+     * commonly used Looker queries and their corresponding natural language
+     * queries optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery looker_golden_queries = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery.Builder
+        addLookerGoldenQueriesBuilder(int index) {
+      return getLookerGoldenQueriesFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of golden queries, providing examples of relevant and
+     * commonly used Looker queries and their corresponding natural language
+     * queries optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery looker_golden_queries = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery.Builder>
+        getLookerGoldenQueriesBuilderList() {
+      return getLookerGoldenQueriesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery,
+            com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQueryOrBuilder>
+        getLookerGoldenQueriesFieldBuilder() {
+      if (lookerGoldenQueriesBuilder_ == null) {
+        lookerGoldenQueriesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery,
+                com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery.Builder,
+                com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQueryOrBuilder>(
+                lookerGoldenQueries_,
+                ((bitField0_ & 0x00000010) != 0),
+                getParentForChildren(),
+                isClean());
+        lookerGoldenQueries_ = null;
+      }
+      return lookerGoldenQueriesBuilder_;
+    }
+
     private java.util.List<com.google.cloud.geminidataanalytics.v1beta.GlossaryTerm>
         glossaryTerms_ = java.util.Collections.emptyList();
 
     private void ensureGlossaryTermsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         glossaryTerms_ =
             new java.util.ArrayList<com.google.cloud.geminidataanalytics.v1beta.GlossaryTerm>(
                 glossaryTerms_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -5700,7 +6332,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
     public Builder clearGlossaryTerms() {
       if (glossaryTermsBuilder_ == null) {
         glossaryTerms_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         glossaryTermsBuilder_.clear();
@@ -5851,7 +6483,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.geminidataanalytics.v1beta.GlossaryTerm.Builder,
                 com.google.cloud.geminidataanalytics.v1beta.GlossaryTermOrBuilder>(
                 glossaryTerms_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         glossaryTerms_ = null;
@@ -5863,12 +6495,12 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
         schemaRelationships_ = java.util.Collections.emptyList();
 
     private void ensureSchemaRelationshipsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         schemaRelationships_ =
             new java.util.ArrayList<
                 com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship>(
                 schemaRelationships_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
       }
     }
 
@@ -6139,7 +6771,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSchemaRelationships() {
       if (schemaRelationshipsBuilder_ == null) {
         schemaRelationships_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         schemaRelationshipsBuilder_.clear();
@@ -6302,7 +6934,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Builder,
                 com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationshipOrBuilder>(
                 schemaRelationships_,
-                ((bitField0_ & 0x00000020) != 0),
+                ((bitField0_ & 0x00000040) != 0),
                 getParentForChildren(),
                 isClean());
         schemaRelationships_ = null;

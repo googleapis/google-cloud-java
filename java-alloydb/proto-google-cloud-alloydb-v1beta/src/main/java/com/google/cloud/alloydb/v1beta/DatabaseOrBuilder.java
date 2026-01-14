@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -165,7 +165,7 @@ public interface DatabaseOrBuilder
    * <code>bool is_template = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Database.is_template is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=1758
+   *     google/cloud/alloydb/v1beta/resources.proto;l=1761
    * @return The isTemplate.
    */
   @java.lang.Deprecated
