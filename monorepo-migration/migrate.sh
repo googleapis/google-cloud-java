@@ -171,7 +171,7 @@ rm -f "$SOURCE_REPO_NAME/.gitignore"
 rm -f "$SOURCE_REPO_NAME/renovate.json"
 rm -f "$SOURCE_REPO_NAME/LICENSE"
 rm -f "$SOURCE_REPO_NAME/java.header"
-rm -rf "$SOURCE_REPO_NAME/.kokoro"
+rm -rf "$SOURCE_REPO_NAME/.kokoro/continuous"  "$SOURCE_REPO_NAME/.kokoro/nightly"  "$SOURCE_REPO_NAME/.kokoro/presubmit"
 rm -f "$SOURCE_REPO_NAME/codecov.yaml"
 rm -f "$SOURCE_REPO_NAME/synth.metadata"
 rm -f "$SOURCE_REPO_NAME/license-checks.xml"
@@ -243,8 +243,11 @@ SOURCE_CONFIG="$SOURCE_REPO_NAME/generation_config.yaml"
 if [ -f "$SOURCE_CONFIG" ]; then
     python3 "$UPDATE_GENERATION_CONFIG_SCRIPT" "generation_config.yaml" "$SOURCE_CONFIG"
     
+    # Remove the source generation_config.yaml as it is now merged
+    rm "$SOURCE_CONFIG"
+
     echo "Committing generation_config.yaml update..."
-    git add generation_config.yaml
+    git add generation_config.yaml "$SOURCE_CONFIG"
     git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): add library to generation_config.yaml"
 fi
 
