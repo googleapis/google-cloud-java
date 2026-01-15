@@ -1,5 +1,44 @@
 # Changelog
 
+## [1.76.0](https://github.com/googleapis/google-cloud-java/compare/v1.75.0...v1.76.0) (2026-01-15)
+
+
+### Features
+
+* [aiplatform] Add Lustre support to the Vertex Training Custom Job API ([59c954c](https://github.com/googleapis/google-cloud-java/commit/59c954c089f0379e716236aaa279207820a7dfe4))
+* [aiplatform] Add Lustre support to the Vertex Training Custom Job API ([c70c873](https://github.com/googleapis/google-cloud-java/commit/c70c8739f2caffdc87535f2e729c1d967d550e8c))
+* [aiplatform] add streaming function call argument API changes ([59c954c](https://github.com/googleapis/google-cloud-java/commit/59c954c089f0379e716236aaa279207820a7dfe4))
+* [alloydb] add POSTGRES_18 to DatabaseVersion ([59c954c](https://github.com/googleapis/google-cloud-java/commit/59c954c089f0379e716236aaa279207820a7dfe4))
+* [alloydb] add POSTGRES_18 to DatabaseVersion ([59c954c](https://github.com/googleapis/google-cloud-java/commit/59c954c089f0379e716236aaa279207820a7dfe4))
+* [artifact-registry] add Fingerprint to Artifact Registry Version resource ([59c954c](https://github.com/googleapis/google-cloud-java/commit/59c954c089f0379e716236aaa279207820a7dfe4))
+* [backupdr] A new service `BackupDrProtectionSummary` is added ([59c954c](https://github.com/googleapis/google-cloud-java/commit/59c954c089f0379e716236aaa279207820a7dfe4))
+* [cloudapiregistry] new module for cloudapiregistry ([#11864](https://github.com/googleapis/google-cloud-java/issues/11864)) ([37c933f](https://github.com/googleapis/google-cloud-java/commit/37c933fa582fe273b83bf86e940545ea68a31307))
+* [compute] Update Compute Engine v1 API to revision 20251210 ([#1137](https://github.com/googleapis/google-cloud-java/issues/1137)) ([59c954c](https://github.com/googleapis/google-cloud-java/commit/59c954c089f0379e716236aaa279207820a7dfe4))
+* [compute] Update Compute Engine v1 API to revision 20251230 ([#1144](https://github.com/googleapis/google-cloud-java/issues/1144)) ([bb0102d](https://github.com/googleapis/google-cloud-java/commit/bb0102d7dbf545cce9dc0349358e071b58167e51))
+* [databasecenter] Adding Method AggregateFleet of Database Center API v1beta ([59c954c](https://github.com/googleapis/google-cloud-java/commit/59c954c089f0379e716236aaa279207820a7dfe4))
+* [databasecenter] Adding Method QueryDatabaseResourceGroups of Database Center API v1beta ([59c954c](https://github.com/googleapis/google-cloud-java/commit/59c954c089f0379e716236aaa279207820a7dfe4))
+* [geminidataanalytics] add LookerGoldenQuery to Context ([59c954c](https://github.com/googleapis/google-cloud-java/commit/59c954c089f0379e716236aaa279207820a7dfe4))
+* [geminidataanalytics] added sync APIs for the CRUD operations of Data Agent ([59c954c](https://github.com/googleapis/google-cloud-java/commit/59c954c089f0379e716236aaa279207820a7dfe4))
+* [grafeas] A new message `File` is added ([59c954c](https://github.com/googleapis/google-cloud-java/commit/59c954c089f0379e716236aaa279207820a7dfe4))
+* [infra-manager] add support for enabling automigration from deprecated Terraform versions ([59c954c](https://github.com/googleapis/google-cloud-java/commit/59c954c089f0379e716236aaa279207820a7dfe4))
+* [netapp] Update NetApp v1 API with Host Groups, Block Volumes, Cache Volumes, and Backup Restore ([bb0102d](https://github.com/googleapis/google-cloud-java/commit/bb0102d7dbf545cce9dc0349358e071b58167e51))
+* [speech] add custom prompt config in the request and return prompt in the response ([59c954c](https://github.com/googleapis/google-cloud-java/commit/59c954c089f0379e716236aaa279207820a7dfe4))
+
+
+### Bug Fixes
+
+* **deps:** update the Java code generator (gapic-generator-java) to 2.65.1 ([59c954c](https://github.com/googleapis/google-cloud-java/commit/59c954c089f0379e716236aaa279207820a7dfe4))
+* update dependency com.google.cloud:sdk-platform-java-config to v3.55.1 ([#11863](https://github.com/googleapis/google-cloud-java/issues/11863)) ([50cda6e](https://github.com/googleapis/google-cloud-java/commit/50cda6ec7be56bf1900737a6aaf12fc494be20c2))
+
+
+### Documentation
+
+* [bigqueryreservation] change comment indicating `enable_gemini_in_bigquery` field for BigQuery Reservation Assignments is deprecated ([59c954c](https://github.com/googleapis/google-cloud-java/commit/59c954c089f0379e716236aaa279207820a7dfe4))
+* [chat] Improve documentation of attachment.proto, event_payload.proto and space.proto ([c70c873](https://github.com/googleapis/google-cloud-java/commit/c70c8739f2caffdc87535f2e729c1d967d550e8c))
+* [geminidataanalytics] specify the data sources supported only by the QueryData API ([c70c873](https://github.com/googleapis/google-cloud-java/commit/c70c8739f2caffdc87535f2e729c1d967d550e8c))
+* [kms] Marking MODIFIED_CUSTOMER_INITIATED_ACCESS and MODIFIED_GOOGLE_INITIATED_SYSTEM_OPERATION Key Access Justification codes as deprecated in favor of GOOGLE_RESPONSE_TO_PRODUCTION_ALERT ([59c954c](https://github.com/googleapis/google-cloud-java/commit/59c954c089f0379e716236aaa279207820a7dfe4))
+* [maintenance] A comment for field `filter` in message `.google.cloud.maintenance.api.v1.SummarizeMaintenancesRequest` is changed ([59c954c](https://github.com/googleapis/google-cloud-java/commit/59c954c089f0379e716236aaa279207820a7dfe4))
+
 ## [1.75.0](https://github.com/googleapis/google-cloud-java/compare/v1.74.0...v1.75.0) (2025-12-16)
 
 
