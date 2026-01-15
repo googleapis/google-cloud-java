@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.35.0](https://github.com/googleapis/java-firestore/compare/v3.34.0...v3.35.0) (2026-01-15)
+
+
+### Features
+
+* Adding gcp resource name span attribute ([#2260](https://github.com/googleapis/java-firestore/issues/2260)) ([926fd8c](https://github.com/googleapis/java-firestore/commit/926fd8c393dfd91f532b61bdf2a50ed8d19d3618))
+* Pipelines enters public preview ([#2272](https://github.com/googleapis/java-firestore/issues/2272)) ([6e30a6c](https://github.com/googleapis/java-firestore/commit/6e30a6c11efe5d428607bfd78f82ba7b49497bd9))
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.65.1 ([1573a6f](https://github.com/googleapis/java-firestore/commit/1573a6f8b7d08e6670f26e2fe1af730700000aac))
+
 ## [3.34.0](https://github.com/googleapis/java-firestore/compare/v3.33.4...v3.34.0) (2025-12-12)
 
 
