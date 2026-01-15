@@ -45,7 +45,7 @@ public class RemoteBigQueryHelper {
   private static final String MODEL_NAME_PREFIX = "model_";
   private static final String ROUTINE_NAME_PREFIX = "routine_";
   private final BigQueryOptions options;
-  private static final int connectTimeout = 60000;
+  private static final int CONNECT_TIMEOUT_IN_MS = 60000;
 
   private RemoteBigQueryHelper(BigQueryOptions options) {
     this.options = options;
@@ -96,8 +96,8 @@ public class RemoteBigQueryHelper {
       HttpTransportOptions transportOptions = BigQueryOptions.getDefaultHttpTransportOptions();
       transportOptions =
           transportOptions.toBuilder()
-              .setConnectTimeout(connectTimeout)
-              .setReadTimeout(connectTimeout)
+              .setConnectTimeout(CONNECT_TIMEOUT_IN_MS)
+              .setReadTimeout(CONNECT_TIMEOUT_IN_MS)
               .build();
       BigQueryOptions bigqueryOptions =
           BigQueryOptions.newBuilder()
@@ -133,8 +133,8 @@ public class RemoteBigQueryHelper {
     HttpTransportOptions transportOptions = BigQueryOptions.getDefaultHttpTransportOptions();
     transportOptions =
         transportOptions.toBuilder()
-            .setConnectTimeout(connectTimeout)
-            .setReadTimeout(connectTimeout)
+            .setConnectTimeout(CONNECT_TIMEOUT_IN_MS)
+            .setReadTimeout(CONNECT_TIMEOUT_IN_MS)
             .build();
     BigQueryOptions.Builder builder =
         bigqueryOptionsBuilder
@@ -143,21 +143,25 @@ public class RemoteBigQueryHelper {
     return new RemoteBigQueryHelper(builder.build());
   }
 
+  // Opt to keep these settings a small as possible to minimize the total test time.
+  // These values can be adjusted per test case, but these serve as default values.
   private static RetrySettings retrySettings() {
-    double retryDelayMultiplier = 1.0;
+    double backoffMultiplier = 1.5;
     int maxAttempts = 10;
-    long initialRetryDelay = 250L;
-    long maxRetryDelay = 30000L;
-    long totalTimeOut = 120000L;
+    long initialRetryDelayMs = 100L; // 0.1s initial retry delay
+    long maxRetryDelayMs = 1000L; // 1s max retry delay between retry
+    long initialRpcTimeoutMs = 1000L; // 1s initial rpc duration
+    long maxRpcTimeoutMs = 2000L; // 2s max rpc duration
+    long totalTimeoutMs = 3000L; // 3s total timeout
     return RetrySettings.newBuilder()
         .setMaxAttempts(maxAttempts)
-        .setMaxRetryDelayDuration(Duration.ofMillis(maxRetryDelay))
-        .setTotalTimeoutDuration(Duration.ofMillis(totalTimeOut))
-        .setInitialRetryDelayDuration(Duration.ofMillis(initialRetryDelay))
-        .setRetryDelayMultiplier(retryDelayMultiplier)
-        .setInitialRpcTimeoutDuration(Duration.ofMillis(totalTimeOut))
-        .setRpcTimeoutMultiplier(retryDelayMultiplier)
-        .setMaxRpcTimeoutDuration(Duration.ofMillis(totalTimeOut))
+        .setTotalTimeoutDuration(Duration.ofMillis(totalTimeoutMs))
+        .setInitialRetryDelayDuration(Duration.ofMillis(initialRetryDelayMs))
+        .setMaxRetryDelayDuration(Duration.ofMillis(maxRetryDelayMs))
+        .setRetryDelayMultiplier(backoffMultiplier)
+        .setInitialRpcTimeoutDuration(Duration.ofMillis(initialRpcTimeoutMs))
+        .setMaxRpcTimeoutDuration(Duration.ofMillis(maxRpcTimeoutMs))
+        .setRpcTimeoutMultiplier(backoffMultiplier)
         .build();
   }
 

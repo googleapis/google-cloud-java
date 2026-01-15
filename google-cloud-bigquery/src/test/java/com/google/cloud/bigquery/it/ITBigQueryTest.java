@@ -477,7 +477,7 @@ class ITBigQueryTest {
       Field.newBuilder("BooleanField", LegacySQLTypeName.BOOLEAN)
           .setDescription("BooleanDescription")
           .build();
-  private static final Schema DDL_TABLE_SCHEMA =
+  private static final Schema SIMPLE_TABLE_SCHEMA =
       Schema.of(DDL_TIMESTAMP_FIELD_SCHEMA, DDL_STRING_FIELD_SCHEMA, DDL_BOOLEAN_FIELD_SCHEMA);
   private static final Schema LARGE_TABLE_SCHEMA =
       Schema.of(
@@ -622,7 +622,7 @@ class ITBigQueryTest {
   private static final String EXTRACT_MODEL_FILE = "extract_model.csv";
   private static final String BUCKET = RemoteStorageHelper.generateBucketName();
   private static final TableId TABLE_ID = TableId.of(DATASET, generateTableName("testing_table"));
-  private static final TableId TABLE_ID_DDL =
+  private static final TableId TABLE_ID_SIMPLE =
       TableId.of(DATASET, generateTableName("ddl_testing_table"));
   private static final TableId TABLE_ID_FAST_QUERY =
       TableId.of(DATASET, generateTableName("fast_query_testing_table"));
@@ -1163,9 +1163,11 @@ class ITBigQueryTest {
 
     LoadJobConfiguration configurationDDL =
         LoadJobConfiguration.newBuilder(
-                TABLE_ID_DDL, "gs://" + BUCKET + "/" + JSON_LOAD_FILE_SIMPLE, FormatOptions.json())
+                TABLE_ID_SIMPLE,
+                "gs://" + BUCKET + "/" + JSON_LOAD_FILE_SIMPLE,
+                FormatOptions.json())
             .setCreateDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
-            .setSchema(DDL_TABLE_SCHEMA)
+            .setSchema(SIMPLE_TABLE_SCHEMA)
             .setLabels(labels)
             .build();
     Job jobDDL = bigquery.create(JobInfo.of(configurationDDL));
@@ -4773,24 +4775,41 @@ class ITBigQueryTest {
 
   @Test
   void testFastDMLQuery() throws InterruptedException {
-    String tableName = TABLE_ID_FAST_QUERY.getTable();
+    // The test runs an update query. Clone the table to ensure that this doesn't impact
+    // other tests.
+    String tableName = generateTableName("test_table_fast_query_dml");
+    String tableNameFastQuery = TABLE_ID_SIMPLE.getTable();
+    String ddlQuery =
+        String.format(
+            "CREATE OR REPLACE TABLE %s ("
+                + "TimestampField TIMESTAMP OPTIONS(description='TimestampDescription'), "
+                + "StringField STRING OPTIONS(description='StringDescription'), "
+                + "BooleanField BOOLEAN OPTIONS(description='BooleanDescription') "
+                + ") AS SELECT DISTINCT * FROM %s",
+            tableName, tableNameFastQuery);
+    QueryJobConfiguration ddlConfig =
+        QueryJobConfiguration.newBuilder(ddlQuery).setDefaultDataset(DatasetId.of(DATASET)).build();
+    TableResult result = bigquery.query(ddlConfig);
+    assertNotNull(result.getJobId());
+
     String dmlQuery =
         String.format("UPDATE %s.%s SET StringField = 'hello' WHERE TRUE", DATASET, tableName);
     QueryJobConfiguration dmlConfig = QueryJobConfiguration.newBuilder(dmlQuery).build();
-    TableResult result = bigquery.query(dmlConfig);
-    assertNotNull(result.getJobId());
-    assertEquals(TABLE_SCHEMA, result.getSchema());
+    TableResult resultAfterDML = bigquery.query(dmlConfig);
+    assertNotNull(resultAfterDML.getJobId());
+    assertEquals(SIMPLE_TABLE_SCHEMA, resultAfterDML.getSchema());
     // Using the job reference on the TableResult, lookup and verify DML statistics.
-    Job queryJob = bigquery.getJob(result.getJobId());
+    Job queryJob = bigquery.getJob(resultAfterDML.getJobId());
+    queryJob = queryJob.waitFor();
     JobStatistics.QueryStatistics statistics = queryJob.getStatistics();
-    assertEquals(2L, statistics.getNumDmlAffectedRows().longValue());
-    assertEquals(2L, statistics.getDmlStats().getUpdatedRowCount().longValue());
+    assertEquals(1L, statistics.getNumDmlAffectedRows().longValue());
+    assertEquals(1L, statistics.getDmlStats().getUpdatedRowCount().longValue());
   }
 
   @Test
   void testFastDDLQuery() throws InterruptedException {
-    String tableName = "test_table_fast_query_ddl";
-    String tableNameFastQuery = TABLE_ID_DDL.getTable();
+    String tableName = generateTableName("test_table_fast_query_ddl");
+    String tableNameFastQuery = TABLE_ID_SIMPLE.getTable();
     String ddlQuery =
         String.format(
             "CREATE OR REPLACE TABLE %s ("
@@ -4803,7 +4822,7 @@ class ITBigQueryTest {
         QueryJobConfiguration.newBuilder(ddlQuery).setDefaultDataset(DatasetId.of(DATASET)).build();
     TableResult result = bigquery.query(ddlConfig);
     assertNotNull(result.getJobId());
-    assertEquals(DDL_TABLE_SCHEMA, result.getSchema());
+    assertEquals(SIMPLE_TABLE_SCHEMA, result.getSchema());
     assertEquals(0, result.getTotalRows());
     // Verify correctness of table content
     String sqlQuery = String.format("SELECT * FROM %s.%s", DATASET, tableName);
@@ -5078,8 +5097,23 @@ class ITBigQueryTest {
 
   @Test
   void testDmlStatistics() throws InterruptedException {
-    String tableName = TABLE_ID_FAST_QUERY.getTable();
-    // Run a DML statement to UPDATE 2 rows of data
+    // This runs an update SQL query. Clone the table to ensure that this doesn't impact
+    // other tests.
+    String tableName = generateTableName("test_table_dml_stats");
+    String tableNameSimple = TABLE_ID_SIMPLE.getTable();
+    String ddlQuery =
+        String.format(
+            "CREATE OR REPLACE TABLE %s ("
+                + "TimestampField TIMESTAMP OPTIONS(description='TimestampDescription'), "
+                + "StringField STRING OPTIONS(description='StringDescription'), "
+                + "BooleanField BOOLEAN OPTIONS(description='BooleanDescription') "
+                + ") AS SELECT DISTINCT * FROM %s",
+            tableName, tableNameSimple);
+    QueryJobConfiguration ddlConfig =
+        QueryJobConfiguration.newBuilder(ddlQuery).setDefaultDataset(DatasetId.of(DATASET)).build();
+    TableResult result = bigquery.query(ddlConfig);
+    assertNotNull(result.getJobId());
+
     String dmlQuery =
         String.format("UPDATE %s.%s SET StringField = 'hello' WHERE TRUE", DATASET, tableName);
     QueryJobConfiguration dmlConfig = QueryJobConfiguration.newBuilder(dmlQuery).build();
@@ -5087,20 +5121,37 @@ class ITBigQueryTest {
     remoteJob = remoteJob.waitFor();
     assertNull(remoteJob.getStatus().getError());
 
-    TableResult result = remoteJob.getQueryResults();
-    assertNotNull(result.getJobId());
-    assertEquals(TABLE_SCHEMA, result.getSchema());
+    TableResult resultAfterUpdate = remoteJob.getQueryResults();
+    assertNotNull(resultAfterUpdate.getJobId());
+    assertEquals(SIMPLE_TABLE_SCHEMA, resultAfterUpdate.getSchema());
 
     Job queryJob = bigquery.getJob(remoteJob.getJobId());
+    queryJob = queryJob.waitFor();
     JobStatistics.QueryStatistics statistics = queryJob.getStatistics();
-    assertEquals(2L, statistics.getNumDmlAffectedRows().longValue());
-    assertEquals(2L, statistics.getDmlStats().getUpdatedRowCount().longValue());
+    assertEquals(1L, statistics.getNumDmlAffectedRows().longValue());
+    assertEquals(1L, statistics.getDmlStats().getUpdatedRowCount().longValue());
   }
 
   /* TODO(prasmish): replicate the entire test case for executeSelect */
   @Test
   void testTransactionInfo() throws InterruptedException {
-    String tableName = TABLE_ID_FAST_QUERY.getTable();
+    // The transaction runs an update query. Clone the table to ensure that this doesn't impact
+    // other tests.
+    String tableName = generateTableName("test_table_transaction_info");
+    String tableNameSimple = TABLE_ID_SIMPLE.getTable();
+    String ddlQuery =
+        String.format(
+            "CREATE OR REPLACE TABLE %s ("
+                + "TimestampField TIMESTAMP OPTIONS(description='TimestampDescription'), "
+                + "StringField STRING OPTIONS(description='StringDescription'), "
+                + "BooleanField BOOLEAN OPTIONS(description='BooleanDescription') "
+                + ") AS SELECT DISTINCT * FROM %s",
+            tableName, tableNameSimple);
+    QueryJobConfiguration ddlConfig =
+        QueryJobConfiguration.newBuilder(ddlQuery).setDefaultDataset(DatasetId.of(DATASET)).build();
+    TableResult result = bigquery.query(ddlConfig);
+    assertNotNull(result.getJobId());
+
     String transaction =
         String.format(
             "BEGIN TRANSACTION;\n"
@@ -5913,7 +5964,7 @@ class ITBigQueryTest {
   @Test
   void testSnapshotTableCopyJob() throws InterruptedException {
     String sourceTableName = "test_copy_job_base_table";
-    String ddlTableName = TABLE_ID_DDL.getTable();
+    String ddlTableName = TABLE_ID_SIMPLE.getTable();
     // this creates a snapshot table at specified snapshotTime
     String snapshotTableName = "test_snapshot_table";
     // Create source table with some data in it
@@ -5930,7 +5981,7 @@ class ITBigQueryTest {
     TableId sourceTableId = TableId.of(DATASET, sourceTableName);
     TableResult result = bigquery.query(ddlConfig);
     assertNotNull(result.getJobId());
-    assertEquals(DDL_TABLE_SCHEMA, result.getSchema());
+    assertEquals(SIMPLE_TABLE_SCHEMA, result.getSchema());
     Table remoteTable = bigquery.getTable(DATASET, sourceTableName);
     assertNotNull(remoteTable);
 
@@ -5952,7 +6003,7 @@ class ITBigQueryTest {
     assertEquals(snapshotTableId.getDataset(), snapshotTable.getTableId().getDataset());
     assertEquals(snapshotTableName, snapshotTable.getTableId().getTable());
     assertTrue(snapshotTable.getDefinition() instanceof SnapshotTableDefinition);
-    assertEquals(DDL_TABLE_SCHEMA, snapshotTable.getDefinition().getSchema());
+    assertEquals(SIMPLE_TABLE_SCHEMA, snapshotTable.getDefinition().getSchema());
     assertNotNull(((SnapshotTableDefinition) snapshotTable.getDefinition()).getSnapshotTime());
     assertEquals(
         sourceTableName,
@@ -5978,7 +6029,7 @@ class ITBigQueryTest {
     assertNotNull(restoredTable);
     assertEquals(restoredTableId.getDataset(), restoredTable.getTableId().getDataset());
     assertEquals(restoredTableName, restoredTable.getTableId().getTable());
-    assertEquals(DDL_TABLE_SCHEMA, restoredTable.getDefinition().getSchema());
+    assertEquals(SIMPLE_TABLE_SCHEMA, restoredTable.getDefinition().getSchema());
     assertEquals(snapshotTable.getNumBytes(), restoredTable.getNumBytes());
     assertEquals(snapshotTable.getNumRows(), restoredTable.getNumRows());
 
@@ -6857,7 +6908,7 @@ class ITBigQueryTest {
   @Test
   void testCloneTableCopyJob() throws InterruptedException {
     String sourceTableName = "test_copy_job_base_table";
-    String ddlTableName = TABLE_ID_DDL.getTable();
+    String ddlTableName = TABLE_ID_SIMPLE.getTable();
     String cloneTableName = "test_clone_table";
     // Create source table with some data in it
     String ddlQuery =
@@ -6873,7 +6924,7 @@ class ITBigQueryTest {
     TableId sourceTableId = TableId.of(DATASET, sourceTableName);
     TableResult result = bigquery.query(ddlConfig);
     assertNotNull(result.getJobId());
-    assertEquals(DDL_TABLE_SCHEMA, result.getSchema());
+    assertEquals(SIMPLE_TABLE_SCHEMA, result.getSchema());
     Table remoteTable = bigquery.getTable(DATASET, sourceTableName);
     assertNotNull(remoteTable);
 
@@ -6897,7 +6948,7 @@ class ITBigQueryTest {
     assertEquals(cloneTableName, cloneTable.getTableId().getTable());
     assertEquals(TableDefinition.Type.TABLE, cloneTable.getDefinition().getType());
     assertTrue(cloneTable.getDefinition() instanceof StandardTableDefinition);
-    assertEquals(DDL_TABLE_SCHEMA, cloneTable.getDefinition().getSchema());
+    assertEquals(SIMPLE_TABLE_SCHEMA, cloneTable.getDefinition().getSchema());
     assertTrue(cloneTable.getCloneDefinition() instanceof CloneDefinition);
     assertEquals(sourceTableName, cloneTable.getCloneDefinition().getBaseTableId().getTable());
     assertNotNull(cloneTable.getCloneDefinition().getCloneTime());
