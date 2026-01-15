@@ -1,5 +1,28 @@
 # Changelog
 
+## [1.145.0](https://github.com/googleapis/java-pubsub/compare/v1.144.1...v1.145.0) (2026-01-15)
+
+
+### Features
+
+* Add AIInference MessageTransform type ([fe73614](https://github.com/googleapis/java-pubsub/commit/fe73614cdb6c2aca445c46e917c325cbfee3adfd))
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.65.1 ([fe73614](https://github.com/googleapis/java-pubsub/commit/fe73614cdb6c2aca445c46e917c325cbfee3adfd))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.55.1 ([#2658](https://github.com/googleapis/java-pubsub/issues/2658)) ([1a11309](https://github.com/googleapis/java-pubsub/commit/1a1130914420b45d628553218a3fa4d477216143))
+* Update googleapis/sdk-platform-java action to v2.65.1 ([#2657](https://github.com/googleapis/java-pubsub/issues/2657)) ([72dd566](https://github.com/googleapis/java-pubsub/commit/72dd5668ab2e71a24bed66c55173ab9ff5093ced))
+
+
+### Documentation
+
+* Add tags documentation links to Pub/Sub resource tags fields ([fe73614](https://github.com/googleapis/java-pubsub/commit/fe73614cdb6c2aca445c46e917c325cbfee3adfd))
+
 ## [1.144.1](https://github.com/googleapis/java-pubsub/compare/v1.144.0...v1.144.1) (2025-12-22)
 
 
