@@ -55,6 +55,7 @@ UPDATE_ROOT_POM_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_root_pom.py"
 FIX_COPYRIGHT_SCRIPT="$TRANSFORM_SCRIPT_DIR/fix_copyright_headers.py"
 UPDATE_GENERATION_CONFIG_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_generation_config.py"
 UPDATE_OWLBOT_HERMETIC_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_owlbot_hermetic.py"
+TRANSFORM_OWLBOT_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_owlbot.py"
 
 echo "Starting migration using git read-tree with isolated clones..."
 
@@ -274,6 +275,30 @@ if [ -n "$SOURCE_OWLBOT" ]; then
     echo "Committing .OwlBot-hermetic.yaml migration..."
     git add "$TARGET_OWLBOT"
     git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): migrate .OwlBot-hermetic.yaml"
+fi
+
+
+# 7.8b Migrate owlbot.py
+echo "Migrating owlbot.py..."
+if [ -f "$SOURCE_DIR/owlbot.py" ]; then
+    TARGET_OWLBOT="$SOURCE_REPO_NAME/owlbot.py"
+    
+    # Check for a template owlbot.py to source common excludes from
+    TEMPLATE_OWLBOT=""
+    if [ -f "java-workstations/owlbot.py" ]; then
+        TEMPLATE_OWLBOT="java-workstations/owlbot.py"
+        echo "Using $TEMPLATE_OWLBOT as template for excludes."
+    fi
+
+    if [ -n "$TEMPLATE_OWLBOT" ]; then
+        python3 "$TRANSFORM_OWLBOT_SCRIPT" "$TARGET_OWLBOT" "$SOURCE_DIR/owlbot.py" "$TEMPLATE_OWLBOT"
+    else
+        python3 "$TRANSFORM_OWLBOT_SCRIPT" "$TARGET_OWLBOT" "$SOURCE_DIR/owlbot.py"
+    fi
+
+    echo "Committing owlbot.py migration..."
+    git add "$TARGET_OWLBOT"
+    git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): migrate owlbot.py"
 fi
 
 # 7.9 Fix copyright headers in Java files
