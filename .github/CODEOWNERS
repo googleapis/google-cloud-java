@@ -12,3 +12,6 @@ samples/**/*.java       @googleapis/cloud-java-team-teamsync @googleapis/java-sa
 
 # Generated snippets should not be owned by samples reviewers
 samples/snippets/generated/      @googleapis/cloud-java-team-teamsync @googleapis/yoshi-java
+
+# JDBC Driver
+google-cloud-bigquery-jdbc/**    @googleapis/bq-developer-tools @googleapis/cloud-java-team-teamsync
