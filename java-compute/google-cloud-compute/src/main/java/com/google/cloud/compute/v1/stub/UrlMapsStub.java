@@ -30,6 +30,8 @@ import com.google.cloud.compute.v1.InvalidateCacheUrlMapRequest;
 import com.google.cloud.compute.v1.ListUrlMapsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchUrlMapRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsUrlMapRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateUrlMapRequest;
 import com.google.cloud.compute.v1.UrlMap;
 import com.google.cloud.compute.v1.UrlMapList;
@@ -100,6 +102,11 @@ public abstract class UrlMapsStub implements BackgroundResource {
 
   public UnaryCallable<PatchUrlMapRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsUrlMapRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   public OperationCallable<UpdateUrlMapRequest, Operation, Operation> updateOperationCallable() {

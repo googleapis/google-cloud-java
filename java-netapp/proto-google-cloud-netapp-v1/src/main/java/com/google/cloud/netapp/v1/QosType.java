@@ -154,7 +154,7 @@ public enum QosType implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.netapp.v1.CommonProto.getDescriptor().getEnumTypes().get(5);
+    return com.google.cloud.netapp.v1.CommonProto.getDescriptor().getEnumTypes().get(6);
   }
 
   private static final QosType[] VALUES = values();

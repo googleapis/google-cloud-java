@@ -28,6 +28,8 @@ import com.google.cloud.compute.v1.ListRegionNotificationEndpointsRequest;
 import com.google.cloud.compute.v1.NotificationEndpoint;
 import com.google.cloud.compute.v1.NotificationEndpointList;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.TestIamPermissionsRegionNotificationEndpointRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -69,6 +71,11 @@ public abstract class RegionNotificationEndpointsStub implements BackgroundResou
   public UnaryCallable<ListRegionNotificationEndpointsRequest, NotificationEndpointList>
       listCallable() {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsRegionNotificationEndpointRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

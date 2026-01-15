@@ -180,6 +180,12 @@ public class TargetTcpProxiesSettings extends ClientSettings<TargetTcpProxiesSet
     return ((TargetTcpProxiesStubSettings) getStubSettings()).setProxyHeaderOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsTargetTcpProxyRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((TargetTcpProxiesStubSettings) getStubSettings()).testIamPermissionsSettings();
+  }
+
   public static final TargetTcpProxiesSettings create(TargetTcpProxiesStubSettings stub)
       throws IOException {
     return new TargetTcpProxiesSettings.Builder(stub.toBuilder()).build();
@@ -343,6 +349,13 @@ public class TargetTcpProxiesSettings extends ClientSettings<TargetTcpProxiesSet
     public OperationCallSettings.Builder<SetProxyHeaderTargetTcpProxyRequest, Operation, Operation>
         setProxyHeaderOperationSettings() {
       return getStubSettingsBuilder().setProxyHeaderOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsTargetTcpProxyRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

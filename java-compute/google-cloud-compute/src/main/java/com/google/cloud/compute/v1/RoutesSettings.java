@@ -141,6 +141,12 @@ public class RoutesSettings extends ClientSettings<RoutesSettings> {
     return ((RoutesStubSettings) getStubSettings()).listSettings();
   }
 
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRouteRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((RoutesStubSettings) getStubSettings()).testIamPermissionsSettings();
+  }
+
   public static final RoutesSettings create(RoutesStubSettings stub) throws IOException {
     return new RoutesSettings.Builder(stub.toBuilder()).build();
   }
@@ -268,6 +274,12 @@ public class RoutesSettings extends ClientSettings<RoutesSettings> {
     public PagedCallSettings.Builder<ListRoutesRequest, RouteList, ListPagedResponse>
         listSettings() {
       return getStubSettingsBuilder().listSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRouteRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

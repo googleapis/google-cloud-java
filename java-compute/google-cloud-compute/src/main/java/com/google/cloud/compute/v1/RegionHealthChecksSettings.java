@@ -158,6 +158,12 @@ public class RegionHealthChecksSettings extends ClientSettings<RegionHealthCheck
     return ((RegionHealthChecksStubSettings) getStubSettings()).patchOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRegionHealthCheckRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((RegionHealthChecksStubSettings) getStubSettings()).testIamPermissionsSettings();
+  }
+
   /** Returns the object with the settings used for calls to update. */
   public UnaryCallSettings<UpdateRegionHealthCheckRequest, Operation> updateSettings() {
     return ((RegionHealthChecksStubSettings) getStubSettings()).updateSettings();
@@ -309,6 +315,13 @@ public class RegionHealthChecksSettings extends ClientSettings<RegionHealthCheck
     public OperationCallSettings.Builder<PatchRegionHealthCheckRequest, Operation, Operation>
         patchOperationSettings() {
       return getStubSettingsBuilder().patchOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsRegionHealthCheckRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     /** Returns the builder for the settings used for calls to update. */

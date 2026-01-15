@@ -57,6 +57,8 @@ import com.google.cloud.compute.v1.TargetTcpProxiesScopedList;
 import com.google.cloud.compute.v1.TargetTcpProxy;
 import com.google.cloud.compute.v1.TargetTcpProxyAggregatedList;
 import com.google.cloud.compute.v1.TargetTcpProxyList;
+import com.google.cloud.compute.v1.TestIamPermissionsTargetTcpProxyRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -175,6 +177,8 @@ public class TargetTcpProxiesStubSettings extends StubSettings<TargetTcpProxiesS
       setProxyHeaderSettings;
   private final OperationCallSettings<SetProxyHeaderTargetTcpProxyRequest, Operation, Operation>
       setProxyHeaderOperationSettings;
+  private final UnaryCallSettings<TestIamPermissionsTargetTcpProxyRequest, TestPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<
           AggregatedListTargetTcpProxiesRequest,
@@ -372,6 +376,12 @@ public class TargetTcpProxiesStubSettings extends StubSettings<TargetTcpProxiesS
     return setProxyHeaderOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsTargetTcpProxyRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
   public TargetTcpProxiesStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -466,6 +476,7 @@ public class TargetTcpProxiesStubSettings extends StubSettings<TargetTcpProxiesS
         settingsBuilder.setBackendServiceOperationSettings().build();
     setProxyHeaderSettings = settingsBuilder.setProxyHeaderSettings().build();
     setProxyHeaderOperationSettings = settingsBuilder.setProxyHeaderOperationSettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   /** Builder for TargetTcpProxiesStubSettings. */
@@ -496,6 +507,9 @@ public class TargetTcpProxiesStubSettings extends StubSettings<TargetTcpProxiesS
     private final OperationCallSettings.Builder<
             SetProxyHeaderTargetTcpProxyRequest, Operation, Operation>
         setProxyHeaderOperationSettings;
+    private final UnaryCallSettings.Builder<
+            TestIamPermissionsTargetTcpProxyRequest, TestPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -557,6 +571,7 @@ public class TargetTcpProxiesStubSettings extends StubSettings<TargetTcpProxiesS
       setBackendServiceOperationSettings = OperationCallSettings.newBuilder();
       setProxyHeaderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setProxyHeaderOperationSettings = OperationCallSettings.newBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -566,7 +581,8 @@ public class TargetTcpProxiesStubSettings extends StubSettings<TargetTcpProxiesS
               insertSettings,
               listSettings,
               setBackendServiceSettings,
-              setProxyHeaderSettings);
+              setProxyHeaderSettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -584,6 +600,7 @@ public class TargetTcpProxiesStubSettings extends StubSettings<TargetTcpProxiesS
       setBackendServiceOperationSettings = settings.setBackendServiceOperationSettings.toBuilder();
       setProxyHeaderSettings = settings.setProxyHeaderSettings.toBuilder();
       setProxyHeaderOperationSettings = settings.setProxyHeaderOperationSettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -593,7 +610,8 @@ public class TargetTcpProxiesStubSettings extends StubSettings<TargetTcpProxiesS
               insertSettings,
               listSettings,
               setBackendServiceSettings,
-              setProxyHeaderSettings);
+              setProxyHeaderSettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -641,6 +659,11 @@ public class TargetTcpProxiesStubSettings extends StubSettings<TargetTcpProxiesS
 
       builder
           .setProxyHeaderSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -826,6 +849,13 @@ public class TargetTcpProxiesStubSettings extends StubSettings<TargetTcpProxiesS
     public OperationCallSettings.Builder<SetProxyHeaderTargetTcpProxyRequest, Operation, Operation>
         setProxyHeaderOperationSettings() {
       return setProxyHeaderOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsTargetTcpProxyRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

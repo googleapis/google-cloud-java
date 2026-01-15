@@ -45,6 +45,8 @@ import com.google.cloud.compute.v1.SetProxyHeaderTargetTcpProxyRequest;
 import com.google.cloud.compute.v1.TargetTcpProxy;
 import com.google.cloud.compute.v1.TargetTcpProxyAggregatedList;
 import com.google.cloud.compute.v1.TargetTcpProxyList;
+import com.google.cloud.compute.v1.TestIamPermissionsTargetTcpProxyRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -432,6 +434,48 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
                   })
               .build();
 
+  private static final ApiMethodDescriptor<
+          TestIamPermissionsTargetTcpProxyRequest, TestPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<TestIamPermissionsTargetTcpProxyRequest, TestPermissionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.TargetTcpProxies/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TestIamPermissionsTargetTcpProxyRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/targetTcpProxies/{resource}/testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsTargetTcpProxyRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsTargetTcpProxyRequest>
+                                serializer = ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "testPermissionsRequestResource",
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<AggregatedListTargetTcpProxiesRequest, TargetTcpProxyAggregatedList>
       aggregatedListCallable;
   private final UnaryCallable<AggregatedListTargetTcpProxiesRequest, AggregatedListPagedResponse>
@@ -453,6 +497,8 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
       setProxyHeaderCallable;
   private final OperationCallable<SetProxyHeaderTargetTcpProxyRequest, Operation, Operation>
       setProxyHeaderOperationCallable;
+  private final UnaryCallable<TestIamPermissionsTargetTcpProxyRequest, TestPermissionsResponse>
+      testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
@@ -584,6 +630,20 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<TestIamPermissionsTargetTcpProxyRequest, TestPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings
+                .<TestIamPermissionsTargetTcpProxyRequest, TestPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .build();
 
     this.aggregatedListCallable =
         callableFactory.createUnaryCallable(
@@ -638,6 +698,11 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
             settings.setProxyHeaderOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -653,6 +718,7 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(setBackendServiceMethodDescriptor);
     methodDescriptors.add(setProxyHeaderMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -726,6 +792,12 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
   public OperationCallable<SetProxyHeaderTargetTcpProxyRequest, Operation, Operation>
       setProxyHeaderOperationCallable() {
     return setProxyHeaderOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsTargetTcpProxyRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

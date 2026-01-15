@@ -23,7 +23,7 @@ package com.google.cloud.netapp.v1;
  *
  *
  * <pre>
- * KmsConfig is the customer managed encryption key(CMEK) configuration.
+ * KmsConfig is the customer-managed encryption key(CMEK) configuration.
  * </pre>
  *
  * Protobuf type {@code google.cloud.netapp.v1.KmsConfig}
@@ -463,6 +463,7 @@ public final class KmsConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Identifier. Name of the KmsConfig.
+   * Format: `projects/{project}/locations/{location}/kmsConfigs/{kms_config}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -487,6 +488,7 @@ public final class KmsConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Identifier. Name of the KmsConfig.
+   * Format: `projects/{project}/locations/{location}/kmsConfigs/{kms_config}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -515,8 +517,8 @@ public final class KmsConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Customer managed crypto key resource full name. Format:
-   * projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{key}.
+   * Required. Customer-managed crypto key resource full name. Format:
+   * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`
    * </pre>
    *
    * <code>string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -540,8 +542,8 @@ public final class KmsConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Customer managed crypto key resource full name. Format:
-   * projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{key}.
+   * Required. Customer-managed crypto key resource full name. Format:
+   * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`
    * </pre>
    *
    * <code>string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1224,7 +1226,7 @@ public final class KmsConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * KmsConfig is the customer managed encryption key(CMEK) configuration.
+   * KmsConfig is the customer-managed encryption key(CMEK) configuration.
    * </pre>
    *
    * Protobuf type {@code google.cloud.netapp.v1.KmsConfig}
@@ -1566,6 +1568,7 @@ public final class KmsConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. Name of the KmsConfig.
+     * Format: `projects/{project}/locations/{location}/kmsConfigs/{kms_config}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1589,6 +1592,7 @@ public final class KmsConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. Name of the KmsConfig.
+     * Format: `projects/{project}/locations/{location}/kmsConfigs/{kms_config}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1612,6 +1616,7 @@ public final class KmsConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. Name of the KmsConfig.
+     * Format: `projects/{project}/locations/{location}/kmsConfigs/{kms_config}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1634,6 +1639,7 @@ public final class KmsConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. Name of the KmsConfig.
+     * Format: `projects/{project}/locations/{location}/kmsConfigs/{kms_config}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1652,6 +1658,7 @@ public final class KmsConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. Name of the KmsConfig.
+     * Format: `projects/{project}/locations/{location}/kmsConfigs/{kms_config}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1676,8 +1683,8 @@ public final class KmsConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Customer managed crypto key resource full name. Format:
-     * projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{key}.
+     * Required. Customer-managed crypto key resource full name. Format:
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`
      * </pre>
      *
      * <code>string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1700,8 +1707,8 @@ public final class KmsConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Customer managed crypto key resource full name. Format:
-     * projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{key}.
+     * Required. Customer-managed crypto key resource full name. Format:
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`
      * </pre>
      *
      * <code>string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1724,8 +1731,8 @@ public final class KmsConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Customer managed crypto key resource full name. Format:
-     * projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{key}.
+     * Required. Customer-managed crypto key resource full name. Format:
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`
      * </pre>
      *
      * <code>string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1747,8 +1754,8 @@ public final class KmsConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Customer managed crypto key resource full name. Format:
-     * projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{key}.
+     * Required. Customer-managed crypto key resource full name. Format:
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`
      * </pre>
      *
      * <code>string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1766,8 +1773,8 @@ public final class KmsConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Customer managed crypto key resource full name. Format:
-     * projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{key}.
+     * Required. Customer-managed crypto key resource full name. Format:
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`
      * </pre>
      *
      * <code>string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>

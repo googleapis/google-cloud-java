@@ -381,7 +381,7 @@ public interface BackupVaultOrBuilder
    *
    *
    * <pre>
-   * Optional. Backup retention policy defining the retenton of backups.
+   * Optional. Backup retention policy defining the retention of backups.
    * </pre>
    *
    * <code>
@@ -396,7 +396,7 @@ public interface BackupVaultOrBuilder
    *
    *
    * <pre>
-   * Optional. Backup retention policy defining the retenton of backups.
+   * Optional. Backup retention policy defining the retention of backups.
    * </pre>
    *
    * <code>
@@ -411,7 +411,7 @@ public interface BackupVaultOrBuilder
    *
    *
    * <pre>
-   * Optional. Backup retention policy defining the retenton of backups.
+   * Optional. Backup retention policy defining the retention of backups.
    * </pre>
    *
    * <code>
@@ -420,4 +420,100 @@ public interface BackupVaultOrBuilder
    */
   com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicyOrBuilder
       getBackupRetentionPolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the Key Management System (KMS) configuration to be
+   * used for backup encryption. Format:
+   * `projects/{project}/locations/{location}/kmsConfigs/{kms_config}`
+   * </pre>
+   *
+   * <code>
+   * string kms_config = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The kmsConfig.
+   */
+  java.lang.String getKmsConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the Key Management System (KMS) configuration to be
+   * used for backup encryption. Format:
+   * `projects/{project}/locations/{location}/kmsConfigs/{kms_config}`
+   * </pre>
+   *
+   * <code>
+   * string kms_config = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for kmsConfig.
+   */
+  com.google.protobuf.ByteString getKmsConfigBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Field indicating encryption state of CMEK backups.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.BackupVault.EncryptionState encryption_state = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for encryptionState.
+   */
+  int getEncryptionStateValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Field indicating encryption state of CMEK backups.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.BackupVault.EncryptionState encryption_state = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The encryptionState.
+   */
+  com.google.cloud.netapp.v1.BackupVault.EncryptionState getEncryptionState();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The crypto key version used to encrypt the backup vault.
+   * Format:
+   * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}`
+   * </pre>
+   *
+   * <code>string backups_crypto_key_version = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The backupsCryptoKeyVersion.
+   */
+  java.lang.String getBackupsCryptoKeyVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The crypto key version used to encrypt the backup vault.
+   * Format:
+   * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}`
+   * </pre>
+   *
+   * <code>string backups_crypto_key_version = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for backupsCryptoKeyVersion.
+   */
+  com.google.protobuf.ByteString getBackupsCryptoKeyVersionBytes();
 }

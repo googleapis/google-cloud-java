@@ -620,12 +620,72 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     MEMORY_OPTIMIZED_M4(276301373),
     /** <code>MEMORY_OPTIMIZED_M4_6TB = 210543650;</code> */
     MEMORY_OPTIMIZED_M4_6TB(210543650),
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for X4 machine with 1440 vCPUs and 24TB of memory.
+     * </pre>
+     *
+     * <code>MEMORY_OPTIMIZED_X4_1440_24T = 206669823;</code>
+     */
+    MEMORY_OPTIMIZED_X4_1440_24T(206669823),
     /** <code>MEMORY_OPTIMIZED_X4_16TB = 183089120;</code> */
     MEMORY_OPTIMIZED_X4_16TB(183089120),
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for X4 machine with 1920 vCPUs and 32TB of memory.
+     * </pre>
+     *
+     * <code>MEMORY_OPTIMIZED_X4_1920_32T = 291963529;</code>
+     */
+    MEMORY_OPTIMIZED_X4_1920_32T(291963529),
     /** <code>MEMORY_OPTIMIZED_X4_24TB = 183116989;</code> */
     MEMORY_OPTIMIZED_X4_24TB(183116989),
     /** <code>MEMORY_OPTIMIZED_X4_32TB = 183144858;</code> */
     MEMORY_OPTIMIZED_X4_32TB(183144858),
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for X4 machine with 480 vCPUs and 6TB of memory.
+     * </pre>
+     *
+     * <code>MEMORY_OPTIMIZED_X4_480_6T = 478547742;</code>
+     */
+    MEMORY_OPTIMIZED_X4_480_6T(478547742),
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for X4 machine with 480 vCPUs and 8TB of memory.
+     * </pre>
+     *
+     * <code>MEMORY_OPTIMIZED_X4_480_8T = 478547804;</code>
+     */
+    MEMORY_OPTIMIZED_X4_480_8T(478547804),
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for X4 machine with 960 vCPUs and 12TB of memory.
+     * </pre>
+     *
+     * <code>MEMORY_OPTIMIZED_X4_960_12T = 424752410;</code>
+     */
+    MEMORY_OPTIMIZED_X4_960_12T(424752410),
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for X4 machine with 960 vCPUs and 16TB of memory.
+     * </pre>
+     *
+     * <code>MEMORY_OPTIMIZED_X4_960_16T = 424752534;</code>
+     */
+    MEMORY_OPTIMIZED_X4_960_16T(424752534),
     /** <code>STORAGE_OPTIMIZED_Z3 = 316796085;</code> */
     STORAGE_OPTIMIZED_Z3(316796085),
     /**
@@ -735,14 +795,80 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     /** <code>MEMORY_OPTIMIZED_M4_6TB = 210543650;</code> */
     public static final int MEMORY_OPTIMIZED_M4_6TB_VALUE = 210543650;
 
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for X4 machine with 1440 vCPUs and 24TB of memory.
+     * </pre>
+     *
+     * <code>MEMORY_OPTIMIZED_X4_1440_24T = 206669823;</code>
+     */
+    public static final int MEMORY_OPTIMIZED_X4_1440_24T_VALUE = 206669823;
+
     /** <code>MEMORY_OPTIMIZED_X4_16TB = 183089120;</code> */
     public static final int MEMORY_OPTIMIZED_X4_16TB_VALUE = 183089120;
+
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for X4 machine with 1920 vCPUs and 32TB of memory.
+     * </pre>
+     *
+     * <code>MEMORY_OPTIMIZED_X4_1920_32T = 291963529;</code>
+     */
+    public static final int MEMORY_OPTIMIZED_X4_1920_32T_VALUE = 291963529;
 
     /** <code>MEMORY_OPTIMIZED_X4_24TB = 183116989;</code> */
     public static final int MEMORY_OPTIMIZED_X4_24TB_VALUE = 183116989;
 
     /** <code>MEMORY_OPTIMIZED_X4_32TB = 183144858;</code> */
     public static final int MEMORY_OPTIMIZED_X4_32TB_VALUE = 183144858;
+
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for X4 machine with 480 vCPUs and 6TB of memory.
+     * </pre>
+     *
+     * <code>MEMORY_OPTIMIZED_X4_480_6T = 478547742;</code>
+     */
+    public static final int MEMORY_OPTIMIZED_X4_480_6T_VALUE = 478547742;
+
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for X4 machine with 480 vCPUs and 8TB of memory.
+     * </pre>
+     *
+     * <code>MEMORY_OPTIMIZED_X4_480_8T = 478547804;</code>
+     */
+    public static final int MEMORY_OPTIMIZED_X4_480_8T_VALUE = 478547804;
+
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for X4 machine with 960 vCPUs and 12TB of memory.
+     * </pre>
+     *
+     * <code>MEMORY_OPTIMIZED_X4_960_12T = 424752410;</code>
+     */
+    public static final int MEMORY_OPTIMIZED_X4_960_12T_VALUE = 424752410;
+
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for X4 machine with 960 vCPUs and 16TB of memory.
+     * </pre>
+     *
+     * <code>MEMORY_OPTIMIZED_X4_960_16T = 424752534;</code>
+     */
+    public static final int MEMORY_OPTIMIZED_X4_960_16T_VALUE = 424752534;
 
     /** <code>STORAGE_OPTIMIZED_Z3 = 316796085;</code> */
     public static final int STORAGE_OPTIMIZED_Z3_VALUE = 316796085;
@@ -840,12 +966,24 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
           return MEMORY_OPTIMIZED_M4;
         case 210543650:
           return MEMORY_OPTIMIZED_M4_6TB;
+        case 206669823:
+          return MEMORY_OPTIMIZED_X4_1440_24T;
         case 183089120:
           return MEMORY_OPTIMIZED_X4_16TB;
+        case 291963529:
+          return MEMORY_OPTIMIZED_X4_1920_32T;
         case 183116989:
           return MEMORY_OPTIMIZED_X4_24TB;
         case 183144858:
           return MEMORY_OPTIMIZED_X4_32TB;
+        case 478547742:
+          return MEMORY_OPTIMIZED_X4_480_6T;
+        case 478547804:
+          return MEMORY_OPTIMIZED_X4_480_8T;
+        case 424752410:
+          return MEMORY_OPTIMIZED_X4_960_12T;
+        case 424752534:
+          return MEMORY_OPTIMIZED_X4_960_16T;
         case 316796085:
           return STORAGE_OPTIMIZED_Z3;
         case 437714322:

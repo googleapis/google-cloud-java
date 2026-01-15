@@ -33,6 +33,8 @@ import com.google.cloud.compute.v1.SetProxyHeaderTargetTcpProxyRequest;
 import com.google.cloud.compute.v1.TargetTcpProxy;
 import com.google.cloud.compute.v1.TargetTcpProxyAggregatedList;
 import com.google.cloud.compute.v1.TargetTcpProxyList;
+import com.google.cloud.compute.v1.TestIamPermissionsTargetTcpProxyRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -102,6 +104,11 @@ public abstract class TargetTcpProxiesStub implements BackgroundResource {
 
   public UnaryCallable<SetProxyHeaderTargetTcpProxyRequest, Operation> setProxyHeaderCallable() {
     throw new UnsupportedOperationException("Not implemented: setProxyHeaderCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsTargetTcpProxyRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

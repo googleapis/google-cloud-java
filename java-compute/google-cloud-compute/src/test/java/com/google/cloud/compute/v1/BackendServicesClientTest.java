@@ -396,6 +396,8 @@ public class BackendServicesClientTest {
             .putAllMetadatas(new HashMap<String, String>())
             .setName("name3373707")
             .setNetwork("network1843485230")
+            .setNetworkPassThroughLbTrafficPolicy(
+                BackendServiceNetworkPassThroughLbTrafficPolicy.newBuilder().build())
             .setOutlierDetection(OutlierDetection.newBuilder().build())
             .setParams(BackendServiceParams.newBuilder().build())
             .setPort(3446913)

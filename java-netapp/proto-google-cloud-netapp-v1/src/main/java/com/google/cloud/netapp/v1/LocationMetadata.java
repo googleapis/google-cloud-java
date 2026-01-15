@@ -314,6 +314,25 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     return hasVcp_;
   }
 
+  public static final int HAS_ONTAP_PROXY_FIELD_NUMBER = 4;
+  private boolean hasOntapProxy_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates if the location has ONTAP Proxy support.
+   * </pre>
+   *
+   * <code>bool has_ontap_proxy = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The hasOntapProxy.
+   */
+  @java.lang.Override
+  public boolean getHasOntapProxy() {
+    return hasOntapProxy_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -345,6 +364,9 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     }
     if (hasVcp_ != false) {
       output.writeBool(3, hasVcp_);
+    }
+    if (hasOntapProxy_ != false) {
+      output.writeBool(4, hasOntapProxy_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -386,6 +408,9 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     if (hasVcp_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, hasVcp_);
     }
+    if (hasOntapProxy_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, hasOntapProxy_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -405,6 +430,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     if (!supportedServiceLevels_.equals(other.supportedServiceLevels_)) return false;
     if (!supportedFlexPerformance_.equals(other.supportedFlexPerformance_)) return false;
     if (getHasVcp() != other.getHasVcp()) return false;
+    if (getHasOntapProxy() != other.getHasOntapProxy()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -426,6 +452,8 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + HAS_VCP_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getHasVcp());
+    hash = (37 * hash) + HAS_ONTAP_PROXY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getHasOntapProxy());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -572,6 +600,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       supportedFlexPerformance_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
       hasVcp_ = false;
+      hasOntapProxy_ = false;
       return this;
     }
 
@@ -625,6 +654,9 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.hasVcp_ = hasVcp_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.hasOntapProxy_ = hasOntapProxy_;
       }
     }
 
@@ -696,6 +728,9 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       if (other.getHasVcp() != false) {
         setHasVcp(other.getHasVcp());
       }
+      if (other.getHasOntapProxy() != false) {
+        setHasOntapProxy(other.getHasOntapProxy());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -766,6 +801,12 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000004;
                 break;
               } // case 24
+            case 32:
+              {
+                hasOntapProxy_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1359,6 +1400,62 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     public Builder clearHasVcp() {
       bitField0_ = (bitField0_ & ~0x00000004);
       hasVcp_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean hasOntapProxy_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates if the location has ONTAP Proxy support.
+     * </pre>
+     *
+     * <code>bool has_ontap_proxy = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The hasOntapProxy.
+     */
+    @java.lang.Override
+    public boolean getHasOntapProxy() {
+      return hasOntapProxy_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates if the location has ONTAP Proxy support.
+     * </pre>
+     *
+     * <code>bool has_ontap_proxy = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The hasOntapProxy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHasOntapProxy(boolean value) {
+
+      hasOntapProxy_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates if the location has ONTAP Proxy support.
+     * </pre>
+     *
+     * <code>bool has_ontap_proxy = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearHasOntapProxy() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      hasOntapProxy_ = false;
       onChanged();
       return this;
     }

@@ -20,6 +20,7 @@ import static com.google.cloud.netapp.v1.NetAppClient.ListActiveDirectoriesPaged
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupPoliciesPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupVaultsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupsPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListHostGroupsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListKmsConfigsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListLocationsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListQuotaRulesPagedResponse;
@@ -48,6 +49,7 @@ import com.google.cloud.netapp.v1.CreateActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.CreateBackupPolicyRequest;
 import com.google.cloud.netapp.v1.CreateBackupRequest;
 import com.google.cloud.netapp.v1.CreateBackupVaultRequest;
+import com.google.cloud.netapp.v1.CreateHostGroupRequest;
 import com.google.cloud.netapp.v1.CreateKmsConfigRequest;
 import com.google.cloud.netapp.v1.CreateQuotaRuleRequest;
 import com.google.cloud.netapp.v1.CreateReplicationRequest;
@@ -58,6 +60,7 @@ import com.google.cloud.netapp.v1.DeleteActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.DeleteBackupPolicyRequest;
 import com.google.cloud.netapp.v1.DeleteBackupRequest;
 import com.google.cloud.netapp.v1.DeleteBackupVaultRequest;
+import com.google.cloud.netapp.v1.DeleteHostGroupRequest;
 import com.google.cloud.netapp.v1.DeleteKmsConfigRequest;
 import com.google.cloud.netapp.v1.DeleteQuotaRuleRequest;
 import com.google.cloud.netapp.v1.DeleteReplicationRequest;
@@ -70,12 +73,14 @@ import com.google.cloud.netapp.v1.GetActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.GetBackupPolicyRequest;
 import com.google.cloud.netapp.v1.GetBackupRequest;
 import com.google.cloud.netapp.v1.GetBackupVaultRequest;
+import com.google.cloud.netapp.v1.GetHostGroupRequest;
 import com.google.cloud.netapp.v1.GetKmsConfigRequest;
 import com.google.cloud.netapp.v1.GetQuotaRuleRequest;
 import com.google.cloud.netapp.v1.GetReplicationRequest;
 import com.google.cloud.netapp.v1.GetSnapshotRequest;
 import com.google.cloud.netapp.v1.GetStoragePoolRequest;
 import com.google.cloud.netapp.v1.GetVolumeRequest;
+import com.google.cloud.netapp.v1.HostGroup;
 import com.google.cloud.netapp.v1.KmsConfig;
 import com.google.cloud.netapp.v1.ListActiveDirectoriesRequest;
 import com.google.cloud.netapp.v1.ListActiveDirectoriesResponse;
@@ -85,6 +90,8 @@ import com.google.cloud.netapp.v1.ListBackupVaultsRequest;
 import com.google.cloud.netapp.v1.ListBackupVaultsResponse;
 import com.google.cloud.netapp.v1.ListBackupsRequest;
 import com.google.cloud.netapp.v1.ListBackupsResponse;
+import com.google.cloud.netapp.v1.ListHostGroupsRequest;
+import com.google.cloud.netapp.v1.ListHostGroupsResponse;
 import com.google.cloud.netapp.v1.ListKmsConfigsRequest;
 import com.google.cloud.netapp.v1.ListKmsConfigsResponse;
 import com.google.cloud.netapp.v1.ListQuotaRulesRequest;
@@ -100,6 +107,8 @@ import com.google.cloud.netapp.v1.ListVolumesResponse;
 import com.google.cloud.netapp.v1.OperationMetadata;
 import com.google.cloud.netapp.v1.QuotaRule;
 import com.google.cloud.netapp.v1.Replication;
+import com.google.cloud.netapp.v1.RestoreBackupFilesRequest;
+import com.google.cloud.netapp.v1.RestoreBackupFilesResponse;
 import com.google.cloud.netapp.v1.ResumeReplicationRequest;
 import com.google.cloud.netapp.v1.ReverseReplicationDirectionRequest;
 import com.google.cloud.netapp.v1.RevertVolumeRequest;
@@ -112,6 +121,7 @@ import com.google.cloud.netapp.v1.UpdateActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.UpdateBackupPolicyRequest;
 import com.google.cloud.netapp.v1.UpdateBackupRequest;
 import com.google.cloud.netapp.v1.UpdateBackupVaultRequest;
+import com.google.cloud.netapp.v1.UpdateHostGroupRequest;
 import com.google.cloud.netapp.v1.UpdateKmsConfigRequest;
 import com.google.cloud.netapp.v1.UpdateQuotaRuleRequest;
 import com.google.cloud.netapp.v1.UpdateReplicationRequest;
@@ -793,6 +803,72 @@ public class GrpcNetAppStub extends NetAppStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<RestoreBackupFilesRequest, Operation>
+      restoreBackupFilesMethodDescriptor =
+          MethodDescriptor.<RestoreBackupFilesRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/RestoreBackupFiles")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RestoreBackupFilesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListHostGroupsRequest, ListHostGroupsResponse>
+      listHostGroupsMethodDescriptor =
+          MethodDescriptor.<ListHostGroupsRequest, ListHostGroupsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/ListHostGroups")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListHostGroupsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListHostGroupsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetHostGroupRequest, HostGroup>
+      getHostGroupMethodDescriptor =
+          MethodDescriptor.<GetHostGroupRequest, HostGroup>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/GetHostGroup")
+              .setRequestMarshaller(ProtoUtils.marshaller(GetHostGroupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(HostGroup.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateHostGroupRequest, Operation>
+      createHostGroupMethodDescriptor =
+          MethodDescriptor.<CreateHostGroupRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/CreateHostGroup")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateHostGroupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateHostGroupRequest, Operation>
+      updateHostGroupMethodDescriptor =
+          MethodDescriptor.<UpdateHostGroupRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/UpdateHostGroup")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateHostGroupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteHostGroupRequest, Operation>
+      deleteHostGroupMethodDescriptor =
+          MethodDescriptor.<DeleteHostGroupRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/DeleteHostGroup")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteHostGroupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -986,6 +1062,23 @@ public class GrpcNetAppStub extends NetAppStub {
   private final UnaryCallable<DeleteQuotaRuleRequest, Operation> deleteQuotaRuleCallable;
   private final OperationCallable<DeleteQuotaRuleRequest, Empty, OperationMetadata>
       deleteQuotaRuleOperationCallable;
+  private final UnaryCallable<RestoreBackupFilesRequest, Operation> restoreBackupFilesCallable;
+  private final OperationCallable<
+          RestoreBackupFilesRequest, RestoreBackupFilesResponse, OperationMetadata>
+      restoreBackupFilesOperationCallable;
+  private final UnaryCallable<ListHostGroupsRequest, ListHostGroupsResponse> listHostGroupsCallable;
+  private final UnaryCallable<ListHostGroupsRequest, ListHostGroupsPagedResponse>
+      listHostGroupsPagedCallable;
+  private final UnaryCallable<GetHostGroupRequest, HostGroup> getHostGroupCallable;
+  private final UnaryCallable<CreateHostGroupRequest, Operation> createHostGroupCallable;
+  private final OperationCallable<CreateHostGroupRequest, HostGroup, OperationMetadata>
+      createHostGroupOperationCallable;
+  private final UnaryCallable<UpdateHostGroupRequest, Operation> updateHostGroupCallable;
+  private final OperationCallable<UpdateHostGroupRequest, HostGroup, OperationMetadata>
+      updateHostGroupOperationCallable;
+  private final UnaryCallable<DeleteHostGroupRequest, Operation> deleteHostGroupCallable;
+  private final OperationCallable<DeleteHostGroupRequest, Empty, OperationMetadata>
+      deleteHostGroupOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1652,6 +1745,67 @@ public class GrpcNetAppStub extends NetAppStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<RestoreBackupFilesRequest, Operation> restoreBackupFilesTransportSettings =
+        GrpcCallSettings.<RestoreBackupFilesRequest, Operation>newBuilder()
+            .setMethodDescriptor(restoreBackupFilesMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListHostGroupsRequest, ListHostGroupsResponse>
+        listHostGroupsTransportSettings =
+            GrpcCallSettings.<ListHostGroupsRequest, ListHostGroupsResponse>newBuilder()
+                .setMethodDescriptor(listHostGroupsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetHostGroupRequest, HostGroup> getHostGroupTransportSettings =
+        GrpcCallSettings.<GetHostGroupRequest, HostGroup>newBuilder()
+            .setMethodDescriptor(getHostGroupMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreateHostGroupRequest, Operation> createHostGroupTransportSettings =
+        GrpcCallSettings.<CreateHostGroupRequest, Operation>newBuilder()
+            .setMethodDescriptor(createHostGroupMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateHostGroupRequest, Operation> updateHostGroupTransportSettings =
+        GrpcCallSettings.<UpdateHostGroupRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateHostGroupMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("host_group.name", String.valueOf(request.getHostGroup().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteHostGroupRequest, Operation> deleteHostGroupTransportSettings =
+        GrpcCallSettings.<DeleteHostGroupRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteHostGroupMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -2163,6 +2317,53 @@ public class GrpcNetAppStub extends NetAppStub {
         callableFactory.createOperationCallable(
             deleteQuotaRuleTransportSettings,
             settings.deleteQuotaRuleOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.restoreBackupFilesCallable =
+        callableFactory.createUnaryCallable(
+            restoreBackupFilesTransportSettings,
+            settings.restoreBackupFilesSettings(),
+            clientContext);
+    this.restoreBackupFilesOperationCallable =
+        callableFactory.createOperationCallable(
+            restoreBackupFilesTransportSettings,
+            settings.restoreBackupFilesOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listHostGroupsCallable =
+        callableFactory.createUnaryCallable(
+            listHostGroupsTransportSettings, settings.listHostGroupsSettings(), clientContext);
+    this.listHostGroupsPagedCallable =
+        callableFactory.createPagedCallable(
+            listHostGroupsTransportSettings, settings.listHostGroupsSettings(), clientContext);
+    this.getHostGroupCallable =
+        callableFactory.createUnaryCallable(
+            getHostGroupTransportSettings, settings.getHostGroupSettings(), clientContext);
+    this.createHostGroupCallable =
+        callableFactory.createUnaryCallable(
+            createHostGroupTransportSettings, settings.createHostGroupSettings(), clientContext);
+    this.createHostGroupOperationCallable =
+        callableFactory.createOperationCallable(
+            createHostGroupTransportSettings,
+            settings.createHostGroupOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateHostGroupCallable =
+        callableFactory.createUnaryCallable(
+            updateHostGroupTransportSettings, settings.updateHostGroupSettings(), clientContext);
+    this.updateHostGroupOperationCallable =
+        callableFactory.createOperationCallable(
+            updateHostGroupTransportSettings,
+            settings.updateHostGroupOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteHostGroupCallable =
+        callableFactory.createUnaryCallable(
+            deleteHostGroupTransportSettings, settings.deleteHostGroupSettings(), clientContext);
+    this.deleteHostGroupOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteHostGroupTransportSettings,
+            settings.deleteHostGroupOperationSettings(),
             clientContext,
             operationsStub);
     this.listLocationsCallable =
@@ -2781,6 +2982,66 @@ public class GrpcNetAppStub extends NetAppStub {
   public OperationCallable<DeleteQuotaRuleRequest, Empty, OperationMetadata>
       deleteQuotaRuleOperationCallable() {
     return deleteQuotaRuleOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RestoreBackupFilesRequest, Operation> restoreBackupFilesCallable() {
+    return restoreBackupFilesCallable;
+  }
+
+  @Override
+  public OperationCallable<RestoreBackupFilesRequest, RestoreBackupFilesResponse, OperationMetadata>
+      restoreBackupFilesOperationCallable() {
+    return restoreBackupFilesOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListHostGroupsRequest, ListHostGroupsResponse> listHostGroupsCallable() {
+    return listHostGroupsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListHostGroupsRequest, ListHostGroupsPagedResponse>
+      listHostGroupsPagedCallable() {
+    return listHostGroupsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetHostGroupRequest, HostGroup> getHostGroupCallable() {
+    return getHostGroupCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateHostGroupRequest, Operation> createHostGroupCallable() {
+    return createHostGroupCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateHostGroupRequest, HostGroup, OperationMetadata>
+      createHostGroupOperationCallable() {
+    return createHostGroupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateHostGroupRequest, Operation> updateHostGroupCallable() {
+    return updateHostGroupCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateHostGroupRequest, HostGroup, OperationMetadata>
+      updateHostGroupOperationCallable() {
+    return updateHostGroupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteHostGroupRequest, Operation> deleteHostGroupCallable() {
+    return deleteHostGroupCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteHostGroupRequest, Empty, OperationMetadata>
+      deleteHostGroupOperationCallable() {
+    return deleteHostGroupOperationCallable;
   }
 
   @Override

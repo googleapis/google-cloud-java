@@ -791,6 +791,62 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
     return osLicense_;
   }
 
+  public static final int PARAMS_FIELD_NUMBER = 78313862;
+  private com.google.cloud.compute.v1.LicenseParams params_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.LicenseParams params = 78313862;</code>
+   *
+   * @return Whether the params field is set.
+   */
+  @java.lang.Override
+  public boolean hasParams() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.LicenseParams params = 78313862;</code>
+   *
+   * @return The params.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.LicenseParams getParams() {
+    return params_ == null
+        ? com.google.cloud.compute.v1.LicenseParams.getDefaultInstance()
+        : params_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.LicenseParams params = 78313862;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.LicenseParamsOrBuilder getParamsOrBuilder() {
+    return params_ == null
+        ? com.google.cloud.compute.v1.LicenseParams.getDefaultInstance()
+        : params_;
+  }
+
   public static final int REMOVABLE_FROM_DISK_FIELD_NUMBER = 25854638;
   private boolean removableFromDisk_ = false;
 
@@ -808,7 +864,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRemovableFromDisk() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
@@ -922,7 +978,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasResourceRequirements() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
@@ -982,7 +1038,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
 
   /**
@@ -1051,7 +1107,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLinkWithId() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
@@ -1118,7 +1174,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSoleTenantOnly() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
 
   /**
@@ -1154,7 +1210,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasTransferable() {
-    return ((bitField0_ & 0x00010000) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
 
   /**
@@ -1193,7 +1249,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasUpdateTimestamp() {
-    return ((bitField0_ & 0x00020000) != 0);
+    return ((bitField0_ & 0x00040000) != 0);
   }
 
   /**
@@ -1272,22 +1328,25 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       output.writeBool(4349893, transferable_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(16959254, appendableToDisk_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       output.writeBool(25854638, removableFromDisk_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 44520962, selfLinkWithId_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
+      output.writeMessage(78313862, getParams());
+    }
+    if (((bitField0_ & 0x00040000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 120894752, updateTimestamp_);
     }
     for (int i = 0; i < requiredCoattachedLicenses_.size(); i++) {
@@ -1301,7 +1360,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 195677718, allowedReplacementLicenses_.getRaw(i));
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       output.writeMessage(214292769, getResourceRequirements());
     }
     if (((bitField0_ & 0x00000100) != 0)) {
@@ -1317,10 +1376,10 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       output.writeBool(427525559, soleTenantOnly_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000400) != 0)) {
@@ -1347,23 +1406,26 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(4349893, transferable_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(16959254, appendableToDisk_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(25854638, removableFromDisk_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(44520962, selfLinkWithId_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(78313862, getParams());
+    }
+    if (((bitField0_ & 0x00040000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(120894752, updateTimestamp_);
     }
     {
@@ -1387,7 +1449,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getAllowedReplacementLicensesList().size();
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               214292769, getResourceRequirements());
@@ -1409,10 +1471,10 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(427525559, soleTenantOnly_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000400) != 0)) {
@@ -1479,6 +1541,10 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
     if (hasOsLicense() != other.hasOsLicense()) return false;
     if (hasOsLicense()) {
       if (getOsLicense() != other.getOsLicense()) return false;
+    }
+    if (hasParams() != other.hasParams()) return false;
+    if (hasParams()) {
+      if (!getParams().equals(other.getParams())) return false;
     }
     if (hasRemovableFromDisk() != other.hasRemovableFromDisk()) return false;
     if (hasRemovableFromDisk()) {
@@ -1572,6 +1638,10 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
     if (hasOsLicense()) {
       hash = (37 * hash) + OS_LICENSE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getOsLicense());
+    }
+    if (hasParams()) {
+      hash = (37 * hash) + PARAMS_FIELD_NUMBER;
+      hash = (53 * hash) + getParams().hashCode();
     }
     if (hasRemovableFromDisk()) {
       hash = (37 * hash) + REMOVABLE_FROM_DISK_FIELD_NUMBER;
@@ -1751,6 +1821,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getMinimumRetentionFieldBuilder();
+        getParamsFieldBuilder();
         getResourceRequirementsFieldBuilder();
       }
     }
@@ -1776,6 +1847,11 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       multiTenantOnly_ = false;
       name_ = "";
       osLicense_ = false;
+      params_ = null;
+      if (paramsBuilder_ != null) {
+        paramsBuilder_.dispose();
+        paramsBuilder_ = null;
+      }
       removableFromDisk_ = false;
       requiredCoattachedLicenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
       resourceRequirements_ = null;
@@ -1878,39 +1954,43 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.removableFromDisk_ = removableFromDisk_;
+        result.params_ = paramsBuilder_ == null ? params_ : paramsBuilder_.build();
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.removableFromDisk_ = removableFromDisk_;
+        to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         requiredCoattachedLicenses_.makeImmutable();
         result.requiredCoattachedLicenses_ = requiredCoattachedLicenses_;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.resourceRequirements_ =
             resourceRequirementsBuilder_ == null
                 ? resourceRequirements_
                 : resourceRequirementsBuilder_.build();
-        to_bitField0_ |= 0x00001000;
-      }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.selfLinkWithId_ = selfLinkWithId_;
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00004000;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.soleTenantOnly_ = soleTenantOnly_;
+        result.selfLinkWithId_ = selfLinkWithId_;
         to_bitField0_ |= 0x00008000;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.transferable_ = transferable_;
+        result.soleTenantOnly_ = soleTenantOnly_;
         to_bitField0_ |= 0x00010000;
       }
       if (((from_bitField0_ & 0x00100000) != 0)) {
-        result.updateTimestamp_ = updateTimestamp_;
+        result.transferable_ = transferable_;
         to_bitField0_ |= 0x00020000;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.updateTimestamp_ = updateTimestamp_;
+        to_bitField0_ |= 0x00040000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2021,13 +2101,16 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       if (other.hasOsLicense()) {
         setOsLicense(other.getOsLicense());
       }
+      if (other.hasParams()) {
+        mergeParams(other.getParams());
+      }
       if (other.hasRemovableFromDisk()) {
         setRemovableFromDisk(other.getRemovableFromDisk());
       }
       if (!other.requiredCoattachedLicenses_.isEmpty()) {
         if (requiredCoattachedLicenses_.isEmpty()) {
           requiredCoattachedLicenses_ = other.requiredCoattachedLicenses_;
-          bitField0_ |= 0x00004000;
+          bitField0_ |= 0x00008000;
         } else {
           ensureRequiredCoattachedLicensesIsMutable();
           requiredCoattachedLicenses_.addAll(other.requiredCoattachedLicenses_);
@@ -2039,12 +2122,12 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (other.hasSelfLinkWithId()) {
         selfLinkWithId_ = other.selfLinkWithId_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (other.hasSoleTenantOnly()) {
@@ -2055,7 +2138,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasUpdateTimestamp()) {
         updateTimestamp_ = other.updateTimestamp_;
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2111,7 +2194,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
             case 34799144:
               {
                 transferable_ = input.readBool();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 34799144
             case 135674032:
@@ -2123,7 +2206,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
             case 206837104:
               {
                 removableFromDisk_ = input.readBool();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 206837104
             case 244202930:
@@ -2135,13 +2218,19 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
             case 356167698:
               {
                 selfLinkWithId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 356167698
+            case 626510898:
+              {
+                input.readMessage(getParamsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 626510898
             case 967158018:
               {
                 updateTimestamp_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 967158018
             case 1033562122:
@@ -2169,7 +2258,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getResourceRequirementsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 1714342154
             case -2099805992:
@@ -2200,13 +2289,13 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
             case -874762824:
               {
                 soleTenantOnly_ = input.readBool();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case -874762824
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case -645248918
             case -391076048:
@@ -3812,6 +3901,209 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.compute.v1.LicenseParams params_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.LicenseParams,
+            com.google.cloud.compute.v1.LicenseParams.Builder,
+            com.google.cloud.compute.v1.LicenseParamsOrBuilder>
+        paramsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.LicenseParams params = 78313862;</code>
+     *
+     * @return Whether the params field is set.
+     */
+    public boolean hasParams() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.LicenseParams params = 78313862;</code>
+     *
+     * @return The params.
+     */
+    public com.google.cloud.compute.v1.LicenseParams getParams() {
+      if (paramsBuilder_ == null) {
+        return params_ == null
+            ? com.google.cloud.compute.v1.LicenseParams.getDefaultInstance()
+            : params_;
+      } else {
+        return paramsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.LicenseParams params = 78313862;</code>
+     */
+    public Builder setParams(com.google.cloud.compute.v1.LicenseParams value) {
+      if (paramsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        params_ = value;
+      } else {
+        paramsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.LicenseParams params = 78313862;</code>
+     */
+    public Builder setParams(com.google.cloud.compute.v1.LicenseParams.Builder builderForValue) {
+      if (paramsBuilder_ == null) {
+        params_ = builderForValue.build();
+      } else {
+        paramsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.LicenseParams params = 78313862;</code>
+     */
+    public Builder mergeParams(com.google.cloud.compute.v1.LicenseParams value) {
+      if (paramsBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)
+            && params_ != null
+            && params_ != com.google.cloud.compute.v1.LicenseParams.getDefaultInstance()) {
+          getParamsBuilder().mergeFrom(value);
+        } else {
+          params_ = value;
+        }
+      } else {
+        paramsBuilder_.mergeFrom(value);
+      }
+      if (params_ != null) {
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.LicenseParams params = 78313862;</code>
+     */
+    public Builder clearParams() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      params_ = null;
+      if (paramsBuilder_ != null) {
+        paramsBuilder_.dispose();
+        paramsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.LicenseParams params = 78313862;</code>
+     */
+    public com.google.cloud.compute.v1.LicenseParams.Builder getParamsBuilder() {
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return getParamsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.LicenseParams params = 78313862;</code>
+     */
+    public com.google.cloud.compute.v1.LicenseParamsOrBuilder getParamsOrBuilder() {
+      if (paramsBuilder_ != null) {
+        return paramsBuilder_.getMessageOrBuilder();
+      } else {
+        return params_ == null
+            ? com.google.cloud.compute.v1.LicenseParams.getDefaultInstance()
+            : params_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.LicenseParams params = 78313862;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.LicenseParams,
+            com.google.cloud.compute.v1.LicenseParams.Builder,
+            com.google.cloud.compute.v1.LicenseParamsOrBuilder>
+        getParamsFieldBuilder() {
+      if (paramsBuilder_ == null) {
+        paramsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.LicenseParams,
+                com.google.cloud.compute.v1.LicenseParams.Builder,
+                com.google.cloud.compute.v1.LicenseParamsOrBuilder>(
+                getParams(), getParentForChildren(), isClean());
+        params_ = null;
+      }
+      return paramsBuilder_;
+    }
+
     private boolean removableFromDisk_;
 
     /**
@@ -3828,7 +4120,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasRemovableFromDisk() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -3864,7 +4156,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
     public Builder setRemovableFromDisk(boolean value) {
 
       removableFromDisk_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3882,7 +4174,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRemovableFromDisk() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       removableFromDisk_ = false;
       onChanged();
       return this;
@@ -3896,7 +4188,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
         requiredCoattachedLicenses_ =
             new com.google.protobuf.LazyStringArrayList(requiredCoattachedLicenses_);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
     }
 
     /**
@@ -3991,7 +4283,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRequiredCoattachedLicensesIsMutable();
       requiredCoattachedLicenses_.set(index, value);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4016,7 +4308,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRequiredCoattachedLicensesIsMutable();
       requiredCoattachedLicenses_.add(value);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4038,7 +4330,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllRequiredCoattachedLicenses(java.lang.Iterable<java.lang.String> values) {
       ensureRequiredCoattachedLicensesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, requiredCoattachedLicenses_);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4058,7 +4350,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRequiredCoattachedLicenses() {
       requiredCoattachedLicenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       ;
       onChanged();
       return this;
@@ -4085,7 +4377,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureRequiredCoattachedLicensesIsMutable();
       requiredCoattachedLicenses_.add(value);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4111,7 +4403,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the resourceRequirements field is set.
      */
     public boolean hasResourceRequirements() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -4158,7 +4450,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       } else {
         resourceRequirementsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4181,7 +4473,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       } else {
         resourceRequirementsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4200,7 +4492,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeResourceRequirements(
         com.google.cloud.compute.v1.LicenseResourceRequirements value) {
       if (resourceRequirementsBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && resourceRequirements_ != null
             && resourceRequirements_
                 != com.google.cloud.compute.v1.LicenseResourceRequirements.getDefaultInstance()) {
@@ -4212,7 +4504,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
         resourceRequirementsBuilder_.mergeFrom(value);
       }
       if (resourceRequirements_ != null) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -4230,7 +4522,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearResourceRequirements() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       resourceRequirements_ = null;
       if (resourceRequirementsBuilder_ != null) {
         resourceRequirementsBuilder_.dispose();
@@ -4253,7 +4545,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.LicenseResourceRequirements.Builder
         getResourceRequirementsBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return getResourceRequirementsFieldBuilder().getBuilder();
     }
@@ -4322,7 +4614,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -4388,7 +4680,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4406,7 +4698,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -4429,7 +4721,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4448,7 +4740,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLinkWithId field is set.
      */
     public boolean hasSelfLinkWithId() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -4514,7 +4806,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       selfLinkWithId_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -4532,7 +4824,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSelfLinkWithId() {
       selfLinkWithId_ = getDefaultInstance().getSelfLinkWithId();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -4555,7 +4847,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       selfLinkWithId_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -4575,7 +4867,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasSoleTenantOnly() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -4609,7 +4901,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
     public Builder setSoleTenantOnly(boolean value) {
 
       soleTenantOnly_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -4626,7 +4918,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSoleTenantOnly() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       soleTenantOnly_ = false;
       onChanged();
       return this;
@@ -4648,7 +4940,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasTransferable() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -4684,7 +4976,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
     public Builder setTransferable(boolean value) {
 
       transferable_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -4702,7 +4994,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTransferable() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       transferable_ = false;
       onChanged();
       return this;
@@ -4723,7 +5015,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTimestamp field is set.
      */
     public boolean hasUpdateTimestamp() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
 
     /**
@@ -4792,7 +5084,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       updateTimestamp_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -4811,7 +5103,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearUpdateTimestamp() {
       updateTimestamp_ = getDefaultInstance().getUpdateTimestamp();
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -4835,7 +5127,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       updateTimestamp_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }

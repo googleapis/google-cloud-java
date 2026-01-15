@@ -55,6 +55,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     replicaZone_ = "";
     zone_ = "";
     qosType_ = 0;
+    type_ = 0;
   }
 
   @java.lang.Override
@@ -1543,6 +1544,77 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     return hotTierSizeUsedGib_;
   }
 
+  public static final int TYPE_FIELD_NUMBER = 35;
+  private int type_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of the storage pool. This field is used to control whether
+   * the pool supports `FILE` based volumes only or `UNIFIED` (both `FILE` and
+   * `BLOCK`) volumes or `UNIFIED_LARGE_CAPACITY` (both `FILE` and `BLOCK`)
+   * volumes with large capacity. If not specified during creation, it defaults
+   * to `FILE`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.netapp.v1.StoragePoolType type = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the type field is set.
+   */
+  @java.lang.Override
+  public boolean hasType() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of the storage pool. This field is used to control whether
+   * the pool supports `FILE` based volumes only or `UNIFIED` (both `FILE` and
+   * `BLOCK`) volumes or `UNIFIED_LARGE_CAPACITY` (both `FILE` and `BLOCK`)
+   * volumes with large capacity. If not specified during creation, it defaults
+   * to `FILE`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.netapp.v1.StoragePoolType type = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for type.
+   */
+  @java.lang.Override
+  public int getTypeValue() {
+    return type_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of the storage pool. This field is used to control whether
+   * the pool supports `FILE` based volumes only or `UNIFIED` (both `FILE` and
+   * `BLOCK`) volumes or `UNIFIED_LARGE_CAPACITY` (both `FILE` and `BLOCK`)
+   * volumes with large capacity. If not specified during creation, it defaults
+   * to `FILE`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.netapp.v1.StoragePoolType type = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The type.
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.StoragePoolType getType() {
+    com.google.cloud.netapp.v1.StoragePoolType result =
+        com.google.cloud.netapp.v1.StoragePoolType.forNumber(type_);
+    return result == null ? com.google.cloud.netapp.v1.StoragePoolType.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1650,6 +1722,9 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     }
     if (hotTierSizeUsedGib_ != 0L) {
       output.writeInt64(34, hotTierSizeUsedGib_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeEnum(35, type_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1763,6 +1838,9 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     if (hotTierSizeUsedGib_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(34, hotTierSizeUsedGib_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(35, type_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1819,6 +1897,10 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         != java.lang.Double.doubleToLongBits(other.getAvailableThroughputMibps())) return false;
     if (getColdTierSizeUsedGib() != other.getColdTierSizeUsedGib()) return false;
     if (getHotTierSizeUsedGib() != other.getHotTierSizeUsedGib()) return false;
+    if (hasType() != other.hasType()) return false;
+    if (hasType()) {
+      if (type_ != other.type_) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1903,6 +1985,10 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getColdTierSizeUsedGib());
     hash = (37 * hash) + HOT_TIER_SIZE_USED_GIB_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getHotTierSizeUsedGib());
+    if (hasType()) {
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2111,6 +2197,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       availableThroughputMibps_ = 0D;
       coldTierSizeUsedGib_ = 0L;
       hotTierSizeUsedGib_ = 0L;
+      type_ = 0;
       return this;
     }
 
@@ -2244,6 +2331,10 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x40000000) != 0)) {
         result.hotTierSizeUsedGib_ = hotTierSizeUsedGib_;
+      }
+      if (((from_bitField0_ & 0x80000000) != 0)) {
+        result.type_ = type_;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2402,6 +2493,9 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getHotTierSizeUsedGib() != 0L) {
         setHotTierSizeUsedGib(other.getHotTierSizeUsedGib());
+      }
+      if (other.hasType()) {
+        setType(other.getType());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2621,6 +2715,12 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x40000000;
                 break;
               } // case 272
+            case 280:
+              {
+                type_ = input.readEnum();
+                bitField0_ |= 0x80000000;
+                break;
+              } // case 280
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5478,6 +5578,153 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     public Builder clearHotTierSizeUsedGib() {
       bitField0_ = (bitField0_ & ~0x40000000);
       hotTierSizeUsedGib_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private int type_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the storage pool. This field is used to control whether
+     * the pool supports `FILE` based volumes only or `UNIFIED` (both `FILE` and
+     * `BLOCK`) volumes or `UNIFIED_LARGE_CAPACITY` (both `FILE` and `BLOCK`)
+     * volumes with large capacity. If not specified during creation, it defaults
+     * to `FILE`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.netapp.v1.StoragePoolType type = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the type field is set.
+     */
+    @java.lang.Override
+    public boolean hasType() {
+      return ((bitField0_ & 0x80000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the storage pool. This field is used to control whether
+     * the pool supports `FILE` based volumes only or `UNIFIED` (both `FILE` and
+     * `BLOCK`) volumes or `UNIFIED_LARGE_CAPACITY` (both `FILE` and `BLOCK`)
+     * volumes with large capacity. If not specified during creation, it defaults
+     * to `FILE`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.netapp.v1.StoragePoolType type = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override
+    public int getTypeValue() {
+      return type_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the storage pool. This field is used to control whether
+     * the pool supports `FILE` based volumes only or `UNIFIED` (both `FILE` and
+     * `BLOCK`) volumes or `UNIFIED_LARGE_CAPACITY` (both `FILE` and `BLOCK`)
+     * volumes with large capacity. If not specified during creation, it defaults
+     * to `FILE`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.netapp.v1.StoragePoolType type = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTypeValue(int value) {
+      type_ = value;
+      bitField0_ |= 0x80000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the storage pool. This field is used to control whether
+     * the pool supports `FILE` based volumes only or `UNIFIED` (both `FILE` and
+     * `BLOCK`) volumes or `UNIFIED_LARGE_CAPACITY` (both `FILE` and `BLOCK`)
+     * volumes with large capacity. If not specified during creation, it defaults
+     * to `FILE`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.netapp.v1.StoragePoolType type = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The type.
+     */
+    @java.lang.Override
+    public com.google.cloud.netapp.v1.StoragePoolType getType() {
+      com.google.cloud.netapp.v1.StoragePoolType result =
+          com.google.cloud.netapp.v1.StoragePoolType.forNumber(type_);
+      return result == null ? com.google.cloud.netapp.v1.StoragePoolType.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the storage pool. This field is used to control whether
+     * the pool supports `FILE` based volumes only or `UNIFIED` (both `FILE` and
+     * `BLOCK`) volumes or `UNIFIED_LARGE_CAPACITY` (both `FILE` and `BLOCK`)
+     * volumes with large capacity. If not specified during creation, it defaults
+     * to `FILE`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.netapp.v1.StoragePoolType type = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setType(com.google.cloud.netapp.v1.StoragePoolType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x80000000;
+      type_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the storage pool. This field is used to control whether
+     * the pool supports `FILE` based volumes only or `UNIFIED` (both `FILE` and
+     * `BLOCK`) volumes or `UNIFIED_LARGE_CAPACITY` (both `FILE` and `BLOCK`)
+     * volumes with large capacity. If not specified during creation, it defaults
+     * to `FILE`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.netapp.v1.StoragePoolType type = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearType() {
+      bitField0_ = (bitField0_ & ~0x80000000);
+      type_ = 0;
       onChanged();
       return this;
     }

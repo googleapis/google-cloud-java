@@ -32,6 +32,8 @@ import com.google.cloud.compute.v1.InsertAutoscalerRequest;
 import com.google.cloud.compute.v1.ListAutoscalersRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchAutoscalerRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsAutoscalerRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateAutoscalerRequest;
 import javax.annotation.Generated;
 
@@ -90,6 +92,11 @@ public abstract class AutoscalersStub implements BackgroundResource {
 
   public UnaryCallable<PatchAutoscalerRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsAutoscalerRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   public OperationCallable<UpdateAutoscalerRequest, Operation, Operation>

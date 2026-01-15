@@ -567,6 +567,48 @@ public interface SourceInstancePropertiesOrBuilder
    *
    *
    * <pre>
+   * PostKeyRevocationActionType of the instance.
+   * Check the PostKeyRevocationActionType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string post_key_revocation_action_type = 292972897;</code>
+   *
+   * @return Whether the postKeyRevocationActionType field is set.
+   */
+  boolean hasPostKeyRevocationActionType();
+
+  /**
+   *
+   *
+   * <pre>
+   * PostKeyRevocationActionType of the instance.
+   * Check the PostKeyRevocationActionType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string post_key_revocation_action_type = 292972897;</code>
+   *
+   * @return The postKeyRevocationActionType.
+   */
+  java.lang.String getPostKeyRevocationActionType();
+
+  /**
+   *
+   *
+   * <pre>
+   * PostKeyRevocationActionType of the instance.
+   * Check the PostKeyRevocationActionType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string post_key_revocation_action_type = 292972897;</code>
+   *
+   * @return The bytes for postKeyRevocationActionType.
+   */
+  com.google.protobuf.ByteString getPostKeyRevocationActionTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Specifies the scheduling options for the instances that are created from
    * this machine image.
    * </pre>

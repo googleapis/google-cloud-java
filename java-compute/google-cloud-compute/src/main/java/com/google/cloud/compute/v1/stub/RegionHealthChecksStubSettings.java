@@ -52,6 +52,8 @@ import com.google.cloud.compute.v1.InsertRegionHealthCheckRequest;
 import com.google.cloud.compute.v1.ListRegionHealthChecksRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchRegionHealthCheckRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsRegionHealthCheckRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateRegionHealthCheckRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -160,6 +162,9 @@ public class RegionHealthChecksStubSettings extends StubSettings<RegionHealthChe
   private final UnaryCallSettings<PatchRegionHealthCheckRequest, Operation> patchSettings;
   private final OperationCallSettings<PatchRegionHealthCheckRequest, Operation, Operation>
       patchOperationSettings;
+  private final UnaryCallSettings<
+          TestIamPermissionsRegionHealthCheckRequest, TestPermissionsResponse>
+      testIamPermissionsSettings;
   private final UnaryCallSettings<UpdateRegionHealthCheckRequest, Operation> updateSettings;
   private final OperationCallSettings<UpdateRegionHealthCheckRequest, Operation, Operation>
       updateOperationSettings;
@@ -264,6 +269,12 @@ public class RegionHealthChecksStubSettings extends StubSettings<RegionHealthChe
     return patchOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRegionHealthCheckRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
   /** Returns the object with the settings used for calls to update. */
   public UnaryCallSettings<UpdateRegionHealthCheckRequest, Operation> updateSettings() {
     return updateSettings;
@@ -365,6 +376,7 @@ public class RegionHealthChecksStubSettings extends StubSettings<RegionHealthChe
     listSettings = settingsBuilder.listSettings().build();
     patchSettings = settingsBuilder.patchSettings().build();
     patchOperationSettings = settingsBuilder.patchOperationSettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
     updateSettings = settingsBuilder.updateSettings().build();
     updateOperationSettings = settingsBuilder.updateOperationSettings().build();
   }
@@ -390,6 +402,9 @@ public class RegionHealthChecksStubSettings extends StubSettings<RegionHealthChe
     private final UnaryCallSettings.Builder<PatchRegionHealthCheckRequest, Operation> patchSettings;
     private final OperationCallSettings.Builder<PatchRegionHealthCheckRequest, Operation, Operation>
         patchOperationSettings;
+    private final UnaryCallSettings.Builder<
+            TestIamPermissionsRegionHealthCheckRequest, TestPermissionsResponse>
+        testIamPermissionsSettings;
     private final UnaryCallSettings.Builder<UpdateRegionHealthCheckRequest, Operation>
         updateSettings;
     private final OperationCallSettings.Builder<
@@ -453,6 +468,7 @@ public class RegionHealthChecksStubSettings extends StubSettings<RegionHealthChe
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       patchOperationSettings = OperationCallSettings.newBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateOperationSettings = OperationCallSettings.newBuilder();
 
@@ -463,6 +479,7 @@ public class RegionHealthChecksStubSettings extends StubSettings<RegionHealthChe
               insertSettings,
               listSettings,
               patchSettings,
+              testIamPermissionsSettings,
               updateSettings);
       initDefaults(this);
     }
@@ -478,6 +495,7 @@ public class RegionHealthChecksStubSettings extends StubSettings<RegionHealthChe
       listSettings = settings.listSettings.toBuilder();
       patchSettings = settings.patchSettings.toBuilder();
       patchOperationSettings = settings.patchOperationSettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
       updateSettings = settings.updateSettings.toBuilder();
       updateOperationSettings = settings.updateOperationSettings.toBuilder();
 
@@ -488,6 +506,7 @@ public class RegionHealthChecksStubSettings extends StubSettings<RegionHealthChe
               insertSettings,
               listSettings,
               patchSettings,
+              testIamPermissionsSettings,
               updateSettings);
     }
 
@@ -526,6 +545,11 @@ public class RegionHealthChecksStubSettings extends StubSettings<RegionHealthChe
 
       builder
           .patchSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -691,6 +715,13 @@ public class RegionHealthChecksStubSettings extends StubSettings<RegionHealthChe
     public OperationCallSettings.Builder<PatchRegionHealthCheckRequest, Operation, Operation>
         patchOperationSettings() {
       return patchOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsRegionHealthCheckRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     /** Returns the builder for the settings used for calls to update. */
