@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.83.0 (2026-01-15)
+
+### Bug Fixes
+
+* change comment indicating `enable_gemini_in_bigquery` field for BigQuery Reservation Assignments is deprecated ([59c954c](https://github.com/googleapis/google-cloud-java/commit/59c954c089f0379e716236aaa279207820a7dfe4))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.55.1 ([#11863](https://github.com/googleapis/google-cloud-java/issues/11863)) ([50cda6e](https://github.com/googleapis/google-cloud-java/commit/50cda6ec7be56bf1900737a6aaf12fc494be20c2))
+
+
 ## 2.82.0 (2025-12-16)
 
 ### Dependencies

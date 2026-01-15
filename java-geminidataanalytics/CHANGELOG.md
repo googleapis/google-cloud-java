@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.10.0 (2026-01-15)
+
+### Features
+
+* add LookerGoldenQuery to Context ([59c954c](https://github.com/googleapis/google-cloud-java/commit/59c954c089f0379e716236aaa279207820a7dfe4))
+* added sync APIs for the CRUD operations of Data Agent ([59c954c](https://github.com/googleapis/google-cloud-java/commit/59c954c089f0379e716236aaa279207820a7dfe4))
+
+### Bug Fixes
+
+* specify the data sources supported only by the QueryData API ([c70c873](https://github.com/googleapis/google-cloud-java/commit/c70c8739f2caffdc87535f2e729c1d967d550e8c))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.55.1 ([#11863](https://github.com/googleapis/google-cloud-java/issues/11863)) ([50cda6e](https://github.com/googleapis/google-cloud-java/commit/50cda6ec7be56bf1900737a6aaf12fc494be20c2))
+
+
 ## 0.9.0 (2025-12-16)
 
 ### Features
