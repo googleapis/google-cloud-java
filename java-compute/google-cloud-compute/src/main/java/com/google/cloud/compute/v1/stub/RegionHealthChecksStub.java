@@ -29,6 +29,8 @@ import com.google.cloud.compute.v1.InsertRegionHealthCheckRequest;
 import com.google.cloud.compute.v1.ListRegionHealthChecksRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchRegionHealthCheckRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsRegionHealthCheckRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateRegionHealthCheckRequest;
 import javax.annotation.Generated;
 
@@ -78,6 +80,11 @@ public abstract class RegionHealthChecksStub implements BackgroundResource {
 
   public UnaryCallable<PatchRegionHealthCheckRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsRegionHealthCheckRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   public OperationCallable<UpdateRegionHealthCheckRequest, Operation, Operation>

@@ -91,6 +91,9 @@
             "Patch": {
               "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            },
             "Update": {
               "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
             }
@@ -672,6 +675,9 @@
             },
             "Patch": {
               "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             },
             "Update": {
               "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
@@ -1963,6 +1969,9 @@
             "Patch": {
               "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            },
             "Update": {
               "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
             }
@@ -2157,6 +2166,9 @@
             },
             "Patch": {
               "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             },
             "Update": {
               "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
@@ -2439,6 +2451,9 @@
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }
@@ -2895,6 +2910,9 @@
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }
@@ -3390,6 +3408,9 @@
             },
             "SetSslPolicy": {
               "methods": ["setSslPolicyAsync", "setSslPolicyAsync", "setSslPolicyOperationCallable", "setSslPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }
@@ -3420,6 +3441,9 @@
             },
             "SetProxyHeader": {
               "methods": ["setProxyHeaderAsync", "setProxyHeaderAsync", "setProxyHeaderOperationCallable", "setProxyHeaderCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }
@@ -3477,6 +3501,9 @@
             },
             "Patch": {
               "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             },
             "Update": {
               "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]

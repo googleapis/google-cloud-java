@@ -71,9 +71,9 @@ public final class SimpleExportPolicyRule extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * SquashMode defines how remote user privileges are restricted when accessing
-   * an NFS export. It controls how user identities (like root) are mapped to
-   * anonymous users to limit access and enforce security.
+   * `SquashMode` defines how remote user privileges are restricted when
+   * accessing an NFS export. It controls how user identities (like root) are
+   * mapped to anonymous users to limit access and enforce security.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.netapp.v1.SimpleExportPolicyRule.SquashMode}
@@ -83,7 +83,7 @@ public final class SimpleExportPolicyRule extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Defaults to NO_ROOT_SQUASH.
+     * Defaults to `NO_ROOT_SQUASH`.
      * </pre>
      *
      * <code>SQUASH_MODE_UNSPECIFIED = 0;</code>
@@ -128,7 +128,7 @@ public final class SimpleExportPolicyRule extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Defaults to NO_ROOT_SQUASH.
+     * Defaults to `NO_ROOT_SQUASH`.
      * </pre>
      *
      * <code>SQUASH_MODE_UNSPECIFIED = 0;</code>
@@ -834,7 +834,7 @@ public final class SimpleExportPolicyRule extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Optional. An integer representing the anonymous user ID. Range is 0 to
-   * 4294967295. Required when squash_mode is ROOT_SQUASH or ALL_SQUASH.
+   * `4294967295`. Required when `squash_mode` is `ROOT_SQUASH` or `ALL_SQUASH`.
    * </pre>
    *
    * <code>optional int64 anon_uid = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -851,7 +851,7 @@ public final class SimpleExportPolicyRule extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Optional. An integer representing the anonymous user ID. Range is 0 to
-   * 4294967295. Required when squash_mode is ROOT_SQUASH or ALL_SQUASH.
+   * `4294967295`. Required when `squash_mode` is `ROOT_SQUASH` or `ALL_SQUASH`.
    * </pre>
    *
    * <code>optional int64 anon_uid = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2696,7 +2696,7 @@ public final class SimpleExportPolicyRule extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. An integer representing the anonymous user ID. Range is 0 to
-     * 4294967295. Required when squash_mode is ROOT_SQUASH or ALL_SQUASH.
+     * `4294967295`. Required when `squash_mode` is `ROOT_SQUASH` or `ALL_SQUASH`.
      * </pre>
      *
      * <code>optional int64 anon_uid = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2713,7 +2713,7 @@ public final class SimpleExportPolicyRule extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. An integer representing the anonymous user ID. Range is 0 to
-     * 4294967295. Required when squash_mode is ROOT_SQUASH or ALL_SQUASH.
+     * `4294967295`. Required when `squash_mode` is `ROOT_SQUASH` or `ALL_SQUASH`.
      * </pre>
      *
      * <code>optional int64 anon_uid = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2730,7 +2730,7 @@ public final class SimpleExportPolicyRule extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. An integer representing the anonymous user ID. Range is 0 to
-     * 4294967295. Required when squash_mode is ROOT_SQUASH or ALL_SQUASH.
+     * `4294967295`. Required when `squash_mode` is `ROOT_SQUASH` or `ALL_SQUASH`.
      * </pre>
      *
      * <code>optional int64 anon_uid = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2751,7 +2751,7 @@ public final class SimpleExportPolicyRule extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. An integer representing the anonymous user ID. Range is 0 to
-     * 4294967295. Required when squash_mode is ROOT_SQUASH or ALL_SQUASH.
+     * `4294967295`. Required when `squash_mode` is `ROOT_SQUASH` or `ALL_SQUASH`.
      * </pre>
      *
      * <code>optional int64 anon_uid = 13 [(.google.api.field_behavior) = OPTIONAL];</code>

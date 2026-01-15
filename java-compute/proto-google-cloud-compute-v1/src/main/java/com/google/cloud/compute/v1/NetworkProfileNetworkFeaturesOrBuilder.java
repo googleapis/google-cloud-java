@@ -90,6 +90,48 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    *
    *
    * <pre>
+   * Specifies whether address creation is allowed.
+   * Check the AllowAddressCreation enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string allow_address_creation = 450941184;</code>
+   *
+   * @return Whether the allowAddressCreation field is set.
+   */
+  boolean hasAllowAddressCreation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether address creation is allowed.
+   * Check the AllowAddressCreation enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string allow_address_creation = 450941184;</code>
+   *
+   * @return The allowAddressCreation.
+   */
+  java.lang.String getAllowAddressCreation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether address creation is allowed.
+   * Check the AllowAddressCreation enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string allow_address_creation = 450941184;</code>
+   *
+   * @return The bytes for allowAddressCreation.
+   */
+  com.google.protobuf.ByteString getAllowAddressCreationBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Specifies whether alias IP ranges (and secondary address ranges) are
    * allowed.
    * Check the AllowAliasIpRanges enum for the list of possible values.
@@ -390,6 +432,48 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    *
    *
    * <pre>
+   * Specifies whether firewall policy can be attached to the network.
+   * Check the AllowFirewallPolicy enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string allow_firewall_policy = 254200923;</code>
+   *
+   * @return Whether the allowFirewallPolicy field is set.
+   */
+  boolean hasAllowFirewallPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether firewall policy can be attached to the network.
+   * Check the AllowFirewallPolicy enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string allow_firewall_policy = 254200923;</code>
+   *
+   * @return The allowFirewallPolicy.
+   */
+  java.lang.String getAllowFirewallPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether firewall policy can be attached to the network.
+   * Check the AllowFirewallPolicy enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string allow_firewall_policy = 254200923;</code>
+   *
+   * @return The bytes for allowFirewallPolicy.
+   */
+  com.google.protobuf.ByteString getAllowFirewallPolicyBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Specifies whether Cloud Interconnect creation is allowed.
    * Check the AllowInterconnect enum for the list of possible values.
    * </pre>
@@ -553,6 +637,48 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The bytes for allowMultiNicInSameNetwork.
    */
   com.google.protobuf.ByteString getAllowMultiNicInSameNetworkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether multi-nic in the same subnetwork is allowed.
+   * Check the AllowMultiNicInSameSubnetwork enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string allow_multi_nic_in_same_subnetwork = 278087904;</code>
+   *
+   * @return Whether the allowMultiNicInSameSubnetwork field is set.
+   */
+  boolean hasAllowMultiNicInSameSubnetwork();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether multi-nic in the same subnetwork is allowed.
+   * Check the AllowMultiNicInSameSubnetwork enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string allow_multi_nic_in_same_subnetwork = 278087904;</code>
+   *
+   * @return The allowMultiNicInSameSubnetwork.
+   */
+  java.lang.String getAllowMultiNicInSameSubnetwork();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether multi-nic in the same subnetwork is allowed.
+   * Check the AllowMultiNicInSameSubnetwork enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string allow_multi_nic_in_same_subnetwork = 278087904;</code>
+   *
+   * @return The bytes for allowMultiNicInSameSubnetwork.
+   */
+  com.google.protobuf.ByteString getAllowMultiNicInSameSubnetworkBytes();
 
   /**
    *
@@ -936,6 +1062,90 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    *
    *
    * <pre>
+   * Specifies whether subnetwork creation is allowed.
+   * Check the AllowSubnetworkCreation enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string allow_subnetwork_creation = 459328026;</code>
+   *
+   * @return Whether the allowSubnetworkCreation field is set.
+   */
+  boolean hasAllowSubnetworkCreation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether subnetwork creation is allowed.
+   * Check the AllowSubnetworkCreation enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string allow_subnetwork_creation = 459328026;</code>
+   *
+   * @return The allowSubnetworkCreation.
+   */
+  java.lang.String getAllowSubnetworkCreation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether subnetwork creation is allowed.
+   * Check the AllowSubnetworkCreation enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string allow_subnetwork_creation = 459328026;</code>
+   *
+   * @return The bytes for allowSubnetworkCreation.
+   */
+  com.google.protobuf.ByteString getAllowSubnetworkCreationBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether VPC firewall rules can be created under the network.
+   * Check the AllowVpcFirewallRules enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string allow_vpc_firewall_rules = 509076420;</code>
+   *
+   * @return Whether the allowVpcFirewallRules field is set.
+   */
+  boolean hasAllowVpcFirewallRules();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether VPC firewall rules can be created under the network.
+   * Check the AllowVpcFirewallRules enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string allow_vpc_firewall_rules = 509076420;</code>
+   *
+   * @return The allowVpcFirewallRules.
+   */
+  java.lang.String getAllowVpcFirewallRules();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether VPC firewall rules can be created under the network.
+   * Check the AllowVpcFirewallRules enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string allow_vpc_firewall_rules = 509076420;</code>
+   *
+   * @return The bytes for allowVpcFirewallRules.
+   */
+  com.google.protobuf.ByteString getAllowVpcFirewallRulesBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Specifies whether VPC peering is allowed.
    * Check the AllowVpcPeering enum for the list of possible values.
    * </pre>
@@ -1015,6 +1225,64 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The bytes for allowVpn.
    */
   com.google.protobuf.ByteString getAllowVpnBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the FirewallPolicyTypes enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string firewall_policy_types = 390742027;</code>
+   *
+   * @return A list containing the firewallPolicyTypes.
+   */
+  java.util.List<java.lang.String> getFirewallPolicyTypesList();
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the FirewallPolicyTypes enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string firewall_policy_types = 390742027;</code>
+   *
+   * @return The count of firewallPolicyTypes.
+   */
+  int getFirewallPolicyTypesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the FirewallPolicyTypes enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string firewall_policy_types = 390742027;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The firewallPolicyTypes at the given index.
+   */
+  java.lang.String getFirewallPolicyTypes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the FirewallPolicyTypes enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string firewall_policy_types = 390742027;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the firewallPolicyTypes at the given index.
+   */
+  com.google.protobuf.ByteString getFirewallPolicyTypesBytes(int index);
 
   /**
    *
@@ -1119,6 +1387,117 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The bytes for multicast.
    */
   com.google.protobuf.ByteString getMulticastBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies a predefined internal IPv6 range for the network.
+   * </pre>
+   *
+   * <code>optional string predefined_network_internal_ipv6_range = 527810909;</code>
+   *
+   * @return Whether the predefinedNetworkInternalIpv6Range field is set.
+   */
+  boolean hasPredefinedNetworkInternalIpv6Range();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies a predefined internal IPv6 range for the network.
+   * </pre>
+   *
+   * <code>optional string predefined_network_internal_ipv6_range = 527810909;</code>
+   *
+   * @return The predefinedNetworkInternalIpv6Range.
+   */
+  java.lang.String getPredefinedNetworkInternalIpv6Range();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies a predefined internal IPv6 range for the network.
+   * </pre>
+   *
+   * <code>optional string predefined_network_internal_ipv6_range = 527810909;</code>
+   *
+   * @return The bytes for predefinedNetworkInternalIpv6Range.
+   */
+  com.google.protobuf.ByteString getPredefinedNetworkInternalIpv6RangeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Predefined subnetwork ranges for the network.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.NetworkProfileNetworkFeaturesPredefinedSubnetworkRange predefined_subnetwork_ranges = 408740430;
+   * </code>
+   */
+  java.util.List<com.google.cloud.compute.v1.NetworkProfileNetworkFeaturesPredefinedSubnetworkRange>
+      getPredefinedSubnetworkRangesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Predefined subnetwork ranges for the network.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.NetworkProfileNetworkFeaturesPredefinedSubnetworkRange predefined_subnetwork_ranges = 408740430;
+   * </code>
+   */
+  com.google.cloud.compute.v1.NetworkProfileNetworkFeaturesPredefinedSubnetworkRange
+      getPredefinedSubnetworkRanges(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Predefined subnetwork ranges for the network.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.NetworkProfileNetworkFeaturesPredefinedSubnetworkRange predefined_subnetwork_ranges = 408740430;
+   * </code>
+   */
+  int getPredefinedSubnetworkRangesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Predefined subnetwork ranges for the network.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.NetworkProfileNetworkFeaturesPredefinedSubnetworkRange predefined_subnetwork_ranges = 408740430;
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.cloud.compute.v1
+                  .NetworkProfileNetworkFeaturesPredefinedSubnetworkRangeOrBuilder>
+      getPredefinedSubnetworkRangesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Predefined subnetwork ranges for the network.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.NetworkProfileNetworkFeaturesPredefinedSubnetworkRange predefined_subnetwork_ranges = 408740430;
+   * </code>
+   */
+  com.google.cloud.compute.v1.NetworkProfileNetworkFeaturesPredefinedSubnetworkRangeOrBuilder
+      getPredefinedSubnetworkRangesOrBuilder(int index);
 
   /**
    *

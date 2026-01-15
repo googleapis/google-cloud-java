@@ -288,6 +288,16 @@ public final class NetworkProfileProfileType extends com.google.protobuf.Generat
      * <code>ROCE = 2520927;</code>
      */
     ROCE(2520927),
+    /**
+     *
+     *
+     * <pre>
+     * RDMA over Converged Ethernet (RoCE) for Bare Metal.
+     * </pre>
+     *
+     * <code>ROCE_METAL = 421218823;</code>
+     */
+    ROCE_METAL(421218823),
     UNRECOGNIZED(-1),
     ;
 
@@ -324,6 +334,17 @@ public final class NetworkProfileProfileType extends com.google.protobuf.Generat
      */
     public static final int ROCE_VALUE = 2520927;
 
+    /**
+     *
+     *
+     * <pre>
+     * RDMA over Converged Ethernet (RoCE) for Bare Metal.
+     * </pre>
+     *
+     * <code>ROCE_METAL = 421218823;</code>
+     */
+    public static final int ROCE_METAL_VALUE = 421218823;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -354,6 +375,8 @@ public final class NetworkProfileProfileType extends com.google.protobuf.Generat
           return FALCON;
         case 2520927:
           return ROCE;
+        case 421218823:
+          return ROCE_METAL;
         default:
           return null;
       }

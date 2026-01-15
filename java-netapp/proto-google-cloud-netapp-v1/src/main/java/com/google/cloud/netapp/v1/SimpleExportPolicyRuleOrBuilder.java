@@ -435,7 +435,7 @@ public interface SimpleExportPolicyRuleOrBuilder
    *
    * <pre>
    * Optional. An integer representing the anonymous user ID. Range is 0 to
-   * 4294967295. Required when squash_mode is ROOT_SQUASH or ALL_SQUASH.
+   * `4294967295`. Required when `squash_mode` is `ROOT_SQUASH` or `ALL_SQUASH`.
    * </pre>
    *
    * <code>optional int64 anon_uid = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -449,7 +449,7 @@ public interface SimpleExportPolicyRuleOrBuilder
    *
    * <pre>
    * Optional. An integer representing the anonymous user ID. Range is 0 to
-   * 4294967295. Required when squash_mode is ROOT_SQUASH or ALL_SQUASH.
+   * `4294967295`. Required when `squash_mode` is `ROOT_SQUASH` or `ALL_SQUASH`.
    * </pre>
    *
    * <code>optional int64 anon_uid = 13 [(.google.api.field_behavior) = OPTIONAL];</code>

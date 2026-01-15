@@ -457,6 +457,46 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
+   * Input only. Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.StoragePoolParams params = 78313862;</code>
+   *
+   * @return Whether the params field is set.
+   */
+  boolean hasParams();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.StoragePoolParams params = 78313862;</code>
+   *
+   * @return The params.
+   */
+  com.google.cloud.compute.v1.StoragePoolParams getParams();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.StoragePoolParams params = 78313862;</code>
+   */
+  com.google.cloud.compute.v1.StoragePoolParamsOrBuilder getParamsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Provisioning type of the performance-related parameters of the pool,
    * such as throughput and IOPS.
    * Check the PerformanceProvisioningType enum for the list of possible values.

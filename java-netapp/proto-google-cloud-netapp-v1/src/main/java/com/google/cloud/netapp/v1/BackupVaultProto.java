@@ -77,7 +77,7 @@ public final class BackupVaultProto {
           + ")google/cloud/netapp/v1/backup_vault.pr"
           + "oto\022\026google.cloud.netapp.v1\032\037google/api/"
           + "field_behavior.proto\032\031google/api/resource.proto\032"
-          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\221\n\n"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\376\014\n"
           + "\013BackupVault\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022=\n"
           + "\005state\030\002"
@@ -99,7 +99,12 @@ public final class BackupVaultProto {
           + " \001(\tB)\340A\003\372A#\n"
           + "!netapp.googleapis.com/BackupVault\022_\n"
           + "\027backup_retention_policy\030\013 \001(\01329.google"
-          + ".cloud.netapp.v1.BackupVault.BackupRetentionPolicyB\003\340A\001\032\344\001\n"
+          + ".cloud.netapp.v1.BackupVault.BackupRetentionPolicyB\003\340A\001\022;\n\n"
+          + "kms_config\030\014 \001(\tB\'\340A\001\372A!\n"
+          + "\037netapp.googleapis.com/KmsConfig\022R\n"
+          + "\020encryption_state\030\r"
+          + " \001(\01623.google.cloud.netapp.v1.BackupVault.EncryptionStateB\003\340A\003\022\'\n"
+          + "\032backups_crypto_key_version\030\016 \001(\tB\003\340A\003\032\344\001\n"
           + "\025BackupRetentionPolicy\0223\n"
           + "&backup_minimum_enforced_retention_days\030\001 \001(\005B\003\340A\002\022#\n"
           + "\026daily_backup_immutable\030\002 \001(\010B\003\340A\001\022$\n"
@@ -119,9 +124,15 @@ public final class BackupVaultProto {
           + "\017BackupVaultType\022!\n"
           + "\035BACKUP_VAULT_TYPE_UNSPECIFIED\020\000\022\r\n"
           + "\tIN_REGION\020\001\022\020\n"
-          + "\014CROSS_REGION\020\002:\207\001\352A\203\001\n"
-          + "!netapp.googleapis.com/BackupVault\022Cprojects/{project}/locations/{location}/"
-          + "backupVaults/{backup_vault}*\014backupVaults2\013backupVault\"P\n"
+          + "\014CROSS_REGION\020\002\"\260\001\n"
+          + "\017EncryptionState\022 \n"
+          + "\034ENCRYPTION_STATE_UNSPECIFIED\020\000\022\034\n"
+          + "\030ENCRYPTION_STATE_PENDING\020\001\022\036\n"
+          + "\032ENCRYPTION_STATE_COMPLETED\020\002\022 \n"
+          + "\034ENCRYPTION_STATE_IN_PROGRESS\020\003\022\033\n"
+          + "\027ENCRYPTION_STATE_FAILED\020\004:\207\001\352A\203\001\n"
+          + "!netapp.googleapis.com/BackupVault\022Cprojects/{project}/locations/{locat"
+          + "ion}/backupVaults/{backup_vault}*\014backupVaults2\013backupVault\"P\n"
           + "\025GetBackupVaultRequest\0227\n"
           + "\004name\030\001 \001(\tB)\340A\002\372A#\n"
           + "!netapp.googleapis.com/BackupVault\"\235\001\n"
@@ -137,8 +148,8 @@ public final class BackupVaultProto {
           + "\017next_page_token\030\002 \001(\t\022\023\n"
           + "\013unreachable\030\003 \003(\t\"\263\001\n"
           + "\030CreateBackupVaultRequest\0229\n"
-          + "\006parent\030\001 \001(\tB)\340A"
-          + "\002\372A#\022!netapp.googleapis.com/BackupVault\022\034\n"
+          + "\006parent\030\001 \001("
+          + "\tB)\340A\002\372A#\022!netapp.googleapis.com/BackupVault\022\034\n"
           + "\017backup_vault_id\030\002 \001(\tB\003\340A\002\022>\n"
           + "\014backup_vault\030\003"
           + " \001(\0132#.google.cloud.netapp.v1.BackupVaultB\003\340A\002\"S\n"
@@ -147,12 +158,12 @@ public final class BackupVaultProto {
           + "!netapp.googleapis.com/BackupVault\"\220\001\n"
           + "\030UpdateBackupVaultRequest\0224\n"
           + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\022>\n"
-          + "\014backup_vault\030\002 "
-          + "\001(\0132#.google.cloud.netapp.v1.BackupVaultB\003\340A\002B\262\001\n"
-          + "\032com.google.cloud.netapp.v1B\020BackupVaultProtoP\001Z2cloud.google.com/go/ne"
-          + "tapp/apiv1/netapppb;netapppb\252\002\026Google.Cl"
-          + "oud.NetApp.V1\312\002\026Google\\Cloud\\NetApp\\V1\352\002"
-          + "\031Google::Cloud::NetApp::V1b\006proto3"
+          + "\014backup_vault\030\002"
+          + " \001(\0132#.google.cloud.netapp.v1.BackupVaultB\003\340A\002B\262\001\n"
+          + "\032com.google.cloud.netapp.v1B\020BackupVaultProtoP\001Z2cloud.google.com/"
+          + "go/netapp/apiv1/netapppb;netapppb\252\002\026Goog"
+          + "le.Cloud.NetApp.V1\312\002\026Google\\Cloud\\NetApp"
+          + "\\V1\352\002\031Google::Cloud::NetApp::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -180,6 +191,9 @@ public final class BackupVaultProto {
               "SourceBackupVault",
               "DestinationBackupVault",
               "BackupRetentionPolicy",
+              "KmsConfig",
+              "EncryptionState",
+              "BackupsCryptoKeyVersion",
             });
     internal_static_google_cloud_netapp_v1_BackupVault_BackupRetentionPolicy_descriptor =
         internal_static_google_cloud_netapp_v1_BackupVault_descriptor.getNestedTypes().get(0);

@@ -48,6 +48,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
     machineType_ = "";
     minCpuPlatform_ = "";
     networkInterfaces_ = java.util.Collections.emptyList();
+    postKeyRevocationActionType_ = "";
     serviceAccounts_ = java.util.Collections.emptyList();
   }
 
@@ -270,6 +271,194 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.SourceInstanceProperties.KeyRevocationActionType)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * PostKeyRevocationActionType of the instance.
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.cloud.compute.v1.SourceInstanceProperties.PostKeyRevocationActionType}
+   */
+  public enum PostKeyRevocationActionType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_POST_KEY_REVOCATION_ACTION_TYPE = 0;</code>
+     */
+    UNDEFINED_POST_KEY_REVOCATION_ACTION_TYPE(0),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates user chose no operation.
+     * </pre>
+     *
+     * <code>NOOP = 2402146;</code>
+     */
+    NOOP(2402146),
+    /**
+     *
+     *
+     * <pre>
+     * Default value. This value is unused.
+     * </pre>
+     *
+     * <code>POST_KEY_REVOCATION_ACTION_TYPE_UNSPECIFIED = 228738393;</code>
+     */
+    POST_KEY_REVOCATION_ACTION_TYPE_UNSPECIFIED(228738393),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates user chose to opt for VM shutdown on key revocation.
+     * </pre>
+     *
+     * <code>SHUTDOWN = 76412502;</code>
+     */
+    SHUTDOWN(76412502),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_POST_KEY_REVOCATION_ACTION_TYPE = 0;</code>
+     */
+    public static final int UNDEFINED_POST_KEY_REVOCATION_ACTION_TYPE_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates user chose no operation.
+     * </pre>
+     *
+     * <code>NOOP = 2402146;</code>
+     */
+    public static final int NOOP_VALUE = 2402146;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default value. This value is unused.
+     * </pre>
+     *
+     * <code>POST_KEY_REVOCATION_ACTION_TYPE_UNSPECIFIED = 228738393;</code>
+     */
+    public static final int POST_KEY_REVOCATION_ACTION_TYPE_UNSPECIFIED_VALUE = 228738393;
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates user chose to opt for VM shutdown on key revocation.
+     * </pre>
+     *
+     * <code>SHUTDOWN = 76412502;</code>
+     */
+    public static final int SHUTDOWN_VALUE = 76412502;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static PostKeyRevocationActionType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static PostKeyRevocationActionType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_POST_KEY_REVOCATION_ACTION_TYPE;
+        case 2402146:
+          return NOOP;
+        case 228738393:
+          return POST_KEY_REVOCATION_ACTION_TYPE_UNSPECIFIED;
+        case 76412502:
+          return SHUTDOWN;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PostKeyRevocationActionType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<PostKeyRevocationActionType>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<PostKeyRevocationActionType>() {
+              public PostKeyRevocationActionType findValueByNumber(int number) {
+                return PostKeyRevocationActionType.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.SourceInstanceProperties.getDescriptor()
+          .getEnumTypes()
+          .get(1);
+    }
+
+    private static final PostKeyRevocationActionType[] VALUES = values();
+
+    public static PostKeyRevocationActionType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private PostKeyRevocationActionType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.SourceInstanceProperties.PostKeyRevocationActionType)
   }
 
   private int bitField0_;
@@ -1072,6 +1261,78 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
     return networkInterfaces_.get(index);
   }
 
+  public static final int POST_KEY_REVOCATION_ACTION_TYPE_FIELD_NUMBER = 292972897;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object postKeyRevocationActionType_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * PostKeyRevocationActionType of the instance.
+   * Check the PostKeyRevocationActionType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string post_key_revocation_action_type = 292972897;</code>
+   *
+   * @return Whether the postKeyRevocationActionType field is set.
+   */
+  @java.lang.Override
+  public boolean hasPostKeyRevocationActionType() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * PostKeyRevocationActionType of the instance.
+   * Check the PostKeyRevocationActionType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string post_key_revocation_action_type = 292972897;</code>
+   *
+   * @return The postKeyRevocationActionType.
+   */
+  @java.lang.Override
+  public java.lang.String getPostKeyRevocationActionType() {
+    java.lang.Object ref = postKeyRevocationActionType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      postKeyRevocationActionType_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * PostKeyRevocationActionType of the instance.
+   * Check the PostKeyRevocationActionType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string post_key_revocation_action_type = 292972897;</code>
+   *
+   * @return The bytes for postKeyRevocationActionType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPostKeyRevocationActionTypeBytes() {
+    java.lang.Object ref = postKeyRevocationActionType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      postKeyRevocationActionType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int SCHEDULING_FIELD_NUMBER = 386688404;
   private com.google.cloud.compute.v1.Scheduling scheduling_;
 
@@ -1089,7 +1350,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public boolean hasScheduling() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
@@ -1239,7 +1500,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public boolean hasTags() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -1292,7 +1553,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(3552281, getTags());
     }
     for (int i = 0; i < networkInterfaces_.size(); i++) {
@@ -1318,6 +1579,10 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       output.writeMessage(277537328, serviceAccounts_.get(i));
     }
     if (((bitField0_ & 0x00000080) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 292972897, postKeyRevocationActionType_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(386688404, getScheduling());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
@@ -1343,7 +1608,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3552281, getTags());
     }
     for (int i = 0; i < networkInterfaces_.size(); i++) {
@@ -1374,6 +1639,11 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
               277537328, serviceAccounts_.get(i));
     }
     if (((bitField0_ & 0x00000080) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              292972897, postKeyRevocationActionType_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(386688404, getScheduling());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
@@ -1448,6 +1718,11 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       if (!getMinCpuPlatform().equals(other.getMinCpuPlatform())) return false;
     }
     if (!getNetworkInterfacesList().equals(other.getNetworkInterfacesList())) return false;
+    if (hasPostKeyRevocationActionType() != other.hasPostKeyRevocationActionType()) return false;
+    if (hasPostKeyRevocationActionType()) {
+      if (!getPostKeyRevocationActionType().equals(other.getPostKeyRevocationActionType()))
+        return false;
+    }
     if (hasScheduling() != other.hasScheduling()) return false;
     if (hasScheduling()) {
       if (!getScheduling().equals(other.getScheduling())) return false;
@@ -1511,6 +1786,10 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
     if (getNetworkInterfacesCount() > 0) {
       hash = (37 * hash) + NETWORK_INTERFACES_FIELD_NUMBER;
       hash = (53 * hash) + getNetworkInterfacesList().hashCode();
+    }
+    if (hasPostKeyRevocationActionType()) {
+      hash = (37 * hash) + POST_KEY_REVOCATION_ACTION_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getPostKeyRevocationActionType().hashCode();
     }
     if (hasScheduling()) {
       hash = (37 * hash) + SCHEDULING_FIELD_NUMBER;
@@ -1735,6 +2014,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         networkInterfacesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000400);
+      postKeyRevocationActionType_ = "";
       scheduling_ = null;
       if (schedulingBuilder_ != null) {
         schedulingBuilder_.dispose();
@@ -1746,7 +2026,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         serviceAccounts_ = null;
         serviceAccountsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       tags_ = null;
       if (tagsBuilder_ != null) {
         tagsBuilder_.dispose();
@@ -1817,9 +2097,9 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         result.networkInterfaces_ = networkInterfacesBuilder_.build();
       }
       if (serviceAccountsBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)) {
+        if (((bitField0_ & 0x00002000) != 0)) {
           serviceAccounts_ = java.util.Collections.unmodifiableList(serviceAccounts_);
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00002000);
         }
         result.serviceAccounts_ = serviceAccounts_;
       } else {
@@ -1863,12 +2143,16 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.scheduling_ = schedulingBuilder_ == null ? scheduling_ : schedulingBuilder_.build();
+        result.postKeyRevocationActionType_ = postKeyRevocationActionType_;
         to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.tags_ = tagsBuilder_ == null ? tags_ : tagsBuilder_.build();
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.scheduling_ = schedulingBuilder_ == null ? scheduling_ : schedulingBuilder_.build();
         to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.tags_ = tagsBuilder_ == null ? tags_ : tagsBuilder_.build();
+        to_bitField0_ |= 0x00000200;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2031,6 +2315,11 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
           }
         }
       }
+      if (other.hasPostKeyRevocationActionType()) {
+        postKeyRevocationActionType_ = other.postKeyRevocationActionType_;
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
       if (other.hasScheduling()) {
         mergeScheduling(other.getScheduling());
       }
@@ -2038,7 +2327,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         if (!other.serviceAccounts_.isEmpty()) {
           if (serviceAccounts_.isEmpty()) {
             serviceAccounts_ = other.serviceAccounts_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
           } else {
             ensureServiceAccountsIsMutable();
             serviceAccounts_.addAll(other.serviceAccounts_);
@@ -2051,7 +2340,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
             serviceAccountsBuilder_.dispose();
             serviceAccountsBuilder_ = null;
             serviceAccounts_ = other.serviceAccounts_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
             serviceAccountsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getServiceAccountsFieldBuilder()
@@ -2093,7 +2382,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
             case 28418250:
               {
                 input.readMessage(getTagsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 28418250
             case 421881946:
@@ -2159,10 +2448,16 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
                 }
                 break;
               } // case -2074668670
+            case -1951184118:
+              {
+                postKeyRevocationActionType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case -1951184118
             case -1201460062:
               {
                 input.readMessage(getSchedulingFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case -1201460062
             case -911466526:
@@ -4539,6 +4834,138 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       return networkInterfacesBuilder_;
     }
 
+    private java.lang.Object postKeyRevocationActionType_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * PostKeyRevocationActionType of the instance.
+     * Check the PostKeyRevocationActionType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string post_key_revocation_action_type = 292972897;</code>
+     *
+     * @return Whether the postKeyRevocationActionType field is set.
+     */
+    public boolean hasPostKeyRevocationActionType() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * PostKeyRevocationActionType of the instance.
+     * Check the PostKeyRevocationActionType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string post_key_revocation_action_type = 292972897;</code>
+     *
+     * @return The postKeyRevocationActionType.
+     */
+    public java.lang.String getPostKeyRevocationActionType() {
+      java.lang.Object ref = postKeyRevocationActionType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        postKeyRevocationActionType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * PostKeyRevocationActionType of the instance.
+     * Check the PostKeyRevocationActionType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string post_key_revocation_action_type = 292972897;</code>
+     *
+     * @return The bytes for postKeyRevocationActionType.
+     */
+    public com.google.protobuf.ByteString getPostKeyRevocationActionTypeBytes() {
+      java.lang.Object ref = postKeyRevocationActionType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        postKeyRevocationActionType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * PostKeyRevocationActionType of the instance.
+     * Check the PostKeyRevocationActionType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string post_key_revocation_action_type = 292972897;</code>
+     *
+     * @param value The postKeyRevocationActionType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPostKeyRevocationActionType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      postKeyRevocationActionType_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * PostKeyRevocationActionType of the instance.
+     * Check the PostKeyRevocationActionType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string post_key_revocation_action_type = 292972897;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPostKeyRevocationActionType() {
+      postKeyRevocationActionType_ = getDefaultInstance().getPostKeyRevocationActionType();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * PostKeyRevocationActionType of the instance.
+     * Check the PostKeyRevocationActionType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string post_key_revocation_action_type = 292972897;</code>
+     *
+     * @param value The bytes for postKeyRevocationActionType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPostKeyRevocationActionTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      postKeyRevocationActionType_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.compute.v1.Scheduling scheduling_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Scheduling,
@@ -4559,7 +4986,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
      * @return Whether the scheduling field is set.
      */
     public boolean hasScheduling() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -4603,7 +5030,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       } else {
         schedulingBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4624,7 +5051,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       } else {
         schedulingBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4641,7 +5068,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
      */
     public Builder mergeScheduling(com.google.cloud.compute.v1.Scheduling value) {
       if (schedulingBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && scheduling_ != null
             && scheduling_ != com.google.cloud.compute.v1.Scheduling.getDefaultInstance()) {
           getSchedulingBuilder().mergeFrom(value);
@@ -4652,7 +5079,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         schedulingBuilder_.mergeFrom(value);
       }
       if (scheduling_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -4669,7 +5096,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
      * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
      */
     public Builder clearScheduling() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       scheduling_ = null;
       if (schedulingBuilder_ != null) {
         schedulingBuilder_.dispose();
@@ -4690,7 +5117,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
      * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
      */
     public com.google.cloud.compute.v1.Scheduling.Builder getSchedulingBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return getSchedulingFieldBuilder().getBuilder();
     }
@@ -4746,10 +5173,10 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         java.util.Collections.emptyList();
 
     private void ensureServiceAccountsIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         serviceAccounts_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.ServiceAccount>(serviceAccounts_);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
       }
     }
 
@@ -5008,7 +5435,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
     public Builder clearServiceAccounts() {
       if (serviceAccountsBuilder_ == null) {
         serviceAccounts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
       } else {
         serviceAccountsBuilder_.clear();
@@ -5160,7 +5587,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
                 com.google.cloud.compute.v1.ServiceAccount.Builder,
                 com.google.cloud.compute.v1.ServiceAccountOrBuilder>(
                 serviceAccounts_,
-                ((bitField0_ & 0x00001000) != 0),
+                ((bitField0_ & 0x00002000) != 0),
                 getParentForChildren(),
                 isClean());
         serviceAccounts_ = null;
@@ -5190,7 +5617,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
      * @return Whether the tags field is set.
      */
     public boolean hasTags() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -5236,7 +5663,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       } else {
         tagsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5259,7 +5686,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
       } else {
         tagsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5278,7 +5705,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
      */
     public Builder mergeTags(com.google.cloud.compute.v1.Tags value) {
       if (tagsBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && tags_ != null
             && tags_ != com.google.cloud.compute.v1.Tags.getDefaultInstance()) {
           getTagsBuilder().mergeFrom(value);
@@ -5289,7 +5716,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
         tagsBuilder_.mergeFrom(value);
       }
       if (tags_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -5308,7 +5735,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
      * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
      */
     public Builder clearTags() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       tags_ = null;
       if (tagsBuilder_ != null) {
         tagsBuilder_.dispose();
@@ -5331,7 +5758,7 @@ public final class SourceInstanceProperties extends com.google.protobuf.Generate
      * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
      */
     public com.google.cloud.compute.v1.Tags.Builder getTagsBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getTagsFieldBuilder().getBuilder();
     }

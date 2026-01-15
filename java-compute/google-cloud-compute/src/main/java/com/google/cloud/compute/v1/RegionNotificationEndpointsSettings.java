@@ -150,6 +150,14 @@ public class RegionNotificationEndpointsSettings
     return ((RegionNotificationEndpointsStubSettings) getStubSettings()).listSettings();
   }
 
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<
+          TestIamPermissionsRegionNotificationEndpointRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((RegionNotificationEndpointsStubSettings) getStubSettings())
+        .testIamPermissionsSettings();
+  }
+
   public static final RegionNotificationEndpointsSettings create(
       RegionNotificationEndpointsStubSettings stub) throws IOException {
     return new RegionNotificationEndpointsSettings.Builder(stub.toBuilder()).build();
@@ -285,6 +293,13 @@ public class RegionNotificationEndpointsSettings
             ListRegionNotificationEndpointsRequest, NotificationEndpointList, ListPagedResponse>
         listSettings() {
       return getStubSettingsBuilder().listSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsRegionNotificationEndpointRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

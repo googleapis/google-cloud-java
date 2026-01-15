@@ -522,6 +522,46 @@ public interface LicenseOrBuilder
    *
    *
    * <pre>
+   * Input only. Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.LicenseParams params = 78313862;</code>
+   *
+   * @return Whether the params field is set.
+   */
+  boolean hasParams();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.LicenseParams params = 78313862;</code>
+   *
+   * @return The params.
+   */
+  com.google.cloud.compute.v1.LicenseParams getParams();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.LicenseParams params = 78313862;</code>
+   */
+  com.google.cloud.compute.v1.LicenseParamsOrBuilder getParamsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * If true, this license can be removed from a disk's set of licenses, with no
    * replacement license needed.
    * </pre>

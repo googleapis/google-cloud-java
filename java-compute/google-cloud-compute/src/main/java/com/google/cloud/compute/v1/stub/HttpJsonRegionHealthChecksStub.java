@@ -41,6 +41,8 @@ import com.google.cloud.compute.v1.ListRegionHealthChecksRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchRegionHealthCheckRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsRegionHealthCheckRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateRegionHealthCheckRequest;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -317,6 +319,50 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
                   })
               .build();
 
+  private static final ApiMethodDescriptor<
+          TestIamPermissionsRegionHealthCheckRequest, TestPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<TestIamPermissionsRegionHealthCheckRequest, TestPermissionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.RegionHealthChecks/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<TestIamPermissionsRegionHealthCheckRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/healthChecks/{resource}/testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsRegionHealthCheckRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsRegionHealthCheckRequest>
+                                serializer = ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "testPermissionsRequestResource",
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<UpdateRegionHealthCheckRequest, Operation>
       updateMethodDescriptor =
           ApiMethodDescriptor.<UpdateRegionHealthCheckRequest, Operation>newBuilder()
@@ -387,6 +433,8 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
   private final UnaryCallable<PatchRegionHealthCheckRequest, Operation> patchCallable;
   private final OperationCallable<PatchRegionHealthCheckRequest, Operation, Operation>
       patchOperationCallable;
+  private final UnaryCallable<TestIamPermissionsRegionHealthCheckRequest, TestPermissionsResponse>
+      testIamPermissionsCallable;
   private final UnaryCallable<UpdateRegionHealthCheckRequest, Operation> updateCallable;
   private final OperationCallable<UpdateRegionHealthCheckRequest, Operation, Operation>
       updateOperationCallable;
@@ -499,6 +547,21 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<TestIamPermissionsRegionHealthCheckRequest, TestPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings
+                .<TestIamPermissionsRegionHealthCheckRequest, TestPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<UpdateRegionHealthCheckRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateRegionHealthCheckRequest, Operation>newBuilder()
             .setMethodDescriptor(updateMethodDescriptor)
@@ -549,6 +612,11 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
             settings.patchOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
     this.updateCallable =
         callableFactory.createUnaryCallable(
             updateTransportSettings, settings.updateSettings(), clientContext);
@@ -571,6 +639,7 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     methodDescriptors.add(updateMethodDescriptor);
     return methodDescriptors;
   }
@@ -621,6 +690,12 @@ public class HttpJsonRegionHealthChecksStub extends RegionHealthChecksStub {
   public OperationCallable<PatchRegionHealthCheckRequest, Operation, Operation>
       patchOperationCallable() {
     return patchOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsRegionHealthCheckRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

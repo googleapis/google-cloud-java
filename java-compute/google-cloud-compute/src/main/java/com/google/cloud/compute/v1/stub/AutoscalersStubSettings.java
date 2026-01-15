@@ -56,6 +56,8 @@ import com.google.cloud.compute.v1.InsertAutoscalerRequest;
 import com.google.cloud.compute.v1.ListAutoscalersRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchAutoscalerRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsAutoscalerRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateAutoscalerRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -167,6 +169,8 @@ public class AutoscalersStubSettings extends StubSettings<AutoscalersStubSetting
   private final UnaryCallSettings<PatchAutoscalerRequest, Operation> patchSettings;
   private final OperationCallSettings<PatchAutoscalerRequest, Operation, Operation>
       patchOperationSettings;
+  private final UnaryCallSettings<TestIamPermissionsAutoscalerRequest, TestPermissionsResponse>
+      testIamPermissionsSettings;
   private final UnaryCallSettings<UpdateAutoscalerRequest, Operation> updateSettings;
   private final OperationCallSettings<UpdateAutoscalerRequest, Operation, Operation>
       updateOperationSettings;
@@ -345,6 +349,12 @@ public class AutoscalersStubSettings extends StubSettings<AutoscalersStubSetting
     return patchOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsAutoscalerRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
   /** Returns the object with the settings used for calls to update. */
   public UnaryCallSettings<UpdateAutoscalerRequest, Operation> updateSettings() {
     return updateSettings;
@@ -447,6 +457,7 @@ public class AutoscalersStubSettings extends StubSettings<AutoscalersStubSetting
     listSettings = settingsBuilder.listSettings().build();
     patchSettings = settingsBuilder.patchSettings().build();
     patchOperationSettings = settingsBuilder.patchOperationSettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
     updateSettings = settingsBuilder.updateSettings().build();
     updateOperationSettings = settingsBuilder.updateOperationSettings().build();
   }
@@ -470,6 +481,9 @@ public class AutoscalersStubSettings extends StubSettings<AutoscalersStubSetting
     private final UnaryCallSettings.Builder<PatchAutoscalerRequest, Operation> patchSettings;
     private final OperationCallSettings.Builder<PatchAutoscalerRequest, Operation, Operation>
         patchOperationSettings;
+    private final UnaryCallSettings.Builder<
+            TestIamPermissionsAutoscalerRequest, TestPermissionsResponse>
+        testIamPermissionsSettings;
     private final UnaryCallSettings.Builder<UpdateAutoscalerRequest, Operation> updateSettings;
     private final OperationCallSettings.Builder<UpdateAutoscalerRequest, Operation, Operation>
         updateOperationSettings;
@@ -532,6 +546,7 @@ public class AutoscalersStubSettings extends StubSettings<AutoscalersStubSetting
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       patchOperationSettings = OperationCallSettings.newBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateOperationSettings = OperationCallSettings.newBuilder();
 
@@ -543,6 +558,7 @@ public class AutoscalersStubSettings extends StubSettings<AutoscalersStubSetting
               insertSettings,
               listSettings,
               patchSettings,
+              testIamPermissionsSettings,
               updateSettings);
       initDefaults(this);
     }
@@ -559,6 +575,7 @@ public class AutoscalersStubSettings extends StubSettings<AutoscalersStubSetting
       listSettings = settings.listSettings.toBuilder();
       patchSettings = settings.patchSettings.toBuilder();
       patchOperationSettings = settings.patchOperationSettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
       updateSettings = settings.updateSettings.toBuilder();
       updateOperationSettings = settings.updateOperationSettings.toBuilder();
 
@@ -570,6 +587,7 @@ public class AutoscalersStubSettings extends StubSettings<AutoscalersStubSetting
               insertSettings,
               listSettings,
               patchSettings,
+              testIamPermissionsSettings,
               updateSettings);
     }
 
@@ -613,6 +631,11 @@ public class AutoscalersStubSettings extends StubSettings<AutoscalersStubSetting
 
       builder
           .patchSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -784,6 +807,12 @@ public class AutoscalersStubSettings extends StubSettings<AutoscalersStubSetting
     public OperationCallSettings.Builder<PatchAutoscalerRequest, Operation, Operation>
         patchOperationSettings() {
       return patchOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsAutoscalerRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     /** Returns the builder for the settings used for calls to update. */

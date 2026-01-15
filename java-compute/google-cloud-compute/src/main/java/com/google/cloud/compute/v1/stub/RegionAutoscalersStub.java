@@ -29,6 +29,8 @@ import com.google.cloud.compute.v1.ListRegionAutoscalersRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchRegionAutoscalerRequest;
 import com.google.cloud.compute.v1.RegionAutoscalerList;
+import com.google.cloud.compute.v1.TestIamPermissionsRegionAutoscalerRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateRegionAutoscalerRequest;
 import javax.annotation.Generated;
 
@@ -78,6 +80,11 @@ public abstract class RegionAutoscalersStub implements BackgroundResource {
 
   public UnaryCallable<PatchRegionAutoscalerRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsRegionAutoscalerRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   public OperationCallable<UpdateRegionAutoscalerRequest, Operation, Operation>

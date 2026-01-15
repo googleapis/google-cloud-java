@@ -53,6 +53,8 @@ import com.google.cloud.compute.v1.InvalidateCacheUrlMapRequest;
 import com.google.cloud.compute.v1.ListUrlMapsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchUrlMapRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsUrlMapRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateUrlMapRequest;
 import com.google.cloud.compute.v1.UrlMap;
 import com.google.cloud.compute.v1.UrlMapList;
@@ -170,6 +172,8 @@ public class UrlMapsStubSettings extends StubSettings<UrlMapsStubSettings> {
   private final UnaryCallSettings<PatchUrlMapRequest, Operation> patchSettings;
   private final OperationCallSettings<PatchUrlMapRequest, Operation, Operation>
       patchOperationSettings;
+  private final UnaryCallSettings<TestIamPermissionsUrlMapRequest, TestPermissionsResponse>
+      testIamPermissionsSettings;
   private final UnaryCallSettings<UpdateUrlMapRequest, Operation> updateSettings;
   private final OperationCallSettings<UpdateUrlMapRequest, Operation, Operation>
       updateOperationSettings;
@@ -348,6 +352,12 @@ public class UrlMapsStubSettings extends StubSettings<UrlMapsStubSettings> {
     return patchOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsUrlMapRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
   /** Returns the object with the settings used for calls to update. */
   public UnaryCallSettings<UpdateUrlMapRequest, Operation> updateSettings() {
     return updateSettings;
@@ -456,6 +466,7 @@ public class UrlMapsStubSettings extends StubSettings<UrlMapsStubSettings> {
     listSettings = settingsBuilder.listSettings().build();
     patchSettings = settingsBuilder.patchSettings().build();
     patchOperationSettings = settingsBuilder.patchOperationSettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
     updateSettings = settingsBuilder.updateSettings().build();
     updateOperationSettings = settingsBuilder.updateOperationSettings().build();
     validateSettings = settingsBuilder.validateSettings().build();
@@ -483,6 +494,9 @@ public class UrlMapsStubSettings extends StubSettings<UrlMapsStubSettings> {
     private final UnaryCallSettings.Builder<PatchUrlMapRequest, Operation> patchSettings;
     private final OperationCallSettings.Builder<PatchUrlMapRequest, Operation, Operation>
         patchOperationSettings;
+    private final UnaryCallSettings.Builder<
+            TestIamPermissionsUrlMapRequest, TestPermissionsResponse>
+        testIamPermissionsSettings;
     private final UnaryCallSettings.Builder<UpdateUrlMapRequest, Operation> updateSettings;
     private final OperationCallSettings.Builder<UpdateUrlMapRequest, Operation, Operation>
         updateOperationSettings;
@@ -549,6 +563,7 @@ public class UrlMapsStubSettings extends StubSettings<UrlMapsStubSettings> {
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       patchOperationSettings = OperationCallSettings.newBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateOperationSettings = OperationCallSettings.newBuilder();
       validateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -562,6 +577,7 @@ public class UrlMapsStubSettings extends StubSettings<UrlMapsStubSettings> {
               invalidateCacheSettings,
               listSettings,
               patchSettings,
+              testIamPermissionsSettings,
               updateSettings,
               validateSettings);
       initDefaults(this);
@@ -581,6 +597,7 @@ public class UrlMapsStubSettings extends StubSettings<UrlMapsStubSettings> {
       listSettings = settings.listSettings.toBuilder();
       patchSettings = settings.patchSettings.toBuilder();
       patchOperationSettings = settings.patchOperationSettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
       updateSettings = settings.updateSettings.toBuilder();
       updateOperationSettings = settings.updateOperationSettings.toBuilder();
       validateSettings = settings.validateSettings.toBuilder();
@@ -594,6 +611,7 @@ public class UrlMapsStubSettings extends StubSettings<UrlMapsStubSettings> {
               invalidateCacheSettings,
               listSettings,
               patchSettings,
+              testIamPermissionsSettings,
               updateSettings,
               validateSettings);
     }
@@ -643,6 +661,11 @@ public class UrlMapsStubSettings extends StubSettings<UrlMapsStubSettings> {
 
       builder
           .patchSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -854,6 +877,12 @@ public class UrlMapsStubSettings extends StubSettings<UrlMapsStubSettings> {
     public OperationCallSettings.Builder<PatchUrlMapRequest, Operation, Operation>
         patchOperationSettings() {
       return patchOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsUrlMapRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     /** Returns the builder for the settings used for calls to update. */

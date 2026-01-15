@@ -181,7 +181,7 @@ public enum HybridReplicationSchedule implements com.google.protobuf.ProtocolMes
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.netapp.v1.CommonProto.getDescriptor().getEnumTypes().get(4);
+    return com.google.cloud.netapp.v1.CommonProto.getDescriptor().getEnumTypes().get(5);
   }
 
   private static final HybridReplicationSchedule[] VALUES = values();

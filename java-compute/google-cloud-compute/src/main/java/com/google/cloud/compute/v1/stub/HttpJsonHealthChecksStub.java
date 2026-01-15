@@ -44,6 +44,8 @@ import com.google.cloud.compute.v1.ListHealthChecksRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchHealthCheckRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsHealthCheckRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateHealthCheckRequest;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -374,6 +376,48 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
                   })
               .build();
 
+  private static final ApiMethodDescriptor<
+          TestIamPermissionsHealthCheckRequest, TestPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<TestIamPermissionsHealthCheckRequest, TestPermissionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.HealthChecks/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TestIamPermissionsHealthCheckRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/healthChecks/{resource}/testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsHealthCheckRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsHealthCheckRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "testPermissionsRequestResource",
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<UpdateHealthCheckRequest, Operation>
       updateMethodDescriptor =
           ApiMethodDescriptor.<UpdateHealthCheckRequest, Operation>newBuilder()
@@ -446,6 +490,8 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
   private final UnaryCallable<PatchHealthCheckRequest, Operation> patchCallable;
   private final OperationCallable<PatchHealthCheckRequest, Operation, Operation>
       patchOperationCallable;
+  private final UnaryCallable<TestIamPermissionsHealthCheckRequest, TestPermissionsResponse>
+      testIamPermissionsCallable;
   private final UnaryCallable<UpdateHealthCheckRequest, Operation> updateCallable;
   private final OperationCallable<UpdateHealthCheckRequest, Operation, Operation>
       updateOperationCallable;
@@ -566,6 +612,20 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<TestIamPermissionsHealthCheckRequest, TestPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings
+                .<TestIamPermissionsHealthCheckRequest, TestPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<UpdateHealthCheckRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateHealthCheckRequest, Operation>newBuilder()
             .setMethodDescriptor(updateMethodDescriptor)
@@ -621,6 +681,11 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
             settings.patchOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
     this.updateCallable =
         callableFactory.createUnaryCallable(
             updateTransportSettings, settings.updateSettings(), clientContext);
@@ -644,6 +709,7 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     methodDescriptors.add(updateMethodDescriptor);
     return methodDescriptors;
   }
@@ -705,6 +771,12 @@ public class HttpJsonHealthChecksStub extends HealthChecksStub {
   @Override
   public OperationCallable<PatchHealthCheckRequest, Operation, Operation> patchOperationCallable() {
     return patchOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsHealthCheckRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

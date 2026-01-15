@@ -2129,6 +2129,60 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
+   * Configures traffic steering properties of internal passthrough Network
+   * Load Balancers.
+   *
+   * networkPassThroughLbTrafficPolicy cannot be specified with haPolicy.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.BackendServiceNetworkPassThroughLbTrafficPolicy network_pass_through_lb_traffic_policy = 230323750;
+   * </code>
+   *
+   * @return Whether the networkPassThroughLbTrafficPolicy field is set.
+   */
+  boolean hasNetworkPassThroughLbTrafficPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configures traffic steering properties of internal passthrough Network
+   * Load Balancers.
+   *
+   * networkPassThroughLbTrafficPolicy cannot be specified with haPolicy.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.BackendServiceNetworkPassThroughLbTrafficPolicy network_pass_through_lb_traffic_policy = 230323750;
+   * </code>
+   *
+   * @return The networkPassThroughLbTrafficPolicy.
+   */
+  com.google.cloud.compute.v1.BackendServiceNetworkPassThroughLbTrafficPolicy
+      getNetworkPassThroughLbTrafficPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configures traffic steering properties of internal passthrough Network
+   * Load Balancers.
+   *
+   * networkPassThroughLbTrafficPolicy cannot be specified with haPolicy.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.BackendServiceNetworkPassThroughLbTrafficPolicy network_pass_through_lb_traffic_policy = 230323750;
+   * </code>
+   */
+  com.google.cloud.compute.v1.BackendServiceNetworkPassThroughLbTrafficPolicyOrBuilder
+      getNetworkPassThroughLbTrafficPolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Settings controlling the ejection of unhealthy backend endpoints from the
    * load balancing pool of each individual proxy instance that processes the
    * traffic for the given backend service. If not set, this feature is

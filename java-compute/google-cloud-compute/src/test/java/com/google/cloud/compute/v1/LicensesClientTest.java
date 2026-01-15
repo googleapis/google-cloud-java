@@ -166,6 +166,7 @@ public class LicensesClientTest {
             .setMultiTenantOnly(true)
             .setName("name3373707")
             .setOsLicense(true)
+            .setParams(LicenseParams.newBuilder().build())
             .setRemovableFromDisk(true)
             .addAllRequiredCoattachedLicenses(new ArrayList<String>())
             .setResourceRequirements(LicenseResourceRequirements.newBuilder().build())

@@ -205,6 +205,12 @@ public class TargetSslProxiesSettings extends ClientSettings<TargetSslProxiesSet
     return ((TargetSslProxiesStubSettings) getStubSettings()).setSslPolicyOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsTargetSslProxyRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((TargetSslProxiesStubSettings) getStubSettings()).testIamPermissionsSettings();
+  }
+
   public static final TargetSslProxiesSettings create(TargetSslProxiesStubSettings stub)
       throws IOException {
     return new TargetSslProxiesSettings.Builder(stub.toBuilder()).build();
@@ -397,6 +403,13 @@ public class TargetSslProxiesSettings extends ClientSettings<TargetSslProxiesSet
     public OperationCallSettings.Builder<SetSslPolicyTargetSslProxyRequest, Operation, Operation>
         setSslPolicyOperationSettings() {
       return getStubSettingsBuilder().setSslPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsTargetSslProxyRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

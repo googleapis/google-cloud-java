@@ -52,6 +52,8 @@ import com.google.cloud.compute.v1.ListRegionAutoscalersRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchRegionAutoscalerRequest;
 import com.google.cloud.compute.v1.RegionAutoscalerList;
+import com.google.cloud.compute.v1.TestIamPermissionsRegionAutoscalerRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateRegionAutoscalerRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -161,6 +163,9 @@ public class RegionAutoscalersStubSettings extends StubSettings<RegionAutoscaler
   private final UnaryCallSettings<PatchRegionAutoscalerRequest, Operation> patchSettings;
   private final OperationCallSettings<PatchRegionAutoscalerRequest, Operation, Operation>
       patchOperationSettings;
+  private final UnaryCallSettings<
+          TestIamPermissionsRegionAutoscalerRequest, TestPermissionsResponse>
+      testIamPermissionsSettings;
   private final UnaryCallSettings<UpdateRegionAutoscalerRequest, Operation> updateSettings;
   private final OperationCallSettings<UpdateRegionAutoscalerRequest, Operation, Operation>
       updateOperationSettings;
@@ -266,6 +271,12 @@ public class RegionAutoscalersStubSettings extends StubSettings<RegionAutoscaler
     return patchOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRegionAutoscalerRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
   /** Returns the object with the settings used for calls to update. */
   public UnaryCallSettings<UpdateRegionAutoscalerRequest, Operation> updateSettings() {
     return updateSettings;
@@ -367,6 +378,7 @@ public class RegionAutoscalersStubSettings extends StubSettings<RegionAutoscaler
     listSettings = settingsBuilder.listSettings().build();
     patchSettings = settingsBuilder.patchSettings().build();
     patchOperationSettings = settingsBuilder.patchOperationSettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
     updateSettings = settingsBuilder.updateSettings().build();
     updateOperationSettings = settingsBuilder.updateOperationSettings().build();
   }
@@ -389,6 +401,9 @@ public class RegionAutoscalersStubSettings extends StubSettings<RegionAutoscaler
     private final UnaryCallSettings.Builder<PatchRegionAutoscalerRequest, Operation> patchSettings;
     private final OperationCallSettings.Builder<PatchRegionAutoscalerRequest, Operation, Operation>
         patchOperationSettings;
+    private final UnaryCallSettings.Builder<
+            TestIamPermissionsRegionAutoscalerRequest, TestPermissionsResponse>
+        testIamPermissionsSettings;
     private final UnaryCallSettings.Builder<UpdateRegionAutoscalerRequest, Operation>
         updateSettings;
     private final OperationCallSettings.Builder<UpdateRegionAutoscalerRequest, Operation, Operation>
@@ -451,6 +466,7 @@ public class RegionAutoscalersStubSettings extends StubSettings<RegionAutoscaler
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       patchOperationSettings = OperationCallSettings.newBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateOperationSettings = OperationCallSettings.newBuilder();
 
@@ -461,6 +477,7 @@ public class RegionAutoscalersStubSettings extends StubSettings<RegionAutoscaler
               insertSettings,
               listSettings,
               patchSettings,
+              testIamPermissionsSettings,
               updateSettings);
       initDefaults(this);
     }
@@ -476,6 +493,7 @@ public class RegionAutoscalersStubSettings extends StubSettings<RegionAutoscaler
       listSettings = settings.listSettings.toBuilder();
       patchSettings = settings.patchSettings.toBuilder();
       patchOperationSettings = settings.patchOperationSettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
       updateSettings = settings.updateSettings.toBuilder();
       updateOperationSettings = settings.updateOperationSettings.toBuilder();
 
@@ -486,6 +504,7 @@ public class RegionAutoscalersStubSettings extends StubSettings<RegionAutoscaler
               insertSettings,
               listSettings,
               patchSettings,
+              testIamPermissionsSettings,
               updateSettings);
     }
 
@@ -524,6 +543,11 @@ public class RegionAutoscalersStubSettings extends StubSettings<RegionAutoscaler
 
       builder
           .patchSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -689,6 +713,13 @@ public class RegionAutoscalersStubSettings extends StubSettings<RegionAutoscaler
     public OperationCallSettings.Builder<PatchRegionAutoscalerRequest, Operation, Operation>
         patchOperationSettings() {
       return patchOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsRegionAutoscalerRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     /** Returns the builder for the settings used for calls to update. */

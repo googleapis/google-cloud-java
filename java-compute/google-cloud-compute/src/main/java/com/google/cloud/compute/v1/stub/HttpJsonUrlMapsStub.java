@@ -42,6 +42,8 @@ import com.google.cloud.compute.v1.ListUrlMapsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchUrlMapRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsUrlMapRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateUrlMapRequest;
 import com.google.cloud.compute.v1.UrlMap;
 import com.google.cloud.compute.v1.UrlMapList;
@@ -415,6 +417,46 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
               })
           .build();
 
+  private static final ApiMethodDescriptor<TestIamPermissionsUrlMapRequest, TestPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor.<TestIamPermissionsUrlMapRequest, TestPermissionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.UrlMaps/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TestIamPermissionsUrlMapRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/urlMaps/{resource}/testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsUrlMapRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsUrlMapRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "testPermissionsRequestResource",
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<UpdateUrlMapRequest, Operation> updateMethodDescriptor =
       ApiMethodDescriptor.<UpdateUrlMapRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.UrlMaps/Update")
@@ -524,6 +566,8 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
   private final UnaryCallable<ListUrlMapsRequest, ListPagedResponse> listPagedCallable;
   private final UnaryCallable<PatchUrlMapRequest, Operation> patchCallable;
   private final OperationCallable<PatchUrlMapRequest, Operation, Operation> patchOperationCallable;
+  private final UnaryCallable<TestIamPermissionsUrlMapRequest, TestPermissionsResponse>
+      testIamPermissionsCallable;
   private final UnaryCallable<UpdateUrlMapRequest, Operation> updateCallable;
   private final OperationCallable<UpdateUrlMapRequest, Operation, Operation>
       updateOperationCallable;
@@ -653,6 +697,20 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<TestIamPermissionsUrlMapRequest, TestPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings
+                .<TestIamPermissionsUrlMapRequest, TestPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<UpdateUrlMapRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateUrlMapRequest, Operation>newBuilder()
             .setMethodDescriptor(updateMethodDescriptor)
@@ -729,6 +787,11 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
             settings.patchOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
     this.updateCallable =
         callableFactory.createUnaryCallable(
             updateTransportSettings, settings.updateSettings(), clientContext);
@@ -756,6 +819,7 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
     methodDescriptors.add(invalidateCacheMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     methodDescriptors.add(updateMethodDescriptor);
     methodDescriptors.add(validateMethodDescriptor);
     return methodDescriptors;
@@ -827,6 +891,12 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
   @Override
   public OperationCallable<PatchUrlMapRequest, Operation, Operation> patchOperationCallable() {
     return patchOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsUrlMapRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

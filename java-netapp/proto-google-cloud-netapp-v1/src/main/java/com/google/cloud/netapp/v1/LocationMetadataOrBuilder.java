@@ -190,4 +190,17 @@ public interface LocationMetadataOrBuilder
    * @return The hasVcp.
    */
   boolean getHasVcp();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates if the location has ONTAP Proxy support.
+   * </pre>
+   *
+   * <code>bool has_ontap_proxy = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The hasOntapProxy.
+   */
+  boolean getHasOntapProxy();
 }

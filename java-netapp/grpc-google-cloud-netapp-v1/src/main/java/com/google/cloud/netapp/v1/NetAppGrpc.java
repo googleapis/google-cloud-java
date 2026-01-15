@@ -2619,6 +2619,261 @@ public final class NetAppGrpc {
     return getDeleteQuotaRuleMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.RestoreBackupFilesRequest, com.google.longrunning.Operation>
+      getRestoreBackupFilesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RestoreBackupFiles",
+      requestType = com.google.cloud.netapp.v1.RestoreBackupFilesRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.RestoreBackupFilesRequest, com.google.longrunning.Operation>
+      getRestoreBackupFilesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.RestoreBackupFilesRequest, com.google.longrunning.Operation>
+        getRestoreBackupFilesMethod;
+    if ((getRestoreBackupFilesMethod = NetAppGrpc.getRestoreBackupFilesMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getRestoreBackupFilesMethod = NetAppGrpc.getRestoreBackupFilesMethod) == null) {
+          NetAppGrpc.getRestoreBackupFilesMethod =
+              getRestoreBackupFilesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.RestoreBackupFilesRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RestoreBackupFiles"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.RestoreBackupFilesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("RestoreBackupFiles"))
+                      .build();
+        }
+      }
+    }
+    return getRestoreBackupFilesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.ListHostGroupsRequest,
+          com.google.cloud.netapp.v1.ListHostGroupsResponse>
+      getListHostGroupsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListHostGroups",
+      requestType = com.google.cloud.netapp.v1.ListHostGroupsRequest.class,
+      responseType = com.google.cloud.netapp.v1.ListHostGroupsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.ListHostGroupsRequest,
+          com.google.cloud.netapp.v1.ListHostGroupsResponse>
+      getListHostGroupsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.ListHostGroupsRequest,
+            com.google.cloud.netapp.v1.ListHostGroupsResponse>
+        getListHostGroupsMethod;
+    if ((getListHostGroupsMethod = NetAppGrpc.getListHostGroupsMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getListHostGroupsMethod = NetAppGrpc.getListHostGroupsMethod) == null) {
+          NetAppGrpc.getListHostGroupsMethod =
+              getListHostGroupsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.ListHostGroupsRequest,
+                          com.google.cloud.netapp.v1.ListHostGroupsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListHostGroups"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.ListHostGroupsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.ListHostGroupsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("ListHostGroups"))
+                      .build();
+        }
+      }
+    }
+    return getListHostGroupsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.GetHostGroupRequest, com.google.cloud.netapp.v1.HostGroup>
+      getGetHostGroupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetHostGroup",
+      requestType = com.google.cloud.netapp.v1.GetHostGroupRequest.class,
+      responseType = com.google.cloud.netapp.v1.HostGroup.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.GetHostGroupRequest, com.google.cloud.netapp.v1.HostGroup>
+      getGetHostGroupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.GetHostGroupRequest, com.google.cloud.netapp.v1.HostGroup>
+        getGetHostGroupMethod;
+    if ((getGetHostGroupMethod = NetAppGrpc.getGetHostGroupMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getGetHostGroupMethod = NetAppGrpc.getGetHostGroupMethod) == null) {
+          NetAppGrpc.getGetHostGroupMethod =
+              getGetHostGroupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.GetHostGroupRequest,
+                          com.google.cloud.netapp.v1.HostGroup>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetHostGroup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.GetHostGroupRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.HostGroup.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("GetHostGroup"))
+                      .build();
+        }
+      }
+    }
+    return getGetHostGroupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.CreateHostGroupRequest, com.google.longrunning.Operation>
+      getCreateHostGroupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateHostGroup",
+      requestType = com.google.cloud.netapp.v1.CreateHostGroupRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.CreateHostGroupRequest, com.google.longrunning.Operation>
+      getCreateHostGroupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.CreateHostGroupRequest, com.google.longrunning.Operation>
+        getCreateHostGroupMethod;
+    if ((getCreateHostGroupMethod = NetAppGrpc.getCreateHostGroupMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getCreateHostGroupMethod = NetAppGrpc.getCreateHostGroupMethod) == null) {
+          NetAppGrpc.getCreateHostGroupMethod =
+              getCreateHostGroupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.CreateHostGroupRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateHostGroup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.CreateHostGroupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("CreateHostGroup"))
+                      .build();
+        }
+      }
+    }
+    return getCreateHostGroupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.UpdateHostGroupRequest, com.google.longrunning.Operation>
+      getUpdateHostGroupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateHostGroup",
+      requestType = com.google.cloud.netapp.v1.UpdateHostGroupRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.UpdateHostGroupRequest, com.google.longrunning.Operation>
+      getUpdateHostGroupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.UpdateHostGroupRequest, com.google.longrunning.Operation>
+        getUpdateHostGroupMethod;
+    if ((getUpdateHostGroupMethod = NetAppGrpc.getUpdateHostGroupMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getUpdateHostGroupMethod = NetAppGrpc.getUpdateHostGroupMethod) == null) {
+          NetAppGrpc.getUpdateHostGroupMethod =
+              getUpdateHostGroupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.UpdateHostGroupRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateHostGroup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.UpdateHostGroupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("UpdateHostGroup"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateHostGroupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.DeleteHostGroupRequest, com.google.longrunning.Operation>
+      getDeleteHostGroupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteHostGroup",
+      requestType = com.google.cloud.netapp.v1.DeleteHostGroupRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.DeleteHostGroupRequest, com.google.longrunning.Operation>
+      getDeleteHostGroupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.DeleteHostGroupRequest, com.google.longrunning.Operation>
+        getDeleteHostGroupMethod;
+    if ((getDeleteHostGroupMethod = NetAppGrpc.getDeleteHostGroupMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getDeleteHostGroupMethod = NetAppGrpc.getDeleteHostGroupMethod) == null) {
+          NetAppGrpc.getDeleteHostGroupMethod =
+              getDeleteHostGroupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.DeleteHostGroupRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteHostGroup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.DeleteHostGroupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("DeleteHostGroup"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteHostGroupMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static NetAppStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<NetAppStub> factory =
@@ -3539,6 +3794,92 @@ public final class NetAppGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteQuotaRuleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restore files from a backup to a volume.
+     * </pre>
+     */
+    default void restoreBackupFiles(
+        com.google.cloud.netapp.v1.RestoreBackupFilesRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRestoreBackupFilesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of host groups in a `location`. Use `-` as location to list
+     * host groups across all locations.
+     * </pre>
+     */
+    default void listHostGroups(
+        com.google.cloud.netapp.v1.ListHostGroupsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.ListHostGroupsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListHostGroupsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns details of the specified host group.
+     * </pre>
+     */
+    default void getHostGroup(
+        com.google.cloud.netapp.v1.GetHostGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.HostGroup> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetHostGroupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new host group.
+     * </pre>
+     */
+    default void createHostGroup(
+        com.google.cloud.netapp.v1.CreateHostGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateHostGroupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing host group.
+     * </pre>
+     */
+    default void updateHostGroup(
+        com.google.cloud.netapp.v1.UpdateHostGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateHostGroupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a host group.
+     * </pre>
+     */
+    default void deleteHostGroup(
+        com.google.cloud.netapp.v1.DeleteHostGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteHostGroupMethod(), responseObserver);
     }
   }
 
@@ -4551,6 +4892,104 @@ public final class NetAppGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restore files from a backup to a volume.
+     * </pre>
+     */
+    public void restoreBackupFiles(
+        com.google.cloud.netapp.v1.RestoreBackupFilesRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRestoreBackupFilesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of host groups in a `location`. Use `-` as location to list
+     * host groups across all locations.
+     * </pre>
+     */
+    public void listHostGroups(
+        com.google.cloud.netapp.v1.ListHostGroupsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.ListHostGroupsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListHostGroupsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns details of the specified host group.
+     * </pre>
+     */
+    public void getHostGroup(
+        com.google.cloud.netapp.v1.GetHostGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.HostGroup> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetHostGroupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new host group.
+     * </pre>
+     */
+    public void createHostGroup(
+        com.google.cloud.netapp.v1.CreateHostGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateHostGroupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing host group.
+     * </pre>
+     */
+    public void updateHostGroup(
+        com.google.cloud.netapp.v1.UpdateHostGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateHostGroupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a host group.
+     * </pre>
+     */
+    public void deleteHostGroup(
+        com.google.cloud.netapp.v1.DeleteHostGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteHostGroupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -5383,6 +5822,86 @@ public final class NetAppGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteQuotaRuleMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restore files from a backup to a volume.
+     * </pre>
+     */
+    public com.google.longrunning.Operation restoreBackupFiles(
+        com.google.cloud.netapp.v1.RestoreBackupFilesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRestoreBackupFilesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of host groups in a `location`. Use `-` as location to list
+     * host groups across all locations.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.ListHostGroupsResponse listHostGroups(
+        com.google.cloud.netapp.v1.ListHostGroupsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListHostGroupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns details of the specified host group.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.HostGroup getHostGroup(
+        com.google.cloud.netapp.v1.GetHostGroupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetHostGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new host group.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createHostGroup(
+        com.google.cloud.netapp.v1.CreateHostGroupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateHostGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing host group.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateHostGroup(
+        com.google.cloud.netapp.v1.UpdateHostGroupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateHostGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a host group.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteHostGroup(
+        com.google.cloud.netapp.v1.DeleteHostGroupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteHostGroupMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -6192,6 +6711,85 @@ public final class NetAppGrpc {
         com.google.cloud.netapp.v1.DeleteQuotaRuleRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteQuotaRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restore files from a backup to a volume.
+     * </pre>
+     */
+    public com.google.longrunning.Operation restoreBackupFiles(
+        com.google.cloud.netapp.v1.RestoreBackupFilesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRestoreBackupFilesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of host groups in a `location`. Use `-` as location to list
+     * host groups across all locations.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.ListHostGroupsResponse listHostGroups(
+        com.google.cloud.netapp.v1.ListHostGroupsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListHostGroupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns details of the specified host group.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.HostGroup getHostGroup(
+        com.google.cloud.netapp.v1.GetHostGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetHostGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new host group.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createHostGroup(
+        com.google.cloud.netapp.v1.CreateHostGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateHostGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing host group.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateHostGroup(
+        com.google.cloud.netapp.v1.UpdateHostGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateHostGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a host group.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteHostGroup(
+        com.google.cloud.netapp.v1.DeleteHostGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteHostGroupMethod(), getCallOptions(), request);
     }
   }
 
@@ -7021,6 +7619,86 @@ public final class NetAppGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteQuotaRuleMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restore files from a backup to a volume.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        restoreBackupFiles(com.google.cloud.netapp.v1.RestoreBackupFilesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRestoreBackupFilesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of host groups in a `location`. Use `-` as location to list
+     * host groups across all locations.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.netapp.v1.ListHostGroupsResponse>
+        listHostGroups(com.google.cloud.netapp.v1.ListHostGroupsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListHostGroupsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns details of the specified host group.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.netapp.v1.HostGroup>
+        getHostGroup(com.google.cloud.netapp.v1.GetHostGroupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetHostGroupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new host group.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createHostGroup(com.google.cloud.netapp.v1.CreateHostGroupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateHostGroupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing host group.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateHostGroup(com.google.cloud.netapp.v1.UpdateHostGroupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateHostGroupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a host group.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteHostGroup(com.google.cloud.netapp.v1.DeleteHostGroupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteHostGroupMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_STORAGE_POOLS = 0;
@@ -7083,6 +7761,12 @@ public final class NetAppGrpc {
   private static final int METHODID_CREATE_QUOTA_RULE = 57;
   private static final int METHODID_UPDATE_QUOTA_RULE = 58;
   private static final int METHODID_DELETE_QUOTA_RULE = 59;
+  private static final int METHODID_RESTORE_BACKUP_FILES = 60;
+  private static final int METHODID_LIST_HOST_GROUPS = 61;
+  private static final int METHODID_GET_HOST_GROUP = 62;
+  private static final int METHODID_CREATE_HOST_GROUP = 63;
+  private static final int METHODID_UPDATE_HOST_GROUP = 64;
+  private static final int METHODID_DELETE_HOST_GROUP = 65;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -7416,6 +8100,37 @@ public final class NetAppGrpc {
         case METHODID_DELETE_QUOTA_RULE:
           serviceImpl.deleteQuotaRule(
               (com.google.cloud.netapp.v1.DeleteQuotaRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_RESTORE_BACKUP_FILES:
+          serviceImpl.restoreBackupFiles(
+              (com.google.cloud.netapp.v1.RestoreBackupFilesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_HOST_GROUPS:
+          serviceImpl.listHostGroups(
+              (com.google.cloud.netapp.v1.ListHostGroupsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.ListHostGroupsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_HOST_GROUP:
+          serviceImpl.getHostGroup(
+              (com.google.cloud.netapp.v1.GetHostGroupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.HostGroup>) responseObserver);
+          break;
+        case METHODID_CREATE_HOST_GROUP:
+          serviceImpl.createHostGroup(
+              (com.google.cloud.netapp.v1.CreateHostGroupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_HOST_GROUP:
+          serviceImpl.updateHostGroup(
+              (com.google.cloud.netapp.v1.UpdateHostGroupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_HOST_GROUP:
+          serviceImpl.deleteHostGroup(
+              (com.google.cloud.netapp.v1.DeleteHostGroupRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -7811,6 +8526,43 @@ public final class NetAppGrpc {
                 new MethodHandlers<
                     com.google.cloud.netapp.v1.DeleteQuotaRuleRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_QUOTA_RULE)))
+        .addMethod(
+            getRestoreBackupFilesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.RestoreBackupFilesRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RESTORE_BACKUP_FILES)))
+        .addMethod(
+            getListHostGroupsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.ListHostGroupsRequest,
+                    com.google.cloud.netapp.v1.ListHostGroupsResponse>(
+                    service, METHODID_LIST_HOST_GROUPS)))
+        .addMethod(
+            getGetHostGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.GetHostGroupRequest,
+                    com.google.cloud.netapp.v1.HostGroup>(service, METHODID_GET_HOST_GROUP)))
+        .addMethod(
+            getCreateHostGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.CreateHostGroupRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_HOST_GROUP)))
+        .addMethod(
+            getUpdateHostGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.UpdateHostGroupRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_HOST_GROUP)))
+        .addMethod(
+            getDeleteHostGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.DeleteHostGroupRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_HOST_GROUP)))
         .build();
   }
 
@@ -7920,6 +8672,12 @@ public final class NetAppGrpc {
                       .addMethod(getCreateQuotaRuleMethod())
                       .addMethod(getUpdateQuotaRuleMethod())
                       .addMethod(getDeleteQuotaRuleMethod())
+                      .addMethod(getRestoreBackupFilesMethod())
+                      .addMethod(getListHostGroupsMethod())
+                      .addMethod(getGetHostGroupMethod())
+                      .addMethod(getCreateHostGroupMethod())
+                      .addMethod(getUpdateHostGroupMethod())
+                      .addMethod(getDeleteHostGroupMethod())
                       .build();
         }
       }

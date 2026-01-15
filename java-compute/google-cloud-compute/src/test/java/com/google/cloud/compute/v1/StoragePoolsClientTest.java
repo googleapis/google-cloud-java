@@ -223,6 +223,7 @@ public class StoragePoolsClientTest {
             .setLabelFingerprint("labelFingerprint379449680")
             .putAllLabels(new HashMap<String, String>())
             .setName("name3373707")
+            .setParams(StoragePoolParams.newBuilder().build())
             .setPerformanceProvisioningType("performanceProvisioningType2104724503")
             .setPoolProvisionedCapacityGb(-1132075054)
             .setPoolProvisionedIops(1185834135)

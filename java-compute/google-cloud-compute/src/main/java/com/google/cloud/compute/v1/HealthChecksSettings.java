@@ -165,6 +165,12 @@ public class HealthChecksSettings extends ClientSettings<HealthChecksSettings> {
     return ((HealthChecksStubSettings) getStubSettings()).patchOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsHealthCheckRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((HealthChecksStubSettings) getStubSettings()).testIamPermissionsSettings();
+  }
+
   /** Returns the object with the settings used for calls to update. */
   public UnaryCallSettings<UpdateHealthCheckRequest, Operation> updateSettings() {
     return ((HealthChecksStubSettings) getStubSettings()).updateSettings();
@@ -324,6 +330,12 @@ public class HealthChecksSettings extends ClientSettings<HealthChecksSettings> {
     public OperationCallSettings.Builder<PatchHealthCheckRequest, Operation, Operation>
         patchOperationSettings() {
       return getStubSettingsBuilder().patchOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsHealthCheckRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     /** Returns the builder for the settings used for calls to update. */

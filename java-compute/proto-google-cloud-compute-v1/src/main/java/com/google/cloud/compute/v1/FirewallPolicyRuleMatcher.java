@@ -44,6 +44,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     destAddressGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
     destFqdns_ = com.google.protobuf.LazyStringArrayList.emptyList();
     destIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    destNetworkContext_ = "";
     destNetworkType_ = "";
     destRegionCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     destThreatIntelligences_ = com.google.protobuf.LazyStringArrayList.emptyList();
@@ -51,6 +52,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     srcAddressGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
     srcFqdns_ = com.google.protobuf.LazyStringArrayList.emptyList();
     srcIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    srcNetworkContext_ = "";
     srcNetworkType_ = "";
     srcNetworks_ = com.google.protobuf.LazyStringArrayList.emptyList();
     srcRegionCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
@@ -77,6 +79,135 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.FirewallPolicyRuleMatcher.class,
             com.google.cloud.compute.v1.FirewallPolicyRuleMatcher.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Network context of the traffic destination. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - NON_INTERNET
+   * Additional supported values which may be not listed in the enum directly due to technical reasons:
+   * INTERNET
+   * INTRA_VPC
+   * NON_INTERNET
+   * UNSPECIFIED
+   * VPC_NETWORKS
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.FirewallPolicyRuleMatcher.DestNetworkContext}
+   */
+  public enum DestNetworkContext implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_DEST_NETWORK_CONTEXT = 0;</code>
+     */
+    UNDEFINED_DEST_NETWORK_CONTEXT(0),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_DEST_NETWORK_CONTEXT = 0;</code>
+     */
+    public static final int UNDEFINED_DEST_NETWORK_CONTEXT_VALUE = 0;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static DestNetworkContext valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static DestNetworkContext forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_DEST_NETWORK_CONTEXT;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<DestNetworkContext>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<DestNetworkContext>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<DestNetworkContext>() {
+              public DestNetworkContext findValueByNumber(int number) {
+                return DestNetworkContext.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.FirewallPolicyRuleMatcher.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final DestNetworkContext[] VALUES = values();
+
+    public static DestNetworkContext valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private DestNetworkContext(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.FirewallPolicyRuleMatcher.DestNetworkContext)
   }
 
   /**
@@ -182,7 +313,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.compute.v1.FirewallPolicyRuleMatcher.getDescriptor()
           .getEnumTypes()
-          .get(0);
+          .get(1);
     }
 
     private static final DestNetworkType[] VALUES = values();
@@ -205,6 +336,137 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.FirewallPolicyRuleMatcher.DestNetworkType)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Network context of the traffic source. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - INTRA_VPC
+   *      - NON_INTERNET
+   *      - VPC_NETWORKS
+   * Additional supported values which may be not listed in the enum directly due to technical reasons:
+   * INTERNET
+   * INTRA_VPC
+   * NON_INTERNET
+   * UNSPECIFIED
+   * VPC_NETWORKS
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.FirewallPolicyRuleMatcher.SrcNetworkContext}
+   */
+  public enum SrcNetworkContext implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_SRC_NETWORK_CONTEXT = 0;</code>
+     */
+    UNDEFINED_SRC_NETWORK_CONTEXT(0),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_SRC_NETWORK_CONTEXT = 0;</code>
+     */
+    public static final int UNDEFINED_SRC_NETWORK_CONTEXT_VALUE = 0;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SrcNetworkContext valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static SrcNetworkContext forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_SRC_NETWORK_CONTEXT;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<SrcNetworkContext>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<SrcNetworkContext>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<SrcNetworkContext>() {
+              public SrcNetworkContext findValueByNumber(int number) {
+                return SrcNetworkContext.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.FirewallPolicyRuleMatcher.getDescriptor()
+          .getEnumTypes()
+          .get(2);
+    }
+
+    private static final SrcNetworkContext[] VALUES = values();
+
+    public static SrcNetworkContext valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private SrcNetworkContext(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.FirewallPolicyRuleMatcher.SrcNetworkContext)
   }
 
   /**
@@ -311,7 +573,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.compute.v1.FirewallPolicyRuleMatcher.getDescriptor()
           .getEnumTypes()
-          .get(1);
+          .get(3);
     }
 
     private static final SrcNetworkType[] VALUES = values();
@@ -556,6 +818,93 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     return destIpRanges_.getByteString(index);
   }
 
+  public static final int DEST_NETWORK_CONTEXT_FIELD_NUMBER = 76347649;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object destNetworkContext_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Network context of the traffic destination. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - NON_INTERNET
+   * Check the DestNetworkContext enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string dest_network_context = 76347649;</code>
+   *
+   * @return Whether the destNetworkContext field is set.
+   */
+  @java.lang.Override
+  public boolean hasDestNetworkContext() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Network context of the traffic destination. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - NON_INTERNET
+   * Check the DestNetworkContext enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string dest_network_context = 76347649;</code>
+   *
+   * @return The destNetworkContext.
+   */
+  @java.lang.Override
+  public java.lang.String getDestNetworkContext() {
+    java.lang.Object ref = destNetworkContext_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      destNetworkContext_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Network context of the traffic destination. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - NON_INTERNET
+   * Check the DestNetworkContext enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string dest_network_context = 76347649;</code>
+   *
+   * @return The bytes for destNetworkContext.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDestNetworkContextBytes() {
+    java.lang.Object ref = destNetworkContext_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      destNetworkContext_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int DEST_NETWORK_TYPE_FIELD_NUMBER = 409853224;
 
   @SuppressWarnings("serial")
@@ -580,7 +929,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public boolean hasDestNetworkType() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -1106,6 +1455,99 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     return srcIpRanges_.getByteString(index);
   }
 
+  public static final int SRC_NETWORK_CONTEXT_FIELD_NUMBER = 147649603;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object srcNetworkContext_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Network context of the traffic source. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - INTRA_VPC
+   *      - NON_INTERNET
+   *      - VPC_NETWORKS
+   * Check the SrcNetworkContext enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string src_network_context = 147649603;</code>
+   *
+   * @return Whether the srcNetworkContext field is set.
+   */
+  @java.lang.Override
+  public boolean hasSrcNetworkContext() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Network context of the traffic source. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - INTRA_VPC
+   *      - NON_INTERNET
+   *      - VPC_NETWORKS
+   * Check the SrcNetworkContext enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string src_network_context = 147649603;</code>
+   *
+   * @return The srcNetworkContext.
+   */
+  @java.lang.Override
+  public java.lang.String getSrcNetworkContext() {
+    java.lang.Object ref = srcNetworkContext_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      srcNetworkContext_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Network context of the traffic source. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - INTRA_VPC
+   *      - NON_INTERNET
+   *      - VPC_NETWORKS
+   * Check the SrcNetworkContext enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string src_network_context = 147649603;</code>
+   *
+   * @return The bytes for srcNetworkContext.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSrcNetworkContextBytes() {
+    java.lang.Object ref = srcNetworkContext_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      srcNetworkContext_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int SRC_NETWORK_TYPE_FIELD_NUMBER = 309819686;
 
   @SuppressWarnings("serial")
@@ -1132,7 +1574,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public boolean hasSrcNetworkType() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -1541,6 +1983,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 76347649, destNetworkContext_);
+    }
     for (int i = 0; i < srcRegionCodes_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 99086742, srcRegionCodes_.getRaw(i));
@@ -1549,6 +1994,9 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 119896492, destThreatIntelligences_.getRaw(i));
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 147649603, srcNetworkContext_);
+    }
     for (int i = 0; i < destRegionCodes_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 199120280, destRegionCodes_.getRaw(i));
@@ -1556,7 +2004,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     for (int i = 0; i < srcNetworks_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 247119872, srcNetworks_.getRaw(i));
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 309819686, srcNetworkType_);
     }
     for (int i = 0; i < srcThreatIntelligences_.size(); i++) {
@@ -1573,7 +2021,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     for (int i = 0; i < layer4Configs_.size(); i++) {
       output.writeMessage(373534261, layer4Configs_.get(i));
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 409853224, destNetworkType_);
     }
     for (int i = 0; i < srcIpRanges_.size(); i++) {
@@ -1602,6 +2050,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(76347649, destNetworkContext_);
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < srcRegionCodes_.size(); i++) {
@@ -1617,6 +2069,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       size += dataSize;
       size += 5 * getDestThreatIntelligencesList().size();
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(147649603, srcNetworkContext_);
     }
     {
       int dataSize = 0;
@@ -1634,7 +2090,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       size += dataSize;
       size += 5 * getSrcNetworksList().size();
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(309819686, srcNetworkType_);
     }
     {
@@ -1666,7 +2122,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               373534261, layer4Configs_.get(i));
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(409853224, destNetworkType_);
     }
     {
@@ -1725,6 +2181,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     if (!getDestAddressGroupsList().equals(other.getDestAddressGroupsList())) return false;
     if (!getDestFqdnsList().equals(other.getDestFqdnsList())) return false;
     if (!getDestIpRangesList().equals(other.getDestIpRangesList())) return false;
+    if (hasDestNetworkContext() != other.hasDestNetworkContext()) return false;
+    if (hasDestNetworkContext()) {
+      if (!getDestNetworkContext().equals(other.getDestNetworkContext())) return false;
+    }
     if (hasDestNetworkType() != other.hasDestNetworkType()) return false;
     if (hasDestNetworkType()) {
       if (!getDestNetworkType().equals(other.getDestNetworkType())) return false;
@@ -1736,6 +2196,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     if (!getSrcAddressGroupsList().equals(other.getSrcAddressGroupsList())) return false;
     if (!getSrcFqdnsList().equals(other.getSrcFqdnsList())) return false;
     if (!getSrcIpRangesList().equals(other.getSrcIpRangesList())) return false;
+    if (hasSrcNetworkContext() != other.hasSrcNetworkContext()) return false;
+    if (hasSrcNetworkContext()) {
+      if (!getSrcNetworkContext().equals(other.getSrcNetworkContext())) return false;
+    }
     if (hasSrcNetworkType() != other.hasSrcNetworkType()) return false;
     if (hasSrcNetworkType()) {
       if (!getSrcNetworkType().equals(other.getSrcNetworkType())) return false;
@@ -1768,6 +2232,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       hash = (37 * hash) + DEST_IP_RANGES_FIELD_NUMBER;
       hash = (53 * hash) + getDestIpRangesList().hashCode();
     }
+    if (hasDestNetworkContext()) {
+      hash = (37 * hash) + DEST_NETWORK_CONTEXT_FIELD_NUMBER;
+      hash = (53 * hash) + getDestNetworkContext().hashCode();
+    }
     if (hasDestNetworkType()) {
       hash = (37 * hash) + DEST_NETWORK_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getDestNetworkType().hashCode();
@@ -1795,6 +2263,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     if (getSrcIpRangesCount() > 0) {
       hash = (37 * hash) + SRC_IP_RANGES_FIELD_NUMBER;
       hash = (53 * hash) + getSrcIpRangesList().hashCode();
+    }
+    if (hasSrcNetworkContext()) {
+      hash = (37 * hash) + SRC_NETWORK_CONTEXT_FIELD_NUMBER;
+      hash = (53 * hash) + getSrcNetworkContext().hashCode();
     }
     if (hasSrcNetworkType()) {
       hash = (37 * hash) + SRC_NETWORK_TYPE_FIELD_NUMBER;
@@ -1961,6 +2433,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       destAddressGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
       destFqdns_ = com.google.protobuf.LazyStringArrayList.emptyList();
       destIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      destNetworkContext_ = "";
       destNetworkType_ = "";
       destRegionCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       destThreatIntelligences_ = com.google.protobuf.LazyStringArrayList.emptyList();
@@ -1970,10 +2443,11 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
         layer4Configs_ = null;
         layer4ConfigsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       srcAddressGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
       srcFqdns_ = com.google.protobuf.LazyStringArrayList.emptyList();
       srcIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      srcNetworkContext_ = "";
       srcNetworkType_ = "";
       srcNetworks_ = com.google.protobuf.LazyStringArrayList.emptyList();
       srcRegionCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
@@ -1983,7 +2457,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
         srcSecureTags_ = null;
         srcSecureTagsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       srcThreatIntelligences_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
@@ -2023,18 +2497,18 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     private void buildPartialRepeatedFields(
         com.google.cloud.compute.v1.FirewallPolicyRuleMatcher result) {
       if (layer4ConfigsBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           layer4Configs_ = java.util.Collections.unmodifiableList(layer4Configs_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.layer4Configs_ = layer4Configs_;
       } else {
         result.layer4Configs_ = layer4ConfigsBuilder_.build();
       }
       if (srcSecureTagsBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)) {
+        if (((bitField0_ & 0x00008000) != 0)) {
           srcSecureTags_ = java.util.Collections.unmodifiableList(srcSecureTags_);
-          bitField0_ = (bitField0_ & ~0x00002000);
+          bitField0_ = (bitField0_ & ~0x00008000);
         }
         result.srcSecureTags_ = srcSecureTags_;
       } else {
@@ -2058,42 +2532,50 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.destNetworkType_ = destNetworkType_;
+        result.destNetworkContext_ = destNetworkContext_;
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.destNetworkType_ = destNetworkType_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         destRegionCodes_.makeImmutable();
         result.destRegionCodes_ = destRegionCodes_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         destThreatIntelligences_.makeImmutable();
         result.destThreatIntelligences_ = destThreatIntelligences_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         srcAddressGroups_.makeImmutable();
         result.srcAddressGroups_ = srcAddressGroups_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         srcFqdns_.makeImmutable();
         result.srcFqdns_ = srcFqdns_;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         srcIpRanges_.makeImmutable();
         result.srcIpRanges_ = srcIpRanges_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.srcNetworkType_ = srcNetworkType_;
-        to_bitField0_ |= 0x00000002;
-      }
       if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.srcNetworkContext_ = srcNetworkContext_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.srcNetworkType_ = srcNetworkType_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         srcNetworks_.makeImmutable();
         result.srcNetworks_ = srcNetworks_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         srcRegionCodes_.makeImmutable();
         result.srcRegionCodes_ = srcRegionCodes_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         srcThreatIntelligences_.makeImmutable();
         result.srcThreatIntelligences_ = srcThreatIntelligences_;
       }
@@ -2176,15 +2658,20 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
         }
         onChanged();
       }
+      if (other.hasDestNetworkContext()) {
+        destNetworkContext_ = other.destNetworkContext_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       if (other.hasDestNetworkType()) {
         destNetworkType_ = other.destNetworkType_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.destRegionCodes_.isEmpty()) {
         if (destRegionCodes_.isEmpty()) {
           destRegionCodes_ = other.destRegionCodes_;
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
         } else {
           ensureDestRegionCodesIsMutable();
           destRegionCodes_.addAll(other.destRegionCodes_);
@@ -2194,7 +2681,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       if (!other.destThreatIntelligences_.isEmpty()) {
         if (destThreatIntelligences_.isEmpty()) {
           destThreatIntelligences_ = other.destThreatIntelligences_;
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
         } else {
           ensureDestThreatIntelligencesIsMutable();
           destThreatIntelligences_.addAll(other.destThreatIntelligences_);
@@ -2205,7 +2692,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
         if (!other.layer4Configs_.isEmpty()) {
           if (layer4Configs_.isEmpty()) {
             layer4Configs_ = other.layer4Configs_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureLayer4ConfigsIsMutable();
             layer4Configs_.addAll(other.layer4Configs_);
@@ -2218,7 +2705,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
             layer4ConfigsBuilder_.dispose();
             layer4ConfigsBuilder_ = null;
             layer4Configs_ = other.layer4Configs_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
             layer4ConfigsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLayer4ConfigsFieldBuilder()
@@ -2231,7 +2718,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       if (!other.srcAddressGroups_.isEmpty()) {
         if (srcAddressGroups_.isEmpty()) {
           srcAddressGroups_ = other.srcAddressGroups_;
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000100;
         } else {
           ensureSrcAddressGroupsIsMutable();
           srcAddressGroups_.addAll(other.srcAddressGroups_);
@@ -2241,7 +2728,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       if (!other.srcFqdns_.isEmpty()) {
         if (srcFqdns_.isEmpty()) {
           srcFqdns_ = other.srcFqdns_;
-          bitField0_ |= 0x00000100;
+          bitField0_ |= 0x00000200;
         } else {
           ensureSrcFqdnsIsMutable();
           srcFqdns_.addAll(other.srcFqdns_);
@@ -2251,22 +2738,27 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       if (!other.srcIpRanges_.isEmpty()) {
         if (srcIpRanges_.isEmpty()) {
           srcIpRanges_ = other.srcIpRanges_;
-          bitField0_ |= 0x00000200;
+          bitField0_ |= 0x00000400;
         } else {
           ensureSrcIpRangesIsMutable();
           srcIpRanges_.addAll(other.srcIpRanges_);
         }
         onChanged();
       }
+      if (other.hasSrcNetworkContext()) {
+        srcNetworkContext_ = other.srcNetworkContext_;
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
       if (other.hasSrcNetworkType()) {
         srcNetworkType_ = other.srcNetworkType_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (!other.srcNetworks_.isEmpty()) {
         if (srcNetworks_.isEmpty()) {
           srcNetworks_ = other.srcNetworks_;
-          bitField0_ |= 0x00000800;
+          bitField0_ |= 0x00002000;
         } else {
           ensureSrcNetworksIsMutable();
           srcNetworks_.addAll(other.srcNetworks_);
@@ -2276,7 +2768,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       if (!other.srcRegionCodes_.isEmpty()) {
         if (srcRegionCodes_.isEmpty()) {
           srcRegionCodes_ = other.srcRegionCodes_;
-          bitField0_ |= 0x00001000;
+          bitField0_ |= 0x00004000;
         } else {
           ensureSrcRegionCodesIsMutable();
           srcRegionCodes_.addAll(other.srcRegionCodes_);
@@ -2287,7 +2779,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
         if (!other.srcSecureTags_.isEmpty()) {
           if (srcSecureTags_.isEmpty()) {
             srcSecureTags_ = other.srcSecureTags_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00008000);
           } else {
             ensureSrcSecureTagsIsMutable();
             srcSecureTags_.addAll(other.srcSecureTags_);
@@ -2300,7 +2792,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
             srcSecureTagsBuilder_.dispose();
             srcSecureTagsBuilder_ = null;
             srcSecureTags_ = other.srcSecureTags_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00008000);
             srcSecureTagsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSrcSecureTagsFieldBuilder()
@@ -2313,7 +2805,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       if (!other.srcThreatIntelligences_.isEmpty()) {
         if (srcThreatIntelligences_.isEmpty()) {
           srcThreatIntelligences_ = other.srcThreatIntelligences_;
-          bitField0_ |= 0x00004000;
+          bitField0_ |= 0x00010000;
         } else {
           ensureSrcThreatIntelligencesIsMutable();
           srcThreatIntelligences_.addAll(other.srcThreatIntelligences_);
@@ -2346,6 +2838,12 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
             case 0:
               done = true;
               break;
+            case 610781194:
+              {
+                destNetworkContext_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 610781194
             case 792693938:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -2360,6 +2858,12 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
                 destThreatIntelligences_.add(s);
                 break;
               } // case 959171938
+            case 1181196826:
+              {
+                srcNetworkContext_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 1181196826
             case 1592962242:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -2377,7 +2881,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
             case -1816409806:
               {
                 srcNetworkType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00001000;
                 break;
               } // case -1816409806
             case -1705919150:
@@ -2418,7 +2922,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
             case -1016141502:
               {
                 destNetworkType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case -1016141502
             case -837942630:
@@ -3067,6 +3571,168 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       return this;
     }
 
+    private java.lang.Object destNetworkContext_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Network context of the traffic destination. Allowed values are:
+     *
+     *
+     *      - UNSPECIFIED
+     *      - INTERNET
+     *      - NON_INTERNET
+     * Check the DestNetworkContext enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string dest_network_context = 76347649;</code>
+     *
+     * @return Whether the destNetworkContext field is set.
+     */
+    public boolean hasDestNetworkContext() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Network context of the traffic destination. Allowed values are:
+     *
+     *
+     *      - UNSPECIFIED
+     *      - INTERNET
+     *      - NON_INTERNET
+     * Check the DestNetworkContext enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string dest_network_context = 76347649;</code>
+     *
+     * @return The destNetworkContext.
+     */
+    public java.lang.String getDestNetworkContext() {
+      java.lang.Object ref = destNetworkContext_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        destNetworkContext_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Network context of the traffic destination. Allowed values are:
+     *
+     *
+     *      - UNSPECIFIED
+     *      - INTERNET
+     *      - NON_INTERNET
+     * Check the DestNetworkContext enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string dest_network_context = 76347649;</code>
+     *
+     * @return The bytes for destNetworkContext.
+     */
+    public com.google.protobuf.ByteString getDestNetworkContextBytes() {
+      java.lang.Object ref = destNetworkContext_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        destNetworkContext_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Network context of the traffic destination. Allowed values are:
+     *
+     *
+     *      - UNSPECIFIED
+     *      - INTERNET
+     *      - NON_INTERNET
+     * Check the DestNetworkContext enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string dest_network_context = 76347649;</code>
+     *
+     * @param value The destNetworkContext to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDestNetworkContext(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      destNetworkContext_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Network context of the traffic destination. Allowed values are:
+     *
+     *
+     *      - UNSPECIFIED
+     *      - INTERNET
+     *      - NON_INTERNET
+     * Check the DestNetworkContext enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string dest_network_context = 76347649;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDestNetworkContext() {
+      destNetworkContext_ = getDefaultInstance().getDestNetworkContext();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Network context of the traffic destination. Allowed values are:
+     *
+     *
+     *      - UNSPECIFIED
+     *      - INTERNET
+     *      - NON_INTERNET
+     * Check the DestNetworkContext enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string dest_network_context = 76347649;</code>
+     *
+     * @param value The bytes for destNetworkContext to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDestNetworkContextBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      destNetworkContext_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object destNetworkType_ = "";
 
     /**
@@ -3087,7 +3753,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      * @return Whether the destNetworkType field is set.
      */
     public boolean hasDestNetworkType() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -3171,7 +3837,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       destNetworkType_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3195,7 +3861,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      */
     public Builder clearDestNetworkType() {
       destNetworkType_ = getDefaultInstance().getDestNetworkType();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -3224,7 +3890,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       checkByteStringIsUtf8(value);
       destNetworkType_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3236,7 +3902,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       if (!destRegionCodes_.isModifiable()) {
         destRegionCodes_ = new com.google.protobuf.LazyStringArrayList(destRegionCodes_);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
     }
 
     /**
@@ -3336,7 +4002,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       ensureDestRegionCodesIsMutable();
       destRegionCodes_.set(index, value);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3362,7 +4028,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       ensureDestRegionCodesIsMutable();
       destRegionCodes_.add(value);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3385,7 +4051,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public Builder addAllDestRegionCodes(java.lang.Iterable<java.lang.String> values) {
       ensureDestRegionCodesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, destRegionCodes_);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3406,7 +4072,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      */
     public Builder clearDestRegionCodes() {
       destRegionCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       ;
       onChanged();
       return this;
@@ -3434,7 +4100,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       checkByteStringIsUtf8(value);
       ensureDestRegionCodesIsMutable();
       destRegionCodes_.add(value);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3447,7 +4113,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
         destThreatIntelligences_ =
             new com.google.protobuf.LazyStringArrayList(destThreatIntelligences_);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
     }
 
     /**
@@ -3537,7 +4203,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       ensureDestThreatIntelligencesIsMutable();
       destThreatIntelligences_.set(index, value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3561,7 +4227,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       ensureDestThreatIntelligencesIsMutable();
       destThreatIntelligences_.add(value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3582,7 +4248,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public Builder addAllDestThreatIntelligences(java.lang.Iterable<java.lang.String> values) {
       ensureDestThreatIntelligencesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, destThreatIntelligences_);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3601,7 +4267,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      */
     public Builder clearDestThreatIntelligences() {
       destThreatIntelligences_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       ;
       onChanged();
       return this;
@@ -3627,7 +4293,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       checkByteStringIsUtf8(value);
       ensureDestThreatIntelligencesIsMutable();
       destThreatIntelligences_.add(value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3636,11 +4302,11 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
         layer4Configs_ = java.util.Collections.emptyList();
 
     private void ensureLayer4ConfigsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         layer4Configs_ =
             new java.util.ArrayList<
                 com.google.cloud.compute.v1.FirewallPolicyRuleMatcherLayer4Config>(layer4Configs_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -3897,7 +4563,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public Builder clearLayer4Configs() {
       if (layer4ConfigsBuilder_ == null) {
         layer4Configs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         layer4ConfigsBuilder_.clear();
@@ -4051,7 +4717,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
                 com.google.cloud.compute.v1.FirewallPolicyRuleMatcherLayer4Config.Builder,
                 com.google.cloud.compute.v1.FirewallPolicyRuleMatcherLayer4ConfigOrBuilder>(
                 layer4Configs_,
-                ((bitField0_ & 0x00000040) != 0),
+                ((bitField0_ & 0x00000080) != 0),
                 getParentForChildren(),
                 isClean());
         layer4Configs_ = null;
@@ -4066,7 +4732,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       if (!srcAddressGroups_.isModifiable()) {
         srcAddressGroups_ = new com.google.protobuf.LazyStringArrayList(srcAddressGroups_);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
     }
 
     /**
@@ -4156,7 +4822,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       ensureSrcAddressGroupsIsMutable();
       srcAddressGroups_.set(index, value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4180,7 +4846,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       ensureSrcAddressGroupsIsMutable();
       srcAddressGroups_.add(value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4201,7 +4867,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public Builder addAllSrcAddressGroups(java.lang.Iterable<java.lang.String> values) {
       ensureSrcAddressGroupsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, srcAddressGroups_);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4220,7 +4886,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      */
     public Builder clearSrcAddressGroups() {
       srcAddressGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       ;
       onChanged();
       return this;
@@ -4246,7 +4912,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       checkByteStringIsUtf8(value);
       ensureSrcAddressGroupsIsMutable();
       srcAddressGroups_.add(value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4258,7 +4924,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       if (!srcFqdns_.isModifiable()) {
         srcFqdns_ = new com.google.protobuf.LazyStringArrayList(srcFqdns_);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
     }
 
     /**
@@ -4353,7 +5019,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       ensureSrcFqdnsIsMutable();
       srcFqdns_.set(index, value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4378,7 +5044,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       ensureSrcFqdnsIsMutable();
       srcFqdns_.add(value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4400,7 +5066,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public Builder addAllSrcFqdns(java.lang.Iterable<java.lang.String> values) {
       ensureSrcFqdnsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, srcFqdns_);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4420,7 +5086,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      */
     public Builder clearSrcFqdns() {
       srcFqdns_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       ;
       onChanged();
       return this;
@@ -4447,7 +5113,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       checkByteStringIsUtf8(value);
       ensureSrcFqdnsIsMutable();
       srcFqdns_.add(value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4459,7 +5125,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       if (!srcIpRanges_.isModifiable()) {
         srcIpRanges_ = new com.google.protobuf.LazyStringArrayList(srcIpRanges_);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
     }
 
     /**
@@ -4549,7 +5215,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       ensureSrcIpRangesIsMutable();
       srcIpRanges_.set(index, value);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4573,7 +5239,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       ensureSrcIpRangesIsMutable();
       srcIpRanges_.add(value);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4594,7 +5260,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public Builder addAllSrcIpRanges(java.lang.Iterable<java.lang.String> values) {
       ensureSrcIpRangesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, srcIpRanges_);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4613,7 +5279,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      */
     public Builder clearSrcIpRanges() {
       srcIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       ;
       onChanged();
       return this;
@@ -4639,7 +5305,181 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       checkByteStringIsUtf8(value);
       ensureSrcIpRangesIsMutable();
       srcIpRanges_.add(value);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object srcNetworkContext_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Network context of the traffic source. Allowed values are:
+     *
+     *
+     *      - UNSPECIFIED
+     *      - INTERNET
+     *      - INTRA_VPC
+     *      - NON_INTERNET
+     *      - VPC_NETWORKS
+     * Check the SrcNetworkContext enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string src_network_context = 147649603;</code>
+     *
+     * @return Whether the srcNetworkContext field is set.
+     */
+    public boolean hasSrcNetworkContext() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Network context of the traffic source. Allowed values are:
+     *
+     *
+     *      - UNSPECIFIED
+     *      - INTERNET
+     *      - INTRA_VPC
+     *      - NON_INTERNET
+     *      - VPC_NETWORKS
+     * Check the SrcNetworkContext enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string src_network_context = 147649603;</code>
+     *
+     * @return The srcNetworkContext.
+     */
+    public java.lang.String getSrcNetworkContext() {
+      java.lang.Object ref = srcNetworkContext_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        srcNetworkContext_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Network context of the traffic source. Allowed values are:
+     *
+     *
+     *      - UNSPECIFIED
+     *      - INTERNET
+     *      - INTRA_VPC
+     *      - NON_INTERNET
+     *      - VPC_NETWORKS
+     * Check the SrcNetworkContext enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string src_network_context = 147649603;</code>
+     *
+     * @return The bytes for srcNetworkContext.
+     */
+    public com.google.protobuf.ByteString getSrcNetworkContextBytes() {
+      java.lang.Object ref = srcNetworkContext_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        srcNetworkContext_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Network context of the traffic source. Allowed values are:
+     *
+     *
+     *      - UNSPECIFIED
+     *      - INTERNET
+     *      - INTRA_VPC
+     *      - NON_INTERNET
+     *      - VPC_NETWORKS
+     * Check the SrcNetworkContext enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string src_network_context = 147649603;</code>
+     *
+     * @param value The srcNetworkContext to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSrcNetworkContext(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      srcNetworkContext_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Network context of the traffic source. Allowed values are:
+     *
+     *
+     *      - UNSPECIFIED
+     *      - INTERNET
+     *      - INTRA_VPC
+     *      - NON_INTERNET
+     *      - VPC_NETWORKS
+     * Check the SrcNetworkContext enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string src_network_context = 147649603;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSrcNetworkContext() {
+      srcNetworkContext_ = getDefaultInstance().getSrcNetworkContext();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Network context of the traffic source. Allowed values are:
+     *
+     *
+     *      - UNSPECIFIED
+     *      - INTERNET
+     *      - INTRA_VPC
+     *      - NON_INTERNET
+     *      - VPC_NETWORKS
+     * Check the SrcNetworkContext enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string src_network_context = 147649603;</code>
+     *
+     * @param value The bytes for srcNetworkContext to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSrcNetworkContextBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      srcNetworkContext_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4666,7 +5506,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      * @return Whether the srcNetworkType field is set.
      */
     public boolean hasSrcNetworkType() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -4756,7 +5596,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       srcNetworkType_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4782,7 +5622,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      */
     public Builder clearSrcNetworkType() {
       srcNetworkType_ = getDefaultInstance().getSrcNetworkType();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -4813,7 +5653,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       checkByteStringIsUtf8(value);
       srcNetworkType_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4825,7 +5665,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       if (!srcNetworks_.isModifiable()) {
         srcNetworks_ = new com.google.protobuf.LazyStringArrayList(srcNetworks_);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
     }
 
     /**
@@ -4910,7 +5750,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       ensureSrcNetworksIsMutable();
       srcNetworks_.set(index, value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4933,7 +5773,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       ensureSrcNetworksIsMutable();
       srcNetworks_.add(value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4953,7 +5793,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public Builder addAllSrcNetworks(java.lang.Iterable<java.lang.String> values) {
       ensureSrcNetworksIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, srcNetworks_);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4971,7 +5811,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      */
     public Builder clearSrcNetworks() {
       srcNetworks_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00002000);
       ;
       onChanged();
       return this;
@@ -4996,7 +5836,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       checkByteStringIsUtf8(value);
       ensureSrcNetworksIsMutable();
       srcNetworks_.add(value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5008,7 +5848,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       if (!srcRegionCodes_.isModifiable()) {
         srcRegionCodes_ = new com.google.protobuf.LazyStringArrayList(srcRegionCodes_);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
     }
 
     /**
@@ -5108,7 +5948,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       ensureSrcRegionCodesIsMutable();
       srcRegionCodes_.set(index, value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5134,7 +5974,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       ensureSrcRegionCodesIsMutable();
       srcRegionCodes_.add(value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5157,7 +5997,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public Builder addAllSrcRegionCodes(java.lang.Iterable<java.lang.String> values) {
       ensureSrcRegionCodesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, srcRegionCodes_);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5178,7 +6018,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      */
     public Builder clearSrcRegionCodes() {
       srcRegionCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       ;
       onChanged();
       return this;
@@ -5206,7 +6046,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       checkByteStringIsUtf8(value);
       ensureSrcRegionCodesIsMutable();
       srcRegionCodes_.add(value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5215,11 +6055,11 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
         java.util.Collections.emptyList();
 
     private void ensureSrcSecureTagsIsMutable() {
-      if (!((bitField0_ & 0x00002000) != 0)) {
+      if (!((bitField0_ & 0x00008000) != 0)) {
         srcSecureTags_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag>(
                 srcSecureTags_);
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00008000;
       }
     }
 
@@ -5517,7 +6357,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public Builder clearSrcSecureTags() {
       if (srcSecureTagsBuilder_ == null) {
         srcSecureTags_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         onChanged();
       } else {
         srcSecureTagsBuilder_.clear();
@@ -5695,7 +6535,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
                 com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.Builder,
                 com.google.cloud.compute.v1.FirewallPolicyRuleSecureTagOrBuilder>(
                 srcSecureTags_,
-                ((bitField0_ & 0x00002000) != 0),
+                ((bitField0_ & 0x00008000) != 0),
                 getParentForChildren(),
                 isClean());
         srcSecureTags_ = null;
@@ -5711,7 +6551,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
         srcThreatIntelligences_ =
             new com.google.protobuf.LazyStringArrayList(srcThreatIntelligences_);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
     }
 
     /**
@@ -5801,7 +6641,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       ensureSrcThreatIntelligencesIsMutable();
       srcThreatIntelligences_.set(index, value);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5825,7 +6665,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       }
       ensureSrcThreatIntelligencesIsMutable();
       srcThreatIntelligences_.add(value);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5846,7 +6686,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     public Builder addAllSrcThreatIntelligences(java.lang.Iterable<java.lang.String> values) {
       ensureSrcThreatIntelligencesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, srcThreatIntelligences_);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5865,7 +6705,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
      */
     public Builder clearSrcThreatIntelligences() {
       srcThreatIntelligences_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       ;
       onChanged();
       return this;
@@ -5891,7 +6731,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       checkByteStringIsUtf8(value);
       ensureSrcThreatIntelligencesIsMutable();
       srcThreatIntelligences_.add(value);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }

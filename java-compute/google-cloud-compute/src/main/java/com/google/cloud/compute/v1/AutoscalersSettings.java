@@ -163,6 +163,12 @@ public class AutoscalersSettings extends ClientSettings<AutoscalersSettings> {
     return ((AutoscalersStubSettings) getStubSettings()).patchOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsAutoscalerRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((AutoscalersStubSettings) getStubSettings()).testIamPermissionsSettings();
+  }
+
   /** Returns the object with the settings used for calls to update. */
   public UnaryCallSettings<UpdateAutoscalerRequest, Operation> updateSettings() {
     return ((AutoscalersStubSettings) getStubSettings()).updateSettings();
@@ -319,6 +325,12 @@ public class AutoscalersSettings extends ClientSettings<AutoscalersSettings> {
     public OperationCallSettings.Builder<PatchAutoscalerRequest, Operation, Operation>
         patchOperationSettings() {
       return getStubSettingsBuilder().patchOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsAutoscalerRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     /** Returns the builder for the settings used for calls to update. */

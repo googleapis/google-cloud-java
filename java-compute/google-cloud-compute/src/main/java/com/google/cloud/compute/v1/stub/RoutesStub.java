@@ -28,6 +28,8 @@ import com.google.cloud.compute.v1.ListRoutesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Route;
 import com.google.cloud.compute.v1.RouteList;
+import com.google.cloud.compute.v1.TestIamPermissionsRouteRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -65,6 +67,11 @@ public abstract class RoutesStub implements BackgroundResource {
 
   public UnaryCallable<ListRoutesRequest, RouteList> listCallable() {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsRouteRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

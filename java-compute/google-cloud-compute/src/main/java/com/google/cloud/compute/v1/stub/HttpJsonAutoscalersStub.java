@@ -44,6 +44,8 @@ import com.google.cloud.compute.v1.ListAutoscalersRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchAutoscalerRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsAutoscalerRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateAutoscalerRequest;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -379,6 +381,49 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
                   })
               .build();
 
+  private static final ApiMethodDescriptor<
+          TestIamPermissionsAutoscalerRequest, TestPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<TestIamPermissionsAutoscalerRequest, TestPermissionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Autoscalers/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TestIamPermissionsAutoscalerRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/autoscalers/{resource}/testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsAutoscalerRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsAutoscalerRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "testPermissionsRequestResource",
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<UpdateAutoscalerRequest, Operation>
       updateMethodDescriptor =
           ApiMethodDescriptor.<UpdateAutoscalerRequest, Operation>newBuilder()
@@ -453,6 +498,8 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
   private final UnaryCallable<PatchAutoscalerRequest, Operation> patchCallable;
   private final OperationCallable<PatchAutoscalerRequest, Operation, Operation>
       patchOperationCallable;
+  private final UnaryCallable<TestIamPermissionsAutoscalerRequest, TestPermissionsResponse>
+      testIamPermissionsCallable;
   private final UnaryCallable<UpdateAutoscalerRequest, Operation> updateCallable;
   private final OperationCallable<UpdateAutoscalerRequest, Operation, Operation>
       updateOperationCallable;
@@ -575,6 +622,21 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<TestIamPermissionsAutoscalerRequest, TestPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings
+                .<TestIamPermissionsAutoscalerRequest, TestPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<UpdateAutoscalerRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateAutoscalerRequest, Operation>newBuilder()
             .setMethodDescriptor(updateMethodDescriptor)
@@ -630,6 +692,11 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
             settings.patchOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
     this.updateCallable =
         callableFactory.createUnaryCallable(
             updateTransportSettings, settings.updateSettings(), clientContext);
@@ -653,6 +720,7 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     methodDescriptors.add(updateMethodDescriptor);
     return methodDescriptors;
   }
@@ -714,6 +782,12 @@ public class HttpJsonAutoscalersStub extends AutoscalersStub {
   @Override
   public OperationCallable<PatchAutoscalerRequest, Operation, Operation> patchOperationCallable() {
     return patchOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsAutoscalerRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

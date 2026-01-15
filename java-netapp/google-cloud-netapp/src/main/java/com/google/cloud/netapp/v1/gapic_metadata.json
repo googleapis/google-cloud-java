@@ -22,6 +22,9 @@
             "CreateBackupVault": {
               "methods": ["createBackupVaultAsync", "createBackupVaultAsync", "createBackupVaultAsync", "createBackupVaultOperationCallable", "createBackupVaultCallable"]
             },
+            "CreateHostGroup": {
+              "methods": ["createHostGroupAsync", "createHostGroupAsync", "createHostGroupAsync", "createHostGroupOperationCallable", "createHostGroupCallable"]
+            },
             "CreateKmsConfig": {
               "methods": ["createKmsConfigAsync", "createKmsConfigAsync", "createKmsConfigAsync", "createKmsConfigOperationCallable", "createKmsConfigCallable"]
             },
@@ -51,6 +54,9 @@
             },
             "DeleteBackupVault": {
               "methods": ["deleteBackupVaultAsync", "deleteBackupVaultAsync", "deleteBackupVaultAsync", "deleteBackupVaultOperationCallable", "deleteBackupVaultCallable"]
+            },
+            "DeleteHostGroup": {
+              "methods": ["deleteHostGroupAsync", "deleteHostGroupAsync", "deleteHostGroupAsync", "deleteHostGroupOperationCallable", "deleteHostGroupCallable"]
             },
             "DeleteKmsConfig": {
               "methods": ["deleteKmsConfigAsync", "deleteKmsConfigAsync", "deleteKmsConfigAsync", "deleteKmsConfigOperationCallable", "deleteKmsConfigCallable"]
@@ -88,6 +94,9 @@
             "GetBackupVault": {
               "methods": ["getBackupVault", "getBackupVault", "getBackupVault", "getBackupVaultCallable"]
             },
+            "GetHostGroup": {
+              "methods": ["getHostGroup", "getHostGroup", "getHostGroup", "getHostGroupCallable"]
+            },
             "GetKmsConfig": {
               "methods": ["getKmsConfig", "getKmsConfig", "getKmsConfig", "getKmsConfigCallable"]
             },
@@ -121,6 +130,9 @@
             "ListBackups": {
               "methods": ["listBackups", "listBackups", "listBackups", "listBackupsPagedCallable", "listBackupsCallable"]
             },
+            "ListHostGroups": {
+              "methods": ["listHostGroups", "listHostGroups", "listHostGroups", "listHostGroupsPagedCallable", "listHostGroupsCallable"]
+            },
             "ListKmsConfigs": {
               "methods": ["listKmsConfigs", "listKmsConfigs", "listKmsConfigs", "listKmsConfigsPagedCallable", "listKmsConfigsCallable"]
             },
@@ -141,6 +153,9 @@
             },
             "ListVolumes": {
               "methods": ["listVolumes", "listVolumes", "listVolumes", "listVolumesPagedCallable", "listVolumesCallable"]
+            },
+            "RestoreBackupFiles": {
+              "methods": ["restoreBackupFilesAsync", "restoreBackupFilesOperationCallable", "restoreBackupFilesCallable"]
             },
             "ResumeReplication": {
               "methods": ["resumeReplicationAsync", "resumeReplicationOperationCallable", "resumeReplicationCallable"]
@@ -171,6 +186,9 @@
             },
             "UpdateBackupVault": {
               "methods": ["updateBackupVaultAsync", "updateBackupVaultAsync", "updateBackupVaultOperationCallable", "updateBackupVaultCallable"]
+            },
+            "UpdateHostGroup": {
+              "methods": ["updateHostGroupAsync", "updateHostGroupAsync", "updateHostGroupOperationCallable", "updateHostGroupCallable"]
             },
             "UpdateKmsConfig": {
               "methods": ["updateKmsConfigAsync", "updateKmsConfigAsync", "updateKmsConfigOperationCallable", "updateKmsConfigCallable"]

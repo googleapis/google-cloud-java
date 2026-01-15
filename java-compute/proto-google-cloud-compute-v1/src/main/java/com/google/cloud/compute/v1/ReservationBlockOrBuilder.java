@@ -191,6 +191,34 @@ public interface ReservationBlockOrBuilder
    *
    *
    * <pre>
+   * Output only. Number of hosts currently in use. If there is one or more Instances running
+   * on the host, it is considered in use.
+   * </pre>
+   *
+   * <code>optional int32 in_use_host_count = 364069834;</code>
+   *
+   * @return Whether the inUseHostCount field is set.
+   */
+  boolean hasInUseHostCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Number of hosts currently in use. If there is one or more Instances running
+   * on the host, it is considered in use.
+   * </pre>
+   *
+   * <code>optional int32 in_use_host_count = 364069834;</code>
+   *
+   * @return The inUseHostCount.
+   */
+  int getInUseHostCount();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. [Output Only] Type of the resource. Alwayscompute#reservationBlock for reservation blocks.
    * </pre>
    *

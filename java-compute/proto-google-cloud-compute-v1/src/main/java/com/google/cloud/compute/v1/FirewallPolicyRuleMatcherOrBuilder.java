@@ -206,6 +206,63 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
+   * Network context of the traffic destination. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - NON_INTERNET
+   * Check the DestNetworkContext enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string dest_network_context = 76347649;</code>
+   *
+   * @return Whether the destNetworkContext field is set.
+   */
+  boolean hasDestNetworkContext();
+
+  /**
+   *
+   *
+   * <pre>
+   * Network context of the traffic destination. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - NON_INTERNET
+   * Check the DestNetworkContext enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string dest_network_context = 76347649;</code>
+   *
+   * @return The destNetworkContext.
+   */
+  java.lang.String getDestNetworkContext();
+
+  /**
+   *
+   *
+   * <pre>
+   * Network context of the traffic destination. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - NON_INTERNET
+   * Check the DestNetworkContext enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string dest_network_context = 76347649;</code>
+   *
+   * @return The bytes for destNetworkContext.
+   */
+  com.google.protobuf.ByteString getDestNetworkContextBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Network type of the traffic destination. Allowed values are:
    *
    *
@@ -629,6 +686,69 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return The bytes of the srcIpRanges at the given index.
    */
   com.google.protobuf.ByteString getSrcIpRangesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Network context of the traffic source. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - INTRA_VPC
+   *      - NON_INTERNET
+   *      - VPC_NETWORKS
+   * Check the SrcNetworkContext enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string src_network_context = 147649603;</code>
+   *
+   * @return Whether the srcNetworkContext field is set.
+   */
+  boolean hasSrcNetworkContext();
+
+  /**
+   *
+   *
+   * <pre>
+   * Network context of the traffic source. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - INTRA_VPC
+   *      - NON_INTERNET
+   *      - VPC_NETWORKS
+   * Check the SrcNetworkContext enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string src_network_context = 147649603;</code>
+   *
+   * @return The srcNetworkContext.
+   */
+  java.lang.String getSrcNetworkContext();
+
+  /**
+   *
+   *
+   * <pre>
+   * Network context of the traffic source. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - INTRA_VPC
+   *      - NON_INTERNET
+   *      - VPC_NETWORKS
+   * Check the SrcNetworkContext enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string src_network_context = 147649603;</code>
+   *
+   * @return The bytes for srcNetworkContext.
+   */
+  com.google.protobuf.ByteString getSrcNetworkContextBytes();
 
   /**
    *

@@ -172,6 +172,12 @@ public class UrlMapsSettings extends ClientSettings<UrlMapsSettings> {
     return ((UrlMapsStubSettings) getStubSettings()).patchOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsUrlMapRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((UrlMapsStubSettings) getStubSettings()).testIamPermissionsSettings();
+  }
+
   /** Returns the object with the settings used for calls to update. */
   public UnaryCallSettings<UpdateUrlMapRequest, Operation> updateSettings() {
     return ((UrlMapsStubSettings) getStubSettings()).updateSettings();
@@ -345,6 +351,12 @@ public class UrlMapsSettings extends ClientSettings<UrlMapsSettings> {
     public OperationCallSettings.Builder<PatchUrlMapRequest, Operation, Operation>
         patchOperationSettings() {
       return getStubSettingsBuilder().patchOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsUrlMapRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     /** Returns the builder for the settings used for calls to update. */
