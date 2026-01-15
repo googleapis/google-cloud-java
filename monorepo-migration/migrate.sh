@@ -172,6 +172,8 @@ rm -f "$SOURCE_REPO_NAME/renovate.json"
 rm -f "$SOURCE_REPO_NAME/LICENSE"
 rm -f "$SOURCE_REPO_NAME/java.header"
 rm -rf "$SOURCE_REPO_NAME/.kokoro"
+rm -f "$SOURCE_REPO_NAME/codecov.yaml"
+rm -f "$SOURCE_REPO_NAME/synth.metadata"
 rm -f "$SOURCE_REPO_NAME/license-checks.xml"
 find "$SOURCE_REPO_NAME" -maxdepth 1 -name "*.md" ! -name "CHANGELOG.md" ! -name "README.md" -delete
 
