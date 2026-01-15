@@ -179,15 +179,16 @@ public class ExecuteQueryIT {
       try {
         preparedStatement =
             dataClient.prepareStatement(
-                "SELECT 'stringVal' AS strCol, b'foo' as bytesCol, 1 AS intCol, CAST(1.2 AS FLOAT32) as"
-                    + " f32Col, CAST(1.3 AS FLOAT64) as f64Col, true as boolCol,"
+                "SELECT 'stringVal' AS strCol, b'foo' as bytesCol, 1 AS intCol, CAST(1.2 AS"
+                    + " FLOAT32) as f32Col, CAST(1.3 AS FLOAT64) as f64Col, true as boolCol,"
                     + " TIMESTAMP_FROM_UNIX_MILLIS(1000) AS tsCol, DATE(2024, 06, 01) as dateCol,"
                     + " STRUCT(1 as a, \"foo\" as b) AS structCol, [1,2,3] AS arrCol, "
                     + cf
                     + " as mapCol, "
                     + " CAST(b'\022\005Lover' AS `"
                     + schemaBundleId
-                    + ".com.google.cloud.bigtable.data.v2.test.Album`) as protoCol, CAST('JAZZ' AS `"
+                    + ".com.google.cloud.bigtable.data.v2.test.Album`) as protoCol, CAST('JAZZ' AS"
+                    + " `"
                     + schemaBundleId
                     + ".com.google.cloud.bigtable.data.v2.test.Genre`) as enumCol FROM `"
                     + tableId
