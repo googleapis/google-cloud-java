@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,6 +74,52 @@ public interface MessageTransformOrBuilder
    *
    *
    * <pre>
+   * Optional. AI Inference. Specifies the Vertex AI endpoint that inference
+   * requests built from the Pub/Sub message data and provided parameters will
+   * be sent to.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.AIInference ai_inference = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the aiInference field is set.
+   */
+  boolean hasAiInference();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. AI Inference. Specifies the Vertex AI endpoint that inference
+   * requests built from the Pub/Sub message data and provided parameters will
+   * be sent to.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.AIInference ai_inference = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The aiInference.
+   */
+  com.google.pubsub.v1.AIInference getAiInference();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. AI Inference. Specifies the Vertex AI endpoint that inference
+   * requests built from the Pub/Sub message data and provided parameters will
+   * be sent to.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.AIInference ai_inference = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.pubsub.v1.AIInferenceOrBuilder getAiInferenceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. This field is deprecated, use the `disabled` field to disable
    * transforms.
    * </pre>
@@ -81,7 +127,7 @@ public interface MessageTransformOrBuilder
    * <code>bool enabled = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.pubsub.v1.MessageTransform.enabled is deprecated. See
-   *     google/pubsub/v1/pubsub.proto;l=818
+   *     google/pubsub/v1/pubsub.proto;l=857
    * @return The enabled.
    */
   @java.lang.Deprecated

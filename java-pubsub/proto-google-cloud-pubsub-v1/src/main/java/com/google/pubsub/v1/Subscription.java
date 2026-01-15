@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2228,7 +2228,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Information about the associated Analytics Hub subscription.
-   * Only set if the subscritpion is created by Analytics Hub.
+   * Only set if the subscription is created by Analytics Hub.
    * </pre>
    *
    * <code>
@@ -2247,7 +2247,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Information about the associated Analytics Hub subscription.
-   * Only set if the subscritpion is created by Analytics Hub.
+   * Only set if the subscription is created by Analytics Hub.
    * </pre>
    *
    * <code>
@@ -2269,7 +2269,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Information about the associated Analytics Hub subscription.
-   * Only set if the subscritpion is created by Analytics Hub.
+   * Only set if the subscription is created by Analytics Hub.
    * </pre>
    *
    * <code>
@@ -2410,6 +2410,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    * resource. For example:
    *   "123/environment": "production",
    *   "123/costCenter": "marketing"
+   * See https://docs.cloud.google.com/pubsub/docs/tags for more information on
+   * using tags with Pub/Sub resources.
    * </pre>
    *
    * <code>
@@ -2439,6 +2441,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    * resource. For example:
    *   "123/environment": "production",
    *   "123/costCenter": "marketing"
+   * See https://docs.cloud.google.com/pubsub/docs/tags for more information on
+   * using tags with Pub/Sub resources.
    * </pre>
    *
    * <code>
@@ -2458,6 +2462,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    * resource. For example:
    *   "123/environment": "production",
    *   "123/costCenter": "marketing"
+   * See https://docs.cloud.google.com/pubsub/docs/tags for more information on
+   * using tags with Pub/Sub resources.
    * </pre>
    *
    * <code>
@@ -2484,6 +2490,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
    * resource. For example:
    *   "123/environment": "production",
    *   "123/costCenter": "marketing"
+   * See https://docs.cloud.google.com/pubsub/docs/tags for more information on
+   * using tags with Pub/Sub resources.
    * </pre>
    *
    * <code>
@@ -6621,7 +6629,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Information about the associated Analytics Hub subscription.
-     * Only set if the subscritpion is created by Analytics Hub.
+     * Only set if the subscription is created by Analytics Hub.
      * </pre>
      *
      * <code>
@@ -6639,7 +6647,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Information about the associated Analytics Hub subscription.
-     * Only set if the subscritpion is created by Analytics Hub.
+     * Only set if the subscription is created by Analytics Hub.
      * </pre>
      *
      * <code>
@@ -6664,7 +6672,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Information about the associated Analytics Hub subscription.
-     * Only set if the subscritpion is created by Analytics Hub.
+     * Only set if the subscription is created by Analytics Hub.
      * </pre>
      *
      * <code>
@@ -6691,7 +6699,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Information about the associated Analytics Hub subscription.
-     * Only set if the subscritpion is created by Analytics Hub.
+     * Only set if the subscription is created by Analytics Hub.
      * </pre>
      *
      * <code>
@@ -6715,7 +6723,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Information about the associated Analytics Hub subscription.
-     * Only set if the subscritpion is created by Analytics Hub.
+     * Only set if the subscription is created by Analytics Hub.
      * </pre>
      *
      * <code>
@@ -6749,7 +6757,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Information about the associated Analytics Hub subscription.
-     * Only set if the subscritpion is created by Analytics Hub.
+     * Only set if the subscription is created by Analytics Hub.
      * </pre>
      *
      * <code>
@@ -6772,7 +6780,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Information about the associated Analytics Hub subscription.
-     * Only set if the subscritpion is created by Analytics Hub.
+     * Only set if the subscription is created by Analytics Hub.
      * </pre>
      *
      * <code>
@@ -6791,7 +6799,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Information about the associated Analytics Hub subscription.
-     * Only set if the subscritpion is created by Analytics Hub.
+     * Only set if the subscription is created by Analytics Hub.
      * </pre>
      *
      * <code>
@@ -6814,7 +6822,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Information about the associated Analytics Hub subscription.
-     * Only set if the subscritpion is created by Analytics Hub.
+     * Only set if the subscription is created by Analytics Hub.
      * </pre>
      *
      * <code>
@@ -7297,6 +7305,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * resource. For example:
      *   "123/environment": "production",
      *   "123/costCenter": "marketing"
+     * See https://docs.cloud.google.com/pubsub/docs/tags for more information on
+     * using tags with Pub/Sub resources.
      * </pre>
      *
      * <code>
@@ -7326,6 +7336,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * resource. For example:
      *   "123/environment": "production",
      *   "123/costCenter": "marketing"
+     * See https://docs.cloud.google.com/pubsub/docs/tags for more information on
+     * using tags with Pub/Sub resources.
      * </pre>
      *
      * <code>
@@ -7345,6 +7357,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * resource. For example:
      *   "123/environment": "production",
      *   "123/costCenter": "marketing"
+     * See https://docs.cloud.google.com/pubsub/docs/tags for more information on
+     * using tags with Pub/Sub resources.
      * </pre>
      *
      * <code>
@@ -7371,6 +7385,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * resource. For example:
      *   "123/environment": "production",
      *   "123/costCenter": "marketing"
+     * See https://docs.cloud.google.com/pubsub/docs/tags for more information on
+     * using tags with Pub/Sub resources.
      * </pre>
      *
      * <code>
@@ -7403,6 +7419,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * resource. For example:
      *   "123/environment": "production",
      *   "123/costCenter": "marketing"
+     * See https://docs.cloud.google.com/pubsub/docs/tags for more information on
+     * using tags with Pub/Sub resources.
      * </pre>
      *
      * <code>
@@ -7432,6 +7450,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * resource. For example:
      *   "123/environment": "production",
      *   "123/costCenter": "marketing"
+     * See https://docs.cloud.google.com/pubsub/docs/tags for more information on
+     * using tags with Pub/Sub resources.
      * </pre>
      *
      * <code>
@@ -7458,6 +7478,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      * resource. For example:
      *   "123/environment": "production",
      *   "123/costCenter": "marketing"
+     * See https://docs.cloud.google.com/pubsub/docs/tags for more information on
+     * using tags with Pub/Sub resources.
      * </pre>
      *
      * <code>

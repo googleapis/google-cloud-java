@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1179,7 +1179,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param subscription Required. Identifier. The name of the subscription to get. Format is
+   * @param subscription Required. The name of the subscription to get. Format is
    *     `projects/{project}/subscriptions/{sub}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1209,7 +1209,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param subscription Required. Identifier. The name of the subscription to get. Format is
+   * @param subscription Required. The name of the subscription to get. Format is
    *     `projects/{project}/subscriptions/{sub}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1416,8 +1416,8 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param project Required. Identifier. The name of the project in which to list subscriptions.
-   *     Format is `projects/{project-id}`.
+   * @param project Required. The name of the project in which to list subscriptions. Format is
+   *     `projects/{project-id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSubscriptionsPagedResponse listSubscriptions(ProjectName project) {
@@ -1448,8 +1448,8 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param project Required. Identifier. The name of the project in which to list subscriptions.
-   *     Format is `projects/{project-id}`.
+   * @param project Required. The name of the project in which to list subscriptions. Format is
+   *     `projects/{project-id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSubscriptionsPagedResponse listSubscriptions(String project) {
@@ -1584,7 +1584,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param subscription Required. Identifier. The subscription to delete. Format is
+   * @param subscription Required. The subscription to delete. Format is
    *     `projects/{project}/subscriptions/{sub}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1617,7 +1617,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param subscription Required. Identifier. The subscription to delete. Format is
+   * @param subscription Required. The subscription to delete. Format is
    *     `projects/{project}/subscriptions/{sub}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2631,7 +2631,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param snapshot Required. Identifier. The name of the snapshot to get. Format is
+   * @param snapshot Required. The name of the snapshot to get. Format is
    *     `projects/{project}/snapshots/{snap}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2664,7 +2664,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param snapshot Required. Identifier. The name of the snapshot to get. Format is
+   * @param snapshot Required. The name of the snapshot to get. Format is
    *     `projects/{project}/snapshots/{snap}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2788,8 +2788,8 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param project Required. Identifier. The name of the project in which to list snapshots. Format
-   *     is `projects/{project-id}`.
+   * @param project Required. The name of the project in which to list snapshots. Format is
+   *     `projects/{project-id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSnapshotsPagedResponse listSnapshots(ProjectName project) {
@@ -2823,8 +2823,8 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param project Required. Identifier. The name of the project in which to list snapshots. Format
-   *     is `projects/{project-id}`.
+   * @param project Required. The name of the project in which to list snapshots. Format is
+   *     `projects/{project-id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSnapshotsPagedResponse listSnapshots(String project) {
@@ -2975,11 +2975,10 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Identifier. User-provided name for this snapshot. If the name is not
-   *     provided in the request, the server will assign a random name for this snapshot on the same
-   *     project as the subscription. Note that for REST API requests, you must specify a name. See
-   *     the [resource name
-   *     rules](https://cloud.google.com/pubsub/docs/pubsub-basics#resource_names). Format is
+   * @param name Required. User-provided name for this snapshot. If the name is not provided in the
+   *     request, the server will assign a random name for this snapshot on the same project as the
+   *     subscription. Note that for REST API requests, you must specify a name. See the [resource
+   *     name rules](https://cloud.google.com/pubsub/docs/pubsub-basics#resource_names). Format is
    *     `projects/{project}/snapshots/{snap}`.
    * @param subscription Required. The subscription whose backlog the snapshot retains.
    *     Specifically, the created snapshot is guaranteed to retain: (a) The existing backlog on the
@@ -3029,11 +3028,10 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Identifier. User-provided name for this snapshot. If the name is not
-   *     provided in the request, the server will assign a random name for this snapshot on the same
-   *     project as the subscription. Note that for REST API requests, you must specify a name. See
-   *     the [resource name
-   *     rules](https://cloud.google.com/pubsub/docs/pubsub-basics#resource_names). Format is
+   * @param name Required. User-provided name for this snapshot. If the name is not provided in the
+   *     request, the server will assign a random name for this snapshot on the same project as the
+   *     subscription. Note that for REST API requests, you must specify a name. See the [resource
+   *     name rules](https://cloud.google.com/pubsub/docs/pubsub-basics#resource_names). Format is
    *     `projects/{project}/snapshots/{snap}`.
    * @param subscription Required. The subscription whose backlog the snapshot retains.
    *     Specifically, the created snapshot is guaranteed to retain: (a) The existing backlog on the
@@ -3083,11 +3081,10 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Identifier. User-provided name for this snapshot. If the name is not
-   *     provided in the request, the server will assign a random name for this snapshot on the same
-   *     project as the subscription. Note that for REST API requests, you must specify a name. See
-   *     the [resource name
-   *     rules](https://cloud.google.com/pubsub/docs/pubsub-basics#resource_names). Format is
+   * @param name Required. User-provided name for this snapshot. If the name is not provided in the
+   *     request, the server will assign a random name for this snapshot on the same project as the
+   *     subscription. Note that for REST API requests, you must specify a name. See the [resource
+   *     name rules](https://cloud.google.com/pubsub/docs/pubsub-basics#resource_names). Format is
    *     `projects/{project}/snapshots/{snap}`.
    * @param subscription Required. The subscription whose backlog the snapshot retains.
    *     Specifically, the created snapshot is guaranteed to retain: (a) The existing backlog on the
@@ -3137,11 +3134,10 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Identifier. User-provided name for this snapshot. If the name is not
-   *     provided in the request, the server will assign a random name for this snapshot on the same
-   *     project as the subscription. Note that for REST API requests, you must specify a name. See
-   *     the [resource name
-   *     rules](https://cloud.google.com/pubsub/docs/pubsub-basics#resource_names). Format is
+   * @param name Required. User-provided name for this snapshot. If the name is not provided in the
+   *     request, the server will assign a random name for this snapshot on the same project as the
+   *     subscription. Note that for REST API requests, you must specify a name. See the [resource
+   *     name rules](https://cloud.google.com/pubsub/docs/pubsub-basics#resource_names). Format is
    *     `projects/{project}/snapshots/{snap}`.
    * @param subscription Required. The subscription whose backlog the snapshot retains.
    *     Specifically, the created snapshot is guaranteed to retain: (a) The existing backlog on the
@@ -3514,7 +3510,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param snapshot Required. Identifier. The name of the snapshot to delete. Format is
+   * @param snapshot Required. The name of the snapshot to delete. Format is
    *     `projects/{project}/snapshots/{snap}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -3550,7 +3546,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param snapshot Required. Identifier. The name of the snapshot to delete. Format is
+   * @param snapshot Required. The name of the snapshot to delete. Format is
    *     `projects/{project}/snapshots/{snap}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

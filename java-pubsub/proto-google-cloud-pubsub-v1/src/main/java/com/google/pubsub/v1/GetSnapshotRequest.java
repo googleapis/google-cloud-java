@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,12 +73,12 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Identifier. The name of the snapshot to get.
+   * Required. The name of the snapshot to get.
    * Format is `projects/{project}/snapshots/{snap}`.
    * </pre>
    *
    * <code>
-   * string snapshot = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
+   * string snapshot = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The snapshot.
@@ -100,12 +100,12 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Identifier. The name of the snapshot to get.
+   * Required. The name of the snapshot to get.
    * Format is `projects/{project}/snapshots/{snap}`.
    * </pre>
    *
    * <code>
-   * string snapshot = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
+   * string snapshot = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for snapshot.
@@ -470,12 +470,12 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Identifier. The name of the snapshot to get.
+     * Required. The name of the snapshot to get.
      * Format is `projects/{project}/snapshots/{snap}`.
      * </pre>
      *
      * <code>
-     * string snapshot = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
+     * string snapshot = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The snapshot.
@@ -496,12 +496,12 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Identifier. The name of the snapshot to get.
+     * Required. The name of the snapshot to get.
      * Format is `projects/{project}/snapshots/{snap}`.
      * </pre>
      *
      * <code>
-     * string snapshot = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
+     * string snapshot = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for snapshot.
@@ -522,12 +522,12 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Identifier. The name of the snapshot to get.
+     * Required. The name of the snapshot to get.
      * Format is `projects/{project}/snapshots/{snap}`.
      * </pre>
      *
      * <code>
-     * string snapshot = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
+     * string snapshot = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The snapshot to set.
@@ -547,12 +547,12 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Identifier. The name of the snapshot to get.
+     * Required. The name of the snapshot to get.
      * Format is `projects/{project}/snapshots/{snap}`.
      * </pre>
      *
      * <code>
-     * string snapshot = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
+     * string snapshot = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -568,12 +568,12 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Identifier. The name of the snapshot to get.
+     * Required. The name of the snapshot to get.
      * Format is `projects/{project}/snapshots/{snap}`.
      * </pre>
      *
      * <code>
-     * string snapshot = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
+     * string snapshot = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for snapshot to set.

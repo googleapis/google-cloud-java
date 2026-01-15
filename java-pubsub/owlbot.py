@@ -1069,11 +1069,6 @@ for library in s.get_staging_dirs():
         r'setMaxInboundMessageSize\(Integer.MAX_VALUE\)',
         'setMaxInboundMessageSize(20 << 20)'
     )
-    s.replace(
-        f"proto-google-cloud-{service}-{version}/src/**/*.java",
-        java.BAD_LICENSE,
-        java.GOOD_LICENSE,
-    )
 
     s.replace(
         '**/TopicAdminClient.java',

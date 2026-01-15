@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,12 +74,12 @@ public final class ListTopicsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. Identifier. The name of the project in which to list topics.
+   * Required. The name of the project in which to list topics.
    * Format is `projects/{project-id}`.
    * </pre>
    *
    * <code>
-   * string project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
+   * string project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The project.
@@ -101,12 +101,12 @@ public final class ListTopicsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. Identifier. The name of the project in which to list topics.
+   * Required. The name of the project in which to list topics.
    * Format is `projects/{project-id}`.
    * </pre>
    *
    * <code>
-   * string project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
+   * string project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for project.
@@ -593,12 +593,12 @@ public final class ListTopicsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Identifier. The name of the project in which to list topics.
+     * Required. The name of the project in which to list topics.
      * Format is `projects/{project-id}`.
      * </pre>
      *
      * <code>
-     * string project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
+     * string project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The project.
@@ -619,12 +619,12 @@ public final class ListTopicsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Identifier. The name of the project in which to list topics.
+     * Required. The name of the project in which to list topics.
      * Format is `projects/{project-id}`.
      * </pre>
      *
      * <code>
-     * string project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
+     * string project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for project.
@@ -645,12 +645,12 @@ public final class ListTopicsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Identifier. The name of the project in which to list topics.
+     * Required. The name of the project in which to list topics.
      * Format is `projects/{project-id}`.
      * </pre>
      *
      * <code>
-     * string project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
+     * string project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The project to set.
@@ -670,12 +670,12 @@ public final class ListTopicsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Identifier. The name of the project in which to list topics.
+     * Required. The name of the project in which to list topics.
      * Format is `projects/{project-id}`.
      * </pre>
      *
      * <code>
-     * string project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
+     * string project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -691,12 +691,12 @@ public final class ListTopicsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Identifier. The name of the project in which to list topics.
+     * Required. The name of the project in which to list topics.
      * Format is `projects/{project-id}`.
      * </pre>
      *
      * <code>
-     * string project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
+     * string project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for project to set.
