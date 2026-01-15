@@ -1,5 +1,24 @@
 # Changelog
 
+## [3.19.1](https://github.com/googleapis/java-bigquerystorage/compare/v3.19.0...v3.19.1) (2026-01-15)
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.65.1 ([4b9ce88](https://github.com/googleapis/java-bigquerystorage/commit/4b9ce887eb275403e0472f3561bc4abd2d2053b8))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.57.1 ([#3060](https://github.com/googleapis/java-bigquerystorage/issues/3060)) ([3a82884](https://github.com/googleapis/java-bigquerystorage/commit/3a828848626d62dde6f89d9ef4bc781bda2b4c5e))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.55.1 ([#3173](https://github.com/googleapis/java-bigquerystorage/issues/3173)) ([fc161f2](https://github.com/googleapis/java-bigquerystorage/commit/fc161f230eef41c9458dcdc9ab95e9549e5134b8))
+* Update googleapis/sdk-platform-java action to v2.65.1 ([#3172](https://github.com/googleapis/java-bigquerystorage/issues/3172)) ([fdd8e4f](https://github.com/googleapis/java-bigquerystorage/commit/fdd8e4f2252dcca9aa31c6169a77f0c27f6ff554))
+
+
+### Documentation
+
+* Add samples for using timestamps with BQStorage Read and Write API ([#3167](https://github.com/googleapis/java-bigquerystorage/issues/3167)) ([332736e](https://github.com/googleapis/java-bigquerystorage/commit/332736e8a2e9569163838d266ff49897486b9c3a))
+
 ## [3.19.0](https://github.com/googleapis/java-bigquerystorage/compare/v3.18.0...v3.19.0) (2025-12-12)
 
 
