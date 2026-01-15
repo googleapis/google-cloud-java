@@ -73,6 +73,8 @@ def transform(content, lib_name):
                     continue
         
         if not skip_current_job:
+            if 'run: echo "SUREFIRE_JVM_OPT=' in line and '!java17' not in line:
+                line = line.replace('" >> $GITHUB_ENV', ' -P !java17" >> $GITHUB_ENV')
             new_lines.append(line)
     return "\n".join(new_lines)
 
