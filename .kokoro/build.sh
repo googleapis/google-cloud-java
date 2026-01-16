@@ -43,6 +43,7 @@ fi
 
 case ${JOB_TYPE} in
   test)
+    echo "SUREFIRE_JVM_OPT: ${SUREFIRE_JVM_OPT}"
     retry_with_backoff 3 10 \
       mvn test \
         -B -ntp \
@@ -54,7 +55,7 @@ case ${JOB_TYPE} in
         -Dflatten.skip=true \
         -Danimal.sniffer.skip=true \
         -Dmaven.wagon.http.retryHandler.count=5 \
-        -T 1C
+        -T 1C ${SUREFIRE_JVM_OPT}
     RETURN_CODE=$?
     echo "Finished running unit tests"
     ;;
