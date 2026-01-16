@@ -15,7 +15,8 @@
 import sys
 import re
 
-def modernize_pom(file_path, parent_version, source_repo_name=None):
+
+def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artifactId='google-cloud-jar-parent', relative_path='../google-cloud-jar-parent/pom.xml'):
     with open(file_path, 'r') as f:
         lines = f.readlines()
 
@@ -64,9 +65,9 @@ def modernize_pom(file_path, parent_version, source_repo_name=None):
             indent = line[:line.find('<')]
             new_lines.append(f"{indent}<parent>\n")
             new_lines.append(f"{indent}  <groupId>com.google.cloud</groupId>\n")
-            new_lines.append(f"{indent}  <artifactId>google-cloud-jar-parent</artifactId>\n")
+            new_lines.append(f"{indent}  <artifactId>{parent_artifactId}</artifactId>\n")
             new_lines.append(f"{indent}  <version>{parent_version}</version><!-- {{x-version-update:google-cloud-java:current}} -->\n")
-            new_lines.append(f"{indent}  <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>\n")
+            new_lines.append(f"{indent}  <relativePath>{relative_path}</relativePath>\n")
             continue
         if '</parent>' in line and in_parent:
             in_parent = False
@@ -161,7 +162,10 @@ def modernize_pom(file_path, parent_version, source_repo_name=None):
 if __name__ == "__main__":
     if len(sys.argv) > 2:
         source_repo = sys.argv[3] if len(sys.argv) > 3 else None
-        modernize_pom(sys.argv[1], sys.argv[2], source_repo)
+        parent_artifactId = sys.argv[4] if len(sys.argv) > 4 else 'google-cloud-jar-parent'
+        relative_path = sys.argv[5] if len(sys.argv) > 5 else '../google-cloud-jar-parent/pom.xml'
+        modernize_pom(sys.argv[1], sys.argv[2], source_repo, parent_artifactId, relative_path)
     else:
-        print("Usage: python3 modernize_pom.py <file_path> <parent_version> [source_repo_name]")
+        print("Usage: python3 modernize_pom.py <file_path> <parent_version> [source_repo_name] [parent_artifactId] [relative_path]")
         sys.exit(1)
+
