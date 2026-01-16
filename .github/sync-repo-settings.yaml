@@ -123,7 +123,5 @@ permissionRules:
     permission: admin
   - team: yoshi-java-admins
     permission: admin
-  - team: yoshi-java
-    permission: push
-  - team: api-logging-partners
+  - team: cloud-java-team-teamsync
     permission: push

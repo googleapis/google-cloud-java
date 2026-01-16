@@ -3,8 +3,7 @@
 
 # For syntax help see:
 # https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners#codeowners-syntax
-# @googleapis/api-logging @googleapis/yoshi-java @googleapis/api-logging-partners are the default owners for changes in this repo
-*                       @googleapis/api-logging @googleapis/yoshi-java @googleapis/api-logging-partners
+# @googleapis/cloud-java-team-teamsync are the default owners for changes in this repo
+*                       @googleapis/cloud-java-team-teamsync
 
-# @googleapis/api-logging @googleapis/yoshi-java @googleapis/api-logging-partners are the default owners for samples changes
-samples/**/*.java       @googleapis/java-samples-reviewers @googleapis/api-logging @googleapis/api-logging-partners
+samples/**/*.java       @googleapis/java-samples-reviewers
