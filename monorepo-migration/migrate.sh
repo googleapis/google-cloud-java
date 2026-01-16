@@ -315,7 +315,7 @@ echo "Committing copyright header fixes..."
 git add "$SOURCE_REPO_NAME"
 git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): update copyright headers to 2026 Google LLC"
 
-# 7.10 Modernize root pom.xml
+# 7.11 Modernize root pom.xml
 echo "Modernizing root pom.xml..."
 PARENT_VERSION=$(grep -m 1 "<version>.*{x-version-update:google-cloud-java:current}" google-cloud-jar-parent/pom.xml | sed -E 's/.*<version>(.*)<\/version>.*/\1/')
 python3 "$MODERNIZE_POM_SCRIPT" "$SOURCE_REPO_NAME/pom.xml" "$PARENT_VERSION" "$SOURCE_REPO_NAME"
@@ -323,6 +323,19 @@ python3 "$MODERNIZE_POM_SCRIPT" "$SOURCE_REPO_NAME/pom.xml" "$PARENT_VERSION" "$
 echo "Committing root pom.xml modernization..."
 git add "$SOURCE_REPO_NAME/pom.xml"
 git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): modernize root pom.xml"
+
+# 7.12 Modernize BOM pom.xml
+echo "Modernizing BOM pom.xml..."
+# Find potential BOM POMs (usually in a subdirectory ending with -bom)
+find "$SOURCE_REPO_NAME" -name "pom.xml" | grep "\-bom/pom.xml" | while read -r bom_pom; do
+    echo "Modernizing BOM: $bom_pom"
+    # BOMs should inherit from google-cloud-pom-parent
+    python3 "$MODERNIZE_POM_SCRIPT" "$bom_pom" "$PARENT_VERSION" "$SOURCE_REPO_NAME" "google-cloud-pom-parent" "../../google-cloud-pom-parent/pom.xml"
+    
+    echo "Committing BOM pom.xml modernization for $bom_pom..."
+    git add "$bom_pom"
+    git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): modernize BOM pom.xml"
+done
 
 # 7.11 Verify compilation
 echo "Verifying compilation..."
