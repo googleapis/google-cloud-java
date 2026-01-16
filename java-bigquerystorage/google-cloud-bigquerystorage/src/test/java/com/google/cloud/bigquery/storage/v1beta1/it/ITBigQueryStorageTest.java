@@ -1,0 +1,1334 @@
+/*
+ * Copyright 2019 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.google.cloud.bigquery.storage.v1beta1.it;
+
+import static com.google.common.truth.Truth.assertThat;
+import static com.google.common.truth.Truth.assertWithMessage;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.fail;
+
+import com.google.api.gax.core.FixedCredentialsProvider;
+import com.google.api.gax.rpc.ServerStream;
+import com.google.api.gax.rpc.UnauthenticatedException;
+import com.google.auth.oauth2.ServiceAccountCredentials;
+import com.google.cloud.RetryOption;
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.DatasetId;
+import com.google.cloud.bigquery.DatasetInfo;
+import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.Field.Mode;
+import com.google.cloud.bigquery.Job;
+import com.google.cloud.bigquery.JobInfo;
+import com.google.cloud.bigquery.JobInfo.WriteDisposition;
+import com.google.cloud.bigquery.LegacySQLTypeName;
+import com.google.cloud.bigquery.QueryJobConfiguration;
+import com.google.cloud.bigquery.StandardTableDefinition;
+import com.google.cloud.bigquery.TableId;
+import com.google.cloud.bigquery.TableInfo;
+import com.google.cloud.bigquery.TimePartitioning;
+import com.google.cloud.bigquery.storage.v1beta1.BigQueryStorageClient;
+import com.google.cloud.bigquery.storage.v1beta1.BigQueryStorageSettings;
+import com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions;
+import com.google.cloud.bigquery.storage.v1beta1.Storage.CreateReadSessionRequest;
+import com.google.cloud.bigquery.storage.v1beta1.Storage.DataFormat;
+import com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsRequest;
+import com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse;
+import com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession;
+import com.google.cloud.bigquery.storage.v1beta1.Storage.Stream;
+import com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition;
+import com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers;
+import com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference;
+import com.google.cloud.bigquery.storage.v1beta1.it.SimpleRowReader.AvroRowConsumer;
+import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
+import com.google.common.base.Preconditions;
+import com.google.protobuf.TextFormat;
+import com.google.protobuf.Timestamp;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.math.BigDecimal;
+import java.nio.ByteBuffer;
+import java.time.Duration;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.UUID;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Logger;
+import org.apache.avro.Conversions;
+import org.apache.avro.LogicalTypes;
+import org.apache.avro.Schema;
+import org.apache.avro.generic.GenericData;
+import org.apache.avro.generic.GenericRecordBuilder;
+import org.apache.avro.util.Utf8;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
+/** Integration tests for BigQuery Storage API. */
+class ITBigQueryStorageTest {
+
+  private static final Logger LOG = Logger.getLogger(ITBigQueryStorageTest.class.getName());
+  private static final String DATASET = RemoteBigQueryHelper.generateDatasetName();
+  private static final String DESCRIPTION = "BigQuery Storage Java client test dataset";
+
+  private static BigQueryStorageClient client;
+  private static String parentProjectId;
+  private static BigQuery bigquery;
+
+  private static final String FAKE_JSON_CRED_WITH_GOOGLE_DOMAIN =
+      "{\n"
+          + "  \"private_key_id\": \"somekeyid\",\n"
+          + "  \"private_key\": \"-----BEGIN PRIVATE KEY-----\\n"
+          + "MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC+K2hSuFpAdrJI\\n"
+          + "nCgcDz2M7t7bjdlsadsasad+fvRSW6TjNQZ3p5LLQY1kSZRqBqylRkzteMOyHgaR\\n"
+          + "0Pmxh3ILCND5men43j3h4eDbrhQBuxfEMalkG92sL+PNQSETY2tnvXryOvmBRwa/\\n"
+          + "QP/9dJfIkIDJ9Fw9N4Bhhhp6mCcRpdQjV38H7JsyJ7lih/oNjECgYAt\\n"
+          + "knddadwkwewcVxHFhcZJO+XWf6ofLUXpRwiTZakGMn8EE1uVa2LgczOjwWHGi99MFjxSer5m9\\n"
+          + "1tCa3/KEGKiS/YL71JvjwX3mb+cewlkcmweBKZHM2JPTk0ZednFSpVZMtycjkbLa\\n"
+          + "dYOS8V85AgMBewECggEBAKksaldajfDZDV6nGqbFjMiizAKJolr/M3OQw16K6o3/\\n"
+          + "0S31xIe3sSlgW0+UbYlF4U8KifhManD1apVSC3csafaspP4RZUHFhtBywLO9pR5c\\n"
+          + "r6S5aLp+gPWFyIp1pfXbWGvc5VY/v9x7ya1VEa6rXvLsKupSeWAW4tMj3eo/64ge\\n"
+          + "sdaceaLYw52KeBYiT6+vpsnYrEkAHO1fF/LavbLLOFJmFTMxmsNaG0tuiJHgjshB\\n"
+          + "82DpMCbXG9YcCgI/DbzuIjsdj2JC1cascSP//3PmefWysucBQe7Jryb6NQtASmnv\\n"
+          + "CdDw/0jmZTEjpe4S1lxfHplAhHFtdgYTvyYtaLZiVVkCgYEA8eVpof2rceecw/I6\\n"
+          + "5ng1q3Hl2usdWV/4mZMvR0fOemacLLfocX6IYxT1zA1FFJlbXSRsJMf/Qq39mOR2\\n"
+          + "SpW+hr4jCoHeRVYLgsbggtrevGmILAlNoqCMpGZ6vDmJpq6ECV9olliDvpPgWOP+\\n"
+          + "mYPDreFBGxWvQrADNbRt2dmGsrsCgYEAyUHqB2wvJHFqdmeBsaacewzV8x9WgmeX\\n"
+          + "gUIi9REwXlGDW0Mz50dxpxcKCAYn65+7TCnY5O/jmL0VRxU1J2mSWyWTo1C+17L0\\n"
+          + "3fUqjxL1pkefwecxwecvC+gFFYdJ4CQ/MHHXU81Lwl1iWdFCd2UoGddYaOF+KNeM\\n"
+          + "HC7cmqra+JsCgYEAlUNywzq8nUg7282E+uICfCB0LfwejuymR93CtsFgb7cRd6ak\\n"
+          + "ECR8FGfCpH8ruWJINllbQfcHVCX47ndLZwqv3oVFKh6pAS/vVI4dpOepP8++7y1u\\n"
+          + "coOvtreXCX6XqfrWDtKIvv0vjlHBhhhp6mCcRpdQjV38H7JsyJ7lih/oNjECgYAt\\n"
+          + "kndj5uNl5SiuVxHFhcZJO+XWf6ofLUregtevZakGMn8EE1uVa2AY7eafmoU/nZPT\\n"
+          + "00YB0TBATdCbn/nBSuKDESkhSg9s2GEKQZG5hBmL5uCMfo09z3SfxZIhJdlerreP\\n"
+          + "J7gSidI12N+EZxYd4xIJh/HFDgp7RRO87f+WJkofMQKBgGTnClK1VMaCRbJZPriw\\n"
+          + "EfeFCoOX75MxKwXs6xgrw4W//AYGGUjDt83lD6AZP6tws7gJ2IwY/qP7+lyhjEqN\\n"
+          + "HtfPZRGFkGZsdaksdlaksd323423d+15/UvrlRSFPNj1tWQmNKkXyRDW4IG1Oa2p\\n"
+          + "rALStNBx5Y9t0/LQnFI4w3aG\\n"
+          + "-----END PRIVATE KEY-----\\n"
+          + "\",\n"
+          + "  \"project_id\": \"someprojectid\",\n"
+          + "  \"client_email\": \"someclientid@developer.gserviceaccount.com\",\n"
+          + "  \"client_id\": \"someclientid.apps.googleusercontent.com\",\n"
+          + "  \"type\": \"service_account\",\n"
+          + "  \"universe_domain\": \"googleapis.com\"\n"
+          + "}";
+
+  private static final String FAKE_JSON_CRED_WITH_INVALID_DOMAIN =
+      "{\n"
+          + "  \"private_key_id\": \"somekeyid\",\n"
+          + "  \"private_key\": \"-----BEGIN PRIVATE KEY-----\\n"
+          + "MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC+K2hSuFpAdrJI\\n"
+          + "nCgcDz2M7t7bjdlsadsasad+fvRSW6TjNQZ3p5LLQY1kSZRqBqylRkzteMOyHgaR\\n"
+          + "0Pmxh3ILCND5men43j3h4eDbrhQBuxfEMalkG92sL+PNQSETY2tnvXryOvmBRwa/\\n"
+          + "QP/9dJfIkIDJ9Fw9N4Bhhhp6mCcRpdQjV38H7JsyJ7lih/oNjECgYAt\\n"
+          + "knddadwkwewcVxHFhcZJO+XWf6ofLUXpRwiTZakGMn8EE1uVa2LgczOjwWHGi99MFjxSer5m9\\n"
+          + "1tCa3/KEGKiS/YL71JvjwX3mb+cewlkcmweBKZHM2JPTk0ZednFSpVZMtycjkbLa\\n"
+          + "dYOS8V85AgMBewECggEBAKksaldajfDZDV6nGqbFjMiizAKJolr/M3OQw16K6o3/\\n"
+          + "0S31xIe3sSlgW0+UbYlF4U8KifhManD1apVSC3csafaspP4RZUHFhtBywLO9pR5c\\n"
+          + "r6S5aLp+gPWFyIp1pfXbWGvc5VY/v9x7ya1VEa6rXvLsKupSeWAW4tMj3eo/64ge\\n"
+          + "sdaceaLYw52KeBYiT6+vpsnYrEkAHO1fF/LavbLLOFJmFTMxmsNaG0tuiJHgjshB\\n"
+          + "82DpMCbXG9YcCgI/DbzuIjsdj2JC1cascSP//3PmefWysucBQe7Jryb6NQtASmnv\\n"
+          + "CdDw/0jmZTEjpe4S1lxfHplAhHFtdgYTvyYtaLZiVVkCgYEA8eVpof2rceecw/I6\\n"
+          + "5ng1q3Hl2usdWV/4mZMvR0fOemacLLfocX6IYxT1zA1FFJlbXSRsJMf/Qq39mOR2\\n"
+          + "SpW+hr4jCoHeRVYLgsbggtrevGmILAlNoqCMpGZ6vDmJpq6ECV9olliDvpPgWOP+\\n"
+          + "mYPDreFBGxWvQrADNbRt2dmGsrsCgYEAyUHqB2wvJHFqdmeBsaacewzV8x9WgmeX\\n"
+          + "gUIi9REwXlGDW0Mz50dxpxcKCAYn65+7TCnY5O/jmL0VRxU1J2mSWyWTo1C+17L0\\n"
+          + "3fUqjxL1pkefwecxwecvC+gFFYdJ4CQ/MHHXU81Lwl1iWdFCd2UoGddYaOF+KNeM\\n"
+          + "HC7cmqra+JsCgYEAlUNywzq8nUg7282E+uICfCB0LfwejuymR93CtsFgb7cRd6ak\\n"
+          + "ECR8FGfCpH8ruWJINllbQfcHVCX47ndLZwqv3oVFKh6pAS/vVI4dpOepP8++7y1u\\n"
+          + "coOvtreXCX6XqfrWDtKIvv0vjlHBhhhp6mCcRpdQjV38H7JsyJ7lih/oNjECgYAt\\n"
+          + "kndj5uNl5SiuVxHFhcZJO+XWf6ofLUregtevZakGMn8EE1uVa2AY7eafmoU/nZPT\\n"
+          + "00YB0TBATdCbn/nBSuKDESkhSg9s2GEKQZG5hBmL5uCMfo09z3SfxZIhJdlerreP\\n"
+          + "J7gSidI12N+EZxYd4xIJh/HFDgp7RRO87f+WJkofMQKBgGTnClK1VMaCRbJZPriw\\n"
+          + "EfeFCoOX75MxKwXs6xgrw4W//AYGGUjDt83lD6AZP6tws7gJ2IwY/qP7+lyhjEqN\\n"
+          + "HtfPZRGFkGZsdaksdlaksd323423d+15/UvrlRSFPNj1tWQmNKkXyRDW4IG1Oa2p\\n"
+          + "rALStNBx5Y9t0/LQnFI4w3aG\\n"
+          + "-----END PRIVATE KEY-----\\n"
+          + "\",\n"
+          + "  \"project_id\": \"someprojectid\",\n"
+          + "  \"client_email\": \"someclientid@developer.gserviceaccount.com\",\n"
+          + "  \"client_id\": \"someclientid.apps.googleusercontent.com\",\n"
+          + "  \"type\": \"service_account\",\n"
+          + "  \"universe_domain\": \"fake.domain\"\n"
+          + "}";
+
+  @BeforeAll
+  static void beforeAll() throws IOException {
+    client = BigQueryStorageClient.create();
+    parentProjectId = String.format("projects/%s", ServiceOptions.getDefaultProjectId());
+
+    LOG.info(
+        String.format(
+            "%s tests running with parent project: %s",
+            ITBigQueryStorageTest.class.getSimpleName(), parentProjectId));
+
+    RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
+    bigquery = bigqueryHelper.getOptions().getService();
+    DatasetInfo datasetInfo =
+        DatasetInfo.newBuilder(/* datasetId= */ DATASET).setDescription(DESCRIPTION).build();
+    bigquery.create(datasetInfo);
+    LOG.info("Created test dataset: " + DATASET);
+  }
+
+  @AfterAll
+  static void afterAll() throws InterruptedException {
+    if (client != null) {
+      client.close();
+      client.awaitTermination(10, TimeUnit.SECONDS);
+    }
+
+    if (bigquery != null) {
+      RemoteBigQueryHelper.forceDelete(bigquery, DATASET);
+      LOG.info("Deleted test dataset: " + DATASET);
+    }
+  }
+
+  @Test
+  void testSimpleRead() {
+    TableReference tableReference =
+        TableReference.newBuilder()
+            .setProjectId("bigquery-public-data")
+            .setDatasetId("samples")
+            .setTableId("shakespeare")
+            .build();
+
+    ReadSession session =
+        client.createReadSession(
+            /* tableReference= */ tableReference,
+            /* parent= */ parentProjectId,
+            /* requestedStreams= */ 1);
+    assertEquals(
+        1,
+        session.getStreamsCount(),
+        String.format(
+            "Did not receive expected number of streams for table reference '%s' CreateReadSession"
+                + " response:%n%s",
+            TextFormat.printer().shortDebugString(tableReference), session.toString()));
+
+    StreamPosition readPosition =
+        StreamPosition.newBuilder().setStream(session.getStreams(0)).build();
+
+    ReadRowsRequest readRowsRequest =
+        ReadRowsRequest.newBuilder().setReadPosition(readPosition).build();
+
+    long rowCount = 0;
+    ServerStream<ReadRowsResponse> stream = client.readRowsCallable().call(readRowsRequest);
+    for (ReadRowsResponse response : stream) {
+      rowCount += response.getRowCount();
+    }
+
+    assertEquals(164_656, rowCount);
+  }
+
+  @Test
+  void testSimpleReadArrow() {
+    TableReference tableReference =
+        TableReference.newBuilder()
+            .setProjectId("bigquery-public-data")
+            .setDatasetId("samples")
+            .setTableId("shakespeare")
+            .build();
+
+    CreateReadSessionRequest request =
+        CreateReadSessionRequest.newBuilder()
+            .setParent(parentProjectId)
+            .setRequestedStreams(1)
+            .setTableReference(tableReference)
+            .setFormat(DataFormat.ARROW)
+            .build();
+    ReadSession session = client.createReadSession(request);
+    assertEquals(
+        1,
+        session.getStreamsCount(),
+        String.format(
+            "Did not receive expected number of streams for table reference '%s' CreateReadSession"
+                + " response:%n%s",
+            TextFormat.printer().shortDebugString(tableReference), session.toString()));
+
+    StreamPosition readPosition =
+        StreamPosition.newBuilder().setStream(session.getStreams(0)).build();
+
+    ReadRowsRequest readRowsRequest =
+        ReadRowsRequest.newBuilder().setReadPosition(readPosition).build();
+
+    long rowCount = 0;
+    ServerStream<ReadRowsResponse> stream = client.readRowsCallable().call(readRowsRequest);
+    for (ReadRowsResponse response : stream) {
+      Preconditions.checkState(response.hasArrowRecordBatch());
+      rowCount += response.getRowCount();
+    }
+
+    assertEquals(164_656, rowCount);
+  }
+
+  @Test
+  void testRangeType() throws InterruptedException {
+    // Create table with Range values.
+    String tableName = "test_range_type" + UUID.randomUUID().toString().substring(0, 8);
+    QueryJobConfiguration createTable =
+        QueryJobConfiguration.newBuilder(
+                String.format(
+                    "CREATE TABLE %s AS SELECT RANGE(DATE '2020-01-01', DATE '2020-12-31') as date,"
+                        + " \n"
+                        + "RANGE(DATETIME '2020-01-01T12:00:00', DATETIME '2020-12-31T12:00:00') as"
+                        + " datetime, \n"
+                        + "RANGE(TIMESTAMP '2014-01-01 07:00:00.000000+00:00', TIMESTAMP"
+                        + " '2015-01-01 07:00:00.000000+00:00') as timestamp",
+                    tableName))
+            .setDefaultDataset(DatasetId.of(DATASET))
+            .setUseLegacySql(false)
+            .build();
+    bigquery.query(createTable);
+
+    TableReference tableReference =
+        TableReference.newBuilder()
+            .setProjectId(ServiceOptions.getDefaultProjectId())
+            .setDatasetId(DATASET)
+            .setTableId(tableName)
+            .build();
+
+    CreateReadSessionRequest createReadSessionRequestrequest =
+        CreateReadSessionRequest.newBuilder()
+            .setParent(parentProjectId)
+            .setRequestedStreams(1)
+            .setTableReference(tableReference)
+            .setFormat(DataFormat.ARROW)
+            .build();
+    ReadSession session = client.createReadSession(createReadSessionRequestrequest);
+    assertEquals(
+        1,
+        session.getStreamsCount(),
+        String.format(
+            "Did not receive expected number of streams for table reference '%s' CreateReadSession"
+                + " response:%n%s",
+            TextFormat.printer().shortDebugString(tableReference), session.toString()));
+
+    StreamPosition readPosition =
+        StreamPosition.newBuilder().setStream(session.getStreams(0)).build();
+
+    ReadRowsRequest readRowsRequest =
+        ReadRowsRequest.newBuilder().setReadPosition(readPosition).build();
+
+    long rowCount = 0;
+    ServerStream<ReadRowsResponse> stream = client.readRowsCallable().call(readRowsRequest);
+    for (ReadRowsResponse response : stream) {
+      Preconditions.checkState(response.hasArrowRecordBatch());
+      rowCount += response.getRowCount();
+    }
+
+    assertEquals(1, rowCount);
+  }
+
+  @Test
+  void testSimpleReadAndResume() {
+    TableReference tableReference =
+        TableReference.newBuilder()
+            .setProjectId("bigquery-public-data")
+            .setDatasetId("samples")
+            .setTableId("shakespeare")
+            .build();
+
+    ReadSession session =
+        client.createReadSession(
+            /* tableReference= */ tableReference,
+            /* parent= */ parentProjectId,
+            /* requestedStreams= */ 1);
+    assertEquals(
+        1,
+        session.getStreamsCount(),
+        String.format(
+            "Did not receive expected number of streams for table reference '%s' CreateReadSession"
+                + " response:%n%s",
+            TextFormat.printer().shortDebugString(tableReference), session.toString()));
+
+    // We have to read some number of rows in order to be able to resume. More details:
+    // https://cloud.google.com/bigquery/docs/reference/storage/rpc/google.cloud.bigquery.storage.v1beta1#google.cloud.bigquery.storage.v1beta1.ReadRowsRequest
+
+    long rowCount = ReadStreamToOffset(session.getStreams(0), /* rowOffset= */ 34_846);
+
+    StreamPosition readPosition =
+        StreamPosition.newBuilder().setStream(session.getStreams(0)).setOffset(rowCount).build();
+
+    ReadRowsRequest readRowsRequest =
+        ReadRowsRequest.newBuilder().setReadPosition(readPosition).build();
+
+    ServerStream<ReadRowsResponse> stream = client.readRowsCallable().call(readRowsRequest);
+
+    for (ReadRowsResponse response : stream) {
+      rowCount += response.getRowCount();
+    }
+
+    // Verifies that the number of rows skipped and read equals to the total number of rows in the
+    // table.
+    assertEquals(164_656, rowCount);
+  }
+
+  @Test
+  void testFilter() throws IOException {
+    TableReference tableReference =
+        TableReference.newBuilder()
+            .setProjectId("bigquery-public-data")
+            .setDatasetId("samples")
+            .setTableId("shakespeare")
+            .build();
+
+    TableReadOptions options =
+        TableReadOptions.newBuilder().setRowRestriction("word_count > 100").build();
+
+    CreateReadSessionRequest request =
+        CreateReadSessionRequest.newBuilder()
+            .setParent(parentProjectId)
+            .setRequestedStreams(1)
+            .setTableReference(tableReference)
+            .setReadOptions(options)
+            .setFormat(DataFormat.AVRO)
+            .build();
+
+    ReadSession session = client.createReadSession(request);
+    assertEquals(
+        1,
+        session.getStreamsCount(),
+        String.format(
+            "Did not receive expected number of streams for table reference '%s' CreateReadSession"
+                + " response:%n%s",
+            TextFormat.printer().shortDebugString(tableReference), session.toString()));
+
+    StreamPosition readPosition =
+        StreamPosition.newBuilder().setStream(session.getStreams(0)).build();
+
+    ReadRowsRequest readRowsRequest =
+        ReadRowsRequest.newBuilder().setReadPosition(readPosition).build();
+
+    SimpleRowReader reader =
+        new SimpleRowReader(new Schema.Parser().parse(session.getAvroSchema().getSchema()));
+
+    long rowCount = 0;
+
+    ServerStream<ReadRowsResponse> stream = client.readRowsCallable().call(readRowsRequest);
+    for (ReadRowsResponse response : stream) {
+      rowCount += response.getRowCount();
+      reader.processRows(
+          response.getAvroRows(),
+          new SimpleRowReader.AvroRowConsumer() {
+            @Override
+            public void accept(GenericData.Record record) {
+              Long wordCount = (Long) record.get("word_count");
+              assertWithMessage("Row not matching expectations: %s", record.toString())
+                  .that(wordCount)
+                  .isGreaterThan(100L);
+            }
+          });
+    }
+
+    assertEquals(1_333, rowCount);
+  }
+
+  @Test
+  void testColumnSelection() throws IOException {
+    TableReference tableReference =
+        TableReference.newBuilder()
+            .setProjectId("bigquery-public-data")
+            .setDatasetId("samples")
+            .setTableId("shakespeare")
+            .build();
+
+    TableReadOptions options =
+        TableReadOptions.newBuilder()
+            .addSelectedFields("word")
+            .addSelectedFields("word_count")
+            .setRowRestriction("word_count > 100")
+            .build();
+
+    CreateReadSessionRequest request =
+        CreateReadSessionRequest.newBuilder()
+            .setParent(parentProjectId)
+            .setRequestedStreams(1)
+            .setTableReference(tableReference)
+            .setReadOptions(options)
+            .setFormat(DataFormat.AVRO)
+            .build();
+
+    ReadSession session = client.createReadSession(request);
+    assertEquals(
+        1,
+        session.getStreamsCount(),
+        String.format(
+            "Did not receive expected number of streams for table reference '%s' CreateReadSession"
+                + " response:%n%s",
+            TextFormat.printer().shortDebugString(tableReference), session.toString()));
+
+    StreamPosition readPosition =
+        StreamPosition.newBuilder().setStream(session.getStreams(0)).build();
+
+    ReadRowsRequest readRowsRequest =
+        ReadRowsRequest.newBuilder().setReadPosition(readPosition).build();
+
+    Schema avroSchema = new Schema.Parser().parse(session.getAvroSchema().getSchema());
+
+    String actualSchemaMessage =
+        String.format(
+            "Unexpected schema. Actual schema:%n%s", avroSchema.toString(/* pretty= */ true));
+    assertEquals(Schema.Type.RECORD, avroSchema.getType(), actualSchemaMessage);
+    assertEquals("__root__", avroSchema.getName(), actualSchemaMessage);
+
+    assertEquals(2, avroSchema.getFields().size(), actualSchemaMessage);
+    assertEquals(
+        Schema.Type.STRING, avroSchema.getField("word").schema().getType(), actualSchemaMessage);
+    assertEquals(
+        Schema.Type.STRING, avroSchema.getField("word").schema().getType(), actualSchemaMessage);
+    assertEquals(
+        Schema.Type.LONG,
+        avroSchema.getField("word_count").schema().getType(),
+        actualSchemaMessage);
+
+    SimpleRowReader reader = new SimpleRowReader(avroSchema);
+
+    long rowCount = 0;
+    ServerStream<ReadRowsResponse> stream = client.readRowsCallable().call(readRowsRequest);
+    for (ReadRowsResponse response : stream) {
+      rowCount += response.getRowCount();
+      reader.processRows(
+          response.getAvroRows(),
+          new SimpleRowReader.AvroRowConsumer() {
+            @Override
+            public void accept(GenericData.Record record) {
+              String rowAssertMessage =
+                  String.format("Row not matching expectations: %s", record.toString());
+
+              Long wordCount = (Long) record.get("word_count");
+              assertWithMessage(rowAssertMessage).that(wordCount).isGreaterThan(100L);
+
+              Utf8 word = (Utf8) record.get("word");
+              assertWithMessage(rowAssertMessage).that(word.length()).isGreaterThan(0);
+            }
+          });
+    }
+
+    assertEquals(1_333, rowCount);
+  }
+
+  @Test
+  void testReadAtSnapshot() throws InterruptedException, IOException {
+    Field intFieldSchema =
+        Field.newBuilder("col", LegacySQLTypeName.INTEGER)
+            .setMode(Mode.REQUIRED)
+            .setDescription("IntegerDescription")
+            .build();
+    com.google.cloud.bigquery.Schema tableSchema =
+        com.google.cloud.bigquery.Schema.of(intFieldSchema);
+
+    TableId testTableId = TableId.of(/* dataset= */ DATASET, /* table= */ "test_read_snapshot");
+    bigquery.create(TableInfo.of(testTableId, StandardTableDefinition.of(tableSchema)));
+
+    TableReference tableReference =
+        TableReference.newBuilder()
+            .setTableId(testTableId.getTable())
+            .setDatasetId(DATASET)
+            .setProjectId(ServiceOptions.getDefaultProjectId())
+            .build();
+
+    Job firstJob =
+        RunQueryAppendJobAndExpectSuccess(
+            /* destinationTableId= */ testTableId, /* query= */ "SELECT 1 AS col");
+
+    Job secondJob =
+        RunQueryAppendJobAndExpectSuccess(
+            /* destinationTableId= */ testTableId, /* query= */ "SELECT 2 AS col");
+
+    final List<Long> rowsAfterFirstSnapshot = new ArrayList<>();
+    ProcessRowsAtSnapshot(
+        /* tableReference= */ tableReference,
+        /* snapshotInMillis= */ firstJob.getStatistics().getEndTime(),
+        /* filter= */ null,
+        /* consumer= */ new AvroRowConsumer() {
+          @Override
+          public void accept(GenericData.Record record) {
+            rowsAfterFirstSnapshot.add((Long) record.get("col"));
+          }
+        });
+    assertEquals(Arrays.asList(1L), rowsAfterFirstSnapshot);
+
+    final List<Long> rowsAfterSecondSnapshot = new ArrayList<>();
+    ProcessRowsAtSnapshot(
+        /* tableReference= */ tableReference,
+        /* snapshotInMillis= */ secondJob.getStatistics().getEndTime(),
+        /* filter= */ null,
+        /* consumer= */ new AvroRowConsumer() {
+          @Override
+          public void accept(GenericData.Record record) {
+            rowsAfterSecondSnapshot.add((Long) record.get("col"));
+          }
+        });
+    Collections.sort(rowsAfterSecondSnapshot);
+    assertEquals(Arrays.asList(1L, 2L), rowsAfterSecondSnapshot);
+  }
+
+  @Test
+  void testColumnPartitionedTableByDateField() throws InterruptedException, IOException {
+    String partitionedTableName =
+        "test_column_partition_table_by_date" + UUID.randomUUID().toString().substring(0, 8);
+    String createTableStatement =
+        String.format(
+            " CREATE TABLE %s.%s (num_field INT64, date_field DATE) "
+                + " PARTITION BY date_field "
+                + " OPTIONS( "
+                + "   description=\"a table partitioned by date_field\" "
+                + " ) "
+                + "AS "
+                + "   SELECT 1, CAST(\"2019-01-01\" AS DATE)"
+                + "   UNION ALL"
+                + "   SELECT 2, CAST(\"2019-01-02\" AS DATE)"
+                + "   UNION ALL"
+                + "   SELECT 3, CAST(\"2019-01-03\" AS DATE)",
+            DATASET, partitionedTableName);
+
+    RunQueryJobAndExpectSuccess(QueryJobConfiguration.newBuilder(createTableStatement).build());
+
+    TableReference tableReference =
+        TableReference.newBuilder()
+            .setTableId(partitionedTableName)
+            .setDatasetId(DATASET)
+            .setProjectId(ServiceOptions.getDefaultProjectId())
+            .build();
+
+    List<GenericData.Record> unfilteredRows =
+        ReadAllRows(/* tableReference= */ tableReference, /* filter= */ null);
+    assertEquals(3, unfilteredRows.size(), "Actual rows read: " + unfilteredRows.toString());
+
+    List<GenericData.Record> partitionFilteredRows =
+        ReadAllRows(
+            /* tableReference= */ tableReference,
+            /* filter= */ "date_field = CAST(\"2019-01-02\" AS DATE)");
+    assertEquals(
+        1, partitionFilteredRows.size(), "Actual rows read: " + partitionFilteredRows.toString());
+    assertEquals(2L, partitionFilteredRows.get(0).get("num_field"));
+  }
+
+  @Test
+  void testIngestionTimePartitionedTable() throws InterruptedException, IOException {
+    Field intFieldSchema =
+        Field.newBuilder("num_field", LegacySQLTypeName.INTEGER)
+            .setMode(Mode.REQUIRED)
+            .setDescription("IntegerDescription")
+            .build();
+    com.google.cloud.bigquery.Schema tableSchema =
+        com.google.cloud.bigquery.Schema.of(intFieldSchema);
+
+    TableId testTableId =
+        TableId.of(/* dataset= */ DATASET, /* table= */ "test_date_partitioned_table");
+    bigquery.create(
+        TableInfo.of(
+            testTableId,
+            StandardTableDefinition.newBuilder()
+                .setTimePartitioning(TimePartitioning.of(TimePartitioning.Type.DAY))
+                .setSchema(tableSchema)
+                .build()));
+
+    // Simulate ingestion for 2019-01-01.
+    RunQueryAppendJobAndExpectSuccess(
+        /* destinationTableId= */ TableId.of(
+            /* dataset= */ DATASET, /* table= */ testTableId.getTable() + "$20190101"),
+        /* query= */ "SELECT 1 AS num_field");
+
+    // Simulate ingestion for 2019-01-02.
+    RunQueryAppendJobAndExpectSuccess(
+        /* destinationTableId= */ TableId.of(
+            /* dataset= */ DATASET, /* table= */ testTableId.getTable() + "$20190102"),
+        /* query= */ "SELECT 2 AS num_field");
+
+    TableReference tableReference =
+        TableReference.newBuilder()
+            .setTableId(testTableId.getTable())
+            .setDatasetId(testTableId.getDataset())
+            .setProjectId(ServiceOptions.getDefaultProjectId())
+            .build();
+
+    List<GenericData.Record> unfilteredRows =
+        ReadAllRows(/* tableReference= */ tableReference, /* filter= */ null);
+    assertEquals(2, unfilteredRows.size(), "Actual rows read: " + unfilteredRows.toString());
+
+    List<GenericData.Record> partitionFilteredRows =
+        ReadAllRows(
+            /* tableReference= */ tableReference, /* filter= */ "_PARTITIONDATE > \"2019-01-01\"");
+    assertEquals(
+        1, partitionFilteredRows.size(), "Actual rows read: " + partitionFilteredRows.toString());
+    assertEquals(2L, partitionFilteredRows.get(0).get("num_field"));
+  }
+
+  @Test
+  void testBasicSqlTypes() throws InterruptedException, IOException {
+    String tableName = "test_basic_sql_types" + UUID.randomUUID().toString().substring(0, 8);
+    String createTableStatement =
+        String.format(
+            " CREATE TABLE %s.%s "
+                + " (int_field INT64 NOT NULL,"
+                + "  num_field NUMERIC NOT NULL,"
+                + "  float_field FLOAT64 NOT NULL,"
+                + "  bool_field BOOL NOT NULL,"
+                + "  str_field STRING NOT NULL,"
+                + "  bytes_field BYTES NOT NULL) "
+                + " OPTIONS( "
+                + "   description=\"a table with basic column types\" "
+                + " ) "
+                + "AS "
+                + "   SELECT "
+                + "     17,"
+                + "     CAST(1234.56 AS NUMERIC),"
+                + "     6.547678,"
+                + "     TRUE,"
+                + "     \"String field value\","
+                + "     b\"абвгд\"",
+            DATASET, tableName);
+
+    RunQueryJobAndExpectSuccess(QueryJobConfiguration.newBuilder(createTableStatement).build());
+
+    TableReference tableReference =
+        TableReference.newBuilder()
+            .setTableId(tableName)
+            .setDatasetId(DATASET)
+            .setProjectId(ServiceOptions.getDefaultProjectId())
+            .build();
+
+    List<GenericData.Record> rows =
+        ReadAllRows(/* tableReference= */ tableReference, /* filter= */ null);
+    assertEquals(1, rows.size(), "Actual rows read: " + rows.toString());
+
+    GenericData.Record record = rows.get(0);
+    Schema avroSchema = record.getSchema();
+
+    String actualSchemaMessage =
+        String.format(
+            "Unexpected schema. Actual schema:%n%s", avroSchema.toString(/* pretty= */ true));
+    String rowAssertMessage = String.format("Row not matching expectations: %s", record.toString());
+
+    assertEquals(Schema.Type.RECORD, avroSchema.getType(), actualSchemaMessage);
+    assertEquals("__root__", avroSchema.getName(), actualSchemaMessage);
+    assertEquals(6, avroSchema.getFields().size(), actualSchemaMessage);
+
+    assertEquals(
+        Schema.Type.LONG, avroSchema.getField("int_field").schema().getType(), actualSchemaMessage);
+    assertEquals(17L, (long) record.get("int_field"), rowAssertMessage);
+
+    assertEquals(
+        Schema.Type.BYTES,
+        avroSchema.getField("num_field").schema().getType(),
+        actualSchemaMessage);
+    assertEquals(
+        LogicalTypes.decimal(/* precision= */ 38, /* scale= */ 9),
+        avroSchema.getField("num_field").schema().getLogicalType(),
+        actualSchemaMessage);
+    BigDecimal actual_num_field =
+        new Conversions.DecimalConversion()
+            .fromBytes(
+                (ByteBuffer) record.get("num_field"),
+                avroSchema,
+                avroSchema.getField("num_field").schema().getLogicalType());
+    assertEquals(
+        BigDecimal.valueOf(/* unscaledVal= */ 1_234_560_000_000L, /* scale= */ 9),
+        actual_num_field,
+        rowAssertMessage);
+
+    assertEquals(
+        Schema.Type.DOUBLE,
+        avroSchema.getField("float_field").schema().getType(),
+        actualSchemaMessage);
+    assertEquals(
+        /* expected= */ 6.547678d,
+        /* actual= */ (double) record.get("float_field"),
+        /* delta= */ 0.0001,
+        rowAssertMessage);
+
+    assertEquals(
+        Schema.Type.BOOLEAN,
+        avroSchema.getField("bool_field").schema().getType(),
+        actualSchemaMessage);
+    assertEquals(true, record.get("bool_field"), rowAssertMessage);
+
+    assertEquals(
+        Schema.Type.STRING,
+        avroSchema.getField("str_field").schema().getType(),
+        actualSchemaMessage);
+    assertEquals(new Utf8("String field value"), record.get("str_field"), rowAssertMessage);
+
+    assertEquals(
+        Schema.Type.BYTES,
+        avroSchema.getField("bytes_field").schema().getType(),
+        actualSchemaMessage);
+    assertArrayEquals(
+        Utf8.getBytesFor("абвгд"),
+        ((ByteBuffer) (record.get("bytes_field"))).array(),
+        rowAssertMessage);
+  }
+
+  @Test
+  void testDateAndTimeSqlTypes() throws InterruptedException, IOException {
+    String tableName =
+        "test_date_and_time_sql_types" + UUID.randomUUID().toString().substring(0, 8);
+    String createTableStatement =
+        String.format(
+            " CREATE TABLE %s.%s "
+                + " (date_field DATE NOT NULL,"
+                + "  datetime_field DATETIME NOT NULL,"
+                + "  time_field TIME NOT NULL,"
+                + "  timestamp_field TIMESTAMP NOT NULL)"
+                + " OPTIONS( "
+                + "   description=\"a table with date and time column types\" "
+                + " ) "
+                + "AS "
+                + "   SELECT "
+                + "     CAST(\"2019-05-31\" AS DATE),"
+                + "     CAST(\"2019-04-30 21:47:59.999999\" AS DATETIME),"
+                + "     CAST(\"21:47:59.999999\" AS TIME),"
+                + "     CAST(\"2019-04-30 19:24:19.123456 UTC\" AS TIMESTAMP)",
+            DATASET, tableName);
+
+    RunQueryJobAndExpectSuccess(QueryJobConfiguration.newBuilder(createTableStatement).build());
+
+    TableReference tableReference =
+        TableReference.newBuilder()
+            .setTableId(tableName)
+            .setDatasetId(DATASET)
+            .setProjectId(ServiceOptions.getDefaultProjectId())
+            .build();
+
+    List<GenericData.Record> rows =
+        ReadAllRows(/* tableReference= */ tableReference, /* filter= */ null);
+    assertEquals(1, rows.size(), "Actual rows read: " + rows.toString());
+
+    GenericData.Record record = rows.get(0);
+    Schema avroSchema = record.getSchema();
+
+    String actualSchemaMessage =
+        String.format(
+            "Unexpected schema. Actual schema:%n%s", avroSchema.toString(/* pretty= */ true));
+    String rowAssertMessage = String.format("Row not matching expectations: %s", record.toString());
+
+    assertEquals(Schema.Type.RECORD, avroSchema.getType(), actualSchemaMessage);
+    assertEquals("__root__", avroSchema.getName(), actualSchemaMessage);
+    assertEquals(4, avroSchema.getFields().size(), actualSchemaMessage);
+
+    assertEquals(
+        Schema.Type.INT, avroSchema.getField("date_field").schema().getType(), actualSchemaMessage);
+    assertEquals(
+        LogicalTypes.date(),
+        avroSchema.getField("date_field").schema().getLogicalType(),
+        actualSchemaMessage);
+    assertEquals(
+        LocalDate.of(/* year= */ 2019, /* month= */ 5, /* dayOfMonth= */ 31),
+        LocalDate.ofEpochDay((int) record.get("date_field")),
+        rowAssertMessage);
+
+    assertEquals(
+        Schema.Type.STRING,
+        avroSchema.getField("datetime_field").schema().getType(),
+        actualSchemaMessage);
+    assertEquals(
+        "datetime",
+        avroSchema.getField("datetime_field").schema().getObjectProp("logicalType"),
+        actualSchemaMessage);
+    assertEquals(
+        new Utf8("2019-04-30T21:47:59.999999"),
+        (Utf8) record.get("datetime_field"),
+        rowAssertMessage);
+
+    assertEquals(
+        Schema.Type.LONG,
+        avroSchema.getField("time_field").schema().getType(),
+        actualSchemaMessage);
+    assertEquals(
+        LogicalTypes.timeMicros(),
+        avroSchema.getField("time_field").schema().getLogicalType(),
+        actualSchemaMessage);
+    assertEquals(
+        LocalTime.of(
+            /* hour= */ 21, /* minute= */ 47, /* second= */ 59, /* nanoOfSecond= */ 999_999_000),
+        LocalTime.ofNanoOfDay(1_000L * (long) record.get("time_field")),
+        rowAssertMessage);
+
+    assertEquals(
+        Schema.Type.LONG,
+        avroSchema.getField("timestamp_field").schema().getType(),
+        actualSchemaMessage);
+    assertEquals(
+        LogicalTypes.timestampMicros(),
+        avroSchema.getField("timestamp_field").schema().getLogicalType(),
+        actualSchemaMessage);
+    ZonedDateTime expected_timestamp =
+        ZonedDateTime.parse(
+                "2019-04-30T19:24:19Z", DateTimeFormatter.ISO_INSTANT.withZone(ZoneOffset.UTC))
+            .withNano(123_456_000);
+    long actual_timestamp_micros = (long) record.get("timestamp_field");
+    ZonedDateTime actual_timestamp =
+        ZonedDateTime.ofInstant(
+            Instant.ofEpochSecond(
+                /* epochSecond= */ actual_timestamp_micros / 1_000_000,
+                (actual_timestamp_micros % 1_000_000) * 1_000),
+            ZoneOffset.UTC);
+    assertEquals(expected_timestamp, actual_timestamp, rowAssertMessage);
+  }
+
+  @Test
+  void testGeographySqlType() throws InterruptedException, IOException {
+    String tableName = "test_geography_sql_type" + UUID.randomUUID().toString().substring(0, 8);
+    String createTableStatement =
+        String.format(
+            " CREATE TABLE %s.%s "
+                + " (geo_field GEOGRAPHY NOT NULL)"
+                + " OPTIONS( "
+                + "   description=\"a table with a geography column type\" "
+                + " ) "
+                + "AS "
+                + "   SELECT ST_GEOGPOINT(1.1, 2.2)",
+            DATASET, tableName);
+
+    RunQueryJobAndExpectSuccess(QueryJobConfiguration.newBuilder(createTableStatement).build());
+
+    TableReference tableReference =
+        TableReference.newBuilder()
+            .setTableId(tableName)
+            .setDatasetId(DATASET)
+            .setProjectId(ServiceOptions.getDefaultProjectId())
+            .build();
+
+    List<GenericData.Record> rows =
+        ReadAllRows(/* tableReference= */ tableReference, /* filter= */ null);
+    assertEquals(1, rows.size(), "Actual rows read: " + rows.toString());
+
+    GenericData.Record record = rows.get(0);
+    Schema avroSchema = record.getSchema();
+
+    String actualSchemaMessage =
+        String.format(
+            "Unexpected schema. Actual schema:%n%s", avroSchema.toString(/* pretty= */ true));
+    String rowAssertMessage = String.format("Row not matching expectations: %s", record.toString());
+
+    assertEquals(Schema.Type.RECORD, avroSchema.getType(), actualSchemaMessage);
+    assertEquals("__root__", avroSchema.getName(), actualSchemaMessage);
+    assertEquals(1, avroSchema.getFields().size(), actualSchemaMessage);
+
+    assertEquals(
+        Schema.Type.STRING,
+        avroSchema.getField("geo_field").schema().getType(),
+        actualSchemaMessage);
+    assertEquals(
+        "GEOGRAPHY",
+        avroSchema.getField("geo_field").schema().getObjectProp("sqlType"),
+        actualSchemaMessage);
+    assertEquals(new Utf8("POINT(1.1 2.2)"), (Utf8) record.get("geo_field"), rowAssertMessage);
+  }
+
+  @Test
+  void testStructAndArraySqlTypes() throws InterruptedException, IOException {
+    String tableName =
+        "test_struct_and_array_sql_types" + UUID.randomUUID().toString().substring(0, 8);
+    String createTableStatement =
+        String.format(
+            " CREATE TABLE %s.%s  (array_field ARRAY<INT64>,  struct_field STRUCT<int_field INT64"
+                + " NOT NULL, str_field STRING NOT NULL> NOT NULL) OPTIONS(    description=\"a"
+                + " table with array and time column types\"  ) AS    SELECT      [1, 2, 3],    "
+                + " (10, 'abc')",
+            DATASET, tableName);
+
+    RunQueryJobAndExpectSuccess(QueryJobConfiguration.newBuilder(createTableStatement).build());
+
+    TableReference tableReference =
+        TableReference.newBuilder()
+            .setTableId(tableName)
+            .setDatasetId(DATASET)
+            .setProjectId(ServiceOptions.getDefaultProjectId())
+            .build();
+
+    List<GenericData.Record> rows =
+        ReadAllRows(/* tableReference= */ tableReference, /* filter= */ null);
+    assertEquals(1, rows.size(), "Actual rows read: " + rows.toString());
+
+    GenericData.Record record = rows.get(0);
+    Schema avroSchema = record.getSchema();
+
+    String actualSchemaMessage =
+        String.format(
+            "Unexpected schema. Actual schema:%n%s", avroSchema.toString(/* pretty= */ true));
+    String rowAssertMessage = String.format("Row not matching expectations: %s", record.toString());
+
+    assertEquals(Schema.Type.RECORD, avroSchema.getType(), actualSchemaMessage);
+    assertEquals("__root__", avroSchema.getName(), actualSchemaMessage);
+    assertEquals(2, avroSchema.getFields().size(), actualSchemaMessage);
+
+    assertEquals(
+        Schema.Type.ARRAY,
+        avroSchema.getField("array_field").schema().getType(),
+        actualSchemaMessage);
+    assertEquals(
+        Schema.Type.LONG,
+        avroSchema.getField("array_field").schema().getElementType().getType(),
+        actualSchemaMessage);
+    assertArrayEquals(
+        new Long[] {1L, 2L, 3L},
+        ((GenericData.Array<Long>) record.get("array_field")).toArray(new Long[0]),
+        rowAssertMessage);
+
+    // Validate the STRUCT field and its members.
+    Schema structSchema = avroSchema.getField("struct_field").schema();
+    assertEquals(Schema.Type.RECORD, structSchema.getType(), actualSchemaMessage);
+    GenericData.Record structRecord = (GenericData.Record) record.get("struct_field");
+
+    assertEquals(
+        Schema.Type.LONG,
+        structSchema.getField("int_field").schema().getType(),
+        actualSchemaMessage);
+    assertEquals(10L, (long) structRecord.get("int_field"), rowAssertMessage);
+
+    assertEquals(
+        Schema.Type.STRING,
+        structSchema.getField("str_field").schema().getType(),
+        actualSchemaMessage);
+    assertEquals(new Utf8("abc"), structRecord.get("str_field"), rowAssertMessage);
+  }
+
+  @Test
+  void testUniverseDomainWithInvalidUniverseDomain() throws IOException {
+    BigQueryStorageSettings bigQueryStorageSettings =
+        BigQueryStorageSettings.newBuilder()
+            .setCredentialsProvider(
+                FixedCredentialsProvider.create(loadCredentials(FAKE_JSON_CRED_WITH_GOOGLE_DOMAIN)))
+            .setUniverseDomain("invalid.domain")
+            .build();
+
+    BigQueryStorageClient localClient = BigQueryStorageClient.create(bigQueryStorageSettings);
+
+    TableReference tableReference =
+        TableReference.newBuilder()
+            .setProjectId("bigquery-public-data")
+            .setDatasetId("samples")
+            .setTableId("shakespeare")
+            .build();
+
+    UnauthenticatedException e =
+        assertThrows(
+            UnauthenticatedException.class,
+            () ->
+                localClient.createReadSession(
+                    /* tableReference= */ tableReference,
+                    /* parent= */ parentProjectId,
+                    /* requestedStreams= */ 1));
+    assertThat(
+            (e.getMessage()
+                .contains("does not match the universe domain found in the credentials")))
+        .isTrue();
+    localClient.close();
+  }
+
+  @Test
+  void testInvalidUniverseDomainWithMismatchCredentials() throws IOException {
+    BigQueryStorageSettings bigQueryStorageSettings =
+        BigQueryStorageSettings.newBuilder()
+            .setCredentialsProvider(
+                FixedCredentialsProvider.create(
+                    loadCredentials(FAKE_JSON_CRED_WITH_INVALID_DOMAIN)))
+            .setUniverseDomain("invalid.domain")
+            .build();
+
+    BigQueryStorageClient localClient = BigQueryStorageClient.create(bigQueryStorageSettings);
+
+    TableReference tableReference =
+        TableReference.newBuilder()
+            .setProjectId("bigquery-public-data")
+            .setDatasetId("samples")
+            .setTableId("shakespeare")
+            .build();
+
+    UnauthenticatedException e =
+        assertThrows(
+            UnauthenticatedException.class,
+            () ->
+                localClient.createReadSession(
+                    /* tableReference= */ tableReference,
+                    /* parent= */ parentProjectId,
+                    /* requestedStreams= */ 1));
+    assertThat(
+            (e.getMessage()
+                .contains("does not match the universe domain found in the credentials")))
+        .isTrue();
+    localClient.close();
+  }
+
+  @Test
+  void testUniverseDomainWithMatchingDomain() throws IOException {
+    // Test a valid domain using the default credentials and Google default universe domain.
+    BigQueryStorageSettings bigQueryStorageSettings =
+        BigQueryStorageSettings.newBuilder().setUniverseDomain("googleapis.com").build();
+    BigQueryStorageClient localClient = BigQueryStorageClient.create(bigQueryStorageSettings);
+
+    TableReference tableReference =
+        TableReference.newBuilder()
+            .setProjectId("bigquery-public-data")
+            .setDatasetId("samples")
+            .setTableId("shakespeare")
+            .build();
+
+    ReadSession session =
+        localClient.createReadSession(
+            /* tableReference= */ tableReference,
+            /* parent= */ parentProjectId,
+            /* requestedStreams= */ 1);
+
+    assertEquals(
+        1,
+        session.getStreamsCount(),
+        String.format(
+            "Did not receive expected number of streams for table reference '%s' CreateReadSession"
+                + " response:%n%s",
+            TextFormat.printer().shortDebugString(tableReference), session.toString()));
+
+    StreamPosition readPosition =
+        StreamPosition.newBuilder().setStream(session.getStreams(0)).build();
+
+    ReadRowsRequest readRowsRequest =
+        ReadRowsRequest.newBuilder().setReadPosition(readPosition).build();
+
+    long rowCount = 0;
+    ServerStream<ReadRowsResponse> stream = client.readRowsCallable().call(readRowsRequest);
+    for (ReadRowsResponse response : stream) {
+      rowCount += response.getRowCount();
+    }
+
+    assertEquals(164_656, rowCount);
+    localClient.close();
+  }
+
+  void testUniverseDomain() throws IOException {
+    // This test is not yet part presubmit integration test as it requires the apis-tpclp.goog
+    // universe domain credentials.
+    // Test a valid domain using the default credentials and Google default universe domain.
+    BigQueryStorageSettings bigQueryStorageSettings =
+        BigQueryStorageSettings.newBuilder().setUniverseDomain("apis-tpclp.goog").build();
+    BigQueryStorageClient localClient = BigQueryStorageClient.create(bigQueryStorageSettings);
+
+    TableReference tableReference =
+        TableReference.newBuilder()
+            .setProjectId("google-tpc-testing-environment:cloudsdk-test-project")
+            .setDatasetId("tpc_demo_dataset")
+            .setTableId("new_table")
+            .build();
+
+    ReadSession session =
+        localClient.createReadSession(
+            /* tableReference= */ tableReference,
+            /* parent= */ parentProjectId,
+            /* requestedStreams= */ 1);
+
+    StreamPosition readPosition =
+        StreamPosition.newBuilder().setStream(session.getStreams(0)).build();
+
+    ReadRowsRequest readRowsRequest =
+        ReadRowsRequest.newBuilder().setReadPosition(readPosition).build();
+
+    long rowCount = 0;
+    ServerStream<ReadRowsResponse> stream = localClient.readRowsCallable().call(readRowsRequest);
+    for (ReadRowsResponse response : stream) {
+      rowCount += response.getRowCount();
+    }
+
+    assertEquals(1, rowCount);
+    localClient.close();
+  }
+
+  /**
+   * Reads to the specified row offset within the stream. If the stream does not have the desired
+   * rows to read, it will read all of them.
+   *
+   * @param stream
+   * @param rowOffset
+   * @return the number of requested rows to skip or the total rows read if stream had less rows.
+   */
+  private long ReadStreamToOffset(Stream stream, long rowOffset) {
+    StreamPosition readPosition = StreamPosition.newBuilder().setStream(stream).build();
+
+    ReadRowsRequest readRowsRequest =
+        ReadRowsRequest.newBuilder().setReadPosition(readPosition).build();
+
+    long rowCount = 0;
+    ServerStream<ReadRowsResponse> serverStream = client.readRowsCallable().call(readRowsRequest);
+    Iterator<ReadRowsResponse> responseIterator = serverStream.iterator();
+
+    while (responseIterator.hasNext()) {
+      ReadRowsResponse response = responseIterator.next();
+      rowCount += response.getRowCount();
+      if (rowCount >= rowOffset) {
+        return rowOffset;
+      }
+    }
+
+    return rowCount;
+  }
+
+  /**
+   * Reads all the rows from the specified tableReference.
+   *
+   * <p>For every row, the consumer is called for processing.
+   *
+   * @param tableReference
+   * @param snapshotInMillis Optional. If specified, all rows up to timestamp will be returned.
+   * @param filter Optional. If specified, it will be used to restrict returned data.
+   * @param consumer that receives all Avro rows.
+   * @throws IOException
+   */
+  private void ProcessRowsAtSnapshot(
+      TableReference tableReference, Long snapshotInMillis, String filter, AvroRowConsumer consumer)
+      throws IOException {
+    Preconditions.checkNotNull(tableReference);
+    Preconditions.checkNotNull(consumer);
+
+    CreateReadSessionRequest.Builder createSessionRequestBuilder =
+        CreateReadSessionRequest.newBuilder()
+            .setParent(parentProjectId)
+            .setRequestedStreams(1)
+            .setTableReference(tableReference)
+            .setFormat(DataFormat.AVRO);
+
+    if (snapshotInMillis != null) {
+      Timestamp snapshotTimestamp =
+          Timestamp.newBuilder()
+              .setSeconds(snapshotInMillis / 1_000)
+              .setNanos((int) ((snapshotInMillis % 1000) * 1000000))
+              .build();
+      createSessionRequestBuilder.setTableModifiers(
+          TableModifiers.newBuilder().setSnapshotTime(snapshotTimestamp).build());
+    }
+
+    if (filter != null && !filter.isEmpty()) {
+      createSessionRequestBuilder.setReadOptions(
+          TableReadOptions.newBuilder().setRowRestriction(filter).build());
+    }
+
+    ReadSession session = client.createReadSession(createSessionRequestBuilder.build());
+    assertEquals(
+        1,
+        session.getStreamsCount(),
+        String.format(
+            "Did not receive expected number of streams for table reference '%s' CreateReadSession"
+                + " response:%n%s",
+            TextFormat.printer().shortDebugString(tableReference), session.toString()));
+
+    StreamPosition readPosition =
+        StreamPosition.newBuilder().setStream(session.getStreams(0)).build();
+
+    ReadRowsRequest readRowsRequest =
+        ReadRowsRequest.newBuilder().setReadPosition(readPosition).build();
+
+    SimpleRowReader reader =
+        new SimpleRowReader(new Schema.Parser().parse(session.getAvroSchema().getSchema()));
+
+    ServerStream<ReadRowsResponse> stream = client.readRowsCallable().call(readRowsRequest);
+    for (ReadRowsResponse response : stream) {
+      reader.processRows(response.getAvroRows(), consumer);
+    }
+  }
+
+  /**
+   * Reads all the rows from the specified table reference and returns a list as generic Avro
+   * records.
+   *
+   * @param tableReference
+   * @param filter Optional. If specified, it will be used to restrict returned data.
+   * @return
+   */
+  List<GenericData.Record> ReadAllRows(TableReference tableReference, String filter)
+      throws IOException {
+    final List<GenericData.Record> rows = new ArrayList<>();
+    ProcessRowsAtSnapshot(
+        /* tableReference= */ tableReference,
+        /* snapshotInMillis= */ null,
+        /* filter= */ filter,
+        new AvroRowConsumer() {
+          @Override
+          public void accept(GenericData.Record record) {
+            // clone the record since that reference will be reused by the reader.
+            rows.add(new GenericRecordBuilder(record).build());
+          }
+        });
+    return rows;
+  }
+
+  /**
+   * Runs a query job with WRITE_APPEND disposition to the destination table and returns the
+   * successfully completed job.
+   *
+   * @param destinationTableId
+   * @param query
+   * @return
+   * @throws InterruptedException
+   */
+  private Job RunQueryAppendJobAndExpectSuccess(TableId destinationTableId, String query)
+      throws InterruptedException {
+    return RunQueryJobAndExpectSuccess(
+        QueryJobConfiguration.newBuilder(query)
+            .setDestinationTable(destinationTableId)
+            .setUseQueryCache(false)
+            .setUseLegacySql(false)
+            .setWriteDisposition(WriteDisposition.WRITE_APPEND)
+            .build());
+  }
+
+  /**
+   * Runs a query job with provided configuration and returns the successfully completed job.
+   *
+   * @param configuration
+   * @return
+   * @throws InterruptedException
+   */
+  private Job RunQueryJobAndExpectSuccess(QueryJobConfiguration configuration)
+      throws InterruptedException {
+    Job job = bigquery.create(JobInfo.of(configuration));
+    Job completedJob =
+        job.waitFor(
+            RetryOption.initialRetryDelayDuration(Duration.ofSeconds(1)),
+            RetryOption.totalTimeoutDuration(Duration.ofMinutes(1)));
+
+    assertNotNull(completedJob);
+    assertNull(
+        /* object= */ completedJob.getStatus().getError(),
+        /* message= */ "Received a job status that is not a success: "
+            + completedJob.getStatus().toString());
+
+    return completedJob;
+  }
+
+  static ServiceAccountCredentials loadCredentials(String credentialFile) {
+    try (InputStream keyStream = new ByteArrayInputStream(credentialFile.getBytes())) {
+      return ServiceAccountCredentials.fromStream(keyStream);
+    } catch (IOException e) {
+      fail("Couldn't create fake JSON credentials.");
+    }
+    return null;
+  }
+}

@@ -1,0 +1,108 @@
+on:
+  push:
+    paths-ignore:
+      - 'tutorials/**'
+    branches:
+    - main
+  pull_request:
+name: ci
+jobs:
+  units:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        java: [11, 17, 21, 25]
+    steps:
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+    - uses: actions/setup-java@v2
+      with:
+        distribution: temurin
+        java-version: ${{matrix.java}}
+    - run: java -version
+    - run: .kokoro/build.sh
+      env:
+        JOB_TYPE: test
+  units-java8:
+    # Building using Java 17 and run the tests with Java 8 runtime
+    name: "units (8)"
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+    - uses: actions/setup-java@v3
+      with:
+        java-version: 8
+        distribution: zulu
+    - name: "Set jvm system property environment variable for surefire plugin (unit tests)"
+      # Maven surefire plugin (unit tests) allows us to specify JVM to run the tests.
+      # https://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html#jvm
+      run: echo "SUREFIRE_JVM_OPT=-Djvm=${JAVA_HOME}/bin/java" >> $GITHUB_ENV
+      shell: bash
+    - uses: actions/setup-java@v3
+      with:
+        java-version: 17
+        distribution: zulu
+    - run: .kokoro/build.sh
+      env:
+        JOB_TYPE: test
+  windows:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+    - uses: actions/setup-java@v2
+      with:
+        distribution: temurin
+        java-version: 8
+    - run: java -version
+    - run: .kokoro/build.bat
+      env:
+        JOB_TYPE: test
+  dependencies:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java: [17]
+    steps:
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+    - uses: actions/setup-java@v2
+      with:
+        distribution: temurin
+        java-version: ${{matrix.java}}
+    - run: java -version
+    - run: .kokoro/dependencies.sh
+  javadoc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+      - uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 17
+      - run: java -version
+      - run: .kokoro/build.sh
+        env:
+          JOB_TYPE: javadoc
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+    - uses: actions/setup-java@v2
+      with:
+        distribution: temurin
+        java-version: 17
+    - run: java -version
+    - run: .kokoro/build.sh
+      env:
+        JOB_TYPE: lint
+  clirr:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+    - uses: actions/setup-java@v2
+      with:
+        distribution: temurin
+        java-version: 8
+    - run: java -version
+    - run: .kokoro/build.sh
+      env:
+        JOB_TYPE: clirr
