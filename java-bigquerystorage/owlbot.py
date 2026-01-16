@@ -31,5 +31,5 @@ java.common_templates(monorepo=True, excludes=[
     "java.header",
     "license-checks.xml",
     "renovate.json",
-    ".gitignore",
+    ".gitignore"
 ])
