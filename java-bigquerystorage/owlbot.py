@@ -23,6 +23,7 @@ s.remove_staging_dirs()
 java.common_templates(monorepo=True, excludes=[
     ".github/*",
     ".gitignore",
+    ".kokoro/*",
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",

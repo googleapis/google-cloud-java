@@ -6,9 +6,8 @@ on:
     - main
   pull_request:
 name: java-bigquerystorage ci
-defaults:
-  run:
-    working-directory: java-bigquerystorage
+env:
+  BUILD_SUBDIR: java-bigquerystorage
 jobs:
   filter:
     runs-on: ubuntu-latest

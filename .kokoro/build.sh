@@ -35,6 +35,12 @@ fi
 
 RETURN_CODE=0
 
+if [[ -n "${BUILD_SUBDIR}" ]]
+then
+  echo "Running in subdir: ${BUILD_SUBDIR}"
+  pushd "${BUILD_SUBDIR}"
+fi
+
 case ${JOB_TYPE} in
   test)
     retry_with_backoff 3 10 \
@@ -124,6 +130,12 @@ case ${JOB_TYPE} in
   *) ;;
 
 esac
+
+if [[ -n "${BUILD_SUBDIR}" ]]
+then
+  echo "Running in subdir: ${BUILD_SUBDIR}"
+  popd
+fi
 
 if [ "${REPORT_COVERAGE}" == "true" ]; then
   bash ${KOKORO_GFILE_DIR}/codecov.sh
