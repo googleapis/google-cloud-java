@@ -71,6 +71,7 @@ jobs:
     steps:
     - name: Support longpaths
       run: git config --system core.longpaths true
+      working-directory: .
     - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
     - uses: actions/setup-java@v2
       with:
