@@ -35,6 +35,8 @@ def transform(content, lib_name):
 
     in_jobs = False
     skip_current_job = False
+    current_job_is_windows = False
+    
     for line in lines:
         if line.startswith('name:') and not in_jobs:
             name_match = re.match(r'^name:\s*(.*)', line)
@@ -60,6 +62,7 @@ def transform(content, lib_name):
             job_match = re.match(r'^  ([\w-]+):', line)
             if job_match:
                 job_name = job_match.group(1)
+                current_job_is_windows = False # Reset for new job
                 if job_name == 'clirr':
                     skip_current_job = True
                     continue
@@ -73,6 +76,15 @@ def transform(content, lib_name):
                     continue
         
         if not skip_current_job:
+            if 'runs-on:' in line and 'windows' in line:
+                current_job_is_windows = True
+            
+            if line.strip() == 'steps:' and current_job_is_windows:
+                new_lines.append(line)
+                new_lines.append("    - name: Support longpaths")
+                new_lines.append("      run: git config --system core.longpaths true")
+                continue
+
             if 'run: echo "SUREFIRE_JVM_OPT=' in line and '!java17' not in line:
                 line = line.replace('" >> $GITHUB_ENV', ' -P !java17" >> $GITHUB_ENV')
             new_lines.append(line)
