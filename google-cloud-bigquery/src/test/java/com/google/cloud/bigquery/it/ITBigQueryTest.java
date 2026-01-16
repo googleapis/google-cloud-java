@@ -219,7 +219,6 @@ class ITBigQueryTest {
 
   private static final byte[] BYTES = {0xD, 0xE, 0xA, 0xD};
   private static final String BYTES_BASE64 = BaseEncoding.base64().encode(BYTES);
-  private static final Long EXPIRATION_MS = 86400000L;
   private static final Logger LOG = Logger.getLogger(ITBigQueryTest.class.getName());
   private static final String DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final String UK_DATASET = RemoteBigQueryHelper.generateDatasetName();
@@ -2626,12 +2625,13 @@ class ITBigQueryTest {
 
   @Test
   void testListTablesWithPartitioning() {
+    long expirationMs = 86400000L;
+    Type partitionType = Type.DAY;
     String tableName = "test_list_tables_partitioning";
-    TimePartitioning timePartitioning = TimePartitioning.of(Type.DAY, EXPIRATION_MS);
     StandardTableDefinition tableDefinition =
         StandardTableDefinition.newBuilder()
             .setSchema(TABLE_SCHEMA)
-            .setTimePartitioning(timePartitioning)
+            .setTimePartitioning(TimePartitioning.of(partitionType, expirationMs))
             .build();
     TableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), tableDefinition);
     Table createdPartitioningTable = bigquery.create(tableInfo);
@@ -2639,16 +2639,25 @@ class ITBigQueryTest {
     try {
       Page<Table> tables = bigquery.listTables(DATASET);
       boolean found = false;
-      Iterator<Table> tableIterator = tables.getValues().iterator();
-      while (tableIterator.hasNext() && !found) {
-        StandardTableDefinition standardTableDefinition = tableIterator.next().getDefinition();
-        if (standardTableDefinition.getTimePartitioning() != null
-            && standardTableDefinition.getTimePartitioning().getType().equals(Type.DAY)
-            && standardTableDefinition
-                .getTimePartitioning()
-                .getExpirationMs()
-                .equals(EXPIRATION_MS)) {
+      for (Table table : tables.getValues()) {
+        // Look for the table that matches the newly partitioned table. Other tables in the
+        // dataset may not be partitioned or may be partitioned but may not be expiring
+        // (e.g. `null` expirationMs).
+        if (!table
+            .getTableId()
+            .getTable()
+            .equals(createdPartitioningTable.getTableId().getTable())) {
+          continue;
+        }
+
+        StandardTableDefinition standardTableDefinition = table.getDefinition();
+        TimePartitioning timePartitioning = standardTableDefinition.getTimePartitioning();
+        assertNotNull(timePartitioning);
+        assertNotNull(timePartitioning.getExpirationMs());
+        if (timePartitioning.getType().equals(partitionType)
+            && timePartitioning.getExpirationMs().equals(expirationMs)) {
           found = true;
+          break;
         }
       }
       assertTrue(found);
