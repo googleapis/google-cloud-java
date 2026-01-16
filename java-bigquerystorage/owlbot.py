@@ -22,8 +22,8 @@ for library in s.get_staging_dirs():
 s.remove_staging_dirs()
 java.common_templates(monorepo=True, excludes=[
     ".github/*",
-    ".gitignore",
     ".kokoro/*",
+    "samples/*",
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
@@ -31,5 +31,5 @@ java.common_templates(monorepo=True, excludes=[
     "java.header",
     "license-checks.xml",
     "renovate.json",
-    "samples/*"
+    ".gitignore",
 ])
