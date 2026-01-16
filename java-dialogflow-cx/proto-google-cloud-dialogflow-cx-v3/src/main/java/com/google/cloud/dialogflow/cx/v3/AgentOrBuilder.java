@@ -320,15 +320,35 @@ public interface AgentOrBuilder
    *
    *
    * <pre>
-   * Immutable. Name of the start flow in this agent. A start flow will be
-   * automatically created when the agent is created, and can only be deleted by
-   * deleting the agent. Format:
+   * Name of the start flow in this agent. A start flow will be automatically
+   * created when the agent is created, and can only be deleted by deleting
+   * the agent.
+   * Format:
    * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
+   * Currently only the default start flow with id
+   * "00000000-0000-0000-0000-000000000000" is allowed.
    * </pre>
    *
-   * <code>
-   * string start_flow = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string start_flow = 16 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return Whether the startFlow field is set.
+   */
+  boolean hasStartFlow();
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the start flow in this agent. A start flow will be automatically
+   * created when the agent is created, and can only be deleted by deleting
+   * the agent.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
+   * Currently only the default start flow with id
+   * "00000000-0000-0000-0000-000000000000" is allowed.
+   * </pre>
+   *
+   * <code>string start_flow = 16 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The startFlow.
    */
@@ -338,19 +358,80 @@ public interface AgentOrBuilder
    *
    *
    * <pre>
-   * Immutable. Name of the start flow in this agent. A start flow will be
-   * automatically created when the agent is created, and can only be deleted by
-   * deleting the agent. Format:
+   * Name of the start flow in this agent. A start flow will be automatically
+   * created when the agent is created, and can only be deleted by deleting
+   * the agent.
+   * Format:
    * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
+   * Currently only the default start flow with id
+   * "00000000-0000-0000-0000-000000000000" is allowed.
    * </pre>
    *
-   * <code>
-   * string start_flow = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string start_flow = 16 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for startFlow.
    */
   com.google.protobuf.ByteString getStartFlowBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the start playbook in this agent. A start playbook will be
+   * automatically created when the agent is created, and can only be deleted
+   * by deleting the agent.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
+   * Currently only the
+   *  default playbook with id
+   *  "00000000-0000-0000-0000-000000000000" is allowed.
+   * </pre>
+   *
+   * <code>string start_playbook = 39 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return Whether the startPlaybook field is set.
+   */
+  boolean hasStartPlaybook();
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the start playbook in this agent. A start playbook will be
+   * automatically created when the agent is created, and can only be deleted
+   * by deleting the agent.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
+   * Currently only the
+   *  default playbook with id
+   *  "00000000-0000-0000-0000-000000000000" is allowed.
+   * </pre>
+   *
+   * <code>string start_playbook = 39 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The startPlaybook.
+   */
+  java.lang.String getStartPlaybook();
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the start playbook in this agent. A start playbook will be
+   * automatically created when the agent is created, and can only be deleted
+   * by deleting the agent.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
+   * Currently only the
+   *  default playbook with id
+   *  "00000000-0000-0000-0000-000000000000" is allowed.
+   * </pre>
+   *
+   * <code>string start_playbook = 39 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for startPlaybook.
+   */
+  com.google.protobuf.ByteString getStartPlaybookBytes();
 
   /**
    *
@@ -397,7 +478,7 @@ public interface AgentOrBuilder
    * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.Agent.enable_stackdriver_logging is deprecated. See
-   *     google/cloud/dialogflow/cx/v3/agent.proto;l=368
+   *     google/cloud/dialogflow/cx/v3/agent.proto;l=385
    * @return The enableStackdriverLogging.
    */
   @java.lang.Deprecated
@@ -810,4 +891,6 @@ public interface AgentOrBuilder
    * @return The satisfiesPzi.
    */
   boolean getSatisfiesPzi();
+
+  com.google.cloud.dialogflow.cx.v3.Agent.SessionEntryResourceCase getSessionEntryResourceCase();
 }

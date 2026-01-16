@@ -83,11 +83,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Both flow and playbook versions are supported.
+     * Required. Flow, playbook and tool versions are supported.
      * Format for flow version:
      * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;.
      * Format for playbook version:
      * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/versions/&lt;VersionID&gt;.
+     * Format for tool version:
+     * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;/versions/&lt;VersionID&gt;.
      * </pre>
      *
      * <code>
@@ -102,11 +104,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Both flow and playbook versions are supported.
+     * Required. Flow, playbook and tool versions are supported.
      * Format for flow version:
      * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;.
      * Format for playbook version:
      * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/versions/&lt;VersionID&gt;.
+     * Format for tool version:
+     * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;/versions/&lt;VersionID&gt;.
      * </pre>
      *
      * <code>
@@ -172,11 +176,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Both flow and playbook versions are supported.
+     * Required. Flow, playbook and tool versions are supported.
      * Format for flow version:
      * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;.
      * Format for playbook version:
      * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/versions/&lt;VersionID&gt;.
+     * Format for tool version:
+     * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;/versions/&lt;VersionID&gt;.
      * </pre>
      *
      * <code>
@@ -202,11 +208,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Both flow and playbook versions are supported.
+     * Required. Flow, playbook and tool versions are supported.
      * Format for flow version:
      * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;.
      * Format for playbook version:
      * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/versions/&lt;VersionID&gt;.
+     * Format for tool version:
+     * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;/versions/&lt;VersionID&gt;.
      * </pre>
      *
      * <code>
@@ -585,11 +593,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Both flow and playbook versions are supported.
+       * Required. Flow, playbook and tool versions are supported.
        * Format for flow version:
        * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;.
        * Format for playbook version:
        * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/versions/&lt;VersionID&gt;.
+       * Format for tool version:
+       * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;/versions/&lt;VersionID&gt;.
        * </pre>
        *
        * <code>
@@ -614,11 +624,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Both flow and playbook versions are supported.
+       * Required. Flow, playbook and tool versions are supported.
        * Format for flow version:
        * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;.
        * Format for playbook version:
        * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/versions/&lt;VersionID&gt;.
+       * Format for tool version:
+       * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;/versions/&lt;VersionID&gt;.
        * </pre>
        *
        * <code>
@@ -643,11 +655,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Both flow and playbook versions are supported.
+       * Required. Flow, playbook and tool versions are supported.
        * Format for flow version:
        * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;.
        * Format for playbook version:
        * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/versions/&lt;VersionID&gt;.
+       * Format for tool version:
+       * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;/versions/&lt;VersionID&gt;.
        * </pre>
        *
        * <code>
@@ -671,11 +685,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Both flow and playbook versions are supported.
+       * Required. Flow, playbook and tool versions are supported.
        * Format for flow version:
        * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;.
        * Format for playbook version:
        * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/versions/&lt;VersionID&gt;.
+       * Format for tool version:
+       * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;/versions/&lt;VersionID&gt;.
        * </pre>
        *
        * <code>
@@ -695,11 +711,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Both flow and playbook versions are supported.
+       * Required. Flow, playbook and tool versions are supported.
        * Format for flow version:
        * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;.
        * Format for playbook version:
        * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/versions/&lt;VersionID&gt;.
+       * Format for tool version:
+       * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;/versions/&lt;VersionID&gt;.
        * </pre>
        *
        * <code>

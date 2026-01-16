@@ -587,6 +587,43 @@ public interface ContainerOrBuilder
    *
    *
    * <pre>
+   * Readiness probe to be used for health checks.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.Probe readiness_probe = 14;</code>
+   *
+   * @return Whether the readinessProbe field is set.
+   */
+  boolean hasReadinessProbe();
+
+  /**
+   *
+   *
+   * <pre>
+   * Readiness probe to be used for health checks.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.Probe readiness_probe = 14;</code>
+   *
+   * @return The readinessProbe.
+   */
+  com.google.cloud.run.v2.Probe getReadinessProbe();
+
+  /**
+   *
+   *
+   * <pre>
+   * Readiness probe to be used for health checks.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.Probe readiness_probe = 14;</code>
+   */
+  com.google.cloud.run.v2.ProbeOrBuilder getReadinessProbeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Names of the containers that must start before this container.
    * </pre>
    *

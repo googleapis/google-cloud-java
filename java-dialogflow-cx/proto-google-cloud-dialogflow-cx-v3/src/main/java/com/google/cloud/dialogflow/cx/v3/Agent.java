@@ -59,7 +59,6 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     timeZone_ = "";
     description_ = "";
     avatarUri_ = "";
-    startFlow_ = "";
     securitySettings_ = "";
   }
 
@@ -6056,6 +6055,56 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int bitField0_;
+  private int sessionEntryResourceCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object sessionEntryResource_;
+
+  public enum SessionEntryResourceCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    START_FLOW(16),
+    START_PLAYBOOK(39),
+    SESSIONENTRYRESOURCE_NOT_SET(0);
+    private final int value;
+
+    private SessionEntryResourceCase(int value) {
+      this.value = value;
+    }
+
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SessionEntryResourceCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static SessionEntryResourceCase forNumber(int value) {
+      switch (value) {
+        case 16:
+          return START_FLOW;
+        case 39:
+          return START_PLAYBOOK;
+        case 0:
+          return SESSIONENTRYRESOURCE_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public SessionEntryResourceCase getSessionEntryResourceCase() {
+    return SessionEntryResourceCase.forNumber(sessionEntryResourceCase_);
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -6542,34 +6591,57 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_FLOW_FIELD_NUMBER = 16;
 
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object startFlow_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Name of the start flow in this agent. A start flow will be automatically
+   * created when the agent is created, and can only be deleted by deleting
+   * the agent.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
+   * Currently only the default start flow with id
+   * "00000000-0000-0000-0000-000000000000" is allowed.
+   * </pre>
+   *
+   * <code>string start_flow = 16 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return Whether the startFlow field is set.
+   */
+  public boolean hasStartFlow() {
+    return sessionEntryResourceCase_ == 16;
+  }
 
   /**
    *
    *
    * <pre>
-   * Immutable. Name of the start flow in this agent. A start flow will be
-   * automatically created when the agent is created, and can only be deleted by
-   * deleting the agent. Format:
+   * Name of the start flow in this agent. A start flow will be automatically
+   * created when the agent is created, and can only be deleted by deleting
+   * the agent.
+   * Format:
    * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
+   * Currently only the default start flow with id
+   * "00000000-0000-0000-0000-000000000000" is allowed.
    * </pre>
    *
-   * <code>
-   * string start_flow = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string start_flow = 16 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The startFlow.
    */
-  @java.lang.Override
   public java.lang.String getStartFlow() {
-    java.lang.Object ref = startFlow_;
+    java.lang.Object ref = "";
+    if (sessionEntryResourceCase_ == 16) {
+      ref = sessionEntryResource_;
+    }
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      startFlow_ = s;
+      if (sessionEntryResourceCase_ == 16) {
+        sessionEntryResource_ = s;
+      }
       return s;
     }
   }
@@ -6578,25 +6650,124 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. Name of the start flow in this agent. A start flow will be
-   * automatically created when the agent is created, and can only be deleted by
-   * deleting the agent. Format:
+   * Name of the start flow in this agent. A start flow will be automatically
+   * created when the agent is created, and can only be deleted by deleting
+   * the agent.
+   * Format:
    * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
+   * Currently only the default start flow with id
+   * "00000000-0000-0000-0000-000000000000" is allowed.
    * </pre>
    *
-   * <code>
-   * string start_flow = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string start_flow = 16 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for startFlow.
    */
-  @java.lang.Override
   public com.google.protobuf.ByteString getStartFlowBytes() {
-    java.lang.Object ref = startFlow_;
+    java.lang.Object ref = "";
+    if (sessionEntryResourceCase_ == 16) {
+      ref = sessionEntryResource_;
+    }
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      startFlow_ = b;
+      if (sessionEntryResourceCase_ == 16) {
+        sessionEntryResource_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int START_PLAYBOOK_FIELD_NUMBER = 39;
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the start playbook in this agent. A start playbook will be
+   * automatically created when the agent is created, and can only be deleted
+   * by deleting the agent.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
+   * Currently only the
+   *  default playbook with id
+   *  "00000000-0000-0000-0000-000000000000" is allowed.
+   * </pre>
+   *
+   * <code>string start_playbook = 39 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return Whether the startPlaybook field is set.
+   */
+  public boolean hasStartPlaybook() {
+    return sessionEntryResourceCase_ == 39;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the start playbook in this agent. A start playbook will be
+   * automatically created when the agent is created, and can only be deleted
+   * by deleting the agent.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
+   * Currently only the
+   *  default playbook with id
+   *  "00000000-0000-0000-0000-000000000000" is allowed.
+   * </pre>
+   *
+   * <code>string start_playbook = 39 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The startPlaybook.
+   */
+  public java.lang.String getStartPlaybook() {
+    java.lang.Object ref = "";
+    if (sessionEntryResourceCase_ == 39) {
+      ref = sessionEntryResource_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (sessionEntryResourceCase_ == 39) {
+        sessionEntryResource_ = s;
+      }
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the start playbook in this agent. A start playbook will be
+   * automatically created when the agent is created, and can only be deleted
+   * by deleting the agent.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
+   * Currently only the
+   *  default playbook with id
+   *  "00000000-0000-0000-0000-000000000000" is allowed.
+   * </pre>
+   *
+   * <code>string start_playbook = 39 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for startPlaybook.
+   */
+  public com.google.protobuf.ByteString getStartPlaybookBytes() {
+    java.lang.Object ref = "";
+    if (sessionEntryResourceCase_ == 39) {
+      ref = sessionEntryResource_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (sessionEntryResourceCase_ == 39) {
+        sessionEntryResource_ = b;
+      }
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -6678,7 +6849,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.Agent.enable_stackdriver_logging is deprecated. See
-   *     google/cloud/dialogflow/cx/v3/agent.proto;l=368
+   *     google/cloud/dialogflow/cx/v3/agent.proto;l=385
    * @return The enableStackdriverLogging.
    */
   @java.lang.Override
@@ -7288,8 +7459,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(13, getSpeechToTextSettings());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(startFlow_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, startFlow_);
+    if (sessionEntryResourceCase_ == 16) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, sessionEntryResource_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(securitySettings_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 17, securitySettings_);
@@ -7317,6 +7488,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(38, getAnswerFeedbackSettings());
+    }
+    if (sessionEntryResourceCase_ == 39) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 39, sessionEntryResource_);
     }
     if (enableMultiLanguageTraining_ != false) {
       output.writeBool(40, enableMultiLanguageTraining_);
@@ -7372,8 +7546,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(13, getSpeechToTextSettings());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(startFlow_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, startFlow_);
+    if (sessionEntryResourceCase_ == 16) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, sessionEntryResource_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(securitySettings_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, securitySettings_);
@@ -7405,6 +7579,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000020) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(38, getAnswerFeedbackSettings());
+    }
+    if (sessionEntryResourceCase_ == 39) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(39, sessionEntryResource_);
     }
     if (enableMultiLanguageTraining_ != false) {
       size +=
@@ -7453,7 +7630,6 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     if (hasSpeechToTextSettings()) {
       if (!getSpeechToTextSettings().equals(other.getSpeechToTextSettings())) return false;
     }
-    if (!getStartFlow().equals(other.getStartFlow())) return false;
     if (!getSecuritySettings().equals(other.getSecuritySettings())) return false;
     if (getEnableStackdriverLogging() != other.getEnableStackdriverLogging()) return false;
     if (getEnableSpellCorrection() != other.getEnableSpellCorrection()) return false;
@@ -7496,6 +7672,17 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     if (hasSatisfiesPzi()) {
       if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
     }
+    if (!getSessionEntryResourceCase().equals(other.getSessionEntryResourceCase())) return false;
+    switch (sessionEntryResourceCase_) {
+      case 16:
+        if (!getStartFlow().equals(other.getStartFlow())) return false;
+        break;
+      case 39:
+        if (!getStartPlaybook().equals(other.getStartPlaybook())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -7527,8 +7714,6 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SPEECH_TO_TEXT_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getSpeechToTextSettings().hashCode();
     }
-    hash = (37 * hash) + START_FLOW_FIELD_NUMBER;
-    hash = (53 * hash) + getStartFlow().hashCode();
     hash = (37 * hash) + SECURITY_SETTINGS_FIELD_NUMBER;
     hash = (53 * hash) + getSecuritySettings().hashCode();
     hash = (37 * hash) + ENABLE_STACKDRIVER_LOGGING_FIELD_NUMBER;
@@ -7574,6 +7759,18 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     if (hasSatisfiesPzi()) {
       hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
+    }
+    switch (sessionEntryResourceCase_) {
+      case 16:
+        hash = (37 * hash) + START_FLOW_FIELD_NUMBER;
+        hash = (53 * hash) + getStartFlow().hashCode();
+        break;
+      case 39:
+        hash = (37 * hash) + START_PLAYBOOK_FIELD_NUMBER;
+        hash = (53 * hash) + getStartPlaybook().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -7755,7 +7952,6 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         speechToTextSettingsBuilder_.dispose();
         speechToTextSettingsBuilder_ = null;
       }
-      startFlow_ = "";
       securitySettings_ = "";
       enableStackdriverLogging_ = false;
       enableSpellCorrection_ = false;
@@ -7798,6 +7994,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       }
       satisfiesPzs_ = false;
       satisfiesPzi_ = false;
+      sessionEntryResourceCase_ = 0;
+      sessionEntryResource_ = null;
       return this;
     }
 
@@ -7828,6 +8026,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
@@ -7864,80 +8063,82 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
                 : speechToTextSettingsBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.startFlow_ = startFlow_;
-      }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.securitySettings_ = securitySettings_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.enableStackdriverLogging_ = enableStackdriverLogging_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.enableSpellCorrection_ = enableSpellCorrection_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.enableMultiLanguageTraining_ = enableMultiLanguageTraining_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.locked_ = locked_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.advancedSettings_ =
             advancedSettingsBuilder_ == null ? advancedSettings_ : advancedSettingsBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.gitIntegrationSettings_ =
             gitIntegrationSettingsBuilder_ == null
                 ? gitIntegrationSettings_
                 : gitIntegrationSettingsBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.textToSpeechSettings_ =
             textToSpeechSettingsBuilder_ == null
                 ? textToSpeechSettings_
                 : textToSpeechSettingsBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.genAppBuilderSettings_ =
             genAppBuilderSettingsBuilder_ == null
                 ? genAppBuilderSettings_
                 : genAppBuilderSettingsBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.answerFeedbackSettings_ =
             answerFeedbackSettingsBuilder_ == null
                 ? answerFeedbackSettings_
                 : answerFeedbackSettingsBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.personalizationSettings_ =
             personalizationSettingsBuilder_ == null
                 ? personalizationSettings_
                 : personalizationSettingsBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.clientCertificateSettings_ =
             clientCertificateSettingsBuilder_ == null
                 ? clientCertificateSettings_
                 : clientCertificateSettingsBuilder_.build();
         to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x00200000) != 0)) {
+      if (((from_bitField0_ & 0x00400000) != 0)) {
         result.satisfiesPzs_ = satisfiesPzs_;
         to_bitField0_ |= 0x00000100;
       }
-      if (((from_bitField0_ & 0x00400000) != 0)) {
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         result.satisfiesPzi_ = satisfiesPzi_;
         to_bitField0_ |= 0x00000200;
       }
       result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dialogflow.cx.v3.Agent result) {
+      result.sessionEntryResourceCase_ = sessionEntryResourceCase_;
+      result.sessionEntryResource_ = this.sessionEntryResource_;
     }
 
     @java.lang.Override
@@ -8028,14 +8229,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       if (other.hasSpeechToTextSettings()) {
         mergeSpeechToTextSettings(other.getSpeechToTextSettings());
       }
-      if (!other.getStartFlow().isEmpty()) {
-        startFlow_ = other.startFlow_;
-        bitField0_ |= 0x00000100;
-        onChanged();
-      }
       if (!other.getSecuritySettings().isEmpty()) {
         securitySettings_ = other.securitySettings_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.getEnableStackdriverLogging() != false) {
@@ -8076,6 +8272,26 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSatisfiesPzi()) {
         setSatisfiesPzi(other.getSatisfiesPzi());
+      }
+      switch (other.getSessionEntryResourceCase()) {
+        case START_FLOW:
+          {
+            sessionEntryResourceCase_ = 16;
+            sessionEntryResource_ = other.sessionEntryResource_;
+            onChanged();
+            break;
+          }
+        case START_PLAYBOOK:
+          {
+            sessionEntryResourceCase_ = 39;
+            sessionEntryResource_ = other.sessionEntryResource_;
+            onChanged();
+            break;
+          }
+        case SESSIONENTRYRESOURCE_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -8155,99 +8371,107 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
               } // case 106
             case 130:
               {
-                startFlow_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                java.lang.String s = input.readStringRequireUtf8();
+                sessionEntryResourceCase_ = 16;
+                sessionEntryResource_ = s;
                 break;
               } // case 130
             case 138:
               {
                 securitySettings_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 138
             case 144:
               {
                 enableStackdriverLogging_ = input.readBool();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 144
             case 160:
               {
                 enableSpellCorrection_ = input.readBool();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 160
             case 178:
               {
                 input.readMessage(
                     getAdvancedSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 178
             case 216:
               {
                 locked_ = input.readBool();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 216
             case 242:
               {
                 input.readMessage(
                     getGitIntegrationSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 242
             case 250:
               {
                 input.readMessage(
                     getTextToSpeechSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 250
             case 266:
               {
                 input.readMessage(
                     getGenAppBuilderSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 266
             case 306:
               {
                 input.readMessage(
                     getAnswerFeedbackSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 306
+            case 314:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                sessionEntryResourceCase_ = 39;
+                sessionEntryResource_ = s;
+                break;
+              } // case 314
             case 320:
               {
                 enableMultiLanguageTraining_ = input.readBool();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 320
             case 338:
               {
                 input.readMessage(
                     getPersonalizationSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 338
             case 346:
               {
                 input.readMessage(
                     getClientCertificateSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 346
             case 360:
               {
                 satisfiesPzs_ = input.readBool();
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 360
             case 368:
               {
                 satisfiesPzi_ = input.readBool();
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 368
             default:
@@ -8264,6 +8488,20 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       } finally {
         onChanged();
       } // finally
+      return this;
+    }
+
+    private int sessionEntryResourceCase_ = 0;
+    private java.lang.Object sessionEntryResource_;
+
+    public SessionEntryResourceCase getSessionEntryResourceCase() {
+      return SessionEntryResourceCase.forNumber(sessionEntryResourceCase_);
+    }
+
+    public Builder clearSessionEntryResource() {
+      sessionEntryResourceCase_ = 0;
+      sessionEntryResource_ = null;
+      onChanged();
       return this;
     }
 
@@ -9437,30 +9675,57 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       return speechToTextSettingsBuilder_;
     }
 
-    private java.lang.Object startFlow_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the start flow in this agent. A start flow will be automatically
+     * created when the agent is created, and can only be deleted by deleting
+     * the agent.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
+     * Currently only the default start flow with id
+     * "00000000-0000-0000-0000-000000000000" is allowed.
+     * </pre>
+     *
+     * <code>string start_flow = 16 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return Whether the startFlow field is set.
+     */
+    @java.lang.Override
+    public boolean hasStartFlow() {
+      return sessionEntryResourceCase_ == 16;
+    }
 
     /**
      *
      *
      * <pre>
-     * Immutable. Name of the start flow in this agent. A start flow will be
-     * automatically created when the agent is created, and can only be deleted by
-     * deleting the agent. Format:
+     * Name of the start flow in this agent. A start flow will be automatically
+     * created when the agent is created, and can only be deleted by deleting
+     * the agent.
+     * Format:
      * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
+     * Currently only the default start flow with id
+     * "00000000-0000-0000-0000-000000000000" is allowed.
      * </pre>
      *
-     * <code>
-     * string start_flow = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string start_flow = 16 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The startFlow.
      */
+    @java.lang.Override
     public java.lang.String getStartFlow() {
-      java.lang.Object ref = startFlow_;
+      java.lang.Object ref = "";
+      if (sessionEntryResourceCase_ == 16) {
+        ref = sessionEntryResource_;
+      }
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        startFlow_ = s;
+        if (sessionEntryResourceCase_ == 16) {
+          sessionEntryResource_ = s;
+        }
         return s;
       } else {
         return (java.lang.String) ref;
@@ -9471,24 +9736,31 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Name of the start flow in this agent. A start flow will be
-     * automatically created when the agent is created, and can only be deleted by
-     * deleting the agent. Format:
+     * Name of the start flow in this agent. A start flow will be automatically
+     * created when the agent is created, and can only be deleted by deleting
+     * the agent.
+     * Format:
      * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
+     * Currently only the default start flow with id
+     * "00000000-0000-0000-0000-000000000000" is allowed.
      * </pre>
      *
-     * <code>
-     * string start_flow = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string start_flow = 16 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for startFlow.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getStartFlowBytes() {
-      java.lang.Object ref = startFlow_;
+      java.lang.Object ref = "";
+      if (sessionEntryResourceCase_ == 16) {
+        ref = sessionEntryResource_;
+      }
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        startFlow_ = b;
+        if (sessionEntryResourceCase_ == 16) {
+          sessionEntryResource_ = b;
+        }
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -9499,15 +9771,16 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Name of the start flow in this agent. A start flow will be
-     * automatically created when the agent is created, and can only be deleted by
-     * deleting the agent. Format:
+     * Name of the start flow in this agent. A start flow will be automatically
+     * created when the agent is created, and can only be deleted by deleting
+     * the agent.
+     * Format:
      * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
+     * Currently only the default start flow with id
+     * "00000000-0000-0000-0000-000000000000" is allowed.
      * </pre>
      *
-     * <code>
-     * string start_flow = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string start_flow = 16 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The startFlow to set.
      * @return This builder for chaining.
@@ -9516,8 +9789,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      startFlow_ = value;
-      bitField0_ |= 0x00000100;
+      sessionEntryResourceCase_ = 16;
+      sessionEntryResource_ = value;
       onChanged();
       return this;
     }
@@ -9526,22 +9799,25 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Name of the start flow in this agent. A start flow will be
-     * automatically created when the agent is created, and can only be deleted by
-     * deleting the agent. Format:
+     * Name of the start flow in this agent. A start flow will be automatically
+     * created when the agent is created, and can only be deleted by deleting
+     * the agent.
+     * Format:
      * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
+     * Currently only the default start flow with id
+     * "00000000-0000-0000-0000-000000000000" is allowed.
      * </pre>
      *
-     * <code>
-     * string start_flow = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string start_flow = 16 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearStartFlow() {
-      startFlow_ = getDefaultInstance().getStartFlow();
-      bitField0_ = (bitField0_ & ~0x00000100);
-      onChanged();
+      if (sessionEntryResourceCase_ == 16) {
+        sessionEntryResourceCase_ = 0;
+        sessionEntryResource_ = null;
+        onChanged();
+      }
       return this;
     }
 
@@ -9549,15 +9825,16 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Name of the start flow in this agent. A start flow will be
-     * automatically created when the agent is created, and can only be deleted by
-     * deleting the agent. Format:
+     * Name of the start flow in this agent. A start flow will be automatically
+     * created when the agent is created, and can only be deleted by deleting
+     * the agent.
+     * Format:
      * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
+     * Currently only the default start flow with id
+     * "00000000-0000-0000-0000-000000000000" is allowed.
      * </pre>
      *
-     * <code>
-     * string start_flow = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string start_flow = 16 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for startFlow to set.
      * @return This builder for chaining.
@@ -9567,8 +9844,189 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      startFlow_ = value;
-      bitField0_ |= 0x00000100;
+      sessionEntryResourceCase_ = 16;
+      sessionEntryResource_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Name of the start playbook in this agent. A start playbook will be
+     * automatically created when the agent is created, and can only be deleted
+     * by deleting the agent.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
+     * Currently only the
+     *  default playbook with id
+     *  "00000000-0000-0000-0000-000000000000" is allowed.
+     * </pre>
+     *
+     * <code>string start_playbook = 39 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return Whether the startPlaybook field is set.
+     */
+    @java.lang.Override
+    public boolean hasStartPlaybook() {
+      return sessionEntryResourceCase_ == 39;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Name of the start playbook in this agent. A start playbook will be
+     * automatically created when the agent is created, and can only be deleted
+     * by deleting the agent.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
+     * Currently only the
+     *  default playbook with id
+     *  "00000000-0000-0000-0000-000000000000" is allowed.
+     * </pre>
+     *
+     * <code>string start_playbook = 39 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The startPlaybook.
+     */
+    @java.lang.Override
+    public java.lang.String getStartPlaybook() {
+      java.lang.Object ref = "";
+      if (sessionEntryResourceCase_ == 39) {
+        ref = sessionEntryResource_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (sessionEntryResourceCase_ == 39) {
+          sessionEntryResource_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Name of the start playbook in this agent. A start playbook will be
+     * automatically created when the agent is created, and can only be deleted
+     * by deleting the agent.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
+     * Currently only the
+     *  default playbook with id
+     *  "00000000-0000-0000-0000-000000000000" is allowed.
+     * </pre>
+     *
+     * <code>string start_playbook = 39 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for startPlaybook.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getStartPlaybookBytes() {
+      java.lang.Object ref = "";
+      if (sessionEntryResourceCase_ == 39) {
+        ref = sessionEntryResource_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (sessionEntryResourceCase_ == 39) {
+          sessionEntryResource_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Name of the start playbook in this agent. A start playbook will be
+     * automatically created when the agent is created, and can only be deleted
+     * by deleting the agent.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
+     * Currently only the
+     *  default playbook with id
+     *  "00000000-0000-0000-0000-000000000000" is allowed.
+     * </pre>
+     *
+     * <code>string start_playbook = 39 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The startPlaybook to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStartPlaybook(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      sessionEntryResourceCase_ = 39;
+      sessionEntryResource_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Name of the start playbook in this agent. A start playbook will be
+     * automatically created when the agent is created, and can only be deleted
+     * by deleting the agent.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
+     * Currently only the
+     *  default playbook with id
+     *  "00000000-0000-0000-0000-000000000000" is allowed.
+     * </pre>
+     *
+     * <code>string start_playbook = 39 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStartPlaybook() {
+      if (sessionEntryResourceCase_ == 39) {
+        sessionEntryResourceCase_ = 0;
+        sessionEntryResource_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Name of the start playbook in this agent. A start playbook will be
+     * automatically created when the agent is created, and can only be deleted
+     * by deleting the agent.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
+     * Currently only the
+     *  default playbook with id
+     *  "00000000-0000-0000-0000-000000000000" is allowed.
+     * </pre>
+     *
+     * <code>string start_playbook = 39 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for startPlaybook to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStartPlaybookBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      sessionEntryResourceCase_ = 39;
+      sessionEntryResource_ = value;
       onChanged();
       return this;
     }
@@ -9647,7 +10105,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       securitySettings_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -9668,7 +10126,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSecuritySettings() {
       securitySettings_ = getDefaultInstance().getSecuritySettings();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -9694,7 +10152,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       securitySettings_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -9714,7 +10172,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.Agent.enable_stackdriver_logging is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/agent.proto;l=368
+     *     google/cloud/dialogflow/cx/v3/agent.proto;l=385
      * @return The enableStackdriverLogging.
      */
     @java.lang.Override
@@ -9736,7 +10194,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.Agent.enable_stackdriver_logging is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/agent.proto;l=368
+     *     google/cloud/dialogflow/cx/v3/agent.proto;l=385
      * @param value The enableStackdriverLogging to set.
      * @return This builder for chaining.
      */
@@ -9744,7 +10202,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableStackdriverLogging(boolean value) {
 
       enableStackdriverLogging_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -9762,12 +10220,12 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.Agent.enable_stackdriver_logging is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/agent.proto;l=368
+     *     google/cloud/dialogflow/cx/v3/agent.proto;l=385
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearEnableStackdriverLogging() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       enableStackdriverLogging_ = false;
       onChanged();
       return this;
@@ -9808,7 +10266,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableSpellCorrection(boolean value) {
 
       enableSpellCorrection_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -9826,7 +10284,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableSpellCorrection() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       enableSpellCorrection_ = false;
       onChanged();
       return this;
@@ -9869,7 +10327,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableMultiLanguageTraining(boolean value) {
 
       enableMultiLanguageTraining_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -9888,7 +10346,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableMultiLanguageTraining() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       enableMultiLanguageTraining_ = false;
       onChanged();
       return this;
@@ -9929,7 +10387,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     public Builder setLocked(boolean value) {
 
       locked_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -9947,7 +10405,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLocked() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       locked_ = false;
       onChanged();
       return this;
@@ -9973,7 +10431,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the advancedSettings field is set.
      */
     public boolean hasAdvancedSettings() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -10017,7 +10475,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       } else {
         advancedSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -10039,7 +10497,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       } else {
         advancedSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -10056,7 +10514,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeAdvancedSettings(com.google.cloud.dialogflow.cx.v3.AdvancedSettings value) {
       if (advancedSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && advancedSettings_ != null
             && advancedSettings_
                 != com.google.cloud.dialogflow.cx.v3.AdvancedSettings.getDefaultInstance()) {
@@ -10068,7 +10526,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         advancedSettingsBuilder_.mergeFrom(value);
       }
       if (advancedSettings_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -10085,7 +10543,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 22;</code>
      */
     public Builder clearAdvancedSettings() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       advancedSettings_ = null;
       if (advancedSettingsBuilder_ != null) {
         advancedSettingsBuilder_.dispose();
@@ -10106,7 +10564,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 22;</code>
      */
     public com.google.cloud.dialogflow.cx.v3.AdvancedSettings.Builder getAdvancedSettingsBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return getAdvancedSettingsFieldBuilder().getBuilder();
     }
@@ -10180,7 +10638,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the gitIntegrationSettings field is set.
      */
     public boolean hasGitIntegrationSettings() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -10228,7 +10686,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       } else {
         gitIntegrationSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -10251,7 +10709,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       } else {
         gitIntegrationSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -10270,7 +10728,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeGitIntegrationSettings(
         com.google.cloud.dialogflow.cx.v3.Agent.GitIntegrationSettings value) {
       if (gitIntegrationSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && gitIntegrationSettings_ != null
             && gitIntegrationSettings_
                 != com.google.cloud.dialogflow.cx.v3.Agent.GitIntegrationSettings
@@ -10283,7 +10741,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         gitIntegrationSettingsBuilder_.mergeFrom(value);
       }
       if (gitIntegrationSettings_ != null) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -10301,7 +10759,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearGitIntegrationSettings() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       gitIntegrationSettings_ = null;
       if (gitIntegrationSettingsBuilder_ != null) {
         gitIntegrationSettingsBuilder_.dispose();
@@ -10324,7 +10782,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.cx.v3.Agent.GitIntegrationSettings.Builder
         getGitIntegrationSettingsBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return getGitIntegrationSettingsFieldBuilder().getBuilder();
     }
@@ -10400,7 +10858,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the textToSpeechSettings field is set.
      */
     public boolean hasTextToSpeechSettings() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -10447,7 +10905,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       } else {
         textToSpeechSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -10470,7 +10928,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       } else {
         textToSpeechSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -10489,7 +10947,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeTextToSpeechSettings(
         com.google.cloud.dialogflow.cx.v3.TextToSpeechSettings value) {
       if (textToSpeechSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00020000) != 0)
             && textToSpeechSettings_ != null
             && textToSpeechSettings_
                 != com.google.cloud.dialogflow.cx.v3.TextToSpeechSettings.getDefaultInstance()) {
@@ -10501,7 +10959,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         textToSpeechSettingsBuilder_.mergeFrom(value);
       }
       if (textToSpeechSettings_ != null) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       return this;
@@ -10519,7 +10977,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearTextToSpeechSettings() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       textToSpeechSettings_ = null;
       if (textToSpeechSettingsBuilder_ != null) {
         textToSpeechSettingsBuilder_.dispose();
@@ -10542,7 +11000,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.cx.v3.TextToSpeechSettings.Builder
         getTextToSpeechSettingsBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return getTextToSpeechSettingsFieldBuilder().getBuilder();
     }
@@ -10618,7 +11076,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the genAppBuilderSettings field is set.
      */
     public boolean hasGenAppBuilderSettings() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -10666,7 +11124,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       } else {
         genAppBuilderSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -10689,7 +11147,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       } else {
         genAppBuilderSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -10708,7 +11166,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeGenAppBuilderSettings(
         com.google.cloud.dialogflow.cx.v3.Agent.GenAppBuilderSettings value) {
       if (genAppBuilderSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)
+        if (((bitField0_ & 0x00040000) != 0)
             && genAppBuilderSettings_ != null
             && genAppBuilderSettings_
                 != com.google.cloud.dialogflow.cx.v3.Agent.GenAppBuilderSettings
@@ -10721,7 +11179,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         genAppBuilderSettingsBuilder_.mergeFrom(value);
       }
       if (genAppBuilderSettings_ != null) {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       return this;
@@ -10739,7 +11197,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearGenAppBuilderSettings() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       genAppBuilderSettings_ = null;
       if (genAppBuilderSettingsBuilder_ != null) {
         genAppBuilderSettingsBuilder_.dispose();
@@ -10762,7 +11220,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.cx.v3.Agent.GenAppBuilderSettings.Builder
         getGenAppBuilderSettingsBuilder() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return getGenAppBuilderSettingsFieldBuilder().getBuilder();
     }
@@ -10838,7 +11296,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the answerFeedbackSettings field is set.
      */
     public boolean hasAnswerFeedbackSettings() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -10886,7 +11344,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       } else {
         answerFeedbackSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -10909,7 +11367,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       } else {
         answerFeedbackSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -10928,7 +11386,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeAnswerFeedbackSettings(
         com.google.cloud.dialogflow.cx.v3.Agent.AnswerFeedbackSettings value) {
       if (answerFeedbackSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && answerFeedbackSettings_ != null
             && answerFeedbackSettings_
                 != com.google.cloud.dialogflow.cx.v3.Agent.AnswerFeedbackSettings
@@ -10941,7 +11399,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         answerFeedbackSettingsBuilder_.mergeFrom(value);
       }
       if (answerFeedbackSettings_ != null) {
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       return this;
@@ -10959,7 +11417,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearAnswerFeedbackSettings() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       answerFeedbackSettings_ = null;
       if (answerFeedbackSettingsBuilder_ != null) {
         answerFeedbackSettingsBuilder_.dispose();
@@ -10982,7 +11440,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.cx.v3.Agent.AnswerFeedbackSettings.Builder
         getAnswerFeedbackSettingsBuilder() {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return getAnswerFeedbackSettingsFieldBuilder().getBuilder();
     }
@@ -11059,7 +11517,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the personalizationSettings field is set.
      */
     public boolean hasPersonalizationSettings() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -11107,7 +11565,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       } else {
         personalizationSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -11130,7 +11588,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       } else {
         personalizationSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -11149,7 +11607,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     public Builder mergePersonalizationSettings(
         com.google.cloud.dialogflow.cx.v3.Agent.PersonalizationSettings value) {
       if (personalizationSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)
+        if (((bitField0_ & 0x00100000) != 0)
             && personalizationSettings_ != null
             && personalizationSettings_
                 != com.google.cloud.dialogflow.cx.v3.Agent.PersonalizationSettings
@@ -11162,7 +11620,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         personalizationSettingsBuilder_.mergeFrom(value);
       }
       if (personalizationSettings_ != null) {
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       return this;
@@ -11180,7 +11638,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPersonalizationSettings() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       personalizationSettings_ = null;
       if (personalizationSettingsBuilder_ != null) {
         personalizationSettingsBuilder_.dispose();
@@ -11203,7 +11661,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.cx.v3.Agent.PersonalizationSettings.Builder
         getPersonalizationSettingsBuilder() {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return getPersonalizationSettingsFieldBuilder().getBuilder();
     }
@@ -11280,7 +11738,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the clientCertificateSettings field is set.
      */
     public boolean hasClientCertificateSettings() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
 
     /**
@@ -11328,7 +11786,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       } else {
         clientCertificateSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -11351,7 +11809,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       } else {
         clientCertificateSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -11370,7 +11828,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeClientCertificateSettings(
         com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings value) {
       if (clientCertificateSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00100000) != 0)
+        if (((bitField0_ & 0x00200000) != 0)
             && clientCertificateSettings_ != null
             && clientCertificateSettings_
                 != com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings
@@ -11383,7 +11841,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         clientCertificateSettingsBuilder_.mergeFrom(value);
       }
       if (clientCertificateSettings_ != null) {
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       return this;
@@ -11401,7 +11859,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearClientCertificateSettings() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       clientCertificateSettings_ = null;
       if (clientCertificateSettingsBuilder_ != null) {
         clientCertificateSettingsBuilder_.dispose();
@@ -11424,7 +11882,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings.Builder
         getClientCertificateSettingsBuilder() {
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return getClientCertificateSettingsFieldBuilder().getBuilder();
     }
@@ -11497,7 +11955,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasSatisfiesPzs() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
 
     /**
@@ -11537,7 +11995,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     public Builder setSatisfiesPzs(boolean value) {
 
       satisfiesPzs_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -11557,7 +12015,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzs() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       satisfiesPzs_ = false;
       onChanged();
       return this;
@@ -11581,7 +12039,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasSatisfiesPzi() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
 
     /**
@@ -11621,7 +12079,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     public Builder setSatisfiesPzi(boolean value) {
 
       satisfiesPzi_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -11641,7 +12099,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzi() {
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       satisfiesPzi_ = false;
       onChanged();
       return this;

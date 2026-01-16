@@ -2387,6 +2387,60 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     return placeholders_.get(index);
   }
 
+  public static final int LLM_MODEL_SETTINGS_FIELD_NUMBER = 9;
+  private com.google.cloud.dialogflow.cx.v3.LlmModelSettings llmModelSettings_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The LLM model settings.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.LlmModelSettings llm_model_settings = 9;</code>
+   *
+   * @return Whether the llmModelSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasLlmModelSettings() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The LLM model settings.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.LlmModelSettings llm_model_settings = 9;</code>
+   *
+   * @return The llmModelSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.LlmModelSettings getLlmModelSettings() {
+    return llmModelSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3.LlmModelSettings.getDefaultInstance()
+        : llmModelSettings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The LLM model settings.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.LlmModelSettings llm_model_settings = 9;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.LlmModelSettingsOrBuilder
+      getLlmModelSettingsOrBuilder() {
+    return llmModelSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3.LlmModelSettings.getDefaultInstance()
+        : llmModelSettings_;
+  }
+
   public static final int MODEL_PARAMETER_FIELD_NUMBER = 8;
   private com.google.cloud.dialogflow.cx.v3.Generator.ModelParameter modelParameter_;
 
@@ -2403,7 +2457,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasModelParameter() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -2467,8 +2521,11 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < placeholders_.size(); i++) {
       output.writeMessage(5, placeholders_.get(i));
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(8, getModelParameter());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(9, getLlmModelSettings());
     }
     getUnknownFields().writeTo(output);
   }
@@ -2491,8 +2548,11 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < placeholders_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, placeholders_.get(i));
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getModelParameter());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getLlmModelSettings());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2517,6 +2577,10 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       if (!getPromptText().equals(other.getPromptText())) return false;
     }
     if (!getPlaceholdersList().equals(other.getPlaceholdersList())) return false;
+    if (hasLlmModelSettings() != other.hasLlmModelSettings()) return false;
+    if (hasLlmModelSettings()) {
+      if (!getLlmModelSettings().equals(other.getLlmModelSettings())) return false;
+    }
     if (hasModelParameter() != other.hasModelParameter()) return false;
     if (hasModelParameter()) {
       if (!getModelParameter().equals(other.getModelParameter())) return false;
@@ -2543,6 +2607,10 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     if (getPlaceholdersCount() > 0) {
       hash = (37 * hash) + PLACEHOLDERS_FIELD_NUMBER;
       hash = (53 * hash) + getPlaceholdersList().hashCode();
+    }
+    if (hasLlmModelSettings()) {
+      hash = (37 * hash) + LLM_MODEL_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getLlmModelSettings().hashCode();
     }
     if (hasModelParameter()) {
       hash = (37 * hash) + MODEL_PARAMETER_FIELD_NUMBER;
@@ -2694,6 +2762,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getPromptTextFieldBuilder();
         getPlaceholdersFieldBuilder();
+        getLlmModelSettingsFieldBuilder();
         getModelParameterFieldBuilder();
       }
     }
@@ -2716,6 +2785,11 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
         placeholdersBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000008);
+      llmModelSettings_ = null;
+      if (llmModelSettingsBuilder_ != null) {
+        llmModelSettingsBuilder_.dispose();
+        llmModelSettingsBuilder_ = null;
+      }
       modelParameter_ = null;
       if (modelParameterBuilder_ != null) {
         modelParameterBuilder_.dispose();
@@ -2782,9 +2856,14 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.llmModelSettings_ =
+            llmModelSettingsBuilder_ == null ? llmModelSettings_ : llmModelSettingsBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.modelParameter_ =
             modelParameterBuilder_ == null ? modelParameter_ : modelParameterBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2874,6 +2953,9 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.hasLlmModelSettings()) {
+        mergeLlmModelSettings(other.getLlmModelSettings());
+      }
       if (other.hasModelParameter()) {
         mergeModelParameter(other.getModelParameter());
       }
@@ -2938,9 +3020,16 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
             case 66:
               {
                 input.readMessage(getModelParameterFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    getLlmModelSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3851,6 +3940,203 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       return placeholdersBuilder_;
     }
 
+    private com.google.cloud.dialogflow.cx.v3.LlmModelSettings llmModelSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.LlmModelSettings,
+            com.google.cloud.dialogflow.cx.v3.LlmModelSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3.LlmModelSettingsOrBuilder>
+        llmModelSettingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The LLM model settings.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.LlmModelSettings llm_model_settings = 9;</code>
+     *
+     * @return Whether the llmModelSettings field is set.
+     */
+    public boolean hasLlmModelSettings() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The LLM model settings.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.LlmModelSettings llm_model_settings = 9;</code>
+     *
+     * @return The llmModelSettings.
+     */
+    public com.google.cloud.dialogflow.cx.v3.LlmModelSettings getLlmModelSettings() {
+      if (llmModelSettingsBuilder_ == null) {
+        return llmModelSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3.LlmModelSettings.getDefaultInstance()
+            : llmModelSettings_;
+      } else {
+        return llmModelSettingsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The LLM model settings.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.LlmModelSettings llm_model_settings = 9;</code>
+     */
+    public Builder setLlmModelSettings(com.google.cloud.dialogflow.cx.v3.LlmModelSettings value) {
+      if (llmModelSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        llmModelSettings_ = value;
+      } else {
+        llmModelSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The LLM model settings.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.LlmModelSettings llm_model_settings = 9;</code>
+     */
+    public Builder setLlmModelSettings(
+        com.google.cloud.dialogflow.cx.v3.LlmModelSettings.Builder builderForValue) {
+      if (llmModelSettingsBuilder_ == null) {
+        llmModelSettings_ = builderForValue.build();
+      } else {
+        llmModelSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The LLM model settings.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.LlmModelSettings llm_model_settings = 9;</code>
+     */
+    public Builder mergeLlmModelSettings(com.google.cloud.dialogflow.cx.v3.LlmModelSettings value) {
+      if (llmModelSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && llmModelSettings_ != null
+            && llmModelSettings_
+                != com.google.cloud.dialogflow.cx.v3.LlmModelSettings.getDefaultInstance()) {
+          getLlmModelSettingsBuilder().mergeFrom(value);
+        } else {
+          llmModelSettings_ = value;
+        }
+      } else {
+        llmModelSettingsBuilder_.mergeFrom(value);
+      }
+      if (llmModelSettings_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The LLM model settings.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.LlmModelSettings llm_model_settings = 9;</code>
+     */
+    public Builder clearLlmModelSettings() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      llmModelSettings_ = null;
+      if (llmModelSettingsBuilder_ != null) {
+        llmModelSettingsBuilder_.dispose();
+        llmModelSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The LLM model settings.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.LlmModelSettings llm_model_settings = 9;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.LlmModelSettings.Builder getLlmModelSettingsBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getLlmModelSettingsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The LLM model settings.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.LlmModelSettings llm_model_settings = 9;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.LlmModelSettingsOrBuilder
+        getLlmModelSettingsOrBuilder() {
+      if (llmModelSettingsBuilder_ != null) {
+        return llmModelSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return llmModelSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3.LlmModelSettings.getDefaultInstance()
+            : llmModelSettings_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The LLM model settings.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.LlmModelSettings llm_model_settings = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.LlmModelSettings,
+            com.google.cloud.dialogflow.cx.v3.LlmModelSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3.LlmModelSettingsOrBuilder>
+        getLlmModelSettingsFieldBuilder() {
+      if (llmModelSettingsBuilder_ == null) {
+        llmModelSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3.LlmModelSettings,
+                com.google.cloud.dialogflow.cx.v3.LlmModelSettings.Builder,
+                com.google.cloud.dialogflow.cx.v3.LlmModelSettingsOrBuilder>(
+                getLlmModelSettings(), getParentForChildren(), isClean());
+        llmModelSettings_ = null;
+      }
+      return llmModelSettingsBuilder_;
+    }
+
     private com.google.cloud.dialogflow.cx.v3.Generator.ModelParameter modelParameter_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.cx.v3.Generator.ModelParameter,
@@ -3870,7 +4156,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the modelParameter field is set.
      */
     public boolean hasModelParameter() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -3913,7 +4199,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       } else {
         modelParameterBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3934,7 +4220,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       } else {
         modelParameterBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3951,7 +4237,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeModelParameter(
         com.google.cloud.dialogflow.cx.v3.Generator.ModelParameter value) {
       if (modelParameterBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && modelParameter_ != null
             && modelParameter_
                 != com.google.cloud.dialogflow.cx.v3.Generator.ModelParameter
@@ -3964,7 +4250,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
         modelParameterBuilder_.mergeFrom(value);
       }
       if (modelParameter_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -3980,7 +4266,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3.Generator.ModelParameter model_parameter = 8;</code>
      */
     public Builder clearModelParameter() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       modelParameter_ = null;
       if (modelParameterBuilder_ != null) {
         modelParameterBuilder_.dispose();
@@ -4001,7 +4287,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.cx.v3.Generator.ModelParameter.Builder
         getModelParameterBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getModelParameterFieldBuilder().getBuilder();
     }

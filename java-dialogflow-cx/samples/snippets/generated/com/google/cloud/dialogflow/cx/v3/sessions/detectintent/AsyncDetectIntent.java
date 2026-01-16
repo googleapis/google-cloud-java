@@ -20,6 +20,7 @@ package com.google.cloud.dialogflow.cx.v3.samples;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.dialogflow.cx.v3.DetectIntentRequest;
 import com.google.cloud.dialogflow.cx.v3.DetectIntentResponse;
+import com.google.cloud.dialogflow.cx.v3.DetectIntentResponseView;
 import com.google.cloud.dialogflow.cx.v3.OutputAudioConfig;
 import com.google.cloud.dialogflow.cx.v3.QueryInput;
 import com.google.cloud.dialogflow.cx.v3.QueryParameters;
@@ -48,6 +49,7 @@ public class AsyncDetectIntent {
               .setQueryParams(QueryParameters.newBuilder().build())
               .setQueryInput(QueryInput.newBuilder().build())
               .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
+              .setResponseView(DetectIntentResponseView.forNumber(0))
               .build();
       ApiFuture<DetectIntentResponse> future =
           sessionsClient.detectIntentCallable().futureCall(request);

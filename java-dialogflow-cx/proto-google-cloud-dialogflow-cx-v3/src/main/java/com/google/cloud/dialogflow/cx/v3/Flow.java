@@ -59,6 +59,8 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
     transitionRoutes_ = java.util.Collections.emptyList();
     eventHandlers_ = java.util.Collections.emptyList();
     transitionRouteGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    inputParameterDefinitions_ = java.util.Collections.emptyList();
+    outputParameterDefinitions_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -1903,6 +1905,186 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
         : knowledgeConnectorSettings_;
   }
 
+  public static final int INPUT_PARAMETER_DEFINITIONS_FIELD_NUMBER = 26;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.dialogflow.cx.v3.ParameterDefinition>
+      inputParameterDefinitions_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defined structured input parameters for this flow.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition input_parameter_definitions = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.dialogflow.cx.v3.ParameterDefinition>
+      getInputParameterDefinitionsList() {
+    return inputParameterDefinitions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defined structured input parameters for this flow.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition input_parameter_definitions = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.dialogflow.cx.v3.ParameterDefinitionOrBuilder>
+      getInputParameterDefinitionsOrBuilderList() {
+    return inputParameterDefinitions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defined structured input parameters for this flow.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition input_parameter_definitions = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getInputParameterDefinitionsCount() {
+    return inputParameterDefinitions_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defined structured input parameters for this flow.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition input_parameter_definitions = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.ParameterDefinition getInputParameterDefinitions(
+      int index) {
+    return inputParameterDefinitions_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defined structured input parameters for this flow.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition input_parameter_definitions = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.ParameterDefinitionOrBuilder
+      getInputParameterDefinitionsOrBuilder(int index) {
+    return inputParameterDefinitions_.get(index);
+  }
+
+  public static final int OUTPUT_PARAMETER_DEFINITIONS_FIELD_NUMBER = 27;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.dialogflow.cx.v3.ParameterDefinition>
+      outputParameterDefinitions_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defined structured output parameters for this flow.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition output_parameter_definitions = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.dialogflow.cx.v3.ParameterDefinition>
+      getOutputParameterDefinitionsList() {
+    return outputParameterDefinitions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defined structured output parameters for this flow.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition output_parameter_definitions = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.dialogflow.cx.v3.ParameterDefinitionOrBuilder>
+      getOutputParameterDefinitionsOrBuilderList() {
+    return outputParameterDefinitions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defined structured output parameters for this flow.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition output_parameter_definitions = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getOutputParameterDefinitionsCount() {
+    return outputParameterDefinitions_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defined structured output parameters for this flow.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition output_parameter_definitions = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.ParameterDefinition getOutputParameterDefinitions(
+      int index) {
+    return outputParameterDefinitions_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defined structured output parameters for this flow.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition output_parameter_definitions = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.ParameterDefinitionOrBuilder
+      getOutputParameterDefinitionsOrBuilder(int index) {
+    return outputParameterDefinitions_.get(index);
+  }
+
   public static final int MULTI_LANGUAGE_SETTINGS_FIELD_NUMBER = 28;
   private com.google.cloud.dialogflow.cx.v3.Flow.MultiLanguageSettings multiLanguageSettings_;
 
@@ -2025,6 +2207,12 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(18, getKnowledgeConnectorSettings());
     }
+    for (int i = 0; i < inputParameterDefinitions_.size(); i++) {
+      output.writeMessage(26, inputParameterDefinitions_.get(i));
+    }
+    for (int i = 0; i < outputParameterDefinitions_.size(); i++) {
+      output.writeMessage(27, outputParameterDefinitions_.get(i));
+    }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(28, getMultiLanguageSettings());
     }
@@ -2074,6 +2262,16 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               18, getKnowledgeConnectorSettings());
     }
+    for (int i = 0; i < inputParameterDefinitions_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              26, inputParameterDefinitions_.get(i));
+    }
+    for (int i = 0; i < outputParameterDefinitions_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              27, outputParameterDefinitions_.get(i));
+    }
     if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(28, getMultiLanguageSettings());
@@ -2115,6 +2313,10 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
       if (!getKnowledgeConnectorSettings().equals(other.getKnowledgeConnectorSettings()))
         return false;
     }
+    if (!getInputParameterDefinitionsList().equals(other.getInputParameterDefinitionsList()))
+      return false;
+    if (!getOutputParameterDefinitionsList().equals(other.getOutputParameterDefinitionsList()))
+      return false;
     if (hasMultiLanguageSettings() != other.hasMultiLanguageSettings()) return false;
     if (hasMultiLanguageSettings()) {
       if (!getMultiLanguageSettings().equals(other.getMultiLanguageSettings())) return false;
@@ -2160,6 +2362,14 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
     if (hasKnowledgeConnectorSettings()) {
       hash = (37 * hash) + KNOWLEDGE_CONNECTOR_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getKnowledgeConnectorSettings().hashCode();
+    }
+    if (getInputParameterDefinitionsCount() > 0) {
+      hash = (37 * hash) + INPUT_PARAMETER_DEFINITIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getInputParameterDefinitionsList().hashCode();
+    }
+    if (getOutputParameterDefinitionsCount() > 0) {
+      hash = (37 * hash) + OUTPUT_PARAMETER_DEFINITIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getOutputParameterDefinitionsList().hashCode();
     }
     if (hasMultiLanguageSettings()) {
       hash = (37 * hash) + MULTI_LANGUAGE_SETTINGS_FIELD_NUMBER;
@@ -2326,6 +2536,8 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
         getNluSettingsFieldBuilder();
         getAdvancedSettingsFieldBuilder();
         getKnowledgeConnectorSettingsFieldBuilder();
+        getInputParameterDefinitionsFieldBuilder();
+        getOutputParameterDefinitionsFieldBuilder();
         getMultiLanguageSettingsFieldBuilder();
       }
     }
@@ -2367,6 +2579,20 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
         knowledgeConnectorSettingsBuilder_.dispose();
         knowledgeConnectorSettingsBuilder_ = null;
       }
+      if (inputParameterDefinitionsBuilder_ == null) {
+        inputParameterDefinitions_ = java.util.Collections.emptyList();
+      } else {
+        inputParameterDefinitions_ = null;
+        inputParameterDefinitionsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000200);
+      if (outputParameterDefinitionsBuilder_ == null) {
+        outputParameterDefinitions_ = java.util.Collections.emptyList();
+      } else {
+        outputParameterDefinitions_ = null;
+        outputParameterDefinitionsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000400);
       multiLanguageSettings_ = null;
       if (multiLanguageSettingsBuilder_ != null) {
         multiLanguageSettingsBuilder_.dispose();
@@ -2427,6 +2653,26 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.eventHandlers_ = eventHandlersBuilder_.build();
       }
+      if (inputParameterDefinitionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)) {
+          inputParameterDefinitions_ =
+              java.util.Collections.unmodifiableList(inputParameterDefinitions_);
+          bitField0_ = (bitField0_ & ~0x00000200);
+        }
+        result.inputParameterDefinitions_ = inputParameterDefinitions_;
+      } else {
+        result.inputParameterDefinitions_ = inputParameterDefinitionsBuilder_.build();
+      }
+      if (outputParameterDefinitionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)) {
+          outputParameterDefinitions_ =
+              java.util.Collections.unmodifiableList(outputParameterDefinitions_);
+          bitField0_ = (bitField0_ & ~0x00000400);
+        }
+        result.outputParameterDefinitions_ = outputParameterDefinitions_;
+      } else {
+        result.outputParameterDefinitions_ = outputParameterDefinitionsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.dialogflow.cx.v3.Flow result) {
@@ -2462,14 +2708,14 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
                 : knowledgeConnectorSettingsBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.multiLanguageSettings_ =
             multiLanguageSettingsBuilder_ == null
                 ? multiLanguageSettings_
                 : multiLanguageSettingsBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.locked_ = locked_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -2608,6 +2854,60 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
       if (other.hasKnowledgeConnectorSettings()) {
         mergeKnowledgeConnectorSettings(other.getKnowledgeConnectorSettings());
       }
+      if (inputParameterDefinitionsBuilder_ == null) {
+        if (!other.inputParameterDefinitions_.isEmpty()) {
+          if (inputParameterDefinitions_.isEmpty()) {
+            inputParameterDefinitions_ = other.inputParameterDefinitions_;
+            bitField0_ = (bitField0_ & ~0x00000200);
+          } else {
+            ensureInputParameterDefinitionsIsMutable();
+            inputParameterDefinitions_.addAll(other.inputParameterDefinitions_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.inputParameterDefinitions_.isEmpty()) {
+          if (inputParameterDefinitionsBuilder_.isEmpty()) {
+            inputParameterDefinitionsBuilder_.dispose();
+            inputParameterDefinitionsBuilder_ = null;
+            inputParameterDefinitions_ = other.inputParameterDefinitions_;
+            bitField0_ = (bitField0_ & ~0x00000200);
+            inputParameterDefinitionsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getInputParameterDefinitionsFieldBuilder()
+                    : null;
+          } else {
+            inputParameterDefinitionsBuilder_.addAllMessages(other.inputParameterDefinitions_);
+          }
+        }
+      }
+      if (outputParameterDefinitionsBuilder_ == null) {
+        if (!other.outputParameterDefinitions_.isEmpty()) {
+          if (outputParameterDefinitions_.isEmpty()) {
+            outputParameterDefinitions_ = other.outputParameterDefinitions_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+          } else {
+            ensureOutputParameterDefinitionsIsMutable();
+            outputParameterDefinitions_.addAll(other.outputParameterDefinitions_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.outputParameterDefinitions_.isEmpty()) {
+          if (outputParameterDefinitionsBuilder_.isEmpty()) {
+            outputParameterDefinitionsBuilder_.dispose();
+            outputParameterDefinitionsBuilder_ = null;
+            outputParameterDefinitions_ = other.outputParameterDefinitions_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+            outputParameterDefinitionsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getOutputParameterDefinitionsFieldBuilder()
+                    : null;
+          } else {
+            outputParameterDefinitionsBuilder_.addAllMessages(other.outputParameterDefinitions_);
+          }
+        }
+      }
       if (other.hasMultiLanguageSettings()) {
         mergeMultiLanguageSettings(other.getMultiLanguageSettings());
       }
@@ -2712,17 +3012,45 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000100;
                 break;
               } // case 146
+            case 210:
+              {
+                com.google.cloud.dialogflow.cx.v3.ParameterDefinition m =
+                    input.readMessage(
+                        com.google.cloud.dialogflow.cx.v3.ParameterDefinition.parser(),
+                        extensionRegistry);
+                if (inputParameterDefinitionsBuilder_ == null) {
+                  ensureInputParameterDefinitionsIsMutable();
+                  inputParameterDefinitions_.add(m);
+                } else {
+                  inputParameterDefinitionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 210
+            case 218:
+              {
+                com.google.cloud.dialogflow.cx.v3.ParameterDefinition m =
+                    input.readMessage(
+                        com.google.cloud.dialogflow.cx.v3.ParameterDefinition.parser(),
+                        extensionRegistry);
+                if (outputParameterDefinitionsBuilder_ == null) {
+                  ensureOutputParameterDefinitionsIsMutable();
+                  outputParameterDefinitions_.add(m);
+                } else {
+                  outputParameterDefinitionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 218
             case 226:
               {
                 input.readMessage(
                     getMultiLanguageSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 226
             case 240:
               {
                 locked_ = input.readBool();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 240
             default:
@@ -5265,6 +5593,844 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
       return knowledgeConnectorSettingsBuilder_;
     }
 
+    private java.util.List<com.google.cloud.dialogflow.cx.v3.ParameterDefinition>
+        inputParameterDefinitions_ = java.util.Collections.emptyList();
+
+    private void ensureInputParameterDefinitionsIsMutable() {
+      if (!((bitField0_ & 0x00000200) != 0)) {
+        inputParameterDefinitions_ =
+            new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3.ParameterDefinition>(
+                inputParameterDefinitions_);
+        bitField0_ |= 0x00000200;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.ParameterDefinition,
+            com.google.cloud.dialogflow.cx.v3.ParameterDefinition.Builder,
+            com.google.cloud.dialogflow.cx.v3.ParameterDefinitionOrBuilder>
+        inputParameterDefinitionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured input parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition input_parameter_definitions = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.cx.v3.ParameterDefinition>
+        getInputParameterDefinitionsList() {
+      if (inputParameterDefinitionsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(inputParameterDefinitions_);
+      } else {
+        return inputParameterDefinitionsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured input parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition input_parameter_definitions = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getInputParameterDefinitionsCount() {
+      if (inputParameterDefinitionsBuilder_ == null) {
+        return inputParameterDefinitions_.size();
+      } else {
+        return inputParameterDefinitionsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured input parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition input_parameter_definitions = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.ParameterDefinition getInputParameterDefinitions(
+        int index) {
+      if (inputParameterDefinitionsBuilder_ == null) {
+        return inputParameterDefinitions_.get(index);
+      } else {
+        return inputParameterDefinitionsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured input parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition input_parameter_definitions = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setInputParameterDefinitions(
+        int index, com.google.cloud.dialogflow.cx.v3.ParameterDefinition value) {
+      if (inputParameterDefinitionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInputParameterDefinitionsIsMutable();
+        inputParameterDefinitions_.set(index, value);
+        onChanged();
+      } else {
+        inputParameterDefinitionsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured input parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition input_parameter_definitions = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setInputParameterDefinitions(
+        int index, com.google.cloud.dialogflow.cx.v3.ParameterDefinition.Builder builderForValue) {
+      if (inputParameterDefinitionsBuilder_ == null) {
+        ensureInputParameterDefinitionsIsMutable();
+        inputParameterDefinitions_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        inputParameterDefinitionsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured input parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition input_parameter_definitions = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addInputParameterDefinitions(
+        com.google.cloud.dialogflow.cx.v3.ParameterDefinition value) {
+      if (inputParameterDefinitionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInputParameterDefinitionsIsMutable();
+        inputParameterDefinitions_.add(value);
+        onChanged();
+      } else {
+        inputParameterDefinitionsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured input parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition input_parameter_definitions = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addInputParameterDefinitions(
+        int index, com.google.cloud.dialogflow.cx.v3.ParameterDefinition value) {
+      if (inputParameterDefinitionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInputParameterDefinitionsIsMutable();
+        inputParameterDefinitions_.add(index, value);
+        onChanged();
+      } else {
+        inputParameterDefinitionsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured input parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition input_parameter_definitions = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addInputParameterDefinitions(
+        com.google.cloud.dialogflow.cx.v3.ParameterDefinition.Builder builderForValue) {
+      if (inputParameterDefinitionsBuilder_ == null) {
+        ensureInputParameterDefinitionsIsMutable();
+        inputParameterDefinitions_.add(builderForValue.build());
+        onChanged();
+      } else {
+        inputParameterDefinitionsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured input parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition input_parameter_definitions = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addInputParameterDefinitions(
+        int index, com.google.cloud.dialogflow.cx.v3.ParameterDefinition.Builder builderForValue) {
+      if (inputParameterDefinitionsBuilder_ == null) {
+        ensureInputParameterDefinitionsIsMutable();
+        inputParameterDefinitions_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        inputParameterDefinitionsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured input parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition input_parameter_definitions = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllInputParameterDefinitions(
+        java.lang.Iterable<? extends com.google.cloud.dialogflow.cx.v3.ParameterDefinition>
+            values) {
+      if (inputParameterDefinitionsBuilder_ == null) {
+        ensureInputParameterDefinitionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, inputParameterDefinitions_);
+        onChanged();
+      } else {
+        inputParameterDefinitionsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured input parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition input_parameter_definitions = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearInputParameterDefinitions() {
+      if (inputParameterDefinitionsBuilder_ == null) {
+        inputParameterDefinitions_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000200);
+        onChanged();
+      } else {
+        inputParameterDefinitionsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured input parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition input_parameter_definitions = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeInputParameterDefinitions(int index) {
+      if (inputParameterDefinitionsBuilder_ == null) {
+        ensureInputParameterDefinitionsIsMutable();
+        inputParameterDefinitions_.remove(index);
+        onChanged();
+      } else {
+        inputParameterDefinitionsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured input parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition input_parameter_definitions = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.ParameterDefinition.Builder
+        getInputParameterDefinitionsBuilder(int index) {
+      return getInputParameterDefinitionsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured input parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition input_parameter_definitions = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.ParameterDefinitionOrBuilder
+        getInputParameterDefinitionsOrBuilder(int index) {
+      if (inputParameterDefinitionsBuilder_ == null) {
+        return inputParameterDefinitions_.get(index);
+      } else {
+        return inputParameterDefinitionsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured input parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition input_parameter_definitions = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.dialogflow.cx.v3.ParameterDefinitionOrBuilder>
+        getInputParameterDefinitionsOrBuilderList() {
+      if (inputParameterDefinitionsBuilder_ != null) {
+        return inputParameterDefinitionsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(inputParameterDefinitions_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured input parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition input_parameter_definitions = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.ParameterDefinition.Builder
+        addInputParameterDefinitionsBuilder() {
+      return getInputParameterDefinitionsFieldBuilder()
+          .addBuilder(com.google.cloud.dialogflow.cx.v3.ParameterDefinition.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured input parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition input_parameter_definitions = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.ParameterDefinition.Builder
+        addInputParameterDefinitionsBuilder(int index) {
+      return getInputParameterDefinitionsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.dialogflow.cx.v3.ParameterDefinition.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured input parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition input_parameter_definitions = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.cx.v3.ParameterDefinition.Builder>
+        getInputParameterDefinitionsBuilderList() {
+      return getInputParameterDefinitionsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.ParameterDefinition,
+            com.google.cloud.dialogflow.cx.v3.ParameterDefinition.Builder,
+            com.google.cloud.dialogflow.cx.v3.ParameterDefinitionOrBuilder>
+        getInputParameterDefinitionsFieldBuilder() {
+      if (inputParameterDefinitionsBuilder_ == null) {
+        inputParameterDefinitionsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3.ParameterDefinition,
+                com.google.cloud.dialogflow.cx.v3.ParameterDefinition.Builder,
+                com.google.cloud.dialogflow.cx.v3.ParameterDefinitionOrBuilder>(
+                inputParameterDefinitions_,
+                ((bitField0_ & 0x00000200) != 0),
+                getParentForChildren(),
+                isClean());
+        inputParameterDefinitions_ = null;
+      }
+      return inputParameterDefinitionsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.dialogflow.cx.v3.ParameterDefinition>
+        outputParameterDefinitions_ = java.util.Collections.emptyList();
+
+    private void ensureOutputParameterDefinitionsIsMutable() {
+      if (!((bitField0_ & 0x00000400) != 0)) {
+        outputParameterDefinitions_ =
+            new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3.ParameterDefinition>(
+                outputParameterDefinitions_);
+        bitField0_ |= 0x00000400;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.ParameterDefinition,
+            com.google.cloud.dialogflow.cx.v3.ParameterDefinition.Builder,
+            com.google.cloud.dialogflow.cx.v3.ParameterDefinitionOrBuilder>
+        outputParameterDefinitionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured output parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition output_parameter_definitions = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.cx.v3.ParameterDefinition>
+        getOutputParameterDefinitionsList() {
+      if (outputParameterDefinitionsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(outputParameterDefinitions_);
+      } else {
+        return outputParameterDefinitionsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured output parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition output_parameter_definitions = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getOutputParameterDefinitionsCount() {
+      if (outputParameterDefinitionsBuilder_ == null) {
+        return outputParameterDefinitions_.size();
+      } else {
+        return outputParameterDefinitionsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured output parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition output_parameter_definitions = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.ParameterDefinition getOutputParameterDefinitions(
+        int index) {
+      if (outputParameterDefinitionsBuilder_ == null) {
+        return outputParameterDefinitions_.get(index);
+      } else {
+        return outputParameterDefinitionsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured output parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition output_parameter_definitions = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setOutputParameterDefinitions(
+        int index, com.google.cloud.dialogflow.cx.v3.ParameterDefinition value) {
+      if (outputParameterDefinitionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureOutputParameterDefinitionsIsMutable();
+        outputParameterDefinitions_.set(index, value);
+        onChanged();
+      } else {
+        outputParameterDefinitionsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured output parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition output_parameter_definitions = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setOutputParameterDefinitions(
+        int index, com.google.cloud.dialogflow.cx.v3.ParameterDefinition.Builder builderForValue) {
+      if (outputParameterDefinitionsBuilder_ == null) {
+        ensureOutputParameterDefinitionsIsMutable();
+        outputParameterDefinitions_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        outputParameterDefinitionsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured output parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition output_parameter_definitions = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addOutputParameterDefinitions(
+        com.google.cloud.dialogflow.cx.v3.ParameterDefinition value) {
+      if (outputParameterDefinitionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureOutputParameterDefinitionsIsMutable();
+        outputParameterDefinitions_.add(value);
+        onChanged();
+      } else {
+        outputParameterDefinitionsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured output parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition output_parameter_definitions = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addOutputParameterDefinitions(
+        int index, com.google.cloud.dialogflow.cx.v3.ParameterDefinition value) {
+      if (outputParameterDefinitionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureOutputParameterDefinitionsIsMutable();
+        outputParameterDefinitions_.add(index, value);
+        onChanged();
+      } else {
+        outputParameterDefinitionsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured output parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition output_parameter_definitions = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addOutputParameterDefinitions(
+        com.google.cloud.dialogflow.cx.v3.ParameterDefinition.Builder builderForValue) {
+      if (outputParameterDefinitionsBuilder_ == null) {
+        ensureOutputParameterDefinitionsIsMutable();
+        outputParameterDefinitions_.add(builderForValue.build());
+        onChanged();
+      } else {
+        outputParameterDefinitionsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured output parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition output_parameter_definitions = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addOutputParameterDefinitions(
+        int index, com.google.cloud.dialogflow.cx.v3.ParameterDefinition.Builder builderForValue) {
+      if (outputParameterDefinitionsBuilder_ == null) {
+        ensureOutputParameterDefinitionsIsMutable();
+        outputParameterDefinitions_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        outputParameterDefinitionsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured output parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition output_parameter_definitions = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllOutputParameterDefinitions(
+        java.lang.Iterable<? extends com.google.cloud.dialogflow.cx.v3.ParameterDefinition>
+            values) {
+      if (outputParameterDefinitionsBuilder_ == null) {
+        ensureOutputParameterDefinitionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, outputParameterDefinitions_);
+        onChanged();
+      } else {
+        outputParameterDefinitionsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured output parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition output_parameter_definitions = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearOutputParameterDefinitions() {
+      if (outputParameterDefinitionsBuilder_ == null) {
+        outputParameterDefinitions_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000400);
+        onChanged();
+      } else {
+        outputParameterDefinitionsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured output parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition output_parameter_definitions = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeOutputParameterDefinitions(int index) {
+      if (outputParameterDefinitionsBuilder_ == null) {
+        ensureOutputParameterDefinitionsIsMutable();
+        outputParameterDefinitions_.remove(index);
+        onChanged();
+      } else {
+        outputParameterDefinitionsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured output parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition output_parameter_definitions = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.ParameterDefinition.Builder
+        getOutputParameterDefinitionsBuilder(int index) {
+      return getOutputParameterDefinitionsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured output parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition output_parameter_definitions = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.ParameterDefinitionOrBuilder
+        getOutputParameterDefinitionsOrBuilder(int index) {
+      if (outputParameterDefinitionsBuilder_ == null) {
+        return outputParameterDefinitions_.get(index);
+      } else {
+        return outputParameterDefinitionsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured output parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition output_parameter_definitions = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.dialogflow.cx.v3.ParameterDefinitionOrBuilder>
+        getOutputParameterDefinitionsOrBuilderList() {
+      if (outputParameterDefinitionsBuilder_ != null) {
+        return outputParameterDefinitionsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(outputParameterDefinitions_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured output parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition output_parameter_definitions = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.ParameterDefinition.Builder
+        addOutputParameterDefinitionsBuilder() {
+      return getOutputParameterDefinitionsFieldBuilder()
+          .addBuilder(com.google.cloud.dialogflow.cx.v3.ParameterDefinition.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured output parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition output_parameter_definitions = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.ParameterDefinition.Builder
+        addOutputParameterDefinitionsBuilder(int index) {
+      return getOutputParameterDefinitionsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.dialogflow.cx.v3.ParameterDefinition.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defined structured output parameters for this flow.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition output_parameter_definitions = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.cx.v3.ParameterDefinition.Builder>
+        getOutputParameterDefinitionsBuilderList() {
+      return getOutputParameterDefinitionsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.ParameterDefinition,
+            com.google.cloud.dialogflow.cx.v3.ParameterDefinition.Builder,
+            com.google.cloud.dialogflow.cx.v3.ParameterDefinitionOrBuilder>
+        getOutputParameterDefinitionsFieldBuilder() {
+      if (outputParameterDefinitionsBuilder_ == null) {
+        outputParameterDefinitionsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3.ParameterDefinition,
+                com.google.cloud.dialogflow.cx.v3.ParameterDefinition.Builder,
+                com.google.cloud.dialogflow.cx.v3.ParameterDefinitionOrBuilder>(
+                outputParameterDefinitions_,
+                ((bitField0_ & 0x00000400) != 0),
+                getParentForChildren(),
+                isClean());
+        outputParameterDefinitions_ = null;
+      }
+      return outputParameterDefinitionsBuilder_;
+    }
+
     private com.google.cloud.dialogflow.cx.v3.Flow.MultiLanguageSettings multiLanguageSettings_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.cx.v3.Flow.MultiLanguageSettings,
@@ -5286,7 +6452,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the multiLanguageSettings field is set.
      */
     public boolean hasMultiLanguageSettings() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -5333,7 +6499,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
       } else {
         multiLanguageSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5356,7 +6522,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
       } else {
         multiLanguageSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5375,7 +6541,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeMultiLanguageSettings(
         com.google.cloud.dialogflow.cx.v3.Flow.MultiLanguageSettings value) {
       if (multiLanguageSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && multiLanguageSettings_ != null
             && multiLanguageSettings_
                 != com.google.cloud.dialogflow.cx.v3.Flow.MultiLanguageSettings
@@ -5388,7 +6554,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
         multiLanguageSettingsBuilder_.mergeFrom(value);
       }
       if (multiLanguageSettings_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -5406,7 +6572,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearMultiLanguageSettings() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000800);
       multiLanguageSettings_ = null;
       if (multiLanguageSettingsBuilder_ != null) {
         multiLanguageSettingsBuilder_.dispose();
@@ -5429,7 +6595,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.cx.v3.Flow.MultiLanguageSettings.Builder
         getMultiLanguageSettingsBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getMultiLanguageSettingsFieldBuilder().getBuilder();
     }
@@ -5519,7 +6685,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
     public Builder setLocked(boolean value) {
 
       locked_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5537,7 +6703,7 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLocked() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00001000);
       locked_ = false;
       onChanged();
       return this;

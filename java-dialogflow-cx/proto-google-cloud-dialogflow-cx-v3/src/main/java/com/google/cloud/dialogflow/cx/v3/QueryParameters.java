@@ -42,8 +42,10 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
   private QueryParameters() {
     timeZone_ = "";
     sessionEntityTypes_ = java.util.Collections.emptyList();
+    parameterScope_ = "";
     currentPage_ = "";
     flowVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    currentPlaybook_ = "";
     channel_ = "";
   }
 
@@ -473,6 +475,69 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     return parameters_ == null ? com.google.protobuf.Struct.getDefaultInstance() : parameters_;
   }
 
+  public static final int PARAMETER_SCOPE_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parameterScope_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Scope for the parameters. If not specified, parameters will be treated as
+   * session parameters. Parameters with custom scope will not be put into
+   * [session parameters][google.cloud.dialogflow.cx.v3.SessionInfo.parameters].
+   *
+   * You can reference the parameters with custom scope in the agent with the
+   * following format: $parameter-scope.params.parameter-id.
+   * </pre>
+   *
+   * <code>string parameter_scope = 12;</code>
+   *
+   * @return The parameterScope.
+   */
+  @java.lang.Override
+  public java.lang.String getParameterScope() {
+    java.lang.Object ref = parameterScope_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      parameterScope_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Scope for the parameters. If not specified, parameters will be treated as
+   * session parameters. Parameters with custom scope will not be put into
+   * [session parameters][google.cloud.dialogflow.cx.v3.SessionInfo.parameters].
+   *
+   * You can reference the parameters with custom scope in the agent with the
+   * following format: $parameter-scope.params.parameter-id.
+   * </pre>
+   *
+   * <code>string parameter_scope = 12;</code>
+   *
+   * @return The bytes for parameterScope.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getParameterScopeBytes() {
+    java.lang.Object ref = parameterScope_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      parameterScope_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int CURRENT_PAGE_FIELD_NUMBER = 6;
 
   @SuppressWarnings("serial")
@@ -822,6 +887,135 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     return flowVersions_.getByteString(index);
   }
 
+  public static final int CURRENT_PLAYBOOK_FIELD_NUMBER = 19;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object currentPlaybook_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The unique identifier of the
+   * [playbook][google.cloud.dialogflow.cx.v3.Playbook] to start or continue the
+   * session with. If `current_playbook` is specified, the previous state of the
+   * session will be ignored by Dialogflow.
+   *
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string current_playbook = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The currentPlaybook.
+   */
+  @java.lang.Override
+  public java.lang.String getCurrentPlaybook() {
+    java.lang.Object ref = currentPlaybook_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      currentPlaybook_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The unique identifier of the
+   * [playbook][google.cloud.dialogflow.cx.v3.Playbook] to start or continue the
+   * session with. If `current_playbook` is specified, the previous state of the
+   * session will be ignored by Dialogflow.
+   *
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string current_playbook = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for currentPlaybook.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCurrentPlaybookBytes() {
+    java.lang.Object ref = currentPlaybook_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      currentPlaybook_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int LLM_MODEL_SETTINGS_FIELD_NUMBER = 21;
+  private com.google.cloud.dialogflow.cx.v3.LlmModelSettings llmModelSettings_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use the specified LLM model settings for processing the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.LlmModelSettings llm_model_settings = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the llmModelSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasLlmModelSettings() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use the specified LLM model settings for processing the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.LlmModelSettings llm_model_settings = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The llmModelSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.LlmModelSettings getLlmModelSettings() {
+    return llmModelSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3.LlmModelSettings.getDefaultInstance()
+        : llmModelSettings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use the specified LLM model settings for processing the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.LlmModelSettings llm_model_settings = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.LlmModelSettingsOrBuilder
+      getLlmModelSettingsOrBuilder() {
+    return llmModelSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3.LlmModelSettings.getDefaultInstance()
+        : llmModelSettings_;
+  }
+
   public static final int CHANNEL_FIELD_NUMBER = 15;
 
   @SuppressWarnings("serial")
@@ -919,7 +1113,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasSessionTtl() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -993,7 +1187,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasEndUserMetadata() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -1082,7 +1276,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasSearchConfig() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -1142,7 +1336,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    * @deprecated
    *     google.cloud.dialogflow.cx.v3.QueryParameters.populate_data_store_connection_signals is
-   *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=730
+   *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=770
    * @return The populateDataStoreConnectionSignals.
    */
   @java.lang.Override
@@ -1191,20 +1385,29 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetWebhookHeaders(), WebhookHeadersDefaultEntryHolder.defaultEntry, 10);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parameterScope_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, parameterScope_);
+    }
     for (int i = 0; i < flowVersions_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, flowVersions_.getRaw(i));
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(channel_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, channel_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(16, getSessionTtl());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(18, getEndUserMetadata());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currentPlaybook_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 19, currentPlaybook_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(20, getSearchConfig());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(21, getLlmModelSettings());
     }
     if (populateDataStoreConnectionSignals_ != false) {
       output.writeBool(25, populateDataStoreConnectionSignals_);
@@ -1253,6 +1456,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, webhookHeaders__);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parameterScope_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, parameterScope_);
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < flowVersions_.size(); i++) {
@@ -1264,14 +1470,20 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(channel_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, channel_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getSessionTtl());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getEndUserMetadata());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currentPlaybook_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, currentPlaybook_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getSearchConfig());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getLlmModelSettings());
     }
     if (populateDataStoreConnectionSignals_ != false) {
       size +=
@@ -1308,11 +1520,17 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     if (hasParameters()) {
       if (!getParameters().equals(other.getParameters())) return false;
     }
+    if (!getParameterScope().equals(other.getParameterScope())) return false;
     if (!getCurrentPage().equals(other.getCurrentPage())) return false;
     if (getDisableWebhook() != other.getDisableWebhook()) return false;
     if (getAnalyzeQueryTextSentiment() != other.getAnalyzeQueryTextSentiment()) return false;
     if (!internalGetWebhookHeaders().equals(other.internalGetWebhookHeaders())) return false;
     if (!getFlowVersionsList().equals(other.getFlowVersionsList())) return false;
+    if (!getCurrentPlaybook().equals(other.getCurrentPlaybook())) return false;
+    if (hasLlmModelSettings() != other.hasLlmModelSettings()) return false;
+    if (hasLlmModelSettings()) {
+      if (!getLlmModelSettings().equals(other.getLlmModelSettings())) return false;
+    }
     if (!getChannel().equals(other.getChannel())) return false;
     if (hasSessionTtl() != other.hasSessionTtl()) return false;
     if (hasSessionTtl()) {
@@ -1357,6 +1575,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
       hash = (53 * hash) + getParameters().hashCode();
     }
+    hash = (37 * hash) + PARAMETER_SCOPE_FIELD_NUMBER;
+    hash = (53 * hash) + getParameterScope().hashCode();
     hash = (37 * hash) + CURRENT_PAGE_FIELD_NUMBER;
     hash = (53 * hash) + getCurrentPage().hashCode();
     hash = (37 * hash) + DISABLE_WEBHOOK_FIELD_NUMBER;
@@ -1370,6 +1590,12 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     if (getFlowVersionsCount() > 0) {
       hash = (37 * hash) + FLOW_VERSIONS_FIELD_NUMBER;
       hash = (53 * hash) + getFlowVersionsList().hashCode();
+    }
+    hash = (37 * hash) + CURRENT_PLAYBOOK_FIELD_NUMBER;
+    hash = (53 * hash) + getCurrentPlaybook().hashCode();
+    if (hasLlmModelSettings()) {
+      hash = (37 * hash) + LLM_MODEL_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getLlmModelSettings().hashCode();
     }
     hash = (37 * hash) + CHANNEL_FIELD_NUMBER;
     hash = (53 * hash) + getChannel().hashCode();
@@ -1556,6 +1782,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         getSessionEntityTypesFieldBuilder();
         getPayloadFieldBuilder();
         getParametersFieldBuilder();
+        getLlmModelSettingsFieldBuilder();
         getSessionTtlFieldBuilder();
         getEndUserMetadataFieldBuilder();
         getSearchConfigFieldBuilder();
@@ -1589,11 +1816,18 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         parametersBuilder_.dispose();
         parametersBuilder_ = null;
       }
+      parameterScope_ = "";
       currentPage_ = "";
       disableWebhook_ = false;
       analyzeQueryTextSentiment_ = false;
       internalGetMutableWebhookHeaders().clear();
       flowVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      currentPlaybook_ = "";
+      llmModelSettings_ = null;
+      if (llmModelSettingsBuilder_ != null) {
+        llmModelSettingsBuilder_.dispose();
+        llmModelSettingsBuilder_ = null;
+      }
       channel_ = "";
       sessionTtl_ = null;
       if (sessionTtlBuilder_ != null) {
@@ -1679,40 +1913,51 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.currentPage_ = currentPage_;
+        result.parameterScope_ = parameterScope_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.disableWebhook_ = disableWebhook_;
+        result.currentPage_ = currentPage_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.analyzeQueryTextSentiment_ = analyzeQueryTextSentiment_;
+        result.disableWebhook_ = disableWebhook_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.analyzeQueryTextSentiment_ = analyzeQueryTextSentiment_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.webhookHeaders_ = internalGetWebhookHeaders();
         result.webhookHeaders_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         flowVersions_.makeImmutable();
         result.flowVersions_ = flowVersions_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.channel_ = channel_;
-      }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.sessionTtl_ = sessionTtlBuilder_ == null ? sessionTtl_ : sessionTtlBuilder_.build();
-        to_bitField0_ |= 0x00000008;
+        result.currentPlaybook_ = currentPlaybook_;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.endUserMetadata_ =
-            endUserMetadataBuilder_ == null ? endUserMetadata_ : endUserMetadataBuilder_.build();
-        to_bitField0_ |= 0x00000010;
+        result.llmModelSettings_ =
+            llmModelSettingsBuilder_ == null ? llmModelSettings_ : llmModelSettingsBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.searchConfig_ =
-            searchConfigBuilder_ == null ? searchConfig_ : searchConfigBuilder_.build();
-        to_bitField0_ |= 0x00000020;
+        result.channel_ = channel_;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.sessionTtl_ = sessionTtlBuilder_ == null ? sessionTtl_ : sessionTtlBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.endUserMetadata_ =
+            endUserMetadataBuilder_ == null ? endUserMetadata_ : endUserMetadataBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.searchConfig_ =
+            searchConfigBuilder_ == null ? searchConfig_ : searchConfigBuilder_.build();
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.populateDataStoreConnectionSignals_ = populateDataStoreConnectionSignals_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1805,9 +2050,14 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       if (other.hasParameters()) {
         mergeParameters(other.getParameters());
       }
+      if (!other.getParameterScope().isEmpty()) {
+        parameterScope_ = other.parameterScope_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
       if (!other.getCurrentPage().isEmpty()) {
         currentPage_ = other.currentPage_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.getDisableWebhook() != false) {
@@ -1817,20 +2067,28 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         setAnalyzeQueryTextSentiment(other.getAnalyzeQueryTextSentiment());
       }
       internalGetMutableWebhookHeaders().mergeFrom(other.internalGetWebhookHeaders());
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       if (!other.flowVersions_.isEmpty()) {
         if (flowVersions_.isEmpty()) {
           flowVersions_ = other.flowVersions_;
-          bitField0_ |= 0x00000200;
+          bitField0_ |= 0x00000400;
         } else {
           ensureFlowVersionsIsMutable();
           flowVersions_.addAll(other.flowVersions_);
         }
         onChanged();
       }
+      if (!other.getCurrentPlaybook().isEmpty()) {
+        currentPlaybook_ = other.currentPlaybook_;
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      if (other.hasLlmModelSettings()) {
+        mergeLlmModelSettings(other.getLlmModelSettings());
+      }
       if (!other.getChannel().isEmpty()) {
         channel_ = other.channel_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.hasSessionTtl()) {
@@ -1912,19 +2170,19 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
             case 50:
               {
                 currentPage_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 56:
               {
                 disableWebhook_ = input.readBool();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 56
             case 64:
               {
                 analyzeQueryTextSentiment_ = input.readBool();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 64
             case 82:
@@ -1936,9 +2194,15 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
                 internalGetMutableWebhookHeaders()
                     .getMutableMap()
                     .put(webhookHeaders__.getKey(), webhookHeaders__.getValue());
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
+            case 98:
+              {
+                parameterScope_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 98
             case 114:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -1949,31 +2213,44 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
             case 122:
               {
                 channel_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 122
             case 130:
               {
                 input.readMessage(getSessionTtlFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 130
             case 146:
               {
                 input.readMessage(getEndUserMetadataFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 146
+            case 154:
+              {
+                currentPlaybook_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 154
             case 162:
               {
                 input.readMessage(getSearchConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 162
+            case 170:
+              {
+                input.readMessage(
+                    getLlmModelSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 170
             case 200:
               {
                 populateDataStoreConnectionSignals_ = input.readBool();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 200
             default:
@@ -3401,6 +3678,142 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       return parametersBuilder_;
     }
 
+    private java.lang.Object parameterScope_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Scope for the parameters. If not specified, parameters will be treated as
+     * session parameters. Parameters with custom scope will not be put into
+     * [session parameters][google.cloud.dialogflow.cx.v3.SessionInfo.parameters].
+     *
+     * You can reference the parameters with custom scope in the agent with the
+     * following format: $parameter-scope.params.parameter-id.
+     * </pre>
+     *
+     * <code>string parameter_scope = 12;</code>
+     *
+     * @return The parameterScope.
+     */
+    public java.lang.String getParameterScope() {
+      java.lang.Object ref = parameterScope_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        parameterScope_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Scope for the parameters. If not specified, parameters will be treated as
+     * session parameters. Parameters with custom scope will not be put into
+     * [session parameters][google.cloud.dialogflow.cx.v3.SessionInfo.parameters].
+     *
+     * You can reference the parameters with custom scope in the agent with the
+     * following format: $parameter-scope.params.parameter-id.
+     * </pre>
+     *
+     * <code>string parameter_scope = 12;</code>
+     *
+     * @return The bytes for parameterScope.
+     */
+    public com.google.protobuf.ByteString getParameterScopeBytes() {
+      java.lang.Object ref = parameterScope_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        parameterScope_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Scope for the parameters. If not specified, parameters will be treated as
+     * session parameters. Parameters with custom scope will not be put into
+     * [session parameters][google.cloud.dialogflow.cx.v3.SessionInfo.parameters].
+     *
+     * You can reference the parameters with custom scope in the agent with the
+     * following format: $parameter-scope.params.parameter-id.
+     * </pre>
+     *
+     * <code>string parameter_scope = 12;</code>
+     *
+     * @param value The parameterScope to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParameterScope(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      parameterScope_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Scope for the parameters. If not specified, parameters will be treated as
+     * session parameters. Parameters with custom scope will not be put into
+     * [session parameters][google.cloud.dialogflow.cx.v3.SessionInfo.parameters].
+     *
+     * You can reference the parameters with custom scope in the agent with the
+     * following format: $parameter-scope.params.parameter-id.
+     * </pre>
+     *
+     * <code>string parameter_scope = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearParameterScope() {
+      parameterScope_ = getDefaultInstance().getParameterScope();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Scope for the parameters. If not specified, parameters will be treated as
+     * session parameters. Parameters with custom scope will not be put into
+     * [session parameters][google.cloud.dialogflow.cx.v3.SessionInfo.parameters].
+     *
+     * You can reference the parameters with custom scope in the agent with the
+     * following format: $parameter-scope.params.parameter-id.
+     * </pre>
+     *
+     * <code>string parameter_scope = 12;</code>
+     *
+     * @param value The bytes for parameterScope to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParameterScopeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      parameterScope_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object currentPage_ = "";
 
     /**
@@ -3502,7 +3915,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       currentPage_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3532,7 +3945,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearCurrentPage() {
       currentPage_ = getDefaultInstance().getCurrentPage();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -3567,7 +3980,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       checkByteStringIsUtf8(value);
       currentPage_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3605,7 +4018,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     public Builder setDisableWebhook(boolean value) {
 
       disableWebhook_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3622,7 +4035,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDisableWebhook() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       disableWebhook_ = false;
       onChanged();
       return this;
@@ -3663,7 +4076,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     public Builder setAnalyzeQueryTextSentiment(boolean value) {
 
       analyzeQueryTextSentiment_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3681,7 +4094,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearAnalyzeQueryTextSentiment() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       analyzeQueryTextSentiment_ = false;
       onChanged();
       return this;
@@ -3707,7 +4120,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       if (!webhookHeaders_.isMutable()) {
         webhookHeaders_ = webhookHeaders_.copy();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return webhookHeaders_;
     }
@@ -3825,7 +4238,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     }
 
     public Builder clearWebhookHeaders() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       internalGetMutableWebhookHeaders().getMutableMap().clear();
       return this;
     }
@@ -3857,7 +4270,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableWebhookHeaders() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return internalGetMutableWebhookHeaders().getMutableMap();
     }
 
@@ -3885,7 +4298,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException("map value");
       }
       internalGetMutableWebhookHeaders().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return this;
     }
 
@@ -3907,7 +4320,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      */
     public Builder putAllWebhookHeaders(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableWebhookHeaders().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return this;
     }
 
@@ -3918,7 +4331,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       if (!flowVersions_.isModifiable()) {
         flowVersions_ = new com.google.protobuf.LazyStringArrayList(flowVersions_);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
     }
 
     /**
@@ -4038,7 +4451,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       ensureFlowVersionsIsMutable();
       flowVersions_.set(index, value);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4068,7 +4481,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       ensureFlowVersionsIsMutable();
       flowVersions_.add(value);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4095,7 +4508,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     public Builder addAllFlowVersions(java.lang.Iterable<java.lang.String> values) {
       ensureFlowVersionsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, flowVersions_);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4120,7 +4533,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearFlowVersions() {
       flowVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       ;
       onChanged();
       return this;
@@ -4152,9 +4565,375 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       ensureFlowVersionsIsMutable();
       flowVersions_.add(value);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
+    }
+
+    private java.lang.Object currentPlaybook_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The unique identifier of the
+     * [playbook][google.cloud.dialogflow.cx.v3.Playbook] to start or continue the
+     * session with. If `current_playbook` is specified, the previous state of the
+     * session will be ignored by Dialogflow.
+     *
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string current_playbook = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The currentPlaybook.
+     */
+    public java.lang.String getCurrentPlaybook() {
+      java.lang.Object ref = currentPlaybook_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        currentPlaybook_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The unique identifier of the
+     * [playbook][google.cloud.dialogflow.cx.v3.Playbook] to start or continue the
+     * session with. If `current_playbook` is specified, the previous state of the
+     * session will be ignored by Dialogflow.
+     *
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string current_playbook = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for currentPlaybook.
+     */
+    public com.google.protobuf.ByteString getCurrentPlaybookBytes() {
+      java.lang.Object ref = currentPlaybook_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        currentPlaybook_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The unique identifier of the
+     * [playbook][google.cloud.dialogflow.cx.v3.Playbook] to start or continue the
+     * session with. If `current_playbook` is specified, the previous state of the
+     * session will be ignored by Dialogflow.
+     *
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string current_playbook = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The currentPlaybook to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCurrentPlaybook(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      currentPlaybook_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The unique identifier of the
+     * [playbook][google.cloud.dialogflow.cx.v3.Playbook] to start or continue the
+     * session with. If `current_playbook` is specified, the previous state of the
+     * session will be ignored by Dialogflow.
+     *
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string current_playbook = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCurrentPlaybook() {
+      currentPlaybook_ = getDefaultInstance().getCurrentPlaybook();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The unique identifier of the
+     * [playbook][google.cloud.dialogflow.cx.v3.Playbook] to start or continue the
+     * session with. If `current_playbook` is specified, the previous state of the
+     * session will be ignored by Dialogflow.
+     *
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string current_playbook = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for currentPlaybook to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCurrentPlaybookBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      currentPlaybook_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.dialogflow.cx.v3.LlmModelSettings llmModelSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.LlmModelSettings,
+            com.google.cloud.dialogflow.cx.v3.LlmModelSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3.LlmModelSettingsOrBuilder>
+        llmModelSettingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use the specified LLM model settings for processing the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.LlmModelSettings llm_model_settings = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the llmModelSettings field is set.
+     */
+    public boolean hasLlmModelSettings() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use the specified LLM model settings for processing the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.LlmModelSettings llm_model_settings = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The llmModelSettings.
+     */
+    public com.google.cloud.dialogflow.cx.v3.LlmModelSettings getLlmModelSettings() {
+      if (llmModelSettingsBuilder_ == null) {
+        return llmModelSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3.LlmModelSettings.getDefaultInstance()
+            : llmModelSettings_;
+      } else {
+        return llmModelSettingsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use the specified LLM model settings for processing the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.LlmModelSettings llm_model_settings = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLlmModelSettings(com.google.cloud.dialogflow.cx.v3.LlmModelSettings value) {
+      if (llmModelSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        llmModelSettings_ = value;
+      } else {
+        llmModelSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use the specified LLM model settings for processing the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.LlmModelSettings llm_model_settings = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLlmModelSettings(
+        com.google.cloud.dialogflow.cx.v3.LlmModelSettings.Builder builderForValue) {
+      if (llmModelSettingsBuilder_ == null) {
+        llmModelSettings_ = builderForValue.build();
+      } else {
+        llmModelSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use the specified LLM model settings for processing the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.LlmModelSettings llm_model_settings = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeLlmModelSettings(com.google.cloud.dialogflow.cx.v3.LlmModelSettings value) {
+      if (llmModelSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && llmModelSettings_ != null
+            && llmModelSettings_
+                != com.google.cloud.dialogflow.cx.v3.LlmModelSettings.getDefaultInstance()) {
+          getLlmModelSettingsBuilder().mergeFrom(value);
+        } else {
+          llmModelSettings_ = value;
+        }
+      } else {
+        llmModelSettingsBuilder_.mergeFrom(value);
+      }
+      if (llmModelSettings_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use the specified LLM model settings for processing the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.LlmModelSettings llm_model_settings = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearLlmModelSettings() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      llmModelSettings_ = null;
+      if (llmModelSettingsBuilder_ != null) {
+        llmModelSettingsBuilder_.dispose();
+        llmModelSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use the specified LLM model settings for processing the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.LlmModelSettings llm_model_settings = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.LlmModelSettings.Builder getLlmModelSettingsBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return getLlmModelSettingsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use the specified LLM model settings for processing the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.LlmModelSettings llm_model_settings = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.LlmModelSettingsOrBuilder
+        getLlmModelSettingsOrBuilder() {
+      if (llmModelSettingsBuilder_ != null) {
+        return llmModelSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return llmModelSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3.LlmModelSettings.getDefaultInstance()
+            : llmModelSettings_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Use the specified LLM model settings for processing the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.LlmModelSettings llm_model_settings = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.LlmModelSettings,
+            com.google.cloud.dialogflow.cx.v3.LlmModelSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3.LlmModelSettingsOrBuilder>
+        getLlmModelSettingsFieldBuilder() {
+      if (llmModelSettingsBuilder_ == null) {
+        llmModelSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3.LlmModelSettings,
+                com.google.cloud.dialogflow.cx.v3.LlmModelSettings.Builder,
+                com.google.cloud.dialogflow.cx.v3.LlmModelSettingsOrBuilder>(
+                getLlmModelSettings(), getParentForChildren(), isClean());
+        llmModelSettings_ = null;
+      }
+      return llmModelSettingsBuilder_;
     }
 
     private java.lang.Object channel_ = "";
@@ -4258,7 +5037,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       channel_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4288,7 +5067,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearChannel() {
       channel_ = getDefaultInstance().getChannel();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -4323,7 +5102,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       checkByteStringIsUtf8(value);
       channel_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4351,7 +5130,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * @return Whether the sessionTtl field is set.
      */
     public boolean hasSessionTtl() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -4401,7 +5180,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       } else {
         sessionTtlBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4425,7 +5204,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       } else {
         sessionTtlBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4445,7 +5224,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeSessionTtl(com.google.protobuf.Duration value) {
       if (sessionTtlBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && sessionTtl_ != null
             && sessionTtl_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getSessionTtlBuilder().mergeFrom(value);
@@ -4456,7 +5235,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         sessionTtlBuilder_.mergeFrom(value);
       }
       if (sessionTtl_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -4476,7 +5255,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearSessionTtl() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00004000);
       sessionTtl_ = null;
       if (sessionTtlBuilder_ != null) {
         sessionTtlBuilder_.dispose();
@@ -4500,7 +5279,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public com.google.protobuf.Duration.Builder getSessionTtlBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getSessionTtlFieldBuilder().getBuilder();
     }
@@ -4595,7 +5374,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * @return Whether the endUserMetadata field is set.
      */
     public boolean hasEndUserMetadata() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -4673,7 +5452,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       } else {
         endUserMetadataBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4711,7 +5490,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       } else {
         endUserMetadataBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4745,7 +5524,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeEndUserMetadata(com.google.protobuf.Struct value) {
       if (endUserMetadataBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && endUserMetadata_ != null
             && endUserMetadata_ != com.google.protobuf.Struct.getDefaultInstance()) {
           getEndUserMetadataBuilder().mergeFrom(value);
@@ -4756,7 +5535,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         endUserMetadataBuilder_.mergeFrom(value);
       }
       if (endUserMetadata_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -4790,7 +5569,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearEndUserMetadata() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       endUserMetadata_ = null;
       if (endUserMetadataBuilder_ != null) {
         endUserMetadataBuilder_.dispose();
@@ -4828,7 +5607,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public com.google.protobuf.Struct.Builder getEndUserMetadataBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return getEndUserMetadataFieldBuilder().getBuilder();
     }
@@ -4935,7 +5714,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * @return Whether the searchConfig field is set.
      */
     public boolean hasSearchConfig() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -4981,7 +5760,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       } else {
         searchConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5004,7 +5783,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       } else {
         searchConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5022,7 +5801,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeSearchConfig(com.google.cloud.dialogflow.cx.v3.SearchConfig value) {
       if (searchConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && searchConfig_ != null
             && searchConfig_
                 != com.google.cloud.dialogflow.cx.v3.SearchConfig.getDefaultInstance()) {
@@ -5034,7 +5813,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         searchConfigBuilder_.mergeFrom(value);
       }
       if (searchConfig_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -5052,7 +5831,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearSearchConfig() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       searchConfig_ = null;
       if (searchConfigBuilder_ != null) {
         searchConfigBuilder_.dispose();
@@ -5074,7 +5853,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public com.google.cloud.dialogflow.cx.v3.SearchConfig.Builder getSearchConfigBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return getSearchConfigFieldBuilder().getBuilder();
     }
@@ -5146,7 +5925,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      * @deprecated
      *     google.cloud.dialogflow.cx.v3.QueryParameters.populate_data_store_connection_signals is
-     *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=730
+     *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=770
      * @return The populateDataStoreConnectionSignals.
      */
     @java.lang.Override
@@ -5171,7 +5950,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      * @deprecated
      *     google.cloud.dialogflow.cx.v3.QueryParameters.populate_data_store_connection_signals is
-     *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=730
+     *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=770
      * @param value The populateDataStoreConnectionSignals to set.
      * @return This builder for chaining.
      */
@@ -5179,7 +5958,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     public Builder setPopulateDataStoreConnectionSignals(boolean value) {
 
       populateDataStoreConnectionSignals_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5200,12 +5979,12 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      * @deprecated
      *     google.cloud.dialogflow.cx.v3.QueryParameters.populate_data_store_connection_signals is
-     *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=730
+     *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=770
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearPopulateDataStoreConnectionSignals() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       populateDataStoreConnectionSignals_ = false;
       onChanged();
       return this;

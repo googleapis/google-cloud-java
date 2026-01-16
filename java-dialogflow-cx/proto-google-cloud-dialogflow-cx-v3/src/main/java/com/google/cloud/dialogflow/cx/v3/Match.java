@@ -160,7 +160,8 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The query was handled by a [`Playbook`][Playbook].
+     * The query was handled by a
+     * [`Playbook`][google.cloud.dialogflow.cx.v3.Playbook].
      * </pre>
      *
      * <code>PLAYBOOK = 9;</code>
@@ -261,7 +262,8 @@ public final class Match extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The query was handled by a [`Playbook`][Playbook].
+     * The query was handled by a
+     * [`Playbook`][google.cloud.dialogflow.cx.v3.Playbook].
      * </pre>
      *
      * <code>PLAYBOOK = 9;</code>

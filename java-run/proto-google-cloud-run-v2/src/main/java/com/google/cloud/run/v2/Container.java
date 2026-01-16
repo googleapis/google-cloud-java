@@ -871,6 +871,59 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         : startupProbe_;
   }
 
+  public static final int READINESS_PROBE_FIELD_NUMBER = 14;
+  private com.google.cloud.run.v2.Probe readinessProbe_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Readiness probe to be used for health checks.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.Probe readiness_probe = 14;</code>
+   *
+   * @return Whether the readinessProbe field is set.
+   */
+  @java.lang.Override
+  public boolean hasReadinessProbe() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Readiness probe to be used for health checks.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.Probe readiness_probe = 14;</code>
+   *
+   * @return The readinessProbe.
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.Probe getReadinessProbe() {
+    return readinessProbe_ == null
+        ? com.google.cloud.run.v2.Probe.getDefaultInstance()
+        : readinessProbe_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Readiness probe to be used for health checks.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.Probe readiness_probe = 14;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.ProbeOrBuilder getReadinessProbeOrBuilder() {
+    return readinessProbe_ == null
+        ? com.google.cloud.run.v2.Probe.getDefaultInstance()
+        : readinessProbe_;
+  }
+
   public static final int DEPENDS_ON_FIELD_NUMBER = 12;
 
   @SuppressWarnings("serial")
@@ -1012,7 +1065,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasBuildInfo() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -1103,6 +1156,9 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, baseImageUri_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(14, getReadinessProbe());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(15, getBuildInfo());
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -1172,6 +1228,9 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, baseImageUri_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getReadinessProbe());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getBuildInfo());
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -1215,6 +1274,10 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     if (hasStartupProbe() != other.hasStartupProbe()) return false;
     if (hasStartupProbe()) {
       if (!getStartupProbe().equals(other.getStartupProbe())) return false;
+    }
+    if (hasReadinessProbe() != other.hasReadinessProbe()) return false;
+    if (hasReadinessProbe()) {
+      if (!getReadinessProbe().equals(other.getReadinessProbe())) return false;
     }
     if (!getDependsOnList().equals(other.getDependsOnList())) return false;
     if (!getBaseImageUri().equals(other.getBaseImageUri())) return false;
@@ -1274,6 +1337,10 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     if (hasStartupProbe()) {
       hash = (37 * hash) + STARTUP_PROBE_FIELD_NUMBER;
       hash = (53 * hash) + getStartupProbe().hashCode();
+    }
+    if (hasReadinessProbe()) {
+      hash = (37 * hash) + READINESS_PROBE_FIELD_NUMBER;
+      hash = (53 * hash) + getReadinessProbe().hashCode();
     }
     if (getDependsOnCount() > 0) {
       hash = (37 * hash) + DEPENDS_ON_FIELD_NUMBER;
@@ -1436,6 +1503,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         getVolumeMountsFieldBuilder();
         getLivenessProbeFieldBuilder();
         getStartupProbeFieldBuilder();
+        getReadinessProbeFieldBuilder();
         getBuildInfoFieldBuilder();
       }
     }
@@ -1489,6 +1557,11 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       if (startupProbeBuilder_ != null) {
         startupProbeBuilder_.dispose();
         startupProbeBuilder_ = null;
+      }
+      readinessProbe_ = null;
+      if (readinessProbeBuilder_ != null) {
+        readinessProbeBuilder_.dispose();
+        readinessProbeBuilder_ = null;
       }
       dependsOn_ = com.google.protobuf.LazyStringArrayList.emptyList();
       baseImageUri_ = "";
@@ -1600,15 +1673,20 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.readinessProbe_ =
+            readinessProbeBuilder_ == null ? readinessProbe_ : readinessProbeBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         dependsOn_.makeImmutable();
         result.dependsOn_ = dependsOn_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.baseImageUri_ = baseImageUri_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.buildInfo_ = buildInfoBuilder_ == null ? buildInfo_ : buildInfoBuilder_.build();
-        to_bitField0_ |= 0x00000010;
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1786,10 +1864,13 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       if (other.hasStartupProbe()) {
         mergeStartupProbe(other.getStartupProbe());
       }
+      if (other.hasReadinessProbe()) {
+        mergeReadinessProbe(other.getReadinessProbe());
+      }
       if (!other.dependsOn_.isEmpty()) {
         if (dependsOn_.isEmpty()) {
           dependsOn_ = other.dependsOn_;
-          bitField0_ |= 0x00001000;
+          bitField0_ |= 0x00002000;
         } else {
           ensureDependsOnIsMutable();
           dependsOn_.addAll(other.dependsOn_);
@@ -1798,7 +1879,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getBaseImageUri().isEmpty()) {
         baseImageUri_ = other.baseImageUri_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (other.hasBuildInfo()) {
@@ -1928,13 +2009,19 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
             case 106:
               {
                 baseImageUri_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 106
+            case 114:
+              {
+                input.readMessage(getReadinessProbeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 114
             case 122:
               {
                 input.readMessage(getBuildInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 122
             case 138:
@@ -4710,6 +4797,200 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       return startupProbeBuilder_;
     }
 
+    private com.google.cloud.run.v2.Probe readinessProbe_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.run.v2.Probe,
+            com.google.cloud.run.v2.Probe.Builder,
+            com.google.cloud.run.v2.ProbeOrBuilder>
+        readinessProbeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Readiness probe to be used for health checks.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.Probe readiness_probe = 14;</code>
+     *
+     * @return Whether the readinessProbe field is set.
+     */
+    public boolean hasReadinessProbe() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Readiness probe to be used for health checks.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.Probe readiness_probe = 14;</code>
+     *
+     * @return The readinessProbe.
+     */
+    public com.google.cloud.run.v2.Probe getReadinessProbe() {
+      if (readinessProbeBuilder_ == null) {
+        return readinessProbe_ == null
+            ? com.google.cloud.run.v2.Probe.getDefaultInstance()
+            : readinessProbe_;
+      } else {
+        return readinessProbeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Readiness probe to be used for health checks.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.Probe readiness_probe = 14;</code>
+     */
+    public Builder setReadinessProbe(com.google.cloud.run.v2.Probe value) {
+      if (readinessProbeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        readinessProbe_ = value;
+      } else {
+        readinessProbeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Readiness probe to be used for health checks.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.Probe readiness_probe = 14;</code>
+     */
+    public Builder setReadinessProbe(com.google.cloud.run.v2.Probe.Builder builderForValue) {
+      if (readinessProbeBuilder_ == null) {
+        readinessProbe_ = builderForValue.build();
+      } else {
+        readinessProbeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Readiness probe to be used for health checks.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.Probe readiness_probe = 14;</code>
+     */
+    public Builder mergeReadinessProbe(com.google.cloud.run.v2.Probe value) {
+      if (readinessProbeBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && readinessProbe_ != null
+            && readinessProbe_ != com.google.cloud.run.v2.Probe.getDefaultInstance()) {
+          getReadinessProbeBuilder().mergeFrom(value);
+        } else {
+          readinessProbe_ = value;
+        }
+      } else {
+        readinessProbeBuilder_.mergeFrom(value);
+      }
+      if (readinessProbe_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Readiness probe to be used for health checks.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.Probe readiness_probe = 14;</code>
+     */
+    public Builder clearReadinessProbe() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      readinessProbe_ = null;
+      if (readinessProbeBuilder_ != null) {
+        readinessProbeBuilder_.dispose();
+        readinessProbeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Readiness probe to be used for health checks.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.Probe readiness_probe = 14;</code>
+     */
+    public com.google.cloud.run.v2.Probe.Builder getReadinessProbeBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return getReadinessProbeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Readiness probe to be used for health checks.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.Probe readiness_probe = 14;</code>
+     */
+    public com.google.cloud.run.v2.ProbeOrBuilder getReadinessProbeOrBuilder() {
+      if (readinessProbeBuilder_ != null) {
+        return readinessProbeBuilder_.getMessageOrBuilder();
+      } else {
+        return readinessProbe_ == null
+            ? com.google.cloud.run.v2.Probe.getDefaultInstance()
+            : readinessProbe_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Readiness probe to be used for health checks.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.Probe readiness_probe = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.run.v2.Probe,
+            com.google.cloud.run.v2.Probe.Builder,
+            com.google.cloud.run.v2.ProbeOrBuilder>
+        getReadinessProbeFieldBuilder() {
+      if (readinessProbeBuilder_ == null) {
+        readinessProbeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.run.v2.Probe,
+                com.google.cloud.run.v2.Probe.Builder,
+                com.google.cloud.run.v2.ProbeOrBuilder>(
+                getReadinessProbe(), getParentForChildren(), isClean());
+        readinessProbe_ = null;
+      }
+      return readinessProbeBuilder_;
+    }
+
     private com.google.protobuf.LazyStringArrayList dependsOn_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
 
@@ -4717,7 +4998,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       if (!dependsOn_.isModifiable()) {
         dependsOn_ = new com.google.protobuf.LazyStringArrayList(dependsOn_);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
     }
 
     /**
@@ -4802,7 +5083,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDependsOnIsMutable();
       dependsOn_.set(index, value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4825,7 +5106,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDependsOnIsMutable();
       dependsOn_.add(value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4845,7 +5126,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllDependsOn(java.lang.Iterable<java.lang.String> values) {
       ensureDependsOnIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dependsOn_);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4863,7 +5144,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDependsOn() {
       dependsOn_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       ;
       onChanged();
       return this;
@@ -4888,7 +5169,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureDependsOnIsMutable();
       dependsOn_.add(value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4961,7 +5242,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       baseImageUri_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4980,7 +5261,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearBaseImageUri() {
       baseImageUri_ = getDefaultInstance().getBaseImageUri();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -5004,7 +5285,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       baseImageUri_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5030,7 +5311,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the buildInfo field is set.
      */
     public boolean hasBuildInfo() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -5076,7 +5357,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       } else {
         buildInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5098,7 +5379,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       } else {
         buildInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5116,7 +5397,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeBuildInfo(com.google.cloud.run.v2.BuildInfo value) {
       if (buildInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && buildInfo_ != null
             && buildInfo_ != com.google.cloud.run.v2.BuildInfo.getDefaultInstance()) {
           getBuildInfoBuilder().mergeFrom(value);
@@ -5127,7 +5408,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         buildInfoBuilder_.mergeFrom(value);
       }
       if (buildInfo_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -5145,7 +5426,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearBuildInfo() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       buildInfo_ = null;
       if (buildInfoBuilder_ != null) {
         buildInfoBuilder_.dispose();
@@ -5167,7 +5448,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.run.v2.BuildInfo.Builder getBuildInfoBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return getBuildInfoFieldBuilder().getBuilder();
     }

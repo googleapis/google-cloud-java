@@ -587,6 +587,142 @@ public interface FlowOrBuilder
    *
    *
    * <pre>
+   * Optional. Defined structured input parameters for this flow.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition input_parameter_definitions = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.dialogflow.cx.v3.ParameterDefinition>
+      getInputParameterDefinitionsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defined structured input parameters for this flow.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition input_parameter_definitions = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3.ParameterDefinition getInputParameterDefinitions(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defined structured input parameters for this flow.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition input_parameter_definitions = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getInputParameterDefinitionsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defined structured input parameters for this flow.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition input_parameter_definitions = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.dialogflow.cx.v3.ParameterDefinitionOrBuilder>
+      getInputParameterDefinitionsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defined structured input parameters for this flow.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition input_parameter_definitions = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3.ParameterDefinitionOrBuilder
+      getInputParameterDefinitionsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defined structured output parameters for this flow.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition output_parameter_definitions = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.dialogflow.cx.v3.ParameterDefinition>
+      getOutputParameterDefinitionsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defined structured output parameters for this flow.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition output_parameter_definitions = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3.ParameterDefinition getOutputParameterDefinitions(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defined structured output parameters for this flow.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition output_parameter_definitions = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getOutputParameterDefinitionsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defined structured output parameters for this flow.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition output_parameter_definitions = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.dialogflow.cx.v3.ParameterDefinitionOrBuilder>
+      getOutputParameterDefinitionsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defined structured output parameters for this flow.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.cx.v3.ParameterDefinition output_parameter_definitions = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3.ParameterDefinitionOrBuilder
+      getOutputParameterDefinitionsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Multi-lingual agent settings for this flow.
    * </pre>
    *

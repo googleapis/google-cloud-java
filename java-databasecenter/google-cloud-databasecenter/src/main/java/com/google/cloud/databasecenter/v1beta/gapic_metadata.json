@@ -13,6 +13,9 @@
             "AggregateFleet": {
               "methods": ["aggregateFleet", "aggregateFleetPagedCallable", "aggregateFleetCallable"]
             },
+            "AggregateIssueStats": {
+              "methods": ["aggregateIssueStats", "aggregateIssueStatsCallable"]
+            },
             "QueryDatabaseResourceGroups": {
               "methods": ["queryDatabaseResourceGroups", "queryDatabaseResourceGroupsPagedCallable", "queryDatabaseResourceGroupsCallable"]
             },

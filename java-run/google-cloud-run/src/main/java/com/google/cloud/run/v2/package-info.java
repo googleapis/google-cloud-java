@@ -66,6 +66,24 @@
  * }
  * }</pre>
  *
+ * <p>======================= InstancesClient =======================
+ *
+ * <p>Service Description: The Cloud Run Instances API allows you to manage Cloud Run Instances.
+ *
+ * <p>Sample for InstancesClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (InstancesClient instancesClient = InstancesClient.create()) {
+ *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+ *   Instance response = instancesClient.getInstance(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= JobsClient =======================
  *
  * <p>Service Description: Cloud Run Job Control Plane API.

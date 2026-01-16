@@ -206,6 +206,43 @@ public interface GeneratorOrBuilder
    *
    *
    * <pre>
+   * The LLM model settings.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.LlmModelSettings llm_model_settings = 9;</code>
+   *
+   * @return Whether the llmModelSettings field is set.
+   */
+  boolean hasLlmModelSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * The LLM model settings.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.LlmModelSettings llm_model_settings = 9;</code>
+   *
+   * @return The llmModelSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3.LlmModelSettings getLlmModelSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * The LLM model settings.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.LlmModelSettings llm_model_settings = 9;</code>
+   */
+  com.google.cloud.dialogflow.cx.v3.LlmModelSettingsOrBuilder getLlmModelSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Parameters passed to the LLM to configure its behavior.
    * </pre>
    *

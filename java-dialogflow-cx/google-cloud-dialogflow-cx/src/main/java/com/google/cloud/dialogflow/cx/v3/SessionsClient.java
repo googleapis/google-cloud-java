@@ -63,6 +63,7 @@ import javax.annotation.Generated;
  *           .setQueryParams(QueryParameters.newBuilder().build())
  *           .setQueryInput(QueryInput.newBuilder().build())
  *           .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
+ *           .setResponseView(DetectIntentResponseView.forNumber(0))
  *           .build();
  *   DetectIntentResponse response = sessionsClient.detectIntent(request);
  * }
@@ -314,6 +315,7 @@ public class SessionsClient implements BackgroundResource {
    *           .setQueryParams(QueryParameters.newBuilder().build())
    *           .setQueryInput(QueryInput.newBuilder().build())
    *           .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
+   *           .setResponseView(DetectIntentResponseView.forNumber(0))
    *           .build();
    *   DetectIntentResponse response = sessionsClient.detectIntent(request);
    * }
@@ -353,6 +355,7 @@ public class SessionsClient implements BackgroundResource {
    *           .setQueryParams(QueryParameters.newBuilder().build())
    *           .setQueryInput(QueryInput.newBuilder().build())
    *           .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
+   *           .setResponseView(DetectIntentResponseView.forNumber(0))
    *           .build();
    *   ApiFuture<DetectIntentResponse> future =
    *       sessionsClient.detectIntentCallable().futureCall(request);
@@ -390,6 +393,7 @@ public class SessionsClient implements BackgroundResource {
    *           .setQueryParams(QueryParameters.newBuilder().build())
    *           .setQueryInput(QueryInput.newBuilder().build())
    *           .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
+   *           .setResponseView(DetectIntentResponseView.forNumber(0))
    *           .build();
    *   ServerStream<DetectIntentResponse> stream =
    *       sessionsClient.serverStreamingDetectIntentCallable().call(request);
@@ -435,6 +439,7 @@ public class SessionsClient implements BackgroundResource {
    *           .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
    *           .setEnablePartialResponse(true)
    *           .setEnableDebuggingInfo(true)
+   *           .setResponseView(DetectIntentResponseView.forNumber(0))
    *           .build();
    *   bidiStream.send(request);
    *   for (StreamingDetectIntentResponse response : bidiStream) {

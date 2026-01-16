@@ -25,7 +25,6 @@ package com.google.cloud.databasecenter.v1beta;
  * <pre>
  * MachineConfig describes the configuration of a machine specific to a Database
  * Resource.
- * NextID: 5
  * </pre>
  *
  * Protobuf type {@code google.cloud.databasecenter.v1beta.MachineConfig}
@@ -352,7 +351,6 @@ public final class MachineConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * MachineConfig describes the configuration of a machine specific to a Database
    * Resource.
-   * NextID: 5
    * </pre>
    *
    * Protobuf type {@code google.cloud.databasecenter.v1beta.MachineConfig}

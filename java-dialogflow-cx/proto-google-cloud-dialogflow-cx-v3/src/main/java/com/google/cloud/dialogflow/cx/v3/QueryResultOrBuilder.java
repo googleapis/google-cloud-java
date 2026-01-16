@@ -423,224 +423,6 @@ public interface QueryResultOrBuilder
    *
    *
    * <pre>
-   * The list of webhook ids in the order of call sequence.
-   * </pre>
-   *
-   * <code>repeated string webhook_ids = 25;</code>
-   *
-   * @return A list containing the webhookIds.
-   */
-  java.util.List<java.lang.String> getWebhookIdsList();
-
-  /**
-   *
-   *
-   * <pre>
-   * The list of webhook ids in the order of call sequence.
-   * </pre>
-   *
-   * <code>repeated string webhook_ids = 25;</code>
-   *
-   * @return The count of webhookIds.
-   */
-  int getWebhookIdsCount();
-
-  /**
-   *
-   *
-   * <pre>
-   * The list of webhook ids in the order of call sequence.
-   * </pre>
-   *
-   * <code>repeated string webhook_ids = 25;</code>
-   *
-   * @param index The index of the element to return.
-   * @return The webhookIds at the given index.
-   */
-  java.lang.String getWebhookIds(int index);
-
-  /**
-   *
-   *
-   * <pre>
-   * The list of webhook ids in the order of call sequence.
-   * </pre>
-   *
-   * <code>repeated string webhook_ids = 25;</code>
-   *
-   * @param index The index of the value to return.
-   * @return The bytes of the webhookIds at the given index.
-   */
-  com.google.protobuf.ByteString getWebhookIdsBytes(int index);
-
-  /**
-   *
-   *
-   * <pre>
-   * The list of webhook display names in the order of call sequence.
-   * </pre>
-   *
-   * <code>repeated string webhook_display_names = 26;</code>
-   *
-   * @return A list containing the webhookDisplayNames.
-   */
-  java.util.List<java.lang.String> getWebhookDisplayNamesList();
-
-  /**
-   *
-   *
-   * <pre>
-   * The list of webhook display names in the order of call sequence.
-   * </pre>
-   *
-   * <code>repeated string webhook_display_names = 26;</code>
-   *
-   * @return The count of webhookDisplayNames.
-   */
-  int getWebhookDisplayNamesCount();
-
-  /**
-   *
-   *
-   * <pre>
-   * The list of webhook display names in the order of call sequence.
-   * </pre>
-   *
-   * <code>repeated string webhook_display_names = 26;</code>
-   *
-   * @param index The index of the element to return.
-   * @return The webhookDisplayNames at the given index.
-   */
-  java.lang.String getWebhookDisplayNames(int index);
-
-  /**
-   *
-   *
-   * <pre>
-   * The list of webhook display names in the order of call sequence.
-   * </pre>
-   *
-   * <code>repeated string webhook_display_names = 26;</code>
-   *
-   * @param index The index of the value to return.
-   * @return The bytes of the webhookDisplayNames at the given index.
-   */
-  com.google.protobuf.ByteString getWebhookDisplayNamesBytes(int index);
-
-  /**
-   *
-   *
-   * <pre>
-   * The list of webhook latencies in the order of call sequence.
-   * </pre>
-   *
-   * <code>repeated .google.protobuf.Duration webhook_latencies = 27;</code>
-   */
-  java.util.List<com.google.protobuf.Duration> getWebhookLatenciesList();
-
-  /**
-   *
-   *
-   * <pre>
-   * The list of webhook latencies in the order of call sequence.
-   * </pre>
-   *
-   * <code>repeated .google.protobuf.Duration webhook_latencies = 27;</code>
-   */
-  com.google.protobuf.Duration getWebhookLatencies(int index);
-
-  /**
-   *
-   *
-   * <pre>
-   * The list of webhook latencies in the order of call sequence.
-   * </pre>
-   *
-   * <code>repeated .google.protobuf.Duration webhook_latencies = 27;</code>
-   */
-  int getWebhookLatenciesCount();
-
-  /**
-   *
-   *
-   * <pre>
-   * The list of webhook latencies in the order of call sequence.
-   * </pre>
-   *
-   * <code>repeated .google.protobuf.Duration webhook_latencies = 27;</code>
-   */
-  java.util.List<? extends com.google.protobuf.DurationOrBuilder>
-      getWebhookLatenciesOrBuilderList();
-
-  /**
-   *
-   *
-   * <pre>
-   * The list of webhook latencies in the order of call sequence.
-   * </pre>
-   *
-   * <code>repeated .google.protobuf.Duration webhook_latencies = 27;</code>
-   */
-  com.google.protobuf.DurationOrBuilder getWebhookLatenciesOrBuilder(int index);
-
-  /**
-   *
-   *
-   * <pre>
-   * The list of webhook tags in the order of call sequence.
-   * </pre>
-   *
-   * <code>repeated string webhook_tags = 29;</code>
-   *
-   * @return A list containing the webhookTags.
-   */
-  java.util.List<java.lang.String> getWebhookTagsList();
-
-  /**
-   *
-   *
-   * <pre>
-   * The list of webhook tags in the order of call sequence.
-   * </pre>
-   *
-   * <code>repeated string webhook_tags = 29;</code>
-   *
-   * @return The count of webhookTags.
-   */
-  int getWebhookTagsCount();
-
-  /**
-   *
-   *
-   * <pre>
-   * The list of webhook tags in the order of call sequence.
-   * </pre>
-   *
-   * <code>repeated string webhook_tags = 29;</code>
-   *
-   * @param index The index of the element to return.
-   * @return The webhookTags at the given index.
-   */
-  java.lang.String getWebhookTags(int index);
-
-  /**
-   *
-   *
-   * <pre>
-   * The list of webhook tags in the order of call sequence.
-   * </pre>
-   *
-   * <code>repeated string webhook_tags = 29;</code>
-   *
-   * @param index The index of the value to return.
-   * @return The bytes of the webhookTags at the given index.
-   */
-  com.google.protobuf.ByteString getWebhookTagsBytes(int index);
-
-  /**
-   *
-   *
-   * <pre>
    * The list of webhook call status in the order of call sequence.
    * </pre>
    *
@@ -863,7 +645,7 @@ public interface QueryResultOrBuilder
    * <code>.google.cloud.dialogflow.cx.v3.Intent intent = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.QueryResult.intent is deprecated. See
-   *     google/cloud/dialogflow/cx/v3/session.proto;l=1049
+   *     google/cloud/dialogflow/cx/v3/session.proto;l=1080
    * @return Whether the intent field is set.
    */
   @java.lang.Deprecated
@@ -884,7 +666,7 @@ public interface QueryResultOrBuilder
    * <code>.google.cloud.dialogflow.cx.v3.Intent intent = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.QueryResult.intent is deprecated. See
-   *     google/cloud/dialogflow/cx/v3/session.proto;l=1049
+   *     google/cloud/dialogflow/cx/v3/session.proto;l=1080
    * @return The intent.
    */
   @java.lang.Deprecated
@@ -925,7 +707,7 @@ public interface QueryResultOrBuilder
    * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.QueryResult.intent_detection_confidence is
-   *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=1060
+   *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=1091
    * @return The intentDetectionConfidence.
    */
   @java.lang.Deprecated

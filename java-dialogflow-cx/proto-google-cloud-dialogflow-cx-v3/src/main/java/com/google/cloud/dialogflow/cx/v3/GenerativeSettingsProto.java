@@ -44,6 +44,10 @@ public final class GenerativeSettingsProto {
       internal_static_google_cloud_dialogflow_cx_v3_GenerativeSettings_KnowledgeConnectorSettings_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3_GenerativeSettings_KnowledgeConnectorSettings_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3_LlmModelSettings_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3_LlmModelSettings_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -53,40 +57,41 @@ public final class GenerativeSettingsProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n"
-          + "7google/cloud/dialogflow/cx/v3/generative_settings.proto\022\035google.cloud.dialogfl"
+      "\n7google/cloud/dialogflow/cx/v3/generati"
+          + "ve_settings.proto\022\035google.cloud.dialogfl"
           + "ow.cx.v3\032\031google/api/resource.proto\0323goo"
-          + "gle/cloud/dialogflow/cx/v3/safety_settings.proto\"\373\006\n"
-          + "\022GenerativeSettings\022\014\n"
-          + "\004name\030\005 \001(\t\022]\n"
-          + "\021fallback_settings\030\001 \001(\0132B.googl"
-          + "e.cloud.dialogflow.cx.v3.GenerativeSettings.FallbackSettings\022Q\n"
-          + "\032generative_safety_settings\030\003"
-          + " \001(\0132-.google.cloud.dialogflow.cx.v3.SafetySettings\022r\n"
-          + "\034knowledge_connector_settings\030\007 \001(\0132L.google.cloud.dia"
-          + "logflow.cx.v3.GenerativeSettings.KnowledgeConnectorSettings\022\025\n\r"
-          + "language_code\030\004 \001(\t\032\345\001\n"
-          + "\020FallbackSettings\022\027\n"
-          + "\017selected_prompt\030\003 \001(\t\022k\n"
-          + "\020prompt_templates\030\004 \003(\0132Q.goo"
-          + "gle.cloud.dialogflow.cx.v3.GenerativeSettings.FallbackSettings.PromptTemplate\032K\n"
-          + "\016PromptTemplate\022\024\n"
-          + "\014display_name\030\001 \001(\t\022\023\n"
-          + "\013prompt_text\030\002 \001(\t\022\016\n"
-          + "\006frozen\030\003 \001(\010\032\255\001\n"
-          + "\032KnowledgeConnectorSettings\022\020\n"
-          + "\010business\030\001 \001(\t\022\r\n"
-          + "\005agent\030\002 \001(\t\022\026\n"
-          + "\016agent_identity\030\003 \001(\t\022\034\n"
-          + "\024business_description\030\004 \001(\t\022\023\n"
-          + "\013agent_scope\030\005 \001(\t\022#\n"
-          + "\033disable_data_store_fallback\030\010 \001(\010:\201\001\352A~\n"
-          + "1dialogflow.googleapis.com/AgentGenerativeSettings\022Iprojects/{p"
-          + "roject}/locations/{location}/agents/{agent}/generativeSettingsB\272\001\n"
-          + "!com.google.cloud.dialogflow.cx.v3B\027GenerativeSettings"
-          + "ProtoP\001Z1cloud.google.com/go/dialogflow/"
-          + "cx/apiv3/cxpb;cxpb\242\002\002DF\252\002\035Google.Cloud.D"
-          + "ialogflow.Cx.V3\352\002!Google::Cloud::Dialogflow::CX::V3b\006proto3"
+          + "gle/cloud/dialogflow/cx/v3/safety_settin"
+          + "gs.proto\"\310\007\n\022GenerativeSettings\022\014\n\004name\030"
+          + "\005 \001(\t\022]\n\021fallback_settings\030\001 \001(\0132B.googl"
+          + "e.cloud.dialogflow.cx.v3.GenerativeSetti"
+          + "ngs.FallbackSettings\022Q\n\032generative_safet"
+          + "y_settings\030\003 \001(\0132-.google.cloud.dialogfl"
+          + "ow.cx.v3.SafetySettings\022r\n\034knowledge_con"
+          + "nector_settings\030\007 \001(\0132L.google.cloud.dia"
+          + "logflow.cx.v3.GenerativeSettings.Knowled"
+          + "geConnectorSettings\022\025\n\rlanguage_code\030\004 \001"
+          + "(\t\022K\n\022llm_model_settings\030\010 \001(\0132/.google."
+          + "cloud.dialogflow.cx.v3.LlmModelSettings\032"
+          + "\345\001\n\020FallbackSettings\022\027\n\017selected_prompt\030"
+          + "\003 \001(\t\022k\n\020prompt_templates\030\004 \003(\0132Q.google"
+          + ".cloud.dialogflow.cx.v3.GenerativeSettin"
+          + "gs.FallbackSettings.PromptTemplate\032K\n\016Pr"
+          + "omptTemplate\022\024\n\014display_name\030\001 \001(\t\022\023\n\013pr"
+          + "ompt_text\030\002 \001(\t\022\016\n\006frozen\030\003 \001(\010\032\255\001\n\032Know"
+          + "ledgeConnectorSettings\022\020\n\010business\030\001 \001(\t"
+          + "\022\r\n\005agent\030\002 \001(\t\022\026\n\016agent_identity\030\003 \001(\t\022"
+          + "\034\n\024business_description\030\004 \001(\t\022\023\n\013agent_s"
+          + "cope\030\005 \001(\t\022#\n\033disable_data_store_fallbac"
+          + "k\030\010 \001(\010:\201\001\352A~\n1dialogflow.googleapis.com"
+          + "/AgentGenerativeSettings\022Iprojects/{proj"
+          + "ect}/locations/{location}/agents/{agent}"
+          + "/generativeSettings\"6\n\020LlmModelSettings\022"
+          + "\r\n\005model\030\001 \001(\t\022\023\n\013prompt_text\030\002 \001(\tB\272\001\n!"
+          + "com.google.cloud.dialogflow.cx.v3B\027Gener"
+          + "ativeSettingsProtoP\001Z1cloud.google.com/g"
+          + "o/dialogflow/cx/apiv3/cxpb;cxpb\242\002\002DF\252\002\035G"
+          + "oogle.Cloud.Dialogflow.Cx.V3\352\002!Google::C"
+          + "loud::Dialogflow::CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -106,6 +111,7 @@ public final class GenerativeSettingsProto {
               "GenerativeSafetySettings",
               "KnowledgeConnectorSettings",
               "LanguageCode",
+              "LlmModelSettings",
             });
     internal_static_google_cloud_dialogflow_cx_v3_GenerativeSettings_FallbackSettings_descriptor =
         internal_static_google_cloud_dialogflow_cx_v3_GenerativeSettings_descriptor
@@ -141,6 +147,14 @@ public final class GenerativeSettingsProto {
               "BusinessDescription",
               "AgentScope",
               "DisableDataStoreFallback",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3_LlmModelSettings_descriptor =
+        getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_dialogflow_cx_v3_LlmModelSettings_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3_LlmModelSettings_descriptor,
+            new java.lang.String[] {
+              "Model", "PromptText",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

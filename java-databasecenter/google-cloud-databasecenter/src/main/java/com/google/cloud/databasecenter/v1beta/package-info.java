@@ -33,15 +33,14 @@
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (DatabaseCenterClient databaseCenterClient = DatabaseCenterClient.create()) {
- *   QueryProductsRequest request =
- *       QueryProductsRequest.newBuilder()
+ *   AggregateIssueStatsRequest request =
+ *       AggregateIssueStatsRequest.newBuilder()
  *           .setParent("parent-995424086")
- *           .setPageSize(883849137)
- *           .setPageToken("pageToken873572522")
+ *           .setFilter("filter-1274492040")
+ *           .addAllSignalTypeGroups(new ArrayList<SignalTypeGroup>())
+ *           .setBaselineDate(Date.newBuilder().build())
  *           .build();
- *   for (Product element : databaseCenterClient.queryProducts(request).iterateAll()) {
- *     // doThingsWith(element);
- *   }
+ *   AggregateIssueStatsResponse response = databaseCenterClient.aggregateIssueStats(request);
  * }
  * }</pre>
  */

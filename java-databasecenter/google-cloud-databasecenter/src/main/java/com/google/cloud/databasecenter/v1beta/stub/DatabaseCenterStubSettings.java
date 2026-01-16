@@ -49,6 +49,8 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.databasecenter.v1beta.AggregateFleetRequest;
 import com.google.cloud.databasecenter.v1beta.AggregateFleetResponse;
 import com.google.cloud.databasecenter.v1beta.AggregateFleetRow;
+import com.google.cloud.databasecenter.v1beta.AggregateIssueStatsRequest;
+import com.google.cloud.databasecenter.v1beta.AggregateIssueStatsResponse;
 import com.google.cloud.databasecenter.v1beta.DatabaseResourceGroup;
 import com.google.cloud.databasecenter.v1beta.Product;
 import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsRequest;
@@ -81,7 +83,7 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the
  * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
- * of queryProducts:
+ * of aggregateIssueStats:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -92,10 +94,10 @@ import javax.annotation.Generated;
  * DatabaseCenterStubSettings.Builder databaseCenterSettingsBuilder =
  *     DatabaseCenterStubSettings.newBuilder();
  * databaseCenterSettingsBuilder
- *     .queryProductsSettings()
+ *     .aggregateIssueStatsSettings()
  *     .setRetrySettings(
  *         databaseCenterSettingsBuilder
- *             .queryProductsSettings()
+ *             .aggregateIssueStatsSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
@@ -132,6 +134,8 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
           QueryDatabaseResourceGroupsResponse,
           QueryDatabaseResourceGroupsPagedResponse>
       queryDatabaseResourceGroupsSettings;
+  private final UnaryCallSettings<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
+      aggregateIssueStatsSettings;
 
   private static final PagedListDescriptor<QueryProductsRequest, QueryProductsResponse, Product>
       QUERY_PRODUCTS_PAGE_STR_DESC =
@@ -337,6 +341,12 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
     return queryDatabaseResourceGroupsSettings;
   }
 
+  /** Returns the object with the settings used for calls to aggregateIssueStats. */
+  public UnaryCallSettings<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
+      aggregateIssueStatsSettings() {
+    return aggregateIssueStatsSettings;
+  }
+
   public DatabaseCenterStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -452,6 +462,7 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
     aggregateFleetSettings = settingsBuilder.aggregateFleetSettings().build();
     queryDatabaseResourceGroupsSettings =
         settingsBuilder.queryDatabaseResourceGroupsSettings().build();
+    aggregateIssueStatsSettings = settingsBuilder.aggregateIssueStatsSettings().build();
   }
 
   /** Builder for DatabaseCenterStubSettings. */
@@ -468,6 +479,8 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
             QueryDatabaseResourceGroupsResponse,
             QueryDatabaseResourceGroupsPagedResponse>
         queryDatabaseResourceGroupsSettings;
+    private final UnaryCallSettings.Builder<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
+        aggregateIssueStatsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -499,10 +512,14 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
       aggregateFleetSettings = PagedCallSettings.newBuilder(AGGREGATE_FLEET_PAGE_STR_FACT);
       queryDatabaseResourceGroupsSettings =
           PagedCallSettings.newBuilder(QUERY_DATABASE_RESOURCE_GROUPS_PAGE_STR_FACT);
+      aggregateIssueStatsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              queryProductsSettings, aggregateFleetSettings, queryDatabaseResourceGroupsSettings);
+              queryProductsSettings,
+              aggregateFleetSettings,
+              queryDatabaseResourceGroupsSettings,
+              aggregateIssueStatsSettings);
       initDefaults(this);
     }
 
@@ -513,10 +530,14 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
       aggregateFleetSettings = settings.aggregateFleetSettings.toBuilder();
       queryDatabaseResourceGroupsSettings =
           settings.queryDatabaseResourceGroupsSettings.toBuilder();
+      aggregateIssueStatsSettings = settings.aggregateIssueStatsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              queryProductsSettings, aggregateFleetSettings, queryDatabaseResourceGroupsSettings);
+              queryProductsSettings,
+              aggregateFleetSettings,
+              queryDatabaseResourceGroupsSettings,
+              aggregateIssueStatsSettings);
     }
 
     private static Builder createDefault() {
@@ -559,6 +580,11 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
+      builder
+          .aggregateIssueStatsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
       return builder;
     }
 
@@ -598,6 +624,12 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
             QueryDatabaseResourceGroupsPagedResponse>
         queryDatabaseResourceGroupsSettings() {
       return queryDatabaseResourceGroupsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to aggregateIssueStats. */
+    public UnaryCallSettings.Builder<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
+        aggregateIssueStatsSettings() {
+      return aggregateIssueStatsSettings;
     }
 
     @Override

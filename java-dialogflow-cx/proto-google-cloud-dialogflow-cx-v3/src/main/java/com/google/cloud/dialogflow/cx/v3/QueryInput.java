@@ -90,6 +90,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
     AUDIO(5),
     EVENT(6),
     DTMF(7),
+    TOOL_CALL_RESULT(11),
     INPUT_NOT_SET(0);
     private final int value;
 
@@ -119,6 +120,8 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
           return EVENT;
         case 7:
           return DTMF;
+        case 11:
+          return TOOL_CALL_RESULT;
         case 0:
           return INPUT_NOT_SET;
         default:
@@ -405,6 +408,60 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.dialogflow.cx.v3.DtmfInput.getDefaultInstance();
   }
 
+  public static final int TOOL_CALL_RESULT_FIELD_NUMBER = 11;
+
+  /**
+   *
+   *
+   * <pre>
+   * The results of a tool executed by the client.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.ToolCallResult tool_call_result = 11;</code>
+   *
+   * @return Whether the toolCallResult field is set.
+   */
+  @java.lang.Override
+  public boolean hasToolCallResult() {
+    return inputCase_ == 11;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The results of a tool executed by the client.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.ToolCallResult tool_call_result = 11;</code>
+   *
+   * @return The toolCallResult.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.ToolCallResult getToolCallResult() {
+    if (inputCase_ == 11) {
+      return (com.google.cloud.dialogflow.cx.v3.ToolCallResult) input_;
+    }
+    return com.google.cloud.dialogflow.cx.v3.ToolCallResult.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The results of a tool executed by the client.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.ToolCallResult tool_call_result = 11;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.ToolCallResultOrBuilder getToolCallResultOrBuilder() {
+    if (inputCase_ == 11) {
+      return (com.google.cloud.dialogflow.cx.v3.ToolCallResult) input_;
+    }
+    return com.google.cloud.dialogflow.cx.v3.ToolCallResult.getDefaultInstance();
+  }
+
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
@@ -496,6 +553,9 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
     if (inputCase_ == 7) {
       output.writeMessage(7, (com.google.cloud.dialogflow.cx.v3.DtmfInput) input_);
     }
+    if (inputCase_ == 11) {
+      output.writeMessage(11, (com.google.cloud.dialogflow.cx.v3.ToolCallResult) input_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -533,6 +593,11 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               7, (com.google.cloud.dialogflow.cx.v3.DtmfInput) input_);
     }
+    if (inputCase_ == 11) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              11, (com.google.cloud.dialogflow.cx.v3.ToolCallResult) input_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -566,6 +631,9 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
         break;
       case 7:
         if (!getDtmf().equals(other.getDtmf())) return false;
+        break;
+      case 11:
+        if (!getToolCallResult().equals(other.getToolCallResult())) return false;
         break;
       case 0:
       default:
@@ -603,6 +671,10 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       case 7:
         hash = (37 * hash) + DTMF_FIELD_NUMBER;
         hash = (53 * hash) + getDtmf().hashCode();
+        break;
+      case 11:
+        hash = (37 * hash) + TOOL_CALL_RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getToolCallResult().hashCode();
         break;
       case 0:
       default:
@@ -774,6 +846,9 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       if (dtmfBuilder_ != null) {
         dtmfBuilder_.clear();
       }
+      if (toolCallResultBuilder_ != null) {
+        toolCallResultBuilder_.clear();
+      }
       languageCode_ = "";
       inputCase_ = 0;
       input_ = null;
@@ -814,7 +889,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloud.dialogflow.cx.v3.QueryInput result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.languageCode_ = languageCode_;
       }
     }
@@ -836,6 +911,9 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       }
       if (inputCase_ == 7 && dtmfBuilder_ != null) {
         result.input_ = dtmfBuilder_.build();
+      }
+      if (inputCase_ == 11 && toolCallResultBuilder_ != null) {
+        result.input_ = toolCallResultBuilder_.build();
       }
     }
 
@@ -886,7 +964,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dialogflow.cx.v3.QueryInput.getDefaultInstance()) return this;
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       switch (other.getInputCase()) {
@@ -913,6 +991,11 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
         case DTMF:
           {
             mergeDtmf(other.getDtmf());
+            break;
+          }
+        case TOOL_CALL_RESULT:
+          {
+            mergeToolCallResult(other.getToolCallResult());
             break;
           }
         case INPUT_NOT_SET:
@@ -961,7 +1044,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 languageCode_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 34
             case 42:
@@ -982,6 +1065,12 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
                 inputCase_ = 7;
                 break;
               } // case 58
+            case 90:
+              {
+                input.readMessage(getToolCallResultFieldBuilder().getBuilder(), extensionRegistry);
+                inputCase_ = 11;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2101,6 +2190,224 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       return dtmfBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.ToolCallResult,
+            com.google.cloud.dialogflow.cx.v3.ToolCallResult.Builder,
+            com.google.cloud.dialogflow.cx.v3.ToolCallResultOrBuilder>
+        toolCallResultBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The results of a tool executed by the client.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.ToolCallResult tool_call_result = 11;</code>
+     *
+     * @return Whether the toolCallResult field is set.
+     */
+    @java.lang.Override
+    public boolean hasToolCallResult() {
+      return inputCase_ == 11;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The results of a tool executed by the client.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.ToolCallResult tool_call_result = 11;</code>
+     *
+     * @return The toolCallResult.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3.ToolCallResult getToolCallResult() {
+      if (toolCallResultBuilder_ == null) {
+        if (inputCase_ == 11) {
+          return (com.google.cloud.dialogflow.cx.v3.ToolCallResult) input_;
+        }
+        return com.google.cloud.dialogflow.cx.v3.ToolCallResult.getDefaultInstance();
+      } else {
+        if (inputCase_ == 11) {
+          return toolCallResultBuilder_.getMessage();
+        }
+        return com.google.cloud.dialogflow.cx.v3.ToolCallResult.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The results of a tool executed by the client.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.ToolCallResult tool_call_result = 11;</code>
+     */
+    public Builder setToolCallResult(com.google.cloud.dialogflow.cx.v3.ToolCallResult value) {
+      if (toolCallResultBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        input_ = value;
+        onChanged();
+      } else {
+        toolCallResultBuilder_.setMessage(value);
+      }
+      inputCase_ = 11;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The results of a tool executed by the client.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.ToolCallResult tool_call_result = 11;</code>
+     */
+    public Builder setToolCallResult(
+        com.google.cloud.dialogflow.cx.v3.ToolCallResult.Builder builderForValue) {
+      if (toolCallResultBuilder_ == null) {
+        input_ = builderForValue.build();
+        onChanged();
+      } else {
+        toolCallResultBuilder_.setMessage(builderForValue.build());
+      }
+      inputCase_ = 11;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The results of a tool executed by the client.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.ToolCallResult tool_call_result = 11;</code>
+     */
+    public Builder mergeToolCallResult(com.google.cloud.dialogflow.cx.v3.ToolCallResult value) {
+      if (toolCallResultBuilder_ == null) {
+        if (inputCase_ == 11
+            && input_ != com.google.cloud.dialogflow.cx.v3.ToolCallResult.getDefaultInstance()) {
+          input_ =
+              com.google.cloud.dialogflow.cx.v3.ToolCallResult.newBuilder(
+                      (com.google.cloud.dialogflow.cx.v3.ToolCallResult) input_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          input_ = value;
+        }
+        onChanged();
+      } else {
+        if (inputCase_ == 11) {
+          toolCallResultBuilder_.mergeFrom(value);
+        } else {
+          toolCallResultBuilder_.setMessage(value);
+        }
+      }
+      inputCase_ = 11;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The results of a tool executed by the client.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.ToolCallResult tool_call_result = 11;</code>
+     */
+    public Builder clearToolCallResult() {
+      if (toolCallResultBuilder_ == null) {
+        if (inputCase_ == 11) {
+          inputCase_ = 0;
+          input_ = null;
+          onChanged();
+        }
+      } else {
+        if (inputCase_ == 11) {
+          inputCase_ = 0;
+          input_ = null;
+        }
+        toolCallResultBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The results of a tool executed by the client.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.ToolCallResult tool_call_result = 11;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.ToolCallResult.Builder getToolCallResultBuilder() {
+      return getToolCallResultFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The results of a tool executed by the client.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.ToolCallResult tool_call_result = 11;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3.ToolCallResultOrBuilder getToolCallResultOrBuilder() {
+      if ((inputCase_ == 11) && (toolCallResultBuilder_ != null)) {
+        return toolCallResultBuilder_.getMessageOrBuilder();
+      } else {
+        if (inputCase_ == 11) {
+          return (com.google.cloud.dialogflow.cx.v3.ToolCallResult) input_;
+        }
+        return com.google.cloud.dialogflow.cx.v3.ToolCallResult.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The results of a tool executed by the client.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.ToolCallResult tool_call_result = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.ToolCallResult,
+            com.google.cloud.dialogflow.cx.v3.ToolCallResult.Builder,
+            com.google.cloud.dialogflow.cx.v3.ToolCallResultOrBuilder>
+        getToolCallResultFieldBuilder() {
+      if (toolCallResultBuilder_ == null) {
+        if (!(inputCase_ == 11)) {
+          input_ = com.google.cloud.dialogflow.cx.v3.ToolCallResult.getDefaultInstance();
+        }
+        toolCallResultBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3.ToolCallResult,
+                com.google.cloud.dialogflow.cx.v3.ToolCallResult.Builder,
+                com.google.cloud.dialogflow.cx.v3.ToolCallResultOrBuilder>(
+                (com.google.cloud.dialogflow.cx.v3.ToolCallResult) input_,
+                getParentForChildren(),
+                isClean());
+        input_ = null;
+      }
+      inputCase_ = 11;
+      onChanged();
+      return toolCallResultBuilder_;
+    }
+
     private java.lang.Object languageCode_ = "";
 
     /**
@@ -2175,7 +2482,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       languageCode_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2196,7 +2503,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearLanguageCode() {
       languageCode_ = getDefaultInstance().getLanguageCode();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2222,7 +2529,7 @@ public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       languageCode_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

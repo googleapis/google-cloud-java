@@ -336,6 +336,42 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
+   * Scope for the parameters. If not specified, parameters will be treated as
+   * session parameters. Parameters with custom scope will not be put into
+   * [session parameters][google.cloud.dialogflow.cx.v3.SessionInfo.parameters].
+   *
+   * You can reference the parameters with custom scope in the agent with the
+   * following format: $parameter-scope.params.parameter-id.
+   * </pre>
+   *
+   * <code>string parameter_scope = 12;</code>
+   *
+   * @return The parameterScope.
+   */
+  java.lang.String getParameterScope();
+
+  /**
+   *
+   *
+   * <pre>
+   * Scope for the parameters. If not specified, parameters will be treated as
+   * session parameters. Parameters with custom scope will not be put into
+   * [session parameters][google.cloud.dialogflow.cx.v3.SessionInfo.parameters].
+   *
+   * You can reference the parameters with custom scope in the agent with the
+   * following format: $parameter-scope.params.parameter-id.
+   * </pre>
+   *
+   * <code>string parameter_scope = 12;</code>
+   *
+   * @return The bytes for parameterScope.
+   */
+  com.google.protobuf.ByteString getParameterScopeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to
    * override the [current page][QueryResult.current_page] in the session.
    * Format:
@@ -593,6 +629,91 @@ public interface QueryParametersOrBuilder
    *
    *
    * <pre>
+   * Optional. The unique identifier of the
+   * [playbook][google.cloud.dialogflow.cx.v3.Playbook] to start or continue the
+   * session with. If `current_playbook` is specified, the previous state of the
+   * session will be ignored by Dialogflow.
+   *
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string current_playbook = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The currentPlaybook.
+   */
+  java.lang.String getCurrentPlaybook();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The unique identifier of the
+   * [playbook][google.cloud.dialogflow.cx.v3.Playbook] to start or continue the
+   * session with. If `current_playbook` is specified, the previous state of the
+   * session will be ignored by Dialogflow.
+   *
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string current_playbook = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for currentPlaybook.
+   */
+  com.google.protobuf.ByteString getCurrentPlaybookBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use the specified LLM model settings for processing the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.LlmModelSettings llm_model_settings = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the llmModelSettings field is set.
+   */
+  boolean hasLlmModelSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use the specified LLM model settings for processing the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.LlmModelSettings llm_model_settings = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The llmModelSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3.LlmModelSettings getLlmModelSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use the specified LLM model settings for processing the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.LlmModelSettings llm_model_settings = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3.LlmModelSettingsOrBuilder getLlmModelSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The channel which this query is for.
    *
    * If specified, only the
@@ -835,7 +956,7 @@ public interface QueryParametersOrBuilder
    *
    * @deprecated
    *     google.cloud.dialogflow.cx.v3.QueryParameters.populate_data_store_connection_signals is
-   *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=730
+   *     deprecated. See google/cloud/dialogflow/cx/v3/session.proto;l=770
    * @return The populateDataStoreConnectionSignals.
    */
   @java.lang.Deprecated

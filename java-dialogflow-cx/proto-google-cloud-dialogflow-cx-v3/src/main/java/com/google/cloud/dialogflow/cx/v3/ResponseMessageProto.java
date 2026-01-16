@@ -83,28 +83,31 @@ public final class ResponseMessageProto {
     java.lang.String[] descriptorData = {
       "\n"
           + "4google/cloud/dialogflow/cx/v3/response_message.proto\022\035google.cloud.dialogflow."
-          + "cx.v3\032\037google/api/field_behavior.proto\032\034google/protobuf/struct.proto\"\361\r\n"
+          + "cx.v3\032\037google/api/field_behavior.proto\032-"
+          + "google/cloud/dialogflow/cx/v3/tool_call.proto\032\034google/protobuf/struct.proto\"\257\016\n"
           + "\017ResponseMessage\022C\n"
-          + "\004text\030\001"
-          + " \001(\01323.google.cloud.dialogflow.cx.v3.ResponseMessage.TextH\000\022*\n"
+          + "\004text\030\001 \001(\01323.google.c"
+          + "loud.dialogflow.cx.v3.ResponseMessage.TextH\000\022*\n"
           + "\007payload\030\002 \001(\0132\027.google.protobuf.StructH\000\022b\n"
-          + "\024conversation_success\030\t \001(\0132B.google"
-          + ".cloud.dialogflow.cx.v3.ResponseMessage.ConversationSuccessH\000\022[\n"
-          + "\021output_audio_text\030\010"
-          + " \001(\0132>.google.cloud.dialogflow.cx.v3.ResponseMessage.OutputAudioTextH\000\022]\n"
+          + "\024conversation_success\030\t \001(\0132B"
+          + ".google.cloud.dialogflow.cx.v3.ResponseMessage.ConversationSuccessH\000\022[\n"
+          + "\021output_audio_text\030\010 \001(\0132>.google.cloud.dialogflo"
+          + "w.cx.v3.ResponseMessage.OutputAudioTextH\000\022]\n"
           + "\022live_agent_handoff\030\n"
-          + " \001(\0132?.google.cloud.di"
-          + "alogflow.cx.v3.ResponseMessage.LiveAgentHandoffH\000\022]\n"
-          + "\017end_interaction\030\013 \001(\0132=.goo"
-          + "gle.cloud.dialogflow.cx.v3.ResponseMessage.EndInteractionB\003\340A\003H\000\022N\n\n"
+          + " \001(\0132?.google.c"
+          + "loud.dialogflow.cx.v3.ResponseMessage.LiveAgentHandoffH\000\022]\n"
+          + "\017end_interaction\030\013 \001("
+          + "\0132=.google.cloud.dialogflow.cx.v3.ResponseMessage.EndInteractionB\003\340A\003H\000\022N\n\n"
           + "play_audio\030\014"
           + " \001(\01328.google.cloud.dialogflow.cx.v3.ResponseMessage.PlayAudioH\000\022U\n"
           + "\013mixed_audio\030\r"
-          + " \001(\01329.google.cloud.dialogflow.cx.v3.ResponseMessage.MixedAudioB\003\340A\003H\000\022g\n"
-          + "\027telephony_transfer_call\030\022 \001(\0132D.google.cloud."
-          + "dialogflow.cx.v3.ResponseMessage.TelephonyTransferCallH\000\022_\n"
-          + "\023knowledge_info_card\030\024"
-          + " \001(\0132@.google.cloud.dialogflow.cx.v3.ResponseMessage.KnowledgeInfoCardH\000\022R\n\r"
+          + " \001(\01329.google.cloud.dialogflow.c"
+          + "x.v3.ResponseMessage.MixedAudioB\003\340A\003H\000\022g\n"
+          + "\027telephony_transfer_call\030\022 \001(\0132D.google"
+          + ".cloud.dialogflow.cx.v3.ResponseMessage.TelephonyTransferCallH\000\022_\n"
+          + "\023knowledge_info_card\030\024 \001(\0132@.google.cloud.dialogflow.c"
+          + "x.v3.ResponseMessage.KnowledgeInfoCardH\000\022<\n"
+          + "\ttool_call\030\026 \001(\0132\'.google.cloud.dialogflow.cx.v3.ToolCallH\000\022R\n\r"
           + "response_type\030\004"
           + " \001(\0162;.google.cloud.dialogflow.cx.v3.ResponseMessage.ResponseType\022\017\n"
           + "\007channel\030\023 \001(\t\032C\n"
@@ -125,8 +128,8 @@ public final class ResponseMessageProto {
           + "\taudio_uri\030\001 \001(\tB\003\340A\002\022(\n"
           + "\033allow_playback_interruption\030\002 \001(\010B\003\340A\003\032\301\001\n\n"
           + "MixedAudio\022S\n"
-          + "\010segments\030\001"
-          + " \003(\0132A.google.cloud.dialogflow.cx.v3.ResponseMessage.MixedAudio.Segment\032^\n"
+          + "\010segments\030\001 \003(\0132A.goo"
+          + "gle.cloud.dialogflow.cx.v3.ResponseMessage.MixedAudio.Segment\032^\n"
           + "\007Segment\022\017\n"
           + "\005audio\030\001 \001(\014H\000\022\r\n"
           + "\003uri\030\002 \001(\tH\000\022(\n"
@@ -142,16 +145,16 @@ public final class ResponseMessageProto {
           + "\020PARAMETER_PROMPT\020\002\022\022\n"
           + "\016HANDLER_PROMPT\020\003B\t\n"
           + "\007messageB\267\001\n"
-          + "!com.google.cloud.dialogflow.cx.v3B\024ResponseMessageProtoP\001Z1cloud.go"
-          + "ogle.com/go/dialogflow/cx/apiv3/cxpb;cxp"
-          + "b\242\002\002DF\252\002\035Google.Cloud.Dialogflow.Cx.V3\352\002"
-          + "!Google::Cloud::Dialogflow::CX::V3b\006proto3"
+          + "!com.google.cloud.dialogflow.cx.v3B\024ResponseMessageProtoP\001Z1cloud.google.com/go"
+          + "/dialogflow/cx/apiv3/cxpb;cxpb\242\002\002DF\252\002\035Go"
+          + "ogle.Cloud.Dialogflow.Cx.V3\352\002!Google::Cloud::Dialogflow::CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.cloud.dialogflow.cx.v3.ToolCallProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
             });
     internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_descriptor =
@@ -170,6 +173,7 @@ public final class ResponseMessageProto {
               "MixedAudio",
               "TelephonyTransferCall",
               "KnowledgeInfoCard",
+              "ToolCall",
               "ResponseType",
               "Channel",
               "Message",
@@ -276,6 +280,7 @@ public final class ResponseMessageProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.cloud.dialogflow.cx.v3.ToolCallProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
   }
 
