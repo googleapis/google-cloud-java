@@ -13,3 +13,7 @@ SimpleBenchmarkApp/src/main/java/com/google/cloud/App.java
 .flattened-pom.xml
 # Local Test files
 *ITLocalTest.java
+
+# JDBC-specific files
+google-cloud-bigquery-jdbc/drivers/
+google-cloud-bigquery-jdbc/jacoco*
