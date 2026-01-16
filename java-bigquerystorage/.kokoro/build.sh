@@ -1,11 +1,11 @@
 #!/bin/bash
-# Copyright 2019 Google LLC
+# Copyright 2025 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
+#     https://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,8 +23,8 @@ cd ${scriptDir}/..
 # include common functions
 source ${scriptDir}/common.sh
 
-# Print out Java version
-java -version
+# Print out Maven & Java version
+mvn -version
 echo ${JOB_TYPE}
 
 # attempt to install 3 times with exponential backoff (starting with 10 seconds)
@@ -37,10 +37,11 @@ retry_with_backoff 3 10 \
     -Dgcloud.download.skip=true \
     -T 1C
 
-# if GOOGLE_APPLICATION_CREDIENTIALS is specified as a relative path prepend Kokoro root directory onto it
+# if GOOGLE_APPLICATION_CREDENTIALS is specified as a relative path, prepend Kokoro root directory onto it
 if [[ ! -z "${GOOGLE_APPLICATION_CREDENTIALS}" && "${GOOGLE_APPLICATION_CREDENTIALS}" != /* ]]; then
     export GOOGLE_APPLICATION_CREDENTIALS=$(realpath ${KOKORO_GFILE_DIR}/${GOOGLE_APPLICATION_CREDENTIALS})
 fi
+
 
 RETURN_CODE=0
 set +e
@@ -48,33 +49,34 @@ set +e
 case ${JOB_TYPE} in
 test)
     echo "SUREFIRE_JVM_OPT: ${SUREFIRE_JVM_OPT}"
-    mvn test -B -ntp -Dclirr.skip=true -Denforcer.skip=true ${SUREFIRE_JVM_OPT}
+    mvn test -B -ntp -Dfmt.skip=true -Dclirr.skip=true -Denforcer.skip=true ${SUREFIRE_JVM_OPT}
     RETURN_CODE=$?
     ;;
 lint)
-    mvn com.spotify.fmt:fmt-maven-plugin:check
+    mvn com.spotify.fmt:fmt-maven-plugin:check -B -ntp
     RETURN_CODE=$?
     ;;
 javadoc)
-    mvn javadoc:javadoc javadoc:test-javadoc
+    mvn javadoc:javadoc javadoc:test-javadoc -B -ntp -Dfmt.skip=true
     RETURN_CODE=$?
     ;;
 integration)
     mvn -B ${INTEGRATION_TEST_ARGS} \
+      -ntp \
       -Penable-integration-tests \
       -DtrimStackTrace=false \
       -Dclirr.skip=true \
       -Denforcer.skip=true \
-      -Dit.test=!ITBigQueryWrite*RetryTest \
-      -Dsurefire.failIfNoSpecifiedTests=false \
-      -Dfailsafe.failIfNoSpecifiedTests=false \
+      -Dcheckstyle.skip=true \
+      -DskipUnitTests=true \
+      -Dfmt.skip=true \
       -fae \
       verify
     RETURN_CODE=$?
     ;;
 graalvm)
     # Run Unit and Integration Tests with Native Image
-    mvn -B ${INTEGRATION_TEST_ARGS} -ntp -PcustomNative test
+    mvn -B ${INTEGRATION_TEST_ARGS} -ntp -Pnative test -Dfmt.skip=true
     RETURN_CODE=$?
     ;;
 samples)
@@ -87,17 +89,18 @@ samples)
 
     if [[ -f ${SAMPLES_DIR}/pom.xml ]]
     then
-      if [ -f "${KOKORO_GFILE_DIR}/secret_manager/java-bigquerystorage-samples-secrets" ]
-        then
-            source "${KOKORO_GFILE_DIR}/secret_manager/java-bigquerystorage-samples-secrets"
-      fi
+        for FILE in ${KOKORO_GFILE_DIR}/secret_manager/*-samples-secrets; do
+          [[ -f "$FILE" ]] || continue
+          source "$FILE"
+        done
 
         pushd ${SAMPLES_DIR}
         mvn -B \
-          -Penable-samples \
+          -ntp \
           -DtrimStackTrace=false \
           -Dclirr.skip=true \
           -Denforcer.skip=true \
+		  -Dfmt.skip=true \
           -fae \
           verify
         RETURN_CODE=$?
@@ -107,23 +110,7 @@ samples)
     fi
     ;;
 clirr)
-    mvn -B -Denforcer.skip=true clirr:check
-    RETURN_CODE=$?
-    ;;
-retry_quota)
-    mvn -B ${INTEGRATION_TEST_ARGS} \
-      -Dit.test=ITBigQueryWriteQuotaRetryTest \
-      -Dsurefire.failIfNoSpecifiedTests=false \
-      -Dfailsafe.failIfNoSpecifiedTests=false \
-      test
-    RETURN_CODE=$?
-    ;;
-retry_non_quota)
-    mvn -B ${INTEGRATION_TEST_ARGS} \
-      -Dit.test=ITBigQueryWriteNonQuotaRetryTest \
-      -Dsurefire.failIfNoSpecifiedTests=false \
-      -Dfailsafe.failIfNoSpecifiedTests=false \
-      test
+    mvn -B -ntp -Dfmt.skip=true -Denforcer.skip=true clirr:check
     RETURN_CODE=$?
     ;;
 *)
@@ -138,7 +125,7 @@ fi
 # fix output location of logs
 bash .kokoro/coerce_logs.sh
 
-if [[ "${ENABLE_BUILD_COP}" == "true" ]]
+if [[ "${ENABLE_FLAKYBOT}" == "true" ]]
 then
     chmod +x ${KOKORO_GFILE_DIR}/linux_amd64/flakybot
     ${KOKORO_GFILE_DIR}/linux_amd64/flakybot -repo=googleapis/java-bigquerystorage
