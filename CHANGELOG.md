@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.57.2](https://github.com/googleapis/java-bigquery/compare/v2.57.1...v2.57.2) (2026-01-16)
+
+
+### Bug Fixes
+
+* Gracefully handle thread interruption in ConnectionImpl to preve… ([#4047](https://github.com/googleapis/java-bigquery/issues/4047)) ([031deb0](https://github.com/googleapis/java-bigquery/commit/031deb00f153b47d37655b025fcef298a3db0e0b))
+* Job.isDone() uses Job.Status.State if available ([#4039](https://github.com/googleapis/java-bigquery/issues/4039)) ([fa0a12e](https://github.com/googleapis/java-bigquery/commit/fa0a12e3cf171abab528c318ba3f4260b69a5274))
+
+
+### Documentation
+
+* Add specific samples for creating and query timestamps ([#4051](https://github.com/googleapis/java-bigquery/issues/4051)) ([fac16a8](https://github.com/googleapis/java-bigquery/commit/fac16a8eb05a6e13e406feeb9761259cdbf8e674))
+
 ## [2.57.1](https://github.com/googleapis/java-bigquery/compare/v2.57.0...v2.57.1) (2025-12-12)
 
 
