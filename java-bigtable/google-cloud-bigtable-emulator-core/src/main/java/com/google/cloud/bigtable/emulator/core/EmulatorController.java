@@ -134,10 +134,12 @@ public class EmulatorController {
     shutdownHook =
         new Thread(
             () -> {
-              if (!isStopped) {
-                isStopped = true;
-                process.destroy();
+              synchronized (EmulatorController.this) {
+                if (!isStopped) {
+                  isStopped = true;
+                }
               }
+              process.destroy();
             });
 
     Runtime.getRuntime().addShutdownHook(shutdownHook);
