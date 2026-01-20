@@ -223,7 +223,6 @@ class ITBigQueryTest {
   private static final String DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final String UK_DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final String DESCRIPTION = "Test dataset";
-  private static final String OTHER_DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final String MODEL_DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final String ROUTINE_DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
@@ -1190,7 +1189,6 @@ class ITBigQueryTest {
     if (bigquery != null) {
       RemoteBigQueryHelper.forceDelete(bigquery, DATASET);
       RemoteBigQueryHelper.forceDelete(bigquery, UK_DATASET);
-      RemoteBigQueryHelper.forceDelete(bigquery, OTHER_DATASET);
       RemoteBigQueryHelper.forceDelete(bigquery, MODEL_DATASET);
       RemoteBigQueryHelper.forceDelete(bigquery, ROUTINE_DATASET);
     }
@@ -1347,67 +1345,76 @@ class ITBigQueryTest {
 
   @Test
   void testUpdateDataset() {
+    String datasetName = RemoteBigQueryHelper.generateDatasetName();
     Dataset dataset =
         bigquery.create(
-            DatasetInfo.newBuilder(OTHER_DATASET)
+            DatasetInfo.newBuilder(datasetName)
                 .setDescription("Some Description")
                 .setLabels(Collections.singletonMap("a", "b"))
                 .build());
-    assertThat(dataset).isNotNull();
-    assertThat(dataset.getDatasetId().getProject()).isEqualTo(bigquery.getOptions().getProjectId());
-    assertThat(dataset.getDatasetId().getDataset()).isEqualTo(OTHER_DATASET);
-    assertThat(dataset.getDescription()).isEqualTo("Some Description");
-    assertThat(dataset.getLabels()).containsExactly("a", "b");
-    assertThat(dataset.getStorageBillingModel()).isNull();
-    assertThat(dataset.getMaxTimeTravelHours()).isNull();
+    try {
+      assertThat(dataset).isNotNull();
+      assertThat(dataset.getDatasetId().getProject())
+          .isEqualTo(bigquery.getOptions().getProjectId());
+      assertThat(dataset.getDatasetId().getDataset()).isEqualTo(datasetName);
+      assertThat(dataset.getDescription()).isEqualTo("Some Description");
+      assertThat(dataset.getLabels()).containsExactly("a", "b");
+      assertThat(dataset.getStorageBillingModel()).isNull();
+      assertThat(dataset.getMaxTimeTravelHours()).isNull();
 
-    Map<String, String> updateLabels = new HashMap<>();
-    updateLabels.put("x", "y");
-    updateLabels.put("a", null);
-    Dataset updatedDataset =
-        bigquery.update(
-            dataset.toBuilder()
-                .setDescription("Updated Description")
-                .setLabels(updateLabels)
-                .setStorageBillingModel("LOGICAL")
-                .setMaxTimeTravelHours(MAX_TIME_TRAVEL_HOURS)
-                .build());
-    assertThat(updatedDataset.getDescription()).isEqualTo("Updated Description");
-    assertThat(updatedDataset.getLabels()).containsExactly("x", "y");
-    assertThat(updatedDataset.getStorageBillingModel()).isEqualTo("LOGICAL");
-    assertThat(updatedDataset.getMaxTimeTravelHours()).isEqualTo(MAX_TIME_TRAVEL_HOURS);
+      Map<String, String> updateLabels = new HashMap<>();
+      updateLabels.put("x", "y");
+      updateLabels.put("a", null);
+      Dataset updatedDataset =
+          bigquery.update(
+              dataset.toBuilder()
+                  .setDescription("Updated Description")
+                  .setLabels(updateLabels)
+                  .setStorageBillingModel("LOGICAL")
+                  .setMaxTimeTravelHours(MAX_TIME_TRAVEL_HOURS)
+                  .build());
+      assertThat(updatedDataset.getDescription()).isEqualTo("Updated Description");
+      assertThat(updatedDataset.getLabels()).containsExactly("x", "y");
+      assertThat(updatedDataset.getStorageBillingModel()).isEqualTo("LOGICAL");
+      assertThat(updatedDataset.getMaxTimeTravelHours()).isEqualTo(MAX_TIME_TRAVEL_HOURS);
 
-    updatedDataset = bigquery.update(updatedDataset.toBuilder().setLabels(null).build());
-    assertThat(updatedDataset.getLabels()).isEmpty();
-    assertThat(dataset.delete()).isTrue();
+      updatedDataset = bigquery.update(updatedDataset.toBuilder().setLabels(null).build());
+      assertThat(updatedDataset.getLabels()).isEmpty();
+    } finally {
+      dataset.delete();
+    }
   }
 
   @Test
   void testUpdateDatasetWithSelectedFields() {
+    String datasetName = RemoteBigQueryHelper.generateDatasetName();
     Dataset dataset =
         bigquery.create(
-            DatasetInfo.newBuilder(OTHER_DATASET).setDescription("Some Description").build());
-    assertNotNull(dataset);
-    assertEquals(bigquery.getOptions().getProjectId(), dataset.getDatasetId().getProject());
-    assertEquals(OTHER_DATASET, dataset.getDatasetId().getDataset());
-    assertEquals("Some Description", dataset.getDescription());
-    Dataset updatedDataset =
-        bigquery.update(
-            dataset.toBuilder().setDescription("Updated Description").build(),
-            DatasetOption.fields(DatasetField.DESCRIPTION));
-    assertEquals("Updated Description", updatedDataset.getDescription());
-    assertNull(updatedDataset.getCreationTime());
-    assertNull(updatedDataset.getDefaultTableLifetime());
-    assertNull(updatedDataset.getAcl());
-    assertNull(updatedDataset.getEtag());
-    assertNull(updatedDataset.getFriendlyName());
-    assertNull(updatedDataset.getGeneratedId());
-    assertNull(updatedDataset.getLastModified());
-    assertNull(updatedDataset.getLocation());
-    assertNull(updatedDataset.getSelfLink());
-    assertNull(updatedDataset.getStorageBillingModel());
-    assertNull(updatedDataset.getMaxTimeTravelHours());
-    assertTrue(dataset.delete());
+            DatasetInfo.newBuilder(datasetName).setDescription("Some Description").build());
+    try {
+      assertNotNull(dataset);
+      assertEquals(bigquery.getOptions().getProjectId(), dataset.getDatasetId().getProject());
+      assertEquals(datasetName, dataset.getDatasetId().getDataset());
+      assertEquals("Some Description", dataset.getDescription());
+      Dataset updatedDataset =
+          bigquery.update(
+              dataset.toBuilder().setDescription("Updated Description").build(),
+              DatasetOption.fields(DatasetField.DESCRIPTION));
+      assertEquals("Updated Description", updatedDataset.getDescription());
+      assertNull(updatedDataset.getCreationTime());
+      assertNull(updatedDataset.getDefaultTableLifetime());
+      assertNull(updatedDataset.getAcl());
+      assertNull(updatedDataset.getEtag());
+      assertNull(updatedDataset.getFriendlyName());
+      assertNull(updatedDataset.getGeneratedId());
+      assertNull(updatedDataset.getLastModified());
+      assertNull(updatedDataset.getLocation());
+      assertNull(updatedDataset.getSelfLink());
+      assertNull(updatedDataset.getStorageBillingModel());
+      assertNull(updatedDataset.getMaxTimeTravelHours());
+    } finally {
+      dataset.delete();
+    }
   }
 
   @Test
@@ -2680,17 +2687,26 @@ class ITBigQueryTest {
     try {
       Page<Table> tables = bigquery.listTables(DATASET);
       boolean found = false;
-      Iterator<Table> tableIterator = tables.getValues().iterator();
-      while (tableIterator.hasNext() && !found) {
-        StandardTableDefinition standardTableDefinition = tableIterator.next().getDefinition();
-        if (standardTableDefinition.getRangePartitioning() != null) {
-          assertEquals(RANGE_PARTITIONING, standardTableDefinition.getRangePartitioning());
-          assertEquals(RANGE, standardTableDefinition.getRangePartitioning().getRange());
-          assertEquals("IntegerField", standardTableDefinition.getRangePartitioning().getField());
-          found = true;
+      for (Table table : tables.getValues()) {
+        // Look for the table that matches the newly partitioned table. Other tables in the
+        // dataset may not be partitioned and cannot match to them.
+        if (!table
+            .getTableId()
+            .getTable()
+            .equals(createdRangePartitioningTable.getTableId().getTable())) {
+          continue;
         }
+
+        StandardTableDefinition standardTableDefinition = table.getDefinition();
+        RangePartitioning rangePartitioning = standardTableDefinition.getRangePartitioning();
+        assertNotNull(rangePartitioning);
+        assertEquals(RANGE_PARTITIONING, rangePartitioning);
+        assertEquals(RANGE, rangePartitioning.getRange());
+        assertEquals("IntegerField", rangePartitioning.getField());
+        found = true;
+        break;
       }
-      assertTrue(found);
+      assertTrue(found, "Created range partitioned table was not found in the dataset list.");
     } finally {
       createdRangePartitioningTable.delete();
     }
