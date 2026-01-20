@@ -2718,10 +2718,11 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Time when the internal range was created.
+   * Output only. Time when the internal range was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
@@ -2734,10 +2735,11 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Time when the internal range was created.
+   * Output only. Time when the internal range was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
@@ -2750,10 +2752,11 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Time when the internal range was created.
+   * Output only. Time when the internal range was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
@@ -2767,10 +2770,11 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Time when the internal range was updated.
+   * Output only. Time when the internal range was updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 3;</code>
+   * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the updateTime field is set.
    */
@@ -2783,10 +2787,11 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Time when the internal range was updated.
+   * Output only. Time when the internal range was updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 3;</code>
+   * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The updateTime.
    */
@@ -2799,10 +2804,11 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Time when the internal range was updated.
+   * Output only. Time when the internal range was updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 3;</code>
+   * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
@@ -3218,10 +3224,11 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Can be set to narrow down or pick a different address space while
-   * searching for a free range. If not set, defaults to the "10.0.0.0/8"
-   * address space. This can be used to search in other rfc-1918 address
-   * spaces like "172.16.0.0/12" and "192.168.0.0/16" or non-rfc-1918
-   * address spaces used in the VPC.
+   * searching for a free range. If not set, defaults to the ["10.0.0.0/8",
+   * "172.16.0.0/12", "192.168.0.0/16"] address space (for auto-mode networks,
+   * the "10.0.0.0/9" range is used instead of "10.0.0.0/8"). This can be used
+   * to target the search in other rfc-1918 address spaces like "172.16.0.0/12"
+   * and "192.168.0.0/16" or non-rfc-1918 address spaces used in the VPC.
    * </pre>
    *
    * <code>repeated string target_cidr_range = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3237,10 +3244,11 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Can be set to narrow down or pick a different address space while
-   * searching for a free range. If not set, defaults to the "10.0.0.0/8"
-   * address space. This can be used to search in other rfc-1918 address
-   * spaces like "172.16.0.0/12" and "192.168.0.0/16" or non-rfc-1918
-   * address spaces used in the VPC.
+   * searching for a free range. If not set, defaults to the ["10.0.0.0/8",
+   * "172.16.0.0/12", "192.168.0.0/16"] address space (for auto-mode networks,
+   * the "10.0.0.0/9" range is used instead of "10.0.0.0/8"). This can be used
+   * to target the search in other rfc-1918 address spaces like "172.16.0.0/12"
+   * and "192.168.0.0/16" or non-rfc-1918 address spaces used in the VPC.
    * </pre>
    *
    * <code>repeated string target_cidr_range = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3256,10 +3264,11 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Can be set to narrow down or pick a different address space while
-   * searching for a free range. If not set, defaults to the "10.0.0.0/8"
-   * address space. This can be used to search in other rfc-1918 address
-   * spaces like "172.16.0.0/12" and "192.168.0.0/16" or non-rfc-1918
-   * address spaces used in the VPC.
+   * searching for a free range. If not set, defaults to the ["10.0.0.0/8",
+   * "172.16.0.0/12", "192.168.0.0/16"] address space (for auto-mode networks,
+   * the "10.0.0.0/9" range is used instead of "10.0.0.0/8"). This can be used
+   * to target the search in other rfc-1918 address spaces like "172.16.0.0/12"
+   * and "192.168.0.0/16" or non-rfc-1918 address spaces used in the VPC.
    * </pre>
    *
    * <code>repeated string target_cidr_range = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3276,10 +3285,11 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Can be set to narrow down or pick a different address space while
-   * searching for a free range. If not set, defaults to the "10.0.0.0/8"
-   * address space. This can be used to search in other rfc-1918 address
-   * spaces like "172.16.0.0/12" and "192.168.0.0/16" or non-rfc-1918
-   * address spaces used in the VPC.
+   * searching for a free range. If not set, defaults to the ["10.0.0.0/8",
+   * "172.16.0.0/12", "192.168.0.0/16"] address space (for auto-mode networks,
+   * the "10.0.0.0/9" range is used instead of "10.0.0.0/8"). This can be used
+   * to target the search in other rfc-1918 address spaces like "172.16.0.0/12"
+   * and "192.168.0.0/16" or non-rfc-1918 address spaces used in the VPC.
    * </pre>
    *
    * <code>repeated string target_cidr_range = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4768,10 +4778,12 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Time when the internal range was created.
+     * Output only. Time when the internal range was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the createTime field is set.
      */
@@ -4783,10 +4795,12 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Time when the internal range was created.
+     * Output only. Time when the internal range was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The createTime.
      */
@@ -4804,10 +4818,12 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Time when the internal range was created.
+     * Output only. Time when the internal range was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -4827,10 +4843,12 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Time when the internal range was created.
+     * Output only. Time when the internal range was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
@@ -4847,10 +4865,12 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Time when the internal range was created.
+     * Output only. Time when the internal range was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -4875,10 +4895,12 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Time when the internal range was created.
+     * Output only. Time when the internal range was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearCreateTime() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -4895,10 +4917,12 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Time when the internal range was created.
+     * Output only. Time when the internal range was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
       bitField0_ |= 0x00000002;
@@ -4910,10 +4934,12 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Time when the internal range was created.
+     * Output only. Time when the internal range was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -4929,10 +4955,12 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Time when the internal range was created.
+     * Output only. Time when the internal range was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -4962,10 +4990,12 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Time when the internal range was updated.
+     * Output only. Time when the internal range was updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the updateTime field is set.
      */
@@ -4977,10 +5007,12 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Time when the internal range was updated.
+     * Output only. Time when the internal range was updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The updateTime.
      */
@@ -4998,10 +5030,12 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Time when the internal range was updated.
+     * Output only. Time when the internal range was updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -5021,10 +5055,12 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Time when the internal range was updated.
+     * Output only. Time when the internal range was updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
@@ -5041,10 +5077,12 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Time when the internal range was updated.
+     * Output only. Time when the internal range was updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -5069,10 +5107,12 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Time when the internal range was updated.
+     * Output only. Time when the internal range was updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearUpdateTime() {
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -5089,10 +5129,12 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Time when the internal range was updated.
+     * Output only. Time when the internal range was updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
       bitField0_ |= 0x00000004;
@@ -5104,10 +5146,12 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Time when the internal range was updated.
+     * Output only. Time when the internal range was updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
       if (updateTimeBuilder_ != null) {
@@ -5123,10 +5167,12 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Time when the internal range was updated.
+     * Output only. Time when the internal range was updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 3;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -6006,10 +6052,11 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Can be set to narrow down or pick a different address space while
-     * searching for a free range. If not set, defaults to the "10.0.0.0/8"
-     * address space. This can be used to search in other rfc-1918 address
-     * spaces like "172.16.0.0/12" and "192.168.0.0/16" or non-rfc-1918
-     * address spaces used in the VPC.
+     * searching for a free range. If not set, defaults to the ["10.0.0.0/8",
+     * "172.16.0.0/12", "192.168.0.0/16"] address space (for auto-mode networks,
+     * the "10.0.0.0/9" range is used instead of "10.0.0.0/8"). This can be used
+     * to target the search in other rfc-1918 address spaces like "172.16.0.0/12"
+     * and "192.168.0.0/16" or non-rfc-1918 address spaces used in the VPC.
      * </pre>
      *
      * <code>repeated string target_cidr_range = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -6027,10 +6074,11 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Can be set to narrow down or pick a different address space while
-     * searching for a free range. If not set, defaults to the "10.0.0.0/8"
-     * address space. This can be used to search in other rfc-1918 address
-     * spaces like "172.16.0.0/12" and "192.168.0.0/16" or non-rfc-1918
-     * address spaces used in the VPC.
+     * searching for a free range. If not set, defaults to the ["10.0.0.0/8",
+     * "172.16.0.0/12", "192.168.0.0/16"] address space (for auto-mode networks,
+     * the "10.0.0.0/9" range is used instead of "10.0.0.0/8"). This can be used
+     * to target the search in other rfc-1918 address spaces like "172.16.0.0/12"
+     * and "192.168.0.0/16" or non-rfc-1918 address spaces used in the VPC.
      * </pre>
      *
      * <code>repeated string target_cidr_range = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -6047,10 +6095,11 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Can be set to narrow down or pick a different address space while
-     * searching for a free range. If not set, defaults to the "10.0.0.0/8"
-     * address space. This can be used to search in other rfc-1918 address
-     * spaces like "172.16.0.0/12" and "192.168.0.0/16" or non-rfc-1918
-     * address spaces used in the VPC.
+     * searching for a free range. If not set, defaults to the ["10.0.0.0/8",
+     * "172.16.0.0/12", "192.168.0.0/16"] address space (for auto-mode networks,
+     * the "10.0.0.0/9" range is used instead of "10.0.0.0/8"). This can be used
+     * to target the search in other rfc-1918 address spaces like "172.16.0.0/12"
+     * and "192.168.0.0/16" or non-rfc-1918 address spaces used in the VPC.
      * </pre>
      *
      * <code>repeated string target_cidr_range = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -6068,10 +6117,11 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Can be set to narrow down or pick a different address space while
-     * searching for a free range. If not set, defaults to the "10.0.0.0/8"
-     * address space. This can be used to search in other rfc-1918 address
-     * spaces like "172.16.0.0/12" and "192.168.0.0/16" or non-rfc-1918
-     * address spaces used in the VPC.
+     * searching for a free range. If not set, defaults to the ["10.0.0.0/8",
+     * "172.16.0.0/12", "192.168.0.0/16"] address space (for auto-mode networks,
+     * the "10.0.0.0/9" range is used instead of "10.0.0.0/8"). This can be used
+     * to target the search in other rfc-1918 address spaces like "172.16.0.0/12"
+     * and "192.168.0.0/16" or non-rfc-1918 address spaces used in the VPC.
      * </pre>
      *
      * <code>repeated string target_cidr_range = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -6089,10 +6139,11 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Can be set to narrow down or pick a different address space while
-     * searching for a free range. If not set, defaults to the "10.0.0.0/8"
-     * address space. This can be used to search in other rfc-1918 address
-     * spaces like "172.16.0.0/12" and "192.168.0.0/16" or non-rfc-1918
-     * address spaces used in the VPC.
+     * searching for a free range. If not set, defaults to the ["10.0.0.0/8",
+     * "172.16.0.0/12", "192.168.0.0/16"] address space (for auto-mode networks,
+     * the "10.0.0.0/9" range is used instead of "10.0.0.0/8"). This can be used
+     * to target the search in other rfc-1918 address spaces like "172.16.0.0/12"
+     * and "192.168.0.0/16" or non-rfc-1918 address spaces used in the VPC.
      * </pre>
      *
      * <code>repeated string target_cidr_range = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -6118,10 +6169,11 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Can be set to narrow down or pick a different address space while
-     * searching for a free range. If not set, defaults to the "10.0.0.0/8"
-     * address space. This can be used to search in other rfc-1918 address
-     * spaces like "172.16.0.0/12" and "192.168.0.0/16" or non-rfc-1918
-     * address spaces used in the VPC.
+     * searching for a free range. If not set, defaults to the ["10.0.0.0/8",
+     * "172.16.0.0/12", "192.168.0.0/16"] address space (for auto-mode networks,
+     * the "10.0.0.0/9" range is used instead of "10.0.0.0/8"). This can be used
+     * to target the search in other rfc-1918 address spaces like "172.16.0.0/12"
+     * and "192.168.0.0/16" or non-rfc-1918 address spaces used in the VPC.
      * </pre>
      *
      * <code>repeated string target_cidr_range = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -6146,10 +6198,11 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Can be set to narrow down or pick a different address space while
-     * searching for a free range. If not set, defaults to the "10.0.0.0/8"
-     * address space. This can be used to search in other rfc-1918 address
-     * spaces like "172.16.0.0/12" and "192.168.0.0/16" or non-rfc-1918
-     * address spaces used in the VPC.
+     * searching for a free range. If not set, defaults to the ["10.0.0.0/8",
+     * "172.16.0.0/12", "192.168.0.0/16"] address space (for auto-mode networks,
+     * the "10.0.0.0/9" range is used instead of "10.0.0.0/8"). This can be used
+     * to target the search in other rfc-1918 address spaces like "172.16.0.0/12"
+     * and "192.168.0.0/16" or non-rfc-1918 address spaces used in the VPC.
      * </pre>
      *
      * <code>repeated string target_cidr_range = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -6171,10 +6224,11 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Can be set to narrow down or pick a different address space while
-     * searching for a free range. If not set, defaults to the "10.0.0.0/8"
-     * address space. This can be used to search in other rfc-1918 address
-     * spaces like "172.16.0.0/12" and "192.168.0.0/16" or non-rfc-1918
-     * address spaces used in the VPC.
+     * searching for a free range. If not set, defaults to the ["10.0.0.0/8",
+     * "172.16.0.0/12", "192.168.0.0/16"] address space (for auto-mode networks,
+     * the "10.0.0.0/9" range is used instead of "10.0.0.0/8"). This can be used
+     * to target the search in other rfc-1918 address spaces like "172.16.0.0/12"
+     * and "192.168.0.0/16" or non-rfc-1918 address spaces used in the VPC.
      * </pre>
      *
      * <code>repeated string target_cidr_range = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -6195,10 +6249,11 @@ public final class InternalRange extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Can be set to narrow down or pick a different address space while
-     * searching for a free range. If not set, defaults to the "10.0.0.0/8"
-     * address space. This can be used to search in other rfc-1918 address
-     * spaces like "172.16.0.0/12" and "192.168.0.0/16" or non-rfc-1918
-     * address spaces used in the VPC.
+     * searching for a free range. If not set, defaults to the ["10.0.0.0/8",
+     * "172.16.0.0/12", "192.168.0.0/16"] address space (for auto-mode networks,
+     * the "10.0.0.0/9" range is used instead of "10.0.0.0/8"). This can be used
+     * to target the search in other rfc-1918 address spaces like "172.16.0.0/12"
+     * and "192.168.0.0/16" or non-rfc-1918 address spaces used in the VPC.
      * </pre>
      *
      * <code>repeated string target_cidr_range = 11 [(.google.api.field_behavior) = OPTIONAL];
