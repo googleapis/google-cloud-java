@@ -175,7 +175,8 @@ rm -f "$SOURCE_REPO_NAME/.gitignore"
 rm -f "$SOURCE_REPO_NAME/renovate.json"
 rm -f "$SOURCE_REPO_NAME/LICENSE"
 rm -f "$SOURCE_REPO_NAME/java.header"
-rm -rf "$SOURCE_REPO_NAME/.kokoro/continuous"  "$SOURCE_REPO_NAME/.kokoro/nightly"  "$SOURCE_REPO_NAME/.kokoro/presubmit"
+rm -rf "$SOURCE_REPO_NAME/.kokoro"
+# rm -rf "$SOURCE_REPO_NAME/.kokoro/continuous"  "$SOURCE_REPO_NAME/.kokoro/nightly"  "$SOURCE_REPO_NAME/.kokoro/presubmit"
 rm -f "$SOURCE_REPO_NAME/codecov.yaml"
 rm -f "$SOURCE_REPO_NAME/synth.metadata"
 rm -f "$SOURCE_REPO_NAME/license-checks.xml"
@@ -293,18 +294,7 @@ echo "Migrating owlbot.py..."
 if [ -f "$SOURCE_DIR/owlbot.py" ]; then
     TARGET_OWLBOT="$SOURCE_REPO_NAME/owlbot.py"
     
-    # Check for a template owlbot.py to source common excludes from
-    TEMPLATE_OWLBOT=""
-    if [ -f "java-workstations/owlbot.py" ]; then
-        TEMPLATE_OWLBOT="java-workstations/owlbot.py"
-        echo "Using $TEMPLATE_OWLBOT as template for excludes."
-    fi
-
-    if [ -n "$TEMPLATE_OWLBOT" ]; then
-        python3 "$TRANSFORM_OWLBOT_SCRIPT" "$TARGET_OWLBOT" "$SOURCE_DIR/owlbot.py" "$TEMPLATE_OWLBOT"
-    else
-        python3 "$TRANSFORM_OWLBOT_SCRIPT" "$TARGET_OWLBOT" "$SOURCE_DIR/owlbot.py"
-    fi
+    python3 "$TRANSFORM_OWLBOT_SCRIPT" "$TARGET_OWLBOT" "$SOURCE_DIR/owlbot.py"
 
     echo "Committing owlbot.py migration..."
     git add "$TARGET_OWLBOT"
