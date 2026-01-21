@@ -82,11 +82,13 @@ def transform(content, lib_name):
                 new_lines.append(line)
                 new_lines.append("    - name: Support longpaths")
                 new_lines.append("      run: git config --system core.longpaths true")
-                new_lines.append("      working-directory: .")
                 continue
 
             if 'run: echo "SUREFIRE_JVM_OPT=' in line and '!java17' not in line:
                 line = line.replace('" >> $GITHUB_ENV', ' -P !java17" >> $GITHUB_ENV')
+            if 'build.bat' in line:
+                line = line.replace('build.bat', 'build.sh')
+
             new_lines.append(line)
     return "\n".join(new_lines)
 
