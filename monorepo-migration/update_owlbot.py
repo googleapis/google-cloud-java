@@ -132,7 +132,6 @@ def generate_target_content(excludes, top_level_lines, loop_body_lines, standard
     if standard_excludes is None:
         standard_excludes = {
             ".github/*",
-            ".kokoro/*",
             "samples/*",
             "CODE_OF_CONDUCT.md",
             "CONTRIBUTING.md",
