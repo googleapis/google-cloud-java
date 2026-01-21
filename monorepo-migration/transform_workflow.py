@@ -49,9 +49,8 @@ def transform(content, lib_name):
 
         if line.startswith('jobs:'):
             if not inserted_defaults:
-                new_lines.append("defaults:")
-                new_lines.append("  run:")
-                new_lines.append(f"    working-directory: {lib_name}")
+                new_lines.append("env:")
+                new_lines.append(f"  BUILD_SUBDIR: {lib_name}")
                 inserted_defaults = True
             new_lines.append(line)
             new_lines.append(filter_job)
