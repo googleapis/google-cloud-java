@@ -62,6 +62,8 @@ echo "Starting migration using git read-tree with isolated clones..."
 # 0. Create working directory
 mkdir -p "$WORKING_DIR"
 
+MIGRATION_HEAD_BRANCH="add-migration-script"
+
 # 1. Clone the source repository
 if [ ! -d "$SOURCE_DIR" ]; then
     echo "Cloning source repo: $SOURCE_REPO_URL into $SOURCE_DIR"
@@ -70,7 +72,7 @@ else
     echo "Source directory $SOURCE_DIR already exists. Ensuring it is clean and up-to-date..."
     cd "$SOURCE_DIR"
     git fetch origin
-    git checkout -f main
+    git checkout -f "main"
     git reset --hard origin/main
     git clean -fd
     cd - > /dev/null
@@ -109,12 +111,14 @@ fi
 if [ ! -d "$TARGET_DIR" ]; then
     echo "Cloning target monorepo: $MONOREPO_URL into $TARGET_DIR"
     git clone "$MONOREPO_URL" "$TARGET_DIR"
+    git checkout -f "${MIGRATION_HEAD_BRANCH}"
+    git reset --hard origin/${MIGRATION_HEAD_BRANCH}
 else
     echo "Target directory $TARGET_DIR already exists. Ensuring it is clean and up-to-date..."
     cd "$TARGET_DIR"
     git fetch origin
-    git checkout -f main
-    git reset --hard origin/main
+    git checkout -f "${MIGRATION_HEAD_BRANCH}"
+    git reset --hard origin/${MIGRATION_HEAD_BRANCH}
     git clean -fd
     cd - > /dev/null
 fi
@@ -126,8 +130,8 @@ echo "Ensuring clean state in target monorepo..."
 git fetch origin
 git reset --hard HEAD
 git clean -fd
-git checkout -f main
-git reset --hard origin/main
+git checkout -f "${MIGRATION_HEAD_BRANCH}"
+git reset --hard origin/${MIGRATION_HEAD_BRANCH}
 git clean -fdx
 
 # Check if the repository is already migrated
@@ -327,7 +331,7 @@ git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): modernize root pom.xml
 # 7.12 Modernize BOM pom.xml
 echo "Modernizing BOM pom.xml..."
 # Find potential BOM POMs (usually in a subdirectory ending with -bom)
-find "$SOURCE_REPO_NAME" -name "pom.xml" | grep "\-bom/pom.xml" | while read -r bom_pom; do
+find "$SOURCE_REPO_NAME" -name "pom.xml" | grep "\-bom/pom.xml" | grep -v "samples" | while read -r bom_pom; do
     echo "Modernizing BOM: $bom_pom"
     # BOMs should inherit from google-cloud-pom-parent
     python3 "$MODERNIZE_POM_SCRIPT" "$bom_pom" "$PARENT_VERSION" "$SOURCE_REPO_NAME" "google-cloud-pom-parent" "../../google-cloud-pom-parent/pom.xml"
