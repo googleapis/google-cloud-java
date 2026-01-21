@@ -111,10 +111,7 @@ def extract_info(source_code):
                     child_inner = child
                     if isinstance(child, ast.Expr):
                         child_inner = child.value
-                        
-                    # Ignore s.move(library)
-                    if is_call_to(child_inner, ['s', 'move']):
-                        continue
+
                     # Check for nested common_templates (rare but possible)
                     if is_call_to(child_inner, ['java', 'common_templates']) or is_call_to(child_inner, ['common', 'java_library']):
                         excludes.extend(extract_excludes_from_call(child_inner))
@@ -176,7 +173,6 @@ def generate_target_content(excludes, top_level_lines, loop_body_lines, standard
 
     lines.append("for library in s.get_staging_dirs():")
     lines.append("    # put any special-case replacements here")
-    lines.append("    s.move(library)")
     for l in loop_body_lines:
         # Indent loop body
         for sl in l.split('\n'):
