@@ -264,7 +264,7 @@ public final class KmsResourcesProto {
           + "\017XWING_RAW_BYTES\020\004:\256\001\352A\252\001\n"
           + "!cloudkms.googleapis.com/PublicKey\022\204\001projects"
           + "/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryp"
-          + "toKeyVersions/{crypto_key_version}/publicKey\"\324\010\n"
+          + "toKeyVersions/{crypto_key_version}/publicKey\"\373\010\n"
           + "\tImportJob\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\022J\n"
           + "\r"
@@ -283,7 +283,9 @@ public final class KmsResourcesProto {
           + "public_key\030\007"
           + " \001(\01320.google.cloud.kms.v1.ImportJob.WrappingPublicKeyB\003\340A\003\022F\n"
           + "\013attestation\030\010"
-          + " \001(\0132,.google.cloud.kms.v1.KeyOperationAttestationB\003\340A\003\032 \n"
+          + " \001(\0132,.google.cloud.kms.v1.KeyOperationAttestationB\003\340A\003\022%\n"
+          + "\022crypto_key_backend\030\013 \001(\tB\t\340A\005\372A\003\n"
+          + "\001*\032 \n"
           + "\021WrappingPublicKey\022\013\n"
           + "\003pem\030\001 \001(\t\"\345\001\n"
           + "\014ImportMethod\022\035\n"
@@ -299,19 +301,21 @@ public final class KmsResourcesProto {
           + "\022PENDING_GENERATION\020\001\022\n\n"
           + "\006ACTIVE\020\002\022\013\n"
           + "\007EXPIRED\020\003:{\352Ax\n"
-          + "!cloudkms.googleapis.com/ImportJob\022Sprojects"
-          + "/{project}/locations/{location}/keyRings/{key_ring}/importJobs/{import_job}\"[\n"
+          + "!cloudkms.googleapis.com/ImportJob\022Sprojects/"
+          + "{project}/locations/{location}/keyRings/{key_ring}/importJobs/{import_job}\"[\n"
           + "\036ExternalProtectionLevelOptions\022\030\n"
           + "\020external_key_uri\030\001 \001(\t\022\037\n"
           + "\027ekm_connection_key_path\030\002 \001(\t\"b\n"
           + "\035KeyAccessJustificationsPolicy\022A\n"
-          + "\026allowed_access_reasons\030\001 \003(\0162!.google.cloud.kms.v1.AccessReason*j\n"
+          + "\026allowed_access_reasons\030\001"
+          + " \003(\0162!.google.cloud.kms.v1.AccessReason*\201\001\n"
           + "\017ProtectionLevel\022 \n"
           + "\034PROTECTION_LEVEL_UNSPECIFIED\020\000\022\014\n"
           + "\010SOFTWARE\020\001\022\007\n"
           + "\003HSM\020\002\022\014\n"
           + "\010EXTERNAL\020\003\022\020\n"
-          + "\014EXTERNAL_VPC\020\004*\263\003\n"
+          + "\014EXTERNAL_VPC\020\004\022\025\n"
+          + "\021HSM_SINGLE_TENANT\020\005*\263\003\n"
           + "\014AccessReason\022\026\n"
           + "\022REASON_UNSPECIFIED\020\000\022\036\n"
           + "\032CUSTOMER_INITIATED_SUPPORT\020\001\022\034\n"
@@ -326,9 +330,9 @@ public final class KmsResourcesProto {
           + "#GOOGLE_RESPONSE_TO_PRODUCTION_ALERT\020\n"
           + "\022*\n"
           + "&CUSTOMER_AUTHORIZED_WORKFLOW_SERVICING\020\013B\205\001\n"
-          + "\027com.google.cloud.kms.v1B\021KmsResourcesProtoP\001Z)cloud.google.co"
-          + "m/go/kms/apiv1/kmspb;kmspb\252\002\023Google.Clou"
-          + "d.Kms.V1\312\002\023Google\\Cloud\\Kms\\V1b\006proto3"
+          + "\027com.google.cloud.kms.v1B\021KmsResourcesP"
+          + "rotoP\001Z)cloud.google.com/go/kms/apiv1/km"
+          + "spb;kmspb\252\002\023Google.Cloud.Kms.V1\312\002\023Google\\Cloud\\Kms\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -463,6 +467,7 @@ public final class KmsResourcesProto {
               "State",
               "PublicKey",
               "Attestation",
+              "CryptoKeyBackend",
             });
     internal_static_google_cloud_kms_v1_ImportJob_WrappingPublicKey_descriptor =
         internal_static_google_cloud_kms_v1_ImportJob_descriptor.getNestedTypes().get(0);

@@ -107,6 +107,28 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     return ekmAvailable_;
   }
 
+  public static final int HSM_SINGLE_TENANT_AVAILABLE_FIELD_NUMBER = 3;
+  private boolean hsmSingleTenantAvailable_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether [CryptoKeys][google.cloud.kms.v1.CryptoKey] with
+   * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]
+   * [HSM_SINGLE_TENANT][google.cloud.kms.v1.ProtectionLevel.HSM_SINGLE_TENANT]
+   * can be created in this location.
+   * </pre>
+   *
+   * <code>bool hsm_single_tenant_available = 3;</code>
+   *
+   * @return The hsmSingleTenantAvailable.
+   */
+  @java.lang.Override
+  public boolean getHsmSingleTenantAvailable() {
+    return hsmSingleTenantAvailable_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -127,6 +149,9 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     if (ekmAvailable_ != false) {
       output.writeBool(2, ekmAvailable_);
     }
+    if (hsmSingleTenantAvailable_ != false) {
+      output.writeBool(3, hsmSingleTenantAvailable_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -141,6 +166,9 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     }
     if (ekmAvailable_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, ekmAvailable_);
+    }
+    if (hsmSingleTenantAvailable_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, hsmSingleTenantAvailable_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -159,6 +187,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
 
     if (getHsmAvailable() != other.getHsmAvailable()) return false;
     if (getEkmAvailable() != other.getEkmAvailable()) return false;
+    if (getHsmSingleTenantAvailable() != other.getHsmSingleTenantAvailable()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -174,6 +203,8 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getHsmAvailable());
     hash = (37 * hash) + EKM_AVAILABLE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEkmAvailable());
+    hash = (37 * hash) + HSM_SINGLE_TENANT_AVAILABLE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getHsmSingleTenantAvailable());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -317,6 +348,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       bitField0_ = 0;
       hsmAvailable_ = false;
       ekmAvailable_ = false;
+      hsmSingleTenantAvailable_ = false;
       return this;
     }
 
@@ -358,6 +390,9 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.ekmAvailable_ = ekmAvailable_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.hsmSingleTenantAvailable_ = hsmSingleTenantAvailable_;
       }
     }
 
@@ -412,6 +447,9 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       if (other.getEkmAvailable() != false) {
         setEkmAvailable(other.getEkmAvailable());
       }
+      if (other.getHsmSingleTenantAvailable() != false) {
+        setHsmSingleTenantAvailable(other.getHsmSingleTenantAvailable());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -450,6 +488,12 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 24:
+              {
+                hsmSingleTenantAvailable_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -595,6 +639,71 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     public Builder clearEkmAvailable() {
       bitField0_ = (bitField0_ & ~0x00000002);
       ekmAvailable_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean hsmSingleTenantAvailable_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether [CryptoKeys][google.cloud.kms.v1.CryptoKey] with
+     * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]
+     * [HSM_SINGLE_TENANT][google.cloud.kms.v1.ProtectionLevel.HSM_SINGLE_TENANT]
+     * can be created in this location.
+     * </pre>
+     *
+     * <code>bool hsm_single_tenant_available = 3;</code>
+     *
+     * @return The hsmSingleTenantAvailable.
+     */
+    @java.lang.Override
+    public boolean getHsmSingleTenantAvailable() {
+      return hsmSingleTenantAvailable_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether [CryptoKeys][google.cloud.kms.v1.CryptoKey] with
+     * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]
+     * [HSM_SINGLE_TENANT][google.cloud.kms.v1.ProtectionLevel.HSM_SINGLE_TENANT]
+     * can be created in this location.
+     * </pre>
+     *
+     * <code>bool hsm_single_tenant_available = 3;</code>
+     *
+     * @param value The hsmSingleTenantAvailable to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHsmSingleTenantAvailable(boolean value) {
+
+      hsmSingleTenantAvailable_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether [CryptoKeys][google.cloud.kms.v1.CryptoKey] with
+     * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]
+     * [HSM_SINGLE_TENANT][google.cloud.kms.v1.ProtectionLevel.HSM_SINGLE_TENANT]
+     * can be created in this location.
+     * </pre>
+     *
+     * <code>bool hsm_single_tenant_available = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearHsmSingleTenantAvailable() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      hsmSingleTenantAvailable_ = false;
       onChanged();
       return this;
     }

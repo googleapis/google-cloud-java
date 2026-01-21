@@ -448,4 +448,48 @@ public interface ImportJobOrBuilder
    * </code>
    */
   com.google.cloud.kms.v1.KeyOperationAttestationOrBuilder getAttestationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The resource name of the backend environment where the key
+   * material for the wrapping key resides and where all related cryptographic
+   * operations are performed. Currently, this field is only populated for keys
+   * stored in HSM_SINGLE_TENANT. Note, this list is non-exhaustive and may
+   * apply to additional [ProtectionLevels][google.cloud.kms.v1.ProtectionLevel]
+   * in the future.
+   * Supported resources:
+   * * `"projects/&#42;&#47;locations/&#42;&#47;singleTenantHsmInstances/&#42;"`
+   * </pre>
+   *
+   * <code>
+   * string crypto_key_backend = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The cryptoKeyBackend.
+   */
+  java.lang.String getCryptoKeyBackend();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The resource name of the backend environment where the key
+   * material for the wrapping key resides and where all related cryptographic
+   * operations are performed. Currently, this field is only populated for keys
+   * stored in HSM_SINGLE_TENANT. Note, this list is non-exhaustive and may
+   * apply to additional [ProtectionLevels][google.cloud.kms.v1.ProtectionLevel]
+   * in the future.
+   * Supported resources:
+   * * `"projects/&#42;&#47;locations/&#42;&#47;singleTenantHsmInstances/&#42;"`
+   * </pre>
+   *
+   * <code>
+   * string crypto_key_backend = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for cryptoKeyBackend.
+   */
+  com.google.protobuf.ByteString getCryptoKeyBackendBytes();
 }

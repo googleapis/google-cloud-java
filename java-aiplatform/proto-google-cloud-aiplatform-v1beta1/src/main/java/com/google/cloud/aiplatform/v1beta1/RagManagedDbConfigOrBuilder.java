@@ -36,7 +36,7 @@ public interface RagManagedDbConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.enterprise is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=814
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=833
    * @return Whether the enterprise field is set.
    */
   @java.lang.Deprecated
@@ -54,7 +54,7 @@ public interface RagManagedDbConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.enterprise is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=814
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=833
    * @return The enterprise.
    */
   @java.lang.Deprecated
@@ -79,119 +79,241 @@ public interface RagManagedDbConfigOrBuilder
    *
    *
    * <pre>
-   * Sets the RagManagedDb to the Scaled tier. This is the default tier
-   * if not explicitly chosen.
+   * Deprecated: Use `mode` instead to set the tier under Spanner.
+   * Sets the RagManagedDb to the Scaled tier.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled scaled = 4;</code>
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled scaled = 4 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.scaled is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=837
    * @return Whether the scaled field is set.
    */
+  @java.lang.Deprecated
   boolean hasScaled();
 
   /**
    *
    *
    * <pre>
-   * Sets the RagManagedDb to the Scaled tier. This is the default tier
-   * if not explicitly chosen.
+   * Deprecated: Use `mode` instead to set the tier under Spanner.
+   * Sets the RagManagedDb to the Scaled tier.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled scaled = 4;</code>
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled scaled = 4 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.scaled is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=837
    * @return The scaled.
    */
+  @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled getScaled();
 
   /**
    *
    *
    * <pre>
-   * Sets the RagManagedDb to the Scaled tier. This is the default tier
-   * if not explicitly chosen.
+   * Deprecated: Use `mode` instead to set the tier under Spanner.
+   * Sets the RagManagedDb to the Scaled tier.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled scaled = 4;</code>
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled scaled = 4 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.ScaledOrBuilder getScaledOrBuilder();
 
   /**
    *
    *
    * <pre>
+   * Deprecated: Use `mode` instead to set the tier under Spanner.
    * Sets the RagManagedDb to the Basic tier.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Basic basic = 2;</code>
+   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Basic basic = 2 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.basic is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=841
    * @return Whether the basic field is set.
    */
+  @java.lang.Deprecated
   boolean hasBasic();
 
   /**
    *
    *
    * <pre>
+   * Deprecated: Use `mode` instead to set the tier under Spanner.
    * Sets the RagManagedDb to the Basic tier.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Basic basic = 2;</code>
+   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Basic basic = 2 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.basic is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=841
    * @return The basic.
    */
+  @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Basic getBasic();
 
   /**
    *
    *
    * <pre>
+   * Deprecated: Use `mode` instead to set the tier under Spanner.
    * Sets the RagManagedDb to the Basic tier.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Basic basic = 2;</code>
+   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Basic basic = 2 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.BasicOrBuilder getBasicOrBuilder();
 
   /**
    *
    *
    * <pre>
+   * Deprecated: Use `mode` instead to set the tier under Spanner.
    * Sets the RagManagedDb to the Unprovisioned tier.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned unprovisioned = 3;
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned unprovisioned = 3 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.unprovisioned is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=845
    * @return Whether the unprovisioned field is set.
    */
+  @java.lang.Deprecated
   boolean hasUnprovisioned();
 
   /**
    *
    *
    * <pre>
+   * Deprecated: Use `mode` instead to set the tier under Spanner.
    * Sets the RagManagedDb to the Unprovisioned tier.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned unprovisioned = 3;
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned unprovisioned = 3 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.unprovisioned is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=845
    * @return The unprovisioned.
    */
+  @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned getUnprovisioned();
 
   /**
    *
    *
    * <pre>
+   * Deprecated: Use `mode` instead to set the tier under Spanner.
    * Sets the RagManagedDb to the Unprovisioned tier.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned unprovisioned = 3;
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned unprovisioned = 3 [deprecated = true];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.UnprovisionedOrBuilder
       getUnprovisionedOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Sets the backend to be the serverless mode offered by RAG Engine.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Serverless serverless = 5;</code>
+   *
+   * @return Whether the serverless field is set.
+   */
+  boolean hasServerless();
+
+  /**
+   *
+   *
+   * <pre>
+   * Sets the backend to be the serverless mode offered by RAG Engine.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Serverless serverless = 5;</code>
+   *
+   * @return The serverless.
+   */
+  com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Serverless getServerless();
+
+  /**
+   *
+   *
+   * <pre>
+   * Sets the backend to be the serverless mode offered by RAG Engine.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Serverless serverless = 5;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.ServerlessOrBuilder
+      getServerlessOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Sets the RAG Engine backend to be RagManagedDb, built on top of Spanner.
+   *
+   * NOTE: This is the default mode (w/ Basic Tier) if not explicitly chosen.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Spanner spanner = 6;</code>
+   *
+   * @return Whether the spanner field is set.
+   */
+  boolean hasSpanner();
+
+  /**
+   *
+   *
+   * <pre>
+   * Sets the RAG Engine backend to be RagManagedDb, built on top of Spanner.
+   *
+   * NOTE: This is the default mode (w/ Basic Tier) if not explicitly chosen.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Spanner spanner = 6;</code>
+   *
+   * @return The spanner.
+   */
+  com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Spanner getSpanner();
+
+  /**
+   *
+   *
+   * <pre>
+   * Sets the RAG Engine backend to be RagManagedDb, built on top of Spanner.
+   *
+   * NOTE: This is the default mode (w/ Basic Tier) if not explicitly chosen.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Spanner spanner = 6;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.SpannerOrBuilder getSpannerOrBuilder();
+
   com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.TierCase getTierCase();
+
+  com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.ModeCase getModeCase();
 }

@@ -1146,7 +1146,12 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    * if [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] have a
    * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of
    * [EXTERNAL_VPC][google.cloud.kms.v1.ProtectionLevel.EXTERNAL_VPC], with the
-   * resource name in the format `projects/&#42;&#47;locations/&#42;&#47;ekmConnections/&#42;`.
+   * resource name in the format `projects/&#42;&#47;locations/&#42;&#47;ekmConnections/&#42;`. Only
+   * applicable if [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion]
+   * have a [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of
+   * [HSM_SINGLE_TENANT][google.cloud.kms.v1.ProtectionLevel.HSM_SINGLE_TENANT],
+   * with the resource name in the format
+   * `projects/&#42;&#47;locations/&#42;&#47;singleTenantHsmInstances/&#42;`.
    * Note, this list is non-exhaustive and may apply to additional
    * [ProtectionLevels][google.cloud.kms.v1.ProtectionLevel] in the future.
    * </pre>
@@ -1181,7 +1186,12 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    * if [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] have a
    * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of
    * [EXTERNAL_VPC][google.cloud.kms.v1.ProtectionLevel.EXTERNAL_VPC], with the
-   * resource name in the format `projects/&#42;&#47;locations/&#42;&#47;ekmConnections/&#42;`.
+   * resource name in the format `projects/&#42;&#47;locations/&#42;&#47;ekmConnections/&#42;`. Only
+   * applicable if [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion]
+   * have a [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of
+   * [HSM_SINGLE_TENANT][google.cloud.kms.v1.ProtectionLevel.HSM_SINGLE_TENANT],
+   * with the resource name in the format
+   * `projects/&#42;&#47;locations/&#42;&#47;singleTenantHsmInstances/&#42;`.
    * Note, this list is non-exhaustive and may apply to additional
    * [ProtectionLevels][google.cloud.kms.v1.ProtectionLevel] in the future.
    * </pre>
@@ -4211,7 +4221,12 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * if [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] have a
      * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of
      * [EXTERNAL_VPC][google.cloud.kms.v1.ProtectionLevel.EXTERNAL_VPC], with the
-     * resource name in the format `projects/&#42;&#47;locations/&#42;&#47;ekmConnections/&#42;`.
+     * resource name in the format `projects/&#42;&#47;locations/&#42;&#47;ekmConnections/&#42;`. Only
+     * applicable if [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion]
+     * have a [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of
+     * [HSM_SINGLE_TENANT][google.cloud.kms.v1.ProtectionLevel.HSM_SINGLE_TENANT],
+     * with the resource name in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;singleTenantHsmInstances/&#42;`.
      * Note, this list is non-exhaustive and may apply to additional
      * [ProtectionLevels][google.cloud.kms.v1.ProtectionLevel] in the future.
      * </pre>
@@ -4245,7 +4260,12 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * if [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] have a
      * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of
      * [EXTERNAL_VPC][google.cloud.kms.v1.ProtectionLevel.EXTERNAL_VPC], with the
-     * resource name in the format `projects/&#42;&#47;locations/&#42;&#47;ekmConnections/&#42;`.
+     * resource name in the format `projects/&#42;&#47;locations/&#42;&#47;ekmConnections/&#42;`. Only
+     * applicable if [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion]
+     * have a [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of
+     * [HSM_SINGLE_TENANT][google.cloud.kms.v1.ProtectionLevel.HSM_SINGLE_TENANT],
+     * with the resource name in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;singleTenantHsmInstances/&#42;`.
      * Note, this list is non-exhaustive and may apply to additional
      * [ProtectionLevels][google.cloud.kms.v1.ProtectionLevel] in the future.
      * </pre>
@@ -4279,7 +4299,12 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * if [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] have a
      * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of
      * [EXTERNAL_VPC][google.cloud.kms.v1.ProtectionLevel.EXTERNAL_VPC], with the
-     * resource name in the format `projects/&#42;&#47;locations/&#42;&#47;ekmConnections/&#42;`.
+     * resource name in the format `projects/&#42;&#47;locations/&#42;&#47;ekmConnections/&#42;`. Only
+     * applicable if [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion]
+     * have a [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of
+     * [HSM_SINGLE_TENANT][google.cloud.kms.v1.ProtectionLevel.HSM_SINGLE_TENANT],
+     * with the resource name in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;singleTenantHsmInstances/&#42;`.
      * Note, this list is non-exhaustive and may apply to additional
      * [ProtectionLevels][google.cloud.kms.v1.ProtectionLevel] in the future.
      * </pre>
@@ -4312,7 +4337,12 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * if [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] have a
      * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of
      * [EXTERNAL_VPC][google.cloud.kms.v1.ProtectionLevel.EXTERNAL_VPC], with the
-     * resource name in the format `projects/&#42;&#47;locations/&#42;&#47;ekmConnections/&#42;`.
+     * resource name in the format `projects/&#42;&#47;locations/&#42;&#47;ekmConnections/&#42;`. Only
+     * applicable if [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion]
+     * have a [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of
+     * [HSM_SINGLE_TENANT][google.cloud.kms.v1.ProtectionLevel.HSM_SINGLE_TENANT],
+     * with the resource name in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;singleTenantHsmInstances/&#42;`.
      * Note, this list is non-exhaustive and may apply to additional
      * [ProtectionLevels][google.cloud.kms.v1.ProtectionLevel] in the future.
      * </pre>
@@ -4341,7 +4371,12 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * if [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] have a
      * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of
      * [EXTERNAL_VPC][google.cloud.kms.v1.ProtectionLevel.EXTERNAL_VPC], with the
-     * resource name in the format `projects/&#42;&#47;locations/&#42;&#47;ekmConnections/&#42;`.
+     * resource name in the format `projects/&#42;&#47;locations/&#42;&#47;ekmConnections/&#42;`. Only
+     * applicable if [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion]
+     * have a [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of
+     * [HSM_SINGLE_TENANT][google.cloud.kms.v1.ProtectionLevel.HSM_SINGLE_TENANT],
+     * with the resource name in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;singleTenantHsmInstances/&#42;`.
      * Note, this list is non-exhaustive and may apply to additional
      * [ProtectionLevels][google.cloud.kms.v1.ProtectionLevel] in the future.
      * </pre>

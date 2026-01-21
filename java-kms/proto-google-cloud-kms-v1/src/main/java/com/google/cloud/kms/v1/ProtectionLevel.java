@@ -81,6 +81,16 @@ public enum ProtectionLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EXTERNAL_VPC = 4;</code>
    */
   EXTERNAL_VPC(4),
+  /**
+   *
+   *
+   * <pre>
+   * Crypto operations are performed in a single-tenant HSM.
+   * </pre>
+   *
+   * <code>HSM_SINGLE_TENANT = 5;</code>
+   */
+  HSM_SINGLE_TENANT(5),
   UNRECOGNIZED(-1),
   ;
 
@@ -139,6 +149,17 @@ public enum ProtectionLevel implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int EXTERNAL_VPC_VALUE = 4;
 
+  /**
+   *
+   *
+   * <pre>
+   * Crypto operations are performed in a single-tenant HSM.
+   * </pre>
+   *
+   * <code>HSM_SINGLE_TENANT = 5;</code>
+   */
+  public static final int HSM_SINGLE_TENANT_VALUE = 5;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -173,6 +194,8 @@ public enum ProtectionLevel implements com.google.protobuf.ProtocolMessageEnum {
         return EXTERNAL;
       case 4:
         return EXTERNAL_VPC;
+      case 5:
+        return HSM_SINGLE_TENANT;
       default:
         return null;
     }

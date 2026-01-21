@@ -55,4 +55,20 @@ public interface LocationMetadataOrBuilder
    * @return The ekmAvailable.
    */
   boolean getEkmAvailable();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether [CryptoKeys][google.cloud.kms.v1.CryptoKey] with
+   * [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]
+   * [HSM_SINGLE_TENANT][google.cloud.kms.v1.ProtectionLevel.HSM_SINGLE_TENANT]
+   * can be created in this location.
+   * </pre>
+   *
+   * <code>bool hsm_single_tenant_available = 3;</code>
+   *
+   * @return The hsmSingleTenantAvailable.
+   */
+  boolean getHsmSingleTenantAvailable();
 }

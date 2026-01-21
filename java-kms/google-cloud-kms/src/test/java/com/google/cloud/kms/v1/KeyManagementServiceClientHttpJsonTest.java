@@ -961,6 +961,9 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setExpireEventTime(Timestamp.newBuilder().build())
             .setPublicKey(ImportJob.WrappingPublicKey.newBuilder().build())
             .setAttestation(KeyOperationAttestation.newBuilder().build())
+            .setCryptoKeyBackend(
+                ImportJobName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[IMPORT_JOB]")
+                    .toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1015,6 +1018,9 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setExpireEventTime(Timestamp.newBuilder().build())
             .setPublicKey(ImportJob.WrappingPublicKey.newBuilder().build())
             .setAttestation(KeyOperationAttestation.newBuilder().build())
+            .setCryptoKeyBackend(
+                ImportJobName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[IMPORT_JOB]")
+                    .toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1516,6 +1522,7 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setExpireEventTime(Timestamp.newBuilder().build())
             .setPublicKey(ImportJob.WrappingPublicKey.newBuilder().build())
             .setAttestation(KeyOperationAttestation.newBuilder().build())
+            .setCryptoKeyBackend(KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]").toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1573,6 +1580,7 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setExpireEventTime(Timestamp.newBuilder().build())
             .setPublicKey(ImportJob.WrappingPublicKey.newBuilder().build())
             .setAttestation(KeyOperationAttestation.newBuilder().build())
+            .setCryptoKeyBackend(KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]").toString())
             .build();
     mockService.addResponse(expectedResponse);
 

@@ -101,6 +101,34 @@
  * }
  * }</pre>
  *
+ * <p>======================= HsmManagementClient =======================
+ *
+ * <p>Service Description: Google Cloud HSM Management Service
+ *
+ * <p>Provides interfaces for managing HSM instances.
+ *
+ * <p>Implements a REST model with the following objects:
+ *
+ * <ul>
+ *   <li>[SingleTenantHsmInstance][google.cloud.kms.v1.SingleTenantHsmInstance]
+ *   <li>[SingleTenantHsmInstanceProposal][google.cloud.kms.v1.SingleTenantHsmInstanceProposal]
+ * </ul>
+ *
+ * <p>Sample for HsmManagementClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (HsmManagementClient hsmManagementClient = HsmManagementClient.create()) {
+ *   SingleTenantHsmInstanceName name =
+ *       SingleTenantHsmInstanceName.of("[PROJECT]", "[LOCATION]", "[SINGLE_TENANT_HSM_INSTANCE]");
+ *   SingleTenantHsmInstance response = hsmManagementClient.getSingleTenantHsmInstance(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= KeyManagementServiceClient =======================
  *
  * <p>Service Description: Google Cloud Key Management Service
