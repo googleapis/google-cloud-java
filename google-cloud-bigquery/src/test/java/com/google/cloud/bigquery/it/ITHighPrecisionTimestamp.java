@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigquery.it;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -51,14 +52,14 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-public class ITHighPrecisionTimestamp {
+class ITHighPrecisionTimestamp {
 
-  public static final String TEST_HIGH_PRECISION_TIMESTAMP_TABLE_NAME =
-      "test_high_precision_timestamp";
+  private static final String TEST_HIGH_PRECISION_TIMESTAMP_TABLE_NAME =
+      generateTempTableName("test_high_precision_timestamp");
   private static BigQuery bigquery;
   private static final String DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static TableId defaultTableId;
-  public static final long TIMESTAMP_PICOSECOND_PRECISION = 12L;
+  private static final long TIMESTAMP_PICOSECOND_PRECISION = 12L;
   private static final Field TIMESTAMP_HIGH_PRECISION_FIELD_SCHEMA =
       Field.newBuilder("timestampHighPrecisionField", StandardSQLTypeName.TIMESTAMP)
           .setTimestampPrecision(TIMESTAMP_PICOSECOND_PRECISION)
@@ -69,8 +70,12 @@ public class ITHighPrecisionTimestamp {
   private static final String TIMESTAMP2 = "1970-01-01T12:34:56.123456789123Z";
   private static final String TIMESTAMP3 = "2000-01-01T12:34:56.123456789123Z";
 
+  private static String generateTempTableName(String prefix) {
+    return String.format("%s_%s", prefix, UUID.randomUUID().toString().substring(0, 8));
+  }
+
   @BeforeAll
-  public static void beforeClass() {
+  static void beforeClass() {
     BigQueryOptions.Builder builder =
         BigQueryOptions.newBuilder()
             .setDataFormatOptions(
@@ -111,21 +116,15 @@ public class ITHighPrecisionTimestamp {
   }
 
   @AfterAll
-  public static void afterClass() {
+  static void afterClass() {
     if (bigquery != null) {
       bigquery.delete(defaultTableId);
       RemoteBigQueryHelper.forceDelete(bigquery, DATASET);
     }
   }
 
-  private static String generateTempTableName() {
-    return String.format(
-        "insert_temp_%s%s",
-        UUID.randomUUID().toString().substring(0, 6), TEST_HIGH_PRECISION_TIMESTAMP_TABLE_NAME);
-  }
-
   @Test
-  public void query_highPrecisionTimestamp() throws InterruptedException {
+  void query_highPrecisionTimestamp() throws InterruptedException {
     String sql =
         String.format("SELECT timestampHighPrecisionField FROM %s;", defaultTableId.getTable());
     QueryJobConfiguration queryJobConfiguration =
@@ -141,16 +140,14 @@ public class ITHighPrecisionTimestamp {
             .map(x -> (String) x.get(0).getValue())
             .collect(Collectors.toList());
     assertEquals(expected.length, timestamps.size());
-    for (int i = 0; i < timestamps.size(); i++) {
-      assertEquals(expected[i], timestamps.get(i));
-    }
+    assertThat(timestamps).containsAtLeastElementsIn(expected);
   }
 
   @Test
-  public void insert_highPrecisionTimestamp_ISOValidFormat() {
+  void insert_highPrecisionTimestamp_ISOValidFormat() {
     StandardTableDefinition tableDefinition =
         StandardTableDefinition.newBuilder().setSchema(TABLE_SCHEMA).build();
-    String tempTableName = generateTempTableName();
+    String tempTableName = generateTempTableName("insert_temp");
     TableId tableId = TableId.of(DATASET, tempTableName);
     Table createdTable = bigquery.create(TableInfo.of(tableId, tableDefinition));
     assertNotNull(createdTable);
@@ -166,10 +163,10 @@ public class ITHighPrecisionTimestamp {
   }
 
   @Test
-  public void insert_highPrecisionTimestamp_invalidFormats() {
+  void insert_highPrecisionTimestamp_invalidFormats() {
     StandardTableDefinition tableDefinition =
         StandardTableDefinition.newBuilder().setSchema(TABLE_SCHEMA).build();
-    String tempTable = generateTempTableName();
+    String tempTable = generateTempTableName("insert_temp");
     TableId tableId = TableId.of(DATASET, tempTable);
     Table createdTable = bigquery.create(TableInfo.of(tableId, tableDefinition));
     assertNotNull(createdTable);
@@ -207,7 +204,7 @@ public class ITHighPrecisionTimestamp {
   }
 
   @Test
-  public void queryNamedParameter_highPrecisionTimestamp() throws InterruptedException {
+  void queryNamedParameter_highPrecisionTimestamp() throws InterruptedException {
     String query =
         String.format(
             "SELECT * FROM %s.%s WHERE timestampHighPrecisionField >= CAST(@timestampParam AS TIMESTAMP(12))",
@@ -219,6 +216,7 @@ public class ITHighPrecisionTimestamp {
             .setUseLegacySql(false)
             .addNamedParameter(
                 "timestampParam",
+                // For named parameters, java-bigquery does not expect the 'T'
                 QueryParameterValue.timestamp("2000-01-01 12:34:56.123456789123Z"))
             .build();
 
@@ -230,13 +228,38 @@ public class ITHighPrecisionTimestamp {
             .map(x -> (String) x.get(0).getValue())
             .collect(Collectors.toList());
     assertEquals(expected.length, timestamps.size());
-    for (int i = 0; i < timestamps.size(); i++) {
-      assertEquals(expected[i], timestamps.get(i));
-    }
+    assertThat(timestamps).containsAtLeastElementsIn(expected);
   }
 
   @Test
-  public void queryNamedParameter_highPrecisionTimestamp_microsLong() throws InterruptedException {
+  void queryPositionalParameter_highPrecisionTimestamp() throws InterruptedException {
+    String query =
+        String.format(
+            "SELECT * FROM %s.%s WHERE timestampHighPrecisionField >= CAST(? AS TIMESTAMP(12))",
+            DATASET, defaultTableId.getTable());
+
+    QueryJobConfiguration queryConfig =
+        QueryJobConfiguration.newBuilder(query)
+            .setDefaultDataset(DATASET)
+            .setUseLegacySql(false)
+            .addPositionalParameter(
+                // For positional parameters, java-bigquery does not expect the 'T'
+                QueryParameterValue.timestamp("2000-01-01 12:34:56.123456789123Z"))
+            .build();
+
+    TableResult result = bigquery.query(queryConfig);
+    assertNotNull(result);
+    String[] expected = new String[] {TIMESTAMP1, TIMESTAMP3};
+    List<String> timestamps =
+        StreamSupport.stream(result.getValues().spliterator(), false)
+            .map(x -> (String) x.get(0).getValue())
+            .collect(Collectors.toList());
+    assertEquals(expected.length, timestamps.size());
+    assertThat(timestamps).containsAtLeastElementsIn(expected);
+  }
+
+  @Test
+  void queryNamedParameter_highPrecisionTimestamp_microsLong() throws InterruptedException {
     String query =
         String.format(
             "SELECT * FROM %s.%s WHERE timestampHighPrecisionField >= CAST(@timestampParam AS TIMESTAMP(12))",
@@ -263,14 +286,11 @@ public class ITHighPrecisionTimestamp {
             .map(x -> (String) x.get(0).getValue())
             .collect(Collectors.toList());
     assertEquals(expected.length, timestamps.size());
-    for (int i = 0; i < timestamps.size(); i++) {
-      assertEquals(expected[i], timestamps.get(i));
-    }
+    assertThat(timestamps).containsAtLeastElementsIn(expected);
   }
 
   @Test
-  public void queryNamedParameter_highPrecisionTimestamp_microsISOString()
-      throws InterruptedException {
+  void queryNamedParameter_highPrecisionTimestamp_microsISOString() throws InterruptedException {
     String query =
         String.format(
             "SELECT * FROM %s.%s WHERE timestampHighPrecisionField >= CAST(@timestampParam AS TIMESTAMP(12))",
@@ -281,6 +301,7 @@ public class ITHighPrecisionTimestamp {
             .setDefaultDataset(DATASET)
             .setUseLegacySql(false)
             .addNamedParameter(
+                // For named parameters, java-bigquery does not expect the 'T'
                 "timestampParam", QueryParameterValue.timestamp("2000-01-01 12:34:56.123456Z"))
             .build();
 
@@ -292,13 +313,11 @@ public class ITHighPrecisionTimestamp {
             .collect(Collectors.toList());
     String[] expected = new String[] {TIMESTAMP1, TIMESTAMP3};
     assertEquals(expected.length, timestamps.size());
-    for (int i = 0; i < timestamps.size(); i++) {
-      assertEquals(expected[i], timestamps.get(i));
-    }
+    assertThat(timestamps).containsAtLeastElementsIn(expected);
   }
 
   @Test
-  public void queryNamedParameter_highPrecisionTimestamp_noExplicitCastInQuery_fails() {
+  void queryNamedParameter_highPrecisionTimestamp_noExplicitCastInQuery_fails() {
     String query =
         String.format(
             "SELECT * FROM %s.%s WHERE timestampHighPrecisionField >= @timestampParam",
@@ -309,6 +328,7 @@ public class ITHighPrecisionTimestamp {
             .setDefaultDataset(DATASET)
             .setUseLegacySql(false)
             .addNamedParameter(
+                // For named parameters, java-bigquery does not expect the 'T'
                 "timestampParam", QueryParameterValue.timestamp("2000-01-01 12:34:56.123456789123"))
             .build();
 
