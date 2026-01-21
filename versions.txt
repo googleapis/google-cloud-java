@@ -2,3 +2,4 @@
 # module:released-version:current-version
 
 google-cloud-bigquery:2.57.2:2.57.2
+google-cloud-bigquery-jdbc:0.1.0:0.1.0

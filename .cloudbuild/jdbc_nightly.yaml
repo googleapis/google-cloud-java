@@ -1,0 +1,46 @@
+# Copyright 2026 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# Github action job to test core java library features on
+# downstream client libraries before they are released.
+options:
+  workerPool: 'projects/bigquery-devtools-drivers/locations/us-east1/workerPools/java-bigquery-jdbc-pool'
+  dynamic_substitutions: true
+  logging: CLOUD_LOGGING_ONLY
+
+timeout: 10000s
+steps:
+- name: 'gcr.io/cloud-devrel-public-resources/java11'
+  id: "IT Tests"
+  timeout: 10000s
+  entrypoint: 'bash'
+  args: ['.kokoro/build.sh']
+  env:
+  - 'JOB_TYPE=jdbc-integration'
+  secretEnv: ['SA_EMAIL', 'KMS_RESOURCE_PATH', 'SA_SECRET']
+- name: 'gcr.io/cloud-devrel-public-resources/java11'
+  id: "IT Nightly Tests"
+  timeout: 10000s
+  entrypoint: 'bash'
+  args: ['.kokoro/build.sh']
+  env:
+  - 'JOB_TYPE=jdbc-nightly-integration'
+
+availableSecrets:
+  secretManager:
+  - versionName: projects/$PROJECT_ID/secrets/jdbc-presubmit-sa-email/versions/latest
+    env: 'SA_EMAIL'
+  - versionName: projects/$PROJECT_ID/secrets/kms_resource_path/versions/latest
+    env: 'KMS_RESOURCE_PATH'
+  - versionName: projects/$PROJECT_ID/secrets/GoogleJDBCServiceAccountSecret/versions/latest
+    env: 'SA_SECRET'
