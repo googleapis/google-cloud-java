@@ -57,6 +57,9 @@ UPDATE_GENERATION_CONFIG_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_generation_config.
 UPDATE_OWLBOT_HERMETIC_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_owlbot_hermetic.py"
 TRANSFORM_OWLBOT_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_owlbot.py"
 
+# Track number of commits made by this script
+COMMIT_COUNT=0
+
 echo "Starting migration using git read-tree with isolated clones..."
 
 # 0. Create working directory
@@ -185,6 +188,7 @@ find "$SOURCE_REPO_NAME" -maxdepth 1 -name "*.md" ! -name "CHANGELOG.md" ! -name
 # 7. Commit the migration
 echo "Committing migration..."
 git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): migrate $SOURCE_REPO_NAME into monorepo"
+COMMIT_COUNT=$((COMMIT_COUNT + 1))
 
 # 7.1 Update CODEOWNERS
 if [ -n "$CODEOWNER" ]; then
@@ -195,6 +199,7 @@ if [ -n "$CODEOWNER" ]; then
     echo "Committing CODEOWNERS update..."
     git add .github/CODEOWNERS
     git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): add code owners for $SOURCE_REPO_NAME"
+    COMMIT_COUNT=$((COMMIT_COUNT + 1))
 fi
 
 # 7.2 Update root pom.xml modules
@@ -204,7 +209,7 @@ python3 "$UPDATE_ROOT_POM_SCRIPT" "pom.xml" "$SOURCE_REPO_NAME"
 echo "Committing root pom.xml modules update..."
 git add pom.xml
 git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): add module to root pom.xml"
-
+COMMIT_COUNT=$((COMMIT_COUNT + 1))
 
 # 7.5 Migrate GitHub Actions workflows
 echo "Checking for GitHub Actions workflows..."
@@ -240,6 +245,7 @@ if [ -d "$SOURCE_REPO_NAME/.github/workflows" ]; then
     echo "Committing workflow migration..."
     git add .github/workflows
     git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): migrate and adapt GitHub Actions workflows"
+    COMMIT_COUNT=$((COMMIT_COUNT + 1))
 fi
 
 # 7.6 Update generation_config.yaml
@@ -254,6 +260,7 @@ if [ -f "$SOURCE_CONFIG" ]; then
     echo "Committing generation_config.yaml update..."
     git add generation_config.yaml "$SOURCE_CONFIG"
     git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): add library to generation_config.yaml"
+    COMMIT_COUNT=$((COMMIT_COUNT + 1))
 fi
 
 # 7.7 Consolidate versions.txt
@@ -269,6 +276,7 @@ if [ -f "$SOURCE_VERSIONS" ]; then
     echo "Committing versions.txt update..."
     git add versions.txt "$SOURCE_VERSIONS"
     git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): consolidate versions.txt into root"
+    COMMIT_COUNT=$((COMMIT_COUNT + 1))
 fi
 
 # 7.8 Migrate .OwlBot-hermetic.yaml
@@ -286,6 +294,7 @@ if [ -n "$SOURCE_OWLBOT" ]; then
     echo "Committing .OwlBot-hermetic.yaml migration..."
     git add "$TARGET_OWLBOT"
     git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): migrate .OwlBot-hermetic.yaml"
+    COMMIT_COUNT=$((COMMIT_COUNT + 1))
 fi
 
 
@@ -299,6 +308,7 @@ if [ -f "$SOURCE_DIR/owlbot.py" ]; then
     echo "Committing owlbot.py migration..."
     git add "$TARGET_OWLBOT"
     git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): migrate owlbot.py"
+    COMMIT_COUNT=$((COMMIT_COUNT + 1))
 fi
 
 # 7.9 Fix copyright headers in Java files
@@ -308,6 +318,7 @@ python3 "$FIX_COPYRIGHT_SCRIPT" "$SOURCE_REPO_NAME"
 echo "Committing copyright header fixes..."
 git add "$SOURCE_REPO_NAME"
 git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): update copyright headers to 2026 Google LLC"
+COMMIT_COUNT=$((COMMIT_COUNT + 1))
 
 # 7.11 Modernize root pom.xml
 echo "Modernizing root pom.xml..."
@@ -317,11 +328,13 @@ python3 "$MODERNIZE_POM_SCRIPT" "$SOURCE_REPO_NAME/pom.xml" "$PARENT_VERSION" "$
 echo "Committing root pom.xml modernization..."
 git add "$SOURCE_REPO_NAME/pom.xml"
 git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): modernize root pom.xml"
+COMMIT_COUNT=$((COMMIT_COUNT + 1))
 
 # 7.12 Modernize BOM pom.xml
 echo "Modernizing BOM pom.xml..."
 # Find potential BOM POMs (usually in a subdirectory ending with -bom)
-find "$SOURCE_REPO_NAME" -name "pom.xml" | grep "\-bom/pom.xml" | grep -v "samples" | while read -r bom_pom; do
+# Use process substitution or just a loop over the output of find to avoid subshell issues with counters
+while read -r bom_pom; do
     echo "Modernizing BOM: $bom_pom"
     # BOMs should inherit from google-cloud-pom-parent
     python3 "$MODERNIZE_POM_SCRIPT" "$bom_pom" "$PARENT_VERSION" "$SOURCE_REPO_NAME" "google-cloud-pom-parent" "../../google-cloud-pom-parent/pom.xml"
@@ -329,11 +342,34 @@ find "$SOURCE_REPO_NAME" -name "pom.xml" | grep "\-bom/pom.xml" | grep -v "sampl
     echo "Committing BOM pom.xml modernization for $bom_pom..."
     git add "$bom_pom"
     git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): modernize BOM pom.xml"
-done
+    COMMIT_COUNT=$((COMMIT_COUNT + 1))
+done < <(find "$SOURCE_REPO_NAME" -name "pom.xml" | grep "\-bom/pom.xml" | grep -v "samples")
 
 # 7.11 Verify compilation
 echo "Verifying compilation..."
 (cd "$SOURCE_REPO_NAME" && mvn compile -DskipTests -T 1C)
+
+# 7.13 Squash commits
+if [ "${SQUASH_COMMITS:-false}" = "true" ]; then
+    echo "Squashing $COMMIT_COUNT commits..."
+    if [ "$COMMIT_COUNT" -gt 1 ]; then
+        # Reset soft to the first commit of the migration
+        # We want to keep the very first commit message, or maybe a combined one?
+        # The requirement is "squash all the commits it's made into a single migration commit"
+        # The first commit we made was "chore($SOURCE_REPO_NAME): migrate $SOURCE_REPO_NAME into monorepo"
+        
+        # We can do this by soft resetting back COMMIT_COUNT-1 commits
+        # This leaves the first commit as HEAD, but with changes from subsequent commits staged.
+        # NO. Soft reset back N commits.
+        # If we made 3 commits: C1, C2, C3. HEAD is C3.
+        # reset --soft HEAD~2 results in HEAD at C1, with changes from C2 and C3 staged.
+        # then commit --amend adds those staged changes to C1.
+        
+        git reset --soft "HEAD~$((COMMIT_COUNT - 1))"
+        git commit --amend --no-edit --no-gpg-sign
+        echo "Squashed everything into one commit."
+    fi
+fi
 
 # 8. Cleanup
 echo "Cleaning up temporary source clone..."
