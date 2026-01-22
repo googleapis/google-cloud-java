@@ -1,4 +1,4 @@
-name: Generate new GAPIC client library (Hermetic Build)
+CLOUD_JAVA_BOT_GITHUB_TOKENname: Generate new GAPIC client library (Hermetic Build)
 on:
   workflow_dispatch:
       # some inputs are omitted due to limit of 10 input arguments
