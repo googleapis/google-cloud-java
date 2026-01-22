@@ -16,3 +16,7 @@ samples/**/*.java       @googleapis/java-samples-reviewers
 
 # Generated snippets should not be owned by samples reviewers
 samples/snippets/generated/       @googleapis/yoshi-java
+
+# Admin Module (Cloud Java Team ownership)
+**/com/google/cloud/bigtable/admin/** @googleapis/api-bigtable @googleapis/api-bigtable-partners @googleapis/cloud-java-team-teamsync
+**/com/google/bigtable/admin/** @googleapis/api-bigtable @googleapis/api-bigtable-partners @googleapis/cloud-java-team-teamsync
