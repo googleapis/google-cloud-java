@@ -327,7 +327,7 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The id of the quota, which is unquie within the service.
+   * The id of the quota, which is unique within the service.
    * For example, `CpusPerProjectPerRegion`
    * </pre>
    *
@@ -352,7 +352,7 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The id of the quota, which is unquie within the service.
+   * The id of the quota, which is unique within the service.
    * For example, `CpusPerProjectPerRegion`
    * </pre>
    *
@@ -1984,7 +1984,7 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The id of the quota, which is unquie within the service.
+     * The id of the quota, which is unique within the service.
      * For example, `CpusPerProjectPerRegion`
      * </pre>
      *
@@ -2008,7 +2008,7 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The id of the quota, which is unquie within the service.
+     * The id of the quota, which is unique within the service.
      * For example, `CpusPerProjectPerRegion`
      * </pre>
      *
@@ -2032,7 +2032,7 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The id of the quota, which is unquie within the service.
+     * The id of the quota, which is unique within the service.
      * For example, `CpusPerProjectPerRegion`
      * </pre>
      *
@@ -2055,7 +2055,7 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The id of the quota, which is unquie within the service.
+     * The id of the quota, which is unique within the service.
      * For example, `CpusPerProjectPerRegion`
      * </pre>
      *
@@ -2074,7 +2074,7 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The id of the quota, which is unquie within the service.
+     * The id of the quota, which is unique within the service.
      * For example, `CpusPerProjectPerRegion`
      * </pre>
      *

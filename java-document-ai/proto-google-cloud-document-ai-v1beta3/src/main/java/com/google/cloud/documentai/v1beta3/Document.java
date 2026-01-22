@@ -4819,7 +4819,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of detected non-text visual elements e.g. checkbox,
+     * A list of detected non-text visual elements for example, checkbox,
      * signature etc. on the page.
      * </pre>
      *
@@ -4834,7 +4834,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of detected non-text visual elements e.g. checkbox,
+     * A list of detected non-text visual elements for example, checkbox,
      * signature etc. on the page.
      * </pre>
      *
@@ -4848,7 +4848,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of detected non-text visual elements e.g. checkbox,
+     * A list of detected non-text visual elements for example, checkbox,
      * signature etc. on the page.
      * </pre>
      *
@@ -4862,7 +4862,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of detected non-text visual elements e.g. checkbox,
+     * A list of detected non-text visual elements for example, checkbox,
      * signature etc. on the page.
      * </pre>
      *
@@ -4878,7 +4878,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of detected non-text visual elements e.g. checkbox,
+     * A list of detected non-text visual elements for example, checkbox,
      * signature etc. on the page.
      * </pre>
      *
@@ -5190,7 +5190,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Page.provenance is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=551
+     *     google/cloud/documentai/v1beta3/document.proto;l=552
      * @return Whether the provenance field is set.
      */
     @java.lang.Deprecated
@@ -5208,7 +5208,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Page.provenance is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=551
+     *     google/cloud/documentai/v1beta3/document.proto;l=552
      * @return The provenance.
      */
     @java.lang.Deprecated
@@ -8123,9 +8123,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Confidence of the current
        * [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] within
-       * context of the object this layout is for. e.g. confidence can be for a
-       * single token, a table, a visual element, etc. depending on context.
-       * Range `[0, 1]`.
+       * context of the object this layout is for. For example, confidence can
+       * be for a single token, a table, a visual element, etc. depending on
+       * context. Range `[0, 1]`.
        * </pre>
        *
        * <code>float confidence = 2;</code>
@@ -8533,9 +8533,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Confidence of the current
        * [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] within
-       * context of the object this layout is for. e.g. confidence can be for a
-       * single token, a table, a visual element, etc. depending on context.
-       * Range `[0, 1]`.
+       * context of the object this layout is for. For example, confidence can
+       * be for a single token, a table, a visual element, etc. depending on
+       * context. Range `[0, 1]`.
        * </pre>
        *
        * <code>float confidence = 2;</code>
@@ -9322,9 +9322,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Confidence of the current
          * [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] within
-         * context of the object this layout is for. e.g. confidence can be for a
-         * single token, a table, a visual element, etc. depending on context.
-         * Range `[0, 1]`.
+         * context of the object this layout is for. For example, confidence can
+         * be for a single token, a table, a visual element, etc. depending on
+         * context. Range `[0, 1]`.
          * </pre>
          *
          * <code>float confidence = 2;</code>
@@ -9342,9 +9342,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Confidence of the current
          * [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] within
-         * context of the object this layout is for. e.g. confidence can be for a
-         * single token, a table, a visual element, etc. depending on context.
-         * Range `[0, 1]`.
+         * context of the object this layout is for. For example, confidence can
+         * be for a single token, a table, a visual element, etc. depending on
+         * context. Range `[0, 1]`.
          * </pre>
          *
          * <code>float confidence = 2;</code>
@@ -9366,9 +9366,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Confidence of the current
          * [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] within
-         * context of the object this layout is for. e.g. confidence can be for a
-         * single token, a table, a visual element, etc. depending on context.
-         * Range `[0, 1]`.
+         * context of the object this layout is for. For example, confidence can
+         * be for a single token, a table, a visual element, etc. depending on
+         * context. Range `[0, 1]`.
          * </pre>
          *
          * <code>float confidence = 2;</code>
@@ -22992,8 +22992,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Detected non-text visual elements e.g. checkbox, signature etc. on the
-     * page.
+     * Detected non-text visual elements, for example, checkbox, signature, etc.
+     * on the page.
      * </pre>
      *
      * Protobuf type {@code google.cloud.documentai.v1beta3.Document.Page.VisualElement}
@@ -23434,8 +23434,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Detected non-text visual elements e.g. checkbox, signature etc. on the
-       * page.
+       * Detected non-text visual elements, for example, checkbox, signature, etc.
+       * on the page.
        * </pre>
        *
        * Protobuf type {@code google.cloud.documentai.v1beta3.Document.Page.VisualElement}
@@ -30511,7 +30511,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] for the
        * [FormField][google.cloud.documentai.v1beta3.Document.Page.FormField]
-       * name. e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
+       * name. For example, `Address`, `Email`, `Grand total`, `Phone number`,
+       * etc.
        * </pre>
        *
        * <code>.google.cloud.documentai.v1beta3.Document.Page.Layout field_name = 1;</code>
@@ -30526,7 +30527,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] for the
        * [FormField][google.cloud.documentai.v1beta3.Document.Page.FormField]
-       * name. e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
+       * name. For example, `Address`, `Email`, `Grand total`, `Phone number`,
+       * etc.
        * </pre>
        *
        * <code>.google.cloud.documentai.v1beta3.Document.Page.Layout field_name = 1;</code>
@@ -30541,7 +30543,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] for the
        * [FormField][google.cloud.documentai.v1beta3.Document.Page.FormField]
-       * name. e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
+       * name. For example, `Address`, `Email`, `Grand total`, `Phone number`,
+       * etc.
        * </pre>
        *
        * <code>.google.cloud.documentai.v1beta3.Document.Page.Layout field_name = 1;</code>
@@ -30924,7 +30927,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] for the
        * [FormField][google.cloud.documentai.v1beta3.Document.Page.FormField]
-       * name. e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
+       * name. For example, `Address`, `Email`, `Grand total`, `Phone number`,
+       * etc.
        * </pre>
        *
        * <code>.google.cloud.documentai.v1beta3.Document.Page.Layout field_name = 1;</code>
@@ -30942,7 +30946,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] for the
        * [FormField][google.cloud.documentai.v1beta3.Document.Page.FormField]
-       * name. e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
+       * name. For example, `Address`, `Email`, `Grand total`, `Phone number`,
+       * etc.
        * </pre>
        *
        * <code>.google.cloud.documentai.v1beta3.Document.Page.Layout field_name = 1;</code>
@@ -30962,7 +30967,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] for the
        * [FormField][google.cloud.documentai.v1beta3.Document.Page.FormField]
-       * name. e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
+       * name. For example, `Address`, `Email`, `Grand total`, `Phone number`,
+       * etc.
        * </pre>
        *
        * <code>.google.cloud.documentai.v1beta3.Document.Page.Layout field_name = 1;</code>
@@ -32125,7 +32131,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] for the
          * [FormField][google.cloud.documentai.v1beta3.Document.Page.FormField]
-         * name. e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
+         * name. For example, `Address`, `Email`, `Grand total`, `Phone number`,
+         * etc.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1beta3.Document.Page.Layout field_name = 1;</code>
@@ -32142,7 +32149,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] for the
          * [FormField][google.cloud.documentai.v1beta3.Document.Page.FormField]
-         * name. e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
+         * name. For example, `Address`, `Email`, `Grand total`, `Phone number`,
+         * etc.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1beta3.Document.Page.Layout field_name = 1;</code>
@@ -32165,7 +32173,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] for the
          * [FormField][google.cloud.documentai.v1beta3.Document.Page.FormField]
-         * name. e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
+         * name. For example, `Address`, `Email`, `Grand total`, `Phone number`,
+         * etc.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1beta3.Document.Page.Layout field_name = 1;</code>
@@ -32191,7 +32200,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] for the
          * [FormField][google.cloud.documentai.v1beta3.Document.Page.FormField]
-         * name. e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
+         * name. For example, `Address`, `Email`, `Grand total`, `Phone number`,
+         * etc.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1beta3.Document.Page.Layout field_name = 1;</code>
@@ -32214,7 +32224,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] for the
          * [FormField][google.cloud.documentai.v1beta3.Document.Page.FormField]
-         * name. e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
+         * name. For example, `Address`, `Email`, `Grand total`, `Phone number`,
+         * etc.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1beta3.Document.Page.Layout field_name = 1;</code>
@@ -32247,7 +32258,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] for the
          * [FormField][google.cloud.documentai.v1beta3.Document.Page.FormField]
-         * name. e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
+         * name. For example, `Address`, `Email`, `Grand total`, `Phone number`,
+         * etc.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1beta3.Document.Page.Layout field_name = 1;</code>
@@ -32269,7 +32281,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] for the
          * [FormField][google.cloud.documentai.v1beta3.Document.Page.FormField]
-         * name. e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
+         * name. For example, `Address`, `Email`, `Grand total`, `Phone number`,
+         * etc.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1beta3.Document.Page.Layout field_name = 1;</code>
@@ -32287,7 +32300,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] for the
          * [FormField][google.cloud.documentai.v1beta3.Document.Page.FormField]
-         * name. e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
+         * name. For example, `Address`, `Email`, `Grand total`, `Phone number`,
+         * etc.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1beta3.Document.Page.Layout field_name = 1;</code>
@@ -32309,7 +32323,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] for the
          * [FormField][google.cloud.documentai.v1beta3.Document.Page.FormField]
-         * name. e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
+         * name. For example, `Address`, `Email`, `Grand total`, `Phone number`,
+         * etc.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1beta3.Document.Page.Layout field_name = 1;</code>
@@ -38891,7 +38906,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of detected non-text visual elements e.g. checkbox,
+     * A list of detected non-text visual elements for example, checkbox,
      * signature etc. on the page.
      * </pre>
      *
@@ -38909,7 +38924,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of detected non-text visual elements e.g. checkbox,
+     * A list of detected non-text visual elements for example, checkbox,
      * signature etc. on the page.
      * </pre>
      *
@@ -38928,7 +38943,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of detected non-text visual elements e.g. checkbox,
+     * A list of detected non-text visual elements for example, checkbox,
      * signature etc. on the page.
      * </pre>
      *
@@ -38945,7 +38960,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of detected non-text visual elements e.g. checkbox,
+     * A list of detected non-text visual elements for example, checkbox,
      * signature etc. on the page.
      * </pre>
      *
@@ -38963,7 +38978,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of detected non-text visual elements e.g. checkbox,
+     * A list of detected non-text visual elements for example, checkbox,
      * signature etc. on the page.
      * </pre>
      *
@@ -39388,7 +39403,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Page.provenance is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=551
+     *     google/cloud/documentai/v1beta3/document.proto;l=552
      * @return Whether the provenance field is set.
      */
     @java.lang.Override
@@ -39409,7 +39424,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Page.provenance is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=551
+     *     google/cloud/documentai/v1beta3/document.proto;l=552
      * @return The provenance.
      */
     @java.lang.Override
@@ -43933,7 +43948,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -43954,7 +43969,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -43974,7 +43989,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -43995,7 +44010,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -44022,7 +44037,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -44047,7 +44062,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -44074,7 +44089,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -44101,7 +44116,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -44125,7 +44140,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -44150,7 +44165,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -44176,7 +44191,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -44199,7 +44214,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -44222,7 +44237,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -44239,7 +44254,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -44260,7 +44275,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -44282,7 +44297,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -44302,7 +44317,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -44323,7 +44338,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -46197,7 +46212,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Page.provenance is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=551
+       *     google/cloud/documentai/v1beta3/document.proto;l=552
        * @return Whether the provenance field is set.
        */
       @java.lang.Deprecated
@@ -46217,7 +46232,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Page.provenance is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=551
+       *     google/cloud/documentai/v1beta3/document.proto;l=552
        * @return The provenance.
        */
       @java.lang.Deprecated
@@ -46529,7 +46544,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Entity type from a schema e.g. `Address`.
+     * Required. Entity type from a schema for example, `Address`.
      * </pre>
      *
      * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -46542,7 +46557,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Entity type from a schema e.g. `Address`.
+     * Required. Entity type from a schema for example, `Address`.
      * </pre>
      *
      * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -46555,7 +46570,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Text value of the entity e.g. `1600 Amphitheatre Pkwy`.
+     * Optional. Text value of the entity for example, `1600 Amphitheatre Pkwy`.
      * </pre>
      *
      * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -46568,7 +46583,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Text value of the entity e.g. `1600 Amphitheatre Pkwy`.
+     * Optional. Text value of the entity for example, `1600 Amphitheatre Pkwy`.
      * </pre>
      *
      * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -46666,7 +46681,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Canonical id. This will be a unique value in the entity list
+     * Optional. Canonical ID. This will be a unique value in the entity list
      * for this document.
      * </pre>
      *
@@ -46680,7 +46695,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Canonical id. This will be a unique value in the entity list
+     * Optional. Canonical ID. This will be a unique value in the entity list
      * for this document.
      * </pre>
      *
@@ -46695,9 +46710,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Normalized entity value. Absent if the extracted value could
-     * not be converted or the type (e.g. address) is not supported for certain
-     * parsers. This field is also only populated for certain supported document
-     * types.
+     * not be converted or the type (for example, address) is not supported for
+     * certain parsers. This field is also only populated for certain supported
+     * document types.
      * </pre>
      *
      * <code>
@@ -46713,9 +46728,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Normalized entity value. Absent if the extracted value could
-     * not be converted or the type (e.g. address) is not supported for certain
-     * parsers. This field is also only populated for certain supported document
-     * types.
+     * not be converted or the type (for example, address) is not supported for
+     * certain parsers. This field is also only populated for certain supported
+     * document types.
      * </pre>
      *
      * <code>
@@ -46731,9 +46746,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Normalized entity value. Absent if the extracted value could
-     * not be converted or the type (e.g. address) is not supported for certain
-     * parsers. This field is also only populated for certain supported document
-     * types.
+     * not be converted or the type (for example, address) is not supported for
+     * certain parsers. This field is also only populated for certain supported
+     * document types.
      * </pre>
      *
      * <code>
@@ -50137,7 +50152,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Entity type from a schema e.g. `Address`.
+     * Required. Entity type from a schema for example, `Address`.
      * </pre>
      *
      * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -50161,7 +50176,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Entity type from a schema e.g. `Address`.
+     * Required. Entity type from a schema for example, `Address`.
      * </pre>
      *
      * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -50190,7 +50205,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Text value of the entity e.g. `1600 Amphitheatre Pkwy`.
+     * Optional. Text value of the entity for example, `1600 Amphitheatre Pkwy`.
      * </pre>
      *
      * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -50214,7 +50229,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Text value of the entity e.g. `1600 Amphitheatre Pkwy`.
+     * Optional. Text value of the entity for example, `1600 Amphitheatre Pkwy`.
      * </pre>
      *
      * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -50378,7 +50393,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Canonical id. This will be a unique value in the entity list
+     * Optional. Canonical ID. This will be a unique value in the entity list
      * for this document.
      * </pre>
      *
@@ -50403,7 +50418,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Canonical id. This will be a unique value in the entity list
+     * Optional. Canonical ID. This will be a unique value in the entity list
      * for this document.
      * </pre>
      *
@@ -50432,9 +50447,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Normalized entity value. Absent if the extracted value could
-     * not be converted or the type (e.g. address) is not supported for certain
-     * parsers. This field is also only populated for certain supported document
-     * types.
+     * not be converted or the type (for example, address) is not supported for
+     * certain parsers. This field is also only populated for certain supported
+     * document types.
      * </pre>
      *
      * <code>
@@ -50453,9 +50468,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Normalized entity value. Absent if the extracted value could
-     * not be converted or the type (e.g. address) is not supported for certain
-     * parsers. This field is also only populated for certain supported document
-     * types.
+     * not be converted or the type (for example, address) is not supported for
+     * certain parsers. This field is also only populated for certain supported
+     * document types.
      * </pre>
      *
      * <code>
@@ -50477,9 +50492,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Normalized entity value. Absent if the extracted value could
-     * not be converted or the type (e.g. address) is not supported for certain
-     * parsers. This field is also only populated for certain supported document
-     * types.
+     * not be converted or the type (for example, address) is not supported for
+     * certain parsers. This field is also only populated for certain supported
+     * document types.
      * </pre>
      *
      * <code>
@@ -51664,7 +51679,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Entity type from a schema e.g. `Address`.
+       * Required. Entity type from a schema for example, `Address`.
        * </pre>
        *
        * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -51687,7 +51702,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Entity type from a schema e.g. `Address`.
+       * Required. Entity type from a schema for example, `Address`.
        * </pre>
        *
        * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -51710,7 +51725,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Entity type from a schema e.g. `Address`.
+       * Required. Entity type from a schema for example, `Address`.
        * </pre>
        *
        * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -51732,7 +51747,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Entity type from a schema e.g. `Address`.
+       * Required. Entity type from a schema for example, `Address`.
        * </pre>
        *
        * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -51750,7 +51765,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Entity type from a schema e.g. `Address`.
+       * Required. Entity type from a schema for example, `Address`.
        * </pre>
        *
        * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -51775,7 +51790,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Text value of the entity e.g. `1600 Amphitheatre Pkwy`.
+       * Optional. Text value of the entity for example, `1600 Amphitheatre Pkwy`.
        * </pre>
        *
        * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -51798,7 +51813,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Text value of the entity e.g. `1600 Amphitheatre Pkwy`.
+       * Optional. Text value of the entity for example, `1600 Amphitheatre Pkwy`.
        * </pre>
        *
        * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -51821,7 +51836,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Text value of the entity e.g. `1600 Amphitheatre Pkwy`.
+       * Optional. Text value of the entity for example, `1600 Amphitheatre Pkwy`.
        * </pre>
        *
        * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -51843,7 +51858,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Text value of the entity e.g. `1600 Amphitheatre Pkwy`.
+       * Optional. Text value of the entity for example, `1600 Amphitheatre Pkwy`.
        * </pre>
        *
        * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -51861,7 +51876,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Text value of the entity e.g. `1600 Amphitheatre Pkwy`.
+       * Optional. Text value of the entity for example, `1600 Amphitheatre Pkwy`.
        * </pre>
        *
        * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -52279,7 +52294,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Canonical id. This will be a unique value in the entity list
+       * Optional. Canonical ID. This will be a unique value in the entity list
        * for this document.
        * </pre>
        *
@@ -52303,7 +52318,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Canonical id. This will be a unique value in the entity list
+       * Optional. Canonical ID. This will be a unique value in the entity list
        * for this document.
        * </pre>
        *
@@ -52327,7 +52342,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Canonical id. This will be a unique value in the entity list
+       * Optional. Canonical ID. This will be a unique value in the entity list
        * for this document.
        * </pre>
        *
@@ -52350,7 +52365,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Canonical id. This will be a unique value in the entity list
+       * Optional. Canonical ID. This will be a unique value in the entity list
        * for this document.
        * </pre>
        *
@@ -52369,7 +52384,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Canonical id. This will be a unique value in the entity list
+       * Optional. Canonical ID. This will be a unique value in the entity list
        * for this document.
        * </pre>
        *
@@ -52401,9 +52416,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Normalized entity value. Absent if the extracted value could
-       * not be converted or the type (e.g. address) is not supported for certain
-       * parsers. This field is also only populated for certain supported document
-       * types.
+       * not be converted or the type (for example, address) is not supported for
+       * certain parsers. This field is also only populated for certain supported
+       * document types.
        * </pre>
        *
        * <code>
@@ -52421,9 +52436,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Normalized entity value. Absent if the extracted value could
-       * not be converted or the type (e.g. address) is not supported for certain
-       * parsers. This field is also only populated for certain supported document
-       * types.
+       * not be converted or the type (for example, address) is not supported for
+       * certain parsers. This field is also only populated for certain supported
+       * document types.
        * </pre>
        *
        * <code>
@@ -52449,9 +52464,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Normalized entity value. Absent if the extracted value could
-       * not be converted or the type (e.g. address) is not supported for certain
-       * parsers. This field is also only populated for certain supported document
-       * types.
+       * not be converted or the type (for example, address) is not supported for
+       * certain parsers. This field is also only populated for certain supported
+       * document types.
        * </pre>
        *
        * <code>
@@ -52478,9 +52493,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Normalized entity value. Absent if the extracted value could
-       * not be converted or the type (e.g. address) is not supported for certain
-       * parsers. This field is also only populated for certain supported document
-       * types.
+       * not be converted or the type (for example, address) is not supported for
+       * certain parsers. This field is also only populated for certain supported
+       * document types.
        * </pre>
        *
        * <code>
@@ -52505,9 +52520,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Normalized entity value. Absent if the extracted value could
-       * not be converted or the type (e.g. address) is not supported for certain
-       * parsers. This field is also only populated for certain supported document
-       * types.
+       * not be converted or the type (for example, address) is not supported for
+       * certain parsers. This field is also only populated for certain supported
+       * document types.
        * </pre>
        *
        * <code>
@@ -52541,9 +52556,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Normalized entity value. Absent if the extracted value could
-       * not be converted or the type (e.g. address) is not supported for certain
-       * parsers. This field is also only populated for certain supported document
-       * types.
+       * not be converted or the type (for example, address) is not supported for
+       * certain parsers. This field is also only populated for certain supported
+       * document types.
        * </pre>
        *
        * <code>
@@ -52566,9 +52581,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Normalized entity value. Absent if the extracted value could
-       * not be converted or the type (e.g. address) is not supported for certain
-       * parsers. This field is also only populated for certain supported document
-       * types.
+       * not be converted or the type (for example, address) is not supported for
+       * certain parsers. This field is also only populated for certain supported
+       * document types.
        * </pre>
        *
        * <code>
@@ -52587,9 +52602,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Normalized entity value. Absent if the extracted value could
-       * not be converted or the type (e.g. address) is not supported for certain
-       * parsers. This field is also only populated for certain supported document
-       * types.
+       * not be converted or the type (for example, address) is not supported for
+       * certain parsers. This field is also only populated for certain supported
+       * document types.
        * </pre>
        *
        * <code>
@@ -52613,9 +52628,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Normalized entity value. Absent if the extracted value could
-       * not be converted or the type (e.g. address) is not supported for certain
-       * parsers. This field is also only populated for certain supported document
-       * types.
+       * not be converted or the type (for example, address) is not supported for
+       * certain parsers. This field is also only populated for certain supported
+       * document types.
        * </pre>
        *
        * <code>
@@ -53526,7 +53541,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Subject entity id.
+     * Subject entity ID.
      * </pre>
      *
      * <code>string subject_id = 1;</code>
@@ -53539,7 +53554,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Subject entity id.
+     * Subject entity ID.
      * </pre>
      *
      * <code>string subject_id = 1;</code>
@@ -53552,7 +53567,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Object entity id.
+     * Object entity ID.
      * </pre>
      *
      * <code>string object_id = 2;</code>
@@ -53565,7 +53580,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Object entity id.
+     * Object entity ID.
      * </pre>
      *
      * <code>string object_id = 2;</code>
@@ -53658,7 +53673,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Subject entity id.
+     * Subject entity ID.
      * </pre>
      *
      * <code>string subject_id = 1;</code>
@@ -53682,7 +53697,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Subject entity id.
+     * Subject entity ID.
      * </pre>
      *
      * <code>string subject_id = 1;</code>
@@ -53711,7 +53726,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Object entity id.
+     * Object entity ID.
      * </pre>
      *
      * <code>string object_id = 2;</code>
@@ -53735,7 +53750,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Object entity id.
+     * Object entity ID.
      * </pre>
      *
      * <code>string object_id = 2;</code>
@@ -54214,7 +54229,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Subject entity id.
+       * Subject entity ID.
        * </pre>
        *
        * <code>string subject_id = 1;</code>
@@ -54237,7 +54252,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Subject entity id.
+       * Subject entity ID.
        * </pre>
        *
        * <code>string subject_id = 1;</code>
@@ -54260,7 +54275,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Subject entity id.
+       * Subject entity ID.
        * </pre>
        *
        * <code>string subject_id = 1;</code>
@@ -54282,7 +54297,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Subject entity id.
+       * Subject entity ID.
        * </pre>
        *
        * <code>string subject_id = 1;</code>
@@ -54300,7 +54315,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Subject entity id.
+       * Subject entity ID.
        * </pre>
        *
        * <code>string subject_id = 1;</code>
@@ -54325,7 +54340,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Object entity id.
+       * Object entity ID.
        * </pre>
        *
        * <code>string object_id = 2;</code>
@@ -54348,7 +54363,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Object entity id.
+       * Object entity ID.
        * </pre>
        *
        * <code>string object_id = 2;</code>
@@ -54371,7 +54386,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Object entity id.
+       * Object entity ID.
        * </pre>
        *
        * <code>string object_id = 2;</code>
@@ -54393,7 +54408,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Object entity id.
+       * Object entity ID.
        * </pre>
        *
        * <code>string object_id = 2;</code>
@@ -54411,7 +54426,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Object entity id.
+       * Object entity ID.
        * </pre>
        *
        * <code>string object_id = 2;</code>
@@ -56862,7 +56877,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.PageAnchor.PageRef.layout_id is
-       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=777
+       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=778
        * @return The layoutId.
        */
       @java.lang.Deprecated
@@ -56881,7 +56896,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.PageAnchor.PageRef.layout_id is
-       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=777
+       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=778
        * @return The bytes for layoutId.
        */
       @java.lang.Deprecated
@@ -57394,7 +57409,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.PageAnchor.PageRef.layout_id is
-       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=777
+       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=778
        * @return The layoutId.
        */
       @java.lang.Override
@@ -57424,7 +57439,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.PageAnchor.PageRef.layout_id is
-       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=777
+       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=778
        * @return The bytes for layoutId.
        */
       @java.lang.Override
@@ -58203,7 +58218,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=777
+         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=778
          * @return The layoutId.
          */
         @java.lang.Deprecated
@@ -58232,7 +58247,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=777
+         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=778
          * @return The bytes for layoutId.
          */
         @java.lang.Deprecated
@@ -58261,7 +58276,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=777
+         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=778
          * @param value The layoutId to set.
          * @return This builder for chaining.
          */
@@ -58289,7 +58304,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=777
+         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=778
          * @return This builder for chaining.
          */
         @java.lang.Deprecated
@@ -58313,7 +58328,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=777
+         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=778
          * @param value The bytes for layoutId to set.
          * @return This builder for chaining.
          */
@@ -59658,7 +59673,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>int32 revision = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.revision is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=845
+     *     google/cloud/documentai/v1beta3/document.proto;l=846
      * @return The revision.
      */
     @java.lang.Deprecated
@@ -59668,14 +59683,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Id of this operation.  Needs to be unique within the scope of the
+     * The ID of this operation.  Needs to be unique within the scope of the
      * revision.
      * </pre>
      *
      * <code>int32 id = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.id is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=849
+     *     google/cloud/documentai/v1beta3/document.proto;l=850
      * @return The id.
      */
     @java.lang.Deprecated
@@ -60147,13 +60162,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The id of the parent provenance.
+       * The ID of the parent provenance.
        * </pre>
        *
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.Parent.id is deprecated.
-       *     See google/cloud/documentai/v1beta3/document.proto;l=808
+       *     See google/cloud/documentai/v1beta3/document.proto;l=809
        * @return The id.
        */
       @java.lang.Deprecated
@@ -60250,13 +60265,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The id of the parent provenance.
+       * The ID of the parent provenance.
        * </pre>
        *
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.Parent.id is deprecated.
-       *     See google/cloud/documentai/v1beta3/document.proto;l=808
+       *     See google/cloud/documentai/v1beta3/document.proto;l=809
        * @return The id.
        */
       @java.lang.Override
@@ -60786,13 +60801,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The id of the parent provenance.
+         * The ID of the parent provenance.
          * </pre>
          *
          * <code>int32 id = 2 [deprecated = true];</code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.Parent.id is deprecated.
-         *     See google/cloud/documentai/v1beta3/document.proto;l=808
+         *     See google/cloud/documentai/v1beta3/document.proto;l=809
          * @return The id.
          */
         @java.lang.Override
@@ -60805,13 +60820,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The id of the parent provenance.
+         * The ID of the parent provenance.
          * </pre>
          *
          * <code>int32 id = 2 [deprecated = true];</code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.Parent.id is deprecated.
-         *     See google/cloud/documentai/v1beta3/document.proto;l=808
+         *     See google/cloud/documentai/v1beta3/document.proto;l=809
          * @param value The id to set.
          * @return This builder for chaining.
          */
@@ -60828,13 +60843,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The id of the parent provenance.
+         * The ID of the parent provenance.
          * </pre>
          *
          * <code>int32 id = 2 [deprecated = true];</code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.Parent.id is deprecated.
-         *     See google/cloud/documentai/v1beta3/document.proto;l=808
+         *     See google/cloud/documentai/v1beta3/document.proto;l=809
          * @return This builder for chaining.
          */
         @java.lang.Deprecated
@@ -60925,7 +60940,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>int32 revision = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.revision is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=845
+     *     google/cloud/documentai/v1beta3/document.proto;l=846
      * @return The revision.
      */
     @java.lang.Override
@@ -60941,14 +60956,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Id of this operation.  Needs to be unique within the scope of the
+     * The ID of this operation.  Needs to be unique within the scope of the
      * revision.
      * </pre>
      *
      * <code>int32 id = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.id is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=849
+     *     google/cloud/documentai/v1beta3/document.proto;l=850
      * @return The id.
      */
     @java.lang.Override
@@ -61562,7 +61577,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 revision = 1 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.revision is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=845
+       *     google/cloud/documentai/v1beta3/document.proto;l=846
        * @return The revision.
        */
       @java.lang.Override
@@ -61581,7 +61596,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 revision = 1 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.revision is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=845
+       *     google/cloud/documentai/v1beta3/document.proto;l=846
        * @param value The revision to set.
        * @return This builder for chaining.
        */
@@ -61604,7 +61619,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 revision = 1 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.revision is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=845
+       *     google/cloud/documentai/v1beta3/document.proto;l=846
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -61621,14 +61636,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The Id of this operation.  Needs to be unique within the scope of the
+       * The ID of this operation.  Needs to be unique within the scope of the
        * revision.
        * </pre>
        *
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.id is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=849
+       *     google/cloud/documentai/v1beta3/document.proto;l=850
        * @return The id.
        */
       @java.lang.Override
@@ -61641,14 +61656,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The Id of this operation.  Needs to be unique within the scope of the
+       * The ID of this operation.  Needs to be unique within the scope of the
        * revision.
        * </pre>
        *
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.id is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=849
+       *     google/cloud/documentai/v1beta3/document.proto;l=850
        * @param value The id to set.
        * @return This builder for chaining.
        */
@@ -61665,14 +61680,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The Id of this operation.  Needs to be unique within the scope of the
+       * The ID of this operation.  Needs to be unique within the scope of the
        * revision.
        * </pre>
        *
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.id is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=849
+       *     google/cloud/documentai/v1beta3/document.proto;l=850
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -62259,7 +62274,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If the change was made by a person specify the name or id of that
+     * If the change was made by a person specify the name or ID of that
      * person.
      * </pre>
      *
@@ -62273,7 +62288,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If the change was made by a person specify the name or id of that
+     * If the change was made by a person specify the name or ID of that
      * person.
      * </pre>
      *
@@ -62287,7 +62302,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If the change was made by a person specify the name or id of that
+     * If the change was made by a person specify the name or ID of that
      * person.
      * </pre>
      *
@@ -62343,7 +62358,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Id of the revision, internally generated by doc proto storage.
+     * ID of the revision, internally generated by doc proto storage.
      * Unique within the context of the document.
      * </pre>
      *
@@ -62357,7 +62372,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Id of the revision, internally generated by doc proto storage.
+     * ID of the revision, internally generated by doc proto storage.
      * Unique within the context of the document.
      * </pre>
      *
@@ -62379,7 +62394,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=888
+     *     google/cloud/documentai/v1beta3/document.proto;l=889
      * @return A list containing the parent.
      */
     @java.lang.Deprecated
@@ -62397,7 +62412,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=888
+     *     google/cloud/documentai/v1beta3/document.proto;l=889
      * @return The count of parent.
      */
     @java.lang.Deprecated
@@ -62415,7 +62430,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=888
+     *     google/cloud/documentai/v1beta3/document.proto;l=889
      * @param index The index of the element to return.
      * @return The parent at the given index.
      */
@@ -62426,7 +62441,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The revisions that this revision is based on. Must include all the ids
+     * The revisions that this revision is based on. Must include all the IDs
      * that have anything to do with this revision - eg. there are
      * `provenance.parent.revision` fields that index into this field.
      * </pre>
@@ -62441,7 +62456,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The revisions that this revision is based on. Must include all the ids
+     * The revisions that this revision is based on. Must include all the IDs
      * that have anything to do with this revision - eg. there are
      * `provenance.parent.revision` fields that index into this field.
      * </pre>
@@ -62456,7 +62471,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The revisions that this revision is based on. Must include all the ids
+     * The revisions that this revision is based on. Must include all the IDs
      * that have anything to do with this revision - eg. there are
      * `provenance.parent.revision` fields that index into this field.
      * </pre>
@@ -62472,7 +62487,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The revisions that this revision is based on. Must include all the ids
+     * The revisions that this revision is based on. Must include all the IDs
      * that have anything to do with this revision - eg. there are
      * `provenance.parent.revision` fields that index into this field.
      * </pre>
@@ -62621,7 +62636,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Human review state. e.g. `requested`, `succeeded`, `rejected`.
+       * Human review state. For example, `requested`, `succeeded`, `rejected`.
        * </pre>
        *
        * <code>string state = 1;</code>
@@ -62634,7 +62649,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Human review state. e.g. `requested`, `succeeded`, `rejected`.
+       * Human review state. For example, `requested`, `succeeded`, `rejected`.
        * </pre>
        *
        * <code>string state = 1;</code>
@@ -62727,7 +62742,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Human review state. e.g. `requested`, `succeeded`, `rejected`.
+       * Human review state. For example, `requested`, `succeeded`, `rejected`.
        * </pre>
        *
        * <code>string state = 1;</code>
@@ -62751,7 +62766,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Human review state. e.g. `requested`, `succeeded`, `rejected`.
+       * Human review state. For example, `requested`, `succeeded`, `rejected`.
        * </pre>
        *
        * <code>string state = 1;</code>
@@ -63213,7 +63228,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Human review state. e.g. `requested`, `succeeded`, `rejected`.
+         * Human review state. For example, `requested`, `succeeded`, `rejected`.
          * </pre>
          *
          * <code>string state = 1;</code>
@@ -63236,7 +63251,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Human review state. e.g. `requested`, `succeeded`, `rejected`.
+         * Human review state. For example, `requested`, `succeeded`, `rejected`.
          * </pre>
          *
          * <code>string state = 1;</code>
@@ -63259,7 +63274,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Human review state. e.g. `requested`, `succeeded`, `rejected`.
+         * Human review state. For example, `requested`, `succeeded`, `rejected`.
          * </pre>
          *
          * <code>string state = 1;</code>
@@ -63281,7 +63296,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Human review state. e.g. `requested`, `succeeded`, `rejected`.
+         * Human review state. For example, `requested`, `succeeded`, `rejected`.
          * </pre>
          *
          * <code>string state = 1;</code>
@@ -63299,7 +63314,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Human review state. e.g. `requested`, `succeeded`, `rejected`.
+         * Human review state. For example, `requested`, `succeeded`, `rejected`.
          * </pre>
          *
          * <code>string state = 1;</code>
@@ -63558,7 +63573,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If the change was made by a person specify the name or id of that
+     * If the change was made by a person specify the name or ID of that
      * person.
      * </pre>
      *
@@ -63574,7 +63589,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If the change was made by a person specify the name or id of that
+     * If the change was made by a person specify the name or ID of that
      * person.
      * </pre>
      *
@@ -63603,7 +63618,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If the change was made by a person specify the name or id of that
+     * If the change was made by a person specify the name or ID of that
      * person.
      * </pre>
      *
@@ -63713,7 +63728,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Id of the revision, internally generated by doc proto storage.
+     * ID of the revision, internally generated by doc proto storage.
      * Unique within the context of the document.
      * </pre>
      *
@@ -63738,7 +63753,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Id of the revision, internally generated by doc proto storage.
+     * ID of the revision, internally generated by doc proto storage.
      * Unique within the context of the document.
      * </pre>
      *
@@ -63776,7 +63791,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=888
+     *     google/cloud/documentai/v1beta3/document.proto;l=889
      * @return A list containing the parent.
      */
     @java.lang.Override
@@ -63797,7 +63812,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=888
+     *     google/cloud/documentai/v1beta3/document.proto;l=889
      * @return The count of parent.
      */
     @java.lang.Deprecated
@@ -63817,7 +63832,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=888
+     *     google/cloud/documentai/v1beta3/document.proto;l=889
      * @param index The index of the element to return.
      * @return The parent at the given index.
      */
@@ -63838,7 +63853,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The revisions that this revision is based on. Must include all the ids
+     * The revisions that this revision is based on. Must include all the IDs
      * that have anything to do with this revision - eg. there are
      * `provenance.parent.revision` fields that index into this field.
      * </pre>
@@ -63855,7 +63870,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The revisions that this revision is based on. Must include all the ids
+     * The revisions that this revision is based on. Must include all the IDs
      * that have anything to do with this revision - eg. there are
      * `provenance.parent.revision` fields that index into this field.
      * </pre>
@@ -63872,7 +63887,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The revisions that this revision is based on. Must include all the ids
+     * The revisions that this revision is based on. Must include all the IDs
      * that have anything to do with this revision - eg. there are
      * `provenance.parent.revision` fields that index into this field.
      * </pre>
@@ -63890,7 +63905,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The revisions that this revision is based on. Must include all the ids
+     * The revisions that this revision is based on. Must include all the IDs
      * that have anything to do with this revision - eg. there are
      * `provenance.parent.revision` fields that index into this field.
      * </pre>
@@ -64630,7 +64645,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If the change was made by a person specify the name or id of that
+       * If the change was made by a person specify the name or ID of that
        * person.
        * </pre>
        *
@@ -64647,7 +64662,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If the change was made by a person specify the name or id of that
+       * If the change was made by a person specify the name or ID of that
        * person.
        * </pre>
        *
@@ -64677,7 +64692,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If the change was made by a person specify the name or id of that
+       * If the change was made by a person specify the name or ID of that
        * person.
        * </pre>
        *
@@ -64707,7 +64722,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If the change was made by a person specify the name or id of that
+       * If the change was made by a person specify the name or ID of that
        * person.
        * </pre>
        *
@@ -64730,7 +64745,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If the change was made by a person specify the name or id of that
+       * If the change was made by a person specify the name or ID of that
        * person.
        * </pre>
        *
@@ -64751,7 +64766,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If the change was made by a person specify the name or id of that
+       * If the change was made by a person specify the name or ID of that
        * person.
        * </pre>
        *
@@ -64922,7 +64937,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Id of the revision, internally generated by doc proto storage.
+       * ID of the revision, internally generated by doc proto storage.
        * Unique within the context of the document.
        * </pre>
        *
@@ -64946,7 +64961,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Id of the revision, internally generated by doc proto storage.
+       * ID of the revision, internally generated by doc proto storage.
        * Unique within the context of the document.
        * </pre>
        *
@@ -64970,7 +64985,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Id of the revision, internally generated by doc proto storage.
+       * ID of the revision, internally generated by doc proto storage.
        * Unique within the context of the document.
        * </pre>
        *
@@ -64993,7 +65008,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Id of the revision, internally generated by doc proto storage.
+       * ID of the revision, internally generated by doc proto storage.
        * Unique within the context of the document.
        * </pre>
        *
@@ -65012,7 +65027,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Id of the revision, internally generated by doc proto storage.
+       * ID of the revision, internally generated by doc proto storage.
        * Unique within the context of the document.
        * </pre>
        *
@@ -65053,7 +65068,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=888
+       *     google/cloud/documentai/v1beta3/document.proto;l=889
        * @return A list containing the parent.
        */
       @java.lang.Deprecated
@@ -65074,7 +65089,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=888
+       *     google/cloud/documentai/v1beta3/document.proto;l=889
        * @return The count of parent.
        */
       @java.lang.Deprecated
@@ -65094,7 +65109,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=888
+       *     google/cloud/documentai/v1beta3/document.proto;l=889
        * @param index The index of the element to return.
        * @return The parent at the given index.
        */
@@ -65115,7 +65130,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=888
+       *     google/cloud/documentai/v1beta3/document.proto;l=889
        * @param index The index to set the value at.
        * @param value The parent to set.
        * @return This builder for chaining.
@@ -65142,7 +65157,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=888
+       *     google/cloud/documentai/v1beta3/document.proto;l=889
        * @param value The parent to add.
        * @return This builder for chaining.
        */
@@ -65168,7 +65183,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=888
+       *     google/cloud/documentai/v1beta3/document.proto;l=889
        * @param values The parent to add.
        * @return This builder for chaining.
        */
@@ -65193,7 +65208,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=888
+       *     google/cloud/documentai/v1beta3/document.proto;l=889
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -65218,7 +65233,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The revisions that this revision is based on. Must include all the ids
+       * The revisions that this revision is based on. Must include all the IDs
        * that have anything to do with this revision - eg. there are
        * `provenance.parent.revision` fields that index into this field.
        * </pre>
@@ -65236,7 +65251,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The revisions that this revision is based on. Must include all the ids
+       * The revisions that this revision is based on. Must include all the IDs
        * that have anything to do with this revision - eg. there are
        * `provenance.parent.revision` fields that index into this field.
        * </pre>
@@ -65253,7 +65268,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The revisions that this revision is based on. Must include all the ids
+       * The revisions that this revision is based on. Must include all the IDs
        * that have anything to do with this revision - eg. there are
        * `provenance.parent.revision` fields that index into this field.
        * </pre>
@@ -65271,7 +65286,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The revisions that this revision is based on. Must include all the ids
+       * The revisions that this revision is based on. Must include all the IDs
        * that have anything to do with this revision - eg. there are
        * `provenance.parent.revision` fields that index into this field.
        * </pre>
@@ -65289,7 +65304,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The revisions that this revision is based on. Must include all the ids
+       * The revisions that this revision is based on. Must include all the IDs
        * that have anything to do with this revision - eg. there are
        * `provenance.parent.revision` fields that index into this field.
        * </pre>
@@ -65315,7 +65330,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The revisions that this revision is based on. Must include all the ids
+       * The revisions that this revision is based on. Must include all the IDs
        * that have anything to do with this revision - eg. there are
        * `provenance.parent.revision` fields that index into this field.
        * </pre>
@@ -65340,7 +65355,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The revisions that this revision is based on. Must include all the ids
+       * The revisions that this revision is based on. Must include all the IDs
        * that have anything to do with this revision - eg. there are
        * `provenance.parent.revision` fields that index into this field.
        * </pre>
@@ -65362,7 +65377,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The revisions that this revision is based on. Must include all the ids
+       * The revisions that this revision is based on. Must include all the IDs
        * that have anything to do with this revision - eg. there are
        * `provenance.parent.revision` fields that index into this field.
        * </pre>
@@ -65383,7 +65398,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The revisions that this revision is based on. Must include all the ids
+       * The revisions that this revision is based on. Must include all the IDs
        * that have anything to do with this revision - eg. there are
        * `provenance.parent.revision` fields that index into this field.
        * </pre>
@@ -79413,7 +79428,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Asset id of the inline image. If set, find the image
+         * Optional. Asset ID of the inline image. If set, find the image
          * content in the blob_assets field.
          * </pre>
          *
@@ -79427,7 +79442,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Asset id of the inline image. If set, find the image
+         * Optional. Asset ID of the inline image. If set, find the image
          * content in the blob_assets field.
          * </pre>
          *
@@ -79441,7 +79456,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Asset id of the inline image. If set, find the image
+         * Optional. Asset ID of the inline image. If set, find the image
          * content in the blob_assets field.
          * </pre>
          *
@@ -79455,7 +79470,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Google Cloud Storage uri of the image.
+         * Optional. Google Cloud Storage URI of the image.
          * </pre>
          *
          * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -79468,7 +79483,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Google Cloud Storage uri of the image.
+         * Optional. Google Cloud Storage URI of the image.
          * </pre>
          *
          * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -79481,7 +79496,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Google Cloud Storage uri of the image.
+         * Optional. Google Cloud Storage URI of the image.
          * </pre>
          *
          * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -79494,11 +79509,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Data uri of the image.
+         * Optional. Data URI of the image.
          * It is composed of four parts: a prefix (data:), a MIME type
          * indicating the type of data, an optional base64 token if
          * non-textual, and the data itself:
-         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
          * </pre>
          *
          * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -79511,11 +79526,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Data uri of the image.
+         * Optional. Data URI of the image.
          * It is composed of four parts: a prefix (data:), a MIME type
          * indicating the type of data, an optional base64 token if
          * non-textual, and the data itself:
-         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
          * </pre>
          *
          * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -79528,11 +79543,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Data uri of the image.
+         * Optional. Data URI of the image.
          * It is composed of four parts: a prefix (data:), a MIME type
          * indicating the type of data, an optional base64 token if
          * non-textual, and the data itself:
-         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
          * </pre>
          *
          * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -79748,7 +79763,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Asset id of the inline image. If set, find the image
+         * Optional. Asset ID of the inline image. If set, find the image
          * content in the blob_assets field.
          * </pre>
          *
@@ -79764,7 +79779,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Asset id of the inline image. If set, find the image
+         * Optional. Asset ID of the inline image. If set, find the image
          * content in the blob_assets field.
          * </pre>
          *
@@ -79793,7 +79808,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Asset id of the inline image. If set, find the image
+         * Optional. Asset ID of the inline image. If set, find the image
          * content in the blob_assets field.
          * </pre>
          *
@@ -79824,7 +79839,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Google Cloud Storage uri of the image.
+         * Optional. Google Cloud Storage URI of the image.
          * </pre>
          *
          * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -79839,7 +79854,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Google Cloud Storage uri of the image.
+         * Optional. Google Cloud Storage URI of the image.
          * </pre>
          *
          * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -79867,7 +79882,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Google Cloud Storage uri of the image.
+         * Optional. Google Cloud Storage URI of the image.
          * </pre>
          *
          * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -79897,11 +79912,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Data uri of the image.
+         * Optional. Data URI of the image.
          * It is composed of four parts: a prefix (data:), a MIME type
          * indicating the type of data, an optional base64 token if
          * non-textual, and the data itself:
-         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
          * </pre>
          *
          * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -79916,11 +79931,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Data uri of the image.
+         * Optional. Data URI of the image.
          * It is composed of four parts: a prefix (data:), a MIME type
          * indicating the type of data, an optional base64 token if
          * non-textual, and the data itself:
-         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
          * </pre>
          *
          * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -79948,11 +79963,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Data uri of the image.
+         * Optional. Data URI of the image.
          * It is composed of four parts: a prefix (data:), a MIME type
          * indicating the type of data, an optional base64 token if
          * non-textual, and the data itself:
-         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
          * </pre>
          *
          * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -80744,7 +80759,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Asset id of the inline image. If set, find the image
+           * Optional. Asset ID of the inline image. If set, find the image
            * content in the blob_assets field.
            * </pre>
            *
@@ -80761,7 +80776,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Asset id of the inline image. If set, find the image
+           * Optional. Asset ID of the inline image. If set, find the image
            * content in the blob_assets field.
            * </pre>
            *
@@ -80791,7 +80806,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Asset id of the inline image. If set, find the image
+           * Optional. Asset ID of the inline image. If set, find the image
            * content in the blob_assets field.
            * </pre>
            *
@@ -80821,7 +80836,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Asset id of the inline image. If set, find the image
+           * Optional. Asset ID of the inline image. If set, find the image
            * content in the blob_assets field.
            * </pre>
            *
@@ -80844,7 +80859,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Asset id of the inline image. If set, find the image
+           * Optional. Asset ID of the inline image. If set, find the image
            * content in the blob_assets field.
            * </pre>
            *
@@ -80865,7 +80880,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Asset id of the inline image. If set, find the image
+           * Optional. Asset ID of the inline image. If set, find the image
            * content in the blob_assets field.
            * </pre>
            *
@@ -80889,7 +80904,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Google Cloud Storage uri of the image.
+           * Optional. Google Cloud Storage URI of the image.
            * </pre>
            *
            * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -80905,7 +80920,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Google Cloud Storage uri of the image.
+           * Optional. Google Cloud Storage URI of the image.
            * </pre>
            *
            * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -80934,7 +80949,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Google Cloud Storage uri of the image.
+           * Optional. Google Cloud Storage URI of the image.
            * </pre>
            *
            * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -80963,7 +80978,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Google Cloud Storage uri of the image.
+           * Optional. Google Cloud Storage URI of the image.
            * </pre>
            *
            * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -80985,7 +81000,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Google Cloud Storage uri of the image.
+           * Optional. Google Cloud Storage URI of the image.
            * </pre>
            *
            * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -81005,7 +81020,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Google Cloud Storage uri of the image.
+           * Optional. Google Cloud Storage URI of the image.
            * </pre>
            *
            * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -81028,11 +81043,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Data uri of the image.
+           * Optional. Data URI of the image.
            * It is composed of four parts: a prefix (data:), a MIME type
            * indicating the type of data, an optional base64 token if
            * non-textual, and the data itself:
-           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
            * </pre>
            *
            * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -81048,11 +81063,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Data uri of the image.
+           * Optional. Data URI of the image.
            * It is composed of four parts: a prefix (data:), a MIME type
            * indicating the type of data, an optional base64 token if
            * non-textual, and the data itself:
-           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
            * </pre>
            *
            * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -81081,11 +81096,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Data uri of the image.
+           * Optional. Data URI of the image.
            * It is composed of four parts: a prefix (data:), a MIME type
            * indicating the type of data, an optional base64 token if
            * non-textual, and the data itself:
-           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
            * </pre>
            *
            * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -81114,11 +81129,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Data uri of the image.
+           * Optional. Data URI of the image.
            * It is composed of four parts: a prefix (data:), a MIME type
            * indicating the type of data, an optional base64 token if
            * non-textual, and the data itself:
-           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
            * </pre>
            *
            * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -81140,11 +81155,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Data uri of the image.
+           * Optional. Data URI of the image.
            * It is composed of four parts: a prefix (data:), a MIME type
            * indicating the type of data, an optional base64 token if
            * non-textual, and the data itself:
-           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
            * </pre>
            *
            * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -81164,11 +81179,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Data uri of the image.
+           * Optional. Data URI of the image.
            * It is composed of four parts: a prefix (data:), a MIME type
            * indicating the type of data, an optional base64 token if
            * non-textual, and the data itself:
-           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
            * </pre>
            *
            * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -89047,7 +89062,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Asset id of the inline image. If set, find the image
+         * Optional. Asset ID of the inline image. If set, find the image
          * content in the blob_assets field.
          * </pre>
          *
@@ -89061,7 +89076,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Asset id of the inline image. If set, find the image
+         * Optional. Asset ID of the inline image. If set, find the image
          * content in the blob_assets field.
          * </pre>
          *
@@ -89075,7 +89090,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Asset id of the inline image. If set, find the image
+         * Optional. Asset ID of the inline image. If set, find the image
          * content in the blob_assets field.
          * </pre>
          *
@@ -89089,7 +89104,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Google Cloud Storage uri of the image.
+         * Optional. Google Cloud Storage URI of the image.
          * </pre>
          *
          * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -89102,7 +89117,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Google Cloud Storage uri of the image.
+         * Optional. Google Cloud Storage URI of the image.
          * </pre>
          *
          * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -89115,7 +89130,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Google Cloud Storage uri of the image.
+         * Optional. Google Cloud Storage URI of the image.
          * </pre>
          *
          * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -89128,11 +89143,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Data uri of the image.
+         * Optional. Data URI of the image.
          * It is composed of four parts: a prefix (data:), a MIME type
          * indicating the type of data, an optional base64 token if
          * non-textual, and the data itself:
-         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
          * </pre>
          *
          * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -89145,11 +89160,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Data uri of the image.
+         * Optional. Data URI of the image.
          * It is composed of four parts: a prefix (data:), a MIME type
          * indicating the type of data, an optional base64 token if
          * non-textual, and the data itself:
-         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
          * </pre>
          *
          * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -89162,11 +89177,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Data uri of the image.
+         * Optional. Data URI of the image.
          * It is composed of four parts: a prefix (data:), a MIME type
          * indicating the type of data, an optional base64 token if
          * non-textual, and the data itself:
-         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
          * </pre>
          *
          * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -89323,7 +89338,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Asset id of the inline image. If set, find the image
+         * Optional. Asset ID of the inline image. If set, find the image
          * content in the blob_assets field.
          * </pre>
          *
@@ -89339,7 +89354,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Asset id of the inline image. If set, find the image
+         * Optional. Asset ID of the inline image. If set, find the image
          * content in the blob_assets field.
          * </pre>
          *
@@ -89368,7 +89383,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Asset id of the inline image. If set, find the image
+         * Optional. Asset ID of the inline image. If set, find the image
          * content in the blob_assets field.
          * </pre>
          *
@@ -89399,7 +89414,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Google Cloud Storage uri of the image.
+         * Optional. Google Cloud Storage URI of the image.
          * </pre>
          *
          * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -89414,7 +89429,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Google Cloud Storage uri of the image.
+         * Optional. Google Cloud Storage URI of the image.
          * </pre>
          *
          * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -89442,7 +89457,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Google Cloud Storage uri of the image.
+         * Optional. Google Cloud Storage URI of the image.
          * </pre>
          *
          * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -89472,11 +89487,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Data uri of the image.
+         * Optional. Data URI of the image.
          * It is composed of four parts: a prefix (data:), a MIME type
          * indicating the type of data, an optional base64 token if
          * non-textual, and the data itself:
-         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
          * </pre>
          *
          * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -89491,11 +89506,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Data uri of the image.
+         * Optional. Data URI of the image.
          * It is composed of four parts: a prefix (data:), a MIME type
          * indicating the type of data, an optional base64 token if
          * non-textual, and the data itself:
-         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
          * </pre>
          *
          * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -89523,11 +89538,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Data uri of the image.
+         * Optional. Data URI of the image.
          * It is composed of four parts: a prefix (data:), a MIME type
          * indicating the type of data, an optional base64 token if
          * non-textual, and the data itself:
-         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
          * </pre>
          *
          * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -90148,7 +90163,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Asset id of the inline image. If set, find the image
+           * Optional. Asset ID of the inline image. If set, find the image
            * content in the blob_assets field.
            * </pre>
            *
@@ -90165,7 +90180,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Asset id of the inline image. If set, find the image
+           * Optional. Asset ID of the inline image. If set, find the image
            * content in the blob_assets field.
            * </pre>
            *
@@ -90195,7 +90210,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Asset id of the inline image. If set, find the image
+           * Optional. Asset ID of the inline image. If set, find the image
            * content in the blob_assets field.
            * </pre>
            *
@@ -90225,7 +90240,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Asset id of the inline image. If set, find the image
+           * Optional. Asset ID of the inline image. If set, find the image
            * content in the blob_assets field.
            * </pre>
            *
@@ -90248,7 +90263,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Asset id of the inline image. If set, find the image
+           * Optional. Asset ID of the inline image. If set, find the image
            * content in the blob_assets field.
            * </pre>
            *
@@ -90269,7 +90284,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Asset id of the inline image. If set, find the image
+           * Optional. Asset ID of the inline image. If set, find the image
            * content in the blob_assets field.
            * </pre>
            *
@@ -90293,7 +90308,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Google Cloud Storage uri of the image.
+           * Optional. Google Cloud Storage URI of the image.
            * </pre>
            *
            * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -90309,7 +90324,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Google Cloud Storage uri of the image.
+           * Optional. Google Cloud Storage URI of the image.
            * </pre>
            *
            * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -90338,7 +90353,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Google Cloud Storage uri of the image.
+           * Optional. Google Cloud Storage URI of the image.
            * </pre>
            *
            * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -90367,7 +90382,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Google Cloud Storage uri of the image.
+           * Optional. Google Cloud Storage URI of the image.
            * </pre>
            *
            * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -90389,7 +90404,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Google Cloud Storage uri of the image.
+           * Optional. Google Cloud Storage URI of the image.
            * </pre>
            *
            * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -90409,7 +90424,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Google Cloud Storage uri of the image.
+           * Optional. Google Cloud Storage URI of the image.
            * </pre>
            *
            * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -90432,11 +90447,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Data uri of the image.
+           * Optional. Data URI of the image.
            * It is composed of four parts: a prefix (data:), a MIME type
            * indicating the type of data, an optional base64 token if
            * non-textual, and the data itself:
-           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
            * </pre>
            *
            * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -90452,11 +90467,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Data uri of the image.
+           * Optional. Data URI of the image.
            * It is composed of four parts: a prefix (data:), a MIME type
            * indicating the type of data, an optional base64 token if
            * non-textual, and the data itself:
-           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
            * </pre>
            *
            * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -90485,11 +90500,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Data uri of the image.
+           * Optional. Data URI of the image.
            * It is composed of four parts: a prefix (data:), a MIME type
            * indicating the type of data, an optional base64 token if
            * non-textual, and the data itself:
-           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
            * </pre>
            *
            * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -90518,11 +90533,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Data uri of the image.
+           * Optional. Data URI of the image.
            * It is composed of four parts: a prefix (data:), a MIME type
            * indicating the type of data, an optional base64 token if
            * non-textual, and the data itself:
-           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
            * </pre>
            *
            * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -90544,11 +90559,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Data uri of the image.
+           * Optional. Data URI of the image.
            * It is composed of four parts: a prefix (data:), a MIME type
            * indicating the type of data, an optional base64 token if
            * non-textual, and the data itself:
-           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
            * </pre>
            *
            * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -90568,11 +90583,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Optional. Data uri of the image.
+           * Optional. Data URI of the image.
            * It is composed of four parts: a prefix (data:), a MIME type
            * indicating the type of data, an optional base64 token if
            * non-textual, and the data itself:
-           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;.
            * </pre>
            *
            * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -91802,7 +91817,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The chunk field in the chunk. A chunk field could be one of the various
-       * types (e.g. image, table) supported.
+       * types (for example, image, table) supported.
        * </pre>
        *
        * Protobuf type {@code
@@ -92255,7 +92270,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * The chunk field in the chunk. A chunk field could be one of the various
-         * types (e.g. image, table) supported.
+         * types (for example, image, table) supported.
          * </pre>
          *
          * Protobuf type {@code
@@ -97371,7 +97386,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The id of the blob asset.
+     * Optional. The ID of the blob asset.
      * </pre>
      *
      * <code>string asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -97384,7 +97399,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The id of the blob asset.
+     * Optional. The ID of the blob asset.
      * </pre>
      *
      * <code>string asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -97397,7 +97412,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The content of the blob asset, e.g. image bytes.
+     * Optional. The content of the blob asset, for example, image bytes.
      * </pre>
      *
      * <code>bytes content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -97442,8 +97457,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Represents a blob asset. It's used to store the content of the inline blob
-   * in this document, e.g. image bytes, such that it can be referenced by
-   * other fields in the document via asset id.
+   * in this document, for example, image bytes, such that it can be referenced
+   * by other fields in the document via asset ID.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1beta3.Document.BlobAsset}
@@ -97495,7 +97510,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The id of the blob asset.
+     * Optional. The ID of the blob asset.
      * </pre>
      *
      * <code>string asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -97519,7 +97534,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The id of the blob asset.
+     * Optional. The ID of the blob asset.
      * </pre>
      *
      * <code>string asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -97546,7 +97561,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The content of the blob asset, e.g. image bytes.
+     * Optional. The content of the blob asset, for example, image bytes.
      * </pre>
      *
      * <code>bytes content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -97800,8 +97815,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Represents a blob asset. It's used to store the content of the inline blob
-     * in this document, e.g. image bytes, such that it can be referenced by
-     * other fields in the document via asset id.
+     * in this document, for example, image bytes, such that it can be referenced
+     * by other fields in the document via asset ID.
      * </pre>
      *
      * Protobuf type {@code google.cloud.documentai.v1beta3.Document.BlobAsset}
@@ -98017,7 +98032,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The id of the blob asset.
+       * Optional. The ID of the blob asset.
        * </pre>
        *
        * <code>string asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -98040,7 +98055,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The id of the blob asset.
+       * Optional. The ID of the blob asset.
        * </pre>
        *
        * <code>string asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -98063,7 +98078,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The id of the blob asset.
+       * Optional. The ID of the blob asset.
        * </pre>
        *
        * <code>string asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -98085,7 +98100,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The id of the blob asset.
+       * Optional. The ID of the blob asset.
        * </pre>
        *
        * <code>string asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -98103,7 +98118,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The id of the blob asset.
+       * Optional. The ID of the blob asset.
        * </pre>
        *
        * <code>string asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -98128,7 +98143,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The content of the blob asset, e.g. image bytes.
+       * Optional. The content of the blob asset, for example, image bytes.
        * </pre>
        *
        * <code>bytes content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -98144,7 +98159,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The content of the blob asset, e.g. image bytes.
+       * Optional. The content of the blob asset, for example, image bytes.
        * </pre>
        *
        * <code>bytes content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -98166,7 +98181,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The content of the blob asset, e.g. image bytes.
+       * Optional. The content of the blob asset, for example, image bytes.
        * </pre>
        *
        * <code>bytes content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -101231,7 +101246,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The revision id.
+     * The revision ID.
      * </pre>
      *
      * <code>string revision_id = 1;</code>
@@ -101244,7 +101259,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The revision id.
+     * The revision ID.
      * </pre>
      *
      * <code>string revision_id = 1;</code>
@@ -101410,7 +101425,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The revision id.
+     * The revision ID.
      * </pre>
      *
      * <code>string revision_id = 1;</code>
@@ -101434,7 +101449,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The revision id.
+     * The revision ID.
      * </pre>
      *
      * <code>string revision_id = 1;</code>
@@ -102074,7 +102089,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The revision id.
+       * The revision ID.
        * </pre>
        *
        * <code>string revision_id = 1;</code>
@@ -102097,7 +102112,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The revision id.
+       * The revision ID.
        * </pre>
        *
        * <code>string revision_id = 1;</code>
@@ -102120,7 +102135,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The revision id.
+       * The revision ID.
        * </pre>
        *
        * <code>string revision_id = 1;</code>
@@ -102142,7 +102157,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The revision id.
+       * The revision ID.
        * </pre>
        *
        * <code>string revision_id = 1;</code>
@@ -102160,7 +102175,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The revision id.
+       * The revision ID.
        * </pre>
        *
        * <code>string revision_id = 1;</code>
@@ -103929,8 +103944,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The blob assets in this document. This is used to store the
-   * content of the inline blobs in this document, e.g. image bytes, such that
-   * it can be referenced by other fields in the document via asset id.
+   * content of the inline blobs in this document, for example, image bytes,
+   * such that it can be referenced by other fields in the document via asset
+   * id.
    * </pre>
    *
    * <code>
@@ -103948,8 +103964,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The blob assets in this document. This is used to store the
-   * content of the inline blobs in this document, e.g. image bytes, such that
-   * it can be referenced by other fields in the document via asset id.
+   * content of the inline blobs in this document, for example, image bytes,
+   * such that it can be referenced by other fields in the document via asset
+   * id.
    * </pre>
    *
    * <code>
@@ -103967,8 +103984,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The blob assets in this document. This is used to store the
-   * content of the inline blobs in this document, e.g. image bytes, such that
-   * it can be referenced by other fields in the document via asset id.
+   * content of the inline blobs in this document, for example, image bytes,
+   * such that it can be referenced by other fields in the document via asset
+   * id.
    * </pre>
    *
    * <code>
@@ -103985,8 +104003,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The blob assets in this document. This is used to store the
-   * content of the inline blobs in this document, e.g. image bytes, such that
-   * it can be referenced by other fields in the document via asset id.
+   * content of the inline blobs in this document, for example, image bytes,
+   * such that it can be referenced by other fields in the document via asset
+   * id.
    * </pre>
    *
    * <code>
@@ -104003,8 +104022,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The blob assets in this document. This is used to store the
-   * content of the inline blobs in this document, e.g. image bytes, such that
-   * it can be referenced by other fields in the document via asset id.
+   * content of the inline blobs in this document, for example, image bytes,
+   * such that it can be referenced by other fields in the document via asset
+   * id.
    * </pre>
    *
    * <code>
@@ -104192,10 +104212,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The entity revision id that `document.entities` field is based on.
+   * The entity revision ID that `document.entities` field is based on.
    * If this field is set and `entities_revisions` is not empty, the entities in
    * `document.entities` field are the entities in the entity revision with this
-   * id and `document.entity_validation_output` field is the
+   * ID and `document.entity_validation_output` field is the
    * `entity_validation_output` field in this entity revision.
    * </pre>
    *
@@ -104220,10 +104240,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The entity revision id that `document.entities` field is based on.
+   * The entity revision ID that `document.entities` field is based on.
    * If this field is set and `entities_revisions` is not empty, the entities in
    * `document.entities` field are the entities in the entity revision with this
-   * id and `document.entity_validation_output` field is the
+   * ID and `document.entity_validation_output` field is the
    * `entity_validation_output` field in this entity revision.
    * </pre>
    *
@@ -109361,8 +109381,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The blob assets in this document. This is used to store the
-     * content of the inline blobs in this document, e.g. image bytes, such that
-     * it can be referenced by other fields in the document via asset id.
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
      * </pre>
      *
      * <code>
@@ -109383,8 +109404,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The blob assets in this document. This is used to store the
-     * content of the inline blobs in this document, e.g. image bytes, such that
-     * it can be referenced by other fields in the document via asset id.
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
      * </pre>
      *
      * <code>
@@ -109404,8 +109426,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The blob assets in this document. This is used to store the
-     * content of the inline blobs in this document, e.g. image bytes, such that
-     * it can be referenced by other fields in the document via asset id.
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
      * </pre>
      *
      * <code>
@@ -109425,8 +109448,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The blob assets in this document. This is used to store the
-     * content of the inline blobs in this document, e.g. image bytes, such that
-     * it can be referenced by other fields in the document via asset id.
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
      * </pre>
      *
      * <code>
@@ -109453,8 +109477,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The blob assets in this document. This is used to store the
-     * content of the inline blobs in this document, e.g. image bytes, such that
-     * it can be referenced by other fields in the document via asset id.
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
      * </pre>
      *
      * <code>
@@ -109478,8 +109503,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The blob assets in this document. This is used to store the
-     * content of the inline blobs in this document, e.g. image bytes, such that
-     * it can be referenced by other fields in the document via asset id.
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
      * </pre>
      *
      * <code>
@@ -109505,8 +109531,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The blob assets in this document. This is used to store the
-     * content of the inline blobs in this document, e.g. image bytes, such that
-     * it can be referenced by other fields in the document via asset id.
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
      * </pre>
      *
      * <code>
@@ -109533,8 +109560,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The blob assets in this document. This is used to store the
-     * content of the inline blobs in this document, e.g. image bytes, such that
-     * it can be referenced by other fields in the document via asset id.
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
      * </pre>
      *
      * <code>
@@ -109558,8 +109586,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The blob assets in this document. This is used to store the
-     * content of the inline blobs in this document, e.g. image bytes, such that
-     * it can be referenced by other fields in the document via asset id.
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
      * </pre>
      *
      * <code>
@@ -109583,8 +109612,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The blob assets in this document. This is used to store the
-     * content of the inline blobs in this document, e.g. image bytes, such that
-     * it can be referenced by other fields in the document via asset id.
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
      * </pre>
      *
      * <code>
@@ -109609,8 +109639,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The blob assets in this document. This is used to store the
-     * content of the inline blobs in this document, e.g. image bytes, such that
-     * it can be referenced by other fields in the document via asset id.
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
      * </pre>
      *
      * <code>
@@ -109633,8 +109664,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The blob assets in this document. This is used to store the
-     * content of the inline blobs in this document, e.g. image bytes, such that
-     * it can be referenced by other fields in the document via asset id.
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
      * </pre>
      *
      * <code>
@@ -109657,8 +109689,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The blob assets in this document. This is used to store the
-     * content of the inline blobs in this document, e.g. image bytes, such that
-     * it can be referenced by other fields in the document via asset id.
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
      * </pre>
      *
      * <code>
@@ -109675,8 +109708,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The blob assets in this document. This is used to store the
-     * content of the inline blobs in this document, e.g. image bytes, such that
-     * it can be referenced by other fields in the document via asset id.
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
      * </pre>
      *
      * <code>
@@ -109697,8 +109731,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The blob assets in this document. This is used to store the
-     * content of the inline blobs in this document, e.g. image bytes, such that
-     * it can be referenced by other fields in the document via asset id.
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
      * </pre>
      *
      * <code>
@@ -109719,8 +109754,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The blob assets in this document. This is used to store the
-     * content of the inline blobs in this document, e.g. image bytes, such that
-     * it can be referenced by other fields in the document via asset id.
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
      * </pre>
      *
      * <code>
@@ -109737,8 +109773,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The blob assets in this document. This is used to store the
-     * content of the inline blobs in this document, e.g. image bytes, such that
-     * it can be referenced by other fields in the document via asset id.
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
      * </pre>
      *
      * <code>
@@ -109757,8 +109794,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The blob assets in this document. This is used to store the
-     * content of the inline blobs in this document, e.g. image bytes, such that
-     * it can be referenced by other fields in the document via asset id.
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
      * </pre>
      *
      * <code>
@@ -110486,10 +110524,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The entity revision id that `document.entities` field is based on.
+     * The entity revision ID that `document.entities` field is based on.
      * If this field is set and `entities_revisions` is not empty, the entities in
      * `document.entities` field are the entities in the entity revision with this
-     * id and `document.entity_validation_output` field is the
+     * ID and `document.entity_validation_output` field is the
      * `entity_validation_output` field in this entity revision.
      * </pre>
      *
@@ -110513,10 +110551,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The entity revision id that `document.entities` field is based on.
+     * The entity revision ID that `document.entities` field is based on.
      * If this field is set and `entities_revisions` is not empty, the entities in
      * `document.entities` field are the entities in the entity revision with this
-     * id and `document.entity_validation_output` field is the
+     * ID and `document.entity_validation_output` field is the
      * `entity_validation_output` field in this entity revision.
      * </pre>
      *
@@ -110540,10 +110578,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The entity revision id that `document.entities` field is based on.
+     * The entity revision ID that `document.entities` field is based on.
      * If this field is set and `entities_revisions` is not empty, the entities in
      * `document.entities` field are the entities in the entity revision with this
-     * id and `document.entity_validation_output` field is the
+     * ID and `document.entity_validation_output` field is the
      * `entity_validation_output` field in this entity revision.
      * </pre>
      *
@@ -110566,10 +110604,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The entity revision id that `document.entities` field is based on.
+     * The entity revision ID that `document.entities` field is based on.
      * If this field is set and `entities_revisions` is not empty, the entities in
      * `document.entities` field are the entities in the entity revision with this
-     * id and `document.entity_validation_output` field is the
+     * ID and `document.entity_validation_output` field is the
      * `entity_validation_output` field in this entity revision.
      * </pre>
      *
@@ -110588,10 +110626,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The entity revision id that `document.entities` field is based on.
+     * The entity revision ID that `document.entities` field is based on.
      * If this field is set and `entities_revisions` is not empty, the entities in
      * `document.entities` field are the entities in the entity revision with this
-     * id and `document.entity_validation_output` field is the
+     * ID and `document.entity_validation_output` field is the
      * `entity_validation_output` field in this entity revision.
      * </pre>
      *
