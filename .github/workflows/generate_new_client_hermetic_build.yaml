@@ -1,4 +1,4 @@
-CLOUD_JAVA_BOT_GITHUB_TOKENname: Generate new GAPIC client library (Hermetic Build)
+name: Generate new GAPIC client library (Hermetic Build)
 on:
   workflow_dispatch:
       # some inputs are omitted due to limit of 10 input arguments
@@ -114,4 +114,4 @@ jobs:
           API_SHORTNAME: ${{ github.event.inputs.api_shortname }}
           GENERATION_ARGUMENTS: ${{ steps.config_generation.outputs.new_library_args }}
           DOCKER_VOLUMES: ${{ steps.generation.outputs.repo_volumes }}
-          GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
+          GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_GITHUB_TOKEN }}
