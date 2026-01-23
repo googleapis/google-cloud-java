@@ -1,4 +1,4 @@
-CLOUD_JAVA_BOT_GITHUB_TOKEN# Copyright 2024 Google LLC
+# Copyright 2024 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -36,10 +36,10 @@ jobs:
       if: env.SHOULD_RUN == 'true'
       with:
         fetch-depth: 0
-        token: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
+        token: ${{ secrets.CLOUD_JAVA_BOT_GITHUB_TOKEN }}
     - uses: googleapis/sdk-platform-java/.github/scripts@v2.65.1
       if: env.SHOULD_RUN == 'true'
       with:
         base_ref: ${{ github.base_ref }}
         head_ref: ${{ github.head_ref }}
-        token: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
+        token: ${{ secrets.CLOUD_JAVA_BOT_GITHUB_TOKEN }}
