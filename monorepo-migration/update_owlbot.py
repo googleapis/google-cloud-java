@@ -128,23 +128,21 @@ def extract_info(source_code):
 
     return excludes, top_level_lines, loop_body_lines
 
-def generate_target_content(excludes, top_level_lines, loop_body_lines, standard_excludes=None):
-    if standard_excludes is None:
-        standard_excludes = {
-            ".github/*",
-            "samples/*",
-            "CODE_OF_CONDUCT.md",
-            "CONTRIBUTING.md",
-            "LICENSE",
-            "SECURITY.md",
-            "java.header",
-            "license-checks.xml",
-            "renovate.json",
-            ".gitignore"
-        }
-    
-    final_excludes = sorted(list(set(standard_excludes)))
-    excludes_str = ",\n    ".join([f'"{e}"' for e in final_excludes])
+def generate_target_content(excludes, top_level_lines, loop_body_lines):
+    standard_excludes = [
+        ".github/*",
+        ".kokoro/*",
+        "samples/*",
+        "CODE_OF_CONDUCT.md",
+        "CONTRIBUTING.md",
+        "LICENSE",
+        "SECURITY.md",
+        "java.header",
+        "license-checks.xml",
+        "renovate.json",
+        ".gitignore",
+    ]
+    excludes_str = ",\n    ".join([f'"{e}"' for e in standard_excludes])
 
     # Reconstruct content
     lines = []
@@ -201,18 +199,7 @@ def main():
         source_code = f.read()
 
     excludes, top_level_lines, loop_body_lines = extract_info(source_code)
-    
-    standard_excludes = None
-    if template_file:
-        if os.path.exists(template_file):
-            with open(template_file, 'r') as f:
-                template_code = f.read()
-            template_excludes, _, _ = extract_info(template_code)
-            standard_excludes = template_excludes
-        else:
-            print(f"Template file {template_file} not found using default excludes.")
-
-    target_content = generate_target_content(excludes, top_level_lines, loop_body_lines, standard_excludes)
+    target_content = generate_target_content(excludes, top_level_lines, loop_body_lines)
     
     if os.path.dirname(target_file):
         os.makedirs(os.path.dirname(target_file), exist_ok=True)
