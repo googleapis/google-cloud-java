@@ -59,18 +59,6 @@ package:
 		-DincludeScope=runtime
 	${MAKE} generate-dependency-list
 
-package-all-dependencies:
-	mvn package \
-		-DincludeScope=runtime \
-		-Dmaven.test.skip=true \
-		-P=release-all-dependencies
-
-package-all-dependencies-shaded:
-	mvn package \
-		-DincludeScope=runtime \
-		-Dmaven.test.skip=true \
-		-P=release-all-dependencies,release-all-dependencies-shaded
-
 generate-dependency-list:
 	mvn -B dependency:list \
 		-f pom.xml \
@@ -123,11 +111,13 @@ docker-package: docker-build
 		sh -c "make package && \
 			mkdir -p /tmp/package && \
 			cp --no-preserve=ownership /mvn/test-target/google-cloud-bigquery-jdbc-*.jar /tmp/package && \
-			rm -f /pkg/*tests.jar && \
+			rm -f /tmp/package/google-cloud-bigquery-jdbc-*-all.jar && \
+			rm -f /tmp/package/*tests.jar && \
 			cp --no-preserve=ownership dependencies.txt /tmp/package && \
 			rm dependencies.txt && \
 			cp --no-preserve=ownership /mvn/test-target/dependency/*.jar /tmp/package && \
-			zip -j -r /pkg/google-cloud-bigquery-jdbc-$$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout).zip /tmp/package"
+			zip -j -r /pkg/google-cloud-bigquery-jdbc-$$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout).zip /tmp/package && \
+			cp --no-preserve=ownership /mvn/test-target/google-cloud-bigquery-jdbc-*-all.jar /pkg "
 
 docker-unittest: |
 	$(MAKE) .docker-run args="make unittest test=$(test)"

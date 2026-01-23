@@ -67,6 +67,74 @@
             </ignoredUsedUndeclaredDependencies>
         </configuration>
     </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-shade-plugin</artifactId>
+            <version>3.5.2</version> <!-- Use the latest version -->
+            <executions>
+              <execution>
+                <phase>package</phase>
+                <goals>
+                  <goal>shade</goal>
+                </goals>
+                <configuration>
+                  <shadedArtifactAttached>true</shadedArtifactAttached>
+                  <shadedClassifierName>all</shadedClassifierName> <!-- Any name that makes sense -->
+                  <createDependencyReducedPom>false</createDependencyReducedPom>
+                  <archive>
+                      <manifestEntries>
+                          <Add-Opens>java.base/java.nio=ALL-UNNAMED</Add-Opens>
+                      </manifestEntries>
+                  </archive>
+                  <transformers>
+                    <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                    <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer"/>
+                    <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                      <resource>META-INF/io.netty.versions.properties</resource>
+                    </transformer>
+                  </transformers>
+                  <relocations>
+                    <relocation>
+                      <pattern>com</pattern>
+                      <shadedPattern>com.google.bqjdbc.shaded.com</shadedPattern>
+                      <excludes>
+                        <exclude>com.google.cloud.bigquery.*</exclude>
+                        <exclude>com.google.cloud.bigquery.jdbc.*</exclude>
+                      </excludes>
+                    </relocation>
+                    <relocation>
+                      <pattern>org</pattern>
+                      <shadedPattern>com.google.bqjdbc.shaded.org</shadedPattern>
+                      <excludes>
+                        <exclude>org.conscrypt.*</exclude>
+                      </excludes>
+                    </relocation>
+                    <relocation>
+                      <pattern>io</pattern>
+                      <shadedPattern>com.google.bqjdbc.shaded.io</shadedPattern>
+                    </relocation>
+                  </relocations>
+                  <filters>
+                      <filter>
+                          <artifact>*:*</artifact>
+                          <excludes>
+                              <exclude>META-INF/LICENSE*</exclude>
+                              <exclude>META-INF/NOTICE*</exclude>
+                              <exclude>META-INF/DEPENDENCIES</exclude>
+                              <exclude>META-INF/proguard/*.pro</exclude>
+                              <exclude>META-INF/maven/**</exclude>
+                              <exclude>META-INF/*.MF</exclude>
+                              <exclude>META-INF/*.SF</exclude>
+                              <exclude>META-INF/*.DSA</exclude>
+                              <exclude>META-INF/*.RSA</exclude>
+                              <exclude>arrow-git.properties</exclude>
+                          </excludes>
+                      </filter>
+                  </filters>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
     </plugins>
   </build>
 
@@ -231,99 +299,6 @@
             <configuration>
               <argLine>--add-opens=java.base/java.nio=org.apache.arrow.memory.core,ALL-UNNAMED</argLine>
             </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-
-    <!-- Profile used to build JAR with all dependencies for the release. -->
-    <profile>
-      <id>release-all-dependencies-shaded</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-shade-plugin</artifactId>
-            <version>3.5.2</version> <!-- Use the latest version -->
-            <executions>
-              <execution>
-                <configuration>
-                  <relocations>
-                    <relocation>
-                      <pattern>com</pattern>
-                      <shadedPattern>shaded.bqjdbc.com</shadedPattern>
-                      <excludes>
-                        <exclude>com.google.cloud.bigquery.jdbc.*</exclude>
-                      </excludes>
-                    </relocation>
-                    <relocation>
-                      <pattern>org</pattern>
-                      <shadedPattern>shaded.bqjdbc.org</shadedPattern>
-                      <excludes>
-                        <exclude>org.conscrypt.*</exclude>
-                      </excludes>
-                    </relocation>
-                    <relocation>
-                      <pattern>io</pattern>
-                      <shadedPattern>shaded.bqjdbc.io</shadedPattern>
-                    </relocation>
-                  </relocations>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-
-    <profile>
-      <id>release-all-dependencies</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-shade-plugin</artifactId>
-            <version>3.5.2</version> <!-- Use the latest version -->
-            <executions>
-              <execution>
-                <phase>package</phase>
-                <goals>
-                  <goal>shade</goal>
-                </goals>
-                <configuration>
-                  <createDependencyReducedPom>false</createDependencyReducedPom>
-                  <archive>
-                      <manifestEntries>
-                          <Add-Opens>java.base/java.nio=ALL-UNNAMED</Add-Opens>
-                      </manifestEntries>
-                  </archive>
-                  <transformers>
-                    <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
-                    <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer"/>
-                    <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                      <resource>META-INF/io.netty.versions.properties</resource>
-                    </transformer>
-                  </transformers>
-                  <filters>
-                      <filter>
-                          <artifact>*:*</artifact>
-                          <excludes>
-                              <exclude>META-INF/LICENSE*</exclude>
-                              <exclude>META-INF/NOTICE*</exclude>
-                              <exclude>META-INF/DEPENDENCIES</exclude>
-                              <exclude>META-INF/proguard/*.pro</exclude>
-                              <exclude>META-INF/maven/**</exclude>
-                              <exclude>META-INF/*.MF</exclude>
-                              <exclude>META-INF/*.SF</exclude>
-                              <exclude>META-INF/*.DSA</exclude>
-                              <exclude>META-INF/*.RSA</exclude>
-                              <exclude>arrow-git.properties</exclude>
-                          </excludes>
-                      </filter>
-                  </filters>
-                </configuration>
-              </execution>
-            </executions>
           </plugin>
         </plugins>
       </build>
