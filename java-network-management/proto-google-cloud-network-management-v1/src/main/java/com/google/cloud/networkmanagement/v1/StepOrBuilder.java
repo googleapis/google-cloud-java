@@ -789,7 +789,7 @@ public interface StepOrBuilder
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=282
+   *     google/cloud/networkmanagement/v1/trace.proto;l=290
    * @return Whether the loadBalancer field is set.
    */
   @java.lang.Deprecated
@@ -808,7 +808,7 @@ public interface StepOrBuilder
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=282
+   *     google/cloud/networkmanagement/v1/trace.proto;l=290
    * @return The loadBalancer.
    */
   @java.lang.Deprecated
@@ -902,6 +902,90 @@ public interface StepOrBuilder
    * <code>.google.cloud.networkmanagement.v1.GKEMasterInfo gke_master = 18;</code>
    */
   com.google.cloud.networkmanagement.v1.GKEMasterInfoOrBuilder getGkeMasterOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Google Kubernetes Engine Pod.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.GkePodInfo gke_pod = 37;</code>
+   *
+   * @return Whether the gkePod field is set.
+   */
+  boolean hasGkePod();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Google Kubernetes Engine Pod.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.GkePodInfo gke_pod = 37;</code>
+   *
+   * @return The gkePod.
+   */
+  com.google.cloud.networkmanagement.v1.GkePodInfo getGkePod();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Google Kubernetes Engine Pod.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.GkePodInfo gke_pod = 37;</code>
+   */
+  com.google.cloud.networkmanagement.v1.GkePodInfoOrBuilder getGkePodOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of the reason why GKE Pod IP masquerading was
+   * skipped.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo ip_masquerading_skipped = 38;
+   * </code>
+   *
+   * @return Whether the ipMasqueradingSkipped field is set.
+   */
+  boolean hasIpMasqueradingSkipped();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of the reason why GKE Pod IP masquerading was
+   * skipped.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo ip_masquerading_skipped = 38;
+   * </code>
+   *
+   * @return The ipMasqueradingSkipped.
+   */
+  com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo getIpMasqueradingSkipped();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of the reason why GKE Pod IP masquerading was
+   * skipped.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo ip_masquerading_skipped = 38;
+   * </code>
+   */
+  com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfoOrBuilder
+      getIpMasqueradingSkippedOrBuilder();
 
   /**
    *

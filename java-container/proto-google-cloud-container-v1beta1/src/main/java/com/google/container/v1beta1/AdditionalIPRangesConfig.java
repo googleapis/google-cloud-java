@@ -43,6 +43,7 @@ public final class AdditionalIPRangesConfig extends com.google.protobuf.Generate
   private AdditionalIPRangesConfig() {
     subnetwork_ = "";
     podIpv4RangeNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    status_ = 0;
   }
 
   @java.lang.Override
@@ -64,6 +65,176 @@ public final class AdditionalIPRangesConfig extends com.google.protobuf.Generate
         .ensureFieldAccessorsInitialized(
             com.google.container.v1beta1.AdditionalIPRangesConfig.class,
             com.google.container.v1beta1.AdditionalIPRangesConfig.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Additional subnet with DRAINING status will not be selected during new node
+   * pool creation. To undrain the draining status, update the cluster to set
+   * the sunbet to ACTIVE status. To remove the additional subnet, use the
+   * update cluster API to remove the subnet from the
+   * desired_additional_ip_ranges list. IP ranges can be removed regardless of
+   * its status, as long as no node pools are using them.
+   * </pre>
+   *
+   * Protobuf enum {@code google.container.v1beta1.AdditionalIPRangesConfig.Status}
+   */
+  public enum Status implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Not set, same as ACTIVE.
+     * </pre>
+     *
+     * <code>STATUS_UNSPECIFIED = 0;</code>
+     */
+    STATUS_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * ACTIVE status indicates that the subnet is available for new node pool
+     * creation.
+     * </pre>
+     *
+     * <code>ACTIVE = 1;</code>
+     */
+    ACTIVE(1),
+    /**
+     *
+     *
+     * <pre>
+     * DRAINING status indicates that the subnet is not used for new node pool
+     * creation.
+     * </pre>
+     *
+     * <code>DRAINING = 2;</code>
+     */
+    DRAINING(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Not set, same as ACTIVE.
+     * </pre>
+     *
+     * <code>STATUS_UNSPECIFIED = 0;</code>
+     */
+    public static final int STATUS_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * ACTIVE status indicates that the subnet is available for new node pool
+     * creation.
+     * </pre>
+     *
+     * <code>ACTIVE = 1;</code>
+     */
+    public static final int ACTIVE_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * DRAINING status indicates that the subnet is not used for new node pool
+     * creation.
+     * </pre>
+     *
+     * <code>DRAINING = 2;</code>
+     */
+    public static final int DRAINING_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Status valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Status forNumber(int value) {
+      switch (value) {
+        case 0:
+          return STATUS_UNSPECIFIED;
+        case 1:
+          return ACTIVE;
+        case 2:
+          return DRAINING;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Status> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Status> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Status>() {
+          public Status findValueByNumber(int number) {
+            return Status.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.container.v1beta1.AdditionalIPRangesConfig.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final Status[] VALUES = values();
+
+    public static Status valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Status(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.container.v1beta1.AdditionalIPRangesConfig.Status)
   }
 
   public static final int SUBNETWORK_FIELD_NUMBER = 1;
@@ -205,6 +376,45 @@ public final class AdditionalIPRangesConfig extends com.google.protobuf.Generate
     return podIpv4RangeNames_.getByteString(index);
   }
 
+  public static final int STATUS_FIELD_NUMBER = 3;
+  private int status_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Draining status of the additional subnet.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.AdditionalIPRangesConfig.Status status = 3;</code>
+   *
+   * @return The enum numeric value on the wire for status.
+   */
+  @java.lang.Override
+  public int getStatusValue() {
+    return status_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Draining status of the additional subnet.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.AdditionalIPRangesConfig.Status status = 3;</code>
+   *
+   * @return The status.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.AdditionalIPRangesConfig.Status getStatus() {
+    com.google.container.v1beta1.AdditionalIPRangesConfig.Status result =
+        com.google.container.v1beta1.AdditionalIPRangesConfig.Status.forNumber(status_);
+    return result == null
+        ? com.google.container.v1beta1.AdditionalIPRangesConfig.Status.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -224,6 +434,11 @@ public final class AdditionalIPRangesConfig extends com.google.protobuf.Generate
     }
     for (int i = 0; i < podIpv4RangeNames_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, podIpv4RangeNames_.getRaw(i));
+    }
+    if (status_
+        != com.google.container.v1beta1.AdditionalIPRangesConfig.Status.STATUS_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(3, status_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -245,6 +460,11 @@ public final class AdditionalIPRangesConfig extends com.google.protobuf.Generate
       size += dataSize;
       size += 1 * getPodIpv4RangeNamesList().size();
     }
+    if (status_
+        != com.google.container.v1beta1.AdditionalIPRangesConfig.Status.STATUS_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, status_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -263,6 +483,7 @@ public final class AdditionalIPRangesConfig extends com.google.protobuf.Generate
 
     if (!getSubnetwork().equals(other.getSubnetwork())) return false;
     if (!getPodIpv4RangeNamesList().equals(other.getPodIpv4RangeNamesList())) return false;
+    if (status_ != other.status_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -280,6 +501,8 @@ public final class AdditionalIPRangesConfig extends com.google.protobuf.Generate
       hash = (37 * hash) + POD_IPV4_RANGE_NAMES_FIELD_NUMBER;
       hash = (53 * hash) + getPodIpv4RangeNamesList().hashCode();
     }
+    hash = (37 * hash) + STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + status_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -424,6 +647,7 @@ public final class AdditionalIPRangesConfig extends com.google.protobuf.Generate
       bitField0_ = 0;
       subnetwork_ = "";
       podIpv4RangeNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      status_ = 0;
       return this;
     }
 
@@ -466,6 +690,9 @@ public final class AdditionalIPRangesConfig extends com.google.protobuf.Generate
       if (((from_bitField0_ & 0x00000002) != 0)) {
         podIpv4RangeNames_.makeImmutable();
         result.podIpv4RangeNames_ = podIpv4RangeNames_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.status_ = status_;
       }
     }
 
@@ -530,6 +757,9 @@ public final class AdditionalIPRangesConfig extends com.google.protobuf.Generate
         }
         onChanged();
       }
+      if (other.status_ != 0) {
+        setStatusValue(other.getStatusValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -569,6 +799,12 @@ public final class AdditionalIPRangesConfig extends com.google.protobuf.Generate
                 podIpv4RangeNames_.add(s);
                 break;
               } // case 18
+            case 24:
+              {
+                status_ = input.readEnum();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -920,6 +1156,103 @@ public final class AdditionalIPRangesConfig extends com.google.protobuf.Generate
       ensurePodIpv4RangeNamesIsMutable();
       podIpv4RangeNames_.add(value);
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private int status_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Draining status of the additional subnet.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AdditionalIPRangesConfig.Status status = 3;</code>
+     *
+     * @return The enum numeric value on the wire for status.
+     */
+    @java.lang.Override
+    public int getStatusValue() {
+      return status_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Draining status of the additional subnet.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AdditionalIPRangesConfig.Status status = 3;</code>
+     *
+     * @param value The enum numeric value on the wire for status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusValue(int value) {
+      status_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Draining status of the additional subnet.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AdditionalIPRangesConfig.Status status = 3;</code>
+     *
+     * @return The status.
+     */
+    @java.lang.Override
+    public com.google.container.v1beta1.AdditionalIPRangesConfig.Status getStatus() {
+      com.google.container.v1beta1.AdditionalIPRangesConfig.Status result =
+          com.google.container.v1beta1.AdditionalIPRangesConfig.Status.forNumber(status_);
+      return result == null
+          ? com.google.container.v1beta1.AdditionalIPRangesConfig.Status.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Draining status of the additional subnet.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AdditionalIPRangesConfig.Status status = 3;</code>
+     *
+     * @param value The status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatus(com.google.container.v1beta1.AdditionalIPRangesConfig.Status value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000004;
+      status_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Draining status of the additional subnet.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AdditionalIPRangesConfig.Status status = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStatus() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      status_ = 0;
       onChanged();
       return this;
     }

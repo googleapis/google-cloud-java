@@ -122,7 +122,7 @@ public interface AddonsConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1862
+   *     google/container/v1/cluster_service.proto;l=2099
    * @return Whether the kubernetesDashboard field is set.
    */
   @java.lang.Deprecated
@@ -143,7 +143,7 @@ public interface AddonsConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1862
+   *     google/container/v1/cluster_service.proto;l=2099
    * @return The kubernetesDashboard.
    */
   @java.lang.Deprecated
@@ -692,4 +692,47 @@ public interface AddonsConfigOrBuilder
    * <code>.google.container.v1.LustreCsiDriverConfig lustre_csi_driver_config = 23;</code>
    */
   com.google.container.v1.LustreCsiDriverConfigOrBuilder getLustreCsiDriverConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the slice controller add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.SliceControllerConfig slice_controller_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sliceControllerConfig field is set.
+   */
+  boolean hasSliceControllerConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the slice controller add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.SliceControllerConfig slice_controller_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sliceControllerConfig.
+   */
+  com.google.container.v1.SliceControllerConfig getSliceControllerConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the slice controller add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.SliceControllerConfig slice_controller_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1.SliceControllerConfigOrBuilder getSliceControllerConfigOrBuilder();
 }

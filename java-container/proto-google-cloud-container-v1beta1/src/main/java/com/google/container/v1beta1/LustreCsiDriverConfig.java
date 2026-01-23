@@ -96,12 +96,15 @@ public final class LustreCsiDriverConfig extends com.google.protobuf.GeneratedMe
    * 1. The GKE node version is older than 1.33.2-gke.4655000.
    * 2. You're connecting to a Lustre instance that has the
    * 'gke-support-enabled' flag.
+   * Deprecated: This flag is no longer required as of GKE node version
+   * 1.33.2-gke.4655000, unless you are connecting to a Lustre instance
+   * that has the `gke-support-enabled` flag.
    * </pre>
    *
    * <code>bool enable_legacy_lustre_port = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.LustreCsiDriverConfig.enable_legacy_lustre_port is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=2232
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=2437
    * @return The enableLegacyLustrePort.
    */
   @java.lang.Override
@@ -543,12 +546,15 @@ public final class LustreCsiDriverConfig extends com.google.protobuf.GeneratedMe
      * 1. The GKE node version is older than 1.33.2-gke.4655000.
      * 2. You're connecting to a Lustre instance that has the
      * 'gke-support-enabled' flag.
+     * Deprecated: This flag is no longer required as of GKE node version
+     * 1.33.2-gke.4655000, unless you are connecting to a Lustre instance
+     * that has the `gke-support-enabled` flag.
      * </pre>
      *
      * <code>bool enable_legacy_lustre_port = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.LustreCsiDriverConfig.enable_legacy_lustre_port is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=2232
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=2437
      * @return The enableLegacyLustrePort.
      */
     @java.lang.Override
@@ -569,12 +575,15 @@ public final class LustreCsiDriverConfig extends com.google.protobuf.GeneratedMe
      * 1. The GKE node version is older than 1.33.2-gke.4655000.
      * 2. You're connecting to a Lustre instance that has the
      * 'gke-support-enabled' flag.
+     * Deprecated: This flag is no longer required as of GKE node version
+     * 1.33.2-gke.4655000, unless you are connecting to a Lustre instance
+     * that has the `gke-support-enabled` flag.
      * </pre>
      *
      * <code>bool enable_legacy_lustre_port = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.LustreCsiDriverConfig.enable_legacy_lustre_port is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=2232
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=2437
      * @param value The enableLegacyLustrePort to set.
      * @return This builder for chaining.
      */
@@ -599,12 +608,15 @@ public final class LustreCsiDriverConfig extends com.google.protobuf.GeneratedMe
      * 1. The GKE node version is older than 1.33.2-gke.4655000.
      * 2. You're connecting to a Lustre instance that has the
      * 'gke-support-enabled' flag.
+     * Deprecated: This flag is no longer required as of GKE node version
+     * 1.33.2-gke.4655000, unless you are connecting to a Lustre instance
+     * that has the `gke-support-enabled` flag.
      * </pre>
      *
      * <code>bool enable_legacy_lustre_port = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.LustreCsiDriverConfig.enable_legacy_lustre_port is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=2232
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=2437
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

@@ -95,7 +95,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2462
+   *     google/container/v1beta1/cluster_service.proto;l=2673
    * @return The clusterIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -111,7 +111,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2462
+   *     google/container/v1beta1/cluster_service.proto;l=2673
    * @return The bytes for clusterIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -127,7 +127,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2465
+   *     google/container/v1beta1/cluster_service.proto;l=2676
    * @return The nodeIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -143,7 +143,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2465
+   *     google/container/v1beta1/cluster_service.proto;l=2676
    * @return The bytes for nodeIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -159,7 +159,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2468
+   *     google/container/v1beta1/cluster_service.proto;l=2679
    * @return The servicesIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -175,7 +175,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2468
+   *     google/container/v1beta1/cluster_service.proto;l=2679
    * @return The bytes for servicesIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -272,7 +272,7 @@ public interface IPAllocationPolicyOrBuilder
    * netmask.
    *
    * Set to a
-   * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+   * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
    * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
    * to use.
@@ -299,7 +299,7 @@ public interface IPAllocationPolicyOrBuilder
    * netmask.
    *
    * Set to a
-   * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+   * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
    * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
    * to use.
@@ -325,7 +325,7 @@ public interface IPAllocationPolicyOrBuilder
    * netmask.
    *
    * Set to a
-   * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+   * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
    * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
    * to use.
@@ -351,7 +351,7 @@ public interface IPAllocationPolicyOrBuilder
    * netmask.
    *
    * Set to a
-   * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+   * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
    * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
    * to use.
@@ -378,7 +378,7 @@ public interface IPAllocationPolicyOrBuilder
    * netmask.
    *
    * Set to a
-   * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+   * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
    * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
    * to use.
@@ -405,7 +405,7 @@ public interface IPAllocationPolicyOrBuilder
    * netmask.
    *
    * Set to a
-   * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+   * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
    * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
    * to use.
@@ -456,7 +456,7 @@ public interface IPAllocationPolicyOrBuilder
    * netmask.
    *
    * Set to a
-   * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+   * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
    * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
    * to use.
@@ -466,7 +466,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string tpu_ipv4_cidr_block = 13 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.tpu_ipv4_cidr_block is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2568
+   *     google/container/v1beta1/cluster_service.proto;l=2779
    * @return The tpuIpv4CidrBlock.
    */
   @java.lang.Deprecated
@@ -487,7 +487,7 @@ public interface IPAllocationPolicyOrBuilder
    * netmask.
    *
    * Set to a
-   * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+   * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
    * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
    * to use.
@@ -497,7 +497,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string tpu_ipv4_cidr_block = 13 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.tpu_ipv4_cidr_block is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2568
+   *     google/container/v1beta1/cluster_service.proto;l=2779
    * @return The bytes for tpuIpv4CidrBlock.
    */
   @java.lang.Deprecated

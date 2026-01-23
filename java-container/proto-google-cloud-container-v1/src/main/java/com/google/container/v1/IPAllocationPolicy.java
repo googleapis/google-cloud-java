@@ -194,7 +194,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2242
+   *     google/container/v1/cluster_service.proto;l=2489
    * @return The clusterIpv4Cidr.
    */
   @java.lang.Override
@@ -221,7 +221,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2242
+   *     google/container/v1/cluster_service.proto;l=2489
    * @return The bytes for clusterIpv4Cidr.
    */
   @java.lang.Override
@@ -253,7 +253,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2245
+   *     google/container/v1/cluster_service.proto;l=2492
    * @return The nodeIpv4Cidr.
    */
   @java.lang.Override
@@ -280,7 +280,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2245
+   *     google/container/v1/cluster_service.proto;l=2492
    * @return The bytes for nodeIpv4Cidr.
    */
   @java.lang.Override
@@ -312,7 +312,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2248
+   *     google/container/v1/cluster_service.proto;l=2495
    * @return The servicesIpv4Cidr.
    */
   @java.lang.Override
@@ -339,7 +339,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2248
+   *     google/container/v1/cluster_service.proto;l=2495
    * @return The bytes for servicesIpv4Cidr.
    */
   @java.lang.Override
@@ -506,7 +506,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * netmask.
    *
    * Set to a
-   * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+   * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
    * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
    * to use.
@@ -544,7 +544,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * netmask.
    *
    * Set to a
-   * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+   * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
    * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
    * to use.
@@ -586,7 +586,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * netmask.
    *
    * Set to a
-   * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+   * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
    * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
    * to use.
@@ -623,7 +623,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * netmask.
    *
    * Set to a
-   * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+   * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
    * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
    * to use.
@@ -666,7 +666,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * netmask.
    *
    * Set to a
-   * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+   * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
    * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
    * to use.
@@ -704,7 +704,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * netmask.
    *
    * Set to a
-   * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+   * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
    * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
    * to use.
@@ -747,7 +747,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * netmask.
    *
    * Set to a
-   * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+   * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
    * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
    * to use.
@@ -759,7 +759,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string tpu_ipv4_cidr_block = 13 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.tpu_ipv4_cidr_block is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2336
+   *     google/container/v1/cluster_service.proto;l=2583
    * @return The tpuIpv4CidrBlock.
    */
   @java.lang.Override
@@ -791,7 +791,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * netmask.
    *
    * Set to a
-   * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+   * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
    * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
    * to use.
@@ -803,7 +803,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string tpu_ipv4_cidr_block = 13 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.tpu_ipv4_cidr_block is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2336
+   *     google/container/v1/cluster_service.proto;l=2583
    * @return The bytes for tpuIpv4CidrBlock.
    */
   @java.lang.Override
@@ -2679,7 +2679,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2242
+     *     google/container/v1/cluster_service.proto;l=2489
      * @return The clusterIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2705,7 +2705,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2242
+     *     google/container/v1/cluster_service.proto;l=2489
      * @return The bytes for clusterIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2731,7 +2731,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2242
+     *     google/container/v1/cluster_service.proto;l=2489
      * @param value The clusterIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2756,7 +2756,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2242
+     *     google/container/v1/cluster_service.proto;l=2489
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2777,7 +2777,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2242
+     *     google/container/v1/cluster_service.proto;l=2489
      * @param value The bytes for clusterIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2805,7 +2805,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2245
+     *     google/container/v1/cluster_service.proto;l=2492
      * @return The nodeIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2831,7 +2831,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2245
+     *     google/container/v1/cluster_service.proto;l=2492
      * @return The bytes for nodeIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2857,7 +2857,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2245
+     *     google/container/v1/cluster_service.proto;l=2492
      * @param value The nodeIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2882,7 +2882,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2245
+     *     google/container/v1/cluster_service.proto;l=2492
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2903,7 +2903,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2245
+     *     google/container/v1/cluster_service.proto;l=2492
      * @param value The bytes for nodeIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2931,7 +2931,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2248
+     *     google/container/v1/cluster_service.proto;l=2495
      * @return The servicesIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2957,7 +2957,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2248
+     *     google/container/v1/cluster_service.proto;l=2495
      * @return The bytes for servicesIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2983,7 +2983,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2248
+     *     google/container/v1/cluster_service.proto;l=2495
      * @param value The servicesIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -3008,7 +3008,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2248
+     *     google/container/v1/cluster_service.proto;l=2495
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3029,7 +3029,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2248
+     *     google/container/v1/cluster_service.proto;l=2495
      * @param value The bytes for servicesIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -3344,7 +3344,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * netmask.
      *
      * Set to a
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
      * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
      * to use.
@@ -3381,7 +3381,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * netmask.
      *
      * Set to a
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
      * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
      * to use.
@@ -3418,7 +3418,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * netmask.
      *
      * Set to a
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
      * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
      * to use.
@@ -3454,7 +3454,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * netmask.
      *
      * Set to a
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
      * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
      * to use.
@@ -3486,7 +3486,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * netmask.
      *
      * Set to a
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
      * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
      * to use.
@@ -3524,7 +3524,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * netmask.
      *
      * Set to a
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
      * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
      * to use.
@@ -3560,7 +3560,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * netmask.
      *
      * Set to a
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
      * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
      * to use.
@@ -3596,7 +3596,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * netmask.
      *
      * Set to a
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
      * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
      * to use.
@@ -3631,7 +3631,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * netmask.
      *
      * Set to a
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
      * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
      * to use.
@@ -3662,7 +3662,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * netmask.
      *
      * Set to a
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
      * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
      * to use.
@@ -3701,7 +3701,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * netmask.
      *
      * Set to a
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
      * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
      * to use.
@@ -3738,7 +3738,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * netmask.
      *
      * Set to a
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
      * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
      * to use.
@@ -3775,7 +3775,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * netmask.
      *
      * Set to a
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
      * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
      * to use.
@@ -3811,7 +3811,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * netmask.
      *
      * Set to a
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
      * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
      * to use.
@@ -3843,7 +3843,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * netmask.
      *
      * Set to a
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
      * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
      * to use.
@@ -3882,7 +3882,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * netmask.
      *
      * Set to a
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
      * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
      * to use.
@@ -3894,7 +3894,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string tpu_ipv4_cidr_block = 13 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.tpu_ipv4_cidr_block is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2336
+     *     google/container/v1/cluster_service.proto;l=2583
      * @return The tpuIpv4CidrBlock.
      */
     @java.lang.Deprecated
@@ -3925,7 +3925,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * netmask.
      *
      * Set to a
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
      * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
      * to use.
@@ -3937,7 +3937,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string tpu_ipv4_cidr_block = 13 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.tpu_ipv4_cidr_block is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2336
+     *     google/container/v1/cluster_service.proto;l=2583
      * @return The bytes for tpuIpv4CidrBlock.
      */
     @java.lang.Deprecated
@@ -3968,7 +3968,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * netmask.
      *
      * Set to a
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
      * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
      * to use.
@@ -3980,7 +3980,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string tpu_ipv4_cidr_block = 13 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.tpu_ipv4_cidr_block is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2336
+     *     google/container/v1/cluster_service.proto;l=2583
      * @param value The tpuIpv4CidrBlock to set.
      * @return This builder for chaining.
      */
@@ -4010,7 +4010,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * netmask.
      *
      * Set to a
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
      * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
      * to use.
@@ -4022,7 +4022,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string tpu_ipv4_cidr_block = 13 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.tpu_ipv4_cidr_block is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2336
+     *     google/container/v1/cluster_service.proto;l=2583
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4048,7 +4048,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * netmask.
      *
      * Set to a
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
      * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
      * to use.
@@ -4060,7 +4060,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string tpu_ipv4_cidr_block = 13 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.tpu_ipv4_cidr_block is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2336
+     *     google/container/v1/cluster_service.proto;l=2583
      * @param value The bytes for tpuIpv4CidrBlock to set.
      * @return This builder for chaining.
      */

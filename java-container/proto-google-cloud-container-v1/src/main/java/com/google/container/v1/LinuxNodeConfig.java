@@ -1447,6 +1447,5247 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public interface SwapConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.container.v1.LinuxNodeConfig.SwapConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enables or disables swap for the node pool.
+     * </pre>
+     *
+     * <code>optional bool enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the enabled field is set.
+     */
+    boolean hasEnabled();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enables or disables swap for the node pool.
+     * </pre>
+     *
+     * <code>optional bool enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enabled.
+     */
+    boolean getEnabled();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If omitted, swap space is encrypted by default.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig encryption_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the encryptionConfig field is set.
+     */
+    boolean hasEncryptionConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If omitted, swap space is encrypted by default.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig encryption_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The encryptionConfig.
+     */
+    com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig getEncryptionConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If omitted, swap space is encrypted by default.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig encryption_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfigOrBuilder
+        getEncryptionConfigOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Swap on the node's boot disk.
+     * </pre>
+     *
+     * <code>.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile boot_disk_profile = 3;
+     * </code>
+     *
+     * @return Whether the bootDiskProfile field is set.
+     */
+    boolean hasBootDiskProfile();
+
+    /**
+     *
+     *
+     * <pre>
+     * Swap on the node's boot disk.
+     * </pre>
+     *
+     * <code>.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile boot_disk_profile = 3;
+     * </code>
+     *
+     * @return The bootDiskProfile.
+     */
+    com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile getBootDiskProfile();
+
+    /**
+     *
+     *
+     * <pre>
+     * Swap on the node's boot disk.
+     * </pre>
+     *
+     * <code>.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile boot_disk_profile = 3;
+     * </code>
+     */
+    com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfileOrBuilder
+        getBootDiskProfileOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Swap on the local SSD shared with pod ephemeral storage.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile ephemeral_local_ssd_profile = 4;
+     * </code>
+     *
+     * @return Whether the ephemeralLocalSsdProfile field is set.
+     */
+    boolean hasEphemeralLocalSsdProfile();
+
+    /**
+     *
+     *
+     * <pre>
+     * Swap on the local SSD shared with pod ephemeral storage.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile ephemeral_local_ssd_profile = 4;
+     * </code>
+     *
+     * @return The ephemeralLocalSsdProfile.
+     */
+    com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile
+        getEphemeralLocalSsdProfile();
+
+    /**
+     *
+     *
+     * <pre>
+     * Swap on the local SSD shared with pod ephemeral storage.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile ephemeral_local_ssd_profile = 4;
+     * </code>
+     */
+    com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfileOrBuilder
+        getEphemeralLocalSsdProfileOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Provisions a new, separate local NVMe SSD exclusively for swap.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile dedicated_local_ssd_profile = 5;
+     * </code>
+     *
+     * @return Whether the dedicatedLocalSsdProfile field is set.
+     */
+    boolean hasDedicatedLocalSsdProfile();
+
+    /**
+     *
+     *
+     * <pre>
+     * Provisions a new, separate local NVMe SSD exclusively for swap.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile dedicated_local_ssd_profile = 5;
+     * </code>
+     *
+     * @return The dedicatedLocalSsdProfile.
+     */
+    com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile
+        getDedicatedLocalSsdProfile();
+
+    /**
+     *
+     *
+     * <pre>
+     * Provisions a new, separate local NVMe SSD exclusively for swap.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile dedicated_local_ssd_profile = 5;
+     * </code>
+     */
+    com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfileOrBuilder
+        getDedicatedLocalSsdProfileOrBuilder();
+
+    com.google.container.v1.LinuxNodeConfig.SwapConfig.PerformanceProfileCase
+        getPerformanceProfileCase();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for swap memory on a node pool.
+   * </pre>
+   *
+   * Protobuf type {@code google.container.v1.LinuxNodeConfig.SwapConfig}
+   */
+  public static final class SwapConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.container.v1.LinuxNodeConfig.SwapConfig)
+      SwapConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use SwapConfig.newBuilder() to construct.
+    private SwapConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SwapConfig() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SwapConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_LinuxNodeConfig_SwapConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_LinuxNodeConfig_SwapConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.container.v1.LinuxNodeConfig.SwapConfig.class,
+              com.google.container.v1.LinuxNodeConfig.SwapConfig.Builder.class);
+    }
+
+    public interface EncryptionConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, swap space will not be encrypted.
+       * Defaults to false (encrypted).
+       * </pre>
+       *
+       * <code>optional bool disabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the disabled field is set.
+       */
+      boolean hasDisabled();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, swap space will not be encrypted.
+       * Defaults to false (encrypted).
+       * </pre>
+       *
+       * <code>optional bool disabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The disabled.
+       */
+      boolean getDisabled();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines encryption settings for the swap space.
+     * </pre>
+     *
+     * Protobuf type {@code google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig}
+     */
+    public static final class EncryptionConfig extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig)
+        EncryptionConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use EncryptionConfig.newBuilder() to construct.
+      private EncryptionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private EncryptionConfig() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new EncryptionConfig();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_LinuxNodeConfig_SwapConfig_EncryptionConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_LinuxNodeConfig_SwapConfig_EncryptionConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig.class,
+                com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig.Builder.class);
+      }
+
+      private int bitField0_;
+      public static final int DISABLED_FIELD_NUMBER = 1;
+      private boolean disabled_ = false;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, swap space will not be encrypted.
+       * Defaults to false (encrypted).
+       * </pre>
+       *
+       * <code>optional bool disabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the disabled field is set.
+       */
+      @java.lang.Override
+      public boolean hasDisabled() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, swap space will not be encrypted.
+       * Defaults to false (encrypted).
+       * </pre>
+       *
+       * <code>optional bool disabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The disabled.
+       */
+      @java.lang.Override
+      public boolean getDisabled() {
+        return disabled_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeBool(1, disabled_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, disabled_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj instanceof com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig)) {
+          return super.equals(obj);
+        }
+        com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig other =
+            (com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig) obj;
+
+        if (hasDisabled() != other.hasDisabled()) return false;
+        if (hasDisabled()) {
+          if (getDisabled() != other.getDisabled()) return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasDisabled()) {
+          hash = (37 * hash) + DISABLED_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisabled());
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Defines encryption settings for the swap space.
+       * </pre>
+       *
+       * Protobuf type {@code google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig)
+          com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.container.v1.ClusterServiceProto
+              .internal_static_google_container_v1_LinuxNodeConfig_SwapConfig_EncryptionConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.container.v1.ClusterServiceProto
+              .internal_static_google_container_v1_LinuxNodeConfig_SwapConfig_EncryptionConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig.class,
+                  com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          disabled_ = false;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.container.v1.ClusterServiceProto
+              .internal_static_google_container_v1_LinuxNodeConfig_SwapConfig_EncryptionConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig
+            getDefaultInstanceForType() {
+          return com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig build() {
+          com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig buildPartial() {
+          com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig result =
+              new com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig result) {
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.disabled_ = disabled_;
+            to_bitField0_ |= 0x00000001;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig) {
+            return mergeFrom(
+                (com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig other) {
+          if (other
+              == com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig
+                  .getDefaultInstance()) return this;
+          if (other.hasDisabled()) {
+            setDisabled(other.getDisabled());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    disabled_ = input.readBool();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private boolean disabled_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, swap space will not be encrypted.
+         * Defaults to false (encrypted).
+         * </pre>
+         *
+         * <code>optional bool disabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return Whether the disabled field is set.
+         */
+        @java.lang.Override
+        public boolean hasDisabled() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, swap space will not be encrypted.
+         * Defaults to false (encrypted).
+         * </pre>
+         *
+         * <code>optional bool disabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The disabled.
+         */
+        @java.lang.Override
+        public boolean getDisabled() {
+          return disabled_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, swap space will not be encrypted.
+         * Defaults to false (encrypted).
+         * </pre>
+         *
+         * <code>optional bool disabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The disabled to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDisabled(boolean value) {
+
+          disabled_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, swap space will not be encrypted.
+         * Defaults to false (encrypted).
+         * </pre>
+         *
+         * <code>optional bool disabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearDisabled() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          disabled_ = false;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig)
+      private static final com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig();
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<EncryptionConfig> PARSER =
+          new com.google.protobuf.AbstractParser<EncryptionConfig>() {
+            @java.lang.Override
+            public EncryptionConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<EncryptionConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<EncryptionConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface BootDiskProfileOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the size of the swap space in gibibytes (GiB).
+       * </pre>
+       *
+       * <code>int64 swap_size_gib = 1;</code>
+       *
+       * @return Whether the swapSizeGib field is set.
+       */
+      boolean hasSwapSizeGib();
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the size of the swap space in gibibytes (GiB).
+       * </pre>
+       *
+       * <code>int64 swap_size_gib = 1;</code>
+       *
+       * @return The swapSizeGib.
+       */
+      long getSwapSizeGib();
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the size of the swap space as a percentage of the boot disk
+       * size.
+       * </pre>
+       *
+       * <code>int32 swap_size_percent = 2;</code>
+       *
+       * @return Whether the swapSizePercent field is set.
+       */
+      boolean hasSwapSizePercent();
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the size of the swap space as a percentage of the boot disk
+       * size.
+       * </pre>
+       *
+       * <code>int32 swap_size_percent = 2;</code>
+       *
+       * @return The swapSizePercent.
+       */
+      int getSwapSizePercent();
+
+      com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile.SwapSizeCase
+          getSwapSizeCase();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Swap on the node's boot disk.
+     * </pre>
+     *
+     * Protobuf type {@code google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile}
+     */
+    public static final class BootDiskProfile extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile)
+        BootDiskProfileOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use BootDiskProfile.newBuilder() to construct.
+      private BootDiskProfile(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private BootDiskProfile() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new BootDiskProfile();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_LinuxNodeConfig_SwapConfig_BootDiskProfile_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_LinuxNodeConfig_SwapConfig_BootDiskProfile_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile.class,
+                com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile.Builder.class);
+      }
+
+      private int swapSizeCase_ = 0;
+
+      @SuppressWarnings("serial")
+      private java.lang.Object swapSize_;
+
+      public enum SwapSizeCase
+          implements
+              com.google.protobuf.Internal.EnumLite,
+              com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        SWAP_SIZE_GIB(1),
+        SWAP_SIZE_PERCENT(2),
+        SWAPSIZE_NOT_SET(0);
+        private final int value;
+
+        private SwapSizeCase(int value) {
+          this.value = value;
+        }
+
+        /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static SwapSizeCase valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static SwapSizeCase forNumber(int value) {
+          switch (value) {
+            case 1:
+              return SWAP_SIZE_GIB;
+            case 2:
+              return SWAP_SIZE_PERCENT;
+            case 0:
+              return SWAPSIZE_NOT_SET;
+            default:
+              return null;
+          }
+        }
+
+        public int getNumber() {
+          return this.value;
+        }
+      };
+
+      public SwapSizeCase getSwapSizeCase() {
+        return SwapSizeCase.forNumber(swapSizeCase_);
+      }
+
+      public static final int SWAP_SIZE_GIB_FIELD_NUMBER = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the size of the swap space in gibibytes (GiB).
+       * </pre>
+       *
+       * <code>int64 swap_size_gib = 1;</code>
+       *
+       * @return Whether the swapSizeGib field is set.
+       */
+      @java.lang.Override
+      public boolean hasSwapSizeGib() {
+        return swapSizeCase_ == 1;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the size of the swap space in gibibytes (GiB).
+       * </pre>
+       *
+       * <code>int64 swap_size_gib = 1;</code>
+       *
+       * @return The swapSizeGib.
+       */
+      @java.lang.Override
+      public long getSwapSizeGib() {
+        if (swapSizeCase_ == 1) {
+          return (java.lang.Long) swapSize_;
+        }
+        return 0L;
+      }
+
+      public static final int SWAP_SIZE_PERCENT_FIELD_NUMBER = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the size of the swap space as a percentage of the boot disk
+       * size.
+       * </pre>
+       *
+       * <code>int32 swap_size_percent = 2;</code>
+       *
+       * @return Whether the swapSizePercent field is set.
+       */
+      @java.lang.Override
+      public boolean hasSwapSizePercent() {
+        return swapSizeCase_ == 2;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the size of the swap space as a percentage of the boot disk
+       * size.
+       * </pre>
+       *
+       * <code>int32 swap_size_percent = 2;</code>
+       *
+       * @return The swapSizePercent.
+       */
+      @java.lang.Override
+      public int getSwapSizePercent() {
+        if (swapSizeCase_ == 2) {
+          return (java.lang.Integer) swapSize_;
+        }
+        return 0;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (swapSizeCase_ == 1) {
+          output.writeInt64(1, (long) ((java.lang.Long) swapSize_));
+        }
+        if (swapSizeCase_ == 2) {
+          output.writeInt32(2, (int) ((java.lang.Integer) swapSize_));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (swapSizeCase_ == 1) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeInt64Size(
+                  1, (long) ((java.lang.Long) swapSize_));
+        }
+        if (swapSizeCase_ == 2) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeInt32Size(
+                  2, (int) ((java.lang.Integer) swapSize_));
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj instanceof com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile)) {
+          return super.equals(obj);
+        }
+        com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile other =
+            (com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile) obj;
+
+        if (!getSwapSizeCase().equals(other.getSwapSizeCase())) return false;
+        switch (swapSizeCase_) {
+          case 1:
+            if (getSwapSizeGib() != other.getSwapSizeGib()) return false;
+            break;
+          case 2:
+            if (getSwapSizePercent() != other.getSwapSizePercent()) return false;
+            break;
+          case 0:
+          default:
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        switch (swapSizeCase_) {
+          case 1:
+            hash = (37 * hash) + SWAP_SIZE_GIB_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getSwapSizeGib());
+            break;
+          case 2:
+            hash = (37 * hash) + SWAP_SIZE_PERCENT_FIELD_NUMBER;
+            hash = (53 * hash) + getSwapSizePercent();
+            break;
+          case 0:
+          default:
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Swap on the node's boot disk.
+       * </pre>
+       *
+       * Protobuf type {@code google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile)
+          com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfileOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.container.v1.ClusterServiceProto
+              .internal_static_google_container_v1_LinuxNodeConfig_SwapConfig_BootDiskProfile_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.container.v1.ClusterServiceProto
+              .internal_static_google_container_v1_LinuxNodeConfig_SwapConfig_BootDiskProfile_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile.class,
+                  com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile.Builder.class);
+        }
+
+        // Construct using
+        // com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          swapSizeCase_ = 0;
+          swapSize_ = null;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.container.v1.ClusterServiceProto
+              .internal_static_google_container_v1_LinuxNodeConfig_SwapConfig_BootDiskProfile_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile
+            getDefaultInstanceForType() {
+          return com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile build() {
+          com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile buildPartial() {
+          com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile result =
+              new com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          buildPartialOneofs(result);
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile result) {
+          int from_bitField0_ = bitField0_;
+        }
+
+        private void buildPartialOneofs(
+            com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile result) {
+          result.swapSizeCase_ = swapSizeCase_;
+          result.swapSize_ = this.swapSize_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile) {
+            return mergeFrom(
+                (com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile other) {
+          if (other
+              == com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile
+                  .getDefaultInstance()) return this;
+          switch (other.getSwapSizeCase()) {
+            case SWAP_SIZE_GIB:
+              {
+                setSwapSizeGib(other.getSwapSizeGib());
+                break;
+              }
+            case SWAP_SIZE_PERCENT:
+              {
+                setSwapSizePercent(other.getSwapSizePercent());
+                break;
+              }
+            case SWAPSIZE_NOT_SET:
+              {
+                break;
+              }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    swapSize_ = input.readInt64();
+                    swapSizeCase_ = 1;
+                    break;
+                  } // case 8
+                case 16:
+                  {
+                    swapSize_ = input.readInt32();
+                    swapSizeCase_ = 2;
+                    break;
+                  } // case 16
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int swapSizeCase_ = 0;
+        private java.lang.Object swapSize_;
+
+        public SwapSizeCase getSwapSizeCase() {
+          return SwapSizeCase.forNumber(swapSizeCase_);
+        }
+
+        public Builder clearSwapSize() {
+          swapSizeCase_ = 0;
+          swapSize_ = null;
+          onChanged();
+          return this;
+        }
+
+        private int bitField0_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies the size of the swap space in gibibytes (GiB).
+         * </pre>
+         *
+         * <code>int64 swap_size_gib = 1;</code>
+         *
+         * @return Whether the swapSizeGib field is set.
+         */
+        public boolean hasSwapSizeGib() {
+          return swapSizeCase_ == 1;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies the size of the swap space in gibibytes (GiB).
+         * </pre>
+         *
+         * <code>int64 swap_size_gib = 1;</code>
+         *
+         * @return The swapSizeGib.
+         */
+        public long getSwapSizeGib() {
+          if (swapSizeCase_ == 1) {
+            return (java.lang.Long) swapSize_;
+          }
+          return 0L;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies the size of the swap space in gibibytes (GiB).
+         * </pre>
+         *
+         * <code>int64 swap_size_gib = 1;</code>
+         *
+         * @param value The swapSizeGib to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSwapSizeGib(long value) {
+
+          swapSizeCase_ = 1;
+          swapSize_ = value;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies the size of the swap space in gibibytes (GiB).
+         * </pre>
+         *
+         * <code>int64 swap_size_gib = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSwapSizeGib() {
+          if (swapSizeCase_ == 1) {
+            swapSizeCase_ = 0;
+            swapSize_ = null;
+            onChanged();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies the size of the swap space as a percentage of the boot disk
+         * size.
+         * </pre>
+         *
+         * <code>int32 swap_size_percent = 2;</code>
+         *
+         * @return Whether the swapSizePercent field is set.
+         */
+        public boolean hasSwapSizePercent() {
+          return swapSizeCase_ == 2;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies the size of the swap space as a percentage of the boot disk
+         * size.
+         * </pre>
+         *
+         * <code>int32 swap_size_percent = 2;</code>
+         *
+         * @return The swapSizePercent.
+         */
+        public int getSwapSizePercent() {
+          if (swapSizeCase_ == 2) {
+            return (java.lang.Integer) swapSize_;
+          }
+          return 0;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies the size of the swap space as a percentage of the boot disk
+         * size.
+         * </pre>
+         *
+         * <code>int32 swap_size_percent = 2;</code>
+         *
+         * @param value The swapSizePercent to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSwapSizePercent(int value) {
+
+          swapSizeCase_ = 2;
+          swapSize_ = value;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies the size of the swap space as a percentage of the boot disk
+         * size.
+         * </pre>
+         *
+         * <code>int32 swap_size_percent = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSwapSizePercent() {
+          if (swapSizeCase_ == 2) {
+            swapSizeCase_ = 0;
+            swapSize_ = null;
+            onChanged();
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile)
+      private static final com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE = new com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile();
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<BootDiskProfile> PARSER =
+          new com.google.protobuf.AbstractParser<BootDiskProfile>() {
+            @java.lang.Override
+            public BootDiskProfile parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<BootDiskProfile> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<BootDiskProfile> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface EphemeralLocalSsdProfileOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the size of the swap space in gibibytes (GiB).
+       * </pre>
+       *
+       * <code>int64 swap_size_gib = 1;</code>
+       *
+       * @return Whether the swapSizeGib field is set.
+       */
+      boolean hasSwapSizeGib();
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the size of the swap space in gibibytes (GiB).
+       * </pre>
+       *
+       * <code>int64 swap_size_gib = 1;</code>
+       *
+       * @return The swapSizeGib.
+       */
+      long getSwapSizeGib();
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the size of the swap space as a percentage of the ephemeral
+       * local SSD capacity.
+       * </pre>
+       *
+       * <code>int32 swap_size_percent = 2;</code>
+       *
+       * @return Whether the swapSizePercent field is set.
+       */
+      boolean hasSwapSizePercent();
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the size of the swap space as a percentage of the ephemeral
+       * local SSD capacity.
+       * </pre>
+       *
+       * <code>int32 swap_size_percent = 2;</code>
+       *
+       * @return The swapSizePercent.
+       */
+      int getSwapSizePercent();
+
+      com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile.SwapSizeCase
+          getSwapSizeCase();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Swap on the local SSD shared with pod ephemeral storage.
+     * </pre>
+     *
+     * Protobuf type {@code google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile}
+     */
+    public static final class EphemeralLocalSsdProfile
+        extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile)
+        EphemeralLocalSsdProfileOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use EphemeralLocalSsdProfile.newBuilder() to construct.
+      private EphemeralLocalSsdProfile(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private EphemeralLocalSsdProfile() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new EphemeralLocalSsdProfile();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_LinuxNodeConfig_SwapConfig_EphemeralLocalSsdProfile_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_LinuxNodeConfig_SwapConfig_EphemeralLocalSsdProfile_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile.class,
+                com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile.Builder
+                    .class);
+      }
+
+      private int swapSizeCase_ = 0;
+
+      @SuppressWarnings("serial")
+      private java.lang.Object swapSize_;
+
+      public enum SwapSizeCase
+          implements
+              com.google.protobuf.Internal.EnumLite,
+              com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        SWAP_SIZE_GIB(1),
+        SWAP_SIZE_PERCENT(2),
+        SWAPSIZE_NOT_SET(0);
+        private final int value;
+
+        private SwapSizeCase(int value) {
+          this.value = value;
+        }
+
+        /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static SwapSizeCase valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static SwapSizeCase forNumber(int value) {
+          switch (value) {
+            case 1:
+              return SWAP_SIZE_GIB;
+            case 2:
+              return SWAP_SIZE_PERCENT;
+            case 0:
+              return SWAPSIZE_NOT_SET;
+            default:
+              return null;
+          }
+        }
+
+        public int getNumber() {
+          return this.value;
+        }
+      };
+
+      public SwapSizeCase getSwapSizeCase() {
+        return SwapSizeCase.forNumber(swapSizeCase_);
+      }
+
+      public static final int SWAP_SIZE_GIB_FIELD_NUMBER = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the size of the swap space in gibibytes (GiB).
+       * </pre>
+       *
+       * <code>int64 swap_size_gib = 1;</code>
+       *
+       * @return Whether the swapSizeGib field is set.
+       */
+      @java.lang.Override
+      public boolean hasSwapSizeGib() {
+        return swapSizeCase_ == 1;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the size of the swap space in gibibytes (GiB).
+       * </pre>
+       *
+       * <code>int64 swap_size_gib = 1;</code>
+       *
+       * @return The swapSizeGib.
+       */
+      @java.lang.Override
+      public long getSwapSizeGib() {
+        if (swapSizeCase_ == 1) {
+          return (java.lang.Long) swapSize_;
+        }
+        return 0L;
+      }
+
+      public static final int SWAP_SIZE_PERCENT_FIELD_NUMBER = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the size of the swap space as a percentage of the ephemeral
+       * local SSD capacity.
+       * </pre>
+       *
+       * <code>int32 swap_size_percent = 2;</code>
+       *
+       * @return Whether the swapSizePercent field is set.
+       */
+      @java.lang.Override
+      public boolean hasSwapSizePercent() {
+        return swapSizeCase_ == 2;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the size of the swap space as a percentage of the ephemeral
+       * local SSD capacity.
+       * </pre>
+       *
+       * <code>int32 swap_size_percent = 2;</code>
+       *
+       * @return The swapSizePercent.
+       */
+      @java.lang.Override
+      public int getSwapSizePercent() {
+        if (swapSizeCase_ == 2) {
+          return (java.lang.Integer) swapSize_;
+        }
+        return 0;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (swapSizeCase_ == 1) {
+          output.writeInt64(1, (long) ((java.lang.Long) swapSize_));
+        }
+        if (swapSizeCase_ == 2) {
+          output.writeInt32(2, (int) ((java.lang.Integer) swapSize_));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (swapSizeCase_ == 1) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeInt64Size(
+                  1, (long) ((java.lang.Long) swapSize_));
+        }
+        if (swapSizeCase_ == 2) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeInt32Size(
+                  2, (int) ((java.lang.Integer) swapSize_));
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile)) {
+          return super.equals(obj);
+        }
+        com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile other =
+            (com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile) obj;
+
+        if (!getSwapSizeCase().equals(other.getSwapSizeCase())) return false;
+        switch (swapSizeCase_) {
+          case 1:
+            if (getSwapSizeGib() != other.getSwapSizeGib()) return false;
+            break;
+          case 2:
+            if (getSwapSizePercent() != other.getSwapSizePercent()) return false;
+            break;
+          case 0:
+          default:
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        switch (swapSizeCase_) {
+          case 1:
+            hash = (37 * hash) + SWAP_SIZE_GIB_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getSwapSizeGib());
+            break;
+          case 2:
+            hash = (37 * hash) + SWAP_SIZE_PERCENT_FIELD_NUMBER;
+            hash = (53 * hash) + getSwapSizePercent();
+            break;
+          case 0:
+          default:
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Swap on the local SSD shared with pod ephemeral storage.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile)
+          com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfileOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.container.v1.ClusterServiceProto
+              .internal_static_google_container_v1_LinuxNodeConfig_SwapConfig_EphemeralLocalSsdProfile_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.container.v1.ClusterServiceProto
+              .internal_static_google_container_v1_LinuxNodeConfig_SwapConfig_EphemeralLocalSsdProfile_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile.class,
+                  com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          swapSizeCase_ = 0;
+          swapSize_ = null;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.container.v1.ClusterServiceProto
+              .internal_static_google_container_v1_LinuxNodeConfig_SwapConfig_EphemeralLocalSsdProfile_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile
+            getDefaultInstanceForType() {
+          return com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile build() {
+          com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile
+            buildPartial() {
+          com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile result =
+              new com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          buildPartialOneofs(result);
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile result) {
+          int from_bitField0_ = bitField0_;
+        }
+
+        private void buildPartialOneofs(
+            com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile result) {
+          result.swapSizeCase_ = swapSizeCase_;
+          result.swapSize_ = this.swapSize_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile) {
+            return mergeFrom(
+                (com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile other) {
+          if (other
+              == com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile
+                  .getDefaultInstance()) return this;
+          switch (other.getSwapSizeCase()) {
+            case SWAP_SIZE_GIB:
+              {
+                setSwapSizeGib(other.getSwapSizeGib());
+                break;
+              }
+            case SWAP_SIZE_PERCENT:
+              {
+                setSwapSizePercent(other.getSwapSizePercent());
+                break;
+              }
+            case SWAPSIZE_NOT_SET:
+              {
+                break;
+              }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    swapSize_ = input.readInt64();
+                    swapSizeCase_ = 1;
+                    break;
+                  } // case 8
+                case 16:
+                  {
+                    swapSize_ = input.readInt32();
+                    swapSizeCase_ = 2;
+                    break;
+                  } // case 16
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int swapSizeCase_ = 0;
+        private java.lang.Object swapSize_;
+
+        public SwapSizeCase getSwapSizeCase() {
+          return SwapSizeCase.forNumber(swapSizeCase_);
+        }
+
+        public Builder clearSwapSize() {
+          swapSizeCase_ = 0;
+          swapSize_ = null;
+          onChanged();
+          return this;
+        }
+
+        private int bitField0_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies the size of the swap space in gibibytes (GiB).
+         * </pre>
+         *
+         * <code>int64 swap_size_gib = 1;</code>
+         *
+         * @return Whether the swapSizeGib field is set.
+         */
+        public boolean hasSwapSizeGib() {
+          return swapSizeCase_ == 1;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies the size of the swap space in gibibytes (GiB).
+         * </pre>
+         *
+         * <code>int64 swap_size_gib = 1;</code>
+         *
+         * @return The swapSizeGib.
+         */
+        public long getSwapSizeGib() {
+          if (swapSizeCase_ == 1) {
+            return (java.lang.Long) swapSize_;
+          }
+          return 0L;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies the size of the swap space in gibibytes (GiB).
+         * </pre>
+         *
+         * <code>int64 swap_size_gib = 1;</code>
+         *
+         * @param value The swapSizeGib to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSwapSizeGib(long value) {
+
+          swapSizeCase_ = 1;
+          swapSize_ = value;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies the size of the swap space in gibibytes (GiB).
+         * </pre>
+         *
+         * <code>int64 swap_size_gib = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSwapSizeGib() {
+          if (swapSizeCase_ == 1) {
+            swapSizeCase_ = 0;
+            swapSize_ = null;
+            onChanged();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies the size of the swap space as a percentage of the ephemeral
+         * local SSD capacity.
+         * </pre>
+         *
+         * <code>int32 swap_size_percent = 2;</code>
+         *
+         * @return Whether the swapSizePercent field is set.
+         */
+        public boolean hasSwapSizePercent() {
+          return swapSizeCase_ == 2;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies the size of the swap space as a percentage of the ephemeral
+         * local SSD capacity.
+         * </pre>
+         *
+         * <code>int32 swap_size_percent = 2;</code>
+         *
+         * @return The swapSizePercent.
+         */
+        public int getSwapSizePercent() {
+          if (swapSizeCase_ == 2) {
+            return (java.lang.Integer) swapSize_;
+          }
+          return 0;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies the size of the swap space as a percentage of the ephemeral
+         * local SSD capacity.
+         * </pre>
+         *
+         * <code>int32 swap_size_percent = 2;</code>
+         *
+         * @param value The swapSizePercent to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSwapSizePercent(int value) {
+
+          swapSizeCase_ = 2;
+          swapSize_ = value;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specifies the size of the swap space as a percentage of the ephemeral
+         * local SSD capacity.
+         * </pre>
+         *
+         * <code>int32 swap_size_percent = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSwapSizePercent() {
+          if (swapSizeCase_ == 2) {
+            swapSizeCase_ = 0;
+            swapSize_ = null;
+            onChanged();
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile)
+      private static final com.google.container.v1.LinuxNodeConfig.SwapConfig
+              .EphemeralLocalSsdProfile
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile();
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<EphemeralLocalSsdProfile> PARSER =
+          new com.google.protobuf.AbstractParser<EphemeralLocalSsdProfile>() {
+            @java.lang.Override
+            public EphemeralLocalSsdProfile parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<EphemeralLocalSsdProfile> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<EphemeralLocalSsdProfile> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface DedicatedLocalSsdProfileOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The number of physical local NVMe SSD disks to attach.
+       * </pre>
+       *
+       * <code>int64 disk_count = 1;</code>
+       *
+       * @return The diskCount.
+       */
+      long getDiskCount();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Provisions a new, separate local NVMe SSD exclusively for swap.
+     * </pre>
+     *
+     * Protobuf type {@code google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile}
+     */
+    public static final class DedicatedLocalSsdProfile
+        extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile)
+        DedicatedLocalSsdProfileOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use DedicatedLocalSsdProfile.newBuilder() to construct.
+      private DedicatedLocalSsdProfile(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private DedicatedLocalSsdProfile() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new DedicatedLocalSsdProfile();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_LinuxNodeConfig_SwapConfig_DedicatedLocalSsdProfile_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_LinuxNodeConfig_SwapConfig_DedicatedLocalSsdProfile_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile.class,
+                com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile.Builder
+                    .class);
+      }
+
+      public static final int DISK_COUNT_FIELD_NUMBER = 1;
+      private long diskCount_ = 0L;
+
+      /**
+       *
+       *
+       * <pre>
+       * The number of physical local NVMe SSD disks to attach.
+       * </pre>
+       *
+       * <code>int64 disk_count = 1;</code>
+       *
+       * @return The diskCount.
+       */
+      @java.lang.Override
+      public long getDiskCount() {
+        return diskCount_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (diskCount_ != 0L) {
+          output.writeInt64(1, diskCount_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (diskCount_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, diskCount_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile)) {
+          return super.equals(obj);
+        }
+        com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile other =
+            (com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile) obj;
+
+        if (getDiskCount() != other.getDiskCount()) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + DISK_COUNT_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getDiskCount());
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Provisions a new, separate local NVMe SSD exclusively for swap.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile)
+          com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfileOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.container.v1.ClusterServiceProto
+              .internal_static_google_container_v1_LinuxNodeConfig_SwapConfig_DedicatedLocalSsdProfile_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.container.v1.ClusterServiceProto
+              .internal_static_google_container_v1_LinuxNodeConfig_SwapConfig_DedicatedLocalSsdProfile_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile.class,
+                  com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          diskCount_ = 0L;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.container.v1.ClusterServiceProto
+              .internal_static_google_container_v1_LinuxNodeConfig_SwapConfig_DedicatedLocalSsdProfile_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile
+            getDefaultInstanceForType() {
+          return com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile build() {
+          com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile
+            buildPartial() {
+          com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile result =
+              new com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.diskCount_ = diskCount_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile) {
+            return mergeFrom(
+                (com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile other) {
+          if (other
+              == com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile
+                  .getDefaultInstance()) return this;
+          if (other.getDiskCount() != 0L) {
+            setDiskCount(other.getDiskCount());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    diskCount_ = input.readInt64();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private long diskCount_;
+
+        /**
+         *
+         *
+         * <pre>
+         * The number of physical local NVMe SSD disks to attach.
+         * </pre>
+         *
+         * <code>int64 disk_count = 1;</code>
+         *
+         * @return The diskCount.
+         */
+        @java.lang.Override
+        public long getDiskCount() {
+          return diskCount_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The number of physical local NVMe SSD disks to attach.
+         * </pre>
+         *
+         * <code>int64 disk_count = 1;</code>
+         *
+         * @param value The diskCount to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDiskCount(long value) {
+
+          diskCount_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The number of physical local NVMe SSD disks to attach.
+         * </pre>
+         *
+         * <code>int64 disk_count = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearDiskCount() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          diskCount_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile)
+      private static final com.google.container.v1.LinuxNodeConfig.SwapConfig
+              .DedicatedLocalSsdProfile
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile();
+      }
+
+      public static com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<DedicatedLocalSsdProfile> PARSER =
+          new com.google.protobuf.AbstractParser<DedicatedLocalSsdProfile>() {
+            @java.lang.Override
+            public DedicatedLocalSsdProfile parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<DedicatedLocalSsdProfile> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<DedicatedLocalSsdProfile> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
+    private int performanceProfileCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object performanceProfile_;
+
+    public enum PerformanceProfileCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      BOOT_DISK_PROFILE(3),
+      EPHEMERAL_LOCAL_SSD_PROFILE(4),
+      DEDICATED_LOCAL_SSD_PROFILE(5),
+      PERFORMANCEPROFILE_NOT_SET(0);
+      private final int value;
+
+      private PerformanceProfileCase(int value) {
+        this.value = value;
+      }
+
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static PerformanceProfileCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static PerformanceProfileCase forNumber(int value) {
+        switch (value) {
+          case 3:
+            return BOOT_DISK_PROFILE;
+          case 4:
+            return EPHEMERAL_LOCAL_SSD_PROFILE;
+          case 5:
+            return DEDICATED_LOCAL_SSD_PROFILE;
+          case 0:
+            return PERFORMANCEPROFILE_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public PerformanceProfileCase getPerformanceProfileCase() {
+      return PerformanceProfileCase.forNumber(performanceProfileCase_);
+    }
+
+    public static final int ENABLED_FIELD_NUMBER = 1;
+    private boolean enabled_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enables or disables swap for the node pool.
+     * </pre>
+     *
+     * <code>optional bool enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the enabled field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnabled() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enables or disables swap for the node pool.
+     * </pre>
+     *
+     * <code>optional bool enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enabled.
+     */
+    @java.lang.Override
+    public boolean getEnabled() {
+      return enabled_;
+    }
+
+    public static final int ENCRYPTION_CONFIG_FIELD_NUMBER = 2;
+    private com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig encryptionConfig_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If omitted, swap space is encrypted by default.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig encryption_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the encryptionConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasEncryptionConfig() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If omitted, swap space is encrypted by default.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig encryption_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The encryptionConfig.
+     */
+    @java.lang.Override
+    public com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig
+        getEncryptionConfig() {
+      return encryptionConfig_ == null
+          ? com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig.getDefaultInstance()
+          : encryptionConfig_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If omitted, swap space is encrypted by default.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig encryption_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfigOrBuilder
+        getEncryptionConfigOrBuilder() {
+      return encryptionConfig_ == null
+          ? com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig.getDefaultInstance()
+          : encryptionConfig_;
+    }
+
+    public static final int BOOT_DISK_PROFILE_FIELD_NUMBER = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * Swap on the node's boot disk.
+     * </pre>
+     *
+     * <code>.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile boot_disk_profile = 3;
+     * </code>
+     *
+     * @return Whether the bootDiskProfile field is set.
+     */
+    @java.lang.Override
+    public boolean hasBootDiskProfile() {
+      return performanceProfileCase_ == 3;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Swap on the node's boot disk.
+     * </pre>
+     *
+     * <code>.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile boot_disk_profile = 3;
+     * </code>
+     *
+     * @return The bootDiskProfile.
+     */
+    @java.lang.Override
+    public com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile getBootDiskProfile() {
+      if (performanceProfileCase_ == 3) {
+        return (com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile)
+            performanceProfile_;
+      }
+      return com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Swap on the node's boot disk.
+     * </pre>
+     *
+     * <code>.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile boot_disk_profile = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfileOrBuilder
+        getBootDiskProfileOrBuilder() {
+      if (performanceProfileCase_ == 3) {
+        return (com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile)
+            performanceProfile_;
+      }
+      return com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile
+          .getDefaultInstance();
+    }
+
+    public static final int EPHEMERAL_LOCAL_SSD_PROFILE_FIELD_NUMBER = 4;
+
+    /**
+     *
+     *
+     * <pre>
+     * Swap on the local SSD shared with pod ephemeral storage.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile ephemeral_local_ssd_profile = 4;
+     * </code>
+     *
+     * @return Whether the ephemeralLocalSsdProfile field is set.
+     */
+    @java.lang.Override
+    public boolean hasEphemeralLocalSsdProfile() {
+      return performanceProfileCase_ == 4;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Swap on the local SSD shared with pod ephemeral storage.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile ephemeral_local_ssd_profile = 4;
+     * </code>
+     *
+     * @return The ephemeralLocalSsdProfile.
+     */
+    @java.lang.Override
+    public com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile
+        getEphemeralLocalSsdProfile() {
+      if (performanceProfileCase_ == 4) {
+        return (com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile)
+            performanceProfile_;
+      }
+      return com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Swap on the local SSD shared with pod ephemeral storage.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile ephemeral_local_ssd_profile = 4;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfileOrBuilder
+        getEphemeralLocalSsdProfileOrBuilder() {
+      if (performanceProfileCase_ == 4) {
+        return (com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile)
+            performanceProfile_;
+      }
+      return com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile
+          .getDefaultInstance();
+    }
+
+    public static final int DEDICATED_LOCAL_SSD_PROFILE_FIELD_NUMBER = 5;
+
+    /**
+     *
+     *
+     * <pre>
+     * Provisions a new, separate local NVMe SSD exclusively for swap.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile dedicated_local_ssd_profile = 5;
+     * </code>
+     *
+     * @return Whether the dedicatedLocalSsdProfile field is set.
+     */
+    @java.lang.Override
+    public boolean hasDedicatedLocalSsdProfile() {
+      return performanceProfileCase_ == 5;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Provisions a new, separate local NVMe SSD exclusively for swap.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile dedicated_local_ssd_profile = 5;
+     * </code>
+     *
+     * @return The dedicatedLocalSsdProfile.
+     */
+    @java.lang.Override
+    public com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile
+        getDedicatedLocalSsdProfile() {
+      if (performanceProfileCase_ == 5) {
+        return (com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile)
+            performanceProfile_;
+      }
+      return com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Provisions a new, separate local NVMe SSD exclusively for swap.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile dedicated_local_ssd_profile = 5;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfileOrBuilder
+        getDedicatedLocalSsdProfileOrBuilder() {
+      if (performanceProfileCase_ == 5) {
+        return (com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile)
+            performanceProfile_;
+      }
+      return com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile
+          .getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeBool(1, enabled_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(2, getEncryptionConfig());
+      }
+      if (performanceProfileCase_ == 3) {
+        output.writeMessage(
+            3,
+            (com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile)
+                performanceProfile_);
+      }
+      if (performanceProfileCase_ == 4) {
+        output.writeMessage(
+            4,
+            (com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile)
+                performanceProfile_);
+      }
+      if (performanceProfileCase_ == 5) {
+        output.writeMessage(
+            5,
+            (com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile)
+                performanceProfile_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, enabled_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getEncryptionConfig());
+      }
+      if (performanceProfileCase_ == 3) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                3,
+                (com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile)
+                    performanceProfile_);
+      }
+      if (performanceProfileCase_ == 4) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                4,
+                (com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile)
+                    performanceProfile_);
+      }
+      if (performanceProfileCase_ == 5) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                5,
+                (com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile)
+                    performanceProfile_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.container.v1.LinuxNodeConfig.SwapConfig)) {
+        return super.equals(obj);
+      }
+      com.google.container.v1.LinuxNodeConfig.SwapConfig other =
+          (com.google.container.v1.LinuxNodeConfig.SwapConfig) obj;
+
+      if (hasEnabled() != other.hasEnabled()) return false;
+      if (hasEnabled()) {
+        if (getEnabled() != other.getEnabled()) return false;
+      }
+      if (hasEncryptionConfig() != other.hasEncryptionConfig()) return false;
+      if (hasEncryptionConfig()) {
+        if (!getEncryptionConfig().equals(other.getEncryptionConfig())) return false;
+      }
+      if (!getPerformanceProfileCase().equals(other.getPerformanceProfileCase())) return false;
+      switch (performanceProfileCase_) {
+        case 3:
+          if (!getBootDiskProfile().equals(other.getBootDiskProfile())) return false;
+          break;
+        case 4:
+          if (!getEphemeralLocalSsdProfile().equals(other.getEphemeralLocalSsdProfile()))
+            return false;
+          break;
+        case 5:
+          if (!getDedicatedLocalSsdProfile().equals(other.getDedicatedLocalSsdProfile()))
+            return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasEnabled()) {
+        hash = (37 * hash) + ENABLED_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnabled());
+      }
+      if (hasEncryptionConfig()) {
+        hash = (37 * hash) + ENCRYPTION_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getEncryptionConfig().hashCode();
+      }
+      switch (performanceProfileCase_) {
+        case 3:
+          hash = (37 * hash) + BOOT_DISK_PROFILE_FIELD_NUMBER;
+          hash = (53 * hash) + getBootDiskProfile().hashCode();
+          break;
+        case 4:
+          hash = (37 * hash) + EPHEMERAL_LOCAL_SSD_PROFILE_FIELD_NUMBER;
+          hash = (53 * hash) + getEphemeralLocalSsdProfile().hashCode();
+          break;
+        case 5:
+          hash = (37 * hash) + DEDICATED_LOCAL_SSD_PROFILE_FIELD_NUMBER;
+          hash = (53 * hash) + getDedicatedLocalSsdProfile().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.SwapConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.SwapConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.SwapConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.SwapConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.SwapConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.SwapConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.SwapConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.SwapConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.SwapConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.SwapConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.SwapConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.SwapConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.container.v1.LinuxNodeConfig.SwapConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for swap memory on a node pool.
+     * </pre>
+     *
+     * Protobuf type {@code google.container.v1.LinuxNodeConfig.SwapConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.container.v1.LinuxNodeConfig.SwapConfig)
+        com.google.container.v1.LinuxNodeConfig.SwapConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_LinuxNodeConfig_SwapConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_LinuxNodeConfig_SwapConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.container.v1.LinuxNodeConfig.SwapConfig.class,
+                com.google.container.v1.LinuxNodeConfig.SwapConfig.Builder.class);
+      }
+
+      // Construct using com.google.container.v1.LinuxNodeConfig.SwapConfig.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getEncryptionConfigFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        enabled_ = false;
+        encryptionConfig_ = null;
+        if (encryptionConfigBuilder_ != null) {
+          encryptionConfigBuilder_.dispose();
+          encryptionConfigBuilder_ = null;
+        }
+        if (bootDiskProfileBuilder_ != null) {
+          bootDiskProfileBuilder_.clear();
+        }
+        if (ephemeralLocalSsdProfileBuilder_ != null) {
+          ephemeralLocalSsdProfileBuilder_.clear();
+        }
+        if (dedicatedLocalSsdProfileBuilder_ != null) {
+          dedicatedLocalSsdProfileBuilder_.clear();
+        }
+        performanceProfileCase_ = 0;
+        performanceProfile_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_LinuxNodeConfig_SwapConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.LinuxNodeConfig.SwapConfig getDefaultInstanceForType() {
+        return com.google.container.v1.LinuxNodeConfig.SwapConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.LinuxNodeConfig.SwapConfig build() {
+        com.google.container.v1.LinuxNodeConfig.SwapConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.LinuxNodeConfig.SwapConfig buildPartial() {
+        com.google.container.v1.LinuxNodeConfig.SwapConfig result =
+            new com.google.container.v1.LinuxNodeConfig.SwapConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.container.v1.LinuxNodeConfig.SwapConfig result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.enabled_ = enabled_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.encryptionConfig_ =
+              encryptionConfigBuilder_ == null
+                  ? encryptionConfig_
+                  : encryptionConfigBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      private void buildPartialOneofs(com.google.container.v1.LinuxNodeConfig.SwapConfig result) {
+        result.performanceProfileCase_ = performanceProfileCase_;
+        result.performanceProfile_ = this.performanceProfile_;
+        if (performanceProfileCase_ == 3 && bootDiskProfileBuilder_ != null) {
+          result.performanceProfile_ = bootDiskProfileBuilder_.build();
+        }
+        if (performanceProfileCase_ == 4 && ephemeralLocalSsdProfileBuilder_ != null) {
+          result.performanceProfile_ = ephemeralLocalSsdProfileBuilder_.build();
+        }
+        if (performanceProfileCase_ == 5 && dedicatedLocalSsdProfileBuilder_ != null) {
+          result.performanceProfile_ = dedicatedLocalSsdProfileBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.container.v1.LinuxNodeConfig.SwapConfig) {
+          return mergeFrom((com.google.container.v1.LinuxNodeConfig.SwapConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.container.v1.LinuxNodeConfig.SwapConfig other) {
+        if (other == com.google.container.v1.LinuxNodeConfig.SwapConfig.getDefaultInstance())
+          return this;
+        if (other.hasEnabled()) {
+          setEnabled(other.getEnabled());
+        }
+        if (other.hasEncryptionConfig()) {
+          mergeEncryptionConfig(other.getEncryptionConfig());
+        }
+        switch (other.getPerformanceProfileCase()) {
+          case BOOT_DISK_PROFILE:
+            {
+              mergeBootDiskProfile(other.getBootDiskProfile());
+              break;
+            }
+          case EPHEMERAL_LOCAL_SSD_PROFILE:
+            {
+              mergeEphemeralLocalSsdProfile(other.getEphemeralLocalSsdProfile());
+              break;
+            }
+          case DEDICATED_LOCAL_SSD_PROFILE:
+            {
+              mergeDedicatedLocalSsdProfile(other.getDedicatedLocalSsdProfile());
+              break;
+            }
+          case PERFORMANCEPROFILE_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  enabled_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  input.readMessage(
+                      getEncryptionConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getBootDiskProfileFieldBuilder().getBuilder(), extensionRegistry);
+                  performanceProfileCase_ = 3;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  input.readMessage(
+                      getEphemeralLocalSsdProfileFieldBuilder().getBuilder(), extensionRegistry);
+                  performanceProfileCase_ = 4;
+                  break;
+                } // case 34
+              case 42:
+                {
+                  input.readMessage(
+                      getDedicatedLocalSsdProfileFieldBuilder().getBuilder(), extensionRegistry);
+                  performanceProfileCase_ = 5;
+                  break;
+                } // case 42
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int performanceProfileCase_ = 0;
+      private java.lang.Object performanceProfile_;
+
+      public PerformanceProfileCase getPerformanceProfileCase() {
+        return PerformanceProfileCase.forNumber(performanceProfileCase_);
+      }
+
+      public Builder clearPerformanceProfile() {
+        performanceProfileCase_ = 0;
+        performanceProfile_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean enabled_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enables or disables swap for the node pool.
+       * </pre>
+       *
+       * <code>optional bool enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the enabled field is set.
+       */
+      @java.lang.Override
+      public boolean hasEnabled() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enables or disables swap for the node pool.
+       * </pre>
+       *
+       * <code>optional bool enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The enabled.
+       */
+      @java.lang.Override
+      public boolean getEnabled() {
+        return enabled_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enables or disables swap for the node pool.
+       * </pre>
+       *
+       * <code>optional bool enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The enabled to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnabled(boolean value) {
+
+        enabled_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enables or disables swap for the node pool.
+       * </pre>
+       *
+       * <code>optional bool enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnabled() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        enabled_ = false;
+        onChanged();
+        return this;
+      }
+
+      private com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig encryptionConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig,
+              com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig.Builder,
+              com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfigOrBuilder>
+          encryptionConfigBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If omitted, swap space is encrypted by default.
+       * </pre>
+       *
+       * <code>
+       * optional .google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig encryption_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the encryptionConfig field is set.
+       */
+      public boolean hasEncryptionConfig() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If omitted, swap space is encrypted by default.
+       * </pre>
+       *
+       * <code>
+       * optional .google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig encryption_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The encryptionConfig.
+       */
+      public com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig
+          getEncryptionConfig() {
+        if (encryptionConfigBuilder_ == null) {
+          return encryptionConfig_ == null
+              ? com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig
+                  .getDefaultInstance()
+              : encryptionConfig_;
+        } else {
+          return encryptionConfigBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If omitted, swap space is encrypted by default.
+       * </pre>
+       *
+       * <code>
+       * optional .google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig encryption_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setEncryptionConfig(
+          com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig value) {
+        if (encryptionConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          encryptionConfig_ = value;
+        } else {
+          encryptionConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If omitted, swap space is encrypted by default.
+       * </pre>
+       *
+       * <code>
+       * optional .google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig encryption_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setEncryptionConfig(
+          com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig.Builder
+              builderForValue) {
+        if (encryptionConfigBuilder_ == null) {
+          encryptionConfig_ = builderForValue.build();
+        } else {
+          encryptionConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If omitted, swap space is encrypted by default.
+       * </pre>
+       *
+       * <code>
+       * optional .google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig encryption_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeEncryptionConfig(
+          com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig value) {
+        if (encryptionConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && encryptionConfig_ != null
+              && encryptionConfig_
+                  != com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig
+                      .getDefaultInstance()) {
+            getEncryptionConfigBuilder().mergeFrom(value);
+          } else {
+            encryptionConfig_ = value;
+          }
+        } else {
+          encryptionConfigBuilder_.mergeFrom(value);
+        }
+        if (encryptionConfig_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If omitted, swap space is encrypted by default.
+       * </pre>
+       *
+       * <code>
+       * optional .google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig encryption_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearEncryptionConfig() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        encryptionConfig_ = null;
+        if (encryptionConfigBuilder_ != null) {
+          encryptionConfigBuilder_.dispose();
+          encryptionConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If omitted, swap space is encrypted by default.
+       * </pre>
+       *
+       * <code>
+       * optional .google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig encryption_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig.Builder
+          getEncryptionConfigBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getEncryptionConfigFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If omitted, swap space is encrypted by default.
+       * </pre>
+       *
+       * <code>
+       * optional .google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig encryption_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfigOrBuilder
+          getEncryptionConfigOrBuilder() {
+        if (encryptionConfigBuilder_ != null) {
+          return encryptionConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return encryptionConfig_ == null
+              ? com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig
+                  .getDefaultInstance()
+              : encryptionConfig_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If omitted, swap space is encrypted by default.
+       * </pre>
+       *
+       * <code>
+       * optional .google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig encryption_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig,
+              com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig.Builder,
+              com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfigOrBuilder>
+          getEncryptionConfigFieldBuilder() {
+        if (encryptionConfigBuilder_ == null) {
+          encryptionConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig,
+                  com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfig.Builder,
+                  com.google.container.v1.LinuxNodeConfig.SwapConfig.EncryptionConfigOrBuilder>(
+                  getEncryptionConfig(), getParentForChildren(), isClean());
+          encryptionConfig_ = null;
+        }
+        return encryptionConfigBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile,
+              com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile.Builder,
+              com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfileOrBuilder>
+          bootDiskProfileBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Swap on the node's boot disk.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile boot_disk_profile = 3;
+       * </code>
+       *
+       * @return Whether the bootDiskProfile field is set.
+       */
+      @java.lang.Override
+      public boolean hasBootDiskProfile() {
+        return performanceProfileCase_ == 3;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Swap on the node's boot disk.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile boot_disk_profile = 3;
+       * </code>
+       *
+       * @return The bootDiskProfile.
+       */
+      @java.lang.Override
+      public com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile
+          getBootDiskProfile() {
+        if (bootDiskProfileBuilder_ == null) {
+          if (performanceProfileCase_ == 3) {
+            return (com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile)
+                performanceProfile_;
+          }
+          return com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile
+              .getDefaultInstance();
+        } else {
+          if (performanceProfileCase_ == 3) {
+            return bootDiskProfileBuilder_.getMessage();
+          }
+          return com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Swap on the node's boot disk.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile boot_disk_profile = 3;
+       * </code>
+       */
+      public Builder setBootDiskProfile(
+          com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile value) {
+        if (bootDiskProfileBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          performanceProfile_ = value;
+          onChanged();
+        } else {
+          bootDiskProfileBuilder_.setMessage(value);
+        }
+        performanceProfileCase_ = 3;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Swap on the node's boot disk.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile boot_disk_profile = 3;
+       * </code>
+       */
+      public Builder setBootDiskProfile(
+          com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile.Builder
+              builderForValue) {
+        if (bootDiskProfileBuilder_ == null) {
+          performanceProfile_ = builderForValue.build();
+          onChanged();
+        } else {
+          bootDiskProfileBuilder_.setMessage(builderForValue.build());
+        }
+        performanceProfileCase_ = 3;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Swap on the node's boot disk.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile boot_disk_profile = 3;
+       * </code>
+       */
+      public Builder mergeBootDiskProfile(
+          com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile value) {
+        if (bootDiskProfileBuilder_ == null) {
+          if (performanceProfileCase_ == 3
+              && performanceProfile_
+                  != com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile
+                      .getDefaultInstance()) {
+            performanceProfile_ =
+                com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile.newBuilder(
+                        (com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile)
+                            performanceProfile_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            performanceProfile_ = value;
+          }
+          onChanged();
+        } else {
+          if (performanceProfileCase_ == 3) {
+            bootDiskProfileBuilder_.mergeFrom(value);
+          } else {
+            bootDiskProfileBuilder_.setMessage(value);
+          }
+        }
+        performanceProfileCase_ = 3;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Swap on the node's boot disk.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile boot_disk_profile = 3;
+       * </code>
+       */
+      public Builder clearBootDiskProfile() {
+        if (bootDiskProfileBuilder_ == null) {
+          if (performanceProfileCase_ == 3) {
+            performanceProfileCase_ = 0;
+            performanceProfile_ = null;
+            onChanged();
+          }
+        } else {
+          if (performanceProfileCase_ == 3) {
+            performanceProfileCase_ = 0;
+            performanceProfile_ = null;
+          }
+          bootDiskProfileBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Swap on the node's boot disk.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile boot_disk_profile = 3;
+       * </code>
+       */
+      public com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile.Builder
+          getBootDiskProfileBuilder() {
+        return getBootDiskProfileFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Swap on the node's boot disk.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile boot_disk_profile = 3;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfileOrBuilder
+          getBootDiskProfileOrBuilder() {
+        if ((performanceProfileCase_ == 3) && (bootDiskProfileBuilder_ != null)) {
+          return bootDiskProfileBuilder_.getMessageOrBuilder();
+        } else {
+          if (performanceProfileCase_ == 3) {
+            return (com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile)
+                performanceProfile_;
+          }
+          return com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Swap on the node's boot disk.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile boot_disk_profile = 3;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile,
+              com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile.Builder,
+              com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfileOrBuilder>
+          getBootDiskProfileFieldBuilder() {
+        if (bootDiskProfileBuilder_ == null) {
+          if (!(performanceProfileCase_ == 3)) {
+            performanceProfile_ =
+                com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile
+                    .getDefaultInstance();
+          }
+          bootDiskProfileBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile,
+                  com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile.Builder,
+                  com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfileOrBuilder>(
+                  (com.google.container.v1.LinuxNodeConfig.SwapConfig.BootDiskProfile)
+                      performanceProfile_,
+                  getParentForChildren(),
+                  isClean());
+          performanceProfile_ = null;
+        }
+        performanceProfileCase_ = 3;
+        onChanged();
+        return bootDiskProfileBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile,
+              com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile.Builder,
+              com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfileOrBuilder>
+          ephemeralLocalSsdProfileBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Swap on the local SSD shared with pod ephemeral storage.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile ephemeral_local_ssd_profile = 4;
+       * </code>
+       *
+       * @return Whether the ephemeralLocalSsdProfile field is set.
+       */
+      @java.lang.Override
+      public boolean hasEphemeralLocalSsdProfile() {
+        return performanceProfileCase_ == 4;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Swap on the local SSD shared with pod ephemeral storage.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile ephemeral_local_ssd_profile = 4;
+       * </code>
+       *
+       * @return The ephemeralLocalSsdProfile.
+       */
+      @java.lang.Override
+      public com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile
+          getEphemeralLocalSsdProfile() {
+        if (ephemeralLocalSsdProfileBuilder_ == null) {
+          if (performanceProfileCase_ == 4) {
+            return (com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile)
+                performanceProfile_;
+          }
+          return com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile
+              .getDefaultInstance();
+        } else {
+          if (performanceProfileCase_ == 4) {
+            return ephemeralLocalSsdProfileBuilder_.getMessage();
+          }
+          return com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Swap on the local SSD shared with pod ephemeral storage.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile ephemeral_local_ssd_profile = 4;
+       * </code>
+       */
+      public Builder setEphemeralLocalSsdProfile(
+          com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile value) {
+        if (ephemeralLocalSsdProfileBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          performanceProfile_ = value;
+          onChanged();
+        } else {
+          ephemeralLocalSsdProfileBuilder_.setMessage(value);
+        }
+        performanceProfileCase_ = 4;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Swap on the local SSD shared with pod ephemeral storage.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile ephemeral_local_ssd_profile = 4;
+       * </code>
+       */
+      public Builder setEphemeralLocalSsdProfile(
+          com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile.Builder
+              builderForValue) {
+        if (ephemeralLocalSsdProfileBuilder_ == null) {
+          performanceProfile_ = builderForValue.build();
+          onChanged();
+        } else {
+          ephemeralLocalSsdProfileBuilder_.setMessage(builderForValue.build());
+        }
+        performanceProfileCase_ = 4;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Swap on the local SSD shared with pod ephemeral storage.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile ephemeral_local_ssd_profile = 4;
+       * </code>
+       */
+      public Builder mergeEphemeralLocalSsdProfile(
+          com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile value) {
+        if (ephemeralLocalSsdProfileBuilder_ == null) {
+          if (performanceProfileCase_ == 4
+              && performanceProfile_
+                  != com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile
+                      .getDefaultInstance()) {
+            performanceProfile_ =
+                com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile
+                    .newBuilder(
+                        (com.google.container.v1.LinuxNodeConfig.SwapConfig
+                                .EphemeralLocalSsdProfile)
+                            performanceProfile_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            performanceProfile_ = value;
+          }
+          onChanged();
+        } else {
+          if (performanceProfileCase_ == 4) {
+            ephemeralLocalSsdProfileBuilder_.mergeFrom(value);
+          } else {
+            ephemeralLocalSsdProfileBuilder_.setMessage(value);
+          }
+        }
+        performanceProfileCase_ = 4;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Swap on the local SSD shared with pod ephemeral storage.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile ephemeral_local_ssd_profile = 4;
+       * </code>
+       */
+      public Builder clearEphemeralLocalSsdProfile() {
+        if (ephemeralLocalSsdProfileBuilder_ == null) {
+          if (performanceProfileCase_ == 4) {
+            performanceProfileCase_ = 0;
+            performanceProfile_ = null;
+            onChanged();
+          }
+        } else {
+          if (performanceProfileCase_ == 4) {
+            performanceProfileCase_ = 0;
+            performanceProfile_ = null;
+          }
+          ephemeralLocalSsdProfileBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Swap on the local SSD shared with pod ephemeral storage.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile ephemeral_local_ssd_profile = 4;
+       * </code>
+       */
+      public com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile.Builder
+          getEphemeralLocalSsdProfileBuilder() {
+        return getEphemeralLocalSsdProfileFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Swap on the local SSD shared with pod ephemeral storage.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile ephemeral_local_ssd_profile = 4;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfileOrBuilder
+          getEphemeralLocalSsdProfileOrBuilder() {
+        if ((performanceProfileCase_ == 4) && (ephemeralLocalSsdProfileBuilder_ != null)) {
+          return ephemeralLocalSsdProfileBuilder_.getMessageOrBuilder();
+        } else {
+          if (performanceProfileCase_ == 4) {
+            return (com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile)
+                performanceProfile_;
+          }
+          return com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Swap on the local SSD shared with pod ephemeral storage.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile ephemeral_local_ssd_profile = 4;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile,
+              com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile.Builder,
+              com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfileOrBuilder>
+          getEphemeralLocalSsdProfileFieldBuilder() {
+        if (ephemeralLocalSsdProfileBuilder_ == null) {
+          if (!(performanceProfileCase_ == 4)) {
+            performanceProfile_ =
+                com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile
+                    .getDefaultInstance();
+          }
+          ephemeralLocalSsdProfileBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile,
+                  com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile
+                      .Builder,
+                  com.google.container.v1.LinuxNodeConfig.SwapConfig
+                      .EphemeralLocalSsdProfileOrBuilder>(
+                  (com.google.container.v1.LinuxNodeConfig.SwapConfig.EphemeralLocalSsdProfile)
+                      performanceProfile_,
+                  getParentForChildren(),
+                  isClean());
+          performanceProfile_ = null;
+        }
+        performanceProfileCase_ = 4;
+        onChanged();
+        return ephemeralLocalSsdProfileBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile,
+              com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile.Builder,
+              com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfileOrBuilder>
+          dedicatedLocalSsdProfileBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Provisions a new, separate local NVMe SSD exclusively for swap.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile dedicated_local_ssd_profile = 5;
+       * </code>
+       *
+       * @return Whether the dedicatedLocalSsdProfile field is set.
+       */
+      @java.lang.Override
+      public boolean hasDedicatedLocalSsdProfile() {
+        return performanceProfileCase_ == 5;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Provisions a new, separate local NVMe SSD exclusively for swap.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile dedicated_local_ssd_profile = 5;
+       * </code>
+       *
+       * @return The dedicatedLocalSsdProfile.
+       */
+      @java.lang.Override
+      public com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile
+          getDedicatedLocalSsdProfile() {
+        if (dedicatedLocalSsdProfileBuilder_ == null) {
+          if (performanceProfileCase_ == 5) {
+            return (com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile)
+                performanceProfile_;
+          }
+          return com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile
+              .getDefaultInstance();
+        } else {
+          if (performanceProfileCase_ == 5) {
+            return dedicatedLocalSsdProfileBuilder_.getMessage();
+          }
+          return com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Provisions a new, separate local NVMe SSD exclusively for swap.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile dedicated_local_ssd_profile = 5;
+       * </code>
+       */
+      public Builder setDedicatedLocalSsdProfile(
+          com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile value) {
+        if (dedicatedLocalSsdProfileBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          performanceProfile_ = value;
+          onChanged();
+        } else {
+          dedicatedLocalSsdProfileBuilder_.setMessage(value);
+        }
+        performanceProfileCase_ = 5;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Provisions a new, separate local NVMe SSD exclusively for swap.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile dedicated_local_ssd_profile = 5;
+       * </code>
+       */
+      public Builder setDedicatedLocalSsdProfile(
+          com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile.Builder
+              builderForValue) {
+        if (dedicatedLocalSsdProfileBuilder_ == null) {
+          performanceProfile_ = builderForValue.build();
+          onChanged();
+        } else {
+          dedicatedLocalSsdProfileBuilder_.setMessage(builderForValue.build());
+        }
+        performanceProfileCase_ = 5;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Provisions a new, separate local NVMe SSD exclusively for swap.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile dedicated_local_ssd_profile = 5;
+       * </code>
+       */
+      public Builder mergeDedicatedLocalSsdProfile(
+          com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile value) {
+        if (dedicatedLocalSsdProfileBuilder_ == null) {
+          if (performanceProfileCase_ == 5
+              && performanceProfile_
+                  != com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile
+                      .getDefaultInstance()) {
+            performanceProfile_ =
+                com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile
+                    .newBuilder(
+                        (com.google.container.v1.LinuxNodeConfig.SwapConfig
+                                .DedicatedLocalSsdProfile)
+                            performanceProfile_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            performanceProfile_ = value;
+          }
+          onChanged();
+        } else {
+          if (performanceProfileCase_ == 5) {
+            dedicatedLocalSsdProfileBuilder_.mergeFrom(value);
+          } else {
+            dedicatedLocalSsdProfileBuilder_.setMessage(value);
+          }
+        }
+        performanceProfileCase_ = 5;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Provisions a new, separate local NVMe SSD exclusively for swap.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile dedicated_local_ssd_profile = 5;
+       * </code>
+       */
+      public Builder clearDedicatedLocalSsdProfile() {
+        if (dedicatedLocalSsdProfileBuilder_ == null) {
+          if (performanceProfileCase_ == 5) {
+            performanceProfileCase_ = 0;
+            performanceProfile_ = null;
+            onChanged();
+          }
+        } else {
+          if (performanceProfileCase_ == 5) {
+            performanceProfileCase_ = 0;
+            performanceProfile_ = null;
+          }
+          dedicatedLocalSsdProfileBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Provisions a new, separate local NVMe SSD exclusively for swap.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile dedicated_local_ssd_profile = 5;
+       * </code>
+       */
+      public com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile.Builder
+          getDedicatedLocalSsdProfileBuilder() {
+        return getDedicatedLocalSsdProfileFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Provisions a new, separate local NVMe SSD exclusively for swap.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile dedicated_local_ssd_profile = 5;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfileOrBuilder
+          getDedicatedLocalSsdProfileOrBuilder() {
+        if ((performanceProfileCase_ == 5) && (dedicatedLocalSsdProfileBuilder_ != null)) {
+          return dedicatedLocalSsdProfileBuilder_.getMessageOrBuilder();
+        } else {
+          if (performanceProfileCase_ == 5) {
+            return (com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile)
+                performanceProfile_;
+          }
+          return com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Provisions a new, separate local NVMe SSD exclusively for swap.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile dedicated_local_ssd_profile = 5;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile,
+              com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile.Builder,
+              com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfileOrBuilder>
+          getDedicatedLocalSsdProfileFieldBuilder() {
+        if (dedicatedLocalSsdProfileBuilder_ == null) {
+          if (!(performanceProfileCase_ == 5)) {
+            performanceProfile_ =
+                com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile
+                    .getDefaultInstance();
+          }
+          dedicatedLocalSsdProfileBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile,
+                  com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile
+                      .Builder,
+                  com.google.container.v1.LinuxNodeConfig.SwapConfig
+                      .DedicatedLocalSsdProfileOrBuilder>(
+                  (com.google.container.v1.LinuxNodeConfig.SwapConfig.DedicatedLocalSsdProfile)
+                      performanceProfile_,
+                  getParentForChildren(),
+                  isClean());
+          performanceProfile_ = null;
+        }
+        performanceProfileCase_ = 5;
+        onChanged();
+        return dedicatedLocalSsdProfileBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.container.v1.LinuxNodeConfig.SwapConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.container.v1.LinuxNodeConfig.SwapConfig)
+    private static final com.google.container.v1.LinuxNodeConfig.SwapConfig DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.container.v1.LinuxNodeConfig.SwapConfig();
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.SwapConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SwapConfig> PARSER =
+        new com.google.protobuf.AbstractParser<SwapConfig>() {
+          @java.lang.Override
+          public SwapConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SwapConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SwapConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.container.v1.LinuxNodeConfig.SwapConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface NodeKernelModuleLoadingOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading)
@@ -2326,7 +7567,12 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
+   * net.ipv4.tcp_mtu_probing
    * net.ipv4.tcp_max_orphans
+   * net.ipv4.tcp_max_tw_buckets
+   * net.ipv4.tcp_syn_retries
+   * net.ipv4.tcp_ecn
+   * net.ipv4.tcp_congestion_control
    * net.netfilter.nf_conntrack_max
    * net.netfilter.nf_conntrack_buckets
    * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -2336,14 +7582,23 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
+   * kernel.perf_event_paranoid
+   * kernel.sched_rt_runtime_us
+   * kernel.softlockup_panic
+   * kernel.yama.ptrace_scope
+   * kernel.kptr_restrict
+   * kernel.dmesg_restrict
+   * kernel.sysrq
    * fs.aio-max-nr
    * fs.file-max
    * fs.inotify.max_user_instances
    * fs.inotify.max_user_watches
    * fs.nr_open
    * vm.dirty_background_ratio
+   * vm.dirty_background_bytes
    * vm.dirty_expire_centisecs
    * vm.dirty_ratio
+   * vm.dirty_bytes
    * vm.dirty_writeback_centisecs
    * vm.max_map_count
    * vm.overcommit_memory
@@ -2392,7 +7647,12 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
+   * net.ipv4.tcp_mtu_probing
    * net.ipv4.tcp_max_orphans
+   * net.ipv4.tcp_max_tw_buckets
+   * net.ipv4.tcp_syn_retries
+   * net.ipv4.tcp_ecn
+   * net.ipv4.tcp_congestion_control
    * net.netfilter.nf_conntrack_max
    * net.netfilter.nf_conntrack_buckets
    * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -2402,14 +7662,23 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
+   * kernel.perf_event_paranoid
+   * kernel.sched_rt_runtime_us
+   * kernel.softlockup_panic
+   * kernel.yama.ptrace_scope
+   * kernel.kptr_restrict
+   * kernel.dmesg_restrict
+   * kernel.sysrq
    * fs.aio-max-nr
    * fs.file-max
    * fs.inotify.max_user_instances
    * fs.inotify.max_user_watches
    * fs.nr_open
    * vm.dirty_background_ratio
+   * vm.dirty_background_bytes
    * vm.dirty_expire_centisecs
    * vm.dirty_ratio
+   * vm.dirty_bytes
    * vm.dirty_writeback_centisecs
    * vm.max_map_count
    * vm.overcommit_memory
@@ -2448,7 +7717,12 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
+   * net.ipv4.tcp_mtu_probing
    * net.ipv4.tcp_max_orphans
+   * net.ipv4.tcp_max_tw_buckets
+   * net.ipv4.tcp_syn_retries
+   * net.ipv4.tcp_ecn
+   * net.ipv4.tcp_congestion_control
    * net.netfilter.nf_conntrack_max
    * net.netfilter.nf_conntrack_buckets
    * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -2458,14 +7732,23 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
+   * kernel.perf_event_paranoid
+   * kernel.sched_rt_runtime_us
+   * kernel.softlockup_panic
+   * kernel.yama.ptrace_scope
+   * kernel.kptr_restrict
+   * kernel.dmesg_restrict
+   * kernel.sysrq
    * fs.aio-max-nr
    * fs.file-max
    * fs.inotify.max_user_instances
    * fs.inotify.max_user_watches
    * fs.nr_open
    * vm.dirty_background_ratio
+   * vm.dirty_background_bytes
    * vm.dirty_expire_centisecs
    * vm.dirty_ratio
+   * vm.dirty_bytes
    * vm.dirty_writeback_centisecs
    * vm.max_map_count
    * vm.overcommit_memory
@@ -2511,7 +7794,12 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
+   * net.ipv4.tcp_mtu_probing
    * net.ipv4.tcp_max_orphans
+   * net.ipv4.tcp_max_tw_buckets
+   * net.ipv4.tcp_syn_retries
+   * net.ipv4.tcp_ecn
+   * net.ipv4.tcp_congestion_control
    * net.netfilter.nf_conntrack_max
    * net.netfilter.nf_conntrack_buckets
    * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -2521,14 +7809,23 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
+   * kernel.perf_event_paranoid
+   * kernel.sched_rt_runtime_us
+   * kernel.softlockup_panic
+   * kernel.yama.ptrace_scope
+   * kernel.kptr_restrict
+   * kernel.dmesg_restrict
+   * kernel.sysrq
    * fs.aio-max-nr
    * fs.file-max
    * fs.inotify.max_user_instances
    * fs.inotify.max_user_watches
    * fs.nr_open
    * vm.dirty_background_ratio
+   * vm.dirty_background_bytes
    * vm.dirty_expire_centisecs
    * vm.dirty_ratio
+   * vm.dirty_bytes
    * vm.dirty_writeback_centisecs
    * vm.max_map_count
    * vm.overcommit_memory
@@ -2765,6 +8062,68 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
         : result;
   }
 
+  public static final int SWAP_CONFIG_FIELD_NUMBER = 12;
+  private com.google.container.v1.LinuxNodeConfig.SwapConfig swapConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Enables and configures swap space on nodes.
+   * If omitted, swap is disabled.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.LinuxNodeConfig.SwapConfig swap_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the swapConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasSwapConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Enables and configures swap space on nodes.
+   * If omitted, swap is disabled.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.LinuxNodeConfig.SwapConfig swap_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The swapConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.LinuxNodeConfig.SwapConfig getSwapConfig() {
+    return swapConfig_ == null
+        ? com.google.container.v1.LinuxNodeConfig.SwapConfig.getDefaultInstance()
+        : swapConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Enables and configures swap space on nodes.
+   * If omitted, swap is disabled.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.LinuxNodeConfig.SwapConfig swap_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.LinuxNodeConfig.SwapConfigOrBuilder getSwapConfigOrBuilder() {
+    return swapConfig_ == null
+        ? com.google.container.v1.LinuxNodeConfig.SwapConfig.getDefaultInstance()
+        : swapConfig_;
+  }
+
   public static final int NODE_KERNEL_MODULE_LOADING_FIELD_NUMBER = 13;
   private com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading nodeKernelModuleLoading_;
 
@@ -2785,7 +8144,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasNodeKernelModuleLoading() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -2868,6 +8227,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       output.writeEnum(5, transparentHugepageDefrag_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(12, getSwapConfig());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(13, getNodeKernelModuleLoading());
     }
     getUnknownFields().writeTo(output);
@@ -2909,6 +8271,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, transparentHugepageDefrag_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getSwapConfig());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               13, getNodeKernelModuleLoading());
@@ -2936,6 +8301,10 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     }
     if (transparentHugepageEnabled_ != other.transparentHugepageEnabled_) return false;
     if (transparentHugepageDefrag_ != other.transparentHugepageDefrag_) return false;
+    if (hasSwapConfig() != other.hasSwapConfig()) return false;
+    if (hasSwapConfig()) {
+      if (!getSwapConfig().equals(other.getSwapConfig())) return false;
+    }
     if (hasNodeKernelModuleLoading() != other.hasNodeKernelModuleLoading()) return false;
     if (hasNodeKernelModuleLoading()) {
       if (!getNodeKernelModuleLoading().equals(other.getNodeKernelModuleLoading())) return false;
@@ -2965,6 +8334,10 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + transparentHugepageEnabled_;
     hash = (37 * hash) + TRANSPARENT_HUGEPAGE_DEFRAG_FIELD_NUMBER;
     hash = (53 * hash) + transparentHugepageDefrag_;
+    if (hasSwapConfig()) {
+      hash = (37 * hash) + SWAP_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getSwapConfig().hashCode();
+    }
     if (hasNodeKernelModuleLoading()) {
       hash = (37 * hash) + NODE_KERNEL_MODULE_LOADING_FIELD_NUMBER;
       hash = (53 * hash) + getNodeKernelModuleLoading().hashCode();
@@ -3133,6 +8506,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getHugepagesFieldBuilder();
+        getSwapConfigFieldBuilder();
         getNodeKernelModuleLoadingFieldBuilder();
       }
     }
@@ -3150,6 +8524,11 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       }
       transparentHugepageEnabled_ = 0;
       transparentHugepageDefrag_ = 0;
+      swapConfig_ = null;
+      if (swapConfigBuilder_ != null) {
+        swapConfigBuilder_.dispose();
+        swapConfigBuilder_ = null;
+      }
       nodeKernelModuleLoading_ = null;
       if (nodeKernelModuleLoadingBuilder_ != null) {
         nodeKernelModuleLoadingBuilder_.dispose();
@@ -3210,11 +8589,15 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
         result.transparentHugepageDefrag_ = transparentHugepageDefrag_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.swapConfig_ = swapConfigBuilder_ == null ? swapConfig_ : swapConfigBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.nodeKernelModuleLoading_ =
             nodeKernelModuleLoadingBuilder_ == null
                 ? nodeKernelModuleLoading_
                 : nodeKernelModuleLoadingBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3277,6 +8660,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       }
       if (other.transparentHugepageDefrag_ != 0) {
         setTransparentHugepageDefragValue(other.getTransparentHugepageDefragValue());
+      }
+      if (other.hasSwapConfig()) {
+        mergeSwapConfig(other.getSwapConfig());
       }
       if (other.hasNodeKernelModuleLoading()) {
         mergeNodeKernelModuleLoading(other.getNodeKernelModuleLoading());
@@ -3343,11 +8729,17 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000010;
                 break;
               } // case 40
+            case 98:
+              {
+                input.readMessage(getSwapConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 98
             case 106:
               {
                 input.readMessage(
                     getNodeKernelModuleLoadingFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 106
             default:
@@ -3416,7 +8808,12 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
+     * net.ipv4.tcp_mtu_probing
      * net.ipv4.tcp_max_orphans
+     * net.ipv4.tcp_max_tw_buckets
+     * net.ipv4.tcp_syn_retries
+     * net.ipv4.tcp_ecn
+     * net.ipv4.tcp_congestion_control
      * net.netfilter.nf_conntrack_max
      * net.netfilter.nf_conntrack_buckets
      * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -3426,14 +8823,23 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
+     * kernel.perf_event_paranoid
+     * kernel.sched_rt_runtime_us
+     * kernel.softlockup_panic
+     * kernel.yama.ptrace_scope
+     * kernel.kptr_restrict
+     * kernel.dmesg_restrict
+     * kernel.sysrq
      * fs.aio-max-nr
      * fs.file-max
      * fs.inotify.max_user_instances
      * fs.inotify.max_user_watches
      * fs.nr_open
      * vm.dirty_background_ratio
+     * vm.dirty_background_bytes
      * vm.dirty_expire_centisecs
      * vm.dirty_ratio
+     * vm.dirty_bytes
      * vm.dirty_writeback_centisecs
      * vm.max_map_count
      * vm.overcommit_memory
@@ -3482,7 +8888,12 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
+     * net.ipv4.tcp_mtu_probing
      * net.ipv4.tcp_max_orphans
+     * net.ipv4.tcp_max_tw_buckets
+     * net.ipv4.tcp_syn_retries
+     * net.ipv4.tcp_ecn
+     * net.ipv4.tcp_congestion_control
      * net.netfilter.nf_conntrack_max
      * net.netfilter.nf_conntrack_buckets
      * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -3492,14 +8903,23 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
+     * kernel.perf_event_paranoid
+     * kernel.sched_rt_runtime_us
+     * kernel.softlockup_panic
+     * kernel.yama.ptrace_scope
+     * kernel.kptr_restrict
+     * kernel.dmesg_restrict
+     * kernel.sysrq
      * fs.aio-max-nr
      * fs.file-max
      * fs.inotify.max_user_instances
      * fs.inotify.max_user_watches
      * fs.nr_open
      * vm.dirty_background_ratio
+     * vm.dirty_background_bytes
      * vm.dirty_expire_centisecs
      * vm.dirty_ratio
+     * vm.dirty_bytes
      * vm.dirty_writeback_centisecs
      * vm.max_map_count
      * vm.overcommit_memory
@@ -3538,7 +8958,12 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
+     * net.ipv4.tcp_mtu_probing
      * net.ipv4.tcp_max_orphans
+     * net.ipv4.tcp_max_tw_buckets
+     * net.ipv4.tcp_syn_retries
+     * net.ipv4.tcp_ecn
+     * net.ipv4.tcp_congestion_control
      * net.netfilter.nf_conntrack_max
      * net.netfilter.nf_conntrack_buckets
      * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -3548,14 +8973,23 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
+     * kernel.perf_event_paranoid
+     * kernel.sched_rt_runtime_us
+     * kernel.softlockup_panic
+     * kernel.yama.ptrace_scope
+     * kernel.kptr_restrict
+     * kernel.dmesg_restrict
+     * kernel.sysrq
      * fs.aio-max-nr
      * fs.file-max
      * fs.inotify.max_user_instances
      * fs.inotify.max_user_watches
      * fs.nr_open
      * vm.dirty_background_ratio
+     * vm.dirty_background_bytes
      * vm.dirty_expire_centisecs
      * vm.dirty_ratio
+     * vm.dirty_bytes
      * vm.dirty_writeback_centisecs
      * vm.max_map_count
      * vm.overcommit_memory
@@ -3601,7 +9035,12 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
+     * net.ipv4.tcp_mtu_probing
      * net.ipv4.tcp_max_orphans
+     * net.ipv4.tcp_max_tw_buckets
+     * net.ipv4.tcp_syn_retries
+     * net.ipv4.tcp_ecn
+     * net.ipv4.tcp_congestion_control
      * net.netfilter.nf_conntrack_max
      * net.netfilter.nf_conntrack_buckets
      * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -3611,14 +9050,23 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
+     * kernel.perf_event_paranoid
+     * kernel.sched_rt_runtime_us
+     * kernel.softlockup_panic
+     * kernel.yama.ptrace_scope
+     * kernel.kptr_restrict
+     * kernel.dmesg_restrict
+     * kernel.sysrq
      * fs.aio-max-nr
      * fs.file-max
      * fs.inotify.max_user_instances
      * fs.inotify.max_user_watches
      * fs.nr_open
      * vm.dirty_background_ratio
+     * vm.dirty_background_bytes
      * vm.dirty_expire_centisecs
      * vm.dirty_ratio
+     * vm.dirty_bytes
      * vm.dirty_writeback_centisecs
      * vm.max_map_count
      * vm.overcommit_memory
@@ -3670,7 +9118,12 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
+     * net.ipv4.tcp_mtu_probing
      * net.ipv4.tcp_max_orphans
+     * net.ipv4.tcp_max_tw_buckets
+     * net.ipv4.tcp_syn_retries
+     * net.ipv4.tcp_ecn
+     * net.ipv4.tcp_congestion_control
      * net.netfilter.nf_conntrack_max
      * net.netfilter.nf_conntrack_buckets
      * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -3680,14 +9133,23 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
+     * kernel.perf_event_paranoid
+     * kernel.sched_rt_runtime_us
+     * kernel.softlockup_panic
+     * kernel.yama.ptrace_scope
+     * kernel.kptr_restrict
+     * kernel.dmesg_restrict
+     * kernel.sysrq
      * fs.aio-max-nr
      * fs.file-max
      * fs.inotify.max_user_instances
      * fs.inotify.max_user_watches
      * fs.nr_open
      * vm.dirty_background_ratio
+     * vm.dirty_background_bytes
      * vm.dirty_expire_centisecs
      * vm.dirty_ratio
+     * vm.dirty_bytes
      * vm.dirty_writeback_centisecs
      * vm.max_map_count
      * vm.overcommit_memory
@@ -3736,7 +9198,12 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
+     * net.ipv4.tcp_mtu_probing
      * net.ipv4.tcp_max_orphans
+     * net.ipv4.tcp_max_tw_buckets
+     * net.ipv4.tcp_syn_retries
+     * net.ipv4.tcp_ecn
+     * net.ipv4.tcp_congestion_control
      * net.netfilter.nf_conntrack_max
      * net.netfilter.nf_conntrack_buckets
      * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -3746,14 +9213,23 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
+     * kernel.perf_event_paranoid
+     * kernel.sched_rt_runtime_us
+     * kernel.softlockup_panic
+     * kernel.yama.ptrace_scope
+     * kernel.kptr_restrict
+     * kernel.dmesg_restrict
+     * kernel.sysrq
      * fs.aio-max-nr
      * fs.file-max
      * fs.inotify.max_user_instances
      * fs.inotify.max_user_watches
      * fs.nr_open
      * vm.dirty_background_ratio
+     * vm.dirty_background_bytes
      * vm.dirty_expire_centisecs
      * vm.dirty_ratio
+     * vm.dirty_bytes
      * vm.dirty_writeback_centisecs
      * vm.max_map_count
      * vm.overcommit_memory
@@ -3799,7 +9275,12 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
+     * net.ipv4.tcp_mtu_probing
      * net.ipv4.tcp_max_orphans
+     * net.ipv4.tcp_max_tw_buckets
+     * net.ipv4.tcp_syn_retries
+     * net.ipv4.tcp_ecn
+     * net.ipv4.tcp_congestion_control
      * net.netfilter.nf_conntrack_max
      * net.netfilter.nf_conntrack_buckets
      * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -3809,14 +9290,23 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
+     * kernel.perf_event_paranoid
+     * kernel.sched_rt_runtime_us
+     * kernel.softlockup_panic
+     * kernel.yama.ptrace_scope
+     * kernel.kptr_restrict
+     * kernel.dmesg_restrict
+     * kernel.sysrq
      * fs.aio-max-nr
      * fs.file-max
      * fs.inotify.max_user_instances
      * fs.inotify.max_user_watches
      * fs.nr_open
      * vm.dirty_background_ratio
+     * vm.dirty_background_bytes
      * vm.dirty_expire_centisecs
      * vm.dirty_ratio
+     * vm.dirty_bytes
      * vm.dirty_writeback_centisecs
      * vm.max_map_count
      * vm.overcommit_memory
@@ -4427,6 +9917,229 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
+    private com.google.container.v1.LinuxNodeConfig.SwapConfig swapConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.LinuxNodeConfig.SwapConfig,
+            com.google.container.v1.LinuxNodeConfig.SwapConfig.Builder,
+            com.google.container.v1.LinuxNodeConfig.SwapConfigOrBuilder>
+        swapConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enables and configures swap space on nodes.
+     * If omitted, swap is disabled.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.LinuxNodeConfig.SwapConfig swap_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the swapConfig field is set.
+     */
+    public boolean hasSwapConfig() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enables and configures swap space on nodes.
+     * If omitted, swap is disabled.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.LinuxNodeConfig.SwapConfig swap_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The swapConfig.
+     */
+    public com.google.container.v1.LinuxNodeConfig.SwapConfig getSwapConfig() {
+      if (swapConfigBuilder_ == null) {
+        return swapConfig_ == null
+            ? com.google.container.v1.LinuxNodeConfig.SwapConfig.getDefaultInstance()
+            : swapConfig_;
+      } else {
+        return swapConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enables and configures swap space on nodes.
+     * If omitted, swap is disabled.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.LinuxNodeConfig.SwapConfig swap_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSwapConfig(com.google.container.v1.LinuxNodeConfig.SwapConfig value) {
+      if (swapConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        swapConfig_ = value;
+      } else {
+        swapConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enables and configures swap space on nodes.
+     * If omitted, swap is disabled.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.LinuxNodeConfig.SwapConfig swap_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSwapConfig(
+        com.google.container.v1.LinuxNodeConfig.SwapConfig.Builder builderForValue) {
+      if (swapConfigBuilder_ == null) {
+        swapConfig_ = builderForValue.build();
+      } else {
+        swapConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enables and configures swap space on nodes.
+     * If omitted, swap is disabled.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.LinuxNodeConfig.SwapConfig swap_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSwapConfig(com.google.container.v1.LinuxNodeConfig.SwapConfig value) {
+      if (swapConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && swapConfig_ != null
+            && swapConfig_
+                != com.google.container.v1.LinuxNodeConfig.SwapConfig.getDefaultInstance()) {
+          getSwapConfigBuilder().mergeFrom(value);
+        } else {
+          swapConfig_ = value;
+        }
+      } else {
+        swapConfigBuilder_.mergeFrom(value);
+      }
+      if (swapConfig_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enables and configures swap space on nodes.
+     * If omitted, swap is disabled.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.LinuxNodeConfig.SwapConfig swap_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSwapConfig() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      swapConfig_ = null;
+      if (swapConfigBuilder_ != null) {
+        swapConfigBuilder_.dispose();
+        swapConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enables and configures swap space on nodes.
+     * If omitted, swap is disabled.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.LinuxNodeConfig.SwapConfig swap_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1.LinuxNodeConfig.SwapConfig.Builder getSwapConfigBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getSwapConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enables and configures swap space on nodes.
+     * If omitted, swap is disabled.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.LinuxNodeConfig.SwapConfig swap_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1.LinuxNodeConfig.SwapConfigOrBuilder getSwapConfigOrBuilder() {
+      if (swapConfigBuilder_ != null) {
+        return swapConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return swapConfig_ == null
+            ? com.google.container.v1.LinuxNodeConfig.SwapConfig.getDefaultInstance()
+            : swapConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enables and configures swap space on nodes.
+     * If omitted, swap is disabled.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.LinuxNodeConfig.SwapConfig swap_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.LinuxNodeConfig.SwapConfig,
+            com.google.container.v1.LinuxNodeConfig.SwapConfig.Builder,
+            com.google.container.v1.LinuxNodeConfig.SwapConfigOrBuilder>
+        getSwapConfigFieldBuilder() {
+      if (swapConfigBuilder_ == null) {
+        swapConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.LinuxNodeConfig.SwapConfig,
+                com.google.container.v1.LinuxNodeConfig.SwapConfig.Builder,
+                com.google.container.v1.LinuxNodeConfig.SwapConfigOrBuilder>(
+                getSwapConfig(), getParentForChildren(), isClean());
+        swapConfig_ = null;
+      }
+      return swapConfigBuilder_;
+    }
+
     private com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading
         nodeKernelModuleLoading_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -4451,7 +10164,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * @return Whether the nodeKernelModuleLoading field is set.
      */
     public boolean hasNodeKernelModuleLoading() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -4503,7 +10216,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       } else {
         nodeKernelModuleLoadingBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4528,7 +10241,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       } else {
         nodeKernelModuleLoadingBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4549,7 +10262,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     public Builder mergeNodeKernelModuleLoading(
         com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading value) {
       if (nodeKernelModuleLoadingBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && nodeKernelModuleLoading_ != null
             && nodeKernelModuleLoading_
                 != com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading
@@ -4562,7 +10275,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
         nodeKernelModuleLoadingBuilder_.mergeFrom(value);
       }
       if (nodeKernelModuleLoading_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -4582,7 +10295,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearNodeKernelModuleLoading() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       nodeKernelModuleLoading_ = null;
       if (nodeKernelModuleLoadingBuilder_ != null) {
         nodeKernelModuleLoadingBuilder_.dispose();
@@ -4607,7 +10320,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      */
     public com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading.Builder
         getNodeKernelModuleLoadingBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getNodeKernelModuleLoadingFieldBuilder().getBuilder();
     }

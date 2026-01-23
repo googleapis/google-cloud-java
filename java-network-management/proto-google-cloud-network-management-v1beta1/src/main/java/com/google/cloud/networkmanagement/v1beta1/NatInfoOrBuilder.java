@@ -311,4 +311,34 @@ public interface NatInfoOrBuilder
    * @return The bytes for natGatewayName.
    */
   com.google.protobuf.ByteString getNatGatewayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Type of Cloud NAT gateway. Only valid when `type` is CLOUD_NAT.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.NatInfo.CloudNatGatewayType cloud_nat_gateway_type = 14;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for cloudNatGatewayType.
+   */
+  int getCloudNatGatewayTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Type of Cloud NAT gateway. Only valid when `type` is CLOUD_NAT.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.NatInfo.CloudNatGatewayType cloud_nat_gateway_type = 14;
+   * </code>
+   *
+   * @return The cloudNatGatewayType.
+   */
+  com.google.cloud.networkmanagement.v1beta1.NatInfo.CloudNatGatewayType getCloudNatGatewayType();
 }

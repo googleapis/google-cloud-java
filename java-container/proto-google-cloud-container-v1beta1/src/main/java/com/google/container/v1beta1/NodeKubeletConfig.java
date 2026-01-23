@@ -1184,6 +1184,108 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     return singleProcessOomKill_;
   }
 
+  public static final int SHUTDOWN_GRACE_PERIOD_SECONDS_FIELD_NUMBER = 26;
+  private int shutdownGracePeriodSeconds_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. shutdown_grace_period_seconds is the maximum allowed grace period
+   * (in seconds) the total duration that the node should delay the shutdown
+   * during a graceful shutdown. This is the total grace period for pod
+   * termination for both regular and critical pods.
+   * https://kubernetes.io/docs/concepts/cluster-administration/node-shutdown/
+   * If set to 0, node will not enable the graceful node shutdown functionality.
+   * This field is only valid for Spot VMs.
+   * Allowed values: 0, 30, 120.
+   * </pre>
+   *
+   * <code>
+   * optional int32 shutdown_grace_period_seconds = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the shutdownGracePeriodSeconds field is set.
+   */
+  @java.lang.Override
+  public boolean hasShutdownGracePeriodSeconds() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. shutdown_grace_period_seconds is the maximum allowed grace period
+   * (in seconds) the total duration that the node should delay the shutdown
+   * during a graceful shutdown. This is the total grace period for pod
+   * termination for both regular and critical pods.
+   * https://kubernetes.io/docs/concepts/cluster-administration/node-shutdown/
+   * If set to 0, node will not enable the graceful node shutdown functionality.
+   * This field is only valid for Spot VMs.
+   * Allowed values: 0, 30, 120.
+   * </pre>
+   *
+   * <code>
+   * optional int32 shutdown_grace_period_seconds = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The shutdownGracePeriodSeconds.
+   */
+  @java.lang.Override
+  public int getShutdownGracePeriodSeconds() {
+    return shutdownGracePeriodSeconds_;
+  }
+
+  public static final int SHUTDOWN_GRACE_PERIOD_CRITICAL_PODS_SECONDS_FIELD_NUMBER = 27;
+  private int shutdownGracePeriodCriticalPodsSeconds_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. shutdown_grace_period_critical_pod_seconds is the maximum allowed
+   * grace period (in seconds) used to terminate critical pods during a node
+   * shutdown. This value should be &lt;= shutdown_grace_period_seconds, and is
+   * only valid if shutdown_grace_period_seconds is set.
+   * https://kubernetes.io/docs/concepts/cluster-administration/node-shutdown/
+   * Range: [0, 120].
+   * </pre>
+   *
+   * <code>
+   * optional int32 shutdown_grace_period_critical_pods_seconds = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the shutdownGracePeriodCriticalPodsSeconds field is set.
+   */
+  @java.lang.Override
+  public boolean hasShutdownGracePeriodCriticalPodsSeconds() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. shutdown_grace_period_critical_pod_seconds is the maximum allowed
+   * grace period (in seconds) used to terminate critical pods during a node
+   * shutdown. This value should be &lt;= shutdown_grace_period_seconds, and is
+   * only valid if shutdown_grace_period_seconds is set.
+   * https://kubernetes.io/docs/concepts/cluster-administration/node-shutdown/
+   * Range: [0, 120].
+   * </pre>
+   *
+   * <code>
+   * optional int32 shutdown_grace_period_critical_pods_seconds = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The shutdownGracePeriodCriticalPodsSeconds.
+   */
+  @java.lang.Override
+  public int getShutdownGracePeriodCriticalPodsSeconds() {
+    return shutdownGracePeriodCriticalPodsSeconds_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1258,6 +1360,12 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       output.writeBool(22, singleProcessOomKill_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeInt32(26, shutdownGracePeriodSeconds_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeInt32(27, shutdownGracePeriodCriticalPodsSeconds_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1342,6 +1450,15 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(22, singleProcessOomKill_);
     }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(26, shutdownGracePeriodSeconds_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(
+              27, shutdownGracePeriodCriticalPodsSeconds_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1404,6 +1521,16 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     if (hasSingleProcessOomKill() != other.hasSingleProcessOomKill()) return false;
     if (hasSingleProcessOomKill()) {
       if (getSingleProcessOomKill() != other.getSingleProcessOomKill()) return false;
+    }
+    if (hasShutdownGracePeriodSeconds() != other.hasShutdownGracePeriodSeconds()) return false;
+    if (hasShutdownGracePeriodSeconds()) {
+      if (getShutdownGracePeriodSeconds() != other.getShutdownGracePeriodSeconds()) return false;
+    }
+    if (hasShutdownGracePeriodCriticalPodsSeconds()
+        != other.hasShutdownGracePeriodCriticalPodsSeconds()) return false;
+    if (hasShutdownGracePeriodCriticalPodsSeconds()) {
+      if (getShutdownGracePeriodCriticalPodsSeconds()
+          != other.getShutdownGracePeriodCriticalPodsSeconds()) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1475,6 +1602,14 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     if (hasSingleProcessOomKill()) {
       hash = (37 * hash) + SINGLE_PROCESS_OOM_KILL_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSingleProcessOomKill());
+    }
+    if (hasShutdownGracePeriodSeconds()) {
+      hash = (37 * hash) + SHUTDOWN_GRACE_PERIOD_SECONDS_FIELD_NUMBER;
+      hash = (53 * hash) + getShutdownGracePeriodSeconds();
+    }
+    if (hasShutdownGracePeriodCriticalPodsSeconds()) {
+      hash = (37 * hash) + SHUTDOWN_GRACE_PERIOD_CRITICAL_PODS_SECONDS_FIELD_NUMBER;
+      hash = (53 * hash) + getShutdownGracePeriodCriticalPodsSeconds();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1674,6 +1809,8 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
       evictionMaxPodGracePeriodSeconds_ = 0;
       maxParallelImagePulls_ = 0;
       singleProcessOomKill_ = false;
+      shutdownGracePeriodSeconds_ = 0;
+      shutdownGracePeriodCriticalPodsSeconds_ = 0;
       return this;
     }
 
@@ -1789,6 +1926,14 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
       if (((from_bitField0_ & 0x00080000) != 0)) {
         result.singleProcessOomKill_ = singleProcessOomKill_;
         to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.shutdownGracePeriodSeconds_ = shutdownGracePeriodSeconds_;
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.shutdownGracePeriodCriticalPodsSeconds_ = shutdownGracePeriodCriticalPodsSeconds_;
+        to_bitField0_ |= 0x00000200;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1914,6 +2059,13 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasSingleProcessOomKill()) {
         setSingleProcessOomKill(other.getSingleProcessOomKill());
+      }
+      if (other.hasShutdownGracePeriodSeconds()) {
+        setShutdownGracePeriodSeconds(other.getShutdownGracePeriodSeconds());
+      }
+      if (other.hasShutdownGracePeriodCriticalPodsSeconds()) {
+        setShutdownGracePeriodCriticalPodsSeconds(
+            other.getShutdownGracePeriodCriticalPodsSeconds());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2064,6 +2216,18 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00080000;
                 break;
               } // case 176
+            case 208:
+              {
+                shutdownGracePeriodSeconds_ = input.readInt32();
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 208
+            case 216:
+              {
+                shutdownGracePeriodCriticalPodsSeconds_ = input.readInt32();
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 216
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5229,6 +5393,214 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     public Builder clearSingleProcessOomKill() {
       bitField0_ = (bitField0_ & ~0x00080000);
       singleProcessOomKill_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int shutdownGracePeriodSeconds_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. shutdown_grace_period_seconds is the maximum allowed grace period
+     * (in seconds) the total duration that the node should delay the shutdown
+     * during a graceful shutdown. This is the total grace period for pod
+     * termination for both regular and critical pods.
+     * https://kubernetes.io/docs/concepts/cluster-administration/node-shutdown/
+     * If set to 0, node will not enable the graceful node shutdown functionality.
+     * This field is only valid for Spot VMs.
+     * Allowed values: 0, 30, 120.
+     * </pre>
+     *
+     * <code>
+     * optional int32 shutdown_grace_period_seconds = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the shutdownGracePeriodSeconds field is set.
+     */
+    @java.lang.Override
+    public boolean hasShutdownGracePeriodSeconds() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. shutdown_grace_period_seconds is the maximum allowed grace period
+     * (in seconds) the total duration that the node should delay the shutdown
+     * during a graceful shutdown. This is the total grace period for pod
+     * termination for both regular and critical pods.
+     * https://kubernetes.io/docs/concepts/cluster-administration/node-shutdown/
+     * If set to 0, node will not enable the graceful node shutdown functionality.
+     * This field is only valid for Spot VMs.
+     * Allowed values: 0, 30, 120.
+     * </pre>
+     *
+     * <code>
+     * optional int32 shutdown_grace_period_seconds = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The shutdownGracePeriodSeconds.
+     */
+    @java.lang.Override
+    public int getShutdownGracePeriodSeconds() {
+      return shutdownGracePeriodSeconds_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. shutdown_grace_period_seconds is the maximum allowed grace period
+     * (in seconds) the total duration that the node should delay the shutdown
+     * during a graceful shutdown. This is the total grace period for pod
+     * termination for both regular and critical pods.
+     * https://kubernetes.io/docs/concepts/cluster-administration/node-shutdown/
+     * If set to 0, node will not enable the graceful node shutdown functionality.
+     * This field is only valid for Spot VMs.
+     * Allowed values: 0, 30, 120.
+     * </pre>
+     *
+     * <code>
+     * optional int32 shutdown_grace_period_seconds = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The shutdownGracePeriodSeconds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShutdownGracePeriodSeconds(int value) {
+
+      shutdownGracePeriodSeconds_ = value;
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. shutdown_grace_period_seconds is the maximum allowed grace period
+     * (in seconds) the total duration that the node should delay the shutdown
+     * during a graceful shutdown. This is the total grace period for pod
+     * termination for both regular and critical pods.
+     * https://kubernetes.io/docs/concepts/cluster-administration/node-shutdown/
+     * If set to 0, node will not enable the graceful node shutdown functionality.
+     * This field is only valid for Spot VMs.
+     * Allowed values: 0, 30, 120.
+     * </pre>
+     *
+     * <code>
+     * optional int32 shutdown_grace_period_seconds = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearShutdownGracePeriodSeconds() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      shutdownGracePeriodSeconds_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int shutdownGracePeriodCriticalPodsSeconds_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. shutdown_grace_period_critical_pod_seconds is the maximum allowed
+     * grace period (in seconds) used to terminate critical pods during a node
+     * shutdown. This value should be &lt;= shutdown_grace_period_seconds, and is
+     * only valid if shutdown_grace_period_seconds is set.
+     * https://kubernetes.io/docs/concepts/cluster-administration/node-shutdown/
+     * Range: [0, 120].
+     * </pre>
+     *
+     * <code>
+     * optional int32 shutdown_grace_period_critical_pods_seconds = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the shutdownGracePeriodCriticalPodsSeconds field is set.
+     */
+    @java.lang.Override
+    public boolean hasShutdownGracePeriodCriticalPodsSeconds() {
+      return ((bitField0_ & 0x00200000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. shutdown_grace_period_critical_pod_seconds is the maximum allowed
+     * grace period (in seconds) used to terminate critical pods during a node
+     * shutdown. This value should be &lt;= shutdown_grace_period_seconds, and is
+     * only valid if shutdown_grace_period_seconds is set.
+     * https://kubernetes.io/docs/concepts/cluster-administration/node-shutdown/
+     * Range: [0, 120].
+     * </pre>
+     *
+     * <code>
+     * optional int32 shutdown_grace_period_critical_pods_seconds = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The shutdownGracePeriodCriticalPodsSeconds.
+     */
+    @java.lang.Override
+    public int getShutdownGracePeriodCriticalPodsSeconds() {
+      return shutdownGracePeriodCriticalPodsSeconds_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. shutdown_grace_period_critical_pod_seconds is the maximum allowed
+     * grace period (in seconds) used to terminate critical pods during a node
+     * shutdown. This value should be &lt;= shutdown_grace_period_seconds, and is
+     * only valid if shutdown_grace_period_seconds is set.
+     * https://kubernetes.io/docs/concepts/cluster-administration/node-shutdown/
+     * Range: [0, 120].
+     * </pre>
+     *
+     * <code>
+     * optional int32 shutdown_grace_period_critical_pods_seconds = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The shutdownGracePeriodCriticalPodsSeconds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShutdownGracePeriodCriticalPodsSeconds(int value) {
+
+      shutdownGracePeriodCriticalPodsSeconds_ = value;
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. shutdown_grace_period_critical_pod_seconds is the maximum allowed
+     * grace period (in seconds) used to terminate critical pods during a node
+     * shutdown. This value should be &lt;= shutdown_grace_period_seconds, and is
+     * only valid if shutdown_grace_period_seconds is set.
+     * https://kubernetes.io/docs/concepts/cluster-administration/node-shutdown/
+     * Range: [0, 120].
+     * </pre>
+     *
+     * <code>
+     * optional int32 shutdown_grace_period_critical_pods_seconds = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearShutdownGracePeriodCriticalPodsSeconds() {
+      bitField0_ = (bitField0_ & ~0x00200000);
+      shutdownGracePeriodCriticalPodsSeconds_ = 0;
       onChanged();
       return this;
     }

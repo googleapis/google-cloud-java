@@ -118,4 +118,83 @@ public interface ContainerdConfigOrBuilder
    */
   com.google.container.v1beta1.ContainerdConfig.WritableCgroupsOrBuilder
       getWritableCgroupsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * RegistryHostConfig configures containerd registry host configuration.
+   * Each registry_hosts represents a hosts.toml file.
+   * At most 25 registry_hosts are allowed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.ContainerdConfig.RegistryHostConfig registry_hosts = 3;
+   * </code>
+   */
+  java.util.List<com.google.container.v1beta1.ContainerdConfig.RegistryHostConfig>
+      getRegistryHostsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * RegistryHostConfig configures containerd registry host configuration.
+   * Each registry_hosts represents a hosts.toml file.
+   * At most 25 registry_hosts are allowed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.ContainerdConfig.RegistryHostConfig registry_hosts = 3;
+   * </code>
+   */
+  com.google.container.v1beta1.ContainerdConfig.RegistryHostConfig getRegistryHosts(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * RegistryHostConfig configures containerd registry host configuration.
+   * Each registry_hosts represents a hosts.toml file.
+   * At most 25 registry_hosts are allowed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.ContainerdConfig.RegistryHostConfig registry_hosts = 3;
+   * </code>
+   */
+  int getRegistryHostsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * RegistryHostConfig configures containerd registry host configuration.
+   * Each registry_hosts represents a hosts.toml file.
+   * At most 25 registry_hosts are allowed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.ContainerdConfig.RegistryHostConfig registry_hosts = 3;
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.container.v1beta1.ContainerdConfig.RegistryHostConfigOrBuilder>
+      getRegistryHostsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * RegistryHostConfig configures containerd registry host configuration.
+   * Each registry_hosts represents a hosts.toml file.
+   * At most 25 registry_hosts are allowed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.ContainerdConfig.RegistryHostConfig registry_hosts = 3;
+   * </code>
+   */
+  com.google.container.v1beta1.ContainerdConfig.RegistryHostConfigOrBuilder
+      getRegistryHostsOrBuilder(int index);
 }

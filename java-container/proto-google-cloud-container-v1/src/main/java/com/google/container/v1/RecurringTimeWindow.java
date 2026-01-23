@@ -124,7 +124,7 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * An RRULE (https://tools.ietf.org/html/rfc5545#section-3.8.5.3) for how
-   * this window reccurs. They go on for the span of time between the start and
+   * this window recurs. They go on for the span of time between the start and
    * end time.
    *
    * For example, to have something repeat every weekday, you'd use:
@@ -179,7 +179,7 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * An RRULE (https://tools.ietf.org/html/rfc5545#section-3.8.5.3) for how
-   * this window reccurs. They go on for the span of time between the start and
+   * this window recurs. They go on for the span of time between the start and
    * end time.
    *
    * For example, to have something repeat every weekday, you'd use:
@@ -811,7 +811,7 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * An RRULE (https://tools.ietf.org/html/rfc5545#section-3.8.5.3) for how
-     * this window reccurs. They go on for the span of time between the start and
+     * this window recurs. They go on for the span of time between the start and
      * end time.
      *
      * For example, to have something repeat every weekday, you'd use:
@@ -865,7 +865,7 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * An RRULE (https://tools.ietf.org/html/rfc5545#section-3.8.5.3) for how
-     * this window reccurs. They go on for the span of time between the start and
+     * this window recurs. They go on for the span of time between the start and
      * end time.
      *
      * For example, to have something repeat every weekday, you'd use:
@@ -919,7 +919,7 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * An RRULE (https://tools.ietf.org/html/rfc5545#section-3.8.5.3) for how
-     * this window reccurs. They go on for the span of time between the start and
+     * this window recurs. They go on for the span of time between the start and
      * end time.
      *
      * For example, to have something repeat every weekday, you'd use:
@@ -972,7 +972,7 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * An RRULE (https://tools.ietf.org/html/rfc5545#section-3.8.5.3) for how
-     * this window reccurs. They go on for the span of time between the start and
+     * this window recurs. They go on for the span of time between the start and
      * end time.
      *
      * For example, to have something repeat every weekday, you'd use:
@@ -1021,7 +1021,7 @@ public final class RecurringTimeWindow extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * An RRULE (https://tools.ietf.org/html/rfc5545#section-3.8.5.3) for how
-     * this window reccurs. They go on for the span of time between the start and
+     * this window recurs. They go on for the span of time between the start and
      * end time.
      *
      * For example, to have something repeat every weekday, you'd use:

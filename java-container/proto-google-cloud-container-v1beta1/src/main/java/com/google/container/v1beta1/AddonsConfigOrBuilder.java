@@ -124,7 +124,7 @@ public interface AddonsConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2066
+   *     google/container/v1beta1/cluster_service.proto;l=2261
    * @return Whether the kubernetesDashboard field is set.
    */
   @java.lang.Deprecated
@@ -146,7 +146,7 @@ public interface AddonsConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2066
+   *     google/container/v1beta1/cluster_service.proto;l=2261
    * @return The kubernetesDashboard.
    */
   @java.lang.Deprecated
@@ -224,7 +224,7 @@ public interface AddonsConfigOrBuilder
    * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.istio_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2075
+   *     google/container/v1beta1/cluster_service.proto;l=2270
    * @return Whether the istioConfig field is set.
    */
   @java.lang.Deprecated
@@ -241,7 +241,7 @@ public interface AddonsConfigOrBuilder
    * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.istio_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2075
+   *     google/container/v1beta1/cluster_service.proto;l=2270
    * @return The istioConfig.
    */
   @java.lang.Deprecated
@@ -439,7 +439,7 @@ public interface AddonsConfigOrBuilder
    * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.kalm_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2095
+   *     google/container/v1beta1/cluster_service.proto;l=2290
    * @return Whether the kalmConfig field is set.
    */
   @java.lang.Deprecated
@@ -456,7 +456,7 @@ public interface AddonsConfigOrBuilder
    * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.kalm_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2095
+   *     google/container/v1beta1/cluster_service.proto;l=2290
    * @return The kalmConfig.
    */
   @java.lang.Deprecated
@@ -803,4 +803,84 @@ public interface AddonsConfigOrBuilder
    * <code>.google.container.v1beta1.LustreCsiDriverConfig lustre_csi_driver_config = 23;</code>
    */
   com.google.container.v1beta1.LustreCsiDriverConfigOrBuilder getLustreCsiDriverConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Pod Snapshot feature.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.PodSnapshotConfig pod_snapshot_config = 24;</code>
+   *
+   * @return Whether the podSnapshotConfig field is set.
+   */
+  boolean hasPodSnapshotConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Pod Snapshot feature.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.PodSnapshotConfig pod_snapshot_config = 24;</code>
+   *
+   * @return The podSnapshotConfig.
+   */
+  com.google.container.v1beta1.PodSnapshotConfig getPodSnapshotConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Pod Snapshot feature.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.PodSnapshotConfig pod_snapshot_config = 24;</code>
+   */
+  com.google.container.v1beta1.PodSnapshotConfigOrBuilder getPodSnapshotConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the slice controller add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.SliceControllerConfig slice_controller_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sliceControllerConfig field is set.
+   */
+  boolean hasSliceControllerConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the slice controller add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.SliceControllerConfig slice_controller_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sliceControllerConfig.
+   */
+  com.google.container.v1beta1.SliceControllerConfig getSliceControllerConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the slice controller add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.SliceControllerConfig slice_controller_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1beta1.SliceControllerConfigOrBuilder getSliceControllerConfigOrBuilder();
 }

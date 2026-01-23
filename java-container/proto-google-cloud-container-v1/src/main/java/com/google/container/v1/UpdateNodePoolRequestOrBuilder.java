@@ -36,7 +36,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3758
+   *     google/container/v1/cluster_service.proto;l=4041
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -54,7 +54,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3758
+   *     google/container/v1/cluster_service.proto;l=4041
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -73,7 +73,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3764
+   *     google/container/v1/cluster_service.proto;l=4047
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -92,7 +92,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3764
+   *     google/container/v1/cluster_service.proto;l=4047
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -109,7 +109,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3768
+   *     google/container/v1/cluster_service.proto;l=4051
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -126,7 +126,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3768
+   *     google/container/v1/cluster_service.proto;l=4051
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
@@ -143,7 +143,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3772
+   *     google/container/v1/cluster_service.proto;l=4055
    * @return The nodePoolId.
    */
   @java.lang.Deprecated
@@ -160,7 +160,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3772
+   *     google/container/v1/cluster_service.proto;l=4055
    * @return The bytes for nodePoolId.
    */
   @java.lang.Deprecated
@@ -1423,4 +1423,84 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>.google.container.v1.BootDisk boot_disk = 47;</code>
    */
   com.google.container.v1.BootDiskOrBuilder getBootDiskOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired node drain configuration for nodes in the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePool.NodeDrainConfig node_drain_config = 48;</code>
+   *
+   * @return Whether the nodeDrainConfig field is set.
+   */
+  boolean hasNodeDrainConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired node drain configuration for nodes in the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePool.NodeDrainConfig node_drain_config = 48;</code>
+   *
+   * @return The nodeDrainConfig.
+   */
+  com.google.container.v1.NodePool.NodeDrainConfig getNodeDrainConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired node drain configuration for nodes in the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePool.NodeDrainConfig node_drain_config = 48;</code>
+   */
+  com.google.container.v1.NodePool.NodeDrainConfigOrBuilder getNodeDrainConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Consolidation delay defines duration after which the Cluster Autoscaler can
+   * scale down underutilized nodes. If not set, nodes are scaled down by
+   * default behavior, i.e. according to the chosen autoscaling profile.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration consolidation_delay = 49;</code>
+   *
+   * @return Whether the consolidationDelay field is set.
+   */
+  boolean hasConsolidationDelay();
+
+  /**
+   *
+   *
+   * <pre>
+   * Consolidation delay defines duration after which the Cluster Autoscaler can
+   * scale down underutilized nodes. If not set, nodes are scaled down by
+   * default behavior, i.e. according to the chosen autoscaling profile.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration consolidation_delay = 49;</code>
+   *
+   * @return The consolidationDelay.
+   */
+  com.google.protobuf.Duration getConsolidationDelay();
+
+  /**
+   *
+   *
+   * <pre>
+   * Consolidation delay defines duration after which the Cluster Autoscaler can
+   * scale down underutilized nodes. If not set, nodes are scaled down by
+   * default behavior, i.e. according to the chosen autoscaling profile.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration consolidation_delay = 49;</code>
+   */
+  com.google.protobuf.DurationOrBuilder getConsolidationDelayOrBuilder();
 }

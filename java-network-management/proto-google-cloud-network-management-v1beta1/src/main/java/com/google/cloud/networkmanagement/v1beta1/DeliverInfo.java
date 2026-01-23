@@ -262,6 +262,16 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>REDIS_CLUSTER = 17;</code>
      */
     REDIS_CLUSTER(17),
+    /**
+     *
+     *
+     * <pre>
+     * Target is a GKE Pod.
+     * </pre>
+     *
+     * <code>GKE_POD = 19;</code>
+     */
+    GKE_POD(19),
     UNRECOGNIZED(-1),
     ;
 
@@ -466,6 +476,17 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int REDIS_CLUSTER_VALUE = 17;
 
+    /**
+     *
+     *
+     * <pre>
+     * Target is a GKE Pod.
+     * </pre>
+     *
+     * <code>GKE_POD = 19;</code>
+     */
+    public static final int GKE_POD_VALUE = 19;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -526,6 +547,8 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
           return REDIS_INSTANCE;
         case 17:
           return REDIS_CLUSTER;
+        case 19:
+          return GKE_POD;
         default:
           return null;
       }

@@ -89,7 +89,7 @@ public interface RouteInfoOrBuilder
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1.RouteInfo.route_scope is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=621
+   *     google/cloud/networkmanagement/v1/trace.proto;l=642
    * @return The enum numeric value on the wire for routeScope.
    */
   @java.lang.Deprecated
@@ -108,7 +108,7 @@ public interface RouteInfoOrBuilder
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1.RouteInfo.route_scope is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=621
+   *     google/cloud/networkmanagement/v1/trace.proto;l=642
    * @return The routeScope.
    */
   @java.lang.Deprecated
@@ -236,7 +236,7 @@ public interface RouteInfoOrBuilder
    * <code>string next_hop = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1.RouteInfo.next_hop is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=641
+   *     google/cloud/networkmanagement/v1/trace.proto;l=662
    * @return The nextHop.
    */
   @java.lang.Deprecated
@@ -254,7 +254,7 @@ public interface RouteInfoOrBuilder
    * <code>string next_hop = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1.RouteInfo.next_hop is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=641
+   *     google/cloud/networkmanagement/v1/trace.proto;l=662
    * @return The bytes for nextHop.
    */
   @java.lang.Deprecated
@@ -681,7 +681,7 @@ public interface RouteInfoOrBuilder
    * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1.RouteInfo.advertised_route_next_hop_uri is
-   *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=681
+   *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=702
    * @return Whether the advertisedRouteNextHopUri field is set.
    */
   @java.lang.Deprecated
@@ -701,7 +701,7 @@ public interface RouteInfoOrBuilder
    * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1.RouteInfo.advertised_route_next_hop_uri is
-   *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=681
+   *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=702
    * @return The advertisedRouteNextHopUri.
    */
   @java.lang.Deprecated
@@ -721,7 +721,7 @@ public interface RouteInfoOrBuilder
    * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1.RouteInfo.advertised_route_next_hop_uri is
-   *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=681
+   *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=702
    * @return The bytes for advertisedRouteNextHopUri.
    */
   @java.lang.Deprecated

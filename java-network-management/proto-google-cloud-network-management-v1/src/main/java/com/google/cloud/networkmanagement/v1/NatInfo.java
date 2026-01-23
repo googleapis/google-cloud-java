@@ -49,6 +49,7 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
     newDestinationIp_ = "";
     routerUri_ = "";
     natGatewayName_ = "";
+    cloudNatGatewayType_ = 0;
   }
 
   @java.lang.Override
@@ -298,6 +299,237 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.networkmanagement.v1.NatInfo.Type)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Types of Cloud NAT gateway.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.networkmanagement.v1.NatInfo.CloudNatGatewayType}
+   */
+  public enum CloudNatGatewayType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Type is unspecified.
+     * </pre>
+     *
+     * <code>CLOUD_NAT_GATEWAY_TYPE_UNSPECIFIED = 0;</code>
+     */
+    CLOUD_NAT_GATEWAY_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Public NAT gateway.
+     * </pre>
+     *
+     * <code>PUBLIC_NAT44 = 1;</code>
+     */
+    PUBLIC_NAT44(1),
+    /**
+     *
+     *
+     * <pre>
+     * Public NAT64 gateway.
+     * </pre>
+     *
+     * <code>PUBLIC_NAT64 = 2;</code>
+     */
+    PUBLIC_NAT64(2),
+    /**
+     *
+     *
+     * <pre>
+     * Private NAT gateway for NCC.
+     * </pre>
+     *
+     * <code>PRIVATE_NAT_NCC = 3;</code>
+     */
+    PRIVATE_NAT_NCC(3),
+    /**
+     *
+     *
+     * <pre>
+     * Private NAT gateway for hybrid connectivity.
+     * </pre>
+     *
+     * <code>PRIVATE_NAT_HYBRID = 4;</code>
+     */
+    PRIVATE_NAT_HYBRID(4),
+    /**
+     *
+     *
+     * <pre>
+     * Private NAT64 gateway.
+     * </pre>
+     *
+     * <code>PRIVATE_NAT64 = 5;</code>
+     */
+    PRIVATE_NAT64(5),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Type is unspecified.
+     * </pre>
+     *
+     * <code>CLOUD_NAT_GATEWAY_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int CLOUD_NAT_GATEWAY_TYPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Public NAT gateway.
+     * </pre>
+     *
+     * <code>PUBLIC_NAT44 = 1;</code>
+     */
+    public static final int PUBLIC_NAT44_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Public NAT64 gateway.
+     * </pre>
+     *
+     * <code>PUBLIC_NAT64 = 2;</code>
+     */
+    public static final int PUBLIC_NAT64_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Private NAT gateway for NCC.
+     * </pre>
+     *
+     * <code>PRIVATE_NAT_NCC = 3;</code>
+     */
+    public static final int PRIVATE_NAT_NCC_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * Private NAT gateway for hybrid connectivity.
+     * </pre>
+     *
+     * <code>PRIVATE_NAT_HYBRID = 4;</code>
+     */
+    public static final int PRIVATE_NAT_HYBRID_VALUE = 4;
+
+    /**
+     *
+     *
+     * <pre>
+     * Private NAT64 gateway.
+     * </pre>
+     *
+     * <code>PRIVATE_NAT64 = 5;</code>
+     */
+    public static final int PRIVATE_NAT64_VALUE = 5;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static CloudNatGatewayType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static CloudNatGatewayType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return CLOUD_NAT_GATEWAY_TYPE_UNSPECIFIED;
+        case 1:
+          return PUBLIC_NAT44;
+        case 2:
+          return PUBLIC_NAT64;
+        case 3:
+          return PRIVATE_NAT_NCC;
+        case 4:
+          return PRIVATE_NAT_HYBRID;
+        case 5:
+          return PRIVATE_NAT64;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<CloudNatGatewayType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<CloudNatGatewayType>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<CloudNatGatewayType>() {
+              public CloudNatGatewayType findValueByNumber(int number) {
+                return CloudNatGatewayType.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.networkmanagement.v1.NatInfo.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final CloudNatGatewayType[] VALUES = values();
+
+    public static CloudNatGatewayType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private CloudNatGatewayType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.networkmanagement.v1.NatInfo.CloudNatGatewayType)
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
@@ -841,6 +1073,51 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int CLOUD_NAT_GATEWAY_TYPE_FIELD_NUMBER = 14;
+  private int cloudNatGatewayType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Type of Cloud NAT gateway. Only valid when `type` is CLOUD_NAT.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.NatInfo.CloudNatGatewayType cloud_nat_gateway_type = 14;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for cloudNatGatewayType.
+   */
+  @java.lang.Override
+  public int getCloudNatGatewayTypeValue() {
+    return cloudNatGatewayType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Type of Cloud NAT gateway. Only valid when `type` is CLOUD_NAT.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.NatInfo.CloudNatGatewayType cloud_nat_gateway_type = 14;
+   * </code>
+   *
+   * @return The cloudNatGatewayType.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1.NatInfo.CloudNatGatewayType
+      getCloudNatGatewayType() {
+    com.google.cloud.networkmanagement.v1.NatInfo.CloudNatGatewayType result =
+        com.google.cloud.networkmanagement.v1.NatInfo.CloudNatGatewayType.forNumber(
+            cloudNatGatewayType_);
+    return result == null
+        ? com.google.cloud.networkmanagement.v1.NatInfo.CloudNatGatewayType.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -894,6 +1171,12 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(natGatewayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, natGatewayName_);
     }
+    if (cloudNatGatewayType_
+        != com.google.cloud.networkmanagement.v1.NatInfo.CloudNatGatewayType
+            .CLOUD_NAT_GATEWAY_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(14, cloudNatGatewayType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -942,6 +1225,12 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(natGatewayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, natGatewayName_);
     }
+    if (cloudNatGatewayType_
+        != com.google.cloud.networkmanagement.v1.NatInfo.CloudNatGatewayType
+            .CLOUD_NAT_GATEWAY_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(14, cloudNatGatewayType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -971,6 +1260,7 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
     if (getNewDestinationPort() != other.getNewDestinationPort()) return false;
     if (!getRouterUri().equals(other.getRouterUri())) return false;
     if (!getNatGatewayName().equals(other.getNatGatewayName())) return false;
+    if (cloudNatGatewayType_ != other.cloudNatGatewayType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1008,6 +1298,8 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getRouterUri().hashCode();
     hash = (37 * hash) + NAT_GATEWAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getNatGatewayName().hashCode();
+    hash = (37 * hash) + CLOUD_NAT_GATEWAY_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + cloudNatGatewayType_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1161,6 +1453,7 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
       newDestinationPort_ = 0;
       routerUri_ = "";
       natGatewayName_ = "";
+      cloudNatGatewayType_ = 0;
       return this;
     }
 
@@ -1235,6 +1528,9 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.natGatewayName_ = natGatewayName_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.cloudNatGatewayType_ = cloudNatGatewayType_;
       }
     }
 
@@ -1337,6 +1633,9 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
         natGatewayName_ = other.natGatewayName_;
         bitField0_ |= 0x00001000;
         onChanged();
+      }
+      if (other.cloudNatGatewayType_ != 0) {
+        setCloudNatGatewayTypeValue(other.getCloudNatGatewayTypeValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1442,6 +1741,12 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00001000;
                 break;
               } // case 106
+            case 112:
+              {
+                cloudNatGatewayType_ = input.readEnum();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 112
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2672,6 +2977,116 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       natGatewayName_ = value;
       bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    private int cloudNatGatewayType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Type of Cloud NAT gateway. Only valid when `type` is CLOUD_NAT.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.NatInfo.CloudNatGatewayType cloud_nat_gateway_type = 14;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for cloudNatGatewayType.
+     */
+    @java.lang.Override
+    public int getCloudNatGatewayTypeValue() {
+      return cloudNatGatewayType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Type of Cloud NAT gateway. Only valid when `type` is CLOUD_NAT.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.NatInfo.CloudNatGatewayType cloud_nat_gateway_type = 14;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for cloudNatGatewayType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCloudNatGatewayTypeValue(int value) {
+      cloudNatGatewayType_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Type of Cloud NAT gateway. Only valid when `type` is CLOUD_NAT.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.NatInfo.CloudNatGatewayType cloud_nat_gateway_type = 14;
+     * </code>
+     *
+     * @return The cloudNatGatewayType.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1.NatInfo.CloudNatGatewayType
+        getCloudNatGatewayType() {
+      com.google.cloud.networkmanagement.v1.NatInfo.CloudNatGatewayType result =
+          com.google.cloud.networkmanagement.v1.NatInfo.CloudNatGatewayType.forNumber(
+              cloudNatGatewayType_);
+      return result == null
+          ? com.google.cloud.networkmanagement.v1.NatInfo.CloudNatGatewayType.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Type of Cloud NAT gateway. Only valid when `type` is CLOUD_NAT.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.NatInfo.CloudNatGatewayType cloud_nat_gateway_type = 14;
+     * </code>
+     *
+     * @param value The cloudNatGatewayType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCloudNatGatewayType(
+        com.google.cloud.networkmanagement.v1.NatInfo.CloudNatGatewayType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00002000;
+      cloudNatGatewayType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Type of Cloud NAT gateway. Only valid when `type` is CLOUD_NAT.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.NatInfo.CloudNatGatewayType cloud_nat_gateway_type = 14;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCloudNatGatewayType() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      cloudNatGatewayType_ = 0;
       onChanged();
       return this;
     }

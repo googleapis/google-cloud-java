@@ -1968,6 +1968,43 @@ public interface NodeConfigOrBuilder
    *
    *
    * <pre>
+   * The configuration for GPU Direct
+   * </pre>
+   *
+   * <code>optional .google.container.v1beta1.GPUDirectConfig gpu_direct_config = 51;</code>
+   *
+   * @return Whether the gpuDirectConfig field is set.
+   */
+  boolean hasGpuDirectConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for GPU Direct
+   * </pre>
+   *
+   * <code>optional .google.container.v1beta1.GPUDirectConfig gpu_direct_config = 51;</code>
+   *
+   * @return The gpuDirectConfig.
+   */
+  com.google.container.v1beta1.GPUDirectConfig getGpuDirectConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for GPU Direct
+   * </pre>
+   *
+   * <code>optional .google.container.v1beta1.GPUDirectConfig gpu_direct_config = 51;</code>
+   */
+  com.google.container.v1beta1.GPUDirectConfigOrBuilder getGpuDirectConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The maximum duration for the nodes to exist.
    * If unspecified, the nodes can exist indefinitely.
    * </pre>
@@ -2150,4 +2187,47 @@ public interface NodeConfigOrBuilder
    * <code>.google.container.v1beta1.BootDisk boot_disk = 57;</code>
    */
   com.google.container.v1beta1.BootDiskOrBuilder getBootDiskOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Consolidation delay defines duration after which the Cluster Autoscaler can
+   * scale down underutilized nodes. If not set, nodes are scaled down by
+   * default behavior, i.e. according to the chosen autoscaling profile.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration consolidation_delay = 60;</code>
+   *
+   * @return Whether the consolidationDelay field is set.
+   */
+  boolean hasConsolidationDelay();
+
+  /**
+   *
+   *
+   * <pre>
+   * Consolidation delay defines duration after which the Cluster Autoscaler can
+   * scale down underutilized nodes. If not set, nodes are scaled down by
+   * default behavior, i.e. according to the chosen autoscaling profile.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration consolidation_delay = 60;</code>
+   *
+   * @return The consolidationDelay.
+   */
+  com.google.protobuf.Duration getConsolidationDelay();
+
+  /**
+   *
+   *
+   * <pre>
+   * Consolidation delay defines duration after which the Cluster Autoscaler can
+   * scale down underutilized nodes. If not set, nodes are scaled down by
+   * default behavior, i.e. according to the chosen autoscaling profile.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration consolidation_delay = 60;</code>
+   */
+  com.google.protobuf.DurationOrBuilder getConsolidationDelayOrBuilder();
 }

@@ -3018,6 +3018,59 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         : secondaryBootDiskUpdateStrategy_;
   }
 
+  public static final int GPU_DIRECT_CONFIG_FIELD_NUMBER = 51;
+  private com.google.container.v1.GPUDirectConfig gpuDirectConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for GPU Direct
+   * </pre>
+   *
+   * <code>optional .google.container.v1.GPUDirectConfig gpu_direct_config = 51;</code>
+   *
+   * @return Whether the gpuDirectConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasGpuDirectConfig() {
+    return ((bitField0_ & 0x00080000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for GPU Direct
+   * </pre>
+   *
+   * <code>optional .google.container.v1.GPUDirectConfig gpu_direct_config = 51;</code>
+   *
+   * @return The gpuDirectConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.GPUDirectConfig getGpuDirectConfig() {
+    return gpuDirectConfig_ == null
+        ? com.google.container.v1.GPUDirectConfig.getDefaultInstance()
+        : gpuDirectConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for GPU Direct
+   * </pre>
+   *
+   * <code>optional .google.container.v1.GPUDirectConfig gpu_direct_config = 51;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.GPUDirectConfigOrBuilder getGpuDirectConfigOrBuilder() {
+    return gpuDirectConfig_ == null
+        ? com.google.container.v1.GPUDirectConfig.getDefaultInstance()
+        : gpuDirectConfig_;
+  }
+
   public static final int MAX_RUN_DURATION_FIELD_NUMBER = 53;
   private com.google.protobuf.Duration maxRunDuration_;
 
@@ -3035,7 +3088,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasMaxRunDuration() {
-    return ((bitField0_ & 0x00080000) != 0);
+    return ((bitField0_ & 0x00100000) != 0);
   }
 
   /**
@@ -3093,7 +3146,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasLocalSsdEncryptionMode() {
-    return ((bitField0_ & 0x00100000) != 0);
+    return ((bitField0_ & 0x00200000) != 0);
   }
 
   /**
@@ -3204,7 +3257,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasFlexStart() {
-    return ((bitField0_ & 0x00200000) != 0);
+    return ((bitField0_ & 0x00400000) != 0);
   }
 
   /**
@@ -3239,7 +3292,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasBootDisk() {
-    return ((bitField0_ & 0x00400000) != 0);
+    return ((bitField0_ & 0x00800000) != 0);
   }
 
   /**
@@ -3270,6 +3323,65 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.container.v1.BootDiskOrBuilder getBootDiskOrBuilder() {
     return bootDisk_ == null ? com.google.container.v1.BootDisk.getDefaultInstance() : bootDisk_;
+  }
+
+  public static final int CONSOLIDATION_DELAY_FIELD_NUMBER = 60;
+  private com.google.protobuf.Duration consolidationDelay_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Consolidation delay defines duration after which the Cluster Autoscaler can
+   * scale down underutilized nodes. If not set, nodes are scaled down by
+   * default behavior, i.e. according to the chosen autoscaling profile.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration consolidation_delay = 60;</code>
+   *
+   * @return Whether the consolidationDelay field is set.
+   */
+  @java.lang.Override
+  public boolean hasConsolidationDelay() {
+    return ((bitField0_ & 0x01000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Consolidation delay defines duration after which the Cluster Autoscaler can
+   * scale down underutilized nodes. If not set, nodes are scaled down by
+   * default behavior, i.e. according to the chosen autoscaling profile.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration consolidation_delay = 60;</code>
+   *
+   * @return The consolidationDelay.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getConsolidationDelay() {
+    return consolidationDelay_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : consolidationDelay_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Consolidation delay defines duration after which the Cluster Autoscaler can
+   * scale down underutilized nodes. If not set, nodes are scaled down by
+   * default behavior, i.e. according to the chosen autoscaling profile.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration consolidation_delay = 60;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getConsolidationDelayOrBuilder() {
+    return consolidationDelay_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : consolidationDelay_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -3404,9 +3516,12 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(50, getSecondaryBootDiskUpdateStrategy());
     }
     if (((bitField0_ & 0x00080000) != 0)) {
-      output.writeMessage(53, getMaxRunDuration());
+      output.writeMessage(51, getGpuDirectConfig());
     }
     if (((bitField0_ & 0x00100000) != 0)) {
+      output.writeMessage(53, getMaxRunDuration());
+    }
+    if (((bitField0_ & 0x00200000) != 0)) {
       output.writeEnum(54, localSsdEncryptionMode_);
     }
     if (effectiveCgroupMode_
@@ -3414,11 +3529,14 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(55, effectiveCgroupMode_);
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       output.writeBool(56, flexStart_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       output.writeMessage(57, getBootDisk());
+    }
+    if (((bitField0_ & 0x01000000) != 0)) {
+      output.writeMessage(60, getConsolidationDelay());
     }
     getUnknownFields().writeTo(output);
   }
@@ -3599,9 +3717,12 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
               50, getSecondaryBootDiskUpdateStrategy());
     }
     if (((bitField0_ & 0x00080000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(53, getMaxRunDuration());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(51, getGpuDirectConfig());
     }
     if (((bitField0_ & 0x00100000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(53, getMaxRunDuration());
+    }
+    if (((bitField0_ & 0x00200000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(54, localSsdEncryptionMode_);
     }
     if (effectiveCgroupMode_
@@ -3609,11 +3730,14 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(55, effectiveCgroupMode_);
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(56, flexStart_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(57, getBootDisk());
+    }
+    if (((bitField0_ & 0x01000000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(60, getConsolidationDelay());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -3731,6 +3855,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (!getSecondaryBootDiskUpdateStrategy().equals(other.getSecondaryBootDiskUpdateStrategy()))
         return false;
     }
+    if (hasGpuDirectConfig() != other.hasGpuDirectConfig()) return false;
+    if (hasGpuDirectConfig()) {
+      if (!getGpuDirectConfig().equals(other.getGpuDirectConfig())) return false;
+    }
     if (hasMaxRunDuration() != other.hasMaxRunDuration()) return false;
     if (hasMaxRunDuration()) {
       if (!getMaxRunDuration().equals(other.getMaxRunDuration())) return false;
@@ -3747,6 +3875,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasBootDisk() != other.hasBootDisk()) return false;
     if (hasBootDisk()) {
       if (!getBootDisk().equals(other.getBootDisk())) return false;
+    }
+    if (hasConsolidationDelay() != other.hasConsolidationDelay()) return false;
+    if (hasConsolidationDelay()) {
+      if (!getConsolidationDelay().equals(other.getConsolidationDelay())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -3895,6 +4027,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SECONDARY_BOOT_DISK_UPDATE_STRATEGY_FIELD_NUMBER;
       hash = (53 * hash) + getSecondaryBootDiskUpdateStrategy().hashCode();
     }
+    if (hasGpuDirectConfig()) {
+      hash = (37 * hash) + GPU_DIRECT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getGpuDirectConfig().hashCode();
+    }
     if (hasMaxRunDuration()) {
       hash = (37 * hash) + MAX_RUN_DURATION_FIELD_NUMBER;
       hash = (53 * hash) + getMaxRunDuration().hashCode();
@@ -3912,6 +4048,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasBootDisk()) {
       hash = (37 * hash) + BOOT_DISK_FIELD_NUMBER;
       hash = (53 * hash) + getBootDisk().hashCode();
+    }
+    if (hasConsolidationDelay()) {
+      hash = (37 * hash) + CONSOLIDATION_DELAY_FIELD_NUMBER;
+      hash = (53 * hash) + getConsolidationDelay().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -4110,8 +4250,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         getResourceManagerTagsFieldBuilder();
         getSecondaryBootDisksFieldBuilder();
         getSecondaryBootDiskUpdateStrategyFieldBuilder();
+        getGpuDirectConfigFieldBuilder();
         getMaxRunDurationFieldBuilder();
         getBootDiskFieldBuilder();
+        getConsolidationDelayFieldBuilder();
       }
     }
 
@@ -4254,6 +4396,11 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         secondaryBootDiskUpdateStrategyBuilder_.dispose();
         secondaryBootDiskUpdateStrategyBuilder_ = null;
       }
+      gpuDirectConfig_ = null;
+      if (gpuDirectConfigBuilder_ != null) {
+        gpuDirectConfigBuilder_.dispose();
+        gpuDirectConfigBuilder_ = null;
+      }
       maxRunDuration_ = null;
       if (maxRunDurationBuilder_ != null) {
         maxRunDurationBuilder_.dispose();
@@ -4266,6 +4413,11 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (bootDiskBuilder_ != null) {
         bootDiskBuilder_.dispose();
         bootDiskBuilder_ = null;
+      }
+      consolidationDelay_ = null;
+      if (consolidationDelayBuilder_ != null) {
+        consolidationDelayBuilder_.dispose();
+        consolidationDelayBuilder_ = null;
       }
       return this;
     }
@@ -4516,24 +4668,36 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00040000;
       }
       if (((from_bitField1_ & 0x00000100) != 0)) {
-        result.maxRunDuration_ =
-            maxRunDurationBuilder_ == null ? maxRunDuration_ : maxRunDurationBuilder_.build();
+        result.gpuDirectConfig_ =
+            gpuDirectConfigBuilder_ == null ? gpuDirectConfig_ : gpuDirectConfigBuilder_.build();
         to_bitField0_ |= 0x00080000;
       }
       if (((from_bitField1_ & 0x00000200) != 0)) {
-        result.localSsdEncryptionMode_ = localSsdEncryptionMode_;
+        result.maxRunDuration_ =
+            maxRunDurationBuilder_ == null ? maxRunDuration_ : maxRunDurationBuilder_.build();
         to_bitField0_ |= 0x00100000;
       }
       if (((from_bitField1_ & 0x00000400) != 0)) {
-        result.effectiveCgroupMode_ = effectiveCgroupMode_;
-      }
-      if (((from_bitField1_ & 0x00000800) != 0)) {
-        result.flexStart_ = flexStart_;
+        result.localSsdEncryptionMode_ = localSsdEncryptionMode_;
         to_bitField0_ |= 0x00200000;
       }
+      if (((from_bitField1_ & 0x00000800) != 0)) {
+        result.effectiveCgroupMode_ = effectiveCgroupMode_;
+      }
       if (((from_bitField1_ & 0x00001000) != 0)) {
-        result.bootDisk_ = bootDiskBuilder_ == null ? bootDisk_ : bootDiskBuilder_.build();
+        result.flexStart_ = flexStart_;
         to_bitField0_ |= 0x00400000;
+      }
+      if (((from_bitField1_ & 0x00002000) != 0)) {
+        result.bootDisk_ = bootDiskBuilder_ == null ? bootDisk_ : bootDiskBuilder_.build();
+        to_bitField0_ |= 0x00800000;
+      }
+      if (((from_bitField1_ & 0x00004000) != 0)) {
+        result.consolidationDelay_ =
+            consolidationDelayBuilder_ == null
+                ? consolidationDelay_
+                : consolidationDelayBuilder_.build();
+        to_bitField0_ |= 0x01000000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4807,6 +4971,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.hasSecondaryBootDiskUpdateStrategy()) {
         mergeSecondaryBootDiskUpdateStrategy(other.getSecondaryBootDiskUpdateStrategy());
       }
+      if (other.hasGpuDirectConfig()) {
+        mergeGpuDirectConfig(other.getGpuDirectConfig());
+      }
       if (other.hasMaxRunDuration()) {
         mergeMaxRunDuration(other.getMaxRunDuration());
       }
@@ -4821,6 +4988,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasBootDisk()) {
         mergeBootDisk(other.getBootDisk());
+      }
+      if (other.hasConsolidationDelay()) {
+        mergeConsolidationDelay(other.getConsolidationDelay());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -5144,36 +5314,49 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x00000080;
                 break;
               } // case 402
+            case 410:
+              {
+                input.readMessage(getGpuDirectConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000100;
+                break;
+              } // case 410
             case 426:
               {
                 input.readMessage(getMaxRunDurationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000100;
+                bitField1_ |= 0x00000200;
                 break;
               } // case 426
             case 432:
               {
                 localSsdEncryptionMode_ = input.readEnum();
-                bitField1_ |= 0x00000200;
+                bitField1_ |= 0x00000400;
                 break;
               } // case 432
             case 440:
               {
                 effectiveCgroupMode_ = input.readEnum();
-                bitField1_ |= 0x00000400;
+                bitField1_ |= 0x00000800;
                 break;
               } // case 440
             case 448:
               {
                 flexStart_ = input.readBool();
-                bitField1_ |= 0x00000800;
+                bitField1_ |= 0x00001000;
                 break;
               } // case 448
             case 458:
               {
                 input.readMessage(getBootDiskFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00001000;
+                bitField1_ |= 0x00002000;
                 break;
               } // case 458
+            case 482:
+              {
+                input.readMessage(
+                    getConsolidationDelayFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00004000;
+                break;
+              } // case 482
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -12929,6 +13112,201 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       return secondaryBootDiskUpdateStrategyBuilder_;
     }
 
+    private com.google.container.v1.GPUDirectConfig gpuDirectConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.GPUDirectConfig,
+            com.google.container.v1.GPUDirectConfig.Builder,
+            com.google.container.v1.GPUDirectConfigOrBuilder>
+        gpuDirectConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for GPU Direct
+     * </pre>
+     *
+     * <code>optional .google.container.v1.GPUDirectConfig gpu_direct_config = 51;</code>
+     *
+     * @return Whether the gpuDirectConfig field is set.
+     */
+    public boolean hasGpuDirectConfig() {
+      return ((bitField1_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for GPU Direct
+     * </pre>
+     *
+     * <code>optional .google.container.v1.GPUDirectConfig gpu_direct_config = 51;</code>
+     *
+     * @return The gpuDirectConfig.
+     */
+    public com.google.container.v1.GPUDirectConfig getGpuDirectConfig() {
+      if (gpuDirectConfigBuilder_ == null) {
+        return gpuDirectConfig_ == null
+            ? com.google.container.v1.GPUDirectConfig.getDefaultInstance()
+            : gpuDirectConfig_;
+      } else {
+        return gpuDirectConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for GPU Direct
+     * </pre>
+     *
+     * <code>optional .google.container.v1.GPUDirectConfig gpu_direct_config = 51;</code>
+     */
+    public Builder setGpuDirectConfig(com.google.container.v1.GPUDirectConfig value) {
+      if (gpuDirectConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gpuDirectConfig_ = value;
+      } else {
+        gpuDirectConfigBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for GPU Direct
+     * </pre>
+     *
+     * <code>optional .google.container.v1.GPUDirectConfig gpu_direct_config = 51;</code>
+     */
+    public Builder setGpuDirectConfig(
+        com.google.container.v1.GPUDirectConfig.Builder builderForValue) {
+      if (gpuDirectConfigBuilder_ == null) {
+        gpuDirectConfig_ = builderForValue.build();
+      } else {
+        gpuDirectConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for GPU Direct
+     * </pre>
+     *
+     * <code>optional .google.container.v1.GPUDirectConfig gpu_direct_config = 51;</code>
+     */
+    public Builder mergeGpuDirectConfig(com.google.container.v1.GPUDirectConfig value) {
+      if (gpuDirectConfigBuilder_ == null) {
+        if (((bitField1_ & 0x00000100) != 0)
+            && gpuDirectConfig_ != null
+            && gpuDirectConfig_ != com.google.container.v1.GPUDirectConfig.getDefaultInstance()) {
+          getGpuDirectConfigBuilder().mergeFrom(value);
+        } else {
+          gpuDirectConfig_ = value;
+        }
+      } else {
+        gpuDirectConfigBuilder_.mergeFrom(value);
+      }
+      if (gpuDirectConfig_ != null) {
+        bitField1_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for GPU Direct
+     * </pre>
+     *
+     * <code>optional .google.container.v1.GPUDirectConfig gpu_direct_config = 51;</code>
+     */
+    public Builder clearGpuDirectConfig() {
+      bitField1_ = (bitField1_ & ~0x00000100);
+      gpuDirectConfig_ = null;
+      if (gpuDirectConfigBuilder_ != null) {
+        gpuDirectConfigBuilder_.dispose();
+        gpuDirectConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for GPU Direct
+     * </pre>
+     *
+     * <code>optional .google.container.v1.GPUDirectConfig gpu_direct_config = 51;</code>
+     */
+    public com.google.container.v1.GPUDirectConfig.Builder getGpuDirectConfigBuilder() {
+      bitField1_ |= 0x00000100;
+      onChanged();
+      return getGpuDirectConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for GPU Direct
+     * </pre>
+     *
+     * <code>optional .google.container.v1.GPUDirectConfig gpu_direct_config = 51;</code>
+     */
+    public com.google.container.v1.GPUDirectConfigOrBuilder getGpuDirectConfigOrBuilder() {
+      if (gpuDirectConfigBuilder_ != null) {
+        return gpuDirectConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return gpuDirectConfig_ == null
+            ? com.google.container.v1.GPUDirectConfig.getDefaultInstance()
+            : gpuDirectConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for GPU Direct
+     * </pre>
+     *
+     * <code>optional .google.container.v1.GPUDirectConfig gpu_direct_config = 51;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.GPUDirectConfig,
+            com.google.container.v1.GPUDirectConfig.Builder,
+            com.google.container.v1.GPUDirectConfigOrBuilder>
+        getGpuDirectConfigFieldBuilder() {
+      if (gpuDirectConfigBuilder_ == null) {
+        gpuDirectConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.GPUDirectConfig,
+                com.google.container.v1.GPUDirectConfig.Builder,
+                com.google.container.v1.GPUDirectConfigOrBuilder>(
+                getGpuDirectConfig(), getParentForChildren(), isClean());
+        gpuDirectConfig_ = null;
+      }
+      return gpuDirectConfigBuilder_;
+    }
+
     private com.google.protobuf.Duration maxRunDuration_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Duration,
@@ -12949,7 +13327,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the maxRunDuration field is set.
      */
     public boolean hasMaxRunDuration() {
-      return ((bitField1_ & 0x00000100) != 0);
+      return ((bitField1_ & 0x00000200) != 0);
     }
 
     /**
@@ -12993,7 +13371,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         maxRunDurationBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000100;
+      bitField1_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -13014,7 +13392,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         maxRunDurationBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000100;
+      bitField1_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -13031,7 +13409,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeMaxRunDuration(com.google.protobuf.Duration value) {
       if (maxRunDurationBuilder_ == null) {
-        if (((bitField1_ & 0x00000100) != 0)
+        if (((bitField1_ & 0x00000200) != 0)
             && maxRunDuration_ != null
             && maxRunDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getMaxRunDurationBuilder().mergeFrom(value);
@@ -13042,7 +13420,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         maxRunDurationBuilder_.mergeFrom(value);
       }
       if (maxRunDuration_ != null) {
-        bitField1_ |= 0x00000100;
+        bitField1_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -13059,7 +13437,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration max_run_duration = 53;</code>
      */
     public Builder clearMaxRunDuration() {
-      bitField1_ = (bitField1_ & ~0x00000100);
+      bitField1_ = (bitField1_ & ~0x00000200);
       maxRunDuration_ = null;
       if (maxRunDurationBuilder_ != null) {
         maxRunDurationBuilder_.dispose();
@@ -13080,7 +13458,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration max_run_duration = 53;</code>
      */
     public com.google.protobuf.Duration.Builder getMaxRunDurationBuilder() {
-      bitField1_ |= 0x00000100;
+      bitField1_ |= 0x00000200;
       onChanged();
       return getMaxRunDurationFieldBuilder().getBuilder();
     }
@@ -13150,7 +13528,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasLocalSsdEncryptionMode() {
-      return ((bitField1_ & 0x00000200) != 0);
+      return ((bitField1_ & 0x00000400) != 0);
     }
 
     /**
@@ -13189,7 +13567,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setLocalSsdEncryptionModeValue(int value) {
       localSsdEncryptionMode_ = value;
-      bitField1_ |= 0x00000200;
+      bitField1_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -13238,7 +13616,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField1_ |= 0x00000200;
+      bitField1_ |= 0x00000400;
       localSsdEncryptionMode_ = value.getNumber();
       onChanged();
       return this;
@@ -13259,7 +13637,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLocalSsdEncryptionMode() {
-      bitField1_ = (bitField1_ & ~0x00000200);
+      bitField1_ = (bitField1_ & ~0x00000400);
       localSsdEncryptionMode_ = 0;
       onChanged();
       return this;
@@ -13307,7 +13685,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setEffectiveCgroupModeValue(int value) {
       effectiveCgroupMode_ = value;
-      bitField1_ |= 0x00000400;
+      bitField1_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -13359,7 +13737,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField1_ |= 0x00000400;
+      bitField1_ |= 0x00000800;
       effectiveCgroupMode_ = value.getNumber();
       onChanged();
       return this;
@@ -13382,7 +13760,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEffectiveCgroupMode() {
-      bitField1_ = (bitField1_ & ~0x00000400);
+      bitField1_ = (bitField1_ & ~0x00000800);
       effectiveCgroupMode_ = 0;
       onChanged();
       return this;
@@ -13403,7 +13781,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasFlexStart() {
-      return ((bitField1_ & 0x00000800) != 0);
+      return ((bitField1_ & 0x00001000) != 0);
     }
 
     /**
@@ -13437,7 +13815,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setFlexStart(boolean value) {
 
       flexStart_ = value;
-      bitField1_ |= 0x00000800;
+      bitField1_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -13454,7 +13832,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFlexStart() {
-      bitField1_ = (bitField1_ & ~0x00000800);
+      bitField1_ = (bitField1_ & ~0x00001000);
       flexStart_ = false;
       onChanged();
       return this;
@@ -13479,7 +13857,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the bootDisk field is set.
      */
     public boolean hasBootDisk() {
-      return ((bitField1_ & 0x00001000) != 0);
+      return ((bitField1_ & 0x00002000) != 0);
     }
 
     /**
@@ -13521,7 +13899,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         bootDiskBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00001000;
+      bitField1_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -13541,7 +13919,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         bootDiskBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00001000;
+      bitField1_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -13557,7 +13935,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeBootDisk(com.google.container.v1.BootDisk value) {
       if (bootDiskBuilder_ == null) {
-        if (((bitField1_ & 0x00001000) != 0)
+        if (((bitField1_ & 0x00002000) != 0)
             && bootDisk_ != null
             && bootDisk_ != com.google.container.v1.BootDisk.getDefaultInstance()) {
           getBootDiskBuilder().mergeFrom(value);
@@ -13568,7 +13946,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         bootDiskBuilder_.mergeFrom(value);
       }
       if (bootDisk_ != null) {
-        bitField1_ |= 0x00001000;
+        bitField1_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -13584,7 +13962,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.BootDisk boot_disk = 57;</code>
      */
     public Builder clearBootDisk() {
-      bitField1_ = (bitField1_ & ~0x00001000);
+      bitField1_ = (bitField1_ & ~0x00002000);
       bootDisk_ = null;
       if (bootDiskBuilder_ != null) {
         bootDiskBuilder_.dispose();
@@ -13604,7 +13982,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.BootDisk boot_disk = 57;</code>
      */
     public com.google.container.v1.BootDisk.Builder getBootDiskBuilder() {
-      bitField1_ |= 0x00001000;
+      bitField1_ |= 0x00002000;
       onChanged();
       return getBootDiskFieldBuilder().getBuilder();
     }
@@ -13652,6 +14030,218 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         bootDisk_ = null;
       }
       return bootDiskBuilder_;
+    }
+
+    private com.google.protobuf.Duration consolidationDelay_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        consolidationDelayBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Consolidation delay defines duration after which the Cluster Autoscaler can
+     * scale down underutilized nodes. If not set, nodes are scaled down by
+     * default behavior, i.e. according to the chosen autoscaling profile.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration consolidation_delay = 60;</code>
+     *
+     * @return Whether the consolidationDelay field is set.
+     */
+    public boolean hasConsolidationDelay() {
+      return ((bitField1_ & 0x00004000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Consolidation delay defines duration after which the Cluster Autoscaler can
+     * scale down underutilized nodes. If not set, nodes are scaled down by
+     * default behavior, i.e. according to the chosen autoscaling profile.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration consolidation_delay = 60;</code>
+     *
+     * @return The consolidationDelay.
+     */
+    public com.google.protobuf.Duration getConsolidationDelay() {
+      if (consolidationDelayBuilder_ == null) {
+        return consolidationDelay_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : consolidationDelay_;
+      } else {
+        return consolidationDelayBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Consolidation delay defines duration after which the Cluster Autoscaler can
+     * scale down underutilized nodes. If not set, nodes are scaled down by
+     * default behavior, i.e. according to the chosen autoscaling profile.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration consolidation_delay = 60;</code>
+     */
+    public Builder setConsolidationDelay(com.google.protobuf.Duration value) {
+      if (consolidationDelayBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        consolidationDelay_ = value;
+      } else {
+        consolidationDelayBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Consolidation delay defines duration after which the Cluster Autoscaler can
+     * scale down underutilized nodes. If not set, nodes are scaled down by
+     * default behavior, i.e. according to the chosen autoscaling profile.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration consolidation_delay = 60;</code>
+     */
+    public Builder setConsolidationDelay(com.google.protobuf.Duration.Builder builderForValue) {
+      if (consolidationDelayBuilder_ == null) {
+        consolidationDelay_ = builderForValue.build();
+      } else {
+        consolidationDelayBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Consolidation delay defines duration after which the Cluster Autoscaler can
+     * scale down underutilized nodes. If not set, nodes are scaled down by
+     * default behavior, i.e. according to the chosen autoscaling profile.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration consolidation_delay = 60;</code>
+     */
+    public Builder mergeConsolidationDelay(com.google.protobuf.Duration value) {
+      if (consolidationDelayBuilder_ == null) {
+        if (((bitField1_ & 0x00004000) != 0)
+            && consolidationDelay_ != null
+            && consolidationDelay_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getConsolidationDelayBuilder().mergeFrom(value);
+        } else {
+          consolidationDelay_ = value;
+        }
+      } else {
+        consolidationDelayBuilder_.mergeFrom(value);
+      }
+      if (consolidationDelay_ != null) {
+        bitField1_ |= 0x00004000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Consolidation delay defines duration after which the Cluster Autoscaler can
+     * scale down underutilized nodes. If not set, nodes are scaled down by
+     * default behavior, i.e. according to the chosen autoscaling profile.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration consolidation_delay = 60;</code>
+     */
+    public Builder clearConsolidationDelay() {
+      bitField1_ = (bitField1_ & ~0x00004000);
+      consolidationDelay_ = null;
+      if (consolidationDelayBuilder_ != null) {
+        consolidationDelayBuilder_.dispose();
+        consolidationDelayBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Consolidation delay defines duration after which the Cluster Autoscaler can
+     * scale down underutilized nodes. If not set, nodes are scaled down by
+     * default behavior, i.e. according to the chosen autoscaling profile.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration consolidation_delay = 60;</code>
+     */
+    public com.google.protobuf.Duration.Builder getConsolidationDelayBuilder() {
+      bitField1_ |= 0x00004000;
+      onChanged();
+      return getConsolidationDelayFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Consolidation delay defines duration after which the Cluster Autoscaler can
+     * scale down underutilized nodes. If not set, nodes are scaled down by
+     * default behavior, i.e. according to the chosen autoscaling profile.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration consolidation_delay = 60;</code>
+     */
+    public com.google.protobuf.DurationOrBuilder getConsolidationDelayOrBuilder() {
+      if (consolidationDelayBuilder_ != null) {
+        return consolidationDelayBuilder_.getMessageOrBuilder();
+      } else {
+        return consolidationDelay_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : consolidationDelay_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Consolidation delay defines duration after which the Cluster Autoscaler can
+     * scale down underutilized nodes. If not set, nodes are scaled down by
+     * default behavior, i.e. according to the chosen autoscaling profile.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration consolidation_delay = 60;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        getConsolidationDelayFieldBuilder() {
+      if (consolidationDelayBuilder_ == null) {
+        consolidationDelayBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getConsolidationDelay(), getParentForChildren(), isClean());
+        consolidationDelay_ = null;
+      }
+      return consolidationDelayBuilder_;
     }
 
     @java.lang.Override

@@ -160,6 +160,17 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Initial state: packet originating from a Google Kubernetes Engine Pod.
+     * A GkePodInfo is populated with starting Pod information.
+     * </pre>
+     *
+     * <code>START_FROM_GKE_POD = 39;</code>
+     */
+    START_FROM_GKE_POD(39),
+    /**
+     *
+     *
+     * <pre>
      * Initial state: packet originating from a Redis instance.
      * A RedisInstanceInfo is populated with starting instance information.
      * </pre>
@@ -427,6 +438,17 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Transition state: GKE Pod IP masquerading is skipped. The
+     * `ip_masquerading_skipped` field is populated with the reason.
+     * </pre>
+     *
+     * <code>SKIP_GKE_POD_IP_MASQUERADING = 40;</code>
+     */
+    SKIP_GKE_POD_IP_MASQUERADING(40),
+    /**
+     *
+     *
+     * <pre>
      * Transition state: original connection is terminated and a new proxied
      * connection is initiated.
      * </pre>
@@ -573,6 +595,18 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>START_FROM_CLOUD_SQL_INSTANCE = 22;</code>
      */
     public static final int START_FROM_CLOUD_SQL_INSTANCE_VALUE = 22;
+
+    /**
+     *
+     *
+     * <pre>
+     * Initial state: packet originating from a Google Kubernetes Engine Pod.
+     * A GkePodInfo is populated with starting Pod information.
+     * </pre>
+     *
+     * <code>START_FROM_GKE_POD = 39;</code>
+     */
+    public static final int START_FROM_GKE_POD_VALUE = 39;
 
     /**
      *
@@ -868,6 +902,18 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Transition state: GKE Pod IP masquerading is skipped. The
+     * `ip_masquerading_skipped` field is populated with the reason.
+     * </pre>
+     *
+     * <code>SKIP_GKE_POD_IP_MASQUERADING = 40;</code>
+     */
+    public static final int SKIP_GKE_POD_IP_MASQUERADING_VALUE = 40;
+
+    /**
+     *
+     *
+     * <pre>
      * Transition state: original connection is terminated and a new proxied
      * connection is initiated.
      * </pre>
@@ -971,6 +1017,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           return START_FROM_GKE_MASTER;
         case 22:
           return START_FROM_CLOUD_SQL_INSTANCE;
+        case 39:
+          return START_FROM_GKE_POD;
         case 32:
           return START_FROM_REDIS_INSTANCE;
         case 33:
@@ -1021,6 +1069,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           return SERVERLESS_EXTERNAL_CONNECTION;
         case 14:
           return NAT;
+        case 40:
+          return SKIP_GKE_POD_IP_MASQUERADING;
         case 15:
           return PROXY_CONNECTION;
         case 16:
@@ -1116,6 +1166,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     LOAD_BALANCER(16),
     NETWORK(17),
     GKE_MASTER(18),
+    GKE_POD(37),
+    IP_MASQUERADING_SKIPPED(38),
     CLOUD_SQL_INSTANCE(19),
     REDIS_INSTANCE(30),
     REDIS_CLUSTER(31),
@@ -1186,6 +1238,10 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           return NETWORK;
         case 18:
           return GKE_MASTER;
+        case 37:
+          return GKE_POD;
+        case 38:
+          return IP_MASQUERADING_SKIPPED;
         case 19:
           return CLOUD_SQL_INSTANCE;
         case 30:
@@ -2358,7 +2414,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=282
+   *     google/cloud/networkmanagement/v1/trace.proto;l=290
    * @return Whether the loadBalancer field is set.
    */
   @java.lang.Override
@@ -2380,7 +2436,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=282
+   *     google/cloud/networkmanagement/v1/trace.proto;l=290
    * @return The loadBalancer.
    */
   @java.lang.Override
@@ -2520,6 +2576,125 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.networkmanagement.v1.GKEMasterInfo) stepInfo_;
     }
     return com.google.cloud.networkmanagement.v1.GKEMasterInfo.getDefaultInstance();
+  }
+
+  public static final int GKE_POD_FIELD_NUMBER = 37;
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Google Kubernetes Engine Pod.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.GkePodInfo gke_pod = 37;</code>
+   *
+   * @return Whether the gkePod field is set.
+   */
+  @java.lang.Override
+  public boolean hasGkePod() {
+    return stepInfoCase_ == 37;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Google Kubernetes Engine Pod.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.GkePodInfo gke_pod = 37;</code>
+   *
+   * @return The gkePod.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1.GkePodInfo getGkePod() {
+    if (stepInfoCase_ == 37) {
+      return (com.google.cloud.networkmanagement.v1.GkePodInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1.GkePodInfo.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Google Kubernetes Engine Pod.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.GkePodInfo gke_pod = 37;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1.GkePodInfoOrBuilder getGkePodOrBuilder() {
+    if (stepInfoCase_ == 37) {
+      return (com.google.cloud.networkmanagement.v1.GkePodInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1.GkePodInfo.getDefaultInstance();
+  }
+
+  public static final int IP_MASQUERADING_SKIPPED_FIELD_NUMBER = 38;
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of the reason why GKE Pod IP masquerading was
+   * skipped.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo ip_masquerading_skipped = 38;
+   * </code>
+   *
+   * @return Whether the ipMasqueradingSkipped field is set.
+   */
+  @java.lang.Override
+  public boolean hasIpMasqueradingSkipped() {
+    return stepInfoCase_ == 38;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of the reason why GKE Pod IP masquerading was
+   * skipped.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo ip_masquerading_skipped = 38;
+   * </code>
+   *
+   * @return The ipMasqueradingSkipped.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo
+      getIpMasqueradingSkipped() {
+    if (stepInfoCase_ == 38) {
+      return (com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of the reason why GKE Pod IP masquerading was
+   * skipped.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo ip_masquerading_skipped = 38;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfoOrBuilder
+      getIpMasqueradingSkippedOrBuilder() {
+    if (stepInfoCase_ == 38) {
+      return (com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo.getDefaultInstance();
   }
 
   public static final int CLOUD_SQL_INSTANCE_FIELD_NUMBER = 19;
@@ -3263,6 +3438,13 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     if (stepInfoCase_ == 36) {
       output.writeMessage(36, (com.google.cloud.networkmanagement.v1.HybridSubnetInfo) stepInfo_);
     }
+    if (stepInfoCase_ == 37) {
+      output.writeMessage(37, (com.google.cloud.networkmanagement.v1.GkePodInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 38) {
+      output.writeMessage(
+          38, (com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo) stepInfo_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -3440,6 +3622,16 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               36, (com.google.cloud.networkmanagement.v1.HybridSubnetInfo) stepInfo_);
     }
+    if (stepInfoCase_ == 37) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              37, (com.google.cloud.networkmanagement.v1.GkePodInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 38) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              38, (com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo) stepInfo_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3523,6 +3715,12 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         break;
       case 18:
         if (!getGkeMaster().equals(other.getGkeMaster())) return false;
+        break;
+      case 37:
+        if (!getGkePod().equals(other.getGkePod())) return false;
+        break;
+      case 38:
+        if (!getIpMasqueradingSkipped().equals(other.getIpMasqueradingSkipped())) return false;
         break;
       case 19:
         if (!getCloudSqlInstance().equals(other.getCloudSqlInstance())) return false;
@@ -3659,6 +3857,14 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       case 18:
         hash = (37 * hash) + GKE_MASTER_FIELD_NUMBER;
         hash = (53 * hash) + getGkeMaster().hashCode();
+        break;
+      case 37:
+        hash = (37 * hash) + GKE_POD_FIELD_NUMBER;
+        hash = (53 * hash) + getGkePod().hashCode();
+        break;
+      case 38:
+        hash = (37 * hash) + IP_MASQUERADING_SKIPPED_FIELD_NUMBER;
+        hash = (53 * hash) + getIpMasqueradingSkipped().hashCode();
         break;
       case 19:
         hash = (37 * hash) + CLOUD_SQL_INSTANCE_FIELD_NUMBER;
@@ -3913,6 +4119,12 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       if (gkeMasterBuilder_ != null) {
         gkeMasterBuilder_.clear();
       }
+      if (gkePodBuilder_ != null) {
+        gkePodBuilder_.clear();
+      }
+      if (ipMasqueradingSkippedBuilder_ != null) {
+        ipMasqueradingSkippedBuilder_.clear();
+      }
       if (cloudSqlInstanceBuilder_ != null) {
         cloudSqlInstanceBuilder_.clear();
       }
@@ -4068,6 +4280,12 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       if (stepInfoCase_ == 18 && gkeMasterBuilder_ != null) {
         result.stepInfo_ = gkeMasterBuilder_.build();
+      }
+      if (stepInfoCase_ == 37 && gkePodBuilder_ != null) {
+        result.stepInfo_ = gkePodBuilder_.build();
+      }
+      if (stepInfoCase_ == 38 && ipMasqueradingSkippedBuilder_ != null) {
+        result.stepInfo_ = ipMasqueradingSkippedBuilder_.build();
       }
       if (stepInfoCase_ == 19 && cloudSqlInstanceBuilder_ != null) {
         result.stepInfo_ = cloudSqlInstanceBuilder_.build();
@@ -4264,6 +4482,16 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         case GKE_MASTER:
           {
             mergeGkeMaster(other.getGkeMaster());
+            break;
+          }
+        case GKE_POD:
+          {
+            mergeGkePod(other.getGkePod());
+            break;
+          }
+        case IP_MASQUERADING_SKIPPED:
+          {
+            mergeIpMasqueradingSkipped(other.getIpMasqueradingSkipped());
             break;
           }
         case CLOUD_SQL_INSTANCE:
@@ -4569,6 +4797,19 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
                 stepInfoCase_ = 36;
                 break;
               } // case 290
+            case 298:
+              {
+                input.readMessage(getGkePodFieldBuilder().getBuilder(), extensionRegistry);
+                stepInfoCase_ = 37;
+                break;
+              } // case 298
+            case 306:
+              {
+                input.readMessage(
+                    getIpMasqueradingSkippedFieldBuilder().getBuilder(), extensionRegistry);
+                stepInfoCase_ = 38;
+                break;
+              } // case 306
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8842,7 +9083,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=282
+     *     google/cloud/networkmanagement/v1/trace.proto;l=290
      * @return Whether the loadBalancer field is set.
      */
     @java.lang.Override
@@ -8864,7 +9105,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=282
+     *     google/cloud/networkmanagement/v1/trace.proto;l=290
      * @return The loadBalancer.
      */
     @java.lang.Override
@@ -9518,6 +9759,477 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 18;
       onChanged();
       return gkeMasterBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1.GkePodInfo,
+            com.google.cloud.networkmanagement.v1.GkePodInfo.Builder,
+            com.google.cloud.networkmanagement.v1.GkePodInfoOrBuilder>
+        gkePodBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Google Kubernetes Engine Pod.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.GkePodInfo gke_pod = 37;</code>
+     *
+     * @return Whether the gkePod field is set.
+     */
+    @java.lang.Override
+    public boolean hasGkePod() {
+      return stepInfoCase_ == 37;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Google Kubernetes Engine Pod.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.GkePodInfo gke_pod = 37;</code>
+     *
+     * @return The gkePod.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1.GkePodInfo getGkePod() {
+      if (gkePodBuilder_ == null) {
+        if (stepInfoCase_ == 37) {
+          return (com.google.cloud.networkmanagement.v1.GkePodInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1.GkePodInfo.getDefaultInstance();
+      } else {
+        if (stepInfoCase_ == 37) {
+          return gkePodBuilder_.getMessage();
+        }
+        return com.google.cloud.networkmanagement.v1.GkePodInfo.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Google Kubernetes Engine Pod.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.GkePodInfo gke_pod = 37;</code>
+     */
+    public Builder setGkePod(com.google.cloud.networkmanagement.v1.GkePodInfo value) {
+      if (gkePodBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stepInfo_ = value;
+        onChanged();
+      } else {
+        gkePodBuilder_.setMessage(value);
+      }
+      stepInfoCase_ = 37;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Google Kubernetes Engine Pod.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.GkePodInfo gke_pod = 37;</code>
+     */
+    public Builder setGkePod(
+        com.google.cloud.networkmanagement.v1.GkePodInfo.Builder builderForValue) {
+      if (gkePodBuilder_ == null) {
+        stepInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        gkePodBuilder_.setMessage(builderForValue.build());
+      }
+      stepInfoCase_ = 37;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Google Kubernetes Engine Pod.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.GkePodInfo gke_pod = 37;</code>
+     */
+    public Builder mergeGkePod(com.google.cloud.networkmanagement.v1.GkePodInfo value) {
+      if (gkePodBuilder_ == null) {
+        if (stepInfoCase_ == 37
+            && stepInfo_ != com.google.cloud.networkmanagement.v1.GkePodInfo.getDefaultInstance()) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1.GkePodInfo.newBuilder(
+                      (com.google.cloud.networkmanagement.v1.GkePodInfo) stepInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          stepInfo_ = value;
+        }
+        onChanged();
+      } else {
+        if (stepInfoCase_ == 37) {
+          gkePodBuilder_.mergeFrom(value);
+        } else {
+          gkePodBuilder_.setMessage(value);
+        }
+      }
+      stepInfoCase_ = 37;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Google Kubernetes Engine Pod.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.GkePodInfo gke_pod = 37;</code>
+     */
+    public Builder clearGkePod() {
+      if (gkePodBuilder_ == null) {
+        if (stepInfoCase_ == 37) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+          onChanged();
+        }
+      } else {
+        if (stepInfoCase_ == 37) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+        }
+        gkePodBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Google Kubernetes Engine Pod.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.GkePodInfo gke_pod = 37;</code>
+     */
+    public com.google.cloud.networkmanagement.v1.GkePodInfo.Builder getGkePodBuilder() {
+      return getGkePodFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Google Kubernetes Engine Pod.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.GkePodInfo gke_pod = 37;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1.GkePodInfoOrBuilder getGkePodOrBuilder() {
+      if ((stepInfoCase_ == 37) && (gkePodBuilder_ != null)) {
+        return gkePodBuilder_.getMessageOrBuilder();
+      } else {
+        if (stepInfoCase_ == 37) {
+          return (com.google.cloud.networkmanagement.v1.GkePodInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1.GkePodInfo.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Google Kubernetes Engine Pod.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.GkePodInfo gke_pod = 37;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1.GkePodInfo,
+            com.google.cloud.networkmanagement.v1.GkePodInfo.Builder,
+            com.google.cloud.networkmanagement.v1.GkePodInfoOrBuilder>
+        getGkePodFieldBuilder() {
+      if (gkePodBuilder_ == null) {
+        if (!(stepInfoCase_ == 37)) {
+          stepInfo_ = com.google.cloud.networkmanagement.v1.GkePodInfo.getDefaultInstance();
+        }
+        gkePodBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.networkmanagement.v1.GkePodInfo,
+                com.google.cloud.networkmanagement.v1.GkePodInfo.Builder,
+                com.google.cloud.networkmanagement.v1.GkePodInfoOrBuilder>(
+                (com.google.cloud.networkmanagement.v1.GkePodInfo) stepInfo_,
+                getParentForChildren(),
+                isClean());
+        stepInfo_ = null;
+      }
+      stepInfoCase_ = 37;
+      onChanged();
+      return gkePodBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo,
+            com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo.Builder,
+            com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfoOrBuilder>
+        ipMasqueradingSkippedBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of the reason why GKE Pod IP masquerading was
+     * skipped.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo ip_masquerading_skipped = 38;
+     * </code>
+     *
+     * @return Whether the ipMasqueradingSkipped field is set.
+     */
+    @java.lang.Override
+    public boolean hasIpMasqueradingSkipped() {
+      return stepInfoCase_ == 38;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of the reason why GKE Pod IP masquerading was
+     * skipped.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo ip_masquerading_skipped = 38;
+     * </code>
+     *
+     * @return The ipMasqueradingSkipped.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo
+        getIpMasqueradingSkipped() {
+      if (ipMasqueradingSkippedBuilder_ == null) {
+        if (stepInfoCase_ == 38) {
+          return (com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo.getDefaultInstance();
+      } else {
+        if (stepInfoCase_ == 38) {
+          return ipMasqueradingSkippedBuilder_.getMessage();
+        }
+        return com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of the reason why GKE Pod IP masquerading was
+     * skipped.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo ip_masquerading_skipped = 38;
+     * </code>
+     */
+    public Builder setIpMasqueradingSkipped(
+        com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo value) {
+      if (ipMasqueradingSkippedBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stepInfo_ = value;
+        onChanged();
+      } else {
+        ipMasqueradingSkippedBuilder_.setMessage(value);
+      }
+      stepInfoCase_ = 38;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of the reason why GKE Pod IP masquerading was
+     * skipped.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo ip_masquerading_skipped = 38;
+     * </code>
+     */
+    public Builder setIpMasqueradingSkipped(
+        com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo.Builder builderForValue) {
+      if (ipMasqueradingSkippedBuilder_ == null) {
+        stepInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        ipMasqueradingSkippedBuilder_.setMessage(builderForValue.build());
+      }
+      stepInfoCase_ = 38;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of the reason why GKE Pod IP masquerading was
+     * skipped.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo ip_masquerading_skipped = 38;
+     * </code>
+     */
+    public Builder mergeIpMasqueradingSkipped(
+        com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo value) {
+      if (ipMasqueradingSkippedBuilder_ == null) {
+        if (stepInfoCase_ == 38
+            && stepInfo_
+                != com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo
+                    .getDefaultInstance()) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo.newBuilder(
+                      (com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo) stepInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          stepInfo_ = value;
+        }
+        onChanged();
+      } else {
+        if (stepInfoCase_ == 38) {
+          ipMasqueradingSkippedBuilder_.mergeFrom(value);
+        } else {
+          ipMasqueradingSkippedBuilder_.setMessage(value);
+        }
+      }
+      stepInfoCase_ = 38;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of the reason why GKE Pod IP masquerading was
+     * skipped.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo ip_masquerading_skipped = 38;
+     * </code>
+     */
+    public Builder clearIpMasqueradingSkipped() {
+      if (ipMasqueradingSkippedBuilder_ == null) {
+        if (stepInfoCase_ == 38) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+          onChanged();
+        }
+      } else {
+        if (stepInfoCase_ == 38) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+        }
+        ipMasqueradingSkippedBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of the reason why GKE Pod IP masquerading was
+     * skipped.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo ip_masquerading_skipped = 38;
+     * </code>
+     */
+    public com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo.Builder
+        getIpMasqueradingSkippedBuilder() {
+      return getIpMasqueradingSkippedFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of the reason why GKE Pod IP masquerading was
+     * skipped.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo ip_masquerading_skipped = 38;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfoOrBuilder
+        getIpMasqueradingSkippedOrBuilder() {
+      if ((stepInfoCase_ == 38) && (ipMasqueradingSkippedBuilder_ != null)) {
+        return ipMasqueradingSkippedBuilder_.getMessageOrBuilder();
+      } else {
+        if (stepInfoCase_ == 38) {
+          return (com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of the reason why GKE Pod IP masquerading was
+     * skipped.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo ip_masquerading_skipped = 38;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo,
+            com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo.Builder,
+            com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfoOrBuilder>
+        getIpMasqueradingSkippedFieldBuilder() {
+      if (ipMasqueradingSkippedBuilder_ == null) {
+        if (!(stepInfoCase_ == 38)) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo.getDefaultInstance();
+        }
+        ipMasqueradingSkippedBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo,
+                com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo.Builder,
+                com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfoOrBuilder>(
+                (com.google.cloud.networkmanagement.v1.IpMasqueradingSkippedInfo) stepInfo_,
+                getParentForChildren(),
+                isClean());
+        stepInfo_ = null;
+      }
+      stepInfoCase_ = 38;
+      onChanged();
+      return ipMasqueradingSkippedBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<

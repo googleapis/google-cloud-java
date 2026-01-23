@@ -22,4 +22,51 @@ package com.google.container.v1beta1;
 public interface MasterOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.container.v1beta1.Master)
-    com.google.protobuf.MessageOrBuilder {}
+    com.google.protobuf.MessageOrBuilder {
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The compatibility status of the control plane.
+   * It should be empty if the cluster does not have emulated version.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.CompatibilityStatus compatibility_status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the compatibilityStatus field is set.
+   */
+  boolean hasCompatibilityStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The compatibility status of the control plane.
+   * It should be empty if the cluster does not have emulated version.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.CompatibilityStatus compatibility_status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The compatibilityStatus.
+   */
+  com.google.container.v1beta1.CompatibilityStatus getCompatibilityStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The compatibility status of the control plane.
+   * It should be empty if the cluster does not have emulated version.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.CompatibilityStatus compatibility_status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.container.v1beta1.CompatibilityStatusOrBuilder getCompatibilityStatusOrBuilder();
+}

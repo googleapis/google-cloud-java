@@ -264,13 +264,47 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Aborted because no valid source or destination endpoint is derived from
-     * the input test request.
+     * Aborted because no valid source or destination endpoint can be derived
+     * from the test request.
      * </pre>
      *
      * <code>NO_SOURCE_LOCATION = 5;</code>
      */
     NO_SOURCE_LOCATION(5),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because the source IP address is not contained within the subnet
+     * ranges of the provided VPC network.
+     * </pre>
+     *
+     * <code>NO_SOURCE_GCP_NETWORK_LOCATION = 42;</code>
+     */
+    NO_SOURCE_GCP_NETWORK_LOCATION(42),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because the source IP address is not contained within the
+     * destination ranges of the routes towards non-GCP networks in the provided
+     * VPC network.
+     * </pre>
+     *
+     * <code>NO_SOURCE_NON_GCP_NETWORK_LOCATION = 43;</code>
+     */
+    NO_SOURCE_NON_GCP_NETWORK_LOCATION(43),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because the source IP address can't be resolved as an Internet
+     * IP address.
+     * </pre>
+     *
+     * <code>NO_SOURCE_INTERNET_LOCATION = 44;</code>
+     */
+    NO_SOURCE_INTERNET_LOCATION(44),
     /**
      *
      *
@@ -428,6 +462,18 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Aborted because tests with the external database as a source are not
+     * supported. In such replication scenarios, the connection is initiated by
+     * the Cloud SQL replica instance.
+     * </pre>
+     *
+     * <code>SOURCE_EXTERNAL_CLOUD_SQL_UNSUPPORTED = 45;</code>
+     */
+    SOURCE_EXTERNAL_CLOUD_SQL_UNSUPPORTED(45),
+    /**
+     *
+     *
+     * <pre>
      * Aborted because tests with a Redis Cluster as a source are not supported.
      * </pre>
      *
@@ -510,6 +556,18 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>IP_VERSION_PROTOCOL_MISMATCH = 40;</code>
      */
     IP_VERSION_PROTOCOL_MISMATCH(40),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because selected GKE Pod endpoint location is unknown. This is
+     * often the case for "Pending" Pods, which don't have assigned IP addresses
+     * yet.
+     * </pre>
+     *
+     * <code>GKE_POD_UNKNOWN_ENDPOINT_LOCATION = 41;</code>
+     */
+    GKE_POD_UNKNOWN_ENDPOINT_LOCATION(41),
     UNRECOGNIZED(-1),
     ;
 
@@ -708,13 +766,50 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Aborted because no valid source or destination endpoint is derived from
-     * the input test request.
+     * Aborted because no valid source or destination endpoint can be derived
+     * from the test request.
      * </pre>
      *
      * <code>NO_SOURCE_LOCATION = 5;</code>
      */
     public static final int NO_SOURCE_LOCATION_VALUE = 5;
+
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because the source IP address is not contained within the subnet
+     * ranges of the provided VPC network.
+     * </pre>
+     *
+     * <code>NO_SOURCE_GCP_NETWORK_LOCATION = 42;</code>
+     */
+    public static final int NO_SOURCE_GCP_NETWORK_LOCATION_VALUE = 42;
+
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because the source IP address is not contained within the
+     * destination ranges of the routes towards non-GCP networks in the provided
+     * VPC network.
+     * </pre>
+     *
+     * <code>NO_SOURCE_NON_GCP_NETWORK_LOCATION = 43;</code>
+     */
+    public static final int NO_SOURCE_NON_GCP_NETWORK_LOCATION_VALUE = 43;
+
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because the source IP address can't be resolved as an Internet
+     * IP address.
+     * </pre>
+     *
+     * <code>NO_SOURCE_INTERNET_LOCATION = 44;</code>
+     */
+    public static final int NO_SOURCE_INTERNET_LOCATION_VALUE = 44;
 
     /**
      *
@@ -887,6 +982,19 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Aborted because tests with the external database as a source are not
+     * supported. In such replication scenarios, the connection is initiated by
+     * the Cloud SQL replica instance.
+     * </pre>
+     *
+     * <code>SOURCE_EXTERNAL_CLOUD_SQL_UNSUPPORTED = 45;</code>
+     */
+    public static final int SOURCE_EXTERNAL_CLOUD_SQL_UNSUPPORTED_VALUE = 45;
+
+    /**
+     *
+     *
+     * <pre>
      * Aborted because tests with a Redis Cluster as a source are not supported.
      * </pre>
      *
@@ -977,6 +1085,19 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int IP_VERSION_PROTOCOL_MISMATCH_VALUE = 40;
 
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because selected GKE Pod endpoint location is unknown. This is
+     * often the case for "Pending" Pods, which don't have assigned IP addresses
+     * yet.
+     * </pre>
+     *
+     * <code>GKE_POD_UNKNOWN_ENDPOINT_LOCATION = 41;</code>
+     */
+    public static final int GKE_POD_UNKNOWN_ENDPOINT_LOCATION_VALUE = 41;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -1035,6 +1156,12 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
           return PERMISSION_DENIED_NO_CLOUD_ROUTER_CONFIGS;
         case 5:
           return NO_SOURCE_LOCATION;
+        case 42:
+          return NO_SOURCE_GCP_NETWORK_LOCATION;
+        case 43:
+          return NO_SOURCE_NON_GCP_NETWORK_LOCATION;
+        case 44:
+          return NO_SOURCE_INTERNET_LOCATION;
         case 6:
           return INVALID_ARGUMENT;
         case 9:
@@ -1063,6 +1190,8 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
           return GOOGLE_MANAGED_SERVICE_AMBIGUOUS_ENDPOINT;
         case 20:
           return SOURCE_PSC_CLOUD_SQL_UNSUPPORTED;
+        case 45:
+          return SOURCE_EXTERNAL_CLOUD_SQL_UNSUPPORTED;
         case 34:
           return SOURCE_REDIS_CLUSTER_UNSUPPORTED;
         case 35:
@@ -1079,6 +1208,8 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
           return NO_SERVERLESS_IP_RANGES;
         case 40:
           return IP_VERSION_PROTOCOL_MISMATCH;
+        case 41:
+          return GKE_POD_UNKNOWN_ENDPOINT_LOCATION;
         default:
           return null;
       }

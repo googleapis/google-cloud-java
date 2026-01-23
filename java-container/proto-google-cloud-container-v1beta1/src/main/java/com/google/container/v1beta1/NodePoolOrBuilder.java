@@ -408,7 +408,7 @@ public interface NodePoolOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=5239
+   *     google/container/v1beta1/cluster_service.proto;l=5514
    * @return The statusMessage.
    */
   @java.lang.Deprecated
@@ -428,7 +428,7 @@ public interface NodePoolOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=5239
+   *     google/container/v1beta1/cluster_service.proto;l=5514
    * @return The bytes for statusMessage.
    */
   @java.lang.Deprecated
@@ -844,4 +844,41 @@ public interface NodePoolOrBuilder
    * <code>.google.container.v1beta1.BestEffortProvisioning best_effort_provisioning = 113;</code>
    */
   com.google.container.v1beta1.BestEffortProvisioningOrBuilder getBestEffortProvisioningOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the node drain configuration for this node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodePool.NodeDrainConfig node_drain_config = 116;</code>
+   *
+   * @return Whether the nodeDrainConfig field is set.
+   */
+  boolean hasNodeDrainConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the node drain configuration for this node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodePool.NodeDrainConfig node_drain_config = 116;</code>
+   *
+   * @return The nodeDrainConfig.
+   */
+  com.google.container.v1beta1.NodePool.NodeDrainConfig getNodeDrainConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the node drain configuration for this node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodePool.NodeDrainConfig node_drain_config = 116;</code>
+   */
+  com.google.container.v1beta1.NodePool.NodeDrainConfigOrBuilder getNodeDrainConfigOrBuilder();
 }

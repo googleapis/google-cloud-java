@@ -92,6 +92,8 @@ public class SyncUpdateNodePool {
               .setMaxRunDuration(Duration.newBuilder().build())
               .setFlexStart(true)
               .setBootDisk(BootDisk.newBuilder().build())
+              .setNodeDrainConfig(NodePool.NodeDrainConfig.newBuilder().build())
+              .setConsolidationDelay(Duration.newBuilder().build())
               .build();
       Operation response = clusterManagerClient.updateNodePool(request);
     }

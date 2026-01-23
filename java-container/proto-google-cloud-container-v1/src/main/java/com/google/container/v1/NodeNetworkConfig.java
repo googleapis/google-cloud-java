@@ -1516,14 +1516,20 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. The subnetwork path for the node pool.
+   * Optional. The subnetwork name/path for the node pool.
    * Format: projects/{project}/regions/{region}/subnetworks/{subnetwork}
-   * If the cluster is associated with multiple subnetworks, the subnetwork for
-   * the node pool is picked based on the IP utilization during node pool
-   * creation and is immutable.
+   * If the cluster is associated with multiple subnetworks, the subnetwork can
+   * be either:
+   * 1. A user supplied subnetwork name/full path during node pool creation.
+   *    Example1: my-subnet
+   *    Example2: projects/gke-project/regions/us-central1/subnetworks/my-subnet
+   * 2. A subnetwork path picked based on the IP utilization during node pool
+   *    creation and is immutable.
    * </pre>
    *
-   * <code>string subnetwork = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string subnetwork = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The subnetwork.
    */
@@ -1544,14 +1550,20 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. The subnetwork path for the node pool.
+   * Optional. The subnetwork name/path for the node pool.
    * Format: projects/{project}/regions/{region}/subnetworks/{subnetwork}
-   * If the cluster is associated with multiple subnetworks, the subnetwork for
-   * the node pool is picked based on the IP utilization during node pool
-   * creation and is immutable.
+   * If the cluster is associated with multiple subnetworks, the subnetwork can
+   * be either:
+   * 1. A user supplied subnetwork name/full path during node pool creation.
+   *    Example1: my-subnet
+   *    Example2: projects/gke-project/regions/us-central1/subnetworks/my-subnet
+   * 2. A subnetwork path picked based on the IP utilization during node pool
+   *    creation and is immutable.
    * </pre>
    *
-   * <code>string subnetwork = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string subnetwork = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for subnetwork.
    */
@@ -4351,14 +4363,20 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The subnetwork path for the node pool.
+     * Optional. The subnetwork name/path for the node pool.
      * Format: projects/{project}/regions/{region}/subnetworks/{subnetwork}
-     * If the cluster is associated with multiple subnetworks, the subnetwork for
-     * the node pool is picked based on the IP utilization during node pool
-     * creation and is immutable.
+     * If the cluster is associated with multiple subnetworks, the subnetwork can
+     * be either:
+     * 1. A user supplied subnetwork name/full path during node pool creation.
+     *    Example1: my-subnet
+     *    Example2: projects/gke-project/regions/us-central1/subnetworks/my-subnet
+     * 2. A subnetwork path picked based on the IP utilization during node pool
+     *    creation and is immutable.
      * </pre>
      *
-     * <code>string subnetwork = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string subnetwork = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The subnetwork.
      */
@@ -4378,14 +4396,20 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The subnetwork path for the node pool.
+     * Optional. The subnetwork name/path for the node pool.
      * Format: projects/{project}/regions/{region}/subnetworks/{subnetwork}
-     * If the cluster is associated with multiple subnetworks, the subnetwork for
-     * the node pool is picked based on the IP utilization during node pool
-     * creation and is immutable.
+     * If the cluster is associated with multiple subnetworks, the subnetwork can
+     * be either:
+     * 1. A user supplied subnetwork name/full path during node pool creation.
+     *    Example1: my-subnet
+     *    Example2: projects/gke-project/regions/us-central1/subnetworks/my-subnet
+     * 2. A subnetwork path picked based on the IP utilization during node pool
+     *    creation and is immutable.
      * </pre>
      *
-     * <code>string subnetwork = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string subnetwork = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for subnetwork.
      */
@@ -4405,14 +4429,20 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The subnetwork path for the node pool.
+     * Optional. The subnetwork name/path for the node pool.
      * Format: projects/{project}/regions/{region}/subnetworks/{subnetwork}
-     * If the cluster is associated with multiple subnetworks, the subnetwork for
-     * the node pool is picked based on the IP utilization during node pool
-     * creation and is immutable.
+     * If the cluster is associated with multiple subnetworks, the subnetwork can
+     * be either:
+     * 1. A user supplied subnetwork name/full path during node pool creation.
+     *    Example1: my-subnet
+     *    Example2: projects/gke-project/regions/us-central1/subnetworks/my-subnet
+     * 2. A subnetwork path picked based on the IP utilization during node pool
+     *    creation and is immutable.
      * </pre>
      *
-     * <code>string subnetwork = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string subnetwork = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The subnetwork to set.
      * @return This builder for chaining.
@@ -4431,14 +4461,20 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The subnetwork path for the node pool.
+     * Optional. The subnetwork name/path for the node pool.
      * Format: projects/{project}/regions/{region}/subnetworks/{subnetwork}
-     * If the cluster is associated with multiple subnetworks, the subnetwork for
-     * the node pool is picked based on the IP utilization during node pool
-     * creation and is immutable.
+     * If the cluster is associated with multiple subnetworks, the subnetwork can
+     * be either:
+     * 1. A user supplied subnetwork name/full path during node pool creation.
+     *    Example1: my-subnet
+     *    Example2: projects/gke-project/regions/us-central1/subnetworks/my-subnet
+     * 2. A subnetwork path picked based on the IP utilization during node pool
+     *    creation and is immutable.
      * </pre>
      *
-     * <code>string subnetwork = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string subnetwork = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -4453,14 +4489,20 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The subnetwork path for the node pool.
+     * Optional. The subnetwork name/path for the node pool.
      * Format: projects/{project}/regions/{region}/subnetworks/{subnetwork}
-     * If the cluster is associated with multiple subnetworks, the subnetwork for
-     * the node pool is picked based on the IP utilization during node pool
-     * creation and is immutable.
+     * If the cluster is associated with multiple subnetworks, the subnetwork can
+     * be either:
+     * 1. A user supplied subnetwork name/full path during node pool creation.
+     *    Example1: my-subnet
+     *    Example2: projects/gke-project/regions/us-central1/subnetworks/my-subnet
+     * 2. A subnetwork path picked based on the IP utilization during node pool
+     *    creation and is immutable.
      * </pre>
      *
-     * <code>string subnetwork = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string subnetwork = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for subnetwork to set.
      * @return This builder for chaining.

@@ -51,6 +51,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     cloudSqlInstance_ = "";
     redisInstance_ = "";
     redisCluster_ = "";
+    gkePod_ = "";
     network_ = "";
     networkType_ = 0;
     projectId_ = "";
@@ -81,8 +82,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type definition of an endpoint's network. Use one of the
-   * following choices:
+   * The type of the network of the IP address endpoint. Relevant for the source
+   * IP address endpoints.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.networkmanagement.v1.Endpoint.NetworkType}
@@ -92,7 +93,15 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Default type if unspecified.
+     * Unspecified. The test will analyze all possible IP address locations.
+     * This might take longer and produce inaccurate or ambiguous results, so
+     * prefer specifying an explicit network type.
+     *
+     * The `project_id` field should be set to the project where the GCP
+     * endpoint is located, or where the non-GCP endpoint should be reachable
+     * from (via routes to non-GCP networks). The project might also be inferred
+     * from the Connectivity Test project or other projects referenced in the
+     * request.
      * </pre>
      *
      * <code>NETWORK_TYPE_UNSPECIFIED = 0;</code>
@@ -102,9 +111,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A network hosted within Google Cloud.
-     * To receive more detailed output, specify the URI for the source or
-     * destination network.
+     * A VPC network. Should be used for internal IP addresses in VPC networks.
+     * The `network` field should be set to the URI of this network. Only
+     * endpoints within this network will be considered.
      * </pre>
      *
      * <code>GCP_NETWORK = 1;</code>
@@ -114,14 +123,29 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A network hosted outside of Google Cloud.
-     * This can be an on-premises network, an internet resource or a network
-     * hosted by another cloud provider.
+     * A non-GCP network (for example, an on-premises network or another cloud
+     * provider network). Should be used for internal IP addresses outside of
+     * Google Cloud. The `network` field should be set to the URI of the VPC
+     * network containing a corresponding Cloud VPN tunnel, Cloud Interconnect
+     * VLAN attachment, or a router appliance instance. Only endpoints reachable
+     * from the provided VPC network via the routes to non-GCP networks will be
+     * considered.
      * </pre>
      *
      * <code>NON_GCP_NETWORK = 2;</code>
      */
     NON_GCP_NETWORK(2),
+    /**
+     *
+     *
+     * <pre>
+     * Internet. Should be used for internet-routable external IP addresses or
+     * IP addresses for global Google APIs and services.
+     * </pre>
+     *
+     * <code>INTERNET = 3;</code>
+     */
+    INTERNET(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -129,7 +153,15 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Default type if unspecified.
+     * Unspecified. The test will analyze all possible IP address locations.
+     * This might take longer and produce inaccurate or ambiguous results, so
+     * prefer specifying an explicit network type.
+     *
+     * The `project_id` field should be set to the project where the GCP
+     * endpoint is located, or where the non-GCP endpoint should be reachable
+     * from (via routes to non-GCP networks). The project might also be inferred
+     * from the Connectivity Test project or other projects referenced in the
+     * request.
      * </pre>
      *
      * <code>NETWORK_TYPE_UNSPECIFIED = 0;</code>
@@ -140,9 +172,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A network hosted within Google Cloud.
-     * To receive more detailed output, specify the URI for the source or
-     * destination network.
+     * A VPC network. Should be used for internal IP addresses in VPC networks.
+     * The `network` field should be set to the URI of this network. Only
+     * endpoints within this network will be considered.
      * </pre>
      *
      * <code>GCP_NETWORK = 1;</code>
@@ -153,14 +185,30 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A network hosted outside of Google Cloud.
-     * This can be an on-premises network, an internet resource or a network
-     * hosted by another cloud provider.
+     * A non-GCP network (for example, an on-premises network or another cloud
+     * provider network). Should be used for internal IP addresses outside of
+     * Google Cloud. The `network` field should be set to the URI of the VPC
+     * network containing a corresponding Cloud VPN tunnel, Cloud Interconnect
+     * VLAN attachment, or a router appliance instance. Only endpoints reachable
+     * from the provided VPC network via the routes to non-GCP networks will be
+     * considered.
      * </pre>
      *
      * <code>NON_GCP_NETWORK = 2;</code>
      */
     public static final int NON_GCP_NETWORK_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Internet. Should be used for internet-routable external IP addresses or
+     * IP addresses for global Google APIs and services.
+     * </pre>
+     *
+     * <code>INTERNET = 3;</code>
+     */
+    public static final int INTERNET_VALUE = 3;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -192,6 +240,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
           return GCP_NETWORK;
         case 2:
           return NON_GCP_NETWORK;
+        case 3:
+          return INTERNET;
         default:
           return null;
       }
@@ -3408,6 +3458,61 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int GKE_POD_FIELD_NUMBER = 21;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object gkePod_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * A [GKE Pod](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+   * URI.
+   * </pre>
+   *
+   * <code>string gke_pod = 21;</code>
+   *
+   * @return The gkePod.
+   */
+  @java.lang.Override
+  public java.lang.String getGkePod() {
+    java.lang.Object ref = gkePod_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      gkePod_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A [GKE Pod](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+   * URI.
+   * </pre>
+   *
+   * <code>string gke_pod = 21;</code>
+   *
+   * @return The bytes for gkePod.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getGkePodBytes() {
+    java.lang.Object ref = gkePod_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      gkePod_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int CLOUD_FUNCTION_FIELD_NUMBER = 10;
   private com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint cloudFunction_;
 
@@ -3615,7 +3720,10 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A VPC network URI.
+   * A VPC network URI. For source endpoints, used according to the
+   * `network_type`. For destination endpoints, used only when the source is an
+   * external IP address endpoint, and the destination is an internal IP address
+   * endpoint.
    * </pre>
    *
    * <code>string network = 4;</code>
@@ -3639,7 +3747,10 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A VPC network URI.
+   * A VPC network URI. For source endpoints, used according to the
+   * `network_type`. For destination endpoints, used only when the source is an
+   * external IP address endpoint, and the destination is an internal IP address
+   * endpoint.
    * </pre>
    *
    * <code>string network = 4;</code>
@@ -3666,9 +3777,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Type of the network where the endpoint is located.
-   * Applicable only to source endpoint, as destination network type can be
-   * inferred from the source.
+   * For source endpoints, type of the network where the endpoint is located.
+   * Not relevant for destination endpoints.
    * </pre>
    *
    * <code>.google.cloud.networkmanagement.v1.Endpoint.NetworkType network_type = 5;</code>
@@ -3684,9 +3794,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Type of the network where the endpoint is located.
-   * Applicable only to source endpoint, as destination network type can be
-   * inferred from the source.
+   * For source endpoints, type of the network where the endpoint is located.
+   * Not relevant for destination endpoints.
    * </pre>
    *
    * <code>.google.cloud.networkmanagement.v1.Endpoint.NetworkType network_type = 5;</code>
@@ -3711,15 +3820,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Project ID where the endpoint is located.
-   * The project ID can be derived from the URI if you provide a endpoint or
-   * network URI.
-   * The following are two cases where you may need to provide the project ID:
-   * 1. Only the IP address is specified, and the IP address is within a Google
-   * Cloud project.
-   * 2. When you are using Shared VPC and the IP address that you provide is
-   * from the service project. In this case, the network that the IP address
-   * resides in is defined in the host project.
+   * For source endpoints, endpoint project ID. Used according to the
+   * `network_type`. Not relevant for destination endpoints.
    * </pre>
    *
    * <code>string project_id = 6;</code>
@@ -3743,15 +3845,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Project ID where the endpoint is located.
-   * The project ID can be derived from the URI if you provide a endpoint or
-   * network URI.
-   * The following are two cases where you may need to provide the project ID:
-   * 1. Only the IP address is specified, and the IP address is within a Google
-   * Cloud project.
-   * 2. When you are using Shared VPC and the IP address that you provide is
-   * from the service project. In this case, the network that the IP address
-   * resides in is defined in the host project.
+   * For source endpoints, endpoint project ID. Used according to the
+   * `network_type`. Not relevant for destination endpoints.
    * </pre>
    *
    * <code>string project_id = 6;</code>
@@ -3841,6 +3936,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fqdn_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 19, fqdn_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gkePod_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 21, gkePod_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -3906,6 +4004,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fqdn_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, fqdn_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gkePod_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, gkePod_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3943,6 +4044,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     if (!getCloudSqlInstance().equals(other.getCloudSqlInstance())) return false;
     if (!getRedisInstance().equals(other.getRedisInstance())) return false;
     if (!getRedisCluster().equals(other.getRedisCluster())) return false;
+    if (!getGkePod().equals(other.getGkePod())) return false;
     if (hasCloudFunction() != other.hasCloudFunction()) return false;
     if (hasCloudFunction()) {
       if (!getCloudFunction().equals(other.getCloudFunction())) return false;
@@ -3999,6 +4101,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getRedisInstance().hashCode();
     hash = (37 * hash) + REDIS_CLUSTER_FIELD_NUMBER;
     hash = (53 * hash) + getRedisCluster().hashCode();
+    hash = (37 * hash) + GKE_POD_FIELD_NUMBER;
+    hash = (53 * hash) + getGkePod().hashCode();
     if (hasCloudFunction()) {
       hash = (37 * hash) + CLOUD_FUNCTION_FIELD_NUMBER;
       hash = (53 * hash) + getCloudFunction().hashCode();
@@ -4180,6 +4284,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       cloudSqlInstance_ = "";
       redisInstance_ = "";
       redisCluster_ = "";
+      gkePod_ = "";
       cloudFunction_ = null;
       if (cloudFunctionBuilder_ != null) {
         cloudFunctionBuilder_.dispose();
@@ -4275,27 +4380,30 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         result.redisCluster_ = redisCluster_;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.gkePod_ = gkePod_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.cloudFunction_ =
             cloudFunctionBuilder_ == null ? cloudFunction_ : cloudFunctionBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.appEngineVersion_ =
             appEngineVersionBuilder_ == null ? appEngineVersion_ : appEngineVersionBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.cloudRunRevision_ =
             cloudRunRevisionBuilder_ == null ? cloudRunRevision_ : cloudRunRevisionBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.network_ = network_;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.networkType_ = networkType_;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.projectId_ = projectId_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -4400,6 +4508,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000800;
         onChanged();
       }
+      if (!other.getGkePod().isEmpty()) {
+        gkePod_ = other.gkePod_;
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
       if (other.hasCloudFunction()) {
         mergeCloudFunction(other.getCloudFunction());
       }
@@ -4411,7 +4524,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (other.networkType_ != 0) {
@@ -4419,7 +4532,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -4469,19 +4582,19 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 network_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 34
             case 40:
               {
                 networkType_ = input.readEnum();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 40
             case 50:
               {
                 projectId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 50
             case 58:
@@ -4499,21 +4612,21 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
             case 82:
               {
                 input.readMessage(getCloudFunctionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(
                     getAppEngineVersionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 90
             case 98:
               {
                 input.readMessage(
                     getCloudRunRevisionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 98
             case 106:
@@ -4558,6 +4671,12 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000100;
                 break;
               } // case 154
+            case 170:
+              {
+                gkePod_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 170
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5976,6 +6095,122 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object gkePod_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * A [GKE Pod](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+     * URI.
+     * </pre>
+     *
+     * <code>string gke_pod = 21;</code>
+     *
+     * @return The gkePod.
+     */
+    public java.lang.String getGkePod() {
+      java.lang.Object ref = gkePod_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        gkePod_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A [GKE Pod](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+     * URI.
+     * </pre>
+     *
+     * <code>string gke_pod = 21;</code>
+     *
+     * @return The bytes for gkePod.
+     */
+    public com.google.protobuf.ByteString getGkePodBytes() {
+      java.lang.Object ref = gkePod_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        gkePod_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A [GKE Pod](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+     * URI.
+     * </pre>
+     *
+     * <code>string gke_pod = 21;</code>
+     *
+     * @param value The gkePod to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGkePod(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      gkePod_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A [GKE Pod](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+     * URI.
+     * </pre>
+     *
+     * <code>string gke_pod = 21;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearGkePod() {
+      gkePod_ = getDefaultInstance().getGkePod();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A [GKE Pod](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+     * URI.
+     * </pre>
+     *
+     * <code>string gke_pod = 21;</code>
+     *
+     * @param value The bytes for gkePod to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGkePodBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      gkePod_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint cloudFunction_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint,
@@ -5997,7 +6232,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the cloudFunction field is set.
      */
     public boolean hasCloudFunction() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -6045,7 +6280,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       } else {
         cloudFunctionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -6069,7 +6304,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       } else {
         cloudFunctionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -6088,7 +6323,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeCloudFunction(
         com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint value) {
       if (cloudFunctionBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && cloudFunction_ != null
             && cloudFunction_
                 != com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint
@@ -6101,7 +6336,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         cloudFunctionBuilder_.mergeFrom(value);
       }
       if (cloudFunction_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -6119,7 +6354,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCloudFunction() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       cloudFunction_ = null;
       if (cloudFunctionBuilder_ != null) {
         cloudFunctionBuilder_.dispose();
@@ -6142,7 +6377,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint.Builder
         getCloudFunctionBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getCloudFunctionFieldBuilder().getBuilder();
     }
@@ -6222,7 +6457,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the appEngineVersion field is set.
      */
     public boolean hasAppEngineVersion() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -6275,7 +6510,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       } else {
         appEngineVersionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -6301,7 +6536,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       } else {
         appEngineVersionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -6322,7 +6557,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeAppEngineVersion(
         com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint value) {
       if (appEngineVersionBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && appEngineVersion_ != null
             && appEngineVersion_
                 != com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint
@@ -6335,7 +6570,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         appEngineVersionBuilder_.mergeFrom(value);
       }
       if (appEngineVersion_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -6355,7 +6590,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearAppEngineVersion() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       appEngineVersion_ = null;
       if (appEngineVersionBuilder_ != null) {
         appEngineVersionBuilder_.dispose();
@@ -6380,7 +6615,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint.Builder
         getAppEngineVersionBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getAppEngineVersionFieldBuilder().getBuilder();
     }
@@ -6464,7 +6699,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the cloudRunRevision field is set.
      */
     public boolean hasCloudRunRevision() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -6517,7 +6752,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       } else {
         cloudRunRevisionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -6543,7 +6778,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       } else {
         cloudRunRevisionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -6564,7 +6799,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeCloudRunRevision(
         com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint value) {
       if (cloudRunRevisionBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && cloudRunRevision_ != null
             && cloudRunRevision_
                 != com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint
@@ -6577,7 +6812,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         cloudRunRevisionBuilder_.mergeFrom(value);
       }
       if (cloudRunRevision_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -6597,7 +6832,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCloudRunRevision() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       cloudRunRevision_ = null;
       if (cloudRunRevisionBuilder_ != null) {
         cloudRunRevisionBuilder_.dispose();
@@ -6622,7 +6857,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint.Builder
         getCloudRunRevisionBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return getCloudRunRevisionFieldBuilder().getBuilder();
     }
@@ -6688,7 +6923,10 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A VPC network URI.
+     * A VPC network URI. For source endpoints, used according to the
+     * `network_type`. For destination endpoints, used only when the source is an
+     * external IP address endpoint, and the destination is an internal IP address
+     * endpoint.
      * </pre>
      *
      * <code>string network = 4;</code>
@@ -6711,7 +6949,10 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A VPC network URI.
+     * A VPC network URI. For source endpoints, used according to the
+     * `network_type`. For destination endpoints, used only when the source is an
+     * external IP address endpoint, and the destination is an internal IP address
+     * endpoint.
      * </pre>
      *
      * <code>string network = 4;</code>
@@ -6734,7 +6975,10 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A VPC network URI.
+     * A VPC network URI. For source endpoints, used according to the
+     * `network_type`. For destination endpoints, used only when the source is an
+     * external IP address endpoint, and the destination is an internal IP address
+     * endpoint.
      * </pre>
      *
      * <code>string network = 4;</code>
@@ -6747,7 +6991,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       network_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6756,7 +7000,10 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A VPC network URI.
+     * A VPC network URI. For source endpoints, used according to the
+     * `network_type`. For destination endpoints, used only when the source is an
+     * external IP address endpoint, and the destination is an internal IP address
+     * endpoint.
      * </pre>
      *
      * <code>string network = 4;</code>
@@ -6765,7 +7012,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearNetwork() {
       network_ = getDefaultInstance().getNetwork();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -6774,7 +7021,10 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A VPC network URI.
+     * A VPC network URI. For source endpoints, used according to the
+     * `network_type`. For destination endpoints, used only when the source is an
+     * external IP address endpoint, and the destination is an internal IP address
+     * endpoint.
      * </pre>
      *
      * <code>string network = 4;</code>
@@ -6788,7 +7038,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       network_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6799,9 +7049,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the network where the endpoint is located.
-     * Applicable only to source endpoint, as destination network type can be
-     * inferred from the source.
+     * For source endpoints, type of the network where the endpoint is located.
+     * Not relevant for destination endpoints.
      * </pre>
      *
      * <code>.google.cloud.networkmanagement.v1.Endpoint.NetworkType network_type = 5;</code>
@@ -6817,9 +7066,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the network where the endpoint is located.
-     * Applicable only to source endpoint, as destination network type can be
-     * inferred from the source.
+     * For source endpoints, type of the network where the endpoint is located.
+     * Not relevant for destination endpoints.
      * </pre>
      *
      * <code>.google.cloud.networkmanagement.v1.Endpoint.NetworkType network_type = 5;</code>
@@ -6829,7 +7077,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setNetworkTypeValue(int value) {
       networkType_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6838,9 +7086,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the network where the endpoint is located.
-     * Applicable only to source endpoint, as destination network type can be
-     * inferred from the source.
+     * For source endpoints, type of the network where the endpoint is located.
+     * Not relevant for destination endpoints.
      * </pre>
      *
      * <code>.google.cloud.networkmanagement.v1.Endpoint.NetworkType network_type = 5;</code>
@@ -6860,9 +7107,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the network where the endpoint is located.
-     * Applicable only to source endpoint, as destination network type can be
-     * inferred from the source.
+     * For source endpoints, type of the network where the endpoint is located.
+     * Not relevant for destination endpoints.
      * </pre>
      *
      * <code>.google.cloud.networkmanagement.v1.Endpoint.NetworkType network_type = 5;</code>
@@ -6875,7 +7121,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       networkType_ = value.getNumber();
       onChanged();
       return this;
@@ -6885,9 +7131,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the network where the endpoint is located.
-     * Applicable only to source endpoint, as destination network type can be
-     * inferred from the source.
+     * For source endpoints, type of the network where the endpoint is located.
+     * Not relevant for destination endpoints.
      * </pre>
      *
      * <code>.google.cloud.networkmanagement.v1.Endpoint.NetworkType network_type = 5;</code>
@@ -6895,7 +7140,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetworkType() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       networkType_ = 0;
       onChanged();
       return this;
@@ -6907,15 +7152,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Project ID where the endpoint is located.
-     * The project ID can be derived from the URI if you provide a endpoint or
-     * network URI.
-     * The following are two cases where you may need to provide the project ID:
-     * 1. Only the IP address is specified, and the IP address is within a Google
-     * Cloud project.
-     * 2. When you are using Shared VPC and the IP address that you provide is
-     * from the service project. In this case, the network that the IP address
-     * resides in is defined in the host project.
+     * For source endpoints, endpoint project ID. Used according to the
+     * `network_type`. Not relevant for destination endpoints.
      * </pre>
      *
      * <code>string project_id = 6;</code>
@@ -6938,15 +7176,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Project ID where the endpoint is located.
-     * The project ID can be derived from the URI if you provide a endpoint or
-     * network URI.
-     * The following are two cases where you may need to provide the project ID:
-     * 1. Only the IP address is specified, and the IP address is within a Google
-     * Cloud project.
-     * 2. When you are using Shared VPC and the IP address that you provide is
-     * from the service project. In this case, the network that the IP address
-     * resides in is defined in the host project.
+     * For source endpoints, endpoint project ID. Used according to the
+     * `network_type`. Not relevant for destination endpoints.
      * </pre>
      *
      * <code>string project_id = 6;</code>
@@ -6969,15 +7200,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Project ID where the endpoint is located.
-     * The project ID can be derived from the URI if you provide a endpoint or
-     * network URI.
-     * The following are two cases where you may need to provide the project ID:
-     * 1. Only the IP address is specified, and the IP address is within a Google
-     * Cloud project.
-     * 2. When you are using Shared VPC and the IP address that you provide is
-     * from the service project. In this case, the network that the IP address
-     * resides in is defined in the host project.
+     * For source endpoints, endpoint project ID. Used according to the
+     * `network_type`. Not relevant for destination endpoints.
      * </pre>
      *
      * <code>string project_id = 6;</code>
@@ -6990,7 +7214,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       projectId_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6999,15 +7223,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Project ID where the endpoint is located.
-     * The project ID can be derived from the URI if you provide a endpoint or
-     * network URI.
-     * The following are two cases where you may need to provide the project ID:
-     * 1. Only the IP address is specified, and the IP address is within a Google
-     * Cloud project.
-     * 2. When you are using Shared VPC and the IP address that you provide is
-     * from the service project. In this case, the network that the IP address
-     * resides in is defined in the host project.
+     * For source endpoints, endpoint project ID. Used according to the
+     * `network_type`. Not relevant for destination endpoints.
      * </pre>
      *
      * <code>string project_id = 6;</code>
@@ -7016,7 +7233,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearProjectId() {
       projectId_ = getDefaultInstance().getProjectId();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -7025,15 +7242,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Project ID where the endpoint is located.
-     * The project ID can be derived from the URI if you provide a endpoint or
-     * network URI.
-     * The following are two cases where you may need to provide the project ID:
-     * 1. Only the IP address is specified, and the IP address is within a Google
-     * Cloud project.
-     * 2. When you are using Shared VPC and the IP address that you provide is
-     * from the service project. In this case, the network that the IP address
-     * resides in is defined in the host project.
+     * For source endpoints, endpoint project ID. Used according to the
+     * `network_type`. Not relevant for destination endpoints.
      * </pre>
      *
      * <code>string project_id = 6;</code>
@@ -7047,7 +7257,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       projectId_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }

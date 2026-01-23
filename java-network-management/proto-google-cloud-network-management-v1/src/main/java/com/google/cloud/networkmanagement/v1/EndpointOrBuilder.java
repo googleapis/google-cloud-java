@@ -409,6 +409,34 @@ public interface EndpointOrBuilder
    *
    *
    * <pre>
+   * A [GKE Pod](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+   * URI.
+   * </pre>
+   *
+   * <code>string gke_pod = 21;</code>
+   *
+   * @return The gkePod.
+   */
+  java.lang.String getGkePod();
+
+  /**
+   *
+   *
+   * <pre>
+   * A [GKE Pod](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
+   * URI.
+   * </pre>
+   *
+   * <code>string gke_pod = 21;</code>
+   *
+   * @return The bytes for gkePod.
+   */
+  com.google.protobuf.ByteString getGkePodBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * A [Cloud Function](https://cloud.google.com/functions). Applicable only to
    * source endpoint.
    * </pre>
@@ -553,7 +581,10 @@ public interface EndpointOrBuilder
    *
    *
    * <pre>
-   * A VPC network URI.
+   * A VPC network URI. For source endpoints, used according to the
+   * `network_type`. For destination endpoints, used only when the source is an
+   * external IP address endpoint, and the destination is an internal IP address
+   * endpoint.
    * </pre>
    *
    * <code>string network = 4;</code>
@@ -566,7 +597,10 @@ public interface EndpointOrBuilder
    *
    *
    * <pre>
-   * A VPC network URI.
+   * A VPC network URI. For source endpoints, used according to the
+   * `network_type`. For destination endpoints, used only when the source is an
+   * external IP address endpoint, and the destination is an internal IP address
+   * endpoint.
    * </pre>
    *
    * <code>string network = 4;</code>
@@ -579,9 +613,8 @@ public interface EndpointOrBuilder
    *
    *
    * <pre>
-   * Type of the network where the endpoint is located.
-   * Applicable only to source endpoint, as destination network type can be
-   * inferred from the source.
+   * For source endpoints, type of the network where the endpoint is located.
+   * Not relevant for destination endpoints.
    * </pre>
    *
    * <code>.google.cloud.networkmanagement.v1.Endpoint.NetworkType network_type = 5;</code>
@@ -594,9 +627,8 @@ public interface EndpointOrBuilder
    *
    *
    * <pre>
-   * Type of the network where the endpoint is located.
-   * Applicable only to source endpoint, as destination network type can be
-   * inferred from the source.
+   * For source endpoints, type of the network where the endpoint is located.
+   * Not relevant for destination endpoints.
    * </pre>
    *
    * <code>.google.cloud.networkmanagement.v1.Endpoint.NetworkType network_type = 5;</code>
@@ -609,15 +641,8 @@ public interface EndpointOrBuilder
    *
    *
    * <pre>
-   * Project ID where the endpoint is located.
-   * The project ID can be derived from the URI if you provide a endpoint or
-   * network URI.
-   * The following are two cases where you may need to provide the project ID:
-   * 1. Only the IP address is specified, and the IP address is within a Google
-   * Cloud project.
-   * 2. When you are using Shared VPC and the IP address that you provide is
-   * from the service project. In this case, the network that the IP address
-   * resides in is defined in the host project.
+   * For source endpoints, endpoint project ID. Used according to the
+   * `network_type`. Not relevant for destination endpoints.
    * </pre>
    *
    * <code>string project_id = 6;</code>
@@ -630,15 +655,8 @@ public interface EndpointOrBuilder
    *
    *
    * <pre>
-   * Project ID where the endpoint is located.
-   * The project ID can be derived from the URI if you provide a endpoint or
-   * network URI.
-   * The following are two cases where you may need to provide the project ID:
-   * 1. Only the IP address is specified, and the IP address is within a Google
-   * Cloud project.
-   * 2. When you are using Shared VPC and the IP address that you provide is
-   * from the service project. In this case, the network that the IP address
-   * resides in is defined in the host project.
+   * For source endpoints, endpoint project ID. Used according to the
+   * `network_type`. Not relevant for destination endpoints.
    * </pre>
    *
    * <code>string project_id = 6;</code>

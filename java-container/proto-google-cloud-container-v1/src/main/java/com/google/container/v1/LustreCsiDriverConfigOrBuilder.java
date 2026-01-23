@@ -57,7 +57,7 @@ public interface LustreCsiDriverConfigOrBuilder
    * <code>bool enable_legacy_lustre_port = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.LustreCsiDriverConfig.enable_legacy_lustre_port is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2103
+   *     See google/container/v1/cluster_service.proto;l=2344
    * @return The enableLegacyLustrePort.
    */
   @java.lang.Deprecated

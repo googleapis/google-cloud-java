@@ -330,6 +330,16 @@ public final class UpgradeInfoEvent extends com.google.protobuf.GeneratedMessage
      * <code>UPGRADE_LIFECYCLE = 3;</code>
      */
     UPGRADE_LIFECYCLE(3),
+    /**
+     *
+     *
+     * <pre>
+     * DISRUPTION_EVENT indicates the event is about the disruption.
+     * </pre>
+     *
+     * <code>DISRUPTION_EVENT = 4;</code>
+     */
+    DISRUPTION_EVENT(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -380,6 +390,17 @@ public final class UpgradeInfoEvent extends com.google.protobuf.GeneratedMessage
      */
     public static final int UPGRADE_LIFECYCLE_VALUE = 3;
 
+    /**
+     *
+     *
+     * <pre>
+     * DISRUPTION_EVENT indicates the event is about the disruption.
+     * </pre>
+     *
+     * <code>DISRUPTION_EVENT = 4;</code>
+     */
+    public static final int DISRUPTION_EVENT_VALUE = 4;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -412,6 +433,8 @@ public final class UpgradeInfoEvent extends com.google.protobuf.GeneratedMessage
           return COS_MILESTONE_VERSION_UPDATE;
         case 3:
           return UPGRADE_LIFECYCLE;
+        case 4:
+          return DISRUPTION_EVENT;
         default:
           return null;
       }
@@ -1054,6 +1077,62 @@ public final class UpgradeInfoEvent extends com.google.protobuf.GeneratedMessage
         : result;
   }
 
+  public static final int DISRUPTION_EVENT_FIELD_NUMBER = 14;
+  private com.google.container.v1.DisruptionEvent disruptionEvent_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The information about the disruption event. This field is only populated
+   * when event_type is DISRUPTION_EVENT.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.DisruptionEvent disruption_event = 14;</code>
+   *
+   * @return Whether the disruptionEvent field is set.
+   */
+  @java.lang.Override
+  public boolean hasDisruptionEvent() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The information about the disruption event. This field is only populated
+   * when event_type is DISRUPTION_EVENT.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.DisruptionEvent disruption_event = 14;</code>
+   *
+   * @return The disruptionEvent.
+   */
+  @java.lang.Override
+  public com.google.container.v1.DisruptionEvent getDisruptionEvent() {
+    return disruptionEvent_ == null
+        ? com.google.container.v1.DisruptionEvent.getDefaultInstance()
+        : disruptionEvent_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The information about the disruption event. This field is only populated
+   * when event_type is DISRUPTION_EVENT.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.DisruptionEvent disruption_event = 14;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.DisruptionEventOrBuilder getDisruptionEventOrBuilder() {
+    return disruptionEvent_ == null
+        ? com.google.container.v1.DisruptionEvent.getDefaultInstance()
+        : disruptionEvent_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1107,6 +1186,9 @@ public final class UpgradeInfoEvent extends com.google.protobuf.GeneratedMessage
         != com.google.container.v1.UpgradeInfoEvent.EventType.EVENT_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(12, eventType_);
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(14, getDisruptionEvent());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1157,6 +1239,9 @@ public final class UpgradeInfoEvent extends com.google.protobuf.GeneratedMessage
         != com.google.container.v1.UpgradeInfoEvent.EventType.EVENT_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, eventType_);
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getDisruptionEvent());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1196,6 +1281,10 @@ public final class UpgradeInfoEvent extends com.google.protobuf.GeneratedMessage
     }
     if (!getDescription().equals(other.getDescription())) return false;
     if (eventType_ != other.eventType_) return false;
+    if (hasDisruptionEvent() != other.hasDisruptionEvent()) return false;
+    if (hasDisruptionEvent()) {
+      if (!getDisruptionEvent().equals(other.getDisruptionEvent())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1239,6 +1328,10 @@ public final class UpgradeInfoEvent extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + EVENT_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + eventType_;
+    if (hasDisruptionEvent()) {
+      hash = (37 * hash) + DISRUPTION_EVENT_FIELD_NUMBER;
+      hash = (53 * hash) + getDisruptionEvent().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1385,6 +1478,7 @@ public final class UpgradeInfoEvent extends com.google.protobuf.GeneratedMessage
         getEndTimeFieldBuilder();
         getStandardSupportEndTimeFieldBuilder();
         getExtendedSupportEndTimeFieldBuilder();
+        getDisruptionEventFieldBuilder();
       }
     }
 
@@ -1420,6 +1514,11 @@ public final class UpgradeInfoEvent extends com.google.protobuf.GeneratedMessage
       }
       description_ = "";
       eventType_ = 0;
+      disruptionEvent_ = null;
+      if (disruptionEventBuilder_ != null) {
+        disruptionEventBuilder_.dispose();
+        disruptionEventBuilder_ = null;
+      }
       return this;
     }
 
@@ -1502,6 +1601,11 @@ public final class UpgradeInfoEvent extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.eventType_ = eventType_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.disruptionEvent_ =
+            disruptionEventBuilder_ == null ? disruptionEvent_ : disruptionEventBuilder_.build();
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1596,6 +1700,9 @@ public final class UpgradeInfoEvent extends com.google.protobuf.GeneratedMessage
       }
       if (other.eventType_ != 0) {
         setEventTypeValue(other.getEventTypeValue());
+      }
+      if (other.hasDisruptionEvent()) {
+        mergeDisruptionEvent(other.getDisruptionEvent());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1697,6 +1804,12 @@ public final class UpgradeInfoEvent extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000800;
                 break;
               } // case 96
+            case 114:
+              {
+                input.readMessage(getDisruptionEventFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3341,6 +3454,210 @@ public final class UpgradeInfoEvent extends com.google.protobuf.GeneratedMessage
       eventType_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.container.v1.DisruptionEvent disruptionEvent_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.DisruptionEvent,
+            com.google.container.v1.DisruptionEvent.Builder,
+            com.google.container.v1.DisruptionEventOrBuilder>
+        disruptionEventBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The information about the disruption event. This field is only populated
+     * when event_type is DISRUPTION_EVENT.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.DisruptionEvent disruption_event = 14;</code>
+     *
+     * @return Whether the disruptionEvent field is set.
+     */
+    public boolean hasDisruptionEvent() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The information about the disruption event. This field is only populated
+     * when event_type is DISRUPTION_EVENT.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.DisruptionEvent disruption_event = 14;</code>
+     *
+     * @return The disruptionEvent.
+     */
+    public com.google.container.v1.DisruptionEvent getDisruptionEvent() {
+      if (disruptionEventBuilder_ == null) {
+        return disruptionEvent_ == null
+            ? com.google.container.v1.DisruptionEvent.getDefaultInstance()
+            : disruptionEvent_;
+      } else {
+        return disruptionEventBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The information about the disruption event. This field is only populated
+     * when event_type is DISRUPTION_EVENT.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.DisruptionEvent disruption_event = 14;</code>
+     */
+    public Builder setDisruptionEvent(com.google.container.v1.DisruptionEvent value) {
+      if (disruptionEventBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        disruptionEvent_ = value;
+      } else {
+        disruptionEventBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The information about the disruption event. This field is only populated
+     * when event_type is DISRUPTION_EVENT.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.DisruptionEvent disruption_event = 14;</code>
+     */
+    public Builder setDisruptionEvent(
+        com.google.container.v1.DisruptionEvent.Builder builderForValue) {
+      if (disruptionEventBuilder_ == null) {
+        disruptionEvent_ = builderForValue.build();
+      } else {
+        disruptionEventBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The information about the disruption event. This field is only populated
+     * when event_type is DISRUPTION_EVENT.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.DisruptionEvent disruption_event = 14;</code>
+     */
+    public Builder mergeDisruptionEvent(com.google.container.v1.DisruptionEvent value) {
+      if (disruptionEventBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && disruptionEvent_ != null
+            && disruptionEvent_ != com.google.container.v1.DisruptionEvent.getDefaultInstance()) {
+          getDisruptionEventBuilder().mergeFrom(value);
+        } else {
+          disruptionEvent_ = value;
+        }
+      } else {
+        disruptionEventBuilder_.mergeFrom(value);
+      }
+      if (disruptionEvent_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The information about the disruption event. This field is only populated
+     * when event_type is DISRUPTION_EVENT.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.DisruptionEvent disruption_event = 14;</code>
+     */
+    public Builder clearDisruptionEvent() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      disruptionEvent_ = null;
+      if (disruptionEventBuilder_ != null) {
+        disruptionEventBuilder_.dispose();
+        disruptionEventBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The information about the disruption event. This field is only populated
+     * when event_type is DISRUPTION_EVENT.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.DisruptionEvent disruption_event = 14;</code>
+     */
+    public com.google.container.v1.DisruptionEvent.Builder getDisruptionEventBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return getDisruptionEventFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The information about the disruption event. This field is only populated
+     * when event_type is DISRUPTION_EVENT.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.DisruptionEvent disruption_event = 14;</code>
+     */
+    public com.google.container.v1.DisruptionEventOrBuilder getDisruptionEventOrBuilder() {
+      if (disruptionEventBuilder_ != null) {
+        return disruptionEventBuilder_.getMessageOrBuilder();
+      } else {
+        return disruptionEvent_ == null
+            ? com.google.container.v1.DisruptionEvent.getDefaultInstance()
+            : disruptionEvent_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The information about the disruption event. This field is only populated
+     * when event_type is DISRUPTION_EVENT.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.DisruptionEvent disruption_event = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.DisruptionEvent,
+            com.google.container.v1.DisruptionEvent.Builder,
+            com.google.container.v1.DisruptionEventOrBuilder>
+        getDisruptionEventFieldBuilder() {
+      if (disruptionEventBuilder_ == null) {
+        disruptionEventBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.DisruptionEvent,
+                com.google.container.v1.DisruptionEvent.Builder,
+                com.google.container.v1.DisruptionEventOrBuilder>(
+                getDisruptionEvent(), getParentForChildren(), isClean());
+        disruptionEvent_ = null;
+      }
+      return disruptionEventBuilder_;
     }
 
     @java.lang.Override

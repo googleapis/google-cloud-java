@@ -385,4 +385,44 @@ public interface UpgradeInfoEventOrBuilder
    * @return The eventType.
    */
   com.google.container.v1.UpgradeInfoEvent.EventType getEventType();
+
+  /**
+   *
+   *
+   * <pre>
+   * The information about the disruption event. This field is only populated
+   * when event_type is DISRUPTION_EVENT.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.DisruptionEvent disruption_event = 14;</code>
+   *
+   * @return Whether the disruptionEvent field is set.
+   */
+  boolean hasDisruptionEvent();
+
+  /**
+   *
+   *
+   * <pre>
+   * The information about the disruption event. This field is only populated
+   * when event_type is DISRUPTION_EVENT.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.DisruptionEvent disruption_event = 14;</code>
+   *
+   * @return The disruptionEvent.
+   */
+  com.google.container.v1.DisruptionEvent getDisruptionEvent();
+
+  /**
+   *
+   *
+   * <pre>
+   * The information about the disruption event. This field is only populated
+   * when event_type is DISRUPTION_EVENT.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.DisruptionEvent disruption_event = 14;</code>
+   */
+  com.google.container.v1.DisruptionEventOrBuilder getDisruptionEventOrBuilder();
 }

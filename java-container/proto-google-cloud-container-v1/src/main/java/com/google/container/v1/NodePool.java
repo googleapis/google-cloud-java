@@ -6338,6 +6338,614 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface NodeDrainConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.container.v1.NodePool.NodeDrainConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether to respect PDB during node pool deletion.
+     * </pre>
+     *
+     * <code>optional bool respect_pdb_during_node_pool_deletion = 3;</code>
+     *
+     * @return Whether the respectPdbDuringNodePoolDeletion field is set.
+     */
+    boolean hasRespectPdbDuringNodePoolDeletion();
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether to respect PDB during node pool deletion.
+     * </pre>
+     *
+     * <code>optional bool respect_pdb_during_node_pool_deletion = 3;</code>
+     *
+     * @return The respectPdbDuringNodePoolDeletion.
+     */
+    boolean getRespectPdbDuringNodePoolDeletion();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * NodeDrainConfig contains the node drain related configurations for this
+   * nodepool.
+   * </pre>
+   *
+   * Protobuf type {@code google.container.v1.NodePool.NodeDrainConfig}
+   */
+  public static final class NodeDrainConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.container.v1.NodePool.NodeDrainConfig)
+      NodeDrainConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use NodeDrainConfig.newBuilder() to construct.
+    private NodeDrainConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private NodeDrainConfig() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new NodeDrainConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_NodePool_NodeDrainConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_NodePool_NodeDrainConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.container.v1.NodePool.NodeDrainConfig.class,
+              com.google.container.v1.NodePool.NodeDrainConfig.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int RESPECT_PDB_DURING_NODE_POOL_DELETION_FIELD_NUMBER = 3;
+    private boolean respectPdbDuringNodePoolDeletion_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether to respect PDB during node pool deletion.
+     * </pre>
+     *
+     * <code>optional bool respect_pdb_during_node_pool_deletion = 3;</code>
+     *
+     * @return Whether the respectPdbDuringNodePoolDeletion field is set.
+     */
+    @java.lang.Override
+    public boolean hasRespectPdbDuringNodePoolDeletion() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether to respect PDB during node pool deletion.
+     * </pre>
+     *
+     * <code>optional bool respect_pdb_during_node_pool_deletion = 3;</code>
+     *
+     * @return The respectPdbDuringNodePoolDeletion.
+     */
+    @java.lang.Override
+    public boolean getRespectPdbDuringNodePoolDeletion() {
+      return respectPdbDuringNodePoolDeletion_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeBool(3, respectPdbDuringNodePoolDeletion_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(
+                3, respectPdbDuringNodePoolDeletion_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.container.v1.NodePool.NodeDrainConfig)) {
+        return super.equals(obj);
+      }
+      com.google.container.v1.NodePool.NodeDrainConfig other =
+          (com.google.container.v1.NodePool.NodeDrainConfig) obj;
+
+      if (hasRespectPdbDuringNodePoolDeletion() != other.hasRespectPdbDuringNodePoolDeletion())
+        return false;
+      if (hasRespectPdbDuringNodePoolDeletion()) {
+        if (getRespectPdbDuringNodePoolDeletion() != other.getRespectPdbDuringNodePoolDeletion())
+          return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasRespectPdbDuringNodePoolDeletion()) {
+        hash = (37 * hash) + RESPECT_PDB_DURING_NODE_POOL_DELETION_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashBoolean(getRespectPdbDuringNodePoolDeletion());
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.container.v1.NodePool.NodeDrainConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1.NodePool.NodeDrainConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1.NodePool.NodeDrainConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1.NodePool.NodeDrainConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1.NodePool.NodeDrainConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1.NodePool.NodeDrainConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1.NodePool.NodeDrainConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.NodePool.NodeDrainConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1.NodePool.NodeDrainConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.NodePool.NodeDrainConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1.NodePool.NodeDrainConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.NodePool.NodeDrainConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.container.v1.NodePool.NodeDrainConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * NodeDrainConfig contains the node drain related configurations for this
+     * nodepool.
+     * </pre>
+     *
+     * Protobuf type {@code google.container.v1.NodePool.NodeDrainConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.container.v1.NodePool.NodeDrainConfig)
+        com.google.container.v1.NodePool.NodeDrainConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_NodePool_NodeDrainConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_NodePool_NodeDrainConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.container.v1.NodePool.NodeDrainConfig.class,
+                com.google.container.v1.NodePool.NodeDrainConfig.Builder.class);
+      }
+
+      // Construct using com.google.container.v1.NodePool.NodeDrainConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        respectPdbDuringNodePoolDeletion_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_NodePool_NodeDrainConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.NodePool.NodeDrainConfig getDefaultInstanceForType() {
+        return com.google.container.v1.NodePool.NodeDrainConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.NodePool.NodeDrainConfig build() {
+        com.google.container.v1.NodePool.NodeDrainConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.NodePool.NodeDrainConfig buildPartial() {
+        com.google.container.v1.NodePool.NodeDrainConfig result =
+            new com.google.container.v1.NodePool.NodeDrainConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.container.v1.NodePool.NodeDrainConfig result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.respectPdbDuringNodePoolDeletion_ = respectPdbDuringNodePoolDeletion_;
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.container.v1.NodePool.NodeDrainConfig) {
+          return mergeFrom((com.google.container.v1.NodePool.NodeDrainConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.container.v1.NodePool.NodeDrainConfig other) {
+        if (other == com.google.container.v1.NodePool.NodeDrainConfig.getDefaultInstance())
+          return this;
+        if (other.hasRespectPdbDuringNodePoolDeletion()) {
+          setRespectPdbDuringNodePoolDeletion(other.getRespectPdbDuringNodePoolDeletion());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24:
+                {
+                  respectPdbDuringNodePoolDeletion_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 24
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean respectPdbDuringNodePoolDeletion_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Whether to respect PDB during node pool deletion.
+       * </pre>
+       *
+       * <code>optional bool respect_pdb_during_node_pool_deletion = 3;</code>
+       *
+       * @return Whether the respectPdbDuringNodePoolDeletion field is set.
+       */
+      @java.lang.Override
+      public boolean hasRespectPdbDuringNodePoolDeletion() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Whether to respect PDB during node pool deletion.
+       * </pre>
+       *
+       * <code>optional bool respect_pdb_during_node_pool_deletion = 3;</code>
+       *
+       * @return The respectPdbDuringNodePoolDeletion.
+       */
+      @java.lang.Override
+      public boolean getRespectPdbDuringNodePoolDeletion() {
+        return respectPdbDuringNodePoolDeletion_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Whether to respect PDB during node pool deletion.
+       * </pre>
+       *
+       * <code>optional bool respect_pdb_during_node_pool_deletion = 3;</code>
+       *
+       * @param value The respectPdbDuringNodePoolDeletion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRespectPdbDuringNodePoolDeletion(boolean value) {
+
+        respectPdbDuringNodePoolDeletion_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Whether to respect PDB during node pool deletion.
+       * </pre>
+       *
+       * <code>optional bool respect_pdb_during_node_pool_deletion = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRespectPdbDuringNodePoolDeletion() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        respectPdbDuringNodePoolDeletion_ = false;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.container.v1.NodePool.NodeDrainConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.container.v1.NodePool.NodeDrainConfig)
+    private static final com.google.container.v1.NodePool.NodeDrainConfig DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.container.v1.NodePool.NodeDrainConfig();
+    }
+
+    public static com.google.container.v1.NodePool.NodeDrainConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<NodeDrainConfig> PARSER =
+        new com.google.protobuf.AbstractParser<NodeDrainConfig>() {
+          @java.lang.Override
+          public NodeDrainConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<NodeDrainConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<NodeDrainConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.container.v1.NodePool.NodeDrainConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -6882,7 +7490,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=4727
+   *     google/container/v1/cluster_service.proto;l=5025
    * @return The statusMessage.
    */
   @java.lang.Override
@@ -6913,7 +7521,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=4727
+   *     google/container/v1/cluster_service.proto;l=5025
    * @return The bytes for statusMessage.
    */
   @java.lang.Override
@@ -7523,6 +8131,59 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         : bestEffortProvisioning_;
   }
 
+  public static final int NODE_DRAIN_CONFIG_FIELD_NUMBER = 116;
+  private com.google.container.v1.NodePool.NodeDrainConfig nodeDrainConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the node drain configuration for this node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePool.NodeDrainConfig node_drain_config = 116;</code>
+   *
+   * @return Whether the nodeDrainConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasNodeDrainConfig() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the node drain configuration for this node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePool.NodeDrainConfig node_drain_config = 116;</code>
+   *
+   * @return The nodeDrainConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodePool.NodeDrainConfig getNodeDrainConfig() {
+    return nodeDrainConfig_ == null
+        ? com.google.container.v1.NodePool.NodeDrainConfig.getDefaultInstance()
+        : nodeDrainConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the node drain configuration for this node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePool.NodeDrainConfig node_drain_config = 116;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodePool.NodeDrainConfigOrBuilder getNodeDrainConfigOrBuilder() {
+    return nodeDrainConfig_ == null
+        ? com.google.container.v1.NodePool.NodeDrainConfig.getDefaultInstance()
+        : nodeDrainConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -7599,6 +8260,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(113, getBestEffortProvisioning());
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      output.writeMessage(116, getNodeDrainConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -7685,6 +8349,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               113, getBestEffortProvisioning());
     }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(116, getNodeDrainConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -7750,6 +8417,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     if (hasBestEffortProvisioning() != other.hasBestEffortProvisioning()) return false;
     if (hasBestEffortProvisioning()) {
       if (!getBestEffortProvisioning().equals(other.getBestEffortProvisioning())) return false;
+    }
+    if (hasNodeDrainConfig() != other.hasNodeDrainConfig()) return false;
+    if (hasNodeDrainConfig()) {
+      if (!getNodeDrainConfig().equals(other.getNodeDrainConfig())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -7829,6 +8500,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     if (hasBestEffortProvisioning()) {
       hash = (37 * hash) + BEST_EFFORT_PROVISIONING_FIELD_NUMBER;
       hash = (53 * hash) + getBestEffortProvisioning().hashCode();
+    }
+    if (hasNodeDrainConfig()) {
+      hash = (37 * hash) + NODE_DRAIN_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getNodeDrainConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -7986,6 +8661,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         getUpdateInfoFieldBuilder();
         getQueuedProvisioningFieldBuilder();
         getBestEffortProvisioningFieldBuilder();
+        getNodeDrainConfigFieldBuilder();
       }
     }
 
@@ -8059,6 +8735,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       if (bestEffortProvisioningBuilder_ != null) {
         bestEffortProvisioningBuilder_.dispose();
         bestEffortProvisioningBuilder_ = null;
+      }
+      nodeDrainConfig_ = null;
+      if (nodeDrainConfigBuilder_ != null) {
+        nodeDrainConfigBuilder_.dispose();
+        nodeDrainConfigBuilder_ = null;
       }
       return this;
     }
@@ -8193,6 +8874,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
                 ? bestEffortProvisioning_
                 : bestEffortProvisioningBuilder_.build();
         to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.nodeDrainConfig_ =
+            nodeDrainConfigBuilder_ == null ? nodeDrainConfig_ : nodeDrainConfigBuilder_.build();
+        to_bitField0_ |= 0x00000400;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -8352,6 +9038,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasBestEffortProvisioning()) {
         mergeBestEffortProvisioning(other.getBestEffortProvisioning());
+      }
+      if (other.hasNodeDrainConfig()) {
+        mergeNodeDrainConfig(other.getNodeDrainConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -8517,6 +9206,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00100000;
                 break;
               } // case 906
+            case 930:
+              {
+                input.readMessage(getNodeDrainConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 930
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9954,7 +10649,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=4727
+     *     google/container/v1/cluster_service.proto;l=5025
      * @return The statusMessage.
      */
     @java.lang.Deprecated
@@ -9984,7 +10679,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=4727
+     *     google/container/v1/cluster_service.proto;l=5025
      * @return The bytes for statusMessage.
      */
     @java.lang.Deprecated
@@ -10014,7 +10709,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=4727
+     *     google/container/v1/cluster_service.proto;l=5025
      * @param value The statusMessage to set.
      * @return This builder for chaining.
      */
@@ -10043,7 +10738,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=4727
+     *     google/container/v1/cluster_service.proto;l=5025
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -10068,7 +10763,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=4727
+     *     google/container/v1/cluster_service.proto;l=5025
      * @param value The bytes for statusMessage to set.
      * @return This builder for chaining.
      */
@@ -12241,6 +12936,202 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         bestEffortProvisioning_ = null;
       }
       return bestEffortProvisioningBuilder_;
+    }
+
+    private com.google.container.v1.NodePool.NodeDrainConfig nodeDrainConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NodePool.NodeDrainConfig,
+            com.google.container.v1.NodePool.NodeDrainConfig.Builder,
+            com.google.container.v1.NodePool.NodeDrainConfigOrBuilder>
+        nodeDrainConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the node drain configuration for this node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.NodeDrainConfig node_drain_config = 116;</code>
+     *
+     * @return Whether the nodeDrainConfig field is set.
+     */
+    public boolean hasNodeDrainConfig() {
+      return ((bitField0_ & 0x00200000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the node drain configuration for this node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.NodeDrainConfig node_drain_config = 116;</code>
+     *
+     * @return The nodeDrainConfig.
+     */
+    public com.google.container.v1.NodePool.NodeDrainConfig getNodeDrainConfig() {
+      if (nodeDrainConfigBuilder_ == null) {
+        return nodeDrainConfig_ == null
+            ? com.google.container.v1.NodePool.NodeDrainConfig.getDefaultInstance()
+            : nodeDrainConfig_;
+      } else {
+        return nodeDrainConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the node drain configuration for this node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.NodeDrainConfig node_drain_config = 116;</code>
+     */
+    public Builder setNodeDrainConfig(com.google.container.v1.NodePool.NodeDrainConfig value) {
+      if (nodeDrainConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        nodeDrainConfig_ = value;
+      } else {
+        nodeDrainConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the node drain configuration for this node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.NodeDrainConfig node_drain_config = 116;</code>
+     */
+    public Builder setNodeDrainConfig(
+        com.google.container.v1.NodePool.NodeDrainConfig.Builder builderForValue) {
+      if (nodeDrainConfigBuilder_ == null) {
+        nodeDrainConfig_ = builderForValue.build();
+      } else {
+        nodeDrainConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the node drain configuration for this node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.NodeDrainConfig node_drain_config = 116;</code>
+     */
+    public Builder mergeNodeDrainConfig(com.google.container.v1.NodePool.NodeDrainConfig value) {
+      if (nodeDrainConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00200000) != 0)
+            && nodeDrainConfig_ != null
+            && nodeDrainConfig_
+                != com.google.container.v1.NodePool.NodeDrainConfig.getDefaultInstance()) {
+          getNodeDrainConfigBuilder().mergeFrom(value);
+        } else {
+          nodeDrainConfig_ = value;
+        }
+      } else {
+        nodeDrainConfigBuilder_.mergeFrom(value);
+      }
+      if (nodeDrainConfig_ != null) {
+        bitField0_ |= 0x00200000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the node drain configuration for this node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.NodeDrainConfig node_drain_config = 116;</code>
+     */
+    public Builder clearNodeDrainConfig() {
+      bitField0_ = (bitField0_ & ~0x00200000);
+      nodeDrainConfig_ = null;
+      if (nodeDrainConfigBuilder_ != null) {
+        nodeDrainConfigBuilder_.dispose();
+        nodeDrainConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the node drain configuration for this node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.NodeDrainConfig node_drain_config = 116;</code>
+     */
+    public com.google.container.v1.NodePool.NodeDrainConfig.Builder getNodeDrainConfigBuilder() {
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return getNodeDrainConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the node drain configuration for this node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.NodeDrainConfig node_drain_config = 116;</code>
+     */
+    public com.google.container.v1.NodePool.NodeDrainConfigOrBuilder getNodeDrainConfigOrBuilder() {
+      if (nodeDrainConfigBuilder_ != null) {
+        return nodeDrainConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return nodeDrainConfig_ == null
+            ? com.google.container.v1.NodePool.NodeDrainConfig.getDefaultInstance()
+            : nodeDrainConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the node drain configuration for this node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.NodeDrainConfig node_drain_config = 116;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NodePool.NodeDrainConfig,
+            com.google.container.v1.NodePool.NodeDrainConfig.Builder,
+            com.google.container.v1.NodePool.NodeDrainConfigOrBuilder>
+        getNodeDrainConfigFieldBuilder() {
+      if (nodeDrainConfigBuilder_ == null) {
+        nodeDrainConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.NodePool.NodeDrainConfig,
+                com.google.container.v1.NodePool.NodeDrainConfig.Builder,
+                com.google.container.v1.NodePool.NodeDrainConfigOrBuilder>(
+                getNodeDrainConfig(), getParentForChildren(), isClean());
+        nodeDrainConfig_ = null;
+      }
+      return nodeDrainConfigBuilder_;
     }
 
     @java.lang.Override

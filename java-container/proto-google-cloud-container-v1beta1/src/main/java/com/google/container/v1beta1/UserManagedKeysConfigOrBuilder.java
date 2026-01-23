@@ -326,6 +326,72 @@ public interface UserManagedKeysConfigOrBuilder
    *
    *
    * <pre>
+   * Output only. All of the versions of the Cloud KMS cryptoKey that are used
+   * by Confidential Hyperdisks on the control plane nodes.
+   * </pre>
+   *
+   * <code>
+   * repeated string control_plane_disk_encryption_key_versions = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the controlPlaneDiskEncryptionKeyVersions.
+   */
+  java.util.List<java.lang.String> getControlPlaneDiskEncryptionKeyVersionsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All of the versions of the Cloud KMS cryptoKey that are used
+   * by Confidential Hyperdisks on the control plane nodes.
+   * </pre>
+   *
+   * <code>
+   * repeated string control_plane_disk_encryption_key_versions = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of controlPlaneDiskEncryptionKeyVersions.
+   */
+  int getControlPlaneDiskEncryptionKeyVersionsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All of the versions of the Cloud KMS cryptoKey that are used
+   * by Confidential Hyperdisks on the control plane nodes.
+   * </pre>
+   *
+   * <code>
+   * repeated string control_plane_disk_encryption_key_versions = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The controlPlaneDiskEncryptionKeyVersions at the given index.
+   */
+  java.lang.String getControlPlaneDiskEncryptionKeyVersions(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All of the versions of the Cloud KMS cryptoKey that are used
+   * by Confidential Hyperdisks on the control plane nodes.
+   * </pre>
+   *
+   * <code>
+   * repeated string control_plane_disk_encryption_key_versions = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the controlPlaneDiskEncryptionKeyVersions at the given index.
+   */
+  com.google.protobuf.ByteString getControlPlaneDiskEncryptionKeyVersionsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Resource path of the Cloud KMS cryptoKey to use for encryption of internal
    * etcd backups.
    * </pre>

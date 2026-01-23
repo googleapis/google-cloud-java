@@ -232,13 +232,22 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Packet is sent from the Internet or Google service to the private IPv6
-     * address.
+     * Packet is sent from the Internet to the private IPv6 address.
      * </pre>
      *
      * <code>NO_ROUTE_FROM_INTERNET_TO_PRIVATE_IPV6_ADDRESS = 44;</code>
      */
     NO_ROUTE_FROM_INTERNET_TO_PRIVATE_IPV6_ADDRESS(44),
+    /**
+     *
+     *
+     * <pre>
+     * Packet is sent from the Internet to the private IPv4 address.
+     * </pre>
+     *
+     * <code>NO_ROUTE_FROM_INTERNET_TO_PRIVATE_IPV4_ADDRESS = 109;</code>
+     */
+    NO_ROUTE_FROM_INTERNET_TO_PRIVATE_IPV4_ADDRESS(109),
     /**
      *
      *
@@ -394,6 +403,16 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>GKE_CLUSTER_NOT_RUNNING = 27;</code>
      */
     GKE_CLUSTER_NOT_RUNNING(27),
+    /**
+     *
+     *
+     * <pre>
+     * Packet sent from or to a GKE Pod that is not in running state.
+     * </pre>
+     *
+     * <code>GKE_POD_NOT_RUNNING = 103;</code>
+     */
+    GKE_POD_NOT_RUNNING(103),
     /**
      *
      *
@@ -1083,6 +1102,17 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Packet is dropped due to matching a Private NAT64 gateway with no rules
+     * for source IPv6 addresses.
+     * </pre>
+     *
+     * <code>NO_CONFIGURED_PRIVATE_NAT64_RULE = 107;</code>
+     */
+    NO_CONFIGURED_PRIVATE_NAT64_RULE(107),
+    /**
+     *
+     *
+     * <pre>
      * Packet is dropped due to being sent to a backend of a passthrough load
      * balancer that doesn't use the same IP version as the frontend.
      * </pre>
@@ -1168,6 +1198,17 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>HYBRID_SUBNET_REGION_MISMATCH = 105;</code>
      */
     HYBRID_SUBNET_REGION_MISMATCH(105),
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped because no matching route was found in the hybrid
+     * subnet.
+     * </pre>
+     *
+     * <code>HYBRID_SUBNET_NO_ROUTE = 106;</code>
+     */
+    HYBRID_SUBNET_NO_ROUTE(106),
     UNRECOGNIZED(-1),
     ;
 
@@ -1337,13 +1378,23 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Packet is sent from the Internet or Google service to the private IPv6
-     * address.
+     * Packet is sent from the Internet to the private IPv6 address.
      * </pre>
      *
      * <code>NO_ROUTE_FROM_INTERNET_TO_PRIVATE_IPV6_ADDRESS = 44;</code>
      */
     public static final int NO_ROUTE_FROM_INTERNET_TO_PRIVATE_IPV6_ADDRESS_VALUE = 44;
+
+    /**
+     *
+     *
+     * <pre>
+     * Packet is sent from the Internet to the private IPv4 address.
+     * </pre>
+     *
+     * <code>NO_ROUTE_FROM_INTERNET_TO_PRIVATE_IPV4_ADDRESS = 109;</code>
+     */
+    public static final int NO_ROUTE_FROM_INTERNET_TO_PRIVATE_IPV4_ADDRESS_VALUE = 109;
 
     /**
      *
@@ -1513,6 +1564,17 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>GKE_CLUSTER_NOT_RUNNING = 27;</code>
      */
     public static final int GKE_CLUSTER_NOT_RUNNING_VALUE = 27;
+
+    /**
+     *
+     *
+     * <pre>
+     * Packet sent from or to a GKE Pod that is not in running state.
+     * </pre>
+     *
+     * <code>GKE_POD_NOT_RUNNING = 103;</code>
+     */
+    public static final int GKE_POD_NOT_RUNNING_VALUE = 103;
 
     /**
      *
@@ -2265,6 +2327,18 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Packet is dropped due to matching a Private NAT64 gateway with no rules
+     * for source IPv6 addresses.
+     * </pre>
+     *
+     * <code>NO_CONFIGURED_PRIVATE_NAT64_RULE = 107;</code>
+     */
+    public static final int NO_CONFIGURED_PRIVATE_NAT64_RULE_VALUE = 107;
+
+    /**
+     *
+     *
+     * <pre>
      * Packet is dropped due to being sent to a backend of a passthrough load
      * balancer that doesn't use the same IP version as the frontend.
      * </pre>
@@ -2358,6 +2432,18 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int HYBRID_SUBNET_REGION_MISMATCH_VALUE = 105;
 
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped because no matching route was found in the hybrid
+     * subnet.
+     * </pre>
+     *
+     * <code>HYBRID_SUBNET_NO_ROUTE = 106;</code>
+     */
+    public static final int HYBRID_SUBNET_NO_ROUTE_VALUE = 106;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -2412,6 +2498,8 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
           return ROUTE_NEXT_HOP_FORWARDING_RULE_TYPE_INVALID;
         case 44:
           return NO_ROUTE_FROM_INTERNET_TO_PRIVATE_IPV6_ADDRESS;
+        case 109:
+          return NO_ROUTE_FROM_INTERNET_TO_PRIVATE_IPV4_ADDRESS;
         case 98:
           return NO_ROUTE_FROM_EXTERNAL_IPV6_SOURCE_TO_PRIVATE_IPV6_ADDRESS;
         case 45:
@@ -2440,6 +2528,8 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
           return INSTANCE_NOT_RUNNING;
         case 27:
           return GKE_CLUSTER_NOT_RUNNING;
+        case 103:
+          return GKE_POD_NOT_RUNNING;
         case 28:
           return CLOUD_SQL_INSTANCE_NOT_RUNNING;
         case 68:
@@ -2564,6 +2654,8 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
           return TRAFFIC_FROM_HYBRID_ENDPOINT_TO_INTERNET_DISALLOWED;
         case 90:
           return NO_MATCHING_NAT64_GATEWAY;
+        case 107:
+          return NO_CONFIGURED_PRIVATE_NAT64_RULE;
         case 96:
           return LOAD_BALANCER_BACKEND_IP_VERSION_MISMATCH;
         case 97:
@@ -2580,6 +2672,8 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
           return NCC_ROUTE_WITHIN_HYBRID_SUBNET_UNSUPPORTED;
         case 105:
           return HYBRID_SUBNET_REGION_MISMATCH;
+        case 106:
+          return HYBRID_SUBNET_NO_ROUTE;
         default:
           return null;
       }

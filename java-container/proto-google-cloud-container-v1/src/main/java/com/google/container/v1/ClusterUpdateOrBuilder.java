@@ -583,7 +583,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_master_authorized_networks_config is
-   *     deprecated. See google/container/v1/cluster_service.proto;l=3121
+   *     deprecated. See google/container/v1/cluster_service.proto;l=3376
    * @return Whether the desiredMasterAuthorizedNetworksConfig field is set.
    */
   @java.lang.Deprecated
@@ -605,7 +605,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_master_authorized_networks_config is
-   *     deprecated. See google/container/v1/cluster_service.proto;l=3121
+   *     deprecated. See google/container/v1/cluster_service.proto;l=3376
    * @return The desiredMasterAuthorizedNetworksConfig.
    */
   @java.lang.Deprecated
@@ -850,7 +850,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_private_cluster_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3159
+   *     google/container/v1/cluster_service.proto;l=3414
    * @return Whether the desiredPrivateClusterConfig field is set.
    */
   @java.lang.Deprecated
@@ -877,7 +877,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_private_cluster_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3159
+   *     google/container/v1/cluster_service.proto;l=3414
    * @return The desiredPrivateClusterConfig.
    */
   @java.lang.Deprecated
@@ -1360,7 +1360,7 @@ public interface ClusterUpdateOrBuilder
    * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_enable_private_endpoint is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=3204
+   *     See google/container/v1/cluster_service.proto;l=3459
    * @return Whether the desiredEnablePrivateEndpoint field is set.
    */
   @java.lang.Deprecated
@@ -1381,7 +1381,7 @@ public interface ClusterUpdateOrBuilder
    * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_enable_private_endpoint is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=3204
+   *     See google/container/v1/cluster_service.proto;l=3459
    * @return The desiredEnablePrivateEndpoint.
    */
   @java.lang.Deprecated
@@ -2476,7 +2476,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.user_managed_keys_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3320
+   *     google/container/v1/cluster_service.proto;l=3575
    * @return Whether the userManagedKeysConfig field is set.
    */
   @java.lang.Deprecated
@@ -2499,7 +2499,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.user_managed_keys_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3320
+   *     google/container/v1/cluster_service.proto;l=3575
    * @return The userManagedKeysConfig.
    */
   @java.lang.Deprecated
@@ -2623,7 +2623,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_enterprise_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3333
+   *     google/container/v1/cluster_service.proto;l=3588
    * @return Whether the desiredEnterpriseConfig field is set.
    */
   @java.lang.Deprecated
@@ -2644,7 +2644,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_enterprise_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3333
+   *     google/container/v1/cluster_service.proto;l=3588
    * @return The desiredEnterpriseConfig.
    */
   @java.lang.Deprecated
@@ -2940,4 +2940,89 @@ public interface ClusterUpdateOrBuilder
    * <code>.google.container.v1.NetworkTierConfig desired_network_tier_config = 155;</code>
    */
   com.google.container.v1.NetworkTierConfigOrBuilder getDesiredNetworkTierConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired privileged admission config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.PrivilegedAdmissionConfig desired_privileged_admission_config = 159;
+   * </code>
+   *
+   * @return Whether the desiredPrivilegedAdmissionConfig field is set.
+   */
+  boolean hasDesiredPrivilegedAdmissionConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired privileged admission config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.PrivilegedAdmissionConfig desired_privileged_admission_config = 159;
+   * </code>
+   *
+   * @return The desiredPrivilegedAdmissionConfig.
+   */
+  com.google.container.v1.PrivilegedAdmissionConfig getDesiredPrivilegedAdmissionConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired privileged admission config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.PrivilegedAdmissionConfig desired_privileged_admission_config = 159;
+   * </code>
+   */
+  com.google.container.v1.PrivilegedAdmissionConfigOrBuilder
+      getDesiredPrivilegedAdmissionConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired managed open telemetry configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.ManagedOpenTelemetryConfig desired_managed_opentelemetry_config = 163;
+   * </code>
+   *
+   * @return Whether the desiredManagedOpentelemetryConfig field is set.
+   */
+  boolean hasDesiredManagedOpentelemetryConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired managed open telemetry configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.ManagedOpenTelemetryConfig desired_managed_opentelemetry_config = 163;
+   * </code>
+   *
+   * @return The desiredManagedOpentelemetryConfig.
+   */
+  com.google.container.v1.ManagedOpenTelemetryConfig getDesiredManagedOpentelemetryConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired managed open telemetry configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.ManagedOpenTelemetryConfig desired_managed_opentelemetry_config = 163;
+   * </code>
+   */
+  com.google.container.v1.ManagedOpenTelemetryConfigOrBuilder
+      getDesiredManagedOpentelemetryConfigOrBuilder();
 }

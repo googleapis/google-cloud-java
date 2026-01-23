@@ -506,7 +506,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>int32 initial_node_count = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.initial_node_count is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2456
+   *     google/container/v1/cluster_service.proto;l=2703
    * @return The initialNodeCount.
    */
   @java.lang.Override
@@ -538,7 +538,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.container.v1.NodeConfig node_config = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.node_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2469
+   *     google/container/v1/cluster_service.proto;l=2716
    * @return Whether the nodeConfig field is set.
    */
   @java.lang.Override
@@ -567,7 +567,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.container.v1.NodeConfig node_config = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.node_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2469
+   *     google/container/v1/cluster_service.proto;l=2716
    * @return The nodeConfig.
    */
   @java.lang.Override
@@ -885,7 +885,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The IP address range of the container pods in this cluster, in
-   * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+   * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`). Leave blank to have
    * one automatically chosen or specify a `/14` block in `10.0.0.0/8`.
    * </pre>
@@ -912,7 +912,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The IP address range of the container pods in this cluster, in
-   * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+   * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`). Leave blank to have
    * one automatically chosen or specify a `/14` block in `10.0.0.0/8`.
    * </pre>
@@ -1682,7 +1682,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.Cluster.master_authorized_networks_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2576
+   *     google/container/v1/cluster_service.proto;l=2823
    * @return Whether the masterAuthorizedNetworksConfig field is set.
    */
   @java.lang.Override
@@ -1707,7 +1707,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.Cluster.master_authorized_networks_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2576
+   *     google/container/v1/cluster_service.proto;l=2823
    * @return The masterAuthorizedNetworksConfig.
    */
   @java.lang.Override
@@ -2803,7 +2803,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>string zone = 101 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @deprecated google.container.v1.Cluster.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2650
+   *     google/container/v1/cluster_service.proto;l=2897
    * @return The zone.
    */
   @java.lang.Override
@@ -2833,7 +2833,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>string zone = 101 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @deprecated google.container.v1.Cluster.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2650
+   *     google/container/v1/cluster_service.proto;l=2897
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -3064,7 +3064,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.Cluster.current_node_version is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2685
+   *     google/container/v1/cluster_service.proto;l=2932
    * @return The currentNodeVersion.
    */
   @java.lang.Override
@@ -3097,7 +3097,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.Cluster.current_node_version is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2685
+   *     google/container/v1/cluster_service.proto;l=2932
    * @return The bytes for currentNodeVersion.
    */
   @java.lang.Override
@@ -3229,7 +3229,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.Cluster.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2698
+   *     google/container/v1/cluster_service.proto;l=2945
    * @return The statusMessage.
    */
   @java.lang.Override
@@ -3260,7 +3260,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.Cluster.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2698
+   *     google/container/v1/cluster_service.proto;l=2945
    * @return The bytes for statusMessage.
    */
   @java.lang.Override
@@ -3310,7 +3310,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The IP address range of the Kubernetes services in
    * this cluster, in
-   * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+   * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `1.2.3.4/29`). Service addresses are
    * typically put in the last `/16` from the container CIDR.
    * </pre>
@@ -3338,7 +3338,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The IP address range of the Kubernetes services in
    * this cluster, in
-   * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+   * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `1.2.3.4/29`). Service addresses are
    * typically put in the last `/16` from the container CIDR.
    * </pre>
@@ -3378,7 +3378,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2715
+   *     google/container/v1/cluster_service.proto;l=2962
    * @return A list containing the instanceGroupUrls.
    */
   @java.lang.Deprecated
@@ -3398,7 +3398,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2715
+   *     google/container/v1/cluster_service.proto;l=2962
    * @return The count of instanceGroupUrls.
    */
   @java.lang.Deprecated
@@ -3418,7 +3418,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2715
+   *     google/container/v1/cluster_service.proto;l=2962
    * @param index The index of the element to return.
    * @return The instanceGroupUrls at the given index.
    */
@@ -3439,7 +3439,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2715
+   *     google/container/v1/cluster_service.proto;l=2962
    * @param index The index of the value to return.
    * @return The bytes of the instanceGroupUrls at the given index.
    */
@@ -3464,7 +3464,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.Cluster.current_node_count is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2720
+   *     google/container/v1/cluster_service.proto;l=2967
    * @return The currentNodeCount.
    */
   @java.lang.Override
@@ -3604,7 +3604,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>bool enable_tpu = 115 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.enable_tpu is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2737
+   *     google/container/v1/cluster_service.proto;l=2984
    * @return The enableTpu.
    */
   @java.lang.Override
@@ -3623,7 +3623,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The IP address range of the Cloud TPUs in this cluster, in
-   * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+   * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `1.2.3.4/29`).
    * This field is deprecated due to the deprecation of 2VM TPU. The end of life
    * date for 2VM TPU is 2025-04-25.
@@ -3634,7 +3634,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.Cluster.tpu_ipv4_cidr_block is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2744
+   *     google/container/v1/cluster_service.proto;l=2991
    * @return The tpuIpv4CidrBlock.
    */
   @java.lang.Override
@@ -3656,7 +3656,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The IP address range of the Cloud TPUs in this cluster, in
-   * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+   * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `1.2.3.4/29`).
    * This field is deprecated due to the deprecation of 2VM TPU. The end of life
    * date for 2VM TPU is 2025-04-25.
@@ -3667,7 +3667,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.Cluster.tpu_ipv4_cidr_block is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2744
+   *     google/container/v1/cluster_service.proto;l=2991
    * @return The bytes for tpuIpv4CidrBlock.
    */
   @java.lang.Override
@@ -4419,7 +4419,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.container.v1.EnterpriseConfig enterprise_config = 149 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.enterprise_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2794
+   *     google/container/v1/cluster_service.proto;l=3041
    * @return Whether the enterpriseConfig field is set.
    */
   @java.lang.Override
@@ -4441,7 +4441,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.container.v1.EnterpriseConfig enterprise_config = 149 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.enterprise_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2794
+   *     google/container/v1/cluster_service.proto;l=3041
    * @return The enterpriseConfig.
    */
   @java.lang.Override
@@ -4875,6 +4875,63 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         : anonymousAuthenticationConfig_;
   }
 
+  public static final int MANAGED_OPENTELEMETRY_CONFIG_FIELD_NUMBER = 168;
+  private com.google.container.v1.ManagedOpenTelemetryConfig managedOpentelemetryConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Managed OpenTelemetry pipeline.
+   * </pre>
+   *
+   * <code>.google.container.v1.ManagedOpenTelemetryConfig managed_opentelemetry_config = 168;
+   * </code>
+   *
+   * @return Whether the managedOpentelemetryConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasManagedOpentelemetryConfig() {
+    return ((bitField1_ & 0x00001000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Managed OpenTelemetry pipeline.
+   * </pre>
+   *
+   * <code>.google.container.v1.ManagedOpenTelemetryConfig managed_opentelemetry_config = 168;
+   * </code>
+   *
+   * @return The managedOpentelemetryConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.ManagedOpenTelemetryConfig getManagedOpentelemetryConfig() {
+    return managedOpentelemetryConfig_ == null
+        ? com.google.container.v1.ManagedOpenTelemetryConfig.getDefaultInstance()
+        : managedOpentelemetryConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Managed OpenTelemetry pipeline.
+   * </pre>
+   *
+   * <code>.google.container.v1.ManagedOpenTelemetryConfig managed_opentelemetry_config = 168;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.ManagedOpenTelemetryConfigOrBuilder
+      getManagedOpentelemetryConfigOrBuilder() {
+    return managedOpentelemetryConfig_ == null
+        ? com.google.container.v1.ManagedOpenTelemetryConfig.getDefaultInstance()
+        : managedOpentelemetryConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -5122,6 +5179,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField1_ & 0x00000800) != 0)) {
       output.writeMessage(164, getAnonymousAuthenticationConfig());
+    }
+    if (((bitField1_ & 0x00001000) != 0)) {
+      output.writeMessage(168, getManagedOpentelemetryConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -5413,6 +5473,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               164, getAnonymousAuthenticationConfig());
     }
+    if (((bitField1_ & 0x00001000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              168, getManagedOpentelemetryConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -5644,6 +5709,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return false;
     if (hasAnonymousAuthenticationConfig()) {
       if (!getAnonymousAuthenticationConfig().equals(other.getAnonymousAuthenticationConfig()))
+        return false;
+    }
+    if (hasManagedOpentelemetryConfig() != other.hasManagedOpentelemetryConfig()) return false;
+    if (hasManagedOpentelemetryConfig()) {
+      if (!getManagedOpentelemetryConfig().equals(other.getManagedOpentelemetryConfig()))
         return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -5913,6 +5983,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ANONYMOUS_AUTHENTICATION_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getAnonymousAuthenticationConfig().hashCode();
     }
+    if (hasManagedOpentelemetryConfig()) {
+      hash = (37 * hash) + MANAGED_OPENTELEMETRY_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getManagedOpentelemetryConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -6118,6 +6192,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         getRbacBindingConfigFieldBuilder();
         getGkeAutoUpgradeConfigFieldBuilder();
         getAnonymousAuthenticationConfigFieldBuilder();
+        getManagedOpentelemetryConfigFieldBuilder();
       }
     }
 
@@ -6384,6 +6459,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (anonymousAuthenticationConfigBuilder_ != null) {
         anonymousAuthenticationConfigBuilder_.dispose();
         anonymousAuthenticationConfigBuilder_ = null;
+      }
+      managedOpentelemetryConfig_ = null;
+      if (managedOpentelemetryConfigBuilder_ != null) {
+        managedOpentelemetryConfigBuilder_.dispose();
+        managedOpentelemetryConfigBuilder_ = null;
       }
       return this;
     }
@@ -6825,6 +6905,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                 : anonymousAuthenticationConfigBuilder_.build();
         to_bitField1_ |= 0x00000800;
       }
+      if (((from_bitField2_ & 0x00004000) != 0)) {
+        result.managedOpentelemetryConfig_ =
+            managedOpentelemetryConfigBuilder_ == null
+                ? managedOpentelemetryConfig_
+                : managedOpentelemetryConfigBuilder_.build();
+        to_bitField1_ |= 0x00001000;
+      }
       result.bitField0_ |= to_bitField0_;
       result.bitField1_ |= to_bitField1_;
     }
@@ -7219,6 +7306,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasAnonymousAuthenticationConfig()) {
         mergeAnonymousAuthenticationConfig(other.getAnonymousAuthenticationConfig());
+      }
+      if (other.hasManagedOpentelemetryConfig()) {
+        mergeManagedOpentelemetryConfig(other.getManagedOpentelemetryConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -7766,6 +7856,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                 bitField2_ |= 0x00002000;
                 break;
               } // case 1314
+            case 1346:
+              {
+                input.readMessage(
+                    getManagedOpentelemetryConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField2_ |= 0x00004000;
+                break;
+              } // case 1346
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8061,7 +8158,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>int32 initial_node_count = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.initial_node_count is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2456
+     *     google/container/v1/cluster_service.proto;l=2703
      * @return The initialNodeCount.
      */
     @java.lang.Override
@@ -8090,7 +8187,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>int32 initial_node_count = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.initial_node_count is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2456
+     *     google/container/v1/cluster_service.proto;l=2703
      * @param value The initialNodeCount to set.
      * @return This builder for chaining.
      */
@@ -8123,7 +8220,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>int32 initial_node_count = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.initial_node_count is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2456
+     *     google/container/v1/cluster_service.proto;l=2703
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -8161,7 +8258,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.NodeConfig node_config = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.node_config is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2469
+     *     google/container/v1/cluster_service.proto;l=2716
      * @return Whether the nodeConfig field is set.
      */
     @java.lang.Deprecated
@@ -8189,7 +8286,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.NodeConfig node_config = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.node_config is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2469
+     *     google/container/v1/cluster_service.proto;l=2716
      * @return The nodeConfig.
      */
     @java.lang.Deprecated
@@ -9115,7 +9212,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The IP address range of the container pods in this cluster, in
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`). Leave blank to have
      * one automatically chosen or specify a `/14` block in `10.0.0.0/8`.
      * </pre>
@@ -9141,7 +9238,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The IP address range of the container pods in this cluster, in
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`). Leave blank to have
      * one automatically chosen or specify a `/14` block in `10.0.0.0/8`.
      * </pre>
@@ -9167,7 +9264,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The IP address range of the container pods in this cluster, in
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`). Leave blank to have
      * one automatically chosen or specify a `/14` block in `10.0.0.0/8`.
      * </pre>
@@ -9192,7 +9289,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The IP address range of the container pods in this cluster, in
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`). Leave blank to have
      * one automatically chosen or specify a `/14` block in `10.0.0.0/8`.
      * </pre>
@@ -9213,7 +9310,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The IP address range of the container pods in this cluster, in
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `10.96.0.0/14`). Leave blank to have
      * one automatically chosen or specify a `/14` block in `10.0.0.0/8`.
      * </pre>
@@ -11396,7 +11493,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.master_authorized_networks_config is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2576
+     *     google/container/v1/cluster_service.proto;l=2823
      * @return Whether the masterAuthorizedNetworksConfig field is set.
      */
     @java.lang.Deprecated
@@ -11420,7 +11517,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.master_authorized_networks_config is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2576
+     *     google/container/v1/cluster_service.proto;l=2823
      * @return The masterAuthorizedNetworksConfig.
      */
     @java.lang.Deprecated
@@ -15405,7 +15502,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2650
+     *     google/container/v1/cluster_service.proto;l=2897
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -15435,7 +15532,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2650
+     *     google/container/v1/cluster_service.proto;l=2897
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -15465,7 +15562,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2650
+     *     google/container/v1/cluster_service.proto;l=2897
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -15494,7 +15591,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2650
+     *     google/container/v1/cluster_service.proto;l=2897
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -15519,7 +15616,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2650
+     *     google/container/v1/cluster_service.proto;l=2897
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -15976,7 +16073,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.current_node_version is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2685
+     *     google/container/v1/cluster_service.proto;l=2932
      * @return The currentNodeVersion.
      */
     @java.lang.Deprecated
@@ -16008,7 +16105,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.current_node_version is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2685
+     *     google/container/v1/cluster_service.proto;l=2932
      * @return The bytes for currentNodeVersion.
      */
     @java.lang.Deprecated
@@ -16040,7 +16137,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.current_node_version is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2685
+     *     google/container/v1/cluster_service.proto;l=2932
      * @param value The currentNodeVersion to set.
      * @return This builder for chaining.
      */
@@ -16071,7 +16168,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.current_node_version is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2685
+     *     google/container/v1/cluster_service.proto;l=2932
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -16098,7 +16195,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.current_node_version is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2685
+     *     google/container/v1/cluster_service.proto;l=2932
      * @param value The bytes for currentNodeVersion to set.
      * @return This builder for chaining.
      */
@@ -16351,7 +16448,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2698
+     *     google/container/v1/cluster_service.proto;l=2945
      * @return The statusMessage.
      */
     @java.lang.Deprecated
@@ -16381,7 +16478,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2698
+     *     google/container/v1/cluster_service.proto;l=2945
      * @return The bytes for statusMessage.
      */
     @java.lang.Deprecated
@@ -16411,7 +16508,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2698
+     *     google/container/v1/cluster_service.proto;l=2945
      * @param value The statusMessage to set.
      * @return This builder for chaining.
      */
@@ -16440,7 +16537,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2698
+     *     google/container/v1/cluster_service.proto;l=2945
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -16465,7 +16562,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2698
+     *     google/container/v1/cluster_service.proto;l=2945
      * @param value The bytes for statusMessage to set.
      * @return This builder for chaining.
      */
@@ -16554,7 +16651,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The IP address range of the Kubernetes services in
      * this cluster, in
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `1.2.3.4/29`). Service addresses are
      * typically put in the last `/16` from the container CIDR.
      * </pre>
@@ -16581,7 +16678,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The IP address range of the Kubernetes services in
      * this cluster, in
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `1.2.3.4/29`). Service addresses are
      * typically put in the last `/16` from the container CIDR.
      * </pre>
@@ -16608,7 +16705,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The IP address range of the Kubernetes services in
      * this cluster, in
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `1.2.3.4/29`). Service addresses are
      * typically put in the last `/16` from the container CIDR.
      * </pre>
@@ -16634,7 +16731,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The IP address range of the Kubernetes services in
      * this cluster, in
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `1.2.3.4/29`). Service addresses are
      * typically put in the last `/16` from the container CIDR.
      * </pre>
@@ -16656,7 +16753,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The IP address range of the Kubernetes services in
      * this cluster, in
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `1.2.3.4/29`). Service addresses are
      * typically put in the last `/16` from the container CIDR.
      * </pre>
@@ -16699,7 +16796,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2715
+     *     google/container/v1/cluster_service.proto;l=2962
      * @return A list containing the instanceGroupUrls.
      */
     @java.lang.Deprecated
@@ -16720,7 +16817,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2715
+     *     google/container/v1/cluster_service.proto;l=2962
      * @return The count of instanceGroupUrls.
      */
     @java.lang.Deprecated
@@ -16740,7 +16837,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2715
+     *     google/container/v1/cluster_service.proto;l=2962
      * @param index The index of the element to return.
      * @return The instanceGroupUrls at the given index.
      */
@@ -16761,7 +16858,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2715
+     *     google/container/v1/cluster_service.proto;l=2962
      * @param index The index of the value to return.
      * @return The bytes of the instanceGroupUrls at the given index.
      */
@@ -16782,7 +16879,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2715
+     *     google/container/v1/cluster_service.proto;l=2962
      * @param index The index to set the value at.
      * @param value The instanceGroupUrls to set.
      * @return This builder for chaining.
@@ -16811,7 +16908,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2715
+     *     google/container/v1/cluster_service.proto;l=2962
      * @param value The instanceGroupUrls to add.
      * @return This builder for chaining.
      */
@@ -16839,7 +16936,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2715
+     *     google/container/v1/cluster_service.proto;l=2962
      * @param values The instanceGroupUrls to add.
      * @return This builder for chaining.
      */
@@ -16864,7 +16961,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2715
+     *     google/container/v1/cluster_service.proto;l=2962
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -16888,7 +16985,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2715
+     *     google/container/v1/cluster_service.proto;l=2962
      * @param value The bytes of the instanceGroupUrls to add.
      * @return This builder for chaining.
      */
@@ -16920,7 +17017,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.current_node_count is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2720
+     *     google/container/v1/cluster_service.proto;l=2967
      * @return The currentNodeCount.
      */
     @java.lang.Override
@@ -16942,7 +17039,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.current_node_count is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2720
+     *     google/container/v1/cluster_service.proto;l=2967
      * @param value The currentNodeCount to set.
      * @return This builder for chaining.
      */
@@ -16968,7 +17065,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.current_node_count is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2720
+     *     google/container/v1/cluster_service.proto;l=2967
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -17240,7 +17337,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_tpu = 115 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.enable_tpu is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2737
+     *     google/container/v1/cluster_service.proto;l=2984
      * @return The enableTpu.
      */
     @java.lang.Override
@@ -17261,7 +17358,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_tpu = 115 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.enable_tpu is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2737
+     *     google/container/v1/cluster_service.proto;l=2984
      * @param value The enableTpu to set.
      * @return This builder for chaining.
      */
@@ -17286,7 +17383,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_tpu = 115 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.enable_tpu is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2737
+     *     google/container/v1/cluster_service.proto;l=2984
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -17304,7 +17401,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The IP address range of the Cloud TPUs in this cluster, in
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `1.2.3.4/29`).
      * This field is deprecated due to the deprecation of 2VM TPU. The end of life
      * date for 2VM TPU is 2025-04-25.
@@ -17315,7 +17412,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.tpu_ipv4_cidr_block is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2744
+     *     google/container/v1/cluster_service.proto;l=2991
      * @return The tpuIpv4CidrBlock.
      */
     @java.lang.Deprecated
@@ -17336,7 +17433,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The IP address range of the Cloud TPUs in this cluster, in
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `1.2.3.4/29`).
      * This field is deprecated due to the deprecation of 2VM TPU. The end of life
      * date for 2VM TPU is 2025-04-25.
@@ -17347,7 +17444,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.tpu_ipv4_cidr_block is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2744
+     *     google/container/v1/cluster_service.proto;l=2991
      * @return The bytes for tpuIpv4CidrBlock.
      */
     @java.lang.Deprecated
@@ -17368,7 +17465,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The IP address range of the Cloud TPUs in this cluster, in
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `1.2.3.4/29`).
      * This field is deprecated due to the deprecation of 2VM TPU. The end of life
      * date for 2VM TPU is 2025-04-25.
@@ -17379,7 +17476,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.tpu_ipv4_cidr_block is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2744
+     *     google/container/v1/cluster_service.proto;l=2991
      * @param value The tpuIpv4CidrBlock to set.
      * @return This builder for chaining.
      */
@@ -17399,7 +17496,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The IP address range of the Cloud TPUs in this cluster, in
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `1.2.3.4/29`).
      * This field is deprecated due to the deprecation of 2VM TPU. The end of life
      * date for 2VM TPU is 2025-04-25.
@@ -17410,7 +17507,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.tpu_ipv4_cidr_block is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2744
+     *     google/container/v1/cluster_service.proto;l=2991
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -17426,7 +17523,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The IP address range of the Cloud TPUs in this cluster, in
-     * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+     * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
      * notation (e.g. `1.2.3.4/29`).
      * This field is deprecated due to the deprecation of 2VM TPU. The end of life
      * date for 2VM TPU is 2025-04-25.
@@ -17437,7 +17534,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.tpu_ipv4_cidr_block is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2744
+     *     google/container/v1/cluster_service.proto;l=2991
      * @param value The bytes for tpuIpv4CidrBlock to set.
      * @return This builder for chaining.
      */
@@ -20051,7 +20148,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.enterprise_config is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2794
+     *     google/container/v1/cluster_service.proto;l=3041
      * @return Whether the enterpriseConfig field is set.
      */
     @java.lang.Deprecated
@@ -20073,7 +20170,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.enterprise_config is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2794
+     *     google/container/v1/cluster_service.proto;l=3041
      * @return The enterpriseConfig.
      */
     @java.lang.Deprecated
@@ -21647,6 +21744,215 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         anonymousAuthenticationConfig_ = null;
       }
       return anonymousAuthenticationConfigBuilder_;
+    }
+
+    private com.google.container.v1.ManagedOpenTelemetryConfig managedOpentelemetryConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ManagedOpenTelemetryConfig,
+            com.google.container.v1.ManagedOpenTelemetryConfig.Builder,
+            com.google.container.v1.ManagedOpenTelemetryConfigOrBuilder>
+        managedOpentelemetryConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Managed OpenTelemetry pipeline.
+     * </pre>
+     *
+     * <code>.google.container.v1.ManagedOpenTelemetryConfig managed_opentelemetry_config = 168;
+     * </code>
+     *
+     * @return Whether the managedOpentelemetryConfig field is set.
+     */
+    public boolean hasManagedOpentelemetryConfig() {
+      return ((bitField2_ & 0x00004000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Managed OpenTelemetry pipeline.
+     * </pre>
+     *
+     * <code>.google.container.v1.ManagedOpenTelemetryConfig managed_opentelemetry_config = 168;
+     * </code>
+     *
+     * @return The managedOpentelemetryConfig.
+     */
+    public com.google.container.v1.ManagedOpenTelemetryConfig getManagedOpentelemetryConfig() {
+      if (managedOpentelemetryConfigBuilder_ == null) {
+        return managedOpentelemetryConfig_ == null
+            ? com.google.container.v1.ManagedOpenTelemetryConfig.getDefaultInstance()
+            : managedOpentelemetryConfig_;
+      } else {
+        return managedOpentelemetryConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Managed OpenTelemetry pipeline.
+     * </pre>
+     *
+     * <code>.google.container.v1.ManagedOpenTelemetryConfig managed_opentelemetry_config = 168;
+     * </code>
+     */
+    public Builder setManagedOpentelemetryConfig(
+        com.google.container.v1.ManagedOpenTelemetryConfig value) {
+      if (managedOpentelemetryConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        managedOpentelemetryConfig_ = value;
+      } else {
+        managedOpentelemetryConfigBuilder_.setMessage(value);
+      }
+      bitField2_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Managed OpenTelemetry pipeline.
+     * </pre>
+     *
+     * <code>.google.container.v1.ManagedOpenTelemetryConfig managed_opentelemetry_config = 168;
+     * </code>
+     */
+    public Builder setManagedOpentelemetryConfig(
+        com.google.container.v1.ManagedOpenTelemetryConfig.Builder builderForValue) {
+      if (managedOpentelemetryConfigBuilder_ == null) {
+        managedOpentelemetryConfig_ = builderForValue.build();
+      } else {
+        managedOpentelemetryConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField2_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Managed OpenTelemetry pipeline.
+     * </pre>
+     *
+     * <code>.google.container.v1.ManagedOpenTelemetryConfig managed_opentelemetry_config = 168;
+     * </code>
+     */
+    public Builder mergeManagedOpentelemetryConfig(
+        com.google.container.v1.ManagedOpenTelemetryConfig value) {
+      if (managedOpentelemetryConfigBuilder_ == null) {
+        if (((bitField2_ & 0x00004000) != 0)
+            && managedOpentelemetryConfig_ != null
+            && managedOpentelemetryConfig_
+                != com.google.container.v1.ManagedOpenTelemetryConfig.getDefaultInstance()) {
+          getManagedOpentelemetryConfigBuilder().mergeFrom(value);
+        } else {
+          managedOpentelemetryConfig_ = value;
+        }
+      } else {
+        managedOpentelemetryConfigBuilder_.mergeFrom(value);
+      }
+      if (managedOpentelemetryConfig_ != null) {
+        bitField2_ |= 0x00004000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Managed OpenTelemetry pipeline.
+     * </pre>
+     *
+     * <code>.google.container.v1.ManagedOpenTelemetryConfig managed_opentelemetry_config = 168;
+     * </code>
+     */
+    public Builder clearManagedOpentelemetryConfig() {
+      bitField2_ = (bitField2_ & ~0x00004000);
+      managedOpentelemetryConfig_ = null;
+      if (managedOpentelemetryConfigBuilder_ != null) {
+        managedOpentelemetryConfigBuilder_.dispose();
+        managedOpentelemetryConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Managed OpenTelemetry pipeline.
+     * </pre>
+     *
+     * <code>.google.container.v1.ManagedOpenTelemetryConfig managed_opentelemetry_config = 168;
+     * </code>
+     */
+    public com.google.container.v1.ManagedOpenTelemetryConfig.Builder
+        getManagedOpentelemetryConfigBuilder() {
+      bitField2_ |= 0x00004000;
+      onChanged();
+      return getManagedOpentelemetryConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Managed OpenTelemetry pipeline.
+     * </pre>
+     *
+     * <code>.google.container.v1.ManagedOpenTelemetryConfig managed_opentelemetry_config = 168;
+     * </code>
+     */
+    public com.google.container.v1.ManagedOpenTelemetryConfigOrBuilder
+        getManagedOpentelemetryConfigOrBuilder() {
+      if (managedOpentelemetryConfigBuilder_ != null) {
+        return managedOpentelemetryConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return managedOpentelemetryConfig_ == null
+            ? com.google.container.v1.ManagedOpenTelemetryConfig.getDefaultInstance()
+            : managedOpentelemetryConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Managed OpenTelemetry pipeline.
+     * </pre>
+     *
+     * <code>.google.container.v1.ManagedOpenTelemetryConfig managed_opentelemetry_config = 168;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ManagedOpenTelemetryConfig,
+            com.google.container.v1.ManagedOpenTelemetryConfig.Builder,
+            com.google.container.v1.ManagedOpenTelemetryConfigOrBuilder>
+        getManagedOpentelemetryConfigFieldBuilder() {
+      if (managedOpentelemetryConfigBuilder_ == null) {
+        managedOpentelemetryConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.ManagedOpenTelemetryConfig,
+                com.google.container.v1.ManagedOpenTelemetryConfig.Builder,
+                com.google.container.v1.ManagedOpenTelemetryConfigOrBuilder>(
+                getManagedOpentelemetryConfig(), getParentForChildren(), isClean());
+        managedOpentelemetryConfig_ = null;
+      }
+      return managedOpentelemetryConfigBuilder_;
     }
 
     @java.lang.Override

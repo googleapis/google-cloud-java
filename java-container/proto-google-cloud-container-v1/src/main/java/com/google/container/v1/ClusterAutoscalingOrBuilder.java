@@ -272,4 +272,36 @@ public interface ClusterAutoscalingOrBuilder
    */
   com.google.container.v1.DefaultComputeClassConfigOrBuilder
       getDefaultComputeClassConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Autopilot general profile for the cluster, which defines the
+   * configuration for the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.ClusterAutoscaling.AutopilotGeneralProfile autopilot_general_profile = 14;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for autopilotGeneralProfile.
+   */
+  int getAutopilotGeneralProfileValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Autopilot general profile for the cluster, which defines the
+   * configuration for the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.ClusterAutoscaling.AutopilotGeneralProfile autopilot_general_profile = 14;
+   * </code>
+   *
+   * @return The autopilotGeneralProfile.
+   */
+  com.google.container.v1.ClusterAutoscaling.AutopilotGeneralProfile getAutopilotGeneralProfile();
 }

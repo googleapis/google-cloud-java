@@ -7653,7 +7653,12 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
+   * net.ipv4.tcp_mtu_probing
    * net.ipv4.tcp_max_orphans
+   * net.ipv4.tcp_max_tw_buckets
+   * net.ipv4.tcp_syn_retries
+   * net.ipv4.tcp_ecn
+   * net.ipv4.tcp_congestion_control
    * net.netfilter.nf_conntrack_max
    * net.netfilter.nf_conntrack_buckets
    * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -7663,14 +7668,23 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
+   * kernel.perf_event_paranoid
+   * kernel.sched_rt_runtime_us
+   * kernel.softlockup_panic
+   * kernel.yama.ptrace_scope
+   * kernel.kptr_restrict
+   * kernel.dmesg_restrict
+   * kernel.sysrq
    * fs.aio-max-nr
    * fs.file-max
    * fs.inotify.max_user_instances
    * fs.inotify.max_user_watches
    * fs.nr_open
    * vm.dirty_background_ratio
+   * vm.dirty_background_bytes
    * vm.dirty_expire_centisecs
    * vm.dirty_ratio
+   * vm.dirty_bytes
    * vm.dirty_writeback_centisecs
    * vm.max_map_count
    * vm.overcommit_memory
@@ -7719,7 +7733,12 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
+   * net.ipv4.tcp_mtu_probing
    * net.ipv4.tcp_max_orphans
+   * net.ipv4.tcp_max_tw_buckets
+   * net.ipv4.tcp_syn_retries
+   * net.ipv4.tcp_ecn
+   * net.ipv4.tcp_congestion_control
    * net.netfilter.nf_conntrack_max
    * net.netfilter.nf_conntrack_buckets
    * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -7729,14 +7748,23 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
+   * kernel.perf_event_paranoid
+   * kernel.sched_rt_runtime_us
+   * kernel.softlockup_panic
+   * kernel.yama.ptrace_scope
+   * kernel.kptr_restrict
+   * kernel.dmesg_restrict
+   * kernel.sysrq
    * fs.aio-max-nr
    * fs.file-max
    * fs.inotify.max_user_instances
    * fs.inotify.max_user_watches
    * fs.nr_open
    * vm.dirty_background_ratio
+   * vm.dirty_background_bytes
    * vm.dirty_expire_centisecs
    * vm.dirty_ratio
+   * vm.dirty_bytes
    * vm.dirty_writeback_centisecs
    * vm.max_map_count
    * vm.overcommit_memory
@@ -7775,7 +7803,12 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
+   * net.ipv4.tcp_mtu_probing
    * net.ipv4.tcp_max_orphans
+   * net.ipv4.tcp_max_tw_buckets
+   * net.ipv4.tcp_syn_retries
+   * net.ipv4.tcp_ecn
+   * net.ipv4.tcp_congestion_control
    * net.netfilter.nf_conntrack_max
    * net.netfilter.nf_conntrack_buckets
    * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -7785,14 +7818,23 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
+   * kernel.perf_event_paranoid
+   * kernel.sched_rt_runtime_us
+   * kernel.softlockup_panic
+   * kernel.yama.ptrace_scope
+   * kernel.kptr_restrict
+   * kernel.dmesg_restrict
+   * kernel.sysrq
    * fs.aio-max-nr
    * fs.file-max
    * fs.inotify.max_user_instances
    * fs.inotify.max_user_watches
    * fs.nr_open
    * vm.dirty_background_ratio
+   * vm.dirty_background_bytes
    * vm.dirty_expire_centisecs
    * vm.dirty_ratio
+   * vm.dirty_bytes
    * vm.dirty_writeback_centisecs
    * vm.max_map_count
    * vm.overcommit_memory
@@ -7838,7 +7880,12 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
+   * net.ipv4.tcp_mtu_probing
    * net.ipv4.tcp_max_orphans
+   * net.ipv4.tcp_max_tw_buckets
+   * net.ipv4.tcp_syn_retries
+   * net.ipv4.tcp_ecn
+   * net.ipv4.tcp_congestion_control
    * net.netfilter.nf_conntrack_max
    * net.netfilter.nf_conntrack_buckets
    * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -7848,14 +7895,23 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
+   * kernel.perf_event_paranoid
+   * kernel.sched_rt_runtime_us
+   * kernel.softlockup_panic
+   * kernel.yama.ptrace_scope
+   * kernel.kptr_restrict
+   * kernel.dmesg_restrict
+   * kernel.sysrq
    * fs.aio-max-nr
    * fs.file-max
    * fs.inotify.max_user_instances
    * fs.inotify.max_user_watches
    * fs.nr_open
    * vm.dirty_background_ratio
+   * vm.dirty_background_bytes
    * vm.dirty_expire_centisecs
    * vm.dirty_ratio
+   * vm.dirty_bytes
    * vm.dirty_writeback_centisecs
    * vm.max_map_count
    * vm.overcommit_memory
@@ -8843,7 +8899,12 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
+     * net.ipv4.tcp_mtu_probing
      * net.ipv4.tcp_max_orphans
+     * net.ipv4.tcp_max_tw_buckets
+     * net.ipv4.tcp_syn_retries
+     * net.ipv4.tcp_ecn
+     * net.ipv4.tcp_congestion_control
      * net.netfilter.nf_conntrack_max
      * net.netfilter.nf_conntrack_buckets
      * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -8853,14 +8914,23 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
+     * kernel.perf_event_paranoid
+     * kernel.sched_rt_runtime_us
+     * kernel.softlockup_panic
+     * kernel.yama.ptrace_scope
+     * kernel.kptr_restrict
+     * kernel.dmesg_restrict
+     * kernel.sysrq
      * fs.aio-max-nr
      * fs.file-max
      * fs.inotify.max_user_instances
      * fs.inotify.max_user_watches
      * fs.nr_open
      * vm.dirty_background_ratio
+     * vm.dirty_background_bytes
      * vm.dirty_expire_centisecs
      * vm.dirty_ratio
+     * vm.dirty_bytes
      * vm.dirty_writeback_centisecs
      * vm.max_map_count
      * vm.overcommit_memory
@@ -8909,7 +8979,12 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
+     * net.ipv4.tcp_mtu_probing
      * net.ipv4.tcp_max_orphans
+     * net.ipv4.tcp_max_tw_buckets
+     * net.ipv4.tcp_syn_retries
+     * net.ipv4.tcp_ecn
+     * net.ipv4.tcp_congestion_control
      * net.netfilter.nf_conntrack_max
      * net.netfilter.nf_conntrack_buckets
      * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -8919,14 +8994,23 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
+     * kernel.perf_event_paranoid
+     * kernel.sched_rt_runtime_us
+     * kernel.softlockup_panic
+     * kernel.yama.ptrace_scope
+     * kernel.kptr_restrict
+     * kernel.dmesg_restrict
+     * kernel.sysrq
      * fs.aio-max-nr
      * fs.file-max
      * fs.inotify.max_user_instances
      * fs.inotify.max_user_watches
      * fs.nr_open
      * vm.dirty_background_ratio
+     * vm.dirty_background_bytes
      * vm.dirty_expire_centisecs
      * vm.dirty_ratio
+     * vm.dirty_bytes
      * vm.dirty_writeback_centisecs
      * vm.max_map_count
      * vm.overcommit_memory
@@ -8965,7 +9049,12 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
+     * net.ipv4.tcp_mtu_probing
      * net.ipv4.tcp_max_orphans
+     * net.ipv4.tcp_max_tw_buckets
+     * net.ipv4.tcp_syn_retries
+     * net.ipv4.tcp_ecn
+     * net.ipv4.tcp_congestion_control
      * net.netfilter.nf_conntrack_max
      * net.netfilter.nf_conntrack_buckets
      * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -8975,14 +9064,23 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
+     * kernel.perf_event_paranoid
+     * kernel.sched_rt_runtime_us
+     * kernel.softlockup_panic
+     * kernel.yama.ptrace_scope
+     * kernel.kptr_restrict
+     * kernel.dmesg_restrict
+     * kernel.sysrq
      * fs.aio-max-nr
      * fs.file-max
      * fs.inotify.max_user_instances
      * fs.inotify.max_user_watches
      * fs.nr_open
      * vm.dirty_background_ratio
+     * vm.dirty_background_bytes
      * vm.dirty_expire_centisecs
      * vm.dirty_ratio
+     * vm.dirty_bytes
      * vm.dirty_writeback_centisecs
      * vm.max_map_count
      * vm.overcommit_memory
@@ -9028,7 +9126,12 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
+     * net.ipv4.tcp_mtu_probing
      * net.ipv4.tcp_max_orphans
+     * net.ipv4.tcp_max_tw_buckets
+     * net.ipv4.tcp_syn_retries
+     * net.ipv4.tcp_ecn
+     * net.ipv4.tcp_congestion_control
      * net.netfilter.nf_conntrack_max
      * net.netfilter.nf_conntrack_buckets
      * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -9038,14 +9141,23 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
+     * kernel.perf_event_paranoid
+     * kernel.sched_rt_runtime_us
+     * kernel.softlockup_panic
+     * kernel.yama.ptrace_scope
+     * kernel.kptr_restrict
+     * kernel.dmesg_restrict
+     * kernel.sysrq
      * fs.aio-max-nr
      * fs.file-max
      * fs.inotify.max_user_instances
      * fs.inotify.max_user_watches
      * fs.nr_open
      * vm.dirty_background_ratio
+     * vm.dirty_background_bytes
      * vm.dirty_expire_centisecs
      * vm.dirty_ratio
+     * vm.dirty_bytes
      * vm.dirty_writeback_centisecs
      * vm.max_map_count
      * vm.overcommit_memory
@@ -9097,7 +9209,12 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
+     * net.ipv4.tcp_mtu_probing
      * net.ipv4.tcp_max_orphans
+     * net.ipv4.tcp_max_tw_buckets
+     * net.ipv4.tcp_syn_retries
+     * net.ipv4.tcp_ecn
+     * net.ipv4.tcp_congestion_control
      * net.netfilter.nf_conntrack_max
      * net.netfilter.nf_conntrack_buckets
      * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -9107,14 +9224,23 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
+     * kernel.perf_event_paranoid
+     * kernel.sched_rt_runtime_us
+     * kernel.softlockup_panic
+     * kernel.yama.ptrace_scope
+     * kernel.kptr_restrict
+     * kernel.dmesg_restrict
+     * kernel.sysrq
      * fs.aio-max-nr
      * fs.file-max
      * fs.inotify.max_user_instances
      * fs.inotify.max_user_watches
      * fs.nr_open
      * vm.dirty_background_ratio
+     * vm.dirty_background_bytes
      * vm.dirty_expire_centisecs
      * vm.dirty_ratio
+     * vm.dirty_bytes
      * vm.dirty_writeback_centisecs
      * vm.max_map_count
      * vm.overcommit_memory
@@ -9163,7 +9289,12 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
+     * net.ipv4.tcp_mtu_probing
      * net.ipv4.tcp_max_orphans
+     * net.ipv4.tcp_max_tw_buckets
+     * net.ipv4.tcp_syn_retries
+     * net.ipv4.tcp_ecn
+     * net.ipv4.tcp_congestion_control
      * net.netfilter.nf_conntrack_max
      * net.netfilter.nf_conntrack_buckets
      * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -9173,14 +9304,23 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
+     * kernel.perf_event_paranoid
+     * kernel.sched_rt_runtime_us
+     * kernel.softlockup_panic
+     * kernel.yama.ptrace_scope
+     * kernel.kptr_restrict
+     * kernel.dmesg_restrict
+     * kernel.sysrq
      * fs.aio-max-nr
      * fs.file-max
      * fs.inotify.max_user_instances
      * fs.inotify.max_user_watches
      * fs.nr_open
      * vm.dirty_background_ratio
+     * vm.dirty_background_bytes
      * vm.dirty_expire_centisecs
      * vm.dirty_ratio
+     * vm.dirty_bytes
      * vm.dirty_writeback_centisecs
      * vm.max_map_count
      * vm.overcommit_memory
@@ -9226,7 +9366,12 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
+     * net.ipv4.tcp_mtu_probing
      * net.ipv4.tcp_max_orphans
+     * net.ipv4.tcp_max_tw_buckets
+     * net.ipv4.tcp_syn_retries
+     * net.ipv4.tcp_ecn
+     * net.ipv4.tcp_congestion_control
      * net.netfilter.nf_conntrack_max
      * net.netfilter.nf_conntrack_buckets
      * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -9236,14 +9381,23 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
+     * kernel.perf_event_paranoid
+     * kernel.sched_rt_runtime_us
+     * kernel.softlockup_panic
+     * kernel.yama.ptrace_scope
+     * kernel.kptr_restrict
+     * kernel.dmesg_restrict
+     * kernel.sysrq
      * fs.aio-max-nr
      * fs.file-max
      * fs.inotify.max_user_instances
      * fs.inotify.max_user_watches
      * fs.nr_open
      * vm.dirty_background_ratio
+     * vm.dirty_background_bytes
      * vm.dirty_expire_centisecs
      * vm.dirty_ratio
+     * vm.dirty_bytes
      * vm.dirty_writeback_centisecs
      * vm.max_map_count
      * vm.overcommit_memory

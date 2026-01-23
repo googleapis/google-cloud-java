@@ -61,6 +61,18 @@ public enum NodePoolUpdateStrategy implements com.google.protobuf.ProtocolMessag
    * <code>SURGE = 3;</code>
    */
   SURGE(3),
+  /**
+   *
+   *
+   * <pre>
+   * SHORT_LIVED is the dedicated upgrade strategy for
+   * QueuedProvisioning and flex start nodepools scaled up only by enqueueing to
+   * the Dynamic Workload Scheduler (DWS).
+   * </pre>
+   *
+   * <code>SHORT_LIVED = 5;</code>
+   */
+  SHORT_LIVED(5),
   UNRECOGNIZED(-1),
   ;
 
@@ -99,6 +111,19 @@ public enum NodePoolUpdateStrategy implements com.google.protobuf.ProtocolMessag
    */
   public static final int SURGE_VALUE = 3;
 
+  /**
+   *
+   *
+   * <pre>
+   * SHORT_LIVED is the dedicated upgrade strategy for
+   * QueuedProvisioning and flex start nodepools scaled up only by enqueueing to
+   * the Dynamic Workload Scheduler (DWS).
+   * </pre>
+   *
+   * <code>SHORT_LIVED = 5;</code>
+   */
+  public static final int SHORT_LIVED_VALUE = 5;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -129,6 +154,8 @@ public enum NodePoolUpdateStrategy implements com.google.protobuf.ProtocolMessag
         return BLUE_GREEN;
       case 3:
         return SURGE;
+      case 5:
+        return SHORT_LIVED;
       default:
         return null;
     }

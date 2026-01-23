@@ -121,4 +121,30 @@ public interface AdditionalIPRangesConfigOrBuilder
    * @return The bytes of the podIpv4RangeNames at the given index.
    */
   com.google.protobuf.ByteString getPodIpv4RangeNamesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Draining status of the additional subnet.
+   * </pre>
+   *
+   * <code>.google.container.v1.AdditionalIPRangesConfig.Status status = 3;</code>
+   *
+   * @return The enum numeric value on the wire for status.
+   */
+  int getStatusValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Draining status of the additional subnet.
+   * </pre>
+   *
+   * <code>.google.container.v1.AdditionalIPRangesConfig.Status status = 3;</code>
+   *
+   * @return The status.
+   */
+  com.google.container.v1.AdditionalIPRangesConfig.Status getStatus();
 }

@@ -94,7 +94,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3758
+   *     google/container/v1/cluster_service.proto;l=4041
    * @return The projectId.
    */
   @java.lang.Override
@@ -123,7 +123,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3758
+   *     google/container/v1/cluster_service.proto;l=4041
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -158,7 +158,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3764
+   *     google/container/v1/cluster_service.proto;l=4047
    * @return The zone.
    */
   @java.lang.Override
@@ -188,7 +188,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3764
+   *     google/container/v1/cluster_service.proto;l=4047
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -221,7 +221,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3768
+   *     google/container/v1/cluster_service.proto;l=4051
    * @return The clusterId.
    */
   @java.lang.Override
@@ -249,7 +249,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3768
+   *     google/container/v1/cluster_service.proto;l=4051
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -282,7 +282,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3772
+   *     google/container/v1/cluster_service.proto;l=4055
    * @return The nodePoolId.
    */
   @java.lang.Override
@@ -310,7 +310,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3772
+   *     google/container/v1/cluster_service.proto;l=4055
    * @return The bytes for nodePoolId.
    */
   @java.lang.Override
@@ -2112,6 +2112,118 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     return bootDisk_ == null ? com.google.container.v1.BootDisk.getDefaultInstance() : bootDisk_;
   }
 
+  public static final int NODE_DRAIN_CONFIG_FIELD_NUMBER = 48;
+  private com.google.container.v1.NodePool.NodeDrainConfig nodeDrainConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired node drain configuration for nodes in the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePool.NodeDrainConfig node_drain_config = 48;</code>
+   *
+   * @return Whether the nodeDrainConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasNodeDrainConfig() {
+    return ((bitField0_ & 0x00200000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired node drain configuration for nodes in the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePool.NodeDrainConfig node_drain_config = 48;</code>
+   *
+   * @return The nodeDrainConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodePool.NodeDrainConfig getNodeDrainConfig() {
+    return nodeDrainConfig_ == null
+        ? com.google.container.v1.NodePool.NodeDrainConfig.getDefaultInstance()
+        : nodeDrainConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired node drain configuration for nodes in the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePool.NodeDrainConfig node_drain_config = 48;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodePool.NodeDrainConfigOrBuilder getNodeDrainConfigOrBuilder() {
+    return nodeDrainConfig_ == null
+        ? com.google.container.v1.NodePool.NodeDrainConfig.getDefaultInstance()
+        : nodeDrainConfig_;
+  }
+
+  public static final int CONSOLIDATION_DELAY_FIELD_NUMBER = 49;
+  private com.google.protobuf.Duration consolidationDelay_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Consolidation delay defines duration after which the Cluster Autoscaler can
+   * scale down underutilized nodes. If not set, nodes are scaled down by
+   * default behavior, i.e. according to the chosen autoscaling profile.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration consolidation_delay = 49;</code>
+   *
+   * @return Whether the consolidationDelay field is set.
+   */
+  @java.lang.Override
+  public boolean hasConsolidationDelay() {
+    return ((bitField0_ & 0x00400000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Consolidation delay defines duration after which the Cluster Autoscaler can
+   * scale down underutilized nodes. If not set, nodes are scaled down by
+   * default behavior, i.e. according to the chosen autoscaling profile.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration consolidation_delay = 49;</code>
+   *
+   * @return The consolidationDelay.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getConsolidationDelay() {
+    return consolidationDelay_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : consolidationDelay_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Consolidation delay defines duration after which the Cluster Autoscaler can
+   * scale down underutilized nodes. If not set, nodes are scaled down by
+   * default behavior, i.e. according to the chosen autoscaling profile.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration consolidation_delay = 49;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getConsolidationDelayOrBuilder() {
+    return consolidationDelay_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : consolidationDelay_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2230,6 +2342,12 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     }
     if (((bitField0_ & 0x00100000) != 0)) {
       output.writeMessage(47, getBootDisk());
+    }
+    if (((bitField0_ & 0x00200000) != 0)) {
+      output.writeMessage(48, getNodeDrainConfig());
+    }
+    if (((bitField0_ & 0x00400000) != 0)) {
+      output.writeMessage(49, getConsolidationDelay());
     }
     getUnknownFields().writeTo(output);
   }
@@ -2357,6 +2475,12 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (((bitField0_ & 0x00100000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(47, getBootDisk());
     }
+    if (((bitField0_ & 0x00200000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(48, getNodeDrainConfig());
+    }
+    if (((bitField0_ & 0x00400000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(49, getConsolidationDelay());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2470,6 +2594,14 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (hasBootDisk() != other.hasBootDisk()) return false;
     if (hasBootDisk()) {
       if (!getBootDisk().equals(other.getBootDisk())) return false;
+    }
+    if (hasNodeDrainConfig() != other.hasNodeDrainConfig()) return false;
+    if (hasNodeDrainConfig()) {
+      if (!getNodeDrainConfig().equals(other.getNodeDrainConfig())) return false;
+    }
+    if (hasConsolidationDelay() != other.hasConsolidationDelay()) return false;
+    if (hasConsolidationDelay()) {
+      if (!getConsolidationDelay().equals(other.getConsolidationDelay())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -2599,6 +2731,14 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (hasBootDisk()) {
       hash = (37 * hash) + BOOT_DISK_FIELD_NUMBER;
       hash = (53 * hash) + getBootDisk().hashCode();
+    }
+    if (hasNodeDrainConfig()) {
+      hash = (37 * hash) + NODE_DRAIN_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getNodeDrainConfig().hashCode();
+    }
+    if (hasConsolidationDelay()) {
+      hash = (37 * hash) + CONSOLIDATION_DELAY_FIELD_NUMBER;
+      hash = (53 * hash) + getConsolidationDelay().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2762,6 +2902,8 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         getQueuedProvisioningFieldBuilder();
         getMaxRunDurationFieldBuilder();
         getBootDiskFieldBuilder();
+        getNodeDrainConfigFieldBuilder();
+        getConsolidationDelayFieldBuilder();
       }
     }
 
@@ -2890,6 +3032,16 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       if (bootDiskBuilder_ != null) {
         bootDiskBuilder_.dispose();
         bootDiskBuilder_ = null;
+      }
+      nodeDrainConfig_ = null;
+      if (nodeDrainConfigBuilder_ != null) {
+        nodeDrainConfigBuilder_.dispose();
+        nodeDrainConfigBuilder_ = null;
+      }
+      consolidationDelay_ = null;
+      if (consolidationDelayBuilder_ != null) {
+        consolidationDelayBuilder_.dispose();
+        consolidationDelayBuilder_ = null;
       }
       return this;
     }
@@ -3099,6 +3251,18 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       if (((from_bitField1_ & 0x00000004) != 0)) {
         result.bootDisk_ = bootDiskBuilder_ == null ? bootDisk_ : bootDiskBuilder_.build();
         to_bitField0_ |= 0x00100000;
+      }
+      if (((from_bitField1_ & 0x00000008) != 0)) {
+        result.nodeDrainConfig_ =
+            nodeDrainConfigBuilder_ == null ? nodeDrainConfig_ : nodeDrainConfigBuilder_.build();
+        to_bitField0_ |= 0x00200000;
+      }
+      if (((from_bitField1_ & 0x00000010) != 0)) {
+        result.consolidationDelay_ =
+            consolidationDelayBuilder_ == null
+                ? consolidationDelay_
+                : consolidationDelayBuilder_.build();
+        to_bitField0_ |= 0x00400000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3310,6 +3474,12 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       if (other.hasBootDisk()) {
         mergeBootDisk(other.getBootDisk());
+      }
+      if (other.hasNodeDrainConfig()) {
+        mergeNodeDrainConfig(other.getNodeDrainConfig());
+      }
+      if (other.hasConsolidationDelay()) {
+        mergeConsolidationDelay(other.getConsolidationDelay());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3563,6 +3733,19 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
                 bitField1_ |= 0x00000004;
                 break;
               } // case 378
+            case 386:
+              {
+                input.readMessage(getNodeDrainConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000008;
+                break;
+              } // case 386
+            case 394:
+              {
+                input.readMessage(
+                    getConsolidationDelayFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000010;
+                break;
+              } // case 394
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3597,7 +3780,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3758
+     *     google/container/v1/cluster_service.proto;l=4041
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -3625,7 +3808,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3758
+     *     google/container/v1/cluster_service.proto;l=4041
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -3653,7 +3836,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3758
+     *     google/container/v1/cluster_service.proto;l=4041
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -3680,7 +3863,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3758
+     *     google/container/v1/cluster_service.proto;l=4041
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3703,7 +3886,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3758
+     *     google/container/v1/cluster_service.proto;l=4041
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -3734,7 +3917,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3764
+     *     google/container/v1/cluster_service.proto;l=4047
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -3763,7 +3946,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3764
+     *     google/container/v1/cluster_service.proto;l=4047
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -3792,7 +3975,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3764
+     *     google/container/v1/cluster_service.proto;l=4047
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -3820,7 +4003,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3764
+     *     google/container/v1/cluster_service.proto;l=4047
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3844,7 +4027,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3764
+     *     google/container/v1/cluster_service.proto;l=4047
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -3873,7 +4056,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3768
+     *     google/container/v1/cluster_service.proto;l=4051
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -3900,7 +4083,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3768
+     *     google/container/v1/cluster_service.proto;l=4051
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -3927,7 +4110,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3768
+     *     google/container/v1/cluster_service.proto;l=4051
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -3953,7 +4136,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3768
+     *     google/container/v1/cluster_service.proto;l=4051
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3975,7 +4158,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3768
+     *     google/container/v1/cluster_service.proto;l=4051
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */
@@ -4004,7 +4187,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3772
+     *     google/container/v1/cluster_service.proto;l=4055
      * @return The nodePoolId.
      */
     @java.lang.Deprecated
@@ -4031,7 +4214,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3772
+     *     google/container/v1/cluster_service.proto;l=4055
      * @return The bytes for nodePoolId.
      */
     @java.lang.Deprecated
@@ -4058,7 +4241,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3772
+     *     google/container/v1/cluster_service.proto;l=4055
      * @param value The nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -4084,7 +4267,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3772
+     *     google/container/v1/cluster_service.proto;l=4055
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4106,7 +4289,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3772
+     *     google/container/v1/cluster_service.proto;l=4055
      * @param value The bytes for nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -9964,6 +10147,414 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         bootDisk_ = null;
       }
       return bootDiskBuilder_;
+    }
+
+    private com.google.container.v1.NodePool.NodeDrainConfig nodeDrainConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NodePool.NodeDrainConfig,
+            com.google.container.v1.NodePool.NodeDrainConfig.Builder,
+            com.google.container.v1.NodePool.NodeDrainConfigOrBuilder>
+        nodeDrainConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired node drain configuration for nodes in the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.NodeDrainConfig node_drain_config = 48;</code>
+     *
+     * @return Whether the nodeDrainConfig field is set.
+     */
+    public boolean hasNodeDrainConfig() {
+      return ((bitField1_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired node drain configuration for nodes in the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.NodeDrainConfig node_drain_config = 48;</code>
+     *
+     * @return The nodeDrainConfig.
+     */
+    public com.google.container.v1.NodePool.NodeDrainConfig getNodeDrainConfig() {
+      if (nodeDrainConfigBuilder_ == null) {
+        return nodeDrainConfig_ == null
+            ? com.google.container.v1.NodePool.NodeDrainConfig.getDefaultInstance()
+            : nodeDrainConfig_;
+      } else {
+        return nodeDrainConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired node drain configuration for nodes in the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.NodeDrainConfig node_drain_config = 48;</code>
+     */
+    public Builder setNodeDrainConfig(com.google.container.v1.NodePool.NodeDrainConfig value) {
+      if (nodeDrainConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        nodeDrainConfig_ = value;
+      } else {
+        nodeDrainConfigBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired node drain configuration for nodes in the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.NodeDrainConfig node_drain_config = 48;</code>
+     */
+    public Builder setNodeDrainConfig(
+        com.google.container.v1.NodePool.NodeDrainConfig.Builder builderForValue) {
+      if (nodeDrainConfigBuilder_ == null) {
+        nodeDrainConfig_ = builderForValue.build();
+      } else {
+        nodeDrainConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired node drain configuration for nodes in the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.NodeDrainConfig node_drain_config = 48;</code>
+     */
+    public Builder mergeNodeDrainConfig(com.google.container.v1.NodePool.NodeDrainConfig value) {
+      if (nodeDrainConfigBuilder_ == null) {
+        if (((bitField1_ & 0x00000008) != 0)
+            && nodeDrainConfig_ != null
+            && nodeDrainConfig_
+                != com.google.container.v1.NodePool.NodeDrainConfig.getDefaultInstance()) {
+          getNodeDrainConfigBuilder().mergeFrom(value);
+        } else {
+          nodeDrainConfig_ = value;
+        }
+      } else {
+        nodeDrainConfigBuilder_.mergeFrom(value);
+      }
+      if (nodeDrainConfig_ != null) {
+        bitField1_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired node drain configuration for nodes in the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.NodeDrainConfig node_drain_config = 48;</code>
+     */
+    public Builder clearNodeDrainConfig() {
+      bitField1_ = (bitField1_ & ~0x00000008);
+      nodeDrainConfig_ = null;
+      if (nodeDrainConfigBuilder_ != null) {
+        nodeDrainConfigBuilder_.dispose();
+        nodeDrainConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired node drain configuration for nodes in the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.NodeDrainConfig node_drain_config = 48;</code>
+     */
+    public com.google.container.v1.NodePool.NodeDrainConfig.Builder getNodeDrainConfigBuilder() {
+      bitField1_ |= 0x00000008;
+      onChanged();
+      return getNodeDrainConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired node drain configuration for nodes in the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.NodeDrainConfig node_drain_config = 48;</code>
+     */
+    public com.google.container.v1.NodePool.NodeDrainConfigOrBuilder getNodeDrainConfigOrBuilder() {
+      if (nodeDrainConfigBuilder_ != null) {
+        return nodeDrainConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return nodeDrainConfig_ == null
+            ? com.google.container.v1.NodePool.NodeDrainConfig.getDefaultInstance()
+            : nodeDrainConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired node drain configuration for nodes in the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodePool.NodeDrainConfig node_drain_config = 48;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NodePool.NodeDrainConfig,
+            com.google.container.v1.NodePool.NodeDrainConfig.Builder,
+            com.google.container.v1.NodePool.NodeDrainConfigOrBuilder>
+        getNodeDrainConfigFieldBuilder() {
+      if (nodeDrainConfigBuilder_ == null) {
+        nodeDrainConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.NodePool.NodeDrainConfig,
+                com.google.container.v1.NodePool.NodeDrainConfig.Builder,
+                com.google.container.v1.NodePool.NodeDrainConfigOrBuilder>(
+                getNodeDrainConfig(), getParentForChildren(), isClean());
+        nodeDrainConfig_ = null;
+      }
+      return nodeDrainConfigBuilder_;
+    }
+
+    private com.google.protobuf.Duration consolidationDelay_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        consolidationDelayBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Consolidation delay defines duration after which the Cluster Autoscaler can
+     * scale down underutilized nodes. If not set, nodes are scaled down by
+     * default behavior, i.e. according to the chosen autoscaling profile.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration consolidation_delay = 49;</code>
+     *
+     * @return Whether the consolidationDelay field is set.
+     */
+    public boolean hasConsolidationDelay() {
+      return ((bitField1_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Consolidation delay defines duration after which the Cluster Autoscaler can
+     * scale down underutilized nodes. If not set, nodes are scaled down by
+     * default behavior, i.e. according to the chosen autoscaling profile.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration consolidation_delay = 49;</code>
+     *
+     * @return The consolidationDelay.
+     */
+    public com.google.protobuf.Duration getConsolidationDelay() {
+      if (consolidationDelayBuilder_ == null) {
+        return consolidationDelay_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : consolidationDelay_;
+      } else {
+        return consolidationDelayBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Consolidation delay defines duration after which the Cluster Autoscaler can
+     * scale down underutilized nodes. If not set, nodes are scaled down by
+     * default behavior, i.e. according to the chosen autoscaling profile.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration consolidation_delay = 49;</code>
+     */
+    public Builder setConsolidationDelay(com.google.protobuf.Duration value) {
+      if (consolidationDelayBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        consolidationDelay_ = value;
+      } else {
+        consolidationDelayBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Consolidation delay defines duration after which the Cluster Autoscaler can
+     * scale down underutilized nodes. If not set, nodes are scaled down by
+     * default behavior, i.e. according to the chosen autoscaling profile.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration consolidation_delay = 49;</code>
+     */
+    public Builder setConsolidationDelay(com.google.protobuf.Duration.Builder builderForValue) {
+      if (consolidationDelayBuilder_ == null) {
+        consolidationDelay_ = builderForValue.build();
+      } else {
+        consolidationDelayBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Consolidation delay defines duration after which the Cluster Autoscaler can
+     * scale down underutilized nodes. If not set, nodes are scaled down by
+     * default behavior, i.e. according to the chosen autoscaling profile.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration consolidation_delay = 49;</code>
+     */
+    public Builder mergeConsolidationDelay(com.google.protobuf.Duration value) {
+      if (consolidationDelayBuilder_ == null) {
+        if (((bitField1_ & 0x00000010) != 0)
+            && consolidationDelay_ != null
+            && consolidationDelay_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getConsolidationDelayBuilder().mergeFrom(value);
+        } else {
+          consolidationDelay_ = value;
+        }
+      } else {
+        consolidationDelayBuilder_.mergeFrom(value);
+      }
+      if (consolidationDelay_ != null) {
+        bitField1_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Consolidation delay defines duration after which the Cluster Autoscaler can
+     * scale down underutilized nodes. If not set, nodes are scaled down by
+     * default behavior, i.e. according to the chosen autoscaling profile.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration consolidation_delay = 49;</code>
+     */
+    public Builder clearConsolidationDelay() {
+      bitField1_ = (bitField1_ & ~0x00000010);
+      consolidationDelay_ = null;
+      if (consolidationDelayBuilder_ != null) {
+        consolidationDelayBuilder_.dispose();
+        consolidationDelayBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Consolidation delay defines duration after which the Cluster Autoscaler can
+     * scale down underutilized nodes. If not set, nodes are scaled down by
+     * default behavior, i.e. according to the chosen autoscaling profile.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration consolidation_delay = 49;</code>
+     */
+    public com.google.protobuf.Duration.Builder getConsolidationDelayBuilder() {
+      bitField1_ |= 0x00000010;
+      onChanged();
+      return getConsolidationDelayFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Consolidation delay defines duration after which the Cluster Autoscaler can
+     * scale down underutilized nodes. If not set, nodes are scaled down by
+     * default behavior, i.e. according to the chosen autoscaling profile.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration consolidation_delay = 49;</code>
+     */
+    public com.google.protobuf.DurationOrBuilder getConsolidationDelayOrBuilder() {
+      if (consolidationDelayBuilder_ != null) {
+        return consolidationDelayBuilder_.getMessageOrBuilder();
+      } else {
+        return consolidationDelay_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : consolidationDelay_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Consolidation delay defines duration after which the Cluster Autoscaler can
+     * scale down underutilized nodes. If not set, nodes are scaled down by
+     * default behavior, i.e. according to the chosen autoscaling profile.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration consolidation_delay = 49;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        getConsolidationDelayFieldBuilder() {
+      if (consolidationDelayBuilder_ == null) {
+        consolidationDelayBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getConsolidationDelay(), getParentForChildren(), isClean());
+        consolidationDelay_ = null;
+      }
+      return consolidationDelayBuilder_;
     }
 
     @java.lang.Override

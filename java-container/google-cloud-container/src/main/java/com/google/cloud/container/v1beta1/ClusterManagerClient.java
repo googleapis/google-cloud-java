@@ -35,6 +35,7 @@ import com.google.container.v1beta1.CheckAutopilotCompatibilityResponse;
 import com.google.container.v1beta1.Cluster;
 import com.google.container.v1beta1.ClusterUpdate;
 import com.google.container.v1beta1.ClusterUpgradeInfo;
+import com.google.container.v1beta1.CompleteControlPlaneUpgradeRequest;
 import com.google.container.v1beta1.CompleteIPRotationRequest;
 import com.google.container.v1beta1.CompleteNodePoolUpgradeRequest;
 import com.google.container.v1beta1.CreateClusterRequest;
@@ -765,6 +766,20 @@ import javax.annotation.Generated;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> CompleteControlPlaneUpgrade</td>
+ *      <td><p> CompleteControlPlaneUpgrade completes the rollback-safe upgrade by performing the step two upgrade for a specific cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> completeControlPlaneUpgrade(CompleteControlPlaneUpgradeRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> completeControlPlaneUpgradeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -1344,6 +1359,8 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .setMaxRunDuration(Duration.newBuilder().build())
    *           .setFlexStart(true)
    *           .setBootDisk(BootDisk.newBuilder().build())
+   *           .setNodeDrainConfig(NodePool.NodeDrainConfig.newBuilder().build())
+   *           .setConsolidationDelay(Duration.newBuilder().build())
    *           .build();
    *   Operation response = clusterManagerClient.updateNodePool(request);
    * }
@@ -1406,6 +1423,8 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .setMaxRunDuration(Duration.newBuilder().build())
    *           .setFlexStart(true)
    *           .setBootDisk(BootDisk.newBuilder().build())
+   *           .setNodeDrainConfig(NodePool.NodeDrainConfig.newBuilder().build())
+   *           .setConsolidationDelay(Duration.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
    *       clusterManagerClient.updateNodePoolCallable().futureCall(request);
@@ -4598,6 +4617,67 @@ public class ClusterManagerClient implements BackgroundResource {
   public final UnaryCallable<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
       fetchNodePoolUpgradeInfoCallable() {
     return stub.fetchNodePoolUpgradeInfoCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * CompleteControlPlaneUpgrade completes the rollback-safe upgrade by performing the step two
+   * upgrade for a specific cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   CompleteControlPlaneUpgradeRequest request =
+   *       CompleteControlPlaneUpgradeRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setVersion("version351608024")
+   *           .build();
+   *   Operation response = clusterManagerClient.completeControlPlaneUpgrade(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Operation completeControlPlaneUpgrade(CompleteControlPlaneUpgradeRequest request) {
+    return completeControlPlaneUpgradeCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * CompleteControlPlaneUpgrade completes the rollback-safe upgrade by performing the step two
+   * upgrade for a specific cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   CompleteControlPlaneUpgradeRequest request =
+   *       CompleteControlPlaneUpgradeRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setVersion("version351608024")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       clusterManagerClient.completeControlPlaneUpgradeCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CompleteControlPlaneUpgradeRequest, Operation>
+      completeControlPlaneUpgradeCallable() {
+    return stub.completeControlPlaneUpgradeCallable();
   }
 
   @Override

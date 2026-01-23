@@ -205,4 +205,56 @@ public interface UpgradeDetailsOrBuilder
    * @return The startType.
    */
   com.google.container.v1beta1.UpgradeDetails.StartType getStartType();
+
+  /**
+   *
+   *
+   * <pre>
+   * The emulated version before the upgrade.
+   * </pre>
+   *
+   * <code>string initial_emulated_version = 7;</code>
+   *
+   * @return The initialEmulatedVersion.
+   */
+  java.lang.String getInitialEmulatedVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * The emulated version before the upgrade.
+   * </pre>
+   *
+   * <code>string initial_emulated_version = 7;</code>
+   *
+   * @return The bytes for initialEmulatedVersion.
+   */
+  com.google.protobuf.ByteString getInitialEmulatedVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The emulated version after the upgrade.
+   * </pre>
+   *
+   * <code>string target_emulated_version = 8;</code>
+   *
+   * @return The targetEmulatedVersion.
+   */
+  java.lang.String getTargetEmulatedVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * The emulated version after the upgrade.
+   * </pre>
+   *
+   * <code>string target_emulated_version = 8;</code>
+   *
+   * @return The bytes for targetEmulatedVersion.
+   */
+  com.google.protobuf.ByteString getTargetEmulatedVersionBytes();
 }

@@ -198,7 +198,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1862
+   *     google/container/v1/cluster_service.proto;l=2099
    * @return Whether the kubernetesDashboard field is set.
    */
   @java.lang.Override
@@ -222,7 +222,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1862
+   *     google/container/v1/cluster_service.proto;l=2099
    * @return The kubernetesDashboard.
    */
   @java.lang.Override
@@ -995,6 +995,66 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         : lustreCsiDriverConfig_;
   }
 
+  public static final int SLICE_CONTROLLER_CONFIG_FIELD_NUMBER = 26;
+  private com.google.container.v1.SliceControllerConfig sliceControllerConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the slice controller add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.SliceControllerConfig slice_controller_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sliceControllerConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasSliceControllerConfig() {
+    return ((bitField0_ & 0x00010000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the slice controller add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.SliceControllerConfig slice_controller_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sliceControllerConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.SliceControllerConfig getSliceControllerConfig() {
+    return sliceControllerConfig_ == null
+        ? com.google.container.v1.SliceControllerConfig.getDefaultInstance()
+        : sliceControllerConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the slice controller add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.SliceControllerConfig slice_controller_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.SliceControllerConfigOrBuilder
+      getSliceControllerConfigOrBuilder() {
+    return sliceControllerConfig_ == null
+        ? com.google.container.v1.SliceControllerConfig.getDefaultInstance()
+        : sliceControllerConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1056,6 +1116,9 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00008000) != 0)) {
       output.writeMessage(23, getLustreCsiDriverConfig());
+    }
+    if (((bitField0_ & 0x00010000) != 0)) {
+      output.writeMessage(26, getSliceControllerConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1127,6 +1190,10 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00008000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(23, getLustreCsiDriverConfig());
+    }
+    if (((bitField0_ & 0x00010000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(26, getSliceControllerConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1212,6 +1279,10 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasLustreCsiDriverConfig()) {
       if (!getLustreCsiDriverConfig().equals(other.getLustreCsiDriverConfig())) return false;
     }
+    if (hasSliceControllerConfig() != other.hasSliceControllerConfig()) return false;
+    if (hasSliceControllerConfig()) {
+      if (!getSliceControllerConfig().equals(other.getSliceControllerConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1286,6 +1357,10 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasLustreCsiDriverConfig()) {
       hash = (37 * hash) + LUSTRE_CSI_DRIVER_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getLustreCsiDriverConfig().hashCode();
+    }
+    if (hasSliceControllerConfig()) {
+      hash = (37 * hash) + SLICE_CONTROLLER_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getSliceControllerConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1444,6 +1519,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         getRayOperatorConfigFieldBuilder();
         getHighScaleCheckpointingConfigFieldBuilder();
         getLustreCsiDriverConfigFieldBuilder();
+        getSliceControllerConfigFieldBuilder();
       }
     }
 
@@ -1530,6 +1606,11 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       if (lustreCsiDriverConfigBuilder_ != null) {
         lustreCsiDriverConfigBuilder_.dispose();
         lustreCsiDriverConfigBuilder_ = null;
+      }
+      sliceControllerConfig_ = null;
+      if (sliceControllerConfigBuilder_ != null) {
+        sliceControllerConfigBuilder_.dispose();
+        sliceControllerConfigBuilder_ = null;
       }
       return this;
     }
@@ -1673,6 +1754,13 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
                 : lustreCsiDriverConfigBuilder_.build();
         to_bitField0_ |= 0x00008000;
       }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.sliceControllerConfig_ =
+            sliceControllerConfigBuilder_ == null
+                ? sliceControllerConfig_
+                : sliceControllerConfigBuilder_.build();
+        to_bitField0_ |= 0x00010000;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1768,6 +1856,9 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasLustreCsiDriverConfig()) {
         mergeLustreCsiDriverConfig(other.getLustreCsiDriverConfig());
+      }
+      if (other.hasSliceControllerConfig()) {
+        mergeSliceControllerConfig(other.getSliceControllerConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1906,6 +1997,13 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00008000;
                 break;
               } // case 186
+            case 210:
+              {
+                input.readMessage(
+                    getSliceControllerConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 210
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2370,7 +2468,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1862
+     *     google/container/v1/cluster_service.proto;l=2099
      * @return Whether the kubernetesDashboard field is set.
      */
     @java.lang.Deprecated
@@ -2393,7 +2491,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1862
+     *     google/container/v1/cluster_service.proto;l=2099
      * @return The kubernetesDashboard.
      */
     @java.lang.Deprecated
@@ -5294,6 +5392,221 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         lustreCsiDriverConfig_ = null;
       }
       return lustreCsiDriverConfigBuilder_;
+    }
+
+    private com.google.container.v1.SliceControllerConfig sliceControllerConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.SliceControllerConfig,
+            com.google.container.v1.SliceControllerConfig.Builder,
+            com.google.container.v1.SliceControllerConfigOrBuilder>
+        sliceControllerConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the slice controller add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.SliceControllerConfig slice_controller_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the sliceControllerConfig field is set.
+     */
+    public boolean hasSliceControllerConfig() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the slice controller add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.SliceControllerConfig slice_controller_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The sliceControllerConfig.
+     */
+    public com.google.container.v1.SliceControllerConfig getSliceControllerConfig() {
+      if (sliceControllerConfigBuilder_ == null) {
+        return sliceControllerConfig_ == null
+            ? com.google.container.v1.SliceControllerConfig.getDefaultInstance()
+            : sliceControllerConfig_;
+      } else {
+        return sliceControllerConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the slice controller add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.SliceControllerConfig slice_controller_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSliceControllerConfig(com.google.container.v1.SliceControllerConfig value) {
+      if (sliceControllerConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sliceControllerConfig_ = value;
+      } else {
+        sliceControllerConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the slice controller add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.SliceControllerConfig slice_controller_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSliceControllerConfig(
+        com.google.container.v1.SliceControllerConfig.Builder builderForValue) {
+      if (sliceControllerConfigBuilder_ == null) {
+        sliceControllerConfig_ = builderForValue.build();
+      } else {
+        sliceControllerConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the slice controller add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.SliceControllerConfig slice_controller_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSliceControllerConfig(com.google.container.v1.SliceControllerConfig value) {
+      if (sliceControllerConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00010000) != 0)
+            && sliceControllerConfig_ != null
+            && sliceControllerConfig_
+                != com.google.container.v1.SliceControllerConfig.getDefaultInstance()) {
+          getSliceControllerConfigBuilder().mergeFrom(value);
+        } else {
+          sliceControllerConfig_ = value;
+        }
+      } else {
+        sliceControllerConfigBuilder_.mergeFrom(value);
+      }
+      if (sliceControllerConfig_ != null) {
+        bitField0_ |= 0x00010000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the slice controller add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.SliceControllerConfig slice_controller_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSliceControllerConfig() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      sliceControllerConfig_ = null;
+      if (sliceControllerConfigBuilder_ != null) {
+        sliceControllerConfigBuilder_.dispose();
+        sliceControllerConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the slice controller add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.SliceControllerConfig slice_controller_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1.SliceControllerConfig.Builder getSliceControllerConfigBuilder() {
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return getSliceControllerConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the slice controller add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.SliceControllerConfig slice_controller_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1.SliceControllerConfigOrBuilder
+        getSliceControllerConfigOrBuilder() {
+      if (sliceControllerConfigBuilder_ != null) {
+        return sliceControllerConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return sliceControllerConfig_ == null
+            ? com.google.container.v1.SliceControllerConfig.getDefaultInstance()
+            : sliceControllerConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the slice controller add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.SliceControllerConfig slice_controller_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.SliceControllerConfig,
+            com.google.container.v1.SliceControllerConfig.Builder,
+            com.google.container.v1.SliceControllerConfigOrBuilder>
+        getSliceControllerConfigFieldBuilder() {
+      if (sliceControllerConfigBuilder_ == null) {
+        sliceControllerConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.SliceControllerConfig,
+                com.google.container.v1.SliceControllerConfig.Builder,
+                com.google.container.v1.SliceControllerConfigOrBuilder>(
+                getSliceControllerConfig(), getParentForChildren(), isClean());
+        sliceControllerConfig_ = null;
+      }
+      return sliceControllerConfigBuilder_;
     }
 
     @java.lang.Override

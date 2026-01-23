@@ -62,6 +62,70 @@ public final class Master extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.Master.Builder.class);
   }
 
+  private int bitField0_;
+  public static final int COMPATIBILITY_STATUS_FIELD_NUMBER = 3;
+  private com.google.container.v1beta1.CompatibilityStatus compatibilityStatus_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The compatibility status of the control plane.
+   * It should be empty if the cluster does not have emulated version.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.CompatibilityStatus compatibility_status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the compatibilityStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasCompatibilityStatus() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The compatibility status of the control plane.
+   * It should be empty if the cluster does not have emulated version.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.CompatibilityStatus compatibility_status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The compatibilityStatus.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.CompatibilityStatus getCompatibilityStatus() {
+    return compatibilityStatus_ == null
+        ? com.google.container.v1beta1.CompatibilityStatus.getDefaultInstance()
+        : compatibilityStatus_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The compatibility status of the control plane.
+   * It should be empty if the cluster does not have emulated version.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.CompatibilityStatus compatibility_status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.CompatibilityStatusOrBuilder
+      getCompatibilityStatusOrBuilder() {
+    return compatibilityStatus_ == null
+        ? com.google.container.v1beta1.CompatibilityStatus.getDefaultInstance()
+        : compatibilityStatus_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -76,6 +140,9 @@ public final class Master extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(3, getCompatibilityStatus());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -85,6 +152,9 @@ public final class Master extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getCompatibilityStatus());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -100,6 +170,10 @@ public final class Master extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.container.v1beta1.Master other = (com.google.container.v1beta1.Master) obj;
 
+    if (hasCompatibilityStatus() != other.hasCompatibilityStatus()) return false;
+    if (hasCompatibilityStatus()) {
+      if (!getCompatibilityStatus().equals(other.getCompatibilityStatus())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -111,6 +185,10 @@ public final class Master extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasCompatibilityStatus()) {
+      hash = (37 * hash) + COMPATIBILITY_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getCompatibilityStatus().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -240,15 +318,30 @@ public final class Master extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.container.v1beta1.Master.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getCompatibilityStatusFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
+      compatibilityStatus_ = null;
+      if (compatibilityStatusBuilder_ != null) {
+        compatibilityStatusBuilder_.dispose();
+        compatibilityStatusBuilder_ = null;
+      }
       return this;
     }
 
@@ -275,8 +368,24 @@ public final class Master extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.container.v1beta1.Master buildPartial() {
       com.google.container.v1beta1.Master result = new com.google.container.v1beta1.Master(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.container.v1beta1.Master result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.compatibilityStatus_ =
+            compatibilityStatusBuilder_ == null
+                ? compatibilityStatus_
+                : compatibilityStatusBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -324,6 +433,9 @@ public final class Master extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.container.v1beta1.Master other) {
       if (other == com.google.container.v1beta1.Master.getDefaultInstance()) return this;
+      if (other.hasCompatibilityStatus()) {
+        mergeCompatibilityStatus(other.getCompatibilityStatus());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -350,6 +462,13 @@ public final class Master extends com.google.protobuf.GeneratedMessageV3
             case 0:
               done = true;
               break;
+            case 26:
+              {
+                input.readMessage(
+                    getCompatibilityStatusFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -365,6 +484,234 @@ public final class Master extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       } // finally
       return this;
+    }
+
+    private int bitField0_;
+
+    private com.google.container.v1beta1.CompatibilityStatus compatibilityStatus_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.CompatibilityStatus,
+            com.google.container.v1beta1.CompatibilityStatus.Builder,
+            com.google.container.v1beta1.CompatibilityStatusOrBuilder>
+        compatibilityStatusBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The compatibility status of the control plane.
+     * It should be empty if the cluster does not have emulated version.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.CompatibilityStatus compatibility_status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the compatibilityStatus field is set.
+     */
+    public boolean hasCompatibilityStatus() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The compatibility status of the control plane.
+     * It should be empty if the cluster does not have emulated version.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.CompatibilityStatus compatibility_status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The compatibilityStatus.
+     */
+    public com.google.container.v1beta1.CompatibilityStatus getCompatibilityStatus() {
+      if (compatibilityStatusBuilder_ == null) {
+        return compatibilityStatus_ == null
+            ? com.google.container.v1beta1.CompatibilityStatus.getDefaultInstance()
+            : compatibilityStatus_;
+      } else {
+        return compatibilityStatusBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The compatibility status of the control plane.
+     * It should be empty if the cluster does not have emulated version.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.CompatibilityStatus compatibility_status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCompatibilityStatus(com.google.container.v1beta1.CompatibilityStatus value) {
+      if (compatibilityStatusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        compatibilityStatus_ = value;
+      } else {
+        compatibilityStatusBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The compatibility status of the control plane.
+     * It should be empty if the cluster does not have emulated version.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.CompatibilityStatus compatibility_status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCompatibilityStatus(
+        com.google.container.v1beta1.CompatibilityStatus.Builder builderForValue) {
+      if (compatibilityStatusBuilder_ == null) {
+        compatibilityStatus_ = builderForValue.build();
+      } else {
+        compatibilityStatusBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The compatibility status of the control plane.
+     * It should be empty if the cluster does not have emulated version.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.CompatibilityStatus compatibility_status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCompatibilityStatus(
+        com.google.container.v1beta1.CompatibilityStatus value) {
+      if (compatibilityStatusBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && compatibilityStatus_ != null
+            && compatibilityStatus_
+                != com.google.container.v1beta1.CompatibilityStatus.getDefaultInstance()) {
+          getCompatibilityStatusBuilder().mergeFrom(value);
+        } else {
+          compatibilityStatus_ = value;
+        }
+      } else {
+        compatibilityStatusBuilder_.mergeFrom(value);
+      }
+      if (compatibilityStatus_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The compatibility status of the control plane.
+     * It should be empty if the cluster does not have emulated version.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.CompatibilityStatus compatibility_status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCompatibilityStatus() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      compatibilityStatus_ = null;
+      if (compatibilityStatusBuilder_ != null) {
+        compatibilityStatusBuilder_.dispose();
+        compatibilityStatusBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The compatibility status of the control plane.
+     * It should be empty if the cluster does not have emulated version.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.CompatibilityStatus compatibility_status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.container.v1beta1.CompatibilityStatus.Builder
+        getCompatibilityStatusBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return getCompatibilityStatusFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The compatibility status of the control plane.
+     * It should be empty if the cluster does not have emulated version.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.CompatibilityStatus compatibility_status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.container.v1beta1.CompatibilityStatusOrBuilder
+        getCompatibilityStatusOrBuilder() {
+      if (compatibilityStatusBuilder_ != null) {
+        return compatibilityStatusBuilder_.getMessageOrBuilder();
+      } else {
+        return compatibilityStatus_ == null
+            ? com.google.container.v1beta1.CompatibilityStatus.getDefaultInstance()
+            : compatibilityStatus_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The compatibility status of the control plane.
+     * It should be empty if the cluster does not have emulated version.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.CompatibilityStatus compatibility_status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.CompatibilityStatus,
+            com.google.container.v1beta1.CompatibilityStatus.Builder,
+            com.google.container.v1beta1.CompatibilityStatusOrBuilder>
+        getCompatibilityStatusFieldBuilder() {
+      if (compatibilityStatusBuilder_ == null) {
+        compatibilityStatusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.CompatibilityStatus,
+                com.google.container.v1beta1.CompatibilityStatus.Builder,
+                com.google.container.v1beta1.CompatibilityStatusOrBuilder>(
+                getCompatibilityStatus(), getParentForChildren(), isClean());
+        compatibilityStatus_ = null;
+      }
+      return compatibilityStatusBuilder_;
     }
 
     @java.lang.Override

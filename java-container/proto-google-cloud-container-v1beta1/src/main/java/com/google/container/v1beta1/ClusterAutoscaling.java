@@ -46,6 +46,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
     resourceLimits_ = java.util.Collections.emptyList();
     autoscalingProfile_ = 0;
     autoprovisioningLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    autopilotGeneralProfile_ = 0;
   }
 
   @java.lang.Override
@@ -229,6 +230,145 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
     }
 
     // @@protoc_insertion_point(enum_scope:google.container.v1beta1.ClusterAutoscaling.AutoscalingProfile)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines possible options for Autopilot general profile.
+   * </pre>
+   *
+   * Protobuf enum {@code google.container.v1beta1.ClusterAutoscaling.AutopilotGeneralProfile}
+   */
+  public enum AutopilotGeneralProfile implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Use default configuration.
+     * </pre>
+     *
+     * <code>AUTOPILOT_GENERAL_PROFILE_UNSPECIFIED = 0;</code>
+     */
+    AUTOPILOT_GENERAL_PROFILE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Avoid extra IP consumption.
+     * </pre>
+     *
+     * <code>NO_PERFORMANCE = 1;</code>
+     */
+    NO_PERFORMANCE(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Use default configuration.
+     * </pre>
+     *
+     * <code>AUTOPILOT_GENERAL_PROFILE_UNSPECIFIED = 0;</code>
+     */
+    public static final int AUTOPILOT_GENERAL_PROFILE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Avoid extra IP consumption.
+     * </pre>
+     *
+     * <code>NO_PERFORMANCE = 1;</code>
+     */
+    public static final int NO_PERFORMANCE_VALUE = 1;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static AutopilotGeneralProfile valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static AutopilotGeneralProfile forNumber(int value) {
+      switch (value) {
+        case 0:
+          return AUTOPILOT_GENERAL_PROFILE_UNSPECIFIED;
+        case 1:
+          return NO_PERFORMANCE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<AutopilotGeneralProfile>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<AutopilotGeneralProfile>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<AutopilotGeneralProfile>() {
+              public AutopilotGeneralProfile findValueByNumber(int number) {
+                return AutopilotGeneralProfile.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.container.v1beta1.ClusterAutoscaling.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final AutopilotGeneralProfile[] VALUES = values();
+
+    public static AutopilotGeneralProfile valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private AutopilotGeneralProfile(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.container.v1beta1.ClusterAutoscaling.AutopilotGeneralProfile)
   }
 
   private int bitField0_;
@@ -573,6 +713,53 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
         : defaultComputeClassConfig_;
   }
 
+  public static final int AUTOPILOT_GENERAL_PROFILE_FIELD_NUMBER = 14;
+  private int autopilotGeneralProfile_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Autopilot general profile for the cluster, which defines the
+   * configuration for the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ClusterAutoscaling.AutopilotGeneralProfile autopilot_general_profile = 14;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for autopilotGeneralProfile.
+   */
+  @java.lang.Override
+  public int getAutopilotGeneralProfileValue() {
+    return autopilotGeneralProfile_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Autopilot general profile for the cluster, which defines the
+   * configuration for the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ClusterAutoscaling.AutopilotGeneralProfile autopilot_general_profile = 14;
+   * </code>
+   *
+   * @return The autopilotGeneralProfile.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.ClusterAutoscaling.AutopilotGeneralProfile
+      getAutopilotGeneralProfile() {
+    com.google.container.v1beta1.ClusterAutoscaling.AutopilotGeneralProfile result =
+        com.google.container.v1beta1.ClusterAutoscaling.AutopilotGeneralProfile.forNumber(
+            autopilotGeneralProfile_);
+    return result == null
+        ? com.google.container.v1beta1.ClusterAutoscaling.AutopilotGeneralProfile.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -607,6 +794,12 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(9, getDefaultComputeClassConfig());
+    }
+    if (autopilotGeneralProfile_
+        != com.google.container.v1beta1.ClusterAutoscaling.AutopilotGeneralProfile
+            .AUTOPILOT_GENERAL_PROFILE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(14, autopilotGeneralProfile_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -646,6 +839,12 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               9, getDefaultComputeClassConfig());
     }
+    if (autopilotGeneralProfile_
+        != com.google.container.v1beta1.ClusterAutoscaling.AutopilotGeneralProfile
+            .AUTOPILOT_GENERAL_PROFILE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(14, autopilotGeneralProfile_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -678,6 +877,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       if (!getDefaultComputeClassConfig().equals(other.getDefaultComputeClassConfig()))
         return false;
     }
+    if (autopilotGeneralProfile_ != other.autopilotGeneralProfile_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -709,6 +909,8 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + DEFAULT_COMPUTE_CLASS_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getDefaultComputeClassConfig().hashCode();
     }
+    hash = (37 * hash) + AUTOPILOT_GENERAL_PROFILE_FIELD_NUMBER;
+    hash = (53 * hash) + autopilotGeneralProfile_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -883,6 +1085,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
         defaultComputeClassConfigBuilder_.dispose();
         defaultComputeClassConfigBuilder_ = null;
       }
+      autopilotGeneralProfile_ = 0;
       return this;
     }
 
@@ -957,6 +1160,9 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
                 ? defaultComputeClassConfig_
                 : defaultComputeClassConfigBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.autopilotGeneralProfile_ = autopilotGeneralProfile_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1056,6 +1262,9 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       if (other.hasDefaultComputeClassConfig()) {
         mergeDefaultComputeClassConfig(other.getDefaultComputeClassConfig());
       }
+      if (other.autopilotGeneralProfile_ != 0) {
+        setAutopilotGeneralProfileValue(other.getAutopilotGeneralProfileValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1129,6 +1338,12 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000020;
                 break;
               } // case 74
+            case 112:
+              {
+                autopilotGeneralProfile_ = input.readEnum();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 112
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2343,6 +2558,121 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
         defaultComputeClassConfig_ = null;
       }
       return defaultComputeClassConfigBuilder_;
+    }
+
+    private int autopilotGeneralProfile_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Autopilot general profile for the cluster, which defines the
+     * configuration for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.ClusterAutoscaling.AutopilotGeneralProfile autopilot_general_profile = 14;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for autopilotGeneralProfile.
+     */
+    @java.lang.Override
+    public int getAutopilotGeneralProfileValue() {
+      return autopilotGeneralProfile_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Autopilot general profile for the cluster, which defines the
+     * configuration for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.ClusterAutoscaling.AutopilotGeneralProfile autopilot_general_profile = 14;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for autopilotGeneralProfile to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAutopilotGeneralProfileValue(int value) {
+      autopilotGeneralProfile_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Autopilot general profile for the cluster, which defines the
+     * configuration for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.ClusterAutoscaling.AutopilotGeneralProfile autopilot_general_profile = 14;
+     * </code>
+     *
+     * @return The autopilotGeneralProfile.
+     */
+    @java.lang.Override
+    public com.google.container.v1beta1.ClusterAutoscaling.AutopilotGeneralProfile
+        getAutopilotGeneralProfile() {
+      com.google.container.v1beta1.ClusterAutoscaling.AutopilotGeneralProfile result =
+          com.google.container.v1beta1.ClusterAutoscaling.AutopilotGeneralProfile.forNumber(
+              autopilotGeneralProfile_);
+      return result == null
+          ? com.google.container.v1beta1.ClusterAutoscaling.AutopilotGeneralProfile.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Autopilot general profile for the cluster, which defines the
+     * configuration for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.ClusterAutoscaling.AutopilotGeneralProfile autopilot_general_profile = 14;
+     * </code>
+     *
+     * @param value The autopilotGeneralProfile to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAutopilotGeneralProfile(
+        com.google.container.v1beta1.ClusterAutoscaling.AutopilotGeneralProfile value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000040;
+      autopilotGeneralProfile_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Autopilot general profile for the cluster, which defines the
+     * configuration for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.ClusterAutoscaling.AutopilotGeneralProfile autopilot_general_profile = 14;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAutopilotGeneralProfile() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      autopilotGeneralProfile_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

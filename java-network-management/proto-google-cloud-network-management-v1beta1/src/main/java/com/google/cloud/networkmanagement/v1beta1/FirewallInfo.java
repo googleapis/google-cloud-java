@@ -148,7 +148,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Global network firewall policy rule.
+     * User-defined global network firewall policy rule.
      * For details, see [Network firewall
      * policies](https://cloud.google.com/vpc/docs/network-firewall-policies).
      * </pre>
@@ -160,7 +160,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Regional network firewall policy rule.
+     * User-defined regional network firewall policy rule.
      * For details, see [Regional network firewall
      * policies](https://cloud.google.com/firewall/docs/regional-firewall-policies).
      * </pre>
@@ -168,6 +168,26 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>NETWORK_REGIONAL_FIREWALL_POLICY_RULE = 6;</code>
      */
     NETWORK_REGIONAL_FIREWALL_POLICY_RULE(6),
+    /**
+     *
+     *
+     * <pre>
+     * System-defined global network firewall policy rule.
+     * </pre>
+     *
+     * <code>SYSTEM_NETWORK_FIREWALL_POLICY_RULE = 7;</code>
+     */
+    SYSTEM_NETWORK_FIREWALL_POLICY_RULE(7),
+    /**
+     *
+     *
+     * <pre>
+     * System-defined regional network firewall policy rule.
+     * </pre>
+     *
+     * <code>SYSTEM_REGIONAL_NETWORK_FIREWALL_POLICY_RULE = 8;</code>
+     */
+    SYSTEM_REGIONAL_NETWORK_FIREWALL_POLICY_RULE(8),
     /**
      *
      *
@@ -276,7 +296,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Global network firewall policy rule.
+     * User-defined global network firewall policy rule.
      * For details, see [Network firewall
      * policies](https://cloud.google.com/vpc/docs/network-firewall-policies).
      * </pre>
@@ -289,7 +309,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Regional network firewall policy rule.
+     * User-defined regional network firewall policy rule.
      * For details, see [Regional network firewall
      * policies](https://cloud.google.com/firewall/docs/regional-firewall-policies).
      * </pre>
@@ -297,6 +317,28 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>NETWORK_REGIONAL_FIREWALL_POLICY_RULE = 6;</code>
      */
     public static final int NETWORK_REGIONAL_FIREWALL_POLICY_RULE_VALUE = 6;
+
+    /**
+     *
+     *
+     * <pre>
+     * System-defined global network firewall policy rule.
+     * </pre>
+     *
+     * <code>SYSTEM_NETWORK_FIREWALL_POLICY_RULE = 7;</code>
+     */
+    public static final int SYSTEM_NETWORK_FIREWALL_POLICY_RULE_VALUE = 7;
+
+    /**
+     *
+     *
+     * <pre>
+     * System-defined regional network firewall policy rule.
+     * </pre>
+     *
+     * <code>SYSTEM_REGIONAL_NETWORK_FIREWALL_POLICY_RULE = 8;</code>
+     */
+    public static final int SYSTEM_REGIONAL_NETWORK_FIREWALL_POLICY_RULE_VALUE = 8;
 
     /**
      *
@@ -376,6 +418,10 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
           return NETWORK_FIREWALL_POLICY_RULE;
         case 6:
           return NETWORK_REGIONAL_FIREWALL_POLICY_RULE;
+        case 7:
+          return SYSTEM_NETWORK_FIREWALL_POLICY_RULE;
+        case 8:
+          return SYSTEM_REGIONAL_NETWORK_FIREWALL_POLICY_RULE;
         case 100:
           return UNSUPPORTED_FIREWALL_POLICY_RULE;
         case 101:

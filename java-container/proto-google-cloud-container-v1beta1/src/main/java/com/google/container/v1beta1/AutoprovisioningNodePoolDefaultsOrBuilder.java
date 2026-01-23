@@ -254,7 +254,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * <code>string min_cpu_platform = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=5635
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=5926
    * @return The minCpuPlatform.
    */
   @java.lang.Deprecated
@@ -280,7 +280,7 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    * <code>string min_cpu_platform = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=5635
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=5926
    * @return The bytes for minCpuPlatform.
    */
   @java.lang.Deprecated

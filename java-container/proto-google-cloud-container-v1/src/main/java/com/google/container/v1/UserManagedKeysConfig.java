@@ -48,6 +48,7 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
     serviceAccountVerificationKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
     aggregationCa_ = "";
     controlPlaneDiskEncryptionKey_ = "";
+    controlPlaneDiskEncryptionKeyVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
     gkeopsEtcdBackupEncryptionKey_ = "";
   }
 
@@ -533,6 +534,86 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
     }
   }
 
+  public static final int CONTROL_PLANE_DISK_ENCRYPTION_KEY_VERSIONS_FIELD_NUMBER = 18;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList controlPlaneDiskEncryptionKeyVersions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All of the versions of the Cloud KMS cryptoKey that are used
+   * by Confidential Hyperdisks on the control plane nodes.
+   * </pre>
+   *
+   * <code>
+   * repeated string control_plane_disk_encryption_key_versions = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the controlPlaneDiskEncryptionKeyVersions.
+   */
+  public com.google.protobuf.ProtocolStringList getControlPlaneDiskEncryptionKeyVersionsList() {
+    return controlPlaneDiskEncryptionKeyVersions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All of the versions of the Cloud KMS cryptoKey that are used
+   * by Confidential Hyperdisks on the control plane nodes.
+   * </pre>
+   *
+   * <code>
+   * repeated string control_plane_disk_encryption_key_versions = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of controlPlaneDiskEncryptionKeyVersions.
+   */
+  public int getControlPlaneDiskEncryptionKeyVersionsCount() {
+    return controlPlaneDiskEncryptionKeyVersions_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All of the versions of the Cloud KMS cryptoKey that are used
+   * by Confidential Hyperdisks on the control plane nodes.
+   * </pre>
+   *
+   * <code>
+   * repeated string control_plane_disk_encryption_key_versions = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The controlPlaneDiskEncryptionKeyVersions at the given index.
+   */
+  public java.lang.String getControlPlaneDiskEncryptionKeyVersions(int index) {
+    return controlPlaneDiskEncryptionKeyVersions_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All of the versions of the Cloud KMS cryptoKey that are used
+   * by Confidential Hyperdisks on the control plane nodes.
+   * </pre>
+   *
+   * <code>
+   * repeated string control_plane_disk_encryption_key_versions = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the controlPlaneDiskEncryptionKeyVersions at the given index.
+   */
+  public com.google.protobuf.ByteString getControlPlaneDiskEncryptionKeyVersionsBytes(int index) {
+    return controlPlaneDiskEncryptionKeyVersions_.getByteString(index);
+  }
+
   public static final int GKEOPS_ETCD_BACKUP_ENCRYPTION_KEY_FIELD_NUMBER = 17;
 
   @SuppressWarnings("serial")
@@ -632,6 +713,10 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 17, gkeopsEtcdBackupEncryptionKey_);
     }
+    for (int i = 0; i < controlPlaneDiskEncryptionKeyVersions_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 18, controlPlaneDiskEncryptionKeyVersions_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -679,6 +764,14 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               17, gkeopsEtcdBackupEncryptionKey_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < controlPlaneDiskEncryptionKeyVersions_.size(); i++) {
+        dataSize += computeStringSizeNoTag(controlPlaneDiskEncryptionKeyVersions_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getControlPlaneDiskEncryptionKeyVersionsList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -705,6 +798,8 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
     if (!getAggregationCa().equals(other.getAggregationCa())) return false;
     if (!getControlPlaneDiskEncryptionKey().equals(other.getControlPlaneDiskEncryptionKey()))
       return false;
+    if (!getControlPlaneDiskEncryptionKeyVersionsList()
+        .equals(other.getControlPlaneDiskEncryptionKeyVersionsList())) return false;
     if (!getGkeopsEtcdBackupEncryptionKey().equals(other.getGkeopsEtcdBackupEncryptionKey()))
       return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -736,6 +831,10 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
     hash = (53 * hash) + getAggregationCa().hashCode();
     hash = (37 * hash) + CONTROL_PLANE_DISK_ENCRYPTION_KEY_FIELD_NUMBER;
     hash = (53 * hash) + getControlPlaneDiskEncryptionKey().hashCode();
+    if (getControlPlaneDiskEncryptionKeyVersionsCount() > 0) {
+      hash = (37 * hash) + CONTROL_PLANE_DISK_ENCRYPTION_KEY_VERSIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getControlPlaneDiskEncryptionKeyVersionsList().hashCode();
+    }
     hash = (37 * hash) + GKEOPS_ETCD_BACKUP_ENCRYPTION_KEY_FIELD_NUMBER;
     hash = (53 * hash) + getGkeopsEtcdBackupEncryptionKey().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -886,6 +985,7 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       serviceAccountVerificationKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
       aggregationCa_ = "";
       controlPlaneDiskEncryptionKey_ = "";
+      controlPlaneDiskEncryptionKeyVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       gkeopsEtcdBackupEncryptionKey_ = "";
       return this;
     }
@@ -947,6 +1047,10 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
         result.controlPlaneDiskEncryptionKey_ = controlPlaneDiskEncryptionKey_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        controlPlaneDiskEncryptionKeyVersions_.makeImmutable();
+        result.controlPlaneDiskEncryptionKeyVersions_ = controlPlaneDiskEncryptionKeyVersions_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.gkeopsEtcdBackupEncryptionKey_ = gkeopsEtcdBackupEncryptionKey_;
       }
     }
@@ -1041,9 +1145,20 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
         bitField0_ |= 0x00000040;
         onChanged();
       }
+      if (!other.controlPlaneDiskEncryptionKeyVersions_.isEmpty()) {
+        if (controlPlaneDiskEncryptionKeyVersions_.isEmpty()) {
+          controlPlaneDiskEncryptionKeyVersions_ = other.controlPlaneDiskEncryptionKeyVersions_;
+          bitField0_ |= 0x00000080;
+        } else {
+          ensureControlPlaneDiskEncryptionKeyVersionsIsMutable();
+          controlPlaneDiskEncryptionKeyVersions_.addAll(
+              other.controlPlaneDiskEncryptionKeyVersions_);
+        }
+        onChanged();
+      }
       if (!other.getGkeopsEtcdBackupEncryptionKey().isEmpty()) {
         gkeopsEtcdBackupEncryptionKey_ = other.gkeopsEtcdBackupEncryptionKey_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1119,9 +1234,16 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
             case 138:
               {
                 gkeopsEtcdBackupEncryptionKey_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 138
+            case 146:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureControlPlaneDiskEncryptionKeyVersionsIsMutable();
+                controlPlaneDiskEncryptionKeyVersions_.add(s);
+                break;
+              } // case 146
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2209,6 +2331,220 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       return this;
     }
 
+    private com.google.protobuf.LazyStringArrayList controlPlaneDiskEncryptionKeyVersions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureControlPlaneDiskEncryptionKeyVersionsIsMutable() {
+      if (!controlPlaneDiskEncryptionKeyVersions_.isModifiable()) {
+        controlPlaneDiskEncryptionKeyVersions_ =
+            new com.google.protobuf.LazyStringArrayList(controlPlaneDiskEncryptionKeyVersions_);
+      }
+      bitField0_ |= 0x00000080;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All of the versions of the Cloud KMS cryptoKey that are used
+     * by Confidential Hyperdisks on the control plane nodes.
+     * </pre>
+     *
+     * <code>
+     * repeated string control_plane_disk_encryption_key_versions = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the controlPlaneDiskEncryptionKeyVersions.
+     */
+    public com.google.protobuf.ProtocolStringList getControlPlaneDiskEncryptionKeyVersionsList() {
+      controlPlaneDiskEncryptionKeyVersions_.makeImmutable();
+      return controlPlaneDiskEncryptionKeyVersions_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All of the versions of the Cloud KMS cryptoKey that are used
+     * by Confidential Hyperdisks on the control plane nodes.
+     * </pre>
+     *
+     * <code>
+     * repeated string control_plane_disk_encryption_key_versions = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of controlPlaneDiskEncryptionKeyVersions.
+     */
+    public int getControlPlaneDiskEncryptionKeyVersionsCount() {
+      return controlPlaneDiskEncryptionKeyVersions_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All of the versions of the Cloud KMS cryptoKey that are used
+     * by Confidential Hyperdisks on the control plane nodes.
+     * </pre>
+     *
+     * <code>
+     * repeated string control_plane_disk_encryption_key_versions = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The controlPlaneDiskEncryptionKeyVersions at the given index.
+     */
+    public java.lang.String getControlPlaneDiskEncryptionKeyVersions(int index) {
+      return controlPlaneDiskEncryptionKeyVersions_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All of the versions of the Cloud KMS cryptoKey that are used
+     * by Confidential Hyperdisks on the control plane nodes.
+     * </pre>
+     *
+     * <code>
+     * repeated string control_plane_disk_encryption_key_versions = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the controlPlaneDiskEncryptionKeyVersions at the given index.
+     */
+    public com.google.protobuf.ByteString getControlPlaneDiskEncryptionKeyVersionsBytes(int index) {
+      return controlPlaneDiskEncryptionKeyVersions_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All of the versions of the Cloud KMS cryptoKey that are used
+     * by Confidential Hyperdisks on the control plane nodes.
+     * </pre>
+     *
+     * <code>
+     * repeated string control_plane_disk_encryption_key_versions = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The controlPlaneDiskEncryptionKeyVersions to set.
+     * @return This builder for chaining.
+     */
+    public Builder setControlPlaneDiskEncryptionKeyVersions(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureControlPlaneDiskEncryptionKeyVersionsIsMutable();
+      controlPlaneDiskEncryptionKeyVersions_.set(index, value);
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All of the versions of the Cloud KMS cryptoKey that are used
+     * by Confidential Hyperdisks on the control plane nodes.
+     * </pre>
+     *
+     * <code>
+     * repeated string control_plane_disk_encryption_key_versions = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The controlPlaneDiskEncryptionKeyVersions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addControlPlaneDiskEncryptionKeyVersions(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureControlPlaneDiskEncryptionKeyVersionsIsMutable();
+      controlPlaneDiskEncryptionKeyVersions_.add(value);
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All of the versions of the Cloud KMS cryptoKey that are used
+     * by Confidential Hyperdisks on the control plane nodes.
+     * </pre>
+     *
+     * <code>
+     * repeated string control_plane_disk_encryption_key_versions = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The controlPlaneDiskEncryptionKeyVersions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllControlPlaneDiskEncryptionKeyVersions(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureControlPlaneDiskEncryptionKeyVersionsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, controlPlaneDiskEncryptionKeyVersions_);
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All of the versions of the Cloud KMS cryptoKey that are used
+     * by Confidential Hyperdisks on the control plane nodes.
+     * </pre>
+     *
+     * <code>
+     * repeated string control_plane_disk_encryption_key_versions = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearControlPlaneDiskEncryptionKeyVersions() {
+      controlPlaneDiskEncryptionKeyVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All of the versions of the Cloud KMS cryptoKey that are used
+     * by Confidential Hyperdisks on the control plane nodes.
+     * </pre>
+     *
+     * <code>
+     * repeated string control_plane_disk_encryption_key_versions = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes of the controlPlaneDiskEncryptionKeyVersions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addControlPlaneDiskEncryptionKeyVersionsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureControlPlaneDiskEncryptionKeyVersionsIsMutable();
+      controlPlaneDiskEncryptionKeyVersions_.add(value);
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object gkeopsEtcdBackupEncryptionKey_ = "";
 
     /**
@@ -2283,7 +2619,7 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       gkeopsEtcdBackupEncryptionKey_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2304,7 +2640,7 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
      */
     public Builder clearGkeopsEtcdBackupEncryptionKey() {
       gkeopsEtcdBackupEncryptionKey_ = getDefaultInstance().getGkeopsEtcdBackupEncryptionKey();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2330,7 +2666,7 @@ public final class UserManagedKeysConfig extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       gkeopsEtcdBackupEncryptionKey_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

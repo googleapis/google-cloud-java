@@ -108,7 +108,7 @@ public interface ClusterOrBuilder
    * <code>int32 initial_node_count = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.initial_node_count is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2456
+   *     google/container/v1/cluster_service.proto;l=2703
    * @return The initialNodeCount.
    */
   @java.lang.Deprecated
@@ -134,7 +134,7 @@ public interface ClusterOrBuilder
    * <code>.google.container.v1.NodeConfig node_config = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.node_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2469
+   *     google/container/v1/cluster_service.proto;l=2716
    * @return Whether the nodeConfig field is set.
    */
   @java.lang.Deprecated
@@ -160,7 +160,7 @@ public interface ClusterOrBuilder
    * <code>.google.container.v1.NodeConfig node_config = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.node_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2469
+   *     google/container/v1/cluster_service.proto;l=2716
    * @return The nodeConfig.
    */
   @java.lang.Deprecated
@@ -366,7 +366,7 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * The IP address range of the container pods in this cluster, in
-   * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+   * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`). Leave blank to have
    * one automatically chosen or specify a `/14` block in `10.0.0.0/8`.
    * </pre>
@@ -382,7 +382,7 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * The IP address range of the container pods in this cluster, in
-   * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+   * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`). Leave blank to have
    * one automatically chosen or specify a `/14` block in `10.0.0.0/8`.
    * </pre>
@@ -920,7 +920,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.master_authorized_networks_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2576
+   *     google/container/v1/cluster_service.proto;l=2823
    * @return Whether the masterAuthorizedNetworksConfig field is set.
    */
   @java.lang.Deprecated
@@ -942,7 +942,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.master_authorized_networks_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2576
+   *     google/container/v1/cluster_service.proto;l=2823
    * @return The masterAuthorizedNetworksConfig.
    */
   @java.lang.Deprecated
@@ -1704,7 +1704,7 @@ public interface ClusterOrBuilder
    * <code>string zone = 101 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @deprecated google.container.v1.Cluster.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2650
+   *     google/container/v1/cluster_service.proto;l=2897
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -1723,7 +1723,7 @@ public interface ClusterOrBuilder
    * <code>string zone = 101 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @deprecated google.container.v1.Cluster.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2650
+   *     google/container/v1/cluster_service.proto;l=2897
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -1857,7 +1857,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.current_node_version is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2685
+   *     google/container/v1/cluster_service.proto;l=2932
    * @return The currentNodeVersion.
    */
   @java.lang.Deprecated
@@ -1879,7 +1879,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.current_node_version is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2685
+   *     google/container/v1/cluster_service.proto;l=2932
    * @return The bytes for currentNodeVersion.
    */
   @java.lang.Deprecated
@@ -1957,7 +1957,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2698
+   *     google/container/v1/cluster_service.proto;l=2945
    * @return The statusMessage.
    */
   @java.lang.Deprecated
@@ -1977,7 +1977,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2698
+   *     google/container/v1/cluster_service.proto;l=2945
    * @return The bytes for statusMessage.
    */
   @java.lang.Deprecated
@@ -2005,7 +2005,7 @@ public interface ClusterOrBuilder
    * <pre>
    * Output only. The IP address range of the Kubernetes services in
    * this cluster, in
-   * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+   * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `1.2.3.4/29`). Service addresses are
    * typically put in the last `/16` from the container CIDR.
    * </pre>
@@ -2022,7 +2022,7 @@ public interface ClusterOrBuilder
    * <pre>
    * Output only. The IP address range of the Kubernetes services in
    * this cluster, in
-   * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+   * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `1.2.3.4/29`). Service addresses are
    * typically put in the last `/16` from the container CIDR.
    * </pre>
@@ -2045,7 +2045,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2715
+   *     google/container/v1/cluster_service.proto;l=2962
    * @return A list containing the instanceGroupUrls.
    */
   @java.lang.Deprecated
@@ -2063,7 +2063,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2715
+   *     google/container/v1/cluster_service.proto;l=2962
    * @return The count of instanceGroupUrls.
    */
   @java.lang.Deprecated
@@ -2081,7 +2081,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2715
+   *     google/container/v1/cluster_service.proto;l=2962
    * @param index The index of the element to return.
    * @return The instanceGroupUrls at the given index.
    */
@@ -2100,7 +2100,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2715
+   *     google/container/v1/cluster_service.proto;l=2962
    * @param index The index of the value to return.
    * @return The bytes of the instanceGroupUrls at the given index.
    */
@@ -2120,7 +2120,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.current_node_count is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2720
+   *     google/container/v1/cluster_service.proto;l=2967
    * @return The currentNodeCount.
    */
   @java.lang.Deprecated
@@ -2200,7 +2200,7 @@ public interface ClusterOrBuilder
    * <code>bool enable_tpu = 115 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.enable_tpu is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2737
+   *     google/container/v1/cluster_service.proto;l=2984
    * @return The enableTpu.
    */
   @java.lang.Deprecated
@@ -2211,7 +2211,7 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * Output only. The IP address range of the Cloud TPUs in this cluster, in
-   * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+   * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `1.2.3.4/29`).
    * This field is deprecated due to the deprecation of 2VM TPU. The end of life
    * date for 2VM TPU is 2025-04-25.
@@ -2222,7 +2222,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.tpu_ipv4_cidr_block is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2744
+   *     google/container/v1/cluster_service.proto;l=2991
    * @return The tpuIpv4CidrBlock.
    */
   @java.lang.Deprecated
@@ -2233,7 +2233,7 @@ public interface ClusterOrBuilder
    *
    * <pre>
    * Output only. The IP address range of the Cloud TPUs in this cluster, in
-   * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+   * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `1.2.3.4/29`).
    * This field is deprecated due to the deprecation of 2VM TPU. The end of life
    * date for 2VM TPU is 2025-04-25.
@@ -2244,7 +2244,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Cluster.tpu_ipv4_cidr_block is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2744
+   *     google/container/v1/cluster_service.proto;l=2991
    * @return The bytes for tpuIpv4CidrBlock.
    */
   @java.lang.Deprecated
@@ -2755,7 +2755,7 @@ public interface ClusterOrBuilder
    * <code>.google.container.v1.EnterpriseConfig enterprise_config = 149 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.enterprise_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2794
+   *     google/container/v1/cluster_service.proto;l=3041
    * @return Whether the enterpriseConfig field is set.
    */
   @java.lang.Deprecated
@@ -2774,7 +2774,7 @@ public interface ClusterOrBuilder
    * <code>.google.container.v1.EnterpriseConfig enterprise_config = 149 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.enterprise_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2794
+   *     google/container/v1/cluster_service.proto;l=3041
    * @return The enterpriseConfig.
    */
   @java.lang.Deprecated
@@ -3081,4 +3081,45 @@ public interface ClusterOrBuilder
    */
   com.google.container.v1.AnonymousAuthenticationConfigOrBuilder
       getAnonymousAuthenticationConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Managed OpenTelemetry pipeline.
+   * </pre>
+   *
+   * <code>.google.container.v1.ManagedOpenTelemetryConfig managed_opentelemetry_config = 168;
+   * </code>
+   *
+   * @return Whether the managedOpentelemetryConfig field is set.
+   */
+  boolean hasManagedOpentelemetryConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Managed OpenTelemetry pipeline.
+   * </pre>
+   *
+   * <code>.google.container.v1.ManagedOpenTelemetryConfig managed_opentelemetry_config = 168;
+   * </code>
+   *
+   * @return The managedOpentelemetryConfig.
+   */
+  com.google.container.v1.ManagedOpenTelemetryConfig getManagedOpentelemetryConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Managed OpenTelemetry pipeline.
+   * </pre>
+   *
+   * <code>.google.container.v1.ManagedOpenTelemetryConfig managed_opentelemetry_config = 168;
+   * </code>
+   */
+  com.google.container.v1.ManagedOpenTelemetryConfigOrBuilder
+      getManagedOpentelemetryConfigOrBuilder();
 }
