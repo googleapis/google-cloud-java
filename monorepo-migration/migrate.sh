@@ -95,7 +95,7 @@ if [ -z "$CODEOWNER" ]; then
     if [ -n "$CODEOWNERS_FILE" ]; then
         # Extract the line(s) starting with * (global owners)
         # Use grep to find the line, then sed to remove the '*' and standard team handle
-        EXTRACTED_OWNERS=$(grep "^\*" "$CODEOWNERS_FILE" | sed 's/^\*[[:space:]]*//' | sed 's/@googleapis\/cloud-java-team-teamsync//g' | xargs)
+        EXTRACTED_OWNERS=$(grep "^\* " "$CODEOWNERS_FILE" | sed 's/^\*[[:space:]]*//' | sed 's/@googleapis\/cloud-java-team-teamsync//g' | xargs)
         if [ -n "$EXTRACTED_OWNERS" ]; then
             DEFAULT_CODEOWNER="$EXTRACTED_OWNERS"
             echo "Found default CODEOWNER: $DEFAULT_CODEOWNER"
