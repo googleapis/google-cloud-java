@@ -16,8 +16,6 @@
 
 package com.google.cloud.vertexai.api.stub;
 
-import static com.google.cloud.vertexai.api.LlmUtilityServiceClient.ListLocationsPagedResponse;
-
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -38,6 +36,7 @@ import com.google.cloud.vertexai.api.ComputeTokensRequest;
 import com.google.cloud.vertexai.api.ComputeTokensResponse;
 import com.google.cloud.vertexai.api.CountTokensRequest;
 import com.google.cloud.vertexai.api.CountTokensResponse;
+import com.google.cloud.vertexai.api.LlmUtilityServiceClient.ListLocationsPagedResponse;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
