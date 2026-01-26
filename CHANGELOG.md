@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.24.0](https://github.com/googleapis/java-logging/compare/v3.23.11...v3.24.0) (2026-01-26)
+
+
+### Features
+
+* Bump minor version ([#1923](https://github.com/googleapis/java-logging/issues/1923)) ([ad7958c](https://github.com/googleapis/java-logging/commit/ad7958c789a86fd7fe2c10e3ce4ea57174aee379))
+
 ## [3.23.11](https://github.com/googleapis/java-logging/compare/v3.23.10...v3.23.11) (2026-01-23)
 
 
