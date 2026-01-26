@@ -1095,4 +1095,39 @@ public final class ITQueryWatchTest extends ITBaseTest {
     response.setFilter(ExistenceFilter.newBuilder().setCount(documentCount).build());
     return response.build();
   }
+
+  @Test
+  public void testInequalityIncludesAndSortsMissingFields() throws Exception {
+    setDocument("doc1", map("key", 1));
+    setDocument("doc2", map("key", 2));
+    setDocument("doc3", map("other", 1)); // missing "key"
+    setDocument("doc4", map("key", null));
+
+    final Query query = randomColl.whereNotEqualTo("key", 1);
+    QuerySnapshotEventListener listener =
+        QuerySnapshotEventListener.builder().setInitialEventCount(1).build();
+    ListenerRegistration registration = query.addSnapshotListener(listener);
+
+    try {
+      listener.eventsCountDownLatch.awaitInitialEvents();
+    } finally {
+      registration.remove();
+    }
+
+    ListenerAssertions listenerAssertions = listener.assertions();
+    listenerAssertions.noError();
+
+    if (getFirestoreEdition() == FirestoreEdition.ENTERPRISE) {
+      // Expect doc2, doc3, doc4. doc1 excluded.
+      // Order: Missing/Null (which are equal in sort) < Number.
+      // Missing/Null sorted by __name__.
+      // doc3 < doc4.
+      // So: doc3, doc4, doc2.
+      List<String> expectedOrder = Arrays.asList("doc3", "doc4", "doc2");
+      assertEquals(expectedOrder, listenerAssertions.addedIds);
+    } else {
+      List<String> expectedOrder = singletonList("doc2");
+      assertEquals(expectedOrder, listenerAssertions.addedIds);
+    }
+  }
 }

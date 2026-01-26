@@ -108,7 +108,7 @@ public class PipelineUtils {
         case EQUAL:
           return and(field.exists(), field.equal(value));
         case NOT_EQUAL:
-          return and(field.exists(), field.notEqual(value));
+          return field.notEqual(value);
         case ARRAY_CONTAINS:
           return and(field.exists(), field.arrayContains(value));
         case IN:
@@ -119,8 +119,7 @@ public class PipelineUtils {
           return and(field.exists(), arrayContainsAny(field, Lists.newArrayList(valuesListAny)));
         case NOT_IN:
           List<Value> notInValues = value.getArrayValue().getValuesList();
-          return and(
-              field.exists(), not(Expression.equalAny(field, Lists.newArrayList(notInValues))));
+          return not(Expression.equalAny(field, Lists.newArrayList(notInValues)));
         default:
           // Handle OPERATOR_UNSPECIFIED and UNRECOGNIZED cases as needed
           throw new IllegalArgumentException("Unsupported operator: " + comparisonFilter.operator);

@@ -373,21 +373,30 @@ public class Query extends StreamableQuery<QuerySnapshot> {
       return Objects.equals(fieldReference, filter.fieldReference);
     }
 
-    public int compare(QueryDocumentSnapshot doc1, QueryDocumentSnapshot doc2) {
-      String path = fieldReference.getFieldPath();
-      if (FieldPath.isDocumentId(path)) {
-        return direction.documentIdComparator.compare(doc1, doc2);
-      }
-      FieldPath fieldPath = FieldPath.fromDotSeparatedString(path);
-      Preconditions.checkState(
-          doc1.contains(fieldPath) && doc2.contains(fieldPath),
-          "Can only compare fields that exist in the DocumentSnapshot."
-              + " Please include the fields you are ordering on in your select() call.");
-      Value v1 = doc1.extractField(fieldPath);
-      Value v2 = doc2.extractField(fieldPath);
+    @Override
+    public int compare(QueryDocumentSnapshot left, QueryDocumentSnapshot right) {
+      Value leftValue =
+          left.extractField(FieldPath.fromDotSeparatedString(fieldReference.getFieldPath()));
+      Value rightValue =
+          right.extractField(FieldPath.fromDotSeparatedString(fieldReference.getFieldPath()));
 
-      int cmp = com.google.cloud.firestore.Order.INSTANCE.compare(v1, v2);
-      return (direction == Direction.ASCENDING) ? cmp : -cmp;
+      // If the field isn't present, we treat it as a null value.
+      if (leftValue == null) {
+        leftValue =
+            Value.newBuilder().setNullValue(com.google.protobuf.NullValue.NULL_VALUE).build();
+      }
+      if (rightValue == null) {
+        rightValue =
+            Value.newBuilder().setNullValue(com.google.protobuf.NullValue.NULL_VALUE).build();
+      }
+
+      int cmp = com.google.cloud.firestore.Order.INSTANCE.compare(leftValue, rightValue);
+
+      if (direction == Direction.DESCENDING) {
+        cmp = -cmp;
+      }
+
+      return cmp;
     }
   }
 
@@ -2052,6 +2061,7 @@ public class Query extends StreamableQuery<QuerySnapshot> {
     }
 
     // Orders
+    List<FieldOrder> explicitSortOrder = this.options.getFieldOrders();
     List<FieldOrder> normalizedOrderBy = createImplicitOrderBy();
     int size = normalizedOrderBy.size();
     List<Field> fields = new ArrayList<>(size);
@@ -2066,14 +2076,25 @@ public class Query extends StreamableQuery<QuerySnapshot> {
       }
     }
 
-    if (fields.size() == 1) {
-      ppl = ppl.where(fields.get(0).exists());
-    } else {
+    // Only add existence filters for fields that are explicitly ordered.
+    // Implicit order bys (e.g. from inequality filters) should not generate
+    // existence filters
+    // because the inequality filter itself will already generate an existence
+    // filter if needed,
+    // or arguably should not if it's a NOT_IN / NOT_EQUAL filter.
+    List<Field> existenceCheckFields = new ArrayList<>();
+    for (FieldOrder order : explicitSortOrder) {
+      existenceCheckFields.add(Field.ofServerPath(order.fieldReference.getFieldPath()));
+    }
+
+    if (existenceCheckFields.size() == 1) {
+      ppl = ppl.where(existenceCheckFields.get(0).exists());
+    } else if (existenceCheckFields.size() > 1) {
       ppl =
           ppl.where(
               and(
-                  fields.get(0).exists(),
-                  fields.subList(1, fields.size()).stream()
+                  existenceCheckFields.get(0).exists(),
+                  existenceCheckFields.subList(1, existenceCheckFields.size()).stream()
                       .map((Field field) -> field.exists())
                       .toArray(BooleanExpression[]::new)));
     }
