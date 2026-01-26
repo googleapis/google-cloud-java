@@ -1,4 +1,4 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-logging-logback:0.132.21-alpha:0.132.22-alpha-SNAPSHOT
+google-cloud-logging-logback:0.133.0-alpha:0.133.0-alpha
