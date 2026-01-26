@@ -1,6 +1,0 @@
-target/
-.idea/
-*.iml
-__pycache__/
-
-.flattened-pom.xml
