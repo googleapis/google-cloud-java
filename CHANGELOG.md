@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.19.2](https://github.com/googleapis/java-bigquerystorage/compare/v3.19.1...v3.19.2) (2026-01-26)
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.66.0 ([7ce735c](https://github.com/googleapis/java-bigquerystorage/commit/7ce735cdfe2ed118cb94ef84e4d07ebbeb3e93da))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.56.0 ([#3178](https://github.com/googleapis/java-bigquerystorage/issues/3178)) ([8437b7e](https://github.com/googleapis/java-bigquerystorage/commit/8437b7eea65d9f80e5535997ae58b0b254415ad4))
+* Update googleapis/sdk-platform-java action to v2.66.0 ([#3179](https://github.com/googleapis/java-bigquerystorage/issues/3179)) ([6da91c6](https://github.com/googleapis/java-bigquerystorage/commit/6da91c6bd1c0872af1f35651cd7c0fd9b0932b36))
+
 ## [3.19.1](https://github.com/googleapis/java-bigquerystorage/compare/v3.19.0...v3.19.1) (2026-01-15)
 
 
