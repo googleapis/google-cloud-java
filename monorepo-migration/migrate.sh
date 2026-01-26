@@ -65,7 +65,8 @@ echo "Starting migration using git read-tree with isolated clones..."
 # 0. Create working directory
 mkdir -p "$WORKING_DIR"
 
-MIGRATION_HEAD_BRANCH="add-migration-script"
+MIGRATION_HEAD_BRANCH="${MIGRATION_HEAD_BRANCH:-main}"
+echo "Basing migration branch on: ${MIGRATION_HEAD_BRANCH}"
 
 # 1. Clone the source repository
 if [ ! -d "$SOURCE_DIR" ]; then
