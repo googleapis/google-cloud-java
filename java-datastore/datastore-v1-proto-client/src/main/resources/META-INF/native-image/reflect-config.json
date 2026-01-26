@@ -1,0 +1,33 @@
+[
+  {
+    "name":"com.google.datastore.v1.client.Datastore",
+    "methods":[
+      {"name":"allocateIds","parameterTypes":["com.google.datastore.v1.AllocateIdsRequest"] },
+      {"name":"beginTransaction","parameterTypes":["com.google.datastore.v1.BeginTransactionRequest"] },
+      {"name":"commit","parameterTypes":["com.google.datastore.v1.CommitRequest"] },
+      {"name":"lookup","parameterTypes":["com.google.datastore.v1.LookupRequest"] },
+      {"name":"reserveIds","parameterTypes":["com.google.datastore.v1.ReserveIdsRequest"] },
+      {"name":"rollback","parameterTypes":["com.google.datastore.v1.RollbackRequest"] },
+      {"name":"runQuery","parameterTypes":["com.google.datastore.v1.RunQueryRequest"] },
+      {"name":"runAggregationQuery","parameterTypes":["com.google.datastore.v1.RunAggregationQueryRequest"] }
+    ]
+  },
+  {
+    "name":"com.google.api.client.http.HttpRequest",
+    "allDeclaredFields":true,
+    "allPublicFields":true,
+    "allDeclaredMethods":true,
+    "allPublicMethods":true,
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true
+  },
+  {
+    "name":"com.google.api.client.http.HttpHeaders",
+    "allDeclaredFields":true,
+    "allPublicFields":true,
+    "allDeclaredMethods":true,
+    "allPublicMethods":true,
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true
+  }
+]

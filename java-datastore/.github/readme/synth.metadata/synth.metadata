@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-datastore.git",
+        "sha": "b1932d97b8263c2bcfdf31179bb5705988d8d516"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "17ee6e5c08f2eb47029beee4776ce990e56b3925"
+      }
+    }
+  ]
+}
