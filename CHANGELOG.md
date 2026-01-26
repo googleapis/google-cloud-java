@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.20.0](https://github.com/googleapis/java-bigquerystorage/compare/v3.19.2...v3.20.0) (2026-01-26)
+
+
+### Features
+
+* Bump minor version ([#3183](https://github.com/googleapis/java-bigquerystorage/issues/3183)) ([7b95dbb](https://github.com/googleapis/java-bigquerystorage/commit/7b95dbbe22c120a3c9338adc156dd9bbef218991))
+
 ## [3.19.2](https://github.com/googleapis/java-bigquerystorage/compare/v3.19.1...v3.19.2) (2026-01-26)
 
 
