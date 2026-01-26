@@ -1,5 +1,5 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-bigquery:2.57.2:2.57.3-SNAPSHOT
-google-cloud-bigquery-jdbc:0.1.0:0.1.1-SNAPSHOT
+google-cloud-bigquery:2.58.0:2.58.0
+google-cloud-bigquery-jdbc:0.2.0:0.2.0

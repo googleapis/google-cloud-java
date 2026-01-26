@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.58.0](https://github.com/googleapis/java-bigquery/compare/v2.57.2...v2.58.0) (2026-01-26)
+
+
+### Features
+
+* Update shared config and bigquerystorage ([#4081](https://github.com/googleapis/java-bigquery/issues/4081)) ([ed575f4](https://github.com/googleapis/java-bigquery/commit/ed575f4149badfb3346f5f3657cf254ea268e0fe))
+
 ## [2.57.2](https://github.com/googleapis/java-bigquery/compare/v2.57.1...v2.57.2) (2026-01-16)
 
 

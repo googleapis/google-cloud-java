@@ -20,7 +20,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquery-jdbc</artifactId>
-  <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery-jdbc:current} -->
+  <version>0.2.0</version><!-- {x-version-update:google-cloud-bigquery-jdbc:current} -->
   <packaging>jar</packaging>
   <name>BigQuery JDBC</name>
   <url>https://github.com/googleapis/java-bigquery-jdbc</url>
@@ -141,7 +141,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bigquery-parent</artifactId>
-    <version>2.57.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery:current} -->
+    <version>2.58.0</version><!-- {x-version-update:google-cloud-bigquery:current} -->
   </parent>
   <dependencies>
     <dependency>
