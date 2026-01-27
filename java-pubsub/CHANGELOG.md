@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.147.0](https://github.com/googleapis/java-pubsub/compare/v1.146.0...v1.147.0) (2026-01-27)
+
+
+### Features
+
+* Enable Subscriber StreamingPull keepalives by increasing the StreamingPull protocol version ([#2672](https://github.com/googleapis/java-pubsub/issues/2672)) ([18a592d](https://github.com/googleapis/java-pubsub/commit/18a592d81971ca99fa8fac0b355b02c4c3646bf2))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.58.0 ([#2639](https://github.com/googleapis/java-pubsub/issues/2639)) ([afe27d8](https://github.com/googleapis/java-pubsub/commit/afe27d881379ad2564961b439176c61d0e9ce663))
+* Update dependency com.google.cloud:google-cloud-core to v2.64.0 ([#2641](https://github.com/googleapis/java-pubsub/issues/2641)) ([93368a3](https://github.com/googleapis/java-pubsub/commit/93368a3e9aec90e42a944d76e79559f3f35ac792))
+* Update dependency com.google.cloud:google-cloud-storage to v2.62.0 ([#2643](https://github.com/googleapis/java-pubsub/issues/2643)) ([6a4f059](https://github.com/googleapis/java-pubsub/commit/6a4f0595610e06ba1fa58fe916c7f5a1f09245ca))
+* Update dependency com.google.protobuf:protobuf-java-util to v4.33.4 ([#2656](https://github.com/googleapis/java-pubsub/issues/2656)) ([0973b81](https://github.com/googleapis/java-pubsub/commit/0973b81b82493e7a7df1764e4f29435abe545d50))
+* Update dependency org.assertj:assertj-core to v3.27.7 [security] ([#2670](https://github.com/googleapis/java-pubsub/issues/2670)) ([32d75fd](https://github.com/googleapis/java-pubsub/commit/32d75fd9096bb56286c98636d5a8fa6a23508f60))
+
 ## [1.146.0](https://github.com/googleapis/java-pubsub/compare/v1.145.0...v1.146.0) (2026-01-26)
 
 
