@@ -60,6 +60,7 @@ case ${JOB_TYPE} in
     echo "Finished running unit tests"
     ;;
   integration)
+    export DATASTORE_PROJECT_ID="${GOOGLE_CLOUD_PROJECT}"
     generate_modified_modules_list
     if [[ "$(release_please_snapshot_pull_request)" == "true" ]]; then
       echo "Skipping integration tests as this is Release Please SNAPSHOT pull request."
