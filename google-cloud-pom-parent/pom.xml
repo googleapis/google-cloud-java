@@ -82,6 +82,34 @@
               </execution>
             </executions>
           </plugin>
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-enforcer-plugin</artifactId>
+              <executions>
+                <execution>
+                  <id>enforce</id>
+                  <goals>
+                    <goal>enforce</goal>
+                  </goals>
+                  <configuration>
+                    <rules>
+                      <requireUpperBoundDeps>
+                        <excludes>
+                          <exclude>io.opentelemetry:opentelemetry-api</exclude>
+                          <exclude>io.opentelemetry:opentelemetry-sdk-metrics</exclude>
+                          <exclude>io.opentelemetry:opentelemetry-sdk-logs</exclude>
+                          <exclude>io.opentelemetry:opentelemetry-context</exclude>
+                          <exclude>io.opentelemetry:opentelemetry-sdk-trace</exclude>
+                          <exclude>io.opentelemetry:opentelemetry-sdk-extension-autoconfigure-spi</exclude>
+                          <exclude>io.opentelemetry:opentelemetry-sdk-common</exclude>
+                          <exclude>io.opentelemetry:opentelemetry-sdk</exclude>
+                        </excludes>
+                      </requireUpperBoundDeps>
+                    </rules>
+                  </configuration>
+                  </execution>
+                </executions>
+            </plugin>
         </plugins>
       </build>
     </profile>
