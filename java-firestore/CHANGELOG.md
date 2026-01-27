@@ -1,5 +1,23 @@
 # Changelog
 
+## [3.36.0](https://github.com/googleapis/java-firestore/compare/v3.35.1...v3.36.0) (2026-01-27)
+
+
+### Features
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.66.0 ([fa4b6a0](https://github.com/googleapis/java-firestore/commit/fa4b6a0d6f3f59e9092019207bbbb90483eb49f9))
+
+
+### Bug Fixes
+
+* Remove undesired exists() conditions from query-to-pipeline conversion ([#2293](https://github.com/googleapis/java-firestore/issues/2293)) ([09225e4](https://github.com/googleapis/java-firestore/commit/09225e4b8e6a435fb5544315980e2dd831fefd84))
+
+
+### Dependencies
+
+* Update googleapis/sdk-platform-java action to v2.66.0 ([#2297](https://github.com/googleapis/java-firestore/issues/2297)) ([14bcca5](https://github.com/googleapis/java-firestore/commit/14bcca5d450312d663142dbb7e9003d785e6a4de))
+* Update shared config to 3.56.0 ([#2300](https://github.com/googleapis/java-firestore/issues/2300)) ([b18b08d](https://github.com/googleapis/java-firestore/commit/b18b08d6a9f56948e5e4664f1e3bec7313ba7014))
+
 ## [3.35.1](https://github.com/googleapis/java-firestore/compare/v3.35.0...v3.35.1) (2026-01-19)
 
 
