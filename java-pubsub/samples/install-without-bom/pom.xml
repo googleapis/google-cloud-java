@@ -44,7 +44,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-pubsub</artifactId>
-      <version>1.143.1</version>
+      <version>1.146.0</version>
     </dependency>
     <!-- [END pubsub_install_without_bom] -->
 
