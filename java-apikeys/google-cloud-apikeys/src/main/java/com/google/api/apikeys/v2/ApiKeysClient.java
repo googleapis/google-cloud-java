@@ -326,6 +326,7 @@ public class ApiKeysClient implements BackgroundResource {
     return settings;
   }
 
+  // add extra comments
   public ApiKeysStub getStub() {
     return stub;
   }
