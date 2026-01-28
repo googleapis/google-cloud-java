@@ -6,14 +6,14 @@
     <version>2.58.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery:current} -->
     <packaging>pom</packaging>
     <parent>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>sdk-platform-java-config</artifactId>
-        <version>3.56.0</version>
-        <relativePath/>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-pom-parent</artifactId>
+      <version>1.77.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+      <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
     </parent>
 
     <name>Google Cloud BigQuery BOM</name>
-    <url>https://github.com/googleapis/java-bigquery</url>
+    <url>https://github.com/googleapis/google-cloud-java</url>
     <description>
       BOM for Google Cloud BigQuery
     </description>
@@ -35,11 +35,10 @@
     </developers>
 
     <scm>
-      <connection>scm:git:https://github.com/googleapis/java-bigquery.git</connection>
-      <developerConnection>scm:git:git@github.com:googleapis/java-bigquery.git</developerConnection>
-      <url>https://github.com/googleapis/java-bigquery</url>
+      <connection>scm:git:https://github.com/googleapis/google-cloud-java.git</connection>
+      <developerConnection>scm:git:git@github.com:googleapis/google-cloud-java.git</developerConnection>
+      <url>https://github.com/googleapis/google-cloud-java</url>
     </scm>
-
 
     <licenses>
       <license>
