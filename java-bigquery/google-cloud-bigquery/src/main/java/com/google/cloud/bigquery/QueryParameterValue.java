@@ -1,0 +1,729 @@
+/*
+ * Copyright 2026 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.google.cloud.bigquery;
+
+import static java.time.temporal.ChronoField.HOUR_OF_DAY;
+import static java.time.temporal.ChronoField.MINUTE_OF_HOUR;
+import static java.time.temporal.ChronoField.NANO_OF_SECOND;
+import static java.time.temporal.ChronoField.SECOND_OF_MINUTE;
+
+import com.google.api.core.ObsoleteApi;
+import com.google.api.services.bigquery.model.QueryParameterType;
+import com.google.api.services.bigquery.model.RangeValue;
+import com.google.auto.value.AutoValue;
+import com.google.cloud.Timestamp;
+import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Function;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Lists;
+import com.google.common.io.BaseEncoding;
+import com.google.gson.JsonObject;
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.time.Instant;
+import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
+import java.time.format.DateTimeParseException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.annotation.Nullable;
+import org.threeten.extra.PeriodDuration;
+
+/**
+ * A value for a QueryParameter along with its type.
+ *
+ * <p>A static factory method is provided for each of the possible types (e.g. {@link #int64(Long)}
+ * for StandardSQLTypeName.INT64). Alternatively, an instance can be constructed by calling {@link
+ * #of(Object, Class)} with the value and a Class object, which will use these mappings:
+ *
+ * <ul>
+ *   <li>Boolean: StandardSQLTypeName.BOOL
+ *   <li>String: StandardSQLTypeName.STRING
+ *   <li>Integer: StandardSQLTypeName.INT64
+ *   <li>Long: StandardSQLTypeName.INT64
+ *   <li>Double: StandardSQLTypeName.FLOAT64
+ *   <li>Float: StandardSQLTypeName.FLOAT64
+ *   <li>BigDecimal: StandardSQLTypeName.NUMERIC
+ *   <li>BigNumeric: StandardSQLTypeName.BIGNUMERIC
+ *   <li>JSON: StandardSQLTypeName.JSON
+ *   <li>INTERVAL: StandardSQLTypeName.INTERVAL
+ * </ul>
+ *
+ * <p>No other types are supported through that entry point. The other types can be created by
+ * calling {@link #of(Object, StandardSQLTypeName)} with the value and a particular
+ * StandardSQLTypeName enum value.
+ *
+ * <p>Struct parameters are currently not supported.
+ */
+@AutoValue
+public abstract class QueryParameterValue implements Serializable {
+
+  static final DateTimeFormatter TIMESTAMP_FORMATTER =
+      new DateTimeFormatterBuilder()
+          .parseLenient()
+          .append(DateTimeFormatter.ISO_LOCAL_DATE)
+          .appendLiteral(' ')
+          .appendValue(HOUR_OF_DAY, 2)
+          .appendLiteral(':')
+          .appendValue(MINUTE_OF_HOUR, 2)
+          .optionalStart()
+          .appendLiteral(':')
+          .appendValue(SECOND_OF_MINUTE, 2)
+          .optionalStart()
+          .appendFraction(NANO_OF_SECOND, 6, 9, true)
+          .optionalStart()
+          .appendOffset("+HHMM", "+00:00")
+          .optionalEnd()
+          .toFormatter()
+          .withZone(ZoneOffset.UTC);
+  private static final DateTimeFormatter TIMESTAMP_VALIDATOR =
+      new DateTimeFormatterBuilder()
+          .parseLenient()
+          .append(TIMESTAMP_FORMATTER)
+          .optionalStart()
+          .appendOffsetId()
+          .optionalEnd()
+          .toFormatter()
+          .withZone(ZoneOffset.UTC);
+  // Regex to identify >9 digits in the fraction part (e.g. `.123456789123`)
+  // Matches the dot, followed by 10+ digits (fractional part), followed by non-digits (like `+00`)
+  // or end of string
+  private static final Pattern ISO8601_TIMESTAMP_HIGH_PRECISION_PATTERN =
+      Pattern.compile("\\.(\\d{10,})(?:\\D|$)");
+
+  private static final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+  private static final DateTimeFormatter timeFormatter =
+      DateTimeFormatter.ofPattern("HH:mm:ss.SSSSSS");
+  private static final DateTimeFormatter datetimeFormatter =
+      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS");
+
+  static final Function<
+          QueryParameterValue, com.google.api.services.bigquery.model.QueryParameterValue>
+      TO_VALUE_PB_FUNCTION =
+          new Function<
+              QueryParameterValue, com.google.api.services.bigquery.model.QueryParameterValue>() {
+            @Override
+            public com.google.api.services.bigquery.model.QueryParameterValue apply(
+                QueryParameterValue value) {
+              return value.toValuePb();
+            }
+          };
+  private static final long serialVersionUID = -5620695863123562896L;
+
+  @AutoValue.Builder
+  public abstract static class Builder {
+
+    /** Sets the value to the given scalar value. */
+    public abstract Builder setValue(String value);
+
+    /** Sets array values. The type must set to ARRAY. */
+    public Builder setArrayValues(List<QueryParameterValue> arrayValues) {
+      return setArrayValuesInner(ImmutableList.copyOf(arrayValues));
+    }
+
+    abstract Builder setArrayValuesInner(ImmutableList<QueryParameterValue> arrayValues);
+
+    /** Sets struct values. The type must set to STRUCT. */
+    public Builder setStructValues(Map<String, QueryParameterValue> structValues) {
+      setStructTypes(ImmutableMap.copyOf(structValues));
+      return setStructValuesInner(ImmutableMap.copyOf(structValues));
+    }
+
+    abstract Builder setStructValuesInner(Map<String, QueryParameterValue> structValues);
+
+    /** Sets range values. The type must set to RANGE. */
+    public Builder setRangeValues(Range range) {
+      return setRangeValuesInner(range);
+    }
+
+    abstract Builder setRangeValuesInner(Range range);
+
+    /** Sets the parameter data type. */
+    public abstract Builder setType(StandardSQLTypeName type);
+
+    /** Sets the data type of the array elements. The type must set to ARRAY. */
+    public abstract Builder setArrayType(StandardSQLTypeName arrayType);
+
+    /** Sets the data type of the struct elements. The type must set to STRUCT. */
+    public Builder setStructTypes(Map<String, QueryParameterValue> structTypes) {
+      return setStructTypesInner(structTypes);
+    }
+
+    abstract Builder setStructTypesInner(Map<String, QueryParameterValue> structTypes);
+
+    /** Creates a {@code QueryParameterValue} object. */
+    public abstract QueryParameterValue build();
+  }
+
+  QueryParameterValue() {
+    // Package-private so it's extensible by AutoValue but not users.
+  }
+
+  /** Returns the value of this parameter. */
+  @Nullable
+  public abstract String getValue();
+
+  /** Returns the array values of this parameter. The returned list, if not null, is immutable. */
+  @Nullable
+  public List<QueryParameterValue> getArrayValues() {
+    return getArrayValuesInner();
+  }
+
+  @Nullable
+  abstract ImmutableList<QueryParameterValue> getArrayValuesInner();
+
+  /** Returns the struct values of this parameter. The returned map, if not null, is immutable. */
+  @Nullable
+  public Map<String, QueryParameterValue> getStructValues() {
+    return getStructValuesInner();
+  }
+
+  @Nullable
+  abstract Map<String, QueryParameterValue> getStructValuesInner();
+
+  /** Returns the struct values of this parameter. The returned map, if not null, is immutable. */
+  @Nullable
+  public Range getRangeValues() {
+    return getRangeValuesInner();
+  }
+
+  @Nullable
+  abstract Range getRangeValuesInner();
+
+  /** Returns the data type of this parameter. */
+  public abstract StandardSQLTypeName getType();
+
+  /** Returns the data type of the array elements. */
+  @Nullable
+  public abstract StandardSQLTypeName getArrayType();
+
+  /** Returns the data type of the struct elements. */
+  @Nullable
+  public Map<String, QueryParameterValue> getStructTypes() {
+    return getStructTypesInner();
+  }
+
+  @Nullable
+  abstract Map<String, QueryParameterValue> getStructTypesInner();
+
+  /**
+   * Creates a {@code QueryParameterValue} object with the given value and type. Note: this does not
+   * support BigNumeric
+   */
+  public static <T> QueryParameterValue of(T value, Class<T> type) {
+    return of(value, classToType(type));
+  }
+
+  /** Creates a {@code QueryParameterValue} object with the given value and type. */
+  public static <T> QueryParameterValue of(T value, StandardSQLTypeName type) {
+    return QueryParameterValue.newBuilder()
+        .setValue(valueToStringOrNull(value, type))
+        .setType(type)
+        .build();
+  }
+
+  /** Creates a {@code QueryParameterValue} object with a type of BOOL. */
+  public static QueryParameterValue bool(Boolean value) {
+    return of(value, StandardSQLTypeName.BOOL);
+  }
+
+  /** Creates a {@code QueryParameterValue} object with a type of INT64. */
+  public static QueryParameterValue int64(Long value) {
+    return of(value, StandardSQLTypeName.INT64);
+  }
+
+  /** Creates a {@code QueryParameterValue} object with a type of INT64. */
+  public static QueryParameterValue int64(Integer value) {
+    return of(value, StandardSQLTypeName.INT64);
+  }
+
+  /** Creates a {@code QueryParameterValue} object with a type of FLOAT64. */
+  public static QueryParameterValue float64(Double value) {
+    return of(value, StandardSQLTypeName.FLOAT64);
+  }
+
+  /** Creates a {@code QueryParameterValue} object with a type of FLOAT64. */
+  public static QueryParameterValue float64(Float value) {
+    return of(value, StandardSQLTypeName.FLOAT64);
+  }
+
+  /** Creates a {@code QueryParameterValue} object with a type of NUMERIC. */
+  public static QueryParameterValue numeric(BigDecimal value) {
+    return of(value, StandardSQLTypeName.NUMERIC);
+  }
+
+  /** Creates a {@code QueryParameterValue} object with a type of BIGNUMERIC. */
+  public static QueryParameterValue bigNumeric(BigDecimal value) {
+    return of(value, StandardSQLTypeName.BIGNUMERIC);
+  }
+
+  /** Creates a {@code QueryParameterValue} object with a type of STRING. */
+  public static QueryParameterValue string(String value) {
+    return of(value, StandardSQLTypeName.STRING);
+  }
+
+  /** Creates a {@code QueryParameterValue} object with a type of GEOGRAPHY. */
+  public static QueryParameterValue geography(String value) {
+    return of(value, StandardSQLTypeName.GEOGRAPHY);
+  }
+
+  /**
+   * Creates a {@code QueryParameterValue} object with a type of JSON. Currently, this is only
+   * supported in INSERT, not in query as a filter
+   */
+  public static QueryParameterValue json(String value) {
+    return of(value, StandardSQLTypeName.JSON);
+  }
+
+  /**
+   * Creates a {@code QueryParameterValue} object with a type of JSON. Currently, this is only
+   * supported in INSERT, not in query as a filter
+   */
+  public static QueryParameterValue json(JsonObject value) {
+    return of(value, StandardSQLTypeName.JSON);
+  }
+
+  /** Creates a {@code QueryParameterValue} object with a type of BYTES. */
+  public static QueryParameterValue bytes(byte[] value) {
+    return of(value, StandardSQLTypeName.BYTES);
+  }
+
+  /**
+   * Creates a {@code QueryParameterValue} object with a type of TIMESTAMP.
+   *
+   * <p>This method only supports microsecond precision for timestamp. To use higher precision,
+   * prefer {@link #timestamp(String)} with an ISO8601 String
+   *
+   * @param value Microseconds since epoch, e.g. 1733945416000000 corresponds to 2024-12-11
+   *     19:30:16.929Z
+   */
+  public static QueryParameterValue timestamp(Long value) {
+    return of(value, StandardSQLTypeName.TIMESTAMP);
+  }
+
+  /**
+   * Creates a {@code QueryParameterValue} object with a type of TIMESTAMP.
+   *
+   * <p>This method supports up to picosecond precision (12 digits) for timestamp. Input should
+   * conform to ISO8601 format.
+   *
+   * <p>Should be in the format "yyyy-MM-dd HH:mm:ss.SSSSSS{SSSSSSS}Z", e.g. "2014-08-19
+   * 12:41:35.123456Z" for microsecond precision and "2014-08-19 12:41:35.123456789123Z" for
+   * picosecond precision
+   */
+  public static QueryParameterValue timestamp(String value) {
+    return of(value, StandardSQLTypeName.TIMESTAMP);
+  }
+
+  /**
+   * Creates a {@code QueryParameterValue} object with a type of DATE. Must be in the format
+   * "yyyy-MM-dd", e.g. "2014-08-19".
+   */
+  public static QueryParameterValue date(String value) {
+    return of(value, StandardSQLTypeName.DATE);
+  }
+
+  /**
+   * Creates a {@code QueryParameterValue} object with a type of TIME. Must be in the format
+   * "HH:mm:ss.SSSSSS", e.g. "12:41:35.220000".
+   */
+  public static QueryParameterValue time(String value) {
+    return of(value, StandardSQLTypeName.TIME);
+  }
+
+  /**
+   * Creates a {@code QueryParameterValue} object with a type of DATETIME. Must be in the format
+   * "yyyy-MM-dd HH:mm:ss.SSSSSS", e.g. "2014-08-19 12:41:35.220000".
+   */
+  public static QueryParameterValue dateTime(String value) {
+    return of(value, StandardSQLTypeName.DATETIME);
+  }
+
+  /**
+   * Creates a {@code QueryParameterValue} object with a type of INTERVAL. Must be in the canonical
+   * format "[sign]Y-M [sign]D [sign]H:M:S[.F]", e.g. "123-7 -19 0:24:12.000006" or ISO 8601
+   * duration format, e.g. "P123Y7M-19DT0H24M12.000006S"
+   */
+  public static QueryParameterValue interval(String value) {
+    return of(value, StandardSQLTypeName.INTERVAL);
+  }
+
+  /**
+   * Creates a {@code QueryParameterValue} object with a type of INTERVAL. This method is obsolete.
+   * Use {@link #interval(String)} instead.
+   */
+  @ObsoleteApi("Use interval(String) instead")
+  public static QueryParameterValue interval(PeriodDuration value) {
+    return of(value, StandardSQLTypeName.INTERVAL);
+  }
+
+  /** Creates a {@code QueryParameterValue} object with a type of RANGE. */
+  public static QueryParameterValue range(Range value) {
+    return QueryParameterValue.newBuilder()
+        .setRangeValues(value)
+        .setType(StandardSQLTypeName.RANGE)
+        .build();
+  }
+
+  /**
+   * Creates a {@code QueryParameterValue} object with a type of ARRAY, and an array element type
+   * based on the given class.
+   */
+  public static <T> QueryParameterValue array(T[] array, Class<T> clazz) {
+    return array(array, classToType(clazz));
+  }
+
+  /**
+   * Creates a {@code QueryParameterValue} object with a type of ARRAY the given array element type.
+   */
+  public static <T> QueryParameterValue array(T[] array, StandardSQLTypeName type) {
+    List<QueryParameterValue> listValues = new ArrayList<>();
+    for (T obj : array) {
+      if (type == StandardSQLTypeName.STRUCT) {
+        listValues.add((QueryParameterValue) obj);
+      } else {
+        listValues.add(QueryParameterValue.of(obj, type));
+      }
+    }
+    return QueryParameterValue.newBuilder()
+        .setArrayValues(listValues)
+        .setType(StandardSQLTypeName.ARRAY)
+        .setArrayType(type)
+        .build();
+  }
+
+  /**
+   * Creates a map with {@code QueryParameterValue} object and a type of STRUCT the given struct
+   * element type.
+   */
+  public static QueryParameterValue struct(Map<String, QueryParameterValue> struct) {
+    return QueryParameterValue.newBuilder()
+        .setStructValues(struct)
+        .setType(StandardSQLTypeName.STRUCT)
+        .build();
+  }
+
+  private static <T> StandardSQLTypeName classToType(Class<T> type) {
+    if (Boolean.class.isAssignableFrom(type)) {
+      return StandardSQLTypeName.BOOL;
+    } else if (String.class.isAssignableFrom(type)) {
+      return StandardSQLTypeName.STRING;
+    } else if (String.class.isAssignableFrom(type)) {
+      return StandardSQLTypeName.GEOGRAPHY;
+    } else if (Integer.class.isAssignableFrom(type)) {
+      return StandardSQLTypeName.INT64;
+    } else if (Long.class.isAssignableFrom(type)) {
+      return StandardSQLTypeName.INT64;
+    } else if (Double.class.isAssignableFrom(type)) {
+      return StandardSQLTypeName.FLOAT64;
+    } else if (Float.class.isAssignableFrom(type)) {
+      return StandardSQLTypeName.FLOAT64;
+    } else if (BigDecimal.class.isAssignableFrom(type)) {
+      return StandardSQLTypeName.NUMERIC;
+    } else if (Date.class.isAssignableFrom(type)) {
+      return StandardSQLTypeName.DATE;
+    } else if (String.class.isAssignableFrom(type)) {
+      return StandardSQLTypeName.JSON;
+    } else if (JsonObject.class.isAssignableFrom(type)) {
+      return StandardSQLTypeName.JSON;
+    }
+    throw new IllegalArgumentException("Unsupported object type for QueryParameter: " + type);
+  }
+
+  private static <T> String valueToStringOrNull(T value, StandardSQLTypeName type) {
+    if (value == null) {
+      return null;
+    }
+    switch (type) {
+      case BOOL:
+        if (value instanceof Boolean) {
+          return value.toString();
+        }
+        break;
+      case INT64:
+        if (value instanceof Integer || value instanceof Long) {
+          return value.toString();
+        }
+        break;
+      case FLOAT64:
+        if (value instanceof Double || value instanceof Float) {
+          return value.toString();
+        }
+        break;
+      case NUMERIC:
+      case BIGNUMERIC:
+        if (value instanceof BigDecimal) {
+          return value.toString();
+        }
+        break;
+      case BYTES:
+        if (value instanceof byte[]) {
+          return BaseEncoding.base64().encode((byte[]) value);
+        }
+        break;
+      case STRING:
+        return value.toString();
+      case GEOGRAPHY:
+        return value.toString();
+      case JSON:
+        if (value instanceof String || value instanceof JsonObject) return value.toString();
+      case INTERVAL:
+        if (value instanceof String || value instanceof PeriodDuration) return value.toString();
+        break;
+      case STRUCT:
+        throw new IllegalArgumentException("Cannot convert STRUCT to String value");
+      case ARRAY:
+        throw new IllegalArgumentException("Cannot convert ARRAY to String value");
+      case RANGE:
+        throw new IllegalArgumentException("Cannot convert RANGE to String value");
+      case TIMESTAMP:
+        if (value instanceof Long) {
+          // Timestamp passed as a Long only support Microsecond precision
+          Timestamp timestamp = Timestamp.ofTimeMicroseconds((Long) value);
+          return TIMESTAMP_FORMATTER.format(
+              Instant.ofEpochSecond(timestamp.getSeconds(), timestamp.getNanos()));
+        } else if (value instanceof String) {
+          // Timestamp passed as a String can support up picosecond precision, however,
+          // DateTimeFormatter only supports nanosecond precision. Higher than nanosecond
+          // requires a custom validator.
+          validateTimestamp((String) value);
+          return (String) value;
+        }
+        break;
+      case DATE:
+        if (value instanceof String) {
+          // verify that the String is in the right format
+          checkFormat(value, dateFormatter);
+          return (String) value;
+        } else if (value instanceof Date) {
+          com.google.cloud.Date date = com.google.cloud.Date.fromJavaUtilDate((Date) value);
+          return date.toString();
+        }
+        break;
+      case TIME:
+        if (value instanceof String) {
+          // verify that the String is in the right format
+          checkFormat(value, timeFormatter);
+          return (String) value;
+        }
+        break;
+      case DATETIME:
+        if (value instanceof String) {
+          // verify that the String is in the right format
+          checkFormat(value, datetimeFormatter);
+          return (String) value;
+        }
+        break;
+      default:
+        throw new UnsupportedOperationException("Implementation error - Unsupported type: " + type);
+    }
+    throw new IllegalArgumentException(
+        "Type " + type + " incompatible with " + value.getClass().getCanonicalName());
+  }
+
+  /**
+   * Internal helper method to check that the timestamp follows the expected String input of ISO8601
+   * string. Allows the fractional portion of the timestamp to support up to 12 digits of precision
+   * (up to picosecond).
+   *
+   * @throws IllegalArgumentException if timestamp is invalid or exceeds picosecond precision
+   */
+  @VisibleForTesting
+  static void validateTimestamp(String timestamp) {
+    // Check if the string has greater than nanosecond precision (>9 digits in fractional second)
+    Matcher matcher = ISO8601_TIMESTAMP_HIGH_PRECISION_PATTERN.matcher(timestamp);
+    if (matcher.find()) {
+      // Group 1 is the fractional second part of the ISO8601 string
+      String fraction = matcher.group(1);
+      // Pos 10-12 of the fractional second are guaranteed to be digits. The regex only
+      // matches the fraction section as long as they are digits.
+      if (fraction.length() > 12) {
+        throw new IllegalArgumentException(
+            "Fractional second portion of ISO8601 only supports up to picosecond (12 digits) in BigQuery");
+      }
+
+      // Replace the entire fractional second portion with just the nanosecond portion.
+      // The new timestamp will be validated against the JDK's DateTimeFormatter
+      String truncatedFraction = fraction.substring(0, 9);
+      timestamp =
+          new StringBuilder(timestamp)
+              .replace(matcher.start(1), matcher.end(1), truncatedFraction)
+              .toString();
+    }
+
+    // It is valid as long as DateTimeFormatter doesn't throw an exception
+    checkFormat(timestamp, TIMESTAMP_VALIDATOR);
+  }
+
+  private static void checkFormat(Object value, DateTimeFormatter formatter) {
+    try {
+      formatter.parse((String) value);
+    } catch (DateTimeParseException e) {
+      throw new IllegalArgumentException(e.getMessage(), e);
+    }
+  }
+
+  /** Returns a builder for a QueryParameterValue object with given value. */
+  public abstract Builder toBuilder();
+
+  /** Returns a builder for the {@code QueryParameterValue} object. */
+  public static Builder newBuilder() {
+    return new AutoValue_QueryParameterValue.Builder();
+  }
+
+  com.google.api.services.bigquery.model.QueryParameterValue toValuePb() {
+    com.google.api.services.bigquery.model.QueryParameterValue valuePb =
+        new com.google.api.services.bigquery.model.QueryParameterValue();
+    valuePb.setValue(getValue());
+    if (getArrayValues() != null) {
+      valuePb.setArrayValues(
+          Lists.transform(getArrayValues(), QueryParameterValue.TO_VALUE_PB_FUNCTION));
+    }
+    if (getStructValues() != null) {
+      Map<String, com.google.api.services.bigquery.model.QueryParameterValue> structValues =
+          new HashMap<>();
+      for (Map.Entry<String, QueryParameterValue> structValue : getStructValues().entrySet()) {
+        structValues.put(structValue.getKey(), structValue.getValue().toValuePb());
+      }
+      valuePb.setStructValues(structValues);
+    }
+    if (getType() == StandardSQLTypeName.RANGE) {
+      RangeValue rangeValue = new RangeValue();
+      if (!getRangeValues().getStart().isNull()) {
+        com.google.api.services.bigquery.model.QueryParameterValue startValue =
+            new com.google.api.services.bigquery.model.QueryParameterValue();
+        startValue.setValue(getRangeValues().getStart().getStringValue());
+        rangeValue.setStart(startValue);
+      }
+      if (!getRangeValues().getEnd().isNull()) {
+        com.google.api.services.bigquery.model.QueryParameterValue endValue =
+            new com.google.api.services.bigquery.model.QueryParameterValue();
+        endValue.setValue(getRangeValues().getEnd().getStringValue());
+        rangeValue.setEnd(endValue);
+      }
+      valuePb.setRangeValue(rangeValue);
+    }
+    return valuePb;
+  }
+
+  QueryParameterType toTypePb() {
+    QueryParameterType typePb = new QueryParameterType();
+    typePb.setType(getType().toString());
+    if (getArrayType() != null) {
+      List<QueryParameterValue> values = getArrayValues();
+      if (getArrayType() == StandardSQLTypeName.STRUCT && values != null && values.size() != 0) {
+        QueryParameterType structType = values.get(0).toTypePb();
+        typePb.setArrayType(structType);
+      } else {
+        QueryParameterType arrayTypePb = new QueryParameterType();
+        arrayTypePb.setType(getArrayType().toString());
+        typePb.setArrayType(arrayTypePb);
+      }
+    }
+    if (getStructTypes() != null) {
+      List<QueryParameterType.StructTypes> structTypes = new ArrayList<>();
+      for (Map.Entry<String, QueryParameterValue> entry : getStructTypes().entrySet()) {
+        QueryParameterType.StructTypes structType = new QueryParameterType.StructTypes();
+        structType.setName(entry.getKey());
+        structType.setType(entry.getValue().toTypePb());
+        structTypes.add(structType);
+      }
+      typePb.setStructTypes(structTypes);
+    }
+    if (getType() == StandardSQLTypeName.RANGE
+        && getRangeValues() != null
+        && getRangeValues().getType() != null) {
+      QueryParameterType rangeTypePb = new QueryParameterType();
+      rangeTypePb.setType(getRangeValues().getType().getType());
+      typePb.setRangeElementType(rangeTypePb);
+    }
+    return typePb;
+  }
+
+  static QueryParameterValue fromPb(
+      com.google.api.services.bigquery.model.QueryParameterValue valuePb,
+      QueryParameterType typePb) {
+    Builder valueBuilder = newBuilder();
+    Map<String, QueryParameterType> parameterTypes = new HashMap<>();
+    StandardSQLTypeName type = StandardSQLTypeName.valueOf(typePb.getType());
+    valueBuilder.setType(type);
+    if (type == StandardSQLTypeName.ARRAY) {
+      valueBuilder.setArrayType(StandardSQLTypeName.valueOf(typePb.getArrayType().getType()));
+      if (valuePb == null || valuePb.getArrayValues() == null) {
+        valueBuilder.setArrayValues(ImmutableList.<QueryParameterValue>of());
+      } else {
+        ImmutableList.Builder<QueryParameterValue> arrayValues = ImmutableList.builder();
+        for (com.google.api.services.bigquery.model.QueryParameterValue elementValuePb :
+            valuePb.getArrayValues()) {
+          arrayValues.add(fromPb(elementValuePb, typePb.getArrayType()));
+        }
+        valueBuilder.setArrayValues(arrayValues.build());
+      }
+    } else if (type == StandardSQLTypeName.STRUCT) {
+      Map<String, QueryParameterValue> structTypes = new HashMap<>();
+      for (QueryParameterType.StructTypes types : typePb.getStructTypes()) {
+        structTypes.put(
+            types.getName(),
+            QueryParameterValue.newBuilder()
+                .setType(StandardSQLTypeName.valueOf(types.getType().getType()))
+                .build());
+      }
+      valueBuilder.setStructTypes(structTypes);
+      if (valuePb == null || valuePb.getStructValues() == null) {
+        valueBuilder.setStructValues(ImmutableMap.<String, QueryParameterValue>of());
+      } else {
+        Map<String, QueryParameterValue> structValues = new HashMap<>();
+        for (QueryParameterType.StructTypes structType : typePb.getStructTypes()) {
+          parameterTypes.put(structType.getName(), structType.getType());
+        }
+        for (Map.Entry<String, com.google.api.services.bigquery.model.QueryParameterValue>
+            structValue : valuePb.getStructValues().entrySet()) {
+          structValues.put(
+              structValue.getKey(),
+              QueryParameterValue.fromPb(
+                  structValue.getValue(), parameterTypes.get(structValue.getKey())));
+        }
+        valueBuilder.setStructValues(structValues);
+      }
+    } else if (type == StandardSQLTypeName.RANGE) {
+      Range.Builder range = Range.newBuilder();
+      if (valuePb.getRangeValue() != null) {
+        com.google.api.services.bigquery.model.RangeValue rangeValuePb = valuePb.getRangeValue();
+        if (rangeValuePb.getStart() != null && rangeValuePb.getStart().getValue() != null) {
+          range.setStart(valuePb.getRangeValue().getStart().getValue());
+        }
+        if (rangeValuePb.getEnd() != null && rangeValuePb.getEnd().getValue() != null) {
+          range.setEnd(valuePb.getRangeValue().getEnd().getValue());
+        }
+      }
+      if (typePb.getRangeElementType() != null && typePb.getRangeElementType().getType() != null) {
+        range.setType(FieldElementType.fromPb(typePb));
+      }
+      valueBuilder.setRangeValues(range.build());
+    } else {
+      valueBuilder.setValue(valuePb == null ? "" : valuePb.getValue());
+    }
+    return valueBuilder.build();
+  }
+}

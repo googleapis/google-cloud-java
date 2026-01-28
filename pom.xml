@@ -45,6 +45,7 @@
     <module>java-beyondcorp-clientconnectorservices</module>
     <module>java-beyondcorp-clientgateways</module>
     <module>java-biglake</module>
+    <module>java-bigquery</module>
     <module>java-bigquery-data-exchange</module>
     <module>java-bigqueryconnection</module>
     <module>java-bigquerydatapolicy</module>

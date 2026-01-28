@@ -937,3 +937,5 @@ grpc-google-cloud-gkerecommender-v1:0.2.0:0.3.0-SNAPSHOT
 google-cloud-cloudapiregistry:0.1.0:0.2.0-SNAPSHOT
 proto-google-cloud-cloudapiregistry-v1beta:0.1.0:0.2.0-SNAPSHOT
 grpc-google-cloud-cloudapiregistry-v1beta:0.1.0:0.2.0-SNAPSHOT
+google-cloud-bigquery:2.58.0:2.58.1-SNAPSHOT
+google-cloud-bigquery-jdbc:0.2.0:0.2.1-SNAPSHOT

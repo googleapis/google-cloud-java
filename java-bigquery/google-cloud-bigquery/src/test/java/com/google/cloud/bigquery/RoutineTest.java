@@ -1,0 +1,252 @@
+/*
+ * Copyright 2026 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.google.cloud.bigquery;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.eq;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+import com.google.common.collect.ImmutableList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+@ExtendWith(MockitoExtension.class)
+public class RoutineTest {
+
+  private static final RoutineId ROUTINE_ID = RoutineId.of("dataset", "routine");
+  private static final RoutineId ROUTINE_ID_TVF = RoutineId.of("dataset", "tvf_routine");
+  private static final String DETERMINISM_LEVEL = "DETERMINISTIC";
+  private static final String ETAG = "etag";
+  private static final String ROUTINE_TYPE = "SCALAR_FUNCTION";
+  private static final String ROUTINE_TYPE_TVF = "TABLE_VALUED_FUNCTION";
+  private static final Long CREATION_TIME = 10L;
+  private static final Long LAST_MODIFIED_TIME = 20L;
+  private static final String LANGUAGE = "SQL";
+
+  private static final RoutineArgument ARG_1 =
+      RoutineArgument.newBuilder()
+          .setDataType(StandardSQLDataType.newBuilder("STRING").build())
+          .setName("arg1")
+          .build();
+
+  private static final List<RoutineArgument> ARGUMENT_LIST = ImmutableList.of(ARG_1);
+
+  private static final StandardSQLDataType RETURN_TYPE =
+      StandardSQLDataType.newBuilder("FLOAT64").build();
+
+  private static final StandardSQLField COLUMN_1 =
+      StandardSQLField.newBuilder("COLUMN_1", StandardSQLDataType.newBuilder("STRING").build())
+          .build();
+  private static final StandardSQLField COLUMN_2 =
+      StandardSQLField.newBuilder("COLUMN_2", StandardSQLDataType.newBuilder("FLOAT64").build())
+          .build();
+
+  private static final List<StandardSQLField> COLUMN_LIST = ImmutableList.of(COLUMN_1, COLUMN_2);
+
+  private static final StandardSQLTableType RETURN_TABLE_TYPE =
+      StandardSQLTableType.newBuilder(COLUMN_LIST).build();
+
+  private static final List<String> IMPORTED_LIBRARIES =
+      ImmutableList.of("gs://foo", "gs://bar", "gs://baz");
+
+  private static final String BODY = "body";
+  private static final Map<String, String> userDefinedContext =
+      new HashMap<String, String>() {
+        {
+          put("key1", "value1");
+          put("key2", "value2");
+        }
+      };
+  private static final RemoteFunctionOptions REMOTE_FUNCTION_OPTIONS =
+      RemoteFunctionOptions.newBuilder()
+          .setEndpoint("endpoint")
+          .setConnection("connection")
+          .setUserDefinedContext(userDefinedContext)
+          .setMaxBatchingRows(10L)
+          .build();
+
+  private static final String DATA_GOVERNANCE_TYPE = "DATA_MASKING";
+
+  private static final RoutineInfo ROUTINE_INFO =
+      RoutineInfo.newBuilder(ROUTINE_ID)
+          .setEtag(ETAG)
+          .setRoutineType(ROUTINE_TYPE)
+          .setCreationTime(CREATION_TIME)
+          .setDeterminismLevel(DETERMINISM_LEVEL)
+          .setLastModifiedTime(LAST_MODIFIED_TIME)
+          .setLanguage(LANGUAGE)
+          .setArguments(ARGUMENT_LIST)
+          .setReturnType(RETURN_TYPE)
+          .setImportedLibraries(IMPORTED_LIBRARIES)
+          .setBody(BODY)
+          .setRemoteFunctionOptions(REMOTE_FUNCTION_OPTIONS)
+          .setDataGovernanceType(DATA_GOVERNANCE_TYPE)
+          .build();
+
+  private static final RoutineInfo ROUTINE_INFO_TVF =
+      RoutineInfo.newBuilder(ROUTINE_ID_TVF)
+          .setBody(BODY)
+          .setRoutineType(ROUTINE_TYPE_TVF)
+          .setReturnTableType(RETURN_TABLE_TYPE)
+          .build();
+
+  private BigQuery bigquery;
+  private BigQueryOptions mockOptions;
+  private Routine expectedRoutine;
+  private Routine expectedRoutineTvf;
+  private Routine routine;
+
+  @BeforeEach
+  public void setUp() {
+    bigquery = mock(BigQuery.class);
+    mockOptions = mock(BigQueryOptions.class);
+    when(bigquery.getOptions()).thenReturn(mockOptions);
+    expectedRoutine = new Routine(bigquery, new RoutineInfo.BuilderImpl(ROUTINE_INFO));
+    expectedRoutineTvf = new Routine(bigquery, new RoutineInfo.BuilderImpl(ROUTINE_INFO_TVF));
+    routine = new Routine(bigquery, new RoutineInfo.BuilderImpl(ROUTINE_INFO));
+  }
+
+  @Test
+  public void testBuilder() {
+    Routine builtRoutine =
+        new Routine.Builder(bigquery, ROUTINE_ID)
+            .setEtag(ETAG)
+            .setRoutineType(ROUTINE_TYPE)
+            .setCreationTime(CREATION_TIME)
+            .setDeterminismLevel(DETERMINISM_LEVEL)
+            .setLastModifiedTime(LAST_MODIFIED_TIME)
+            .setLanguage(LANGUAGE)
+            .setArguments(ARGUMENT_LIST)
+            .setReturnType(RETURN_TYPE)
+            .setImportedLibraries(IMPORTED_LIBRARIES)
+            .setBody(BODY)
+            .setRemoteFunctionOptions(REMOTE_FUNCTION_OPTIONS)
+            .setDataGovernanceType(DATA_GOVERNANCE_TYPE)
+            .build();
+    assertEquals(ETAG, builtRoutine.getEtag());
+    assertEquals(DETERMINISM_LEVEL, builtRoutine.getDeterminismLevel());
+    assertSame(bigquery, builtRoutine.getBigQuery());
+  }
+
+  @Test
+  public void testToBuilder() {
+    compareRoutineInfo(expectedRoutine, expectedRoutine.toBuilder().build());
+    compareRoutineInfo(expectedRoutineTvf, expectedRoutineTvf.toBuilder().build());
+  }
+
+  @Test
+  public void testExists_True() {
+    BigQuery.RoutineOption[] expectedOptions = {BigQuery.RoutineOption.fields()};
+    when(bigquery.getRoutine(ROUTINE_INFO.getRoutineId(), expectedOptions)).thenReturn(null);
+    assertFalse(routine.exists());
+    verify(bigquery).getRoutine(ROUTINE_INFO.getRoutineId(), expectedOptions);
+  }
+
+  @Test
+  public void testExists_False() {
+    BigQuery.RoutineOption[] expectedOptions = {BigQuery.RoutineOption.fields()};
+    when(bigquery.getRoutine(ROUTINE_INFO.getRoutineId(), expectedOptions))
+        .thenReturn(expectedRoutine);
+    assertTrue(routine.exists());
+    verify(bigquery).getRoutine(ROUTINE_INFO.getRoutineId(), expectedOptions);
+  }
+
+  @Test
+  public void testReload() {
+    RoutineInfo updatedInfo = ROUTINE_INFO.toBuilder().setBody("body2").build();
+    Routine expectedRoutine = new Routine(bigquery, new RoutineInfo.BuilderImpl(updatedInfo));
+    when(bigquery.getRoutine(ROUTINE_INFO.getRoutineId())).thenReturn(expectedRoutine);
+    Routine updatedRoutine = routine.reload();
+    compareRoutine(expectedRoutine, updatedRoutine);
+    verify(bigquery).getRoutine(ROUTINE_INFO.getRoutineId());
+  }
+
+  @Test
+  public void testReload_Null() {
+    when(bigquery.getRoutine(ROUTINE_INFO.getRoutineId())).thenReturn(null);
+    assertNull(routine.reload());
+    verify(bigquery).getRoutine(ROUTINE_INFO.getRoutineId());
+  }
+
+  @Test
+  public void testUpdate() {
+    Routine expectedUpdatedRoutine = expectedRoutine.toBuilder().setBody("body2").build();
+    when(bigquery.update(eq(expectedRoutine))).thenReturn(expectedUpdatedRoutine);
+    Routine actualUpdatedRoutine = routine.update();
+    compareRoutine(expectedUpdatedRoutine, actualUpdatedRoutine);
+    verify(bigquery).update(eq(expectedRoutine));
+  }
+
+  @Test
+  public void testUpdateWithOptions() {
+    Routine expectedUpdatedRoutine = expectedRoutine.toBuilder().setBody("body2").build();
+    when(bigquery.update(eq(expectedRoutine), eq(BigQuery.RoutineOption.fields())))
+        .thenReturn(expectedUpdatedRoutine);
+    Routine actualUpdatedRoutine = routine.update(BigQuery.RoutineOption.fields());
+    compareRoutine(expectedUpdatedRoutine, actualUpdatedRoutine);
+    verify(bigquery).update(eq(expectedRoutine), eq(BigQuery.RoutineOption.fields()));
+  }
+
+  @Test
+  public void testDeleteTrue() {
+    when(bigquery.delete(ROUTINE_INFO.getRoutineId())).thenReturn(true);
+    assertTrue(routine.delete());
+    verify(bigquery).delete(ROUTINE_INFO.getRoutineId());
+  }
+
+  @Test
+  public void testDeleteFalse() {
+    when(bigquery.delete(ROUTINE_INFO.getRoutineId())).thenReturn(false);
+    assertFalse(routine.delete());
+    verify(bigquery).delete(ROUTINE_INFO.getRoutineId());
+  }
+
+  private void compareRoutine(Routine expected, Routine value) {
+    assertEquals(expected, value);
+    compareRoutineInfo(expected, value);
+    assertEquals(expected.getBigQuery().getOptions(), value.getBigQuery().getOptions());
+  }
+
+  public void compareRoutineInfo(RoutineInfo expected, RoutineInfo value) {
+    assertEquals(expected, value);
+    assertEquals(expected.getRoutineId(), value.getRoutineId());
+    assertEquals(expected.getEtag(), value.getEtag());
+    assertEquals(expected.getRoutineType(), value.getRoutineType());
+    assertEquals(expected.getCreationTime(), value.getCreationTime());
+    assertEquals(expected.getDeterminismLevel(), value.getDeterminismLevel());
+    assertEquals(expected.getLastModifiedTime(), value.getLastModifiedTime());
+    assertEquals(expected.getLanguage(), value.getLanguage());
+    assertEquals(expected.getArguments(), value.getArguments());
+    assertEquals(expected.getReturnType(), value.getReturnType());
+    assertEquals(expected.getReturnTableType(), value.getReturnTableType());
+    assertEquals(expected.getImportedLibraries(), value.getImportedLibraries());
+    assertEquals(expected.getBody(), value.getBody());
+    assertEquals(expected.hashCode(), value.hashCode());
+    assertEquals(expected.getRemoteFunctionOptions(), value.getRemoteFunctionOptions());
+    assertEquals(expected.getDataGovernanceType(), value.getDataGovernanceType());
+  }
+}
