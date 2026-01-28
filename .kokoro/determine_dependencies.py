@@ -84,15 +84,9 @@ def parse_pom(path: str) -> Module:
     module = Module(path, group_id, artifact_id, parent_coords)
 
     # Dependencies
-    def add_dependencies(section, is_management=False):
+    def add_dependencies(section):
         if section is not None:
             for dep in section.findall("mvn:dependency", NS):
-                if is_management:
-                    # Only include 'import' scope dependencies from dependencyManagement
-                    scope = dep.find("mvn:scope", NS)
-                    if scope is None or scope.text != "import":
-                        continue
-
                 d_group = dep.find("mvn:groupId", NS)
                 d_artifact = dep.find("mvn:artifactId", NS)
                 if d_group is not None and d_artifact is not None:
@@ -102,7 +96,7 @@ def parse_pom(path: str) -> Module:
 
     dep_mgmt = root.find("mvn:dependencyManagement", NS)
     if dep_mgmt is not None:
-        add_dependencies(dep_mgmt.find("mvn:dependencies", NS), is_management=True)
+        add_dependencies(dep_mgmt.find("mvn:dependencies", NS))
 
     # Plugin dependencies
     build = root.find("mvn:build", NS)
@@ -171,6 +165,12 @@ def build_graph(
         # Regular dependencies
         for dep_key in module.dependencies:
             if dep_key in modules:
+                # Prevent cycle: If I am the parent of the dependency, ignore it.
+                # (Parent manages Child -> Child depends on Parent)
+                dep_module = modules[dep_key]
+                if dep_module.parent == key:
+                    continue
+
                 graph[key].add(dep_key)
 
     return modules, graph
