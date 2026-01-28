@@ -1,0 +1,5 @@
+# Format:
+# module:released-version:current-version
+
+google-cloud-bigquery:2.58.0:2.58.1-SNAPSHOT
+google-cloud-bigquery-jdbc:0.2.0:0.2.1-SNAPSHOT

@@ -1,0 +1,262 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.cloud</groupId>
+  <artifactId>google-cloud-bigquery-parent</artifactId>
+  <packaging>pom</packaging>
+  <version>2.58.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery:current} -->
+  <name>BigQuery Parent</name>
+  <url>https://github.com/googleapis/java-bigquery</url>
+  <description>
+    Java idiomatic client for Google Cloud Platform services.
+  </description>
+
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>sdk-platform-java-config</artifactId>
+    <version>3.56.0</version>
+  </parent>
+
+  <developers>
+    <developer>
+      <id>chingor</id>
+      <name>Jeff Ching</name>
+      <email>chingor@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
+  <organization>
+    <name>Google LLC</name>
+  </organization>
+  <scm child.scm.connection.inherit.append.path="false"  child.scm.developerConnection.inherit.append.path="false"
+       child.scm.url.inherit.append.path="false">
+    <connection>scm:git:git@github.com:googleapis/java-bigquery.git</connection>
+    <developerConnection>scm:git:git@github.com:googleapis/java-bigquery.git</developerConnection>
+    <url>https://github.com/googleapis/java-bigquery</url>
+    <tag>HEAD</tag>
+  </scm>
+  <issueManagement>
+    <url>https://github.com/googleapis/java-bigquery/issues</url>
+    <system>GitHub Issues</system>
+  </issueManagement>
+  <licenses>
+    <license>
+      <name>Apache-2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <github.global.server>github</github.global.server>
+    <site.installationModule>google-cloud-bigquery-parent</site.installationModule>
+    <google-api-services-bigquery.version>v2-rev20251012-2.0.0</google-api-services-bigquery.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-shared-dependencies</artifactId>
+        <version>${google-cloud-shared-dependencies.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <!-- Used for BQ Storage APIs -->
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-bigquerystorage-bom</artifactId>
+        <version>3.20.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-datacatalog-bom</artifactId>
+        <version>1.78.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>org.checkerframework</groupId>
+        <artifactId>checker-compat-qual</artifactId>
+        <version>2.5.6</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-bigquery</artifactId>
+        <version>2.58.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery:current} -->
+      </dependency>
+
+      <dependency>
+        <groupId>com.google.apis</groupId>
+        <artifactId>google-api-services-bigquery</artifactId>
+        <version>${google-api-services-bigquery.version}</version>
+      </dependency>
+      
+      <!-- Used for Interval and Range types -->
+      <dependency>
+        <groupId>org.threeten</groupId>
+        <artifactId>threeten-extra</artifactId>
+        <version>1.8.0</version>
+      </dependency>
+
+      <!-- Test dependencies -->
+      <dependency>
+        <groupId>com.google.truth</groupId>
+        <artifactId>truth</artifactId>
+        <version>1.4.4</version>
+        <scope>test</scope>
+        <exclusions>
+          <exclusion>
+            <groupId>org.checkerframework</groupId>
+            <artifactId>checker-qual</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-storage</artifactId>
+        <version>2.53.3</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-bigqueryconnection</artifactId>
+        <version>2.74.0</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-bigqueryconnection-v1</artifactId>
+        <version>2.70.0</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-bom</artifactId>
+        <version>4.11.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <modules>
+    <module>google-cloud-bigquery</module>
+    <module>google-cloud-bigquery-bom</module>
+    <module>google-cloud-bigquery-jdbc</module>
+  </modules>
+
+  <build>
+    <plugins>
+      <!-- This is actually a used dependency -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <configuration>
+          <ignoredUnusedDeclaredDependencies>
+            <ignoredUnusedDeclaredDependency>io.netty:netty-buffer</ignoredUnusedDeclaredDependency>
+            <ignoredUnusedDeclaredDependency>io.netty:netty-common</ignoredUnusedDeclaredDependency>
+            <ignoredUnusedDeclaredDependency>org.apache.arrow:arrow-memory-netty</ignoredUnusedDeclaredDependency>
+            <ignoredUnusedDeclaredDependency>com.google.api:gax</ignoredUnusedDeclaredDependency>
+            <!-- maven-dependency-plugin cannot detect the runtime usage of junit-jupiter-engine for executing JUnit 5+ tests. -->
+            <ignoredUnusedDeclaredDependency>org.junit.jupiter:junit-jupiter-engine</ignoredUnusedDeclaredDependency>
+          </ignoredUnusedDeclaredDependencies>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>3.9.0</version>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <report>index</report>
+              <report>dependency-info</report>
+              <report>team</report>
+              <report>ci-management</report>
+              <report>issue-management</report>
+              <report>licenses</report>
+              <report>scm</report>
+              <report>dependency-management</report>
+              <report>distribution-management</report>
+              <report>summary</report>
+              <report>modules</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+        <configuration>
+          <dependencyDetailsEnabled>true</dependencyDetailsEnabled>
+          <artifactId>${site.installationModule}</artifactId>
+          <packaging>jar</packaging>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <reportSets>
+          <reportSet>
+            <id>html</id>
+            <reports>
+              <report>aggregate</report>
+              <report>javadoc</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+        <configuration>
+          <doclint>none</doclint>
+          <show>protected</show>
+          <nohelp>true</nohelp>
+          <outputDirectory>${project.build.directory}/javadoc</outputDirectory>
+          <groups>
+            <group>
+              <title>Test helpers packages</title>
+              <packages>com.google.cloud.testing</packages>
+            </group>
+            <group>
+              <title>SPI packages</title>
+              <packages>com.google.cloud.spi*</packages>
+            </group>
+          </groups>
+
+          <links>
+            <link>https://grpc.io/grpc-java/javadoc/</link>
+            <link>https://developers.google.com/protocol-buffers/docs/reference/java/</link>
+            <link>https://googleapis.dev/java/google-auth-library/latest/</link>
+            <link>https://googleapis.dev/java/gax/latest/</link>
+            <link>https://googleapis.github.io/api-common-java/</link>
+          </links>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
+
+  <profiles>
+    <profile>
+      <id>include-samples</id>
+      <modules>
+        <module>samples</module>
+      </modules>
+    </profile>
+    <profile>
+      <id>benchmark</id>
+      <modules>
+        <module>benchmark</module>
+      </modules>
+    </profile>
+  </profiles>
+</project>

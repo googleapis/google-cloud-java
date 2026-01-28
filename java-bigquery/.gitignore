@@ -1,0 +1,19 @@
+.idea
+*.iml
+target/
+__pycache__
+.project
+.settings
+.classpath
+.DS_Store
+.diff.txt
+.new-list.txt
+.org-list.txt
+SimpleBenchmarkApp/src/main/java/com/google/cloud/App.java
+.flattened-pom.xml
+# Local Test files
+*ITLocalTest.java
+
+# JDBC-specific files
+google-cloud-bigquery-jdbc/drivers/
+google-cloud-bigquery-jdbc/jacoco*
