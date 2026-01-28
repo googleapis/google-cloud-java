@@ -60,7 +60,6 @@ public interface ExamplesOverrideOrBuilder
    * <code>repeated .google.cloud.vertexai.v1.ExamplesRestrictionsNamespace restrictions = 3;</code>
    */
   java.util.List<com.google.cloud.vertexai.api.ExamplesRestrictionsNamespace> getRestrictionsList();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface ExamplesOverrideOrBuilder
    * <code>repeated .google.cloud.vertexai.v1.ExamplesRestrictionsNamespace restrictions = 3;</code>
    */
   com.google.cloud.vertexai.api.ExamplesRestrictionsNamespace getRestrictions(int index);
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface ExamplesOverrideOrBuilder
    * <code>repeated .google.cloud.vertexai.v1.ExamplesRestrictionsNamespace restrictions = 3;</code>
    */
   int getRestrictionsCount();
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface ExamplesOverrideOrBuilder
    */
   java.util.List<? extends com.google.cloud.vertexai.api.ExamplesRestrictionsNamespaceOrBuilder>
       getRestrictionsOrBuilderList();
-
   /**
    *
    *
@@ -132,7 +128,6 @@ public interface ExamplesOverrideOrBuilder
    * @return The enum numeric value on the wire for dataFormat.
    */
   int getDataFormatValue();
-
   /**
    *
    *

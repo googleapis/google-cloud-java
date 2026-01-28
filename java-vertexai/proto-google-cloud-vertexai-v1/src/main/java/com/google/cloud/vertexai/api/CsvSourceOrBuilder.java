@@ -38,7 +38,6 @@ public interface CsvSourceOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface CsvSourceOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.vertexai.api.GcsSource getGcsSource();
-
   /**
    *
    *

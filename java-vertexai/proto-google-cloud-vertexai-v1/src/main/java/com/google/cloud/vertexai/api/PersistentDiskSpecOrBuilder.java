@@ -40,7 +40,6 @@ public interface PersistentDiskSpecOrBuilder
    * @return The diskType.
    */
   java.lang.String getDiskType();
-
   /**
    *
    *

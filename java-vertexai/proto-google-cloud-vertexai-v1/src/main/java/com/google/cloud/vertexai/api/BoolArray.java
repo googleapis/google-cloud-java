@@ -33,7 +33,6 @@ public final class BoolArray extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.BoolArray)
     BoolArrayOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BoolArray.newBuilder() to construct.
   private BoolArray(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class BoolArray extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.BooleanList values_ = emptyBooleanList();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class BoolArray extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Boolean> getValuesList() {
     return values_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class BoolArray extends com.google.protobuf.GeneratedMessageV3
   public int getValuesCount() {
     return values_.size();
   }
-
   /**
    *
    *
@@ -290,7 +286,6 @@ public final class BoolArray extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -508,7 +503,6 @@ public final class BoolArray extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -524,7 +518,6 @@ public final class BoolArray extends com.google.protobuf.GeneratedMessageV3
       values_.makeImmutable();
       return values_;
     }
-
     /**
      *
      *
@@ -539,7 +532,6 @@ public final class BoolArray extends com.google.protobuf.GeneratedMessageV3
     public int getValuesCount() {
       return values_.size();
     }
-
     /**
      *
      *
@@ -555,7 +547,6 @@ public final class BoolArray extends com.google.protobuf.GeneratedMessageV3
     public boolean getValues(int index) {
       return values_.getBoolean(index);
     }
-
     /**
      *
      *
@@ -577,7 +568,6 @@ public final class BoolArray extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -598,7 +588,6 @@ public final class BoolArray extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -618,7 +607,6 @@ public final class BoolArray extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

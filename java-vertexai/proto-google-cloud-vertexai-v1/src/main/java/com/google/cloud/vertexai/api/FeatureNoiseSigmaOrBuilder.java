@@ -37,7 +37,6 @@ public interface FeatureNoiseSigmaOrBuilder
    */
   java.util.List<com.google.cloud.vertexai.api.FeatureNoiseSigma.NoiseSigmaForFeature>
       getNoiseSigmaList();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface FeatureNoiseSigmaOrBuilder
    * </code>
    */
   com.google.cloud.vertexai.api.FeatureNoiseSigma.NoiseSigmaForFeature getNoiseSigma(int index);
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface FeatureNoiseSigmaOrBuilder
    * </code>
    */
   int getNoiseSigmaCount();
-
   /**
    *
    *
@@ -78,7 +75,6 @@ public interface FeatureNoiseSigmaOrBuilder
   java.util.List<
           ? extends com.google.cloud.vertexai.api.FeatureNoiseSigma.NoiseSigmaForFeatureOrBuilder>
       getNoiseSigmaOrBuilderList();
-
   /**
    *
    *

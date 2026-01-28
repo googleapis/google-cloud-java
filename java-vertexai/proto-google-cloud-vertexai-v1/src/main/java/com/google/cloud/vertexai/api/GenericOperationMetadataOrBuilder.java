@@ -39,7 +39,6 @@ public interface GenericOperationMetadataOrBuilder
    * </code>
    */
   java.util.List<com.google.rpc.Status> getPartialFailuresList();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface GenericOperationMetadataOrBuilder
    * </code>
    */
   com.google.rpc.Status getPartialFailures(int index);
-
   /**
    *
    *
@@ -71,7 +69,6 @@ public interface GenericOperationMetadataOrBuilder
    * </code>
    */
   int getPartialFailuresCount();
-
   /**
    *
    *
@@ -87,7 +84,6 @@ public interface GenericOperationMetadataOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getPartialFailuresOrBuilderList();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface GenericOperationMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -131,7 +126,6 @@ public interface GenericOperationMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -159,7 +153,6 @@ public interface GenericOperationMetadataOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -175,7 +168,6 @@ public interface GenericOperationMetadataOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *

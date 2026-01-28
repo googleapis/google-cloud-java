@@ -36,7 +36,6 @@ public interface DynamicRetrievalConfigOrBuilder
    * @return The enum numeric value on the wire for mode.
    */
   int getModeValue();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface DynamicRetrievalConfigOrBuilder
    * @return Whether the dynamicThreshold field is set.
    */
   boolean hasDynamicThreshold();
-
   /**
    *
    *

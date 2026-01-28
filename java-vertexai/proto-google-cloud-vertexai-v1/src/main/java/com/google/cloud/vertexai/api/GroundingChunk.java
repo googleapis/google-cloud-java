@@ -33,7 +33,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.GroundingChunk)
     GroundingChunkOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GroundingChunk.newBuilder() to construct.
   private GroundingChunk(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,7 +78,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the uri field is set.
      */
     boolean hasUri();
-
     /**
      *
      *
@@ -92,7 +90,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
      * @return The uri.
      */
     java.lang.String getUri();
-
     /**
      *
      *
@@ -118,7 +115,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the title field is set.
      */
     boolean hasTitle();
-
     /**
      *
      *
@@ -131,7 +127,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
      * @return The title.
      */
     java.lang.String getTitle();
-
     /**
      *
      *
@@ -145,7 +140,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getTitleBytes();
   }
-
   /**
    *
    *
@@ -160,7 +154,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.GroundingChunk.Web)
       WebOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Web.newBuilder() to construct.
     private Web(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -197,7 +190,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object uri_ = "";
-
     /**
      *
      *
@@ -213,7 +205,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUri() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -237,7 +228,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -266,7 +256,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object title_ = "";
-
     /**
      *
      *
@@ -282,7 +271,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTitle() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -306,7 +294,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -510,7 +497,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -717,7 +703,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object uri_ = "";
-
       /**
        *
        *
@@ -732,7 +717,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       public boolean hasUri() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -755,7 +739,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -778,7 +761,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -800,7 +782,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -818,7 +799,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -843,7 +823,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object title_ = "";
-
       /**
        *
        *
@@ -858,7 +837,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       public boolean hasTitle() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -881,7 +859,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -904,7 +881,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -926,7 +902,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -944,7 +919,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1049,7 +1023,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the uri field is set.
      */
     boolean hasUri();
-
     /**
      *
      *
@@ -1062,7 +1035,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
      * @return The uri.
      */
     java.lang.String getUri();
-
     /**
      *
      *
@@ -1088,7 +1060,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the title field is set.
      */
     boolean hasTitle();
-
     /**
      *
      *
@@ -1101,7 +1072,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
      * @return The title.
      */
     java.lang.String getTitle();
-
     /**
      *
      *
@@ -1127,7 +1097,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the text field is set.
      */
     boolean hasText();
-
     /**
      *
      *
@@ -1140,7 +1109,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
      * @return The text.
      */
     java.lang.String getText();
-
     /**
      *
      *
@@ -1154,7 +1122,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getTextBytes();
   }
-
   /**
    *
    *
@@ -1169,7 +1136,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.GroundingChunk.RetrievedContext)
       RetrievedContextOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use RetrievedContext.newBuilder() to construct.
     private RetrievedContext(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1207,7 +1173,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object uri_ = "";
-
     /**
      *
      *
@@ -1223,7 +1188,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUri() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1247,7 +1211,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1276,7 +1239,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object title_ = "";
-
     /**
      *
      *
@@ -1292,7 +1254,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTitle() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1316,7 +1277,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1345,7 +1305,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object text_ = "";
-
     /**
      *
      *
@@ -1361,7 +1320,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
     public boolean hasText() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1385,7 +1343,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1604,7 +1561,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1831,7 +1787,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object uri_ = "";
-
       /**
        *
        *
@@ -1846,7 +1801,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       public boolean hasUri() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -1869,7 +1823,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1892,7 +1845,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1914,7 +1866,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1932,7 +1883,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1957,7 +1907,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object title_ = "";
-
       /**
        *
        *
@@ -1972,7 +1921,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       public boolean hasTitle() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -1995,7 +1943,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2018,7 +1965,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2040,7 +1986,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2058,7 +2003,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2083,7 +2027,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object text_ = "";
-
       /**
        *
        *
@@ -2098,7 +2041,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       public boolean hasText() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -2121,7 +2063,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2144,7 +2085,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2166,7 +2106,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2184,7 +2123,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2292,7 +2230,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
     private ChunkTypeCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2326,7 +2263,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WEB_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -2342,7 +2278,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
   public boolean hasWeb() {
     return chunkTypeCase_ == 1;
   }
-
   /**
    *
    *
@@ -2361,7 +2296,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.vertexai.api.GroundingChunk.Web.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2380,7 +2314,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RETRIEVED_CONTEXT_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -2396,7 +2329,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRetrievedContext() {
     return chunkTypeCase_ == 2;
   }
-
   /**
    *
    *
@@ -2415,7 +2347,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.vertexai.api.GroundingChunk.RetrievedContext.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2624,7 +2555,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2860,7 +2790,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vertexai.api.GroundingChunk.Web.Builder,
             com.google.cloud.vertexai.api.GroundingChunk.WebOrBuilder>
         webBuilder_;
-
     /**
      *
      *
@@ -2876,7 +2805,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
     public boolean hasWeb() {
       return chunkTypeCase_ == 1;
     }
-
     /**
      *
      *
@@ -2902,7 +2830,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.vertexai.api.GroundingChunk.Web.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2925,7 +2852,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       chunkTypeCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -2946,7 +2872,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       chunkTypeCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -2980,7 +2905,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       chunkTypeCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -3006,7 +2930,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3019,7 +2942,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vertexai.api.GroundingChunk.Web.Builder getWebBuilder() {
       return getWebFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3040,7 +2962,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.vertexai.api.GroundingChunk.Web.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3079,7 +3000,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vertexai.api.GroundingChunk.RetrievedContext.Builder,
             com.google.cloud.vertexai.api.GroundingChunk.RetrievedContextOrBuilder>
         retrievedContextBuilder_;
-
     /**
      *
      *
@@ -3095,7 +3015,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRetrievedContext() {
       return chunkTypeCase_ == 2;
     }
-
     /**
      *
      *
@@ -3121,7 +3040,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.vertexai.api.GroundingChunk.RetrievedContext.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3145,7 +3063,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       chunkTypeCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3166,7 +3083,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       chunkTypeCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3202,7 +3118,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       chunkTypeCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3228,7 +3143,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3242,7 +3156,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         getRetrievedContextBuilder() {
       return getRetrievedContextFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3264,7 +3177,6 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.vertexai.api.GroundingChunk.RetrievedContext.getDefaultInstance();
       }
     }
-
     /**
      *
      *

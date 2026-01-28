@@ -40,7 +40,6 @@ public interface DirectPredictRequestOrBuilder
    * @return The endpoint.
    */
   java.lang.String getEndpoint();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface DirectPredictRequestOrBuilder
    * <code>repeated .google.cloud.vertexai.v1.Tensor inputs = 2;</code>
    */
   java.util.List<com.google.cloud.vertexai.api.Tensor> getInputsList();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface DirectPredictRequestOrBuilder
    * <code>repeated .google.cloud.vertexai.v1.Tensor inputs = 2;</code>
    */
   com.google.cloud.vertexai.api.Tensor getInputs(int index);
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface DirectPredictRequestOrBuilder
    * <code>repeated .google.cloud.vertexai.v1.Tensor inputs = 2;</code>
    */
   int getInputsCount();
-
   /**
    *
    *
@@ -101,7 +97,6 @@ public interface DirectPredictRequestOrBuilder
    * <code>repeated .google.cloud.vertexai.v1.Tensor inputs = 2;</code>
    */
   java.util.List<? extends com.google.cloud.vertexai.api.TensorOrBuilder> getInputsOrBuilderList();
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public interface DirectPredictRequestOrBuilder
    * @return Whether the parameters field is set.
    */
   boolean hasParameters();
-
   /**
    *
    *
@@ -138,7 +132,6 @@ public interface DirectPredictRequestOrBuilder
    * @return The parameters.
    */
   com.google.cloud.vertexai.api.Tensor getParameters();
-
   /**
    *
    *

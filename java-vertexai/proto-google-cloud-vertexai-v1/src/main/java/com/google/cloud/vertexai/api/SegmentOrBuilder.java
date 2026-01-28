@@ -77,7 +77,6 @@ public interface SegmentOrBuilder
    * @return The text.
    */
   java.lang.String getText();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.MachineSpec)
     MachineSpecOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MachineSpec.newBuilder() to construct.
   private MachineSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object machineType_ = "";
-
   /**
    *
    *
@@ -107,7 +105,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -146,7 +143,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ACCELERATOR_TYPE_FIELD_NUMBER = 2;
   private int acceleratorType_ = 0;
-
   /**
    *
    *
@@ -166,7 +162,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
   public int getAcceleratorTypeValue() {
     return acceleratorType_;
   }
-
   /**
    *
    *
@@ -191,7 +186,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ACCELERATOR_COUNT_FIELD_NUMBER = 3;
   private int acceleratorCount_ = 0;
-
   /**
    *
    *
@@ -212,7 +206,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tpuTopology_ = "";
-
   /**
    *
    *
@@ -237,7 +230,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -265,7 +257,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RESERVATION_AFFINITY_FIELD_NUMBER = 5;
   private com.google.cloud.vertexai.api.ReservationAffinity reservationAffinity_;
-
   /**
    *
    *
@@ -284,7 +275,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
   public boolean hasReservationAffinity() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -305,7 +295,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.vertexai.api.ReservationAffinity.getDefaultInstance()
         : reservationAffinity_;
   }
-
   /**
    *
    *
@@ -528,7 +517,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -786,7 +774,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object machineType_ = "";
-
     /**
      *
      *
@@ -821,7 +808,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -856,7 +842,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -890,7 +875,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -920,7 +904,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -957,7 +940,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int acceleratorType_ = 0;
-
     /**
      *
      *
@@ -977,7 +959,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     public int getAcceleratorTypeValue() {
       return acceleratorType_;
     }
-
     /**
      *
      *
@@ -1000,7 +981,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1022,7 +1002,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.vertexai.api.AcceleratorType.forNumber(acceleratorType_);
       return result == null ? com.google.cloud.vertexai.api.AcceleratorType.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1048,7 +1027,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1072,7 +1050,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int acceleratorCount_;
-
     /**
      *
      *
@@ -1088,7 +1065,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     public int getAcceleratorCount() {
       return acceleratorCount_;
     }
-
     /**
      *
      *
@@ -1108,7 +1084,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1128,7 +1103,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object tpuTopology_ = "";
-
     /**
      *
      *
@@ -1152,7 +1126,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1176,7 +1149,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1199,7 +1171,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1218,7 +1189,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1249,7 +1219,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vertexai.api.ReservationAffinity.Builder,
             com.google.cloud.vertexai.api.ReservationAffinityOrBuilder>
         reservationAffinityBuilder_;
-
     /**
      *
      *
@@ -1267,7 +1236,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReservationAffinity() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1291,7 +1259,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
         return reservationAffinityBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1317,7 +1284,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1341,7 +1307,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1374,7 +1339,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1397,7 +1361,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1416,7 +1379,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getReservationAffinityFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1439,7 +1401,6 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
             : reservationAffinity_;
       }
     }
-
     /**
      *
      *

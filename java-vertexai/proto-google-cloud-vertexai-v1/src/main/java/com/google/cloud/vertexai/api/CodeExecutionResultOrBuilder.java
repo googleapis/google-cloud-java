@@ -38,7 +38,6 @@ public interface CodeExecutionResultOrBuilder
    * @return The enum numeric value on the wire for outcome.
    */
   int getOutcomeValue();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface CodeExecutionResultOrBuilder
    * @return The output.
    */
   java.lang.String getOutput();
-
   /**
    *
    *

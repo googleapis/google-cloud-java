@@ -36,7 +36,6 @@ public interface NeighborOrBuilder
    * @return The neighborId.
    */
   java.lang.String getNeighborId();
-
   /**
    *
    *

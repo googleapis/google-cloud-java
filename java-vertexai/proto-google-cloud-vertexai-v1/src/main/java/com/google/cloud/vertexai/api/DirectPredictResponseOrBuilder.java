@@ -34,7 +34,6 @@ public interface DirectPredictResponseOrBuilder
    * <code>repeated .google.cloud.vertexai.v1.Tensor outputs = 1;</code>
    */
   java.util.List<com.google.cloud.vertexai.api.Tensor> getOutputsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface DirectPredictResponseOrBuilder
    * <code>repeated .google.cloud.vertexai.v1.Tensor outputs = 1;</code>
    */
   com.google.cloud.vertexai.api.Tensor getOutputs(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface DirectPredictResponseOrBuilder
    * <code>repeated .google.cloud.vertexai.v1.Tensor outputs = 1;</code>
    */
   int getOutputsCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface DirectPredictResponseOrBuilder
    * <code>repeated .google.cloud.vertexai.v1.Tensor outputs = 1;</code>
    */
   java.util.List<? extends com.google.cloud.vertexai.api.TensorOrBuilder> getOutputsOrBuilderList();
-
   /**
    *
    *
@@ -91,7 +87,6 @@ public interface DirectPredictResponseOrBuilder
    * @return Whether the parameters field is set.
    */
   boolean hasParameters();
-
   /**
    *
    *
@@ -104,7 +99,6 @@ public interface DirectPredictResponseOrBuilder
    * @return The parameters.
    */
   com.google.cloud.vertexai.api.Tensor getParameters();
-
   /**
    *
    *

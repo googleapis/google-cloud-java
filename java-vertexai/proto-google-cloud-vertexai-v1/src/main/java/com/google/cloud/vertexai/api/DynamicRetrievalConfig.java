@@ -33,7 +33,6 @@ public final class DynamicRetrievalConfig extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.DynamicRetrievalConfig)
     DynamicRetrievalConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DynamicRetrievalConfig.newBuilder() to construct.
   private DynamicRetrievalConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -107,7 +106,6 @@ public final class DynamicRetrievalConfig extends com.google.protobuf.GeneratedM
      * <code>MODE_UNSPECIFIED = 0;</code>
      */
     public static final int MODE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -205,7 +203,6 @@ public final class DynamicRetrievalConfig extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int MODE_FIELD_NUMBER = 1;
   private int mode_ = 0;
-
   /**
    *
    *
@@ -221,7 +218,6 @@ public final class DynamicRetrievalConfig extends com.google.protobuf.GeneratedM
   public int getModeValue() {
     return mode_;
   }
-
   /**
    *
    *
@@ -244,7 +240,6 @@ public final class DynamicRetrievalConfig extends com.google.protobuf.GeneratedM
 
   public static final int DYNAMIC_THRESHOLD_FIELD_NUMBER = 2;
   private float dynamicThreshold_ = 0F;
-
   /**
    *
    *
@@ -261,7 +256,6 @@ public final class DynamicRetrievalConfig extends com.google.protobuf.GeneratedM
   public boolean hasDynamicThreshold() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -455,7 +449,6 @@ public final class DynamicRetrievalConfig extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -654,7 +647,6 @@ public final class DynamicRetrievalConfig extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private int mode_ = 0;
-
     /**
      *
      *
@@ -670,7 +662,6 @@ public final class DynamicRetrievalConfig extends com.google.protobuf.GeneratedM
     public int getModeValue() {
       return mode_;
     }
-
     /**
      *
      *
@@ -689,7 +680,6 @@ public final class DynamicRetrievalConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -709,7 +699,6 @@ public final class DynamicRetrievalConfig extends com.google.protobuf.GeneratedM
           ? com.google.cloud.vertexai.api.DynamicRetrievalConfig.Mode.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -731,7 +720,6 @@ public final class DynamicRetrievalConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +739,6 @@ public final class DynamicRetrievalConfig extends com.google.protobuf.GeneratedM
     }
 
     private float dynamicThreshold_;
-
     /**
      *
      *
@@ -768,7 +755,6 @@ public final class DynamicRetrievalConfig extends com.google.protobuf.GeneratedM
     public boolean hasDynamicThreshold() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -785,7 +771,6 @@ public final class DynamicRetrievalConfig extends com.google.protobuf.GeneratedM
     public float getDynamicThreshold() {
       return dynamicThreshold_;
     }
-
     /**
      *
      *
@@ -806,7 +791,6 @@ public final class DynamicRetrievalConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
