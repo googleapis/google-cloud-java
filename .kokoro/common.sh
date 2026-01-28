@@ -347,3 +347,15 @@ function install_modules() {
       -T 1C
   fi
 }
+
+scriptDir=$(realpath $(dirname "${BASH_SOURCE[0]}"))
+root_dir=$(realpath "$scriptDir/..")
+function install_dependencies() {
+  target_module_path=$(realpath "$1")
+  rel_target_path=$(realpath --relative-to="$root_dir" "$target_module_path")
+  echo "Resolving dependencies for $rel_target_path..."
+  dependencies=$(python3 "$scriptDir/determine_dependencies.py" "$1")
+  echo "Found dependencies: $dependencies"
+
+  install_modules "${dependencies}"
+}
