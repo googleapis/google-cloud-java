@@ -47,15 +47,14 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (DatabaseCenterClient databaseCenterClient = DatabaseCenterClient.create()) {
- *   QueryProductsRequest request =
- *       QueryProductsRequest.newBuilder()
+ *   AggregateIssueStatsRequest request =
+ *       AggregateIssueStatsRequest.newBuilder()
  *           .setParent("parent-995424086")
- *           .setPageSize(883849137)
- *           .setPageToken("pageToken873572522")
+ *           .setFilter("filter-1274492040")
+ *           .addAllSignalTypeGroups(new ArrayList<SignalTypeGroup>())
+ *           .setBaselineDate(Date.newBuilder().build())
  *           .build();
- *   for (Product element : databaseCenterClient.queryProducts(request).iterateAll()) {
- *     // doThingsWith(element);
- *   }
+ *   AggregateIssueStatsResponse response = databaseCenterClient.aggregateIssueStats(request);
  * }
  * }</pre>
  *
@@ -111,6 +110,20 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> queryDatabaseResourceGroupsPagedCallable()
  *           <li><p> queryDatabaseResourceGroupsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AggregateIssueStats</td>
+ *      <td><p> AggregateIssueStats provides database resource issues statistics.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> aggregateIssueStats(AggregateIssueStatsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> aggregateIssueStatsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -562,6 +575,69 @@ public class DatabaseCenterClient implements BackgroundResource {
           QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsResponse>
       queryDatabaseResourceGroupsCallable() {
     return stub.queryDatabaseResourceGroupsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * AggregateIssueStats provides database resource issues statistics.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatabaseCenterClient databaseCenterClient = DatabaseCenterClient.create()) {
+   *   AggregateIssueStatsRequest request =
+   *       AggregateIssueStatsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .addAllSignalTypeGroups(new ArrayList<SignalTypeGroup>())
+   *           .setBaselineDate(Date.newBuilder().build())
+   *           .build();
+   *   AggregateIssueStatsResponse response = databaseCenterClient.aggregateIssueStats(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AggregateIssueStatsResponse aggregateIssueStats(AggregateIssueStatsRequest request) {
+    return aggregateIssueStatsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * AggregateIssueStats provides database resource issues statistics.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatabaseCenterClient databaseCenterClient = DatabaseCenterClient.create()) {
+   *   AggregateIssueStatsRequest request =
+   *       AggregateIssueStatsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .addAllSignalTypeGroups(new ArrayList<SignalTypeGroup>())
+   *           .setBaselineDate(Date.newBuilder().build())
+   *           .build();
+   *   ApiFuture<AggregateIssueStatsResponse> future =
+   *       databaseCenterClient.aggregateIssueStatsCallable().futureCall(request);
+   *   // Do something.
+   *   AggregateIssueStatsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
+      aggregateIssueStatsCallable() {
+    return stub.aggregateIssueStatsCallable();
   }
 
   @Override

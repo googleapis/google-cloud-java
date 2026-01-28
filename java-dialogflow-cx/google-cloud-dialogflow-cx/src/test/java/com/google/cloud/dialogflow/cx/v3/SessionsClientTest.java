@@ -117,6 +117,7 @@ public class SessionsClientTest {
             .setQueryParams(QueryParameters.newBuilder().build())
             .setQueryInput(QueryInput.newBuilder().build())
             .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
+            .setResponseView(DetectIntentResponseView.forNumber(0))
             .build();
 
     DetectIntentResponse actualResponse = client.detectIntent(request);
@@ -130,6 +131,7 @@ public class SessionsClientTest {
     Assert.assertEquals(request.getQueryParams(), actualRequest.getQueryParams());
     Assert.assertEquals(request.getQueryInput(), actualRequest.getQueryInput());
     Assert.assertEquals(request.getOutputAudioConfig(), actualRequest.getOutputAudioConfig());
+    Assert.assertEquals(request.getResponseView(), actualRequest.getResponseView());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -151,6 +153,7 @@ public class SessionsClientTest {
               .setQueryParams(QueryParameters.newBuilder().build())
               .setQueryInput(QueryInput.newBuilder().build())
               .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
+              .setResponseView(DetectIntentResponseView.forNumber(0))
               .build();
       client.detectIntent(request);
       Assert.fail("No exception raised");
@@ -179,6 +182,7 @@ public class SessionsClientTest {
             .setQueryParams(QueryParameters.newBuilder().build())
             .setQueryInput(QueryInput.newBuilder().build())
             .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
+            .setResponseView(DetectIntentResponseView.forNumber(0))
             .build();
 
     MockStreamObserver<DetectIntentResponse> responseObserver = new MockStreamObserver<>();
@@ -205,6 +209,7 @@ public class SessionsClientTest {
             .setQueryParams(QueryParameters.newBuilder().build())
             .setQueryInput(QueryInput.newBuilder().build())
             .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
+            .setResponseView(DetectIntentResponseView.forNumber(0))
             .build();
 
     MockStreamObserver<DetectIntentResponse> responseObserver = new MockStreamObserver<>();
@@ -241,6 +246,7 @@ public class SessionsClientTest {
             .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
             .setEnablePartialResponse(true)
             .setEnableDebuggingInfo(true)
+            .setResponseView(DetectIntentResponseView.forNumber(0))
             .build();
 
     MockStreamObserver<StreamingDetectIntentResponse> responseObserver = new MockStreamObserver<>();
@@ -273,6 +279,7 @@ public class SessionsClientTest {
             .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
             .setEnablePartialResponse(true)
             .setEnableDebuggingInfo(true)
+            .setResponseView(DetectIntentResponseView.forNumber(0))
             .build();
 
     MockStreamObserver<StreamingDetectIntentResponse> responseObserver = new MockStreamObserver<>();

@@ -423,7 +423,7 @@ public class OrganizationVpcFlowLogsServiceClient implements BackgroundResource 
    *
    * @param parent Required. The parent resource of the VpcFlowLogsConfig, in one of the following
    *     formats:
-   *     <p>- For project-level resourcs: `projects/{project_id}/locations/global`
+   *     <p>- For project-level resources: `projects/{project_id}/locations/global`
    *     <p>- For organization-level resources: `organizations/{organization_id}/locations/global`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -459,7 +459,7 @@ public class OrganizationVpcFlowLogsServiceClient implements BackgroundResource 
    *
    * @param parent Required. The parent resource of the VpcFlowLogsConfig, in one of the following
    *     formats:
-   *     <p>- For project-level resourcs: `projects/{project_id}/locations/global`
+   *     <p>- For project-level resources: `projects/{project_id}/locations/global`
    *     <p>- For organization-level resources: `organizations/{organization_id}/locations/global`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -496,7 +496,7 @@ public class OrganizationVpcFlowLogsServiceClient implements BackgroundResource 
    *
    * @param parent Required. The parent resource of the VpcFlowLogsConfig, in one of the following
    *     formats:
-   *     <p>- For project-level resourcs: `projects/{project_id}/locations/global`
+   *     <p>- For project-level resources: `projects/{project_id}/locations/global`
    *     <p>- For organization-level resources: `organizations/{organization_id}/locations/global`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

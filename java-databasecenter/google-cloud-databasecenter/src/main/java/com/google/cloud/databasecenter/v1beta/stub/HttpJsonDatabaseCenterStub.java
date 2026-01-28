@@ -34,6 +34,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.databasecenter.v1beta.AggregateFleetRequest;
 import com.google.cloud.databasecenter.v1beta.AggregateFleetResponse;
+import com.google.cloud.databasecenter.v1beta.AggregateIssueStatsRequest;
+import com.google.cloud.databasecenter.v1beta.AggregateIssueStatsResponse;
 import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsRequest;
 import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsResponse;
 import com.google.cloud.databasecenter.v1beta.QueryProductsRequest;
@@ -176,6 +178,43 @@ public class HttpJsonDatabaseCenterStub extends DatabaseCenterStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
+      aggregateIssueStatsMethodDescriptor =
+          ApiMethodDescriptor.<AggregateIssueStatsRequest, AggregateIssueStatsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.databasecenter.v1beta.DatabaseCenter/AggregateIssueStats")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AggregateIssueStatsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta:aggregateIssueStats",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregateIssueStatsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregateIssueStatsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AggregateIssueStatsResponse>newBuilder()
+                      .setDefaultInstance(AggregateIssueStatsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<QueryProductsRequest, QueryProductsResponse> queryProductsCallable;
   private final UnaryCallable<QueryProductsRequest, QueryProductsPagedResponse>
       queryProductsPagedCallable;
@@ -188,6 +227,8 @@ public class HttpJsonDatabaseCenterStub extends DatabaseCenterStub {
   private final UnaryCallable<
           QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsPagedResponse>
       queryDatabaseResourceGroupsPagedCallable;
+  private final UnaryCallable<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
+      aggregateIssueStatsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -251,6 +292,13 @@ public class HttpJsonDatabaseCenterStub extends DatabaseCenterStub {
                 .setMethodDescriptor(queryDatabaseResourceGroupsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
+        aggregateIssueStatsTransportSettings =
+            HttpJsonCallSettings
+                .<AggregateIssueStatsRequest, AggregateIssueStatsResponse>newBuilder()
+                .setMethodDescriptor(aggregateIssueStatsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
 
     this.queryProductsCallable =
         callableFactory.createUnaryCallable(
@@ -274,6 +322,11 @@ public class HttpJsonDatabaseCenterStub extends DatabaseCenterStub {
             queryDatabaseResourceGroupsTransportSettings,
             settings.queryDatabaseResourceGroupsSettings(),
             clientContext);
+    this.aggregateIssueStatsCallable =
+        callableFactory.createUnaryCallable(
+            aggregateIssueStatsTransportSettings,
+            settings.aggregateIssueStatsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -285,6 +338,7 @@ public class HttpJsonDatabaseCenterStub extends DatabaseCenterStub {
     methodDescriptors.add(queryProductsMethodDescriptor);
     methodDescriptors.add(aggregateFleetMethodDescriptor);
     methodDescriptors.add(queryDatabaseResourceGroupsMethodDescriptor);
+    methodDescriptors.add(aggregateIssueStatsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -320,6 +374,12 @@ public class HttpJsonDatabaseCenterStub extends DatabaseCenterStub {
   public UnaryCallable<QueryDatabaseResourceGroupsRequest, QueryDatabaseResourceGroupsPagedResponse>
       queryDatabaseResourceGroupsPagedCallable() {
     return queryDatabaseResourceGroupsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
+      aggregateIssueStatsCallable() {
+    return aggregateIssueStatsCallable;
   }
 
   @Override

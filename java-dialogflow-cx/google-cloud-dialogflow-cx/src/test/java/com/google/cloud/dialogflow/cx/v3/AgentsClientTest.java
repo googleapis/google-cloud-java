@@ -194,7 +194,6 @@ public class AgentsClientTest {
             .setDescription("description-1724546052")
             .setAvatarUri("avatarUri-428646061")
             .setSpeechToTextSettings(SpeechToTextSettings.newBuilder().build())
-            .setStartFlow(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
             .setSecuritySettings(
                 SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
                     .toString())
@@ -256,7 +255,6 @@ public class AgentsClientTest {
             .setDescription("description-1724546052")
             .setAvatarUri("avatarUri-428646061")
             .setSpeechToTextSettings(SpeechToTextSettings.newBuilder().build())
-            .setStartFlow(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
             .setSecuritySettings(
                 SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
                     .toString())
@@ -318,7 +316,6 @@ public class AgentsClientTest {
             .setDescription("description-1724546052")
             .setAvatarUri("avatarUri-428646061")
             .setSpeechToTextSettings(SpeechToTextSettings.newBuilder().build())
-            .setStartFlow(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
             .setSecuritySettings(
                 SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
                     .toString())
@@ -383,7 +380,6 @@ public class AgentsClientTest {
             .setDescription("description-1724546052")
             .setAvatarUri("avatarUri-428646061")
             .setSpeechToTextSettings(SpeechToTextSettings.newBuilder().build())
-            .setStartFlow(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
             .setSecuritySettings(
                 SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
                     .toString())
@@ -448,7 +444,6 @@ public class AgentsClientTest {
             .setDescription("description-1724546052")
             .setAvatarUri("avatarUri-428646061")
             .setSpeechToTextSettings(SpeechToTextSettings.newBuilder().build())
-            .setStartFlow(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
             .setSecuritySettings(
                 SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
                     .toString())
@@ -830,6 +825,7 @@ public class AgentsClientTest {
             .setKnowledgeConnectorSettings(
                 GenerativeSettings.KnowledgeConnectorSettings.newBuilder().build())
             .setLanguageCode("languageCode-2092349083")
+            .setLlmModelSettings(LlmModelSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 
@@ -880,6 +876,7 @@ public class AgentsClientTest {
             .setKnowledgeConnectorSettings(
                 GenerativeSettings.KnowledgeConnectorSettings.newBuilder().build())
             .setLanguageCode("languageCode-2092349083")
+            .setLlmModelSettings(LlmModelSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 
@@ -928,6 +925,7 @@ public class AgentsClientTest {
             .setKnowledgeConnectorSettings(
                 GenerativeSettings.KnowledgeConnectorSettings.newBuilder().build())
             .setLanguageCode("languageCode-2092349083")
+            .setLlmModelSettings(LlmModelSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 

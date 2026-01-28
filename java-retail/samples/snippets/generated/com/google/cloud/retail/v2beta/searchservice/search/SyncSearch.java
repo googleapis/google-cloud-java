@@ -21,6 +21,7 @@ import com.google.cloud.retail.v2beta.BranchName;
 import com.google.cloud.retail.v2beta.SearchRequest;
 import com.google.cloud.retail.v2beta.SearchResponse;
 import com.google.cloud.retail.v2beta.SearchServiceClient;
+import com.google.cloud.retail.v2beta.StringList;
 import com.google.cloud.retail.v2beta.UserInfo;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -68,6 +69,7 @@ public class SyncSearch {
               .setLanguageCode("languageCode-2092349083")
               .setRegionCode("regionCode-1991004415")
               .setPlaceId("placeId-494224254")
+              .putAllUserAttributes(new HashMap<String, StringList>())
               .build();
       for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
         // doThingsWith(element);

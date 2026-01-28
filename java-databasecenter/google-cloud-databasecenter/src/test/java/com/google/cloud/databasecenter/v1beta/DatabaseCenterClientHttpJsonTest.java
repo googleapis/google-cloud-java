@@ -275,4 +275,63 @@ public class DatabaseCenterClientHttpJsonTest {
       // Expected exception.
     }
   }
+
+  @Test
+  public void aggregateIssueStatsTest() throws Exception {
+    AggregateIssueStatsResponse expectedResponse =
+        AggregateIssueStatsResponse.newBuilder()
+            .addAllIssueGroupStats(new ArrayList<IssueGroupStats>())
+            .setTotalResourcesCount(-1148081286)
+            .setTotalResourceGroupsCount(-1586193222)
+            .addAllUnreachable(new ArrayList<String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AggregateIssueStatsRequest request =
+        AggregateIssueStatsRequest.newBuilder()
+            .setParent("parent-995424086")
+            .setFilter("filter-1274492040")
+            .addAllSignalTypeGroups(new ArrayList<SignalTypeGroup>())
+            .setBaselineDate(Date.newBuilder().build())
+            .build();
+
+    AggregateIssueStatsResponse actualResponse = client.aggregateIssueStats(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void aggregateIssueStatsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AggregateIssueStatsRequest request =
+          AggregateIssueStatsRequest.newBuilder()
+              .setParent("parent-995424086")
+              .setFilter("filter-1274492040")
+              .addAllSignalTypeGroups(new ArrayList<SignalTypeGroup>())
+              .setBaselineDate(Date.newBuilder().build())
+              .build();
+      client.aggregateIssueStats(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
 }

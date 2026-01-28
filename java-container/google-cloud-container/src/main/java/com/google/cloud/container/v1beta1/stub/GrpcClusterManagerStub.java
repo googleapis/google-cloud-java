@@ -31,6 +31,7 @@ import com.google.container.v1beta1.CheckAutopilotCompatibilityRequest;
 import com.google.container.v1beta1.CheckAutopilotCompatibilityResponse;
 import com.google.container.v1beta1.Cluster;
 import com.google.container.v1beta1.ClusterUpgradeInfo;
+import com.google.container.v1beta1.CompleteControlPlaneUpgradeRequest;
 import com.google.container.v1beta1.CompleteIPRotationRequest;
 import com.google.container.v1beta1.CompleteNodePoolUpgradeRequest;
 import com.google.container.v1beta1.CreateClusterRequest;
@@ -501,6 +502,18 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<CompleteControlPlaneUpgradeRequest, Operation>
+      completeControlPlaneUpgradeMethodDescriptor =
+          MethodDescriptor.<CompleteControlPlaneUpgradeRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.container.v1beta1.ClusterManager/CompleteControlPlaneUpgrade")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CompleteControlPlaneUpgradeRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private final UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable;
   private final UnaryCallable<GetClusterRequest, Cluster> getClusterCallable;
   private final UnaryCallable<CreateClusterRequest, Operation> createClusterCallable;
@@ -549,6 +562,8 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
       fetchClusterUpgradeInfoCallable;
   private final UnaryCallable<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
       fetchNodePoolUpgradeInfoCallable;
+  private final UnaryCallable<CompleteControlPlaneUpgradeRequest, Operation>
+      completeControlPlaneUpgradeCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -1070,6 +1085,17 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<CompleteControlPlaneUpgradeRequest, Operation>
+        completeControlPlaneUpgradeTransportSettings =
+            GrpcCallSettings.<CompleteControlPlaneUpgradeRequest, Operation>newBuilder()
+                .setMethodDescriptor(completeControlPlaneUpgradeMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
 
     this.listClustersCallable =
         callableFactory.createUnaryCallable(
@@ -1210,6 +1236,11 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
         callableFactory.createUnaryCallable(
             fetchNodePoolUpgradeInfoTransportSettings,
             settings.fetchNodePoolUpgradeInfoSettings(),
+            clientContext);
+    this.completeControlPlaneUpgradeCallable =
+        callableFactory.createUnaryCallable(
+            completeControlPlaneUpgradeTransportSettings,
+            settings.completeControlPlaneUpgradeSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -1414,6 +1445,12 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
   public UnaryCallable<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
       fetchNodePoolUpgradeInfoCallable() {
     return fetchNodePoolUpgradeInfoCallable;
+  }
+
+  @Override
+  public UnaryCallable<CompleteControlPlaneUpgradeRequest, Operation>
+      completeControlPlaneUpgradeCallable() {
+    return completeControlPlaneUpgradeCallable;
   }
 
   @Override

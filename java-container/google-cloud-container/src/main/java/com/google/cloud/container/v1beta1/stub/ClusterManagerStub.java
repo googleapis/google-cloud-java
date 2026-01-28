@@ -26,6 +26,7 @@ import com.google.container.v1beta1.CheckAutopilotCompatibilityRequest;
 import com.google.container.v1beta1.CheckAutopilotCompatibilityResponse;
 import com.google.container.v1beta1.Cluster;
 import com.google.container.v1beta1.ClusterUpgradeInfo;
+import com.google.container.v1beta1.CompleteControlPlaneUpgradeRequest;
 import com.google.container.v1beta1.CompleteIPRotationRequest;
 import com.google.container.v1beta1.CompleteNodePoolUpgradeRequest;
 import com.google.container.v1beta1.CreateClusterRequest;
@@ -243,6 +244,12 @@ public abstract class ClusterManagerStub implements BackgroundResource {
   public UnaryCallable<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
       fetchNodePoolUpgradeInfoCallable() {
     throw new UnsupportedOperationException("Not implemented: fetchNodePoolUpgradeInfoCallable()");
+  }
+
+  public UnaryCallable<CompleteControlPlaneUpgradeRequest, Operation>
+      completeControlPlaneUpgradeCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: completeControlPlaneUpgradeCallable()");
   }
 
   @Override

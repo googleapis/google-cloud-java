@@ -193,6 +193,7 @@ public class GeneratorsClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setPromptText(Phrase.newBuilder().build())
             .addAllPlaceholders(new ArrayList<Generator.Placeholder>())
+            .setLlmModelSettings(LlmModelSettings.newBuilder().build())
             .setModelParameter(Generator.ModelParameter.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -242,6 +243,7 @@ public class GeneratorsClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setPromptText(Phrase.newBuilder().build())
             .addAllPlaceholders(new ArrayList<Generator.Placeholder>())
+            .setLlmModelSettings(LlmModelSettings.newBuilder().build())
             .setModelParameter(Generator.ModelParameter.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -293,6 +295,7 @@ public class GeneratorsClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setPromptText(Phrase.newBuilder().build())
             .addAllPlaceholders(new ArrayList<Generator.Placeholder>())
+            .setLlmModelSettings(LlmModelSettings.newBuilder().build())
             .setModelParameter(Generator.ModelParameter.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -344,6 +347,7 @@ public class GeneratorsClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setPromptText(Phrase.newBuilder().build())
             .addAllPlaceholders(new ArrayList<Generator.Placeholder>())
+            .setLlmModelSettings(LlmModelSettings.newBuilder().build())
             .setModelParameter(Generator.ModelParameter.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -395,6 +399,7 @@ public class GeneratorsClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setPromptText(Phrase.newBuilder().build())
             .addAllPlaceholders(new ArrayList<Generator.Placeholder>())
+            .setLlmModelSettings(LlmModelSettings.newBuilder().build())
             .setModelParameter(Generator.ModelParameter.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -406,6 +411,7 @@ public class GeneratorsClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setPromptText(Phrase.newBuilder().build())
             .addAllPlaceholders(new ArrayList<Generator.Placeholder>())
+            .setLlmModelSettings(LlmModelSettings.newBuilder().build())
             .setModelParameter(Generator.ModelParameter.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
@@ -443,6 +449,7 @@ public class GeneratorsClientHttpJsonTest {
               .setDisplayName("displayName1714148973")
               .setPromptText(Phrase.newBuilder().build())
               .addAllPlaceholders(new ArrayList<Generator.Placeholder>())
+              .setLlmModelSettings(LlmModelSettings.newBuilder().build())
               .setModelParameter(Generator.ModelParameter.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
