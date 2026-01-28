@@ -33,10 +33,17 @@ if [ -f "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secr
   source "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secrets"
 fi
 
+if [[ -n "${BUILD_SUBDIR}" ]]
+then
+  echo "Running in subdir: ${BUILD_SUBDIR}"
+  pushd "${BUILD_SUBDIR}"
+fi
+
 RETURN_CODE=0
 
 case ${JOB_TYPE} in
   test)
+    echo "SUREFIRE_JVM_OPT: ${SUREFIRE_JVM_OPT}"
     retry_with_backoff 3 10 \
       mvn test \
         -B -ntp \
@@ -48,11 +55,12 @@ case ${JOB_TYPE} in
         -Dflatten.skip=true \
         -Danimal.sniffer.skip=true \
         -Dmaven.wagon.http.retryHandler.count=5 \
-        -T 1C
+        -T 1C ${SUREFIRE_JVM_OPT}
     RETURN_CODE=$?
     echo "Finished running unit tests"
     ;;
   integration)
+    export DATASTORE_PROJECT_ID="${GOOGLE_CLOUD_PROJECT}"
     generate_modified_modules_list
     if [[ "$(release_please_snapshot_pull_request)" == "true" ]]; then
       echo "Skipping integration tests as this is Release Please SNAPSHOT pull request."
@@ -124,6 +132,12 @@ case ${JOB_TYPE} in
   *) ;;
 
 esac
+
+if [[ -n "${BUILD_SUBDIR}" ]]
+then
+  echo "restoring directory"
+  popd
+fi
 
 if [ "${REPORT_COVERAGE}" == "true" ]; then
   bash ${KOKORO_GFILE_DIR}/codecov.sh
