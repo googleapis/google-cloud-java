@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,8 @@ import com.google.cloud.vertexai.api.DirectPredictRequest;
 import com.google.cloud.vertexai.api.DirectPredictResponse;
 import com.google.cloud.vertexai.api.DirectRawPredictRequest;
 import com.google.cloud.vertexai.api.DirectRawPredictResponse;
+import com.google.cloud.vertexai.api.EmbedContentRequest;
+import com.google.cloud.vertexai.api.EmbedContentResponse;
 import com.google.cloud.vertexai.api.ExplainRequest;
 import com.google.cloud.vertexai.api.ExplainResponse;
 import com.google.cloud.vertexai.api.GenerateContentRequest;
@@ -120,6 +122,10 @@ public abstract class PredictionServiceStub implements BackgroundResource {
   public ServerStreamingCallable<GenerateContentRequest, GenerateContentResponse>
       streamGenerateContentCallable() {
     throw new UnsupportedOperationException("Not implemented: streamGenerateContentCallable()");
+  }
+
+  public UnaryCallable<EmbedContentRequest, EmbedContentResponse> embedContentCallable() {
+    throw new UnsupportedOperationException("Not implemented: embedContentCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
