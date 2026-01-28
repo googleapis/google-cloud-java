@@ -55,7 +55,7 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the
  * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
- * of queryProducts:
+ * of aggregateIssueStats:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -66,10 +66,10 @@ import javax.annotation.Generated;
  * DatabaseCenterSettings.Builder databaseCenterSettingsBuilder =
  *     DatabaseCenterSettings.newBuilder();
  * databaseCenterSettingsBuilder
- *     .queryProductsSettings()
+ *     .aggregateIssueStatsSettings()
  *     .setRetrySettings(
  *         databaseCenterSettingsBuilder
- *             .queryProductsSettings()
+ *             .aggregateIssueStatsSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
@@ -112,6 +112,12 @@ public class DatabaseCenterSettings extends ClientSettings<DatabaseCenterSetting
           QueryDatabaseResourceGroupsPagedResponse>
       queryDatabaseResourceGroupsSettings() {
     return ((DatabaseCenterStubSettings) getStubSettings()).queryDatabaseResourceGroupsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to aggregateIssueStats. */
+  public UnaryCallSettings<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
+      aggregateIssueStatsSettings() {
+    return ((DatabaseCenterStubSettings) getStubSettings()).aggregateIssueStatsSettings();
   }
 
   public static final DatabaseCenterSettings create(DatabaseCenterStubSettings stub)
@@ -247,6 +253,12 @@ public class DatabaseCenterSettings extends ClientSettings<DatabaseCenterSetting
             QueryDatabaseResourceGroupsPagedResponse>
         queryDatabaseResourceGroupsSettings() {
       return getStubSettingsBuilder().queryDatabaseResourceGroupsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to aggregateIssueStats. */
+    public UnaryCallSettings.Builder<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
+        aggregateIssueStatsSettings() {
+      return getStubSettingsBuilder().aggregateIssueStatsSettings();
     }
 
     @Override

@@ -71,6 +71,7 @@ import com.google.container.v1.ListUsableSubnetworksRequest;
 import com.google.container.v1.ListUsableSubnetworksResponse;
 import com.google.container.v1.LoggingConfig;
 import com.google.container.v1.MaintenancePolicy;
+import com.google.container.v1.ManagedOpenTelemetryConfig;
 import com.google.container.v1.MasterAuth;
 import com.google.container.v1.MasterAuthorizedNetworksConfig;
 import com.google.container.v1.MaxPodsConstraint;
@@ -344,6 +345,7 @@ public class ClusterManagerClientHttpJsonTest {
             .setRbacBindingConfig(RBACBindingConfig.newBuilder().build())
             .setGkeAutoUpgradeConfig(GkeAutoUpgradeConfig.newBuilder().build())
             .setAnonymousAuthenticationConfig(AnonymousAuthenticationConfig.newBuilder().build())
+            .setManagedOpentelemetryConfig(ManagedOpenTelemetryConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -464,6 +466,7 @@ public class ClusterManagerClientHttpJsonTest {
             .setRbacBindingConfig(RBACBindingConfig.newBuilder().build())
             .setGkeAutoUpgradeConfig(GkeAutoUpgradeConfig.newBuilder().build())
             .setAnonymousAuthenticationConfig(AnonymousAuthenticationConfig.newBuilder().build())
+            .setManagedOpentelemetryConfig(ManagedOpenTelemetryConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -803,6 +806,8 @@ public class ClusterManagerClientHttpJsonTest {
             .setMaxRunDuration(Duration.newBuilder().build())
             .setFlexStart(true)
             .setBootDisk(BootDisk.newBuilder().build())
+            .setNodeDrainConfig(NodePool.NodeDrainConfig.newBuilder().build())
+            .setConsolidationDelay(Duration.newBuilder().build())
             .build();
 
     Operation actualResponse = client.updateNodePool(request);
@@ -869,6 +874,8 @@ public class ClusterManagerClientHttpJsonTest {
               .setMaxRunDuration(Duration.newBuilder().build())
               .setFlexStart(true)
               .setBootDisk(BootDisk.newBuilder().build())
+              .setNodeDrainConfig(NodePool.NodeDrainConfig.newBuilder().build())
+              .setConsolidationDelay(Duration.newBuilder().build())
               .build();
       client.updateNodePool(request);
       Assert.fail("No exception raised");
@@ -2290,6 +2297,7 @@ public class ClusterManagerClientHttpJsonTest {
             .setEtag("etag3123477")
             .setQueuedProvisioning(NodePool.QueuedProvisioning.newBuilder().build())
             .setBestEffortProvisioning(BestEffortProvisioning.newBuilder().build())
+            .setNodeDrainConfig(NodePool.NodeDrainConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2355,6 +2363,7 @@ public class ClusterManagerClientHttpJsonTest {
             .setEtag("etag3123477")
             .setQueuedProvisioning(NodePool.QueuedProvisioning.newBuilder().build())
             .setBestEffortProvisioning(BestEffortProvisioning.newBuilder().build())
+            .setNodeDrainConfig(NodePool.NodeDrainConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

@@ -93,6 +93,8 @@ public class AsyncUpdateNodePool {
               .setMaxRunDuration(Duration.newBuilder().build())
               .setFlexStart(true)
               .setBootDisk(BootDisk.newBuilder().build())
+              .setNodeDrainConfig(NodePool.NodeDrainConfig.newBuilder().build())
+              .setConsolidationDelay(Duration.newBuilder().build())
               .build();
       ApiFuture<Operation> future =
           clusterManagerClient.updateNodePoolCallable().futureCall(request);

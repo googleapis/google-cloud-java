@@ -1740,6 +1740,57 @@ public final class ClusterManagerGrpc {
     return getFetchNodePoolUpgradeInfoMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.container.v1beta1.CompleteControlPlaneUpgradeRequest,
+          com.google.container.v1beta1.Operation>
+      getCompleteControlPlaneUpgradeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CompleteControlPlaneUpgrade",
+      requestType = com.google.container.v1beta1.CompleteControlPlaneUpgradeRequest.class,
+      responseType = com.google.container.v1beta1.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.container.v1beta1.CompleteControlPlaneUpgradeRequest,
+          com.google.container.v1beta1.Operation>
+      getCompleteControlPlaneUpgradeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.container.v1beta1.CompleteControlPlaneUpgradeRequest,
+            com.google.container.v1beta1.Operation>
+        getCompleteControlPlaneUpgradeMethod;
+    if ((getCompleteControlPlaneUpgradeMethod =
+            ClusterManagerGrpc.getCompleteControlPlaneUpgradeMethod)
+        == null) {
+      synchronized (ClusterManagerGrpc.class) {
+        if ((getCompleteControlPlaneUpgradeMethod =
+                ClusterManagerGrpc.getCompleteControlPlaneUpgradeMethod)
+            == null) {
+          ClusterManagerGrpc.getCompleteControlPlaneUpgradeMethod =
+              getCompleteControlPlaneUpgradeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.container.v1beta1.CompleteControlPlaneUpgradeRequest,
+                          com.google.container.v1beta1.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CompleteControlPlaneUpgrade"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.container.v1beta1.CompleteControlPlaneUpgradeRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.container.v1beta1.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ClusterManagerMethodDescriptorSupplier("CompleteControlPlaneUpgrade"))
+                      .build();
+        }
+      }
+    }
+    return getCompleteControlPlaneUpgradeMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ClusterManagerStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ClusterManagerStub> factory =
@@ -2356,6 +2407,21 @@ public final class ClusterManagerGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getFetchNodePoolUpgradeInfoMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * CompleteControlPlaneUpgrade completes the rollback-safe upgrade by
+     * performing the step two upgrade for a specific cluster.
+     * </pre>
+     */
+    default void completeControlPlaneUpgrade(
+        com.google.container.v1beta1.CompleteControlPlaneUpgradeRequest request,
+        io.grpc.stub.StreamObserver<com.google.container.v1beta1.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCompleteControlPlaneUpgradeMethod(), responseObserver);
     }
   }
 
@@ -3019,6 +3085,23 @@ public final class ClusterManagerGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * CompleteControlPlaneUpgrade completes the rollback-safe upgrade by
+     * performing the step two upgrade for a specific cluster.
+     * </pre>
+     */
+    public void completeControlPlaneUpgrade(
+        com.google.container.v1beta1.CompleteControlPlaneUpgradeRequest request,
+        io.grpc.stub.StreamObserver<com.google.container.v1beta1.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCompleteControlPlaneUpgradeMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -3568,6 +3651,21 @@ public final class ClusterManagerGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchNodePoolUpgradeInfoMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * CompleteControlPlaneUpgrade completes the rollback-safe upgrade by
+     * performing the step two upgrade for a specific cluster.
+     * </pre>
+     */
+    public com.google.container.v1beta1.Operation completeControlPlaneUpgrade(
+        com.google.container.v1beta1.CompleteControlPlaneUpgradeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCompleteControlPlaneUpgradeMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -4098,6 +4196,20 @@ public final class ClusterManagerGrpc {
         com.google.container.v1beta1.FetchNodePoolUpgradeInfoRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFetchNodePoolUpgradeInfoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * CompleteControlPlaneUpgrade completes the rollback-safe upgrade by
+     * performing the step two upgrade for a specific cluster.
+     * </pre>
+     */
+    public com.google.container.v1beta1.Operation completeControlPlaneUpgrade(
+        com.google.container.v1beta1.CompleteControlPlaneUpgradeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCompleteControlPlaneUpgradeMethod(), getCallOptions(), request);
     }
   }
 
@@ -4667,6 +4779,22 @@ public final class ClusterManagerGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getFetchNodePoolUpgradeInfoMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * CompleteControlPlaneUpgrade completes the rollback-safe upgrade by
+     * performing the step two upgrade for a specific cluster.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.container.v1beta1.Operation>
+        completeControlPlaneUpgrade(
+            com.google.container.v1beta1.CompleteControlPlaneUpgradeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCompleteControlPlaneUpgradeMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_CLUSTERS = 0;
@@ -4706,6 +4834,7 @@ public final class ClusterManagerGrpc {
   private static final int METHODID_LIST_LOCATIONS = 34;
   private static final int METHODID_FETCH_CLUSTER_UPGRADE_INFO = 35;
   private static final int METHODID_FETCH_NODE_POOL_UPGRADE_INFO = 36;
+  private static final int METHODID_COMPLETE_CONTROL_PLANE_UPGRADE = 37;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4943,6 +5072,12 @@ public final class ClusterManagerGrpc {
           serviceImpl.fetchNodePoolUpgradeInfo(
               (com.google.container.v1beta1.FetchNodePoolUpgradeInfoRequest) request,
               (io.grpc.stub.StreamObserver<com.google.container.v1beta1.NodePoolUpgradeInfo>)
+                  responseObserver);
+          break;
+        case METHODID_COMPLETE_CONTROL_PLANE_UPGRADE:
+          serviceImpl.completeControlPlaneUpgrade(
+              (com.google.container.v1beta1.CompleteControlPlaneUpgradeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.container.v1beta1.Operation>)
                   responseObserver);
           break;
         default:
@@ -5200,6 +5335,13 @@ public final class ClusterManagerGrpc {
                     com.google.container.v1beta1.FetchNodePoolUpgradeInfoRequest,
                     com.google.container.v1beta1.NodePoolUpgradeInfo>(
                     service, METHODID_FETCH_NODE_POOL_UPGRADE_INFO)))
+        .addMethod(
+            getCompleteControlPlaneUpgradeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1beta1.CompleteControlPlaneUpgradeRequest,
+                    com.google.container.v1beta1.Operation>(
+                    service, METHODID_COMPLETE_CONTROL_PLANE_UPGRADE)))
         .build();
   }
 
@@ -5288,6 +5430,7 @@ public final class ClusterManagerGrpc {
                       .addMethod(getListLocationsMethod())
                       .addMethod(getFetchClusterUpgradeInfoMethod())
                       .addMethod(getFetchNodePoolUpgradeInfoMethod())
+                      .addMethod(getCompleteControlPlaneUpgradeMethod())
                       .build();
         }
       }

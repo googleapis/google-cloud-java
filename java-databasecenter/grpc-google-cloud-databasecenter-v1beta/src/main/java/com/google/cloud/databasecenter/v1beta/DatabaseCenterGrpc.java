@@ -181,6 +181,55 @@ public final class DatabaseCenterGrpc {
     return getQueryDatabaseResourceGroupsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.databasecenter.v1beta.AggregateIssueStatsRequest,
+          com.google.cloud.databasecenter.v1beta.AggregateIssueStatsResponse>
+      getAggregateIssueStatsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AggregateIssueStats",
+      requestType = com.google.cloud.databasecenter.v1beta.AggregateIssueStatsRequest.class,
+      responseType = com.google.cloud.databasecenter.v1beta.AggregateIssueStatsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.databasecenter.v1beta.AggregateIssueStatsRequest,
+          com.google.cloud.databasecenter.v1beta.AggregateIssueStatsResponse>
+      getAggregateIssueStatsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.databasecenter.v1beta.AggregateIssueStatsRequest,
+            com.google.cloud.databasecenter.v1beta.AggregateIssueStatsResponse>
+        getAggregateIssueStatsMethod;
+    if ((getAggregateIssueStatsMethod = DatabaseCenterGrpc.getAggregateIssueStatsMethod) == null) {
+      synchronized (DatabaseCenterGrpc.class) {
+        if ((getAggregateIssueStatsMethod = DatabaseCenterGrpc.getAggregateIssueStatsMethod)
+            == null) {
+          DatabaseCenterGrpc.getAggregateIssueStatsMethod =
+              getAggregateIssueStatsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.databasecenter.v1beta.AggregateIssueStatsRequest,
+                          com.google.cloud.databasecenter.v1beta.AggregateIssueStatsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "AggregateIssueStats"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.databasecenter.v1beta.AggregateIssueStatsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.databasecenter.v1beta.AggregateIssueStatsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DatabaseCenterMethodDescriptorSupplier("AggregateIssueStats"))
+                      .build();
+        }
+      }
+    }
+    return getAggregateIssueStatsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static DatabaseCenterStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<DatabaseCenterStub> factory =
@@ -291,6 +340,22 @@ public final class DatabaseCenterGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getQueryDatabaseResourceGroupsMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * AggregateIssueStats provides database resource issues statistics.
+     * </pre>
+     */
+    default void aggregateIssueStats(
+        com.google.cloud.databasecenter.v1beta.AggregateIssueStatsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.databasecenter.v1beta.AggregateIssueStatsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAggregateIssueStatsMethod(), responseObserver);
+    }
   }
 
   /**
@@ -380,6 +445,24 @@ public final class DatabaseCenterGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * AggregateIssueStats provides database resource issues statistics.
+     * </pre>
+     */
+    public void aggregateIssueStats(
+        com.google.cloud.databasecenter.v1beta.AggregateIssueStatsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.databasecenter.v1beta.AggregateIssueStatsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAggregateIssueStatsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -445,6 +528,20 @@ public final class DatabaseCenterGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getQueryDatabaseResourceGroupsMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * AggregateIssueStats provides database resource issues statistics.
+     * </pre>
+     */
+    public com.google.cloud.databasecenter.v1beta.AggregateIssueStatsResponse aggregateIssueStats(
+        com.google.cloud.databasecenter.v1beta.AggregateIssueStatsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getAggregateIssueStatsMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -506,6 +603,19 @@ public final class DatabaseCenterGrpc {
             com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getQueryDatabaseResourceGroupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * AggregateIssueStats provides database resource issues statistics.
+     * </pre>
+     */
+    public com.google.cloud.databasecenter.v1beta.AggregateIssueStatsResponse aggregateIssueStats(
+        com.google.cloud.databasecenter.v1beta.AggregateIssueStatsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAggregateIssueStatsMethod(), getCallOptions(), request);
     }
   }
 
@@ -572,11 +682,27 @@ public final class DatabaseCenterGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getQueryDatabaseResourceGroupsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * AggregateIssueStats provides database resource issues statistics.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.databasecenter.v1beta.AggregateIssueStatsResponse>
+        aggregateIssueStats(
+            com.google.cloud.databasecenter.v1beta.AggregateIssueStatsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAggregateIssueStatsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_QUERY_PRODUCTS = 0;
   private static final int METHODID_AGGREGATE_FLEET = 1;
   private static final int METHODID_QUERY_DATABASE_RESOURCE_GROUPS = 2;
+  private static final int METHODID_AGGREGATE_ISSUE_STATS = 3;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -614,6 +740,13 @@ public final class DatabaseCenterGrpc {
               (com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_AGGREGATE_ISSUE_STATS:
+          serviceImpl.aggregateIssueStats(
+              (com.google.cloud.databasecenter.v1beta.AggregateIssueStatsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.databasecenter.v1beta.AggregateIssueStatsResponse>)
                   responseObserver);
           break;
         default:
@@ -655,6 +788,13 @@ public final class DatabaseCenterGrpc {
                     com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsRequest,
                     com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsResponse>(
                     service, METHODID_QUERY_DATABASE_RESOURCE_GROUPS)))
+        .addMethod(
+            getAggregateIssueStatsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.databasecenter.v1beta.AggregateIssueStatsRequest,
+                    com.google.cloud.databasecenter.v1beta.AggregateIssueStatsResponse>(
+                    service, METHODID_AGGREGATE_ISSUE_STATS)))
         .build();
   }
 
@@ -709,6 +849,7 @@ public final class DatabaseCenterGrpc {
                       .addMethod(getQueryProductsMethod())
                       .addMethod(getAggregateFleetMethod())
                       .addMethod(getQueryDatabaseResourceGroupsMethod())
+                      .addMethod(getAggregateIssueStatsMethod())
                       .build();
         }
       }

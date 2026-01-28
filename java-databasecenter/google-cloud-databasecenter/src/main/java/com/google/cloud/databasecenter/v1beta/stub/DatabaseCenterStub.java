@@ -25,6 +25,8 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.databasecenter.v1beta.AggregateFleetRequest;
 import com.google.cloud.databasecenter.v1beta.AggregateFleetResponse;
+import com.google.cloud.databasecenter.v1beta.AggregateIssueStatsRequest;
+import com.google.cloud.databasecenter.v1beta.AggregateIssueStatsResponse;
 import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsRequest;
 import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsResponse;
 import com.google.cloud.databasecenter.v1beta.QueryProductsRequest;
@@ -69,6 +71,11 @@ public abstract class DatabaseCenterStub implements BackgroundResource {
       queryDatabaseResourceGroupsCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: queryDatabaseResourceGroupsCallable()");
+  }
+
+  public UnaryCallable<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
+      aggregateIssueStatsCallable() {
+    throw new UnsupportedOperationException("Not implemented: aggregateIssueStatsCallable()");
   }
 
   @Override

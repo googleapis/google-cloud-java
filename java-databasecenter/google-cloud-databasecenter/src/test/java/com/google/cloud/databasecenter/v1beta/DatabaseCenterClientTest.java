@@ -275,4 +275,60 @@ public class DatabaseCenterClientTest {
       // Expected exception.
     }
   }
+
+  @Test
+  public void aggregateIssueStatsTest() throws Exception {
+    AggregateIssueStatsResponse expectedResponse =
+        AggregateIssueStatsResponse.newBuilder()
+            .addAllIssueGroupStats(new ArrayList<IssueGroupStats>())
+            .setTotalResourcesCount(-1148081286)
+            .setTotalResourceGroupsCount(-1586193222)
+            .addAllUnreachable(new ArrayList<String>())
+            .build();
+    mockDatabaseCenter.addResponse(expectedResponse);
+
+    AggregateIssueStatsRequest request =
+        AggregateIssueStatsRequest.newBuilder()
+            .setParent("parent-995424086")
+            .setFilter("filter-1274492040")
+            .addAllSignalTypeGroups(new ArrayList<SignalTypeGroup>())
+            .setBaselineDate(Date.newBuilder().build())
+            .build();
+
+    AggregateIssueStatsResponse actualResponse = client.aggregateIssueStats(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDatabaseCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AggregateIssueStatsRequest actualRequest = ((AggregateIssueStatsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
+    Assert.assertEquals(request.getSignalTypeGroupsList(), actualRequest.getSignalTypeGroupsList());
+    Assert.assertEquals(request.getBaselineDate(), actualRequest.getBaselineDate());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void aggregateIssueStatsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDatabaseCenter.addException(exception);
+
+    try {
+      AggregateIssueStatsRequest request =
+          AggregateIssueStatsRequest.newBuilder()
+              .setParent("parent-995424086")
+              .setFilter("filter-1274492040")
+              .addAllSignalTypeGroups(new ArrayList<SignalTypeGroup>())
+              .setBaselineDate(Date.newBuilder().build())
+              .build();
+      client.aggregateIssueStats(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
 }
