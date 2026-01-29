@@ -211,6 +211,13 @@
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-opentelemetry</artifactId>
+      <!-- TODO: remove this after next release (2.72.0). This is necessary to workaround a late downgrade of otel in cloud-shared-deps -->
+      <exclusions>
+        <exclusion>
+          <groupId>io.opentelemetry</groupId>
+          <artifactId>opentelemetry-api</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.threeten</groupId>
