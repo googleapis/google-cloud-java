@@ -718,7 +718,7 @@ libraries:
     auto-scaling and no-stress management. Optimize GPU and TPU provisioning, use
     integrated developer tools, and get multi-cluster support from SREs.
   release_level: stable
-  codeowner_team: '@googleapis/yoshi-java'
+  codeowner_team: '@googleapis/cloud-sdk-java-team'
   issue_tracker: https://issuetracker.google.com/savedsearches/559777
   rest_documentation: https://cloud.google.com/kubernetes-engine/docs/reference/rest
   GAPICs:
