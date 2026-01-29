@@ -1,0 +1,48 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.auditmanager.v1",
+  "libraryPackage": "com.google.cloud.auditmanager.v1",
+  "services": {
+    "AuditManager": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AuditManagerClient",
+          "rpcs": {
+            "EnrollResource": {
+              "methods": ["enrollResource", "enrollResource", "enrollResourceCallable"]
+            },
+            "GenerateAuditReport": {
+              "methods": ["generateAuditReportAsync", "generateAuditReportAsync", "generateAuditReportOperationCallable", "generateAuditReportCallable"]
+            },
+            "GenerateAuditScopeReport": {
+              "methods": ["generateAuditScopeReport", "generateAuditScopeReport", "generateAuditScopeReportCallable"]
+            },
+            "GetAuditReport": {
+              "methods": ["getAuditReport", "getAuditReport", "getAuditReport", "getAuditReportCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetResourceEnrollmentStatus": {
+              "methods": ["getResourceEnrollmentStatus", "getResourceEnrollmentStatus", "getResourceEnrollmentStatus", "getResourceEnrollmentStatusCallable"]
+            },
+            "ListAuditReports": {
+              "methods": ["listAuditReports", "listAuditReports", "listAuditReports", "listAuditReports", "listAuditReportsPagedCallable", "listAuditReportsCallable"]
+            },
+            "ListControls": {
+              "methods": ["listControls", "listControls", "listControls", "listControlsPagedCallable", "listControlsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListResourceEnrollmentStatuses": {
+              "methods": ["listResourceEnrollmentStatuses", "listResourceEnrollmentStatuses", "listResourceEnrollmentStatuses", "listResourceEnrollmentStatusesPagedCallable", "listResourceEnrollmentStatusesCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -35,6 +35,7 @@
     <module>java-artifact-registry</module>
     <module>java-asset</module>
     <module>java-assured-workloads</module>
+    <module>java-auditmanager</module>
     <module>java-automl</module>
     <module>java-backupdr</module>
     <module>java-bare-metal-solution</module>

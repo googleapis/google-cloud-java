@@ -937,3 +937,6 @@ grpc-google-cloud-gkerecommender-v1:0.2.0:0.3.0-SNAPSHOT
 google-cloud-cloudapiregistry:0.1.0:0.2.0-SNAPSHOT
 proto-google-cloud-cloudapiregistry-v1beta:0.1.0:0.2.0-SNAPSHOT
 grpc-google-cloud-cloudapiregistry-v1beta:0.1.0:0.2.0-SNAPSHOT
+google-cloud-auditmanager:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-auditmanager-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-auditmanager-v1:0.0.0:0.0.1-SNAPSHOT
