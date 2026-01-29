@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,8 @@ import com.google.cloud.vertexai.api.DirectPredictRequest;
 import com.google.cloud.vertexai.api.DirectPredictResponse;
 import com.google.cloud.vertexai.api.DirectRawPredictRequest;
 import com.google.cloud.vertexai.api.DirectRawPredictResponse;
+import com.google.cloud.vertexai.api.EmbedContentRequest;
+import com.google.cloud.vertexai.api.EmbedContentResponse;
 import com.google.cloud.vertexai.api.ExplainRequest;
 import com.google.cloud.vertexai.api.ExplainResponse;
 import com.google.cloud.vertexai.api.GenerateContentRequest;
@@ -431,6 +433,45 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<EmbedContentRequest, EmbedContentResponse>
+      embedContentMethodDescriptor =
+          ApiMethodDescriptor.<EmbedContentRequest, EmbedContentResponse>newBuilder()
+              .setFullMethodName("google.cloud.aiplatform.v1.PredictionService/EmbedContent")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<EmbedContentRequest>newBuilder()
+                      .setPath(
+                          "/v1/{model=projects/*/locations/*/publishers/*/models/*}:embedContent",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<EmbedContentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasModel()) {
+                              serializer.putPathParam(fields, "model", request.getModel());
+                            }
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<EmbedContentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearModel().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<EmbedContentResponse>newBuilder()
+                      .setDefaultInstance(EmbedContentResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -662,6 +703,7 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
       generateContentCallable;
   private final ServerStreamingCallable<GenerateContentRequest, GenerateContentResponse>
       streamGenerateContentCallable;
+  private final UnaryCallable<EmbedContentRequest, EmbedContentResponse> embedContentCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -817,6 +859,17 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<EmbedContentRequest, EmbedContentResponse> embedContentTransportSettings =
+        HttpJsonCallSettings.<EmbedContentRequest, EmbedContentResponse>newBuilder()
+            .setMethodDescriptor(embedContentMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("model", String.valueOf(request.getModel()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -906,6 +959,9 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
             streamGenerateContentTransportSettings,
             settings.streamGenerateContentSettings(),
             clientContext);
+    this.embedContentCallable =
+        callableFactory.createUnaryCallable(
+            embedContentTransportSettings, settings.embedContentSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -943,6 +999,7 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
     methodDescriptors.add(explainMethodDescriptor);
     methodDescriptors.add(generateContentMethodDescriptor);
     methodDescriptors.add(streamGenerateContentMethodDescriptor);
+    methodDescriptors.add(embedContentMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
@@ -1000,6 +1057,11 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
   }
 
   @Override
+  public UnaryCallable<EmbedContentRequest, EmbedContentResponse> embedContentCallable() {
+    return embedContentCallable;
+  }
+
+  @Override
   public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
     return listLocationsCallable;
   }
@@ -1035,28 +1097,32 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
   public BidiStreamingCallable<StreamDirectPredictRequest, StreamDirectPredictResponse>
       streamDirectPredictCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: streamDirectPredictCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: streamDirectPredictCallable(). REST transport is not implemented for this"
+            + " method yet.");
   }
 
   @Override
   public BidiStreamingCallable<StreamDirectRawPredictRequest, StreamDirectRawPredictResponse>
       streamDirectRawPredictCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: streamDirectRawPredictCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: streamDirectRawPredictCallable(). REST transport is not implemented for"
+            + " this method yet.");
   }
 
   @Override
   public BidiStreamingCallable<StreamingPredictRequest, StreamingPredictResponse>
       streamingPredictCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: streamingPredictCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: streamingPredictCallable(). REST transport is not implemented for this"
+            + " method yet.");
   }
 
   @Override
   public BidiStreamingCallable<StreamingRawPredictRequest, StreamingRawPredictResponse>
       streamingRawPredictCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: streamingRawPredictCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: streamingRawPredictCallable(). REST transport is not implemented for this"
+            + " method yet.");
   }
 
   @Override
