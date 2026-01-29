@@ -35,6 +35,16 @@ fi
 
 if [[ -n "${BUILD_SUBDIR}" ]]
 then
+  echo "Compiling and building all modules for ${BUILD_SUBDIR}"
+  mvn clean install \
+    -DskipTests \
+    -Dclirr.skip \
+    -Dflatten.skip \
+    -Dcheckstyle.skip \
+    -Djacoco.skip \
+    -Denforcer.skip \
+    --also-make \
+    --projects "${BUILD_SUBDIR}"
   echo "Running in subdir: ${BUILD_SUBDIR}"
   pushd "${BUILD_SUBDIR}"
 fi
