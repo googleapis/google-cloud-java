@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.85.0 (2026-01-29)
+
+### Features
+
+* add a user_attributes field in SearchRequest that can be used for personalization ([d7a49aa](https://github.com/googleapis/google-cloud-java/commit/d7a49aa9502012df1209b55ec741b1d4ac639361))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.56.0 ([#11879](https://github.com/googleapis/google-cloud-java/issues/11879)) ([ac1f018](https://github.com/googleapis/google-cloud-java/commit/ac1f0182ac5b405ca164ac867c8c042322736bef))
+
+
 ## 2.84.0 (2026-01-15)
 
 ### Dependencies
