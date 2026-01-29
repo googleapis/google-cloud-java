@@ -33,6 +33,16 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-cloudapiregistry-v1</artifactId>
+        <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-cloudapiregistry-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-cloudapiregistry-v1</artifactId>
+        <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-cloudapiregistry-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-cloudapiregistry-v1beta</artifactId>
         <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-cloudapiregistry-v1beta:current} -->
       </dependency>
@@ -48,7 +58,9 @@
   <modules>
     <module>google-cloud-cloudapiregistry</module>
     <module>grpc-google-cloud-cloudapiregistry-v1beta</module>
+    <module>grpc-google-cloud-cloudapiregistry-v1</module>
     <module>proto-google-cloud-cloudapiregistry-v1beta</module>
+    <module>proto-google-cloud-cloudapiregistry-v1</module>
     <module>google-cloud-cloudapiregistry-bom</module>
   </modules>
 
