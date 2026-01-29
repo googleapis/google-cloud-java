@@ -14,9 +14,87 @@
 
 import sys
 import re
+import os
 
+def parse_pom_for_version(file_path):
+    """Extracts artifactId and version from a pom.xml file."""
+    artifact_id = None
+    version = None
+    parent_version = None
+    
+    try:
+        with open(file_path, 'r') as f:
+            in_parent = False
+            in_skipped_section = False
+            # Sections to skip to avoid capturing artifactId/version from dependencies or plugins
+            skip_tags = ['dependencies', 'dependencyManagement', 'plugins', 'build', 'reporting', 'profiles']
+            
+            for line in f:
+                stripped = line.strip()
+                if not stripped: continue
+                
+                # Check for skipped sections
+                section_start = False
+                for tag in skip_tags:
+                    if f'<{tag}>' in stripped:
+                        in_skipped_section = True
+                        section_start = True
+                        break
+                if section_start: continue
+                
+                section_end = False
+                for tag in skip_tags:
+                    if f'</{tag}>' in stripped:
+                        in_skipped_section = False
+                        section_end = True
+                        break
+                if section_end: continue
+                
+                if in_skipped_section: continue
+                
+                if '<parent>' in stripped:
+                    in_parent = True
+                    continue
+                if '</parent>' in stripped:
+                    in_parent = False
+                    continue
+                    
+                if '<artifactId>' in stripped and not artifact_id and not in_parent:
+                    match = re.search(r'<artifactId>(.*?)</artifactId>', stripped)
+                    if match:
+                        artifact_id = match.group(1).strip()
+                
+                if '<version>' in stripped:
+                    match = re.search(r'<version>(.*?)</version>', stripped)
+                    if match:
+                        v = match.group(1).strip()
+                        if in_parent:
+                            parent_version = v
+                        elif not version:
+                            version = v
+                
+                if artifact_id and version:
+                    break
+    except Exception as e:
+        print(f"Warning: Could not parse {file_path}: {e}")
+                
+    return artifact_id, version or parent_version
 
-def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artifactId='google-cloud-jar-parent', relative_path='../google-cloud-jar-parent/pom.xml'):
+def get_monorepo_versions(monorepo_root='.'):
+    """Scans all pom.xml files in the monorepo to build a map of artifactId to version."""
+    versions = {}
+    for root, dirs, files in os.walk(monorepo_root):
+        # Skip common directories to improve performance and avoid noise
+        dirs[:] = [d for d in dirs if d not in ['samples', 'test', 'target', '.git', '.cloud', 'verification', 'test_data']]
+        
+        if 'pom.xml' in files:
+            pom_path = os.path.join(root, 'pom.xml')
+            artifactId, version = parse_pom_for_version(pom_path)
+            if artifactId and version:
+                versions[artifactId] = version
+    return versions
+
+def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artifactId='google-cloud-jar-parent', relative_path='../google-cloud-jar-parent/pom.xml', monorepo_versions=None):
     with open(file_path, 'r') as f:
         lines = f.readlines()
 
@@ -121,9 +199,6 @@ def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artif
                     continue
 
                 if in_dependency:
-                    current_dependency_lines.append(line)
-                    if '{x-version-update:' in line:
-                        should_preserve = True
                     if '<groupId>' in line:
                         match = re.search(r'<groupId>(.*?)</groupId>', line)
                         if match:
@@ -134,6 +209,19 @@ def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artif
                             current_artifact_id = match.group(1).strip()
                     if '<version>' in line:
                         has_version = True
+                    
+                    if monorepo_versions and current_artifact_id and current_artifact_id in monorepo_versions:
+                        new_version = monorepo_versions[current_artifact_id]
+                        indent = line[:line.find('<')]
+                        if '<version>' in line:
+                            marker_artifact = current_artifact_id.replace('-bom', '')
+                            current_dependency_lines.append(f"{indent}<version>{new_version}</version><!-- {{x-version-update:{marker_artifact}:current}} -->\n")
+                            should_preserve = True
+                            continue
+                    
+                    current_dependency_lines.append(line)
+                    if '{x-version-update:' in line:
+                        should_preserve = True
                     continue
 
                 # Prune comments and extra whitespace in depMgmt for a cleaner result
@@ -161,10 +249,18 @@ def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artif
 
 if __name__ == "__main__":
     if len(sys.argv) > 2:
+        # Monorepo root is likely the parent of the directory containing this script
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        monorepo_root = os.path.dirname(script_dir)
+        
+        print(f"Scanning monorepo at {monorepo_root} for versions...")
+        monorepo_versions = get_monorepo_versions(monorepo_root)
+        print(f"Found {len(monorepo_versions)} artifacts.")
+        
         source_repo = sys.argv[3] if len(sys.argv) > 3 else None
         parent_artifactId = sys.argv[4] if len(sys.argv) > 4 else 'google-cloud-jar-parent'
         relative_path = sys.argv[5] if len(sys.argv) > 5 else '../google-cloud-jar-parent/pom.xml'
-        modernize_pom(sys.argv[1], sys.argv[2], source_repo, parent_artifactId, relative_path)
+        modernize_pom(sys.argv[1], sys.argv[2], source_repo, parent_artifactId, relative_path, monorepo_versions)
     else:
         print("Usage: python3 modernize_pom.py <file_path> <parent_version> [source_repo_name] [parent_artifactId] [relative_path]")
         sys.exit(1)
