@@ -1,5 +1,38 @@
 # Changelog
 
+## [1.77.0](https://github.com/googleapis/google-cloud-java/compare/v1.76.0...v1.77.0) (2026-01-29)
+
+
+### Features
+
+* [aiplatform] RAG - add mode config to RagEngineConfig with Spanner and Serverless ([d7a49aa](https://github.com/googleapis/google-cloud-java/commit/d7a49aa9502012df1209b55ec741b1d4ac639361))
+* [auditmanager] new module for auditmanager ([#11888](https://github.com/googleapis/google-cloud-java/issues/11888)) ([c307b61](https://github.com/googleapis/google-cloud-java/commit/c307b61aa5debb504f49cce5d9d64840590eb93d))
+* [backupdr] Add support for AlloyDB backup and restore ([d7a49aa](https://github.com/googleapis/google-cloud-java/commit/d7a49aa9502012df1209b55ec741b1d4ac639361))
+* [container] Add GPUDirectConfig to configure GPU Direct for node pools ([d7a49aa](https://github.com/googleapis/google-cloud-java/commit/d7a49aa9502012df1209b55ec741b1d4ac639361))
+* [container] Add SwapConfig to enable and configure swap memory for node pools ([d7a49aa](https://github.com/googleapis/google-cloud-java/commit/d7a49aa9502012df1209b55ec741b1d4ac639361))
+* [databasecenter] Adding Method AggregateIssueStats of Database Center API v1beta ([d7a49aa](https://github.com/googleapis/google-cloud-java/commit/d7a49aa9502012df1209b55ec741b1d4ac639361))
+* [dialogflow-cx] updated v3 dialogflow client libraries ([d7a49aa](https://github.com/googleapis/google-cloud-java/commit/d7a49aa9502012df1209b55ec741b1d4ac639361))
+* [grafeas] A new field `last_vulnerability_update_time` is added to message `.grafeas.v1.DiscoveryOccurrence` ([d7a49aa](https://github.com/googleapis/google-cloud-java/commit/d7a49aa9502012df1209b55ec741b1d4ac639361))
+* [kms] add the SingleTenantHsm functionality including the management API and resource types ([d7a49aa](https://github.com/googleapis/google-cloud-java/commit/d7a49aa9502012df1209b55ec741b1d4ac639361))
+* [network-management] add fields and messages for GKE Pods and IP masquerading ([d7a49aa](https://github.com/googleapis/google-cloud-java/commit/d7a49aa9502012df1209b55ec741b1d4ac639361))
+* [network-management] add fields and messages for GKE Pods and IP masquerading ([d7a49aa](https://github.com/googleapis/google-cloud-java/commit/d7a49aa9502012df1209b55ec741b1d4ac639361))
+* [networkconnectivity] Added OUTPUT_ONLY annotations to create_time and update_time in InternalRange to reflect existing service behavior ([d7a49aa](https://github.com/googleapis/google-cloud-java/commit/d7a49aa9502012df1209b55ec741b1d4ac639361))
+* [retail] add a user_attributes field in SearchRequest that can be used for personalization ([d7a49aa](https://github.com/googleapis/google-cloud-java/commit/d7a49aa9502012df1209b55ec741b1d4ac639361))
+* [run] add instances client library ([d7a49aa](https://github.com/googleapis/google-cloud-java/commit/d7a49aa9502012df1209b55ec741b1d4ac639361))
+* google/cloud/apiregistry/v1 release ([#11892](https://github.com/googleapis/google-cloud-java/issues/11892)) ([ec0643e](https://github.com/googleapis/google-cloud-java/commit/ec0643e2b84be89ff8297ed1583bc639344e987f))
+
+
+### Bug Fixes
+
+* **deps:** update the Java code generator (gapic-generator-java) to 2.66.0 ([d7a49aa](https://github.com/googleapis/google-cloud-java/commit/d7a49aa9502012df1209b55ec741b1d4ac639361))
+* update dependency com.google.cloud:sdk-platform-java-config to v3.56.0 ([#11879](https://github.com/googleapis/google-cloud-java/issues/11879)) ([ac1f018](https://github.com/googleapis/google-cloud-java/commit/ac1f0182ac5b405ca164ac867c8c042322736bef))
+
+
+### Documentation
+
+* [cloudquotas] Correct typo in comment for field `quota_id` ([d7a49aa](https://github.com/googleapis/google-cloud-java/commit/d7a49aa9502012df1209b55ec741b1d4ac639361))
+* [document-ai] Regenerated REST and RPC Document AI documentation to include missing changes from September 2024 to November 2025 ([d7a49aa](https://github.com/googleapis/google-cloud-java/commit/d7a49aa9502012df1209b55ec741b1d4ac639361))
+
 ## [1.76.0](https://github.com/googleapis/google-cloud-java/compare/v1.75.0...v1.76.0) (2026-01-15)
 
 
