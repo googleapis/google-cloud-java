@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -310,7 +310,8 @@ public class EndpointName implements ResourceName {
     private Builder(EndpointName endpointName) {
       Preconditions.checkArgument(
           Objects.equals(endpointName.pathTemplate, PROJECT_LOCATION_ENDPOINT),
-          "toBuilder is only supported when EndpointName has the pattern of projects/{project}/locations/{location}/endpoints/{endpoint}");
+          "toBuilder is only supported when EndpointName has the pattern of"
+              + " projects/{project}/locations/{location}/endpoints/{endpoint}");
       this.project = endpointName.project;
       this.location = endpointName.location;
       this.endpoint = endpointName.endpoint;

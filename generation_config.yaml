@@ -563,6 +563,7 @@ libraries:
   cloud_api: true
   GAPICs:
   - proto_path: google/cloud/apiregistry/v1beta
+  - proto_path: google/cloud/apiregistry/v1
   requires_billing: true
 - api_shortname: cloudbuild
   name_pretty: Cloud Build
