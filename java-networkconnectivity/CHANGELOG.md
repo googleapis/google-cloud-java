@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.82.0 (2026-01-29)
+
+### Features
+
+* Added OUTPUT_ONLY annotations to create_time and update_time in InternalRange to reflect existing service behavior ([d7a49aa](https://github.com/googleapis/google-cloud-java/commit/d7a49aa9502012df1209b55ec741b1d4ac639361))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.56.0 ([#11879](https://github.com/googleapis/google-cloud-java/issues/11879)) ([ac1f018](https://github.com/googleapis/google-cloud-java/commit/ac1f0182ac5b405ca164ac867c8c042322736bef))
+
+
 ## 1.81.0 (2026-01-15)
 
 ### Dependencies
