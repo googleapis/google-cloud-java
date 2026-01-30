@@ -13,7 +13,7 @@
   "api_id": "logging.googleapis.com",
   "library_type": "GAPIC_COMBO",
   "requires_billing": true,
-  "codeowner_team": "@googleapis/cloud-java-team-teamsync",
+  "codeowner_team": "@googleapis/cloud-sdk-java-team",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559764",
   "recommended_package": "com.google.cloud.logging"
 }
