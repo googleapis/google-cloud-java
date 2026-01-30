@@ -34,6 +34,12 @@ public final class CbtTestProxyMain {
 
     CbtTestProxy cbtTestProxy = CbtTestProxy.create();
     logger.info(String.format("Test proxy starting on %d", port));
-    ServerBuilder.forPort(port).addService(cbtTestProxy).build().start().awaitTermination();
+    ServerBuilder.forPort(port)
+        .addService(cbtTestProxy)
+        .maxInboundMessageSize(Integer.MAX_VALUE)
+        .maxInboundMetadataSize(Integer.MAX_VALUE)
+        .build()
+        .start()
+        .awaitTermination();
   }
 }
