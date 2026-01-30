@@ -9,7 +9,7 @@
   "repo": "googleapis/java-logging-logback",
   "repo_short": "java-logging-logback",
   "distribution_name": "com.google.cloud:google-cloud-logging-logback",
-  "codeowner_team": "@googleapis/cloud-java-team-teamsync",
+  "codeowner_team": "@googleapis/cloud-sdk-java-team",
   "library_type": "OTHER",
   "api_id": "logging.googleapis.com"
 }
