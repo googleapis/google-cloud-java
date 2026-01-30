@@ -187,6 +187,9 @@ def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artif
                     in_dependency = False
                     current_dependency_lines.append(line)
 
+                    if current_artifact_id == 'google-cloud-shared-dependencies':
+                        continue
+
                     # Preservation logic:
                     # 1. Has x-version-update comment
                     # 2. Is NOT com.google group AND has a version tag
@@ -218,6 +221,9 @@ def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artif
                             current_dependency_lines.append(f"{indent}<version>{new_version}</version><!-- {{x-version-update:{marker_artifact}:current}} -->\n")
                             should_preserve = True
                             continue
+
+                    if current_artifact_id and current_artifact_id.startswith('google-api-services-'):
+                        should_preserve = True
                     
                     current_dependency_lines.append(line)
                     if '{x-version-update:' in line:
