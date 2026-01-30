@@ -5,22 +5,22 @@
 # https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners#codeowners-syntax
 
 # The @googleapis/api-firestore @googleapis/firestore-dpe is the default owner for changes in this repo
-*                       @googleapis/yoshi-java @googleapis/api-firestore @googleapis/firestore-dpe
+*                       @googleapis/cloud-sdk-java-team @googleapis/api-firestore @googleapis/firestore-dpe
 
 # for handwritten libraries, keep codeowner_team in .repo-metadata.json as owner
 **/*.java               @googleapis/api-firestore @googleapis/firestore-dpe
 
 # For generated Java code
-proto-*/                    @googleapis/yoshi-java @googleapis/api-firestore @googleapis/firestore-dpe
-grpc-*/                     @googleapis/yoshi-java @googleapis/api-firestore @googleapis/firestore-dpe
+proto-*/                    @googleapis/cloud-sdk-java-team @googleapis/api-firestore @googleapis/firestore-dpe
+grpc-*/                     @googleapis/cloud-sdk-java-team @googleapis/api-firestore @googleapis/firestore-dpe
 # Generated code pattern in google-cloud-firestore and google-cloud-firestore-admin
-**/*Client.java             @googleapis/yoshi-java @googleapis/api-firestore @googleapis/firestore-dpe
-**/*Settings.java           @googleapis/yoshi-java @googleapis/api-firestore @googleapis/firestore-dpe
-**/*ClientHttpJsonTest.java @googleapis/yoshi-java @googleapis/api-firestore @googleapis/firestore-dpe
-**/*ClientTest.java         @googleapis/yoshi-java @googleapis/api-firestore @googleapis/firestore-dpe
+**/*Client.java             @googleapis/cloud-sdk-java-team @googleapis/api-firestore @googleapis/firestore-dpe
+**/*Settings.java           @googleapis/cloud-sdk-java-team @googleapis/api-firestore @googleapis/firestore-dpe
+**/*ClientHttpJsonTest.java @googleapis/cloud-sdk-java-team @googleapis/api-firestore @googleapis/firestore-dpe
+**/*ClientTest.java         @googleapis/cloud-sdk-java-team @googleapis/api-firestore @googleapis/firestore-dpe
 
 # The java-samples-reviewers team is the default owner for samples changes
 samples/**/*.java       @googleapis/java-samples-reviewers
 
 # Generated snippets should not be owned by samples reviewers
-samples/snippets/generated/       @googleapis/yoshi-java
+samples/snippets/generated/       @googleapis/cloud-sdk-java-team
