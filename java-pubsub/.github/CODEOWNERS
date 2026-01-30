@@ -5,25 +5,25 @@
 # https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners#codeowners-syntax
 
 # The @googleapis/api-pubsub is the default owner for changes in this repo
-*                       @googleapis/yoshi-java @googleapis/api-pubsub
+*                       @googleapis/cloud-sdk-java-team @googleapis/api-pubsub
 
 # for handwritten libraries, keep codeowner_team in .repo-metadata.json as owner
 **/*.java               @googleapis/api-pubsub
 
 # For generated Java code
-proto-*/                    @googleapis/yoshi-java @googleapis/api-pubsub
-grpc-*/                     @googleapis/yoshi-java @googleapis/api-pubsub
+proto-*/                    @googleapis/cloud-sdk-java-team @googleapis/api-pubsub
+grpc-*/                     @googleapis/cloud-sdk-java-team @googleapis/api-pubsub
 # Generated code pattern in google-cloud-pubsub
-**/*Client.java             @googleapis/yoshi-java @googleapis/api-pubsub
-**/*Settings.java           @googleapis/yoshi-java @googleapis/api-pubsub
-**/*ClientHttpJsonTest.java @googleapis/yoshi-java @googleapis/api-pubsub
-**/*ClientTest.java         @googleapis/yoshi-java @googleapis/api-pubsub
-google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/stub/** @googleapis/yoshi-java @googleapis/api-pubsub
-google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/package-info.java @googleapis/yoshi-java @googleapis/api-pubsub
-google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/Mock* @googleapis/yoshi-java @googleapis/api-pubsub
+**/*Client.java             @googleapis/cloud-sdk-java-team @googleapis/api-pubsub
+**/*Settings.java           @googleapis/cloud-sdk-java-team @googleapis/api-pubsub
+**/*ClientHttpJsonTest.java @googleapis/cloud-sdk-java-team @googleapis/api-pubsub
+**/*ClientTest.java         @googleapis/cloud-sdk-java-team @googleapis/api-pubsub
+google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/stub/** @googleapis/cloud-sdk-java-team @googleapis/api-pubsub
+google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/package-info.java @googleapis/cloud-sdk-java-team @googleapis/api-pubsub
+google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/Mock* @googleapis/cloud-sdk-java-team @googleapis/api-pubsub
 
 # The java-samples-reviewers team is the default owner for samples changes
 samples/**/*.java       @googleapis/java-samples-reviewers
 
 # Generated snippets should not be owned by samples reviewers
-samples/snippets/generated/       @googleapis/yoshi-java
+samples/snippets/generated/       @googleapis/cloud-sdk-java-team
