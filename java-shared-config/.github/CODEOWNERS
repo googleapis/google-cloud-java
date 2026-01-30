@@ -4,10 +4,10 @@
 # For syntax help see:
 # https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners#codeowners-syntax
 
-*                       @googleapis/yoshi-java
+*                       @googleapis/cloud-sdk-java-team
 
 # The java-samples-reviewers team is the default owner for samples changes
 samples/**/*.java       @googleapis/java-samples-reviewers
 
 # Generated snippets should not be owned by samples reviewers
-samples/snippets/generated/       @googleapis/yoshi-java
+samples/snippets/generated/       @googleapis/cloud-sdk-java-team
