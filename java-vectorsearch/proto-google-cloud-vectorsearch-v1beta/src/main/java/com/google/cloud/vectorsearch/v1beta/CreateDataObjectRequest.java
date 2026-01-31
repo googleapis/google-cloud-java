@@ -143,7 +143,7 @@ public final class CreateDataObjectRequest extends com.google.protobuf.Generated
    * <pre>
    * Required. The id of the dataObject to create.
    * The id must be 1-63 characters long, and comply with
-   * &lt;a href="https://www.ietf.org/rfc/rfc1035.txt" target="_blank"&gt;RFC1035&lt;/a&gt;.
+   * [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
    * Specifically, it must be 1-63 characters long and match the regular
    * expression `[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?`.
    * </pre>
@@ -171,7 +171,7 @@ public final class CreateDataObjectRequest extends com.google.protobuf.Generated
    * <pre>
    * Required. The id of the dataObject to create.
    * The id must be 1-63 characters long, and comply with
-   * &lt;a href="https://www.ietf.org/rfc/rfc1035.txt" target="_blank"&gt;RFC1035&lt;/a&gt;.
+   * [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
    * Specifically, it must be 1-63 characters long and match the regular
    * expression `[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?`.
    * </pre>
@@ -769,7 +769,7 @@ public final class CreateDataObjectRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The id of the dataObject to create.
      * The id must be 1-63 characters long, and comply with
-     * &lt;a href="https://www.ietf.org/rfc/rfc1035.txt" target="_blank"&gt;RFC1035&lt;/a&gt;.
+     * [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Specifically, it must be 1-63 characters long and match the regular
      * expression `[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?`.
      * </pre>
@@ -796,7 +796,7 @@ public final class CreateDataObjectRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The id of the dataObject to create.
      * The id must be 1-63 characters long, and comply with
-     * &lt;a href="https://www.ietf.org/rfc/rfc1035.txt" target="_blank"&gt;RFC1035&lt;/a&gt;.
+     * [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Specifically, it must be 1-63 characters long and match the regular
      * expression `[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?`.
      * </pre>
@@ -823,7 +823,7 @@ public final class CreateDataObjectRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The id of the dataObject to create.
      * The id must be 1-63 characters long, and comply with
-     * &lt;a href="https://www.ietf.org/rfc/rfc1035.txt" target="_blank"&gt;RFC1035&lt;/a&gt;.
+     * [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Specifically, it must be 1-63 characters long and match the regular
      * expression `[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?`.
      * </pre>
@@ -849,7 +849,7 @@ public final class CreateDataObjectRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The id of the dataObject to create.
      * The id must be 1-63 characters long, and comply with
-     * &lt;a href="https://www.ietf.org/rfc/rfc1035.txt" target="_blank"&gt;RFC1035&lt;/a&gt;.
+     * [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Specifically, it must be 1-63 characters long and match the regular
      * expression `[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?`.
      * </pre>
@@ -871,7 +871,7 @@ public final class CreateDataObjectRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The id of the dataObject to create.
      * The id must be 1-63 characters long, and comply with
-     * &lt;a href="https://www.ietf.org/rfc/rfc1035.txt" target="_blank"&gt;RFC1035&lt;/a&gt;.
+     * [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Specifically, it must be 1-63 characters long and match the regular
      * expression `[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?`.
      * </pre>

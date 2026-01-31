@@ -87,12 +87,12 @@ public final class EncryptionInfoProto extends com.google.protobuf.GeneratedFile
           + "encrypted_dek\030\004 \001(\tB\003\340A\002\";\n"
           + "\007KeyType\022\030\n"
           + "\024KEY_TYPE_UNSPECIFIED\020\000\022\026\n"
-          + "\022XCHACHA20_POLY1305\020\001B\323\001\n"
-          + "\035com.google.ads.datamanager.v1B\023EncryptionInfoProtoP\001ZDgoogle.golan"
-          + "g.org/genproto/googleapis/ads/datamanage"
-          + "r/v1;datamanager\252\002\031Google.Ads.DataManage"
-          + "r.V1\312\002\031Google\\Ads\\DataManager\\V1\352\002\034Googl"
-          + "e::Ads::DataManager::V1b\006proto3"
+          + "\022XCHACHA20_POLY1305\020\001B\320\001\n"
+          + "\035com.google.ads.datamanager.v1B\023EncryptionInfoProtoP\001ZAcloud.google"
+          + ".com/go/datamanager/apiv1/datamanagerpb;"
+          + "datamanagerpb\252\002\031Google.Ads.DataManager.V"
+          + "1\312\002\031Google\\Ads\\DataManager\\V1\352\002\034Google::"
+          + "Ads::DataManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

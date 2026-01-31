@@ -635,6 +635,189 @@ public interface GenerationConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. If enabled, audio timestamps will be included in the request to
+   * the model. This can be useful for synchronizing audio with other modalities
+   * in the response.
+   * </pre>
+   *
+   * <code>optional bool audio_timestamp = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the audioTimestamp field is set.
+   */
+  boolean hasAudioTimestamp();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If enabled, audio timestamps will be included in the request to
+   * the model. This can be useful for synchronizing audio with other modalities
+   * in the response.
+   * </pre>
+   *
+   * <code>optional bool audio_timestamp = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The audioTimestamp.
+   */
+  boolean getAudioTimestamp();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The modalities of the response. The model will generate a
+   * response that includes all the specified modalities. For example, if this
+   * is set to `[TEXT, IMAGE]`, the response will include both text and an
+   * image.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.GenerationConfig.Modality response_modalities = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the responseModalities.
+   */
+  java.util.List<com.google.cloud.aiplatform.v1.GenerationConfig.Modality>
+      getResponseModalitiesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The modalities of the response. The model will generate a
+   * response that includes all the specified modalities. For example, if this
+   * is set to `[TEXT, IMAGE]`, the response will include both text and an
+   * image.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.GenerationConfig.Modality response_modalities = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of responseModalities.
+   */
+  int getResponseModalitiesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The modalities of the response. The model will generate a
+   * response that includes all the specified modalities. For example, if this
+   * is set to `[TEXT, IMAGE]`, the response will include both text and an
+   * image.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.GenerationConfig.Modality response_modalities = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The responseModalities at the given index.
+   */
+  com.google.cloud.aiplatform.v1.GenerationConfig.Modality getResponseModalities(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The modalities of the response. The model will generate a
+   * response that includes all the specified modalities. For example, if this
+   * is set to `[TEXT, IMAGE]`, the response will include both text and an
+   * image.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.GenerationConfig.Modality response_modalities = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for responseModalities.
+   */
+  java.util.List<java.lang.Integer> getResponseModalitiesValueList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The modalities of the response. The model will generate a
+   * response that includes all the specified modalities. For example, if this
+   * is set to `[TEXT, IMAGE]`, the response will include both text and an
+   * image.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.GenerationConfig.Modality response_modalities = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of responseModalities at the given index.
+   */
+  int getResponseModalitiesValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The token resolution at which input media content is sampled.
+   * This is used to control the trade-off between the quality of the response
+   * and the number of tokens used to represent the media. A higher resolution
+   * allows the model to perceive more detail, which can lead to a more nuanced
+   * response, but it will also use more tokens. This does not affect the
+   * image dimensions sent to the model.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.GenerationConfig.MediaResolution media_resolution = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the mediaResolution field is set.
+   */
+  boolean hasMediaResolution();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The token resolution at which input media content is sampled.
+   * This is used to control the trade-off between the quality of the response
+   * and the number of tokens used to represent the media. A higher resolution
+   * allows the model to perceive more detail, which can lead to a more nuanced
+   * response, but it will also use more tokens. This does not affect the
+   * image dimensions sent to the model.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.GenerationConfig.MediaResolution media_resolution = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for mediaResolution.
+   */
+  int getMediaResolutionValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The token resolution at which input media content is sampled.
+   * This is used to control the trade-off between the quality of the response
+   * and the number of tokens used to represent the media. A higher resolution
+   * allows the model to perceive more detail, which can lead to a more nuanced
+   * response, but it will also use more tokens. This does not affect the
+   * image dimensions sent to the model.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.GenerationConfig.MediaResolution media_resolution = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The mediaResolution.
+   */
+  com.google.cloud.aiplatform.v1.GenerationConfig.MediaResolution getMediaResolution();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The speech generation config.
    * </pre>
    *

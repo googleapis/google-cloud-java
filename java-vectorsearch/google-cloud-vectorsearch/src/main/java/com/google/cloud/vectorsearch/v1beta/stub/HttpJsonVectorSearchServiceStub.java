@@ -46,6 +46,9 @@ import com.google.cloud.vectorsearch.v1beta.CreateCollectionRequest;
 import com.google.cloud.vectorsearch.v1beta.CreateIndexRequest;
 import com.google.cloud.vectorsearch.v1beta.DeleteCollectionRequest;
 import com.google.cloud.vectorsearch.v1beta.DeleteIndexRequest;
+import com.google.cloud.vectorsearch.v1beta.ExportDataObjectsMetadata;
+import com.google.cloud.vectorsearch.v1beta.ExportDataObjectsRequest;
+import com.google.cloud.vectorsearch.v1beta.ExportDataObjectsResponse;
 import com.google.cloud.vectorsearch.v1beta.GetCollectionRequest;
 import com.google.cloud.vectorsearch.v1beta.GetIndexRequest;
 import com.google.cloud.vectorsearch.v1beta.ImportDataObjectsMetadata;
@@ -83,8 +86,10 @@ public class HttpJsonVectorSearchServiceStub extends VectorSearchServiceStub {
       TypeRegistry.newBuilder()
           .add(Collection.getDescriptor())
           .add(Empty.getDescriptor())
+          .add(ExportDataObjectsMetadata.getDescriptor())
           .add(ImportDataObjectsMetadata.getDescriptor())
           .add(Index.getDescriptor())
+          .add(ExportDataObjectsResponse.getDescriptor())
           .add(ImportDataObjectsResponse.getDescriptor())
           .add(OperationMetadata.getDescriptor())
           .build();
@@ -482,6 +487,47 @@ public class HttpJsonVectorSearchServiceStub extends VectorSearchServiceStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<ExportDataObjectsRequest, Operation>
+      exportDataObjectsMethodDescriptor =
+          ApiMethodDescriptor.<ExportDataObjectsRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.vectorsearch.v1beta.VectorSearchService/ExportDataObjects")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ExportDataObjectsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=projects/*/locations/*/collections/*}:exportDataObjects",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ExportDataObjectsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ExportDataObjectsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ExportDataObjectsRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -578,6 +624,10 @@ public class HttpJsonVectorSearchServiceStub extends VectorSearchServiceStub {
   private final OperationCallable<
           ImportDataObjectsRequest, ImportDataObjectsResponse, ImportDataObjectsMetadata>
       importDataObjectsOperationCallable;
+  private final UnaryCallable<ExportDataObjectsRequest, Operation> exportDataObjectsCallable;
+  private final OperationCallable<
+          ExportDataObjectsRequest, ExportDataObjectsResponse, ExportDataObjectsMetadata>
+      exportDataObjectsOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -766,6 +816,17 @@ public class HttpJsonVectorSearchServiceStub extends VectorSearchServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<ExportDataObjectsRequest, Operation> exportDataObjectsTransportSettings =
+        HttpJsonCallSettings.<ExportDataObjectsRequest, Operation>newBuilder()
+            .setMethodDescriptor(exportDataObjectsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -864,6 +925,17 @@ public class HttpJsonVectorSearchServiceStub extends VectorSearchServiceStub {
             settings.importDataObjectsOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.exportDataObjectsCallable =
+        callableFactory.createUnaryCallable(
+            exportDataObjectsTransportSettings,
+            settings.exportDataObjectsSettings(),
+            clientContext);
+    this.exportDataObjectsOperationCallable =
+        callableFactory.createOperationCallable(
+            exportDataObjectsTransportSettings,
+            settings.exportDataObjectsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -891,6 +963,7 @@ public class HttpJsonVectorSearchServiceStub extends VectorSearchServiceStub {
     methodDescriptors.add(createIndexMethodDescriptor);
     methodDescriptors.add(deleteIndexMethodDescriptor);
     methodDescriptors.add(importDataObjectsMethodDescriptor);
+    methodDescriptors.add(exportDataObjectsMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -996,6 +1069,18 @@ public class HttpJsonVectorSearchServiceStub extends VectorSearchServiceStub {
           ImportDataObjectsRequest, ImportDataObjectsResponse, ImportDataObjectsMetadata>
       importDataObjectsOperationCallable() {
     return importDataObjectsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExportDataObjectsRequest, Operation> exportDataObjectsCallable() {
+    return exportDataObjectsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          ExportDataObjectsRequest, ExportDataObjectsResponse, ExportDataObjectsMetadata>
+      exportDataObjectsOperationCallable() {
+    return exportDataObjectsOperationCallable;
   }
 
   @Override

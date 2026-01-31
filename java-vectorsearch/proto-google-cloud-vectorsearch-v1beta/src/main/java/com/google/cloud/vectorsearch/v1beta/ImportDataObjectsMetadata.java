@@ -24,7 +24,8 @@ package com.google.cloud.vectorsearch.v1beta;
  *
  *
  * <pre>
- * Metadata for [DataObjectService.ImportDataObjects][].
+ * Metadata for
+ * [VectorSearchService.ImportDataObjects][google.cloud.vectorsearch.v1beta.VectorSearchService.ImportDataObjects].
  * </pre>
  *
  * Protobuf type {@code google.cloud.vectorsearch.v1beta.ImportDataObjectsMetadata}
@@ -407,7 +408,8 @@ public final class ImportDataObjectsMetadata extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Metadata for [DataObjectService.ImportDataObjects][].
+   * Metadata for
+   * [VectorSearchService.ImportDataObjects][google.cloud.vectorsearch.v1beta.VectorSearchService.ImportDataObjects].
    * </pre>
    *
    * Protobuf type {@code google.cloud.vectorsearch.v1beta.ImportDataObjectsMetadata}

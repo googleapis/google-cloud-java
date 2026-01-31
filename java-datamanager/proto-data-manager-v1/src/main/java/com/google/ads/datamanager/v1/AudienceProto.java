@@ -75,12 +75,12 @@ public final class AudienceProto extends com.google.protobuf.GeneratedFile {
           + "google.ads.datamanager.v1.ConsentB\003\340A\001B\006"
           + "\n\004data\"!\n\010PairData\022\025\n\010pair_ids\030\001 \003(\tB\003\340A"
           + "\002\"%\n\nMobileData\022\027\n\nmobile_ids\030\001 \003(\tB\003\340A\002"
-          + "B\315\001\n\035com.google.ads.datamanager.v1B\rAudi"
-          + "enceProtoP\001ZDgoogle.golang.org/genproto/"
-          + "googleapis/ads/datamanager/v1;datamanage"
-          + "r\252\002\031Google.Ads.DataManager.V1\312\002\031Google\\A"
-          + "ds\\DataManager\\V1\352\002\034Google::Ads::DataMan"
-          + "ager::V1b\006proto3"
+          + "B\312\001\n\035com.google.ads.datamanager.v1B\rAudi"
+          + "enceProtoP\001ZAcloud.google.com/go/dataman"
+          + "ager/apiv1/datamanagerpb;datamanagerpb\252\002"
+          + "\031Google.Ads.DataManager.V1\312\002\031Google\\Ads\\"
+          + "DataManager\\V1\352\002\034Google::Ads::DataManage"
+          + "r::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

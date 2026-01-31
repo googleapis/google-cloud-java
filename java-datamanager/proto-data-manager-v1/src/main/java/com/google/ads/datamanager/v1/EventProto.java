@@ -126,11 +126,11 @@ public final class EventProto extends com.google.protobuf.GeneratedFile {
           + "\003APP\020\002\022\014\n"
           + "\010IN_STORE\020\003\022\t\n"
           + "\005PHONE\020\004\022\t\n"
-          + "\005OTHER\020\005B\312\001\n"
+          + "\005OTHER\020\005B\307\001\n"
           + "\035com.google.ads.datamanager.v1B\n"
-          + "EventProtoP\001ZDgoogle.golang.org/genproto/googleapis/ads/datamanager/v1;datamana"
-          + "ger\252\002\031Google.Ads.DataManager.V1\312\002\031Google"
-          + "\\Ads\\DataManager\\V1\352\002\034Google::Ads::DataManager::V1b\006proto3"
+          + "EventProtoP\001ZAcloud.google.com/go/datamanager/apiv1/datamanagerpb;datamanagerpb"
+          + "\252\002\031Google.Ads.DataManager.V1\312\002\031Google\\Ad"
+          + "s\\DataManager\\V1\352\002\034Google::Ads::DataManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

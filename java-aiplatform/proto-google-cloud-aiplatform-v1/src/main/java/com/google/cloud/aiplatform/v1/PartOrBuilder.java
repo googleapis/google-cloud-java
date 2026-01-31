@@ -411,6 +411,46 @@ public interface PartOrBuilder
    */
   com.google.cloud.aiplatform.v1.VideoMetadataOrBuilder getVideoMetadataOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * per part media resolution.
+   * Media resolution for the input media.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.Part.MediaResolution media_resolution = 12;</code>
+   *
+   * @return Whether the mediaResolution field is set.
+   */
+  boolean hasMediaResolution();
+
+  /**
+   *
+   *
+   * <pre>
+   * per part media resolution.
+   * Media resolution for the input media.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.Part.MediaResolution media_resolution = 12;</code>
+   *
+   * @return The mediaResolution.
+   */
+  com.google.cloud.aiplatform.v1.Part.MediaResolution getMediaResolution();
+
+  /**
+   *
+   *
+   * <pre>
+   * per part media resolution.
+   * Media resolution for the input media.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.Part.MediaResolution media_resolution = 12;</code>
+   */
+  com.google.cloud.aiplatform.v1.Part.MediaResolutionOrBuilder getMediaResolutionOrBuilder();
+
   com.google.cloud.aiplatform.v1.Part.DataCase getDataCase();
 
   com.google.cloud.aiplatform.v1.Part.MetadataCase getMetadataCase();

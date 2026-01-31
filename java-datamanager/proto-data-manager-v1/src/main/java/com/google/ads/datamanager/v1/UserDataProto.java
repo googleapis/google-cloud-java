@@ -76,11 +76,11 @@ public final class UserDataProto extends com.google.protobuf.GeneratedFile {
           + "given_name\030\001 \001(\tB\003\340A\002\022\030\n"
           + "\013family_name\030\002 \001(\tB\003\340A\002\022\030\n"
           + "\013region_code\030\003 \001(\tB\003\340A\002\022\030\n"
-          + "\013postal_code\030\004 \001(\tB\003\340A\002B\315\001\n"
+          + "\013postal_code\030\004 \001(\tB\003\340A\002B\312\001\n"
           + "\035com.google.ads.datamanager.v1B\r"
-          + "UserDataProtoP\001ZDgoogle.golang.org/genproto/googleapis/ads/datamanager/v1;da"
-          + "tamanager\252\002\031Google.Ads.DataManager.V1\312\002\031"
-          + "Google\\Ads\\DataManager\\V1\352\002\034Google::Ads::DataManager::V1b\006proto3"
+          + "UserDataProtoP\001ZAcloud.google.com/go/datamanager/apiv1/datamanagerpb;dataman"
+          + "agerpb\252\002\031Google.Ads.DataManager.V1\312\002\031Goo"
+          + "gle\\Ads\\DataManager\\V1\352\002\034Google::Ads::DataManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
