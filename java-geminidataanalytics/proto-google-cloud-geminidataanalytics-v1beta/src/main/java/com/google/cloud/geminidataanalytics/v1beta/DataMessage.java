@@ -324,7 +324,7 @@ public final class DataMessage extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.DataMessage.generated_looker_query is
-   *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=537
+   *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=545
    * @return Whether the generatedLookerQuery field is set.
    */
   @java.lang.Override
@@ -346,7 +346,7 @@ public final class DataMessage extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.DataMessage.generated_looker_query is
-   *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=537
+   *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=545
    * @return The generatedLookerQuery.
    */
   @java.lang.Override
@@ -1513,7 +1513,7 @@ public final class DataMessage extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.DataMessage.generated_looker_query is
-     *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=537
+     *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=545
      * @return Whether the generatedLookerQuery field is set.
      */
     @java.lang.Override
@@ -1535,7 +1535,7 @@ public final class DataMessage extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.DataMessage.generated_looker_query is
-     *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=537
+     *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=545
      * @return The generatedLookerQuery.
      */
     @java.lang.Override

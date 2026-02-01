@@ -174,4 +174,99 @@ public interface DataResultOrBuilder
    * </code>
    */
   com.google.protobuf.StructOrBuilder getDataOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Formatted representation of the data, when applicable.
+   * Each row is a struct that directly corresponds to the row at the same index
+   * within the `data` field. Its values are string representations of the
+   * original data, formatted according to data source specifications (e.g.,
+   * "$1,234.56" for currency). Columns without formatting will default to
+   * their raw value representation. If no columns have formatting rules, this
+   * field will be empty.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.protobuf.Struct formatted_data = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.protobuf.Struct> getFormattedDataList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Formatted representation of the data, when applicable.
+   * Each row is a struct that directly corresponds to the row at the same index
+   * within the `data` field. Its values are string representations of the
+   * original data, formatted according to data source specifications (e.g.,
+   * "$1,234.56" for currency). Columns without formatting will default to
+   * their raw value representation. If no columns have formatting rules, this
+   * field will be empty.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.protobuf.Struct formatted_data = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.Struct getFormattedData(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Formatted representation of the data, when applicable.
+   * Each row is a struct that directly corresponds to the row at the same index
+   * within the `data` field. Its values are string representations of the
+   * original data, formatted according to data source specifications (e.g.,
+   * "$1,234.56" for currency). Columns without formatting will default to
+   * their raw value representation. If no columns have formatting rules, this
+   * field will be empty.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.protobuf.Struct formatted_data = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getFormattedDataCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Formatted representation of the data, when applicable.
+   * Each row is a struct that directly corresponds to the row at the same index
+   * within the `data` field. Its values are string representations of the
+   * original data, formatted according to data source specifications (e.g.,
+   * "$1,234.56" for currency). Columns without formatting will default to
+   * their raw value representation. If no columns have formatting rules, this
+   * field will be empty.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.protobuf.Struct formatted_data = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.protobuf.StructOrBuilder> getFormattedDataOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Formatted representation of the data, when applicable.
+   * Each row is a struct that directly corresponds to the row at the same index
+   * within the `data` field. Its values are string representations of the
+   * original data, formatted according to data source specifications (e.g.,
+   * "$1,234.56" for currency). Columns without formatting will default to
+   * their raw value representation. If no columns have formatting rules, this
+   * field will be empty.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.protobuf.Struct formatted_data = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.StructOrBuilder getFormattedDataOrBuilder(int index);
 }
