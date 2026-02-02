@@ -148,6 +148,7 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
         firestoreBuilder.runQuerySettings().retrySettings().setMaxAttempts(5);
         firestoreBuilder.runAggregationQuerySettings().retrySettings().setMaxAttempts(5);
         firestoreBuilder.batchGetDocumentsSettings().retrySettings().setMaxAttempts(5);
+        firestoreBuilder.executePipelineSettings().retrySettings().setMaxAttempts(5);
       } else {
         firestoreBuilder.applyToAllUnaryMethods(
             builder -> {
@@ -158,6 +159,7 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
         firestoreBuilder.runQuerySettings().setRetrySettings(retrySettings);
         firestoreBuilder.runAggregationQuerySettings().setRetrySettings(retrySettings);
         firestoreBuilder.batchGetDocumentsSettings().setRetrySettings(retrySettings);
+        firestoreBuilder.executePipelineSettings().setRetrySettings(retrySettings);
       }
 
       ApiTracerFactory apiTracerFactory = options.getApiTracerFactory();

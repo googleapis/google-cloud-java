@@ -38,6 +38,8 @@ import com.google.firestore.v1.BeginTransactionRequest;
 import com.google.firestore.v1.BeginTransactionResponse;
 import com.google.firestore.v1.CommitRequest;
 import com.google.firestore.v1.CommitResponse;
+import com.google.firestore.v1.ExecutePipelineRequest;
+import com.google.firestore.v1.ExecutePipelineResponse;
 import com.google.firestore.v1.ListDocumentsRequest;
 import com.google.firestore.v1.ListDocumentsResponse;
 import com.google.firestore.v1.PartitionQueryRequest;
@@ -207,6 +209,18 @@ public class GrpcFirestoreRpcTest {
     CallableRetryData actual = getRetryData(grpcFirestoreRpc.runAggregationQueryCallable());
     ServerStreamingCallSettings<RunAggregationQueryRequest, RunAggregationQueryResponse>
         expectedSettings = defaultStubSettings.runAggregationQuerySettings();
+    assertThat(actual.retrySettings)
+        .isEqualTo(withMaxAttempt5(expectedSettings.getRetrySettings()));
+    assertThat(actual.retryableCodes)
+        .containsExactlyElementsIn(expectedSettings.getRetryableCodes());
+  }
+
+  @Test
+  public void executePipelineCallableFollowsServiceConfig() throws Exception {
+    GrpcFirestoreRpc grpcFirestoreRpc = new GrpcFirestoreRpc(firestoreOptionsWithoutOverride);
+    CallableRetryData actual = getRetryData(grpcFirestoreRpc.executePipelineCallable());
+    ServerStreamingCallSettings<ExecutePipelineRequest, ExecutePipelineResponse> expectedSettings =
+        defaultStubSettings.executePipelineSettings();
     assertThat(actual.retrySettings)
         .isEqualTo(withMaxAttempt5(expectedSettings.getRetrySettings()));
     assertThat(actual.retryableCodes)
