@@ -188,6 +188,7 @@ find "$SOURCE_REPO_NAME" -maxdepth 1 -name "*.md" ! -name "CHANGELOG.md" ! -name
 
 # 7. Commit the migration
 echo "Committing migration..."
+git add "$SOURCE_REPO_NAME"
 git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): migrate $SOURCE_REPO_NAME into monorepo"
 COMMIT_COUNT=$((COMMIT_COUNT + 1))
 
@@ -242,6 +243,7 @@ if [ -d "$SOURCE_REPO_NAME/.github/workflows" ]; then
     
     # Cleanup empty .github directory if it exists
     rm -rf "$SOURCE_REPO_NAME/.github"
+    git add -- "$SOURCE_REPO_NAME/.github"
     
     echo "Committing workflow migration..."
     git add .github/workflows
@@ -313,13 +315,13 @@ if [ -f "$SOURCE_DIR/owlbot.py" ]; then
 fi
 
 # 7.9 Fix copyright headers in Java files
-echo "Fixing copyright headers in Java files..."
-python3 "$FIX_COPYRIGHT_SCRIPT" "$SOURCE_REPO_NAME"
+# echo "Fixing copyright headers in Java files..."
+# python3 "$FIX_COPYRIGHT_SCRIPT" "$SOURCE_REPO_NAME"
 
-echo "Committing copyright header fixes..."
-git add "$SOURCE_REPO_NAME"
-git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): update copyright headers to 2026 Google LLC"
-COMMIT_COUNT=$((COMMIT_COUNT + 1))
+# echo "Committing copyright header fixes..."
+# git add "$SOURCE_REPO_NAME"
+# git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): update copyright headers to 2026 Google LLC"
+# COMMIT_COUNT=$((COMMIT_COUNT + 1))
 
 # 7.11 Modernize root pom.xml
 echo "Modernizing root pom.xml..."
