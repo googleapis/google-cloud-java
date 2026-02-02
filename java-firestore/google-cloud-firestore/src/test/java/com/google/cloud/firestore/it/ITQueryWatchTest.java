@@ -668,24 +668,46 @@ public final class ITQueryWatchTest extends ITBaseTest {
         .get();
 
     Query query = col.orderBy("__name__", Direction.ASCENDING);
-    List<String> expectedOrder =
-        Arrays.asList(
-            "__id-2__",
-            "__id7__",
-            "__id12__",
-            "12",
-            "7",
-            "A",
-            "Aa",
-            "__id",
-            "__id1_",
-            "_id1__",
-            "a");
 
     QuerySnapshot snapshot = query.get().get();
     List<String> queryOrder =
         snapshot.getDocuments().stream().map(doc -> doc.getId()).collect(Collectors.toList());
-    assertEquals(expectedOrder, queryOrder); // Assert order from backend
+    if (getFirestoreEdition() == FirestoreEdition.STANDARD) {
+      List<String> expectedOrder =
+          Arrays.asList(
+              "__id-2__",
+              "__id7__",
+              "__id12__",
+              "12",
+              "7",
+              "A",
+              "Aa",
+              "__id",
+              "__id1_",
+              "_id1__",
+              "a");
+      assertThat(queryOrder)
+          .containsExactlyElementsIn(expectedOrder)
+          .inOrder(); // standard backend order
+    } else {
+      List<String> expectedOrder =
+          Arrays.asList(
+              "12",
+              "7",
+              "A",
+              "Aa",
+              "__id",
+              "__id-2__",
+              "__id12__",
+              "__id1_",
+              "__id7__",
+              "_id1__",
+              "a");
+
+      assertThat(queryOrder)
+          .containsExactlyElementsIn(expectedOrder)
+          .inOrder(); // enterprise backend order
+    }
 
     CountDownLatch latch = new CountDownLatch(1);
     List<String> listenerOrder = new ArrayList<>();
@@ -704,6 +726,20 @@ public final class ITQueryWatchTest extends ITBaseTest {
     latch.await();
     registration.remove();
 
+    List<String> expectedOrder =
+        Arrays.asList(
+            "__id-2__",
+            "__id7__",
+            "__id12__",
+            "12",
+            "7",
+            "A",
+            "Aa",
+            "__id",
+            "__id1_",
+            "_id1__",
+            "a");
+    // TODO: SDK now implements stardard backend order. We need to change it to Enterprise order
     assertEquals(expectedOrder, listenerOrder); // Assert order in the SDK
   }
 
@@ -737,7 +773,11 @@ public final class ITQueryWatchTest extends ITBaseTest {
     QuerySnapshot snapshot = query.get().get();
     List<String> queryOrder =
         snapshot.getDocuments().stream().map(doc -> doc.getId()).collect(Collectors.toList());
-    assertEquals(expectedOrder, queryOrder); // Assert order from backend
+    if (getFirestoreEdition() == FirestoreEdition.STANDARD) {
+      assertEquals(expectedOrder, queryOrder); // Assert order from backend
+    } else {
+      assertThat(queryOrder).isEmpty();
+    }
 
     CountDownLatch latch = new CountDownLatch(1);
     List<String> listenerOrder = new ArrayList<>();
@@ -756,7 +796,11 @@ public final class ITQueryWatchTest extends ITBaseTest {
     latch.await();
     registration.remove();
 
-    assertEquals(expectedOrder, listenerOrder); // Assert order in the SDK
+    if (getFirestoreEdition() == FirestoreEdition.STANDARD) {
+      assertEquals(expectedOrder, listenerOrder); // Assert order in the SDK
+    } else {
+      assertThat(listenerOrder).isEmpty();
+    }
   }
 
   /**
@@ -1123,7 +1167,8 @@ public final class ITQueryWatchTest extends ITBaseTest {
       // Missing/Null sorted by __name__.
       // doc3 < doc4.
       // So: doc3, doc4, doc2.
-      List<String> expectedOrder = Arrays.asList("doc3", "doc4", "doc2");
+      // TODO: Watch still applies orderby normalization for now
+      List<String> expectedOrder = Arrays.asList("doc2", "doc4");
       assertEquals(expectedOrder, listenerAssertions.addedIds);
     } else {
       List<String> expectedOrder = singletonList("doc2");

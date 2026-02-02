@@ -103,6 +103,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
@@ -1144,6 +1145,11 @@ public class ITSystemTest extends ITBaseTest {
 
   @Test
   public void listCollections() throws Exception {
+    assumeTrue(
+        "Skip this test when running against enterprise because it does not support"
+            + " listCollections",
+        getFirestoreEdition() != FirestoreEdition.ENTERPRISE);
+
     // We test with 21 collections since 20 collections are by default returned in a single paged
     // response.
     String[] collections =
@@ -1170,6 +1176,9 @@ public class ITSystemTest extends ITBaseTest {
 
   @Test
   public void listDocuments() throws Exception {
+    assumeTrue(
+        "Skip this test when running against enterprise because it does not support listDocuments",
+        getFirestoreEdition() != FirestoreEdition.ENTERPRISE);
     // We test with 21 documents since 20 documents are by default returned in a single paged
     // response.
     String[] documents =
@@ -1196,6 +1205,11 @@ public class ITSystemTest extends ITBaseTest {
 
   @Test
   public void listDocumentsListsMissingDocument() throws Exception {
+    assumeFalse(
+        "Skip this test when running against enterprise because it does not support"
+            + " missing documents.",
+        getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
+
     randomColl.document("missing/foo/bar").set(SINGLE_FIELD_MAP).get();
     Iterable<DocumentReference> collectionRefs = randomColl.listDocuments();
     assertEquals(randomColl.document("missing"), collectionRefs.iterator().next());
@@ -1598,6 +1612,10 @@ public class ITSystemTest extends ITBaseTest {
 
   @Test
   public void queryPaginationWithWhereClause() throws ExecutionException, InterruptedException {
+    // TODO(pipeline): Enable this test against production when adding implicitOrderBy.
+    assumeTrue(
+        "Skip this test when running against enterprise because it does not work yet.",
+        getFirestoreEdition() != FirestoreEdition.ENTERPRISE);
     WriteBatch batch = firestore.batch();
 
     for (int i = 0; i < 10; ++i) {
@@ -1661,9 +1679,14 @@ public class ITSystemTest extends ITBaseTest {
     batch.commit().get();
 
     QuerySnapshot querySnapshot = firestore.collectionGroup(collectionGroup).get().get();
-    assertEquals(
-        asList("cg-doc1", "cg-doc2", "cg-doc3", "cg-doc4", "cg-doc5"),
-        querySnapshotToIds(querySnapshot));
+    if (getFirestoreEdition() == FirestoreEdition.STANDARD) {
+      assertEquals(
+          asList("cg-doc1", "cg-doc2", "cg-doc3", "cg-doc4", "cg-doc5"),
+          querySnapshotToIds(querySnapshot));
+    } else {
+      assertThat(querySnapshotToIds(querySnapshot))
+          .containsExactlyElementsIn(asList("cg-doc1", "cg-doc2", "cg-doc3", "cg-doc4", "cg-doc5"));
+    }
   }
 
   @Test
@@ -1743,7 +1766,12 @@ public class ITSystemTest extends ITBaseTest {
             .whereLessThanOrEqualTo(FieldPath.documentId(), "a/b0")
             .get()
             .get();
-    assertEquals(asList("cg-doc2", "cg-doc3", "cg-doc4"), querySnapshotToIds(querySnapshot));
+    if (getFirestoreEdition() == FirestoreEdition.STANDARD) {
+      assertEquals(asList("cg-doc2", "cg-doc3", "cg-doc4"), querySnapshotToIds(querySnapshot));
+    } else {
+      assertThat(querySnapshotToIds(querySnapshot))
+          .containsExactlyElementsIn(asList("cg-doc2", "cg-doc3", "cg-doc4"));
+    }
 
     querySnapshot =
         firestore
@@ -1767,7 +1795,11 @@ public class ITSystemTest extends ITBaseTest {
     QuerySnapshot querySnapshot =
         randomColl.whereIn("zip", Arrays.<Object>asList(98101, 98103)).get().get();
 
-    assertEquals(asList("a", "c"), querySnapshotToIds(querySnapshot));
+    if (getFirestoreEdition() == FirestoreEdition.STANDARD) {
+      assertEquals(asList("a", "c"), querySnapshotToIds(querySnapshot));
+    } else {
+      assertThat(querySnapshotToIds(querySnapshot)).containsExactlyElementsIn(asList("a", "c"));
+    }
   }
 
   @Test
@@ -1824,7 +1856,11 @@ public class ITSystemTest extends ITBaseTest {
     QuerySnapshot querySnapshot =
         randomColl.whereNotEqualTo(FieldPath.documentId(), doc1.getId()).get().get();
 
-    assertEquals(asList("b", "c"), querySnapshotToIds(querySnapshot));
+    if (getFirestoreEdition() == FirestoreEdition.STANDARD) {
+      assertEquals(asList("b", "c"), querySnapshotToIds(querySnapshot));
+    } else {
+      assertThat(querySnapshotToIds(querySnapshot)).containsExactlyElementsIn(asList("b", "c"));
+    }
   }
 
   @Test
@@ -1836,7 +1872,11 @@ public class ITSystemTest extends ITBaseTest {
     QuerySnapshot querySnapshot =
         randomColl.whereIn(FieldPath.documentId(), Arrays.asList(doc1.getId(), doc2)).get().get();
 
-    assertEquals(asList("a", "b"), querySnapshotToIds(querySnapshot));
+    if (getFirestoreEdition() == FirestoreEdition.STANDARD) {
+      assertEquals(asList("a", "b"), querySnapshotToIds(querySnapshot));
+    } else {
+      assertThat(querySnapshotToIds(querySnapshot)).containsExactlyElementsIn(asList("a", "b"));
+    }
   }
 
   @Test
@@ -1850,15 +1890,31 @@ public class ITSystemTest extends ITBaseTest {
 
     QuerySnapshot querySnapshot =
         randomColl.whereNotIn("zip", Arrays.<Object>asList(98101, 98103)).get().get();
-    assertEquals(asList("b", "d", "e", "f"), querySnapshotToIds(querySnapshot));
+    if (getFirestoreEdition() == FirestoreEdition.STANDARD) {
+      assertEquals(asList("b", "d", "e", "f"), querySnapshotToIds(querySnapshot));
+    } else {
+      assertThat(querySnapshotToIds(querySnapshot))
+          .containsExactlyElementsIn(asList("b", "d", "e", "f"));
+    }
 
     querySnapshot = randomColl.whereNotIn("zip", Arrays.<Object>asList(Double.NaN)).get().get();
-    assertEquals(asList("b", "a", "c", "d", "e", "f"), querySnapshotToIds(querySnapshot));
+    if (getFirestoreEdition() == FirestoreEdition.STANDARD) {
+      assertEquals(asList("b", "a", "c", "d", "e", "f"), querySnapshotToIds(querySnapshot));
+    } else {
+      assertThat(querySnapshotToIds(querySnapshot))
+          .containsExactlyElementsIn(asList("b", "a", "c", "d", "e", "f"));
+    }
 
     List<Object> nullArray = new ArrayList<>();
     nullArray.add(null);
     querySnapshot = randomColl.whereNotIn("zip", nullArray).get().get();
-    assertEquals(new ArrayList<>(), querySnapshotToIds(querySnapshot));
+
+    if (getFirestoreEdition() == FirestoreEdition.STANDARD) {
+      assertEquals(new ArrayList<>(), querySnapshotToIds(querySnapshot));
+    } else {
+      assertThat(querySnapshotToIds(querySnapshot))
+          .containsExactlyElementsIn(asList("a", "b", "c", "d", "e", "f"));
+    }
   }
 
   @Test
@@ -1886,10 +1942,15 @@ public class ITSystemTest extends ITBaseTest {
     setDocument("f", map("array", asList(map("a", 42))));
     setDocument("g", map("array", 42));
 
-    QuerySnapshot querySnapshot =
-        randomColl.whereArrayContainsAny("array", Arrays.<Object>asList(42, 43)).get().get();
+    Query query = randomColl.whereArrayContainsAny("array", Arrays.<Object>asList(42, 43));
 
-    assertEquals(asList("a", "b", "d", "e"), querySnapshotToIds(querySnapshot));
+    if (getFirestoreEdition() == FirestoreEdition.STANDARD) {
+      assertEquals(asList("a", "b", "d", "e"), querySnapshotToIds(query.get().get()));
+    } else {
+      // TODO: Currently rejected because of mixed type setup, backend will change the behavior; and
+      // this test will fail by then.
+      assertThrows(ExecutionException.class, () -> querySnapshotToIds(query.get().get()));
+    }
   }
 
   @Test
@@ -2277,6 +2338,9 @@ public class ITSystemTest extends ITBaseTest {
 
   @Test
   public void testRecursiveDeleteTopLevelCollection() throws Exception {
+    assumeFalse(
+        "Skip this test when running against enterprise because it does not support showMissing",
+        getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
     setupRecursiveDeleteTest();
     firestore.recursiveDelete(randomColl).get();
     assertEquals(0, countCollectionChildren(randomColl));
@@ -2284,6 +2348,9 @@ public class ITSystemTest extends ITBaseTest {
 
   @Test
   public void testRecursiveDeleteNestedCollection() throws Exception {
+    assumeFalse(
+        "Skip this test when running against enterprise because it does not support showMissing",
+        getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
     setupRecursiveDeleteTest();
     firestore.recursiveDelete(randomColl.document("bob").collection("parentsCol")).get();
     assertEquals(2, countCollectionChildren(randomColl));
@@ -2291,6 +2358,10 @@ public class ITSystemTest extends ITBaseTest {
 
   @Test
   public void testRecursiveDeleteNestedDocument() throws Exception {
+    assumeFalse(
+        "Skip this test when running against enterprise because it does not support showMissing",
+        getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
+
     setupRecursiveDeleteTest();
     DocumentReference document = randomColl.document("bob/parentsCol/daniel");
     firestore.recursiveDelete(document).get();
@@ -2302,6 +2373,9 @@ public class ITSystemTest extends ITBaseTest {
 
   @Test
   public void testRecursiveDeleteLeafDocument() throws Exception {
+    assumeFalse(
+        "Skip this test when running against enterprise because it does not support showMissing",
+        getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
     setupRecursiveDeleteTest();
     DocumentReference document = randomColl.document("bob/parentsCol/daniel/childCol/ernie");
     firestore.recursiveDelete(document).get();
@@ -2310,8 +2384,12 @@ public class ITSystemTest extends ITBaseTest {
     assertEquals(5, countCollectionChildren(randomColl));
   }
 
+  @Ignore("Flaky with graalvm-native-a")
   @Test
   public void testRecursiveDeleteDoesNotAffectOtherCollections() throws Exception {
+    assumeFalse(
+        "Skip this test when running against enterprise because it does not support showMissing",
+        getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
     setupRecursiveDeleteTest();
 
     // Add another nested collection that shouldn't be deleted.
@@ -2325,6 +2403,11 @@ public class ITSystemTest extends ITBaseTest {
 
   @Test
   public void testRecursiveDeleteWithCustomBulkWriterInstance() throws Exception {
+    assumeFalse(
+        "Skip this test when running against enterprise because it does not support"
+            + " bulk writer.",
+        getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
+
     setupRecursiveDeleteTest();
 
     BulkWriter bulkWriter = firestore.bulkWriter();

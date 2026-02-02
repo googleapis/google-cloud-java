@@ -21,6 +21,7 @@ import static com.google.cloud.firestore.LocalFirestoreHelper.map;
 import static com.google.cloud.firestore.it.TestHelper.await;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.*;
+import static org.junit.Assume.assumeTrue;
 
 import com.google.cloud.firestore.*;
 import java.time.Duration;
@@ -826,6 +827,9 @@ public class ITQueryFindNearestTest extends ITBaseTest {
 
   @Test
   public void testVectorQueryPlan() throws Exception {
+    assumeTrue(
+        "Skip this test when running against enterprise because it does not support explain yet",
+        getFirestoreEdition() != FirestoreEdition.ENTERPRISE);
     CollectionReference collection =
         testCollectionWithDocs(
             map(
@@ -865,6 +869,9 @@ public class ITQueryFindNearestTest extends ITBaseTest {
 
   @Test
   public void testVectorQueryProfile() throws Exception {
+    assumeTrue(
+        "Skip this test when running against enterprise because it does not support explain yet",
+        getFirestoreEdition() != FirestoreEdition.ENTERPRISE);
     CollectionReference collection =
         testCollectionWithDocs(
             map(

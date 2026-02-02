@@ -16,7 +16,6 @@
 
 package com.google.cloud.firestore;
 
-import static com.google.cloud.firestore.pipeline.expressions.Expression.and;
 import static com.google.cloud.firestore.telemetry.TelemetryConstants.METHOD_NAME_RUN_AGGREGATION_QUERY;
 import static com.google.cloud.firestore.telemetry.TraceUtil.ATTRIBUTE_KEY_ATTEMPT;
 
@@ -29,7 +28,6 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StreamController;
 import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.pipeline.expressions.AliasedAggregate;
-import com.google.cloud.firestore.pipeline.expressions.BooleanExpression;
 import com.google.cloud.firestore.telemetry.MetricsUtil.MetricsContext;
 import com.google.cloud.firestore.telemetry.TelemetryConstants;
 import com.google.cloud.firestore.telemetry.TelemetryConstants.MetricType;
@@ -53,7 +51,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
-import java.util.stream.Collectors;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
@@ -90,22 +87,6 @@ public class AggregateQuery {
 
   Pipeline pipeline() {
     Pipeline pipeline = getQuery().pipeline();
-
-    List<BooleanExpression> existsExprs =
-        this.aggregateFieldList.stream()
-            .map(PipelineUtils::toPipelineExistsExpr)
-            .filter(Objects::nonNull)
-            .collect(Collectors.toList());
-    if (existsExprs.size() == 1) {
-      pipeline = pipeline.where(existsExprs.get(0));
-    } else if (existsExprs.size() > 1) {
-      pipeline =
-          pipeline.where(
-              and(
-                  existsExprs.get(0),
-                  existsExprs.subList(1, existsExprs.size()).toArray(new BooleanExpression[0])));
-    }
-
     return pipeline.aggregate(
         this.aggregateFieldList.stream()
             .map(PipelineUtils::toPipelineAggregatorTarget)

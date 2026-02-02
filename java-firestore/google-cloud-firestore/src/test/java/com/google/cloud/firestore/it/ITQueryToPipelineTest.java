@@ -609,7 +609,11 @@ public class ITQueryToPipelineTest extends ITBaseTest {
     Query query1 = collRef.whereNotIn("bar", Arrays.asList(2L)).orderBy("foo");
     List<PipelineResult> snapshot =
         firestore.pipeline().createFrom(query1).execute().get().getResults();
-    verifyResults(snapshot, map("foo", 3L, "bar", 10L));
+    if (getFirestoreEdition() == FirestoreEdition.ENTERPRISE) {
+      verifyResults(snapshot, map("foo", 2L), map("foo", 3L, "bar", 10L));
+    } else {
+      verifyResults(snapshot, map("foo", 3L, "bar", 10L));
+    }
   }
 
   @Test

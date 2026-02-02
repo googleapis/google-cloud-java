@@ -1161,7 +1161,8 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .createFrom(collection)
             .where(
-                Expression.notEqualAny("genre", Lists.newArrayList("Romance", "Dystopian", null)))
+                Expression.notEqualAny(
+                    "genre", Lists.newArrayList("Science Fiction", "Romance", "Dystopian", null)))
             .select("genre")
             .distinct("genre")
             .execute()
@@ -1169,7 +1170,11 @@ public class ITPipelineTest extends ITBaseTest {
             .getResults();
     assertThat(data(results))
         .containsExactly(
-            map("genre", "Science Fiction"),
+            // This is somewhat surprising because the pipeline did ask specifically for genre not
+            // equal to null,
+            // however at the later distinct stage, UNSET is grouped as null and thus null appears
+            // in the result.
+            map("genre", null),
             map("genre", "Magical Realism"),
             map("genre", "Fantasy"),
             map("genre", "Psychological Thriller"),
@@ -1236,10 +1241,9 @@ public class ITPipelineTest extends ITBaseTest {
             .select(
                 field("rating").equal(nullValue()).as("ratingIsNull"),
                 field("rating").equal(Double.NaN).as("ratingIsNaN"),
+                // arrayGet("title", 0) evaluates to UNSET so it is not an error
                 arrayGet("title", 0).isError().as("isError"),
-                arrayGet("title", 0)
-                    .ifError(constant("was error"), constant("was not error"))
-                    .as("ifError"),
+                arrayGet("title", 0).ifError(constant("was error")).as("ifError"),
                 field("foo").isAbsent().as("isAbsent"),
                 field("title").notEqual(nullValue()).as("titleIsNotNull"),
                 field("cost").notEqual(Double.NaN).as("costIsNotNan"),
@@ -1259,8 +1263,6 @@ public class ITPipelineTest extends ITBaseTest {
                     false,
                     "isError",
                     false,
-                    "ifError",
-                    "was not error",
                     "isAbsent",
                     true,
                     "titleIsNotNull",
