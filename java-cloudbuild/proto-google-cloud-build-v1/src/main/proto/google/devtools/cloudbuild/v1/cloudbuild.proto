@@ -582,7 +582,7 @@ message StorageSource {
     // Unspecified defaults to GSUTIL.
     SOURCE_FETCHER_UNSPECIFIED = 0;
 
-    // Use the "gsutil" tool to download the source file.
+    // Use the "gcloud storage" tool to download the source file.
     GSUTIL = 1;
 
     // Use the Cloud Storage Fetcher tool to download the source file.
