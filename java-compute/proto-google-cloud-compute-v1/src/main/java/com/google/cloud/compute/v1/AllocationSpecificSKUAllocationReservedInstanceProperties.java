@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Properties of the SKU instances being reserved. Next ID: 9
+ * Properties of the SKU instances being reserved.
+ * Next ID: 9
  * </pre>
  *
  * Protobuf type {@code
@@ -168,7 +169,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
    *
    *
    * <pre>
-   * Specifies amount of local ssd to reserve with each instance. The type of disk is local-ssd.
+   * Specifies amount of local ssd to reserve with each instance. The type
+   * of disk is local-ssd.
    * </pre>
    *
    * <code>
@@ -187,7 +189,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
    *
    *
    * <pre>
-   * Specifies amount of local ssd to reserve with each instance. The type of disk is local-ssd.
+   * Specifies amount of local ssd to reserve with each instance. The type
+   * of disk is local-ssd.
    * </pre>
    *
    * <code>
@@ -207,7 +210,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
    *
    *
    * <pre>
-   * Specifies amount of local ssd to reserve with each instance. The type of disk is local-ssd.
+   * Specifies amount of local ssd to reserve with each instance. The type
+   * of disk is local-ssd.
    * </pre>
    *
    * <code>
@@ -223,7 +227,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
    *
    *
    * <pre>
-   * Specifies amount of local ssd to reserve with each instance. The type of disk is local-ssd.
+   * Specifies amount of local ssd to reserve with each instance. The type
+   * of disk is local-ssd.
    * </pre>
    *
    * <code>
@@ -241,7 +246,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
    *
    *
    * <pre>
-   * Specifies amount of local ssd to reserve with each instance. The type of disk is local-ssd.
+   * Specifies amount of local ssd to reserve with each instance. The type
+   * of disk is local-ssd.
    * </pre>
    *
    * <code>
@@ -264,7 +270,9 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
    *
    *
    * <pre>
-   * An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
+   * An opaque location hint used to place the allocation close to other
+   * resources.
+   * This field is for use by internal tools that use the public API.
    * </pre>
    *
    * <code>optional string location_hint = 350519505;</code>
@@ -280,7 +288,9 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
    *
    *
    * <pre>
-   * An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
+   * An opaque location hint used to place the allocation close to other
+   * resources.
+   * This field is for use by internal tools that use the public API.
    * </pre>
    *
    * <code>optional string location_hint = 350519505;</code>
@@ -304,7 +314,9 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
    *
    *
    * <pre>
-   * An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
+   * An opaque location hint used to place the allocation close to other
+   * resources.
+   * This field is for use by internal tools that use the public API.
    * </pre>
    *
    * <code>optional string location_hint = 350519505;</code>
@@ -333,7 +345,9 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
    *
    *
    * <pre>
-   * Specifies type of machine (name only) which has fixed number of vCPUs and fixed amount of memory. This also includes specifying custom machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
+   * Specifies type of machine (name only) which has fixed number of vCPUs
+   * and fixed amount of memory. This also includes specifying custom
+   * machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
    * </pre>
    *
    * <code>optional string machine_type = 227711026;</code>
@@ -349,7 +363,9 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
    *
    *
    * <pre>
-   * Specifies type of machine (name only) which has fixed number of vCPUs and fixed amount of memory. This also includes specifying custom machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
+   * Specifies type of machine (name only) which has fixed number of vCPUs
+   * and fixed amount of memory. This also includes specifying custom
+   * machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
    * </pre>
    *
    * <code>optional string machine_type = 227711026;</code>
@@ -373,7 +389,9 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
    *
    *
    * <pre>
-   * Specifies type of machine (name only) which has fixed number of vCPUs and fixed amount of memory. This also includes specifying custom machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
+   * Specifies type of machine (name only) which has fixed number of vCPUs
+   * and fixed amount of memory. This also includes specifying custom
+   * machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
    * </pre>
    *
    * <code>optional string machine_type = 227711026;</code>
@@ -706,7 +724,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
    *
    *
    * <pre>
-   * Properties of the SKU instances being reserved. Next ID: 9
+   * Properties of the SKU instances being reserved.
+   * Next ID: 9
    * </pre>
    *
    * Protobuf type {@code
@@ -1488,7 +1507,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      *
      *
      * <pre>
-     * Specifies amount of local ssd to reserve with each instance. The type of disk is local-ssd.
+     * Specifies amount of local ssd to reserve with each instance. The type
+     * of disk is local-ssd.
      * </pre>
      *
      * <code>
@@ -1510,7 +1530,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      *
      *
      * <pre>
-     * Specifies amount of local ssd to reserve with each instance. The type of disk is local-ssd.
+     * Specifies amount of local ssd to reserve with each instance. The type
+     * of disk is local-ssd.
      * </pre>
      *
      * <code>
@@ -1529,7 +1550,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      *
      *
      * <pre>
-     * Specifies amount of local ssd to reserve with each instance. The type of disk is local-ssd.
+     * Specifies amount of local ssd to reserve with each instance. The type
+     * of disk is local-ssd.
      * </pre>
      *
      * <code>
@@ -1550,7 +1572,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      *
      *
      * <pre>
-     * Specifies amount of local ssd to reserve with each instance. The type of disk is local-ssd.
+     * Specifies amount of local ssd to reserve with each instance. The type
+     * of disk is local-ssd.
      * </pre>
      *
      * <code>
@@ -1579,7 +1602,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      *
      *
      * <pre>
-     * Specifies amount of local ssd to reserve with each instance. The type of disk is local-ssd.
+     * Specifies amount of local ssd to reserve with each instance. The type
+     * of disk is local-ssd.
      * </pre>
      *
      * <code>
@@ -1605,7 +1629,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      *
      *
      * <pre>
-     * Specifies amount of local ssd to reserve with each instance. The type of disk is local-ssd.
+     * Specifies amount of local ssd to reserve with each instance. The type
+     * of disk is local-ssd.
      * </pre>
      *
      * <code>
@@ -1633,7 +1658,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      *
      *
      * <pre>
-     * Specifies amount of local ssd to reserve with each instance. The type of disk is local-ssd.
+     * Specifies amount of local ssd to reserve with each instance. The type
+     * of disk is local-ssd.
      * </pre>
      *
      * <code>
@@ -1662,7 +1688,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      *
      *
      * <pre>
-     * Specifies amount of local ssd to reserve with each instance. The type of disk is local-ssd.
+     * Specifies amount of local ssd to reserve with each instance. The type
+     * of disk is local-ssd.
      * </pre>
      *
      * <code>
@@ -1687,7 +1714,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      *
      *
      * <pre>
-     * Specifies amount of local ssd to reserve with each instance. The type of disk is local-ssd.
+     * Specifies amount of local ssd to reserve with each instance. The type
+     * of disk is local-ssd.
      * </pre>
      *
      * <code>
@@ -1713,7 +1741,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      *
      *
      * <pre>
-     * Specifies amount of local ssd to reserve with each instance. The type of disk is local-ssd.
+     * Specifies amount of local ssd to reserve with each instance. The type
+     * of disk is local-ssd.
      * </pre>
      *
      * <code>
@@ -1740,7 +1769,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      *
      *
      * <pre>
-     * Specifies amount of local ssd to reserve with each instance. The type of disk is local-ssd.
+     * Specifies amount of local ssd to reserve with each instance. The type
+     * of disk is local-ssd.
      * </pre>
      *
      * <code>
@@ -1762,7 +1792,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      *
      *
      * <pre>
-     * Specifies amount of local ssd to reserve with each instance. The type of disk is local-ssd.
+     * Specifies amount of local ssd to reserve with each instance. The type
+     * of disk is local-ssd.
      * </pre>
      *
      * <code>
@@ -1784,7 +1815,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      *
      *
      * <pre>
-     * Specifies amount of local ssd to reserve with each instance. The type of disk is local-ssd.
+     * Specifies amount of local ssd to reserve with each instance. The type
+     * of disk is local-ssd.
      * </pre>
      *
      * <code>
@@ -1801,7 +1833,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      *
      *
      * <pre>
-     * Specifies amount of local ssd to reserve with each instance. The type of disk is local-ssd.
+     * Specifies amount of local ssd to reserve with each instance. The type
+     * of disk is local-ssd.
      * </pre>
      *
      * <code>
@@ -1822,7 +1855,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      *
      *
      * <pre>
-     * Specifies amount of local ssd to reserve with each instance. The type of disk is local-ssd.
+     * Specifies amount of local ssd to reserve with each instance. The type
+     * of disk is local-ssd.
      * </pre>
      *
      * <code>
@@ -1845,7 +1879,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      *
      *
      * <pre>
-     * Specifies amount of local ssd to reserve with each instance. The type of disk is local-ssd.
+     * Specifies amount of local ssd to reserve with each instance. The type
+     * of disk is local-ssd.
      * </pre>
      *
      * <code>
@@ -1866,7 +1901,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      *
      *
      * <pre>
-     * Specifies amount of local ssd to reserve with each instance. The type of disk is local-ssd.
+     * Specifies amount of local ssd to reserve with each instance. The type
+     * of disk is local-ssd.
      * </pre>
      *
      * <code>
@@ -1888,7 +1924,8 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      *
      *
      * <pre>
-     * Specifies amount of local ssd to reserve with each instance. The type of disk is local-ssd.
+     * Specifies amount of local ssd to reserve with each instance. The type
+     * of disk is local-ssd.
      * </pre>
      *
      * <code>
@@ -1931,7 +1968,9 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      *
      *
      * <pre>
-     * An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
+     * An opaque location hint used to place the allocation close to other
+     * resources.
+     * This field is for use by internal tools that use the public API.
      * </pre>
      *
      * <code>optional string location_hint = 350519505;</code>
@@ -1946,7 +1985,9 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      *
      *
      * <pre>
-     * An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
+     * An opaque location hint used to place the allocation close to other
+     * resources.
+     * This field is for use by internal tools that use the public API.
      * </pre>
      *
      * <code>optional string location_hint = 350519505;</code>
@@ -1969,7 +2010,9 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      *
      *
      * <pre>
-     * An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
+     * An opaque location hint used to place the allocation close to other
+     * resources.
+     * This field is for use by internal tools that use the public API.
      * </pre>
      *
      * <code>optional string location_hint = 350519505;</code>
@@ -1992,7 +2035,9 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      *
      *
      * <pre>
-     * An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
+     * An opaque location hint used to place the allocation close to other
+     * resources.
+     * This field is for use by internal tools that use the public API.
      * </pre>
      *
      * <code>optional string location_hint = 350519505;</code>
@@ -2014,7 +2059,9 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      *
      *
      * <pre>
-     * An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
+     * An opaque location hint used to place the allocation close to other
+     * resources.
+     * This field is for use by internal tools that use the public API.
      * </pre>
      *
      * <code>optional string location_hint = 350519505;</code>
@@ -2032,7 +2079,9 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      *
      *
      * <pre>
-     * An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
+     * An opaque location hint used to place the allocation close to other
+     * resources.
+     * This field is for use by internal tools that use the public API.
      * </pre>
      *
      * <code>optional string location_hint = 350519505;</code>
@@ -2057,7 +2106,9 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      *
      *
      * <pre>
-     * Specifies type of machine (name only) which has fixed number of vCPUs and fixed amount of memory. This also includes specifying custom machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
+     * Specifies type of machine (name only) which has fixed number of vCPUs
+     * and fixed amount of memory. This also includes specifying custom
+     * machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
      * </pre>
      *
      * <code>optional string machine_type = 227711026;</code>
@@ -2072,7 +2123,9 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      *
      *
      * <pre>
-     * Specifies type of machine (name only) which has fixed number of vCPUs and fixed amount of memory. This also includes specifying custom machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
+     * Specifies type of machine (name only) which has fixed number of vCPUs
+     * and fixed amount of memory. This also includes specifying custom
+     * machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
      * </pre>
      *
      * <code>optional string machine_type = 227711026;</code>
@@ -2095,7 +2148,9 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      *
      *
      * <pre>
-     * Specifies type of machine (name only) which has fixed number of vCPUs and fixed amount of memory. This also includes specifying custom machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
+     * Specifies type of machine (name only) which has fixed number of vCPUs
+     * and fixed amount of memory. This also includes specifying custom
+     * machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
      * </pre>
      *
      * <code>optional string machine_type = 227711026;</code>
@@ -2118,7 +2173,9 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      *
      *
      * <pre>
-     * Specifies type of machine (name only) which has fixed number of vCPUs and fixed amount of memory. This also includes specifying custom machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
+     * Specifies type of machine (name only) which has fixed number of vCPUs
+     * and fixed amount of memory. This also includes specifying custom
+     * machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
      * </pre>
      *
      * <code>optional string machine_type = 227711026;</code>
@@ -2140,7 +2197,9 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      *
      *
      * <pre>
-     * Specifies type of machine (name only) which has fixed number of vCPUs and fixed amount of memory. This also includes specifying custom machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
+     * Specifies type of machine (name only) which has fixed number of vCPUs
+     * and fixed amount of memory. This also includes specifying custom
+     * machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
      * </pre>
      *
      * <code>optional string machine_type = 227711026;</code>
@@ -2158,7 +2217,9 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
      *
      *
      * <pre>
-     * Specifies type of machine (name only) which has fixed number of vCPUs and fixed amount of memory. This also includes specifying custom machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
+     * Specifies type of machine (name only) which has fixed number of vCPUs
+     * and fixed amount of memory. This also includes specifying custom
+     * machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
      * </pre>
      *
      * <code>optional string machine_type = 227711026;</code>

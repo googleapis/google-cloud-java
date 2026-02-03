@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -256,6 +256,49 @@ public class DeveloperRegistrationServiceClientHttpJsonTest {
               .setName(DeveloperRegistrationName.of("[ACCOUNT]").toString())
               .build();
       client.unregisterGcp(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAccountForGcpRegistrationTest() throws Exception {
+    GetAccountForGcpRegistrationResponse expectedResponse =
+        GetAccountForGcpRegistrationResponse.newBuilder().setName("name3373707").build();
+    mockService.addResponse(expectedResponse);
+
+    Empty request = Empty.newBuilder().build();
+
+    GetAccountForGcpRegistrationResponse actualResponse =
+        client.getAccountForGcpRegistration(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAccountForGcpRegistrationExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      Empty request = Empty.newBuilder().build();
+      client.getAccountForGcpRegistration(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

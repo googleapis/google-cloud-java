@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,7 +71,7 @@ public final class InterconnectGroupsOperationalStatus
    *
    *
    * <pre>
-   * Summarizes the status of the group.
+   * Output only. Summarizes the status of the group.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.InterconnectGroupsOperationalStatus.GroupStatus}
@@ -218,7 +218,7 @@ public final class InterconnectGroupsOperationalStatus
    *
    *
    * <pre>
-   * The configuration analysis, as returned by Get.
+   * Output only. The configuration analysis, as returned by Get.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InterconnectGroupConfigured configured = 295631422;
@@ -235,7 +235,7 @@ public final class InterconnectGroupsOperationalStatus
    *
    *
    * <pre>
-   * The configuration analysis, as returned by Get.
+   * Output only. The configuration analysis, as returned by Get.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InterconnectGroupConfigured configured = 295631422;
@@ -254,7 +254,7 @@ public final class InterconnectGroupsOperationalStatus
    *
    *
    * <pre>
-   * The configuration analysis, as returned by Get.
+   * Output only. The configuration analysis, as returned by Get.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InterconnectGroupConfigured configured = 295631422;
@@ -276,7 +276,7 @@ public final class InterconnectGroupsOperationalStatus
    *
    *
    * <pre>
-   * Summarizes the status of the group.
+   * Output only. Summarizes the status of the group.
    * Check the GroupStatus enum for the list of possible values.
    * </pre>
    *
@@ -293,7 +293,7 @@ public final class InterconnectGroupsOperationalStatus
    *
    *
    * <pre>
-   * Summarizes the status of the group.
+   * Output only. Summarizes the status of the group.
    * Check the GroupStatus enum for the list of possible values.
    * </pre>
    *
@@ -318,7 +318,7 @@ public final class InterconnectGroupsOperationalStatus
    *
    *
    * <pre>
-   * Summarizes the status of the group.
+   * Output only. Summarizes the status of the group.
    * Check the GroupStatus enum for the list of possible values.
    * </pre>
    *
@@ -346,7 +346,7 @@ public final class InterconnectGroupsOperationalStatus
    *
    *
    * <pre>
-   * The intent of the resource, as returned by Get.
+   * Output only. The intent of the resource, as returned by Get.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InterconnectGroupIntent intent = 426849948;</code>
@@ -362,7 +362,7 @@ public final class InterconnectGroupsOperationalStatus
    *
    *
    * <pre>
-   * The intent of the resource, as returned by Get.
+   * Output only. The intent of the resource, as returned by Get.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InterconnectGroupIntent intent = 426849948;</code>
@@ -380,7 +380,7 @@ public final class InterconnectGroupsOperationalStatus
    *
    *
    * <pre>
-   * The intent of the resource, as returned by Get.
+   * Output only. The intent of the resource, as returned by Get.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InterconnectGroupIntent intent = 426849948;</code>
@@ -464,7 +464,7 @@ public final class InterconnectGroupsOperationalStatus
    *
    *
    * <pre>
-   * The operational state of the group, including only active Interconnects.
+   * Output only. The operational state of the group, including only active Interconnects.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InterconnectGroupConfigured operational = 129704914;
@@ -481,7 +481,7 @@ public final class InterconnectGroupsOperationalStatus
    *
    *
    * <pre>
-   * The operational state of the group, including only active Interconnects.
+   * Output only. The operational state of the group, including only active Interconnects.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InterconnectGroupConfigured operational = 129704914;
@@ -500,7 +500,7 @@ public final class InterconnectGroupsOperationalStatus
    *
    *
    * <pre>
-   * The operational state of the group, including only active Interconnects.
+   * Output only. The operational state of the group, including only active Interconnects.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InterconnectGroupConfigured operational = 129704914;
@@ -1067,7 +1067,7 @@ public final class InterconnectGroupsOperationalStatus
      *
      *
      * <pre>
-     * The configuration analysis, as returned by Get.
+     * Output only. The configuration analysis, as returned by Get.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectGroupConfigured configured = 295631422;
@@ -1083,7 +1083,7 @@ public final class InterconnectGroupsOperationalStatus
      *
      *
      * <pre>
-     * The configuration analysis, as returned by Get.
+     * Output only. The configuration analysis, as returned by Get.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectGroupConfigured configured = 295631422;
@@ -1105,7 +1105,7 @@ public final class InterconnectGroupsOperationalStatus
      *
      *
      * <pre>
-     * The configuration analysis, as returned by Get.
+     * Output only. The configuration analysis, as returned by Get.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectGroupConfigured configured = 295631422;
@@ -1129,7 +1129,7 @@ public final class InterconnectGroupsOperationalStatus
      *
      *
      * <pre>
-     * The configuration analysis, as returned by Get.
+     * Output only. The configuration analysis, as returned by Get.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectGroupConfigured configured = 295631422;
@@ -1151,7 +1151,7 @@ public final class InterconnectGroupsOperationalStatus
      *
      *
      * <pre>
-     * The configuration analysis, as returned by Get.
+     * Output only. The configuration analysis, as returned by Get.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectGroupConfigured configured = 295631422;
@@ -1181,7 +1181,7 @@ public final class InterconnectGroupsOperationalStatus
      *
      *
      * <pre>
-     * The configuration analysis, as returned by Get.
+     * Output only. The configuration analysis, as returned by Get.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectGroupConfigured configured = 295631422;
@@ -1202,7 +1202,7 @@ public final class InterconnectGroupsOperationalStatus
      *
      *
      * <pre>
-     * The configuration analysis, as returned by Get.
+     * Output only. The configuration analysis, as returned by Get.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectGroupConfigured configured = 295631422;
@@ -1218,7 +1218,7 @@ public final class InterconnectGroupsOperationalStatus
      *
      *
      * <pre>
-     * The configuration analysis, as returned by Get.
+     * Output only. The configuration analysis, as returned by Get.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectGroupConfigured configured = 295631422;
@@ -1239,7 +1239,7 @@ public final class InterconnectGroupsOperationalStatus
      *
      *
      * <pre>
-     * The configuration analysis, as returned by Get.
+     * Output only. The configuration analysis, as returned by Get.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectGroupConfigured configured = 295631422;
@@ -1268,7 +1268,7 @@ public final class InterconnectGroupsOperationalStatus
      *
      *
      * <pre>
-     * Summarizes the status of the group.
+     * Output only. Summarizes the status of the group.
      * Check the GroupStatus enum for the list of possible values.
      * </pre>
      *
@@ -1284,7 +1284,7 @@ public final class InterconnectGroupsOperationalStatus
      *
      *
      * <pre>
-     * Summarizes the status of the group.
+     * Output only. Summarizes the status of the group.
      * Check the GroupStatus enum for the list of possible values.
      * </pre>
      *
@@ -1308,7 +1308,7 @@ public final class InterconnectGroupsOperationalStatus
      *
      *
      * <pre>
-     * Summarizes the status of the group.
+     * Output only. Summarizes the status of the group.
      * Check the GroupStatus enum for the list of possible values.
      * </pre>
      *
@@ -1332,7 +1332,7 @@ public final class InterconnectGroupsOperationalStatus
      *
      *
      * <pre>
-     * Summarizes the status of the group.
+     * Output only. Summarizes the status of the group.
      * Check the GroupStatus enum for the list of possible values.
      * </pre>
      *
@@ -1355,7 +1355,7 @@ public final class InterconnectGroupsOperationalStatus
      *
      *
      * <pre>
-     * Summarizes the status of the group.
+     * Output only. Summarizes the status of the group.
      * Check the GroupStatus enum for the list of possible values.
      * </pre>
      *
@@ -1374,7 +1374,7 @@ public final class InterconnectGroupsOperationalStatus
      *
      *
      * <pre>
-     * Summarizes the status of the group.
+     * Output only. Summarizes the status of the group.
      * Check the GroupStatus enum for the list of possible values.
      * </pre>
      *
@@ -1405,7 +1405,7 @@ public final class InterconnectGroupsOperationalStatus
      *
      *
      * <pre>
-     * The intent of the resource, as returned by Get.
+     * Output only. The intent of the resource, as returned by Get.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectGroupIntent intent = 426849948;</code>
@@ -1420,7 +1420,7 @@ public final class InterconnectGroupsOperationalStatus
      *
      *
      * <pre>
-     * The intent of the resource, as returned by Get.
+     * Output only. The intent of the resource, as returned by Get.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectGroupIntent intent = 426849948;</code>
@@ -1441,7 +1441,7 @@ public final class InterconnectGroupsOperationalStatus
      *
      *
      * <pre>
-     * The intent of the resource, as returned by Get.
+     * Output only. The intent of the resource, as returned by Get.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectGroupIntent intent = 426849948;</code>
@@ -1464,7 +1464,7 @@ public final class InterconnectGroupsOperationalStatus
      *
      *
      * <pre>
-     * The intent of the resource, as returned by Get.
+     * Output only. The intent of the resource, as returned by Get.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectGroupIntent intent = 426849948;</code>
@@ -1485,7 +1485,7 @@ public final class InterconnectGroupsOperationalStatus
      *
      *
      * <pre>
-     * The intent of the resource, as returned by Get.
+     * Output only. The intent of the resource, as returned by Get.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectGroupIntent intent = 426849948;</code>
@@ -1514,7 +1514,7 @@ public final class InterconnectGroupsOperationalStatus
      *
      *
      * <pre>
-     * The intent of the resource, as returned by Get.
+     * Output only. The intent of the resource, as returned by Get.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectGroupIntent intent = 426849948;</code>
@@ -1534,7 +1534,7 @@ public final class InterconnectGroupsOperationalStatus
      *
      *
      * <pre>
-     * The intent of the resource, as returned by Get.
+     * Output only. The intent of the resource, as returned by Get.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectGroupIntent intent = 426849948;</code>
@@ -1549,7 +1549,7 @@ public final class InterconnectGroupsOperationalStatus
      *
      *
      * <pre>
-     * The intent of the resource, as returned by Get.
+     * Output only. The intent of the resource, as returned by Get.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectGroupIntent intent = 426849948;</code>
@@ -1568,7 +1568,7 @@ public final class InterconnectGroupsOperationalStatus
      *
      *
      * <pre>
-     * The intent of the resource, as returned by Get.
+     * Output only. The intent of the resource, as returned by Get.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectGroupIntent intent = 426849948;</code>
@@ -1941,7 +1941,7 @@ public final class InterconnectGroupsOperationalStatus
      *
      *
      * <pre>
-     * The operational state of the group, including only active Interconnects.
+     * Output only. The operational state of the group, including only active Interconnects.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectGroupConfigured operational = 129704914;
@@ -1957,7 +1957,7 @@ public final class InterconnectGroupsOperationalStatus
      *
      *
      * <pre>
-     * The operational state of the group, including only active Interconnects.
+     * Output only. The operational state of the group, including only active Interconnects.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectGroupConfigured operational = 129704914;
@@ -1979,7 +1979,7 @@ public final class InterconnectGroupsOperationalStatus
      *
      *
      * <pre>
-     * The operational state of the group, including only active Interconnects.
+     * Output only. The operational state of the group, including only active Interconnects.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectGroupConfigured operational = 129704914;
@@ -2003,7 +2003,7 @@ public final class InterconnectGroupsOperationalStatus
      *
      *
      * <pre>
-     * The operational state of the group, including only active Interconnects.
+     * Output only. The operational state of the group, including only active Interconnects.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectGroupConfigured operational = 129704914;
@@ -2025,7 +2025,7 @@ public final class InterconnectGroupsOperationalStatus
      *
      *
      * <pre>
-     * The operational state of the group, including only active Interconnects.
+     * Output only. The operational state of the group, including only active Interconnects.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectGroupConfigured operational = 129704914;
@@ -2055,7 +2055,7 @@ public final class InterconnectGroupsOperationalStatus
      *
      *
      * <pre>
-     * The operational state of the group, including only active Interconnects.
+     * Output only. The operational state of the group, including only active Interconnects.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectGroupConfigured operational = 129704914;
@@ -2076,7 +2076,7 @@ public final class InterconnectGroupsOperationalStatus
      *
      *
      * <pre>
-     * The operational state of the group, including only active Interconnects.
+     * Output only. The operational state of the group, including only active Interconnects.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectGroupConfigured operational = 129704914;
@@ -2092,7 +2092,7 @@ public final class InterconnectGroupsOperationalStatus
      *
      *
      * <pre>
-     * The operational state of the group, including only active Interconnects.
+     * Output only. The operational state of the group, including only active Interconnects.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectGroupConfigured operational = 129704914;
@@ -2113,7 +2113,7 @@ public final class InterconnectGroupsOperationalStatus
      *
      *
      * <pre>
-     * The operational state of the group, including only active Interconnects.
+     * Output only. The operational state of the group, including only active Interconnects.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectGroupConfigured operational = 129704914;

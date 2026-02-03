@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -125,7 +125,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * The consumer neither allows nor prohibits traffic from the producer to reach its VPC.
+     * The consumer neither allows nor prohibits traffic
+     * from the producer to reach its VPC.
      * </pre>
      *
      * <code>PENDING = 35394935;</code>
@@ -194,7 +195,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * The consumer neither allows nor prohibits traffic from the producer to reach its VPC.
+     * The consumer neither allows nor prohibits traffic
+     * from the producer to reach its VPC.
      * </pre>
      *
      * <code>PENDING = 35394935;</code>
@@ -318,7 +320,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
    *
    *
    * <pre>
-   * The IPv4 address assigned to the producer instance network interface. This value will be a range in case of Serverless.
+   * The IPv4 address assigned to the producer instance network interface.
+   * This value will be a range in case of Serverless.
    * </pre>
    *
    * <code>optional string ip_address = 406272220;</code>
@@ -334,7 +337,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
    *
    *
    * <pre>
-   * The IPv4 address assigned to the producer instance network interface. This value will be a range in case of Serverless.
+   * The IPv4 address assigned to the producer instance network interface.
+   * This value will be a range in case of Serverless.
    * </pre>
    *
    * <code>optional string ip_address = 406272220;</code>
@@ -358,7 +362,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
    *
    *
    * <pre>
-   * The IPv4 address assigned to the producer instance network interface. This value will be a range in case of Serverless.
+   * The IPv4 address assigned to the producer instance network interface.
+   * This value will be a range in case of Serverless.
    * </pre>
    *
    * <code>optional string ip_address = 406272220;</code>
@@ -387,7 +392,9 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
    *
    *
    * <pre>
-   * The IPv6 address assigned to the producer instance network interface. This is only assigned when the stack types of both the instance network interface and the consumer subnet are IPv4_IPv6.
+   * The IPv6 address assigned to the producer instance network interface.
+   * This is only assigned when the stack types of both the instance network
+   * interface and the consumer subnet are IPv4_IPv6.
    * </pre>
    *
    * <code>optional string ipv6_address = 341563804;</code>
@@ -403,7 +410,9 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
    *
    *
    * <pre>
-   * The IPv6 address assigned to the producer instance network interface. This is only assigned when the stack types of both the instance network interface and the consumer subnet are IPv4_IPv6.
+   * The IPv6 address assigned to the producer instance network interface.
+   * This is only assigned when the stack types of both the instance network
+   * interface and the consumer subnet are IPv4_IPv6.
    * </pre>
    *
    * <code>optional string ipv6_address = 341563804;</code>
@@ -427,7 +436,9 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
    *
    *
    * <pre>
-   * The IPv6 address assigned to the producer instance network interface. This is only assigned when the stack types of both the instance network interface and the consumer subnet are IPv4_IPv6.
+   * The IPv6 address assigned to the producer instance network interface.
+   * This is only assigned when the stack types of both the instance network
+   * interface and the consumer subnet are IPv4_IPv6.
    * </pre>
    *
    * <code>optional string ipv6_address = 341563804;</code>
@@ -665,7 +676,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
    *
    *
    * <pre>
-   * The subnetwork used to assign the IP to the producer instance network interface.
+   * The subnetwork used to assign the IP to the producer
+   * instance network interface.
    * </pre>
    *
    * <code>optional string subnetwork = 307827694;</code>
@@ -681,7 +693,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
    *
    *
    * <pre>
-   * The subnetwork used to assign the IP to the producer instance network interface.
+   * The subnetwork used to assign the IP to the producer
+   * instance network interface.
    * </pre>
    *
    * <code>optional string subnetwork = 307827694;</code>
@@ -705,7 +718,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
    *
    *
    * <pre>
-   * The subnetwork used to assign the IP to the producer instance network interface.
+   * The subnetwork used to assign the IP to the producer
+   * instance network interface.
    * </pre>
    *
    * <code>optional string subnetwork = 307827694;</code>
@@ -734,7 +748,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The CIDR range of the subnet from which the IPv4 internal IP was allocated from.
+   * Output only. [Output Only] The CIDR range of the subnet from which the IPv4 internal
+   * IP was allocated from.
    * </pre>
    *
    * <code>optional string subnetwork_cidr_range = 383249827;</code>
@@ -750,7 +765,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The CIDR range of the subnet from which the IPv4 internal IP was allocated from.
+   * Output only. [Output Only] The CIDR range of the subnet from which the IPv4 internal
+   * IP was allocated from.
    * </pre>
    *
    * <code>optional string subnetwork_cidr_range = 383249827;</code>
@@ -774,7 +790,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The CIDR range of the subnet from which the IPv4 internal IP was allocated from.
+   * Output only. [Output Only] The CIDR range of the subnet from which the IPv4 internal
+   * IP was allocated from.
    * </pre>
    *
    * <code>optional string subnetwork_cidr_range = 383249827;</code>
@@ -1345,7 +1362,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * The IPv4 address assigned to the producer instance network interface. This value will be a range in case of Serverless.
+     * The IPv4 address assigned to the producer instance network interface.
+     * This value will be a range in case of Serverless.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -1360,7 +1378,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * The IPv4 address assigned to the producer instance network interface. This value will be a range in case of Serverless.
+     * The IPv4 address assigned to the producer instance network interface.
+     * This value will be a range in case of Serverless.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -1383,7 +1402,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * The IPv4 address assigned to the producer instance network interface. This value will be a range in case of Serverless.
+     * The IPv4 address assigned to the producer instance network interface.
+     * This value will be a range in case of Serverless.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -1406,7 +1426,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * The IPv4 address assigned to the producer instance network interface. This value will be a range in case of Serverless.
+     * The IPv4 address assigned to the producer instance network interface.
+     * This value will be a range in case of Serverless.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -1428,7 +1449,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * The IPv4 address assigned to the producer instance network interface. This value will be a range in case of Serverless.
+     * The IPv4 address assigned to the producer instance network interface.
+     * This value will be a range in case of Serverless.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -1446,7 +1468,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * The IPv4 address assigned to the producer instance network interface. This value will be a range in case of Serverless.
+     * The IPv4 address assigned to the producer instance network interface.
+     * This value will be a range in case of Serverless.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -1471,7 +1494,9 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * The IPv6 address assigned to the producer instance network interface. This is only assigned when the stack types of both the instance network interface and the consumer subnet are IPv4_IPv6.
+     * The IPv6 address assigned to the producer instance network interface.
+     * This is only assigned when the stack types of both the instance network
+     * interface and the consumer subnet are IPv4_IPv6.
      * </pre>
      *
      * <code>optional string ipv6_address = 341563804;</code>
@@ -1486,7 +1511,9 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * The IPv6 address assigned to the producer instance network interface. This is only assigned when the stack types of both the instance network interface and the consumer subnet are IPv4_IPv6.
+     * The IPv6 address assigned to the producer instance network interface.
+     * This is only assigned when the stack types of both the instance network
+     * interface and the consumer subnet are IPv4_IPv6.
      * </pre>
      *
      * <code>optional string ipv6_address = 341563804;</code>
@@ -1509,7 +1536,9 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * The IPv6 address assigned to the producer instance network interface. This is only assigned when the stack types of both the instance network interface and the consumer subnet are IPv4_IPv6.
+     * The IPv6 address assigned to the producer instance network interface.
+     * This is only assigned when the stack types of both the instance network
+     * interface and the consumer subnet are IPv4_IPv6.
      * </pre>
      *
      * <code>optional string ipv6_address = 341563804;</code>
@@ -1532,7 +1561,9 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * The IPv6 address assigned to the producer instance network interface. This is only assigned when the stack types of both the instance network interface and the consumer subnet are IPv4_IPv6.
+     * The IPv6 address assigned to the producer instance network interface.
+     * This is only assigned when the stack types of both the instance network
+     * interface and the consumer subnet are IPv4_IPv6.
      * </pre>
      *
      * <code>optional string ipv6_address = 341563804;</code>
@@ -1554,7 +1585,9 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * The IPv6 address assigned to the producer instance network interface. This is only assigned when the stack types of both the instance network interface and the consumer subnet are IPv4_IPv6.
+     * The IPv6 address assigned to the producer instance network interface.
+     * This is only assigned when the stack types of both the instance network
+     * interface and the consumer subnet are IPv4_IPv6.
      * </pre>
      *
      * <code>optional string ipv6_address = 341563804;</code>
@@ -1572,7 +1605,9 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * The IPv6 address assigned to the producer instance network interface. This is only assigned when the stack types of both the instance network interface and the consumer subnet are IPv4_IPv6.
+     * The IPv6 address assigned to the producer instance network interface.
+     * This is only assigned when the stack types of both the instance network
+     * interface and the consumer subnet are IPv4_IPv6.
      * </pre>
      *
      * <code>optional string ipv6_address = 341563804;</code>
@@ -2039,7 +2074,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * The subnetwork used to assign the IP to the producer instance network interface.
+     * The subnetwork used to assign the IP to the producer
+     * instance network interface.
      * </pre>
      *
      * <code>optional string subnetwork = 307827694;</code>
@@ -2054,7 +2090,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * The subnetwork used to assign the IP to the producer instance network interface.
+     * The subnetwork used to assign the IP to the producer
+     * instance network interface.
      * </pre>
      *
      * <code>optional string subnetwork = 307827694;</code>
@@ -2077,7 +2114,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * The subnetwork used to assign the IP to the producer instance network interface.
+     * The subnetwork used to assign the IP to the producer
+     * instance network interface.
      * </pre>
      *
      * <code>optional string subnetwork = 307827694;</code>
@@ -2100,7 +2138,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * The subnetwork used to assign the IP to the producer instance network interface.
+     * The subnetwork used to assign the IP to the producer
+     * instance network interface.
      * </pre>
      *
      * <code>optional string subnetwork = 307827694;</code>
@@ -2122,7 +2161,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * The subnetwork used to assign the IP to the producer instance network interface.
+     * The subnetwork used to assign the IP to the producer
+     * instance network interface.
      * </pre>
      *
      * <code>optional string subnetwork = 307827694;</code>
@@ -2140,7 +2180,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * The subnetwork used to assign the IP to the producer instance network interface.
+     * The subnetwork used to assign the IP to the producer
+     * instance network interface.
      * </pre>
      *
      * <code>optional string subnetwork = 307827694;</code>
@@ -2165,7 +2206,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The CIDR range of the subnet from which the IPv4 internal IP was allocated from.
+     * Output only. [Output Only] The CIDR range of the subnet from which the IPv4 internal
+     * IP was allocated from.
      * </pre>
      *
      * <code>optional string subnetwork_cidr_range = 383249827;</code>
@@ -2180,7 +2222,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The CIDR range of the subnet from which the IPv4 internal IP was allocated from.
+     * Output only. [Output Only] The CIDR range of the subnet from which the IPv4 internal
+     * IP was allocated from.
      * </pre>
      *
      * <code>optional string subnetwork_cidr_range = 383249827;</code>
@@ -2203,7 +2246,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The CIDR range of the subnet from which the IPv4 internal IP was allocated from.
+     * Output only. [Output Only] The CIDR range of the subnet from which the IPv4 internal
+     * IP was allocated from.
      * </pre>
      *
      * <code>optional string subnetwork_cidr_range = 383249827;</code>
@@ -2226,7 +2270,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The CIDR range of the subnet from which the IPv4 internal IP was allocated from.
+     * Output only. [Output Only] The CIDR range of the subnet from which the IPv4 internal
+     * IP was allocated from.
      * </pre>
      *
      * <code>optional string subnetwork_cidr_range = 383249827;</code>
@@ -2248,7 +2293,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The CIDR range of the subnet from which the IPv4 internal IP was allocated from.
+     * Output only. [Output Only] The CIDR range of the subnet from which the IPv4 internal
+     * IP was allocated from.
      * </pre>
      *
      * <code>optional string subnetwork_cidr_range = 383249827;</code>
@@ -2266,7 +2312,8 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The CIDR range of the subnet from which the IPv4 internal IP was allocated from.
+     * Output only. [Output Only] The CIDR range of the subnet from which the IPv4 internal
+     * IP was allocated from.
      * </pre>
      *
      * <code>optional string subnetwork_cidr_range = 383249827;</code>

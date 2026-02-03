@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,11 +28,11 @@ public interface RepoSourceOrBuilder
    *
    *
    * <pre>
-   * ID of the project that owns the Cloud Source Repository. If omitted, the
-   * project ID requesting the build is assumed.
+   * Optional. ID of the project that owns the Cloud Source Repository. If
+   * omitted, the project ID requesting the build is assumed.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The projectId.
    */
@@ -42,11 +42,11 @@ public interface RepoSourceOrBuilder
    *
    *
    * <pre>
-   * ID of the project that owns the Cloud Source Repository. If omitted, the
-   * project ID requesting the build is assumed.
+   * Optional. ID of the project that owns the Cloud Source Repository. If
+   * omitted, the project ID requesting the build is assumed.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for projectId.
    */
@@ -56,10 +56,10 @@ public interface RepoSourceOrBuilder
    *
    *
    * <pre>
-   * Name of the Cloud Source Repository.
+   * Required. Name of the Cloud Source Repository.
    * </pre>
    *
-   * <code>string repo_name = 2;</code>
+   * <code>string repo_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The repoName.
    */
@@ -69,10 +69,10 @@ public interface RepoSourceOrBuilder
    *
    *
    * <pre>
-   * Name of the Cloud Source Repository.
+   * Required. Name of the Cloud Source Repository.
    * </pre>
    *
-   * <code>string repo_name = 2;</code>
+   * <code>string repo_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for repoName.
    */
@@ -217,13 +217,14 @@ public interface RepoSourceOrBuilder
    *
    *
    * <pre>
-   * Directory, relative to the source root, in which to run the build.
+   * Optional. Directory, relative to the source root, in which to run the
+   * build.
    *
    * This must be a relative path. If a step's `dir` is specified and is an
    * absolute path, this value is ignored for that step's execution.
    * </pre>
    *
-   * <code>string dir = 7;</code>
+   * <code>string dir = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The dir.
    */
@@ -233,13 +234,14 @@ public interface RepoSourceOrBuilder
    *
    *
    * <pre>
-   * Directory, relative to the source root, in which to run the build.
+   * Optional. Directory, relative to the source root, in which to run the
+   * build.
    *
    * This must be a relative path. If a step's `dir` is specified and is an
    * absolute path, this value is ignored for that step's execution.
    * </pre>
    *
-   * <code>string dir = 7;</code>
+   * <code>string dir = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for dir.
    */
@@ -249,11 +251,11 @@ public interface RepoSourceOrBuilder
    *
    *
    * <pre>
-   * Only trigger a build if the revision regex does NOT match the revision
-   * regex.
+   * Optional. Only trigger a build if the revision regex does NOT match the
+   * revision regex.
    * </pre>
    *
-   * <code>bool invert_regex = 8;</code>
+   * <code>bool invert_regex = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The invertRegex.
    */
@@ -263,11 +265,12 @@ public interface RepoSourceOrBuilder
    *
    *
    * <pre>
-   * Substitutions to use in a triggered build.
+   * Optional. Substitutions to use in a triggered build.
    * Should only be used with RunBuildTrigger
    * </pre>
    *
-   * <code>map&lt;string, string&gt; substitutions = 9;</code>
+   * <code>map&lt;string, string&gt; substitutions = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getSubstitutionsCount();
 
@@ -275,11 +278,12 @@ public interface RepoSourceOrBuilder
    *
    *
    * <pre>
-   * Substitutions to use in a triggered build.
+   * Optional. Substitutions to use in a triggered build.
    * Should only be used with RunBuildTrigger
    * </pre>
    *
-   * <code>map&lt;string, string&gt; substitutions = 9;</code>
+   * <code>map&lt;string, string&gt; substitutions = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean containsSubstitutions(java.lang.String key);
 
@@ -291,11 +295,12 @@ public interface RepoSourceOrBuilder
    *
    *
    * <pre>
-   * Substitutions to use in a triggered build.
+   * Optional. Substitutions to use in a triggered build.
    * Should only be used with RunBuildTrigger
    * </pre>
    *
-   * <code>map&lt;string, string&gt; substitutions = 9;</code>
+   * <code>map&lt;string, string&gt; substitutions = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getSubstitutionsMap();
 
@@ -303,11 +308,12 @@ public interface RepoSourceOrBuilder
    *
    *
    * <pre>
-   * Substitutions to use in a triggered build.
+   * Optional. Substitutions to use in a triggered build.
    * Should only be used with RunBuildTrigger
    * </pre>
    *
-   * <code>map&lt;string, string&gt; substitutions = 9;</code>
+   * <code>map&lt;string, string&gt; substitutions = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   /* nullable */
   java.lang.String getSubstitutionsOrDefault(
@@ -319,11 +325,12 @@ public interface RepoSourceOrBuilder
    *
    *
    * <pre>
-   * Substitutions to use in a triggered build.
+   * Optional. Substitutions to use in a triggered build.
    * Should only be used with RunBuildTrigger
    * </pre>
    *
-   * <code>map&lt;string, string&gt; substitutions = 9;</code>
+   * <code>map&lt;string, string&gt; substitutions = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getSubstitutionsOrThrow(java.lang.String key);
 

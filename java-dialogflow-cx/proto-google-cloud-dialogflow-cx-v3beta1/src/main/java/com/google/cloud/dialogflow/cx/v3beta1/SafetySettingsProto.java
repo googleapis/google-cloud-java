@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,6 +37,14 @@ public final class SafetySettingsProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_Phrase_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_RaiSettings_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_RaiSettings_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_RaiSettings_CategoryFilter_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_RaiSettings_CategoryFilter_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_PromptSecuritySettings_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_PromptSecuritySettings_fieldAccessorTable;
@@ -49,29 +57,53 @@ public final class SafetySettingsProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n8google/cloud/dialogflow/cx/v3beta1/saf"
-          + "ety_settings.proto\022\"google.cloud.dialogf"
-          + "low.cx.v3beta1\032\037google/api/field_behavio"
-          + "r.proto\"\251\004\n\016SafetySettings\022y\n$default_ba"
-          + "nned_phrase_match_strategy\030\004 \001(\0162F.googl"
-          + "e.cloud.dialogflow.cx.v3beta1.SafetySett"
-          + "ings.PhraseMatchStrategyB\003\340A\001\022Q\n\016banned_"
-          + "phrases\030\001 \003(\01329.google.cloud.dialogflow."
-          + "cx.v3beta1.SafetySettings.Phrase\022p\n\030prom"
-          + "pt_security_settings\030\010 \001(\0132I.google.clou"
-          + "d.dialogflow.cx.v3beta1.SafetySettings.P"
-          + "romptSecuritySettingsB\003\340A\001\0327\n\006Phrase\022\021\n\004"
-          + "text\030\001 \001(\tB\003\340A\002\022\032\n\rlanguage_code\030\002 \001(\tB\003"
-          + "\340A\002\032=\n\026PromptSecuritySettings\022#\n\026enable_"
-          + "prompt_security\030\001 \001(\010B\003\340A\001\"_\n\023PhraseMatc"
-          + "hStrategy\022%\n!PHRASE_MATCH_STRATEGY_UNSPE"
-          + "CIFIED\020\000\022\021\n\rPARTIAL_MATCH\020\001\022\016\n\nWORD_MATC"
-          + "H\020\002B\312\001\n&com.google.cloud.dialogflow.cx.v"
-          + "3beta1B\023SafetySettingsProtoP\001Z6cloud.goo"
-          + "gle.com/go/dialogflow/cx/apiv3beta1/cxpb"
-          + ";cxpb\242\002\002DF\252\002\"Google.Cloud.Dialogflow.Cx."
-          + "V3Beta1\352\002&Google::Cloud::Dialogflow::CX:"
-          + ":V3beta1b\006proto3"
+      "\n"
+          + "8google/cloud/dialogflow/cx/v3beta1/safety_settings.proto\022\"google.cloud.dialogf"
+          + "low.cx.v3beta1\032\037google/api/field_behavior.proto\"\310\n\n"
+          + "\016SafetySettings\022y\n"
+          + "$default_banned_phrase_match_strategy\030\004 \001(\0162F.googl"
+          + "e.cloud.dialogflow.cx.v3beta1.SafetySettings.PhraseMatchStrategyB\003\340A\001\022Q\n"
+          + "\016banned_phrases\030\001"
+          + " \003(\01329.google.cloud.dialogflow.cx.v3beta1.SafetySettings.Phrase\022Y\n"
+          + "\014rai_settings\030\002 \001(\0132>.google.cloud.dialogflow"
+          + ".cx.v3beta1.SafetySettings.RaiSettingsB\003\340A\001\022d\n"
+          + "\024default_rai_settings\030\003 \001(\0132>.goog"
+          + "le.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettingsB\006\340A\001\340A\005\022p\n"
+          + "\030prompt_security_settings\030\010 \001(\0132I.google.cloud.dialo"
+          + "gflow.cx.v3beta1.SafetySettings.PromptSecuritySettingsB\003\340A\001\0327\n"
+          + "\006Phrase\022\021\n"
+          + "\004text\030\001 \001(\tB\003\340A\002\022\032\n\r"
+          + "language_code\030\002 \001(\tB\003\340A\002\032\333\004\n"
+          + "\013RaiSettings\022l\n"
+          + "\020category_filters\030\003 \003(\0132M.google.cloud.dialogflow.cx.v3beta1.Safe"
+          + "tySettings.RaiSettings.CategoryFilterB\003\340A\001\032\331\001\n"
+          + "\016CategoryFilter\022_\n"
+          + "\010category\030\001 \001(\0162M.google.cloud.dialogflow.cx.v3beta1.Saf"
+          + "etySettings.RaiSettings.SafetyCategory\022f\n"
+          + "\014filter_level\030\002 \001(\0162P.google.cloud.dial"
+          + "ogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyFilterLevel\"w\n"
+          + "\021SafetyFilterLevel\022#\n"
+          + "\037SAFETY_FILTER_LEVEL_UNSPECIFIED\020\000\022\016\n\n"
+          + "BLOCK_NONE\020\001\022\r\n"
+          + "\tBLOCK_FEW\020\002\022\016\n\n"
+          + "BLOCK_SOME\020\003\022\016\n\n"
+          + "BLOCK_MOST\020\004\"\210\001\n"
+          + "\016SafetyCategory\022\037\n"
+          + "\033SAFETY_CATEGORY_UNSPECIFIED\020\000\022\025\n"
+          + "\021DANGEROUS_CONTENT\020\001\022\017\n"
+          + "\013HATE_SPEECH\020\002\022\016\n\n"
+          + "HARASSMENT\020\003\022\035\n"
+          + "\031SEXUALLY_EXPLICIT_CONTENT\020\004\032=\n"
+          + "\026PromptSecuritySettings\022#\n"
+          + "\026enable_prompt_security\030\001 \001(\010B\003\340A\001\"_\n"
+          + "\023PhraseMatchStrategy\022%\n"
+          + "!PHRASE_MATCH_STRATEGY_UNSPECIFIED\020\000\022\021\n\r"
+          + "PARTIAL_MATCH\020\001\022\016\n\n"
+          + "WORD_MATCH\020\002B\312\001\n"
+          + "&com.google.cloud.dialogflow.cx.v3beta1B\023SafetySettingsProtoP\001Z6cloud.goog"
+          + "le.com/go/dialogflow/cx/apiv3beta1/cxpb;"
+          + "cxpb\242\002\002DF\252\002\"Google.Cloud.Dialogflow.Cx.V"
+          + "3Beta1\352\002&Google::Cloud::Dialogflow::CX::V3beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -85,7 +117,11 @@ public final class SafetySettingsProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_descriptor,
             new java.lang.String[] {
-              "DefaultBannedPhraseMatchStrategy", "BannedPhrases", "PromptSecuritySettings",
+              "DefaultBannedPhraseMatchStrategy",
+              "BannedPhrases",
+              "RaiSettings",
+              "DefaultRaiSettings",
+              "PromptSecuritySettings",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_Phrase_descriptor =
         internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_descriptor
@@ -97,10 +133,30 @@ public final class SafetySettingsProto {
             new java.lang.String[] {
               "Text", "LanguageCode",
             });
-    internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_PromptSecuritySettings_descriptor =
+    internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_RaiSettings_descriptor =
         internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_descriptor
             .getNestedTypes()
             .get(1);
+    internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_RaiSettings_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_RaiSettings_descriptor,
+            new java.lang.String[] {
+              "CategoryFilters",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_RaiSettings_CategoryFilter_descriptor =
+        internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_RaiSettings_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_RaiSettings_CategoryFilter_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_RaiSettings_CategoryFilter_descriptor,
+            new java.lang.String[] {
+              "Category", "FilterLevel",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_PromptSecuritySettings_descriptor =
+        internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_descriptor
+            .getNestedTypes()
+            .get(2);
     internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_PromptSecuritySettings_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_PromptSecuritySettings_descriptor,

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ public interface TestPermissionsRequestOrBuilder
    *
    *
    * <pre>
-   * The set of permissions to check for the 'resource'. Permissions with wildcards (such as '*' or 'storage.*') are not allowed.
+   * The set of permissions to check for the 'resource'. Permissions with
+   * wildcards (such as '*' or 'storage.*') are not allowed.
    * </pre>
    *
    * <code>repeated string permissions = 59962500;</code>
@@ -41,7 +42,8 @@ public interface TestPermissionsRequestOrBuilder
    *
    *
    * <pre>
-   * The set of permissions to check for the 'resource'. Permissions with wildcards (such as '*' or 'storage.*') are not allowed.
+   * The set of permissions to check for the 'resource'. Permissions with
+   * wildcards (such as '*' or 'storage.*') are not allowed.
    * </pre>
    *
    * <code>repeated string permissions = 59962500;</code>
@@ -54,7 +56,8 @@ public interface TestPermissionsRequestOrBuilder
    *
    *
    * <pre>
-   * The set of permissions to check for the 'resource'. Permissions with wildcards (such as '*' or 'storage.*') are not allowed.
+   * The set of permissions to check for the 'resource'. Permissions with
+   * wildcards (such as '*' or 'storage.*') are not allowed.
    * </pre>
    *
    * <code>repeated string permissions = 59962500;</code>
@@ -68,7 +71,8 @@ public interface TestPermissionsRequestOrBuilder
    *
    *
    * <pre>
-   * The set of permissions to check for the 'resource'. Permissions with wildcards (such as '*' or 'storage.*') are not allowed.
+   * The set of permissions to check for the 'resource'. Permissions with
+   * wildcards (such as '*' or 'storage.*') are not allowed.
    * </pre>
    *
    * <code>repeated string permissions = 59962500;</code>

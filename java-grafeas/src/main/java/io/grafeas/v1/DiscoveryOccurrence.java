@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 The Grafeas Authors. All rights reserved.
+ * Copyright 2026 The Grafeas Authors. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,6 +45,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     analysisStatus_ = 0;
     analysisError_ = java.util.Collections.emptyList();
     cpe_ = "";
+    files_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -3558,6 +3559,869 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public interface FileOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:grafeas.v1.DiscoveryOccurrence.File)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string name = 1;</code>
+     *
+     * @return The name.
+     */
+    java.lang.String getName();
+
+    /**
+     * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString getNameBytes();
+
+    /** <code>map&lt;string, string&gt; digest = 2;</code> */
+    int getDigestCount();
+
+    /** <code>map&lt;string, string&gt; digest = 2;</code> */
+    boolean containsDigest(java.lang.String key);
+
+    /** Use {@link #getDigestMap()} instead. */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String> getDigest();
+
+    /** <code>map&lt;string, string&gt; digest = 2;</code> */
+    java.util.Map<java.lang.String, java.lang.String> getDigestMap();
+
+    /** <code>map&lt;string, string&gt; digest = 2;</code> */
+    /* nullable */
+    java.lang.String getDigestOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue);
+
+    /** <code>map&lt;string, string&gt; digest = 2;</code> */
+    java.lang.String getDigestOrThrow(java.lang.String key);
+  }
+
+  /** Protobuf type {@code grafeas.v1.DiscoveryOccurrence.File} */
+  public static final class File extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:grafeas.v1.DiscoveryOccurrence.File)
+      FileOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use File.newBuilder() to construct.
+    private File(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private File() {
+      name_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new File();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return io.grafeas.v1.Discovery.internal_static_grafeas_v1_DiscoveryOccurrence_File_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 2:
+          return internalGetDigest();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.grafeas.v1.Discovery
+          .internal_static_grafeas_v1_DiscoveryOccurrence_File_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.grafeas.v1.DiscoveryOccurrence.File.class,
+              io.grafeas.v1.DiscoveryOccurrence.File.Builder.class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
+
+    /**
+     * <code>string name = 1;</code>
+     *
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+
+    /**
+     * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DIGEST_FIELD_NUMBER = 2;
+
+    private static final class DigestDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+          com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+              io.grafeas.v1.Discovery
+                  .internal_static_grafeas_v1_DiscoveryOccurrence_File_DigestEntry_descriptor,
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "",
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "");
+    }
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> digest_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetDigest() {
+      if (digest_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(DigestDefaultEntryHolder.defaultEntry);
+      }
+      return digest_;
+    }
+
+    public int getDigestCount() {
+      return internalGetDigest().getMap().size();
+    }
+
+    /** <code>map&lt;string, string&gt; digest = 2;</code> */
+    @java.lang.Override
+    public boolean containsDigest(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetDigest().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getDigestMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getDigest() {
+      return getDigestMap();
+    }
+
+    /** <code>map&lt;string, string&gt; digest = 2;</code> */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getDigestMap() {
+      return internalGetDigest().getMap();
+    }
+
+    /** <code>map&lt;string, string&gt; digest = 2;</code> */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getDigestOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetDigest().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /** <code>map&lt;string, string&gt; digest = 2;</code> */
+    @java.lang.Override
+    public java.lang.String getDigestOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetDigest().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+          output, internalGetDigest(), DigestDefaultEntryHolder.defaultEntry, 2);
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+          internalGetDigest().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String> digest__ =
+            DigestDefaultEntryHolder.defaultEntry
+                .newBuilderForType()
+                .setKey(entry.getKey())
+                .setValue(entry.getValue())
+                .build();
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, digest__);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof io.grafeas.v1.DiscoveryOccurrence.File)) {
+        return super.equals(obj);
+      }
+      io.grafeas.v1.DiscoveryOccurrence.File other = (io.grafeas.v1.DiscoveryOccurrence.File) obj;
+
+      if (!getName().equals(other.getName())) return false;
+      if (!internalGetDigest().equals(other.internalGetDigest())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      if (!internalGetDigest().getMap().isEmpty()) {
+        hash = (37 * hash) + DIGEST_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetDigest().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.File parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.File parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.File parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.File parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.File parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.File parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.File parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.File parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.File parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.File parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.File parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.File parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(io.grafeas.v1.DiscoveryOccurrence.File prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /** Protobuf type {@code grafeas.v1.DiscoveryOccurrence.File} */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:grafeas.v1.DiscoveryOccurrence.File)
+        io.grafeas.v1.DiscoveryOccurrence.FileOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return io.grafeas.v1.Discovery
+            .internal_static_grafeas_v1_DiscoveryOccurrence_File_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 2:
+            return internalGetDigest();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 2:
+            return internalGetMutableDigest();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.grafeas.v1.Discovery
+            .internal_static_grafeas_v1_DiscoveryOccurrence_File_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.grafeas.v1.DiscoveryOccurrence.File.class,
+                io.grafeas.v1.DiscoveryOccurrence.File.Builder.class);
+      }
+
+      // Construct using io.grafeas.v1.DiscoveryOccurrence.File.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        name_ = "";
+        internalGetMutableDigest().clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return io.grafeas.v1.Discovery
+            .internal_static_grafeas_v1_DiscoveryOccurrence_File_descriptor;
+      }
+
+      @java.lang.Override
+      public io.grafeas.v1.DiscoveryOccurrence.File getDefaultInstanceForType() {
+        return io.grafeas.v1.DiscoveryOccurrence.File.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.grafeas.v1.DiscoveryOccurrence.File build() {
+        io.grafeas.v1.DiscoveryOccurrence.File result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.grafeas.v1.DiscoveryOccurrence.File buildPartial() {
+        io.grafeas.v1.DiscoveryOccurrence.File result =
+            new io.grafeas.v1.DiscoveryOccurrence.File(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(io.grafeas.v1.DiscoveryOccurrence.File result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.digest_ = internalGetDigest();
+          result.digest_.makeImmutable();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.grafeas.v1.DiscoveryOccurrence.File) {
+          return mergeFrom((io.grafeas.v1.DiscoveryOccurrence.File) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.grafeas.v1.DiscoveryOccurrence.File other) {
+        if (other == io.grafeas.v1.DiscoveryOccurrence.File.getDefaultInstance()) return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        internalGetMutableDigest().mergeFrom(other.internalGetDigest());
+        bitField0_ |= 0x00000002;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  name_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  com.google.protobuf.MapEntry<java.lang.String, java.lang.String> digest__ =
+                      input.readMessage(
+                          DigestDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+                  internalGetMutableDigest()
+                      .getMutableMap()
+                      .put(digest__.getKey(), digest__.getValue());
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object name_ = "";
+
+      /**
+       * <code>string name = 1;</code>
+       *
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       * <code>string name = 1;</code>
+       *
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       * <code>string name = 1;</code>
+       *
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <code>string name = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <code>string name = 1;</code>
+       *
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String> digest_;
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetDigest() {
+        if (digest_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(DigestDefaultEntryHolder.defaultEntry);
+        }
+        return digest_;
+      }
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+          internalGetMutableDigest() {
+        if (digest_ == null) {
+          digest_ = com.google.protobuf.MapField.newMapField(DigestDefaultEntryHolder.defaultEntry);
+        }
+        if (!digest_.isMutable()) {
+          digest_ = digest_.copy();
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return digest_;
+      }
+
+      public int getDigestCount() {
+        return internalGetDigest().getMap().size();
+      }
+
+      /** <code>map&lt;string, string&gt; digest = 2;</code> */
+      @java.lang.Override
+      public boolean containsDigest(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        return internalGetDigest().getMap().containsKey(key);
+      }
+
+      /** Use {@link #getDigestMap()} instead. */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getDigest() {
+        return getDigestMap();
+      }
+
+      /** <code>map&lt;string, string&gt; digest = 2;</code> */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, java.lang.String> getDigestMap() {
+        return internalGetDigest().getMap();
+      }
+
+      /** <code>map&lt;string, string&gt; digest = 2;</code> */
+      @java.lang.Override
+      public /* nullable */ java.lang.String getDigestOrDefault(
+          java.lang.String key,
+          /* nullable */
+          java.lang.String defaultValue) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.String> map = internalGetDigest().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+
+      /** <code>map&lt;string, string&gt; digest = 2;</code> */
+      @java.lang.Override
+      public java.lang.String getDigestOrThrow(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.String> map = internalGetDigest().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearDigest() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        internalGetMutableDigest().getMutableMap().clear();
+        return this;
+      }
+
+      /** <code>map&lt;string, string&gt; digest = 2;</code> */
+      public Builder removeDigest(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        internalGetMutableDigest().getMutableMap().remove(key);
+        return this;
+      }
+
+      /** Use alternate mutation accessors instead. */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getMutableDigest() {
+        bitField0_ |= 0x00000002;
+        return internalGetMutableDigest().getMutableMap();
+      }
+
+      /** <code>map&lt;string, string&gt; digest = 2;</code> */
+      public Builder putDigest(java.lang.String key, java.lang.String value) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        if (value == null) {
+          throw new NullPointerException("map value");
+        }
+        internalGetMutableDigest().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+
+      /** <code>map&lt;string, string&gt; digest = 2;</code> */
+      public Builder putAllDigest(java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableDigest().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:grafeas.v1.DiscoveryOccurrence.File)
+    }
+
+    // @@protoc_insertion_point(class_scope:grafeas.v1.DiscoveryOccurrence.File)
+    private static final io.grafeas.v1.DiscoveryOccurrence.File DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new io.grafeas.v1.DiscoveryOccurrence.File();
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.File getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<File> PARSER =
+        new com.google.protobuf.AbstractParser<File>() {
+          @java.lang.Override
+          public File parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<File> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<File> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.grafeas.v1.DiscoveryOccurrence.File getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int CONTINUOUS_ANALYSIS_FIELD_NUMBER = 1;
   private int continuousAnalysis_ = 0;
@@ -4076,6 +4940,82 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         : vulnerabilityAttestation_;
   }
 
+  public static final int FILES_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private java.util.List<io.grafeas.v1.DiscoveryOccurrence.File> files_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Files that make up the resource described by the occurrence.
+   * </pre>
+   *
+   * <code>repeated .grafeas.v1.DiscoveryOccurrence.File files = 11;</code>
+   */
+  @java.lang.Override
+  public java.util.List<io.grafeas.v1.DiscoveryOccurrence.File> getFilesList() {
+    return files_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Files that make up the resource described by the occurrence.
+   * </pre>
+   *
+   * <code>repeated .grafeas.v1.DiscoveryOccurrence.File files = 11;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends io.grafeas.v1.DiscoveryOccurrence.FileOrBuilder>
+      getFilesOrBuilderList() {
+    return files_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Files that make up the resource described by the occurrence.
+   * </pre>
+   *
+   * <code>repeated .grafeas.v1.DiscoveryOccurrence.File files = 11;</code>
+   */
+  @java.lang.Override
+  public int getFilesCount() {
+    return files_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Files that make up the resource described by the occurrence.
+   * </pre>
+   *
+   * <code>repeated .grafeas.v1.DiscoveryOccurrence.File files = 11;</code>
+   */
+  @java.lang.Override
+  public io.grafeas.v1.DiscoveryOccurrence.File getFiles(int index) {
+    return files_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Files that make up the resource described by the occurrence.
+   * </pre>
+   *
+   * <code>repeated .grafeas.v1.DiscoveryOccurrence.File files = 11;</code>
+   */
+  @java.lang.Override
+  public io.grafeas.v1.DiscoveryOccurrence.FileOrBuilder getFilesOrBuilder(int index) {
+    return files_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4124,6 +5064,9 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(10, getVulnerabilityAttestation());
     }
+    for (int i = 0; i < files_.size(); i++) {
+      output.writeMessage(11, files_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -4169,6 +5112,9 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               10, getVulnerabilityAttestation());
     }
+    for (int i = 0; i < files_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, files_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4212,6 +5158,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     if (hasVulnerabilityAttestation()) {
       if (!getVulnerabilityAttestation().equals(other.getVulnerabilityAttestation())) return false;
     }
+    if (!getFilesList().equals(other.getFilesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -4256,6 +5203,10 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     if (hasVulnerabilityAttestation()) {
       hash = (37 * hash) + VULNERABILITY_ATTESTATION_FIELD_NUMBER;
       hash = (53 * hash) + getVulnerabilityAttestation().hashCode();
+    }
+    if (getFilesCount() > 0) {
+      hash = (37 * hash) + FILES_FIELD_NUMBER;
+      hash = (53 * hash) + getFilesList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -4403,6 +5354,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         getArchiveTimeFieldBuilder();
         getSbomStatusFieldBuilder();
         getVulnerabilityAttestationFieldBuilder();
+        getFilesFieldBuilder();
       }
     }
 
@@ -4450,6 +5402,13 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         vulnerabilityAttestationBuilder_.dispose();
         vulnerabilityAttestationBuilder_ = null;
       }
+      if (filesBuilder_ == null) {
+        files_ = java.util.Collections.emptyList();
+      } else {
+        files_ = null;
+        filesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000400);
       return this;
     }
 
@@ -4492,6 +5451,15 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         result.analysisError_ = analysisError_;
       } else {
         result.analysisError_ = analysisErrorBuilder_.build();
+      }
+      if (filesBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)) {
+          files_ = java.util.Collections.unmodifiableList(files_);
+          bitField0_ = (bitField0_ & ~0x00000400);
+        }
+        result.files_ = files_;
+      } else {
+        result.files_ = filesBuilder_.build();
       }
     }
 
@@ -4646,6 +5614,33 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       if (other.hasVulnerabilityAttestation()) {
         mergeVulnerabilityAttestation(other.getVulnerabilityAttestation());
       }
+      if (filesBuilder_ == null) {
+        if (!other.files_.isEmpty()) {
+          if (files_.isEmpty()) {
+            files_ = other.files_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+          } else {
+            ensureFilesIsMutable();
+            files_.addAll(other.files_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.files_.isEmpty()) {
+          if (filesBuilder_.isEmpty()) {
+            filesBuilder_.dispose();
+            filesBuilder_ = null;
+            files_ = other.files_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+            filesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getFilesFieldBuilder()
+                    : null;
+          } else {
+            filesBuilder_.addAllMessages(other.files_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -4741,6 +5736,19 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000200;
                 break;
               } // case 82
+            case 90:
+              {
+                io.grafeas.v1.DiscoveryOccurrence.File m =
+                    input.readMessage(
+                        io.grafeas.v1.DiscoveryOccurrence.File.parser(), extensionRegistry);
+                if (filesBuilder_ == null) {
+                  ensureFilesIsMutable();
+                  files_.add(m);
+                } else {
+                  filesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6602,6 +7610,371 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         vulnerabilityAttestation_ = null;
       }
       return vulnerabilityAttestationBuilder_;
+    }
+
+    private java.util.List<io.grafeas.v1.DiscoveryOccurrence.File> files_ =
+        java.util.Collections.emptyList();
+
+    private void ensureFilesIsMutable() {
+      if (!((bitField0_ & 0x00000400) != 0)) {
+        files_ = new java.util.ArrayList<io.grafeas.v1.DiscoveryOccurrence.File>(files_);
+        bitField0_ |= 0x00000400;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            io.grafeas.v1.DiscoveryOccurrence.File,
+            io.grafeas.v1.DiscoveryOccurrence.File.Builder,
+            io.grafeas.v1.DiscoveryOccurrence.FileOrBuilder>
+        filesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Files that make up the resource described by the occurrence.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.DiscoveryOccurrence.File files = 11;</code>
+     */
+    public java.util.List<io.grafeas.v1.DiscoveryOccurrence.File> getFilesList() {
+      if (filesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(files_);
+      } else {
+        return filesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Files that make up the resource described by the occurrence.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.DiscoveryOccurrence.File files = 11;</code>
+     */
+    public int getFilesCount() {
+      if (filesBuilder_ == null) {
+        return files_.size();
+      } else {
+        return filesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Files that make up the resource described by the occurrence.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.DiscoveryOccurrence.File files = 11;</code>
+     */
+    public io.grafeas.v1.DiscoveryOccurrence.File getFiles(int index) {
+      if (filesBuilder_ == null) {
+        return files_.get(index);
+      } else {
+        return filesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Files that make up the resource described by the occurrence.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.DiscoveryOccurrence.File files = 11;</code>
+     */
+    public Builder setFiles(int index, io.grafeas.v1.DiscoveryOccurrence.File value) {
+      if (filesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFilesIsMutable();
+        files_.set(index, value);
+        onChanged();
+      } else {
+        filesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Files that make up the resource described by the occurrence.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.DiscoveryOccurrence.File files = 11;</code>
+     */
+    public Builder setFiles(
+        int index, io.grafeas.v1.DiscoveryOccurrence.File.Builder builderForValue) {
+      if (filesBuilder_ == null) {
+        ensureFilesIsMutable();
+        files_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        filesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Files that make up the resource described by the occurrence.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.DiscoveryOccurrence.File files = 11;</code>
+     */
+    public Builder addFiles(io.grafeas.v1.DiscoveryOccurrence.File value) {
+      if (filesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFilesIsMutable();
+        files_.add(value);
+        onChanged();
+      } else {
+        filesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Files that make up the resource described by the occurrence.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.DiscoveryOccurrence.File files = 11;</code>
+     */
+    public Builder addFiles(int index, io.grafeas.v1.DiscoveryOccurrence.File value) {
+      if (filesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFilesIsMutable();
+        files_.add(index, value);
+        onChanged();
+      } else {
+        filesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Files that make up the resource described by the occurrence.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.DiscoveryOccurrence.File files = 11;</code>
+     */
+    public Builder addFiles(io.grafeas.v1.DiscoveryOccurrence.File.Builder builderForValue) {
+      if (filesBuilder_ == null) {
+        ensureFilesIsMutable();
+        files_.add(builderForValue.build());
+        onChanged();
+      } else {
+        filesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Files that make up the resource described by the occurrence.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.DiscoveryOccurrence.File files = 11;</code>
+     */
+    public Builder addFiles(
+        int index, io.grafeas.v1.DiscoveryOccurrence.File.Builder builderForValue) {
+      if (filesBuilder_ == null) {
+        ensureFilesIsMutable();
+        files_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        filesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Files that make up the resource described by the occurrence.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.DiscoveryOccurrence.File files = 11;</code>
+     */
+    public Builder addAllFiles(
+        java.lang.Iterable<? extends io.grafeas.v1.DiscoveryOccurrence.File> values) {
+      if (filesBuilder_ == null) {
+        ensureFilesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, files_);
+        onChanged();
+      } else {
+        filesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Files that make up the resource described by the occurrence.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.DiscoveryOccurrence.File files = 11;</code>
+     */
+    public Builder clearFiles() {
+      if (filesBuilder_ == null) {
+        files_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000400);
+        onChanged();
+      } else {
+        filesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Files that make up the resource described by the occurrence.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.DiscoveryOccurrence.File files = 11;</code>
+     */
+    public Builder removeFiles(int index) {
+      if (filesBuilder_ == null) {
+        ensureFilesIsMutable();
+        files_.remove(index);
+        onChanged();
+      } else {
+        filesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Files that make up the resource described by the occurrence.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.DiscoveryOccurrence.File files = 11;</code>
+     */
+    public io.grafeas.v1.DiscoveryOccurrence.File.Builder getFilesBuilder(int index) {
+      return getFilesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Files that make up the resource described by the occurrence.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.DiscoveryOccurrence.File files = 11;</code>
+     */
+    public io.grafeas.v1.DiscoveryOccurrence.FileOrBuilder getFilesOrBuilder(int index) {
+      if (filesBuilder_ == null) {
+        return files_.get(index);
+      } else {
+        return filesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Files that make up the resource described by the occurrence.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.DiscoveryOccurrence.File files = 11;</code>
+     */
+    public java.util.List<? extends io.grafeas.v1.DiscoveryOccurrence.FileOrBuilder>
+        getFilesOrBuilderList() {
+      if (filesBuilder_ != null) {
+        return filesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(files_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Files that make up the resource described by the occurrence.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.DiscoveryOccurrence.File files = 11;</code>
+     */
+    public io.grafeas.v1.DiscoveryOccurrence.File.Builder addFilesBuilder() {
+      return getFilesFieldBuilder()
+          .addBuilder(io.grafeas.v1.DiscoveryOccurrence.File.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Files that make up the resource described by the occurrence.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.DiscoveryOccurrence.File files = 11;</code>
+     */
+    public io.grafeas.v1.DiscoveryOccurrence.File.Builder addFilesBuilder(int index) {
+      return getFilesFieldBuilder()
+          .addBuilder(index, io.grafeas.v1.DiscoveryOccurrence.File.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Files that make up the resource described by the occurrence.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.DiscoveryOccurrence.File files = 11;</code>
+     */
+    public java.util.List<io.grafeas.v1.DiscoveryOccurrence.File.Builder> getFilesBuilderList() {
+      return getFilesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            io.grafeas.v1.DiscoveryOccurrence.File,
+            io.grafeas.v1.DiscoveryOccurrence.File.Builder,
+            io.grafeas.v1.DiscoveryOccurrence.FileOrBuilder>
+        getFilesFieldBuilder() {
+      if (filesBuilder_ == null) {
+        filesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                io.grafeas.v1.DiscoveryOccurrence.File,
+                io.grafeas.v1.DiscoveryOccurrence.File.Builder,
+                io.grafeas.v1.DiscoveryOccurrence.FileOrBuilder>(
+                files_, ((bitField0_ & 0x00000400) != 0), getParentForChildren(), isClean());
+        files_ = null;
+      }
+      return filesBuilder_;
     }
 
     @java.lang.Override

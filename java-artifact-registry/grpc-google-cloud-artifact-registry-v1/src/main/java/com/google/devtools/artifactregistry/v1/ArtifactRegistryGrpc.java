@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2304,6 +2304,52 @@ public final class ArtifactRegistryGrpc {
     return getDeleteAttachmentMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.ExportArtifactRequest,
+          com.google.longrunning.Operation>
+      getExportArtifactMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExportArtifact",
+      requestType = com.google.devtools.artifactregistry.v1.ExportArtifactRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.ExportArtifactRequest,
+          com.google.longrunning.Operation>
+      getExportArtifactMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devtools.artifactregistry.v1.ExportArtifactRequest,
+            com.google.longrunning.Operation>
+        getExportArtifactMethod;
+    if ((getExportArtifactMethod = ArtifactRegistryGrpc.getExportArtifactMethod) == null) {
+      synchronized (ArtifactRegistryGrpc.class) {
+        if ((getExportArtifactMethod = ArtifactRegistryGrpc.getExportArtifactMethod) == null) {
+          ArtifactRegistryGrpc.getExportArtifactMethod =
+              getExportArtifactMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devtools.artifactregistry.v1.ExportArtifactRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ExportArtifact"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.ExportArtifactRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ArtifactRegistryMethodDescriptorSupplier("ExportArtifact"))
+                      .build();
+        }
+      }
+    }
+    return getExportArtifactMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ArtifactRegistryStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ArtifactRegistryStub> factory =
@@ -3097,6 +3143,20 @@ public final class ArtifactRegistryGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteAttachmentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports an artifact to a Cloud Storage bucket.
+     * </pre>
+     */
+    default void exportArtifact(
+        com.google.devtools.artifactregistry.v1.ExportArtifactRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getExportArtifactMethod(), responseObserver);
     }
   }
 
@@ -3956,6 +4016,22 @@ public final class ArtifactRegistryGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports an artifact to a Cloud Storage bucket.
+     * </pre>
+     */
+    public void exportArtifact(
+        com.google.devtools.artifactregistry.v1.ExportArtifactRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getExportArtifactMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -4686,6 +4762,20 @@ public final class ArtifactRegistryGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAttachmentMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports an artifact to a Cloud Storage bucket.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportArtifact(
+        com.google.devtools.artifactregistry.v1.ExportArtifactRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getExportArtifactMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -5366,6 +5456,19 @@ public final class ArtifactRegistryGrpc {
         com.google.devtools.artifactregistry.v1.DeleteAttachmentRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteAttachmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports an artifact to a Cloud Storage bucket.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportArtifact(
+        com.google.devtools.artifactregistry.v1.ExportArtifactRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportArtifactMethod(), getCallOptions(), request);
     }
   }
 
@@ -6093,6 +6196,19 @@ public final class ArtifactRegistryGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteAttachmentMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports an artifact to a Cloud Storage bucket.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        exportArtifact(com.google.devtools.artifactregistry.v1.ExportArtifactRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getExportArtifactMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_DOCKER_IMAGES = 0;
@@ -6144,6 +6260,7 @@ public final class ArtifactRegistryGrpc {
   private static final int METHODID_GET_ATTACHMENT = 46;
   private static final int METHODID_CREATE_ATTACHMENT = 47;
   private static final int METHODID_DELETE_ATTACHMENT = 48;
+  private static final int METHODID_EXPORT_ARTIFACT = 49;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -6451,6 +6568,11 @@ public final class ArtifactRegistryGrpc {
         case METHODID_DELETE_ATTACHMENT:
           serviceImpl.deleteAttachment(
               (com.google.devtools.artifactregistry.v1.DeleteAttachmentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_EXPORT_ARTIFACT:
+          serviceImpl.exportArtifact(
+              (com.google.devtools.artifactregistry.v1.ExportArtifactRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -6790,6 +6912,12 @@ public final class ArtifactRegistryGrpc {
                 new MethodHandlers<
                     com.google.devtools.artifactregistry.v1.DeleteAttachmentRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_ATTACHMENT)))
+        .addMethod(
+            getExportArtifactMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.artifactregistry.v1.ExportArtifactRequest,
+                    com.google.longrunning.Operation>(service, METHODID_EXPORT_ARTIFACT)))
         .build();
   }
 
@@ -6890,6 +7018,7 @@ public final class ArtifactRegistryGrpc {
                       .addMethod(getGetAttachmentMethod())
                       .addMethod(getCreateAttachmentMethod())
                       .addMethod(getDeleteAttachmentMethod())
+                      .addMethod(getExportArtifactMethod())
                       .build();
         }
       }

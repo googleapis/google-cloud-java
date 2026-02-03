@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -100,6 +100,150 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     return diskCount_;
   }
 
+  public static final int EXAPOOL_MAX_READ_IOPS_FIELD_NUMBER = 59241794;
+  private long exapoolMaxReadIops_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Maximum allowed read IOPS for this Exapool.
+   * </pre>
+   *
+   * <code>optional int64 exapool_max_read_iops = 59241794;</code>
+   *
+   * @return Whether the exapoolMaxReadIops field is set.
+   */
+  @java.lang.Override
+  public boolean hasExapoolMaxReadIops() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Maximum allowed read IOPS for this Exapool.
+   * </pre>
+   *
+   * <code>optional int64 exapool_max_read_iops = 59241794;</code>
+   *
+   * @return The exapoolMaxReadIops.
+   */
+  @java.lang.Override
+  public long getExapoolMaxReadIops() {
+    return exapoolMaxReadIops_;
+  }
+
+  public static final int EXAPOOL_MAX_READ_THROUGHPUT_FIELD_NUMBER = 390933251;
+  private long exapoolMaxReadThroughput_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Maximum allowed read throughput in MiB/s for
+   * this Exapool.
+   * </pre>
+   *
+   * <code>optional int64 exapool_max_read_throughput = 390933251;</code>
+   *
+   * @return Whether the exapoolMaxReadThroughput field is set.
+   */
+  @java.lang.Override
+  public boolean hasExapoolMaxReadThroughput() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Maximum allowed read throughput in MiB/s for
+   * this Exapool.
+   * </pre>
+   *
+   * <code>optional int64 exapool_max_read_throughput = 390933251;</code>
+   *
+   * @return The exapoolMaxReadThroughput.
+   */
+  @java.lang.Override
+  public long getExapoolMaxReadThroughput() {
+    return exapoolMaxReadThroughput_;
+  }
+
+  public static final int EXAPOOL_MAX_WRITE_IOPS_FIELD_NUMBER = 293212537;
+  private long exapoolMaxWriteIops_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Maximum allowed write IOPS for this Exapool.
+   * </pre>
+   *
+   * <code>optional int64 exapool_max_write_iops = 293212537;</code>
+   *
+   * @return Whether the exapoolMaxWriteIops field is set.
+   */
+  @java.lang.Override
+  public boolean hasExapoolMaxWriteIops() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Maximum allowed write IOPS for this Exapool.
+   * </pre>
+   *
+   * <code>optional int64 exapool_max_write_iops = 293212537;</code>
+   *
+   * @return The exapoolMaxWriteIops.
+   */
+  @java.lang.Override
+  public long getExapoolMaxWriteIops() {
+    return exapoolMaxWriteIops_;
+  }
+
+  public static final int EXAPOOL_MAX_WRITE_THROUGHPUT_FIELD_NUMBER = 330367482;
+  private long exapoolMaxWriteThroughput_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Maximum allowed write throughput in MiB/s
+   * for this Exapool.
+   * </pre>
+   *
+   * <code>optional int64 exapool_max_write_throughput = 330367482;</code>
+   *
+   * @return Whether the exapoolMaxWriteThroughput field is set.
+   */
+  @java.lang.Override
+  public boolean hasExapoolMaxWriteThroughput() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Maximum allowed write throughput in MiB/s
+   * for this Exapool.
+   * </pre>
+   *
+   * <code>optional int64 exapool_max_write_throughput = 330367482;</code>
+   *
+   * @return The exapoolMaxWriteThroughput.
+   */
+  @java.lang.Override
+  public long getExapoolMaxWriteThroughput() {
+    return exapoolMaxWriteThroughput_;
+  }
+
   public static final int LAST_RESIZE_TIMESTAMP_FIELD_NUMBER = 500825556;
 
   @SuppressWarnings("serial")
@@ -109,7 +253,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Timestamp of the last successful resize in RFC3339 text format.
+   * Output only. [Output Only] Timestamp of the last successful resize inRFC3339 text format.
    * </pre>
    *
    * <code>optional string last_resize_timestamp = 500825556;</code>
@@ -118,14 +262,14 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public boolean hasLastResizeTimestamp() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] Timestamp of the last successful resize in RFC3339 text format.
+   * Output only. [Output Only] Timestamp of the last successful resize inRFC3339 text format.
    * </pre>
    *
    * <code>optional string last_resize_timestamp = 500825556;</code>
@@ -149,7 +293,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Timestamp of the last successful resize in RFC3339 text format.
+   * Output only. [Output Only] Timestamp of the last successful resize inRFC3339 text format.
    * </pre>
    *
    * <code>optional string last_resize_timestamp = 500825556;</code>
@@ -185,7 +329,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public boolean hasMaxTotalProvisionedDiskCapacityGb() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -211,7 +355,9 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Space used by data stored in disks within the storage pool (in bytes). This will reflect the total number of bytes written to the disks in the pool, in contrast to the capacity of those disks.
+   * [Output Only] Space used by data stored in disks within the storage pool
+   * (in bytes). This will reflect the total number of bytes written to the
+   * disks in the pool, in contrast to the capacity of those disks.
    * </pre>
    *
    * <code>optional int64 pool_used_capacity_bytes = 510407877;</code>
@@ -220,14 +366,16 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public boolean hasPoolUsedCapacityBytes() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] Space used by data stored in disks within the storage pool (in bytes). This will reflect the total number of bytes written to the disks in the pool, in contrast to the capacity of those disks.
+   * [Output Only] Space used by data stored in disks within the storage pool
+   * (in bytes). This will reflect the total number of bytes written to the
+   * disks in the pool, in contrast to the capacity of those disks.
    * </pre>
    *
    * <code>optional int64 pool_used_capacity_bytes = 510407877;</code>
@@ -246,7 +394,10 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount that is allowed per disk that is not counted towards pool's IOPS capacity. For more information, see https://cloud.google.com/compute/docs/disks/storage-pools.
+   * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount
+   * that is allowed per disk that is not counted towards pool's IOPS
+   * capacity. For more information, see
+   * https://cloud.google.com/compute/docs/disks/storage-pools.
    * </pre>
    *
    * <code>optional int64 pool_used_iops = 99558536;</code>
@@ -255,14 +406,17 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public boolean hasPoolUsedIops() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount that is allowed per disk that is not counted towards pool's IOPS capacity. For more information, see https://cloud.google.com/compute/docs/disks/storage-pools.
+   * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount
+   * that is allowed per disk that is not counted towards pool's IOPS
+   * capacity. For more information, see
+   * https://cloud.google.com/compute/docs/disks/storage-pools.
    * </pre>
    *
    * <code>optional int64 pool_used_iops = 99558536;</code>
@@ -290,7 +444,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public boolean hasPoolUsedThroughput() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -316,7 +470,8 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Amount of data written into the pool, before it is compacted.
+   * [Output Only] Amount of data written into the pool, before it is
+   * compacted.
    * </pre>
    *
    * <code>optional int64 pool_user_written_bytes = 228964050;</code>
@@ -325,14 +480,15 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public boolean hasPoolUserWrittenBytes() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] Amount of data written into the pool, before it is compacted.
+   * [Output Only] Amount of data written into the pool, before it is
+   * compacted.
    * </pre>
    *
    * <code>optional int64 pool_user_written_bytes = 228964050;</code>
@@ -351,7 +507,9 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Sum of all the disks' provisioned capacity (in GiB) in this storage pool. A disk's provisioned capacity is the same as its total capacity.
+   * [Output Only] Sum of all the disks' provisioned capacity (in GiB) in
+   * this storage pool. A disk's provisioned capacity is the same as its total
+   * capacity.
    * </pre>
    *
    * <code>optional int64 total_provisioned_disk_capacity_gb = 520930980;</code>
@@ -360,14 +518,16 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public boolean hasTotalProvisionedDiskCapacityGb() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] Sum of all the disks' provisioned capacity (in GiB) in this storage pool. A disk's provisioned capacity is the same as its total capacity.
+   * [Output Only] Sum of all the disks' provisioned capacity (in GiB) in
+   * this storage pool. A disk's provisioned capacity is the same as its total
+   * capacity.
    * </pre>
    *
    * <code>optional int64 total_provisioned_disk_capacity_gb = 520930980;</code>
@@ -395,7 +555,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public boolean hasTotalProvisionedDiskIops() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
@@ -421,7 +581,9 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Sum of all the disks' provisioned throughput in MiB/s, minus some amount that is allowed per disk that is not counted towards pool's throughput capacity.
+   * [Output Only] Sum of all the disks' provisioned throughput in MiB/s,
+   * minus some amount that is allowed per disk that is not counted towards
+   * pool's throughput capacity.
    * </pre>
    *
    * <code>optional int64 total_provisioned_disk_throughput = 447677830;</code>
@@ -430,14 +592,16 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public boolean hasTotalProvisionedDiskThroughput() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] Sum of all the disks' provisioned throughput in MiB/s, minus some amount that is allowed per disk that is not counted towards pool's throughput capacity.
+   * [Output Only] Sum of all the disks' provisioned throughput in MiB/s,
+   * minus some amount that is allowed per disk that is not counted towards
+   * pool's throughput capacity.
    * </pre>
    *
    * <code>optional int64 total_provisioned_disk_throughput = 447677830;</code>
@@ -463,34 +627,46 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       output.writeInt64(32812549, totalProvisionedDiskIops_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeInt64(59241794, exapoolMaxReadIops_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeInt64(99558536, poolUsedIops_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeInt64(165818207, maxTotalProvisionedDiskCapacityGb_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt64(182933485, diskCount_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeInt64(206130633, poolUsedThroughput_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeInt64(228964050, poolUserWrittenBytes_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeInt64(293212537, exapoolMaxWriteIops_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeInt64(330367482, exapoolMaxWriteThroughput_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeInt64(390933251, exapoolMaxReadThroughput_);
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
       output.writeInt64(447677830, totalProvisionedDiskThroughput_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 500825556, lastResizeTimestamp_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeInt64(510407877, poolUsedCapacityBytes_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeInt64(520930980, totalProvisionedDiskCapacityGb_);
     }
     getUnknownFields().writeTo(output);
@@ -502,15 +678,18 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt64Size(
               32812549, totalProvisionedDiskIops_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(59241794, exapoolMaxReadIops_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(99558536, poolUsedIops_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt64Size(
               165818207, maxTotalProvisionedDiskCapacityGb_);
@@ -518,28 +697,42 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(182933485, diskCount_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt64Size(206130633, poolUsedThroughput_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt64Size(228964050, poolUserWrittenBytes_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt64Size(293212537, exapoolMaxWriteIops_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt64Size(
+              330367482, exapoolMaxWriteThroughput_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt64Size(
+              390933251, exapoolMaxReadThroughput_);
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt64Size(
               447677830, totalProvisionedDiskThroughput_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(500825556, lastResizeTimestamp_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt64Size(510407877, poolUsedCapacityBytes_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt64Size(
               520930980, totalProvisionedDiskCapacityGb_);
@@ -563,6 +756,22 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     if (hasDiskCount() != other.hasDiskCount()) return false;
     if (hasDiskCount()) {
       if (getDiskCount() != other.getDiskCount()) return false;
+    }
+    if (hasExapoolMaxReadIops() != other.hasExapoolMaxReadIops()) return false;
+    if (hasExapoolMaxReadIops()) {
+      if (getExapoolMaxReadIops() != other.getExapoolMaxReadIops()) return false;
+    }
+    if (hasExapoolMaxReadThroughput() != other.hasExapoolMaxReadThroughput()) return false;
+    if (hasExapoolMaxReadThroughput()) {
+      if (getExapoolMaxReadThroughput() != other.getExapoolMaxReadThroughput()) return false;
+    }
+    if (hasExapoolMaxWriteIops() != other.hasExapoolMaxWriteIops()) return false;
+    if (hasExapoolMaxWriteIops()) {
+      if (getExapoolMaxWriteIops() != other.getExapoolMaxWriteIops()) return false;
+    }
+    if (hasExapoolMaxWriteThroughput() != other.hasExapoolMaxWriteThroughput()) return false;
+    if (hasExapoolMaxWriteThroughput()) {
+      if (getExapoolMaxWriteThroughput() != other.getExapoolMaxWriteThroughput()) return false;
     }
     if (hasLastResizeTimestamp() != other.hasLastResizeTimestamp()) return false;
     if (hasLastResizeTimestamp()) {
@@ -620,6 +829,22 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     if (hasDiskCount()) {
       hash = (37 * hash) + DISK_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getDiskCount());
+    }
+    if (hasExapoolMaxReadIops()) {
+      hash = (37 * hash) + EXAPOOL_MAX_READ_IOPS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getExapoolMaxReadIops());
+    }
+    if (hasExapoolMaxReadThroughput()) {
+      hash = (37 * hash) + EXAPOOL_MAX_READ_THROUGHPUT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getExapoolMaxReadThroughput());
+    }
+    if (hasExapoolMaxWriteIops()) {
+      hash = (37 * hash) + EXAPOOL_MAX_WRITE_IOPS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getExapoolMaxWriteIops());
+    }
+    if (hasExapoolMaxWriteThroughput()) {
+      hash = (37 * hash) + EXAPOOL_MAX_WRITE_THROUGHPUT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getExapoolMaxWriteThroughput());
     }
     if (hasLastResizeTimestamp()) {
       hash = (37 * hash) + LAST_RESIZE_TIMESTAMP_FIELD_NUMBER;
@@ -803,6 +1028,10 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
       super.clear();
       bitField0_ = 0;
       diskCount_ = 0L;
+      exapoolMaxReadIops_ = 0L;
+      exapoolMaxReadThroughput_ = 0L;
+      exapoolMaxWriteIops_ = 0L;
+      exapoolMaxWriteThroughput_ = 0L;
       lastResizeTimestamp_ = "";
       maxTotalProvisionedDiskCapacityGb_ = 0L;
       poolUsedCapacityBytes_ = 0L;
@@ -854,40 +1083,56 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.lastResizeTimestamp_ = lastResizeTimestamp_;
+        result.exapoolMaxReadIops_ = exapoolMaxReadIops_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.maxTotalProvisionedDiskCapacityGb_ = maxTotalProvisionedDiskCapacityGb_;
+        result.exapoolMaxReadThroughput_ = exapoolMaxReadThroughput_;
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.poolUsedCapacityBytes_ = poolUsedCapacityBytes_;
+        result.exapoolMaxWriteIops_ = exapoolMaxWriteIops_;
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.poolUsedIops_ = poolUsedIops_;
+        result.exapoolMaxWriteThroughput_ = exapoolMaxWriteThroughput_;
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.poolUsedThroughput_ = poolUsedThroughput_;
+        result.lastResizeTimestamp_ = lastResizeTimestamp_;
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.poolUserWrittenBytes_ = poolUserWrittenBytes_;
+        result.maxTotalProvisionedDiskCapacityGb_ = maxTotalProvisionedDiskCapacityGb_;
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.totalProvisionedDiskCapacityGb_ = totalProvisionedDiskCapacityGb_;
+        result.poolUsedCapacityBytes_ = poolUsedCapacityBytes_;
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.totalProvisionedDiskIops_ = totalProvisionedDiskIops_;
+        result.poolUsedIops_ = poolUsedIops_;
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.totalProvisionedDiskThroughput_ = totalProvisionedDiskThroughput_;
+        result.poolUsedThroughput_ = poolUsedThroughput_;
         to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.poolUserWrittenBytes_ = poolUserWrittenBytes_;
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.totalProvisionedDiskCapacityGb_ = totalProvisionedDiskCapacityGb_;
+        to_bitField0_ |= 0x00000800;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.totalProvisionedDiskIops_ = totalProvisionedDiskIops_;
+        to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.totalProvisionedDiskThroughput_ = totalProvisionedDiskThroughput_;
+        to_bitField0_ |= 0x00002000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -941,9 +1186,21 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
       if (other.hasDiskCount()) {
         setDiskCount(other.getDiskCount());
       }
+      if (other.hasExapoolMaxReadIops()) {
+        setExapoolMaxReadIops(other.getExapoolMaxReadIops());
+      }
+      if (other.hasExapoolMaxReadThroughput()) {
+        setExapoolMaxReadThroughput(other.getExapoolMaxReadThroughput());
+      }
+      if (other.hasExapoolMaxWriteIops()) {
+        setExapoolMaxWriteIops(other.getExapoolMaxWriteIops());
+      }
+      if (other.hasExapoolMaxWriteThroughput()) {
+        setExapoolMaxWriteThroughput(other.getExapoolMaxWriteThroughput());
+      }
       if (other.hasLastResizeTimestamp()) {
         lastResizeTimestamp_ = other.lastResizeTimestamp_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasMaxTotalProvisionedDiskCapacityGb()) {
@@ -999,19 +1256,25 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
             case 262500392:
               {
                 totalProvisionedDiskIops_ = input.readInt64();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 262500392
+            case 473934352:
+              {
+                exapoolMaxReadIops_ = input.readInt64();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 473934352
             case 796468288:
               {
                 poolUsedIops_ = input.readInt64();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 796468288
             case 1326545656:
               {
                 maxTotalProvisionedDiskCapacityGb_ = input.readInt64();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 1326545656
             case 1463467880:
@@ -1023,37 +1286,55 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
             case 1649045064:
               {
                 poolUsedThroughput_ = input.readInt64();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 1649045064
             case 1831712400:
               {
                 poolUserWrittenBytes_ = input.readInt64();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 1831712400
+            case -1949267000:
+              {
+                exapoolMaxWriteIops_ = input.readInt64();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case -1949267000
+            case -1652027440:
+              {
+                exapoolMaxWriteThroughput_ = input.readInt64();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case -1652027440
+            case -1167501288:
+              {
+                exapoolMaxReadThroughput_ = input.readInt64();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case -1167501288
             case -713544656:
               {
                 totalProvisionedDiskThroughput_ = input.readInt64();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00002000;
                 break;
               } // case -713544656
             case -288362846:
               {
                 lastResizeTimestamp_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000020;
                 break;
               } // case -288362846
             case -211704280:
               {
                 poolUsedCapacityBytes_ = input.readInt64();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000080;
                 break;
               } // case -211704280
             case -127519456:
               {
                 totalProvisionedDiskCapacityGb_ = input.readInt64();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000800;
                 break;
               } // case -127519456
             default:
@@ -1147,20 +1428,21 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
       return this;
     }
 
-    private java.lang.Object lastResizeTimestamp_ = "";
+    private long exapoolMaxReadIops_;
 
     /**
      *
      *
      * <pre>
-     * [Output Only] Timestamp of the last successful resize in RFC3339 text format.
+     * Output only. [Output Only] Maximum allowed read IOPS for this Exapool.
      * </pre>
      *
-     * <code>optional string last_resize_timestamp = 500825556;</code>
+     * <code>optional int64 exapool_max_read_iops = 59241794;</code>
      *
-     * @return Whether the lastResizeTimestamp field is set.
+     * @return Whether the exapoolMaxReadIops field is set.
      */
-    public boolean hasLastResizeTimestamp() {
+    @java.lang.Override
+    public boolean hasExapoolMaxReadIops() {
       return ((bitField0_ & 0x00000002) != 0);
     }
 
@@ -1168,7 +1450,302 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Timestamp of the last successful resize in RFC3339 text format.
+     * Output only. [Output Only] Maximum allowed read IOPS for this Exapool.
+     * </pre>
+     *
+     * <code>optional int64 exapool_max_read_iops = 59241794;</code>
+     *
+     * @return The exapoolMaxReadIops.
+     */
+    @java.lang.Override
+    public long getExapoolMaxReadIops() {
+      return exapoolMaxReadIops_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Maximum allowed read IOPS for this Exapool.
+     * </pre>
+     *
+     * <code>optional int64 exapool_max_read_iops = 59241794;</code>
+     *
+     * @param value The exapoolMaxReadIops to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExapoolMaxReadIops(long value) {
+
+      exapoolMaxReadIops_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Maximum allowed read IOPS for this Exapool.
+     * </pre>
+     *
+     * <code>optional int64 exapool_max_read_iops = 59241794;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExapoolMaxReadIops() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      exapoolMaxReadIops_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long exapoolMaxReadThroughput_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Maximum allowed read throughput in MiB/s for
+     * this Exapool.
+     * </pre>
+     *
+     * <code>optional int64 exapool_max_read_throughput = 390933251;</code>
+     *
+     * @return Whether the exapoolMaxReadThroughput field is set.
+     */
+    @java.lang.Override
+    public boolean hasExapoolMaxReadThroughput() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Maximum allowed read throughput in MiB/s for
+     * this Exapool.
+     * </pre>
+     *
+     * <code>optional int64 exapool_max_read_throughput = 390933251;</code>
+     *
+     * @return The exapoolMaxReadThroughput.
+     */
+    @java.lang.Override
+    public long getExapoolMaxReadThroughput() {
+      return exapoolMaxReadThroughput_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Maximum allowed read throughput in MiB/s for
+     * this Exapool.
+     * </pre>
+     *
+     * <code>optional int64 exapool_max_read_throughput = 390933251;</code>
+     *
+     * @param value The exapoolMaxReadThroughput to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExapoolMaxReadThroughput(long value) {
+
+      exapoolMaxReadThroughput_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Maximum allowed read throughput in MiB/s for
+     * this Exapool.
+     * </pre>
+     *
+     * <code>optional int64 exapool_max_read_throughput = 390933251;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExapoolMaxReadThroughput() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      exapoolMaxReadThroughput_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long exapoolMaxWriteIops_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Maximum allowed write IOPS for this Exapool.
+     * </pre>
+     *
+     * <code>optional int64 exapool_max_write_iops = 293212537;</code>
+     *
+     * @return Whether the exapoolMaxWriteIops field is set.
+     */
+    @java.lang.Override
+    public boolean hasExapoolMaxWriteIops() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Maximum allowed write IOPS for this Exapool.
+     * </pre>
+     *
+     * <code>optional int64 exapool_max_write_iops = 293212537;</code>
+     *
+     * @return The exapoolMaxWriteIops.
+     */
+    @java.lang.Override
+    public long getExapoolMaxWriteIops() {
+      return exapoolMaxWriteIops_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Maximum allowed write IOPS for this Exapool.
+     * </pre>
+     *
+     * <code>optional int64 exapool_max_write_iops = 293212537;</code>
+     *
+     * @param value The exapoolMaxWriteIops to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExapoolMaxWriteIops(long value) {
+
+      exapoolMaxWriteIops_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Maximum allowed write IOPS for this Exapool.
+     * </pre>
+     *
+     * <code>optional int64 exapool_max_write_iops = 293212537;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExapoolMaxWriteIops() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      exapoolMaxWriteIops_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long exapoolMaxWriteThroughput_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Maximum allowed write throughput in MiB/s
+     * for this Exapool.
+     * </pre>
+     *
+     * <code>optional int64 exapool_max_write_throughput = 330367482;</code>
+     *
+     * @return Whether the exapoolMaxWriteThroughput field is set.
+     */
+    @java.lang.Override
+    public boolean hasExapoolMaxWriteThroughput() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Maximum allowed write throughput in MiB/s
+     * for this Exapool.
+     * </pre>
+     *
+     * <code>optional int64 exapool_max_write_throughput = 330367482;</code>
+     *
+     * @return The exapoolMaxWriteThroughput.
+     */
+    @java.lang.Override
+    public long getExapoolMaxWriteThroughput() {
+      return exapoolMaxWriteThroughput_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Maximum allowed write throughput in MiB/s
+     * for this Exapool.
+     * </pre>
+     *
+     * <code>optional int64 exapool_max_write_throughput = 330367482;</code>
+     *
+     * @param value The exapoolMaxWriteThroughput to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExapoolMaxWriteThroughput(long value) {
+
+      exapoolMaxWriteThroughput_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Maximum allowed write throughput in MiB/s
+     * for this Exapool.
+     * </pre>
+     *
+     * <code>optional int64 exapool_max_write_throughput = 330367482;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExapoolMaxWriteThroughput() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      exapoolMaxWriteThroughput_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object lastResizeTimestamp_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Timestamp of the last successful resize inRFC3339 text format.
+     * </pre>
+     *
+     * <code>optional string last_resize_timestamp = 500825556;</code>
+     *
+     * @return Whether the lastResizeTimestamp field is set.
+     */
+    public boolean hasLastResizeTimestamp() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Timestamp of the last successful resize inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_resize_timestamp = 500825556;</code>
@@ -1191,7 +1768,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Timestamp of the last successful resize in RFC3339 text format.
+     * Output only. [Output Only] Timestamp of the last successful resize inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_resize_timestamp = 500825556;</code>
@@ -1214,7 +1791,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Timestamp of the last successful resize in RFC3339 text format.
+     * Output only. [Output Only] Timestamp of the last successful resize inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_resize_timestamp = 500825556;</code>
@@ -1227,7 +1804,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       lastResizeTimestamp_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1236,7 +1813,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Timestamp of the last successful resize in RFC3339 text format.
+     * Output only. [Output Only] Timestamp of the last successful resize inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_resize_timestamp = 500825556;</code>
@@ -1245,7 +1822,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      */
     public Builder clearLastResizeTimestamp() {
       lastResizeTimestamp_ = getDefaultInstance().getLastResizeTimestamp();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1254,7 +1831,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Timestamp of the last successful resize in RFC3339 text format.
+     * Output only. [Output Only] Timestamp of the last successful resize inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_resize_timestamp = 500825556;</code>
@@ -1268,7 +1845,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
       }
       checkByteStringIsUtf8(value);
       lastResizeTimestamp_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1288,7 +1865,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public boolean hasMaxTotalProvisionedDiskCapacityGb() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -1322,7 +1899,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     public Builder setMaxTotalProvisionedDiskCapacityGb(long value) {
 
       maxTotalProvisionedDiskCapacityGb_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1339,7 +1916,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearMaxTotalProvisionedDiskCapacityGb() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000040);
       maxTotalProvisionedDiskCapacityGb_ = 0L;
       onChanged();
       return this;
@@ -1351,7 +1928,9 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Space used by data stored in disks within the storage pool (in bytes). This will reflect the total number of bytes written to the disks in the pool, in contrast to the capacity of those disks.
+     * [Output Only] Space used by data stored in disks within the storage pool
+     * (in bytes). This will reflect the total number of bytes written to the
+     * disks in the pool, in contrast to the capacity of those disks.
      * </pre>
      *
      * <code>optional int64 pool_used_capacity_bytes = 510407877;</code>
@@ -1360,14 +1939,16 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public boolean hasPoolUsedCapacityBytes() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] Space used by data stored in disks within the storage pool (in bytes). This will reflect the total number of bytes written to the disks in the pool, in contrast to the capacity of those disks.
+     * [Output Only] Space used by data stored in disks within the storage pool
+     * (in bytes). This will reflect the total number of bytes written to the
+     * disks in the pool, in contrast to the capacity of those disks.
      * </pre>
      *
      * <code>optional int64 pool_used_capacity_bytes = 510407877;</code>
@@ -1383,7 +1964,9 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Space used by data stored in disks within the storage pool (in bytes). This will reflect the total number of bytes written to the disks in the pool, in contrast to the capacity of those disks.
+     * [Output Only] Space used by data stored in disks within the storage pool
+     * (in bytes). This will reflect the total number of bytes written to the
+     * disks in the pool, in contrast to the capacity of those disks.
      * </pre>
      *
      * <code>optional int64 pool_used_capacity_bytes = 510407877;</code>
@@ -1394,7 +1977,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     public Builder setPoolUsedCapacityBytes(long value) {
 
       poolUsedCapacityBytes_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1403,7 +1986,9 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Space used by data stored in disks within the storage pool (in bytes). This will reflect the total number of bytes written to the disks in the pool, in contrast to the capacity of those disks.
+     * [Output Only] Space used by data stored in disks within the storage pool
+     * (in bytes). This will reflect the total number of bytes written to the
+     * disks in the pool, in contrast to the capacity of those disks.
      * </pre>
      *
      * <code>optional int64 pool_used_capacity_bytes = 510407877;</code>
@@ -1411,7 +1996,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearPoolUsedCapacityBytes() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000080);
       poolUsedCapacityBytes_ = 0L;
       onChanged();
       return this;
@@ -1423,7 +2008,10 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount that is allowed per disk that is not counted towards pool's IOPS capacity. For more information, see https://cloud.google.com/compute/docs/disks/storage-pools.
+     * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount
+     * that is allowed per disk that is not counted towards pool's IOPS
+     * capacity. For more information, see
+     * https://cloud.google.com/compute/docs/disks/storage-pools.
      * </pre>
      *
      * <code>optional int64 pool_used_iops = 99558536;</code>
@@ -1432,14 +2020,17 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public boolean hasPoolUsedIops() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount that is allowed per disk that is not counted towards pool's IOPS capacity. For more information, see https://cloud.google.com/compute/docs/disks/storage-pools.
+     * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount
+     * that is allowed per disk that is not counted towards pool's IOPS
+     * capacity. For more information, see
+     * https://cloud.google.com/compute/docs/disks/storage-pools.
      * </pre>
      *
      * <code>optional int64 pool_used_iops = 99558536;</code>
@@ -1455,7 +2046,10 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount that is allowed per disk that is not counted towards pool's IOPS capacity. For more information, see https://cloud.google.com/compute/docs/disks/storage-pools.
+     * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount
+     * that is allowed per disk that is not counted towards pool's IOPS
+     * capacity. For more information, see
+     * https://cloud.google.com/compute/docs/disks/storage-pools.
      * </pre>
      *
      * <code>optional int64 pool_used_iops = 99558536;</code>
@@ -1466,7 +2060,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     public Builder setPoolUsedIops(long value) {
 
       poolUsedIops_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -1475,7 +2069,10 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount that is allowed per disk that is not counted towards pool's IOPS capacity. For more information, see https://cloud.google.com/compute/docs/disks/storage-pools.
+     * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount
+     * that is allowed per disk that is not counted towards pool's IOPS
+     * capacity. For more information, see
+     * https://cloud.google.com/compute/docs/disks/storage-pools.
      * </pre>
      *
      * <code>optional int64 pool_used_iops = 99558536;</code>
@@ -1483,7 +2080,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearPoolUsedIops() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000100);
       poolUsedIops_ = 0L;
       onChanged();
       return this;
@@ -1504,7 +2101,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public boolean hasPoolUsedThroughput() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -1538,7 +2135,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     public Builder setPoolUsedThroughput(long value) {
 
       poolUsedThroughput_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -1555,7 +2152,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearPoolUsedThroughput() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000200);
       poolUsedThroughput_ = 0L;
       onChanged();
       return this;
@@ -1567,7 +2164,8 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Amount of data written into the pool, before it is compacted.
+     * [Output Only] Amount of data written into the pool, before it is
+     * compacted.
      * </pre>
      *
      * <code>optional int64 pool_user_written_bytes = 228964050;</code>
@@ -1576,14 +2174,15 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public boolean hasPoolUserWrittenBytes() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] Amount of data written into the pool, before it is compacted.
+     * [Output Only] Amount of data written into the pool, before it is
+     * compacted.
      * </pre>
      *
      * <code>optional int64 pool_user_written_bytes = 228964050;</code>
@@ -1599,7 +2198,8 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Amount of data written into the pool, before it is compacted.
+     * [Output Only] Amount of data written into the pool, before it is
+     * compacted.
      * </pre>
      *
      * <code>optional int64 pool_user_written_bytes = 228964050;</code>
@@ -1610,7 +2210,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     public Builder setPoolUserWrittenBytes(long value) {
 
       poolUserWrittenBytes_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -1619,7 +2219,8 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Amount of data written into the pool, before it is compacted.
+     * [Output Only] Amount of data written into the pool, before it is
+     * compacted.
      * </pre>
      *
      * <code>optional int64 pool_user_written_bytes = 228964050;</code>
@@ -1627,7 +2228,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearPoolUserWrittenBytes() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000400);
       poolUserWrittenBytes_ = 0L;
       onChanged();
       return this;
@@ -1639,7 +2240,9 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Sum of all the disks' provisioned capacity (in GiB) in this storage pool. A disk's provisioned capacity is the same as its total capacity.
+     * [Output Only] Sum of all the disks' provisioned capacity (in GiB) in
+     * this storage pool. A disk's provisioned capacity is the same as its total
+     * capacity.
      * </pre>
      *
      * <code>optional int64 total_provisioned_disk_capacity_gb = 520930980;</code>
@@ -1648,14 +2251,16 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public boolean hasTotalProvisionedDiskCapacityGb() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] Sum of all the disks' provisioned capacity (in GiB) in this storage pool. A disk's provisioned capacity is the same as its total capacity.
+     * [Output Only] Sum of all the disks' provisioned capacity (in GiB) in
+     * this storage pool. A disk's provisioned capacity is the same as its total
+     * capacity.
      * </pre>
      *
      * <code>optional int64 total_provisioned_disk_capacity_gb = 520930980;</code>
@@ -1671,7 +2276,9 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Sum of all the disks' provisioned capacity (in GiB) in this storage pool. A disk's provisioned capacity is the same as its total capacity.
+     * [Output Only] Sum of all the disks' provisioned capacity (in GiB) in
+     * this storage pool. A disk's provisioned capacity is the same as its total
+     * capacity.
      * </pre>
      *
      * <code>optional int64 total_provisioned_disk_capacity_gb = 520930980;</code>
@@ -1682,7 +2289,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     public Builder setTotalProvisionedDiskCapacityGb(long value) {
 
       totalProvisionedDiskCapacityGb_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -1691,7 +2298,9 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Sum of all the disks' provisioned capacity (in GiB) in this storage pool. A disk's provisioned capacity is the same as its total capacity.
+     * [Output Only] Sum of all the disks' provisioned capacity (in GiB) in
+     * this storage pool. A disk's provisioned capacity is the same as its total
+     * capacity.
      * </pre>
      *
      * <code>optional int64 total_provisioned_disk_capacity_gb = 520930980;</code>
@@ -1699,7 +2308,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearTotalProvisionedDiskCapacityGb() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000800);
       totalProvisionedDiskCapacityGb_ = 0L;
       onChanged();
       return this;
@@ -1720,7 +2329,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public boolean hasTotalProvisionedDiskIops() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -1754,7 +2363,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     public Builder setTotalProvisionedDiskIops(long value) {
 
       totalProvisionedDiskIops_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -1771,7 +2380,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearTotalProvisionedDiskIops() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00001000);
       totalProvisionedDiskIops_ = 0L;
       onChanged();
       return this;
@@ -1783,7 +2392,9 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Sum of all the disks' provisioned throughput in MiB/s, minus some amount that is allowed per disk that is not counted towards pool's throughput capacity.
+     * [Output Only] Sum of all the disks' provisioned throughput in MiB/s,
+     * minus some amount that is allowed per disk that is not counted towards
+     * pool's throughput capacity.
      * </pre>
      *
      * <code>optional int64 total_provisioned_disk_throughput = 447677830;</code>
@@ -1792,14 +2403,16 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public boolean hasTotalProvisionedDiskThroughput() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] Sum of all the disks' provisioned throughput in MiB/s, minus some amount that is allowed per disk that is not counted towards pool's throughput capacity.
+     * [Output Only] Sum of all the disks' provisioned throughput in MiB/s,
+     * minus some amount that is allowed per disk that is not counted towards
+     * pool's throughput capacity.
      * </pre>
      *
      * <code>optional int64 total_provisioned_disk_throughput = 447677830;</code>
@@ -1815,7 +2428,9 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Sum of all the disks' provisioned throughput in MiB/s, minus some amount that is allowed per disk that is not counted towards pool's throughput capacity.
+     * [Output Only] Sum of all the disks' provisioned throughput in MiB/s,
+     * minus some amount that is allowed per disk that is not counted towards
+     * pool's throughput capacity.
      * </pre>
      *
      * <code>optional int64 total_provisioned_disk_throughput = 447677830;</code>
@@ -1826,7 +2441,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
     public Builder setTotalProvisionedDiskThroughput(long value) {
 
       totalProvisionedDiskThroughput_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -1835,7 +2450,9 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Sum of all the disks' provisioned throughput in MiB/s, minus some amount that is allowed per disk that is not counted towards pool's throughput capacity.
+     * [Output Only] Sum of all the disks' provisioned throughput in MiB/s,
+     * minus some amount that is allowed per disk that is not counted towards
+     * pool's throughput capacity.
      * </pre>
      *
      * <code>optional int64 total_provisioned_disk_throughput = 447677830;</code>
@@ -1843,7 +2460,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearTotalProvisionedDiskThroughput() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00002000);
       totalProvisionedDiskThroughput_ = 0L;
       onChanged();
       return this;

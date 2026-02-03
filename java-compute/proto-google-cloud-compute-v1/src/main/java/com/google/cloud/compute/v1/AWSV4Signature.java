@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,10 @@ package com.google.cloud.compute.v1;
  *
  * Messages
  *
- * Contains the configurations necessary to generate a signature for access to private storage buckets that support Signature Version 4 for authentication. The service name for generating the authentication header will always default to 's3'.
+ * Contains the configurations necessary to generate a signature for access to
+ * private storage buckets that support Signature Version 4 for authentication.
+ * The service name for generating the authentication header will always default
+ * to 's3'.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.AWSV4Signature}
@@ -80,7 +83,12 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The access key used for s3 bucket authentication. Required for updating or creating a backend that uses AWS v4 signature authentication, but will not be returned as part of the configuration when queried with a REST API GET request. &#64;InputOnly
+   * The access key used for s3 bucket authentication. Required for updating or
+   * creating a backend that uses AWS v4 signature authentication, but will not
+   * be returned as part of the configuration when queried with a REST API GET
+   * request.
+   *
+   * &#64;InputOnly
    * </pre>
    *
    * <code>optional string access_key = 468922628;</code>
@@ -96,7 +104,12 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The access key used for s3 bucket authentication. Required for updating or creating a backend that uses AWS v4 signature authentication, but will not be returned as part of the configuration when queried with a REST API GET request. &#64;InputOnly
+   * The access key used for s3 bucket authentication. Required for updating or
+   * creating a backend that uses AWS v4 signature authentication, but will not
+   * be returned as part of the configuration when queried with a REST API GET
+   * request.
+   *
+   * &#64;InputOnly
    * </pre>
    *
    * <code>optional string access_key = 468922628;</code>
@@ -120,7 +133,12 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The access key used for s3 bucket authentication. Required for updating or creating a backend that uses AWS v4 signature authentication, but will not be returned as part of the configuration when queried with a REST API GET request. &#64;InputOnly
+   * The access key used for s3 bucket authentication. Required for updating or
+   * creating a backend that uses AWS v4 signature authentication, but will not
+   * be returned as part of the configuration when queried with a REST API GET
+   * request.
+   *
+   * &#64;InputOnly
    * </pre>
    *
    * <code>optional string access_key = 468922628;</code>
@@ -218,7 +236,8 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The optional version identifier for the access key. You can use this to keep track of different iterations of your access key.
+   * The optional version identifier for the access key. You can use this to
+   * keep track of different iterations of your access key.
    * </pre>
    *
    * <code>optional string access_key_version = 80261277;</code>
@@ -234,7 +253,8 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The optional version identifier for the access key. You can use this to keep track of different iterations of your access key.
+   * The optional version identifier for the access key. You can use this to
+   * keep track of different iterations of your access key.
    * </pre>
    *
    * <code>optional string access_key_version = 80261277;</code>
@@ -258,7 +278,8 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The optional version identifier for the access key. You can use this to keep track of different iterations of your access key.
+   * The optional version identifier for the access key. You can use this to
+   * keep track of different iterations of your access key.
    * </pre>
    *
    * <code>optional string access_key_version = 80261277;</code>
@@ -287,7 +308,9 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the cloud region of your origin. This is a free-form field with the name of the region your cloud uses to host your origin. For example, "us-east-1" for AWS or "us-ashburn-1" for OCI.
+   * The name of the cloud region of your origin. This is a free-form field with
+   * the name of the region your cloud uses to host your origin.  For example,
+   * "us-east-1" for AWS or "us-ashburn-1" for OCI.
    * </pre>
    *
    * <code>optional string origin_region = 265305645;</code>
@@ -303,7 +326,9 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the cloud region of your origin. This is a free-form field with the name of the region your cloud uses to host your origin. For example, "us-east-1" for AWS or "us-ashburn-1" for OCI.
+   * The name of the cloud region of your origin. This is a free-form field with
+   * the name of the region your cloud uses to host your origin.  For example,
+   * "us-east-1" for AWS or "us-ashburn-1" for OCI.
    * </pre>
    *
    * <code>optional string origin_region = 265305645;</code>
@@ -327,7 +352,9 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the cloud region of your origin. This is a free-form field with the name of the region your cloud uses to host your origin. For example, "us-east-1" for AWS or "us-ashburn-1" for OCI.
+   * The name of the cloud region of your origin. This is a free-form field with
+   * the name of the region your cloud uses to host your origin.  For example,
+   * "us-east-1" for AWS or "us-ashburn-1" for OCI.
    * </pre>
    *
    * <code>optional string origin_region = 265305645;</code>
@@ -561,7 +588,10 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
    *
    * Messages
    *
-   * Contains the configurations necessary to generate a signature for access to private storage buckets that support Signature Version 4 for authentication. The service name for generating the authentication header will always default to 's3'.
+   * Contains the configurations necessary to generate a signature for access to
+   * private storage buckets that support Signature Version 4 for authentication.
+   * The service name for generating the authentication header will always default
+   * to 's3'.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.AWSV4Signature}
@@ -796,7 +826,12 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The access key used for s3 bucket authentication. Required for updating or creating a backend that uses AWS v4 signature authentication, but will not be returned as part of the configuration when queried with a REST API GET request. &#64;InputOnly
+     * The access key used for s3 bucket authentication. Required for updating or
+     * creating a backend that uses AWS v4 signature authentication, but will not
+     * be returned as part of the configuration when queried with a REST API GET
+     * request.
+     *
+     * &#64;InputOnly
      * </pre>
      *
      * <code>optional string access_key = 468922628;</code>
@@ -811,7 +846,12 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The access key used for s3 bucket authentication. Required for updating or creating a backend that uses AWS v4 signature authentication, but will not be returned as part of the configuration when queried with a REST API GET request. &#64;InputOnly
+     * The access key used for s3 bucket authentication. Required for updating or
+     * creating a backend that uses AWS v4 signature authentication, but will not
+     * be returned as part of the configuration when queried with a REST API GET
+     * request.
+     *
+     * &#64;InputOnly
      * </pre>
      *
      * <code>optional string access_key = 468922628;</code>
@@ -834,7 +874,12 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The access key used for s3 bucket authentication. Required for updating or creating a backend that uses AWS v4 signature authentication, but will not be returned as part of the configuration when queried with a REST API GET request. &#64;InputOnly
+     * The access key used for s3 bucket authentication. Required for updating or
+     * creating a backend that uses AWS v4 signature authentication, but will not
+     * be returned as part of the configuration when queried with a REST API GET
+     * request.
+     *
+     * &#64;InputOnly
      * </pre>
      *
      * <code>optional string access_key = 468922628;</code>
@@ -857,7 +902,12 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The access key used for s3 bucket authentication. Required for updating or creating a backend that uses AWS v4 signature authentication, but will not be returned as part of the configuration when queried with a REST API GET request. &#64;InputOnly
+     * The access key used for s3 bucket authentication. Required for updating or
+     * creating a backend that uses AWS v4 signature authentication, but will not
+     * be returned as part of the configuration when queried with a REST API GET
+     * request.
+     *
+     * &#64;InputOnly
      * </pre>
      *
      * <code>optional string access_key = 468922628;</code>
@@ -879,7 +929,12 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The access key used for s3 bucket authentication. Required for updating or creating a backend that uses AWS v4 signature authentication, but will not be returned as part of the configuration when queried with a REST API GET request. &#64;InputOnly
+     * The access key used for s3 bucket authentication. Required for updating or
+     * creating a backend that uses AWS v4 signature authentication, but will not
+     * be returned as part of the configuration when queried with a REST API GET
+     * request.
+     *
+     * &#64;InputOnly
      * </pre>
      *
      * <code>optional string access_key = 468922628;</code>
@@ -897,7 +952,12 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The access key used for s3 bucket authentication. Required for updating or creating a backend that uses AWS v4 signature authentication, but will not be returned as part of the configuration when queried with a REST API GET request. &#64;InputOnly
+     * The access key used for s3 bucket authentication. Required for updating or
+     * creating a backend that uses AWS v4 signature authentication, but will not
+     * be returned as part of the configuration when queried with a REST API GET
+     * request.
+     *
+     * &#64;InputOnly
      * </pre>
      *
      * <code>optional string access_key = 468922628;</code>
@@ -1048,7 +1108,8 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The optional version identifier for the access key. You can use this to keep track of different iterations of your access key.
+     * The optional version identifier for the access key. You can use this to
+     * keep track of different iterations of your access key.
      * </pre>
      *
      * <code>optional string access_key_version = 80261277;</code>
@@ -1063,7 +1124,8 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The optional version identifier for the access key. You can use this to keep track of different iterations of your access key.
+     * The optional version identifier for the access key. You can use this to
+     * keep track of different iterations of your access key.
      * </pre>
      *
      * <code>optional string access_key_version = 80261277;</code>
@@ -1086,7 +1148,8 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The optional version identifier for the access key. You can use this to keep track of different iterations of your access key.
+     * The optional version identifier for the access key. You can use this to
+     * keep track of different iterations of your access key.
      * </pre>
      *
      * <code>optional string access_key_version = 80261277;</code>
@@ -1109,7 +1172,8 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The optional version identifier for the access key. You can use this to keep track of different iterations of your access key.
+     * The optional version identifier for the access key. You can use this to
+     * keep track of different iterations of your access key.
      * </pre>
      *
      * <code>optional string access_key_version = 80261277;</code>
@@ -1131,7 +1195,8 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The optional version identifier for the access key. You can use this to keep track of different iterations of your access key.
+     * The optional version identifier for the access key. You can use this to
+     * keep track of different iterations of your access key.
      * </pre>
      *
      * <code>optional string access_key_version = 80261277;</code>
@@ -1149,7 +1214,8 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The optional version identifier for the access key. You can use this to keep track of different iterations of your access key.
+     * The optional version identifier for the access key. You can use this to
+     * keep track of different iterations of your access key.
      * </pre>
      *
      * <code>optional string access_key_version = 80261277;</code>
@@ -1174,7 +1240,9 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the cloud region of your origin. This is a free-form field with the name of the region your cloud uses to host your origin. For example, "us-east-1" for AWS or "us-ashburn-1" for OCI.
+     * The name of the cloud region of your origin. This is a free-form field with
+     * the name of the region your cloud uses to host your origin.  For example,
+     * "us-east-1" for AWS or "us-ashburn-1" for OCI.
      * </pre>
      *
      * <code>optional string origin_region = 265305645;</code>
@@ -1189,7 +1257,9 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the cloud region of your origin. This is a free-form field with the name of the region your cloud uses to host your origin. For example, "us-east-1" for AWS or "us-ashburn-1" for OCI.
+     * The name of the cloud region of your origin. This is a free-form field with
+     * the name of the region your cloud uses to host your origin.  For example,
+     * "us-east-1" for AWS or "us-ashburn-1" for OCI.
      * </pre>
      *
      * <code>optional string origin_region = 265305645;</code>
@@ -1212,7 +1282,9 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the cloud region of your origin. This is a free-form field with the name of the region your cloud uses to host your origin. For example, "us-east-1" for AWS or "us-ashburn-1" for OCI.
+     * The name of the cloud region of your origin. This is a free-form field with
+     * the name of the region your cloud uses to host your origin.  For example,
+     * "us-east-1" for AWS or "us-ashburn-1" for OCI.
      * </pre>
      *
      * <code>optional string origin_region = 265305645;</code>
@@ -1235,7 +1307,9 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the cloud region of your origin. This is a free-form field with the name of the region your cloud uses to host your origin. For example, "us-east-1" for AWS or "us-ashburn-1" for OCI.
+     * The name of the cloud region of your origin. This is a free-form field with
+     * the name of the region your cloud uses to host your origin.  For example,
+     * "us-east-1" for AWS or "us-ashburn-1" for OCI.
      * </pre>
      *
      * <code>optional string origin_region = 265305645;</code>
@@ -1257,7 +1331,9 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the cloud region of your origin. This is a free-form field with the name of the region your cloud uses to host your origin. For example, "us-east-1" for AWS or "us-ashburn-1" for OCI.
+     * The name of the cloud region of your origin. This is a free-form field with
+     * the name of the region your cloud uses to host your origin.  For example,
+     * "us-east-1" for AWS or "us-ashburn-1" for OCI.
      * </pre>
      *
      * <code>optional string origin_region = 265305645;</code>
@@ -1275,7 +1351,9 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the cloud region of your origin. This is a free-form field with the name of the region your cloud uses to host your origin. For example, "us-east-1" for AWS or "us-ashburn-1" for OCI.
+     * The name of the cloud region of your origin. This is a free-form field with
+     * the name of the region your cloud uses to host your origin.  For example,
+     * "us-east-1" for AWS or "us-ashburn-1" for OCI.
      * </pre>
      *
      * <code>optional string origin_region = 265305645;</code>

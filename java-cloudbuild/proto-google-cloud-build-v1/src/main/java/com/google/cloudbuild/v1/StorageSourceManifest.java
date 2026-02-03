@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,12 +76,12 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Cloud Storage bucket containing the source manifest (see [Bucket
+   * Required. Cloud Storage bucket containing the source manifest (see [Bucket
    * Name
    * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
    * </pre>
    *
-   * <code>string bucket = 1;</code>
+   * <code>string bucket = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bucket.
    */
@@ -102,12 +102,12 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Cloud Storage bucket containing the source manifest (see [Bucket
+   * Required. Cloud Storage bucket containing the source manifest (see [Bucket
    * Name
    * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
    * </pre>
    *
-   * <code>string bucket = 1;</code>
+   * <code>string bucket = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for bucket.
    */
@@ -133,12 +133,12 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Cloud Storage object containing the source manifest.
+   * Required. Cloud Storage object containing the source manifest.
    *
    * This object must be a JSON file.
    * </pre>
    *
-   * <code>string object = 2;</code>
+   * <code>string object = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The object.
    */
@@ -159,12 +159,12 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Cloud Storage object containing the source manifest.
+   * Required. Cloud Storage object containing the source manifest.
    *
    * This object must be a JSON file.
    * </pre>
    *
-   * <code>string object = 2;</code>
+   * <code>string object = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for object.
    */
@@ -597,12 +597,12 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Cloud Storage bucket containing the source manifest (see [Bucket
+     * Required. Cloud Storage bucket containing the source manifest (see [Bucket
      * Name
      * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
      * </pre>
      *
-     * <code>string bucket = 1;</code>
+     * <code>string bucket = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bucket.
      */
@@ -622,12 +622,12 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Cloud Storage bucket containing the source manifest (see [Bucket
+     * Required. Cloud Storage bucket containing the source manifest (see [Bucket
      * Name
      * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
      * </pre>
      *
-     * <code>string bucket = 1;</code>
+     * <code>string bucket = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for bucket.
      */
@@ -647,12 +647,12 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Cloud Storage bucket containing the source manifest (see [Bucket
+     * Required. Cloud Storage bucket containing the source manifest (see [Bucket
      * Name
      * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
      * </pre>
      *
-     * <code>string bucket = 1;</code>
+     * <code>string bucket = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bucket to set.
      * @return This builder for chaining.
@@ -671,12 +671,12 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Cloud Storage bucket containing the source manifest (see [Bucket
+     * Required. Cloud Storage bucket containing the source manifest (see [Bucket
      * Name
      * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
      * </pre>
      *
-     * <code>string bucket = 1;</code>
+     * <code>string bucket = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -691,12 +691,12 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Cloud Storage bucket containing the source manifest (see [Bucket
+     * Required. Cloud Storage bucket containing the source manifest (see [Bucket
      * Name
      * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
      * </pre>
      *
-     * <code>string bucket = 1;</code>
+     * <code>string bucket = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for bucket to set.
      * @return This builder for chaining.
@@ -718,12 +718,12 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Cloud Storage object containing the source manifest.
+     * Required. Cloud Storage object containing the source manifest.
      *
      * This object must be a JSON file.
      * </pre>
      *
-     * <code>string object = 2;</code>
+     * <code>string object = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The object.
      */
@@ -743,12 +743,12 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Cloud Storage object containing the source manifest.
+     * Required. Cloud Storage object containing the source manifest.
      *
      * This object must be a JSON file.
      * </pre>
      *
-     * <code>string object = 2;</code>
+     * <code>string object = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for object.
      */
@@ -768,12 +768,12 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Cloud Storage object containing the source manifest.
+     * Required. Cloud Storage object containing the source manifest.
      *
      * This object must be a JSON file.
      * </pre>
      *
-     * <code>string object = 2;</code>
+     * <code>string object = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The object to set.
      * @return This builder for chaining.
@@ -792,12 +792,12 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Cloud Storage object containing the source manifest.
+     * Required. Cloud Storage object containing the source manifest.
      *
      * This object must be a JSON file.
      * </pre>
      *
-     * <code>string object = 2;</code>
+     * <code>string object = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -812,12 +812,12 @@ public final class StorageSourceManifest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Cloud Storage object containing the source manifest.
+     * Required. Cloud Storage object containing the source manifest.
      *
      * This object must be a JSON file.
      * </pre>
      *
-     * <code>string object = 2;</code>
+     * <code>string object = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for object to set.
      * @return This builder for chaining.

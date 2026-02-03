@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -176,9 +176,8 @@ public interface PutMetadataOrBuilder
    *
    * <pre>
    * Optional. Updates objects Content-Type fixed metadata. Unset values will be
-   * ignored.
-   *  Set empty values to clear the metadata. Refer to documentation in
-   *  https://cloud.google.com/storage/docs/metadata#content-type
+   * ignored. Set empty values to clear the metadata. Refer to documentation in
+   * https://cloud.google.com/storage/docs/metadata#content-type
    * </pre>
    *
    * <code>optional string content_type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -192,9 +191,8 @@ public interface PutMetadataOrBuilder
    *
    * <pre>
    * Optional. Updates objects Content-Type fixed metadata. Unset values will be
-   * ignored.
-   *  Set empty values to clear the metadata. Refer to documentation in
-   *  https://cloud.google.com/storage/docs/metadata#content-type
+   * ignored. Set empty values to clear the metadata. Refer to documentation in
+   * https://cloud.google.com/storage/docs/metadata#content-type
    * </pre>
    *
    * <code>optional string content_type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -208,9 +206,8 @@ public interface PutMetadataOrBuilder
    *
    * <pre>
    * Optional. Updates objects Content-Type fixed metadata. Unset values will be
-   * ignored.
-   *  Set empty values to clear the metadata. Refer to documentation in
-   *  https://cloud.google.com/storage/docs/metadata#content-type
+   * ignored. Set empty values to clear the metadata. Refer to documentation in
+   * https://cloud.google.com/storage/docs/metadata#content-type
    * </pre>
    *
    * <code>optional string content_type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -224,10 +221,8 @@ public interface PutMetadataOrBuilder
    *
    * <pre>
    * Optional. Updates objects Cache-Control fixed metadata. Unset values will
-   * be
-   *  ignored. Set empty values to clear the metadata.
-   *  Additionally, the value for Custom-Time cannot decrease. Refer to
-   *  documentation in
+   * be ignored. Set empty values to clear the metadata. Additionally, the value
+   * for Custom-Time cannot decrease. Refer to documentation in
    * https://cloud.google.com/storage/docs/metadata#caching_data.
    * </pre>
    *
@@ -242,10 +237,8 @@ public interface PutMetadataOrBuilder
    *
    * <pre>
    * Optional. Updates objects Cache-Control fixed metadata. Unset values will
-   * be
-   *  ignored. Set empty values to clear the metadata.
-   *  Additionally, the value for Custom-Time cannot decrease. Refer to
-   *  documentation in
+   * be ignored. Set empty values to clear the metadata. Additionally, the value
+   * for Custom-Time cannot decrease. Refer to documentation in
    * https://cloud.google.com/storage/docs/metadata#caching_data.
    * </pre>
    *
@@ -260,10 +253,8 @@ public interface PutMetadataOrBuilder
    *
    * <pre>
    * Optional. Updates objects Cache-Control fixed metadata. Unset values will
-   * be
-   *  ignored. Set empty values to clear the metadata.
-   *  Additionally, the value for Custom-Time cannot decrease. Refer to
-   *  documentation in
+   * be ignored. Set empty values to clear the metadata. Additionally, the value
+   * for Custom-Time cannot decrease. Refer to documentation in
    * https://cloud.google.com/storage/docs/metadata#caching_data.
    * </pre>
    *
@@ -405,4 +396,59 @@ public interface PutMetadataOrBuilder
    * </code>
    */
   java.lang.String getCustomMetadataOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Updates objects retention lock configuration. Unset values will
+   * be ignored. Set empty values to clear the retention for the object with
+   * existing `Unlocked` retention mode. Object with existing `Locked` retention
+   * mode cannot be cleared or reduce retain_until_time. Refer to documentation
+   * in https://cloud.google.com/storage/docs/object-lock
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.storagebatchoperations.v1.ObjectRetention object_retention = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the objectRetention field is set.
+   */
+  boolean hasObjectRetention();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Updates objects retention lock configuration. Unset values will
+   * be ignored. Set empty values to clear the retention for the object with
+   * existing `Unlocked` retention mode. Object with existing `Locked` retention
+   * mode cannot be cleared or reduce retain_until_time. Refer to documentation
+   * in https://cloud.google.com/storage/docs/object-lock
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.storagebatchoperations.v1.ObjectRetention object_retention = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The objectRetention.
+   */
+  com.google.cloud.storagebatchoperations.v1.ObjectRetention getObjectRetention();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Updates objects retention lock configuration. Unset values will
+   * be ignored. Set empty values to clear the retention for the object with
+   * existing `Unlocked` retention mode. Object with existing `Locked` retention
+   * mode cannot be cleared or reduce retain_until_time. Refer to documentation
+   * in https://cloud.google.com/storage/docs/object-lock
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.storagebatchoperations.v1.ObjectRetention object_retention = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.storagebatchoperations.v1.ObjectRetentionOrBuilder getObjectRetentionOrBuilder();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1035,6 +1035,65 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.memorystore.v1.Backup.State.UNRECOGNIZED : result;
   }
 
+  public static final int ENCRYPTION_INFO_FIELD_NUMBER = 14;
+  private com.google.cloud.memorystore.v1.EncryptionInfo encryptionInfo_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Encryption information of the backup.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.EncryptionInfo encryption_info = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the encryptionInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasEncryptionInfo() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Encryption information of the backup.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.EncryptionInfo encryption_info = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The encryptionInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.memorystore.v1.EncryptionInfo getEncryptionInfo() {
+    return encryptionInfo_ == null
+        ? com.google.cloud.memorystore.v1.EncryptionInfo.getDefaultInstance()
+        : encryptionInfo_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Encryption information of the backup.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.EncryptionInfo encryption_info = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.memorystore.v1.EncryptionInfoOrBuilder getEncryptionInfoOrBuilder() {
+    return encryptionInfo_ == null
+        ? com.google.cloud.memorystore.v1.EncryptionInfo.getDefaultInstance()
+        : encryptionInfo_;
+  }
+
   public static final int UID_FIELD_NUMBER = 15;
 
   @SuppressWarnings("serial")
@@ -1147,6 +1206,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (state_ != com.google.cloud.memorystore.v1.Backup.State.STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(13, state_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(14, getEncryptionInfo());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uid_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, uid_);
     }
@@ -1200,6 +1262,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (state_ != com.google.cloud.memorystore.v1.Backup.State.STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(13, state_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getEncryptionInfo());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uid_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, uid_);
     }
@@ -1237,6 +1302,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (getShardCount() != other.getShardCount()) return false;
     if (backupType_ != other.backupType_) return false;
     if (state_ != other.state_) return false;
+    if (hasEncryptionInfo() != other.hasEncryptionInfo()) return false;
+    if (hasEncryptionInfo()) {
+      if (!getEncryptionInfo().equals(other.getEncryptionInfo())) return false;
+    }
     if (!getUid().equals(other.getUid())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1281,6 +1350,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + backupType_;
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
+    if (hasEncryptionInfo()) {
+      hash = (37 * hash) + ENCRYPTION_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionInfo().hashCode();
+    }
     hash = (37 * hash) + UID_FIELD_NUMBER;
     hash = (53 * hash) + getUid().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -1427,6 +1500,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         getCreateTimeFieldBuilder();
         getExpireTimeFieldBuilder();
         getBackupFilesFieldBuilder();
+        getEncryptionInfoFieldBuilder();
       }
     }
 
@@ -1461,6 +1535,11 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       shardCount_ = 0;
       backupType_ = 0;
       state_ = 0;
+      encryptionInfo_ = null;
+      if (encryptionInfoBuilder_ != null) {
+        encryptionInfoBuilder_.dispose();
+        encryptionInfoBuilder_ = null;
+      }
       uid_ = "";
       return this;
     }
@@ -1551,6 +1630,11 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         result.state_ = state_;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.encryptionInfo_ =
+            encryptionInfoBuilder_ == null ? encryptionInfo_ : encryptionInfoBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.uid_ = uid_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1672,9 +1756,12 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
       }
+      if (other.hasEncryptionInfo()) {
+        mergeEncryptionInfo(other.getEncryptionInfo());
+      }
       if (!other.getUid().isEmpty()) {
         uid_ = other.uid_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1788,10 +1875,16 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00001000;
                 break;
               } // case 104
+            case 114:
+              {
+                input.readMessage(getEncryptionInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 114
             case 122:
               {
                 uid_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 122
             default:
@@ -3607,6 +3700,220 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.memorystore.v1.EncryptionInfo encryptionInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.memorystore.v1.EncryptionInfo,
+            com.google.cloud.memorystore.v1.EncryptionInfo.Builder,
+            com.google.cloud.memorystore.v1.EncryptionInfoOrBuilder>
+        encryptionInfoBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Encryption information of the backup.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.EncryptionInfo encryption_info = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the encryptionInfo field is set.
+     */
+    public boolean hasEncryptionInfo() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Encryption information of the backup.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.EncryptionInfo encryption_info = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The encryptionInfo.
+     */
+    public com.google.cloud.memorystore.v1.EncryptionInfo getEncryptionInfo() {
+      if (encryptionInfoBuilder_ == null) {
+        return encryptionInfo_ == null
+            ? com.google.cloud.memorystore.v1.EncryptionInfo.getDefaultInstance()
+            : encryptionInfo_;
+      } else {
+        return encryptionInfoBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Encryption information of the backup.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.EncryptionInfo encryption_info = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEncryptionInfo(com.google.cloud.memorystore.v1.EncryptionInfo value) {
+      if (encryptionInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryptionInfo_ = value;
+      } else {
+        encryptionInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Encryption information of the backup.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.EncryptionInfo encryption_info = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEncryptionInfo(
+        com.google.cloud.memorystore.v1.EncryptionInfo.Builder builderForValue) {
+      if (encryptionInfoBuilder_ == null) {
+        encryptionInfo_ = builderForValue.build();
+      } else {
+        encryptionInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Encryption information of the backup.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.EncryptionInfo encryption_info = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeEncryptionInfo(com.google.cloud.memorystore.v1.EncryptionInfo value) {
+      if (encryptionInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)
+            && encryptionInfo_ != null
+            && encryptionInfo_
+                != com.google.cloud.memorystore.v1.EncryptionInfo.getDefaultInstance()) {
+          getEncryptionInfoBuilder().mergeFrom(value);
+        } else {
+          encryptionInfo_ = value;
+        }
+      } else {
+        encryptionInfoBuilder_.mergeFrom(value);
+      }
+      if (encryptionInfo_ != null) {
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Encryption information of the backup.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.EncryptionInfo encryption_info = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearEncryptionInfo() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      encryptionInfo_ = null;
+      if (encryptionInfoBuilder_ != null) {
+        encryptionInfoBuilder_.dispose();
+        encryptionInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Encryption information of the backup.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.EncryptionInfo encryption_info = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.memorystore.v1.EncryptionInfo.Builder getEncryptionInfoBuilder() {
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return getEncryptionInfoFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Encryption information of the backup.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.EncryptionInfo encryption_info = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.memorystore.v1.EncryptionInfoOrBuilder getEncryptionInfoOrBuilder() {
+      if (encryptionInfoBuilder_ != null) {
+        return encryptionInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return encryptionInfo_ == null
+            ? com.google.cloud.memorystore.v1.EncryptionInfo.getDefaultInstance()
+            : encryptionInfo_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Encryption information of the backup.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.EncryptionInfo encryption_info = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.memorystore.v1.EncryptionInfo,
+            com.google.cloud.memorystore.v1.EncryptionInfo.Builder,
+            com.google.cloud.memorystore.v1.EncryptionInfoOrBuilder>
+        getEncryptionInfoFieldBuilder() {
+      if (encryptionInfoBuilder_ == null) {
+        encryptionInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.memorystore.v1.EncryptionInfo,
+                com.google.cloud.memorystore.v1.EncryptionInfo.Builder,
+                com.google.cloud.memorystore.v1.EncryptionInfoOrBuilder>(
+                getEncryptionInfo(), getParentForChildren(), isClean());
+        encryptionInfo_ = null;
+      }
+      return encryptionInfoBuilder_;
+    }
+
     private java.lang.Object uid_ = "";
 
     /**
@@ -3678,7 +3985,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       uid_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3698,7 +4005,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearUid() {
       uid_ = getDefaultInstance().getUid();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -3723,7 +4030,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       uid_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }

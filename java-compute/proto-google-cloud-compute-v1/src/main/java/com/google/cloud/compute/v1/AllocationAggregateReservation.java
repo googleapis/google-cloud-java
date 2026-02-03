@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,9 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * This reservation type is specified by total resource amounts (e.g. total count of CPUs) and can account for multiple instance SKUs. In other words, one can create instances of varying shapes against this reservation.
+ * This reservation type is specified by total resource amounts (e.g. total
+ * count of CPUs) and can account for multiple instance SKUs. In other words,
+ * one can create instances of varying shapes against this reservation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.AllocationAggregateReservation}
@@ -72,7 +74,8 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The VM family that all instances scheduled against this reservation must belong to.
+   * The VM family that all instances scheduled against this reservation must
+   * belong to.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.AllocationAggregateReservation.VmFamily}
@@ -102,6 +105,8 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
     VM_FAMILY_CLOUD_TPU_POD_SLICE_CT4P(517384407),
     /** <code>VM_FAMILY_CLOUD_TPU_POD_SLICE_CT5P = 517384438;</code> */
     VM_FAMILY_CLOUD_TPU_POD_SLICE_CT5P(517384438),
+    /** <code>VM_FAMILY_CLOUD_TPU_POD_SLICE_TPU7X = 485271888;</code> */
+    VM_FAMILY_CLOUD_TPU_POD_SLICE_TPU7X(485271888),
     UNRECOGNIZED(-1),
     ;
 
@@ -136,6 +141,9 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
 
     /** <code>VM_FAMILY_CLOUD_TPU_POD_SLICE_CT5P = 517384438;</code> */
     public static final int VM_FAMILY_CLOUD_TPU_POD_SLICE_CT5P_VALUE = 517384438;
+
+    /** <code>VM_FAMILY_CLOUD_TPU_POD_SLICE_TPU7X = 485271888;</code> */
+    public static final int VM_FAMILY_CLOUD_TPU_POD_SLICE_TPU7X_VALUE = 485271888;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -177,6 +185,8 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
           return VM_FAMILY_CLOUD_TPU_POD_SLICE_CT4P;
         case 517384438:
           return VM_FAMILY_CLOUD_TPU_POD_SLICE_CT5P;
+        case 485271888:
+          return VM_FAMILY_CLOUD_TPU_POD_SLICE_TPU7X;
         default:
           return null;
       }
@@ -256,7 +266,8 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Reserved resources will be optimized for BATCH workloads, such as ML training.
+     * Reserved resources will be optimized for BATCH workloads, such as ML
+     * training.
      * </pre>
      *
      * <code>BATCH = 62971674;</code>
@@ -266,7 +277,8 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Reserved resources will be optimized for SERVING workloads, such as ML inference.
+     * Reserved resources will be optimized for SERVING workloads, such as ML
+     * inference.
      * </pre>
      *
      * <code>SERVING = 17781740;</code>
@@ -292,7 +304,8 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Reserved resources will be optimized for BATCH workloads, such as ML training.
+     * Reserved resources will be optimized for BATCH workloads, such as ML
+     * training.
      * </pre>
      *
      * <code>BATCH = 62971674;</code>
@@ -303,7 +316,8 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Reserved resources will be optimized for SERVING workloads, such as ML inference.
+     * Reserved resources will be optimized for SERVING workloads, such as ML
+     * inference.
      * </pre>
      *
      * <code>SERVING = 17781740;</code>
@@ -412,7 +426,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * [Output only] List of resources currently in use.
+   * Output only. [Output only] List of resources currently in use.
    * </pre>
    *
    * <code>
@@ -430,7 +444,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * [Output only] List of resources currently in use.
+   * Output only. [Output only] List of resources currently in use.
    * </pre>
    *
    * <code>
@@ -450,7 +464,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * [Output only] List of resources currently in use.
+   * Output only. [Output only] List of resources currently in use.
    * </pre>
    *
    * <code>
@@ -466,7 +480,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * [Output only] List of resources currently in use.
+   * Output only. [Output only] List of resources currently in use.
    * </pre>
    *
    * <code>
@@ -483,7 +497,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * [Output only] List of resources currently in use.
+   * Output only. [Output only] List of resources currently in use.
    * </pre>
    *
    * <code>
@@ -600,7 +614,8 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The VM family that all instances scheduled against this reservation must belong to.
+   * The VM family that all instances scheduled against this reservation must
+   * belong to.
    * Check the VmFamily enum for the list of possible values.
    * </pre>
    *
@@ -617,7 +632,8 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The VM family that all instances scheduled against this reservation must belong to.
+   * The VM family that all instances scheduled against this reservation must
+   * belong to.
    * Check the VmFamily enum for the list of possible values.
    * </pre>
    *
@@ -642,7 +658,8 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The VM family that all instances scheduled against this reservation must belong to.
+   * The VM family that all instances scheduled against this reservation must
+   * belong to.
    * Check the VmFamily enum for the list of possible values.
    * </pre>
    *
@@ -945,7 +962,9 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * This reservation type is specified by total resource amounts (e.g. total count of CPUs) and can account for multiple instance SKUs. In other words, one can create instances of varying shapes against this reservation.
+   * This reservation type is specified by total resource amounts (e.g. total
+   * count of CPUs) and can account for multiple instance SKUs. In other words,
+   * one can create instances of varying shapes against this reservation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.AllocationAggregateReservation}
@@ -1288,7 +1307,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1309,7 +1328,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1328,7 +1347,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1348,7 +1367,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1375,7 +1394,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1400,7 +1419,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1426,7 +1445,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1453,7 +1472,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1477,7 +1496,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1502,7 +1521,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1528,7 +1547,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1550,7 +1569,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1572,7 +1591,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1588,7 +1607,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1608,7 +1627,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1631,7 +1650,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1650,7 +1669,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1670,7 +1689,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -2152,7 +2171,8 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The VM family that all instances scheduled against this reservation must belong to.
+     * The VM family that all instances scheduled against this reservation must
+     * belong to.
      * Check the VmFamily enum for the list of possible values.
      * </pre>
      *
@@ -2168,7 +2188,8 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The VM family that all instances scheduled against this reservation must belong to.
+     * The VM family that all instances scheduled against this reservation must
+     * belong to.
      * Check the VmFamily enum for the list of possible values.
      * </pre>
      *
@@ -2192,7 +2213,8 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The VM family that all instances scheduled against this reservation must belong to.
+     * The VM family that all instances scheduled against this reservation must
+     * belong to.
      * Check the VmFamily enum for the list of possible values.
      * </pre>
      *
@@ -2216,7 +2238,8 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The VM family that all instances scheduled against this reservation must belong to.
+     * The VM family that all instances scheduled against this reservation must
+     * belong to.
      * Check the VmFamily enum for the list of possible values.
      * </pre>
      *
@@ -2239,7 +2262,8 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The VM family that all instances scheduled against this reservation must belong to.
+     * The VM family that all instances scheduled against this reservation must
+     * belong to.
      * Check the VmFamily enum for the list of possible values.
      * </pre>
      *
@@ -2258,7 +2282,8 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The VM family that all instances scheduled against this reservation must belong to.
+     * The VM family that all instances scheduled against this reservation must
+     * belong to.
      * Check the VmFamily enum for the list of possible values.
      * </pre>
      *

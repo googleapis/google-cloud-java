@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,6 +71,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
             com.google.ads.admanager.v1.Network.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -138,7 +139,23 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * Optional. Display name for Network.
    * </pre>
    *
-   * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the displayName field is set.
+   */
+  @java.lang.Override
+  public boolean hasDisplayName() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Display name for Network.
+   * </pre>
+   *
+   * <code>optional string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The displayName.
    */
@@ -162,7 +179,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * Optional. Display name for Network.
    * </pre>
    *
-   * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for displayName.
    */
@@ -191,7 +208,23 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * Output only. Network Code.
    * </pre>
    *
-   * <code>string network_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string network_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the networkCode field is set.
+   */
+  @java.lang.Override
+  public boolean hasNetworkCode() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Network Code.
+   * </pre>
+   *
+   * <code>optional string network_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The networkCode.
    */
@@ -215,7 +248,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * Output only. Network Code.
    * </pre>
    *
-   * <code>string network_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string network_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for networkCode.
    */
@@ -244,7 +277,23 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * Output only. Property code.
    * </pre>
    *
-   * <code>string property_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string property_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the propertyCode field is set.
+   */
+  @java.lang.Override
+  public boolean hasPropertyCode() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Property code.
+   * </pre>
+   *
+   * <code>optional string property_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The propertyCode.
    */
@@ -268,7 +317,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * Output only. Property code.
    * </pre>
    *
-   * <code>string property_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string property_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for propertyCode.
    */
@@ -298,7 +347,24 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * reporting.
    * </pre>
    *
-   * <code>string time_zone = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string time_zone = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the timeZone field is set.
+   */
+  @java.lang.Override
+  public boolean hasTimeZone() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Time zone associated with the delivery of orders and
+   * reporting.
+   * </pre>
+   *
+   * <code>optional string time_zone = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The timeZone.
    */
@@ -323,7 +389,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * reporting.
    * </pre>
    *
-   * <code>string time_zone = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string time_zone = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for timeZone.
    */
@@ -352,7 +418,23 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * Output only. Primary currency code, in ISO-4217 format.
    * </pre>
    *
-   * <code>string currency_code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string currency_code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the currencyCode field is set.
+   */
+  @java.lang.Override
+  public boolean hasCurrencyCode() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Primary currency code, in ISO-4217 format.
+   * </pre>
+   *
+   * <code>optional string currency_code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The currencyCode.
    */
@@ -376,7 +458,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * Output only. Primary currency code, in ISO-4217 format.
    * </pre>
    *
-   * <code>string currency_code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string currency_code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for currencyCode.
    */
@@ -484,7 +566,27 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * string effective_root_ad_unit = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * optional string effective_root_ad_unit = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the effectiveRootAdUnit field is set.
+   */
+  @java.lang.Override
+  public boolean hasEffectiveRootAdUnit() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Top most [Ad Unit](google.ads.admanager.v1.AdUnit) to which
+   * descendant Ad Units can be added.
+   * Format: networks/{network_code}/adUnits/{ad_unit}
+   * </pre>
+   *
+   * <code>
+   * optional string effective_root_ad_unit = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The effectiveRootAdUnit.
@@ -512,7 +614,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * string effective_root_ad_unit = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * optional string effective_root_ad_unit = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for effectiveRootAdUnit.
@@ -540,7 +642,23 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * Output only. Whether this is a test network.
    * </pre>
    *
-   * <code>bool test_network = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool test_network = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the testNetwork field is set.
+   */
+  @java.lang.Override
+  public boolean hasTestNetwork() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether this is a test network.
+   * </pre>
+   *
+   * <code>optional bool test_network = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The testNetwork.
    */
@@ -559,7 +677,23 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * Output only. Network ID.
    * </pre>
    *
-   * <code>int64 network_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional int64 network_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the networkId field is set.
+   */
+  @java.lang.Override
+  public boolean hasNetworkId() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Network ID.
+   * </pre>
+   *
+   * <code>optional int64 network_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The networkId.
    */
@@ -585,32 +719,32 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, displayName_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkCode_)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, networkCode_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(propertyCode_)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, propertyCode_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeZone_)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, timeZone_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currencyCode_)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, currencyCode_);
     }
     for (int i = 0; i < secondaryCurrencyCodes_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 7, secondaryCurrencyCodes_.getRaw(i));
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(effectiveRootAdUnit_)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, effectiveRootAdUnit_);
     }
-    if (testNetwork_ != false) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeBool(10, testNetwork_);
     }
-    if (networkId_ != 0L) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeInt64(11, networkId_);
     }
     getUnknownFields().writeTo(output);
@@ -625,19 +759,19 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayName_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkCode_)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, networkCode_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(propertyCode_)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, propertyCode_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeZone_)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, timeZone_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currencyCode_)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, currencyCode_);
     }
     {
@@ -648,13 +782,13 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getSecondaryCurrencyCodesList().size();
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(effectiveRootAdUnit_)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, effectiveRootAdUnit_);
     }
-    if (testNetwork_ != false) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, testNetwork_);
     }
-    if (networkId_ != 0L) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(11, networkId_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -673,16 +807,40 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     com.google.ads.admanager.v1.Network other = (com.google.ads.admanager.v1.Network) obj;
 
     if (!getName().equals(other.getName())) return false;
-    if (!getDisplayName().equals(other.getDisplayName())) return false;
-    if (!getNetworkCode().equals(other.getNetworkCode())) return false;
-    if (!getPropertyCode().equals(other.getPropertyCode())) return false;
-    if (!getTimeZone().equals(other.getTimeZone())) return false;
-    if (!getCurrencyCode().equals(other.getCurrencyCode())) return false;
+    if (hasDisplayName() != other.hasDisplayName()) return false;
+    if (hasDisplayName()) {
+      if (!getDisplayName().equals(other.getDisplayName())) return false;
+    }
+    if (hasNetworkCode() != other.hasNetworkCode()) return false;
+    if (hasNetworkCode()) {
+      if (!getNetworkCode().equals(other.getNetworkCode())) return false;
+    }
+    if (hasPropertyCode() != other.hasPropertyCode()) return false;
+    if (hasPropertyCode()) {
+      if (!getPropertyCode().equals(other.getPropertyCode())) return false;
+    }
+    if (hasTimeZone() != other.hasTimeZone()) return false;
+    if (hasTimeZone()) {
+      if (!getTimeZone().equals(other.getTimeZone())) return false;
+    }
+    if (hasCurrencyCode() != other.hasCurrencyCode()) return false;
+    if (hasCurrencyCode()) {
+      if (!getCurrencyCode().equals(other.getCurrencyCode())) return false;
+    }
     if (!getSecondaryCurrencyCodesList().equals(other.getSecondaryCurrencyCodesList()))
       return false;
-    if (!getEffectiveRootAdUnit().equals(other.getEffectiveRootAdUnit())) return false;
-    if (getTestNetwork() != other.getTestNetwork()) return false;
-    if (getNetworkId() != other.getNetworkId()) return false;
+    if (hasEffectiveRootAdUnit() != other.hasEffectiveRootAdUnit()) return false;
+    if (hasEffectiveRootAdUnit()) {
+      if (!getEffectiveRootAdUnit().equals(other.getEffectiveRootAdUnit())) return false;
+    }
+    if (hasTestNetwork() != other.hasTestNetwork()) return false;
+    if (hasTestNetwork()) {
+      if (getTestNetwork() != other.getTestNetwork()) return false;
+    }
+    if (hasNetworkId() != other.hasNetworkId()) return false;
+    if (hasNetworkId()) {
+      if (getNetworkId() != other.getNetworkId()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -696,26 +854,42 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getDisplayName().hashCode();
-    hash = (37 * hash) + NETWORK_CODE_FIELD_NUMBER;
-    hash = (53 * hash) + getNetworkCode().hashCode();
-    hash = (37 * hash) + PROPERTY_CODE_FIELD_NUMBER;
-    hash = (53 * hash) + getPropertyCode().hashCode();
-    hash = (37 * hash) + TIME_ZONE_FIELD_NUMBER;
-    hash = (53 * hash) + getTimeZone().hashCode();
-    hash = (37 * hash) + CURRENCY_CODE_FIELD_NUMBER;
-    hash = (53 * hash) + getCurrencyCode().hashCode();
+    if (hasDisplayName()) {
+      hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getDisplayName().hashCode();
+    }
+    if (hasNetworkCode()) {
+      hash = (37 * hash) + NETWORK_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getNetworkCode().hashCode();
+    }
+    if (hasPropertyCode()) {
+      hash = (37 * hash) + PROPERTY_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getPropertyCode().hashCode();
+    }
+    if (hasTimeZone()) {
+      hash = (37 * hash) + TIME_ZONE_FIELD_NUMBER;
+      hash = (53 * hash) + getTimeZone().hashCode();
+    }
+    if (hasCurrencyCode()) {
+      hash = (37 * hash) + CURRENCY_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getCurrencyCode().hashCode();
+    }
     if (getSecondaryCurrencyCodesCount() > 0) {
       hash = (37 * hash) + SECONDARY_CURRENCY_CODES_FIELD_NUMBER;
       hash = (53 * hash) + getSecondaryCurrencyCodesList().hashCode();
     }
-    hash = (37 * hash) + EFFECTIVE_ROOT_AD_UNIT_FIELD_NUMBER;
-    hash = (53 * hash) + getEffectiveRootAdUnit().hashCode();
-    hash = (37 * hash) + TEST_NETWORK_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getTestNetwork());
-    hash = (37 * hash) + NETWORK_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getNetworkId());
+    if (hasEffectiveRootAdUnit()) {
+      hash = (37 * hash) + EFFECTIVE_ROOT_AD_UNIT_FIELD_NUMBER;
+      hash = (53 * hash) + getEffectiveRootAdUnit().hashCode();
+    }
+    if (hasTestNetwork()) {
+      hash = (37 * hash) + TEST_NETWORK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getTestNetwork());
+    }
+    if (hasNetworkId()) {
+      hash = (37 * hash) + NETWORK_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getNetworkId());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -903,20 +1077,26 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.displayName_ = displayName_;
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.networkCode_ = networkCode_;
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.propertyCode_ = propertyCode_;
+        to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.timeZone_ = timeZone_;
+        to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.currencyCode_ = currencyCode_;
+        to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         secondaryCurrencyCodes_.makeImmutable();
@@ -924,13 +1104,17 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.effectiveRootAdUnit_ = effectiveRootAdUnit_;
+        to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.testNetwork_ = testNetwork_;
+        to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.networkId_ = networkId_;
+        to_bitField0_ |= 0x00000080;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -983,27 +1167,27 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (!other.getDisplayName().isEmpty()) {
+      if (other.hasDisplayName()) {
         displayName_ = other.displayName_;
         bitField0_ |= 0x00000002;
         onChanged();
       }
-      if (!other.getNetworkCode().isEmpty()) {
+      if (other.hasNetworkCode()) {
         networkCode_ = other.networkCode_;
         bitField0_ |= 0x00000004;
         onChanged();
       }
-      if (!other.getPropertyCode().isEmpty()) {
+      if (other.hasPropertyCode()) {
         propertyCode_ = other.propertyCode_;
         bitField0_ |= 0x00000008;
         onChanged();
       }
-      if (!other.getTimeZone().isEmpty()) {
+      if (other.hasTimeZone()) {
         timeZone_ = other.timeZone_;
         bitField0_ |= 0x00000010;
         onChanged();
       }
-      if (!other.getCurrencyCode().isEmpty()) {
+      if (other.hasCurrencyCode()) {
         currencyCode_ = other.currencyCode_;
         bitField0_ |= 0x00000020;
         onChanged();
@@ -1018,15 +1202,15 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
-      if (!other.getEffectiveRootAdUnit().isEmpty()) {
+      if (other.hasEffectiveRootAdUnit()) {
         effectiveRootAdUnit_ = other.effectiveRootAdUnit_;
         bitField0_ |= 0x00000080;
         onChanged();
       }
-      if (other.getTestNetwork() != false) {
+      if (other.hasTestNetwork()) {
         setTestNetwork(other.getTestNetwork());
       }
-      if (other.getNetworkId() != 0L) {
+      if (other.hasNetworkId()) {
         setNetworkId(other.getNetworkId());
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1260,7 +1444,22 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * Optional. Display name for Network.
      * </pre>
      *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the displayName field is set.
+     */
+    public boolean hasDisplayName() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Display name for Network.
+     * </pre>
+     *
+     * <code>optional string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The displayName.
      */
@@ -1283,7 +1482,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * Optional. Display name for Network.
      * </pre>
      *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for displayName.
      */
@@ -1306,7 +1505,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * Optional. Display name for Network.
      * </pre>
      *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -1328,7 +1527,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * Optional. Display name for Network.
      * </pre>
      *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1346,7 +1545,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * Optional. Display name for Network.
      * </pre>
      *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
@@ -1371,7 +1570,22 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * Output only. Network Code.
      * </pre>
      *
-     * <code>string network_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string network_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the networkCode field is set.
+     */
+    public boolean hasNetworkCode() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Network Code.
+     * </pre>
+     *
+     * <code>optional string network_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The networkCode.
      */
@@ -1394,7 +1608,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * Output only. Network Code.
      * </pre>
      *
-     * <code>string network_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string network_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for networkCode.
      */
@@ -1417,7 +1631,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * Output only. Network Code.
      * </pre>
      *
-     * <code>string network_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string network_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The networkCode to set.
      * @return This builder for chaining.
@@ -1439,7 +1653,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * Output only. Network Code.
      * </pre>
      *
-     * <code>string network_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string network_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1457,7 +1671,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * Output only. Network Code.
      * </pre>
      *
-     * <code>string network_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string network_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for networkCode to set.
      * @return This builder for chaining.
@@ -1482,7 +1696,22 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * Output only. Property code.
      * </pre>
      *
-     * <code>string property_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string property_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the propertyCode field is set.
+     */
+    public boolean hasPropertyCode() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Property code.
+     * </pre>
+     *
+     * <code>optional string property_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The propertyCode.
      */
@@ -1505,7 +1734,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * Output only. Property code.
      * </pre>
      *
-     * <code>string property_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string property_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for propertyCode.
      */
@@ -1528,7 +1757,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * Output only. Property code.
      * </pre>
      *
-     * <code>string property_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string property_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The propertyCode to set.
      * @return This builder for chaining.
@@ -1550,7 +1779,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * Output only. Property code.
      * </pre>
      *
-     * <code>string property_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string property_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1568,7 +1797,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * Output only. Property code.
      * </pre>
      *
-     * <code>string property_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string property_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for propertyCode to set.
      * @return This builder for chaining.
@@ -1594,7 +1823,23 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * reporting.
      * </pre>
      *
-     * <code>string time_zone = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string time_zone = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the timeZone field is set.
+     */
+    public boolean hasTimeZone() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time zone associated with the delivery of orders and
+     * reporting.
+     * </pre>
+     *
+     * <code>optional string time_zone = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The timeZone.
      */
@@ -1618,7 +1863,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * reporting.
      * </pre>
      *
-     * <code>string time_zone = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string time_zone = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for timeZone.
      */
@@ -1642,7 +1887,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * reporting.
      * </pre>
      *
-     * <code>string time_zone = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string time_zone = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The timeZone to set.
      * @return This builder for chaining.
@@ -1665,7 +1910,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * reporting.
      * </pre>
      *
-     * <code>string time_zone = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string time_zone = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1684,7 +1929,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * reporting.
      * </pre>
      *
-     * <code>string time_zone = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string time_zone = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for timeZone to set.
      * @return This builder for chaining.
@@ -1709,7 +1954,22 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * Output only. Primary currency code, in ISO-4217 format.
      * </pre>
      *
-     * <code>string currency_code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string currency_code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the currencyCode field is set.
+     */
+    public boolean hasCurrencyCode() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Primary currency code, in ISO-4217 format.
+     * </pre>
+     *
+     * <code>optional string currency_code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The currencyCode.
      */
@@ -1732,7 +1992,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * Output only. Primary currency code, in ISO-4217 format.
      * </pre>
      *
-     * <code>string currency_code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string currency_code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for currencyCode.
      */
@@ -1755,7 +2015,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * Output only. Primary currency code, in ISO-4217 format.
      * </pre>
      *
-     * <code>string currency_code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string currency_code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The currencyCode to set.
      * @return This builder for chaining.
@@ -1777,7 +2037,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * Output only. Primary currency code, in ISO-4217 format.
      * </pre>
      *
-     * <code>string currency_code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string currency_code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1795,7 +2055,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * Output only. Primary currency code, in ISO-4217 format.
      * </pre>
      *
-     * <code>string currency_code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string currency_code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for currencyCode to set.
      * @return This builder for chaining.
@@ -2025,7 +2285,26 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string effective_root_ad_unit = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * optional string effective_root_ad_unit = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the effectiveRootAdUnit field is set.
+     */
+    public boolean hasEffectiveRootAdUnit() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Top most [Ad Unit](google.ads.admanager.v1.AdUnit) to which
+     * descendant Ad Units can be added.
+     * Format: networks/{network_code}/adUnits/{ad_unit}
+     * </pre>
+     *
+     * <code>
+     * optional string effective_root_ad_unit = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The effectiveRootAdUnit.
@@ -2052,7 +2331,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string effective_root_ad_unit = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * optional string effective_root_ad_unit = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for effectiveRootAdUnit.
@@ -2079,7 +2358,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string effective_root_ad_unit = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * optional string effective_root_ad_unit = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The effectiveRootAdUnit to set.
@@ -2105,7 +2384,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string effective_root_ad_unit = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * optional string effective_root_ad_unit = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -2127,7 +2406,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string effective_root_ad_unit = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * optional string effective_root_ad_unit = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for effectiveRootAdUnit to set.
@@ -2153,7 +2432,23 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * Output only. Whether this is a test network.
      * </pre>
      *
-     * <code>bool test_network = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool test_network = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the testNetwork field is set.
+     */
+    @java.lang.Override
+    public boolean hasTestNetwork() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether this is a test network.
+     * </pre>
+     *
+     * <code>optional bool test_network = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The testNetwork.
      */
@@ -2169,7 +2464,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * Output only. Whether this is a test network.
      * </pre>
      *
-     * <code>bool test_network = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool test_network = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The testNetwork to set.
      * @return This builder for chaining.
@@ -2189,7 +2484,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * Output only. Whether this is a test network.
      * </pre>
      *
-     * <code>bool test_network = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool test_network = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -2209,7 +2504,23 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * Output only. Network ID.
      * </pre>
      *
-     * <code>int64 network_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 network_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the networkId field is set.
+     */
+    @java.lang.Override
+    public boolean hasNetworkId() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Network ID.
+     * </pre>
+     *
+     * <code>optional int64 network_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The networkId.
      */
@@ -2225,7 +2536,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * Output only. Network ID.
      * </pre>
      *
-     * <code>int64 network_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 network_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The networkId to set.
      * @return This builder for chaining.
@@ -2245,7 +2556,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * Output only. Network ID.
      * </pre>
      *
-     * <code>int64 network_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 network_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */

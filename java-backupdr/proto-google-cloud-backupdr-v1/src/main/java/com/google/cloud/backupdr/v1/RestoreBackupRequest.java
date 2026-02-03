@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,6 +65,7 @@ public final class RestoreBackupRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.backupdr.v1.RestoreBackupRequest.Builder.class);
   }
 
+  private int bitField0_;
   private int targetEnvironmentCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -600,6 +601,98 @@ public final class RestoreBackupRequest extends com.google.protobuf.GeneratedMes
     return com.google.cloud.backupdr.v1.DiskRestoreProperties.getDefaultInstance();
   }
 
+  public static final int CLEAR_OVERRIDES_FIELD_MASK_FIELD_NUMBER = 8;
+  private com.google.protobuf.FieldMask clearOverridesFieldMask_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A field mask used to clear server-side default values
+   * for fields within the `instance_properties` oneof.
+   *
+   * When a field in this mask is cleared, the server will not apply its
+   * default logic (like inheriting a value from the source) for that field.
+   *
+   * The most common current use case is clearing default encryption keys.
+   *
+   * Examples of field mask paths:
+   * - Compute Instance Disks:
+   * `compute_instance_restore_properties.disks.*.disk_encryption_key`
+   * - Single Disk: `disk_restore_properties.disk_encryption_key`
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.FieldMask clear_overrides_field_mask = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the clearOverridesFieldMask field is set.
+   */
+  @java.lang.Override
+  public boolean hasClearOverridesFieldMask() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A field mask used to clear server-side default values
+   * for fields within the `instance_properties` oneof.
+   *
+   * When a field in this mask is cleared, the server will not apply its
+   * default logic (like inheriting a value from the source) for that field.
+   *
+   * The most common current use case is clearing default encryption keys.
+   *
+   * Examples of field mask paths:
+   * - Compute Instance Disks:
+   * `compute_instance_restore_properties.disks.*.disk_encryption_key`
+   * - Single Disk: `disk_restore_properties.disk_encryption_key`
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.FieldMask clear_overrides_field_mask = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The clearOverridesFieldMask.
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMask getClearOverridesFieldMask() {
+    return clearOverridesFieldMask_ == null
+        ? com.google.protobuf.FieldMask.getDefaultInstance()
+        : clearOverridesFieldMask_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A field mask used to clear server-side default values
+   * for fields within the `instance_properties` oneof.
+   *
+   * When a field in this mask is cleared, the server will not apply its
+   * default logic (like inheriting a value from the source) for that field.
+   *
+   * The most common current use case is clearing default encryption keys.
+   *
+   * Examples of field mask paths:
+   * - Compute Instance Disks:
+   * `compute_instance_restore_properties.disks.*.disk_encryption_key`
+   * - Single Disk: `disk_restore_properties.disk_encryption_key`
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.FieldMask clear_overrides_field_mask = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMaskOrBuilder getClearOverridesFieldMaskOrBuilder() {
+    return clearOverridesFieldMask_ == null
+        ? com.google.protobuf.FieldMask.getDefaultInstance()
+        : clearOverridesFieldMask_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -639,6 +732,9 @@ public final class RestoreBackupRequest extends com.google.protobuf.GeneratedMes
     if (instancePropertiesCase_ == 7) {
       output.writeMessage(
           7, (com.google.cloud.backupdr.v1.DiskRestoreProperties) instanceProperties_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(8, getClearOverridesFieldMask());
     }
     getUnknownFields().writeTo(output);
   }
@@ -682,6 +778,10 @@ public final class RestoreBackupRequest extends com.google.protobuf.GeneratedMes
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               7, (com.google.cloud.backupdr.v1.DiskRestoreProperties) instanceProperties_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(8, getClearOverridesFieldMask());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -700,6 +800,10 @@ public final class RestoreBackupRequest extends com.google.protobuf.GeneratedMes
 
     if (!getName().equals(other.getName())) return false;
     if (!getRequestId().equals(other.getRequestId())) return false;
+    if (hasClearOverridesFieldMask() != other.hasClearOverridesFieldMask()) return false;
+    if (hasClearOverridesFieldMask()) {
+      if (!getClearOverridesFieldMask().equals(other.getClearOverridesFieldMask())) return false;
+    }
     if (!getTargetEnvironmentCase().equals(other.getTargetEnvironmentCase())) return false;
     switch (targetEnvironmentCase_) {
       case 3:
@@ -743,6 +847,10 @@ public final class RestoreBackupRequest extends com.google.protobuf.GeneratedMes
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
     hash = (53 * hash) + getRequestId().hashCode();
+    if (hasClearOverridesFieldMask()) {
+      hash = (37 * hash) + CLEAR_OVERRIDES_FIELD_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getClearOverridesFieldMask().hashCode();
+    }
     switch (targetEnvironmentCase_) {
       case 3:
         hash = (37 * hash) + COMPUTE_INSTANCE_TARGET_ENVIRONMENT_FIELD_NUMBER;
@@ -901,10 +1009,19 @@ public final class RestoreBackupRequest extends com.google.protobuf.GeneratedMes
     }
 
     // Construct using com.google.cloud.backupdr.v1.RestoreBackupRequest.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getClearOverridesFieldMaskFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -927,6 +1044,11 @@ public final class RestoreBackupRequest extends com.google.protobuf.GeneratedMes
       }
       if (diskRestorePropertiesBuilder_ != null) {
         diskRestorePropertiesBuilder_.clear();
+      }
+      clearOverridesFieldMask_ = null;
+      if (clearOverridesFieldMaskBuilder_ != null) {
+        clearOverridesFieldMaskBuilder_.dispose();
+        clearOverridesFieldMaskBuilder_ = null;
       }
       targetEnvironmentCase_ = 0;
       targetEnvironment_ = null;
@@ -975,6 +1097,15 @@ public final class RestoreBackupRequest extends com.google.protobuf.GeneratedMes
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.requestId_ = requestId_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.clearOverridesFieldMask_ =
+            clearOverridesFieldMaskBuilder_ == null
+                ? clearOverridesFieldMask_
+                : clearOverridesFieldMaskBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartialOneofs(com.google.cloud.backupdr.v1.RestoreBackupRequest result) {
@@ -1054,6 +1185,9 @@ public final class RestoreBackupRequest extends com.google.protobuf.GeneratedMes
         requestId_ = other.requestId_;
         bitField0_ |= 0x00000002;
         onChanged();
+      }
+      if (other.hasClearOverridesFieldMask()) {
+        mergeClearOverridesFieldMask(other.getClearOverridesFieldMask());
       }
       switch (other.getTargetEnvironmentCase()) {
         case COMPUTE_INSTANCE_TARGET_ENVIRONMENT:
@@ -1167,6 +1301,13 @@ public final class RestoreBackupRequest extends com.google.protobuf.GeneratedMes
                 instancePropertiesCase_ = 7;
                 break;
               } // case 58
+            case 66:
+              {
+                input.readMessage(
+                    getClearOverridesFieldMaskFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2702,6 +2843,318 @@ public final class RestoreBackupRequest extends com.google.protobuf.GeneratedMes
       instancePropertiesCase_ = 7;
       onChanged();
       return diskRestorePropertiesBuilder_;
+    }
+
+    private com.google.protobuf.FieldMask clearOverridesFieldMask_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        clearOverridesFieldMaskBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A field mask used to clear server-side default values
+     * for fields within the `instance_properties` oneof.
+     *
+     * When a field in this mask is cleared, the server will not apply its
+     * default logic (like inheriting a value from the source) for that field.
+     *
+     * The most common current use case is clearing default encryption keys.
+     *
+     * Examples of field mask paths:
+     * - Compute Instance Disks:
+     * `compute_instance_restore_properties.disks.*.disk_encryption_key`
+     * - Single Disk: `disk_restore_properties.disk_encryption_key`
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.FieldMask clear_overrides_field_mask = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the clearOverridesFieldMask field is set.
+     */
+    public boolean hasClearOverridesFieldMask() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A field mask used to clear server-side default values
+     * for fields within the `instance_properties` oneof.
+     *
+     * When a field in this mask is cleared, the server will not apply its
+     * default logic (like inheriting a value from the source) for that field.
+     *
+     * The most common current use case is clearing default encryption keys.
+     *
+     * Examples of field mask paths:
+     * - Compute Instance Disks:
+     * `compute_instance_restore_properties.disks.*.disk_encryption_key`
+     * - Single Disk: `disk_restore_properties.disk_encryption_key`
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.FieldMask clear_overrides_field_mask = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The clearOverridesFieldMask.
+     */
+    public com.google.protobuf.FieldMask getClearOverridesFieldMask() {
+      if (clearOverridesFieldMaskBuilder_ == null) {
+        return clearOverridesFieldMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : clearOverridesFieldMask_;
+      } else {
+        return clearOverridesFieldMaskBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A field mask used to clear server-side default values
+     * for fields within the `instance_properties` oneof.
+     *
+     * When a field in this mask is cleared, the server will not apply its
+     * default logic (like inheriting a value from the source) for that field.
+     *
+     * The most common current use case is clearing default encryption keys.
+     *
+     * Examples of field mask paths:
+     * - Compute Instance Disks:
+     * `compute_instance_restore_properties.disks.*.disk_encryption_key`
+     * - Single Disk: `disk_restore_properties.disk_encryption_key`
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.FieldMask clear_overrides_field_mask = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setClearOverridesFieldMask(com.google.protobuf.FieldMask value) {
+      if (clearOverridesFieldMaskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        clearOverridesFieldMask_ = value;
+      } else {
+        clearOverridesFieldMaskBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A field mask used to clear server-side default values
+     * for fields within the `instance_properties` oneof.
+     *
+     * When a field in this mask is cleared, the server will not apply its
+     * default logic (like inheriting a value from the source) for that field.
+     *
+     * The most common current use case is clearing default encryption keys.
+     *
+     * Examples of field mask paths:
+     * - Compute Instance Disks:
+     * `compute_instance_restore_properties.disks.*.disk_encryption_key`
+     * - Single Disk: `disk_restore_properties.disk_encryption_key`
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.FieldMask clear_overrides_field_mask = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setClearOverridesFieldMask(
+        com.google.protobuf.FieldMask.Builder builderForValue) {
+      if (clearOverridesFieldMaskBuilder_ == null) {
+        clearOverridesFieldMask_ = builderForValue.build();
+      } else {
+        clearOverridesFieldMaskBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A field mask used to clear server-side default values
+     * for fields within the `instance_properties` oneof.
+     *
+     * When a field in this mask is cleared, the server will not apply its
+     * default logic (like inheriting a value from the source) for that field.
+     *
+     * The most common current use case is clearing default encryption keys.
+     *
+     * Examples of field mask paths:
+     * - Compute Instance Disks:
+     * `compute_instance_restore_properties.disks.*.disk_encryption_key`
+     * - Single Disk: `disk_restore_properties.disk_encryption_key`
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.FieldMask clear_overrides_field_mask = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeClearOverridesFieldMask(com.google.protobuf.FieldMask value) {
+      if (clearOverridesFieldMaskBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && clearOverridesFieldMask_ != null
+            && clearOverridesFieldMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getClearOverridesFieldMaskBuilder().mergeFrom(value);
+        } else {
+          clearOverridesFieldMask_ = value;
+        }
+      } else {
+        clearOverridesFieldMaskBuilder_.mergeFrom(value);
+      }
+      if (clearOverridesFieldMask_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A field mask used to clear server-side default values
+     * for fields within the `instance_properties` oneof.
+     *
+     * When a field in this mask is cleared, the server will not apply its
+     * default logic (like inheriting a value from the source) for that field.
+     *
+     * The most common current use case is clearing default encryption keys.
+     *
+     * Examples of field mask paths:
+     * - Compute Instance Disks:
+     * `compute_instance_restore_properties.disks.*.disk_encryption_key`
+     * - Single Disk: `disk_restore_properties.disk_encryption_key`
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.FieldMask clear_overrides_field_mask = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearClearOverridesFieldMask() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      clearOverridesFieldMask_ = null;
+      if (clearOverridesFieldMaskBuilder_ != null) {
+        clearOverridesFieldMaskBuilder_.dispose();
+        clearOverridesFieldMaskBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A field mask used to clear server-side default values
+     * for fields within the `instance_properties` oneof.
+     *
+     * When a field in this mask is cleared, the server will not apply its
+     * default logic (like inheriting a value from the source) for that field.
+     *
+     * The most common current use case is clearing default encryption keys.
+     *
+     * Examples of field mask paths:
+     * - Compute Instance Disks:
+     * `compute_instance_restore_properties.disks.*.disk_encryption_key`
+     * - Single Disk: `disk_restore_properties.disk_encryption_key`
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.FieldMask clear_overrides_field_mask = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.FieldMask.Builder getClearOverridesFieldMaskBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getClearOverridesFieldMaskFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A field mask used to clear server-side default values
+     * for fields within the `instance_properties` oneof.
+     *
+     * When a field in this mask is cleared, the server will not apply its
+     * default logic (like inheriting a value from the source) for that field.
+     *
+     * The most common current use case is clearing default encryption keys.
+     *
+     * Examples of field mask paths:
+     * - Compute Instance Disks:
+     * `compute_instance_restore_properties.disks.*.disk_encryption_key`
+     * - Single Disk: `disk_restore_properties.disk_encryption_key`
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.FieldMask clear_overrides_field_mask = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.FieldMaskOrBuilder getClearOverridesFieldMaskOrBuilder() {
+      if (clearOverridesFieldMaskBuilder_ != null) {
+        return clearOverridesFieldMaskBuilder_.getMessageOrBuilder();
+      } else {
+        return clearOverridesFieldMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : clearOverridesFieldMask_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A field mask used to clear server-side default values
+     * for fields within the `instance_properties` oneof.
+     *
+     * When a field in this mask is cleared, the server will not apply its
+     * default logic (like inheriting a value from the source) for that field.
+     *
+     * The most common current use case is clearing default encryption keys.
+     *
+     * Examples of field mask paths:
+     * - Compute Instance Disks:
+     * `compute_instance_restore_properties.disks.*.disk_encryption_key`
+     * - Single Disk: `disk_restore_properties.disk_encryption_key`
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.FieldMask clear_overrides_field_mask = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        getClearOverridesFieldMaskFieldBuilder() {
+      if (clearOverridesFieldMaskBuilder_ == null) {
+        clearOverridesFieldMaskBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.FieldMask,
+                com.google.protobuf.FieldMask.Builder,
+                com.google.protobuf.FieldMaskOrBuilder>(
+                getClearOverridesFieldMask(), getParentForChildren(), isClean());
+        clearOverridesFieldMask_ = null;
+      }
+      return clearOverridesFieldMaskBuilder_;
     }
 
     @java.lang.Override

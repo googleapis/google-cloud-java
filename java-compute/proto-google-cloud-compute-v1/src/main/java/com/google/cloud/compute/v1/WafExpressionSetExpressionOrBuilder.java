@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,13 @@ public interface WafExpressionSetExpressionOrBuilder
    *
    *
    * <pre>
-   * Expression ID should uniquely identify the origin of the expression. E.g. owasp-crs-v020901-id973337 identifies Owasp core rule set version 2.9.1 rule id 973337. The ID could be used to determine the individual attack definition that has been detected. It could also be used to exclude it from the policy in case of false positive. required
+   * Expression ID should uniquely identify the origin of the expression.
+   * E.g. owasp-crs-v020901-id973337 identifies Owasp core rule set
+   * version 2.9.1 rule id 973337.
+   * The ID could be used to determine the individual attack definition
+   * that has been detected. It could also be used to exclude it from
+   * the policy in case of false positive.
+   * required
    * </pre>
    *
    * <code>optional string id = 3355;</code>
@@ -41,7 +47,13 @@ public interface WafExpressionSetExpressionOrBuilder
    *
    *
    * <pre>
-   * Expression ID should uniquely identify the origin of the expression. E.g. owasp-crs-v020901-id973337 identifies Owasp core rule set version 2.9.1 rule id 973337. The ID could be used to determine the individual attack definition that has been detected. It could also be used to exclude it from the policy in case of false positive. required
+   * Expression ID should uniquely identify the origin of the expression.
+   * E.g. owasp-crs-v020901-id973337 identifies Owasp core rule set
+   * version 2.9.1 rule id 973337.
+   * The ID could be used to determine the individual attack definition
+   * that has been detected. It could also be used to exclude it from
+   * the policy in case of false positive.
+   * required
    * </pre>
    *
    * <code>optional string id = 3355;</code>
@@ -54,7 +66,13 @@ public interface WafExpressionSetExpressionOrBuilder
    *
    *
    * <pre>
-   * Expression ID should uniquely identify the origin of the expression. E.g. owasp-crs-v020901-id973337 identifies Owasp core rule set version 2.9.1 rule id 973337. The ID could be used to determine the individual attack definition that has been detected. It could also be used to exclude it from the policy in case of false positive. required
+   * Expression ID should uniquely identify the origin of the expression.
+   * E.g. owasp-crs-v020901-id973337 identifies Owasp core rule set
+   * version 2.9.1 rule id 973337.
+   * The ID could be used to determine the individual attack definition
+   * that has been detected. It could also be used to exclude it from
+   * the policy in case of false positive.
+   * required
    * </pre>
    *
    * <code>optional string id = 3355;</code>
@@ -67,7 +85,9 @@ public interface WafExpressionSetExpressionOrBuilder
    *
    *
    * <pre>
-   * The sensitivity value associated with the WAF rule ID. This corresponds to the ModSecurity paranoia level, ranging from 1 to 4. 0 is reserved for opt-in only rules.
+   * The sensitivity value associated with the WAF rule ID. This corresponds
+   * to the ModSecurity paranoia level, ranging from 1 to 4. 0 is reserved for
+   * opt-in only rules.
    * </pre>
    *
    * <code>optional int32 sensitivity = 27532959;</code>
@@ -80,7 +100,9 @@ public interface WafExpressionSetExpressionOrBuilder
    *
    *
    * <pre>
-   * The sensitivity value associated with the WAF rule ID. This corresponds to the ModSecurity paranoia level, ranging from 1 to 4. 0 is reserved for opt-in only rules.
+   * The sensitivity value associated with the WAF rule ID. This corresponds
+   * to the ModSecurity paranoia level, ranging from 1 to 4. 0 is reserved for
+   * opt-in only rules.
    * </pre>
    *
    * <code>optional int32 sensitivity = 27532959;</code>

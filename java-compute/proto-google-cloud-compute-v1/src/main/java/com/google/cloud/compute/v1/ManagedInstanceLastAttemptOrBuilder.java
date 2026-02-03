@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ public interface ManagedInstanceLastAttemptOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Encountered errors during the last attempt to create or delete the instance.
+   * Output only. [Output Only] Encountered errors during the last attempt to create or
+   * delete the instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ManagedInstanceLastAttemptErrors errors = 315977579;
@@ -42,7 +43,8 @@ public interface ManagedInstanceLastAttemptOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Encountered errors during the last attempt to create or delete the instance.
+   * Output only. [Output Only] Encountered errors during the last attempt to create or
+   * delete the instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ManagedInstanceLastAttemptErrors errors = 315977579;
@@ -56,7 +58,8 @@ public interface ManagedInstanceLastAttemptOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Encountered errors during the last attempt to create or delete the instance.
+   * Output only. [Output Only] Encountered errors during the last attempt to create or
+   * delete the instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ManagedInstanceLastAttemptErrors errors = 315977579;

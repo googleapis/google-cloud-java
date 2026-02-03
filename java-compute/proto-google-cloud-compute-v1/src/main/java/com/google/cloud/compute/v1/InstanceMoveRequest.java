@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,7 +74,12 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The URL of the destination zone to move the instance. This can be a full or partial URL. For example, the following are all valid URLs to a zone: - https://www.googleapis.com/compute/v1/projects/project/zones/zone - projects/project/zones/zone - zones/zone
+   * The URL of the destination zone to move the instance. This can be a full or
+   * partial URL. For example, the following are all valid URLs to a zone:
+   *
+   *    - https://www.googleapis.com/compute/v1/projects/project/zones/zone
+   *    - projects/project/zones/zone
+   *    - zones/zone
    * </pre>
    *
    * <code>optional string destination_zone = 131854653;</code>
@@ -90,7 +95,12 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The URL of the destination zone to move the instance. This can be a full or partial URL. For example, the following are all valid URLs to a zone: - https://www.googleapis.com/compute/v1/projects/project/zones/zone - projects/project/zones/zone - zones/zone
+   * The URL of the destination zone to move the instance. This can be a full or
+   * partial URL. For example, the following are all valid URLs to a zone:
+   *
+   *    - https://www.googleapis.com/compute/v1/projects/project/zones/zone
+   *    - projects/project/zones/zone
+   *    - zones/zone
    * </pre>
    *
    * <code>optional string destination_zone = 131854653;</code>
@@ -114,7 +124,12 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The URL of the destination zone to move the instance. This can be a full or partial URL. For example, the following are all valid URLs to a zone: - https://www.googleapis.com/compute/v1/projects/project/zones/zone - projects/project/zones/zone - zones/zone
+   * The URL of the destination zone to move the instance. This can be a full or
+   * partial URL. For example, the following are all valid URLs to a zone:
+   *
+   *    - https://www.googleapis.com/compute/v1/projects/project/zones/zone
+   *    - projects/project/zones/zone
+   *    - zones/zone
    * </pre>
    *
    * <code>optional string destination_zone = 131854653;</code>
@@ -143,7 +158,12 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The URL of the target instance to move. This can be a full or partial URL. For example, the following are all valid URLs to an instance: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance - zones/zone/instances/instance
+   * The URL of the target instance to move. This can be a full or partial URL.
+   * For example, the following are all valid URLs to an instance:
+   *
+   *    - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
+   *    - projects/project/zones/zone/instances/instance
+   *    - zones/zone/instances/instance
    * </pre>
    *
    * <code>optional string target_instance = 289769347;</code>
@@ -159,7 +179,12 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The URL of the target instance to move. This can be a full or partial URL. For example, the following are all valid URLs to an instance: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance - zones/zone/instances/instance
+   * The URL of the target instance to move. This can be a full or partial URL.
+   * For example, the following are all valid URLs to an instance:
+   *
+   *    - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
+   *    - projects/project/zones/zone/instances/instance
+   *    - zones/zone/instances/instance
    * </pre>
    *
    * <code>optional string target_instance = 289769347;</code>
@@ -183,7 +208,12 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The URL of the target instance to move. This can be a full or partial URL. For example, the following are all valid URLs to an instance: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance - zones/zone/instances/instance
+   * The URL of the target instance to move. This can be a full or partial URL.
+   * For example, the following are all valid URLs to an instance:
+   *
+   *    - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
+   *    - projects/project/zones/zone/instances/instance
+   *    - zones/zone/instances/instance
    * </pre>
    *
    * <code>optional string target_instance = 289769347;</code>
@@ -589,7 +619,12 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The URL of the destination zone to move the instance. This can be a full or partial URL. For example, the following are all valid URLs to a zone: - https://www.googleapis.com/compute/v1/projects/project/zones/zone - projects/project/zones/zone - zones/zone
+     * The URL of the destination zone to move the instance. This can be a full or
+     * partial URL. For example, the following are all valid URLs to a zone:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project/zones/zone
+     *    - projects/project/zones/zone
+     *    - zones/zone
      * </pre>
      *
      * <code>optional string destination_zone = 131854653;</code>
@@ -604,7 +639,12 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The URL of the destination zone to move the instance. This can be a full or partial URL. For example, the following are all valid URLs to a zone: - https://www.googleapis.com/compute/v1/projects/project/zones/zone - projects/project/zones/zone - zones/zone
+     * The URL of the destination zone to move the instance. This can be a full or
+     * partial URL. For example, the following are all valid URLs to a zone:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project/zones/zone
+     *    - projects/project/zones/zone
+     *    - zones/zone
      * </pre>
      *
      * <code>optional string destination_zone = 131854653;</code>
@@ -627,7 +667,12 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The URL of the destination zone to move the instance. This can be a full or partial URL. For example, the following are all valid URLs to a zone: - https://www.googleapis.com/compute/v1/projects/project/zones/zone - projects/project/zones/zone - zones/zone
+     * The URL of the destination zone to move the instance. This can be a full or
+     * partial URL. For example, the following are all valid URLs to a zone:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project/zones/zone
+     *    - projects/project/zones/zone
+     *    - zones/zone
      * </pre>
      *
      * <code>optional string destination_zone = 131854653;</code>
@@ -650,7 +695,12 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The URL of the destination zone to move the instance. This can be a full or partial URL. For example, the following are all valid URLs to a zone: - https://www.googleapis.com/compute/v1/projects/project/zones/zone - projects/project/zones/zone - zones/zone
+     * The URL of the destination zone to move the instance. This can be a full or
+     * partial URL. For example, the following are all valid URLs to a zone:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project/zones/zone
+     *    - projects/project/zones/zone
+     *    - zones/zone
      * </pre>
      *
      * <code>optional string destination_zone = 131854653;</code>
@@ -672,7 +722,12 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The URL of the destination zone to move the instance. This can be a full or partial URL. For example, the following are all valid URLs to a zone: - https://www.googleapis.com/compute/v1/projects/project/zones/zone - projects/project/zones/zone - zones/zone
+     * The URL of the destination zone to move the instance. This can be a full or
+     * partial URL. For example, the following are all valid URLs to a zone:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project/zones/zone
+     *    - projects/project/zones/zone
+     *    - zones/zone
      * </pre>
      *
      * <code>optional string destination_zone = 131854653;</code>
@@ -690,7 +745,12 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The URL of the destination zone to move the instance. This can be a full or partial URL. For example, the following are all valid URLs to a zone: - https://www.googleapis.com/compute/v1/projects/project/zones/zone - projects/project/zones/zone - zones/zone
+     * The URL of the destination zone to move the instance. This can be a full or
+     * partial URL. For example, the following are all valid URLs to a zone:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project/zones/zone
+     *    - projects/project/zones/zone
+     *    - zones/zone
      * </pre>
      *
      * <code>optional string destination_zone = 131854653;</code>
@@ -715,7 +775,12 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The URL of the target instance to move. This can be a full or partial URL. For example, the following are all valid URLs to an instance: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance - zones/zone/instances/instance
+     * The URL of the target instance to move. This can be a full or partial URL.
+     * For example, the following are all valid URLs to an instance:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
+     *    - projects/project/zones/zone/instances/instance
+     *    - zones/zone/instances/instance
      * </pre>
      *
      * <code>optional string target_instance = 289769347;</code>
@@ -730,7 +795,12 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The URL of the target instance to move. This can be a full or partial URL. For example, the following are all valid URLs to an instance: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance - zones/zone/instances/instance
+     * The URL of the target instance to move. This can be a full or partial URL.
+     * For example, the following are all valid URLs to an instance:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
+     *    - projects/project/zones/zone/instances/instance
+     *    - zones/zone/instances/instance
      * </pre>
      *
      * <code>optional string target_instance = 289769347;</code>
@@ -753,7 +823,12 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The URL of the target instance to move. This can be a full or partial URL. For example, the following are all valid URLs to an instance: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance - zones/zone/instances/instance
+     * The URL of the target instance to move. This can be a full or partial URL.
+     * For example, the following are all valid URLs to an instance:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
+     *    - projects/project/zones/zone/instances/instance
+     *    - zones/zone/instances/instance
      * </pre>
      *
      * <code>optional string target_instance = 289769347;</code>
@@ -776,7 +851,12 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The URL of the target instance to move. This can be a full or partial URL. For example, the following are all valid URLs to an instance: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance - zones/zone/instances/instance
+     * The URL of the target instance to move. This can be a full or partial URL.
+     * For example, the following are all valid URLs to an instance:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
+     *    - projects/project/zones/zone/instances/instance
+     *    - zones/zone/instances/instance
      * </pre>
      *
      * <code>optional string target_instance = 289769347;</code>
@@ -798,7 +878,12 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The URL of the target instance to move. This can be a full or partial URL. For example, the following are all valid URLs to an instance: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance - zones/zone/instances/instance
+     * The URL of the target instance to move. This can be a full or partial URL.
+     * For example, the following are all valid URLs to an instance:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
+     *    - projects/project/zones/zone/instances/instance
+     *    - zones/zone/instances/instance
      * </pre>
      *
      * <code>optional string target_instance = 289769347;</code>
@@ -816,7 +901,12 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The URL of the target instance to move. This can be a full or partial URL. For example, the following are all valid URLs to an instance: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance - zones/zone/instances/instance
+     * The URL of the target instance to move. This can be a full or partial URL.
+     * For example, the following are all valid URLs to an instance:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
+     *    - projects/project/zones/zone/instances/instance
+     *    - zones/zone/instances/instance
      * </pre>
      *
      * <code>optional string target_instance = 289769347;</code>

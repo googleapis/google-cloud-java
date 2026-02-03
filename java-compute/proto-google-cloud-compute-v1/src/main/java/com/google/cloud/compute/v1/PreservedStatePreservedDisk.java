@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,7 +69,12 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * These stateful disks will never be deleted during autohealing, update, instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole MIG is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+   * These stateful disks will never be deleted during autohealing,
+   * update, instance recreate operations. This flag is used to configure
+   * if the disk should be deleted after it is no longer used by the group,
+   * e.g. when the given instance or the whole MIG is deleted.
+   * Note: disks attached in READ_ONLY mode cannot be
+   * auto-deleted.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete}
@@ -198,7 +203,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+   * The mode in which to attach this disk, either READ_WRITE orREAD_ONLY. If not specified, the default is to attach the
+   * disk in READ_WRITE mode.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.PreservedStatePreservedDisk.Mode}
@@ -218,7 +224,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Attaches this disk in read-only mode. Multiple VM instances can use a disk in READ_ONLY mode at a time.
+     * Attaches this disk in read-only mode. Multiple VM instances can use
+     * a disk in READ_ONLY mode at a time.
      * </pre>
      *
      * <code>READ_ONLY = 91950261;</code>
@@ -228,7 +235,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * *[Default]* Attaches this disk in READ_WRITE mode. Only one VM instance at a time can be attached to a disk in READ_WRITE mode.
+     * *[Default]* Attaches this disk in READ_WRITE mode. Only
+     * one VM instance at a time can be attached to a disk inREAD_WRITE mode.
      * </pre>
      *
      * <code>READ_WRITE = 173607894;</code>
@@ -252,7 +260,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Attaches this disk in read-only mode. Multiple VM instances can use a disk in READ_ONLY mode at a time.
+     * Attaches this disk in read-only mode. Multiple VM instances can use
+     * a disk in READ_ONLY mode at a time.
      * </pre>
      *
      * <code>READ_ONLY = 91950261;</code>
@@ -263,7 +272,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * *[Default]* Attaches this disk in READ_WRITE mode. Only one VM instance at a time can be attached to a disk in READ_WRITE mode.
+     * *[Default]* Attaches this disk in READ_WRITE mode. Only
+     * one VM instance at a time can be attached to a disk inREAD_WRITE mode.
      * </pre>
      *
      * <code>READ_WRITE = 173607894;</code>
@@ -365,7 +375,12 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * These stateful disks will never be deleted during autohealing, update, instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole MIG is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+   * These stateful disks will never be deleted during autohealing,
+   * update, instance recreate operations. This flag is used to configure
+   * if the disk should be deleted after it is no longer used by the group,
+   * e.g. when the given instance or the whole MIG is deleted.
+   * Note: disks attached in READ_ONLY mode cannot be
+   * auto-deleted.
    * Check the AutoDelete enum for the list of possible values.
    * </pre>
    *
@@ -382,7 +397,12 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * These stateful disks will never be deleted during autohealing, update, instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole MIG is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+   * These stateful disks will never be deleted during autohealing,
+   * update, instance recreate operations. This flag is used to configure
+   * if the disk should be deleted after it is no longer used by the group,
+   * e.g. when the given instance or the whole MIG is deleted.
+   * Note: disks attached in READ_ONLY mode cannot be
+   * auto-deleted.
    * Check the AutoDelete enum for the list of possible values.
    * </pre>
    *
@@ -407,7 +427,12 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * These stateful disks will never be deleted during autohealing, update, instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole MIG is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+   * These stateful disks will never be deleted during autohealing,
+   * update, instance recreate operations. This flag is used to configure
+   * if the disk should be deleted after it is no longer used by the group,
+   * e.g. when the given instance or the whole MIG is deleted.
+   * Note: disks attached in READ_ONLY mode cannot be
+   * auto-deleted.
    * Check the AutoDelete enum for the list of possible values.
    * </pre>
    *
@@ -437,7 +462,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+   * The mode in which to attach this disk, either READ_WRITE orREAD_ONLY. If not specified, the default is to attach the
+   * disk in READ_WRITE mode.
    * Check the Mode enum for the list of possible values.
    * </pre>
    *
@@ -454,7 +480,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+   * The mode in which to attach this disk, either READ_WRITE orREAD_ONLY. If not specified, the default is to attach the
+   * disk in READ_WRITE mode.
    * Check the Mode enum for the list of possible values.
    * </pre>
    *
@@ -479,7 +506,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+   * The mode in which to attach this disk, either READ_WRITE orREAD_ONLY. If not specified, the default is to attach the
+   * disk in READ_WRITE mode.
    * Check the Mode enum for the list of possible values.
    * </pre>
    *
@@ -509,7 +537,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The URL of the disk resource that is stateful and should be attached to the VM instance.
+   * The URL of the disk resource that is stateful and should be attached
+   * to the VM instance.
    * </pre>
    *
    * <code>optional string source = 177235995;</code>
@@ -525,7 +554,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The URL of the disk resource that is stateful and should be attached to the VM instance.
+   * The URL of the disk resource that is stateful and should be attached
+   * to the VM instance.
    * </pre>
    *
    * <code>optional string source = 177235995;</code>
@@ -549,7 +579,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The URL of the disk resource that is stateful and should be attached to the VM instance.
+   * The URL of the disk resource that is stateful and should be attached
+   * to the VM instance.
    * </pre>
    *
    * <code>optional string source = 177235995;</code>
@@ -986,7 +1017,12 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * These stateful disks will never be deleted during autohealing, update, instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole MIG is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+     * These stateful disks will never be deleted during autohealing,
+     * update, instance recreate operations. This flag is used to configure
+     * if the disk should be deleted after it is no longer used by the group,
+     * e.g. when the given instance or the whole MIG is deleted.
+     * Note: disks attached in READ_ONLY mode cannot be
+     * auto-deleted.
      * Check the AutoDelete enum for the list of possible values.
      * </pre>
      *
@@ -1002,7 +1038,12 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * These stateful disks will never be deleted during autohealing, update, instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole MIG is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+     * These stateful disks will never be deleted during autohealing,
+     * update, instance recreate operations. This flag is used to configure
+     * if the disk should be deleted after it is no longer used by the group,
+     * e.g. when the given instance or the whole MIG is deleted.
+     * Note: disks attached in READ_ONLY mode cannot be
+     * auto-deleted.
      * Check the AutoDelete enum for the list of possible values.
      * </pre>
      *
@@ -1026,7 +1067,12 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * These stateful disks will never be deleted during autohealing, update, instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole MIG is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+     * These stateful disks will never be deleted during autohealing,
+     * update, instance recreate operations. This flag is used to configure
+     * if the disk should be deleted after it is no longer used by the group,
+     * e.g. when the given instance or the whole MIG is deleted.
+     * Note: disks attached in READ_ONLY mode cannot be
+     * auto-deleted.
      * Check the AutoDelete enum for the list of possible values.
      * </pre>
      *
@@ -1050,7 +1096,12 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * These stateful disks will never be deleted during autohealing, update, instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole MIG is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+     * These stateful disks will never be deleted during autohealing,
+     * update, instance recreate operations. This flag is used to configure
+     * if the disk should be deleted after it is no longer used by the group,
+     * e.g. when the given instance or the whole MIG is deleted.
+     * Note: disks attached in READ_ONLY mode cannot be
+     * auto-deleted.
      * Check the AutoDelete enum for the list of possible values.
      * </pre>
      *
@@ -1073,7 +1124,12 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * These stateful disks will never be deleted during autohealing, update, instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole MIG is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+     * These stateful disks will never be deleted during autohealing,
+     * update, instance recreate operations. This flag is used to configure
+     * if the disk should be deleted after it is no longer used by the group,
+     * e.g. when the given instance or the whole MIG is deleted.
+     * Note: disks attached in READ_ONLY mode cannot be
+     * auto-deleted.
      * Check the AutoDelete enum for the list of possible values.
      * </pre>
      *
@@ -1092,7 +1148,12 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * These stateful disks will never be deleted during autohealing, update, instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole MIG is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+     * These stateful disks will never be deleted during autohealing,
+     * update, instance recreate operations. This flag is used to configure
+     * if the disk should be deleted after it is no longer used by the group,
+     * e.g. when the given instance or the whole MIG is deleted.
+     * Note: disks attached in READ_ONLY mode cannot be
+     * auto-deleted.
      * Check the AutoDelete enum for the list of possible values.
      * </pre>
      *
@@ -1118,7 +1179,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+     * The mode in which to attach this disk, either READ_WRITE orREAD_ONLY. If not specified, the default is to attach the
+     * disk in READ_WRITE mode.
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -1134,7 +1196,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+     * The mode in which to attach this disk, either READ_WRITE orREAD_ONLY. If not specified, the default is to attach the
+     * disk in READ_WRITE mode.
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -1158,7 +1221,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+     * The mode in which to attach this disk, either READ_WRITE orREAD_ONLY. If not specified, the default is to attach the
+     * disk in READ_WRITE mode.
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -1182,7 +1246,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+     * The mode in which to attach this disk, either READ_WRITE orREAD_ONLY. If not specified, the default is to attach the
+     * disk in READ_WRITE mode.
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -1205,7 +1270,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+     * The mode in which to attach this disk, either READ_WRITE orREAD_ONLY. If not specified, the default is to attach the
+     * disk in READ_WRITE mode.
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -1224,7 +1290,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+     * The mode in which to attach this disk, either READ_WRITE orREAD_ONLY. If not specified, the default is to attach the
+     * disk in READ_WRITE mode.
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -1250,7 +1317,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The URL of the disk resource that is stateful and should be attached to the VM instance.
+     * The URL of the disk resource that is stateful and should be attached
+     * to the VM instance.
      * </pre>
      *
      * <code>optional string source = 177235995;</code>
@@ -1265,7 +1333,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The URL of the disk resource that is stateful and should be attached to the VM instance.
+     * The URL of the disk resource that is stateful and should be attached
+     * to the VM instance.
      * </pre>
      *
      * <code>optional string source = 177235995;</code>
@@ -1288,7 +1357,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The URL of the disk resource that is stateful and should be attached to the VM instance.
+     * The URL of the disk resource that is stateful and should be attached
+     * to the VM instance.
      * </pre>
      *
      * <code>optional string source = 177235995;</code>
@@ -1311,7 +1381,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The URL of the disk resource that is stateful and should be attached to the VM instance.
+     * The URL of the disk resource that is stateful and should be attached
+     * to the VM instance.
      * </pre>
      *
      * <code>optional string source = 177235995;</code>
@@ -1333,7 +1404,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The URL of the disk resource that is stateful and should be attached to the VM instance.
+     * The URL of the disk resource that is stateful and should be attached
+     * to the VM instance.
      * </pre>
      *
      * <code>optional string source = 177235995;</code>
@@ -1351,7 +1423,8 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The URL of the disk resource that is stateful and should be attached to the VM instance.
+     * The URL of the disk resource that is stateful and should be attached
+     * to the VM instance.
      * </pre>
      *
      * <code>optional string source = 177235995;</code>

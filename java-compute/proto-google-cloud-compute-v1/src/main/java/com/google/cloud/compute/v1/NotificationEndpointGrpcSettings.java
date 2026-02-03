@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a gRPC setting that describes one gRPC notification endpoint and the retry duration attempting to send notification to this endpoint.
+ * Represents a gRPC setting that describes one gRPC notification endpoint and
+ * the retry duration attempting to send notification to this endpoint.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.NotificationEndpointGrpcSettings}
@@ -77,7 +78,9 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
    *
    *
    * <pre>
-   * Optional. If specified, this field is used to set the authority header by the sender of notifications. See https://tools.ietf.org/html/rfc7540#section-8.1.2.3
+   * Optional. If specified, this field is used to set the authority header by
+   * the sender of notifications. See
+   * https://tools.ietf.org/html/rfc7540#section-8.1.2.3
    * </pre>
    *
    * <code>optional string authority = 401868611;</code>
@@ -93,7 +96,9 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
    *
    *
    * <pre>
-   * Optional. If specified, this field is used to set the authority header by the sender of notifications. See https://tools.ietf.org/html/rfc7540#section-8.1.2.3
+   * Optional. If specified, this field is used to set the authority header by
+   * the sender of notifications. See
+   * https://tools.ietf.org/html/rfc7540#section-8.1.2.3
    * </pre>
    *
    * <code>optional string authority = 401868611;</code>
@@ -117,7 +122,9 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
    *
    *
    * <pre>
-   * Optional. If specified, this field is used to set the authority header by the sender of notifications. See https://tools.ietf.org/html/rfc7540#section-8.1.2.3
+   * Optional. If specified, this field is used to set the authority header by
+   * the sender of notifications. See
+   * https://tools.ietf.org/html/rfc7540#section-8.1.2.3
    * </pre>
    *
    * <code>optional string authority = 401868611;</code>
@@ -146,7 +153,8 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
    *
    *
    * <pre>
-   * Endpoint to which gRPC notifications are sent. This must be a valid gRPCLB DNS name.
+   * Endpoint to which gRPC notifications are sent. This must be a valid
+   * gRPCLB DNS name.
    * </pre>
    *
    * <code>optional string endpoint = 130489749;</code>
@@ -162,7 +170,8 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
    *
    *
    * <pre>
-   * Endpoint to which gRPC notifications are sent. This must be a valid gRPCLB DNS name.
+   * Endpoint to which gRPC notifications are sent. This must be a valid
+   * gRPCLB DNS name.
    * </pre>
    *
    * <code>optional string endpoint = 130489749;</code>
@@ -186,7 +195,8 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
    *
    *
    * <pre>
-   * Endpoint to which gRPC notifications are sent. This must be a valid gRPCLB DNS name.
+   * Endpoint to which gRPC notifications are sent. This must be a valid
+   * gRPCLB DNS name.
    * </pre>
    *
    * <code>optional string endpoint = 130489749;</code>
@@ -215,7 +225,8 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
    *
    *
    * <pre>
-   * Optional. If specified, this field is used to populate the "name" field in gRPC requests.
+   * Optional. If specified, this field is used to populate the "name" field
+   * in gRPC requests.
    * </pre>
    *
    * <code>optional string payload_name = 300358300;</code>
@@ -231,7 +242,8 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
    *
    *
    * <pre>
-   * Optional. If specified, this field is used to populate the "name" field in gRPC requests.
+   * Optional. If specified, this field is used to populate the "name" field
+   * in gRPC requests.
    * </pre>
    *
    * <code>optional string payload_name = 300358300;</code>
@@ -255,7 +267,8 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
    *
    *
    * <pre>
-   * Optional. If specified, this field is used to populate the "name" field in gRPC requests.
+   * Optional. If specified, this field is used to populate the "name" field
+   * in gRPC requests.
    * </pre>
    *
    * <code>optional string payload_name = 300358300;</code>
@@ -282,7 +295,11 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
    *
    *
    * <pre>
-   * Optional. This field is used to configure how often to send a full update of all non-healthy backends. If unspecified, full updates are not sent. If specified, must be in the range between 600 seconds to 3600 seconds. Nanos are disallowed. Can only be set for regional notification endpoints.
+   * Optional. This field is used to configure how often to send a full update
+   * of all non-healthy backends. If unspecified, full updates are not sent.
+   * If specified, must be in the range between 600 seconds to 3600 seconds.
+   * Nanos are disallowed. Can only be set for regional notification
+   * endpoints.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
@@ -298,7 +315,11 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
    *
    *
    * <pre>
-   * Optional. This field is used to configure how often to send a full update of all non-healthy backends. If unspecified, full updates are not sent. If specified, must be in the range between 600 seconds to 3600 seconds. Nanos are disallowed. Can only be set for regional notification endpoints.
+   * Optional. This field is used to configure how often to send a full update
+   * of all non-healthy backends. If unspecified, full updates are not sent.
+   * If specified, must be in the range between 600 seconds to 3600 seconds.
+   * Nanos are disallowed. Can only be set for regional notification
+   * endpoints.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
@@ -316,7 +337,11 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
    *
    *
    * <pre>
-   * Optional. This field is used to configure how often to send a full update of all non-healthy backends. If unspecified, full updates are not sent. If specified, must be in the range between 600 seconds to 3600 seconds. Nanos are disallowed. Can only be set for regional notification endpoints.
+   * Optional. This field is used to configure how often to send a full update
+   * of all non-healthy backends. If unspecified, full updates are not sent.
+   * If specified, must be in the range between 600 seconds to 3600 seconds.
+   * Nanos are disallowed. Can only be set for regional notification
+   * endpoints.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
@@ -335,7 +360,9 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
    *
    *
    * <pre>
-   * How much time (in seconds) is spent attempting notification retries until a successful response is received. Default is 30s. Limit is 20m (1200s). Must be a positive number.
+   * How much time (in seconds) is spent attempting notification retries
+   * until a successful response is received. Default is 30s. Limit is 20m
+   * (1200s). Must be a positive number.
    * </pre>
    *
    * <code>optional uint32 retry_duration_sec = 115681117;</code>
@@ -351,7 +378,9 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
    *
    *
    * <pre>
-   * How much time (in seconds) is spent attempting notification retries until a successful response is received. Default is 30s. Limit is 20m (1200s). Must be a positive number.
+   * How much time (in seconds) is spent attempting notification retries
+   * until a successful response is received. Default is 30s. Limit is 20m
+   * (1200s). Must be a positive number.
    * </pre>
    *
    * <code>optional uint32 retry_duration_sec = 115681117;</code>
@@ -590,7 +619,8 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
    *
    *
    * <pre>
-   * Represents a gRPC setting that describes one gRPC notification endpoint and the retry duration attempting to send notification to this endpoint.
+   * Represents a gRPC setting that describes one gRPC notification endpoint and
+   * the retry duration attempting to send notification to this endpoint.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.NotificationEndpointGrpcSettings}
@@ -855,7 +885,9 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. If specified, this field is used to set the authority header by the sender of notifications. See https://tools.ietf.org/html/rfc7540#section-8.1.2.3
+     * Optional. If specified, this field is used to set the authority header by
+     * the sender of notifications. See
+     * https://tools.ietf.org/html/rfc7540#section-8.1.2.3
      * </pre>
      *
      * <code>optional string authority = 401868611;</code>
@@ -870,7 +902,9 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. If specified, this field is used to set the authority header by the sender of notifications. See https://tools.ietf.org/html/rfc7540#section-8.1.2.3
+     * Optional. If specified, this field is used to set the authority header by
+     * the sender of notifications. See
+     * https://tools.ietf.org/html/rfc7540#section-8.1.2.3
      * </pre>
      *
      * <code>optional string authority = 401868611;</code>
@@ -893,7 +927,9 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. If specified, this field is used to set the authority header by the sender of notifications. See https://tools.ietf.org/html/rfc7540#section-8.1.2.3
+     * Optional. If specified, this field is used to set the authority header by
+     * the sender of notifications. See
+     * https://tools.ietf.org/html/rfc7540#section-8.1.2.3
      * </pre>
      *
      * <code>optional string authority = 401868611;</code>
@@ -916,7 +952,9 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. If specified, this field is used to set the authority header by the sender of notifications. See https://tools.ietf.org/html/rfc7540#section-8.1.2.3
+     * Optional. If specified, this field is used to set the authority header by
+     * the sender of notifications. See
+     * https://tools.ietf.org/html/rfc7540#section-8.1.2.3
      * </pre>
      *
      * <code>optional string authority = 401868611;</code>
@@ -938,7 +976,9 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. If specified, this field is used to set the authority header by the sender of notifications. See https://tools.ietf.org/html/rfc7540#section-8.1.2.3
+     * Optional. If specified, this field is used to set the authority header by
+     * the sender of notifications. See
+     * https://tools.ietf.org/html/rfc7540#section-8.1.2.3
      * </pre>
      *
      * <code>optional string authority = 401868611;</code>
@@ -956,7 +996,9 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. If specified, this field is used to set the authority header by the sender of notifications. See https://tools.ietf.org/html/rfc7540#section-8.1.2.3
+     * Optional. If specified, this field is used to set the authority header by
+     * the sender of notifications. See
+     * https://tools.ietf.org/html/rfc7540#section-8.1.2.3
      * </pre>
      *
      * <code>optional string authority = 401868611;</code>
@@ -981,7 +1023,8 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      *
      *
      * <pre>
-     * Endpoint to which gRPC notifications are sent. This must be a valid gRPCLB DNS name.
+     * Endpoint to which gRPC notifications are sent. This must be a valid
+     * gRPCLB DNS name.
      * </pre>
      *
      * <code>optional string endpoint = 130489749;</code>
@@ -996,7 +1039,8 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      *
      *
      * <pre>
-     * Endpoint to which gRPC notifications are sent. This must be a valid gRPCLB DNS name.
+     * Endpoint to which gRPC notifications are sent. This must be a valid
+     * gRPCLB DNS name.
      * </pre>
      *
      * <code>optional string endpoint = 130489749;</code>
@@ -1019,7 +1063,8 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      *
      *
      * <pre>
-     * Endpoint to which gRPC notifications are sent. This must be a valid gRPCLB DNS name.
+     * Endpoint to which gRPC notifications are sent. This must be a valid
+     * gRPCLB DNS name.
      * </pre>
      *
      * <code>optional string endpoint = 130489749;</code>
@@ -1042,7 +1087,8 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      *
      *
      * <pre>
-     * Endpoint to which gRPC notifications are sent. This must be a valid gRPCLB DNS name.
+     * Endpoint to which gRPC notifications are sent. This must be a valid
+     * gRPCLB DNS name.
      * </pre>
      *
      * <code>optional string endpoint = 130489749;</code>
@@ -1064,7 +1110,8 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      *
      *
      * <pre>
-     * Endpoint to which gRPC notifications are sent. This must be a valid gRPCLB DNS name.
+     * Endpoint to which gRPC notifications are sent. This must be a valid
+     * gRPCLB DNS name.
      * </pre>
      *
      * <code>optional string endpoint = 130489749;</code>
@@ -1082,7 +1129,8 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      *
      *
      * <pre>
-     * Endpoint to which gRPC notifications are sent. This must be a valid gRPCLB DNS name.
+     * Endpoint to which gRPC notifications are sent. This must be a valid
+     * gRPCLB DNS name.
      * </pre>
      *
      * <code>optional string endpoint = 130489749;</code>
@@ -1107,7 +1155,8 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. If specified, this field is used to populate the "name" field in gRPC requests.
+     * Optional. If specified, this field is used to populate the "name" field
+     * in gRPC requests.
      * </pre>
      *
      * <code>optional string payload_name = 300358300;</code>
@@ -1122,7 +1171,8 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. If specified, this field is used to populate the "name" field in gRPC requests.
+     * Optional. If specified, this field is used to populate the "name" field
+     * in gRPC requests.
      * </pre>
      *
      * <code>optional string payload_name = 300358300;</code>
@@ -1145,7 +1195,8 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. If specified, this field is used to populate the "name" field in gRPC requests.
+     * Optional. If specified, this field is used to populate the "name" field
+     * in gRPC requests.
      * </pre>
      *
      * <code>optional string payload_name = 300358300;</code>
@@ -1168,7 +1219,8 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. If specified, this field is used to populate the "name" field in gRPC requests.
+     * Optional. If specified, this field is used to populate the "name" field
+     * in gRPC requests.
      * </pre>
      *
      * <code>optional string payload_name = 300358300;</code>
@@ -1190,7 +1242,8 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. If specified, this field is used to populate the "name" field in gRPC requests.
+     * Optional. If specified, this field is used to populate the "name" field
+     * in gRPC requests.
      * </pre>
      *
      * <code>optional string payload_name = 300358300;</code>
@@ -1208,7 +1261,8 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. If specified, this field is used to populate the "name" field in gRPC requests.
+     * Optional. If specified, this field is used to populate the "name" field
+     * in gRPC requests.
      * </pre>
      *
      * <code>optional string payload_name = 300358300;</code>
@@ -1238,7 +1292,11 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. This field is used to configure how often to send a full update of all non-healthy backends. If unspecified, full updates are not sent. If specified, must be in the range between 600 seconds to 3600 seconds. Nanos are disallowed. Can only be set for regional notification endpoints.
+     * Optional. This field is used to configure how often to send a full update
+     * of all non-healthy backends. If unspecified, full updates are not sent.
+     * If specified, must be in the range between 600 seconds to 3600 seconds.
+     * Nanos are disallowed. Can only be set for regional notification
+     * endpoints.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
@@ -1253,7 +1311,11 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. This field is used to configure how often to send a full update of all non-healthy backends. If unspecified, full updates are not sent. If specified, must be in the range between 600 seconds to 3600 seconds. Nanos are disallowed. Can only be set for regional notification endpoints.
+     * Optional. This field is used to configure how often to send a full update
+     * of all non-healthy backends. If unspecified, full updates are not sent.
+     * If specified, must be in the range between 600 seconds to 3600 seconds.
+     * Nanos are disallowed. Can only be set for regional notification
+     * endpoints.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
@@ -1274,7 +1336,11 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. This field is used to configure how often to send a full update of all non-healthy backends. If unspecified, full updates are not sent. If specified, must be in the range between 600 seconds to 3600 seconds. Nanos are disallowed. Can only be set for regional notification endpoints.
+     * Optional. This field is used to configure how often to send a full update
+     * of all non-healthy backends. If unspecified, full updates are not sent.
+     * If specified, must be in the range between 600 seconds to 3600 seconds.
+     * Nanos are disallowed. Can only be set for regional notification
+     * endpoints.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
@@ -1297,7 +1363,11 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. This field is used to configure how often to send a full update of all non-healthy backends. If unspecified, full updates are not sent. If specified, must be in the range between 600 seconds to 3600 seconds. Nanos are disallowed. Can only be set for regional notification endpoints.
+     * Optional. This field is used to configure how often to send a full update
+     * of all non-healthy backends. If unspecified, full updates are not sent.
+     * If specified, must be in the range between 600 seconds to 3600 seconds.
+     * Nanos are disallowed. Can only be set for regional notification
+     * endpoints.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
@@ -1317,7 +1387,11 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. This field is used to configure how often to send a full update of all non-healthy backends. If unspecified, full updates are not sent. If specified, must be in the range between 600 seconds to 3600 seconds. Nanos are disallowed. Can only be set for regional notification endpoints.
+     * Optional. This field is used to configure how often to send a full update
+     * of all non-healthy backends. If unspecified, full updates are not sent.
+     * If specified, must be in the range between 600 seconds to 3600 seconds.
+     * Nanos are disallowed. Can only be set for regional notification
+     * endpoints.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
@@ -1345,7 +1419,11 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. This field is used to configure how often to send a full update of all non-healthy backends. If unspecified, full updates are not sent. If specified, must be in the range between 600 seconds to 3600 seconds. Nanos are disallowed. Can only be set for regional notification endpoints.
+     * Optional. This field is used to configure how often to send a full update
+     * of all non-healthy backends. If unspecified, full updates are not sent.
+     * If specified, must be in the range between 600 seconds to 3600 seconds.
+     * Nanos are disallowed. Can only be set for regional notification
+     * endpoints.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
@@ -1365,7 +1443,11 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. This field is used to configure how often to send a full update of all non-healthy backends. If unspecified, full updates are not sent. If specified, must be in the range between 600 seconds to 3600 seconds. Nanos are disallowed. Can only be set for regional notification endpoints.
+     * Optional. This field is used to configure how often to send a full update
+     * of all non-healthy backends. If unspecified, full updates are not sent.
+     * If specified, must be in the range between 600 seconds to 3600 seconds.
+     * Nanos are disallowed. Can only be set for regional notification
+     * endpoints.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
@@ -1380,7 +1462,11 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. This field is used to configure how often to send a full update of all non-healthy backends. If unspecified, full updates are not sent. If specified, must be in the range between 600 seconds to 3600 seconds. Nanos are disallowed. Can only be set for regional notification endpoints.
+     * Optional. This field is used to configure how often to send a full update
+     * of all non-healthy backends. If unspecified, full updates are not sent.
+     * If specified, must be in the range between 600 seconds to 3600 seconds.
+     * Nanos are disallowed. Can only be set for regional notification
+     * endpoints.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
@@ -1399,7 +1485,11 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. This field is used to configure how often to send a full update of all non-healthy backends. If unspecified, full updates are not sent. If specified, must be in the range between 600 seconds to 3600 seconds. Nanos are disallowed. Can only be set for regional notification endpoints.
+     * Optional. This field is used to configure how often to send a full update
+     * of all non-healthy backends. If unspecified, full updates are not sent.
+     * If specified, must be in the range between 600 seconds to 3600 seconds.
+     * Nanos are disallowed. Can only be set for regional notification
+     * endpoints.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
@@ -1427,7 +1517,9 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      *
      *
      * <pre>
-     * How much time (in seconds) is spent attempting notification retries until a successful response is received. Default is 30s. Limit is 20m (1200s). Must be a positive number.
+     * How much time (in seconds) is spent attempting notification retries
+     * until a successful response is received. Default is 30s. Limit is 20m
+     * (1200s). Must be a positive number.
      * </pre>
      *
      * <code>optional uint32 retry_duration_sec = 115681117;</code>
@@ -1443,7 +1535,9 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      *
      *
      * <pre>
-     * How much time (in seconds) is spent attempting notification retries until a successful response is received. Default is 30s. Limit is 20m (1200s). Must be a positive number.
+     * How much time (in seconds) is spent attempting notification retries
+     * until a successful response is received. Default is 30s. Limit is 20m
+     * (1200s). Must be a positive number.
      * </pre>
      *
      * <code>optional uint32 retry_duration_sec = 115681117;</code>
@@ -1459,7 +1553,9 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      *
      *
      * <pre>
-     * How much time (in seconds) is spent attempting notification retries until a successful response is received. Default is 30s. Limit is 20m (1200s). Must be a positive number.
+     * How much time (in seconds) is spent attempting notification retries
+     * until a successful response is received. Default is 30s. Limit is 20m
+     * (1200s). Must be a positive number.
      * </pre>
      *
      * <code>optional uint32 retry_duration_sec = 115681117;</code>
@@ -1479,7 +1575,9 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
      *
      *
      * <pre>
-     * How much time (in seconds) is spent attempting notification retries until a successful response is received. Default is 30s. Limit is 20m (1200s). Must be a positive number.
+     * How much time (in seconds) is spent attempting notification retries
+     * until a successful response is received. Default is 30s. Limit is 20m
+     * (1200s). Must be a positive number.
      * </pre>
      *
      * <code>optional uint32 retry_duration_sec = 115681117;</code>

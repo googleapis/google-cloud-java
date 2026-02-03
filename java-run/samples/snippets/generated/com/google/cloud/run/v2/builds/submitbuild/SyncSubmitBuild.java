@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.run.v2.samples;
 
 // [START run_v2_generated_Builds_SubmitBuild_sync]
+import com.google.api.LaunchStage;
 import com.google.cloud.run.v2.BuildWorkerPoolName;
 import com.google.cloud.run.v2.BuildsClient;
 import com.google.cloud.run.v2.SubmitBuildRequest;
@@ -44,6 +45,9 @@ public class SyncSubmitBuild {
               .setWorkerPool(
                   BuildWorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
               .addAllTags(new ArrayList<String>())
+              .setMachineType("machineType-218117087")
+              .setReleaseTrack(LaunchStage.forNumber(0))
+              .setClient("client-1357712437")
               .build();
       SubmitBuildResponse response = buildsClient.submitBuild(request);
     }

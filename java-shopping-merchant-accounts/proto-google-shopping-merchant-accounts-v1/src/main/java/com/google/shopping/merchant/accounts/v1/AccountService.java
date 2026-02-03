@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -261,6 +261,7 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
     ACCOUNT_MANAGEMENT(102),
     ACCOUNT_AGGREGATION(103),
     LOCAL_LISTING_MANAGEMENT(104),
+    COMPARISON_SHOPPING(105),
     SERVICETYPE_NOT_SET(0);
     private final int value;
 
@@ -290,6 +291,8 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
           return ACCOUNT_AGGREGATION;
         case 104:
           return LOCAL_LISTING_MANAGEMENT;
+        case 105:
+          return COMPARISON_SHOPPING;
         case 0:
           return SERVICETYPE_NOT_SET;
         default:
@@ -649,6 +652,70 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
       return (com.google.shopping.merchant.accounts.v1.LocalListingManagement) serviceType_;
     }
     return com.google.shopping.merchant.accounts.v1.LocalListingManagement.getDefaultInstance();
+  }
+
+  public static final int COMPARISON_SHOPPING_FIELD_NUMBER = 105;
+
+  /**
+   *
+   *
+   * <pre>
+   * Service type for comparison shopping. The provider is a CSS (Comparison
+   * Shopping Service) managing the account. See
+   * https://support.google.com/merchants/answer/12653197
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.accounts.v1.ComparisonShopping comparison_shopping = 105;
+   * </code>
+   *
+   * @return Whether the comparisonShopping field is set.
+   */
+  @java.lang.Override
+  public boolean hasComparisonShopping() {
+    return serviceTypeCase_ == 105;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Service type for comparison shopping. The provider is a CSS (Comparison
+   * Shopping Service) managing the account. See
+   * https://support.google.com/merchants/answer/12653197
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.accounts.v1.ComparisonShopping comparison_shopping = 105;
+   * </code>
+   *
+   * @return The comparisonShopping.
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.accounts.v1.ComparisonShopping getComparisonShopping() {
+    if (serviceTypeCase_ == 105) {
+      return (com.google.shopping.merchant.accounts.v1.ComparisonShopping) serviceType_;
+    }
+    return com.google.shopping.merchant.accounts.v1.ComparisonShopping.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Service type for comparison shopping. The provider is a CSS (Comparison
+   * Shopping Service) managing the account. See
+   * https://support.google.com/merchants/answer/12653197
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.accounts.v1.ComparisonShopping comparison_shopping = 105;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.accounts.v1.ComparisonShoppingOrBuilder
+      getComparisonShoppingOrBuilder() {
+    if (serviceTypeCase_ == 105) {
+      return (com.google.shopping.merchant.accounts.v1.ComparisonShopping) serviceType_;
+    }
+    return com.google.shopping.merchant.accounts.v1.ComparisonShopping.getDefaultInstance();
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -1066,6 +1133,10 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           104, (com.google.shopping.merchant.accounts.v1.LocalListingManagement) serviceType_);
     }
+    if (serviceTypeCase_ == 105) {
+      output.writeMessage(
+          105, (com.google.shopping.merchant.accounts.v1.ComparisonShopping) serviceType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1120,6 +1191,11 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               104, (com.google.shopping.merchant.accounts.v1.LocalListingManagement) serviceType_);
     }
+    if (serviceTypeCase_ == 105) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              105, (com.google.shopping.merchant.accounts.v1.ComparisonShopping) serviceType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1164,6 +1240,9 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
         break;
       case 104:
         if (!getLocalListingManagement().equals(other.getLocalListingManagement())) return false;
+        break;
+      case 105:
+        if (!getComparisonShopping().equals(other.getComparisonShopping())) return false;
         break;
       case 0:
       default:
@@ -1215,6 +1294,10 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
       case 104:
         hash = (37 * hash) + LOCAL_LISTING_MANAGEMENT_FIELD_NUMBER;
         hash = (53 * hash) + getLocalListingManagement().hashCode();
+        break;
+      case 105:
+        hash = (37 * hash) + COMPARISON_SHOPPING_FIELD_NUMBER;
+        hash = (53 * hash) + getComparisonShopping().hashCode();
         break;
       case 0:
       default:
@@ -1401,6 +1484,9 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
       if (localListingManagementBuilder_ != null) {
         localListingManagementBuilder_.clear();
       }
+      if (comparisonShoppingBuilder_ != null) {
+        comparisonShoppingBuilder_.clear();
+      }
       name_ = "";
       provider_ = "";
       providerDisplayName_ = "";
@@ -1450,25 +1536,25 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.shopping.merchant.accounts.v1.AccountService result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.name_ = name_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.provider_ = provider_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.providerDisplayName_ = providerDisplayName_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.handshake_ = handshakeBuilder_ == null ? handshake_ : handshakeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.mutability_ = mutability_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.externalAccountId_ = externalAccountId_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1492,6 +1578,9 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
       }
       if (serviceTypeCase_ == 104 && localListingManagementBuilder_ != null) {
         result.serviceType_ = localListingManagementBuilder_.build();
+      }
+      if (serviceTypeCase_ == 105 && comparisonShoppingBuilder_ != null) {
+        result.serviceType_ = comparisonShoppingBuilder_.build();
       }
     }
 
@@ -1543,17 +1632,17 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasProvider()) {
         provider_ = other.provider_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getProviderDisplayName().isEmpty()) {
         providerDisplayName_ = other.providerDisplayName_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasHandshake()) {
@@ -1564,7 +1653,7 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getExternalAccountId().isEmpty()) {
         externalAccountId_ = other.externalAccountId_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       switch (other.getServiceTypeCase()) {
@@ -1591,6 +1680,11 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
         case LOCAL_LISTING_MANAGEMENT:
           {
             mergeLocalListingManagement(other.getLocalListingManagement());
+            break;
+          }
+        case COMPARISON_SHOPPING:
+          {
+            mergeComparisonShopping(other.getComparisonShopping());
             break;
           }
         case SERVICETYPE_NOT_SET:
@@ -1627,37 +1721,37 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 10
             case 18:
               {
                 provider_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 18
             case 26:
               {
                 providerDisplayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getHandshakeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 34
             case 40:
               {
                 mutability_ = input.readEnum();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 40
             case 50:
               {
                 externalAccountId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 50
             case 802:
@@ -1695,6 +1789,13 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
                 serviceTypeCase_ = 104;
                 break;
               } // case 834
+            case 842:
+              {
+                input.readMessage(
+                    getComparisonShoppingFieldBuilder().getBuilder(), extensionRegistry);
+                serviceTypeCase_ = 105;
+                break;
+              } // case 842
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3071,6 +3172,258 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
       return localListingManagementBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.shopping.merchant.accounts.v1.ComparisonShopping,
+            com.google.shopping.merchant.accounts.v1.ComparisonShopping.Builder,
+            com.google.shopping.merchant.accounts.v1.ComparisonShoppingOrBuilder>
+        comparisonShoppingBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Service type for comparison shopping. The provider is a CSS (Comparison
+     * Shopping Service) managing the account. See
+     * https://support.google.com/merchants/answer/12653197
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.accounts.v1.ComparisonShopping comparison_shopping = 105;
+     * </code>
+     *
+     * @return Whether the comparisonShopping field is set.
+     */
+    @java.lang.Override
+    public boolean hasComparisonShopping() {
+      return serviceTypeCase_ == 105;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Service type for comparison shopping. The provider is a CSS (Comparison
+     * Shopping Service) managing the account. See
+     * https://support.google.com/merchants/answer/12653197
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.accounts.v1.ComparisonShopping comparison_shopping = 105;
+     * </code>
+     *
+     * @return The comparisonShopping.
+     */
+    @java.lang.Override
+    public com.google.shopping.merchant.accounts.v1.ComparisonShopping getComparisonShopping() {
+      if (comparisonShoppingBuilder_ == null) {
+        if (serviceTypeCase_ == 105) {
+          return (com.google.shopping.merchant.accounts.v1.ComparisonShopping) serviceType_;
+        }
+        return com.google.shopping.merchant.accounts.v1.ComparisonShopping.getDefaultInstance();
+      } else {
+        if (serviceTypeCase_ == 105) {
+          return comparisonShoppingBuilder_.getMessage();
+        }
+        return com.google.shopping.merchant.accounts.v1.ComparisonShopping.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Service type for comparison shopping. The provider is a CSS (Comparison
+     * Shopping Service) managing the account. See
+     * https://support.google.com/merchants/answer/12653197
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.accounts.v1.ComparisonShopping comparison_shopping = 105;
+     * </code>
+     */
+    public Builder setComparisonShopping(
+        com.google.shopping.merchant.accounts.v1.ComparisonShopping value) {
+      if (comparisonShoppingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        serviceType_ = value;
+        onChanged();
+      } else {
+        comparisonShoppingBuilder_.setMessage(value);
+      }
+      serviceTypeCase_ = 105;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Service type for comparison shopping. The provider is a CSS (Comparison
+     * Shopping Service) managing the account. See
+     * https://support.google.com/merchants/answer/12653197
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.accounts.v1.ComparisonShopping comparison_shopping = 105;
+     * </code>
+     */
+    public Builder setComparisonShopping(
+        com.google.shopping.merchant.accounts.v1.ComparisonShopping.Builder builderForValue) {
+      if (comparisonShoppingBuilder_ == null) {
+        serviceType_ = builderForValue.build();
+        onChanged();
+      } else {
+        comparisonShoppingBuilder_.setMessage(builderForValue.build());
+      }
+      serviceTypeCase_ = 105;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Service type for comparison shopping. The provider is a CSS (Comparison
+     * Shopping Service) managing the account. See
+     * https://support.google.com/merchants/answer/12653197
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.accounts.v1.ComparisonShopping comparison_shopping = 105;
+     * </code>
+     */
+    public Builder mergeComparisonShopping(
+        com.google.shopping.merchant.accounts.v1.ComparisonShopping value) {
+      if (comparisonShoppingBuilder_ == null) {
+        if (serviceTypeCase_ == 105
+            && serviceType_
+                != com.google.shopping.merchant.accounts.v1.ComparisonShopping
+                    .getDefaultInstance()) {
+          serviceType_ =
+              com.google.shopping.merchant.accounts.v1.ComparisonShopping.newBuilder(
+                      (com.google.shopping.merchant.accounts.v1.ComparisonShopping) serviceType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          serviceType_ = value;
+        }
+        onChanged();
+      } else {
+        if (serviceTypeCase_ == 105) {
+          comparisonShoppingBuilder_.mergeFrom(value);
+        } else {
+          comparisonShoppingBuilder_.setMessage(value);
+        }
+      }
+      serviceTypeCase_ = 105;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Service type for comparison shopping. The provider is a CSS (Comparison
+     * Shopping Service) managing the account. See
+     * https://support.google.com/merchants/answer/12653197
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.accounts.v1.ComparisonShopping comparison_shopping = 105;
+     * </code>
+     */
+    public Builder clearComparisonShopping() {
+      if (comparisonShoppingBuilder_ == null) {
+        if (serviceTypeCase_ == 105) {
+          serviceTypeCase_ = 0;
+          serviceType_ = null;
+          onChanged();
+        }
+      } else {
+        if (serviceTypeCase_ == 105) {
+          serviceTypeCase_ = 0;
+          serviceType_ = null;
+        }
+        comparisonShoppingBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Service type for comparison shopping. The provider is a CSS (Comparison
+     * Shopping Service) managing the account. See
+     * https://support.google.com/merchants/answer/12653197
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.accounts.v1.ComparisonShopping comparison_shopping = 105;
+     * </code>
+     */
+    public com.google.shopping.merchant.accounts.v1.ComparisonShopping.Builder
+        getComparisonShoppingBuilder() {
+      return getComparisonShoppingFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Service type for comparison shopping. The provider is a CSS (Comparison
+     * Shopping Service) managing the account. See
+     * https://support.google.com/merchants/answer/12653197
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.accounts.v1.ComparisonShopping comparison_shopping = 105;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.shopping.merchant.accounts.v1.ComparisonShoppingOrBuilder
+        getComparisonShoppingOrBuilder() {
+      if ((serviceTypeCase_ == 105) && (comparisonShoppingBuilder_ != null)) {
+        return comparisonShoppingBuilder_.getMessageOrBuilder();
+      } else {
+        if (serviceTypeCase_ == 105) {
+          return (com.google.shopping.merchant.accounts.v1.ComparisonShopping) serviceType_;
+        }
+        return com.google.shopping.merchant.accounts.v1.ComparisonShopping.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Service type for comparison shopping. The provider is a CSS (Comparison
+     * Shopping Service) managing the account. See
+     * https://support.google.com/merchants/answer/12653197
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.accounts.v1.ComparisonShopping comparison_shopping = 105;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.shopping.merchant.accounts.v1.ComparisonShopping,
+            com.google.shopping.merchant.accounts.v1.ComparisonShopping.Builder,
+            com.google.shopping.merchant.accounts.v1.ComparisonShoppingOrBuilder>
+        getComparisonShoppingFieldBuilder() {
+      if (comparisonShoppingBuilder_ == null) {
+        if (!(serviceTypeCase_ == 105)) {
+          serviceType_ =
+              com.google.shopping.merchant.accounts.v1.ComparisonShopping.getDefaultInstance();
+        }
+        comparisonShoppingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.shopping.merchant.accounts.v1.ComparisonShopping,
+                com.google.shopping.merchant.accounts.v1.ComparisonShopping.Builder,
+                com.google.shopping.merchant.accounts.v1.ComparisonShoppingOrBuilder>(
+                (com.google.shopping.merchant.accounts.v1.ComparisonShopping) serviceType_,
+                getParentForChildren(),
+                isClean());
+        serviceType_ = null;
+      }
+      serviceTypeCase_ = 105;
+      onChanged();
+      return comparisonShoppingBuilder_;
+    }
+
     private java.lang.Object name_ = "";
 
     /**
@@ -3139,7 +3492,7 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3158,7 +3511,7 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -3182,7 +3535,7 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3203,7 +3556,7 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the provider field is set.
      */
     public boolean hasProvider() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -3275,7 +3628,7 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       provider_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3295,7 +3648,7 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearProvider() {
       provider_ = getDefaultInstance().getProvider();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -3320,7 +3673,7 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       provider_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3390,7 +3743,7 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       providerDisplayName_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3408,7 +3761,7 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearProviderDisplayName() {
       providerDisplayName_ = getDefaultInstance().getProviderDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -3431,7 +3784,7 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       providerDisplayName_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3458,7 +3811,7 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the handshake field is set.
      */
     public boolean hasHandshake() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -3506,7 +3859,7 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
       } else {
         handshakeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3530,7 +3883,7 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
       } else {
         handshakeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3549,7 +3902,7 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeHandshake(com.google.shopping.merchant.accounts.v1.Handshake value) {
       if (handshakeBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && handshake_ != null
             && handshake_
                 != com.google.shopping.merchant.accounts.v1.Handshake.getDefaultInstance()) {
@@ -3561,7 +3914,7 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
         handshakeBuilder_.mergeFrom(value);
       }
       if (handshake_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -3580,7 +3933,7 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearHandshake() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       handshake_ = null;
       if (handshakeBuilder_ != null) {
         handshakeBuilder_.dispose();
@@ -3603,7 +3956,7 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.shopping.merchant.accounts.v1.Handshake.Builder getHandshakeBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getHandshakeFieldBuilder().getBuilder();
     }
@@ -3699,7 +4052,7 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setMutabilityValue(int value) {
       mutability_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3749,7 +4102,7 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       mutability_ = value.getNumber();
       onChanged();
       return this;
@@ -3771,7 +4124,7 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMutability() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       mutability_ = 0;
       onChanged();
       return this;
@@ -3866,7 +4219,7 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       externalAccountId_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3892,7 +4245,7 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearExternalAccountId() {
       externalAccountId_ = getDefaultInstance().getExternalAccountId();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3923,7 +4276,7 @@ public final class AccountService extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       externalAccountId_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }

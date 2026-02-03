@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -211,7 +211,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Provisioning type of the performance-related parameters of the pool, such as throughput and IOPS.
+   * Provisioning type of the performance-related parameters of the pool,
+   * such as throughput and IOPS.
    * Additional supported values which may be not listed in the enum directly due to technical reasons:
    * ADVANCED
    * STANDARD
@@ -331,7 +332,14 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of storage pool creation. - CREATING: Storage pool is provisioning. storagePool. - FAILED: Storage pool creation failed. - READY: Storage pool is ready for use. - DELETING: Storage pool is deleting.
+   * Output only. [Output Only] The status of storage pool creation.
+   *
+   *
+   *      - CREATING: Storage pool is provisioning.
+   *      storagePool.
+   *      - FAILED: Storage pool creation failed.
+   *      - READY: Storage pool is ready for use.
+   *      - DELETING: Storage pool is deleting.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.StoragePool.State}
@@ -614,7 +622,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -630,7 +639,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -654,7 +664,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -683,7 +694,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -699,7 +711,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -723,7 +736,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -743,6 +757,68 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int EXAPOOL_PROVISIONED_CAPACITY_GB_FIELD_NUMBER = 345174240;
+  private com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb
+      exapoolProvisionedCapacityGb_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Provisioned capacities for each SKU for this Exapool in GiB
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb exapool_provisioned_capacity_gb = 345174240;
+   * </code>
+   *
+   * @return Whether the exapoolProvisionedCapacityGb field is set.
+   */
+  @java.lang.Override
+  public boolean hasExapoolProvisionedCapacityGb() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Provisioned capacities for each SKU for this Exapool in GiB
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb exapool_provisioned_capacity_gb = 345174240;
+   * </code>
+   *
+   * @return The exapoolProvisionedCapacityGb.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb
+      getExapoolProvisionedCapacityGb() {
+    return exapoolProvisionedCapacityGb_ == null
+        ? com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb.getDefaultInstance()
+        : exapoolProvisionedCapacityGb_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Provisioned capacities for each SKU for this Exapool in GiB
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb exapool_provisioned_capacity_gb = 345174240;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGbOrBuilder
+      getExapoolProvisionedCapacityGbOrBuilder() {
+    return exapoolProvisionedCapacityGb_ == null
+        ? com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb.getDefaultInstance()
+        : exapoolProvisionedCapacityGb_;
+  }
+
   public static final int ID_FIELD_NUMBER = 3355;
   private long id_ = 0L;
 
@@ -750,7 +826,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -759,14 +836,15 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasId() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -787,7 +865,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#storagePool for storage pools.
+   * Output only. [Output Only] Type of the resource. Always compute#storagePool
+   * for storage pools.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -796,14 +875,15 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasKind() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#storagePool for storage pools.
+   * Output only. [Output Only] Type of the resource. Always compute#storagePool
+   * for storage pools.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -827,7 +907,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#storagePool for storage pools.
+   * Output only. [Output Only] Type of the resource. Always compute#storagePool
+   * for storage pools.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -856,7 +937,15 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this storage pool, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a storage pool.
+   * A fingerprint for the labels being applied to this storage pool, which is
+   * essentially a hash of the labels set used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve a storage pool.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -865,14 +954,22 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasLabelFingerprint() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this storage pool, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a storage pool.
+   * A fingerprint for the labels being applied to this storage pool, which is
+   * essentially a hash of the labels set used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve a storage pool.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -896,7 +993,15 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this storage pool, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a storage pool.
+   * A fingerprint for the labels being applied to this storage pool, which is
+   * essentially a hash of the labels set used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve a storage pool.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -947,7 +1052,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels to apply to this storage pool. These can be later modified by the setLabels method.
+   * Labels to apply to this storage pool. These can be later modified by
+   * the setLabels method.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -971,7 +1077,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels to apply to this storage pool. These can be later modified by the setLabels method.
+   * Labels to apply to this storage pool. These can be later modified by
+   * the setLabels method.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -985,7 +1092,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels to apply to this storage pool. These can be later modified by the setLabels method.
+   * Labels to apply to this storage pool. These can be later modified by
+   * the setLabels method.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -1006,7 +1114,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels to apply to this storage pool. These can be later modified by the setLabels method.
+   * Labels to apply to this storage pool. These can be later modified by
+   * the setLabels method.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -1032,7 +1141,13 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?`
+   * which means the first character must be a lowercase letter, and all
+   * following characters must be a dash, lowercase letter, or digit, except
+   * the last character, which cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1041,14 +1156,20 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?`
+   * which means the first character must be a lowercase letter, and all
+   * following characters must be a dash, lowercase letter, or digit, except
+   * the last character, which cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1072,7 +1193,13 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?`
+   * which means the first character must be a lowercase letter, and all
+   * following characters must be a dash, lowercase letter, or digit, except
+   * the last character, which cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1092,6 +1219,62 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int PARAMS_FIELD_NUMBER = 78313862;
+  private com.google.cloud.compute.v1.StoragePoolParams params_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.StoragePoolParams params = 78313862;</code>
+   *
+   * @return Whether the params field is set.
+   */
+  @java.lang.Override
+  public boolean hasParams() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.StoragePoolParams params = 78313862;</code>
+   *
+   * @return The params.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.StoragePoolParams getParams() {
+    return params_ == null
+        ? com.google.cloud.compute.v1.StoragePoolParams.getDefaultInstance()
+        : params_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.StoragePoolParams params = 78313862;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.StoragePoolParamsOrBuilder getParamsOrBuilder() {
+    return params_ == null
+        ? com.google.cloud.compute.v1.StoragePoolParams.getDefaultInstance()
+        : params_;
+  }
+
   public static final int PERFORMANCE_PROVISIONING_TYPE_FIELD_NUMBER = 468553469;
 
   @SuppressWarnings("serial")
@@ -1101,7 +1284,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Provisioning type of the performance-related parameters of the pool, such as throughput and IOPS.
+   * Provisioning type of the performance-related parameters of the pool,
+   * such as throughput and IOPS.
    * Check the PerformanceProvisioningType enum for the list of possible values.
    * </pre>
    *
@@ -1111,14 +1295,15 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPerformanceProvisioningType() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * Provisioning type of the performance-related parameters of the pool, such as throughput and IOPS.
+   * Provisioning type of the performance-related parameters of the pool,
+   * such as throughput and IOPS.
    * Check the PerformanceProvisioningType enum for the list of possible values.
    * </pre>
    *
@@ -1143,7 +1328,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Provisioning type of the performance-related parameters of the pool, such as throughput and IOPS.
+   * Provisioning type of the performance-related parameters of the pool,
+   * such as throughput and IOPS.
    * Check the PerformanceProvisioningType enum for the list of possible values.
    * </pre>
    *
@@ -1171,7 +1357,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Size of the storage pool in GiB. For more information about the size limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
+   * Size of the storage pool in GiB. For more information about the size
+   * limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
    * </pre>
    *
    * <code>optional int64 pool_provisioned_capacity_gb = 478537682;</code>
@@ -1180,14 +1367,15 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPoolProvisionedCapacityGb() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * Size of the storage pool in GiB. For more information about the size limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
+   * Size of the storage pool in GiB. For more information about the size
+   * limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
    * </pre>
    *
    * <code>optional int64 pool_provisioned_capacity_gb = 478537682;</code>
@@ -1206,7 +1394,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Provisioned IOPS of the storage pool. Only relevant if the storage pool type is hyperdisk-balanced.
+   * Provisioned IOPS of the storage pool. Only relevant if the storage pool
+   * type is hyperdisk-balanced.
    * </pre>
    *
    * <code>optional int64 pool_provisioned_iops = 112092311;</code>
@@ -1215,14 +1404,15 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPoolProvisionedIops() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * Provisioned IOPS of the storage pool. Only relevant if the storage pool type is hyperdisk-balanced.
+   * Provisioned IOPS of the storage pool. Only relevant if the storage pool
+   * type is hyperdisk-balanced.
    * </pre>
    *
    * <code>optional int64 pool_provisioned_iops = 112092311;</code>
@@ -1241,7 +1431,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Provisioned throughput of the storage pool in MiB/s. Only relevant if the storage pool type is hyperdisk-balanced or hyperdisk-throughput.
+   * Provisioned throughput of the storage pool in MiB/s. Only relevant if the
+   * storage pool type is hyperdisk-balanced or hyperdisk-throughput.
    * </pre>
    *
    * <code>optional int64 pool_provisioned_throughput = 169215640;</code>
@@ -1250,14 +1441,15 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPoolProvisionedThroughput() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * Provisioned throughput of the storage pool in MiB/s. Only relevant if the storage pool type is hyperdisk-balanced or hyperdisk-throughput.
+   * Provisioned throughput of the storage pool in MiB/s. Only relevant if the
+   * storage pool type is hyperdisk-balanced or hyperdisk-throughput.
    * </pre>
    *
    * <code>optional int64 pool_provisioned_throughput = 169215640;</code>
@@ -1276,7 +1468,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status information for the storage pool resource.
+   * Output only. [Output Only] Status information for the storage pool resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus resource_status = 249429315;
@@ -1286,14 +1478,14 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasResourceStatus() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] Status information for the storage pool resource.
+   * Output only. [Output Only] Status information for the storage pool resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus resource_status = 249429315;
@@ -1312,7 +1504,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status information for the storage pool resource.
+   * Output only. [Output Only] Status information for the storage pool resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus resource_status = 249429315;
@@ -1335,7 +1527,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1344,14 +1536,14 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1375,7 +1567,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1404,7 +1596,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource's resource id.
+   * Output only. [Output Only] Server-defined URL for this resource's resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -1413,14 +1605,14 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLinkWithId() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource's resource id.
+   * Output only. [Output Only] Server-defined URL for this resource's resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -1444,7 +1636,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource's resource id.
+   * Output only. [Output Only] Server-defined URL for this resource's resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -1473,7 +1665,14 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of storage pool creation. - CREATING: Storage pool is provisioning. storagePool. - FAILED: Storage pool creation failed. - READY: Storage pool is ready for use. - DELETING: Storage pool is deleting.
+   * Output only. [Output Only] The status of storage pool creation.
+   *
+   *
+   *      - CREATING: Storage pool is provisioning.
+   *      storagePool.
+   *      - FAILED: Storage pool creation failed.
+   *      - READY: Storage pool is ready for use.
+   *      - DELETING: Storage pool is deleting.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -1483,14 +1682,21 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasState() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] The status of storage pool creation. - CREATING: Storage pool is provisioning. storagePool. - FAILED: Storage pool creation failed. - READY: Storage pool is ready for use. - DELETING: Storage pool is deleting.
+   * Output only. [Output Only] The status of storage pool creation.
+   *
+   *
+   *      - CREATING: Storage pool is provisioning.
+   *      storagePool.
+   *      - FAILED: Storage pool creation failed.
+   *      - READY: Storage pool is ready for use.
+   *      - DELETING: Storage pool is deleting.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -1515,7 +1721,14 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of storage pool creation. - CREATING: Storage pool is provisioning. storagePool. - FAILED: Storage pool creation failed. - READY: Storage pool is ready for use. - DELETING: Storage pool is deleting.
+   * Output only. [Output Only] The status of storage pool creation.
+   *
+   *
+   *      - CREATING: Storage pool is provisioning.
+   *      storagePool.
+   *      - FAILED: Storage pool creation failed.
+   *      - READY: Storage pool is ready for use.
+   *      - DELETING: Storage pool is deleting.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -1543,7 +1756,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status information for the storage pool resource.
+   * Output only. [Output Only] Status information for the storage pool resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus status = 181260274;</code>
@@ -1552,14 +1765,14 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] Status information for the storage pool resource.
+   * Output only. [Output Only] Status information for the storage pool resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus status = 181260274;</code>
@@ -1577,7 +1790,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status information for the storage pool resource.
+   * Output only. [Output Only] Status information for the storage pool resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus status = 181260274;</code>
@@ -1607,7 +1820,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStoragePoolType() {
-    return ((bitField0_ & 0x00010000) != 0);
+    return ((bitField0_ & 0x00040000) != 0);
   }
 
   /**
@@ -1667,7 +1880,9 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the storage pool resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * Output only. [Output Only] URL of the zone where the storage pool resides.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -1676,14 +1891,16 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasZone() {
-    return ((bitField0_ & 0x00020000) != 0);
+    return ((bitField0_ & 0x00080000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the storage pool resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * Output only. [Output Only] URL of the zone where the storage pool resides.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -1707,7 +1924,9 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the storage pool resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * Output only. [Output Only] URL of the zone where the storage pool resides.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -1741,60 +1960,66 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeUInt64(3355, id_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 44520962, selfLinkWithId_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeMessage(78313862, getParams());
+    }
+    if (((bitField0_ & 0x00010000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 109757585, state_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeInt64(112092311, poolProvisionedIops_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       output.writeInt64(169215640, poolProvisionedThroughput_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 178124825, labelFingerprint_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       output.writeMessage(181260274, getStatus());
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       output.writeMessage(249429315, getResourceStatus());
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 251610375, capacityProvisioningType_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 285999289, storagePoolType_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(345174240, getExapoolProvisionedCapacityGb());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 468553469, performanceProvisioningType_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeInt64(478537682, poolProvisionedCapacityGb_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -1808,45 +2033,48 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3355, id_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(44520962, selfLinkWithId_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(78313862, getParams());
+    }
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(109757585, state_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt64Size(112092311, poolProvisionedIops_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt64Size(
               169215640, poolProvisionedThroughput_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(178124825, labelFingerprint_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(181260274, getStatus());
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(249429315, getResourceStatus());
     }
@@ -1855,21 +2083,26 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               251610375, capacityProvisioningType_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(285999289, storagePoolType_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              345174240, getExapoolProvisionedCapacityGb());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               468553469, performanceProvisioningType_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt64Size(
               478537682, poolProvisionedCapacityGb_);
@@ -1911,6 +2144,11 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     if (hasDescription()) {
       if (!getDescription().equals(other.getDescription())) return false;
     }
+    if (hasExapoolProvisionedCapacityGb() != other.hasExapoolProvisionedCapacityGb()) return false;
+    if (hasExapoolProvisionedCapacityGb()) {
+      if (!getExapoolProvisionedCapacityGb().equals(other.getExapoolProvisionedCapacityGb()))
+        return false;
+    }
     if (hasId() != other.hasId()) return false;
     if (hasId()) {
       if (getId() != other.getId()) return false;
@@ -1927,6 +2165,10 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     if (hasName() != other.hasName()) return false;
     if (hasName()) {
       if (!getName().equals(other.getName())) return false;
+    }
+    if (hasParams() != other.hasParams()) return false;
+    if (hasParams()) {
+      if (!getParams().equals(other.getParams())) return false;
     }
     if (hasPerformanceProvisioningType() != other.hasPerformanceProvisioningType()) return false;
     if (hasPerformanceProvisioningType()) {
@@ -1996,6 +2238,10 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
     }
+    if (hasExapoolProvisionedCapacityGb()) {
+      hash = (37 * hash) + EXAPOOL_PROVISIONED_CAPACITY_GB_FIELD_NUMBER;
+      hash = (53 * hash) + getExapoolProvisionedCapacityGb().hashCode();
+    }
     if (hasId()) {
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getId());
@@ -2015,6 +2261,10 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     if (hasName()) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasParams()) {
+      hash = (37 * hash) + PARAMS_FIELD_NUMBER;
+      hash = (53 * hash) + getParams().hashCode();
     }
     if (hasPerformanceProvisioningType()) {
       hash = (37 * hash) + PERFORMANCE_PROVISIONING_TYPE_FIELD_NUMBER;
@@ -2223,6 +2473,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getExapoolProvisionedCapacityGbFieldBuilder();
+        getParamsFieldBuilder();
         getResourceStatusFieldBuilder();
         getStatusFieldBuilder();
       }
@@ -2235,11 +2487,21 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       capacityProvisioningType_ = "";
       creationTimestamp_ = "";
       description_ = "";
+      exapoolProvisionedCapacityGb_ = null;
+      if (exapoolProvisionedCapacityGbBuilder_ != null) {
+        exapoolProvisionedCapacityGbBuilder_.dispose();
+        exapoolProvisionedCapacityGbBuilder_ = null;
+      }
       id_ = 0L;
       kind_ = "";
       labelFingerprint_ = "";
       internalGetMutableLabels().clear();
       name_ = "";
+      params_ = null;
+      if (paramsBuilder_ != null) {
+        paramsBuilder_.dispose();
+        paramsBuilder_ = null;
+      }
       performanceProvisioningType_ = "";
       poolProvisionedCapacityGb_ = 0L;
       poolProvisionedIops_ = 0L;
@@ -2309,69 +2571,80 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.id_ = id_;
+        result.exapoolProvisionedCapacityGb_ =
+            exapoolProvisionedCapacityGbBuilder_ == null
+                ? exapoolProvisionedCapacityGb_
+                : exapoolProvisionedCapacityGbBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.kind_ = kind_;
+        result.id_ = id_;
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.labelFingerprint_ = labelFingerprint_;
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.labelFingerprint_ = labelFingerprint_;
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.name_ = name_;
-        to_bitField0_ |= 0x00000040;
-      }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.performanceProvisioningType_ = performanceProvisioningType_;
+        result.name_ = name_;
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.poolProvisionedCapacityGb_ = poolProvisionedCapacityGb_;
+        result.params_ = paramsBuilder_ == null ? params_ : paramsBuilder_.build();
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.poolProvisionedIops_ = poolProvisionedIops_;
+        result.performanceProvisioningType_ = performanceProvisioningType_;
         to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.poolProvisionedThroughput_ = poolProvisionedThroughput_;
+        result.poolProvisionedCapacityGb_ = poolProvisionedCapacityGb_;
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.resourceStatus_ =
-            resourceStatusBuilder_ == null ? resourceStatus_ : resourceStatusBuilder_.build();
+        result.poolProvisionedIops_ = poolProvisionedIops_;
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.poolProvisionedThroughput_ = poolProvisionedThroughput_;
         to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.selfLinkWithId_ = selfLinkWithId_;
+        result.resourceStatus_ =
+            resourceStatusBuilder_ == null ? resourceStatus_ : resourceStatusBuilder_.build();
         to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.state_ = state_;
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00004000;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
+        result.selfLinkWithId_ = selfLinkWithId_;
         to_bitField0_ |= 0x00008000;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.storagePoolType_ = storagePoolType_;
+        result.state_ = state_;
         to_bitField0_ |= 0x00010000;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.zone_ = zone_;
+        result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
         to_bitField0_ |= 0x00020000;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.storagePoolType_ = storagePoolType_;
+        to_bitField0_ |= 0x00040000;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.zone_ = zone_;
+        to_bitField0_ |= 0x00080000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2436,29 +2709,35 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (other.hasExapoolProvisionedCapacityGb()) {
+        mergeExapoolProvisionedCapacityGb(other.getExapoolProvisionedCapacityGb());
+      }
       if (other.hasId()) {
         setId(other.getId());
       }
       if (other.hasKind()) {
         kind_ = other.kind_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasLabelFingerprint()) {
         labelFingerprint_ = other.labelFingerprint_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
+      }
+      if (other.hasParams()) {
+        mergeParams(other.getParams());
       }
       if (other.hasPerformanceProvisioningType()) {
         performanceProvisioningType_ = other.performanceProvisioningType_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasPoolProvisionedCapacityGb()) {
@@ -2475,17 +2754,17 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.hasSelfLinkWithId()) {
         selfLinkWithId_ = other.selfLinkWithId_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (other.hasState()) {
         state_ = other.state_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (other.hasStatus()) {
@@ -2493,12 +2772,12 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasStoragePoolType()) {
         storagePoolType_ = other.storagePoolType_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       if (other.hasZone()) {
         zone_ = other.zone_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2530,25 +2809,25 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
             case 26840:
               {
                 id_ = input.readUInt64();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26840
             case 26336418:
               {
                 kind_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 26336418
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 26989658
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 29957474
             case 244202930:
@@ -2560,43 +2839,49 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
             case 356167698:
               {
                 selfLinkWithId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 356167698
+            case 626510898:
+              {
+                input.readMessage(getParamsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 626510898
             case 878060682:
               {
                 state_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 878060682
             case 896738488:
               {
                 poolProvisionedIops_ = input.readInt64();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 896738488
             case 1353725120:
               {
                 poolProvisionedThroughput_ = input.readInt64();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 1353725120
             case 1424998602:
               {
                 labelFingerprint_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 1424998602
             case 1450082194:
               {
                 input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 1450082194
             case 1995434522:
               {
                 input.readMessage(getResourceStatusFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 1995434522
             case 2012883002:
@@ -2608,9 +2893,16 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
             case -2006972982:
               {
                 storagePoolType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case -2006972982
+            case -1533573374:
+              {
+                input.readMessage(
+                    getExapoolProvisionedCapacityGbFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case -1533573374
             case -911466526:
               {
                 description_ = input.readStringRequireUtf8();
@@ -2620,19 +2912,19 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case -645248918
             case -546539542:
               {
                 performanceProvisioningType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000400;
                 break;
               } // case -546539542
             case -466665840:
               {
                 poolProvisionedCapacityGb_ = input.readInt64();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000800;
                 break;
               } // case -466665840
             case -293404678:
@@ -2644,7 +2936,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case -293404678
             default:
@@ -2804,7 +3096,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2819,7 +3112,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2842,7 +3136,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2865,7 +3160,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2887,7 +3183,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2905,7 +3202,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2930,7 +3228,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2945,7 +3244,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2968,7 +3268,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2991,7 +3292,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -3013,7 +3315,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -3031,7 +3334,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -3050,13 +3354,238 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb
+        exapoolProvisionedCapacityGb_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb,
+            com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb.Builder,
+            com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGbOrBuilder>
+        exapoolProvisionedCapacityGbBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Provisioned capacities for each SKU for this Exapool in GiB
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb exapool_provisioned_capacity_gb = 345174240;
+     * </code>
+     *
+     * @return Whether the exapoolProvisionedCapacityGb field is set.
+     */
+    public boolean hasExapoolProvisionedCapacityGb() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Provisioned capacities for each SKU for this Exapool in GiB
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb exapool_provisioned_capacity_gb = 345174240;
+     * </code>
+     *
+     * @return The exapoolProvisionedCapacityGb.
+     */
+    public com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb
+        getExapoolProvisionedCapacityGb() {
+      if (exapoolProvisionedCapacityGbBuilder_ == null) {
+        return exapoolProvisionedCapacityGb_ == null
+            ? com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb
+                .getDefaultInstance()
+            : exapoolProvisionedCapacityGb_;
+      } else {
+        return exapoolProvisionedCapacityGbBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Provisioned capacities for each SKU for this Exapool in GiB
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb exapool_provisioned_capacity_gb = 345174240;
+     * </code>
+     */
+    public Builder setExapoolProvisionedCapacityGb(
+        com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb value) {
+      if (exapoolProvisionedCapacityGbBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        exapoolProvisionedCapacityGb_ = value;
+      } else {
+        exapoolProvisionedCapacityGbBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Provisioned capacities for each SKU for this Exapool in GiB
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb exapool_provisioned_capacity_gb = 345174240;
+     * </code>
+     */
+    public Builder setExapoolProvisionedCapacityGb(
+        com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb.Builder
+            builderForValue) {
+      if (exapoolProvisionedCapacityGbBuilder_ == null) {
+        exapoolProvisionedCapacityGb_ = builderForValue.build();
+      } else {
+        exapoolProvisionedCapacityGbBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Provisioned capacities for each SKU for this Exapool in GiB
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb exapool_provisioned_capacity_gb = 345174240;
+     * </code>
+     */
+    public Builder mergeExapoolProvisionedCapacityGb(
+        com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb value) {
+      if (exapoolProvisionedCapacityGbBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && exapoolProvisionedCapacityGb_ != null
+            && exapoolProvisionedCapacityGb_
+                != com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb
+                    .getDefaultInstance()) {
+          getExapoolProvisionedCapacityGbBuilder().mergeFrom(value);
+        } else {
+          exapoolProvisionedCapacityGb_ = value;
+        }
+      } else {
+        exapoolProvisionedCapacityGbBuilder_.mergeFrom(value);
+      }
+      if (exapoolProvisionedCapacityGb_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Provisioned capacities for each SKU for this Exapool in GiB
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb exapool_provisioned_capacity_gb = 345174240;
+     * </code>
+     */
+    public Builder clearExapoolProvisionedCapacityGb() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      exapoolProvisionedCapacityGb_ = null;
+      if (exapoolProvisionedCapacityGbBuilder_ != null) {
+        exapoolProvisionedCapacityGbBuilder_.dispose();
+        exapoolProvisionedCapacityGbBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Provisioned capacities for each SKU for this Exapool in GiB
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb exapool_provisioned_capacity_gb = 345174240;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb.Builder
+        getExapoolProvisionedCapacityGbBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getExapoolProvisionedCapacityGbFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Provisioned capacities for each SKU for this Exapool in GiB
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb exapool_provisioned_capacity_gb = 345174240;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGbOrBuilder
+        getExapoolProvisionedCapacityGbOrBuilder() {
+      if (exapoolProvisionedCapacityGbBuilder_ != null) {
+        return exapoolProvisionedCapacityGbBuilder_.getMessageOrBuilder();
+      } else {
+        return exapoolProvisionedCapacityGb_ == null
+            ? com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb
+                .getDefaultInstance()
+            : exapoolProvisionedCapacityGb_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Provisioned capacities for each SKU for this Exapool in GiB
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb exapool_provisioned_capacity_gb = 345174240;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb,
+            com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb.Builder,
+            com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGbOrBuilder>
+        getExapoolProvisionedCapacityGbFieldBuilder() {
+      if (exapoolProvisionedCapacityGbBuilder_ == null) {
+        exapoolProvisionedCapacityGbBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb,
+                com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb.Builder,
+                com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGbOrBuilder>(
+                getExapoolProvisionedCapacityGb(), getParentForChildren(), isClean());
+        exapoolProvisionedCapacityGb_ = null;
+      }
+      return exapoolProvisionedCapacityGbBuilder_;
+    }
+
     private long id_;
 
     /**
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -3065,14 +3594,15 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasId() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -3088,7 +3618,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -3099,7 +3630,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     public Builder setId(long value) {
 
       id_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3108,7 +3639,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -3116,7 +3648,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       id_ = 0L;
       onChanged();
       return this;
@@ -3128,7 +3660,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#storagePool for storage pools.
+     * Output only. [Output Only] Type of the resource. Always compute#storagePool
+     * for storage pools.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3136,14 +3669,15 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#storagePool for storage pools.
+     * Output only. [Output Only] Type of the resource. Always compute#storagePool
+     * for storage pools.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3166,7 +3700,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#storagePool for storage pools.
+     * Output only. [Output Only] Type of the resource. Always compute#storagePool
+     * for storage pools.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3189,7 +3724,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#storagePool for storage pools.
+     * Output only. [Output Only] Type of the resource. Always compute#storagePool
+     * for storage pools.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3202,7 +3738,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       kind_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3211,7 +3747,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#storagePool for storage pools.
+     * Output only. [Output Only] Type of the resource. Always compute#storagePool
+     * for storage pools.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3220,7 +3757,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearKind() {
       kind_ = getDefaultInstance().getKind();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -3229,7 +3766,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#storagePool for storage pools.
+     * Output only. [Output Only] Type of the resource. Always compute#storagePool
+     * for storage pools.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3243,7 +3781,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       kind_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3254,7 +3792,15 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this storage pool, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a storage pool.
+     * A fingerprint for the labels being applied to this storage pool, which is
+     * essentially a hash of the labels set used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve a storage pool.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -3262,14 +3808,22 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the labelFingerprint field is set.
      */
     public boolean hasLabelFingerprint() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this storage pool, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a storage pool.
+     * A fingerprint for the labels being applied to this storage pool, which is
+     * essentially a hash of the labels set used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve a storage pool.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -3292,7 +3846,15 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this storage pool, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a storage pool.
+     * A fingerprint for the labels being applied to this storage pool, which is
+     * essentially a hash of the labels set used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve a storage pool.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -3315,7 +3877,15 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this storage pool, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a storage pool.
+     * A fingerprint for the labels being applied to this storage pool, which is
+     * essentially a hash of the labels set used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve a storage pool.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -3328,7 +3898,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       labelFingerprint_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3337,7 +3907,15 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this storage pool, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a storage pool.
+     * A fingerprint for the labels being applied to this storage pool, which is
+     * essentially a hash of the labels set used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve a storage pool.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -3346,7 +3924,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearLabelFingerprint() {
       labelFingerprint_ = getDefaultInstance().getLabelFingerprint();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -3355,7 +3933,15 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this storage pool, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a storage pool.
+     * A fingerprint for the labels being applied to this storage pool, which is
+     * essentially a hash of the labels set used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve a storage pool.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -3369,7 +3955,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       labelFingerprint_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3391,7 +3977,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return labels_;
     }
@@ -3404,7 +3990,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels to apply to this storage pool. These can be later modified by the setLabels method.
+     * Labels to apply to this storage pool. These can be later modified by
+     * the setLabels method.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -3428,7 +4015,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels to apply to this storage pool. These can be later modified by the setLabels method.
+     * Labels to apply to this storage pool. These can be later modified by
+     * the setLabels method.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -3442,7 +4030,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels to apply to this storage pool. These can be later modified by the setLabels method.
+     * Labels to apply to this storage pool. These can be later modified by
+     * the setLabels method.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -3463,7 +4052,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels to apply to this storage pool. These can be later modified by the setLabels method.
+     * Labels to apply to this storage pool. These can be later modified by
+     * the setLabels method.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -3481,7 +4071,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -3490,7 +4080,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels to apply to this storage pool. These can be later modified by the setLabels method.
+     * Labels to apply to this storage pool. These can be later modified by
+     * the setLabels method.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -3506,7 +4097,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       return internalGetMutableLabels().getMutableMap();
     }
 
@@ -3514,7 +4105,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels to apply to this storage pool. These can be later modified by the setLabels method.
+     * Labels to apply to this storage pool. These can be later modified by
+     * the setLabels method.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -3527,7 +4119,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       return this;
     }
 
@@ -3535,14 +4127,15 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels to apply to this storage pool. These can be later modified by the setLabels method.
+     * Labels to apply to this storage pool. These can be later modified by
+     * the setLabels method.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       return this;
     }
 
@@ -3552,7 +4145,13 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?`
+     * which means the first character must be a lowercase letter, and all
+     * following characters must be a dash, lowercase letter, or digit, except
+     * the last character, which cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3560,14 +4159,20 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?`
+     * which means the first character must be a lowercase letter, and all
+     * following characters must be a dash, lowercase letter, or digit, except
+     * the last character, which cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3590,7 +4195,13 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?`
+     * which means the first character must be a lowercase letter, and all
+     * following characters must be a dash, lowercase letter, or digit, except
+     * the last character, which cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3613,7 +4224,13 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?`
+     * which means the first character must be a lowercase letter, and all
+     * following characters must be a dash, lowercase letter, or digit, except
+     * the last character, which cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3626,7 +4243,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3635,7 +4252,13 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?`
+     * which means the first character must be a lowercase letter, and all
+     * following characters must be a dash, lowercase letter, or digit, except
+     * the last character, which cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3644,7 +4267,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -3653,7 +4276,13 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?`
+     * which means the first character must be a lowercase letter, and all
+     * following characters must be a dash, lowercase letter, or digit, except
+     * the last character, which cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3667,9 +4296,213 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.compute.v1.StoragePoolParams params_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.StoragePoolParams,
+            com.google.cloud.compute.v1.StoragePoolParams.Builder,
+            com.google.cloud.compute.v1.StoragePoolParamsOrBuilder>
+        paramsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.StoragePoolParams params = 78313862;</code>
+     *
+     * @return Whether the params field is set.
+     */
+    public boolean hasParams() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.StoragePoolParams params = 78313862;</code>
+     *
+     * @return The params.
+     */
+    public com.google.cloud.compute.v1.StoragePoolParams getParams() {
+      if (paramsBuilder_ == null) {
+        return params_ == null
+            ? com.google.cloud.compute.v1.StoragePoolParams.getDefaultInstance()
+            : params_;
+      } else {
+        return paramsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.StoragePoolParams params = 78313862;</code>
+     */
+    public Builder setParams(com.google.cloud.compute.v1.StoragePoolParams value) {
+      if (paramsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        params_ = value;
+      } else {
+        paramsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.StoragePoolParams params = 78313862;</code>
+     */
+    public Builder setParams(
+        com.google.cloud.compute.v1.StoragePoolParams.Builder builderForValue) {
+      if (paramsBuilder_ == null) {
+        params_ = builderForValue.build();
+      } else {
+        paramsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.StoragePoolParams params = 78313862;</code>
+     */
+    public Builder mergeParams(com.google.cloud.compute.v1.StoragePoolParams value) {
+      if (paramsBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && params_ != null
+            && params_ != com.google.cloud.compute.v1.StoragePoolParams.getDefaultInstance()) {
+          getParamsBuilder().mergeFrom(value);
+        } else {
+          params_ = value;
+        }
+      } else {
+        paramsBuilder_.mergeFrom(value);
+      }
+      if (params_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.StoragePoolParams params = 78313862;</code>
+     */
+    public Builder clearParams() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      params_ = null;
+      if (paramsBuilder_ != null) {
+        paramsBuilder_.dispose();
+        paramsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.StoragePoolParams params = 78313862;</code>
+     */
+    public com.google.cloud.compute.v1.StoragePoolParams.Builder getParamsBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getParamsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.StoragePoolParams params = 78313862;</code>
+     */
+    public com.google.cloud.compute.v1.StoragePoolParamsOrBuilder getParamsOrBuilder() {
+      if (paramsBuilder_ != null) {
+        return paramsBuilder_.getMessageOrBuilder();
+      } else {
+        return params_ == null
+            ? com.google.cloud.compute.v1.StoragePoolParams.getDefaultInstance()
+            : params_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.StoragePoolParams params = 78313862;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.StoragePoolParams,
+            com.google.cloud.compute.v1.StoragePoolParams.Builder,
+            com.google.cloud.compute.v1.StoragePoolParamsOrBuilder>
+        getParamsFieldBuilder() {
+      if (paramsBuilder_ == null) {
+        paramsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.StoragePoolParams,
+                com.google.cloud.compute.v1.StoragePoolParams.Builder,
+                com.google.cloud.compute.v1.StoragePoolParamsOrBuilder>(
+                getParams(), getParentForChildren(), isClean());
+        params_ = null;
+      }
+      return paramsBuilder_;
     }
 
     private java.lang.Object performanceProvisioningType_ = "";
@@ -3678,7 +4511,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provisioning type of the performance-related parameters of the pool, such as throughput and IOPS.
+     * Provisioning type of the performance-related parameters of the pool,
+     * such as throughput and IOPS.
      * Check the PerformanceProvisioningType enum for the list of possible values.
      * </pre>
      *
@@ -3687,14 +4521,15 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the performanceProvisioningType field is set.
      */
     public boolean hasPerformanceProvisioningType() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Provisioning type of the performance-related parameters of the pool, such as throughput and IOPS.
+     * Provisioning type of the performance-related parameters of the pool,
+     * such as throughput and IOPS.
      * Check the PerformanceProvisioningType enum for the list of possible values.
      * </pre>
      *
@@ -3718,7 +4553,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provisioning type of the performance-related parameters of the pool, such as throughput and IOPS.
+     * Provisioning type of the performance-related parameters of the pool,
+     * such as throughput and IOPS.
      * Check the PerformanceProvisioningType enum for the list of possible values.
      * </pre>
      *
@@ -3742,7 +4578,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provisioning type of the performance-related parameters of the pool, such as throughput and IOPS.
+     * Provisioning type of the performance-related parameters of the pool,
+     * such as throughput and IOPS.
      * Check the PerformanceProvisioningType enum for the list of possible values.
      * </pre>
      *
@@ -3756,7 +4593,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       performanceProvisioningType_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3765,7 +4602,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provisioning type of the performance-related parameters of the pool, such as throughput and IOPS.
+     * Provisioning type of the performance-related parameters of the pool,
+     * such as throughput and IOPS.
      * Check the PerformanceProvisioningType enum for the list of possible values.
      * </pre>
      *
@@ -3775,7 +4613,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPerformanceProvisioningType() {
       performanceProvisioningType_ = getDefaultInstance().getPerformanceProvisioningType();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3784,7 +4622,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provisioning type of the performance-related parameters of the pool, such as throughput and IOPS.
+     * Provisioning type of the performance-related parameters of the pool,
+     * such as throughput and IOPS.
      * Check the PerformanceProvisioningType enum for the list of possible values.
      * </pre>
      *
@@ -3799,7 +4638,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       performanceProvisioningType_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3810,7 +4649,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Size of the storage pool in GiB. For more information about the size limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
+     * Size of the storage pool in GiB. For more information about the size
+     * limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
      * </pre>
      *
      * <code>optional int64 pool_provisioned_capacity_gb = 478537682;</code>
@@ -3819,14 +4659,15 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasPoolProvisionedCapacityGb() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Size of the storage pool in GiB. For more information about the size limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
+     * Size of the storage pool in GiB. For more information about the size
+     * limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
      * </pre>
      *
      * <code>optional int64 pool_provisioned_capacity_gb = 478537682;</code>
@@ -3842,7 +4683,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Size of the storage pool in GiB. For more information about the size limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
+     * Size of the storage pool in GiB. For more information about the size
+     * limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
      * </pre>
      *
      * <code>optional int64 pool_provisioned_capacity_gb = 478537682;</code>
@@ -3853,7 +4695,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     public Builder setPoolProvisionedCapacityGb(long value) {
 
       poolProvisionedCapacityGb_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3862,7 +4704,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Size of the storage pool in GiB. For more information about the size limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
+     * Size of the storage pool in GiB. For more information about the size
+     * limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
      * </pre>
      *
      * <code>optional int64 pool_provisioned_capacity_gb = 478537682;</code>
@@ -3870,7 +4713,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPoolProvisionedCapacityGb() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000800);
       poolProvisionedCapacityGb_ = 0L;
       onChanged();
       return this;
@@ -3882,7 +4725,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provisioned IOPS of the storage pool. Only relevant if the storage pool type is hyperdisk-balanced.
+     * Provisioned IOPS of the storage pool. Only relevant if the storage pool
+     * type is hyperdisk-balanced.
      * </pre>
      *
      * <code>optional int64 pool_provisioned_iops = 112092311;</code>
@@ -3891,14 +4735,15 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasPoolProvisionedIops() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Provisioned IOPS of the storage pool. Only relevant if the storage pool type is hyperdisk-balanced.
+     * Provisioned IOPS of the storage pool. Only relevant if the storage pool
+     * type is hyperdisk-balanced.
      * </pre>
      *
      * <code>optional int64 pool_provisioned_iops = 112092311;</code>
@@ -3914,7 +4759,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provisioned IOPS of the storage pool. Only relevant if the storage pool type is hyperdisk-balanced.
+     * Provisioned IOPS of the storage pool. Only relevant if the storage pool
+     * type is hyperdisk-balanced.
      * </pre>
      *
      * <code>optional int64 pool_provisioned_iops = 112092311;</code>
@@ -3925,7 +4771,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     public Builder setPoolProvisionedIops(long value) {
 
       poolProvisionedIops_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3934,7 +4780,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provisioned IOPS of the storage pool. Only relevant if the storage pool type is hyperdisk-balanced.
+     * Provisioned IOPS of the storage pool. Only relevant if the storage pool
+     * type is hyperdisk-balanced.
      * </pre>
      *
      * <code>optional int64 pool_provisioned_iops = 112092311;</code>
@@ -3942,7 +4789,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPoolProvisionedIops() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00001000);
       poolProvisionedIops_ = 0L;
       onChanged();
       return this;
@@ -3954,7 +4801,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provisioned throughput of the storage pool in MiB/s. Only relevant if the storage pool type is hyperdisk-balanced or hyperdisk-throughput.
+     * Provisioned throughput of the storage pool in MiB/s. Only relevant if the
+     * storage pool type is hyperdisk-balanced or hyperdisk-throughput.
      * </pre>
      *
      * <code>optional int64 pool_provisioned_throughput = 169215640;</code>
@@ -3963,14 +4811,15 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasPoolProvisionedThroughput() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Provisioned throughput of the storage pool in MiB/s. Only relevant if the storage pool type is hyperdisk-balanced or hyperdisk-throughput.
+     * Provisioned throughput of the storage pool in MiB/s. Only relevant if the
+     * storage pool type is hyperdisk-balanced or hyperdisk-throughput.
      * </pre>
      *
      * <code>optional int64 pool_provisioned_throughput = 169215640;</code>
@@ -3986,7 +4835,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provisioned throughput of the storage pool in MiB/s. Only relevant if the storage pool type is hyperdisk-balanced or hyperdisk-throughput.
+     * Provisioned throughput of the storage pool in MiB/s. Only relevant if the
+     * storage pool type is hyperdisk-balanced or hyperdisk-throughput.
      * </pre>
      *
      * <code>optional int64 pool_provisioned_throughput = 169215640;</code>
@@ -3997,7 +4847,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     public Builder setPoolProvisionedThroughput(long value) {
 
       poolProvisionedThroughput_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4006,7 +4856,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Provisioned throughput of the storage pool in MiB/s. Only relevant if the storage pool type is hyperdisk-balanced or hyperdisk-throughput.
+     * Provisioned throughput of the storage pool in MiB/s. Only relevant if the
+     * storage pool type is hyperdisk-balanced or hyperdisk-throughput.
      * </pre>
      *
      * <code>optional int64 pool_provisioned_throughput = 169215640;</code>
@@ -4014,7 +4865,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPoolProvisionedThroughput() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00002000);
       poolProvisionedThroughput_ = 0L;
       onChanged();
       return this;
@@ -4031,7 +4882,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>
@@ -4041,14 +4892,14 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the resourceStatus field is set.
      */
     public boolean hasResourceStatus() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>
@@ -4071,7 +4922,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>
@@ -4087,7 +4938,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       } else {
         resourceStatusBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4096,7 +4947,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>
@@ -4110,7 +4961,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       } else {
         resourceStatusBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4119,7 +4970,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>
@@ -4129,7 +4980,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeResourceStatus(
         com.google.cloud.compute.v1.StoragePoolResourceStatus value) {
       if (resourceStatusBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && resourceStatus_ != null
             && resourceStatus_
                 != com.google.cloud.compute.v1.StoragePoolResourceStatus.getDefaultInstance()) {
@@ -4141,7 +4992,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         resourceStatusBuilder_.mergeFrom(value);
       }
       if (resourceStatus_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -4151,7 +5002,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>
@@ -4159,7 +5010,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearResourceStatus() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       resourceStatus_ = null;
       if (resourceStatusBuilder_ != null) {
         resourceStatusBuilder_.dispose();
@@ -4173,7 +5024,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>
@@ -4182,7 +5033,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.StoragePoolResourceStatus.Builder
         getResourceStatusBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getResourceStatusFieldBuilder().getBuilder();
     }
@@ -4191,7 +5042,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>
@@ -4213,7 +5064,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>
@@ -4243,7 +5094,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined fully-qualified URL for this resource.
+     * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4251,14 +5102,14 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] Server-defined fully-qualified URL for this resource.
+     * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4281,7 +5132,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined fully-qualified URL for this resource.
+     * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4304,7 +5155,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined fully-qualified URL for this resource.
+     * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4317,7 +5168,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4326,7 +5177,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined fully-qualified URL for this resource.
+     * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4335,7 +5186,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -4344,7 +5195,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined fully-qualified URL for this resource.
+     * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4358,7 +5209,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4369,7 +5220,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource's resource id.
+     * Output only. [Output Only] Server-defined URL for this resource's resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -4377,14 +5228,14 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLinkWithId field is set.
      */
     public boolean hasSelfLinkWithId() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource's resource id.
+     * Output only. [Output Only] Server-defined URL for this resource's resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -4407,7 +5258,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource's resource id.
+     * Output only. [Output Only] Server-defined URL for this resource's resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -4430,7 +5281,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource's resource id.
+     * Output only. [Output Only] Server-defined URL for this resource's resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -4443,7 +5294,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       selfLinkWithId_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4452,7 +5303,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource's resource id.
+     * Output only. [Output Only] Server-defined URL for this resource's resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -4461,7 +5312,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSelfLinkWithId() {
       selfLinkWithId_ = getDefaultInstance().getSelfLinkWithId();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -4470,7 +5321,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource's resource id.
+     * Output only. [Output Only] Server-defined URL for this resource's resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -4484,7 +5335,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       selfLinkWithId_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4495,7 +5346,14 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of storage pool creation. - CREATING: Storage pool is provisioning. storagePool. - FAILED: Storage pool creation failed. - READY: Storage pool is ready for use. - DELETING: Storage pool is deleting.
+     * Output only. [Output Only] The status of storage pool creation.
+     *
+     *
+     *      - CREATING: Storage pool is provisioning.
+     *      storagePool.
+     *      - FAILED: Storage pool creation failed.
+     *      - READY: Storage pool is ready for use.
+     *      - DELETING: Storage pool is deleting.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -4504,14 +5362,21 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the state field is set.
      */
     public boolean hasState() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] The status of storage pool creation. - CREATING: Storage pool is provisioning. storagePool. - FAILED: Storage pool creation failed. - READY: Storage pool is ready for use. - DELETING: Storage pool is deleting.
+     * Output only. [Output Only] The status of storage pool creation.
+     *
+     *
+     *      - CREATING: Storage pool is provisioning.
+     *      storagePool.
+     *      - FAILED: Storage pool creation failed.
+     *      - READY: Storage pool is ready for use.
+     *      - DELETING: Storage pool is deleting.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -4535,7 +5400,14 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of storage pool creation. - CREATING: Storage pool is provisioning. storagePool. - FAILED: Storage pool creation failed. - READY: Storage pool is ready for use. - DELETING: Storage pool is deleting.
+     * Output only. [Output Only] The status of storage pool creation.
+     *
+     *
+     *      - CREATING: Storage pool is provisioning.
+     *      storagePool.
+     *      - FAILED: Storage pool creation failed.
+     *      - READY: Storage pool is ready for use.
+     *      - DELETING: Storage pool is deleting.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -4559,7 +5431,14 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of storage pool creation. - CREATING: Storage pool is provisioning. storagePool. - FAILED: Storage pool creation failed. - READY: Storage pool is ready for use. - DELETING: Storage pool is deleting.
+     * Output only. [Output Only] The status of storage pool creation.
+     *
+     *
+     *      - CREATING: Storage pool is provisioning.
+     *      storagePool.
+     *      - FAILED: Storage pool creation failed.
+     *      - READY: Storage pool is ready for use.
+     *      - DELETING: Storage pool is deleting.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -4573,7 +5452,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       state_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4582,7 +5461,14 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of storage pool creation. - CREATING: Storage pool is provisioning. storagePool. - FAILED: Storage pool creation failed. - READY: Storage pool is ready for use. - DELETING: Storage pool is deleting.
+     * Output only. [Output Only] The status of storage pool creation.
+     *
+     *
+     *      - CREATING: Storage pool is provisioning.
+     *      storagePool.
+     *      - FAILED: Storage pool creation failed.
+     *      - READY: Storage pool is ready for use.
+     *      - DELETING: Storage pool is deleting.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -4592,7 +5478,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearState() {
       state_ = getDefaultInstance().getState();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -4601,7 +5487,14 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of storage pool creation. - CREATING: Storage pool is provisioning. storagePool. - FAILED: Storage pool creation failed. - READY: Storage pool is ready for use. - DELETING: Storage pool is deleting.
+     * Output only. [Output Only] The status of storage pool creation.
+     *
+     *
+     *      - CREATING: Storage pool is provisioning.
+     *      storagePool.
+     *      - FAILED: Storage pool creation failed.
+     *      - READY: Storage pool is ready for use.
+     *      - DELETING: Storage pool is deleting.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -4616,7 +5509,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       state_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4632,7 +5525,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus status = 181260274;</code>
@@ -4640,14 +5533,14 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus status = 181260274;</code>
@@ -4668,7 +5561,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus status = 181260274;</code>
@@ -4682,7 +5575,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       } else {
         statusBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -4691,7 +5584,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus status = 181260274;</code>
@@ -4703,7 +5596,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       } else {
         statusBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -4712,14 +5605,14 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus status = 181260274;</code>
      */
     public Builder mergeStatus(com.google.cloud.compute.v1.StoragePoolResourceStatus value) {
       if (statusBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00040000) != 0)
             && status_ != null
             && status_
                 != com.google.cloud.compute.v1.StoragePoolResourceStatus.getDefaultInstance()) {
@@ -4731,7 +5624,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         statusBuilder_.mergeFrom(value);
       }
       if (status_ != null) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       return this;
@@ -4741,13 +5634,13 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus status = 181260274;</code>
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       status_ = null;
       if (statusBuilder_ != null) {
         statusBuilder_.dispose();
@@ -4761,13 +5654,13 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus status = 181260274;</code>
      */
     public com.google.cloud.compute.v1.StoragePoolResourceStatus.Builder getStatusBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
@@ -4776,7 +5669,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus status = 181260274;</code>
@@ -4795,7 +5688,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus status = 181260274;</code>
@@ -4831,7 +5724,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the storagePoolType field is set.
      */
     public boolean hasStoragePoolType() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -4897,7 +5790,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       storagePoolType_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -4915,7 +5808,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearStoragePoolType() {
       storagePoolType_ = getDefaultInstance().getStoragePoolType();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -4938,7 +5831,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       storagePoolType_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -4949,7 +5842,9 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the storage pool resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * Output only. [Output Only] URL of the zone where the storage pool resides.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -4957,14 +5852,16 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the zone field is set.
      */
     public boolean hasZone() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the storage pool resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * Output only. [Output Only] URL of the zone where the storage pool resides.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -4987,7 +5884,9 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the storage pool resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * Output only. [Output Only] URL of the zone where the storage pool resides.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -5010,7 +5909,9 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the storage pool resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * Output only. [Output Only] URL of the zone where the storage pool resides.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -5023,7 +5924,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       zone_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -5032,7 +5933,9 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the storage pool resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * Output only. [Output Only] URL of the zone where the storage pool resides.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -5041,7 +5944,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearZone() {
       zone_ = getDefaultInstance().getZone();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -5050,7 +5953,9 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the storage pool resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * Output only. [Output Only] URL of the zone where the storage pool resides.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -5064,7 +5969,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       zone_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }

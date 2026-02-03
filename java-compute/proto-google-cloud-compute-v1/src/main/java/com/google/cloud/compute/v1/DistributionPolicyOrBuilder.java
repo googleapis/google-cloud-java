@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ public interface DistributionPolicyOrBuilder
    *
    *
    * <pre>
-   * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+   * The distribution shape to which the group converges either proactively or
+   * on resize events (depending on the value set inupdatePolicy.instanceRedistributionType).
    * Check the TargetShape enum for the list of possible values.
    * </pre>
    *
@@ -42,7 +43,8 @@ public interface DistributionPolicyOrBuilder
    *
    *
    * <pre>
-   * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+   * The distribution shape to which the group converges either proactively or
+   * on resize events (depending on the value set inupdatePolicy.instanceRedistributionType).
    * Check the TargetShape enum for the list of possible values.
    * </pre>
    *
@@ -56,7 +58,8 @@ public interface DistributionPolicyOrBuilder
    *
    *
    * <pre>
-   * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+   * The distribution shape to which the group converges either proactively or
+   * on resize events (depending on the value set inupdatePolicy.instanceRedistributionType).
    * Check the TargetShape enum for the list of possible values.
    * </pre>
    *
@@ -70,7 +73,8 @@ public interface DistributionPolicyOrBuilder
    *
    *
    * <pre>
-   * Zones where the regional managed instance group will create and manage its instances.
+   * Zones where the regional managed instance group will create and manage
+   * its instances.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.DistributionPolicyZoneConfiguration zones = 116085319;
@@ -82,7 +86,8 @@ public interface DistributionPolicyOrBuilder
    *
    *
    * <pre>
-   * Zones where the regional managed instance group will create and manage its instances.
+   * Zones where the regional managed instance group will create and manage
+   * its instances.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.DistributionPolicyZoneConfiguration zones = 116085319;
@@ -94,7 +99,8 @@ public interface DistributionPolicyOrBuilder
    *
    *
    * <pre>
-   * Zones where the regional managed instance group will create and manage its instances.
+   * Zones where the regional managed instance group will create and manage
+   * its instances.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.DistributionPolicyZoneConfiguration zones = 116085319;
@@ -106,7 +112,8 @@ public interface DistributionPolicyOrBuilder
    *
    *
    * <pre>
-   * Zones where the regional managed instance group will create and manage its instances.
+   * Zones where the regional managed instance group will create and manage
+   * its instances.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.DistributionPolicyZoneConfiguration zones = 116085319;
@@ -119,7 +126,8 @@ public interface DistributionPolicyOrBuilder
    *
    *
    * <pre>
-   * Zones where the regional managed instance group will create and manage its instances.
+   * Zones where the regional managed instance group will create and manage
+   * its instances.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.DistributionPolicyZoneConfiguration zones = 116085319;

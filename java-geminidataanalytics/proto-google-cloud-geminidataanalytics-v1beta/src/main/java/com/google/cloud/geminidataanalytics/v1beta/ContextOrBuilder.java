@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -223,6 +223,84 @@ public interface ContextOrBuilder
    */
   com.google.cloud.geminidataanalytics.v1beta.ExampleQueryOrBuilder getExampleQueriesOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of golden queries, providing examples of relevant and
+   * commonly used Looker queries and their corresponding natural language
+   * queries optionally present.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery looker_golden_queries = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery>
+      getLookerGoldenQueriesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of golden queries, providing examples of relevant and
+   * commonly used Looker queries and their corresponding natural language
+   * queries optionally present.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery looker_golden_queries = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery getLookerGoldenQueries(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of golden queries, providing examples of relevant and
+   * commonly used Looker queries and their corresponding natural language
+   * queries optionally present.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery looker_golden_queries = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getLookerGoldenQueriesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of golden queries, providing examples of relevant and
+   * commonly used Looker queries and their corresponding natural language
+   * queries optionally present.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery looker_golden_queries = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQueryOrBuilder>
+      getLookerGoldenQueriesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of golden queries, providing examples of relevant and
+   * commonly used Looker queries and their corresponding natural language
+   * queries optionally present.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery looker_golden_queries = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQueryOrBuilder
+      getLookerGoldenQueriesOrBuilder(int index);
 
   /**
    *

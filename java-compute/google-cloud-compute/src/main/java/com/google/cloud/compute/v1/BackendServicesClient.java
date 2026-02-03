@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,7 +87,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> AggregatedList</td>
- *      <td><p> Retrieves the list of all BackendService resources, regional and global, available to the specified project. To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.</td>
+ *      <td><p> Retrieves the list of all BackendService resources, regional and global, available to the specified project.
+ * <p>  To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to `true`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -180,7 +181,9 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetHealth</td>
- *      <td><p> Gets the most recent health check results for this BackendService. Example request body: { "group": "/zones/us-east1-b/instanceGroups/lb-backend-example" }</td>
+ *      <td><p> Gets the most recent health check results for this BackendService.
+ * <p>  Example request body:
+ * <p>  {   "group": "/zones/us-east1-b/instanceGroups/lb-backend-example" }</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -216,7 +219,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Insert</td>
- *      <td><p> Creates a BackendService resource in the specified project using the data included in the request. For more information, see Backend services overview .</td>
+ *      <td><p> Creates a BackendService resource in the specified project using the data included in the request. For more information, see Backend services overview.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -329,7 +332,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> SetSecurityPolicy</td>
- *      <td><p> Sets the Google Cloud Armor security policy for the specified backend service. For more information, see Google Cloud Armor Overview</td>
+ *      <td><p> Sets the Google Cloud Armor security policy for the specified backend service. For more information, seeGoogle Cloud Armor Overview</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -366,7 +369,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Update</td>
- *      <td><p> Updates the specified BackendService resource with the data included in the request. For more information, see Backend services overview.</td>
+ *      <td><p> Updates the specified BackendService resource with the data included in the request. For more information, seeBackend services overview.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -615,8 +618,10 @@ public class BackendServicesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of all BackendService resources, regional and global, available to the
-   * specified project. To prevent failure, Google recommends that you set the
-   * `returnPartialSuccess` parameter to `true`.
+   * specified project.
+   *
+   * <p>To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -647,8 +652,10 @@ public class BackendServicesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of all BackendService resources, regional and global, available to the
-   * specified project. To prevent failure, Google recommends that you set the
-   * `returnPartialSuccess` parameter to `true`.
+   * specified project.
+   *
+   * <p>To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -688,8 +695,10 @@ public class BackendServicesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of all BackendService resources, regional and global, available to the
-   * specified project. To prevent failure, Google recommends that you set the
-   * `returnPartialSuccess` parameter to `true`.
+   * specified project.
+   *
+   * <p>To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -728,8 +737,10 @@ public class BackendServicesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of all BackendService resources, regional and global, available to the
-   * specified project. To prevent failure, Google recommends that you set the
-   * `returnPartialSuccess` parameter to `true`.
+   * specified project.
+   *
+   * <p>To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -1218,8 +1229,11 @@ public class BackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets the most recent health check results for this BackendService. Example request body: {
-   * "group": "/zones/us-east1-b/instanceGroups/lb-backend-example" }
+   * Gets the most recent health check results for this BackendService.
+   *
+   * <p>Example request body:
+   *
+   * <p>{ "group": "/zones/us-east1-b/instanceGroups/lb-backend-example" }
    *
    * <p>Sample code:
    *
@@ -1260,8 +1274,11 @@ public class BackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets the most recent health check results for this BackendService. Example request body: {
-   * "group": "/zones/us-east1-b/instanceGroups/lb-backend-example" }
+   * Gets the most recent health check results for this BackendService.
+   *
+   * <p>Example request body:
+   *
+   * <p>{ "group": "/zones/us-east1-b/instanceGroups/lb-backend-example" }
    *
    * <p>Sample code:
    *
@@ -1291,8 +1308,11 @@ public class BackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets the most recent health check results for this BackendService. Example request body: {
-   * "group": "/zones/us-east1-b/instanceGroups/lb-backend-example" }
+   * Gets the most recent health check results for this BackendService.
+   *
+   * <p>Example request body:
+   *
+   * <p>{ "group": "/zones/us-east1-b/instanceGroups/lb-backend-example" }
    *
    * <p>Sample code:
    *
@@ -1418,7 +1438,7 @@ public class BackendServicesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a BackendService resource in the specified project using the data included in the
-   * request. For more information, see Backend services overview .
+   * request. For more information, see Backend services overview.
    *
    * <p>Sample code:
    *
@@ -1452,7 +1472,7 @@ public class BackendServicesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a BackendService resource in the specified project using the data included in the
-   * request. For more information, see Backend services overview .
+   * request. For more information, see Backend services overview.
    *
    * <p>Sample code:
    *
@@ -1484,7 +1504,7 @@ public class BackendServicesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a BackendService resource in the specified project using the data included in the
-   * request. For more information, see Backend services overview .
+   * request. For more information, see Backend services overview.
    *
    * <p>Sample code:
    *
@@ -1516,7 +1536,7 @@ public class BackendServicesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a BackendService resource in the specified project using the data included in the
-   * request. For more information, see Backend services overview .
+   * request. For more information, see Backend services overview.
    *
    * <p>Sample code:
    *
@@ -2204,7 +2224,7 @@ public class BackendServicesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the Google Cloud Armor security policy for the specified backend service. For more
-   * information, see Google Cloud Armor Overview
+   * information, seeGoogle Cloud Armor Overview
    *
    * <p>Sample code:
    *
@@ -2248,7 +2268,7 @@ public class BackendServicesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the Google Cloud Armor security policy for the specified backend service. For more
-   * information, see Google Cloud Armor Overview
+   * information, seeGoogle Cloud Armor Overview
    *
    * <p>Sample code:
    *
@@ -2281,7 +2301,7 @@ public class BackendServicesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the Google Cloud Armor security policy for the specified backend service. For more
-   * information, see Google Cloud Armor Overview
+   * information, seeGoogle Cloud Armor Overview
    *
    * <p>Sample code:
    *
@@ -2314,7 +2334,7 @@ public class BackendServicesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the Google Cloud Armor security policy for the specified backend service. For more
-   * information, see Google Cloud Armor Overview
+   * information, seeGoogle Cloud Armor Overview
    *
    * <p>Sample code:
    *
@@ -2448,7 +2468,7 @@ public class BackendServicesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified BackendService resource with the data included in the request. For more
-   * information, see Backend services overview.
+   * information, seeBackend services overview.
    *
    * <p>Sample code:
    *
@@ -2486,7 +2506,7 @@ public class BackendServicesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified BackendService resource with the data included in the request. For more
-   * information, see Backend services overview.
+   * information, seeBackend services overview.
    *
    * <p>Sample code:
    *
@@ -2519,7 +2539,7 @@ public class BackendServicesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified BackendService resource with the data included in the request. For more
-   * information, see Backend services overview.
+   * information, seeBackend services overview.
    *
    * <p>Sample code:
    *
@@ -2552,7 +2572,7 @@ public class BackendServicesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified BackendService resource with the data included in the request. For more
-   * information, see Backend services overview.
+   * information, seeBackend services overview.
    *
    * <p>Sample code:
    *

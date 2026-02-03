@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,7 +70,8 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -83,7 +84,8 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -96,7 +98,8 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -109,7 +112,8 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -122,7 +126,8 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -135,7 +140,8 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -148,7 +154,53 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] Provisioned capacities for each SKU for this Exapool in GiB
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb exapool_provisioned_capacity_gb = 345174240;
+   * </code>
+   *
+   * @return Whether the exapoolProvisionedCapacityGb field is set.
+   */
+  boolean hasExapoolProvisionedCapacityGb();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Provisioned capacities for each SKU for this Exapool in GiB
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb exapool_provisioned_capacity_gb = 345174240;
+   * </code>
+   *
+   * @return The exapoolProvisionedCapacityGb.
+   */
+  com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb
+      getExapoolProvisionedCapacityGb();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Provisioned capacities for each SKU for this Exapool in GiB
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb exapool_provisioned_capacity_gb = 345174240;
+   * </code>
+   */
+  com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGbOrBuilder
+      getExapoolProvisionedCapacityGbOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -161,7 +213,8 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -174,7 +227,8 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#storagePool for storage pools.
+   * Output only. [Output Only] Type of the resource. Always compute#storagePool
+   * for storage pools.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -187,7 +241,8 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#storagePool for storage pools.
+   * Output only. [Output Only] Type of the resource. Always compute#storagePool
+   * for storage pools.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -200,7 +255,8 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#storagePool for storage pools.
+   * Output only. [Output Only] Type of the resource. Always compute#storagePool
+   * for storage pools.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -213,7 +269,15 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this storage pool, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a storage pool.
+   * A fingerprint for the labels being applied to this storage pool, which is
+   * essentially a hash of the labels set used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve a storage pool.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -226,7 +290,15 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this storage pool, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a storage pool.
+   * A fingerprint for the labels being applied to this storage pool, which is
+   * essentially a hash of the labels set used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve a storage pool.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -239,7 +311,15 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this storage pool, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a storage pool.
+   * A fingerprint for the labels being applied to this storage pool, which is
+   * essentially a hash of the labels set used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve a storage pool.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -252,7 +332,8 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Labels to apply to this storage pool. These can be later modified by the setLabels method.
+   * Labels to apply to this storage pool. These can be later modified by
+   * the setLabels method.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -263,7 +344,8 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Labels to apply to this storage pool. These can be later modified by the setLabels method.
+   * Labels to apply to this storage pool. These can be later modified by
+   * the setLabels method.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -278,7 +360,8 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Labels to apply to this storage pool. These can be later modified by the setLabels method.
+   * Labels to apply to this storage pool. These can be later modified by
+   * the setLabels method.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -289,7 +372,8 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Labels to apply to this storage pool. These can be later modified by the setLabels method.
+   * Labels to apply to this storage pool. These can be later modified by
+   * the setLabels method.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -304,7 +388,8 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Labels to apply to this storage pool. These can be later modified by the setLabels method.
+   * Labels to apply to this storage pool. These can be later modified by
+   * the setLabels method.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -315,7 +400,13 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?`
+   * which means the first character must be a lowercase letter, and all
+   * following characters must be a dash, lowercase letter, or digit, except
+   * the last character, which cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -328,7 +419,13 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?`
+   * which means the first character must be a lowercase letter, and all
+   * following characters must be a dash, lowercase letter, or digit, except
+   * the last character, which cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -341,7 +438,13 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?`
+   * which means the first character must be a lowercase letter, and all
+   * following characters must be a dash, lowercase letter, or digit, except
+   * the last character, which cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -354,7 +457,48 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Provisioning type of the performance-related parameters of the pool, such as throughput and IOPS.
+   * Input only. Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.StoragePoolParams params = 78313862;</code>
+   *
+   * @return Whether the params field is set.
+   */
+  boolean hasParams();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.StoragePoolParams params = 78313862;</code>
+   *
+   * @return The params.
+   */
+  com.google.cloud.compute.v1.StoragePoolParams getParams();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.StoragePoolParams params = 78313862;</code>
+   */
+  com.google.cloud.compute.v1.StoragePoolParamsOrBuilder getParamsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Provisioning type of the performance-related parameters of the pool,
+   * such as throughput and IOPS.
    * Check the PerformanceProvisioningType enum for the list of possible values.
    * </pre>
    *
@@ -368,7 +512,8 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Provisioning type of the performance-related parameters of the pool, such as throughput and IOPS.
+   * Provisioning type of the performance-related parameters of the pool,
+   * such as throughput and IOPS.
    * Check the PerformanceProvisioningType enum for the list of possible values.
    * </pre>
    *
@@ -382,7 +527,8 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Provisioning type of the performance-related parameters of the pool, such as throughput and IOPS.
+   * Provisioning type of the performance-related parameters of the pool,
+   * such as throughput and IOPS.
    * Check the PerformanceProvisioningType enum for the list of possible values.
    * </pre>
    *
@@ -396,7 +542,8 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Size of the storage pool in GiB. For more information about the size limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
+   * Size of the storage pool in GiB. For more information about the size
+   * limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
    * </pre>
    *
    * <code>optional int64 pool_provisioned_capacity_gb = 478537682;</code>
@@ -409,7 +556,8 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Size of the storage pool in GiB. For more information about the size limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
+   * Size of the storage pool in GiB. For more information about the size
+   * limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
    * </pre>
    *
    * <code>optional int64 pool_provisioned_capacity_gb = 478537682;</code>
@@ -422,7 +570,8 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Provisioned IOPS of the storage pool. Only relevant if the storage pool type is hyperdisk-balanced.
+   * Provisioned IOPS of the storage pool. Only relevant if the storage pool
+   * type is hyperdisk-balanced.
    * </pre>
    *
    * <code>optional int64 pool_provisioned_iops = 112092311;</code>
@@ -435,7 +584,8 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Provisioned IOPS of the storage pool. Only relevant if the storage pool type is hyperdisk-balanced.
+   * Provisioned IOPS of the storage pool. Only relevant if the storage pool
+   * type is hyperdisk-balanced.
    * </pre>
    *
    * <code>optional int64 pool_provisioned_iops = 112092311;</code>
@@ -448,7 +598,8 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Provisioned throughput of the storage pool in MiB/s. Only relevant if the storage pool type is hyperdisk-balanced or hyperdisk-throughput.
+   * Provisioned throughput of the storage pool in MiB/s. Only relevant if the
+   * storage pool type is hyperdisk-balanced or hyperdisk-throughput.
    * </pre>
    *
    * <code>optional int64 pool_provisioned_throughput = 169215640;</code>
@@ -461,7 +612,8 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Provisioned throughput of the storage pool in MiB/s. Only relevant if the storage pool type is hyperdisk-balanced or hyperdisk-throughput.
+   * Provisioned throughput of the storage pool in MiB/s. Only relevant if the
+   * storage pool type is hyperdisk-balanced or hyperdisk-throughput.
    * </pre>
    *
    * <code>optional int64 pool_provisioned_throughput = 169215640;</code>
@@ -474,7 +626,7 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Status information for the storage pool resource.
+   * Output only. [Output Only] Status information for the storage pool resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus resource_status = 249429315;
@@ -488,7 +640,7 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Status information for the storage pool resource.
+   * Output only. [Output Only] Status information for the storage pool resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus resource_status = 249429315;
@@ -502,7 +654,7 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Status information for the storage pool resource.
+   * Output only. [Output Only] Status information for the storage pool resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus resource_status = 249429315;
@@ -514,7 +666,7 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -527,7 +679,7 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -540,7 +692,7 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -553,7 +705,7 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource's resource id.
+   * Output only. [Output Only] Server-defined URL for this resource's resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -566,7 +718,7 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource's resource id.
+   * Output only. [Output Only] Server-defined URL for this resource's resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -579,7 +731,7 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource's resource id.
+   * Output only. [Output Only] Server-defined URL for this resource's resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -592,7 +744,14 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of storage pool creation. - CREATING: Storage pool is provisioning. storagePool. - FAILED: Storage pool creation failed. - READY: Storage pool is ready for use. - DELETING: Storage pool is deleting.
+   * Output only. [Output Only] The status of storage pool creation.
+   *
+   *
+   *      - CREATING: Storage pool is provisioning.
+   *      storagePool.
+   *      - FAILED: Storage pool creation failed.
+   *      - READY: Storage pool is ready for use.
+   *      - DELETING: Storage pool is deleting.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -606,7 +765,14 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of storage pool creation. - CREATING: Storage pool is provisioning. storagePool. - FAILED: Storage pool creation failed. - READY: Storage pool is ready for use. - DELETING: Storage pool is deleting.
+   * Output only. [Output Only] The status of storage pool creation.
+   *
+   *
+   *      - CREATING: Storage pool is provisioning.
+   *      storagePool.
+   *      - FAILED: Storage pool creation failed.
+   *      - READY: Storage pool is ready for use.
+   *      - DELETING: Storage pool is deleting.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -620,7 +786,14 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of storage pool creation. - CREATING: Storage pool is provisioning. storagePool. - FAILED: Storage pool creation failed. - READY: Storage pool is ready for use. - DELETING: Storage pool is deleting.
+   * Output only. [Output Only] The status of storage pool creation.
+   *
+   *
+   *      - CREATING: Storage pool is provisioning.
+   *      storagePool.
+   *      - FAILED: Storage pool creation failed.
+   *      - READY: Storage pool is ready for use.
+   *      - DELETING: Storage pool is deleting.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -634,7 +807,7 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Status information for the storage pool resource.
+   * Output only. [Output Only] Status information for the storage pool resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus status = 181260274;</code>
@@ -647,7 +820,7 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Status information for the storage pool resource.
+   * Output only. [Output Only] Status information for the storage pool resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus status = 181260274;</code>
@@ -660,7 +833,7 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Status information for the storage pool resource.
+   * Output only. [Output Only] Status information for the storage pool resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus status = 181260274;</code>
@@ -710,7 +883,9 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the storage pool resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * Output only. [Output Only] URL of the zone where the storage pool resides.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -723,7 +898,9 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the storage pool resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * Output only. [Output Only] URL of the zone where the storage pool resides.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -736,7 +913,9 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the storage pool resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * Output only. [Output Only] URL of the zone where the storage pool resides.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>

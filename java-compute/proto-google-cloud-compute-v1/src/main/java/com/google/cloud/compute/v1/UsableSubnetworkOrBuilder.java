@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ public interface UsableSubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The external IPv6 address range that is assigned to this subnetwork.
+   * Output only. [Output Only] The external IPv6 address range that is assigned to this
+   * subnetwork.
    * </pre>
    *
    * <code>optional string external_ipv6_prefix = 139299190;</code>
@@ -41,7 +42,8 @@ public interface UsableSubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The external IPv6 address range that is assigned to this subnetwork.
+   * Output only. [Output Only] The external IPv6 address range that is assigned to this
+   * subnetwork.
    * </pre>
    *
    * <code>optional string external_ipv6_prefix = 139299190;</code>
@@ -54,7 +56,8 @@ public interface UsableSubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The external IPv6 address range that is assigned to this subnetwork.
+   * Output only. [Output Only] The external IPv6 address range that is assigned to this
+   * subnetwork.
    * </pre>
    *
    * <code>optional string external_ipv6_prefix = 139299190;</code>
@@ -67,7 +70,8 @@ public interface UsableSubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The internal IPv6 address range that is assigned to this subnetwork.
+   * Output only. [Output Only] The internal IPv6 address range that is assigned to this
+   * subnetwork.
    * </pre>
    *
    * <code>optional string internal_ipv6_prefix = 506270056;</code>
@@ -80,7 +84,8 @@ public interface UsableSubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The internal IPv6 address range that is assigned to this subnetwork.
+   * Output only. [Output Only] The internal IPv6 address range that is assigned to this
+   * subnetwork.
    * </pre>
    *
    * <code>optional string internal_ipv6_prefix = 506270056;</code>
@@ -93,7 +98,8 @@ public interface UsableSubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The internal IPv6 address range that is assigned to this subnetwork.
+   * Output only. [Output Only] The internal IPv6 address range that is assigned to this
+   * subnetwork.
    * </pre>
    *
    * <code>optional string internal_ipv6_prefix = 506270056;</code>
@@ -145,7 +151,9 @@ public interface UsableSubnetworkOrBuilder
    *
    *
    * <pre>
-   * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack.
+   * The access type of IPv6 address this subnet holds. It's immutable and can
+   * only be specified during creation or the first time the subnet is updated
+   * into IPV4_IPV6 dual stack.
    * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
    *
@@ -159,7 +167,9 @@ public interface UsableSubnetworkOrBuilder
    *
    *
    * <pre>
-   * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack.
+   * The access type of IPv6 address this subnet holds. It's immutable and can
+   * only be specified during creation or the first time the subnet is updated
+   * into IPV4_IPV6 dual stack.
    * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
    *
@@ -173,7 +183,9 @@ public interface UsableSubnetworkOrBuilder
    *
    *
    * <pre>
-   * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack.
+   * The access type of IPv6 address this subnet holds. It's immutable and can
+   * only be specified during creation or the first time the subnet is updated
+   * into IPV4_IPV6 dual stack.
    * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
    *
@@ -268,7 +280,12 @@ public interface UsableSubnetworkOrBuilder
    *
    *
    * <pre>
-   * The role of subnetwork. Currently, this field is only used when purpose is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+   * The role of subnetwork. Currently, this field is only used when
+   * purpose is set to GLOBAL_MANAGED_PROXY orREGIONAL_MANAGED_PROXY. The value can be set toACTIVE or BACKUP. An ACTIVE
+   * subnetwork is one that is currently being used for Envoy-based load
+   * balancers in a region. A BACKUP subnetwork is one that is
+   * ready to be promoted to ACTIVE or is currently draining.
+   * This field can be updated with a patch request.
    * Check the Role enum for the list of possible values.
    * </pre>
    *
@@ -282,7 +299,12 @@ public interface UsableSubnetworkOrBuilder
    *
    *
    * <pre>
-   * The role of subnetwork. Currently, this field is only used when purpose is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+   * The role of subnetwork. Currently, this field is only used when
+   * purpose is set to GLOBAL_MANAGED_PROXY orREGIONAL_MANAGED_PROXY. The value can be set toACTIVE or BACKUP. An ACTIVE
+   * subnetwork is one that is currently being used for Envoy-based load
+   * balancers in a region. A BACKUP subnetwork is one that is
+   * ready to be promoted to ACTIVE or is currently draining.
+   * This field can be updated with a patch request.
    * Check the Role enum for the list of possible values.
    * </pre>
    *
@@ -296,7 +318,12 @@ public interface UsableSubnetworkOrBuilder
    *
    *
    * <pre>
-   * The role of subnetwork. Currently, this field is only used when purpose is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+   * The role of subnetwork. Currently, this field is only used when
+   * purpose is set to GLOBAL_MANAGED_PROXY orREGIONAL_MANAGED_PROXY. The value can be set toACTIVE or BACKUP. An ACTIVE
+   * subnetwork is one that is currently being used for Envoy-based load
+   * balancers in a region. A BACKUP subnetwork is one that is
+   * ready to be promoted to ACTIVE or is currently draining.
+   * This field can be updated with a patch request.
    * Check the Role enum for the list of possible values.
    * </pre>
    *
@@ -378,7 +405,11 @@ public interface UsableSubnetworkOrBuilder
    *
    *
    * <pre>
-   * The stack type for the subnet. If set to IPV4_ONLY, new VMs in the subnet are assigned IPv4 addresses only. If set to IPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and IPv6 addresses. If not specified, IPV4_ONLY is used. This field can be both set at resource creation time and updated using patch.
+   * The stack type for the subnet. If set to IPV4_ONLY, new VMs
+   * in the subnet are assigned IPv4 addresses only. If set toIPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and
+   * IPv6 addresses. If not specified, IPV4_ONLY is used.
+   *
+   * This field can be both set at resource creation time and updated usingpatch.
    * Check the StackType enum for the list of possible values.
    * </pre>
    *
@@ -392,7 +423,11 @@ public interface UsableSubnetworkOrBuilder
    *
    *
    * <pre>
-   * The stack type for the subnet. If set to IPV4_ONLY, new VMs in the subnet are assigned IPv4 addresses only. If set to IPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and IPv6 addresses. If not specified, IPV4_ONLY is used. This field can be both set at resource creation time and updated using patch.
+   * The stack type for the subnet. If set to IPV4_ONLY, new VMs
+   * in the subnet are assigned IPv4 addresses only. If set toIPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and
+   * IPv6 addresses. If not specified, IPV4_ONLY is used.
+   *
+   * This field can be both set at resource creation time and updated usingpatch.
    * Check the StackType enum for the list of possible values.
    * </pre>
    *
@@ -406,7 +441,11 @@ public interface UsableSubnetworkOrBuilder
    *
    *
    * <pre>
-   * The stack type for the subnet. If set to IPV4_ONLY, new VMs in the subnet are assigned IPv4 addresses only. If set to IPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and IPv6 addresses. If not specified, IPV4_ONLY is used. This field can be both set at resource creation time and updated using patch.
+   * The stack type for the subnet. If set to IPV4_ONLY, new VMs
+   * in the subnet are assigned IPv4 addresses only. If set toIPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and
+   * IPv6 addresses. If not specified, IPV4_ONLY is used.
+   *
+   * This field can be both set at resource creation time and updated usingpatch.
    * Check the StackType enum for the list of possible values.
    * </pre>
    *

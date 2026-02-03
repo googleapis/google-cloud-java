@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -225,6 +225,7 @@ public class ReservationsClientTest {
             .setKind("kind3292052")
             .addAllLinkedCommitments(new ArrayList<String>())
             .setName("name3373707")
+            .setProtectionTier("protectionTier344968283")
             .setReservationSharingPolicy(AllocationReservationSharingPolicy.newBuilder().build())
             .putAllResourcePolicies(new HashMap<String, String>())
             .setResourceStatus(AllocationResourceStatus.newBuilder().build())

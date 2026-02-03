@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -963,7 +963,7 @@ public interface QueryParametersOrBuilder
    *
    * @deprecated
    *     google.cloud.dialogflow.cx.v3beta1.QueryParameters.populate_data_store_connection_signals
-   *     is deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=762
+   *     is deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=774
    * @return The populateDataStoreConnectionSignals.
    */
   @java.lang.Deprecated

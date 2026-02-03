@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,6 +68,21 @@ public interface ServiceScalingOrBuilder
    * @return The scalingMode.
    */
   com.google.cloud.run.v2.ServiceScaling.ScalingMode getScalingMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. total max instances for the service. This number of instances is
+   * divided among all revisions with specified traffic based on the percent
+   * of traffic they are receiving.
+   * </pre>
+   *
+   * <code>int32 max_instance_count = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The maxInstanceCount.
+   */
+  int getMaxInstanceCount();
 
   /**
    *

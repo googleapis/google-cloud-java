@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,15 +28,11 @@ public interface SpeakerDiarizationConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Minimum number of speakers in the conversation. This range gives
-   * you more flexibility by allowing the system to automatically determine the
-   * correct number of speakers.
-   *
-   * To fix the number of speakers detected in the audio, set
-   * `min_speaker_count` = `max_speaker_count`.
+   * Optional. The system automatically determines the number of speakers. This
+   * value is not currently used.
    * </pre>
    *
-   * <code>int32 min_speaker_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>int32 min_speaker_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The minSpeakerCount.
    */
@@ -46,13 +42,11 @@ public interface SpeakerDiarizationConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Maximum number of speakers in the conversation. Valid values are:
-   * 1-6. Must be &gt;= `min_speaker_count`. This range gives you more flexibility
-   * by allowing the system to automatically determine the correct number of
-   * speakers.
+   * Optional. The system automatically determines the number of speakers. This
+   * value is not currently used.
    * </pre>
    *
-   * <code>int32 max_speaker_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>int32 max_speaker_count = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The maxSpeakerCount.
    */

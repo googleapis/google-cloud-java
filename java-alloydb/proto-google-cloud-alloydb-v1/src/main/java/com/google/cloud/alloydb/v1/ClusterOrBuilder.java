@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -718,7 +718,7 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Input only. Initial user to setup during cluster creation. Required.
+   * Input only. Initial user to setup during cluster creation.
    * If used in `RestoreCluster` this is ignored.
    * </pre>
    *
@@ -734,7 +734,7 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Input only. Initial user to setup during cluster creation. Required.
+   * Input only. Initial user to setup during cluster creation.
    * If used in `RestoreCluster` this is ignored.
    * </pre>
    *
@@ -750,7 +750,7 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Input only. Initial user to setup during cluster creation. Required.
+   * Input only. Initial user to setup during cluster creation.
    * If used in `RestoreCluster` this is ignored.
    * </pre>
    *

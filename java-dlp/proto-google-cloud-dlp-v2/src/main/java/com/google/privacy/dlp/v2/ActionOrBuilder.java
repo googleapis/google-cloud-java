@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -139,30 +139,40 @@ public interface ActionOrBuilder
    *
    *
    * <pre>
-   * Publish findings to Cloud Datahub.
+   * Deprecated because Data Catalog is being turned down. Use
+   * publish_findings_to_dataplex_catalog to publish findings to Dataplex
+   * Universal Catalog.
    * </pre>
    *
    * <code>
-   * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
+   * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5 [deprecated = true];
    * </code>
    *
+   * @deprecated google.privacy.dlp.v2.Action.publish_findings_to_cloud_data_catalog is deprecated.
+   *     See google/privacy/dlp/v2/dlp.proto;l=4399
    * @return Whether the publishFindingsToCloudDataCatalog field is set.
    */
+  @java.lang.Deprecated
   boolean hasPublishFindingsToCloudDataCatalog();
 
   /**
    *
    *
    * <pre>
-   * Publish findings to Cloud Datahub.
+   * Deprecated because Data Catalog is being turned down. Use
+   * publish_findings_to_dataplex_catalog to publish findings to Dataplex
+   * Universal Catalog.
    * </pre>
    *
    * <code>
-   * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
+   * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5 [deprecated = true];
    * </code>
    *
+   * @deprecated google.privacy.dlp.v2.Action.publish_findings_to_cloud_data_catalog is deprecated.
+   *     See google/privacy/dlp/v2/dlp.proto;l=4399
    * @return The publishFindingsToCloudDataCatalog.
    */
+  @java.lang.Deprecated
   com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog
       getPublishFindingsToCloudDataCatalog();
 
@@ -170,13 +180,16 @@ public interface ActionOrBuilder
    *
    *
    * <pre>
-   * Publish findings to Cloud Datahub.
+   * Deprecated because Data Catalog is being turned down. Use
+   * publish_findings_to_dataplex_catalog to publish findings to Dataplex
+   * Universal Catalog.
    * </pre>
    *
    * <code>
-   * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
+   * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5 [deprecated = true];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalogOrBuilder
       getPublishFindingsToCloudDataCatalogOrBuilder();
 

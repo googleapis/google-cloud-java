@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,10 @@ public interface NetworkEndpointGroupsListEndpointsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional query parameter for showing the health status of each network endpoint. Valid options are SKIP or SHOW. If you don't specify this parameter, the health status of network endpoints will not be provided.
+   * Optional query parameter for showing the health status of each network
+   * endpoint. Valid options are SKIP or SHOW. If you
+   * don't specify this parameter, the health status of network endpoints will
+   * not be provided.
    * Check the HealthStatus enum for the list of possible values.
    * </pre>
    *
@@ -42,7 +45,10 @@ public interface NetworkEndpointGroupsListEndpointsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional query parameter for showing the health status of each network endpoint. Valid options are SKIP or SHOW. If you don't specify this parameter, the health status of network endpoints will not be provided.
+   * Optional query parameter for showing the health status of each network
+   * endpoint. Valid options are SKIP or SHOW. If you
+   * don't specify this parameter, the health status of network endpoints will
+   * not be provided.
    * Check the HealthStatus enum for the list of possible values.
    * </pre>
    *
@@ -56,7 +62,10 @@ public interface NetworkEndpointGroupsListEndpointsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional query parameter for showing the health status of each network endpoint. Valid options are SKIP or SHOW. If you don't specify this parameter, the health status of network endpoints will not be provided.
+   * Optional query parameter for showing the health status of each network
+   * endpoint. Valid options are SKIP or SHOW. If you
+   * don't specify this parameter, the health status of network endpoints will
+   * not be provided.
    * Check the HealthStatus enum for the list of possible values.
    * </pre>
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -243,4 +243,89 @@ public interface CreateAndConfigureAccountRequestOrBuilder
   com.google.shopping.merchant.accounts.v1.CreateAndConfigureAccountRequest
           .AddAccountServiceOrBuilder
       getServiceOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If a relationship is created with a provider, you can set an
+   * alias for it with this field. The calling user must be an admin on the
+   * provider to be able to set an alias.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.accounts.v1.CreateAndConfigureAccountRequest.SetAliasForRelationship set_alias = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<
+          com.google.shopping.merchant.accounts.v1.CreateAndConfigureAccountRequest
+              .SetAliasForRelationship>
+      getSetAliasList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If a relationship is created with a provider, you can set an
+   * alias for it with this field. The calling user must be an admin on the
+   * provider to be able to set an alias.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.accounts.v1.CreateAndConfigureAccountRequest.SetAliasForRelationship set_alias = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.shopping.merchant.accounts.v1.CreateAndConfigureAccountRequest.SetAliasForRelationship
+      getSetAlias(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If a relationship is created with a provider, you can set an
+   * alias for it with this field. The calling user must be an admin on the
+   * provider to be able to set an alias.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.accounts.v1.CreateAndConfigureAccountRequest.SetAliasForRelationship set_alias = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getSetAliasCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If a relationship is created with a provider, you can set an
+   * alias for it with this field. The calling user must be an admin on the
+   * provider to be able to set an alias.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.accounts.v1.CreateAndConfigureAccountRequest.SetAliasForRelationship set_alias = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.shopping.merchant.accounts.v1.CreateAndConfigureAccountRequest
+                  .SetAliasForRelationshipOrBuilder>
+      getSetAliasOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If a relationship is created with a provider, you can set an
+   * alias for it with this field. The calling user must be an admin on the
+   * provider to be able to set an alias.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.accounts.v1.CreateAndConfigureAccountRequest.SetAliasForRelationship set_alias = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.shopping.merchant.accounts.v1.CreateAndConfigureAccountRequest
+          .SetAliasForRelationshipOrBuilder
+      getSetAliasOrBuilder(int index);
 }

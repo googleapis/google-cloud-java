@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,7 +91,9 @@ public interface InstancePropertiesPatchOrBuilder
    *
    *
    * <pre>
-   * The metadata key-value pairs that you want to patch onto the instance. For more information, see Project and instance metadata.
+   * The metadata key-value pairs that you want to patch onto the instance. For
+   * more information, see Project and
+   * instance metadata.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 86866735;</code>
@@ -102,7 +104,9 @@ public interface InstancePropertiesPatchOrBuilder
    *
    *
    * <pre>
-   * The metadata key-value pairs that you want to patch onto the instance. For more information, see Project and instance metadata.
+   * The metadata key-value pairs that you want to patch onto the instance. For
+   * more information, see Project and
+   * instance metadata.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 86866735;</code>
@@ -117,7 +121,9 @@ public interface InstancePropertiesPatchOrBuilder
    *
    *
    * <pre>
-   * The metadata key-value pairs that you want to patch onto the instance. For more information, see Project and instance metadata.
+   * The metadata key-value pairs that you want to patch onto the instance. For
+   * more information, see Project and
+   * instance metadata.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 86866735;</code>
@@ -128,7 +134,9 @@ public interface InstancePropertiesPatchOrBuilder
    *
    *
    * <pre>
-   * The metadata key-value pairs that you want to patch onto the instance. For more information, see Project and instance metadata.
+   * The metadata key-value pairs that you want to patch onto the instance. For
+   * more information, see Project and
+   * instance metadata.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 86866735;</code>
@@ -143,7 +151,9 @@ public interface InstancePropertiesPatchOrBuilder
    *
    *
    * <pre>
-   * The metadata key-value pairs that you want to patch onto the instance. For more information, see Project and instance metadata.
+   * The metadata key-value pairs that you want to patch onto the instance. For
+   * more information, see Project and
+   * instance metadata.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 86866735;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,6 +61,28 @@
  * }
  * }</pre>
  *
+ * <p>======================= AdviceClient =======================
+ *
+ * <p>Service Description: The Advice API.
+ *
+ * <p>Sample for AdviceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (AdviceClient adviceClient = AdviceClient.create()) {
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   CalendarModeAdviceRequest calendarModeAdviceRequestResource =
+ *       CalendarModeAdviceRequest.newBuilder().build();
+ *   CalendarModeAdviceResponse response =
+ *       adviceClient.calendarMode(project, region, calendarModeAdviceRequestResource);
+ * }
+ * }</pre>
+ *
  * <p>======================= AutoscalersClient =======================
  *
  * <p>Service Description: The Autoscalers API.
@@ -116,6 +138,25 @@
  *   String project = "project-309310695";
  *   String backendService = "backendService-1884714623";
  *   BackendService response = backendServicesClient.get(project, backendService);
+ * }
+ * }</pre>
+ *
+ * <p>======================= CrossSiteNetworksClient =======================
+ *
+ * <p>Service Description: The CrossSiteNetworks API.
+ *
+ * <p>Sample for CrossSiteNetworksClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (CrossSiteNetworksClient crossSiteNetworksClient = CrossSiteNetworksClient.create()) {
+ *   String project = "project-309310695";
+ *   String crossSiteNetwork = "crossSiteNetwork1009388679";
+ *   CrossSiteNetwork response = crossSiteNetworksClient.get(project, crossSiteNetwork);
  * }
  * }</pre>
  *
@@ -232,6 +273,26 @@
  *   String region = "region-934795532";
  *   String forwardingRule = "forwardingRule-1429104743";
  *   ForwardingRule response = forwardingRulesClient.get(project, region, forwardingRule);
+ * }
+ * }</pre>
+ *
+ * <p>======================= FutureReservationsClient =======================
+ *
+ * <p>Service Description: The FutureReservations API.
+ *
+ * <p>Sample for FutureReservationsClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (FutureReservationsClient futureReservationsClient = FutureReservationsClient.create()) {
+ *   String project = "project-309310695";
+ *   String zone = "zone3744684";
+ *   String futureReservation = "futureReservation1926247945";
+ *   FutureReservation response = futureReservationsClient.get(project, zone, futureReservation);
  * }
  * }</pre>
  *
@@ -2096,6 +2157,26 @@
  *   String region = "region-934795532";
  *   String vpnTunnel = "vpnTunnel452443772";
  *   VpnTunnel response = vpnTunnelsClient.get(project, region, vpnTunnel);
+ * }
+ * }</pre>
+ *
+ * <p>======================= WireGroupsClient =======================
+ *
+ * <p>Service Description: The WireGroups API.
+ *
+ * <p>Sample for WireGroupsClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (WireGroupsClient wireGroupsClient = WireGroupsClient.create()) {
+ *   String project = "project-309310695";
+ *   String crossSiteNetwork = "crossSiteNetwork1009388679";
+ *   String wireGroup = "wireGroup-970399494";
+ *   WireGroup response = wireGroupsClient.get(project, crossSiteNetwork, wireGroup);
  * }
  * }</pre>
  *

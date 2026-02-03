@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -82,7 +82,9 @@ public interface BackendBucketCdnPolicyCacheKeyPolicyOrBuilder
    *
    *
    * <pre>
-   * Names of query string parameters to include in cache keys. Default parameters are always included. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+   * Names of query string parameters to include in cache keys. Default
+   * parameters are always included. '&amp;' and '=' will be percent encoded
+   * and not treated as delimiters.
    * </pre>
    *
    * <code>repeated string query_string_whitelist = 52456496;</code>
@@ -95,7 +97,9 @@ public interface BackendBucketCdnPolicyCacheKeyPolicyOrBuilder
    *
    *
    * <pre>
-   * Names of query string parameters to include in cache keys. Default parameters are always included. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+   * Names of query string parameters to include in cache keys. Default
+   * parameters are always included. '&amp;' and '=' will be percent encoded
+   * and not treated as delimiters.
    * </pre>
    *
    * <code>repeated string query_string_whitelist = 52456496;</code>
@@ -108,7 +112,9 @@ public interface BackendBucketCdnPolicyCacheKeyPolicyOrBuilder
    *
    *
    * <pre>
-   * Names of query string parameters to include in cache keys. Default parameters are always included. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+   * Names of query string parameters to include in cache keys. Default
+   * parameters are always included. '&amp;' and '=' will be percent encoded
+   * and not treated as delimiters.
    * </pre>
    *
    * <code>repeated string query_string_whitelist = 52456496;</code>
@@ -122,7 +128,9 @@ public interface BackendBucketCdnPolicyCacheKeyPolicyOrBuilder
    *
    *
    * <pre>
-   * Names of query string parameters to include in cache keys. Default parameters are always included. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+   * Names of query string parameters to include in cache keys. Default
+   * parameters are always included. '&amp;' and '=' will be percent encoded
+   * and not treated as delimiters.
    * </pre>
    *
    * <code>repeated string query_string_whitelist = 52456496;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,6 +73,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Enum that represents the types of invalid token reasons.
+   * Ensure that applications can handle values not explicitly listed.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.recaptchaenterprise.v1.TokenProperties.InvalidReason}
@@ -149,6 +150,23 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      * <code>BROWSER_ERROR = 6;</code>
      */
     BROWSER_ERROR(6),
+    /**
+     *
+     *
+     * <pre>
+     * The action provided at token generation was different than
+     * the `expected_action` in the assessment request. The comparison is
+     * case-insensitive. This reason can only be returned if all of the
+     * following are true:
+     *
+     *   - your `site_key` has the POLICY_BASED_CHALLENGE integration type
+     *   - you set an action score threshold higher than 0.0
+     *   - you provided a non-empty `expected_action`
+     * </pre>
+     *
+     * <code>UNEXPECTED_ACTION = 7;</code>
+     */
+    UNEXPECTED_ACTION(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -230,6 +248,24 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      */
     public static final int BROWSER_ERROR_VALUE = 6;
 
+    /**
+     *
+     *
+     * <pre>
+     * The action provided at token generation was different than
+     * the `expected_action` in the assessment request. The comparison is
+     * case-insensitive. This reason can only be returned if all of the
+     * following are true:
+     *
+     *   - your `site_key` has the POLICY_BASED_CHALLENGE integration type
+     *   - you set an action score threshold higher than 0.0
+     *   - you provided a non-empty `expected_action`
+     * </pre>
+     *
+     * <code>UNEXPECTED_ACTION = 7;</code>
+     */
+    public static final int UNEXPECTED_ACTION_VALUE = 7;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -268,6 +304,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
           return MISSING;
         case 6:
           return BROWSER_ERROR;
+        case 7:
+          return UNEXPECTED_ACTION;
         default:
           return null;
       }

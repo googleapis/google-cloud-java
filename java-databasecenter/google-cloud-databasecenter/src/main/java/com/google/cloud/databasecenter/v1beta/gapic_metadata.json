@@ -10,6 +10,12 @@
         "grpc": {
           "libraryClient": "DatabaseCenterClient",
           "rpcs": {
+            "AggregateFleet": {
+              "methods": ["aggregateFleet", "aggregateFleetPagedCallable", "aggregateFleetCallable"]
+            },
+            "QueryDatabaseResourceGroups": {
+              "methods": ["queryDatabaseResourceGroups", "queryDatabaseResourceGroupsPagedCallable", "queryDatabaseResourceGroupsCallable"]
+            },
             "QueryProducts": {
               "methods": ["queryProducts", "queryProductsPagedCallable", "queryProductsCallable"]
             }

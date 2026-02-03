@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,12 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * The specification for fault injection introduced into traffic to test the resiliency of clients to backend service failure. As part of fault injection, when clients send requests to a backend service, delays can be introduced by the load balancer on a percentage of requests before sending those request to the backend service. Similarly requests from clients can be aborted by the load balancer for a percentage of requests.
+ * The specification for fault injection introduced into traffic to test
+ * the resiliency of clients to backend service failure. As part of fault
+ * injection, when clients send requests to a backend service, delays can be
+ * introduced by the load balancer on a percentage of requests before sending
+ * those request to the backend service. Similarly requests from clients can be
+ * aborted by the load balancer for a percentage of requests.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.HttpFaultInjection}
@@ -70,7 +75,8 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The specification for how client requests are aborted as part of fault injection.
+   * The specification for how client requests are aborted as part of fault
+   * injection.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.HttpFaultAbort abort = 92611376;</code>
@@ -86,7 +92,8 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The specification for how client requests are aborted as part of fault injection.
+   * The specification for how client requests are aborted as part of fault
+   * injection.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.HttpFaultAbort abort = 92611376;</code>
@@ -104,7 +111,8 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The specification for how client requests are aborted as part of fault injection.
+   * The specification for how client requests are aborted as part of fault
+   * injection.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.HttpFaultAbort abort = 92611376;</code>
@@ -123,7 +131,8 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The specification for how client requests are delayed as part of fault injection, before being sent to a backend service.
+   * The specification for how client requests are delayed as part of fault
+   * injection, before being sent to a backend service.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.HttpFaultDelay delay = 95467907;</code>
@@ -139,7 +148,8 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The specification for how client requests are delayed as part of fault injection, before being sent to a backend service.
+   * The specification for how client requests are delayed as part of fault
+   * injection, before being sent to a backend service.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.HttpFaultDelay delay = 95467907;</code>
@@ -157,7 +167,8 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The specification for how client requests are delayed as part of fault injection, before being sent to a backend service.
+   * The specification for how client requests are delayed as part of fault
+   * injection, before being sent to a backend service.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.HttpFaultDelay delay = 95467907;</code>
@@ -352,7 +363,12 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The specification for fault injection introduced into traffic to test the resiliency of clients to backend service failure. As part of fault injection, when clients send requests to a backend service, delays can be introduced by the load balancer on a percentage of requests before sending those request to the backend service. Similarly requests from clients can be aborted by the load balancer for a percentage of requests.
+   * The specification for fault injection introduced into traffic to test
+   * the resiliency of clients to backend service failure. As part of fault
+   * injection, when clients send requests to a backend service, delays can be
+   * introduced by the load balancer on a percentage of requests before sending
+   * those request to the backend service. Similarly requests from clients can be
+   * aborted by the load balancer for a percentage of requests.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.HttpFaultInjection}
@@ -574,7 +590,8 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The specification for how client requests are aborted as part of fault injection.
+     * The specification for how client requests are aborted as part of fault
+     * injection.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpFaultAbort abort = 92611376;</code>
@@ -589,7 +606,8 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The specification for how client requests are aborted as part of fault injection.
+     * The specification for how client requests are aborted as part of fault
+     * injection.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpFaultAbort abort = 92611376;</code>
@@ -610,7 +628,8 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The specification for how client requests are aborted as part of fault injection.
+     * The specification for how client requests are aborted as part of fault
+     * injection.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpFaultAbort abort = 92611376;</code>
@@ -633,7 +652,8 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The specification for how client requests are aborted as part of fault injection.
+     * The specification for how client requests are aborted as part of fault
+     * injection.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpFaultAbort abort = 92611376;</code>
@@ -653,7 +673,8 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The specification for how client requests are aborted as part of fault injection.
+     * The specification for how client requests are aborted as part of fault
+     * injection.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpFaultAbort abort = 92611376;</code>
@@ -681,7 +702,8 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The specification for how client requests are aborted as part of fault injection.
+     * The specification for how client requests are aborted as part of fault
+     * injection.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpFaultAbort abort = 92611376;</code>
@@ -701,7 +723,8 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The specification for how client requests are aborted as part of fault injection.
+     * The specification for how client requests are aborted as part of fault
+     * injection.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpFaultAbort abort = 92611376;</code>
@@ -716,7 +739,8 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The specification for how client requests are aborted as part of fault injection.
+     * The specification for how client requests are aborted as part of fault
+     * injection.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpFaultAbort abort = 92611376;</code>
@@ -735,7 +759,8 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The specification for how client requests are aborted as part of fault injection.
+     * The specification for how client requests are aborted as part of fault
+     * injection.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpFaultAbort abort = 92611376;</code>
@@ -768,7 +793,8 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The specification for how client requests are delayed as part of fault injection, before being sent to a backend service.
+     * The specification for how client requests are delayed as part of fault
+     * injection, before being sent to a backend service.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpFaultDelay delay = 95467907;</code>
@@ -783,7 +809,8 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The specification for how client requests are delayed as part of fault injection, before being sent to a backend service.
+     * The specification for how client requests are delayed as part of fault
+     * injection, before being sent to a backend service.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpFaultDelay delay = 95467907;</code>
@@ -804,7 +831,8 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The specification for how client requests are delayed as part of fault injection, before being sent to a backend service.
+     * The specification for how client requests are delayed as part of fault
+     * injection, before being sent to a backend service.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpFaultDelay delay = 95467907;</code>
@@ -827,7 +855,8 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The specification for how client requests are delayed as part of fault injection, before being sent to a backend service.
+     * The specification for how client requests are delayed as part of fault
+     * injection, before being sent to a backend service.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpFaultDelay delay = 95467907;</code>
@@ -847,7 +876,8 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The specification for how client requests are delayed as part of fault injection, before being sent to a backend service.
+     * The specification for how client requests are delayed as part of fault
+     * injection, before being sent to a backend service.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpFaultDelay delay = 95467907;</code>
@@ -875,7 +905,8 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The specification for how client requests are delayed as part of fault injection, before being sent to a backend service.
+     * The specification for how client requests are delayed as part of fault
+     * injection, before being sent to a backend service.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpFaultDelay delay = 95467907;</code>
@@ -895,7 +926,8 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The specification for how client requests are delayed as part of fault injection, before being sent to a backend service.
+     * The specification for how client requests are delayed as part of fault
+     * injection, before being sent to a backend service.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpFaultDelay delay = 95467907;</code>
@@ -910,7 +942,8 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The specification for how client requests are delayed as part of fault injection, before being sent to a backend service.
+     * The specification for how client requests are delayed as part of fault
+     * injection, before being sent to a backend service.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpFaultDelay delay = 95467907;</code>
@@ -929,7 +962,8 @@ public final class HttpFaultInjection extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The specification for how client requests are delayed as part of fault injection, before being sent to a backend service.
+     * The specification for how client requests are delayed as part of fault
+     * injection, before being sent to a backend service.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpFaultDelay delay = 95467907;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -80,7 +80,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unspecified. Defaults to GSUTIL.
+     * Unspecified defaults to GSUTIL.
      * </pre>
      *
      * <code>SOURCE_FETCHER_UNSPECIFIED = 0;</code>
@@ -113,7 +113,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unspecified. Defaults to GSUTIL.
+     * Unspecified defaults to GSUTIL.
      * </pre>
      *
      * <code>SOURCE_FETCHER_UNSPECIFIED = 0;</code>
@@ -291,13 +291,13 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud Storage object containing the source.
+   * Required. Cloud Storage object containing the source.
    *
    * This object must be a zipped (`.zip`) or gzipped archive file (`.tar.gz`)
    * containing source to build.
    * </pre>
    *
-   * <code>string object = 2;</code>
+   * <code>string object = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The object.
    */
@@ -318,13 +318,13 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud Storage object containing the source.
+   * Required. Cloud Storage object containing the source.
    *
    * This object must be a zipped (`.zip`) or gzipped archive file (`.tar.gz`)
    * containing source to build.
    * </pre>
    *
-   * <code>string object = 2;</code>
+   * <code>string object = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for object.
    */
@@ -348,11 +348,11 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud Storage generation for the object. If the generation is
+   * Optional. Cloud Storage generation for the object. If the generation is
    * omitted, the latest generation will be used.
    * </pre>
    *
-   * <code>int64 generation = 3;</code>
+   * <code>int64 generation = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The generation.
    */
@@ -368,7 +368,8 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Option to specify the tool to fetch the source file for the build.
+   * Optional. Option to specify the tool to fetch the source file for the
+   * build.
    * </pre>
    *
    * <code>
@@ -386,7 +387,8 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Option to specify the tool to fetch the source file for the build.
+   * Optional. Option to specify the tool to fetch the source file for the
+   * build.
    * </pre>
    *
    * <code>
@@ -944,13 +946,13 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Storage object containing the source.
+     * Required. Cloud Storage object containing the source.
      *
      * This object must be a zipped (`.zip`) or gzipped archive file (`.tar.gz`)
      * containing source to build.
      * </pre>
      *
-     * <code>string object = 2;</code>
+     * <code>string object = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The object.
      */
@@ -970,13 +972,13 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Storage object containing the source.
+     * Required. Cloud Storage object containing the source.
      *
      * This object must be a zipped (`.zip`) or gzipped archive file (`.tar.gz`)
      * containing source to build.
      * </pre>
      *
-     * <code>string object = 2;</code>
+     * <code>string object = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for object.
      */
@@ -996,13 +998,13 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Storage object containing the source.
+     * Required. Cloud Storage object containing the source.
      *
      * This object must be a zipped (`.zip`) or gzipped archive file (`.tar.gz`)
      * containing source to build.
      * </pre>
      *
-     * <code>string object = 2;</code>
+     * <code>string object = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The object to set.
      * @return This builder for chaining.
@@ -1021,13 +1023,13 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Storage object containing the source.
+     * Required. Cloud Storage object containing the source.
      *
      * This object must be a zipped (`.zip`) or gzipped archive file (`.tar.gz`)
      * containing source to build.
      * </pre>
      *
-     * <code>string object = 2;</code>
+     * <code>string object = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1042,13 +1044,13 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Storage object containing the source.
+     * Required. Cloud Storage object containing the source.
      *
      * This object must be a zipped (`.zip`) or gzipped archive file (`.tar.gz`)
      * containing source to build.
      * </pre>
      *
-     * <code>string object = 2;</code>
+     * <code>string object = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for object to set.
      * @return This builder for chaining.
@@ -1070,11 +1072,11 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Storage generation for the object. If the generation is
+     * Optional. Cloud Storage generation for the object. If the generation is
      * omitted, the latest generation will be used.
      * </pre>
      *
-     * <code>int64 generation = 3;</code>
+     * <code>int64 generation = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The generation.
      */
@@ -1087,11 +1089,11 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Storage generation for the object. If the generation is
+     * Optional. Cloud Storage generation for the object. If the generation is
      * omitted, the latest generation will be used.
      * </pre>
      *
-     * <code>int64 generation = 3;</code>
+     * <code>int64 generation = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The generation to set.
      * @return This builder for chaining.
@@ -1108,11 +1110,11 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Storage generation for the object. If the generation is
+     * Optional. Cloud Storage generation for the object. If the generation is
      * omitted, the latest generation will be used.
      * </pre>
      *
-     * <code>int64 generation = 3;</code>
+     * <code>int64 generation = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1129,7 +1131,8 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Option to specify the tool to fetch the source file for the build.
+     * Optional. Option to specify the tool to fetch the source file for the
+     * build.
      * </pre>
      *
      * <code>
@@ -1147,7 +1150,8 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Option to specify the tool to fetch the source file for the build.
+     * Optional. Option to specify the tool to fetch the source file for the
+     * build.
      * </pre>
      *
      * <code>
@@ -1168,7 +1172,8 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Option to specify the tool to fetch the source file for the build.
+     * Optional. Option to specify the tool to fetch the source file for the
+     * build.
      * </pre>
      *
      * <code>
@@ -1190,7 +1195,8 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Option to specify the tool to fetch the source file for the build.
+     * Optional. Option to specify the tool to fetch the source file for the
+     * build.
      * </pre>
      *
      * <code>
@@ -1214,7 +1220,8 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Option to specify the tool to fetch the source file for the build.
+     * Optional. Option to specify the tool to fetch the source file for the
+     * build.
      * </pre>
      *
      * <code>

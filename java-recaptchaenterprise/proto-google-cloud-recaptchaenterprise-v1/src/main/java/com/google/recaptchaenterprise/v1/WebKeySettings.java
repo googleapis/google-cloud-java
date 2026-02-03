@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,6 +71,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Enum that represents the integration types for web keys.
+   * Ensure that applications can handle values not explicitly listed.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.recaptchaenterprise.v1.WebKeySettings.IntegrationType}
@@ -121,6 +122,17 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * <code>INVISIBLE = 3;</code>
      */
     INVISIBLE(3),
+    /**
+     *
+     *
+     * <pre>
+     * Displays a visual challenge or not depending on the user risk analysis
+     * score.
+     * </pre>
+     *
+     * <code>POLICY_BASED_CHALLENGE = 5;</code>
+     */
+    POLICY_BASED_CHALLENGE(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -173,6 +185,18 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int INVISIBLE_VALUE = 3;
 
+    /**
+     *
+     *
+     * <pre>
+     * Displays a visual challenge or not depending on the user risk analysis
+     * score.
+     * </pre>
+     *
+     * <code>POLICY_BASED_CHALLENGE = 5;</code>
+     */
+    public static final int POLICY_BASED_CHALLENGE_VALUE = 5;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -205,6 +229,8 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
           return CHECKBOX;
         case 3:
           return INVISIBLE;
+        case 5:
+          return POLICY_BASED_CHALLENGE;
         default:
           return null;
       }
@@ -266,6 +292,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Enum that represents the possible challenge frequency and difficulty
    * configurations for a web key.
+   * Ensure that applications can handle values not explicitly listed.
    * </pre>
    *
    * Protobuf enum {@code
@@ -447,6 +474,2074 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSecurityPreference)
   }
 
+  public interface ActionSettingsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. A challenge is triggered if the end-user score is below that
+     * threshold. Value must be between 0 and 1 (inclusive).
+     * </pre>
+     *
+     * <code>float score_threshold = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The scoreThreshold.
+     */
+    float getScoreThreshold();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Per-action challenge settings.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings}
+   */
+  public static final class ActionSettings extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings)
+      ActionSettingsOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use ActionSettings.newBuilder() to construct.
+    private ActionSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ActionSettings() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ActionSettings();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
+          .internal_static_google_cloud_recaptchaenterprise_v1_WebKeySettings_ActionSettings_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
+          .internal_static_google_cloud_recaptchaenterprise_v1_WebKeySettings_ActionSettings_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings.class,
+              com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings.Builder.class);
+    }
+
+    public static final int SCORE_THRESHOLD_FIELD_NUMBER = 1;
+    private float scoreThreshold_ = 0F;
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. A challenge is triggered if the end-user score is below that
+     * threshold. Value must be between 0 and 1 (inclusive).
+     * </pre>
+     *
+     * <code>float score_threshold = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The scoreThreshold.
+     */
+    @java.lang.Override
+    public float getScoreThreshold() {
+      return scoreThreshold_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (java.lang.Float.floatToRawIntBits(scoreThreshold_) != 0) {
+        output.writeFloat(1, scoreThreshold_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (java.lang.Float.floatToRawIntBits(scoreThreshold_) != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, scoreThreshold_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings)) {
+        return super.equals(obj);
+      }
+      com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings other =
+          (com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings) obj;
+
+      if (java.lang.Float.floatToIntBits(getScoreThreshold())
+          != java.lang.Float.floatToIntBits(other.getScoreThreshold())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SCORE_THRESHOLD_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getScoreThreshold());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Per-action challenge settings.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings)
+        com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettingsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
+            .internal_static_google_cloud_recaptchaenterprise_v1_WebKeySettings_ActionSettings_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
+            .internal_static_google_cloud_recaptchaenterprise_v1_WebKeySettings_ActionSettings_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings.class,
+                com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings.Builder.class);
+      }
+
+      // Construct using
+      // com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        scoreThreshold_ = 0F;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
+            .internal_static_google_cloud_recaptchaenterprise_v1_WebKeySettings_ActionSettings_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings
+          getDefaultInstanceForType() {
+        return com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings build() {
+        com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings buildPartial() {
+        com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings result =
+            new com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.scoreThreshold_ = scoreThreshold_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings) {
+          return mergeFrom((com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings other) {
+        if (other
+            == com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings.getDefaultInstance())
+          return this;
+        if (other.getScoreThreshold() != 0F) {
+          setScoreThreshold(other.getScoreThreshold());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 13:
+                {
+                  scoreThreshold_ = input.readFloat();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 13
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private float scoreThreshold_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. A challenge is triggered if the end-user score is below that
+       * threshold. Value must be between 0 and 1 (inclusive).
+       * </pre>
+       *
+       * <code>float score_threshold = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The scoreThreshold.
+       */
+      @java.lang.Override
+      public float getScoreThreshold() {
+        return scoreThreshold_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. A challenge is triggered if the end-user score is below that
+       * threshold. Value must be between 0 and 1 (inclusive).
+       * </pre>
+       *
+       * <code>float score_threshold = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The scoreThreshold to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScoreThreshold(float value) {
+
+        scoreThreshold_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. A challenge is triggered if the end-user score is below that
+       * threshold. Value must be between 0 and 1 (inclusive).
+       * </pre>
+       *
+       * <code>float score_threshold = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearScoreThreshold() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        scoreThreshold_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings)
+    private static final com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings();
+    }
+
+    public static com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ActionSettings> PARSER =
+        new com.google.protobuf.AbstractParser<ActionSettings>() {
+          @java.lang.Override
+          public ActionSettings parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ActionSettings> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ActionSettings> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface ChallengeSettingsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Defines when a challenge is triggered (unless the default
+     * threshold is overridden for the given action, see `action_settings`).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings default_settings = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the defaultSettings field is set.
+     */
+    boolean hasDefaultSettings();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Defines when a challenge is triggered (unless the default
+     * threshold is overridden for the given action, see `action_settings`).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings default_settings = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The defaultSettings.
+     */
+    com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings getDefaultSettings();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Defines when a challenge is triggered (unless the default
+     * threshold is overridden for the given action, see `action_settings`).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings default_settings = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettingsOrBuilder
+        getDefaultSettingsOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The action to score threshold map.
+     * The action name should be the same as the action name passed in the
+     * `data-action` attribute
+     * (see https://cloud.google.com/recaptcha/docs/actions-website).
+     * Action names are case-insensitive.
+     * There is a maximum of 100 action settings.
+     * An action name has a maximum length of 100.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings&gt; action_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    int getActionSettingsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The action to score threshold map.
+     * The action name should be the same as the action name passed in the
+     * `data-action` attribute
+     * (see https://cloud.google.com/recaptcha/docs/actions-website).
+     * Action names are case-insensitive.
+     * There is a maximum of 100 action settings.
+     * An action name has a maximum length of 100.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings&gt; action_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    boolean containsActionSettings(java.lang.String key);
+
+    /** Use {@link #getActionSettingsMap()} instead. */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings>
+        getActionSettings();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The action to score threshold map.
+     * The action name should be the same as the action name passed in the
+     * `data-action` attribute
+     * (see https://cloud.google.com/recaptcha/docs/actions-website).
+     * Action names are case-insensitive.
+     * There is a maximum of 100 action settings.
+     * An action name has a maximum length of 100.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings&gt; action_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.Map<java.lang.String, com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings>
+        getActionSettingsMap();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The action to score threshold map.
+     * The action name should be the same as the action name passed in the
+     * `data-action` attribute
+     * (see https://cloud.google.com/recaptcha/docs/actions-website).
+     * Action names are case-insensitive.
+     * There is a maximum of 100 action settings.
+     * An action name has a maximum length of 100.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings&gt; action_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    /* nullable */
+    com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings getActionSettingsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings defaultValue);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The action to score threshold map.
+     * The action name should be the same as the action name passed in the
+     * `data-action` attribute
+     * (see https://cloud.google.com/recaptcha/docs/actions-website).
+     * Action names are case-insensitive.
+     * There is a maximum of 100 action settings.
+     * An action name has a maximum length of 100.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings&gt; action_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings getActionSettingsOrThrow(
+        java.lang.String key);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Settings for POLICY_BASED_CHALLENGE keys to control when a challenge is
+   * triggered.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings}
+   */
+  public static final class ChallengeSettings extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings)
+      ChallengeSettingsOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use ChallengeSettings.newBuilder() to construct.
+    private ChallengeSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ChallengeSettings() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ChallengeSettings();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
+          .internal_static_google_cloud_recaptchaenterprise_v1_WebKeySettings_ChallengeSettings_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 2:
+          return internalGetActionSettings();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
+          .internal_static_google_cloud_recaptchaenterprise_v1_WebKeySettings_ChallengeSettings_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings.class,
+              com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int DEFAULT_SETTINGS_FIELD_NUMBER = 1;
+    private com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings defaultSettings_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Defines when a challenge is triggered (unless the default
+     * threshold is overridden for the given action, see `action_settings`).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings default_settings = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the defaultSettings field is set.
+     */
+    @java.lang.Override
+    public boolean hasDefaultSettings() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Defines when a challenge is triggered (unless the default
+     * threshold is overridden for the given action, see `action_settings`).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings default_settings = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The defaultSettings.
+     */
+    @java.lang.Override
+    public com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings getDefaultSettings() {
+      return defaultSettings_ == null
+          ? com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings.getDefaultInstance()
+          : defaultSettings_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Defines when a challenge is triggered (unless the default
+     * threshold is overridden for the given action, see `action_settings`).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings default_settings = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettingsOrBuilder
+        getDefaultSettingsOrBuilder() {
+      return defaultSettings_ == null
+          ? com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings.getDefaultInstance()
+          : defaultSettings_;
+    }
+
+    public static final int ACTION_SETTINGS_FIELD_NUMBER = 2;
+
+    private static final class ActionSettingsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+              java.lang.String, com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings>
+          defaultEntry =
+              com.google.protobuf.MapEntry
+                  .<java.lang.String,
+                      com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings>
+                      newDefaultInstance(
+                          com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
+                              .internal_static_google_cloud_recaptchaenterprise_v1_WebKeySettings_ChallengeSettings_ActionSettingsEntry_descriptor,
+                          com.google.protobuf.WireFormat.FieldType.STRING,
+                          "",
+                          com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                          com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings
+                              .getDefaultInstance());
+    }
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings>
+        actionSettings_;
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings>
+        internalGetActionSettings() {
+      if (actionSettings_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ActionSettingsDefaultEntryHolder.defaultEntry);
+      }
+      return actionSettings_;
+    }
+
+    public int getActionSettingsCount() {
+      return internalGetActionSettings().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The action to score threshold map.
+     * The action name should be the same as the action name passed in the
+     * `data-action` attribute
+     * (see https://cloud.google.com/recaptcha/docs/actions-website).
+     * Action names are case-insensitive.
+     * There is a maximum of 100 action settings.
+     * An action name has a maximum length of 100.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings&gt; action_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsActionSettings(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetActionSettings().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getActionSettingsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings>
+        getActionSettings() {
+      return getActionSettingsMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The action to score threshold map.
+     * The action name should be the same as the action name passed in the
+     * `data-action` attribute
+     * (see https://cloud.google.com/recaptcha/docs/actions-website).
+     * Action names are case-insensitive.
+     * There is a maximum of 100 action settings.
+     * An action name has a maximum length of 100.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings&gt; action_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<
+            java.lang.String, com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings>
+        getActionSettingsMap() {
+      return internalGetActionSettings().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The action to score threshold map.
+     * The action name should be the same as the action name passed in the
+     * `data-action` attribute
+     * (see https://cloud.google.com/recaptcha/docs/actions-website).
+     * Action names are case-insensitive.
+     * There is a maximum of 100 action settings.
+     * An action name has a maximum length of 100.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings&gt; action_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings
+        getActionSettingsOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<
+              java.lang.String, com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings>
+          map = internalGetActionSettings().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The action to score threshold map.
+     * The action name should be the same as the action name passed in the
+     * `data-action` attribute
+     * (see https://cloud.google.com/recaptcha/docs/actions-website).
+     * Action names are case-insensitive.
+     * There is a maximum of 100 action settings.
+     * An action name has a maximum length of 100.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings&gt; action_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings getActionSettingsOrThrow(
+        java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<
+              java.lang.String, com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings>
+          map = internalGetActionSettings().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getDefaultSettings());
+      }
+      com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+          output, internalGetActionSettings(), ActionSettingsDefaultEntryHolder.defaultEntry, 2);
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getDefaultSettings());
+      }
+      for (java.util.Map.Entry<
+              java.lang.String, com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings>
+          entry : internalGetActionSettings().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<
+                java.lang.String, com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings>
+            actionSettings__ =
+                ActionSettingsDefaultEntryHolder.defaultEntry
+                    .newBuilderForType()
+                    .setKey(entry.getKey())
+                    .setValue(entry.getValue())
+                    .build();
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, actionSettings__);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings)) {
+        return super.equals(obj);
+      }
+      com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings other =
+          (com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings) obj;
+
+      if (hasDefaultSettings() != other.hasDefaultSettings()) return false;
+      if (hasDefaultSettings()) {
+        if (!getDefaultSettings().equals(other.getDefaultSettings())) return false;
+      }
+      if (!internalGetActionSettings().equals(other.internalGetActionSettings())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasDefaultSettings()) {
+        hash = (37 * hash) + DEFAULT_SETTINGS_FIELD_NUMBER;
+        hash = (53 * hash) + getDefaultSettings().hashCode();
+      }
+      if (!internalGetActionSettings().getMap().isEmpty()) {
+        hash = (37 * hash) + ACTION_SETTINGS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetActionSettings().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Settings for POLICY_BASED_CHALLENGE keys to control when a challenge is
+     * triggered.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings)
+        com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettingsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
+            .internal_static_google_cloud_recaptchaenterprise_v1_WebKeySettings_ChallengeSettings_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 2:
+            return internalGetActionSettings();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 2:
+            return internalGetMutableActionSettings();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
+            .internal_static_google_cloud_recaptchaenterprise_v1_WebKeySettings_ChallengeSettings_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings.class,
+                com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings.Builder.class);
+      }
+
+      // Construct using
+      // com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getDefaultSettingsFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        defaultSettings_ = null;
+        if (defaultSettingsBuilder_ != null) {
+          defaultSettingsBuilder_.dispose();
+          defaultSettingsBuilder_ = null;
+        }
+        internalGetMutableActionSettings().clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
+            .internal_static_google_cloud_recaptchaenterprise_v1_WebKeySettings_ChallengeSettings_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings
+          getDefaultInstanceForType() {
+        return com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings build() {
+        com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings buildPartial() {
+        com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings result =
+            new com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.defaultSettings_ =
+              defaultSettingsBuilder_ == null ? defaultSettings_ : defaultSettingsBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.actionSettings_ =
+              internalGetActionSettings().build(ActionSettingsDefaultEntryHolder.defaultEntry);
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings) {
+          return mergeFrom(
+              (com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings other) {
+        if (other
+            == com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings
+                .getDefaultInstance()) return this;
+        if (other.hasDefaultSettings()) {
+          mergeDefaultSettings(other.getDefaultSettings());
+        }
+        internalGetMutableActionSettings().mergeFrom(other.internalGetActionSettings());
+        bitField0_ |= 0x00000002;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getDefaultSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  com.google.protobuf.MapEntry<
+                          java.lang.String,
+                          com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings>
+                      actionSettings__ =
+                          input.readMessage(
+                              ActionSettingsDefaultEntryHolder.defaultEntry.getParserForType(),
+                              extensionRegistry);
+                  internalGetMutableActionSettings()
+                      .ensureBuilderMap()
+                      .put(actionSettings__.getKey(), actionSettings__.getValue());
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings defaultSettings_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings,
+              com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings.Builder,
+              com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettingsOrBuilder>
+          defaultSettingsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Defines when a challenge is triggered (unless the default
+       * threshold is overridden for the given action, see `action_settings`).
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings default_settings = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the defaultSettings field is set.
+       */
+      public boolean hasDefaultSettings() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Defines when a challenge is triggered (unless the default
+       * threshold is overridden for the given action, see `action_settings`).
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings default_settings = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The defaultSettings.
+       */
+      public com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings getDefaultSettings() {
+        if (defaultSettingsBuilder_ == null) {
+          return defaultSettings_ == null
+              ? com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings.getDefaultInstance()
+              : defaultSettings_;
+        } else {
+          return defaultSettingsBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Defines when a challenge is triggered (unless the default
+       * threshold is overridden for the given action, see `action_settings`).
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings default_settings = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setDefaultSettings(
+          com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings value) {
+        if (defaultSettingsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          defaultSettings_ = value;
+        } else {
+          defaultSettingsBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Defines when a challenge is triggered (unless the default
+       * threshold is overridden for the given action, see `action_settings`).
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings default_settings = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setDefaultSettings(
+          com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings.Builder builderForValue) {
+        if (defaultSettingsBuilder_ == null) {
+          defaultSettings_ = builderForValue.build();
+        } else {
+          defaultSettingsBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Defines when a challenge is triggered (unless the default
+       * threshold is overridden for the given action, see `action_settings`).
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings default_settings = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder mergeDefaultSettings(
+          com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings value) {
+        if (defaultSettingsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && defaultSettings_ != null
+              && defaultSettings_
+                  != com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings
+                      .getDefaultInstance()) {
+            getDefaultSettingsBuilder().mergeFrom(value);
+          } else {
+            defaultSettings_ = value;
+          }
+        } else {
+          defaultSettingsBuilder_.mergeFrom(value);
+        }
+        if (defaultSettings_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Defines when a challenge is triggered (unless the default
+       * threshold is overridden for the given action, see `action_settings`).
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings default_settings = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder clearDefaultSettings() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        defaultSettings_ = null;
+        if (defaultSettingsBuilder_ != null) {
+          defaultSettingsBuilder_.dispose();
+          defaultSettingsBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Defines when a challenge is triggered (unless the default
+       * threshold is overridden for the given action, see `action_settings`).
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings default_settings = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings.Builder
+          getDefaultSettingsBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getDefaultSettingsFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Defines when a challenge is triggered (unless the default
+       * threshold is overridden for the given action, see `action_settings`).
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings default_settings = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettingsOrBuilder
+          getDefaultSettingsOrBuilder() {
+        if (defaultSettingsBuilder_ != null) {
+          return defaultSettingsBuilder_.getMessageOrBuilder();
+        } else {
+          return defaultSettings_ == null
+              ? com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings.getDefaultInstance()
+              : defaultSettings_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Defines when a challenge is triggered (unless the default
+       * threshold is overridden for the given action, see `action_settings`).
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings default_settings = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings,
+              com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings.Builder,
+              com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettingsOrBuilder>
+          getDefaultSettingsFieldBuilder() {
+        if (defaultSettingsBuilder_ == null) {
+          defaultSettingsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings,
+                  com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings.Builder,
+                  com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettingsOrBuilder>(
+                  getDefaultSettings(), getParentForChildren(), isClean());
+          defaultSettings_ = null;
+        }
+        return defaultSettingsBuilder_;
+      }
+
+      private static final class ActionSettingsConverter
+          implements com.google.protobuf.MapFieldBuilder.Converter<
+              java.lang.String,
+              com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettingsOrBuilder,
+              com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings> {
+        @java.lang.Override
+        public com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings build(
+            com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettingsOrBuilder val) {
+          if (val instanceof com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings) {
+            return (com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings) val;
+          }
+          return ((com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings.Builder) val)
+              .build();
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.MapEntry<
+                java.lang.String, com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings>
+            defaultEntry() {
+          return ActionSettingsDefaultEntryHolder.defaultEntry;
+        }
+      }
+      ;
+
+      private static final ActionSettingsConverter actionSettingsConverter =
+          new ActionSettingsConverter();
+
+      private com.google.protobuf.MapFieldBuilder<
+              java.lang.String,
+              com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettingsOrBuilder,
+              com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings,
+              com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings.Builder>
+          actionSettings_;
+
+      private com.google.protobuf.MapFieldBuilder<
+              java.lang.String,
+              com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettingsOrBuilder,
+              com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings,
+              com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings.Builder>
+          internalGetActionSettings() {
+        if (actionSettings_ == null) {
+          return new com.google.protobuf.MapFieldBuilder<>(actionSettingsConverter);
+        }
+        return actionSettings_;
+      }
+
+      private com.google.protobuf.MapFieldBuilder<
+              java.lang.String,
+              com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettingsOrBuilder,
+              com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings,
+              com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings.Builder>
+          internalGetMutableActionSettings() {
+        if (actionSettings_ == null) {
+          actionSettings_ = new com.google.protobuf.MapFieldBuilder<>(actionSettingsConverter);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return actionSettings_;
+      }
+
+      public int getActionSettingsCount() {
+        return internalGetActionSettings().ensureBuilderMap().size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The action to score threshold map.
+       * The action name should be the same as the action name passed in the
+       * `data-action` attribute
+       * (see https://cloud.google.com/recaptcha/docs/actions-website).
+       * Action names are case-insensitive.
+       * There is a maximum of 100 action settings.
+       * An action name has a maximum length of 100.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings&gt; action_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public boolean containsActionSettings(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        return internalGetActionSettings().ensureBuilderMap().containsKey(key);
+      }
+
+      /** Use {@link #getActionSettingsMap()} instead. */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<
+              java.lang.String, com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings>
+          getActionSettings() {
+        return getActionSettingsMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The action to score threshold map.
+       * The action name should be the same as the action name passed in the
+       * `data-action` attribute
+       * (see https://cloud.google.com/recaptcha/docs/actions-website).
+       * Action names are case-insensitive.
+       * There is a maximum of 100 action settings.
+       * An action name has a maximum length of 100.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings&gt; action_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.Map<
+              java.lang.String, com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings>
+          getActionSettingsMap() {
+        return internalGetActionSettings().getImmutableMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The action to score threshold map.
+       * The action name should be the same as the action name passed in the
+       * `data-action` attribute
+       * (see https://cloud.google.com/recaptcha/docs/actions-website).
+       * Action names are case-insensitive.
+       * There is a maximum of 100 action settings.
+       * An action name has a maximum length of 100.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings&gt; action_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public /* nullable */ com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings
+          getActionSettingsOrDefault(
+              java.lang.String key,
+              /* nullable */
+              com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings defaultValue) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<
+                java.lang.String,
+                com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettingsOrBuilder>
+            map = internalGetMutableActionSettings().ensureBuilderMap();
+        return map.containsKey(key) ? actionSettingsConverter.build(map.get(key)) : defaultValue;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The action to score threshold map.
+       * The action name should be the same as the action name passed in the
+       * `data-action` attribute
+       * (see https://cloud.google.com/recaptcha/docs/actions-website).
+       * Action names are case-insensitive.
+       * There is a maximum of 100 action settings.
+       * An action name has a maximum length of 100.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings&gt; action_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings
+          getActionSettingsOrThrow(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<
+                java.lang.String,
+                com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettingsOrBuilder>
+            map = internalGetMutableActionSettings().ensureBuilderMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return actionSettingsConverter.build(map.get(key));
+      }
+
+      public Builder clearActionSettings() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        internalGetMutableActionSettings().clear();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The action to score threshold map.
+       * The action name should be the same as the action name passed in the
+       * `data-action` attribute
+       * (see https://cloud.google.com/recaptcha/docs/actions-website).
+       * Action names are case-insensitive.
+       * There is a maximum of 100 action settings.
+       * An action name has a maximum length of 100.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings&gt; action_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder removeActionSettings(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        internalGetMutableActionSettings().ensureBuilderMap().remove(key);
+        return this;
+      }
+
+      /** Use alternate mutation accessors instead. */
+      @java.lang.Deprecated
+      public java.util.Map<
+              java.lang.String, com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings>
+          getMutableActionSettings() {
+        bitField0_ |= 0x00000002;
+        return internalGetMutableActionSettings().ensureMessageMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The action to score threshold map.
+       * The action name should be the same as the action name passed in the
+       * `data-action` attribute
+       * (see https://cloud.google.com/recaptcha/docs/actions-website).
+       * Action names are case-insensitive.
+       * There is a maximum of 100 action settings.
+       * An action name has a maximum length of 100.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings&gt; action_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder putActionSettings(
+          java.lang.String key,
+          com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings value) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        if (value == null) {
+          throw new NullPointerException("map value");
+        }
+        internalGetMutableActionSettings().ensureBuilderMap().put(key, value);
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The action to score threshold map.
+       * The action name should be the same as the action name passed in the
+       * `data-action` attribute
+       * (see https://cloud.google.com/recaptcha/docs/actions-website).
+       * Action names are case-insensitive.
+       * There is a maximum of 100 action settings.
+       * An action name has a maximum length of 100.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings&gt; action_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder putAllActionSettings(
+          java.util.Map<
+                  java.lang.String, com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings>
+              values) {
+        for (java.util.Map.Entry<
+                java.lang.String, com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings>
+            e : values.entrySet()) {
+          if (e.getKey() == null || e.getValue() == null) {
+            throw new NullPointerException();
+          }
+        }
+        internalGetMutableActionSettings().ensureBuilderMap().putAll(values);
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The action to score threshold map.
+       * The action name should be the same as the action name passed in the
+       * `data-action` attribute
+       * (see https://cloud.google.com/recaptcha/docs/actions-website).
+       * Action names are case-insensitive.
+       * There is a maximum of 100 action settings.
+       * An action name has a maximum length of 100.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.recaptchaenterprise.v1.WebKeySettings.ActionSettings&gt; action_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings.Builder
+          putActionSettingsBuilderIfAbsent(java.lang.String key) {
+        java.util.Map<
+                java.lang.String,
+                com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettingsOrBuilder>
+            builderMap = internalGetMutableActionSettings().ensureBuilderMap();
+        com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettingsOrBuilder entry =
+            builderMap.get(key);
+        if (entry == null) {
+          entry = com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings.newBuilder();
+          builderMap.put(key, entry);
+        }
+        if (entry instanceof com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings) {
+          entry =
+              ((com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings) entry).toBuilder();
+          builderMap.put(key, entry);
+        }
+        return (com.google.recaptchaenterprise.v1.WebKeySettings.ActionSettings.Builder) entry;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings)
+    private static final com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings();
+    }
+
+    public static com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ChallengeSettings> PARSER =
+        new com.google.protobuf.AbstractParser<ChallengeSettings>() {
+          @java.lang.Override
+          public ChallengeSettings parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ChallengeSettings> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ChallengeSettings> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int bitField0_;
   public static final int ALLOW_ALL_DOMAINS_FIELD_NUMBER = 3;
   private boolean allowAllDomains_ = false;
 
@@ -480,6 +2575,10 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    * subdomains of an allowed domain are automatically allowed. A valid domain
    * requires a host and must not include any path, port, query or fragment.
    * Examples: 'example.com' or 'subdomain.example.com'
+   * Each key supports a maximum of 250 domains. To use a key on more domains,
+   * set `allow_all_domains` to true. When this is set, you are responsible for
+   * validating the hostname by checking the `token_properties.hostname` field
+   * in each assessment response against your list of allowed domains.
    * </pre>
    *
    * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -498,6 +2597,10 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    * subdomains of an allowed domain are automatically allowed. A valid domain
    * requires a host and must not include any path, port, query or fragment.
    * Examples: 'example.com' or 'subdomain.example.com'
+   * Each key supports a maximum of 250 domains. To use a key on more domains,
+   * set `allow_all_domains` to true. When this is set, you are responsible for
+   * validating the hostname by checking the `token_properties.hostname` field
+   * in each assessment response against your list of allowed domains.
    * </pre>
    *
    * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -516,6 +2619,10 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    * subdomains of an allowed domain are automatically allowed. A valid domain
    * requires a host and must not include any path, port, query or fragment.
    * Examples: 'example.com' or 'subdomain.example.com'
+   * Each key supports a maximum of 250 domains. To use a key on more domains,
+   * set `allow_all_domains` to true. When this is set, you are responsible for
+   * validating the hostname by checking the `token_properties.hostname` field
+   * in each assessment response against your list of allowed domains.
    * </pre>
    *
    * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -535,6 +2642,10 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    * subdomains of an allowed domain are automatically allowed. A valid domain
    * requires a host and must not include any path, port, query or fragment.
    * Examples: 'example.com' or 'subdomain.example.com'
+   * Each key supports a maximum of 250 domains. To use a key on more domains,
+   * set `allow_all_domains` to true. When this is set, you are responsible for
+   * validating the hostname by checking the `token_properties.hostname` field
+   * in each assessment response against your list of allowed domains.
    * </pre>
    *
    * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -619,7 +2730,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Settings for the frequency and difficulty at which this key
    * triggers captcha challenges. This should only be specified for
-   * IntegrationTypes CHECKBOX and INVISIBLE and SCORE_AND_CHALLENGE.
+   * `IntegrationType` CHECKBOX, INVISIBLE or POLICY_BASED_CHALLENGE.
    * </pre>
    *
    * <code>
@@ -639,7 +2750,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Settings for the frequency and difficulty at which this key
    * triggers captcha challenges. This should only be specified for
-   * IntegrationTypes CHECKBOX and INVISIBLE and SCORE_AND_CHALLENGE.
+   * `IntegrationType` CHECKBOX, INVISIBLE or POLICY_BASED_CHALLENGE.
    * </pre>
    *
    * <code>
@@ -657,6 +2768,66 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
     return result == null
         ? com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSecurityPreference.UNRECOGNIZED
         : result;
+  }
+
+  public static final int CHALLENGE_SETTINGS_FIELD_NUMBER = 6;
+  private com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings challengeSettings_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Challenge settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings challenge_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the challengeSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasChallengeSettings() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Challenge settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings challenge_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The challengeSettings.
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings getChallengeSettings() {
+    return challengeSettings_ == null
+        ? com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings.getDefaultInstance()
+        : challengeSettings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Challenge settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings challenge_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettingsOrBuilder
+      getChallengeSettingsOrBuilder() {
+    return challengeSettings_ == null
+        ? com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings.getDefaultInstance()
+        : challengeSettings_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -694,6 +2865,9 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(5, challengeSecurityPreference_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(6, getChallengeSettings());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -730,6 +2904,9 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeEnumSize(5, challengeSecurityPreference_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getChallengeSettings());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -751,6 +2928,10 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
     if (getAllowAmpTraffic() != other.getAllowAmpTraffic()) return false;
     if (integrationType_ != other.integrationType_) return false;
     if (challengeSecurityPreference_ != other.challengeSecurityPreference_) return false;
+    if (hasChallengeSettings() != other.hasChallengeSettings()) return false;
+    if (hasChallengeSettings()) {
+      if (!getChallengeSettings().equals(other.getChallengeSettings())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -774,6 +2955,10 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + integrationType_;
     hash = (37 * hash) + CHALLENGE_SECURITY_PREFERENCE_FIELD_NUMBER;
     hash = (53 * hash) + challengeSecurityPreference_;
+    if (hasChallengeSettings()) {
+      hash = (37 * hash) + CHALLENGE_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getChallengeSettings().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -904,10 +3089,19 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.recaptchaenterprise.v1.WebKeySettings.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getChallengeSettingsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -919,6 +3113,11 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
       allowAmpTraffic_ = false;
       integrationType_ = 0;
       challengeSecurityPreference_ = 0;
+      challengeSettings_ = null;
+      if (challengeSettingsBuilder_ != null) {
+        challengeSettingsBuilder_.dispose();
+        challengeSettingsBuilder_ = null;
+      }
       return this;
     }
 
@@ -971,6 +3170,15 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.challengeSecurityPreference_ = challengeSecurityPreference_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.challengeSettings_ =
+            challengeSettingsBuilder_ == null
+                ? challengeSettings_
+                : challengeSettingsBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1041,6 +3249,9 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
       if (other.challengeSecurityPreference_ != 0) {
         setChallengeSecurityPreferenceValue(other.getChallengeSecurityPreferenceValue());
       }
+      if (other.hasChallengeSettings()) {
+        mergeChallengeSettings(other.getChallengeSettings());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1098,6 +3309,13 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 40
+            case 50:
+              {
+                input.readMessage(
+                    getChallengeSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1191,6 +3409,10 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * subdomains of an allowed domain are automatically allowed. A valid domain
      * requires a host and must not include any path, port, query or fragment.
      * Examples: 'example.com' or 'subdomain.example.com'
+     * Each key supports a maximum of 250 domains. To use a key on more domains,
+     * set `allow_all_domains` to true. When this is set, you are responsible for
+     * validating the hostname by checking the `token_properties.hostname` field
+     * in each assessment response against your list of allowed domains.
      * </pre>
      *
      * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1210,6 +3432,10 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * subdomains of an allowed domain are automatically allowed. A valid domain
      * requires a host and must not include any path, port, query or fragment.
      * Examples: 'example.com' or 'subdomain.example.com'
+     * Each key supports a maximum of 250 domains. To use a key on more domains,
+     * set `allow_all_domains` to true. When this is set, you are responsible for
+     * validating the hostname by checking the `token_properties.hostname` field
+     * in each assessment response against your list of allowed domains.
      * </pre>
      *
      * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1228,6 +3454,10 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * subdomains of an allowed domain are automatically allowed. A valid domain
      * requires a host and must not include any path, port, query or fragment.
      * Examples: 'example.com' or 'subdomain.example.com'
+     * Each key supports a maximum of 250 domains. To use a key on more domains,
+     * set `allow_all_domains` to true. When this is set, you are responsible for
+     * validating the hostname by checking the `token_properties.hostname` field
+     * in each assessment response against your list of allowed domains.
      * </pre>
      *
      * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1247,6 +3477,10 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * subdomains of an allowed domain are automatically allowed. A valid domain
      * requires a host and must not include any path, port, query or fragment.
      * Examples: 'example.com' or 'subdomain.example.com'
+     * Each key supports a maximum of 250 domains. To use a key on more domains,
+     * set `allow_all_domains` to true. When this is set, you are responsible for
+     * validating the hostname by checking the `token_properties.hostname` field
+     * in each assessment response against your list of allowed domains.
      * </pre>
      *
      * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1266,6 +3500,10 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * subdomains of an allowed domain are automatically allowed. A valid domain
      * requires a host and must not include any path, port, query or fragment.
      * Examples: 'example.com' or 'subdomain.example.com'
+     * Each key supports a maximum of 250 domains. To use a key on more domains,
+     * set `allow_all_domains` to true. When this is set, you are responsible for
+     * validating the hostname by checking the `token_properties.hostname` field
+     * in each assessment response against your list of allowed domains.
      * </pre>
      *
      * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1293,6 +3531,10 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * subdomains of an allowed domain are automatically allowed. A valid domain
      * requires a host and must not include any path, port, query or fragment.
      * Examples: 'example.com' or 'subdomain.example.com'
+     * Each key supports a maximum of 250 domains. To use a key on more domains,
+     * set `allow_all_domains` to true. When this is set, you are responsible for
+     * validating the hostname by checking the `token_properties.hostname` field
+     * in each assessment response against your list of allowed domains.
      * </pre>
      *
      * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1319,6 +3561,10 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * subdomains of an allowed domain are automatically allowed. A valid domain
      * requires a host and must not include any path, port, query or fragment.
      * Examples: 'example.com' or 'subdomain.example.com'
+     * Each key supports a maximum of 250 domains. To use a key on more domains,
+     * set `allow_all_domains` to true. When this is set, you are responsible for
+     * validating the hostname by checking the `token_properties.hostname` field
+     * in each assessment response against your list of allowed domains.
      * </pre>
      *
      * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1342,6 +3588,10 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * subdomains of an allowed domain are automatically allowed. A valid domain
      * requires a host and must not include any path, port, query or fragment.
      * Examples: 'example.com' or 'subdomain.example.com'
+     * Each key supports a maximum of 250 domains. To use a key on more domains,
+     * set `allow_all_domains` to true. When this is set, you are responsible for
+     * validating the hostname by checking the `token_properties.hostname` field
+     * in each assessment response against your list of allowed domains.
      * </pre>
      *
      * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1364,6 +3614,10 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * subdomains of an allowed domain are automatically allowed. A valid domain
      * requires a host and must not include any path, port, query or fragment.
      * Examples: 'example.com' or 'subdomain.example.com'
+     * Each key supports a maximum of 250 domains. To use a key on more domains,
+     * set `allow_all_domains` to true. When this is set, you are responsible for
+     * validating the hostname by checking the `token_properties.hostname` field
+     * in each assessment response against your list of allowed domains.
      * </pre>
      *
      * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1559,7 +3813,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Settings for the frequency and difficulty at which this key
      * triggers captcha challenges. This should only be specified for
-     * IntegrationTypes CHECKBOX and INVISIBLE and SCORE_AND_CHALLENGE.
+     * `IntegrationType` CHECKBOX, INVISIBLE or POLICY_BASED_CHALLENGE.
      * </pre>
      *
      * <code>
@@ -1579,7 +3833,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Settings for the frequency and difficulty at which this key
      * triggers captcha challenges. This should only be specified for
-     * IntegrationTypes CHECKBOX and INVISIBLE and SCORE_AND_CHALLENGE.
+     * `IntegrationType` CHECKBOX, INVISIBLE or POLICY_BASED_CHALLENGE.
      * </pre>
      *
      * <code>
@@ -1602,7 +3856,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Settings for the frequency and difficulty at which this key
      * triggers captcha challenges. This should only be specified for
-     * IntegrationTypes CHECKBOX and INVISIBLE and SCORE_AND_CHALLENGE.
+     * `IntegrationType` CHECKBOX, INVISIBLE or POLICY_BASED_CHALLENGE.
      * </pre>
      *
      * <code>
@@ -1629,7 +3883,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Settings for the frequency and difficulty at which this key
      * triggers captcha challenges. This should only be specified for
-     * IntegrationTypes CHECKBOX and INVISIBLE and SCORE_AND_CHALLENGE.
+     * `IntegrationType` CHECKBOX, INVISIBLE or POLICY_BASED_CHALLENGE.
      * </pre>
      *
      * <code>
@@ -1656,7 +3910,7 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Settings for the frequency and difficulty at which this key
      * triggers captcha challenges. This should only be specified for
-     * IntegrationTypes CHECKBOX and INVISIBLE and SCORE_AND_CHALLENGE.
+     * `IntegrationType` CHECKBOX, INVISIBLE or POLICY_BASED_CHALLENGE.
      * </pre>
      *
      * <code>
@@ -1670,6 +3924,229 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
       challengeSecurityPreference_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings challengeSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings,
+            com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings.Builder,
+            com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettingsOrBuilder>
+        challengeSettingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Challenge settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings challenge_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the challengeSettings field is set.
+     */
+    public boolean hasChallengeSettings() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Challenge settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings challenge_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The challengeSettings.
+     */
+    public com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings
+        getChallengeSettings() {
+      if (challengeSettingsBuilder_ == null) {
+        return challengeSettings_ == null
+            ? com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings
+                .getDefaultInstance()
+            : challengeSettings_;
+      } else {
+        return challengeSettingsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Challenge settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings challenge_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setChallengeSettings(
+        com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings value) {
+      if (challengeSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        challengeSettings_ = value;
+      } else {
+        challengeSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Challenge settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings challenge_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setChallengeSettings(
+        com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings.Builder
+            builderForValue) {
+      if (challengeSettingsBuilder_ == null) {
+        challengeSettings_ = builderForValue.build();
+      } else {
+        challengeSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Challenge settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings challenge_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeChallengeSettings(
+        com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings value) {
+      if (challengeSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && challengeSettings_ != null
+            && challengeSettings_
+                != com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings
+                    .getDefaultInstance()) {
+          getChallengeSettingsBuilder().mergeFrom(value);
+        } else {
+          challengeSettings_ = value;
+        }
+      } else {
+        challengeSettingsBuilder_.mergeFrom(value);
+      }
+      if (challengeSettings_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Challenge settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings challenge_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearChallengeSettings() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      challengeSettings_ = null;
+      if (challengeSettingsBuilder_ != null) {
+        challengeSettingsBuilder_.dispose();
+        challengeSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Challenge settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings challenge_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings.Builder
+        getChallengeSettingsBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getChallengeSettingsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Challenge settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings challenge_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettingsOrBuilder
+        getChallengeSettingsOrBuilder() {
+      if (challengeSettingsBuilder_ != null) {
+        return challengeSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return challengeSettings_ == null
+            ? com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings
+                .getDefaultInstance()
+            : challengeSettings_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Challenge settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings challenge_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings,
+            com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings.Builder,
+            com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettingsOrBuilder>
+        getChallengeSettingsFieldBuilder() {
+      if (challengeSettingsBuilder_ == null) {
+        challengeSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings,
+                com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings.Builder,
+                com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettingsOrBuilder>(
+                getChallengeSettings(), getParentForChildren(), isClean());
+        challengeSettings_ = null;
+      }
+      return challengeSettingsBuilder_;
     }
 
     @java.lang.Override

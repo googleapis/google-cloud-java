@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ public interface ResourcePolicyWeeklyCycleDayOfWeekOrBuilder
    *
    *
    * <pre>
-   * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+   * Defines a schedule that runs on specific days of the week. Specify
+   * one or more days. The following options are available:
+   * MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
    * Check the Day enum for the list of possible values.
    * </pre>
    *
@@ -42,7 +44,9 @@ public interface ResourcePolicyWeeklyCycleDayOfWeekOrBuilder
    *
    *
    * <pre>
-   * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+   * Defines a schedule that runs on specific days of the week. Specify
+   * one or more days. The following options are available:
+   * MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
    * Check the Day enum for the list of possible values.
    * </pre>
    *
@@ -56,7 +60,9 @@ public interface ResourcePolicyWeeklyCycleDayOfWeekOrBuilder
    *
    *
    * <pre>
-   * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+   * Defines a schedule that runs on specific days of the week. Specify
+   * one or more days. The following options are available:
+   * MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
    * Check the Day enum for the list of possible values.
    * </pre>
    *
@@ -70,7 +76,8 @@ public interface ResourcePolicyWeeklyCycleDayOfWeekOrBuilder
    *
    *
    * <pre>
-   * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
+   * Output only. [Output only] Duration of the time window, automatically chosen to be
+   * smallest possible in the given scenario.
    * </pre>
    *
    * <code>optional string duration = 155471252;</code>
@@ -83,7 +90,8 @@ public interface ResourcePolicyWeeklyCycleDayOfWeekOrBuilder
    *
    *
    * <pre>
-   * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
+   * Output only. [Output only] Duration of the time window, automatically chosen to be
+   * smallest possible in the given scenario.
    * </pre>
    *
    * <code>optional string duration = 155471252;</code>
@@ -96,7 +104,8 @@ public interface ResourcePolicyWeeklyCycleDayOfWeekOrBuilder
    *
    *
    * <pre>
-   * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
+   * Output only. [Output only] Duration of the time window, automatically chosen to be
+   * smallest possible in the given scenario.
    * </pre>
    *
    * <code>optional string duration = 155471252;</code>
@@ -109,7 +118,8 @@ public interface ResourcePolicyWeeklyCycleDayOfWeekOrBuilder
    *
    *
    * <pre>
-   * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
+   * Time within the window to start the operations.
+   * It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
    * </pre>
    *
    * <code>optional string start_time = 37467274;</code>
@@ -122,7 +132,8 @@ public interface ResourcePolicyWeeklyCycleDayOfWeekOrBuilder
    *
    *
    * <pre>
-   * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
+   * Time within the window to start the operations.
+   * It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
    * </pre>
    *
    * <code>optional string start_time = 37467274;</code>
@@ -135,7 +146,8 @@ public interface ResourcePolicyWeeklyCycleDayOfWeekOrBuilder
    *
    *
    * <pre>
-   * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
+   * Time within the window to start the operations.
+   * It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
    * </pre>
    *
    * <code>optional string start_time = 37467274;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ public interface AllocationAggregateReservationOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of resources currently in use.
+   * Output only. [Output only] List of resources currently in use.
    * </pre>
    *
    * <code>
@@ -42,7 +42,7 @@ public interface AllocationAggregateReservationOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of resources currently in use.
+   * Output only. [Output only] List of resources currently in use.
    * </pre>
    *
    * <code>
@@ -56,7 +56,7 @@ public interface AllocationAggregateReservationOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of resources currently in use.
+   * Output only. [Output only] List of resources currently in use.
    * </pre>
    *
    * <code>
@@ -69,7 +69,7 @@ public interface AllocationAggregateReservationOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of resources currently in use.
+   * Output only. [Output only] List of resources currently in use.
    * </pre>
    *
    * <code>
@@ -86,7 +86,7 @@ public interface AllocationAggregateReservationOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of resources currently in use.
+   * Output only. [Output only] List of resources currently in use.
    * </pre>
    *
    * <code>
@@ -172,7 +172,8 @@ public interface AllocationAggregateReservationOrBuilder
    *
    *
    * <pre>
-   * The VM family that all instances scheduled against this reservation must belong to.
+   * The VM family that all instances scheduled against this reservation must
+   * belong to.
    * Check the VmFamily enum for the list of possible values.
    * </pre>
    *
@@ -186,7 +187,8 @@ public interface AllocationAggregateReservationOrBuilder
    *
    *
    * <pre>
-   * The VM family that all instances scheduled against this reservation must belong to.
+   * The VM family that all instances scheduled against this reservation must
+   * belong to.
    * Check the VmFamily enum for the list of possible values.
    * </pre>
    *
@@ -200,7 +202,8 @@ public interface AllocationAggregateReservationOrBuilder
    *
    *
    * <pre>
-   * The VM family that all instances scheduled against this reservation must belong to.
+   * The VM family that all instances scheduled against this reservation must
+   * belong to.
    * Check the VmFamily enum for the list of possible values.
    * </pre>
    *

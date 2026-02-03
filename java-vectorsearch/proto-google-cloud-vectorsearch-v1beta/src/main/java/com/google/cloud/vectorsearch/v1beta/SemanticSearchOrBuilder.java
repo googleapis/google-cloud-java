@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -150,6 +150,46 @@ public interface SemanticSearchOrBuilder
    * </code>
    */
   com.google.cloud.vectorsearch.v1beta.OutputFieldsOrBuilder getOutputFieldsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A JSON filter expression, e.g. {"genre": {"$eq": "sci-fi"}},
+   * represented as a google.protobuf.Struct.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the filter field is set.
+   */
+  boolean hasFilter();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A JSON filter expression, e.g. {"genre": {"$eq": "sci-fi"}},
+   * represented as a google.protobuf.Struct.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
+   */
+  com.google.protobuf.Struct getFilter();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A JSON filter expression, e.g. {"genre": {"$eq": "sci-fi"}},
+   * represented as a google.protobuf.Struct.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  com.google.protobuf.StructOrBuilder getFilterOrBuilder();
 
   /**
    *

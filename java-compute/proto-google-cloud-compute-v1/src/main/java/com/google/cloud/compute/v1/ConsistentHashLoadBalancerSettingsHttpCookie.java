@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * The information about the HTTP Cookie on which the hash function is based for load balancing policies that use a consistent hash.
+ * The information about the HTTP Cookie on which the hash function is based
+ * for load balancing policies that use a consistent hash.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie}
@@ -455,7 +456,8 @@ public final class ConsistentHashLoadBalancerSettingsHttpCookie
    *
    *
    * <pre>
-   * The information about the HTTP Cookie on which the hash function is based for load balancing policies that use a consistent hash.
+   * The information about the HTTP Cookie on which the hash function is based
+   * for load balancing policies that use a consistent hash.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie}

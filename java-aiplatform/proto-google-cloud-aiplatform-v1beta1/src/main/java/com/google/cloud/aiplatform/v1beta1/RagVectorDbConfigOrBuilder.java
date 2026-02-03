@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -226,6 +226,51 @@ public interface RagVectorDbConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.VertexVectorSearchOrBuilder
       getVertexVectorSearchOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The config for the RAG-managed Vertex Vector Search 2.0.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch rag_managed_vertex_vector_search = 8;
+   * </code>
+   *
+   * @return Whether the ragManagedVertexVectorSearch field is set.
+   */
+  boolean hasRagManagedVertexVectorSearch();
+
+  /**
+   *
+   *
+   * <pre>
+   * The config for the RAG-managed Vertex Vector Search 2.0.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch rag_managed_vertex_vector_search = 8;
+   * </code>
+   *
+   * @return The ragManagedVertexVectorSearch.
+   */
+  com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+      getRagManagedVertexVectorSearch();
+
+  /**
+   *
+   *
+   * <pre>
+   * The config for the RAG-managed Vertex Vector Search 2.0.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch rag_managed_vertex_vector_search = 8;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearchOrBuilder
+      getRagManagedVertexVectorSearchOrBuilder();
 
   /**
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * The available logging options for the load balancer traffic served by this backend service.
+ * The available logging options for the load balancer traffic served by this
+ * backend service.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.BackendServiceLogConfig}
@@ -69,7 +70,10 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * This field can only be specified if logging is enabled for this backend service. Configures whether all, none or a subset of optional fields should be added to the reported logs. One of [INCLUDE_ALL_OPTIONAL, EXCLUDE_ALL_OPTIONAL, CUSTOM]. Default is EXCLUDE_ALL_OPTIONAL.
+   * This field can only be specified if logging is enabled for this backend
+   * service. Configures whether all, none or a subset of optional fields
+   * should be added to the reported logs. One of [INCLUDE_ALL_OPTIONAL,
+   * EXCLUDE_ALL_OPTIONAL, CUSTOM]. Default is EXCLUDE_ALL_OPTIONAL.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.BackendServiceLogConfig.OptionalMode}
@@ -257,7 +261,8 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Denotes whether to enable logging for the load balancer traffic served by this backend service. The default value is false.
+   * Denotes whether to enable logging for the load balancer
+   * traffic served by this backend service. The default value is false.
    * </pre>
    *
    * <code>optional bool enable = 311764355;</code>
@@ -273,7 +278,8 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Denotes whether to enable logging for the load balancer traffic served by this backend service. The default value is false.
+   * Denotes whether to enable logging for the load balancer
+   * traffic served by this backend service. The default value is false.
    * </pre>
    *
    * <code>optional bool enable = 311764355;</code>
@@ -295,7 +301,11 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * This field can only be specified if logging is enabled for this backend service and "logConfig.optionalMode" was set to CUSTOM. Contains a list of optional fields you want to include in the logs. For example: serverInstance, serverGkeDetails.cluster, serverGkeDetails.pod.podNamespace
+   * This field can only be specified if logging is enabled for this backend
+   * service and "logConfig.optionalMode" was set to CUSTOM. Contains a list
+   * of optional fields you want to include in the logs. For example:
+   * serverInstance, serverGkeDetails.cluster,
+   * serverGkeDetails.pod.podNamespace
    * </pre>
    *
    * <code>repeated string optional_fields = 528589944;</code>
@@ -310,7 +320,11 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * This field can only be specified if logging is enabled for this backend service and "logConfig.optionalMode" was set to CUSTOM. Contains a list of optional fields you want to include in the logs. For example: serverInstance, serverGkeDetails.cluster, serverGkeDetails.pod.podNamespace
+   * This field can only be specified if logging is enabled for this backend
+   * service and "logConfig.optionalMode" was set to CUSTOM. Contains a list
+   * of optional fields you want to include in the logs. For example:
+   * serverInstance, serverGkeDetails.cluster,
+   * serverGkeDetails.pod.podNamespace
    * </pre>
    *
    * <code>repeated string optional_fields = 528589944;</code>
@@ -325,7 +339,11 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * This field can only be specified if logging is enabled for this backend service and "logConfig.optionalMode" was set to CUSTOM. Contains a list of optional fields you want to include in the logs. For example: serverInstance, serverGkeDetails.cluster, serverGkeDetails.pod.podNamespace
+   * This field can only be specified if logging is enabled for this backend
+   * service and "logConfig.optionalMode" was set to CUSTOM. Contains a list
+   * of optional fields you want to include in the logs. For example:
+   * serverInstance, serverGkeDetails.cluster,
+   * serverGkeDetails.pod.podNamespace
    * </pre>
    *
    * <code>repeated string optional_fields = 528589944;</code>
@@ -341,7 +359,11 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * This field can only be specified if logging is enabled for this backend service and "logConfig.optionalMode" was set to CUSTOM. Contains a list of optional fields you want to include in the logs. For example: serverInstance, serverGkeDetails.cluster, serverGkeDetails.pod.podNamespace
+   * This field can only be specified if logging is enabled for this backend
+   * service and "logConfig.optionalMode" was set to CUSTOM. Contains a list
+   * of optional fields you want to include in the logs. For example:
+   * serverInstance, serverGkeDetails.cluster,
+   * serverGkeDetails.pod.podNamespace
    * </pre>
    *
    * <code>repeated string optional_fields = 528589944;</code>
@@ -362,7 +384,10 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * This field can only be specified if logging is enabled for this backend service. Configures whether all, none or a subset of optional fields should be added to the reported logs. One of [INCLUDE_ALL_OPTIONAL, EXCLUDE_ALL_OPTIONAL, CUSTOM]. Default is EXCLUDE_ALL_OPTIONAL.
+   * This field can only be specified if logging is enabled for this backend
+   * service. Configures whether all, none or a subset of optional fields
+   * should be added to the reported logs. One of [INCLUDE_ALL_OPTIONAL,
+   * EXCLUDE_ALL_OPTIONAL, CUSTOM]. Default is EXCLUDE_ALL_OPTIONAL.
    * Check the OptionalMode enum for the list of possible values.
    * </pre>
    *
@@ -379,7 +404,10 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * This field can only be specified if logging is enabled for this backend service. Configures whether all, none or a subset of optional fields should be added to the reported logs. One of [INCLUDE_ALL_OPTIONAL, EXCLUDE_ALL_OPTIONAL, CUSTOM]. Default is EXCLUDE_ALL_OPTIONAL.
+   * This field can only be specified if logging is enabled for this backend
+   * service. Configures whether all, none or a subset of optional fields
+   * should be added to the reported logs. One of [INCLUDE_ALL_OPTIONAL,
+   * EXCLUDE_ALL_OPTIONAL, CUSTOM]. Default is EXCLUDE_ALL_OPTIONAL.
    * Check the OptionalMode enum for the list of possible values.
    * </pre>
    *
@@ -404,7 +432,10 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * This field can only be specified if logging is enabled for this backend service. Configures whether all, none or a subset of optional fields should be added to the reported logs. One of [INCLUDE_ALL_OPTIONAL, EXCLUDE_ALL_OPTIONAL, CUSTOM]. Default is EXCLUDE_ALL_OPTIONAL.
+   * This field can only be specified if logging is enabled for this backend
+   * service. Configures whether all, none or a subset of optional fields
+   * should be added to the reported logs. One of [INCLUDE_ALL_OPTIONAL,
+   * EXCLUDE_ALL_OPTIONAL, CUSTOM]. Default is EXCLUDE_ALL_OPTIONAL.
    * Check the OptionalMode enum for the list of possible values.
    * </pre>
    *
@@ -432,7 +463,11 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * This field can only be specified if logging is enabled for this backend service. The value of the field must be in [0, 1]. This configures the sampling rate of requests to the load balancer where 1.0 means all logged requests are reported and 0.0 means no logged requests are reported. The default value is 1.0.
+   * This field can only be specified if logging is enabled for this backend
+   * service. The value of the field must be in [0, 1]. This configures the
+   * sampling rate of requests to the load balancer where 1.0 means all logged
+   * requests are reported and 0.0 means no logged requests are reported. The
+   * default value is 1.0.
    * </pre>
    *
    * <code>optional float sample_rate = 153193045;</code>
@@ -448,7 +483,11 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * This field can only be specified if logging is enabled for this backend service. The value of the field must be in [0, 1]. This configures the sampling rate of requests to the load balancer where 1.0 means all logged requests are reported and 0.0 means no logged requests are reported. The default value is 1.0.
+   * This field can only be specified if logging is enabled for this backend
+   * service. The value of the field must be in [0, 1]. This configures the
+   * sampling rate of requests to the load balancer where 1.0 means all logged
+   * requests are reported and 0.0 means no logged requests are reported. The
+   * default value is 1.0.
    * </pre>
    *
    * <code>optional float sample_rate = 153193045;</code>
@@ -675,7 +714,8 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The available logging options for the load balancer traffic served by this backend service.
+   * The available logging options for the load balancer traffic served by this
+   * backend service.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.BackendServiceLogConfig}
@@ -913,7 +953,8 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Denotes whether to enable logging for the load balancer traffic served by this backend service. The default value is false.
+     * Denotes whether to enable logging for the load balancer
+     * traffic served by this backend service. The default value is false.
      * </pre>
      *
      * <code>optional bool enable = 311764355;</code>
@@ -929,7 +970,8 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Denotes whether to enable logging for the load balancer traffic served by this backend service. The default value is false.
+     * Denotes whether to enable logging for the load balancer
+     * traffic served by this backend service. The default value is false.
      * </pre>
      *
      * <code>optional bool enable = 311764355;</code>
@@ -945,7 +987,8 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Denotes whether to enable logging for the load balancer traffic served by this backend service. The default value is false.
+     * Denotes whether to enable logging for the load balancer
+     * traffic served by this backend service. The default value is false.
      * </pre>
      *
      * <code>optional bool enable = 311764355;</code>
@@ -965,7 +1008,8 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Denotes whether to enable logging for the load balancer traffic served by this backend service. The default value is false.
+     * Denotes whether to enable logging for the load balancer
+     * traffic served by this backend service. The default value is false.
      * </pre>
      *
      * <code>optional bool enable = 311764355;</code>
@@ -993,7 +1037,11 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * This field can only be specified if logging is enabled for this backend service and "logConfig.optionalMode" was set to CUSTOM. Contains a list of optional fields you want to include in the logs. For example: serverInstance, serverGkeDetails.cluster, serverGkeDetails.pod.podNamespace
+     * This field can only be specified if logging is enabled for this backend
+     * service and "logConfig.optionalMode" was set to CUSTOM. Contains a list
+     * of optional fields you want to include in the logs. For example:
+     * serverInstance, serverGkeDetails.cluster,
+     * serverGkeDetails.pod.podNamespace
      * </pre>
      *
      * <code>repeated string optional_fields = 528589944;</code>
@@ -1009,7 +1057,11 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * This field can only be specified if logging is enabled for this backend service and "logConfig.optionalMode" was set to CUSTOM. Contains a list of optional fields you want to include in the logs. For example: serverInstance, serverGkeDetails.cluster, serverGkeDetails.pod.podNamespace
+     * This field can only be specified if logging is enabled for this backend
+     * service and "logConfig.optionalMode" was set to CUSTOM. Contains a list
+     * of optional fields you want to include in the logs. For example:
+     * serverInstance, serverGkeDetails.cluster,
+     * serverGkeDetails.pod.podNamespace
      * </pre>
      *
      * <code>repeated string optional_fields = 528589944;</code>
@@ -1024,7 +1076,11 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * This field can only be specified if logging is enabled for this backend service and "logConfig.optionalMode" was set to CUSTOM. Contains a list of optional fields you want to include in the logs. For example: serverInstance, serverGkeDetails.cluster, serverGkeDetails.pod.podNamespace
+     * This field can only be specified if logging is enabled for this backend
+     * service and "logConfig.optionalMode" was set to CUSTOM. Contains a list
+     * of optional fields you want to include in the logs. For example:
+     * serverInstance, serverGkeDetails.cluster,
+     * serverGkeDetails.pod.podNamespace
      * </pre>
      *
      * <code>repeated string optional_fields = 528589944;</code>
@@ -1040,7 +1096,11 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * This field can only be specified if logging is enabled for this backend service and "logConfig.optionalMode" was set to CUSTOM. Contains a list of optional fields you want to include in the logs. For example: serverInstance, serverGkeDetails.cluster, serverGkeDetails.pod.podNamespace
+     * This field can only be specified if logging is enabled for this backend
+     * service and "logConfig.optionalMode" was set to CUSTOM. Contains a list
+     * of optional fields you want to include in the logs. For example:
+     * serverInstance, serverGkeDetails.cluster,
+     * serverGkeDetails.pod.podNamespace
      * </pre>
      *
      * <code>repeated string optional_fields = 528589944;</code>
@@ -1056,7 +1116,11 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * This field can only be specified if logging is enabled for this backend service and "logConfig.optionalMode" was set to CUSTOM. Contains a list of optional fields you want to include in the logs. For example: serverInstance, serverGkeDetails.cluster, serverGkeDetails.pod.podNamespace
+     * This field can only be specified if logging is enabled for this backend
+     * service and "logConfig.optionalMode" was set to CUSTOM. Contains a list
+     * of optional fields you want to include in the logs. For example:
+     * serverInstance, serverGkeDetails.cluster,
+     * serverGkeDetails.pod.podNamespace
      * </pre>
      *
      * <code>repeated string optional_fields = 528589944;</code>
@@ -1080,7 +1144,11 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * This field can only be specified if logging is enabled for this backend service and "logConfig.optionalMode" was set to CUSTOM. Contains a list of optional fields you want to include in the logs. For example: serverInstance, serverGkeDetails.cluster, serverGkeDetails.pod.podNamespace
+     * This field can only be specified if logging is enabled for this backend
+     * service and "logConfig.optionalMode" was set to CUSTOM. Contains a list
+     * of optional fields you want to include in the logs. For example:
+     * serverInstance, serverGkeDetails.cluster,
+     * serverGkeDetails.pod.podNamespace
      * </pre>
      *
      * <code>repeated string optional_fields = 528589944;</code>
@@ -1103,7 +1171,11 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * This field can only be specified if logging is enabled for this backend service and "logConfig.optionalMode" was set to CUSTOM. Contains a list of optional fields you want to include in the logs. For example: serverInstance, serverGkeDetails.cluster, serverGkeDetails.pod.podNamespace
+     * This field can only be specified if logging is enabled for this backend
+     * service and "logConfig.optionalMode" was set to CUSTOM. Contains a list
+     * of optional fields you want to include in the logs. For example:
+     * serverInstance, serverGkeDetails.cluster,
+     * serverGkeDetails.pod.podNamespace
      * </pre>
      *
      * <code>repeated string optional_fields = 528589944;</code>
@@ -1123,7 +1195,11 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * This field can only be specified if logging is enabled for this backend service and "logConfig.optionalMode" was set to CUSTOM. Contains a list of optional fields you want to include in the logs. For example: serverInstance, serverGkeDetails.cluster, serverGkeDetails.pod.podNamespace
+     * This field can only be specified if logging is enabled for this backend
+     * service and "logConfig.optionalMode" was set to CUSTOM. Contains a list
+     * of optional fields you want to include in the logs. For example:
+     * serverInstance, serverGkeDetails.cluster,
+     * serverGkeDetails.pod.podNamespace
      * </pre>
      *
      * <code>repeated string optional_fields = 528589944;</code>
@@ -1142,7 +1218,11 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * This field can only be specified if logging is enabled for this backend service and "logConfig.optionalMode" was set to CUSTOM. Contains a list of optional fields you want to include in the logs. For example: serverInstance, serverGkeDetails.cluster, serverGkeDetails.pod.podNamespace
+     * This field can only be specified if logging is enabled for this backend
+     * service and "logConfig.optionalMode" was set to CUSTOM. Contains a list
+     * of optional fields you want to include in the logs. For example:
+     * serverInstance, serverGkeDetails.cluster,
+     * serverGkeDetails.pod.podNamespace
      * </pre>
      *
      * <code>repeated string optional_fields = 528589944;</code>
@@ -1168,7 +1248,10 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * This field can only be specified if logging is enabled for this backend service. Configures whether all, none or a subset of optional fields should be added to the reported logs. One of [INCLUDE_ALL_OPTIONAL, EXCLUDE_ALL_OPTIONAL, CUSTOM]. Default is EXCLUDE_ALL_OPTIONAL.
+     * This field can only be specified if logging is enabled for this backend
+     * service. Configures whether all, none or a subset of optional fields
+     * should be added to the reported logs. One of [INCLUDE_ALL_OPTIONAL,
+     * EXCLUDE_ALL_OPTIONAL, CUSTOM]. Default is EXCLUDE_ALL_OPTIONAL.
      * Check the OptionalMode enum for the list of possible values.
      * </pre>
      *
@@ -1184,7 +1267,10 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * This field can only be specified if logging is enabled for this backend service. Configures whether all, none or a subset of optional fields should be added to the reported logs. One of [INCLUDE_ALL_OPTIONAL, EXCLUDE_ALL_OPTIONAL, CUSTOM]. Default is EXCLUDE_ALL_OPTIONAL.
+     * This field can only be specified if logging is enabled for this backend
+     * service. Configures whether all, none or a subset of optional fields
+     * should be added to the reported logs. One of [INCLUDE_ALL_OPTIONAL,
+     * EXCLUDE_ALL_OPTIONAL, CUSTOM]. Default is EXCLUDE_ALL_OPTIONAL.
      * Check the OptionalMode enum for the list of possible values.
      * </pre>
      *
@@ -1208,7 +1294,10 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * This field can only be specified if logging is enabled for this backend service. Configures whether all, none or a subset of optional fields should be added to the reported logs. One of [INCLUDE_ALL_OPTIONAL, EXCLUDE_ALL_OPTIONAL, CUSTOM]. Default is EXCLUDE_ALL_OPTIONAL.
+     * This field can only be specified if logging is enabled for this backend
+     * service. Configures whether all, none or a subset of optional fields
+     * should be added to the reported logs. One of [INCLUDE_ALL_OPTIONAL,
+     * EXCLUDE_ALL_OPTIONAL, CUSTOM]. Default is EXCLUDE_ALL_OPTIONAL.
      * Check the OptionalMode enum for the list of possible values.
      * </pre>
      *
@@ -1232,7 +1321,10 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * This field can only be specified if logging is enabled for this backend service. Configures whether all, none or a subset of optional fields should be added to the reported logs. One of [INCLUDE_ALL_OPTIONAL, EXCLUDE_ALL_OPTIONAL, CUSTOM]. Default is EXCLUDE_ALL_OPTIONAL.
+     * This field can only be specified if logging is enabled for this backend
+     * service. Configures whether all, none or a subset of optional fields
+     * should be added to the reported logs. One of [INCLUDE_ALL_OPTIONAL,
+     * EXCLUDE_ALL_OPTIONAL, CUSTOM]. Default is EXCLUDE_ALL_OPTIONAL.
      * Check the OptionalMode enum for the list of possible values.
      * </pre>
      *
@@ -1255,7 +1347,10 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * This field can only be specified if logging is enabled for this backend service. Configures whether all, none or a subset of optional fields should be added to the reported logs. One of [INCLUDE_ALL_OPTIONAL, EXCLUDE_ALL_OPTIONAL, CUSTOM]. Default is EXCLUDE_ALL_OPTIONAL.
+     * This field can only be specified if logging is enabled for this backend
+     * service. Configures whether all, none or a subset of optional fields
+     * should be added to the reported logs. One of [INCLUDE_ALL_OPTIONAL,
+     * EXCLUDE_ALL_OPTIONAL, CUSTOM]. Default is EXCLUDE_ALL_OPTIONAL.
      * Check the OptionalMode enum for the list of possible values.
      * </pre>
      *
@@ -1274,7 +1369,10 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * This field can only be specified if logging is enabled for this backend service. Configures whether all, none or a subset of optional fields should be added to the reported logs. One of [INCLUDE_ALL_OPTIONAL, EXCLUDE_ALL_OPTIONAL, CUSTOM]. Default is EXCLUDE_ALL_OPTIONAL.
+     * This field can only be specified if logging is enabled for this backend
+     * service. Configures whether all, none or a subset of optional fields
+     * should be added to the reported logs. One of [INCLUDE_ALL_OPTIONAL,
+     * EXCLUDE_ALL_OPTIONAL, CUSTOM]. Default is EXCLUDE_ALL_OPTIONAL.
      * Check the OptionalMode enum for the list of possible values.
      * </pre>
      *
@@ -1300,7 +1398,11 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * This field can only be specified if logging is enabled for this backend service. The value of the field must be in [0, 1]. This configures the sampling rate of requests to the load balancer where 1.0 means all logged requests are reported and 0.0 means no logged requests are reported. The default value is 1.0.
+     * This field can only be specified if logging is enabled for this backend
+     * service. The value of the field must be in [0, 1]. This configures the
+     * sampling rate of requests to the load balancer where 1.0 means all logged
+     * requests are reported and 0.0 means no logged requests are reported. The
+     * default value is 1.0.
      * </pre>
      *
      * <code>optional float sample_rate = 153193045;</code>
@@ -1316,7 +1418,11 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * This field can only be specified if logging is enabled for this backend service. The value of the field must be in [0, 1]. This configures the sampling rate of requests to the load balancer where 1.0 means all logged requests are reported and 0.0 means no logged requests are reported. The default value is 1.0.
+     * This field can only be specified if logging is enabled for this backend
+     * service. The value of the field must be in [0, 1]. This configures the
+     * sampling rate of requests to the load balancer where 1.0 means all logged
+     * requests are reported and 0.0 means no logged requests are reported. The
+     * default value is 1.0.
      * </pre>
      *
      * <code>optional float sample_rate = 153193045;</code>
@@ -1332,7 +1438,11 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * This field can only be specified if logging is enabled for this backend service. The value of the field must be in [0, 1]. This configures the sampling rate of requests to the load balancer where 1.0 means all logged requests are reported and 0.0 means no logged requests are reported. The default value is 1.0.
+     * This field can only be specified if logging is enabled for this backend
+     * service. The value of the field must be in [0, 1]. This configures the
+     * sampling rate of requests to the load balancer where 1.0 means all logged
+     * requests are reported and 0.0 means no logged requests are reported. The
+     * default value is 1.0.
      * </pre>
      *
      * <code>optional float sample_rate = 153193045;</code>
@@ -1352,7 +1462,11 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * This field can only be specified if logging is enabled for this backend service. The value of the field must be in [0, 1]. This configures the sampling rate of requests to the load balancer where 1.0 means all logged requests are reported and 0.0 means no logged requests are reported. The default value is 1.0.
+     * This field can only be specified if logging is enabled for this backend
+     * service. The value of the field must be in [0, 1]. This configures the
+     * sampling rate of requests to the load balancer where 1.0 means all logged
+     * requests are reported and 0.0 means no logged requests are reported. The
+     * default value is 1.0.
      * </pre>
      *
      * <code>optional float sample_rate = 153193045;</code>

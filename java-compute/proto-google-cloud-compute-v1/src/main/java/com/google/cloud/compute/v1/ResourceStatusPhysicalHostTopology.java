@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents the physical host topology of the host on which the VM is running.
+ * Represents the physical host topology of the host on which the VM is
+ * running.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.ResourceStatusPhysicalHostTopology}
@@ -78,7 +79,8 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The ID of the block in which the running instance is located. Instances within the same block experience low network latency.
+   * [Output Only] The ID of the block in which the running instance is
+   * located. Instances within the same block experience low network latency.
    * </pre>
    *
    * <code>optional string block = 93832333;</code>
@@ -94,7 +96,8 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The ID of the block in which the running instance is located. Instances within the same block experience low network latency.
+   * [Output Only] The ID of the block in which the running instance is
+   * located. Instances within the same block experience low network latency.
    * </pre>
    *
    * <code>optional string block = 93832333;</code>
@@ -118,7 +121,8 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The ID of the block in which the running instance is located. Instances within the same block experience low network latency.
+   * [Output Only] The ID of the block in which the running instance is
+   * located. Instances within the same block experience low network latency.
    * </pre>
    *
    * <code>optional string block = 93832333;</code>
@@ -147,7 +151,8 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The global name of the Compute Engine cluster where the running instance is located.
+   * [Output Only] The global name of the Compute Engine cluster where the
+   * running instance is located.
    * </pre>
    *
    * <code>optional string cluster = 335221242;</code>
@@ -163,7 +168,8 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The global name of the Compute Engine cluster where the running instance is located.
+   * [Output Only] The global name of the Compute Engine cluster where the
+   * running instance is located.
    * </pre>
    *
    * <code>optional string cluster = 335221242;</code>
@@ -187,7 +193,8 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The global name of the Compute Engine cluster where the running instance is located.
+   * [Output Only] The global name of the Compute Engine cluster where the
+   * running instance is located.
    * </pre>
    *
    * <code>optional string cluster = 335221242;</code>
@@ -216,7 +223,9 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The ID of the host on which the running instance is located. Instances on the same host experience the lowest possible network latency.
+   * [Output Only] The ID of the host on which the running instance is located.
+   * Instances on the same host experience the lowest possible network
+   * latency.
    * </pre>
    *
    * <code>optional string host = 3208616;</code>
@@ -232,7 +241,9 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The ID of the host on which the running instance is located. Instances on the same host experience the lowest possible network latency.
+   * [Output Only] The ID of the host on which the running instance is located.
+   * Instances on the same host experience the lowest possible network
+   * latency.
    * </pre>
    *
    * <code>optional string host = 3208616;</code>
@@ -256,7 +267,9 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The ID of the host on which the running instance is located. Instances on the same host experience the lowest possible network latency.
+   * [Output Only] The ID of the host on which the running instance is located.
+   * Instances on the same host experience the lowest possible network
+   * latency.
    * </pre>
    *
    * <code>optional string host = 3208616;</code>
@@ -285,7 +298,9 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The ID of the sub-block in which the running instance is located. Instances in the same sub-block experience lower network latency than instances in the same block.
+   * [Output Only] The ID of the sub-block in which the running instance is
+   * located. Instances in the same sub-block experience lower network latency
+   * than instances in the same block.
    * </pre>
    *
    * <code>optional string subblock = 70446669;</code>
@@ -301,7 +316,9 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The ID of the sub-block in which the running instance is located. Instances in the same sub-block experience lower network latency than instances in the same block.
+   * [Output Only] The ID of the sub-block in which the running instance is
+   * located. Instances in the same sub-block experience lower network latency
+   * than instances in the same block.
    * </pre>
    *
    * <code>optional string subblock = 70446669;</code>
@@ -325,7 +342,9 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The ID of the sub-block in which the running instance is located. Instances in the same sub-block experience lower network latency than instances in the same block.
+   * [Output Only] The ID of the sub-block in which the running instance is
+   * located. Instances in the same sub-block experience lower network latency
+   * than instances in the same block.
    * </pre>
    *
    * <code>optional string subblock = 70446669;</code>
@@ -557,7 +576,8 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
    *
    *
    * <pre>
-   * Represents the physical host topology of the host on which the VM is running.
+   * Represents the physical host topology of the host on which the VM is
+   * running.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.ResourceStatusPhysicalHostTopology}
@@ -796,7 +816,8 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The ID of the block in which the running instance is located. Instances within the same block experience low network latency.
+     * [Output Only] The ID of the block in which the running instance is
+     * located. Instances within the same block experience low network latency.
      * </pre>
      *
      * <code>optional string block = 93832333;</code>
@@ -811,7 +832,8 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The ID of the block in which the running instance is located. Instances within the same block experience low network latency.
+     * [Output Only] The ID of the block in which the running instance is
+     * located. Instances within the same block experience low network latency.
      * </pre>
      *
      * <code>optional string block = 93832333;</code>
@@ -834,7 +856,8 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The ID of the block in which the running instance is located. Instances within the same block experience low network latency.
+     * [Output Only] The ID of the block in which the running instance is
+     * located. Instances within the same block experience low network latency.
      * </pre>
      *
      * <code>optional string block = 93832333;</code>
@@ -857,7 +880,8 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The ID of the block in which the running instance is located. Instances within the same block experience low network latency.
+     * [Output Only] The ID of the block in which the running instance is
+     * located. Instances within the same block experience low network latency.
      * </pre>
      *
      * <code>optional string block = 93832333;</code>
@@ -879,7 +903,8 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The ID of the block in which the running instance is located. Instances within the same block experience low network latency.
+     * [Output Only] The ID of the block in which the running instance is
+     * located. Instances within the same block experience low network latency.
      * </pre>
      *
      * <code>optional string block = 93832333;</code>
@@ -897,7 +922,8 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The ID of the block in which the running instance is located. Instances within the same block experience low network latency.
+     * [Output Only] The ID of the block in which the running instance is
+     * located. Instances within the same block experience low network latency.
      * </pre>
      *
      * <code>optional string block = 93832333;</code>
@@ -922,7 +948,8 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The global name of the Compute Engine cluster where the running instance is located.
+     * [Output Only] The global name of the Compute Engine cluster where the
+     * running instance is located.
      * </pre>
      *
      * <code>optional string cluster = 335221242;</code>
@@ -937,7 +964,8 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The global name of the Compute Engine cluster where the running instance is located.
+     * [Output Only] The global name of the Compute Engine cluster where the
+     * running instance is located.
      * </pre>
      *
      * <code>optional string cluster = 335221242;</code>
@@ -960,7 +988,8 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The global name of the Compute Engine cluster where the running instance is located.
+     * [Output Only] The global name of the Compute Engine cluster where the
+     * running instance is located.
      * </pre>
      *
      * <code>optional string cluster = 335221242;</code>
@@ -983,7 +1012,8 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The global name of the Compute Engine cluster where the running instance is located.
+     * [Output Only] The global name of the Compute Engine cluster where the
+     * running instance is located.
      * </pre>
      *
      * <code>optional string cluster = 335221242;</code>
@@ -1005,7 +1035,8 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The global name of the Compute Engine cluster where the running instance is located.
+     * [Output Only] The global name of the Compute Engine cluster where the
+     * running instance is located.
      * </pre>
      *
      * <code>optional string cluster = 335221242;</code>
@@ -1023,7 +1054,8 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The global name of the Compute Engine cluster where the running instance is located.
+     * [Output Only] The global name of the Compute Engine cluster where the
+     * running instance is located.
      * </pre>
      *
      * <code>optional string cluster = 335221242;</code>
@@ -1048,7 +1080,9 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The ID of the host on which the running instance is located. Instances on the same host experience the lowest possible network latency.
+     * [Output Only] The ID of the host on which the running instance is located.
+     * Instances on the same host experience the lowest possible network
+     * latency.
      * </pre>
      *
      * <code>optional string host = 3208616;</code>
@@ -1063,7 +1097,9 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The ID of the host on which the running instance is located. Instances on the same host experience the lowest possible network latency.
+     * [Output Only] The ID of the host on which the running instance is located.
+     * Instances on the same host experience the lowest possible network
+     * latency.
      * </pre>
      *
      * <code>optional string host = 3208616;</code>
@@ -1086,7 +1122,9 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The ID of the host on which the running instance is located. Instances on the same host experience the lowest possible network latency.
+     * [Output Only] The ID of the host on which the running instance is located.
+     * Instances on the same host experience the lowest possible network
+     * latency.
      * </pre>
      *
      * <code>optional string host = 3208616;</code>
@@ -1109,7 +1147,9 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The ID of the host on which the running instance is located. Instances on the same host experience the lowest possible network latency.
+     * [Output Only] The ID of the host on which the running instance is located.
+     * Instances on the same host experience the lowest possible network
+     * latency.
      * </pre>
      *
      * <code>optional string host = 3208616;</code>
@@ -1131,7 +1171,9 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The ID of the host on which the running instance is located. Instances on the same host experience the lowest possible network latency.
+     * [Output Only] The ID of the host on which the running instance is located.
+     * Instances on the same host experience the lowest possible network
+     * latency.
      * </pre>
      *
      * <code>optional string host = 3208616;</code>
@@ -1149,7 +1191,9 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The ID of the host on which the running instance is located. Instances on the same host experience the lowest possible network latency.
+     * [Output Only] The ID of the host on which the running instance is located.
+     * Instances on the same host experience the lowest possible network
+     * latency.
      * </pre>
      *
      * <code>optional string host = 3208616;</code>
@@ -1174,7 +1218,9 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The ID of the sub-block in which the running instance is located. Instances in the same sub-block experience lower network latency than instances in the same block.
+     * [Output Only] The ID of the sub-block in which the running instance is
+     * located. Instances in the same sub-block experience lower network latency
+     * than instances in the same block.
      * </pre>
      *
      * <code>optional string subblock = 70446669;</code>
@@ -1189,7 +1235,9 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The ID of the sub-block in which the running instance is located. Instances in the same sub-block experience lower network latency than instances in the same block.
+     * [Output Only] The ID of the sub-block in which the running instance is
+     * located. Instances in the same sub-block experience lower network latency
+     * than instances in the same block.
      * </pre>
      *
      * <code>optional string subblock = 70446669;</code>
@@ -1212,7 +1260,9 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The ID of the sub-block in which the running instance is located. Instances in the same sub-block experience lower network latency than instances in the same block.
+     * [Output Only] The ID of the sub-block in which the running instance is
+     * located. Instances in the same sub-block experience lower network latency
+     * than instances in the same block.
      * </pre>
      *
      * <code>optional string subblock = 70446669;</code>
@@ -1235,7 +1285,9 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The ID of the sub-block in which the running instance is located. Instances in the same sub-block experience lower network latency than instances in the same block.
+     * [Output Only] The ID of the sub-block in which the running instance is
+     * located. Instances in the same sub-block experience lower network latency
+     * than instances in the same block.
      * </pre>
      *
      * <code>optional string subblock = 70446669;</code>
@@ -1257,7 +1309,9 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The ID of the sub-block in which the running instance is located. Instances in the same sub-block experience lower network latency than instances in the same block.
+     * [Output Only] The ID of the sub-block in which the running instance is
+     * located. Instances in the same sub-block experience lower network latency
+     * than instances in the same block.
      * </pre>
      *
      * <code>optional string subblock = 70446669;</code>
@@ -1275,7 +1329,9 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The ID of the sub-block in which the running instance is located. Instances in the same sub-block experience lower network latency than instances in the same block.
+     * [Output Only] The ID of the sub-block in which the running instance is
+     * located. Instances in the same sub-block experience lower network latency
+     * than instances in the same block.
      * </pre>
      *
      * <code>optional string subblock = 70446669;</code>

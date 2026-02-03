@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,7 +69,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] BGP origin (EGP, IGP or INCOMPLETE)
+   * Output only. [Output only] BGP origin (EGP, IGP or INCOMPLETE)
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.BgpRoute.Origin}
@@ -209,7 +209,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] AS-PATH for the route
+   * Output only. [Output only] AS-PATH for the route
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.BgpRouteAsPath as_paths = 137568929;</code>
@@ -223,7 +223,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] AS-PATH for the route
+   * Output only. [Output only] AS-PATH for the route
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.BgpRouteAsPath as_paths = 137568929;</code>
@@ -238,7 +238,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] AS-PATH for the route
+   * Output only. [Output only] AS-PATH for the route
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.BgpRouteAsPath as_paths = 137568929;</code>
@@ -252,7 +252,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] AS-PATH for the route
+   * Output only. [Output only] AS-PATH for the route
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.BgpRouteAsPath as_paths = 137568929;</code>
@@ -266,7 +266,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] AS-PATH for the route
+   * Output only. [Output only] AS-PATH for the route
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.BgpRouteAsPath as_paths = 137568929;</code>
@@ -286,7 +286,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] BGP communities in human-readable A:B format.
+   * Output only. [Output only] BGP communities in human-readable A:B format.
    * </pre>
    *
    * <code>repeated string communities = 188262983;</code>
@@ -301,7 +301,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] BGP communities in human-readable A:B format.
+   * Output only. [Output only] BGP communities in human-readable A:B format.
    * </pre>
    *
    * <code>repeated string communities = 188262983;</code>
@@ -316,7 +316,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] BGP communities in human-readable A:B format.
+   * Output only. [Output only] BGP communities in human-readable A:B format.
    * </pre>
    *
    * <code>repeated string communities = 188262983;</code>
@@ -332,7 +332,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] BGP communities in human-readable A:B format.
+   * Output only. [Output only] BGP communities in human-readable A:B format.
    * </pre>
    *
    * <code>repeated string communities = 188262983;</code>
@@ -351,7 +351,8 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Destination IP range for the route, in human-readable CIDR format
+   * Output only. [Output only] Destination IP range for the route, in human-readable CIDR
+   * format
    * </pre>
    *
    * <code>
@@ -369,7 +370,8 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Destination IP range for the route, in human-readable CIDR format
+   * Output only. [Output only] Destination IP range for the route, in human-readable CIDR
+   * format
    * </pre>
    *
    * <code>
@@ -390,7 +392,8 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Destination IP range for the route, in human-readable CIDR format
+   * Output only. [Output only] Destination IP range for the route, in human-readable CIDR
+   * format
    * </pre>
    *
    * <code>
@@ -413,7 +416,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] BGP multi-exit discriminator
+   * Output only. [Output only] BGP multi-exit discriminator
    * </pre>
    *
    * <code>optional uint32 med = 107980;</code>
@@ -429,7 +432,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] BGP multi-exit discriminator
+   * Output only. [Output only] BGP multi-exit discriminator
    * </pre>
    *
    * <code>optional uint32 med = 107980;</code>
@@ -450,7 +453,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] BGP origin (EGP, IGP or INCOMPLETE)
+   * Output only. [Output only] BGP origin (EGP, IGP or INCOMPLETE)
    * Check the Origin enum for the list of possible values.
    * </pre>
    *
@@ -467,7 +470,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] BGP origin (EGP, IGP or INCOMPLETE)
+   * Output only. [Output only] BGP origin (EGP, IGP or INCOMPLETE)
    * Check the Origin enum for the list of possible values.
    * </pre>
    *
@@ -492,7 +495,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] BGP origin (EGP, IGP or INCOMPLETE)
+   * Output only. [Output only] BGP origin (EGP, IGP or INCOMPLETE)
    * Check the Origin enum for the list of possible values.
    * </pre>
    *
@@ -1059,7 +1062,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] AS-PATH for the route
+     * Output only. [Output only] AS-PATH for the route
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.BgpRouteAsPath as_paths = 137568929;</code>
@@ -1076,7 +1079,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] AS-PATH for the route
+     * Output only. [Output only] AS-PATH for the route
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.BgpRouteAsPath as_paths = 137568929;</code>
@@ -1093,7 +1096,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] AS-PATH for the route
+     * Output only. [Output only] AS-PATH for the route
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.BgpRouteAsPath as_paths = 137568929;</code>
@@ -1110,7 +1113,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] AS-PATH for the route
+     * Output only. [Output only] AS-PATH for the route
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.BgpRouteAsPath as_paths = 137568929;</code>
@@ -1133,7 +1136,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] AS-PATH for the route
+     * Output only. [Output only] AS-PATH for the route
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.BgpRouteAsPath as_paths = 137568929;</code>
@@ -1154,7 +1157,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] AS-PATH for the route
+     * Output only. [Output only] AS-PATH for the route
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.BgpRouteAsPath as_paths = 137568929;</code>
@@ -1177,7 +1180,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] AS-PATH for the route
+     * Output only. [Output only] AS-PATH for the route
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.BgpRouteAsPath as_paths = 137568929;</code>
@@ -1200,7 +1203,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] AS-PATH for the route
+     * Output only. [Output only] AS-PATH for the route
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.BgpRouteAsPath as_paths = 137568929;</code>
@@ -1220,7 +1223,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] AS-PATH for the route
+     * Output only. [Output only] AS-PATH for the route
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.BgpRouteAsPath as_paths = 137568929;</code>
@@ -1241,7 +1244,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] AS-PATH for the route
+     * Output only. [Output only] AS-PATH for the route
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.BgpRouteAsPath as_paths = 137568929;</code>
@@ -1262,7 +1265,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] AS-PATH for the route
+     * Output only. [Output only] AS-PATH for the route
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.BgpRouteAsPath as_paths = 137568929;</code>
@@ -1282,7 +1285,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] AS-PATH for the route
+     * Output only. [Output only] AS-PATH for the route
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.BgpRouteAsPath as_paths = 137568929;</code>
@@ -1302,7 +1305,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] AS-PATH for the route
+     * Output only. [Output only] AS-PATH for the route
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.BgpRouteAsPath as_paths = 137568929;</code>
@@ -1315,7 +1318,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] AS-PATH for the route
+     * Output only. [Output only] AS-PATH for the route
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.BgpRouteAsPath as_paths = 137568929;</code>
@@ -1332,7 +1335,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] AS-PATH for the route
+     * Output only. [Output only] AS-PATH for the route
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.BgpRouteAsPath as_paths = 137568929;</code>
@@ -1350,7 +1353,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] AS-PATH for the route
+     * Output only. [Output only] AS-PATH for the route
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.BgpRouteAsPath as_paths = 137568929;</code>
@@ -1364,7 +1367,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] AS-PATH for the route
+     * Output only. [Output only] AS-PATH for the route
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.BgpRouteAsPath as_paths = 137568929;</code>
@@ -1378,7 +1381,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] AS-PATH for the route
+     * Output only. [Output only] AS-PATH for the route
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.BgpRouteAsPath as_paths = 137568929;</code>
@@ -1419,7 +1422,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] BGP communities in human-readable A:B format.
+     * Output only. [Output only] BGP communities in human-readable A:B format.
      * </pre>
      *
      * <code>repeated string communities = 188262983;</code>
@@ -1435,7 +1438,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] BGP communities in human-readable A:B format.
+     * Output only. [Output only] BGP communities in human-readable A:B format.
      * </pre>
      *
      * <code>repeated string communities = 188262983;</code>
@@ -1450,7 +1453,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] BGP communities in human-readable A:B format.
+     * Output only. [Output only] BGP communities in human-readable A:B format.
      * </pre>
      *
      * <code>repeated string communities = 188262983;</code>
@@ -1466,7 +1469,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] BGP communities in human-readable A:B format.
+     * Output only. [Output only] BGP communities in human-readable A:B format.
      * </pre>
      *
      * <code>repeated string communities = 188262983;</code>
@@ -1482,7 +1485,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] BGP communities in human-readable A:B format.
+     * Output only. [Output only] BGP communities in human-readable A:B format.
      * </pre>
      *
      * <code>repeated string communities = 188262983;</code>
@@ -1506,7 +1509,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] BGP communities in human-readable A:B format.
+     * Output only. [Output only] BGP communities in human-readable A:B format.
      * </pre>
      *
      * <code>repeated string communities = 188262983;</code>
@@ -1529,7 +1532,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] BGP communities in human-readable A:B format.
+     * Output only. [Output only] BGP communities in human-readable A:B format.
      * </pre>
      *
      * <code>repeated string communities = 188262983;</code>
@@ -1549,7 +1552,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] BGP communities in human-readable A:B format.
+     * Output only. [Output only] BGP communities in human-readable A:B format.
      * </pre>
      *
      * <code>repeated string communities = 188262983;</code>
@@ -1568,7 +1571,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] BGP communities in human-readable A:B format.
+     * Output only. [Output only] BGP communities in human-readable A:B format.
      * </pre>
      *
      * <code>repeated string communities = 188262983;</code>
@@ -1599,7 +1602,8 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Destination IP range for the route, in human-readable CIDR format
+     * Output only. [Output only] Destination IP range for the route, in human-readable CIDR
+     * format
      * </pre>
      *
      * <code>
@@ -1616,7 +1620,8 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Destination IP range for the route, in human-readable CIDR format
+     * Output only. [Output only] Destination IP range for the route, in human-readable CIDR
+     * format
      * </pre>
      *
      * <code>
@@ -1641,7 +1646,8 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Destination IP range for the route, in human-readable CIDR format
+     * Output only. [Output only] Destination IP range for the route, in human-readable CIDR
+     * format
      * </pre>
      *
      * <code>
@@ -1667,7 +1673,8 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Destination IP range for the route, in human-readable CIDR format
+     * Output only. [Output only] Destination IP range for the route, in human-readable CIDR
+     * format
      * </pre>
      *
      * <code>
@@ -1691,7 +1698,8 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Destination IP range for the route, in human-readable CIDR format
+     * Output only. [Output only] Destination IP range for the route, in human-readable CIDR
+     * format
      * </pre>
      *
      * <code>
@@ -1724,7 +1732,8 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Destination IP range for the route, in human-readable CIDR format
+     * Output only. [Output only] Destination IP range for the route, in human-readable CIDR
+     * format
      * </pre>
      *
      * <code>
@@ -1746,7 +1755,8 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Destination IP range for the route, in human-readable CIDR format
+     * Output only. [Output only] Destination IP range for the route, in human-readable CIDR
+     * format
      * </pre>
      *
      * <code>
@@ -1764,7 +1774,8 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Destination IP range for the route, in human-readable CIDR format
+     * Output only. [Output only] Destination IP range for the route, in human-readable CIDR
+     * format
      * </pre>
      *
      * <code>
@@ -1787,7 +1798,8 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Destination IP range for the route, in human-readable CIDR format
+     * Output only. [Output only] Destination IP range for the route, in human-readable CIDR
+     * format
      * </pre>
      *
      * <code>
@@ -1817,7 +1829,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] BGP multi-exit discriminator
+     * Output only. [Output only] BGP multi-exit discriminator
      * </pre>
      *
      * <code>optional uint32 med = 107980;</code>
@@ -1833,7 +1845,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] BGP multi-exit discriminator
+     * Output only. [Output only] BGP multi-exit discriminator
      * </pre>
      *
      * <code>optional uint32 med = 107980;</code>
@@ -1849,7 +1861,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] BGP multi-exit discriminator
+     * Output only. [Output only] BGP multi-exit discriminator
      * </pre>
      *
      * <code>optional uint32 med = 107980;</code>
@@ -1869,7 +1881,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] BGP multi-exit discriminator
+     * Output only. [Output only] BGP multi-exit discriminator
      * </pre>
      *
      * <code>optional uint32 med = 107980;</code>
@@ -1889,7 +1901,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] BGP origin (EGP, IGP or INCOMPLETE)
+     * Output only. [Output only] BGP origin (EGP, IGP or INCOMPLETE)
      * Check the Origin enum for the list of possible values.
      * </pre>
      *
@@ -1905,7 +1917,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] BGP origin (EGP, IGP or INCOMPLETE)
+     * Output only. [Output only] BGP origin (EGP, IGP or INCOMPLETE)
      * Check the Origin enum for the list of possible values.
      * </pre>
      *
@@ -1929,7 +1941,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] BGP origin (EGP, IGP or INCOMPLETE)
+     * Output only. [Output only] BGP origin (EGP, IGP or INCOMPLETE)
      * Check the Origin enum for the list of possible values.
      * </pre>
      *
@@ -1953,7 +1965,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] BGP origin (EGP, IGP or INCOMPLETE)
+     * Output only. [Output only] BGP origin (EGP, IGP or INCOMPLETE)
      * Check the Origin enum for the list of possible values.
      * </pre>
      *
@@ -1976,7 +1988,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] BGP origin (EGP, IGP or INCOMPLETE)
+     * Output only. [Output only] BGP origin (EGP, IGP or INCOMPLETE)
      * Check the Origin enum for the list of possible values.
      * </pre>
      *
@@ -1995,7 +2007,7 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] BGP origin (EGP, IGP or INCOMPLETE)
+     * Output only. [Output only] BGP origin (EGP, IGP or INCOMPLETE)
      * Check the Origin enum for the list of possible values.
      * </pre>
      *

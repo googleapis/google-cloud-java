@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ package com.google.privacy.dlp.v2;
  *
  *
  * <pre>
- * Identifies a single Vertex AI dataset.
+ * Identifies a single Vertex AI resource. Only datasets are
+ * supported.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.VertexDatasetResourceReference}
@@ -74,8 +75,11 @@ public final class VertexDatasetResourceReference extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. The name of the dataset resource. If set within a project-level
+   * Required. The name of the Vertex AI resource. If set within a project-level
    * configuration, the specified resource must be within the project.
+   * Examples:
+   *
+   * * `projects/{project}/locations/{location}/datasets/{dataset}`
    * </pre>
    *
    * <code>string dataset_resource_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -99,8 +103,11 @@ public final class VertexDatasetResourceReference extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. The name of the dataset resource. If set within a project-level
+   * Required. The name of the Vertex AI resource. If set within a project-level
    * configuration, the specified resource must be within the project.
+   * Examples:
+   *
+   * * `projects/{project}/locations/{location}/datasets/{dataset}`
    * </pre>
    *
    * <code>string dataset_resource_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -285,7 +292,8 @@ public final class VertexDatasetResourceReference extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Identifies a single Vertex AI dataset.
+   * Identifies a single Vertex AI resource. Only datasets are
+   * supported.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.VertexDatasetResourceReference}
@@ -470,8 +478,11 @@ public final class VertexDatasetResourceReference extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The name of the dataset resource. If set within a project-level
+     * Required. The name of the Vertex AI resource. If set within a project-level
      * configuration, the specified resource must be within the project.
+     * Examples:
+     *
+     * * `projects/{project}/locations/{location}/datasets/{dataset}`
      * </pre>
      *
      * <code>string dataset_resource_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -494,8 +505,11 @@ public final class VertexDatasetResourceReference extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The name of the dataset resource. If set within a project-level
+     * Required. The name of the Vertex AI resource. If set within a project-level
      * configuration, the specified resource must be within the project.
+     * Examples:
+     *
+     * * `projects/{project}/locations/{location}/datasets/{dataset}`
      * </pre>
      *
      * <code>string dataset_resource_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -518,8 +532,11 @@ public final class VertexDatasetResourceReference extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The name of the dataset resource. If set within a project-level
+     * Required. The name of the Vertex AI resource. If set within a project-level
      * configuration, the specified resource must be within the project.
+     * Examples:
+     *
+     * * `projects/{project}/locations/{location}/datasets/{dataset}`
      * </pre>
      *
      * <code>string dataset_resource_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -541,8 +558,11 @@ public final class VertexDatasetResourceReference extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The name of the dataset resource. If set within a project-level
+     * Required. The name of the Vertex AI resource. If set within a project-level
      * configuration, the specified resource must be within the project.
+     * Examples:
+     *
+     * * `projects/{project}/locations/{location}/datasets/{dataset}`
      * </pre>
      *
      * <code>string dataset_resource_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -560,8 +580,11 @@ public final class VertexDatasetResourceReference extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The name of the dataset resource. If set within a project-level
+     * Required. The name of the Vertex AI resource. If set within a project-level
      * configuration, the specified resource must be within the project.
+     * Examples:
+     *
+     * * `projects/{project}/locations/{location}/datasets/{dataset}`
      * </pre>
      *
      * <code>string dataset_resource_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>

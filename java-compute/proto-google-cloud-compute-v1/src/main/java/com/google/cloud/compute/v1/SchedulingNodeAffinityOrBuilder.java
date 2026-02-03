@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,7 +67,7 @@ public interface SchedulingNodeAffinityOrBuilder
    *
    *
    * <pre>
-   * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
+   * Defines the operation of node selection. Valid operators areIN for affinity and NOT_IN for anti-affinity.
    * Check the Operator enum for the list of possible values.
    * </pre>
    *
@@ -81,7 +81,7 @@ public interface SchedulingNodeAffinityOrBuilder
    *
    *
    * <pre>
-   * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
+   * Defines the operation of node selection. Valid operators areIN for affinity and NOT_IN for anti-affinity.
    * Check the Operator enum for the list of possible values.
    * </pre>
    *
@@ -95,7 +95,7 @@ public interface SchedulingNodeAffinityOrBuilder
    *
    *
    * <pre>
-   * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
+   * Defines the operation of node selection. Valid operators areIN for affinity and NOT_IN for anti-affinity.
    * Check the Operator enum for the list of possible values.
    * </pre>
    *

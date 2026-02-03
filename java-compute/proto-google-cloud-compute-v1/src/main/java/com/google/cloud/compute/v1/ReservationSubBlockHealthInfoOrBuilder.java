@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,7 +54,8 @@ public interface ReservationSubBlockHealthInfoOrBuilder
    *
    *
    * <pre>
-   * The number of degraded infrastructure (e.g NV link domain) in the reservation subblock.
+   * The number of degraded infrastructure (e.g NV link domain) in the
+   * reservation subblock.
    * </pre>
    *
    * <code>optional int32 degraded_infra_count = 138638927;</code>
@@ -67,7 +68,8 @@ public interface ReservationSubBlockHealthInfoOrBuilder
    *
    *
    * <pre>
-   * The number of degraded infrastructure (e.g NV link domain) in the reservation subblock.
+   * The number of degraded infrastructure (e.g NV link domain) in the
+   * reservation subblock.
    * </pre>
    *
    * <code>optional int32 degraded_infra_count = 138638927;</code>
@@ -148,7 +150,8 @@ public interface ReservationSubBlockHealthInfoOrBuilder
    *
    *
    * <pre>
-   * The number of healthy infrastructure (e.g NV link domain) in the reservation subblock.
+   * The number of healthy infrastructure (e.g NV link domain) in the
+   * reservation subblock.
    * </pre>
    *
    * <code>optional int32 healthy_infra_count = 385052222;</code>
@@ -161,7 +164,8 @@ public interface ReservationSubBlockHealthInfoOrBuilder
    *
    *
    * <pre>
-   * The number of healthy infrastructure (e.g NV link domain) in the reservation subblock.
+   * The number of healthy infrastructure (e.g NV link domain) in the
+   * reservation subblock.
    * </pre>
    *
    * <code>optional int32 healthy_infra_count = 385052222;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,7 +84,7 @@ public final class AdReviewCenterAdServiceProto {
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022_\n"
           + "\006status\030\004 \001(\0162J.google.ads.admanager.v1.AdRev"
-          + "iewCenterAdStatusEnum.AdReviewCenterAdStatusB\003\340A\002\022#\n"
+          + "iewCenterAdStatusEnum.AdReviewCenterAdStatusB\003\340A\001\022#\n"
           + "\026ad_review_center_ad_id\030\005 \003(\tB\003\340A\001\0223\n"
           + "\017date_time_range\030\006"
           + " \001(\0132\025.google.type.IntervalB\003\340A\001\022\030\n"

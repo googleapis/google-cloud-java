@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -314,6 +314,82 @@ public interface RestoreBackupRequestOrBuilder
    * <code>.google.cloud.backupdr.v1.DiskRestoreProperties disk_restore_properties = 7;</code>
    */
   com.google.cloud.backupdr.v1.DiskRestorePropertiesOrBuilder getDiskRestorePropertiesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A field mask used to clear server-side default values
+   * for fields within the `instance_properties` oneof.
+   *
+   * When a field in this mask is cleared, the server will not apply its
+   * default logic (like inheriting a value from the source) for that field.
+   *
+   * The most common current use case is clearing default encryption keys.
+   *
+   * Examples of field mask paths:
+   * - Compute Instance Disks:
+   * `compute_instance_restore_properties.disks.*.disk_encryption_key`
+   * - Single Disk: `disk_restore_properties.disk_encryption_key`
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.FieldMask clear_overrides_field_mask = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the clearOverridesFieldMask field is set.
+   */
+  boolean hasClearOverridesFieldMask();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A field mask used to clear server-side default values
+   * for fields within the `instance_properties` oneof.
+   *
+   * When a field in this mask is cleared, the server will not apply its
+   * default logic (like inheriting a value from the source) for that field.
+   *
+   * The most common current use case is clearing default encryption keys.
+   *
+   * Examples of field mask paths:
+   * - Compute Instance Disks:
+   * `compute_instance_restore_properties.disks.*.disk_encryption_key`
+   * - Single Disk: `disk_restore_properties.disk_encryption_key`
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.FieldMask clear_overrides_field_mask = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The clearOverridesFieldMask.
+   */
+  com.google.protobuf.FieldMask getClearOverridesFieldMask();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A field mask used to clear server-side default values
+   * for fields within the `instance_properties` oneof.
+   *
+   * When a field in this mask is cleared, the server will not apply its
+   * default logic (like inheriting a value from the source) for that field.
+   *
+   * The most common current use case is clearing default encryption keys.
+   *
+   * Examples of field mask paths:
+   * - Compute Instance Disks:
+   * `compute_instance_restore_properties.disks.*.disk_encryption_key`
+   * - Single Disk: `disk_restore_properties.disk_encryption_key`
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.FieldMask clear_overrides_field_mask = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.FieldMaskOrBuilder getClearOverridesFieldMaskOrBuilder();
 
   com.google.cloud.backupdr.v1.RestoreBackupRequest.TargetEnvironmentCase
       getTargetEnvironmentCase();

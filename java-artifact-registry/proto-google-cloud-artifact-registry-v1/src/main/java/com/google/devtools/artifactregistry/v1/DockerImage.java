@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,6 +49,8 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
     uri_ = "";
     tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
     mediaType_ = "";
+    artifactType_ = "";
+    imageManifests_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -84,7 +86,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. registry_location, project_id, repository_name and image id forms
    * a unique image
-   * name:`projects/&lt;project_id&gt;/locations/&lt;location&gt;/repository/&lt;repository_name&gt;/dockerImages/&lt;docker_image&gt;`.
+   * name:`projects/&lt;project_id&gt;/locations/&lt;location&gt;/repositories/&lt;repository_name&gt;/dockerImages/&lt;docker_image&gt;`.
    * For example,
    * "projects/test-project/locations/us-west4/repositories/test-repo/dockerImages/
    * nginx&#64;sha256:e9954c1fc875017be1c3e36eca16be2d9e9bccc4bf072163515467d6a823c7cf",
@@ -117,7 +119,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. registry_location, project_id, repository_name and image id forms
    * a unique image
-   * name:`projects/&lt;project_id&gt;/locations/&lt;location&gt;/repository/&lt;repository_name&gt;/dockerImages/&lt;docker_image&gt;`.
+   * name:`projects/&lt;project_id&gt;/locations/&lt;location&gt;/repositories/&lt;repository_name&gt;/dockerImages/&lt;docker_image&gt;`.
    * For example,
    * "projects/test-project/locations/us-west4/repositories/test-repo/dockerImages/
    * nginx&#64;sha256:e9954c1fc875017be1c3e36eca16be2d9e9bccc4bf072163515467d6a823c7cf",
@@ -511,6 +513,158 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
+  public static final int ARTIFACT_TYPE_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object artifactType_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * ArtifactType of this image, e.g. "application/vnd.example+type".
+   * If the `subject_digest` is set and no `artifact_type` is given, the
+   * `media_type` will be considered as the `artifact_type`. This field is
+   * returned as the `metadata.artifactType` field in the Version resource.
+   * </pre>
+   *
+   * <code>string artifact_type = 9;</code>
+   *
+   * @return The artifactType.
+   */
+  @java.lang.Override
+  public java.lang.String getArtifactType() {
+    java.lang.Object ref = artifactType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      artifactType_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * ArtifactType of this image, e.g. "application/vnd.example+type".
+   * If the `subject_digest` is set and no `artifact_type` is given, the
+   * `media_type` will be considered as the `artifact_type`. This field is
+   * returned as the `metadata.artifactType` field in the Version resource.
+   * </pre>
+   *
+   * <code>string artifact_type = 9;</code>
+   *
+   * @return The bytes for artifactType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getArtifactTypeBytes() {
+    java.lang.Object ref = artifactType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      artifactType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int IMAGE_MANIFESTS_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.devtools.artifactregistry.v1.ImageManifest> imageManifests_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. For multi-arch images (manifest lists), this field contains the
+   * list of image manifests.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.artifactregistry.v1.ImageManifest image_manifests = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.devtools.artifactregistry.v1.ImageManifest>
+      getImageManifestsList() {
+    return imageManifests_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. For multi-arch images (manifest lists), this field contains the
+   * list of image manifests.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.artifactregistry.v1.ImageManifest image_manifests = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.devtools.artifactregistry.v1.ImageManifestOrBuilder>
+      getImageManifestsOrBuilderList() {
+    return imageManifests_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. For multi-arch images (manifest lists), this field contains the
+   * list of image manifests.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.artifactregistry.v1.ImageManifest image_manifests = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getImageManifestsCount() {
+    return imageManifests_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. For multi-arch images (manifest lists), this field contains the
+   * list of image manifests.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.artifactregistry.v1.ImageManifest image_manifests = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.devtools.artifactregistry.v1.ImageManifest getImageManifests(int index) {
+    return imageManifests_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. For multi-arch images (manifest lists), this field contains the
+   * list of image manifests.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.artifactregistry.v1.ImageManifest image_manifests = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.devtools.artifactregistry.v1.ImageManifestOrBuilder getImageManifestsOrBuilder(
+      int index) {
+    return imageManifests_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -548,6 +702,12 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(8, getUpdateTime());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(artifactType_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, artifactType_);
+    }
+    for (int i = 0; i < imageManifests_.size(); i++) {
+      output.writeMessage(11, imageManifests_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -587,6 +747,12 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getUpdateTime());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(artifactType_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, artifactType_);
+    }
+    for (int i = 0; i < imageManifests_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, imageManifests_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -620,6 +786,8 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
+    if (!getArtifactType().equals(other.getArtifactType())) return false;
+    if (!getImageManifestsList().equals(other.getImageManifestsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -654,6 +822,12 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
     if (hasUpdateTime()) {
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
+    }
+    hash = (37 * hash) + ARTIFACT_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getArtifactType().hashCode();
+    if (getImageManifestsCount() > 0) {
+      hash = (37 * hash) + IMAGE_MANIFESTS_FIELD_NUMBER;
+      hash = (53 * hash) + getImageManifestsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -804,6 +978,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
         getUploadTimeFieldBuilder();
         getBuildTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
+        getImageManifestsFieldBuilder();
       }
     }
 
@@ -831,6 +1006,14 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
+      artifactType_ = "";
+      if (imageManifestsBuilder_ == null) {
+        imageManifests_ = java.util.Collections.emptyList();
+      } else {
+        imageManifests_ = null;
+        imageManifestsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000200);
       return this;
     }
 
@@ -858,11 +1041,25 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.artifactregistry.v1.DockerImage buildPartial() {
       com.google.devtools.artifactregistry.v1.DockerImage result =
           new com.google.devtools.artifactregistry.v1.DockerImage(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.devtools.artifactregistry.v1.DockerImage result) {
+      if (imageManifestsBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)) {
+          imageManifests_ = java.util.Collections.unmodifiableList(imageManifests_);
+          bitField0_ = (bitField0_ & ~0x00000200);
+        }
+        result.imageManifests_ = imageManifests_;
+      } else {
+        result.imageManifests_ = imageManifestsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.devtools.artifactregistry.v1.DockerImage result) {
@@ -895,6 +1092,9 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.artifactType_ = artifactType_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -982,6 +1182,38 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
       }
+      if (!other.getArtifactType().isEmpty()) {
+        artifactType_ = other.artifactType_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      if (imageManifestsBuilder_ == null) {
+        if (!other.imageManifests_.isEmpty()) {
+          if (imageManifests_.isEmpty()) {
+            imageManifests_ = other.imageManifests_;
+            bitField0_ = (bitField0_ & ~0x00000200);
+          } else {
+            ensureImageManifestsIsMutable();
+            imageManifests_.addAll(other.imageManifests_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.imageManifests_.isEmpty()) {
+          if (imageManifestsBuilder_.isEmpty()) {
+            imageManifestsBuilder_.dispose();
+            imageManifestsBuilder_ = null;
+            imageManifests_ = other.imageManifests_;
+            bitField0_ = (bitField0_ & ~0x00000200);
+            imageManifestsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getImageManifestsFieldBuilder()
+                    : null;
+          } else {
+            imageManifestsBuilder_.addAllMessages(other.imageManifests_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1057,6 +1289,26 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000080;
                 break;
               } // case 66
+            case 74:
+              {
+                artifactType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
+            case 90:
+              {
+                com.google.devtools.artifactregistry.v1.ImageManifest m =
+                    input.readMessage(
+                        com.google.devtools.artifactregistry.v1.ImageManifest.parser(),
+                        extensionRegistry);
+                if (imageManifestsBuilder_ == null) {
+                  ensureImageManifestsIsMutable();
+                  imageManifests_.add(m);
+                } else {
+                  imageManifestsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1084,7 +1336,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. registry_location, project_id, repository_name and image id forms
      * a unique image
-     * name:`projects/&lt;project_id&gt;/locations/&lt;location&gt;/repository/&lt;repository_name&gt;/dockerImages/&lt;docker_image&gt;`.
+     * name:`projects/&lt;project_id&gt;/locations/&lt;location&gt;/repositories/&lt;repository_name&gt;/dockerImages/&lt;docker_image&gt;`.
      * For example,
      * "projects/test-project/locations/us-west4/repositories/test-repo/dockerImages/
      * nginx&#64;sha256:e9954c1fc875017be1c3e36eca16be2d9e9bccc4bf072163515467d6a823c7cf",
@@ -1116,7 +1368,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. registry_location, project_id, repository_name and image id forms
      * a unique image
-     * name:`projects/&lt;project_id&gt;/locations/&lt;location&gt;/repository/&lt;repository_name&gt;/dockerImages/&lt;docker_image&gt;`.
+     * name:`projects/&lt;project_id&gt;/locations/&lt;location&gt;/repositories/&lt;repository_name&gt;/dockerImages/&lt;docker_image&gt;`.
      * For example,
      * "projects/test-project/locations/us-west4/repositories/test-repo/dockerImages/
      * nginx&#64;sha256:e9954c1fc875017be1c3e36eca16be2d9e9bccc4bf072163515467d6a823c7cf",
@@ -1148,7 +1400,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. registry_location, project_id, repository_name and image id forms
      * a unique image
-     * name:`projects/&lt;project_id&gt;/locations/&lt;location&gt;/repository/&lt;repository_name&gt;/dockerImages/&lt;docker_image&gt;`.
+     * name:`projects/&lt;project_id&gt;/locations/&lt;location&gt;/repositories/&lt;repository_name&gt;/dockerImages/&lt;docker_image&gt;`.
      * For example,
      * "projects/test-project/locations/us-west4/repositories/test-repo/dockerImages/
      * nginx&#64;sha256:e9954c1fc875017be1c3e36eca16be2d9e9bccc4bf072163515467d6a823c7cf",
@@ -1179,7 +1431,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. registry_location, project_id, repository_name and image id forms
      * a unique image
-     * name:`projects/&lt;project_id&gt;/locations/&lt;location&gt;/repository/&lt;repository_name&gt;/dockerImages/&lt;docker_image&gt;`.
+     * name:`projects/&lt;project_id&gt;/locations/&lt;location&gt;/repositories/&lt;repository_name&gt;/dockerImages/&lt;docker_image&gt;`.
      * For example,
      * "projects/test-project/locations/us-west4/repositories/test-repo/dockerImages/
      * nginx&#64;sha256:e9954c1fc875017be1c3e36eca16be2d9e9bccc4bf072163515467d6a823c7cf",
@@ -1206,7 +1458,7 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. registry_location, project_id, repository_name and image id forms
      * a unique image
-     * name:`projects/&lt;project_id&gt;/locations/&lt;location&gt;/repository/&lt;repository_name&gt;/dockerImages/&lt;docker_image&gt;`.
+     * name:`projects/&lt;project_id&gt;/locations/&lt;location&gt;/repositories/&lt;repository_name&gt;/dockerImages/&lt;docker_image&gt;`.
      * For example,
      * "projects/test-project/locations/us-west4/repositories/test-repo/dockerImages/
      * nginx&#64;sha256:e9954c1fc875017be1c3e36eca16be2d9e9bccc4bf072163515467d6a823c7cf",
@@ -2354,6 +2606,567 @@ public final class DockerImage extends com.google.protobuf.GeneratedMessageV3
         updateTime_ = null;
       }
       return updateTimeBuilder_;
+    }
+
+    private java.lang.Object artifactType_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * ArtifactType of this image, e.g. "application/vnd.example+type".
+     * If the `subject_digest` is set and no `artifact_type` is given, the
+     * `media_type` will be considered as the `artifact_type`. This field is
+     * returned as the `metadata.artifactType` field in the Version resource.
+     * </pre>
+     *
+     * <code>string artifact_type = 9;</code>
+     *
+     * @return The artifactType.
+     */
+    public java.lang.String getArtifactType() {
+      java.lang.Object ref = artifactType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        artifactType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ArtifactType of this image, e.g. "application/vnd.example+type".
+     * If the `subject_digest` is set and no `artifact_type` is given, the
+     * `media_type` will be considered as the `artifact_type`. This field is
+     * returned as the `metadata.artifactType` field in the Version resource.
+     * </pre>
+     *
+     * <code>string artifact_type = 9;</code>
+     *
+     * @return The bytes for artifactType.
+     */
+    public com.google.protobuf.ByteString getArtifactTypeBytes() {
+      java.lang.Object ref = artifactType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        artifactType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ArtifactType of this image, e.g. "application/vnd.example+type".
+     * If the `subject_digest` is set and no `artifact_type` is given, the
+     * `media_type` will be considered as the `artifact_type`. This field is
+     * returned as the `metadata.artifactType` field in the Version resource.
+     * </pre>
+     *
+     * <code>string artifact_type = 9;</code>
+     *
+     * @param value The artifactType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setArtifactType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      artifactType_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ArtifactType of this image, e.g. "application/vnd.example+type".
+     * If the `subject_digest` is set and no `artifact_type` is given, the
+     * `media_type` will be considered as the `artifact_type`. This field is
+     * returned as the `metadata.artifactType` field in the Version resource.
+     * </pre>
+     *
+     * <code>string artifact_type = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearArtifactType() {
+      artifactType_ = getDefaultInstance().getArtifactType();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ArtifactType of this image, e.g. "application/vnd.example+type".
+     * If the `subject_digest` is set and no `artifact_type` is given, the
+     * `media_type` will be considered as the `artifact_type`. This field is
+     * returned as the `metadata.artifactType` field in the Version resource.
+     * </pre>
+     *
+     * <code>string artifact_type = 9;</code>
+     *
+     * @param value The bytes for artifactType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setArtifactTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      artifactType_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.devtools.artifactregistry.v1.ImageManifest> imageManifests_ =
+        java.util.Collections.emptyList();
+
+    private void ensureImageManifestsIsMutable() {
+      if (!((bitField0_ & 0x00000200) != 0)) {
+        imageManifests_ =
+            new java.util.ArrayList<com.google.devtools.artifactregistry.v1.ImageManifest>(
+                imageManifests_);
+        bitField0_ |= 0x00000200;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.devtools.artifactregistry.v1.ImageManifest,
+            com.google.devtools.artifactregistry.v1.ImageManifest.Builder,
+            com.google.devtools.artifactregistry.v1.ImageManifestOrBuilder>
+        imageManifestsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. For multi-arch images (manifest lists), this field contains the
+     * list of image manifests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.ImageManifest image_manifests = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.devtools.artifactregistry.v1.ImageManifest>
+        getImageManifestsList() {
+      if (imageManifestsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(imageManifests_);
+      } else {
+        return imageManifestsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. For multi-arch images (manifest lists), this field contains the
+     * list of image manifests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.ImageManifest image_manifests = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getImageManifestsCount() {
+      if (imageManifestsBuilder_ == null) {
+        return imageManifests_.size();
+      } else {
+        return imageManifestsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. For multi-arch images (manifest lists), this field contains the
+     * list of image manifests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.ImageManifest image_manifests = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.devtools.artifactregistry.v1.ImageManifest getImageManifests(int index) {
+      if (imageManifestsBuilder_ == null) {
+        return imageManifests_.get(index);
+      } else {
+        return imageManifestsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. For multi-arch images (manifest lists), this field contains the
+     * list of image manifests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.ImageManifest image_manifests = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setImageManifests(
+        int index, com.google.devtools.artifactregistry.v1.ImageManifest value) {
+      if (imageManifestsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureImageManifestsIsMutable();
+        imageManifests_.set(index, value);
+        onChanged();
+      } else {
+        imageManifestsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. For multi-arch images (manifest lists), this field contains the
+     * list of image manifests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.ImageManifest image_manifests = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setImageManifests(
+        int index, com.google.devtools.artifactregistry.v1.ImageManifest.Builder builderForValue) {
+      if (imageManifestsBuilder_ == null) {
+        ensureImageManifestsIsMutable();
+        imageManifests_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        imageManifestsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. For multi-arch images (manifest lists), this field contains the
+     * list of image manifests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.ImageManifest image_manifests = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addImageManifests(com.google.devtools.artifactregistry.v1.ImageManifest value) {
+      if (imageManifestsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureImageManifestsIsMutable();
+        imageManifests_.add(value);
+        onChanged();
+      } else {
+        imageManifestsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. For multi-arch images (manifest lists), this field contains the
+     * list of image manifests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.ImageManifest image_manifests = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addImageManifests(
+        int index, com.google.devtools.artifactregistry.v1.ImageManifest value) {
+      if (imageManifestsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureImageManifestsIsMutable();
+        imageManifests_.add(index, value);
+        onChanged();
+      } else {
+        imageManifestsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. For multi-arch images (manifest lists), this field contains the
+     * list of image manifests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.ImageManifest image_manifests = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addImageManifests(
+        com.google.devtools.artifactregistry.v1.ImageManifest.Builder builderForValue) {
+      if (imageManifestsBuilder_ == null) {
+        ensureImageManifestsIsMutable();
+        imageManifests_.add(builderForValue.build());
+        onChanged();
+      } else {
+        imageManifestsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. For multi-arch images (manifest lists), this field contains the
+     * list of image manifests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.ImageManifest image_manifests = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addImageManifests(
+        int index, com.google.devtools.artifactregistry.v1.ImageManifest.Builder builderForValue) {
+      if (imageManifestsBuilder_ == null) {
+        ensureImageManifestsIsMutable();
+        imageManifests_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        imageManifestsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. For multi-arch images (manifest lists), this field contains the
+     * list of image manifests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.ImageManifest image_manifests = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllImageManifests(
+        java.lang.Iterable<? extends com.google.devtools.artifactregistry.v1.ImageManifest>
+            values) {
+      if (imageManifestsBuilder_ == null) {
+        ensureImageManifestsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, imageManifests_);
+        onChanged();
+      } else {
+        imageManifestsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. For multi-arch images (manifest lists), this field contains the
+     * list of image manifests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.ImageManifest image_manifests = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearImageManifests() {
+      if (imageManifestsBuilder_ == null) {
+        imageManifests_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000200);
+        onChanged();
+      } else {
+        imageManifestsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. For multi-arch images (manifest lists), this field contains the
+     * list of image manifests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.ImageManifest image_manifests = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeImageManifests(int index) {
+      if (imageManifestsBuilder_ == null) {
+        ensureImageManifestsIsMutable();
+        imageManifests_.remove(index);
+        onChanged();
+      } else {
+        imageManifestsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. For multi-arch images (manifest lists), this field contains the
+     * list of image manifests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.ImageManifest image_manifests = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.devtools.artifactregistry.v1.ImageManifest.Builder getImageManifestsBuilder(
+        int index) {
+      return getImageManifestsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. For multi-arch images (manifest lists), this field contains the
+     * list of image manifests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.ImageManifest image_manifests = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.devtools.artifactregistry.v1.ImageManifestOrBuilder
+        getImageManifestsOrBuilder(int index) {
+      if (imageManifestsBuilder_ == null) {
+        return imageManifests_.get(index);
+      } else {
+        return imageManifestsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. For multi-arch images (manifest lists), this field contains the
+     * list of image manifests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.ImageManifest image_manifests = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.devtools.artifactregistry.v1.ImageManifestOrBuilder>
+        getImageManifestsOrBuilderList() {
+      if (imageManifestsBuilder_ != null) {
+        return imageManifestsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(imageManifests_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. For multi-arch images (manifest lists), this field contains the
+     * list of image manifests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.ImageManifest image_manifests = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.devtools.artifactregistry.v1.ImageManifest.Builder
+        addImageManifestsBuilder() {
+      return getImageManifestsFieldBuilder()
+          .addBuilder(com.google.devtools.artifactregistry.v1.ImageManifest.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. For multi-arch images (manifest lists), this field contains the
+     * list of image manifests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.ImageManifest image_manifests = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.devtools.artifactregistry.v1.ImageManifest.Builder addImageManifestsBuilder(
+        int index) {
+      return getImageManifestsFieldBuilder()
+          .addBuilder(
+              index, com.google.devtools.artifactregistry.v1.ImageManifest.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. For multi-arch images (manifest lists), this field contains the
+     * list of image manifests.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devtools.artifactregistry.v1.ImageManifest image_manifests = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.devtools.artifactregistry.v1.ImageManifest.Builder>
+        getImageManifestsBuilderList() {
+      return getImageManifestsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.devtools.artifactregistry.v1.ImageManifest,
+            com.google.devtools.artifactregistry.v1.ImageManifest.Builder,
+            com.google.devtools.artifactregistry.v1.ImageManifestOrBuilder>
+        getImageManifestsFieldBuilder() {
+      if (imageManifestsBuilder_ == null) {
+        imageManifestsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.devtools.artifactregistry.v1.ImageManifest,
+                com.google.devtools.artifactregistry.v1.ImageManifest.Builder,
+                com.google.devtools.artifactregistry.v1.ImageManifestOrBuilder>(
+                imageManifests_,
+                ((bitField0_ & 0x00000200) != 0),
+                getParentForChildren(),
+                isClean());
+        imageManifests_ = null;
+      }
+      return imageManifestsBuilder_;
     }
 
     @java.lang.Override

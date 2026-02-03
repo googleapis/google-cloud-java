@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ public interface InterconnectAttachmentPrivateInfoOrBuilder
    *
    *
    * <pre>
-   * [Output Only] 802.1q encapsulation tag to be used for traffic between Google and the customer, going to and from this network and region.
+   * [Output Only] 802.1q encapsulation tag to be used for traffic between
+   * Google and the customer, going to and from this network and region.
    * </pre>
    *
    * <code>optional uint32 tag8021q = 271820992;</code>
@@ -41,7 +42,8 @@ public interface InterconnectAttachmentPrivateInfoOrBuilder
    *
    *
    * <pre>
-   * [Output Only] 802.1q encapsulation tag to be used for traffic between Google and the customer, going to and from this network and region.
+   * [Output Only] 802.1q encapsulation tag to be used for traffic between
+   * Google and the customer, going to and from this network and region.
    * </pre>
    *
    * <code>optional uint32 tag8021q = 271820992;</code>

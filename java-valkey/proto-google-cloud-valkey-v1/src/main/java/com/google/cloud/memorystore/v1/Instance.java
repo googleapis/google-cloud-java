@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     pscAttachmentDetails_ = java.util.Collections.emptyList();
     endpoints_ = java.util.Collections.emptyList();
     mode_ = 0;
+    kmsKey_ = "";
     backupCollection_ = "";
+    maintenanceVersion_ = "";
+    effectiveMaintenanceVersion_ = "";
+    availableMaintenanceVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -7884,8 +7888,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
-   * or endpoints.connections.psc_connection values instead.
+   * Output only. Deprecated: The discovery_endpoints parameter is deprecated.
+   * As a result, it will not be populated if the connections are created using
+   * endpoints parameter. Instead of this parameter, for discovery, use
+   * endpoints.connections.pscConnection and
+   * endpoints.connections.pscAutoConnection
+   * with connectionType CONNECTION_TYPE_DISCOVERY.
    * </pre>
    *
    * <code>
@@ -7903,8 +7911,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
-   * or endpoints.connections.psc_connection values instead.
+   * Output only. Deprecated: The discovery_endpoints parameter is deprecated.
+   * As a result, it will not be populated if the connections are created using
+   * endpoints parameter. Instead of this parameter, for discovery, use
+   * endpoints.connections.pscConnection and
+   * endpoints.connections.pscAutoConnection
+   * with connectionType CONNECTION_TYPE_DISCOVERY.
    * </pre>
    *
    * <code>
@@ -7922,8 +7934,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
-   * or endpoints.connections.psc_connection values instead.
+   * Output only. Deprecated: The discovery_endpoints parameter is deprecated.
+   * As a result, it will not be populated if the connections are created using
+   * endpoints parameter. Instead of this parameter, for discovery, use
+   * endpoints.connections.pscConnection and
+   * endpoints.connections.pscAutoConnection
+   * with connectionType CONNECTION_TYPE_DISCOVERY.
    * </pre>
    *
    * <code>
@@ -7940,8 +7956,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
-   * or endpoints.connections.psc_connection values instead.
+   * Output only. Deprecated: The discovery_endpoints parameter is deprecated.
+   * As a result, it will not be populated if the connections are created using
+   * endpoints parameter. Instead of this parameter, for discovery, use
+   * endpoints.connections.pscConnection and
+   * endpoints.connections.pscAutoConnection
+   * with connectionType CONNECTION_TYPE_DISCOVERY.
    * </pre>
    *
    * <code>
@@ -7958,8 +7978,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
-   * or endpoints.connections.psc_connection values instead.
+   * Output only. Deprecated: The discovery_endpoints parameter is deprecated.
+   * As a result, it will not be populated if the connections are created using
+   * endpoints parameter. Instead of this parameter, for discovery, use
+   * endpoints.connections.pscConnection and
+   * endpoints.connections.pscAutoConnection
+   * with connectionType CONNECTION_TYPE_DISCOVERY.
    * </pre>
    *
    * <code>
@@ -8715,6 +8739,45 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.memorystore.v1.Instance.Mode.UNRECOGNIZED : result;
   }
 
+  public static final int SIMULATE_MAINTENANCE_EVENT_FIELD_NUMBER = 27;
+  private boolean simulateMaintenanceEvent_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Simulate a maintenance event.
+   * </pre>
+   *
+   * <code>
+   * optional bool simulate_maintenance_event = 27 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the simulateMaintenanceEvent field is set.
+   */
+  @java.lang.Override
+  public boolean hasSimulateMaintenanceEvent() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Simulate a maintenance event.
+   * </pre>
+   *
+   * <code>
+   * optional bool simulate_maintenance_event = 27 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return The simulateMaintenanceEvent.
+   */
+  @java.lang.Override
+  public boolean getSimulateMaintenanceEvent() {
+    return simulateMaintenanceEvent_;
+  }
+
   public static final int ONDEMAND_MAINTENANCE_FIELD_NUMBER = 28;
   private boolean ondemandMaintenance_ = false;
 
@@ -8726,14 +8789,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * optional bool ondemand_maintenance = 28 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * optional bool ondemand_maintenance = 28 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
    * </code>
    *
+   * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
+   *     google/cloud/memorystore/v1/memorystore.proto;l=545
    * @return Whether the ondemandMaintenance field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasOndemandMaintenance() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -8744,14 +8810,95 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * optional bool ondemand_maintenance = 28 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * optional bool ondemand_maintenance = 28 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
    * </code>
    *
+   * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
+   *     google/cloud/memorystore/v1/memorystore.proto;l=545
    * @return The ondemandMaintenance.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean getOndemandMaintenance() {
     return ondemandMaintenance_;
+  }
+
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 29;
+  private boolean satisfiesPzs_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>
+   * optional bool satisfies_pzs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the satisfiesPzs field is set.
+   */
+  @java.lang.Override
+  public boolean hasSatisfiesPzs() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>
+   * optional bool satisfies_pzs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
+  public static final int SATISFIES_PZI_FIELD_NUMBER = 30;
+  private boolean satisfiesPzi_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>
+   * optional bool satisfies_pzi = 30 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the satisfiesPzi field is set.
+   */
+  @java.lang.Override
+  public boolean hasSatisfiesPzi() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>
+   * optional bool satisfies_pzi = 30 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The satisfiesPzi.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzi() {
+    return satisfiesPzi_;
   }
 
   public static final int MAINTENANCE_POLICY_FIELD_NUMBER = 31;
@@ -8774,7 +8921,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasMaintenancePolicy() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
@@ -8838,7 +8985,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasMaintenanceSchedule() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
@@ -8899,7 +9046,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasCrossInstanceReplicationConfig() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
 
   /**
@@ -8963,7 +9110,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasAsyncInstanceEndpointsDeletionEnabled() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
@@ -8987,6 +9134,140 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     return asyncInstanceEndpointsDeletionEnabled_;
   }
 
+  public static final int KMS_KEY_FIELD_NUMBER = 45;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKey_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The KMS key used to encrypt the at-rest data of the cluster.
+   * </pre>
+   *
+   * <code>
+   * optional string kms_key = 45 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the kmsKey field is set.
+   */
+  @java.lang.Override
+  public boolean hasKmsKey() {
+    return ((bitField0_ & 0x00010000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The KMS key used to encrypt the at-rest data of the cluster.
+   * </pre>
+   *
+   * <code>
+   * optional string kms_key = 45 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The kmsKey.
+   */
+  @java.lang.Override
+  public java.lang.String getKmsKey() {
+    java.lang.Object ref = kmsKey_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      kmsKey_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The KMS key used to encrypt the at-rest data of the cluster.
+   * </pre>
+   *
+   * <code>
+   * optional string kms_key = 45 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for kmsKey.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getKmsKeyBytes() {
+    java.lang.Object ref = kmsKey_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      kmsKey_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ENCRYPTION_INFO_FIELD_NUMBER = 46;
+  private com.google.cloud.memorystore.v1.EncryptionInfo encryptionInfo_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Encryption information of the data at rest of the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.EncryptionInfo encryption_info = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the encryptionInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasEncryptionInfo() {
+    return ((bitField0_ & 0x00020000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Encryption information of the data at rest of the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.EncryptionInfo encryption_info = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The encryptionInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.memorystore.v1.EncryptionInfo getEncryptionInfo() {
+    return encryptionInfo_ == null
+        ? com.google.cloud.memorystore.v1.EncryptionInfo.getDefaultInstance()
+        : encryptionInfo_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Encryption information of the data at rest of the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.EncryptionInfo encryption_info = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.memorystore.v1.EncryptionInfoOrBuilder getEncryptionInfoOrBuilder() {
+    return encryptionInfo_ == null
+        ? com.google.cloud.memorystore.v1.EncryptionInfo.getDefaultInstance()
+        : encryptionInfo_;
+  }
+
   public static final int BACKUP_COLLECTION_FIELD_NUMBER = 47;
 
   @SuppressWarnings("serial")
@@ -9008,7 +9289,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasBackupCollection() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00040000) != 0);
   }
 
   /**
@@ -9083,7 +9364,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasAutomatedBackupConfig() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00080000) != 0);
   }
 
   /**
@@ -9123,6 +9404,266 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     return automatedBackupConfig_ == null
         ? com.google.cloud.memorystore.v1.AutomatedBackupConfig.getDefaultInstance()
         : automatedBackupConfig_;
+  }
+
+  public static final int MAINTENANCE_VERSION_FIELD_NUMBER = 49;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object maintenanceVersion_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field can be used to trigger self service update to indicate
+   * the desired maintenance version. The input to this field can be determined
+   * by the available_maintenance_versions field.
+   * </pre>
+   *
+   * <code>optional string maintenance_version = 49 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the maintenanceVersion field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaintenanceVersion() {
+    return ((bitField0_ & 0x00100000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field can be used to trigger self service update to indicate
+   * the desired maintenance version. The input to this field can be determined
+   * by the available_maintenance_versions field.
+   * </pre>
+   *
+   * <code>optional string maintenance_version = 49 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The maintenanceVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getMaintenanceVersion() {
+    java.lang.Object ref = maintenanceVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      maintenanceVersion_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field can be used to trigger self service update to indicate
+   * the desired maintenance version. The input to this field can be determined
+   * by the available_maintenance_versions field.
+   * </pre>
+   *
+   * <code>optional string maintenance_version = 49 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for maintenanceVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getMaintenanceVersionBytes() {
+    java.lang.Object ref = maintenanceVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      maintenanceVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int EFFECTIVE_MAINTENANCE_VERSION_FIELD_NUMBER = 50;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object effectiveMaintenanceVersion_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field represents the actual maintenance version of the
+   * instance.
+   * </pre>
+   *
+   * <code>
+   * optional string effective_maintenance_version = 50 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the effectiveMaintenanceVersion field is set.
+   */
+  @java.lang.Override
+  public boolean hasEffectiveMaintenanceVersion() {
+    return ((bitField0_ & 0x00200000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field represents the actual maintenance version of the
+   * instance.
+   * </pre>
+   *
+   * <code>
+   * optional string effective_maintenance_version = 50 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The effectiveMaintenanceVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getEffectiveMaintenanceVersion() {
+    java.lang.Object ref = effectiveMaintenanceVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      effectiveMaintenanceVersion_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field represents the actual maintenance version of the
+   * instance.
+   * </pre>
+   *
+   * <code>
+   * optional string effective_maintenance_version = 50 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for effectiveMaintenanceVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEffectiveMaintenanceVersionBytes() {
+    java.lang.Object ref = effectiveMaintenanceVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      effectiveMaintenanceVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int AVAILABLE_MAINTENANCE_VERSIONS_FIELD_NUMBER = 51;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList availableMaintenanceVersions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field is used to determine the available maintenance
+   * versions for the self service update.
+   * </pre>
+   *
+   * <code>
+   * repeated string available_maintenance_versions = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the availableMaintenanceVersions.
+   */
+  public com.google.protobuf.ProtocolStringList getAvailableMaintenanceVersionsList() {
+    return availableMaintenanceVersions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field is used to determine the available maintenance
+   * versions for the self service update.
+   * </pre>
+   *
+   * <code>
+   * repeated string available_maintenance_versions = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of availableMaintenanceVersions.
+   */
+  public int getAvailableMaintenanceVersionsCount() {
+    return availableMaintenanceVersions_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field is used to determine the available maintenance
+   * versions for the self service update.
+   * </pre>
+   *
+   * <code>
+   * repeated string available_maintenance_versions = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The availableMaintenanceVersions at the given index.
+   */
+  public java.lang.String getAvailableMaintenanceVersions(int index) {
+    return availableMaintenanceVersions_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field is used to determine the available maintenance
+   * versions for the self service update.
+   * </pre>
+   *
+   * <code>
+   * repeated string available_maintenance_versions = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the availableMaintenanceVersions at the given index.
+   */
+  public com.google.protobuf.ByteString getAvailableMaintenanceVersionsBytes(int index) {
+    return availableMaintenanceVersions_.getByteString(index);
+  }
+
+  public static final int ALLOW_FEWER_ZONES_DEPLOYMENT_FIELD_NUMBER = 54;
+  private boolean allowFewerZonesDeployment_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Deprecated, do not use.
+   * </pre>
+   *
+   * <code>
+   * bool allow_fewer_zones_deployment = 54 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @deprecated google.cloud.memorystore.v1.Instance.allow_fewer_zones_deployment is deprecated.
+   *     See google/cloud/memorystore/v1/memorystore.proto;l=626
+   * @return The allowFewerZonesDeployment.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public boolean getAllowFewerZonesDeployment() {
+    return allowFewerZonesDeployment_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -9221,25 +9762,53 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       output.writeEnum(26, mode_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
-      output.writeBool(28, ondemandMaintenance_);
+      output.writeBool(27, simulateMaintenanceEvent_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
-      output.writeMessage(31, getMaintenancePolicy());
+      output.writeBool(28, ondemandMaintenance_);
     }
     if (((bitField0_ & 0x00000400) != 0)) {
-      output.writeMessage(32, getMaintenanceSchedule());
+      output.writeBool(29, satisfiesPzs_);
     }
     if (((bitField0_ & 0x00000800) != 0)) {
-      output.writeMessage(33, getCrossInstanceReplicationConfig());
+      output.writeBool(30, satisfiesPzi_);
     }
     if (((bitField0_ & 0x00001000) != 0)) {
-      output.writeBool(44, asyncInstanceEndpointsDeletionEnabled_);
+      output.writeMessage(31, getMaintenancePolicy());
     }
     if (((bitField0_ & 0x00002000) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 47, backupCollection_);
+      output.writeMessage(32, getMaintenanceSchedule());
     }
     if (((bitField0_ & 0x00004000) != 0)) {
+      output.writeMessage(33, getCrossInstanceReplicationConfig());
+    }
+    if (((bitField0_ & 0x00008000) != 0)) {
+      output.writeBool(44, asyncInstanceEndpointsDeletionEnabled_);
+    }
+    if (((bitField0_ & 0x00010000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 45, kmsKey_);
+    }
+    if (((bitField0_ & 0x00020000) != 0)) {
+      output.writeMessage(46, getEncryptionInfo());
+    }
+    if (((bitField0_ & 0x00040000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 47, backupCollection_);
+    }
+    if (((bitField0_ & 0x00080000) != 0)) {
       output.writeMessage(48, getAutomatedBackupConfig());
+    }
+    if (((bitField0_ & 0x00100000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 49, maintenanceVersion_);
+    }
+    if (((bitField0_ & 0x00200000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 50, effectiveMaintenanceVersion_);
+    }
+    for (int i = 0; i < availableMaintenanceVersions_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 51, availableMaintenanceVersions_.getRaw(i));
+    }
+    if (allowFewerZonesDeployment_ != false) {
+      output.writeBool(54, allowFewerZonesDeployment_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -9355,31 +9924,65 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(26, mode_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(28, ondemandMaintenance_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(27, simulateMaintenanceEvent_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(31, getMaintenancePolicy());
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(28, ondemandMaintenance_);
     }
     if (((bitField0_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(29, satisfiesPzs_);
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(30, satisfiesPzi_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(31, getMaintenancePolicy());
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(32, getMaintenanceSchedule());
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               33, getCrossInstanceReplicationConfig());
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               44, asyncInstanceEndpointsDeletionEnabled_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(45, kmsKey_);
+    }
+    if (((bitField0_ & 0x00020000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(46, getEncryptionInfo());
+    }
+    if (((bitField0_ & 0x00040000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(47, backupCollection_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(48, getAutomatedBackupConfig());
+    }
+    if (((bitField0_ & 0x00100000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(49, maintenanceVersion_);
+    }
+    if (((bitField0_ & 0x00200000) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              50, effectiveMaintenanceVersion_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < availableMaintenanceVersions_.size(); i++) {
+        dataSize += computeStringSizeNoTag(availableMaintenanceVersions_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getAvailableMaintenanceVersionsList().size();
+    }
+    if (allowFewerZonesDeployment_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(54, allowFewerZonesDeployment_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -9443,9 +10046,21 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (!getPscAttachmentDetailsList().equals(other.getPscAttachmentDetailsList())) return false;
     if (!getEndpointsList().equals(other.getEndpointsList())) return false;
     if (mode_ != other.mode_) return false;
+    if (hasSimulateMaintenanceEvent() != other.hasSimulateMaintenanceEvent()) return false;
+    if (hasSimulateMaintenanceEvent()) {
+      if (getSimulateMaintenanceEvent() != other.getSimulateMaintenanceEvent()) return false;
+    }
     if (hasOndemandMaintenance() != other.hasOndemandMaintenance()) return false;
     if (hasOndemandMaintenance()) {
       if (getOndemandMaintenance() != other.getOndemandMaintenance()) return false;
+    }
+    if (hasSatisfiesPzs() != other.hasSatisfiesPzs()) return false;
+    if (hasSatisfiesPzs()) {
+      if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    }
+    if (hasSatisfiesPzi() != other.hasSatisfiesPzi()) return false;
+    if (hasSatisfiesPzi()) {
+      if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
     }
     if (hasMaintenancePolicy() != other.hasMaintenancePolicy()) return false;
     if (hasMaintenancePolicy()) {
@@ -9467,6 +10082,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (getAsyncInstanceEndpointsDeletionEnabled()
           != other.getAsyncInstanceEndpointsDeletionEnabled()) return false;
     }
+    if (hasKmsKey() != other.hasKmsKey()) return false;
+    if (hasKmsKey()) {
+      if (!getKmsKey().equals(other.getKmsKey())) return false;
+    }
+    if (hasEncryptionInfo() != other.hasEncryptionInfo()) return false;
+    if (hasEncryptionInfo()) {
+      if (!getEncryptionInfo().equals(other.getEncryptionInfo())) return false;
+    }
     if (hasBackupCollection() != other.hasBackupCollection()) return false;
     if (hasBackupCollection()) {
       if (!getBackupCollection().equals(other.getBackupCollection())) return false;
@@ -9475,6 +10098,18 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (hasAutomatedBackupConfig()) {
       if (!getAutomatedBackupConfig().equals(other.getAutomatedBackupConfig())) return false;
     }
+    if (hasMaintenanceVersion() != other.hasMaintenanceVersion()) return false;
+    if (hasMaintenanceVersion()) {
+      if (!getMaintenanceVersion().equals(other.getMaintenanceVersion())) return false;
+    }
+    if (hasEffectiveMaintenanceVersion() != other.hasEffectiveMaintenanceVersion()) return false;
+    if (hasEffectiveMaintenanceVersion()) {
+      if (!getEffectiveMaintenanceVersion().equals(other.getEffectiveMaintenanceVersion()))
+        return false;
+    }
+    if (!getAvailableMaintenanceVersionsList().equals(other.getAvailableMaintenanceVersionsList()))
+      return false;
+    if (getAllowFewerZonesDeployment() != other.getAllowFewerZonesDeployment()) return false;
     if (!getImportSourcesCase().equals(other.getImportSourcesCase())) return false;
     switch (importSourcesCase_) {
       case 23:
@@ -9571,9 +10206,21 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + MODE_FIELD_NUMBER;
     hash = (53 * hash) + mode_;
+    if (hasSimulateMaintenanceEvent()) {
+      hash = (37 * hash) + SIMULATE_MAINTENANCE_EVENT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSimulateMaintenanceEvent());
+    }
     if (hasOndemandMaintenance()) {
       hash = (37 * hash) + ONDEMAND_MAINTENANCE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getOndemandMaintenance());
+    }
+    if (hasSatisfiesPzs()) {
+      hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    }
+    if (hasSatisfiesPzi()) {
+      hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
     }
     if (hasMaintenancePolicy()) {
       hash = (37 * hash) + MAINTENANCE_POLICY_FIELD_NUMBER;
@@ -9594,6 +10241,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
               + com.google.protobuf.Internal.hashBoolean(
                   getAsyncInstanceEndpointsDeletionEnabled());
     }
+    if (hasKmsKey()) {
+      hash = (37 * hash) + KMS_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getKmsKey().hashCode();
+    }
+    if (hasEncryptionInfo()) {
+      hash = (37 * hash) + ENCRYPTION_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionInfo().hashCode();
+    }
     if (hasBackupCollection()) {
       hash = (37 * hash) + BACKUP_COLLECTION_FIELD_NUMBER;
       hash = (53 * hash) + getBackupCollection().hashCode();
@@ -9602,6 +10257,20 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + AUTOMATED_BACKUP_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getAutomatedBackupConfig().hashCode();
     }
+    if (hasMaintenanceVersion()) {
+      hash = (37 * hash) + MAINTENANCE_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getMaintenanceVersion().hashCode();
+    }
+    if (hasEffectiveMaintenanceVersion()) {
+      hash = (37 * hash) + EFFECTIVE_MAINTENANCE_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getEffectiveMaintenanceVersion().hashCode();
+    }
+    if (getAvailableMaintenanceVersionsCount() > 0) {
+      hash = (37 * hash) + AVAILABLE_MAINTENANCE_VERSIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getAvailableMaintenanceVersionsList().hashCode();
+    }
+    hash = (37 * hash) + ALLOW_FEWER_ZONES_DEPLOYMENT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowFewerZonesDeployment());
     switch (importSourcesCase_) {
       case 23:
         hash = (37 * hash) + GCS_SOURCE_FIELD_NUMBER;
@@ -9794,6 +10463,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         getMaintenancePolicyFieldBuilder();
         getMaintenanceScheduleFieldBuilder();
         getCrossInstanceReplicationConfigFieldBuilder();
+        getEncryptionInfoFieldBuilder();
         getAutomatedBackupConfigFieldBuilder();
       }
     }
@@ -9802,6 +10472,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      bitField1_ = 0;
       if (gcsSourceBuilder_ != null) {
         gcsSourceBuilder_.clear();
       }
@@ -9879,7 +10550,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00800000);
       mode_ = 0;
+      simulateMaintenanceEvent_ = false;
       ondemandMaintenance_ = false;
+      satisfiesPzs_ = false;
+      satisfiesPzi_ = false;
       maintenancePolicy_ = null;
       if (maintenancePolicyBuilder_ != null) {
         maintenancePolicyBuilder_.dispose();
@@ -9896,12 +10570,22 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         crossInstanceReplicationConfigBuilder_ = null;
       }
       asyncInstanceEndpointsDeletionEnabled_ = false;
+      kmsKey_ = "";
+      encryptionInfo_ = null;
+      if (encryptionInfoBuilder_ != null) {
+        encryptionInfoBuilder_.dispose();
+        encryptionInfoBuilder_ = null;
+      }
       backupCollection_ = "";
       automatedBackupConfig_ = null;
       if (automatedBackupConfigBuilder_ != null) {
         automatedBackupConfigBuilder_.dispose();
         automatedBackupConfigBuilder_ = null;
       }
+      maintenanceVersion_ = "";
+      effectiveMaintenanceVersion_ = "";
+      availableMaintenanceVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      allowFewerZonesDeployment_ = false;
       importSourcesCase_ = 0;
       importSources_ = null;
       return this;
@@ -9934,6 +10618,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
+      }
+      if (bitField1_ != 0) {
+        buildPartial1(result);
       }
       buildPartialOneofs(result);
       onBuilt();
@@ -10056,44 +10743,86 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         result.mode_ = mode_;
       }
       if (((from_bitField0_ & 0x02000000) != 0)) {
-        result.ondemandMaintenance_ = ondemandMaintenance_;
+        result.simulateMaintenanceEvent_ = simulateMaintenanceEvent_;
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x04000000) != 0)) {
+        result.ondemandMaintenance_ = ondemandMaintenance_;
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x08000000) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.satisfiesPzi_ = satisfiesPzi_;
+        to_bitField0_ |= 0x00000800;
+      }
+      if (((from_bitField0_ & 0x20000000) != 0)) {
         result.maintenancePolicy_ =
             maintenancePolicyBuilder_ == null
                 ? maintenancePolicy_
                 : maintenancePolicyBuilder_.build();
-        to_bitField0_ |= 0x00000200;
+        to_bitField0_ |= 0x00001000;
       }
-      if (((from_bitField0_ & 0x08000000) != 0)) {
+      if (((from_bitField0_ & 0x40000000) != 0)) {
         result.maintenanceSchedule_ =
             maintenanceScheduleBuilder_ == null
                 ? maintenanceSchedule_
                 : maintenanceScheduleBuilder_.build();
-        to_bitField0_ |= 0x00000400;
+        to_bitField0_ |= 0x00002000;
       }
-      if (((from_bitField0_ & 0x10000000) != 0)) {
+      if (((from_bitField0_ & 0x80000000) != 0)) {
         result.crossInstanceReplicationConfig_ =
             crossInstanceReplicationConfigBuilder_ == null
                 ? crossInstanceReplicationConfig_
                 : crossInstanceReplicationConfigBuilder_.build();
-        to_bitField0_ |= 0x00000800;
+        to_bitField0_ |= 0x00004000;
       }
-      if (((from_bitField0_ & 0x20000000) != 0)) {
+      result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartial1(com.google.cloud.memorystore.v1.Instance result) {
+      int from_bitField1_ = bitField1_;
+      int to_bitField0_ = 0;
+      if (((from_bitField1_ & 0x00000001) != 0)) {
         result.asyncInstanceEndpointsDeletionEnabled_ = asyncInstanceEndpointsDeletionEnabled_;
-        to_bitField0_ |= 0x00001000;
+        to_bitField0_ |= 0x00008000;
       }
-      if (((from_bitField0_ & 0x40000000) != 0)) {
+      if (((from_bitField1_ & 0x00000002) != 0)) {
+        result.kmsKey_ = kmsKey_;
+        to_bitField0_ |= 0x00010000;
+      }
+      if (((from_bitField1_ & 0x00000004) != 0)) {
+        result.encryptionInfo_ =
+            encryptionInfoBuilder_ == null ? encryptionInfo_ : encryptionInfoBuilder_.build();
+        to_bitField0_ |= 0x00020000;
+      }
+      if (((from_bitField1_ & 0x00000008) != 0)) {
         result.backupCollection_ = backupCollection_;
-        to_bitField0_ |= 0x00002000;
+        to_bitField0_ |= 0x00040000;
       }
-      if (((from_bitField0_ & 0x80000000) != 0)) {
+      if (((from_bitField1_ & 0x00000010) != 0)) {
         result.automatedBackupConfig_ =
             automatedBackupConfigBuilder_ == null
                 ? automatedBackupConfig_
                 : automatedBackupConfigBuilder_.build();
-        to_bitField0_ |= 0x00004000;
+        to_bitField0_ |= 0x00080000;
+      }
+      if (((from_bitField1_ & 0x00000020) != 0)) {
+        result.maintenanceVersion_ = maintenanceVersion_;
+        to_bitField0_ |= 0x00100000;
+      }
+      if (((from_bitField1_ & 0x00000040) != 0)) {
+        result.effectiveMaintenanceVersion_ = effectiveMaintenanceVersion_;
+        to_bitField0_ |= 0x00200000;
+      }
+      if (((from_bitField1_ & 0x00000080) != 0)) {
+        availableMaintenanceVersions_.makeImmutable();
+        result.availableMaintenanceVersions_ = availableMaintenanceVersions_;
+      }
+      if (((from_bitField1_ & 0x00000100) != 0)) {
+        result.allowFewerZonesDeployment_ = allowFewerZonesDeployment_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -10323,8 +11052,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (other.mode_ != 0) {
         setModeValue(other.getModeValue());
       }
+      if (other.hasSimulateMaintenanceEvent()) {
+        setSimulateMaintenanceEvent(other.getSimulateMaintenanceEvent());
+      }
       if (other.hasOndemandMaintenance()) {
         setOndemandMaintenance(other.getOndemandMaintenance());
+      }
+      if (other.hasSatisfiesPzs()) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (other.hasSatisfiesPzi()) {
+        setSatisfiesPzi(other.getSatisfiesPzi());
       }
       if (other.hasMaintenancePolicy()) {
         mergeMaintenancePolicy(other.getMaintenancePolicy());
@@ -10338,13 +11076,44 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (other.hasAsyncInstanceEndpointsDeletionEnabled()) {
         setAsyncInstanceEndpointsDeletionEnabled(other.getAsyncInstanceEndpointsDeletionEnabled());
       }
+      if (other.hasKmsKey()) {
+        kmsKey_ = other.kmsKey_;
+        bitField1_ |= 0x00000002;
+        onChanged();
+      }
+      if (other.hasEncryptionInfo()) {
+        mergeEncryptionInfo(other.getEncryptionInfo());
+      }
       if (other.hasBackupCollection()) {
         backupCollection_ = other.backupCollection_;
-        bitField0_ |= 0x40000000;
+        bitField1_ |= 0x00000008;
         onChanged();
       }
       if (other.hasAutomatedBackupConfig()) {
         mergeAutomatedBackupConfig(other.getAutomatedBackupConfig());
+      }
+      if (other.hasMaintenanceVersion()) {
+        maintenanceVersion_ = other.maintenanceVersion_;
+        bitField1_ |= 0x00000020;
+        onChanged();
+      }
+      if (other.hasEffectiveMaintenanceVersion()) {
+        effectiveMaintenanceVersion_ = other.effectiveMaintenanceVersion_;
+        bitField1_ |= 0x00000040;
+        onChanged();
+      }
+      if (!other.availableMaintenanceVersions_.isEmpty()) {
+        if (availableMaintenanceVersions_.isEmpty()) {
+          availableMaintenanceVersions_ = other.availableMaintenanceVersions_;
+          bitField1_ |= 0x00000080;
+        } else {
+          ensureAvailableMaintenanceVersionsIsMutable();
+          availableMaintenanceVersions_.addAll(other.availableMaintenanceVersions_);
+        }
+        onChanged();
+      }
+      if (other.getAllowFewerZonesDeployment() != false) {
+        setAllowFewerZonesDeployment(other.getAllowFewerZonesDeployment());
       }
       switch (other.getImportSourcesCase()) {
         case GCS_SOURCE:
@@ -10585,24 +11354,42 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x01000000;
                 break;
               } // case 208
+            case 216:
+              {
+                simulateMaintenanceEvent_ = input.readBool();
+                bitField0_ |= 0x02000000;
+                break;
+              } // case 216
             case 224:
               {
                 ondemandMaintenance_ = input.readBool();
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x04000000;
                 break;
               } // case 224
+            case 232:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x08000000;
+                break;
+              } // case 232
+            case 240:
+              {
+                satisfiesPzi_ = input.readBool();
+                bitField0_ |= 0x10000000;
+                break;
+              } // case 240
             case 250:
               {
                 input.readMessage(
                     getMaintenancePolicyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x04000000;
+                bitField0_ |= 0x20000000;
                 break;
               } // case 250
             case 258:
               {
                 input.readMessage(
                     getMaintenanceScheduleFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x40000000;
                 break;
               } // case 258
             case 266:
@@ -10610,28 +11397,65 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 input.readMessage(
                     getCrossInstanceReplicationConfigFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x10000000;
+                bitField0_ |= 0x80000000;
                 break;
               } // case 266
             case 352:
               {
                 asyncInstanceEndpointsDeletionEnabled_ = input.readBool();
-                bitField0_ |= 0x20000000;
+                bitField1_ |= 0x00000001;
                 break;
               } // case 352
+            case 362:
+              {
+                kmsKey_ = input.readStringRequireUtf8();
+                bitField1_ |= 0x00000002;
+                break;
+              } // case 362
+            case 370:
+              {
+                input.readMessage(getEncryptionInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000004;
+                break;
+              } // case 370
             case 378:
               {
                 backupCollection_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x40000000;
+                bitField1_ |= 0x00000008;
                 break;
               } // case 378
             case 386:
               {
                 input.readMessage(
                     getAutomatedBackupConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x80000000;
+                bitField1_ |= 0x00000010;
                 break;
               } // case 386
+            case 394:
+              {
+                maintenanceVersion_ = input.readStringRequireUtf8();
+                bitField1_ |= 0x00000020;
+                break;
+              } // case 394
+            case 402:
+              {
+                effectiveMaintenanceVersion_ = input.readStringRequireUtf8();
+                bitField1_ |= 0x00000040;
+                break;
+              } // case 402
+            case 410:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureAvailableMaintenanceVersionsIsMutable();
+                availableMaintenanceVersions_.add(s);
+                break;
+              } // case 410
+            case 432:
+              {
+                allowFewerZonesDeployment_ = input.readBool();
+                bitField1_ |= 0x00000100;
+                break;
+              } // case 432
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -10664,6 +11488,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int bitField0_;
+    private int bitField1_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.memorystore.v1.Instance.GcsBackupSource,
@@ -12707,8 +13532,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
-     * or endpoints.connections.psc_connection values instead.
+     * Output only. Deprecated: The discovery_endpoints parameter is deprecated.
+     * As a result, it will not be populated if the connections are created using
+     * endpoints parameter. Instead of this parameter, for discovery, use
+     * endpoints.connections.pscConnection and
+     * endpoints.connections.pscAutoConnection
+     * with connectionType CONNECTION_TYPE_DISCOVERY.
      * </pre>
      *
      * <code>
@@ -12729,8 +13558,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
-     * or endpoints.connections.psc_connection values instead.
+     * Output only. Deprecated: The discovery_endpoints parameter is deprecated.
+     * As a result, it will not be populated if the connections are created using
+     * endpoints parameter. Instead of this parameter, for discovery, use
+     * endpoints.connections.pscConnection and
+     * endpoints.connections.pscAutoConnection
+     * with connectionType CONNECTION_TYPE_DISCOVERY.
      * </pre>
      *
      * <code>
@@ -12750,8 +13583,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
-     * or endpoints.connections.psc_connection values instead.
+     * Output only. Deprecated: The discovery_endpoints parameter is deprecated.
+     * As a result, it will not be populated if the connections are created using
+     * endpoints parameter. Instead of this parameter, for discovery, use
+     * endpoints.connections.pscConnection and
+     * endpoints.connections.pscAutoConnection
+     * with connectionType CONNECTION_TYPE_DISCOVERY.
      * </pre>
      *
      * <code>
@@ -12771,8 +13608,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
-     * or endpoints.connections.psc_connection values instead.
+     * Output only. Deprecated: The discovery_endpoints parameter is deprecated.
+     * As a result, it will not be populated if the connections are created using
+     * endpoints parameter. Instead of this parameter, for discovery, use
+     * endpoints.connections.pscConnection and
+     * endpoints.connections.pscAutoConnection
+     * with connectionType CONNECTION_TYPE_DISCOVERY.
      * </pre>
      *
      * <code>
@@ -12799,8 +13640,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
-     * or endpoints.connections.psc_connection values instead.
+     * Output only. Deprecated: The discovery_endpoints parameter is deprecated.
+     * As a result, it will not be populated if the connections are created using
+     * endpoints parameter. Instead of this parameter, for discovery, use
+     * endpoints.connections.pscConnection and
+     * endpoints.connections.pscAutoConnection
+     * with connectionType CONNECTION_TYPE_DISCOVERY.
      * </pre>
      *
      * <code>
@@ -12824,8 +13669,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
-     * or endpoints.connections.psc_connection values instead.
+     * Output only. Deprecated: The discovery_endpoints parameter is deprecated.
+     * As a result, it will not be populated if the connections are created using
+     * endpoints parameter. Instead of this parameter, for discovery, use
+     * endpoints.connections.pscConnection and
+     * endpoints.connections.pscAutoConnection
+     * with connectionType CONNECTION_TYPE_DISCOVERY.
      * </pre>
      *
      * <code>
@@ -12851,8 +13700,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
-     * or endpoints.connections.psc_connection values instead.
+     * Output only. Deprecated: The discovery_endpoints parameter is deprecated.
+     * As a result, it will not be populated if the connections are created using
+     * endpoints parameter. Instead of this parameter, for discovery, use
+     * endpoints.connections.pscConnection and
+     * endpoints.connections.pscAutoConnection
+     * with connectionType CONNECTION_TYPE_DISCOVERY.
      * </pre>
      *
      * <code>
@@ -12879,8 +13732,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
-     * or endpoints.connections.psc_connection values instead.
+     * Output only. Deprecated: The discovery_endpoints parameter is deprecated.
+     * As a result, it will not be populated if the connections are created using
+     * endpoints parameter. Instead of this parameter, for discovery, use
+     * endpoints.connections.pscConnection and
+     * endpoints.connections.pscAutoConnection
+     * with connectionType CONNECTION_TYPE_DISCOVERY.
      * </pre>
      *
      * <code>
@@ -12904,8 +13761,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
-     * or endpoints.connections.psc_connection values instead.
+     * Output only. Deprecated: The discovery_endpoints parameter is deprecated.
+     * As a result, it will not be populated if the connections are created using
+     * endpoints parameter. Instead of this parameter, for discovery, use
+     * endpoints.connections.pscConnection and
+     * endpoints.connections.pscAutoConnection
+     * with connectionType CONNECTION_TYPE_DISCOVERY.
      * </pre>
      *
      * <code>
@@ -12929,8 +13790,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
-     * or endpoints.connections.psc_connection values instead.
+     * Output only. Deprecated: The discovery_endpoints parameter is deprecated.
+     * As a result, it will not be populated if the connections are created using
+     * endpoints parameter. Instead of this parameter, for discovery, use
+     * endpoints.connections.pscConnection and
+     * endpoints.connections.pscAutoConnection
+     * with connectionType CONNECTION_TYPE_DISCOVERY.
      * </pre>
      *
      * <code>
@@ -12954,8 +13819,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
-     * or endpoints.connections.psc_connection values instead.
+     * Output only. Deprecated: The discovery_endpoints parameter is deprecated.
+     * As a result, it will not be populated if the connections are created using
+     * endpoints parameter. Instead of this parameter, for discovery, use
+     * endpoints.connections.pscConnection and
+     * endpoints.connections.pscAutoConnection
+     * with connectionType CONNECTION_TYPE_DISCOVERY.
      * </pre>
      *
      * <code>
@@ -12978,8 +13847,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
-     * or endpoints.connections.psc_connection values instead.
+     * Output only. Deprecated: The discovery_endpoints parameter is deprecated.
+     * As a result, it will not be populated if the connections are created using
+     * endpoints parameter. Instead of this parameter, for discovery, use
+     * endpoints.connections.pscConnection and
+     * endpoints.connections.pscAutoConnection
+     * with connectionType CONNECTION_TYPE_DISCOVERY.
      * </pre>
      *
      * <code>
@@ -13002,8 +13875,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
-     * or endpoints.connections.psc_connection values instead.
+     * Output only. Deprecated: The discovery_endpoints parameter is deprecated.
+     * As a result, it will not be populated if the connections are created using
+     * endpoints parameter. Instead of this parameter, for discovery, use
+     * endpoints.connections.pscConnection and
+     * endpoints.connections.pscAutoConnection
+     * with connectionType CONNECTION_TYPE_DISCOVERY.
      * </pre>
      *
      * <code>
@@ -13020,8 +13897,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
-     * or endpoints.connections.psc_connection values instead.
+     * Output only. Deprecated: The discovery_endpoints parameter is deprecated.
+     * As a result, it will not be populated if the connections are created using
+     * endpoints parameter. Instead of this parameter, for discovery, use
+     * endpoints.connections.pscConnection and
+     * endpoints.connections.pscAutoConnection
+     * with connectionType CONNECTION_TYPE_DISCOVERY.
      * </pre>
      *
      * <code>
@@ -13042,8 +13923,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
-     * or endpoints.connections.psc_connection values instead.
+     * Output only. Deprecated: The discovery_endpoints parameter is deprecated.
+     * As a result, it will not be populated if the connections are created using
+     * endpoints parameter. Instead of this parameter, for discovery, use
+     * endpoints.connections.pscConnection and
+     * endpoints.connections.pscAutoConnection
+     * with connectionType CONNECTION_TYPE_DISCOVERY.
      * </pre>
      *
      * <code>
@@ -13064,8 +13949,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
-     * or endpoints.connections.psc_connection values instead.
+     * Output only. Deprecated: The discovery_endpoints parameter is deprecated.
+     * As a result, it will not be populated if the connections are created using
+     * endpoints parameter. Instead of this parameter, for discovery, use
+     * endpoints.connections.pscConnection and
+     * endpoints.connections.pscAutoConnection
+     * with connectionType CONNECTION_TYPE_DISCOVERY.
      * </pre>
      *
      * <code>
@@ -13083,8 +13972,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
-     * or endpoints.connections.psc_connection values instead.
+     * Output only. Deprecated: The discovery_endpoints parameter is deprecated.
+     * As a result, it will not be populated if the connections are created using
+     * endpoints parameter. Instead of this parameter, for discovery, use
+     * endpoints.connections.pscConnection and
+     * endpoints.connections.pscAutoConnection
+     * with connectionType CONNECTION_TYPE_DISCOVERY.
      * </pre>
      *
      * <code>
@@ -13103,8 +13996,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
-     * or endpoints.connections.psc_connection values instead.
+     * Output only. Deprecated: The discovery_endpoints parameter is deprecated.
+     * As a result, it will not be populated if the connections are created using
+     * endpoints parameter. Instead of this parameter, for discovery, use
+     * endpoints.connections.pscConnection and
+     * endpoints.connections.pscAutoConnection
+     * with connectionType CONNECTION_TYPE_DISCOVERY.
      * </pre>
      *
      * <code>
@@ -15671,6 +16568,86 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private boolean simulateMaintenanceEvent_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Simulate a maintenance event.
+     * </pre>
+     *
+     * <code>
+     * optional bool simulate_maintenance_event = 27 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the simulateMaintenanceEvent field is set.
+     */
+    @java.lang.Override
+    public boolean hasSimulateMaintenanceEvent() {
+      return ((bitField0_ & 0x02000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Simulate a maintenance event.
+     * </pre>
+     *
+     * <code>
+     * optional bool simulate_maintenance_event = 27 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return The simulateMaintenanceEvent.
+     */
+    @java.lang.Override
+    public boolean getSimulateMaintenanceEvent() {
+      return simulateMaintenanceEvent_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Simulate a maintenance event.
+     * </pre>
+     *
+     * <code>
+     * optional bool simulate_maintenance_event = 27 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @param value The simulateMaintenanceEvent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSimulateMaintenanceEvent(boolean value) {
+
+      simulateMaintenanceEvent_ = value;
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Simulate a maintenance event.
+     * </pre>
+     *
+     * <code>
+     * optional bool simulate_maintenance_event = 27 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSimulateMaintenanceEvent() {
+      bitField0_ = (bitField0_ & ~0x02000000);
+      simulateMaintenanceEvent_ = false;
+      onChanged();
+      return this;
+    }
+
     private boolean ondemandMaintenance_;
 
     /**
@@ -15681,14 +16658,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * optional bool ondemand_maintenance = 28 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * optional bool ondemand_maintenance = 28 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      *
+     * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
+     *     google/cloud/memorystore/v1/memorystore.proto;l=545
      * @return Whether the ondemandMaintenance field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasOndemandMaintenance() {
-      return ((bitField0_ & 0x02000000) != 0);
+      return ((bitField0_ & 0x04000000) != 0);
     }
 
     /**
@@ -15699,12 +16679,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * optional bool ondemand_maintenance = 28 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * optional bool ondemand_maintenance = 28 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      *
+     * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
+     *     google/cloud/memorystore/v1/memorystore.proto;l=545
      * @return The ondemandMaintenance.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getOndemandMaintenance() {
       return ondemandMaintenance_;
     }
@@ -15717,16 +16700,19 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * optional bool ondemand_maintenance = 28 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * optional bool ondemand_maintenance = 28 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      *
+     * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
+     *     google/cloud/memorystore/v1/memorystore.proto;l=545
      * @param value The ondemandMaintenance to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setOndemandMaintenance(boolean value) {
 
       ondemandMaintenance_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -15739,14 +16725,177 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * optional bool ondemand_maintenance = 28 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * optional bool ondemand_maintenance = 28 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
+     *     google/cloud/memorystore/v1/memorystore.proto;l=545
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated
+    public Builder clearOndemandMaintenance() {
+      bitField0_ = (bitField0_ & ~0x04000000);
+      ondemandMaintenance_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean satisfiesPzs_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>
+     * optional bool satisfies_pzs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the satisfiesPzs field is set.
+     */
+    @java.lang.Override
+    public boolean hasSatisfiesPzs() {
+      return ((bitField0_ & 0x08000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>
+     * optional bool satisfies_pzs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>
+     * optional bool satisfies_pzs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>
+     * optional bool satisfies_pzs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearOndemandMaintenance() {
-      bitField0_ = (bitField0_ & ~0x02000000);
-      ondemandMaintenance_ = false;
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x08000000);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean satisfiesPzi_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>
+     * optional bool satisfies_pzi = 30 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the satisfiesPzi field is set.
+     */
+    @java.lang.Override
+    public boolean hasSatisfiesPzi() {
+      return ((bitField0_ & 0x10000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>
+     * optional bool satisfies_pzi = 30 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The satisfiesPzi.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzi() {
+      return satisfiesPzi_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>
+     * optional bool satisfies_pzi = 30 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The satisfiesPzi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzi(boolean value) {
+
+      satisfiesPzi_ = value;
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>
+     * optional bool satisfies_pzi = 30 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzi() {
+      bitField0_ = (bitField0_ & ~0x10000000);
+      satisfiesPzi_ = false;
       onChanged();
       return this;
     }
@@ -15774,7 +16923,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the maintenancePolicy field is set.
      */
     public boolean hasMaintenancePolicy() {
-      return ((bitField0_ & 0x04000000) != 0);
+      return ((bitField0_ & 0x20000000) != 0);
     }
 
     /**
@@ -15824,7 +16973,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         maintenancePolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -15849,7 +16998,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         maintenancePolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -15869,7 +17018,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeMaintenancePolicy(com.google.cloud.memorystore.v1.MaintenancePolicy value) {
       if (maintenancePolicyBuilder_ == null) {
-        if (((bitField0_ & 0x04000000) != 0)
+        if (((bitField0_ & 0x20000000) != 0)
             && maintenancePolicy_ != null
             && maintenancePolicy_
                 != com.google.cloud.memorystore.v1.MaintenancePolicy.getDefaultInstance()) {
@@ -15881,7 +17030,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         maintenancePolicyBuilder_.mergeFrom(value);
       }
       if (maintenancePolicy_ != null) {
-        bitField0_ |= 0x04000000;
+        bitField0_ |= 0x20000000;
         onChanged();
       }
       return this;
@@ -15901,7 +17050,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearMaintenancePolicy() {
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       maintenancePolicy_ = null;
       if (maintenancePolicyBuilder_ != null) {
         maintenancePolicyBuilder_.dispose();
@@ -15925,7 +17074,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.memorystore.v1.MaintenancePolicy.Builder getMaintenancePolicyBuilder() {
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return getMaintenancePolicyFieldBuilder().getBuilder();
     }
@@ -16005,7 +17154,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the maintenanceSchedule field is set.
      */
     public boolean hasMaintenanceSchedule() {
-      return ((bitField0_ & 0x08000000) != 0);
+      return ((bitField0_ & 0x40000000) != 0);
     }
 
     /**
@@ -16052,7 +17201,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         maintenanceScheduleBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -16075,7 +17224,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         maintenanceScheduleBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -16094,7 +17243,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeMaintenanceSchedule(
         com.google.cloud.memorystore.v1.MaintenanceSchedule value) {
       if (maintenanceScheduleBuilder_ == null) {
-        if (((bitField0_ & 0x08000000) != 0)
+        if (((bitField0_ & 0x40000000) != 0)
             && maintenanceSchedule_ != null
             && maintenanceSchedule_
                 != com.google.cloud.memorystore.v1.MaintenanceSchedule.getDefaultInstance()) {
@@ -16106,7 +17255,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         maintenanceScheduleBuilder_.mergeFrom(value);
       }
       if (maintenanceSchedule_ != null) {
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x40000000;
         onChanged();
       }
       return this;
@@ -16124,7 +17273,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearMaintenanceSchedule() {
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       maintenanceSchedule_ = null;
       if (maintenanceScheduleBuilder_ != null) {
         maintenanceScheduleBuilder_.dispose();
@@ -16147,7 +17296,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.memorystore.v1.MaintenanceSchedule.Builder
         getMaintenanceScheduleBuilder() {
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return getMaintenanceScheduleFieldBuilder().getBuilder();
     }
@@ -16224,7 +17373,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the crossInstanceReplicationConfig field is set.
      */
     public boolean hasCrossInstanceReplicationConfig() {
-      return ((bitField0_ & 0x10000000) != 0);
+      return ((bitField0_ & 0x80000000) != 0);
     }
 
     /**
@@ -16272,7 +17421,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         crossInstanceReplicationConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -16295,7 +17444,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         crossInstanceReplicationConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -16314,7 +17463,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeCrossInstanceReplicationConfig(
         com.google.cloud.memorystore.v1.CrossInstanceReplicationConfig value) {
       if (crossInstanceReplicationConfigBuilder_ == null) {
-        if (((bitField0_ & 0x10000000) != 0)
+        if (((bitField0_ & 0x80000000) != 0)
             && crossInstanceReplicationConfig_ != null
             && crossInstanceReplicationConfig_
                 != com.google.cloud.memorystore.v1.CrossInstanceReplicationConfig
@@ -16327,7 +17476,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         crossInstanceReplicationConfigBuilder_.mergeFrom(value);
       }
       if (crossInstanceReplicationConfig_ != null) {
-        bitField0_ |= 0x10000000;
+        bitField0_ |= 0x80000000;
         onChanged();
       }
       return this;
@@ -16345,7 +17494,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCrossInstanceReplicationConfig() {
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x80000000);
       crossInstanceReplicationConfig_ = null;
       if (crossInstanceReplicationConfigBuilder_ != null) {
         crossInstanceReplicationConfigBuilder_.dispose();
@@ -16368,7 +17517,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.memorystore.v1.CrossInstanceReplicationConfig.Builder
         getCrossInstanceReplicationConfigBuilder() {
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return getCrossInstanceReplicationConfigFieldBuilder().getBuilder();
     }
@@ -16443,7 +17592,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasAsyncInstanceEndpointsDeletionEnabled() {
-      return ((bitField0_ & 0x20000000) != 0);
+      return ((bitField1_ & 0x00000001) != 0);
     }
 
     /**
@@ -16487,7 +17636,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder setAsyncInstanceEndpointsDeletionEnabled(boolean value) {
 
       asyncInstanceEndpointsDeletionEnabled_ = value;
-      bitField0_ |= 0x20000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -16509,10 +17658,362 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAsyncInstanceEndpointsDeletionEnabled() {
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField1_ = (bitField1_ & ~0x00000001);
       asyncInstanceEndpointsDeletionEnabled_ = false;
       onChanged();
       return this;
+    }
+
+    private java.lang.Object kmsKey_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The KMS key used to encrypt the at-rest data of the cluster.
+     * </pre>
+     *
+     * <code>
+     * optional string kms_key = 45 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the kmsKey field is set.
+     */
+    public boolean hasKmsKey() {
+      return ((bitField1_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The KMS key used to encrypt the at-rest data of the cluster.
+     * </pre>
+     *
+     * <code>
+     * optional string kms_key = 45 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The kmsKey.
+     */
+    public java.lang.String getKmsKey() {
+      java.lang.Object ref = kmsKey_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kmsKey_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The KMS key used to encrypt the at-rest data of the cluster.
+     * </pre>
+     *
+     * <code>
+     * optional string kms_key = 45 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for kmsKey.
+     */
+    public com.google.protobuf.ByteString getKmsKeyBytes() {
+      java.lang.Object ref = kmsKey_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        kmsKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The KMS key used to encrypt the at-rest data of the cluster.
+     * </pre>
+     *
+     * <code>
+     * optional string kms_key = 45 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The kmsKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKey(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      kmsKey_ = value;
+      bitField1_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The KMS key used to encrypt the at-rest data of the cluster.
+     * </pre>
+     *
+     * <code>
+     * optional string kms_key = 45 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKmsKey() {
+      kmsKey_ = getDefaultInstance().getKmsKey();
+      bitField1_ = (bitField1_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The KMS key used to encrypt the at-rest data of the cluster.
+     * </pre>
+     *
+     * <code>
+     * optional string kms_key = 45 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for kmsKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      kmsKey_ = value;
+      bitField1_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.memorystore.v1.EncryptionInfo encryptionInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.memorystore.v1.EncryptionInfo,
+            com.google.cloud.memorystore.v1.EncryptionInfo.Builder,
+            com.google.cloud.memorystore.v1.EncryptionInfoOrBuilder>
+        encryptionInfoBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Encryption information of the data at rest of the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.EncryptionInfo encryption_info = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the encryptionInfo field is set.
+     */
+    public boolean hasEncryptionInfo() {
+      return ((bitField1_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Encryption information of the data at rest of the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.EncryptionInfo encryption_info = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The encryptionInfo.
+     */
+    public com.google.cloud.memorystore.v1.EncryptionInfo getEncryptionInfo() {
+      if (encryptionInfoBuilder_ == null) {
+        return encryptionInfo_ == null
+            ? com.google.cloud.memorystore.v1.EncryptionInfo.getDefaultInstance()
+            : encryptionInfo_;
+      } else {
+        return encryptionInfoBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Encryption information of the data at rest of the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.EncryptionInfo encryption_info = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEncryptionInfo(com.google.cloud.memorystore.v1.EncryptionInfo value) {
+      if (encryptionInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryptionInfo_ = value;
+      } else {
+        encryptionInfoBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Encryption information of the data at rest of the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.EncryptionInfo encryption_info = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEncryptionInfo(
+        com.google.cloud.memorystore.v1.EncryptionInfo.Builder builderForValue) {
+      if (encryptionInfoBuilder_ == null) {
+        encryptionInfo_ = builderForValue.build();
+      } else {
+        encryptionInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Encryption information of the data at rest of the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.EncryptionInfo encryption_info = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeEncryptionInfo(com.google.cloud.memorystore.v1.EncryptionInfo value) {
+      if (encryptionInfoBuilder_ == null) {
+        if (((bitField1_ & 0x00000004) != 0)
+            && encryptionInfo_ != null
+            && encryptionInfo_
+                != com.google.cloud.memorystore.v1.EncryptionInfo.getDefaultInstance()) {
+          getEncryptionInfoBuilder().mergeFrom(value);
+        } else {
+          encryptionInfo_ = value;
+        }
+      } else {
+        encryptionInfoBuilder_.mergeFrom(value);
+      }
+      if (encryptionInfo_ != null) {
+        bitField1_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Encryption information of the data at rest of the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.EncryptionInfo encryption_info = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearEncryptionInfo() {
+      bitField1_ = (bitField1_ & ~0x00000004);
+      encryptionInfo_ = null;
+      if (encryptionInfoBuilder_ != null) {
+        encryptionInfoBuilder_.dispose();
+        encryptionInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Encryption information of the data at rest of the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.EncryptionInfo encryption_info = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.memorystore.v1.EncryptionInfo.Builder getEncryptionInfoBuilder() {
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return getEncryptionInfoFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Encryption information of the data at rest of the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.EncryptionInfo encryption_info = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.memorystore.v1.EncryptionInfoOrBuilder getEncryptionInfoOrBuilder() {
+      if (encryptionInfoBuilder_ != null) {
+        return encryptionInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return encryptionInfo_ == null
+            ? com.google.cloud.memorystore.v1.EncryptionInfo.getDefaultInstance()
+            : encryptionInfo_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Encryption information of the data at rest of the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.EncryptionInfo encryption_info = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.memorystore.v1.EncryptionInfo,
+            com.google.cloud.memorystore.v1.EncryptionInfo.Builder,
+            com.google.cloud.memorystore.v1.EncryptionInfoOrBuilder>
+        getEncryptionInfoFieldBuilder() {
+      if (encryptionInfoBuilder_ == null) {
+        encryptionInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.memorystore.v1.EncryptionInfo,
+                com.google.cloud.memorystore.v1.EncryptionInfo.Builder,
+                com.google.cloud.memorystore.v1.EncryptionInfoOrBuilder>(
+                getEncryptionInfo(), getParentForChildren(), isClean());
+        encryptionInfo_ = null;
+      }
+      return encryptionInfoBuilder_;
     }
 
     private java.lang.Object backupCollection_ = "";
@@ -16532,7 +18033,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the backupCollection field is set.
      */
     public boolean hasBackupCollection() {
-      return ((bitField0_ & 0x40000000) != 0);
+      return ((bitField1_ & 0x00000008) != 0);
     }
 
     /**
@@ -16607,7 +18108,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       backupCollection_ = value;
-      bitField0_ |= 0x40000000;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -16628,7 +18129,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearBackupCollection() {
       backupCollection_ = getDefaultInstance().getBackupCollection();
-      bitField0_ = (bitField0_ & ~0x40000000);
+      bitField1_ = (bitField1_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -16654,7 +18155,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       backupCollection_ = value;
-      bitField0_ |= 0x40000000;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -16680,7 +18181,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the automatedBackupConfig field is set.
      */
     public boolean hasAutomatedBackupConfig() {
-      return ((bitField0_ & 0x80000000) != 0);
+      return ((bitField1_ & 0x00000010) != 0);
     }
 
     /**
@@ -16727,7 +18228,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         automatedBackupConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -16750,7 +18251,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         automatedBackupConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -16769,7 +18270,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeAutomatedBackupConfig(
         com.google.cloud.memorystore.v1.AutomatedBackupConfig value) {
       if (automatedBackupConfigBuilder_ == null) {
-        if (((bitField0_ & 0x80000000) != 0)
+        if (((bitField1_ & 0x00000010) != 0)
             && automatedBackupConfig_ != null
             && automatedBackupConfig_
                 != com.google.cloud.memorystore.v1.AutomatedBackupConfig.getDefaultInstance()) {
@@ -16781,7 +18282,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         automatedBackupConfigBuilder_.mergeFrom(value);
       }
       if (automatedBackupConfig_ != null) {
-        bitField0_ |= 0x80000000;
+        bitField1_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -16799,7 +18300,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearAutomatedBackupConfig() {
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField1_ = (bitField1_ & ~0x00000010);
       automatedBackupConfig_ = null;
       if (automatedBackupConfigBuilder_ != null) {
         automatedBackupConfigBuilder_.dispose();
@@ -16822,7 +18323,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.memorystore.v1.AutomatedBackupConfig.Builder
         getAutomatedBackupConfigBuilder() {
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000010;
       onChanged();
       return getAutomatedBackupConfigFieldBuilder().getBuilder();
     }
@@ -16875,6 +18376,576 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         automatedBackupConfig_ = null;
       }
       return automatedBackupConfigBuilder_;
+    }
+
+    private java.lang.Object maintenanceVersion_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field can be used to trigger self service update to indicate
+     * the desired maintenance version. The input to this field can be determined
+     * by the available_maintenance_versions field.
+     * </pre>
+     *
+     * <code>optional string maintenance_version = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the maintenanceVersion field is set.
+     */
+    public boolean hasMaintenanceVersion() {
+      return ((bitField1_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field can be used to trigger self service update to indicate
+     * the desired maintenance version. The input to this field can be determined
+     * by the available_maintenance_versions field.
+     * </pre>
+     *
+     * <code>optional string maintenance_version = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The maintenanceVersion.
+     */
+    public java.lang.String getMaintenanceVersion() {
+      java.lang.Object ref = maintenanceVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        maintenanceVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field can be used to trigger self service update to indicate
+     * the desired maintenance version. The input to this field can be determined
+     * by the available_maintenance_versions field.
+     * </pre>
+     *
+     * <code>optional string maintenance_version = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for maintenanceVersion.
+     */
+    public com.google.protobuf.ByteString getMaintenanceVersionBytes() {
+      java.lang.Object ref = maintenanceVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        maintenanceVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field can be used to trigger self service update to indicate
+     * the desired maintenance version. The input to this field can be determined
+     * by the available_maintenance_versions field.
+     * </pre>
+     *
+     * <code>optional string maintenance_version = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The maintenanceVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaintenanceVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      maintenanceVersion_ = value;
+      bitField1_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field can be used to trigger self service update to indicate
+     * the desired maintenance version. The input to this field can be determined
+     * by the available_maintenance_versions field.
+     * </pre>
+     *
+     * <code>optional string maintenance_version = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaintenanceVersion() {
+      maintenanceVersion_ = getDefaultInstance().getMaintenanceVersion();
+      bitField1_ = (bitField1_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field can be used to trigger self service update to indicate
+     * the desired maintenance version. The input to this field can be determined
+     * by the available_maintenance_versions field.
+     * </pre>
+     *
+     * <code>optional string maintenance_version = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes for maintenanceVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaintenanceVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      maintenanceVersion_ = value;
+      bitField1_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object effectiveMaintenanceVersion_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field represents the actual maintenance version of the
+     * instance.
+     * </pre>
+     *
+     * <code>
+     * optional string effective_maintenance_version = 50 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the effectiveMaintenanceVersion field is set.
+     */
+    public boolean hasEffectiveMaintenanceVersion() {
+      return ((bitField1_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field represents the actual maintenance version of the
+     * instance.
+     * </pre>
+     *
+     * <code>
+     * optional string effective_maintenance_version = 50 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The effectiveMaintenanceVersion.
+     */
+    public java.lang.String getEffectiveMaintenanceVersion() {
+      java.lang.Object ref = effectiveMaintenanceVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        effectiveMaintenanceVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field represents the actual maintenance version of the
+     * instance.
+     * </pre>
+     *
+     * <code>
+     * optional string effective_maintenance_version = 50 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for effectiveMaintenanceVersion.
+     */
+    public com.google.protobuf.ByteString getEffectiveMaintenanceVersionBytes() {
+      java.lang.Object ref = effectiveMaintenanceVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        effectiveMaintenanceVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field represents the actual maintenance version of the
+     * instance.
+     * </pre>
+     *
+     * <code>
+     * optional string effective_maintenance_version = 50 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The effectiveMaintenanceVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEffectiveMaintenanceVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      effectiveMaintenanceVersion_ = value;
+      bitField1_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field represents the actual maintenance version of the
+     * instance.
+     * </pre>
+     *
+     * <code>
+     * optional string effective_maintenance_version = 50 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEffectiveMaintenanceVersion() {
+      effectiveMaintenanceVersion_ = getDefaultInstance().getEffectiveMaintenanceVersion();
+      bitField1_ = (bitField1_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field represents the actual maintenance version of the
+     * instance.
+     * </pre>
+     *
+     * <code>
+     * optional string effective_maintenance_version = 50 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for effectiveMaintenanceVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEffectiveMaintenanceVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      effectiveMaintenanceVersion_ = value;
+      bitField1_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList availableMaintenanceVersions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureAvailableMaintenanceVersionsIsMutable() {
+      if (!availableMaintenanceVersions_.isModifiable()) {
+        availableMaintenanceVersions_ =
+            new com.google.protobuf.LazyStringArrayList(availableMaintenanceVersions_);
+      }
+      bitField1_ |= 0x00000080;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field is used to determine the available maintenance
+     * versions for the self service update.
+     * </pre>
+     *
+     * <code>
+     * repeated string available_maintenance_versions = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the availableMaintenanceVersions.
+     */
+    public com.google.protobuf.ProtocolStringList getAvailableMaintenanceVersionsList() {
+      availableMaintenanceVersions_.makeImmutable();
+      return availableMaintenanceVersions_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field is used to determine the available maintenance
+     * versions for the self service update.
+     * </pre>
+     *
+     * <code>
+     * repeated string available_maintenance_versions = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of availableMaintenanceVersions.
+     */
+    public int getAvailableMaintenanceVersionsCount() {
+      return availableMaintenanceVersions_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field is used to determine the available maintenance
+     * versions for the self service update.
+     * </pre>
+     *
+     * <code>
+     * repeated string available_maintenance_versions = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The availableMaintenanceVersions at the given index.
+     */
+    public java.lang.String getAvailableMaintenanceVersions(int index) {
+      return availableMaintenanceVersions_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field is used to determine the available maintenance
+     * versions for the self service update.
+     * </pre>
+     *
+     * <code>
+     * repeated string available_maintenance_versions = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the availableMaintenanceVersions at the given index.
+     */
+    public com.google.protobuf.ByteString getAvailableMaintenanceVersionsBytes(int index) {
+      return availableMaintenanceVersions_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field is used to determine the available maintenance
+     * versions for the self service update.
+     * </pre>
+     *
+     * <code>
+     * repeated string available_maintenance_versions = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The availableMaintenanceVersions to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAvailableMaintenanceVersions(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAvailableMaintenanceVersionsIsMutable();
+      availableMaintenanceVersions_.set(index, value);
+      bitField1_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field is used to determine the available maintenance
+     * versions for the self service update.
+     * </pre>
+     *
+     * <code>
+     * repeated string available_maintenance_versions = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The availableMaintenanceVersions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAvailableMaintenanceVersions(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAvailableMaintenanceVersionsIsMutable();
+      availableMaintenanceVersions_.add(value);
+      bitField1_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field is used to determine the available maintenance
+     * versions for the self service update.
+     * </pre>
+     *
+     * <code>
+     * repeated string available_maintenance_versions = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The availableMaintenanceVersions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAvailableMaintenanceVersions(java.lang.Iterable<java.lang.String> values) {
+      ensureAvailableMaintenanceVersionsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, availableMaintenanceVersions_);
+      bitField1_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field is used to determine the available maintenance
+     * versions for the self service update.
+     * </pre>
+     *
+     * <code>
+     * repeated string available_maintenance_versions = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAvailableMaintenanceVersions() {
+      availableMaintenanceVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField1_ = (bitField1_ & ~0x00000080);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field is used to determine the available maintenance
+     * versions for the self service update.
+     * </pre>
+     *
+     * <code>
+     * repeated string available_maintenance_versions = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes of the availableMaintenanceVersions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAvailableMaintenanceVersionsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureAvailableMaintenanceVersionsIsMutable();
+      availableMaintenanceVersions_.add(value);
+      bitField1_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    private boolean allowFewerZonesDeployment_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Deprecated, do not use.
+     * </pre>
+     *
+     * <code>
+     * bool allow_fewer_zones_deployment = 54 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @deprecated google.cloud.memorystore.v1.Instance.allow_fewer_zones_deployment is deprecated.
+     *     See google/cloud/memorystore/v1/memorystore.proto;l=626
+     * @return The allowFewerZonesDeployment.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public boolean getAllowFewerZonesDeployment() {
+      return allowFewerZonesDeployment_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Deprecated, do not use.
+     * </pre>
+     *
+     * <code>
+     * bool allow_fewer_zones_deployment = 54 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @deprecated google.cloud.memorystore.v1.Instance.allow_fewer_zones_deployment is deprecated.
+     *     See google/cloud/memorystore/v1/memorystore.proto;l=626
+     * @param value The allowFewerZonesDeployment to set.
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated
+    public Builder setAllowFewerZonesDeployment(boolean value) {
+
+      allowFewerZonesDeployment_ = value;
+      bitField1_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Deprecated, do not use.
+     * </pre>
+     *
+     * <code>
+     * bool allow_fewer_zones_deployment = 54 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @deprecated google.cloud.memorystore.v1.Instance.allow_fewer_zones_deployment is deprecated.
+     *     See google/cloud/memorystore/v1/memorystore.proto;l=626
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated
+    public Builder clearAllowFewerZonesDeployment() {
+      bitField1_ = (bitField1_ & ~0x00000100);
+      allowFewerZonesDeployment_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

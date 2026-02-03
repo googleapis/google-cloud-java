@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import static com.google.cloud.netapp.v1.NetAppClient.ListActiveDirectoriesPaged
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupPoliciesPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupVaultsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupsPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListHostGroupsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListKmsConfigsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListLocationsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListQuotaRulesPagedResponse;
@@ -70,6 +71,7 @@ import com.google.cloud.netapp.v1.CreateActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.CreateBackupPolicyRequest;
 import com.google.cloud.netapp.v1.CreateBackupRequest;
 import com.google.cloud.netapp.v1.CreateBackupVaultRequest;
+import com.google.cloud.netapp.v1.CreateHostGroupRequest;
 import com.google.cloud.netapp.v1.CreateKmsConfigRequest;
 import com.google.cloud.netapp.v1.CreateQuotaRuleRequest;
 import com.google.cloud.netapp.v1.CreateReplicationRequest;
@@ -80,6 +82,7 @@ import com.google.cloud.netapp.v1.DeleteActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.DeleteBackupPolicyRequest;
 import com.google.cloud.netapp.v1.DeleteBackupRequest;
 import com.google.cloud.netapp.v1.DeleteBackupVaultRequest;
+import com.google.cloud.netapp.v1.DeleteHostGroupRequest;
 import com.google.cloud.netapp.v1.DeleteKmsConfigRequest;
 import com.google.cloud.netapp.v1.DeleteQuotaRuleRequest;
 import com.google.cloud.netapp.v1.DeleteReplicationRequest;
@@ -92,12 +95,14 @@ import com.google.cloud.netapp.v1.GetActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.GetBackupPolicyRequest;
 import com.google.cloud.netapp.v1.GetBackupRequest;
 import com.google.cloud.netapp.v1.GetBackupVaultRequest;
+import com.google.cloud.netapp.v1.GetHostGroupRequest;
 import com.google.cloud.netapp.v1.GetKmsConfigRequest;
 import com.google.cloud.netapp.v1.GetQuotaRuleRequest;
 import com.google.cloud.netapp.v1.GetReplicationRequest;
 import com.google.cloud.netapp.v1.GetSnapshotRequest;
 import com.google.cloud.netapp.v1.GetStoragePoolRequest;
 import com.google.cloud.netapp.v1.GetVolumeRequest;
+import com.google.cloud.netapp.v1.HostGroup;
 import com.google.cloud.netapp.v1.KmsConfig;
 import com.google.cloud.netapp.v1.ListActiveDirectoriesRequest;
 import com.google.cloud.netapp.v1.ListActiveDirectoriesResponse;
@@ -107,6 +112,8 @@ import com.google.cloud.netapp.v1.ListBackupVaultsRequest;
 import com.google.cloud.netapp.v1.ListBackupVaultsResponse;
 import com.google.cloud.netapp.v1.ListBackupsRequest;
 import com.google.cloud.netapp.v1.ListBackupsResponse;
+import com.google.cloud.netapp.v1.ListHostGroupsRequest;
+import com.google.cloud.netapp.v1.ListHostGroupsResponse;
 import com.google.cloud.netapp.v1.ListKmsConfigsRequest;
 import com.google.cloud.netapp.v1.ListKmsConfigsResponse;
 import com.google.cloud.netapp.v1.ListQuotaRulesRequest;
@@ -122,6 +129,8 @@ import com.google.cloud.netapp.v1.ListVolumesResponse;
 import com.google.cloud.netapp.v1.OperationMetadata;
 import com.google.cloud.netapp.v1.QuotaRule;
 import com.google.cloud.netapp.v1.Replication;
+import com.google.cloud.netapp.v1.RestoreBackupFilesRequest;
+import com.google.cloud.netapp.v1.RestoreBackupFilesResponse;
 import com.google.cloud.netapp.v1.ResumeReplicationRequest;
 import com.google.cloud.netapp.v1.ReverseReplicationDirectionRequest;
 import com.google.cloud.netapp.v1.RevertVolumeRequest;
@@ -134,6 +143,7 @@ import com.google.cloud.netapp.v1.UpdateActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.UpdateBackupPolicyRequest;
 import com.google.cloud.netapp.v1.UpdateBackupRequest;
 import com.google.cloud.netapp.v1.UpdateBackupVaultRequest;
+import com.google.cloud.netapp.v1.UpdateHostGroupRequest;
 import com.google.cloud.netapp.v1.UpdateKmsConfigRequest;
 import com.google.cloud.netapp.v1.UpdateQuotaRuleRequest;
 import com.google.cloud.netapp.v1.UpdateReplicationRequest;
@@ -201,8 +211,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -405,6 +415,23 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
   private final UnaryCallSettings<DeleteQuotaRuleRequest, Operation> deleteQuotaRuleSettings;
   private final OperationCallSettings<DeleteQuotaRuleRequest, Empty, OperationMetadata>
       deleteQuotaRuleOperationSettings;
+  private final UnaryCallSettings<RestoreBackupFilesRequest, Operation> restoreBackupFilesSettings;
+  private final OperationCallSettings<
+          RestoreBackupFilesRequest, RestoreBackupFilesResponse, OperationMetadata>
+      restoreBackupFilesOperationSettings;
+  private final PagedCallSettings<
+          ListHostGroupsRequest, ListHostGroupsResponse, ListHostGroupsPagedResponse>
+      listHostGroupsSettings;
+  private final UnaryCallSettings<GetHostGroupRequest, HostGroup> getHostGroupSettings;
+  private final UnaryCallSettings<CreateHostGroupRequest, Operation> createHostGroupSettings;
+  private final OperationCallSettings<CreateHostGroupRequest, HostGroup, OperationMetadata>
+      createHostGroupOperationSettings;
+  private final UnaryCallSettings<UpdateHostGroupRequest, Operation> updateHostGroupSettings;
+  private final OperationCallSettings<UpdateHostGroupRequest, HostGroup, OperationMetadata>
+      updateHostGroupOperationSettings;
+  private final UnaryCallSettings<DeleteHostGroupRequest, Operation> deleteHostGroupSettings;
+  private final OperationCallSettings<DeleteHostGroupRequest, Empty, OperationMetadata>
+      deleteHostGroupOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -773,6 +800,41 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
             }
           };
 
+  private static final PagedListDescriptor<ListHostGroupsRequest, ListHostGroupsResponse, HostGroup>
+      LIST_HOST_GROUPS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListHostGroupsRequest, ListHostGroupsResponse, HostGroup>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListHostGroupsRequest injectToken(ListHostGroupsRequest payload, String token) {
+              return ListHostGroupsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListHostGroupsRequest injectPageSize(
+                ListHostGroupsRequest payload, int pageSize) {
+              return ListHostGroupsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListHostGroupsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListHostGroupsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<HostGroup> extractResources(ListHostGroupsResponse payload) {
+              return payload.getHostGroupsList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -991,6 +1053,23 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
               PageContext<ListQuotaRulesRequest, ListQuotaRulesResponse, QuotaRule> pageContext =
                   PageContext.create(callable, LIST_QUOTA_RULES_PAGE_STR_DESC, request, context);
               return ListQuotaRulesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListHostGroupsRequest, ListHostGroupsResponse, ListHostGroupsPagedResponse>
+      LIST_HOST_GROUPS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListHostGroupsRequest, ListHostGroupsResponse, ListHostGroupsPagedResponse>() {
+            @Override
+            public ApiFuture<ListHostGroupsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListHostGroupsRequest, ListHostGroupsResponse> callable,
+                ListHostGroupsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListHostGroupsResponse> futureResponse) {
+              PageContext<ListHostGroupsRequest, ListHostGroupsResponse, HostGroup> pageContext =
+                  PageContext.create(callable, LIST_HOST_GROUPS_PAGE_STR_DESC, request, context);
+              return ListHostGroupsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -1572,6 +1651,63 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     return deleteQuotaRuleOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to restoreBackupFiles. */
+  public UnaryCallSettings<RestoreBackupFilesRequest, Operation> restoreBackupFilesSettings() {
+    return restoreBackupFilesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to restoreBackupFiles. */
+  public OperationCallSettings<
+          RestoreBackupFilesRequest, RestoreBackupFilesResponse, OperationMetadata>
+      restoreBackupFilesOperationSettings() {
+    return restoreBackupFilesOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listHostGroups. */
+  public PagedCallSettings<
+          ListHostGroupsRequest, ListHostGroupsResponse, ListHostGroupsPagedResponse>
+      listHostGroupsSettings() {
+    return listHostGroupsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getHostGroup. */
+  public UnaryCallSettings<GetHostGroupRequest, HostGroup> getHostGroupSettings() {
+    return getHostGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createHostGroup. */
+  public UnaryCallSettings<CreateHostGroupRequest, Operation> createHostGroupSettings() {
+    return createHostGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createHostGroup. */
+  public OperationCallSettings<CreateHostGroupRequest, HostGroup, OperationMetadata>
+      createHostGroupOperationSettings() {
+    return createHostGroupOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateHostGroup. */
+  public UnaryCallSettings<UpdateHostGroupRequest, Operation> updateHostGroupSettings() {
+    return updateHostGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateHostGroup. */
+  public OperationCallSettings<UpdateHostGroupRequest, HostGroup, OperationMetadata>
+      updateHostGroupOperationSettings() {
+    return updateHostGroupOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteHostGroup. */
+  public UnaryCallSettings<DeleteHostGroupRequest, Operation> deleteHostGroupSettings() {
+    return deleteHostGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteHostGroup. */
+  public OperationCallSettings<DeleteHostGroupRequest, Empty, OperationMetadata>
+      deleteHostGroupOperationSettings() {
+    return deleteHostGroupOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -1811,6 +1947,17 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     updateQuotaRuleOperationSettings = settingsBuilder.updateQuotaRuleOperationSettings().build();
     deleteQuotaRuleSettings = settingsBuilder.deleteQuotaRuleSettings().build();
     deleteQuotaRuleOperationSettings = settingsBuilder.deleteQuotaRuleOperationSettings().build();
+    restoreBackupFilesSettings = settingsBuilder.restoreBackupFilesSettings().build();
+    restoreBackupFilesOperationSettings =
+        settingsBuilder.restoreBackupFilesOperationSettings().build();
+    listHostGroupsSettings = settingsBuilder.listHostGroupsSettings().build();
+    getHostGroupSettings = settingsBuilder.getHostGroupSettings().build();
+    createHostGroupSettings = settingsBuilder.createHostGroupSettings().build();
+    createHostGroupOperationSettings = settingsBuilder.createHostGroupOperationSettings().build();
+    updateHostGroupSettings = settingsBuilder.updateHostGroupSettings().build();
+    updateHostGroupOperationSettings = settingsBuilder.updateHostGroupOperationSettings().build();
+    deleteHostGroupSettings = settingsBuilder.deleteHostGroupSettings().build();
+    deleteHostGroupOperationSettings = settingsBuilder.deleteHostGroupOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -2038,6 +2185,29 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
         deleteQuotaRuleSettings;
     private final OperationCallSettings.Builder<DeleteQuotaRuleRequest, Empty, OperationMetadata>
         deleteQuotaRuleOperationSettings;
+    private final UnaryCallSettings.Builder<RestoreBackupFilesRequest, Operation>
+        restoreBackupFilesSettings;
+    private final OperationCallSettings.Builder<
+            RestoreBackupFilesRequest, RestoreBackupFilesResponse, OperationMetadata>
+        restoreBackupFilesOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListHostGroupsRequest, ListHostGroupsResponse, ListHostGroupsPagedResponse>
+        listHostGroupsSettings;
+    private final UnaryCallSettings.Builder<GetHostGroupRequest, HostGroup> getHostGroupSettings;
+    private final UnaryCallSettings.Builder<CreateHostGroupRequest, Operation>
+        createHostGroupSettings;
+    private final OperationCallSettings.Builder<
+            CreateHostGroupRequest, HostGroup, OperationMetadata>
+        createHostGroupOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateHostGroupRequest, Operation>
+        updateHostGroupSettings;
+    private final OperationCallSettings.Builder<
+            UpdateHostGroupRequest, HostGroup, OperationMetadata>
+        updateHostGroupOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteHostGroupRequest, Operation>
+        deleteHostGroupSettings;
+    private final OperationCallSettings.Builder<DeleteHostGroupRequest, Empty, OperationMetadata>
+        deleteHostGroupOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -2193,6 +2363,16 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       updateQuotaRuleOperationSettings = OperationCallSettings.newBuilder();
       deleteQuotaRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteQuotaRuleOperationSettings = OperationCallSettings.newBuilder();
+      restoreBackupFilesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      restoreBackupFilesOperationSettings = OperationCallSettings.newBuilder();
+      listHostGroupsSettings = PagedCallSettings.newBuilder(LIST_HOST_GROUPS_PAGE_STR_FACT);
+      getHostGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createHostGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createHostGroupOperationSettings = OperationCallSettings.newBuilder();
+      updateHostGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateHostGroupOperationSettings = OperationCallSettings.newBuilder();
+      deleteHostGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteHostGroupOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -2258,6 +2438,12 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
               createQuotaRuleSettings,
               updateQuotaRuleSettings,
               deleteQuotaRuleSettings,
+              restoreBackupFilesSettings,
+              listHostGroupsSettings,
+              getHostGroupSettings,
+              createHostGroupSettings,
+              updateHostGroupSettings,
+              deleteHostGroupSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -2375,6 +2561,17 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       updateQuotaRuleOperationSettings = settings.updateQuotaRuleOperationSettings.toBuilder();
       deleteQuotaRuleSettings = settings.deleteQuotaRuleSettings.toBuilder();
       deleteQuotaRuleOperationSettings = settings.deleteQuotaRuleOperationSettings.toBuilder();
+      restoreBackupFilesSettings = settings.restoreBackupFilesSettings.toBuilder();
+      restoreBackupFilesOperationSettings =
+          settings.restoreBackupFilesOperationSettings.toBuilder();
+      listHostGroupsSettings = settings.listHostGroupsSettings.toBuilder();
+      getHostGroupSettings = settings.getHostGroupSettings.toBuilder();
+      createHostGroupSettings = settings.createHostGroupSettings.toBuilder();
+      createHostGroupOperationSettings = settings.createHostGroupOperationSettings.toBuilder();
+      updateHostGroupSettings = settings.updateHostGroupSettings.toBuilder();
+      updateHostGroupOperationSettings = settings.updateHostGroupOperationSettings.toBuilder();
+      deleteHostGroupSettings = settings.deleteHostGroupSettings.toBuilder();
+      deleteHostGroupOperationSettings = settings.deleteHostGroupOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -2440,6 +2637,12 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
               createQuotaRuleSettings,
               updateQuotaRuleSettings,
               deleteQuotaRuleSettings,
+              restoreBackupFilesSettings,
+              listHostGroupsSettings,
+              getHostGroupSettings,
+              createHostGroupSettings,
+              updateHostGroupSettings,
+              deleteHostGroupSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -2766,6 +2969,36 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
 
       builder
           .deleteQuotaRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .restoreBackupFilesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listHostGroupsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getHostGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createHostGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateHostGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteHostGroupSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -3716,6 +3949,103 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
                       .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .restoreBackupFilesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RestoreBackupFilesRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  RestoreBackupFilesResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createHostGroupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateHostGroupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(HostGroup.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateHostGroupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateHostGroupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(HostGroup.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteHostGroupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteHostGroupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -4315,6 +4645,64 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     public OperationCallSettings.Builder<DeleteQuotaRuleRequest, Empty, OperationMetadata>
         deleteQuotaRuleOperationSettings() {
       return deleteQuotaRuleOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to restoreBackupFiles. */
+    public UnaryCallSettings.Builder<RestoreBackupFilesRequest, Operation>
+        restoreBackupFilesSettings() {
+      return restoreBackupFilesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to restoreBackupFiles. */
+    public OperationCallSettings.Builder<
+            RestoreBackupFilesRequest, RestoreBackupFilesResponse, OperationMetadata>
+        restoreBackupFilesOperationSettings() {
+      return restoreBackupFilesOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listHostGroups. */
+    public PagedCallSettings.Builder<
+            ListHostGroupsRequest, ListHostGroupsResponse, ListHostGroupsPagedResponse>
+        listHostGroupsSettings() {
+      return listHostGroupsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getHostGroup. */
+    public UnaryCallSettings.Builder<GetHostGroupRequest, HostGroup> getHostGroupSettings() {
+      return getHostGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createHostGroup. */
+    public UnaryCallSettings.Builder<CreateHostGroupRequest, Operation> createHostGroupSettings() {
+      return createHostGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createHostGroup. */
+    public OperationCallSettings.Builder<CreateHostGroupRequest, HostGroup, OperationMetadata>
+        createHostGroupOperationSettings() {
+      return createHostGroupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateHostGroup. */
+    public UnaryCallSettings.Builder<UpdateHostGroupRequest, Operation> updateHostGroupSettings() {
+      return updateHostGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateHostGroup. */
+    public OperationCallSettings.Builder<UpdateHostGroupRequest, HostGroup, OperationMetadata>
+        updateHostGroupOperationSettings() {
+      return updateHostGroupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteHostGroup. */
+    public UnaryCallSettings.Builder<DeleteHostGroupRequest, Operation> deleteHostGroupSettings() {
+      return deleteHostGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteHostGroup. */
+    public OperationCallSettings.Builder<DeleteHostGroupRequest, Empty, OperationMetadata>
+        deleteHostGroupOperationSettings() {
+      return deleteHostGroupOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -138,8 +138,8 @@ public interface ExportDataRequestOrBuilder
    * ignore the request if it has already been completed. The server will
    * guarantee that for at least 60 minutes since the first request.
    *
-   * For example, consider a situation where you make an initial request and t
-   * he request times out. If you make the request again with the same request
+   * For example, consider a situation where you make an initial request and
+   * the request times out. If you make the request again with the same request
    * ID, the server can check if original operation with the same request ID
    * was received, and if so, will ignore the second request. This prevents
    * clients from accidentally creating duplicate commitments.
@@ -165,8 +165,8 @@ public interface ExportDataRequestOrBuilder
    * ignore the request if it has already been completed. The server will
    * guarantee that for at least 60 minutes since the first request.
    *
-   * For example, consider a situation where you make an initial request and t
-   * he request times out. If you make the request again with the same request
+   * For example, consider a situation where you make an initial request and
+   * the request times out. If you make the request again with the same request
    * ID, the server can check if original operation with the same request ID
    * was received, and if so, will ignore the second request. This prevents
    * clients from accidentally creating duplicate commitments.
@@ -230,6 +230,49 @@ public interface ExportDataRequestOrBuilder
    * @return The bytes for serviceAccount.
    */
   com.google.protobuf.ByteString getServiceAccountBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The metadata options for the export data.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1.TransferMetadataOptions metadata_options = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the metadataOptions field is set.
+   */
+  boolean hasMetadataOptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The metadata options for the export data.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1.TransferMetadataOptions metadata_options = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The metadataOptions.
+   */
+  com.google.cloud.parallelstore.v1.TransferMetadataOptions getMetadataOptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The metadata options for the export data.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1.TransferMetadataOptions metadata_options = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.parallelstore.v1.TransferMetadataOptionsOrBuilder getMetadataOptionsOrBuilder();
 
   com.google.cloud.parallelstore.v1.ExportDataRequest.SourceCase getSourceCase();
 

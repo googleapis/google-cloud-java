@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,11 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Specifies options for controlling advanced machine features. Options that would traditionally be configured in a BIOS belong here. Features that require operating system support may have corresponding entries in the GuestOsFeatures of an Image (e.g., whether or not the OS in the Image supports nested virtualization being enabled or disabled).
+ * Specifies options for controlling advanced machine features.
+ * Options that would traditionally be configured in a BIOS belong
+ * here. Features that require operating system support may have
+ * corresponding entries in the GuestOsFeatures of anImage (e.g., whether or not the OS in theImage supports nested virtualization being enabled or
+ * disabled).
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.AdvancedMachineFeatures}
@@ -409,7 +413,10 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The number of threads per physical core. To disable simultaneous multithreading (SMT) set this to 1. If unset, the maximum number of threads supported per core by the underlying processor is assumed.
+   * The number of threads per physical core. To disable simultaneous
+   * multithreading (SMT) set this to 1. If unset, the maximum number
+   * of threads supported per core by the underlying processor is
+   * assumed.
    * </pre>
    *
    * <code>optional int32 threads_per_core = 352611671;</code>
@@ -425,7 +432,10 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The number of threads per physical core. To disable simultaneous multithreading (SMT) set this to 1. If unset, the maximum number of threads supported per core by the underlying processor is assumed.
+   * The number of threads per physical core. To disable simultaneous
+   * multithreading (SMT) set this to 1. If unset, the maximum number
+   * of threads supported per core by the underlying processor is
+   * assumed.
    * </pre>
    *
    * <code>optional int32 threads_per_core = 352611671;</code>
@@ -446,7 +456,12 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Turbo frequency mode to use for the instance. Supported modes include: * ALL_CORE_MAX Using empty string or not setting this field will use the platform-specific default turbo mode.
+   * Turbo frequency mode to use for the instance.
+   * Supported modes include:
+   * * ALL_CORE_MAX
+   *
+   * Using empty string or not setting this field will use the platform-specific
+   * default turbo mode.
    * </pre>
    *
    * <code>optional string turbo_mode = 432965412;</code>
@@ -462,7 +477,12 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Turbo frequency mode to use for the instance. Supported modes include: * ALL_CORE_MAX Using empty string or not setting this field will use the platform-specific default turbo mode.
+   * Turbo frequency mode to use for the instance.
+   * Supported modes include:
+   * * ALL_CORE_MAX
+   *
+   * Using empty string or not setting this field will use the platform-specific
+   * default turbo mode.
    * </pre>
    *
    * <code>optional string turbo_mode = 432965412;</code>
@@ -486,7 +506,12 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Turbo frequency mode to use for the instance. Supported modes include: * ALL_CORE_MAX Using empty string or not setting this field will use the platform-specific default turbo mode.
+   * Turbo frequency mode to use for the instance.
+   * Supported modes include:
+   * * ALL_CORE_MAX
+   *
+   * Using empty string or not setting this field will use the platform-specific
+   * default turbo mode.
    * </pre>
    *
    * <code>optional string turbo_mode = 432965412;</code>
@@ -513,7 +538,11 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The number of physical cores to expose to an instance. Multiply by the number of threads per core to compute the total number of virtual CPUs to expose to the instance. If unset, the number of cores is inferred from the instance's nominal CPU count and the underlying platform's SMT width.
+   * The number of physical cores to expose to an instance. Multiply by
+   * the number of threads per core to compute the total number of virtual
+   * CPUs to expose to the instance. If unset, the number of cores is
+   * inferred from the instance's nominal CPU count and the underlying
+   * platform's SMT width.
    * </pre>
    *
    * <code>optional int32 visible_core_count = 193198684;</code>
@@ -529,7 +558,11 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The number of physical cores to expose to an instance. Multiply by the number of threads per core to compute the total number of virtual CPUs to expose to the instance. If unset, the number of cores is inferred from the instance's nominal CPU count and the underlying platform's SMT width.
+   * The number of physical cores to expose to an instance. Multiply by
+   * the number of threads per core to compute the total number of virtual
+   * CPUs to expose to the instance. If unset, the number of cores is
+   * inferred from the instance's nominal CPU count and the underlying
+   * platform's SMT width.
    * </pre>
    *
    * <code>optional int32 visible_core_count = 193198684;</code>
@@ -788,7 +821,11 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Specifies options for controlling advanced machine features. Options that would traditionally be configured in a BIOS belong here. Features that require operating system support may have corresponding entries in the GuestOsFeatures of an Image (e.g., whether or not the OS in the Image supports nested virtualization being enabled or disabled).
+   * Specifies options for controlling advanced machine features.
+   * Options that would traditionally be configured in a BIOS belong
+   * here. Features that require operating system support may have
+   * corresponding entries in the GuestOsFeatures of anImage (e.g., whether or not the OS in theImage supports nested virtualization being enabled or
+   * disabled).
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.AdvancedMachineFeatures}
@@ -1324,7 +1361,10 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The number of threads per physical core. To disable simultaneous multithreading (SMT) set this to 1. If unset, the maximum number of threads supported per core by the underlying processor is assumed.
+     * The number of threads per physical core. To disable simultaneous
+     * multithreading (SMT) set this to 1. If unset, the maximum number
+     * of threads supported per core by the underlying processor is
+     * assumed.
      * </pre>
      *
      * <code>optional int32 threads_per_core = 352611671;</code>
@@ -1340,7 +1380,10 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The number of threads per physical core. To disable simultaneous multithreading (SMT) set this to 1. If unset, the maximum number of threads supported per core by the underlying processor is assumed.
+     * The number of threads per physical core. To disable simultaneous
+     * multithreading (SMT) set this to 1. If unset, the maximum number
+     * of threads supported per core by the underlying processor is
+     * assumed.
      * </pre>
      *
      * <code>optional int32 threads_per_core = 352611671;</code>
@@ -1356,7 +1399,10 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The number of threads per physical core. To disable simultaneous multithreading (SMT) set this to 1. If unset, the maximum number of threads supported per core by the underlying processor is assumed.
+     * The number of threads per physical core. To disable simultaneous
+     * multithreading (SMT) set this to 1. If unset, the maximum number
+     * of threads supported per core by the underlying processor is
+     * assumed.
      * </pre>
      *
      * <code>optional int32 threads_per_core = 352611671;</code>
@@ -1376,7 +1422,10 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The number of threads per physical core. To disable simultaneous multithreading (SMT) set this to 1. If unset, the maximum number of threads supported per core by the underlying processor is assumed.
+     * The number of threads per physical core. To disable simultaneous
+     * multithreading (SMT) set this to 1. If unset, the maximum number
+     * of threads supported per core by the underlying processor is
+     * assumed.
      * </pre>
      *
      * <code>optional int32 threads_per_core = 352611671;</code>
@@ -1396,7 +1445,12 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Turbo frequency mode to use for the instance. Supported modes include: * ALL_CORE_MAX Using empty string or not setting this field will use the platform-specific default turbo mode.
+     * Turbo frequency mode to use for the instance.
+     * Supported modes include:
+     * * ALL_CORE_MAX
+     *
+     * Using empty string or not setting this field will use the platform-specific
+     * default turbo mode.
      * </pre>
      *
      * <code>optional string turbo_mode = 432965412;</code>
@@ -1411,7 +1465,12 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Turbo frequency mode to use for the instance. Supported modes include: * ALL_CORE_MAX Using empty string or not setting this field will use the platform-specific default turbo mode.
+     * Turbo frequency mode to use for the instance.
+     * Supported modes include:
+     * * ALL_CORE_MAX
+     *
+     * Using empty string or not setting this field will use the platform-specific
+     * default turbo mode.
      * </pre>
      *
      * <code>optional string turbo_mode = 432965412;</code>
@@ -1434,7 +1493,12 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Turbo frequency mode to use for the instance. Supported modes include: * ALL_CORE_MAX Using empty string or not setting this field will use the platform-specific default turbo mode.
+     * Turbo frequency mode to use for the instance.
+     * Supported modes include:
+     * * ALL_CORE_MAX
+     *
+     * Using empty string or not setting this field will use the platform-specific
+     * default turbo mode.
      * </pre>
      *
      * <code>optional string turbo_mode = 432965412;</code>
@@ -1457,7 +1521,12 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Turbo frequency mode to use for the instance. Supported modes include: * ALL_CORE_MAX Using empty string or not setting this field will use the platform-specific default turbo mode.
+     * Turbo frequency mode to use for the instance.
+     * Supported modes include:
+     * * ALL_CORE_MAX
+     *
+     * Using empty string or not setting this field will use the platform-specific
+     * default turbo mode.
      * </pre>
      *
      * <code>optional string turbo_mode = 432965412;</code>
@@ -1479,7 +1548,12 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Turbo frequency mode to use for the instance. Supported modes include: * ALL_CORE_MAX Using empty string or not setting this field will use the platform-specific default turbo mode.
+     * Turbo frequency mode to use for the instance.
+     * Supported modes include:
+     * * ALL_CORE_MAX
+     *
+     * Using empty string or not setting this field will use the platform-specific
+     * default turbo mode.
      * </pre>
      *
      * <code>optional string turbo_mode = 432965412;</code>
@@ -1497,7 +1571,12 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Turbo frequency mode to use for the instance. Supported modes include: * ALL_CORE_MAX Using empty string or not setting this field will use the platform-specific default turbo mode.
+     * Turbo frequency mode to use for the instance.
+     * Supported modes include:
+     * * ALL_CORE_MAX
+     *
+     * Using empty string or not setting this field will use the platform-specific
+     * default turbo mode.
      * </pre>
      *
      * <code>optional string turbo_mode = 432965412;</code>
@@ -1522,7 +1601,11 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The number of physical cores to expose to an instance. Multiply by the number of threads per core to compute the total number of virtual CPUs to expose to the instance. If unset, the number of cores is inferred from the instance's nominal CPU count and the underlying platform's SMT width.
+     * The number of physical cores to expose to an instance. Multiply by
+     * the number of threads per core to compute the total number of virtual
+     * CPUs to expose to the instance. If unset, the number of cores is
+     * inferred from the instance's nominal CPU count and the underlying
+     * platform's SMT width.
      * </pre>
      *
      * <code>optional int32 visible_core_count = 193198684;</code>
@@ -1538,7 +1621,11 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The number of physical cores to expose to an instance. Multiply by the number of threads per core to compute the total number of virtual CPUs to expose to the instance. If unset, the number of cores is inferred from the instance's nominal CPU count and the underlying platform's SMT width.
+     * The number of physical cores to expose to an instance. Multiply by
+     * the number of threads per core to compute the total number of virtual
+     * CPUs to expose to the instance. If unset, the number of cores is
+     * inferred from the instance's nominal CPU count and the underlying
+     * platform's SMT width.
      * </pre>
      *
      * <code>optional int32 visible_core_count = 193198684;</code>
@@ -1554,7 +1641,11 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The number of physical cores to expose to an instance. Multiply by the number of threads per core to compute the total number of virtual CPUs to expose to the instance. If unset, the number of cores is inferred from the instance's nominal CPU count and the underlying platform's SMT width.
+     * The number of physical cores to expose to an instance. Multiply by
+     * the number of threads per core to compute the total number of virtual
+     * CPUs to expose to the instance. If unset, the number of cores is
+     * inferred from the instance's nominal CPU count and the underlying
+     * platform's SMT width.
      * </pre>
      *
      * <code>optional int32 visible_core_count = 193198684;</code>
@@ -1574,7 +1665,11 @@ public final class AdvancedMachineFeatures extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The number of physical cores to expose to an instance. Multiply by the number of threads per core to compute the total number of virtual CPUs to expose to the instance. If unset, the number of cores is inferred from the instance's nominal CPU count and the underlying platform's SMT width.
+     * The number of physical cores to expose to an instance. Multiply by
+     * the number of threads per core to compute the total number of virtual
+     * CPUs to expose to the instance. If unset, the number of cores is
+     * inferred from the instance's nominal CPU count and the underlying
+     * platform's SMT width.
      * </pre>
      *
      * <code>optional int32 visible_core_count = 193198684;</code>

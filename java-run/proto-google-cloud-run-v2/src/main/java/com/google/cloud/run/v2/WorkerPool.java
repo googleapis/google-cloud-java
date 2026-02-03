@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1360,7 +1360,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The generation of this WorkerPool currently serving traffic.
+   * Output only. The generation of this WorkerPool currently serving workloads.
    * See comments in `reconciling` for additional information on reconciliation
    * process in Cloud Run. Please note that unlike v1, this is an int64 value.
    * As with most Google APIs, its JSON representation will be a `string`
@@ -1554,7 +1554,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Name of the latest revision that is serving traffic. See
+   * Output only. Name of the latest revision that is serving workloads. See
    * comments in `reconciling` for additional information on reconciliation
    * process in Cloud Run.
    * </pre>
@@ -1582,7 +1582,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Name of the latest revision that is serving traffic. See
+   * Output only. Name of the latest revision that is serving workloads. See
    * comments in `reconciling` for additional information on reconciliation
    * process in Cloud Run.
    * </pre>
@@ -1765,6 +1765,26 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     return instanceSplitStatuses_.get(index);
   }
 
+  public static final int THREAT_DETECTION_ENABLED_FIELD_NUMBER = 28;
+  private boolean threatDetectionEnabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates whether Cloud Run Threat Detection monitoring is
+   * enabled for the parent project of this worker pool.
+   * </pre>
+   *
+   * <code>bool threat_detection_enabled = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The threatDetectionEnabled.
+   */
+  @java.lang.Override
+  public boolean getThreatDetectionEnabled() {
+    return threatDetectionEnabled_;
+  }
+
   public static final int CUSTOM_AUDIENCES_FIELD_NUMBER = 37;
 
   @SuppressWarnings("serial")
@@ -1775,11 +1795,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * One or more custom audiences that you want this worker pool to support.
-   * Specify each custom audience as the full URL in a string. The custom
-   * audiences are encoded in the token and used to authenticate requests. For
-   * more information, see
-   * https://cloud.google.com/run/docs/configuring/custom-audiences.
+   * Not supported, and ignored by Cloud Run.
    * </pre>
    *
    * <code>repeated string custom_audiences = 37;</code>
@@ -1794,11 +1810,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * One or more custom audiences that you want this worker pool to support.
-   * Specify each custom audience as the full URL in a string. The custom
-   * audiences are encoded in the token and used to authenticate requests. For
-   * more information, see
-   * https://cloud.google.com/run/docs/configuring/custom-audiences.
+   * Not supported, and ignored by Cloud Run.
    * </pre>
    *
    * <code>repeated string custom_audiences = 37;</code>
@@ -1813,11 +1825,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * One or more custom audiences that you want this worker pool to support.
-   * Specify each custom audience as the full URL in a string. The custom
-   * audiences are encoded in the token and used to authenticate requests. For
-   * more information, see
-   * https://cloud.google.com/run/docs/configuring/custom-audiences.
+   * Not supported, and ignored by Cloud Run.
    * </pre>
    *
    * <code>repeated string custom_audiences = 37;</code>
@@ -1833,11 +1841,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * One or more custom audiences that you want this worker pool to support.
-   * Specify each custom audience as the full URL in a string. The custom
-   * audiences are encoded in the token and used to authenticate requests. For
-   * more information, see
-   * https://cloud.google.com/run/docs/configuring/custom-audiences.
+   * Not supported, and ignored by Cloud Run.
    * </pre>
    *
    * <code>repeated string custom_audiences = 37;</code>
@@ -1882,21 +1886,21 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    * will asynchronously perform all necessary steps to bring the WorkerPool to
    * the desired serving state. This process is called reconciliation. While
    * reconciliation is in process, `observed_generation`,
-   * `latest_ready_revison`, `traffic_statuses`, and `uri` will have transient
-   * values that might mismatch the intended state: Once reconciliation is over
-   * (and this field is false), there are two possible outcomes: reconciliation
-   * succeeded and the serving state matches the WorkerPool, or there was an
-   * error, and reconciliation failed. This state can be found in
-   * `terminal_condition.state`.
+   * `latest_ready_revison`, `instance_split_statuses`, and `uri` will have
+   * transient values that might mismatch the intended state: Once
+   * reconciliation is over (and this field is false), there are two possible
+   * outcomes: reconciliation succeeded and the serving state matches the
+   * WorkerPool, or there was an error, and reconciliation failed. This state
+   * can be found in `terminal_condition.state`.
    *
-   * If reconciliation succeeded, the following fields will match: `traffic` and
-   * `traffic_statuses`, `observed_generation` and `generation`,
-   * `latest_ready_revision` and `latest_created_revision`.
+   * If reconciliation succeeded, the following fields will match:
+   * `instance_splits` and `instance_split_statuses`, `observed_generation` and
+   * `generation`, `latest_ready_revision` and `latest_created_revision`.
    *
-   * If reconciliation failed, `traffic_statuses`, `observed_generation`, and
-   * `latest_ready_revision` will have the state of the last serving revision,
-   * or empty for newly created WorkerPools. Additional information on the
-   * failure can be found in `terminal_condition` and `conditions`.
+   * If reconciliation failed, `instance_split_statuses`, `observed_generation`,
+   * and `latest_ready_revision` will have the state of the last serving
+   * revision, or empty for newly created WorkerPools. Additional information on
+   * the failure can be found in `terminal_condition` and `conditions`.
    * </pre>
    *
    * <code>bool reconciling = 98 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1917,11 +1921,11 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A system-generated fingerprint for this version of the
+   * Optional. A system-generated fingerprint for this version of the
    * resource. May be used to detect modification conflict during updates.
    * </pre>
    *
-   * <code>string etag = 99 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string etag = 99 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The etag.
    */
@@ -1942,11 +1946,11 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A system-generated fingerprint for this version of the
+   * Optional. A system-generated fingerprint for this version of the
    * resource. May be used to detect modification conflict during updates.
    * </pre>
    *
-   * <code>string etag = 99 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string etag = 99 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for etag.
    */
@@ -2034,6 +2038,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < instanceSplitStatuses_.size(); i++) {
       output.writeMessage(27, instanceSplitStatuses_.get(i));
+    }
+    if (threatDetectionEnabled_ != false) {
+      output.writeBool(28, threatDetectionEnabled_);
     }
     if (observedGeneration_ != 0L) {
       output.writeInt64(30, observedGeneration_);
@@ -2148,6 +2155,9 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               27, instanceSplitStatuses_.get(i));
     }
+    if (threatDetectionEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(28, threatDetectionEnabled_);
+    }
     if (observedGeneration_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(30, observedGeneration_);
     }
@@ -2244,6 +2254,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     if (!getLatestReadyRevision().equals(other.getLatestReadyRevision())) return false;
     if (!getLatestCreatedRevision().equals(other.getLatestCreatedRevision())) return false;
     if (!getInstanceSplitStatusesList().equals(other.getInstanceSplitStatusesList())) return false;
+    if (getThreatDetectionEnabled() != other.getThreatDetectionEnabled()) return false;
     if (!getCustomAudiencesList().equals(other.getCustomAudiencesList())) return false;
     if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
     if (getReconciling() != other.getReconciling()) return false;
@@ -2335,6 +2346,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + INSTANCE_SPLIT_STATUSES_FIELD_NUMBER;
       hash = (53 * hash) + getInstanceSplitStatusesList().hashCode();
     }
+    hash = (37 * hash) + THREAT_DETECTION_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getThreatDetectionEnabled());
     if (getCustomAudiencesCount() > 0) {
       hash = (37 * hash) + CUSTOM_AUDIENCES_FIELD_NUMBER;
       hash = (53 * hash) + getCustomAudiencesList().hashCode();
@@ -2608,6 +2621,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
         instanceSplitStatusesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x01000000);
+      threatDetectionEnabled_ = false;
       customAudiences_ = com.google.protobuf.LazyStringArrayList.emptyList();
       satisfiesPzs_ = false;
       reconciling_ = false;
@@ -2762,16 +2776,19 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
         result.latestCreatedRevision_ = latestCreatedRevision_;
       }
       if (((from_bitField0_ & 0x02000000) != 0)) {
+        result.threatDetectionEnabled_ = threatDetectionEnabled_;
+      }
+      if (((from_bitField0_ & 0x04000000) != 0)) {
         customAudiences_.makeImmutable();
         result.customAudiences_ = customAudiences_;
       }
-      if (((from_bitField0_ & 0x04000000) != 0)) {
+      if (((from_bitField0_ & 0x08000000) != 0)) {
         result.satisfiesPzs_ = satisfiesPzs_;
       }
-      if (((from_bitField0_ & 0x08000000) != 0)) {
+      if (((from_bitField0_ & 0x10000000) != 0)) {
         result.reconciling_ = reconciling_;
       }
-      if (((from_bitField0_ & 0x10000000) != 0)) {
+      if (((from_bitField0_ & 0x20000000) != 0)) {
         result.etag_ = etag_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -2985,10 +3002,13 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.getThreatDetectionEnabled() != false) {
+        setThreatDetectionEnabled(other.getThreatDetectionEnabled());
+      }
       if (!other.customAudiences_.isEmpty()) {
         if (customAudiences_.isEmpty()) {
           customAudiences_ = other.customAudiences_;
-          bitField0_ |= 0x02000000;
+          bitField0_ |= 0x04000000;
         } else {
           ensureCustomAudiencesIsMutable();
           customAudiences_.addAll(other.customAudiences_);
@@ -3003,7 +3023,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x10000000;
+        bitField0_ |= 0x20000000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -3179,6 +3199,12 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 218
+            case 224:
+              {
+                threatDetectionEnabled_ = input.readBool();
+                bitField0_ |= 0x02000000;
+                break;
+              } // case 224
             case 240:
               {
                 observedGeneration_ = input.readInt64();
@@ -3227,19 +3253,19 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
             case 304:
               {
                 satisfiesPzs_ = input.readBool();
-                bitField0_ |= 0x04000000;
+                bitField0_ |= 0x08000000;
                 break;
               } // case 304
             case 784:
               {
                 reconciling_ = input.readBool();
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x10000000;
                 break;
               } // case 784
             case 794:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x10000000;
+                bitField0_ |= 0x20000000;
                 break;
               } // case 794
             default:
@@ -6754,7 +6780,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The generation of this WorkerPool currently serving traffic.
+     * Output only. The generation of this WorkerPool currently serving workloads.
      * See comments in `reconciling` for additional information on reconciliation
      * process in Cloud Run. Please note that unlike v1, this is an int64 value.
      * As with most Google APIs, its JSON representation will be a `string`
@@ -6774,7 +6800,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The generation of this WorkerPool currently serving traffic.
+     * Output only. The generation of this WorkerPool currently serving workloads.
      * See comments in `reconciling` for additional information on reconciliation
      * process in Cloud Run. Please note that unlike v1, this is an int64 value.
      * As with most Google APIs, its JSON representation will be a `string`
@@ -6798,7 +6824,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The generation of this WorkerPool currently serving traffic.
+     * Output only. The generation of this WorkerPool currently serving workloads.
      * See comments in `reconciling` for additional information on reconciliation
      * process in Cloud Run. Please note that unlike v1, this is an int64 value.
      * As with most Google APIs, its JSON representation will be a `string`
@@ -7516,7 +7542,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Name of the latest revision that is serving traffic. See
+     * Output only. Name of the latest revision that is serving workloads. See
      * comments in `reconciling` for additional information on reconciliation
      * process in Cloud Run.
      * </pre>
@@ -7543,7 +7569,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Name of the latest revision that is serving traffic. See
+     * Output only. Name of the latest revision that is serving workloads. See
      * comments in `reconciling` for additional information on reconciliation
      * process in Cloud Run.
      * </pre>
@@ -7570,7 +7596,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Name of the latest revision that is serving traffic. See
+     * Output only. Name of the latest revision that is serving workloads. See
      * comments in `reconciling` for additional information on reconciliation
      * process in Cloud Run.
      * </pre>
@@ -7596,7 +7622,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Name of the latest revision that is serving traffic. See
+     * Output only. Name of the latest revision that is serving workloads. See
      * comments in `reconciling` for additional information on reconciliation
      * process in Cloud Run.
      * </pre>
@@ -7618,7 +7644,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Name of the latest revision that is serving traffic. See
+     * Output only. Name of the latest revision that is serving workloads. See
      * comments in `reconciling` for additional information on reconciliation
      * process in Cloud Run.
      * </pre>
@@ -8222,6 +8248,65 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       return instanceSplitStatusesBuilder_;
     }
 
+    private boolean threatDetectionEnabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether Cloud Run Threat Detection monitoring is
+     * enabled for the parent project of this worker pool.
+     * </pre>
+     *
+     * <code>bool threat_detection_enabled = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The threatDetectionEnabled.
+     */
+    @java.lang.Override
+    public boolean getThreatDetectionEnabled() {
+      return threatDetectionEnabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether Cloud Run Threat Detection monitoring is
+     * enabled for the parent project of this worker pool.
+     * </pre>
+     *
+     * <code>bool threat_detection_enabled = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The threatDetectionEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setThreatDetectionEnabled(boolean value) {
+
+      threatDetectionEnabled_ = value;
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether Cloud Run Threat Detection monitoring is
+     * enabled for the parent project of this worker pool.
+     * </pre>
+     *
+     * <code>bool threat_detection_enabled = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearThreatDetectionEnabled() {
+      bitField0_ = (bitField0_ & ~0x02000000);
+      threatDetectionEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringArrayList customAudiences_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
 
@@ -8229,18 +8314,14 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       if (!customAudiences_.isModifiable()) {
         customAudiences_ = new com.google.protobuf.LazyStringArrayList(customAudiences_);
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
     }
 
     /**
      *
      *
      * <pre>
-     * One or more custom audiences that you want this worker pool to support.
-     * Specify each custom audience as the full URL in a string. The custom
-     * audiences are encoded in the token and used to authenticate requests. For
-     * more information, see
-     * https://cloud.google.com/run/docs/configuring/custom-audiences.
+     * Not supported, and ignored by Cloud Run.
      * </pre>
      *
      * <code>repeated string custom_audiences = 37;</code>
@@ -8256,11 +8337,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more custom audiences that you want this worker pool to support.
-     * Specify each custom audience as the full URL in a string. The custom
-     * audiences are encoded in the token and used to authenticate requests. For
-     * more information, see
-     * https://cloud.google.com/run/docs/configuring/custom-audiences.
+     * Not supported, and ignored by Cloud Run.
      * </pre>
      *
      * <code>repeated string custom_audiences = 37;</code>
@@ -8275,11 +8352,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more custom audiences that you want this worker pool to support.
-     * Specify each custom audience as the full URL in a string. The custom
-     * audiences are encoded in the token and used to authenticate requests. For
-     * more information, see
-     * https://cloud.google.com/run/docs/configuring/custom-audiences.
+     * Not supported, and ignored by Cloud Run.
      * </pre>
      *
      * <code>repeated string custom_audiences = 37;</code>
@@ -8295,11 +8368,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more custom audiences that you want this worker pool to support.
-     * Specify each custom audience as the full URL in a string. The custom
-     * audiences are encoded in the token and used to authenticate requests. For
-     * more information, see
-     * https://cloud.google.com/run/docs/configuring/custom-audiences.
+     * Not supported, and ignored by Cloud Run.
      * </pre>
      *
      * <code>repeated string custom_audiences = 37;</code>
@@ -8315,11 +8384,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more custom audiences that you want this worker pool to support.
-     * Specify each custom audience as the full URL in a string. The custom
-     * audiences are encoded in the token and used to authenticate requests. For
-     * more information, see
-     * https://cloud.google.com/run/docs/configuring/custom-audiences.
+     * Not supported, and ignored by Cloud Run.
      * </pre>
      *
      * <code>repeated string custom_audiences = 37;</code>
@@ -8334,7 +8399,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       }
       ensureCustomAudiencesIsMutable();
       customAudiences_.set(index, value);
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -8343,11 +8408,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more custom audiences that you want this worker pool to support.
-     * Specify each custom audience as the full URL in a string. The custom
-     * audiences are encoded in the token and used to authenticate requests. For
-     * more information, see
-     * https://cloud.google.com/run/docs/configuring/custom-audiences.
+     * Not supported, and ignored by Cloud Run.
      * </pre>
      *
      * <code>repeated string custom_audiences = 37;</code>
@@ -8361,7 +8422,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       }
       ensureCustomAudiencesIsMutable();
       customAudiences_.add(value);
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -8370,11 +8431,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more custom audiences that you want this worker pool to support.
-     * Specify each custom audience as the full URL in a string. The custom
-     * audiences are encoded in the token and used to authenticate requests. For
-     * more information, see
-     * https://cloud.google.com/run/docs/configuring/custom-audiences.
+     * Not supported, and ignored by Cloud Run.
      * </pre>
      *
      * <code>repeated string custom_audiences = 37;</code>
@@ -8385,7 +8442,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllCustomAudiences(java.lang.Iterable<java.lang.String> values) {
       ensureCustomAudiencesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, customAudiences_);
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -8394,11 +8451,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more custom audiences that you want this worker pool to support.
-     * Specify each custom audience as the full URL in a string. The custom
-     * audiences are encoded in the token and used to authenticate requests. For
-     * more information, see
-     * https://cloud.google.com/run/docs/configuring/custom-audiences.
+     * Not supported, and ignored by Cloud Run.
      * </pre>
      *
      * <code>repeated string custom_audiences = 37;</code>
@@ -8407,7 +8460,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearCustomAudiences() {
       customAudiences_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       ;
       onChanged();
       return this;
@@ -8417,11 +8470,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more custom audiences that you want this worker pool to support.
-     * Specify each custom audience as the full URL in a string. The custom
-     * audiences are encoded in the token and used to authenticate requests. For
-     * more information, see
-     * https://cloud.google.com/run/docs/configuring/custom-audiences.
+     * Not supported, and ignored by Cloud Run.
      * </pre>
      *
      * <code>repeated string custom_audiences = 37;</code>
@@ -8436,7 +8485,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureCustomAudiencesIsMutable();
       customAudiences_.add(value);
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -8474,7 +8523,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     public Builder setSatisfiesPzs(boolean value) {
 
       satisfiesPzs_ = value;
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -8491,7 +8540,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzs() {
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       satisfiesPzs_ = false;
       onChanged();
       return this;
@@ -8510,21 +8559,21 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * will asynchronously perform all necessary steps to bring the WorkerPool to
      * the desired serving state. This process is called reconciliation. While
      * reconciliation is in process, `observed_generation`,
-     * `latest_ready_revison`, `traffic_statuses`, and `uri` will have transient
-     * values that might mismatch the intended state: Once reconciliation is over
-     * (and this field is false), there are two possible outcomes: reconciliation
-     * succeeded and the serving state matches the WorkerPool, or there was an
-     * error, and reconciliation failed. This state can be found in
-     * `terminal_condition.state`.
+     * `latest_ready_revison`, `instance_split_statuses`, and `uri` will have
+     * transient values that might mismatch the intended state: Once
+     * reconciliation is over (and this field is false), there are two possible
+     * outcomes: reconciliation succeeded and the serving state matches the
+     * WorkerPool, or there was an error, and reconciliation failed. This state
+     * can be found in `terminal_condition.state`.
      *
-     * If reconciliation succeeded, the following fields will match: `traffic` and
-     * `traffic_statuses`, `observed_generation` and `generation`,
-     * `latest_ready_revision` and `latest_created_revision`.
+     * If reconciliation succeeded, the following fields will match:
+     * `instance_splits` and `instance_split_statuses`, `observed_generation` and
+     * `generation`, `latest_ready_revision` and `latest_created_revision`.
      *
-     * If reconciliation failed, `traffic_statuses`, `observed_generation`, and
-     * `latest_ready_revision` will have the state of the last serving revision,
-     * or empty for newly created WorkerPools. Additional information on the
-     * failure can be found in `terminal_condition` and `conditions`.
+     * If reconciliation failed, `instance_split_statuses`, `observed_generation`,
+     * and `latest_ready_revision` will have the state of the last serving
+     * revision, or empty for newly created WorkerPools. Additional information on
+     * the failure can be found in `terminal_condition` and `conditions`.
      * </pre>
      *
      * <code>bool reconciling = 98 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -8547,21 +8596,21 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * will asynchronously perform all necessary steps to bring the WorkerPool to
      * the desired serving state. This process is called reconciliation. While
      * reconciliation is in process, `observed_generation`,
-     * `latest_ready_revison`, `traffic_statuses`, and `uri` will have transient
-     * values that might mismatch the intended state: Once reconciliation is over
-     * (and this field is false), there are two possible outcomes: reconciliation
-     * succeeded and the serving state matches the WorkerPool, or there was an
-     * error, and reconciliation failed. This state can be found in
-     * `terminal_condition.state`.
+     * `latest_ready_revison`, `instance_split_statuses`, and `uri` will have
+     * transient values that might mismatch the intended state: Once
+     * reconciliation is over (and this field is false), there are two possible
+     * outcomes: reconciliation succeeded and the serving state matches the
+     * WorkerPool, or there was an error, and reconciliation failed. This state
+     * can be found in `terminal_condition.state`.
      *
-     * If reconciliation succeeded, the following fields will match: `traffic` and
-     * `traffic_statuses`, `observed_generation` and `generation`,
-     * `latest_ready_revision` and `latest_created_revision`.
+     * If reconciliation succeeded, the following fields will match:
+     * `instance_splits` and `instance_split_statuses`, `observed_generation` and
+     * `generation`, `latest_ready_revision` and `latest_created_revision`.
      *
-     * If reconciliation failed, `traffic_statuses`, `observed_generation`, and
-     * `latest_ready_revision` will have the state of the last serving revision,
-     * or empty for newly created WorkerPools. Additional information on the
-     * failure can be found in `terminal_condition` and `conditions`.
+     * If reconciliation failed, `instance_split_statuses`, `observed_generation`,
+     * and `latest_ready_revision` will have the state of the last serving
+     * revision, or empty for newly created WorkerPools. Additional information on
+     * the failure can be found in `terminal_condition` and `conditions`.
      * </pre>
      *
      * <code>bool reconciling = 98 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -8572,7 +8621,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
     public Builder setReconciling(boolean value) {
 
       reconciling_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -8588,21 +8637,21 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * will asynchronously perform all necessary steps to bring the WorkerPool to
      * the desired serving state. This process is called reconciliation. While
      * reconciliation is in process, `observed_generation`,
-     * `latest_ready_revison`, `traffic_statuses`, and `uri` will have transient
-     * values that might mismatch the intended state: Once reconciliation is over
-     * (and this field is false), there are two possible outcomes: reconciliation
-     * succeeded and the serving state matches the WorkerPool, or there was an
-     * error, and reconciliation failed. This state can be found in
-     * `terminal_condition.state`.
+     * `latest_ready_revison`, `instance_split_statuses`, and `uri` will have
+     * transient values that might mismatch the intended state: Once
+     * reconciliation is over (and this field is false), there are two possible
+     * outcomes: reconciliation succeeded and the serving state matches the
+     * WorkerPool, or there was an error, and reconciliation failed. This state
+     * can be found in `terminal_condition.state`.
      *
-     * If reconciliation succeeded, the following fields will match: `traffic` and
-     * `traffic_statuses`, `observed_generation` and `generation`,
-     * `latest_ready_revision` and `latest_created_revision`.
+     * If reconciliation succeeded, the following fields will match:
+     * `instance_splits` and `instance_split_statuses`, `observed_generation` and
+     * `generation`, `latest_ready_revision` and `latest_created_revision`.
      *
-     * If reconciliation failed, `traffic_statuses`, `observed_generation`, and
-     * `latest_ready_revision` will have the state of the last serving revision,
-     * or empty for newly created WorkerPools. Additional information on the
-     * failure can be found in `terminal_condition` and `conditions`.
+     * If reconciliation failed, `instance_split_statuses`, `observed_generation`,
+     * and `latest_ready_revision` will have the state of the last serving
+     * revision, or empty for newly created WorkerPools. Additional information on
+     * the failure can be found in `terminal_condition` and `conditions`.
      * </pre>
      *
      * <code>bool reconciling = 98 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -8610,7 +8659,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReconciling() {
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       reconciling_ = false;
       onChanged();
       return this;
@@ -8622,11 +8671,11 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A system-generated fingerprint for this version of the
+     * Optional. A system-generated fingerprint for this version of the
      * resource. May be used to detect modification conflict during updates.
      * </pre>
      *
-     * <code>string etag = 99 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string etag = 99 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The etag.
      */
@@ -8646,11 +8695,11 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A system-generated fingerprint for this version of the
+     * Optional. A system-generated fingerprint for this version of the
      * resource. May be used to detect modification conflict during updates.
      * </pre>
      *
-     * <code>string etag = 99 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string etag = 99 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for etag.
      */
@@ -8670,11 +8719,11 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A system-generated fingerprint for this version of the
+     * Optional. A system-generated fingerprint for this version of the
      * resource. May be used to detect modification conflict during updates.
      * </pre>
      *
-     * <code>string etag = 99 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string etag = 99 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The etag to set.
      * @return This builder for chaining.
@@ -8684,7 +8733,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -8693,17 +8742,17 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A system-generated fingerprint for this version of the
+     * Optional. A system-generated fingerprint for this version of the
      * resource. May be used to detect modification conflict during updates.
      * </pre>
      *
-     * <code>string etag = 99 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string etag = 99 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       onChanged();
       return this;
     }
@@ -8712,11 +8761,11 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A system-generated fingerprint for this version of the
+     * Optional. A system-generated fingerprint for this version of the
      * resource. May be used to detect modification conflict during updates.
      * </pre>
      *
-     * <code>string etag = 99 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string etag = 99 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for etag to set.
      * @return This builder for chaining.
@@ -8727,7 +8776,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }

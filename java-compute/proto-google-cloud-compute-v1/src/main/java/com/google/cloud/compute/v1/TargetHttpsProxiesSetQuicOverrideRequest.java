@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -110,7 +110,8 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
      *
      *
      * <pre>
-     * No overrides to the default QUIC policy. This option is implicit if no QUIC override has been specified in the request.
+     * No overrides to the default QUIC policy. This option is implicit if
+     * no QUIC override has been specified in the request.
      * </pre>
      *
      * <code>NONE = 2402104;</code>
@@ -156,7 +157,8 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
      *
      *
      * <pre>
-     * No overrides to the default QUIC policy. This option is implicit if no QUIC override has been specified in the request.
+     * No overrides to the default QUIC policy. This option is implicit if
+     * no QUIC override has been specified in the request.
      * </pre>
      *
      * <code>NONE = 2402104;</code>

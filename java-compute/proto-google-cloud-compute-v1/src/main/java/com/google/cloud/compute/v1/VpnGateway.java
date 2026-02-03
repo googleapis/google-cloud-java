@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,13 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a HA VPN gateway. HA VPN is a high-availability (HA) Cloud VPN solution that lets you securely connect your on-premises network to your Google Cloud Virtual Private Cloud network through an IPsec VPN connection in a single region. For more information about Cloud HA VPN solutions, see Cloud VPN topologies .
+ * Represents a HA VPN gateway.
+ *
+ * HA VPN is a high-availability (HA) Cloud VPN solution that lets you securely
+ * connect your on-premises network to your Google Cloud Virtual Private Cloud
+ * network through an IPsec VPN connection in a single region.
+ * For more information about Cloud HA VPN solutions, see
+ * Cloud VPN topologies .
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.VpnGateway}
@@ -90,7 +96,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The IP family of the gateway IPs for the HA-VPN gateway interfaces. If not specified, IPV4 will be used.
+   * The IP family of the gateway IPs for the HA-VPN gateway interfaces. If not
+   * specified, IPV4 will be used.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.VpnGateway.GatewayIpVersion}
@@ -251,7 +258,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY, IPV4_IPV6, IPV6_ONLY. If not specified, IPV4_ONLY is used if the gateway IP version is IPV4, or IPV4_IPV6 if the gateway IP version is IPV6.
+   * The stack type for this VPN gateway to identify the IP protocols that are
+   * enabled. Possible values are: IPV4_ONLY,IPV4_IPV6, IPV6_ONLY. If not specified,IPV4_ONLY is used if the gateway IP version isIPV4, or IPV4_IPV6 if the gateway IP version isIPV6.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.VpnGateway.StackType}
@@ -439,7 +447,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -455,7 +464,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -479,7 +489,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -508,7 +519,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -524,7 +536,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -548,7 +561,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -577,7 +591,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The IP family of the gateway IPs for the HA-VPN gateway interfaces. If not specified, IPV4 will be used.
+   * The IP family of the gateway IPs for the HA-VPN gateway interfaces. If not
+   * specified, IPV4 will be used.
    * Check the GatewayIpVersion enum for the list of possible values.
    * </pre>
    *
@@ -594,7 +609,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The IP family of the gateway IPs for the HA-VPN gateway interfaces. If not specified, IPV4 will be used.
+   * The IP family of the gateway IPs for the HA-VPN gateway interfaces. If not
+   * specified, IPV4 will be used.
    * Check the GatewayIpVersion enum for the list of possible values.
    * </pre>
    *
@@ -619,7 +635,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The IP family of the gateway IPs for the HA-VPN gateway interfaces. If not specified, IPV4 will be used.
+   * The IP family of the gateway IPs for the HA-VPN gateway interfaces. If not
+   * specified, IPV4 will be used.
    * Check the GatewayIpVersion enum for the list of possible values.
    * </pre>
    *
@@ -647,7 +664,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -663,7 +681,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -684,7 +703,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#vpnGateway for VPN gateways.
+   * Output only. [Output Only] Type of resource. Always compute#vpnGateway for
+   * VPN gateways.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -700,7 +720,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#vpnGateway for VPN gateways.
+   * Output only. [Output Only] Type of resource. Always compute#vpnGateway for
+   * VPN gateways.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -724,7 +745,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#vpnGateway for VPN gateways.
+   * Output only. [Output Only] Type of resource. Always compute#vpnGateway for
+   * VPN gateways.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -753,7 +775,15 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this VpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a VpnGateway.
+   * A fingerprint for the labels being applied to this VpnGateway, which
+   * is essentially a hash of the labels set used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve a VpnGateway.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -769,7 +799,15 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this VpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a VpnGateway.
+   * A fingerprint for the labels being applied to this VpnGateway, which
+   * is essentially a hash of the labels set used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve a VpnGateway.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -793,7 +831,15 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this VpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a VpnGateway.
+   * A fingerprint for the labels being applied to this VpnGateway, which
+   * is essentially a hash of the labels set used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve a VpnGateway.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -844,7 +890,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+   * Label values may be empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -868,7 +915,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+   * Label values may be empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -882,7 +930,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+   * Label values may be empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -903,7 +952,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+   * Label values may be empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -929,7 +979,13 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -945,7 +1001,13 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -969,7 +1031,13 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -998,7 +1066,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the network to which this VPN gateway is attached. Provided by the client when the VPN gateway is created.
+   * URL of the network to which this VPN gateway is attached. Provided by the
+   * client when the VPN gateway is created.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -1014,7 +1083,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the network to which this VPN gateway is attached. Provided by the client when the VPN gateway is created.
+   * URL of the network to which this VPN gateway is attached. Provided by the
+   * client when the VPN gateway is created.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -1038,7 +1108,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the network to which this VPN gateway is attached. Provided by the client when the VPN gateway is created.
+   * URL of the network to which this VPN gateway is attached. Provided by the
+   * client when the VPN gateway is created.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -1067,7 +1138,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the VPN gateway resides.
+   * Output only. [Output Only] URL of the region where the VPN gateway resides.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -1083,7 +1154,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the VPN gateway resides.
+   * Output only. [Output Only] URL of the region where the VPN gateway resides.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -1107,7 +1178,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the VPN gateway resides.
+   * Output only. [Output Only] URL of the region where the VPN gateway resides.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -1136,7 +1207,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1152,7 +1223,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1176,7 +1247,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1205,7 +1276,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY, IPV4_IPV6, IPV6_ONLY. If not specified, IPV4_ONLY is used if the gateway IP version is IPV4, or IPV4_IPV6 if the gateway IP version is IPV6.
+   * The stack type for this VPN gateway to identify the IP protocols that are
+   * enabled. Possible values are: IPV4_ONLY,IPV4_IPV6, IPV6_ONLY. If not specified,IPV4_ONLY is used if the gateway IP version isIPV4, or IPV4_IPV6 if the gateway IP version isIPV6.
    * Check the StackType enum for the list of possible values.
    * </pre>
    *
@@ -1222,7 +1294,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY, IPV4_IPV6, IPV6_ONLY. If not specified, IPV4_ONLY is used if the gateway IP version is IPV4, or IPV4_IPV6 if the gateway IP version is IPV6.
+   * The stack type for this VPN gateway to identify the IP protocols that are
+   * enabled. Possible values are: IPV4_ONLY,IPV4_IPV6, IPV6_ONLY. If not specified,IPV4_ONLY is used if the gateway IP version isIPV4, or IPV4_IPV6 if the gateway IP version isIPV6.
    * Check the StackType enum for the list of possible values.
    * </pre>
    *
@@ -1247,7 +1320,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY, IPV4_IPV6, IPV6_ONLY. If not specified, IPV4_ONLY is used if the gateway IP version is IPV4, or IPV4_IPV6 if the gateway IP version is IPV6.
+   * The stack type for this VPN gateway to identify the IP protocols that are
+   * enabled. Possible values are: IPV4_ONLY,IPV4_IPV6, IPV6_ONLY. If not specified,IPV4_ONLY is used if the gateway IP version isIPV4, or IPV4_IPV6 if the gateway IP version isIPV6.
    * Check the StackType enum for the list of possible values.
    * </pre>
    *
@@ -1696,7 +1770,13 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a HA VPN gateway. HA VPN is a high-availability (HA) Cloud VPN solution that lets you securely connect your on-premises network to your Google Cloud Virtual Private Cloud network through an IPsec VPN connection in a single region. For more information about Cloud HA VPN solutions, see Cloud VPN topologies .
+   * Represents a HA VPN gateway.
+   *
+   * HA VPN is a high-availability (HA) Cloud VPN solution that lets you securely
+   * connect your on-premises network to your Google Cloud Virtual Private Cloud
+   * network through an IPsec VPN connection in a single region.
+   * For more information about Cloud HA VPN solutions, see
+   * Cloud VPN topologies .
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.VpnGateway}
@@ -2143,7 +2223,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2158,7 +2239,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2181,7 +2263,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2204,7 +2287,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2226,7 +2310,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2244,7 +2329,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2269,7 +2355,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2284,7 +2371,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2307,7 +2395,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2330,7 +2419,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2352,7 +2442,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2370,7 +2461,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2395,7 +2487,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The IP family of the gateway IPs for the HA-VPN gateway interfaces. If not specified, IPV4 will be used.
+     * The IP family of the gateway IPs for the HA-VPN gateway interfaces. If not
+     * specified, IPV4 will be used.
      * Check the GatewayIpVersion enum for the list of possible values.
      * </pre>
      *
@@ -2411,7 +2504,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The IP family of the gateway IPs for the HA-VPN gateway interfaces. If not specified, IPV4 will be used.
+     * The IP family of the gateway IPs for the HA-VPN gateway interfaces. If not
+     * specified, IPV4 will be used.
      * Check the GatewayIpVersion enum for the list of possible values.
      * </pre>
      *
@@ -2435,7 +2529,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The IP family of the gateway IPs for the HA-VPN gateway interfaces. If not specified, IPV4 will be used.
+     * The IP family of the gateway IPs for the HA-VPN gateway interfaces. If not
+     * specified, IPV4 will be used.
      * Check the GatewayIpVersion enum for the list of possible values.
      * </pre>
      *
@@ -2459,7 +2554,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The IP family of the gateway IPs for the HA-VPN gateway interfaces. If not specified, IPV4 will be used.
+     * The IP family of the gateway IPs for the HA-VPN gateway interfaces. If not
+     * specified, IPV4 will be used.
      * Check the GatewayIpVersion enum for the list of possible values.
      * </pre>
      *
@@ -2482,7 +2578,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The IP family of the gateway IPs for the HA-VPN gateway interfaces. If not specified, IPV4 will be used.
+     * The IP family of the gateway IPs for the HA-VPN gateway interfaces. If not
+     * specified, IPV4 will be used.
      * Check the GatewayIpVersion enum for the list of possible values.
      * </pre>
      *
@@ -2501,7 +2598,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The IP family of the gateway IPs for the HA-VPN gateway interfaces. If not specified, IPV4 will be used.
+     * The IP family of the gateway IPs for the HA-VPN gateway interfaces. If not
+     * specified, IPV4 will be used.
      * Check the GatewayIpVersion enum for the list of possible values.
      * </pre>
      *
@@ -2527,7 +2625,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2543,7 +2642,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2559,7 +2659,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2579,7 +2680,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2599,7 +2701,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#vpnGateway for VPN gateways.
+     * Output only. [Output Only] Type of resource. Always compute#vpnGateway for
+     * VPN gateways.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2614,7 +2717,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#vpnGateway for VPN gateways.
+     * Output only. [Output Only] Type of resource. Always compute#vpnGateway for
+     * VPN gateways.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2637,7 +2741,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#vpnGateway for VPN gateways.
+     * Output only. [Output Only] Type of resource. Always compute#vpnGateway for
+     * VPN gateways.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2660,7 +2765,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#vpnGateway for VPN gateways.
+     * Output only. [Output Only] Type of resource. Always compute#vpnGateway for
+     * VPN gateways.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2682,7 +2788,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#vpnGateway for VPN gateways.
+     * Output only. [Output Only] Type of resource. Always compute#vpnGateway for
+     * VPN gateways.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2700,7 +2807,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#vpnGateway for VPN gateways.
+     * Output only. [Output Only] Type of resource. Always compute#vpnGateway for
+     * VPN gateways.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2725,7 +2833,15 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this VpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a VpnGateway.
+     * A fingerprint for the labels being applied to this VpnGateway, which
+     * is essentially a hash of the labels set used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve a VpnGateway.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -2740,7 +2856,15 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this VpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a VpnGateway.
+     * A fingerprint for the labels being applied to this VpnGateway, which
+     * is essentially a hash of the labels set used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve a VpnGateway.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -2763,7 +2887,15 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this VpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a VpnGateway.
+     * A fingerprint for the labels being applied to this VpnGateway, which
+     * is essentially a hash of the labels set used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve a VpnGateway.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -2786,7 +2918,15 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this VpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a VpnGateway.
+     * A fingerprint for the labels being applied to this VpnGateway, which
+     * is essentially a hash of the labels set used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve a VpnGateway.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -2808,7 +2948,15 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this VpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a VpnGateway.
+     * A fingerprint for the labels being applied to this VpnGateway, which
+     * is essentially a hash of the labels set used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve a VpnGateway.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -2826,7 +2974,15 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this VpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a VpnGateway.
+     * A fingerprint for the labels being applied to this VpnGateway, which
+     * is essentially a hash of the labels set used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve a VpnGateway.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -2875,7 +3031,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+     * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+     * Label values may be empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -2899,7 +3056,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+     * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+     * Label values may be empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -2913,7 +3071,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+     * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+     * Label values may be empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -2934,7 +3093,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+     * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+     * Label values may be empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -2961,7 +3121,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+     * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+     * Label values may be empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -2985,7 +3146,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+     * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+     * Label values may be empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -3006,7 +3168,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+     * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+     * Label values may be empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -3023,7 +3186,13 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3038,7 +3207,13 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3061,7 +3236,13 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3084,7 +3265,13 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3106,7 +3293,13 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3124,7 +3317,13 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3149,7 +3348,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the network to which this VPN gateway is attached. Provided by the client when the VPN gateway is created.
+     * URL of the network to which this VPN gateway is attached. Provided by the
+     * client when the VPN gateway is created.
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -3164,7 +3364,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the network to which this VPN gateway is attached. Provided by the client when the VPN gateway is created.
+     * URL of the network to which this VPN gateway is attached. Provided by the
+     * client when the VPN gateway is created.
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -3187,7 +3388,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the network to which this VPN gateway is attached. Provided by the client when the VPN gateway is created.
+     * URL of the network to which this VPN gateway is attached. Provided by the
+     * client when the VPN gateway is created.
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -3210,7 +3412,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the network to which this VPN gateway is attached. Provided by the client when the VPN gateway is created.
+     * URL of the network to which this VPN gateway is attached. Provided by the
+     * client when the VPN gateway is created.
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -3232,7 +3435,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the network to which this VPN gateway is attached. Provided by the client when the VPN gateway is created.
+     * URL of the network to which this VPN gateway is attached. Provided by the
+     * client when the VPN gateway is created.
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -3250,7 +3454,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the network to which this VPN gateway is attached. Provided by the client when the VPN gateway is created.
+     * URL of the network to which this VPN gateway is attached. Provided by the
+     * client when the VPN gateway is created.
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -3275,7 +3480,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the VPN gateway resides.
+     * Output only. [Output Only] URL of the region where the VPN gateway resides.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -3290,7 +3495,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the VPN gateway resides.
+     * Output only. [Output Only] URL of the region where the VPN gateway resides.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -3313,7 +3518,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the VPN gateway resides.
+     * Output only. [Output Only] URL of the region where the VPN gateway resides.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -3336,7 +3541,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the VPN gateway resides.
+     * Output only. [Output Only] URL of the region where the VPN gateway resides.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -3358,7 +3563,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the VPN gateway resides.
+     * Output only. [Output Only] URL of the region where the VPN gateway resides.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -3376,7 +3581,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the VPN gateway resides.
+     * Output only. [Output Only] URL of the region where the VPN gateway resides.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -3401,7 +3606,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3416,7 +3621,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3439,7 +3644,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3462,7 +3667,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3484,7 +3689,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3502,7 +3707,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3527,7 +3732,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY, IPV4_IPV6, IPV6_ONLY. If not specified, IPV4_ONLY is used if the gateway IP version is IPV4, or IPV4_IPV6 if the gateway IP version is IPV6.
+     * The stack type for this VPN gateway to identify the IP protocols that are
+     * enabled. Possible values are: IPV4_ONLY,IPV4_IPV6, IPV6_ONLY. If not specified,IPV4_ONLY is used if the gateway IP version isIPV4, or IPV4_IPV6 if the gateway IP version isIPV6.
      * Check the StackType enum for the list of possible values.
      * </pre>
      *
@@ -3543,7 +3749,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY, IPV4_IPV6, IPV6_ONLY. If not specified, IPV4_ONLY is used if the gateway IP version is IPV4, or IPV4_IPV6 if the gateway IP version is IPV6.
+     * The stack type for this VPN gateway to identify the IP protocols that are
+     * enabled. Possible values are: IPV4_ONLY,IPV4_IPV6, IPV6_ONLY. If not specified,IPV4_ONLY is used if the gateway IP version isIPV4, or IPV4_IPV6 if the gateway IP version isIPV6.
      * Check the StackType enum for the list of possible values.
      * </pre>
      *
@@ -3567,7 +3774,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY, IPV4_IPV6, IPV6_ONLY. If not specified, IPV4_ONLY is used if the gateway IP version is IPV4, or IPV4_IPV6 if the gateway IP version is IPV6.
+     * The stack type for this VPN gateway to identify the IP protocols that are
+     * enabled. Possible values are: IPV4_ONLY,IPV4_IPV6, IPV6_ONLY. If not specified,IPV4_ONLY is used if the gateway IP version isIPV4, or IPV4_IPV6 if the gateway IP version isIPV6.
      * Check the StackType enum for the list of possible values.
      * </pre>
      *
@@ -3591,7 +3799,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY, IPV4_IPV6, IPV6_ONLY. If not specified, IPV4_ONLY is used if the gateway IP version is IPV4, or IPV4_IPV6 if the gateway IP version is IPV6.
+     * The stack type for this VPN gateway to identify the IP protocols that are
+     * enabled. Possible values are: IPV4_ONLY,IPV4_IPV6, IPV6_ONLY. If not specified,IPV4_ONLY is used if the gateway IP version isIPV4, or IPV4_IPV6 if the gateway IP version isIPV6.
      * Check the StackType enum for the list of possible values.
      * </pre>
      *
@@ -3614,7 +3823,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY, IPV4_IPV6, IPV6_ONLY. If not specified, IPV4_ONLY is used if the gateway IP version is IPV4, or IPV4_IPV6 if the gateway IP version is IPV6.
+     * The stack type for this VPN gateway to identify the IP protocols that are
+     * enabled. Possible values are: IPV4_ONLY,IPV4_IPV6, IPV6_ONLY. If not specified,IPV4_ONLY is used if the gateway IP version isIPV4, or IPV4_IPV6 if the gateway IP version isIPV6.
      * Check the StackType enum for the list of possible values.
      * </pre>
      *
@@ -3633,7 +3843,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY, IPV4_IPV6, IPV6_ONLY. If not specified, IPV4_ONLY is used if the gateway IP version is IPV4, or IPV4_IPV6 if the gateway IP version is IPV6.
+     * The stack type for this VPN gateway to identify the IP protocols that are
+     * enabled. Possible values are: IPV4_ONLY,IPV4_IPV6, IPV6_ONLY. If not specified,IPV4_ONLY is used if the gateway IP version isIPV4, or IPV4_IPV6 if the gateway IP version isIPV6.
      * Check the StackType enum for the list of possible values.
      * </pre>
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -258,7 +258,9 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
    * UUID is not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
    *
-   * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string request_id = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The requestId.
    */
@@ -286,7 +288,9 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
    * UUID is not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
    *
-   * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string request_id = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The bytes for requestId.
    */
@@ -1210,7 +1214,9 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      * UUID is not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
      *
-     * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string request_id = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return The requestId.
      */
@@ -1237,7 +1243,9 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      * UUID is not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
      *
-     * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string request_id = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return The bytes for requestId.
      */
@@ -1264,7 +1272,9 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      * UUID is not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
      *
-     * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string request_id = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @param value The requestId to set.
      * @return This builder for chaining.
@@ -1290,7 +1300,9 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      * UUID is not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
      *
-     * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string request_id = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1312,7 +1324,9 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      * UUID is not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
      *
-     * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string request_id = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @param value The bytes for requestId to set.
      * @return This builder for chaining.

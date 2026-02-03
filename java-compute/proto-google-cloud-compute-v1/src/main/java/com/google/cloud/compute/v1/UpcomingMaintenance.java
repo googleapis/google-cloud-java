@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -112,7 +112,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Maintenance due to customer reported multiple faulty hosts via R&amp;R Subblock API.
+     * Maintenance due to customer reported multiple faulty hosts via R&amp;R
+     * Subblock API.
      * </pre>
      *
      * <code>FAILURE_GPU_MULTIPLE_FAULTY_HOSTS_CUSTOMER_REPORTED = 223284959;</code>
@@ -122,7 +123,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Maintenance due to customer reported NVLink switch failure via R&amp;R Subblock API.
+     * Maintenance due to customer reported NVLink switch failure via R&amp;R
+     * Subblock API.
      * </pre>
      *
      * <code>FAILURE_GPU_NVLINK_SWITCH_CUSTOMER_REPORTED = 88487838;</code>
@@ -212,6 +214,16 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
+     * Maintenance due to TPU errors.
+     * </pre>
+     *
+     * <code>FAILURE_TPU = 467889412;</code>
+     */
+    FAILURE_TPU(467889412),
+    /**
+     *
+     *
+     * <pre>
      * Maintenance due to infrastructure relocation.
      * </pre>
      *
@@ -288,7 +300,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Maintenance due to customer reported multiple faulty hosts via R&amp;R Subblock API.
+     * Maintenance due to customer reported multiple faulty hosts via R&amp;R
+     * Subblock API.
      * </pre>
      *
      * <code>FAILURE_GPU_MULTIPLE_FAULTY_HOSTS_CUSTOMER_REPORTED = 223284959;</code>
@@ -299,7 +312,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Maintenance due to customer reported NVLink switch failure via R&amp;R Subblock API.
+     * Maintenance due to customer reported NVLink switch failure via R&amp;R
+     * Subblock API.
      * </pre>
      *
      * <code>FAILURE_GPU_NVLINK_SWITCH_CUSTOMER_REPORTED = 88487838;</code>
@@ -398,6 +412,17 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
+     * Maintenance due to TPU errors.
+     * </pre>
+     *
+     * <code>FAILURE_TPU = 467889412;</code>
+     */
+    public static final int FAILURE_TPU_VALUE = 467889412;
+
+    /**
+     *
+     *
+     * <pre>
      * Maintenance due to infrastructure relocation.
      * </pre>
      *
@@ -488,6 +513,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
           return FAILURE_NVLINK;
         case 31000530:
           return FAILURE_REDUNDANT_HARDWARE_FAULT;
+        case 467889412:
+          return FAILURE_TPU;
         case 359845636:
           return INFRASTRUCTURE_RELOCATION;
         case 50570235:
@@ -760,7 +787,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Multiple maintenance types in one window. This is only intended to be used for groups.
+     * Multiple maintenance types in one window.
+     * This is only intended to be used for groups.
      * </pre>
      *
      * <code>MULTIPLE = 362714640;</code>
@@ -770,7 +798,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Scheduled maintenance (e.g. maintenance after uptime guarantee is complete).
+     * Scheduled maintenance (e.g. maintenance after uptime guarantee is
+     * complete).
      * </pre>
      *
      * <code>SCHEDULED = 478400653;</code>
@@ -790,7 +819,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Unscheduled maintenance (e.g. emergency maintenance during uptime guarantee).
+     * Unscheduled maintenance (e.g. emergency maintenance during
+     * uptime guarantee).
      * </pre>
      *
      * <code>UNSCHEDULED = 450077204;</code>
@@ -814,7 +844,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Multiple maintenance types in one window. This is only intended to be used for groups.
+     * Multiple maintenance types in one window.
+     * This is only intended to be used for groups.
      * </pre>
      *
      * <code>MULTIPLE = 362714640;</code>
@@ -825,7 +856,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Scheduled maintenance (e.g. maintenance after uptime guarantee is complete).
+     * Scheduled maintenance (e.g. maintenance after uptime guarantee is
+     * complete).
      * </pre>
      *
      * <code>SCHEDULED = 478400653;</code>
@@ -847,7 +879,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Unscheduled maintenance (e.g. emergency maintenance during uptime guarantee).
+     * Unscheduled maintenance (e.g. emergency maintenance during
+     * uptime guarantee).
      * </pre>
      *
      * <code>UNSCHEDULED = 450077204;</code>
@@ -986,7 +1019,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The latest time for the planned maintenance window to start. This timestamp value is in RFC3339 text format.
+   * The latest time for the planned maintenance window to start.
+   * This timestamp value is in RFC3339 text format.
    * </pre>
    *
    * <code>optional string latest_window_start_time = 128032129;</code>
@@ -1002,7 +1036,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The latest time for the planned maintenance window to start. This timestamp value is in RFC3339 text format.
+   * The latest time for the planned maintenance window to start.
+   * This timestamp value is in RFC3339 text format.
    * </pre>
    *
    * <code>optional string latest_window_start_time = 128032129;</code>
@@ -1026,7 +1061,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The latest time for the planned maintenance window to start. This timestamp value is in RFC3339 text format.
+   * The latest time for the planned maintenance window to start.
+   * This timestamp value is in RFC3339 text format.
    * </pre>
    *
    * <code>optional string latest_window_start_time = 128032129;</code>
@@ -1306,7 +1342,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The time by which the maintenance disruption will be completed. This timestamp value is in RFC3339 text format.
+   * The time by which the maintenance disruption will be completed.
+   * This timestamp value is in RFC3339 text format.
    * </pre>
    *
    * <code>optional string window_end_time = 271816480;</code>
@@ -1322,7 +1359,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The time by which the maintenance disruption will be completed. This timestamp value is in RFC3339 text format.
+   * The time by which the maintenance disruption will be completed.
+   * This timestamp value is in RFC3339 text format.
    * </pre>
    *
    * <code>optional string window_end_time = 271816480;</code>
@@ -1346,7 +1384,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The time by which the maintenance disruption will be completed. This timestamp value is in RFC3339 text format.
+   * The time by which the maintenance disruption will be completed.
+   * This timestamp value is in RFC3339 text format.
    * </pre>
    *
    * <code>optional string window_end_time = 271816480;</code>
@@ -1375,7 +1414,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The current start time of the maintenance window. This timestamp value is in RFC3339 text format.
+   * The current start time of the maintenance window.
+   * This timestamp value is in RFC3339 text format.
    * </pre>
    *
    * <code>optional string window_start_time = 473061433;</code>
@@ -1391,7 +1431,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The current start time of the maintenance window. This timestamp value is in RFC3339 text format.
+   * The current start time of the maintenance window.
+   * This timestamp value is in RFC3339 text format.
    * </pre>
    *
    * <code>optional string window_start_time = 473061433;</code>
@@ -1415,7 +1456,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The current start time of the maintenance window. This timestamp value is in RFC3339 text format.
+   * The current start time of the maintenance window.
+   * This timestamp value is in RFC3339 text format.
    * </pre>
    *
    * <code>optional string window_start_time = 473061433;</code>
@@ -2083,7 +2125,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The latest time for the planned maintenance window to start. This timestamp value is in RFC3339 text format.
+     * The latest time for the planned maintenance window to start.
+     * This timestamp value is in RFC3339 text format.
      * </pre>
      *
      * <code>optional string latest_window_start_time = 128032129;</code>
@@ -2098,7 +2141,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The latest time for the planned maintenance window to start. This timestamp value is in RFC3339 text format.
+     * The latest time for the planned maintenance window to start.
+     * This timestamp value is in RFC3339 text format.
      * </pre>
      *
      * <code>optional string latest_window_start_time = 128032129;</code>
@@ -2121,7 +2165,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The latest time for the planned maintenance window to start. This timestamp value is in RFC3339 text format.
+     * The latest time for the planned maintenance window to start.
+     * This timestamp value is in RFC3339 text format.
      * </pre>
      *
      * <code>optional string latest_window_start_time = 128032129;</code>
@@ -2144,7 +2189,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The latest time for the planned maintenance window to start. This timestamp value is in RFC3339 text format.
+     * The latest time for the planned maintenance window to start.
+     * This timestamp value is in RFC3339 text format.
      * </pre>
      *
      * <code>optional string latest_window_start_time = 128032129;</code>
@@ -2166,7 +2212,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The latest time for the planned maintenance window to start. This timestamp value is in RFC3339 text format.
+     * The latest time for the planned maintenance window to start.
+     * This timestamp value is in RFC3339 text format.
      * </pre>
      *
      * <code>optional string latest_window_start_time = 128032129;</code>
@@ -2184,7 +2231,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The latest time for the planned maintenance window to start. This timestamp value is in RFC3339 text format.
+     * The latest time for the planned maintenance window to start.
+     * This timestamp value is in RFC3339 text format.
      * </pre>
      *
      * <code>optional string latest_window_start_time = 128032129;</code>
@@ -2737,7 +2785,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The time by which the maintenance disruption will be completed. This timestamp value is in RFC3339 text format.
+     * The time by which the maintenance disruption will be completed.
+     * This timestamp value is in RFC3339 text format.
      * </pre>
      *
      * <code>optional string window_end_time = 271816480;</code>
@@ -2752,7 +2801,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The time by which the maintenance disruption will be completed. This timestamp value is in RFC3339 text format.
+     * The time by which the maintenance disruption will be completed.
+     * This timestamp value is in RFC3339 text format.
      * </pre>
      *
      * <code>optional string window_end_time = 271816480;</code>
@@ -2775,7 +2825,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The time by which the maintenance disruption will be completed. This timestamp value is in RFC3339 text format.
+     * The time by which the maintenance disruption will be completed.
+     * This timestamp value is in RFC3339 text format.
      * </pre>
      *
      * <code>optional string window_end_time = 271816480;</code>
@@ -2798,7 +2849,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The time by which the maintenance disruption will be completed. This timestamp value is in RFC3339 text format.
+     * The time by which the maintenance disruption will be completed.
+     * This timestamp value is in RFC3339 text format.
      * </pre>
      *
      * <code>optional string window_end_time = 271816480;</code>
@@ -2820,7 +2872,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The time by which the maintenance disruption will be completed. This timestamp value is in RFC3339 text format.
+     * The time by which the maintenance disruption will be completed.
+     * This timestamp value is in RFC3339 text format.
      * </pre>
      *
      * <code>optional string window_end_time = 271816480;</code>
@@ -2838,7 +2891,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The time by which the maintenance disruption will be completed. This timestamp value is in RFC3339 text format.
+     * The time by which the maintenance disruption will be completed.
+     * This timestamp value is in RFC3339 text format.
      * </pre>
      *
      * <code>optional string window_end_time = 271816480;</code>
@@ -2863,7 +2917,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The current start time of the maintenance window. This timestamp value is in RFC3339 text format.
+     * The current start time of the maintenance window.
+     * This timestamp value is in RFC3339 text format.
      * </pre>
      *
      * <code>optional string window_start_time = 473061433;</code>
@@ -2878,7 +2933,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The current start time of the maintenance window. This timestamp value is in RFC3339 text format.
+     * The current start time of the maintenance window.
+     * This timestamp value is in RFC3339 text format.
      * </pre>
      *
      * <code>optional string window_start_time = 473061433;</code>
@@ -2901,7 +2957,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The current start time of the maintenance window. This timestamp value is in RFC3339 text format.
+     * The current start time of the maintenance window.
+     * This timestamp value is in RFC3339 text format.
      * </pre>
      *
      * <code>optional string window_start_time = 473061433;</code>
@@ -2924,7 +2981,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The current start time of the maintenance window. This timestamp value is in RFC3339 text format.
+     * The current start time of the maintenance window.
+     * This timestamp value is in RFC3339 text format.
      * </pre>
      *
      * <code>optional string window_start_time = 473061433;</code>
@@ -2946,7 +3004,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The current start time of the maintenance window. This timestamp value is in RFC3339 text format.
+     * The current start time of the maintenance window.
+     * This timestamp value is in RFC3339 text format.
      * </pre>
      *
      * <code>optional string window_start_time = 473061433;</code>
@@ -2964,7 +3023,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The current start time of the maintenance window. This timestamp value is in RFC3339 text format.
+     * The current start time of the maintenance window.
+     * This timestamp value is in RFC3339 text format.
      * </pre>
      *
      * <code>optional string window_start_time = 473061433;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * The user's intent for this AttachmentGroup. This is the only required field besides the name that must be specified on group creation.
+ * The user's intent for this AttachmentGroup. This is the only required field
+ * besides the name that must be specified on group creation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.InterconnectAttachmentGroupIntent}
@@ -452,7 +453,8 @@ public final class InterconnectAttachmentGroupIntent extends com.google.protobuf
    *
    *
    * <pre>
-   * The user's intent for this AttachmentGroup. This is the only required field besides the name that must be specified on group creation.
+   * The user's intent for this AttachmentGroup. This is the only required field
+   * besides the name that must be specified on group creation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.InterconnectAttachmentGroupIntent}

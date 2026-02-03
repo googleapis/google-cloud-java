@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -159,7 +159,8 @@ public final class FirewallPoliciesListAssociationsResponse
    *
    *
    * <pre>
-   * [Output Only] Type of firewallPolicy associations. Always compute#FirewallPoliciesListAssociations for lists of firewallPolicy associations.
+   * Output only. [Output Only] Type of firewallPolicy associations. Alwayscompute#FirewallPoliciesListAssociations for lists of
+   * firewallPolicy associations.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -175,7 +176,8 @@ public final class FirewallPoliciesListAssociationsResponse
    *
    *
    * <pre>
-   * [Output Only] Type of firewallPolicy associations. Always compute#FirewallPoliciesListAssociations for lists of firewallPolicy associations.
+   * Output only. [Output Only] Type of firewallPolicy associations. Alwayscompute#FirewallPoliciesListAssociations for lists of
+   * firewallPolicy associations.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -199,7 +201,8 @@ public final class FirewallPoliciesListAssociationsResponse
    *
    *
    * <pre>
-   * [Output Only] Type of firewallPolicy associations. Always compute#FirewallPoliciesListAssociations for lists of firewallPolicy associations.
+   * Output only. [Output Only] Type of firewallPolicy associations. Alwayscompute#FirewallPoliciesListAssociations for lists of
+   * firewallPolicy associations.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1053,7 +1056,8 @@ public final class FirewallPoliciesListAssociationsResponse
      *
      *
      * <pre>
-     * [Output Only] Type of firewallPolicy associations. Always compute#FirewallPoliciesListAssociations for lists of firewallPolicy associations.
+     * Output only. [Output Only] Type of firewallPolicy associations. Alwayscompute#FirewallPoliciesListAssociations for lists of
+     * firewallPolicy associations.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1068,7 +1072,8 @@ public final class FirewallPoliciesListAssociationsResponse
      *
      *
      * <pre>
-     * [Output Only] Type of firewallPolicy associations. Always compute#FirewallPoliciesListAssociations for lists of firewallPolicy associations.
+     * Output only. [Output Only] Type of firewallPolicy associations. Alwayscompute#FirewallPoliciesListAssociations for lists of
+     * firewallPolicy associations.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1091,7 +1096,8 @@ public final class FirewallPoliciesListAssociationsResponse
      *
      *
      * <pre>
-     * [Output Only] Type of firewallPolicy associations. Always compute#FirewallPoliciesListAssociations for lists of firewallPolicy associations.
+     * Output only. [Output Only] Type of firewallPolicy associations. Alwayscompute#FirewallPoliciesListAssociations for lists of
+     * firewallPolicy associations.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1114,7 +1120,8 @@ public final class FirewallPoliciesListAssociationsResponse
      *
      *
      * <pre>
-     * [Output Only] Type of firewallPolicy associations. Always compute#FirewallPoliciesListAssociations for lists of firewallPolicy associations.
+     * Output only. [Output Only] Type of firewallPolicy associations. Alwayscompute#FirewallPoliciesListAssociations for lists of
+     * firewallPolicy associations.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1136,7 +1143,8 @@ public final class FirewallPoliciesListAssociationsResponse
      *
      *
      * <pre>
-     * [Output Only] Type of firewallPolicy associations. Always compute#FirewallPoliciesListAssociations for lists of firewallPolicy associations.
+     * Output only. [Output Only] Type of firewallPolicy associations. Alwayscompute#FirewallPoliciesListAssociations for lists of
+     * firewallPolicy associations.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1154,7 +1162,8 @@ public final class FirewallPoliciesListAssociationsResponse
      *
      *
      * <pre>
-     * [Output Only] Type of firewallPolicy associations. Always compute#FirewallPoliciesListAssociations for lists of firewallPolicy associations.
+     * Output only. [Output Only] Type of firewallPolicy associations. Alwayscompute#FirewallPoliciesListAssociations for lists of
+     * firewallPolicy associations.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ package com.google.shopping.merchant.accounts.v1;
  *
  *
  * <pre>
- * The `User` message represents a user associated with a Merchant Center
+ * The `User` resource represents a user associated with a Merchant Center
  * account. It is used to manage user permissions and access rights within the
  * account. For more information, see [Frequently asked questions about people
  * and access levels](//support.google.com/merchants/answer/12160472).
@@ -73,7 +73,9 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The possible states of a user.
+   * The state represents the possible statuses of a user. It is an output-only
+   * field that is set to `PENDING` when a user is invited to an account and
+   * changes to `VERIFIED` once the user accepts the invitation.
    * </pre>
    *
    * Protobuf enum {@code google.shopping.merchant.accounts.v1.User.State}
@@ -662,7 +664,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The `User` message represents a user associated with a Merchant Center
+   * The `User` resource represents a user associated with a Merchant Center
    * account. It is used to manage user permissions and access rights within the
    * account. For more information, see [Frequently asked questions about people
    * and access levels](//support.google.com/merchants/answer/12160472).

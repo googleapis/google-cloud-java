@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,8 @@ import com.google.cloud.geminidataanalytics.v1beta.ListConversationsResponse;
 import com.google.cloud.geminidataanalytics.v1beta.ListMessagesRequest;
 import com.google.cloud.geminidataanalytics.v1beta.ListMessagesResponse;
 import com.google.cloud.geminidataanalytics.v1beta.Message;
+import com.google.cloud.geminidataanalytics.v1beta.QueryDataRequest;
+import com.google.cloud.geminidataanalytics.v1beta.QueryDataResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -130,6 +132,17 @@ public class GrpcDataChatServiceStub extends DataChatServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<QueryDataRequest, QueryDataResponse>
+      queryDataMethodDescriptor =
+          MethodDescriptor.<QueryDataRequest, QueryDataResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.geminidataanalytics.v1beta.DataChatService/QueryData")
+              .setRequestMarshaller(ProtoUtils.marshaller(QueryDataRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(QueryDataResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -162,6 +175,7 @@ public class GrpcDataChatServiceStub extends DataChatServiceStub {
   private final UnaryCallable<ListMessagesRequest, ListMessagesResponse> listMessagesCallable;
   private final UnaryCallable<ListMessagesRequest, ListMessagesPagedResponse>
       listMessagesPagedCallable;
+  private final UnaryCallable<QueryDataRequest, QueryDataResponse> queryDataCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -272,6 +286,16 @@ public class GrpcDataChatServiceStub extends DataChatServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<QueryDataRequest, QueryDataResponse> queryDataTransportSettings =
+        GrpcCallSettings.<QueryDataRequest, QueryDataResponse>newBuilder()
+            .setMethodDescriptor(queryDataMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -325,6 +349,9 @@ public class GrpcDataChatServiceStub extends DataChatServiceStub {
     this.listMessagesPagedCallable =
         callableFactory.createPagedCallable(
             listMessagesTransportSettings, settings.listMessagesSettings(), clientContext);
+    this.queryDataCallable =
+        callableFactory.createUnaryCallable(
+            queryDataTransportSettings, settings.queryDataSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -383,6 +410,11 @@ public class GrpcDataChatServiceStub extends DataChatServiceStub {
   @Override
   public UnaryCallable<ListMessagesRequest, ListMessagesPagedResponse> listMessagesPagedCallable() {
     return listMessagesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryDataRequest, QueryDataResponse> queryDataCallable() {
+    return queryDataCallable;
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -141,7 +141,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Get</td>
- *      <td><p> Returns the specified Project resource. To decrease latency for this method, you can optionally omit any unneeded information from the response by using a field mask. This practice is especially recommended for unused quota information (the `quotas` field). To exclude one or more fields, set your request's `fields` query parameter to only include the fields you need. For example, to only include the `id` and `selfLink` fields, add the query parameter `?fields=id,selfLink` to your request.</td>
+ *      <td><p> Returns the specified Project resource.
+ * <p>  To decrease latency for this method, you can optionally omit any unneeded information from the response by using a field mask. This practice is especially recommended for unused quota information (the `quotas` field). To exclude one or more fields, set your request's `fields` query parameter to only include the fields you need. For example, to only include the `id` and `selfLink` fields, add the query parameter `?fields=id,selfLink` to your request.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -215,7 +216,13 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> MoveDisk</td>
- *      <td><p> Starting September 29, 2025, you can't use the moveDisk API on new projects. To move a disk to a different region or zone, follow the steps in [Change the location of a disk](https://{$universe.dns_names.final_documentation_domain}/compute/docs/disks/migrate-to-hyperdisk#migrate-to-hd). Projects that already use the moveDisk API can continue usage until September 29, 2026. Starting November 1, 2025, API responses will include a warning message in the response body about the upcoming deprecation. You can skip the message to continue using the service without interruption.</td>
+ *      <td><p> Moves a persistent disk from one zone to another.
+ * <ul>
+ * <li> Note&#42;: The moveDisk API will be deprecated on September 29, 2026.
+ * </ul>
+ * <p>  Starting September 29, 2025, you can't use the moveDisk API on new projects. To move a disk to a different region or zone, follow the steps in [Change the location of a disk](https://cloud.google.com/compute/docs/disks/migrate-to-hyperdisk#migrate-to-hd).
+ * <p>  Projects that already use the moveDisk API can continue usage until September 29, 2026.
+ * <p>  Starting November 1, 2025, API responses will include a warning message in the response body about the upcoming deprecation. You can skip the message to continue using the service without interruption.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -234,7 +241,10 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> MoveInstance</td>
- *      <td><p> Moves an instance and its attached persistent disks from one zone to another. &#42;Note&#42;: Moving VMs or disks by using this method might cause unexpected behavior. For more information, see the [known issue](/compute/docs/troubleshooting/known-issues#moving_vms_or_disks_using_the_moveinstance_api_or_the_causes_unexpected_behavior). [Deprecated] This method is deprecated. See [moving instance across zones](/compute/docs/instances/moving-instance-across-zones) instead.</td>
+ *      <td><p> Moves an instance and its attached persistent disks from one zone to another.
+ * <ul>
+ * <li> Note&#42;: Moving VMs or disks by using this method might  cause unexpected behavior. For more information, see the [known  issue](/compute/docs/troubleshooting/known-issues#moving_vms_or_disks_using_the_moveinstance_api_or_the_causes_unexpected_behavior). [Deprecated] This method is deprecated. See [moving instance across zones](/compute/docs/instances/moving-instance-across-zones) instead.
+ * </ul></td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -310,7 +320,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> SetUsageExportBucket</td>
- *      <td><p> Enables the usage export feature and sets the usage export bucket where reports are stored. If you provide an empty request body using this method, the usage export feature will be disabled.</td>
+ *      <td><p> Enables the usage export feature and sets theusage export bucket where reports are stored. If you provide an empty request body using this method, the usage export feature will be disabled.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -916,12 +926,13 @@ public class ProjectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified Project resource. To decrease latency for this method, you can optionally
-   * omit any unneeded information from the response by using a field mask. This practice is
-   * especially recommended for unused quota information (the `quotas` field). To exclude one or
-   * more fields, set your request's `fields` query parameter to only include the fields you need.
-   * For example, to only include the `id` and `selfLink` fields, add the query parameter
-   * `?fields=id,selfLink` to your request.
+   * Returns the specified Project resource.
+   *
+   * <p>To decrease latency for this method, you can optionally omit any unneeded information from
+   * the response by using a field mask. This practice is especially recommended for unused quota
+   * information (the `quotas` field). To exclude one or more fields, set your request's `fields`
+   * query parameter to only include the fields you need. For example, to only include the `id` and
+   * `selfLink` fields, add the query parameter `?fields=id,selfLink` to your request.
    *
    * <p>Sample code:
    *
@@ -947,12 +958,13 @@ public class ProjectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified Project resource. To decrease latency for this method, you can optionally
-   * omit any unneeded information from the response by using a field mask. This practice is
-   * especially recommended for unused quota information (the `quotas` field). To exclude one or
-   * more fields, set your request's `fields` query parameter to only include the fields you need.
-   * For example, to only include the `id` and `selfLink` fields, add the query parameter
-   * `?fields=id,selfLink` to your request.
+   * Returns the specified Project resource.
+   *
+   * <p>To decrease latency for this method, you can optionally omit any unneeded information from
+   * the response by using a field mask. This practice is especially recommended for unused quota
+   * information (the `quotas` field). To exclude one or more fields, set your request's `fields`
+   * query parameter to only include the fields you need. For example, to only include the `id` and
+   * `selfLink` fields, add the query parameter `?fields=id,selfLink` to your request.
    *
    * <p>Sample code:
    *
@@ -978,12 +990,13 @@ public class ProjectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified Project resource. To decrease latency for this method, you can optionally
-   * omit any unneeded information from the response by using a field mask. This practice is
-   * especially recommended for unused quota information (the `quotas` field). To exclude one or
-   * more fields, set your request's `fields` query parameter to only include the fields you need.
-   * For example, to only include the `id` and `selfLink` fields, add the query parameter
-   * `?fields=id,selfLink` to your request.
+   * Returns the specified Project resource.
+   *
+   * <p>To decrease latency for this method, you can optionally omit any unneeded information from
+   * the response by using a field mask. This practice is especially recommended for unused quota
+   * information (the `quotas` field). To exclude one or more fields, set your request's `fields`
+   * query parameter to only include the fields you need. For example, to only include the `id` and
+   * `selfLink` fields, add the query parameter `?fields=id,selfLink` to your request.
    *
    * <p>Sample code:
    *
@@ -1383,11 +1396,19 @@ public class ProjectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Starting September 29, 2025, you can't use the moveDisk API on new projects. To move a disk to
-   * a different region or zone, follow the steps in [Change the location of a
-   * disk](https://{$universe.dns_names.final_documentation_domain}/compute/docs/disks/migrate-to-hyperdisk#migrate-to-hd).
-   * Projects that already use the moveDisk API can continue usage until September 29, 2026.
-   * Starting November 1, 2025, API responses will include a warning message in the response body
+   * Moves a persistent disk from one zone to another.
+   *
+   * <ul>
+   *   <li>Note&#42;: The moveDisk API will be deprecated on September 29, 2026.
+   * </ul>
+   *
+   * <p>Starting September 29, 2025, you can't use the moveDisk API on new projects. To move a disk
+   * to a different region or zone, follow the steps in [Change the location of a
+   * disk](https://cloud.google.com/compute/docs/disks/migrate-to-hyperdisk#migrate-to-hd).
+   *
+   * <p>Projects that already use the moveDisk API can continue usage until September 29, 2026.
+   *
+   * <p>Starting November 1, 2025, API responses will include a warning message in the response body
    * about the upcoming deprecation. You can skip the message to continue using the service without
    * interruption.
    *
@@ -1422,11 +1443,19 @@ public class ProjectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Starting September 29, 2025, you can't use the moveDisk API on new projects. To move a disk to
-   * a different region or zone, follow the steps in [Change the location of a
-   * disk](https://{$universe.dns_names.final_documentation_domain}/compute/docs/disks/migrate-to-hyperdisk#migrate-to-hd).
-   * Projects that already use the moveDisk API can continue usage until September 29, 2026.
-   * Starting November 1, 2025, API responses will include a warning message in the response body
+   * Moves a persistent disk from one zone to another.
+   *
+   * <ul>
+   *   <li>Note&#42;: The moveDisk API will be deprecated on September 29, 2026.
+   * </ul>
+   *
+   * <p>Starting September 29, 2025, you can't use the moveDisk API on new projects. To move a disk
+   * to a different region or zone, follow the steps in [Change the location of a
+   * disk](https://cloud.google.com/compute/docs/disks/migrate-to-hyperdisk#migrate-to-hd).
+   *
+   * <p>Projects that already use the moveDisk API can continue usage until September 29, 2026.
+   *
+   * <p>Starting November 1, 2025, API responses will include a warning message in the response body
    * about the upcoming deprecation. You can skip the message to continue using the service without
    * interruption.
    *
@@ -1458,11 +1487,19 @@ public class ProjectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Starting September 29, 2025, you can't use the moveDisk API on new projects. To move a disk to
-   * a different region or zone, follow the steps in [Change the location of a
-   * disk](https://{$universe.dns_names.final_documentation_domain}/compute/docs/disks/migrate-to-hyperdisk#migrate-to-hd).
-   * Projects that already use the moveDisk API can continue usage until September 29, 2026.
-   * Starting November 1, 2025, API responses will include a warning message in the response body
+   * Moves a persistent disk from one zone to another.
+   *
+   * <ul>
+   *   <li>Note&#42;: The moveDisk API will be deprecated on September 29, 2026.
+   * </ul>
+   *
+   * <p>Starting September 29, 2025, you can't use the moveDisk API on new projects. To move a disk
+   * to a different region or zone, follow the steps in [Change the location of a
+   * disk](https://cloud.google.com/compute/docs/disks/migrate-to-hyperdisk#migrate-to-hd).
+   *
+   * <p>Projects that already use the moveDisk API can continue usage until September 29, 2026.
+   *
+   * <p>Starting November 1, 2025, API responses will include a warning message in the response body
    * about the upcoming deprecation. You can skip the message to continue using the service without
    * interruption.
    *
@@ -1495,11 +1532,19 @@ public class ProjectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Starting September 29, 2025, you can't use the moveDisk API on new projects. To move a disk to
-   * a different region or zone, follow the steps in [Change the location of a
-   * disk](https://{$universe.dns_names.final_documentation_domain}/compute/docs/disks/migrate-to-hyperdisk#migrate-to-hd).
-   * Projects that already use the moveDisk API can continue usage until September 29, 2026.
-   * Starting November 1, 2025, API responses will include a warning message in the response body
+   * Moves a persistent disk from one zone to another.
+   *
+   * <ul>
+   *   <li>Note&#42;: The moveDisk API will be deprecated on September 29, 2026.
+   * </ul>
+   *
+   * <p>Starting September 29, 2025, you can't use the moveDisk API on new projects. To move a disk
+   * to a different region or zone, follow the steps in [Change the location of a
+   * disk](https://cloud.google.com/compute/docs/disks/migrate-to-hyperdisk#migrate-to-hd).
+   *
+   * <p>Projects that already use the moveDisk API can continue usage until September 29, 2026.
+   *
+   * <p>Starting November 1, 2025, API responses will include a warning message in the response body
    * about the upcoming deprecation. You can skip the message to continue using the service without
    * interruption.
    *
@@ -1530,12 +1575,15 @@ public class ProjectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Moves an instance and its attached persistent disks from one zone to another. &#42;Note&#42;:
-   * Moving VMs or disks by using this method might cause unexpected behavior. For more information,
-   * see the [known
-   * issue](/compute/docs/troubleshooting/known-issues#moving_vms_or_disks_using_the_moveinstance_api_or_the_causes_unexpected_behavior).
-   * [Deprecated] This method is deprecated. See [moving instance across
-   * zones](/compute/docs/instances/moving-instance-across-zones) instead.
+   * Moves an instance and its attached persistent disks from one zone to another.
+   *
+   * <ul>
+   *   <li>Note&#42;: Moving VMs or disks by using this method might cause unexpected behavior. For
+   *       more information, see the [known
+   *       issue](/compute/docs/troubleshooting/known-issues#moving_vms_or_disks_using_the_moveinstance_api_or_the_causes_unexpected_behavior).
+   *       [Deprecated] This method is deprecated. See [moving instance across
+   *       zones](/compute/docs/instances/moving-instance-across-zones) instead.
+   * </ul>
    *
    * <p>Sample code:
    *
@@ -1569,12 +1617,15 @@ public class ProjectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Moves an instance and its attached persistent disks from one zone to another. &#42;Note&#42;:
-   * Moving VMs or disks by using this method might cause unexpected behavior. For more information,
-   * see the [known
-   * issue](/compute/docs/troubleshooting/known-issues#moving_vms_or_disks_using_the_moveinstance_api_or_the_causes_unexpected_behavior).
-   * [Deprecated] This method is deprecated. See [moving instance across
-   * zones](/compute/docs/instances/moving-instance-across-zones) instead.
+   * Moves an instance and its attached persistent disks from one zone to another.
+   *
+   * <ul>
+   *   <li>Note&#42;: Moving VMs or disks by using this method might cause unexpected behavior. For
+   *       more information, see the [known
+   *       issue](/compute/docs/troubleshooting/known-issues#moving_vms_or_disks_using_the_moveinstance_api_or_the_causes_unexpected_behavior).
+   *       [Deprecated] This method is deprecated. See [moving instance across
+   *       zones](/compute/docs/instances/moving-instance-across-zones) instead.
+   * </ul>
    *
    * <p>Sample code:
    *
@@ -1605,12 +1656,15 @@ public class ProjectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Moves an instance and its attached persistent disks from one zone to another. &#42;Note&#42;:
-   * Moving VMs or disks by using this method might cause unexpected behavior. For more information,
-   * see the [known
-   * issue](/compute/docs/troubleshooting/known-issues#moving_vms_or_disks_using_the_moveinstance_api_or_the_causes_unexpected_behavior).
-   * [Deprecated] This method is deprecated. See [moving instance across
-   * zones](/compute/docs/instances/moving-instance-across-zones) instead.
+   * Moves an instance and its attached persistent disks from one zone to another.
+   *
+   * <ul>
+   *   <li>Note&#42;: Moving VMs or disks by using this method might cause unexpected behavior. For
+   *       more information, see the [known
+   *       issue](/compute/docs/troubleshooting/known-issues#moving_vms_or_disks_using_the_moveinstance_api_or_the_causes_unexpected_behavior).
+   *       [Deprecated] This method is deprecated. See [moving instance across
+   *       zones](/compute/docs/instances/moving-instance-across-zones) instead.
+   * </ul>
    *
    * <p>Sample code:
    *
@@ -1641,12 +1695,15 @@ public class ProjectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Moves an instance and its attached persistent disks from one zone to another. &#42;Note&#42;:
-   * Moving VMs or disks by using this method might cause unexpected behavior. For more information,
-   * see the [known
-   * issue](/compute/docs/troubleshooting/known-issues#moving_vms_or_disks_using_the_moveinstance_api_or_the_causes_unexpected_behavior).
-   * [Deprecated] This method is deprecated. See [moving instance across
-   * zones](/compute/docs/instances/moving-instance-across-zones) instead.
+   * Moves an instance and its attached persistent disks from one zone to another.
+   *
+   * <ul>
+   *   <li>Note&#42;: Moving VMs or disks by using this method might cause unexpected behavior. For
+   *       more information, see the [known
+   *       issue](/compute/docs/troubleshooting/known-issues#moving_vms_or_disks_using_the_moveinstance_api_or_the_causes_unexpected_behavior).
+   *       [Deprecated] This method is deprecated. See [moving instance across
+   *       zones](/compute/docs/instances/moving-instance-across-zones) instead.
+   * </ul>
    *
    * <p>Sample code:
    *
@@ -2085,7 +2142,7 @@ public class ProjectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Enables the usage export feature and sets the usage export bucket where reports are stored. If
+   * Enables the usage export feature and sets theusage export bucket where reports are stored. If
    * you provide an empty request body using this method, the usage export feature will be disabled.
    *
    * <p>Sample code:
@@ -2120,7 +2177,7 @@ public class ProjectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Enables the usage export feature and sets the usage export bucket where reports are stored. If
+   * Enables the usage export feature and sets theusage export bucket where reports are stored. If
    * you provide an empty request body using this method, the usage export feature will be disabled.
    *
    * <p>Sample code:
@@ -2152,7 +2209,7 @@ public class ProjectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Enables the usage export feature and sets the usage export bucket where reports are stored. If
+   * Enables the usage export feature and sets theusage export bucket where reports are stored. If
    * you provide an empty request body using this method, the usage export feature will be disabled.
    *
    * <p>Sample code:
@@ -2184,7 +2241,7 @@ public class ProjectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Enables the usage export feature and sets the usage export bucket where reports are stored. If
+   * Enables the usage export feature and sets theusage export bucket where reports are stored. If
    * you provide an empty request body using this method, the usage export feature will be disabled.
    *
    * <p>Sample code:

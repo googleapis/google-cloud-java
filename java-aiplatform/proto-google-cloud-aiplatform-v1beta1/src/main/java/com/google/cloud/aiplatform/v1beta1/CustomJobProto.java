@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -134,7 +134,7 @@ public final class CustomJobProto {
           + "\016experiment_run\030\022 \001(\tB)\340A\001\372A#\n"
           + "!aiplatform.googleapis.com/Context\0227\n"
           + "\006models\030\024 \003(\tB\'\340A\001\372A!\n"
-          + "\037aiplatform.googleapis.com/Model\"\237\003\n"
+          + "\037aiplatform.googleapis.com/Model\"\351\003\n"
           + "\016WorkerPoolSpec\022H\n"
           + "\016container_spec\030\006 \001(\0132..google"
           + ".cloud.aiplatform.v1beta1.ContainerSpecH\000\022Q\n"
@@ -144,7 +144,9 @@ public final class CustomJobProto {
           + "d.aiplatform.v1beta1.MachineSpecB\006\340A\001\340A\005\022\032\n\r"
           + "replica_count\030\002 \001(\003B\003\340A\001\022B\n\n"
           + "nfs_mounts\030\004"
-          + " \003(\0132).google.cloud.aiplatform.v1beta1.NfsMountB\003\340A\001\022<\n"
+          + " \003(\0132).google.cloud.aiplatform.v1beta1.NfsMountB\003\340A\001\022H\n\r"
+          + "lustre_mounts\030\t \003(\0132"
+          + ",.google.cloud.aiplatform.v1beta1.LustreMountB\003\340A\001\022<\n"
           + "\tdisk_spec\030\005 \001(\0132).google.cloud.aiplatform.v1beta1.DiskSpecB\006\n"
           + "\004task\"|\n\r"
           + "ContainerSpec\022\026\n"
@@ -161,8 +163,8 @@ public final class CustomJobProto {
           + "Scheduling\022*\n"
           + "\007timeout\030\001 \001(\0132\031.google.protobuf.Duration\022%\n"
           + "\035restart_job_on_worker_restart\030\003 \001(\010\022K\n"
-          + "\010strategy\030\004 \001(\01624.google.clou"
-          + "d.aiplatform.v1beta1.Scheduling.StrategyB\003\340A\001\022\034\n"
+          + "\010strategy\030\004 \001(\01624.google.cloud.aipl"
+          + "atform.v1beta1.Scheduling.StrategyB\003\340A\001\022\034\n"
           + "\017disable_retries\030\005 \001(\010B\003\340A\001\0229\n"
           + "\021max_wait_duration\030\006"
           + " \001(\0132\031.google.protobuf.DurationB\003\340A\001\"q\n"
@@ -173,11 +175,11 @@ public final class CustomJobProto {
           + "\010STANDARD\020\003\022\010\n"
           + "\004SPOT\020\004\022\016\n\n"
           + "FLEX_START\020\006B\345\001\n"
-          + "#com.google.cloud.aiplatform.v1beta1B\016CustomJobProtoP\001ZCcloud.googl"
-          + "e.com/go/aiplatform/apiv1beta1/aiplatfor"
-          + "mpb;aiplatformpb\252\002\037Google.Cloud.AIPlatfo"
-          + "rm.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1b"
-          + "eta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "#com.google.cloud.aiplatform.v1beta1B\016CustomJobProtoP\001ZCcloud.google.com/"
+          + "go/aiplatform/apiv1beta1/aiplatformpb;ai"
+          + "platformpb\252\002\037Google.Cloud.AIPlatform.V1B"
+          + "eta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002"
+          + "\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -269,6 +271,7 @@ public final class CustomJobProto {
               "MachineSpec",
               "ReplicaCount",
               "NfsMounts",
+              "LustreMounts",
               "DiskSpec",
               "Task",
             });

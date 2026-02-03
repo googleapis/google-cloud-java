@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -126,7 +126,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> AggregatedList</td>
- *      <td><p> Retrieves an aggregated list of network firewall policies, listing network firewall policies from all applicable scopes (global and regional) and grouping the results per scope. To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.</td>
+ *      <td><p> Retrieves an aggregated list of network firewall policies, listing network firewall policies from all applicable scopes (global and regional) and grouping the results per scope.
+ * <p>  To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to `true`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -993,8 +994,10 @@ public class NetworkFirewallPoliciesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of network firewall policies, listing network firewall policies
-   * from all applicable scopes (global and regional) and grouping the results per scope. To prevent
-   * failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.
+   * from all applicable scopes (global and regional) and grouping the results per scope.
+   *
+   * <p>To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -1026,8 +1029,10 @@ public class NetworkFirewallPoliciesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of network firewall policies, listing network firewall policies
-   * from all applicable scopes (global and regional) and grouping the results per scope. To prevent
-   * failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.
+   * from all applicable scopes (global and regional) and grouping the results per scope.
+   *
+   * <p>To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -1068,8 +1073,10 @@ public class NetworkFirewallPoliciesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of network firewall policies, listing network firewall policies
-   * from all applicable scopes (global and regional) and grouping the results per scope. To prevent
-   * failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.
+   * from all applicable scopes (global and regional) and grouping the results per scope.
+   *
+   * <p>To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -1110,8 +1117,10 @@ public class NetworkFirewallPoliciesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an aggregated list of network firewall policies, listing network firewall policies
-   * from all applicable scopes (global and regional) and grouping the results per scope. To prevent
-   * failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.
+   * from all applicable scopes (global and regional) and grouping the results per scope.
+   *
+   * <p>To prevent failure, it is recommended that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,12 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents an SSL Policy resource. Use SSL policies to control SSL features, such as versions and cipher suites, that are offered by Application Load Balancers and proxy Network Load Balancers. For more information, read SSL policies overview.
+ * Represents an SSL Policy resource.
+ *
+ * Use SSL policies to control SSL features, such as versions and cipher
+ * suites, that are offered by Application Load Balancers and proxy Network Load
+ * Balancers. For more information, read
+ * SSL policies overview.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.SslPolicy}
@@ -79,7 +84,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+   * The minimum version of SSL protocol that can be used by the clients to
+   * establish a connection with the load balancer. This can be one ofTLS_1_0, TLS_1_1, TLS_1_2,TLS_1_3. When set to TLS_1_3, the profile field
+   * must be set to RESTRICTED.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.SslPolicy.MinTlsVersion}
@@ -125,6 +132,16 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>TLS_1_2 = 33116736;</code>
      */
     TLS_1_2(33116736),
+    /**
+     *
+     *
+     * <pre>
+     * TLS 1.3
+     * </pre>
+     *
+     * <code>TLS_1_3 = 33116737;</code>
+     */
+    TLS_1_3(33116737),
     UNRECOGNIZED(-1),
     ;
 
@@ -172,6 +189,17 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int TLS_1_2_VALUE = 33116736;
 
+    /**
+     *
+     *
+     * <pre>
+     * TLS 1.3
+     * </pre>
+     *
+     * <code>TLS_1_3 = 33116737;</code>
+     */
+    public static final int TLS_1_3_VALUE = 33116737;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -204,6 +232,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
           return TLS_1_1;
         case 33116736:
           return TLS_1_2;
+        case 33116737:
+          return TLS_1_3;
         default:
           return null;
       }
@@ -261,7 +291,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+   * Profile specifies the set of SSL features that can be used by the load
+   * balancer when negotiating SSL with clients. This can be one ofCOMPATIBLE, MODERN, RESTRICTED, orCUSTOM. If using CUSTOM, the set of SSL features
+   * to enable must be specified in the customFeatures field.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.SslPolicy.Profile}
@@ -281,7 +313,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Compatible profile. Allows the broadset set of clients, even those which support only out-of-date SSL features to negotiate with the load balancer.
+     * Compatible profile. Allows the broadset set of clients, even those which
+     * support only out-of-date SSL features to negotiate with the load
+     * balancer.
      * </pre>
      *
      * <code>COMPATIBLE = 179357396;</code>
@@ -291,7 +325,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Custom profile. Allow only the set of allowed SSL features specified in the customFeatures field.
+     * Custom profile. Allow only the set of allowed SSL features specified in
+     * the customFeatures field.
      * </pre>
      *
      * <code>CUSTOM = 388595569;</code>
@@ -301,7 +336,19 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Modern profile. Supports a wide set of SSL features, allowing modern clients to negotiate SSL with the load balancer.
+     * FIPS compatible profile. Supports a reduced set of SSL features,
+     * intended to meet FIPS 140-3 compliance requirements.
+     * </pre>
+     *
+     * <code>FIPS_202205 = 475828188;</code>
+     */
+    FIPS_202205(475828188),
+    /**
+     *
+     *
+     * <pre>
+     * Modern profile. Supports a wide set of SSL features, allowing modern
+     * clients to negotiate SSL with the load balancer.
      * </pre>
      *
      * <code>MODERN = 132013855;</code>
@@ -311,7 +358,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Restricted profile. Supports a reduced set of SSL features, intended to meet stricter compliance requirements.
+     * Restricted profile. Supports a reduced set of SSL features, intended to
+     * meet stricter compliance requirements.
      * </pre>
      *
      * <code>RESTRICTED = 261551195;</code>
@@ -335,7 +383,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Compatible profile. Allows the broadset set of clients, even those which support only out-of-date SSL features to negotiate with the load balancer.
+     * Compatible profile. Allows the broadset set of clients, even those which
+     * support only out-of-date SSL features to negotiate with the load
+     * balancer.
      * </pre>
      *
      * <code>COMPATIBLE = 179357396;</code>
@@ -346,7 +396,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Custom profile. Allow only the set of allowed SSL features specified in the customFeatures field.
+     * Custom profile. Allow only the set of allowed SSL features specified in
+     * the customFeatures field.
      * </pre>
      *
      * <code>CUSTOM = 388595569;</code>
@@ -357,7 +408,20 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Modern profile. Supports a wide set of SSL features, allowing modern clients to negotiate SSL with the load balancer.
+     * FIPS compatible profile. Supports a reduced set of SSL features,
+     * intended to meet FIPS 140-3 compliance requirements.
+     * </pre>
+     *
+     * <code>FIPS_202205 = 475828188;</code>
+     */
+    public static final int FIPS_202205_VALUE = 475828188;
+
+    /**
+     *
+     *
+     * <pre>
+     * Modern profile. Supports a wide set of SSL features, allowing modern
+     * clients to negotiate SSL with the load balancer.
      * </pre>
      *
      * <code>MODERN = 132013855;</code>
@@ -368,7 +432,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Restricted profile. Supports a reduced set of SSL features, intended to meet stricter compliance requirements.
+     * Restricted profile. Supports a reduced set of SSL features, intended to
+     * meet stricter compliance requirements.
      * </pre>
      *
      * <code>RESTRICTED = 261551195;</code>
@@ -405,6 +470,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
           return COMPATIBLE;
         case 388595569:
           return CUSTOM;
+        case 475828188:
+          return FIPS_202205;
         case 132013855:
           return MODERN;
         case 261551195:
@@ -472,7 +539,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -488,7 +556,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -512,7 +581,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -542,7 +612,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+   * A list of features enabled when the selected profile is CUSTOM. The
+   *  method returns the set of features that can be
+   * specified in this list. This field must be empty if the profile is notCUSTOM.
    * </pre>
    *
    * <code>repeated string custom_features = 34789707;</code>
@@ -557,7 +629,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+   * A list of features enabled when the selected profile is CUSTOM. The
+   *  method returns the set of features that can be
+   * specified in this list. This field must be empty if the profile is notCUSTOM.
    * </pre>
    *
    * <code>repeated string custom_features = 34789707;</code>
@@ -572,7 +646,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+   * A list of features enabled when the selected profile is CUSTOM. The
+   *  method returns the set of features that can be
+   * specified in this list. This field must be empty if the profile is notCUSTOM.
    * </pre>
    *
    * <code>repeated string custom_features = 34789707;</code>
@@ -588,7 +664,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+   * A list of features enabled when the selected profile is CUSTOM. The
+   *  method returns the set of features that can be
+   * specified in this list. This field must be empty if the profile is notCUSTOM.
    * </pre>
    *
    * <code>repeated string custom_features = 34789707;</code>
@@ -609,7 +687,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -625,7 +704,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -649,7 +729,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -679,7 +760,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The list of features enabled in the SSL policy.
+   * Output only. [Output Only] The list of features enabled in the SSL policy.
    * </pre>
    *
    * <code>repeated string enabled_features = 469017467;</code>
@@ -694,7 +775,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The list of features enabled in the SSL policy.
+   * Output only. [Output Only] The list of features enabled in the SSL policy.
    * </pre>
    *
    * <code>repeated string enabled_features = 469017467;</code>
@@ -709,7 +790,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The list of features enabled in the SSL policy.
+   * Output only. [Output Only] The list of features enabled in the SSL policy.
    * </pre>
    *
    * <code>repeated string enabled_features = 469017467;</code>
@@ -725,7 +806,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The list of features enabled in the SSL policy.
+   * Output only. [Output Only] The list of features enabled in the SSL policy.
    * </pre>
    *
    * <code>repeated string enabled_features = 469017467;</code>
@@ -746,7 +827,14 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
+   * Fingerprint of this resource. A hash of the contents stored in this object.
+   * This field is used in optimistic locking. This field will be ignored when
+   * inserting a SslPolicy. An up-to-date fingerprint must be
+   * provided in order to update the SslPolicy, otherwise the
+   * request will fail with error 412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve an SslPolicy.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -762,7 +850,14 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
+   * Fingerprint of this resource. A hash of the contents stored in this object.
+   * This field is used in optimistic locking. This field will be ignored when
+   * inserting a SslPolicy. An up-to-date fingerprint must be
+   * provided in order to update the SslPolicy, otherwise the
+   * request will fail with error 412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve an SslPolicy.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -786,7 +881,14 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
+   * Fingerprint of this resource. A hash of the contents stored in this object.
+   * This field is used in optimistic locking. This field will be ignored when
+   * inserting a SslPolicy. An up-to-date fingerprint must be
+   * provided in order to update the SslPolicy, otherwise the
+   * request will fail with error 412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve an SslPolicy.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -813,7 +915,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -829,7 +932,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -850,7 +954,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Always compute#sslPolicyfor SSL policies.
+   * Output only. [Output only] Type of the resource. Alwayscompute#sslPolicyfor SSL policies.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -866,7 +970,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Always compute#sslPolicyfor SSL policies.
+   * Output only. [Output only] Type of the resource. Alwayscompute#sslPolicyfor SSL policies.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -890,7 +994,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Always compute#sslPolicyfor SSL policies.
+   * Output only. [Output only] Type of the resource. Alwayscompute#sslPolicyfor SSL policies.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -919,7 +1023,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+   * The minimum version of SSL protocol that can be used by the clients to
+   * establish a connection with the load balancer. This can be one ofTLS_1_0, TLS_1_1, TLS_1_2,TLS_1_3. When set to TLS_1_3, the profile field
+   * must be set to RESTRICTED.
    * Check the MinTlsVersion enum for the list of possible values.
    * </pre>
    *
@@ -936,7 +1042,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+   * The minimum version of SSL protocol that can be used by the clients to
+   * establish a connection with the load balancer. This can be one ofTLS_1_0, TLS_1_1, TLS_1_2,TLS_1_3. When set to TLS_1_3, the profile field
+   * must be set to RESTRICTED.
    * Check the MinTlsVersion enum for the list of possible values.
    * </pre>
    *
@@ -961,7 +1069,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+   * The minimum version of SSL protocol that can be used by the clients to
+   * establish a connection with the load balancer. This can be one ofTLS_1_0, TLS_1_1, TLS_1_2,TLS_1_3. When set to TLS_1_3, the profile field
+   * must be set to RESTRICTED.
    * Check the MinTlsVersion enum for the list of possible values.
    * </pre>
    *
@@ -991,7 +1101,13 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. The name must be 1-63 characters long, and comply
+   * with RFC1035. Specifically, the name must be 1-63 characters
+   * long and match the regular expression
+   * `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character
+   * must be a lowercase letter, and all following characters must be a dash,
+   * lowercase letter, or digit, except the last character, which cannot be a
+   * dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1007,7 +1123,13 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. The name must be 1-63 characters long, and comply
+   * with RFC1035. Specifically, the name must be 1-63 characters
+   * long and match the regular expression
+   * `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character
+   * must be a lowercase letter, and all following characters must be a dash,
+   * lowercase letter, or digit, except the last character, which cannot be a
+   * dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1031,7 +1153,13 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. The name must be 1-63 characters long, and comply
+   * with RFC1035. Specifically, the name must be 1-63 characters
+   * long and match the regular expression
+   * `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character
+   * must be a lowercase letter, and all following characters must be a dash,
+   * lowercase letter, or digit, except the last character, which cannot be a
+   * dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1060,7 +1188,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+   * Profile specifies the set of SSL features that can be used by the load
+   * balancer when negotiating SSL with clients. This can be one ofCOMPATIBLE, MODERN, RESTRICTED, orCUSTOM. If using CUSTOM, the set of SSL features
+   * to enable must be specified in the customFeatures field.
    * Check the Profile enum for the list of possible values.
    * </pre>
    *
@@ -1077,7 +1207,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+   * Profile specifies the set of SSL features that can be used by the load
+   * balancer when negotiating SSL with clients. This can be one ofCOMPATIBLE, MODERN, RESTRICTED, orCUSTOM. If using CUSTOM, the set of SSL features
+   * to enable must be specified in the customFeatures field.
    * Check the Profile enum for the list of possible values.
    * </pre>
    *
@@ -1102,7 +1234,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+   * Profile specifies the set of SSL features that can be used by the load
+   * balancer when negotiating SSL with clients. This can be one ofCOMPATIBLE, MODERN, RESTRICTED, orCUSTOM. If using CUSTOM, the set of SSL features
+   * to enable must be specified in the customFeatures field.
    * Check the Profile enum for the list of possible values.
    * </pre>
    *
@@ -1132,7 +1266,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional SSL policy resides. This field is not applicable to global SSL policies.
+   * Output only. [Output Only] URL of the region where the regional SSL policy
+   * resides. This field is not applicable to global SSL policies.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -1148,7 +1283,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional SSL policy resides. This field is not applicable to global SSL policies.
+   * Output only. [Output Only] URL of the region where the regional SSL policy
+   * resides. This field is not applicable to global SSL policies.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -1172,7 +1308,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional SSL policy resides. This field is not applicable to global SSL policies.
+   * Output only. [Output Only] URL of the region where the regional SSL policy
+   * resides. This field is not applicable to global SSL policies.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -1201,7 +1338,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1217,7 +1354,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1241,7 +1378,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1270,7 +1407,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
+   * Output only. [Output Only] If potential misconfigurations are detected for this
+   * SSL policy, this field will be populated with warning messages.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -1284,7 +1422,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
+   * Output only. [Output Only] If potential misconfigurations are detected for this
+   * SSL policy, this field will be populated with warning messages.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -1299,7 +1438,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
+   * Output only. [Output Only] If potential misconfigurations are detected for this
+   * SSL policy, this field will be populated with warning messages.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -1313,7 +1453,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
+   * Output only. [Output Only] If potential misconfigurations are detected for this
+   * SSL policy, this field will be populated with warning messages.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -1327,7 +1468,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
+   * Output only. [Output Only] If potential misconfigurations are detected for this
+   * SSL policy, this field will be populated with warning messages.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -1676,7 +1818,12 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents an SSL Policy resource. Use SSL policies to control SSL features, such as versions and cipher suites, that are offered by Application Load Balancers and proxy Network Load Balancers. For more information, read SSL policies overview.
+   * Represents an SSL Policy resource.
+   *
+   * Use SSL policies to control SSL features, such as versions and cipher
+   * suites, that are offered by Application Load Balancers and proxy Network Load
+   * Balancers. For more information, read
+   * SSL policies overview.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.SslPolicy}
@@ -2109,7 +2256,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2124,7 +2272,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2147,7 +2296,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2170,7 +2320,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2192,7 +2343,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2210,7 +2362,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2243,7 +2396,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+     * A list of features enabled when the selected profile is CUSTOM. The
+     *  method returns the set of features that can be
+     * specified in this list. This field must be empty if the profile is notCUSTOM.
      * </pre>
      *
      * <code>repeated string custom_features = 34789707;</code>
@@ -2259,7 +2414,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+     * A list of features enabled when the selected profile is CUSTOM. The
+     *  method returns the set of features that can be
+     * specified in this list. This field must be empty if the profile is notCUSTOM.
      * </pre>
      *
      * <code>repeated string custom_features = 34789707;</code>
@@ -2274,7 +2431,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+     * A list of features enabled when the selected profile is CUSTOM. The
+     *  method returns the set of features that can be
+     * specified in this list. This field must be empty if the profile is notCUSTOM.
      * </pre>
      *
      * <code>repeated string custom_features = 34789707;</code>
@@ -2290,7 +2449,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+     * A list of features enabled when the selected profile is CUSTOM. The
+     *  method returns the set of features that can be
+     * specified in this list. This field must be empty if the profile is notCUSTOM.
      * </pre>
      *
      * <code>repeated string custom_features = 34789707;</code>
@@ -2306,7 +2467,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+     * A list of features enabled when the selected profile is CUSTOM. The
+     *  method returns the set of features that can be
+     * specified in this list. This field must be empty if the profile is notCUSTOM.
      * </pre>
      *
      * <code>repeated string custom_features = 34789707;</code>
@@ -2330,7 +2493,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+     * A list of features enabled when the selected profile is CUSTOM. The
+     *  method returns the set of features that can be
+     * specified in this list. This field must be empty if the profile is notCUSTOM.
      * </pre>
      *
      * <code>repeated string custom_features = 34789707;</code>
@@ -2353,7 +2518,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+     * A list of features enabled when the selected profile is CUSTOM. The
+     *  method returns the set of features that can be
+     * specified in this list. This field must be empty if the profile is notCUSTOM.
      * </pre>
      *
      * <code>repeated string custom_features = 34789707;</code>
@@ -2373,7 +2540,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+     * A list of features enabled when the selected profile is CUSTOM. The
+     *  method returns the set of features that can be
+     * specified in this list. This field must be empty if the profile is notCUSTOM.
      * </pre>
      *
      * <code>repeated string custom_features = 34789707;</code>
@@ -2392,7 +2561,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+     * A list of features enabled when the selected profile is CUSTOM. The
+     *  method returns the set of features that can be
+     * specified in this list. This field must be empty if the profile is notCUSTOM.
      * </pre>
      *
      * <code>repeated string custom_features = 34789707;</code>
@@ -2418,7 +2589,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2433,7 +2605,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2456,7 +2629,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2479,7 +2653,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2501,7 +2676,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2519,7 +2695,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2552,7 +2729,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The list of features enabled in the SSL policy.
+     * Output only. [Output Only] The list of features enabled in the SSL policy.
      * </pre>
      *
      * <code>repeated string enabled_features = 469017467;</code>
@@ -2568,7 +2745,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The list of features enabled in the SSL policy.
+     * Output only. [Output Only] The list of features enabled in the SSL policy.
      * </pre>
      *
      * <code>repeated string enabled_features = 469017467;</code>
@@ -2583,7 +2760,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The list of features enabled in the SSL policy.
+     * Output only. [Output Only] The list of features enabled in the SSL policy.
      * </pre>
      *
      * <code>repeated string enabled_features = 469017467;</code>
@@ -2599,7 +2776,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The list of features enabled in the SSL policy.
+     * Output only. [Output Only] The list of features enabled in the SSL policy.
      * </pre>
      *
      * <code>repeated string enabled_features = 469017467;</code>
@@ -2615,7 +2792,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The list of features enabled in the SSL policy.
+     * Output only. [Output Only] The list of features enabled in the SSL policy.
      * </pre>
      *
      * <code>repeated string enabled_features = 469017467;</code>
@@ -2639,7 +2816,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The list of features enabled in the SSL policy.
+     * Output only. [Output Only] The list of features enabled in the SSL policy.
      * </pre>
      *
      * <code>repeated string enabled_features = 469017467;</code>
@@ -2662,7 +2839,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The list of features enabled in the SSL policy.
+     * Output only. [Output Only] The list of features enabled in the SSL policy.
      * </pre>
      *
      * <code>repeated string enabled_features = 469017467;</code>
@@ -2682,7 +2859,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The list of features enabled in the SSL policy.
+     * Output only. [Output Only] The list of features enabled in the SSL policy.
      * </pre>
      *
      * <code>repeated string enabled_features = 469017467;</code>
@@ -2701,7 +2878,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The list of features enabled in the SSL policy.
+     * Output only. [Output Only] The list of features enabled in the SSL policy.
      * </pre>
      *
      * <code>repeated string enabled_features = 469017467;</code>
@@ -2727,7 +2904,14 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
+     * Fingerprint of this resource. A hash of the contents stored in this object.
+     * This field is used in optimistic locking. This field will be ignored when
+     * inserting a SslPolicy. An up-to-date fingerprint must be
+     * provided in order to update the SslPolicy, otherwise the
+     * request will fail with error 412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve an SslPolicy.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -2742,7 +2926,14 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
+     * Fingerprint of this resource. A hash of the contents stored in this object.
+     * This field is used in optimistic locking. This field will be ignored when
+     * inserting a SslPolicy. An up-to-date fingerprint must be
+     * provided in order to update the SslPolicy, otherwise the
+     * request will fail with error 412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve an SslPolicy.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -2765,7 +2956,14 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
+     * Fingerprint of this resource. A hash of the contents stored in this object.
+     * This field is used in optimistic locking. This field will be ignored when
+     * inserting a SslPolicy. An up-to-date fingerprint must be
+     * provided in order to update the SslPolicy, otherwise the
+     * request will fail with error 412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve an SslPolicy.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -2788,7 +2986,14 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
+     * Fingerprint of this resource. A hash of the contents stored in this object.
+     * This field is used in optimistic locking. This field will be ignored when
+     * inserting a SslPolicy. An up-to-date fingerprint must be
+     * provided in order to update the SslPolicy, otherwise the
+     * request will fail with error 412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve an SslPolicy.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -2810,7 +3015,14 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
+     * Fingerprint of this resource. A hash of the contents stored in this object.
+     * This field is used in optimistic locking. This field will be ignored when
+     * inserting a SslPolicy. An up-to-date fingerprint must be
+     * provided in order to update the SslPolicy, otherwise the
+     * request will fail with error 412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve an SslPolicy.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -2828,7 +3040,14 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
+     * Fingerprint of this resource. A hash of the contents stored in this object.
+     * This field is used in optimistic locking. This field will be ignored when
+     * inserting a SslPolicy. An up-to-date fingerprint must be
+     * provided in order to update the SslPolicy, otherwise the
+     * request will fail with error 412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve an SslPolicy.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -2853,7 +3072,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2869,7 +3089,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2885,7 +3106,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2905,7 +3127,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2925,7 +3148,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Always compute#sslPolicyfor SSL policies.
+     * Output only. [Output only] Type of the resource. Alwayscompute#sslPolicyfor SSL policies.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2940,7 +3163,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Always compute#sslPolicyfor SSL policies.
+     * Output only. [Output only] Type of the resource. Alwayscompute#sslPolicyfor SSL policies.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2963,7 +3186,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Always compute#sslPolicyfor SSL policies.
+     * Output only. [Output only] Type of the resource. Alwayscompute#sslPolicyfor SSL policies.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2986,7 +3209,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Always compute#sslPolicyfor SSL policies.
+     * Output only. [Output only] Type of the resource. Alwayscompute#sslPolicyfor SSL policies.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3008,7 +3231,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Always compute#sslPolicyfor SSL policies.
+     * Output only. [Output only] Type of the resource. Alwayscompute#sslPolicyfor SSL policies.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3026,7 +3249,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Always compute#sslPolicyfor SSL policies.
+     * Output only. [Output only] Type of the resource. Alwayscompute#sslPolicyfor SSL policies.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3051,7 +3274,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+     * The minimum version of SSL protocol that can be used by the clients to
+     * establish a connection with the load balancer. This can be one ofTLS_1_0, TLS_1_1, TLS_1_2,TLS_1_3. When set to TLS_1_3, the profile field
+     * must be set to RESTRICTED.
      * Check the MinTlsVersion enum for the list of possible values.
      * </pre>
      *
@@ -3067,7 +3292,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+     * The minimum version of SSL protocol that can be used by the clients to
+     * establish a connection with the load balancer. This can be one ofTLS_1_0, TLS_1_1, TLS_1_2,TLS_1_3. When set to TLS_1_3, the profile field
+     * must be set to RESTRICTED.
      * Check the MinTlsVersion enum for the list of possible values.
      * </pre>
      *
@@ -3091,7 +3318,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+     * The minimum version of SSL protocol that can be used by the clients to
+     * establish a connection with the load balancer. This can be one ofTLS_1_0, TLS_1_1, TLS_1_2,TLS_1_3. When set to TLS_1_3, the profile field
+     * must be set to RESTRICTED.
      * Check the MinTlsVersion enum for the list of possible values.
      * </pre>
      *
@@ -3115,7 +3344,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+     * The minimum version of SSL protocol that can be used by the clients to
+     * establish a connection with the load balancer. This can be one ofTLS_1_0, TLS_1_1, TLS_1_2,TLS_1_3. When set to TLS_1_3, the profile field
+     * must be set to RESTRICTED.
      * Check the MinTlsVersion enum for the list of possible values.
      * </pre>
      *
@@ -3138,7 +3369,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+     * The minimum version of SSL protocol that can be used by the clients to
+     * establish a connection with the load balancer. This can be one ofTLS_1_0, TLS_1_1, TLS_1_2,TLS_1_3. When set to TLS_1_3, the profile field
+     * must be set to RESTRICTED.
      * Check the MinTlsVersion enum for the list of possible values.
      * </pre>
      *
@@ -3157,7 +3390,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+     * The minimum version of SSL protocol that can be used by the clients to
+     * establish a connection with the load balancer. This can be one ofTLS_1_0, TLS_1_1, TLS_1_2,TLS_1_3. When set to TLS_1_3, the profile field
+     * must be set to RESTRICTED.
      * Check the MinTlsVersion enum for the list of possible values.
      * </pre>
      *
@@ -3183,7 +3418,13 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. The name must be 1-63 characters long, and comply
+     * with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression
+     * `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character
+     * must be a lowercase letter, and all following characters must be a dash,
+     * lowercase letter, or digit, except the last character, which cannot be a
+     * dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3198,7 +3439,13 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. The name must be 1-63 characters long, and comply
+     * with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression
+     * `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character
+     * must be a lowercase letter, and all following characters must be a dash,
+     * lowercase letter, or digit, except the last character, which cannot be a
+     * dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3221,7 +3468,13 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. The name must be 1-63 characters long, and comply
+     * with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression
+     * `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character
+     * must be a lowercase letter, and all following characters must be a dash,
+     * lowercase letter, or digit, except the last character, which cannot be a
+     * dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3244,7 +3497,13 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. The name must be 1-63 characters long, and comply
+     * with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression
+     * `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character
+     * must be a lowercase letter, and all following characters must be a dash,
+     * lowercase letter, or digit, except the last character, which cannot be a
+     * dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3266,7 +3525,13 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. The name must be 1-63 characters long, and comply
+     * with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression
+     * `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character
+     * must be a lowercase letter, and all following characters must be a dash,
+     * lowercase letter, or digit, except the last character, which cannot be a
+     * dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3284,7 +3549,13 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. The name must be 1-63 characters long, and comply
+     * with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression
+     * `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character
+     * must be a lowercase letter, and all following characters must be a dash,
+     * lowercase letter, or digit, except the last character, which cannot be a
+     * dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3309,7 +3580,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+     * Profile specifies the set of SSL features that can be used by the load
+     * balancer when negotiating SSL with clients. This can be one ofCOMPATIBLE, MODERN, RESTRICTED, orCUSTOM. If using CUSTOM, the set of SSL features
+     * to enable must be specified in the customFeatures field.
      * Check the Profile enum for the list of possible values.
      * </pre>
      *
@@ -3325,7 +3598,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+     * Profile specifies the set of SSL features that can be used by the load
+     * balancer when negotiating SSL with clients. This can be one ofCOMPATIBLE, MODERN, RESTRICTED, orCUSTOM. If using CUSTOM, the set of SSL features
+     * to enable must be specified in the customFeatures field.
      * Check the Profile enum for the list of possible values.
      * </pre>
      *
@@ -3349,7 +3624,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+     * Profile specifies the set of SSL features that can be used by the load
+     * balancer when negotiating SSL with clients. This can be one ofCOMPATIBLE, MODERN, RESTRICTED, orCUSTOM. If using CUSTOM, the set of SSL features
+     * to enable must be specified in the customFeatures field.
      * Check the Profile enum for the list of possible values.
      * </pre>
      *
@@ -3373,7 +3650,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+     * Profile specifies the set of SSL features that can be used by the load
+     * balancer when negotiating SSL with clients. This can be one ofCOMPATIBLE, MODERN, RESTRICTED, orCUSTOM. If using CUSTOM, the set of SSL features
+     * to enable must be specified in the customFeatures field.
      * Check the Profile enum for the list of possible values.
      * </pre>
      *
@@ -3396,7 +3675,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+     * Profile specifies the set of SSL features that can be used by the load
+     * balancer when negotiating SSL with clients. This can be one ofCOMPATIBLE, MODERN, RESTRICTED, orCUSTOM. If using CUSTOM, the set of SSL features
+     * to enable must be specified in the customFeatures field.
      * Check the Profile enum for the list of possible values.
      * </pre>
      *
@@ -3415,7 +3696,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+     * Profile specifies the set of SSL features that can be used by the load
+     * balancer when negotiating SSL with clients. This can be one ofCOMPATIBLE, MODERN, RESTRICTED, orCUSTOM. If using CUSTOM, the set of SSL features
+     * to enable must be specified in the customFeatures field.
      * Check the Profile enum for the list of possible values.
      * </pre>
      *
@@ -3441,7 +3724,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the regional SSL policy resides. This field is not applicable to global SSL policies.
+     * Output only. [Output Only] URL of the region where the regional SSL policy
+     * resides. This field is not applicable to global SSL policies.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -3456,7 +3740,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the regional SSL policy resides. This field is not applicable to global SSL policies.
+     * Output only. [Output Only] URL of the region where the regional SSL policy
+     * resides. This field is not applicable to global SSL policies.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -3479,7 +3764,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the regional SSL policy resides. This field is not applicable to global SSL policies.
+     * Output only. [Output Only] URL of the region where the regional SSL policy
+     * resides. This field is not applicable to global SSL policies.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -3502,7 +3788,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the regional SSL policy resides. This field is not applicable to global SSL policies.
+     * Output only. [Output Only] URL of the region where the regional SSL policy
+     * resides. This field is not applicable to global SSL policies.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -3524,7 +3811,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the regional SSL policy resides. This field is not applicable to global SSL policies.
+     * Output only. [Output Only] URL of the region where the regional SSL policy
+     * resides. This field is not applicable to global SSL policies.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -3542,7 +3830,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the regional SSL policy resides. This field is not applicable to global SSL policies.
+     * Output only. [Output Only] URL of the region where the regional SSL policy
+     * resides. This field is not applicable to global SSL policies.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -3567,7 +3856,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3582,7 +3871,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3605,7 +3894,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3628,7 +3917,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3650,7 +3939,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3668,7 +3957,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3707,7 +3996,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
+     * Output only. [Output Only] If potential misconfigurations are detected for this
+     * SSL policy, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -3724,7 +4014,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
+     * Output only. [Output Only] If potential misconfigurations are detected for this
+     * SSL policy, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -3741,7 +4032,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
+     * Output only. [Output Only] If potential misconfigurations are detected for this
+     * SSL policy, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -3758,7 +4050,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
+     * Output only. [Output Only] If potential misconfigurations are detected for this
+     * SSL policy, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -3781,7 +4074,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
+     * Output only. [Output Only] If potential misconfigurations are detected for this
+     * SSL policy, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -3802,7 +4096,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
+     * Output only. [Output Only] If potential misconfigurations are detected for this
+     * SSL policy, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -3825,7 +4120,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
+     * Output only. [Output Only] If potential misconfigurations are detected for this
+     * SSL policy, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -3848,7 +4144,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
+     * Output only. [Output Only] If potential misconfigurations are detected for this
+     * SSL policy, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -3868,7 +4165,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
+     * Output only. [Output Only] If potential misconfigurations are detected for this
+     * SSL policy, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -3889,7 +4187,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
+     * Output only. [Output Only] If potential misconfigurations are detected for this
+     * SSL policy, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -3910,7 +4209,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
+     * Output only. [Output Only] If potential misconfigurations are detected for this
+     * SSL policy, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -3930,7 +4230,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
+     * Output only. [Output Only] If potential misconfigurations are detected for this
+     * SSL policy, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -3950,7 +4251,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
+     * Output only. [Output Only] If potential misconfigurations are detected for this
+     * SSL policy, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -3963,7 +4265,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
+     * Output only. [Output Only] If potential misconfigurations are detected for this
+     * SSL policy, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -3980,7 +4283,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
+     * Output only. [Output Only] If potential misconfigurations are detected for this
+     * SSL policy, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -3998,7 +4302,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
+     * Output only. [Output Only] If potential misconfigurations are detected for this
+     * SSL policy, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -4012,7 +4317,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
+     * Output only. [Output Only] If potential misconfigurations are detected for this
+     * SSL policy, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -4026,7 +4332,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
+     * Output only. [Output Only] If potential misconfigurations are detected for this
+     * SSL policy, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>

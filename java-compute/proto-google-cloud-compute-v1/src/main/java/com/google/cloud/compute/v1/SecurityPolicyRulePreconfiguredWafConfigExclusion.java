@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -83,7 +83,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
    *
    *
    * <pre>
-   * A list of request cookie names whose value will be excluded from inspection during preconfigured WAF evaluation.
+   * A list of request cookie names whose value will be excluded from
+   * inspection during preconfigured WAF evaluation.
    * </pre>
    *
    * <code>
@@ -101,7 +102,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
    *
    *
    * <pre>
-   * A list of request cookie names whose value will be excluded from inspection during preconfigured WAF evaluation.
+   * A list of request cookie names whose value will be excluded from
+   * inspection during preconfigured WAF evaluation.
    * </pre>
    *
    * <code>
@@ -121,7 +123,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
    *
    *
    * <pre>
-   * A list of request cookie names whose value will be excluded from inspection during preconfigured WAF evaluation.
+   * A list of request cookie names whose value will be excluded from
+   * inspection during preconfigured WAF evaluation.
    * </pre>
    *
    * <code>
@@ -137,7 +140,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
    *
    *
    * <pre>
-   * A list of request cookie names whose value will be excluded from inspection during preconfigured WAF evaluation.
+   * A list of request cookie names whose value will be excluded from
+   * inspection during preconfigured WAF evaluation.
    * </pre>
    *
    * <code>
@@ -154,7 +158,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
    *
    *
    * <pre>
-   * A list of request cookie names whose value will be excluded from inspection during preconfigured WAF evaluation.
+   * A list of request cookie names whose value will be excluded from
+   * inspection during preconfigured WAF evaluation.
    * </pre>
    *
    * <code>
@@ -179,7 +184,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
    *
    *
    * <pre>
-   * A list of request header names whose value will be excluded from inspection during preconfigured WAF evaluation.
+   * A list of request header names whose value will be excluded from
+   * inspection during preconfigured WAF evaluation.
    * </pre>
    *
    * <code>
@@ -197,7 +203,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
    *
    *
    * <pre>
-   * A list of request header names whose value will be excluded from inspection during preconfigured WAF evaluation.
+   * A list of request header names whose value will be excluded from
+   * inspection during preconfigured WAF evaluation.
    * </pre>
    *
    * <code>
@@ -217,7 +224,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
    *
    *
    * <pre>
-   * A list of request header names whose value will be excluded from inspection during preconfigured WAF evaluation.
+   * A list of request header names whose value will be excluded from
+   * inspection during preconfigured WAF evaluation.
    * </pre>
    *
    * <code>
@@ -233,7 +241,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
    *
    *
    * <pre>
-   * A list of request header names whose value will be excluded from inspection during preconfigured WAF evaluation.
+   * A list of request header names whose value will be excluded from
+   * inspection during preconfigured WAF evaluation.
    * </pre>
    *
    * <code>
@@ -250,7 +259,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
    *
    *
    * <pre>
-   * A list of request header names whose value will be excluded from inspection during preconfigured WAF evaluation.
+   * A list of request header names whose value will be excluded from
+   * inspection during preconfigured WAF evaluation.
    * </pre>
    *
    * <code>
@@ -275,7 +285,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
    *
    *
    * <pre>
-   * A list of request query parameter names whose value will be excluded from inspection during preconfigured WAF evaluation. Note that the parameter can be in the query string or in the POST body.
+   * A list of request query parameter names whose value will be excluded
+   * from inspection during preconfigured WAF evaluation. Note that the
+   * parameter can be in the query string or in the POST body.
    * </pre>
    *
    * <code>
@@ -293,7 +305,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
    *
    *
    * <pre>
-   * A list of request query parameter names whose value will be excluded from inspection during preconfigured WAF evaluation. Note that the parameter can be in the query string or in the POST body.
+   * A list of request query parameter names whose value will be excluded
+   * from inspection during preconfigured WAF evaluation. Note that the
+   * parameter can be in the query string or in the POST body.
    * </pre>
    *
    * <code>
@@ -313,7 +327,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
    *
    *
    * <pre>
-   * A list of request query parameter names whose value will be excluded from inspection during preconfigured WAF evaluation. Note that the parameter can be in the query string or in the POST body.
+   * A list of request query parameter names whose value will be excluded
+   * from inspection during preconfigured WAF evaluation. Note that the
+   * parameter can be in the query string or in the POST body.
    * </pre>
    *
    * <code>
@@ -329,7 +345,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
    *
    *
    * <pre>
-   * A list of request query parameter names whose value will be excluded from inspection during preconfigured WAF evaluation. Note that the parameter can be in the query string or in the POST body.
+   * A list of request query parameter names whose value will be excluded
+   * from inspection during preconfigured WAF evaluation. Note that the
+   * parameter can be in the query string or in the POST body.
    * </pre>
    *
    * <code>
@@ -346,7 +364,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
    *
    *
    * <pre>
-   * A list of request query parameter names whose value will be excluded from inspection during preconfigured WAF evaluation. Note that the parameter can be in the query string or in the POST body.
+   * A list of request query parameter names whose value will be excluded
+   * from inspection during preconfigured WAF evaluation. Note that the
+   * parameter can be in the query string or in the POST body.
    * </pre>
    *
    * <code>
@@ -371,7 +391,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
    *
    *
    * <pre>
-   * A list of request URIs from the request line to be excluded from inspection during preconfigured WAF evaluation. When specifying this field, the query or fragment part should be excluded.
+   * A list of request URIs from the request line to be excluded from
+   * inspection during preconfigured WAF evaluation. When specifying this
+   * field, the query or fragment part should be excluded.
    * </pre>
    *
    * <code>
@@ -389,7 +411,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
    *
    *
    * <pre>
-   * A list of request URIs from the request line to be excluded from inspection during preconfigured WAF evaluation. When specifying this field, the query or fragment part should be excluded.
+   * A list of request URIs from the request line to be excluded from
+   * inspection during preconfigured WAF evaluation. When specifying this
+   * field, the query or fragment part should be excluded.
    * </pre>
    *
    * <code>
@@ -409,7 +433,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
    *
    *
    * <pre>
-   * A list of request URIs from the request line to be excluded from inspection during preconfigured WAF evaluation. When specifying this field, the query or fragment part should be excluded.
+   * A list of request URIs from the request line to be excluded from
+   * inspection during preconfigured WAF evaluation. When specifying this
+   * field, the query or fragment part should be excluded.
    * </pre>
    *
    * <code>
@@ -425,7 +451,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
    *
    *
    * <pre>
-   * A list of request URIs from the request line to be excluded from inspection during preconfigured WAF evaluation. When specifying this field, the query or fragment part should be excluded.
+   * A list of request URIs from the request line to be excluded from
+   * inspection during preconfigured WAF evaluation. When specifying this
+   * field, the query or fragment part should be excluded.
    * </pre>
    *
    * <code>
@@ -442,7 +470,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
    *
    *
    * <pre>
-   * A list of request URIs from the request line to be excluded from inspection during preconfigured WAF evaluation. When specifying this field, the query or fragment part should be excluded.
+   * A list of request URIs from the request line to be excluded from
+   * inspection during preconfigured WAF evaluation. When specifying this
+   * field, the query or fragment part should be excluded.
    * </pre>
    *
    * <code>
@@ -466,7 +496,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
    *
    *
    * <pre>
-   * A list of target rule IDs under the WAF rule set to apply the preconfigured WAF exclusion. If omitted, it refers to all the rule IDs under the WAF rule set.
+   * A list of target rule IDs under the WAF rule set to apply the
+   * preconfigured WAF exclusion. If omitted, it refers to all the rule
+   * IDs under the WAF rule set.
    * </pre>
    *
    * <code>repeated string target_rule_ids = 498430435;</code>
@@ -481,7 +513,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
    *
    *
    * <pre>
-   * A list of target rule IDs under the WAF rule set to apply the preconfigured WAF exclusion. If omitted, it refers to all the rule IDs under the WAF rule set.
+   * A list of target rule IDs under the WAF rule set to apply the
+   * preconfigured WAF exclusion. If omitted, it refers to all the rule
+   * IDs under the WAF rule set.
    * </pre>
    *
    * <code>repeated string target_rule_ids = 498430435;</code>
@@ -496,7 +530,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
    *
    *
    * <pre>
-   * A list of target rule IDs under the WAF rule set to apply the preconfigured WAF exclusion. If omitted, it refers to all the rule IDs under the WAF rule set.
+   * A list of target rule IDs under the WAF rule set to apply the
+   * preconfigured WAF exclusion. If omitted, it refers to all the rule
+   * IDs under the WAF rule set.
    * </pre>
    *
    * <code>repeated string target_rule_ids = 498430435;</code>
@@ -512,7 +548,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
    *
    *
    * <pre>
-   * A list of target rule IDs under the WAF rule set to apply the preconfigured WAF exclusion. If omitted, it refers to all the rule IDs under the WAF rule set.
+   * A list of target rule IDs under the WAF rule set to apply the
+   * preconfigured WAF exclusion. If omitted, it refers to all the rule
+   * IDs under the WAF rule set.
    * </pre>
    *
    * <code>repeated string target_rule_ids = 498430435;</code>
@@ -1338,7 +1376,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request cookie names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request cookie names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -1360,7 +1399,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request cookie names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request cookie names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -1379,7 +1419,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request cookie names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request cookie names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -1399,7 +1440,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request cookie names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request cookie names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -1427,7 +1469,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request cookie names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request cookie names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -1453,7 +1496,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request cookie names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request cookie names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -1480,7 +1524,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request cookie names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request cookie names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -1508,7 +1553,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request cookie names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request cookie names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -1533,7 +1579,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request cookie names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request cookie names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -1559,7 +1606,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request cookie names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request cookie names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -1586,7 +1634,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request cookie names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request cookie names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -1608,7 +1657,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request cookie names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request cookie names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -1630,7 +1680,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request cookie names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request cookie names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -1647,7 +1698,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request cookie names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request cookie names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -1668,7 +1720,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request cookie names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request cookie names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -1691,7 +1744,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request cookie names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request cookie names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -1712,7 +1766,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request cookie names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request cookie names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -1734,7 +1789,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request cookie names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request cookie names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -1803,7 +1859,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request header names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request header names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -1825,7 +1882,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request header names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request header names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -1844,7 +1902,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request header names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request header names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -1864,7 +1923,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request header names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request header names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -1892,7 +1952,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request header names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request header names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -1918,7 +1979,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request header names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request header names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -1945,7 +2007,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request header names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request header names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -1973,7 +2036,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request header names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request header names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -1998,7 +2062,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request header names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request header names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -2024,7 +2089,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request header names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request header names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -2051,7 +2117,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request header names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request header names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -2073,7 +2140,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request header names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request header names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -2095,7 +2163,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request header names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request header names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -2112,7 +2181,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request header names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request header names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -2133,7 +2203,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request header names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request header names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -2156,7 +2227,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request header names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request header names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -2177,7 +2249,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request header names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request header names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -2199,7 +2272,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request header names whose value will be excluded from inspection during preconfigured WAF evaluation.
+     * A list of request header names whose value will be excluded from
+     * inspection during preconfigured WAF evaluation.
      * </pre>
      *
      * <code>
@@ -2268,7 +2342,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request query parameter names whose value will be excluded from inspection during preconfigured WAF evaluation. Note that the parameter can be in the query string or in the POST body.
+     * A list of request query parameter names whose value will be excluded
+     * from inspection during preconfigured WAF evaluation. Note that the
+     * parameter can be in the query string or in the POST body.
      * </pre>
      *
      * <code>
@@ -2290,7 +2366,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request query parameter names whose value will be excluded from inspection during preconfigured WAF evaluation. Note that the parameter can be in the query string or in the POST body.
+     * A list of request query parameter names whose value will be excluded
+     * from inspection during preconfigured WAF evaluation. Note that the
+     * parameter can be in the query string or in the POST body.
      * </pre>
      *
      * <code>
@@ -2309,7 +2387,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request query parameter names whose value will be excluded from inspection during preconfigured WAF evaluation. Note that the parameter can be in the query string or in the POST body.
+     * A list of request query parameter names whose value will be excluded
+     * from inspection during preconfigured WAF evaluation. Note that the
+     * parameter can be in the query string or in the POST body.
      * </pre>
      *
      * <code>
@@ -2329,7 +2409,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request query parameter names whose value will be excluded from inspection during preconfigured WAF evaluation. Note that the parameter can be in the query string or in the POST body.
+     * A list of request query parameter names whose value will be excluded
+     * from inspection during preconfigured WAF evaluation. Note that the
+     * parameter can be in the query string or in the POST body.
      * </pre>
      *
      * <code>
@@ -2357,7 +2439,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request query parameter names whose value will be excluded from inspection during preconfigured WAF evaluation. Note that the parameter can be in the query string or in the POST body.
+     * A list of request query parameter names whose value will be excluded
+     * from inspection during preconfigured WAF evaluation. Note that the
+     * parameter can be in the query string or in the POST body.
      * </pre>
      *
      * <code>
@@ -2383,7 +2467,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request query parameter names whose value will be excluded from inspection during preconfigured WAF evaluation. Note that the parameter can be in the query string or in the POST body.
+     * A list of request query parameter names whose value will be excluded
+     * from inspection during preconfigured WAF evaluation. Note that the
+     * parameter can be in the query string or in the POST body.
      * </pre>
      *
      * <code>
@@ -2410,7 +2496,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request query parameter names whose value will be excluded from inspection during preconfigured WAF evaluation. Note that the parameter can be in the query string or in the POST body.
+     * A list of request query parameter names whose value will be excluded
+     * from inspection during preconfigured WAF evaluation. Note that the
+     * parameter can be in the query string or in the POST body.
      * </pre>
      *
      * <code>
@@ -2438,7 +2526,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request query parameter names whose value will be excluded from inspection during preconfigured WAF evaluation. Note that the parameter can be in the query string or in the POST body.
+     * A list of request query parameter names whose value will be excluded
+     * from inspection during preconfigured WAF evaluation. Note that the
+     * parameter can be in the query string or in the POST body.
      * </pre>
      *
      * <code>
@@ -2463,7 +2553,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request query parameter names whose value will be excluded from inspection during preconfigured WAF evaluation. Note that the parameter can be in the query string or in the POST body.
+     * A list of request query parameter names whose value will be excluded
+     * from inspection during preconfigured WAF evaluation. Note that the
+     * parameter can be in the query string or in the POST body.
      * </pre>
      *
      * <code>
@@ -2489,7 +2581,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request query parameter names whose value will be excluded from inspection during preconfigured WAF evaluation. Note that the parameter can be in the query string or in the POST body.
+     * A list of request query parameter names whose value will be excluded
+     * from inspection during preconfigured WAF evaluation. Note that the
+     * parameter can be in the query string or in the POST body.
      * </pre>
      *
      * <code>
@@ -2517,7 +2611,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request query parameter names whose value will be excluded from inspection during preconfigured WAF evaluation. Note that the parameter can be in the query string or in the POST body.
+     * A list of request query parameter names whose value will be excluded
+     * from inspection during preconfigured WAF evaluation. Note that the
+     * parameter can be in the query string or in the POST body.
      * </pre>
      *
      * <code>
@@ -2539,7 +2635,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request query parameter names whose value will be excluded from inspection during preconfigured WAF evaluation. Note that the parameter can be in the query string or in the POST body.
+     * A list of request query parameter names whose value will be excluded
+     * from inspection during preconfigured WAF evaluation. Note that the
+     * parameter can be in the query string or in the POST body.
      * </pre>
      *
      * <code>
@@ -2561,7 +2659,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request query parameter names whose value will be excluded from inspection during preconfigured WAF evaluation. Note that the parameter can be in the query string or in the POST body.
+     * A list of request query parameter names whose value will be excluded
+     * from inspection during preconfigured WAF evaluation. Note that the
+     * parameter can be in the query string or in the POST body.
      * </pre>
      *
      * <code>
@@ -2578,7 +2678,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request query parameter names whose value will be excluded from inspection during preconfigured WAF evaluation. Note that the parameter can be in the query string or in the POST body.
+     * A list of request query parameter names whose value will be excluded
+     * from inspection during preconfigured WAF evaluation. Note that the
+     * parameter can be in the query string or in the POST body.
      * </pre>
      *
      * <code>
@@ -2599,7 +2701,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request query parameter names whose value will be excluded from inspection during preconfigured WAF evaluation. Note that the parameter can be in the query string or in the POST body.
+     * A list of request query parameter names whose value will be excluded
+     * from inspection during preconfigured WAF evaluation. Note that the
+     * parameter can be in the query string or in the POST body.
      * </pre>
      *
      * <code>
@@ -2622,7 +2726,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request query parameter names whose value will be excluded from inspection during preconfigured WAF evaluation. Note that the parameter can be in the query string or in the POST body.
+     * A list of request query parameter names whose value will be excluded
+     * from inspection during preconfigured WAF evaluation. Note that the
+     * parameter can be in the query string or in the POST body.
      * </pre>
      *
      * <code>
@@ -2643,7 +2749,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request query parameter names whose value will be excluded from inspection during preconfigured WAF evaluation. Note that the parameter can be in the query string or in the POST body.
+     * A list of request query parameter names whose value will be excluded
+     * from inspection during preconfigured WAF evaluation. Note that the
+     * parameter can be in the query string or in the POST body.
      * </pre>
      *
      * <code>
@@ -2665,7 +2773,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request query parameter names whose value will be excluded from inspection during preconfigured WAF evaluation. Note that the parameter can be in the query string or in the POST body.
+     * A list of request query parameter names whose value will be excluded
+     * from inspection during preconfigured WAF evaluation. Note that the
+     * parameter can be in the query string or in the POST body.
      * </pre>
      *
      * <code>
@@ -2734,7 +2844,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request URIs from the request line to be excluded from inspection during preconfigured WAF evaluation. When specifying this field, the query or fragment part should be excluded.
+     * A list of request URIs from the request line to be excluded from
+     * inspection during preconfigured WAF evaluation. When specifying this
+     * field, the query or fragment part should be excluded.
      * </pre>
      *
      * <code>
@@ -2756,7 +2868,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request URIs from the request line to be excluded from inspection during preconfigured WAF evaluation. When specifying this field, the query or fragment part should be excluded.
+     * A list of request URIs from the request line to be excluded from
+     * inspection during preconfigured WAF evaluation. When specifying this
+     * field, the query or fragment part should be excluded.
      * </pre>
      *
      * <code>
@@ -2775,7 +2889,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request URIs from the request line to be excluded from inspection during preconfigured WAF evaluation. When specifying this field, the query or fragment part should be excluded.
+     * A list of request URIs from the request line to be excluded from
+     * inspection during preconfigured WAF evaluation. When specifying this
+     * field, the query or fragment part should be excluded.
      * </pre>
      *
      * <code>
@@ -2795,7 +2911,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request URIs from the request line to be excluded from inspection during preconfigured WAF evaluation. When specifying this field, the query or fragment part should be excluded.
+     * A list of request URIs from the request line to be excluded from
+     * inspection during preconfigured WAF evaluation. When specifying this
+     * field, the query or fragment part should be excluded.
      * </pre>
      *
      * <code>
@@ -2823,7 +2941,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request URIs from the request line to be excluded from inspection during preconfigured WAF evaluation. When specifying this field, the query or fragment part should be excluded.
+     * A list of request URIs from the request line to be excluded from
+     * inspection during preconfigured WAF evaluation. When specifying this
+     * field, the query or fragment part should be excluded.
      * </pre>
      *
      * <code>
@@ -2849,7 +2969,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request URIs from the request line to be excluded from inspection during preconfigured WAF evaluation. When specifying this field, the query or fragment part should be excluded.
+     * A list of request URIs from the request line to be excluded from
+     * inspection during preconfigured WAF evaluation. When specifying this
+     * field, the query or fragment part should be excluded.
      * </pre>
      *
      * <code>
@@ -2876,7 +2998,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request URIs from the request line to be excluded from inspection during preconfigured WAF evaluation. When specifying this field, the query or fragment part should be excluded.
+     * A list of request URIs from the request line to be excluded from
+     * inspection during preconfigured WAF evaluation. When specifying this
+     * field, the query or fragment part should be excluded.
      * </pre>
      *
      * <code>
@@ -2904,7 +3028,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request URIs from the request line to be excluded from inspection during preconfigured WAF evaluation. When specifying this field, the query or fragment part should be excluded.
+     * A list of request URIs from the request line to be excluded from
+     * inspection during preconfigured WAF evaluation. When specifying this
+     * field, the query or fragment part should be excluded.
      * </pre>
      *
      * <code>
@@ -2929,7 +3055,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request URIs from the request line to be excluded from inspection during preconfigured WAF evaluation. When specifying this field, the query or fragment part should be excluded.
+     * A list of request URIs from the request line to be excluded from
+     * inspection during preconfigured WAF evaluation. When specifying this
+     * field, the query or fragment part should be excluded.
      * </pre>
      *
      * <code>
@@ -2955,7 +3083,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request URIs from the request line to be excluded from inspection during preconfigured WAF evaluation. When specifying this field, the query or fragment part should be excluded.
+     * A list of request URIs from the request line to be excluded from
+     * inspection during preconfigured WAF evaluation. When specifying this
+     * field, the query or fragment part should be excluded.
      * </pre>
      *
      * <code>
@@ -2982,7 +3112,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request URIs from the request line to be excluded from inspection during preconfigured WAF evaluation. When specifying this field, the query or fragment part should be excluded.
+     * A list of request URIs from the request line to be excluded from
+     * inspection during preconfigured WAF evaluation. When specifying this
+     * field, the query or fragment part should be excluded.
      * </pre>
      *
      * <code>
@@ -3004,7 +3136,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request URIs from the request line to be excluded from inspection during preconfigured WAF evaluation. When specifying this field, the query or fragment part should be excluded.
+     * A list of request URIs from the request line to be excluded from
+     * inspection during preconfigured WAF evaluation. When specifying this
+     * field, the query or fragment part should be excluded.
      * </pre>
      *
      * <code>
@@ -3026,7 +3160,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request URIs from the request line to be excluded from inspection during preconfigured WAF evaluation. When specifying this field, the query or fragment part should be excluded.
+     * A list of request URIs from the request line to be excluded from
+     * inspection during preconfigured WAF evaluation. When specifying this
+     * field, the query or fragment part should be excluded.
      * </pre>
      *
      * <code>
@@ -3043,7 +3179,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request URIs from the request line to be excluded from inspection during preconfigured WAF evaluation. When specifying this field, the query or fragment part should be excluded.
+     * A list of request URIs from the request line to be excluded from
+     * inspection during preconfigured WAF evaluation. When specifying this
+     * field, the query or fragment part should be excluded.
      * </pre>
      *
      * <code>
@@ -3064,7 +3202,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request URIs from the request line to be excluded from inspection during preconfigured WAF evaluation. When specifying this field, the query or fragment part should be excluded.
+     * A list of request URIs from the request line to be excluded from
+     * inspection during preconfigured WAF evaluation. When specifying this
+     * field, the query or fragment part should be excluded.
      * </pre>
      *
      * <code>
@@ -3087,7 +3227,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request URIs from the request line to be excluded from inspection during preconfigured WAF evaluation. When specifying this field, the query or fragment part should be excluded.
+     * A list of request URIs from the request line to be excluded from
+     * inspection during preconfigured WAF evaluation. When specifying this
+     * field, the query or fragment part should be excluded.
      * </pre>
      *
      * <code>
@@ -3108,7 +3250,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request URIs from the request line to be excluded from inspection during preconfigured WAF evaluation. When specifying this field, the query or fragment part should be excluded.
+     * A list of request URIs from the request line to be excluded from
+     * inspection during preconfigured WAF evaluation. When specifying this
+     * field, the query or fragment part should be excluded.
      * </pre>
      *
      * <code>
@@ -3130,7 +3274,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of request URIs from the request line to be excluded from inspection during preconfigured WAF evaluation. When specifying this field, the query or fragment part should be excluded.
+     * A list of request URIs from the request line to be excluded from
+     * inspection during preconfigured WAF evaluation. When specifying this
+     * field, the query or fragment part should be excluded.
      * </pre>
      *
      * <code>
@@ -3184,7 +3330,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of target rule IDs under the WAF rule set to apply the preconfigured WAF exclusion. If omitted, it refers to all the rule IDs under the WAF rule set.
+     * A list of target rule IDs under the WAF rule set to apply the
+     * preconfigured WAF exclusion. If omitted, it refers to all the rule
+     * IDs under the WAF rule set.
      * </pre>
      *
      * <code>repeated string target_rule_ids = 498430435;</code>
@@ -3200,7 +3348,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of target rule IDs under the WAF rule set to apply the preconfigured WAF exclusion. If omitted, it refers to all the rule IDs under the WAF rule set.
+     * A list of target rule IDs under the WAF rule set to apply the
+     * preconfigured WAF exclusion. If omitted, it refers to all the rule
+     * IDs under the WAF rule set.
      * </pre>
      *
      * <code>repeated string target_rule_ids = 498430435;</code>
@@ -3215,7 +3365,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of target rule IDs under the WAF rule set to apply the preconfigured WAF exclusion. If omitted, it refers to all the rule IDs under the WAF rule set.
+     * A list of target rule IDs under the WAF rule set to apply the
+     * preconfigured WAF exclusion. If omitted, it refers to all the rule
+     * IDs under the WAF rule set.
      * </pre>
      *
      * <code>repeated string target_rule_ids = 498430435;</code>
@@ -3231,7 +3383,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of target rule IDs under the WAF rule set to apply the preconfigured WAF exclusion. If omitted, it refers to all the rule IDs under the WAF rule set.
+     * A list of target rule IDs under the WAF rule set to apply the
+     * preconfigured WAF exclusion. If omitted, it refers to all the rule
+     * IDs under the WAF rule set.
      * </pre>
      *
      * <code>repeated string target_rule_ids = 498430435;</code>
@@ -3247,7 +3401,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of target rule IDs under the WAF rule set to apply the preconfigured WAF exclusion. If omitted, it refers to all the rule IDs under the WAF rule set.
+     * A list of target rule IDs under the WAF rule set to apply the
+     * preconfigured WAF exclusion. If omitted, it refers to all the rule
+     * IDs under the WAF rule set.
      * </pre>
      *
      * <code>repeated string target_rule_ids = 498430435;</code>
@@ -3271,7 +3427,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of target rule IDs under the WAF rule set to apply the preconfigured WAF exclusion. If omitted, it refers to all the rule IDs under the WAF rule set.
+     * A list of target rule IDs under the WAF rule set to apply the
+     * preconfigured WAF exclusion. If omitted, it refers to all the rule
+     * IDs under the WAF rule set.
      * </pre>
      *
      * <code>repeated string target_rule_ids = 498430435;</code>
@@ -3294,7 +3452,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of target rule IDs under the WAF rule set to apply the preconfigured WAF exclusion. If omitted, it refers to all the rule IDs under the WAF rule set.
+     * A list of target rule IDs under the WAF rule set to apply the
+     * preconfigured WAF exclusion. If omitted, it refers to all the rule
+     * IDs under the WAF rule set.
      * </pre>
      *
      * <code>repeated string target_rule_ids = 498430435;</code>
@@ -3314,7 +3474,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of target rule IDs under the WAF rule set to apply the preconfigured WAF exclusion. If omitted, it refers to all the rule IDs under the WAF rule set.
+     * A list of target rule IDs under the WAF rule set to apply the
+     * preconfigured WAF exclusion. If omitted, it refers to all the rule
+     * IDs under the WAF rule set.
      * </pre>
      *
      * <code>repeated string target_rule_ids = 498430435;</code>
@@ -3333,7 +3495,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      *
      *
      * <pre>
-     * A list of target rule IDs under the WAF rule set to apply the preconfigured WAF exclusion. If omitted, it refers to all the rule IDs under the WAF rule set.
+     * A list of target rule IDs under the WAF rule set to apply the
+     * preconfigured WAF exclusion. If omitted, it refers to all the rule
+     * IDs under the WAF rule set.
      * </pre>
      *
      * <code>repeated string target_rule_ids = 498430435;</code>

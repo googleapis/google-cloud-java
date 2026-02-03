@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -81,7 +81,19 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Defines the operating mode for this policy. The following modes are available: - OFF: Disables the autoscaler but maintains its configuration. - ONLY_SCALE_OUT: Restricts the autoscaler to add VM instances only. - ON: Enables all autoscaler activities according to its policy. For more information, see "Turning off or restricting an autoscaler"
+   * Defines the operating mode for this policy.
+   * The following modes are available:
+   *
+   *    - OFF: Disables the autoscaler but maintains its
+   *    configuration.
+   *    - ONLY_SCALE_OUT: Restricts the autoscaler to add
+   *    VM instances only.
+   *    - ON: Enables all autoscaler activities according to its
+   *    policy.
+   *
+   *
+   * For more information, see
+   * "Turning off or restricting an autoscaler"
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.AutoscalingPolicy.Mode}
@@ -101,7 +113,9 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Do not automatically scale the MIG in or out. The recommended_size field contains the size of MIG that would be set if the actuation mode was enabled.
+     * Do not automatically scale the MIG in or out.
+     * The recommended_size field contains the size of MIG that would be set if
+     * the actuation mode was enabled.
      * </pre>
      *
      * <code>OFF = 78159;</code>
@@ -121,7 +135,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Automatically create VMs according to the policy, but do not scale the MIG in.
+     * Automatically create VMs according to the policy, but do not scale
+     * the MIG in.
      * </pre>
      *
      * <code>ONLY_SCALE_OUT = 152713670;</code>
@@ -131,7 +146,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Automatically create VMs according to the policy, but do not scale the MIG in.
+     * Automatically create VMs according to the policy, but do not scale
+     * the MIG in.
      * </pre>
      *
      * <code>ONLY_UP = 478095374;</code>
@@ -155,7 +171,9 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Do not automatically scale the MIG in or out. The recommended_size field contains the size of MIG that would be set if the actuation mode was enabled.
+     * Do not automatically scale the MIG in or out.
+     * The recommended_size field contains the size of MIG that would be set if
+     * the actuation mode was enabled.
      * </pre>
      *
      * <code>OFF = 78159;</code>
@@ -177,7 +195,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Automatically create VMs according to the policy, but do not scale the MIG in.
+     * Automatically create VMs according to the policy, but do not scale
+     * the MIG in.
      * </pre>
      *
      * <code>ONLY_SCALE_OUT = 152713670;</code>
@@ -188,7 +207,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Automatically create VMs according to the policy, but do not scale the MIG in.
+     * Automatically create VMs according to the policy, but do not scale
+     * the MIG in.
      * </pre>
      *
      * <code>ONLY_UP = 478095374;</code>
@@ -290,7 +310,19 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The number of seconds that your application takes to initialize on a VM instance. This is referred to as the [initialization period](/compute/docs/autoscaler#cool_down_period). Specifying an accurate initialization period improves autoscaler decisions. For example, when scaling out, the autoscaler ignores data from VMs that are still initializing because those VMs might not yet represent normal usage of your application. The default initialization period is 60 seconds. Initialization periods might vary because of numerous factors. We recommend that you test how long your application takes to initialize. To do this, create a VM and time your application's startup process.
+   * The number of seconds that your application takes to initialize on a VM
+   * instance. This is referred to as the
+   * [initialization period](/compute/docs/autoscaler#cool_down_period).
+   * Specifying an accurate initialization period improves
+   * autoscaler decisions. For example, when scaling out, the autoscaler ignores
+   * data from VMs that are still initializing because those VMs might not yet
+   * represent normal usage of your application. The default initialization
+   * period is 60 seconds.
+   *
+   * Initialization periods might vary because of numerous
+   * factors. We recommend that you test how long your application takes to
+   * initialize. To do this, create a VM and time your application's startup
+   * process.
    * </pre>
    *
    * <code>optional int32 cool_down_period_sec = 107692954;</code>
@@ -306,7 +338,19 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The number of seconds that your application takes to initialize on a VM instance. This is referred to as the [initialization period](/compute/docs/autoscaler#cool_down_period). Specifying an accurate initialization period improves autoscaler decisions. For example, when scaling out, the autoscaler ignores data from VMs that are still initializing because those VMs might not yet represent normal usage of your application. The default initialization period is 60 seconds. Initialization periods might vary because of numerous factors. We recommend that you test how long your application takes to initialize. To do this, create a VM and time your application's startup process.
+   * The number of seconds that your application takes to initialize on a VM
+   * instance. This is referred to as the
+   * [initialization period](/compute/docs/autoscaler#cool_down_period).
+   * Specifying an accurate initialization period improves
+   * autoscaler decisions. For example, when scaling out, the autoscaler ignores
+   * data from VMs that are still initializing because those VMs might not yet
+   * represent normal usage of your application. The default initialization
+   * period is 60 seconds.
+   *
+   * Initialization periods might vary because of numerous
+   * factors. We recommend that you test how long your application takes to
+   * initialize. To do this, create a VM and time your application's startup
+   * process.
    * </pre>
    *
    * <code>optional int32 cool_down_period_sec = 107692954;</code>
@@ -325,7 +369,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
+   * Defines the CPU utilization policy that allows the autoscaler to scale
+   * based on the average CPU utilization of a managed instance group.
    * </pre>
    *
    * <code>
@@ -343,7 +388,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
+   * Defines the CPU utilization policy that allows the autoscaler to scale
+   * based on the average CPU utilization of a managed instance group.
    * </pre>
    *
    * <code>
@@ -363,7 +409,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
+   * Defines the CPU utilization policy that allows the autoscaler to scale
+   * based on the average CPU utilization of a managed instance group.
    * </pre>
    *
    * <code>
@@ -538,7 +585,9 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The maximum number of instances that the autoscaler can scale out to. This is required when creating or updating an autoscaler. The maximum number of replicas must not be lower than minimal number of replicas.
+   * The maximum number of instances that the autoscaler can scale out to. This
+   * is required when creating or updating an autoscaler. The maximum number
+   * of replicas must not be lower than minimal number of replicas.
    * </pre>
    *
    * <code>optional int32 max_num_replicas = 62327375;</code>
@@ -554,7 +603,9 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The maximum number of instances that the autoscaler can scale out to. This is required when creating or updating an autoscaler. The maximum number of replicas must not be lower than minimal number of replicas.
+   * The maximum number of instances that the autoscaler can scale out to. This
+   * is required when creating or updating an autoscaler. The maximum number
+   * of replicas must not be lower than minimal number of replicas.
    * </pre>
    *
    * <code>optional int32 max_num_replicas = 62327375;</code>
@@ -573,7 +624,9 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The minimum number of replicas that the autoscaler can scale in to. This cannot be less than 0. If not provided, autoscaler chooses a default value depending on maximum number of instances allowed.
+   * The minimum number of replicas that the autoscaler can scale in to.
+   * This cannot be less than 0. If not provided, autoscaler chooses a
+   * default value depending on maximum number of instances allowed.
    * </pre>
    *
    * <code>optional int32 min_num_replicas = 535329825;</code>
@@ -589,7 +642,9 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The minimum number of replicas that the autoscaler can scale in to. This cannot be less than 0. If not provided, autoscaler chooses a default value depending on maximum number of instances allowed.
+   * The minimum number of replicas that the autoscaler can scale in to.
+   * This cannot be less than 0. If not provided, autoscaler chooses a
+   * default value depending on maximum number of instances allowed.
    * </pre>
    *
    * <code>optional int32 min_num_replicas = 535329825;</code>
@@ -610,7 +665,19 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Defines the operating mode for this policy. The following modes are available: - OFF: Disables the autoscaler but maintains its configuration. - ONLY_SCALE_OUT: Restricts the autoscaler to add VM instances only. - ON: Enables all autoscaler activities according to its policy. For more information, see "Turning off or restricting an autoscaler"
+   * Defines the operating mode for this policy.
+   * The following modes are available:
+   *
+   *    - OFF: Disables the autoscaler but maintains its
+   *    configuration.
+   *    - ONLY_SCALE_OUT: Restricts the autoscaler to add
+   *    VM instances only.
+   *    - ON: Enables all autoscaler activities according to its
+   *    policy.
+   *
+   *
+   * For more information, see
+   * "Turning off or restricting an autoscaler"
    * Check the Mode enum for the list of possible values.
    * </pre>
    *
@@ -627,7 +694,19 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Defines the operating mode for this policy. The following modes are available: - OFF: Disables the autoscaler but maintains its configuration. - ONLY_SCALE_OUT: Restricts the autoscaler to add VM instances only. - ON: Enables all autoscaler activities according to its policy. For more information, see "Turning off or restricting an autoscaler"
+   * Defines the operating mode for this policy.
+   * The following modes are available:
+   *
+   *    - OFF: Disables the autoscaler but maintains its
+   *    configuration.
+   *    - ONLY_SCALE_OUT: Restricts the autoscaler to add
+   *    VM instances only.
+   *    - ON: Enables all autoscaler activities according to its
+   *    policy.
+   *
+   *
+   * For more information, see
+   * "Turning off or restricting an autoscaler"
    * Check the Mode enum for the list of possible values.
    * </pre>
    *
@@ -652,7 +731,19 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Defines the operating mode for this policy. The following modes are available: - OFF: Disables the autoscaler but maintains its configuration. - ONLY_SCALE_OUT: Restricts the autoscaler to add VM instances only. - ON: Enables all autoscaler activities according to its policy. For more information, see "Turning off or restricting an autoscaler"
+   * Defines the operating mode for this policy.
+   * The following modes are available:
+   *
+   *    - OFF: Disables the autoscaler but maintains its
+   *    configuration.
+   *    - ONLY_SCALE_OUT: Restricts the autoscaler to add
+   *    VM instances only.
+   *    - ON: Enables all autoscaler activities according to its
+   *    policy.
+   *
+   *
+   * For more information, see
+   * "Turning off or restricting an autoscaler"
    * Check the Mode enum for the list of possible values.
    * </pre>
    *
@@ -756,7 +847,10 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler, and they can overlap. During overlapping periods the greatest min_required_replicas of all scaling schedules is applied. Up to 128 scaling schedules are allowed.
+   * Scaling schedules defined for an autoscaler. Multiple schedules
+   * can be set on an autoscaler, and they can overlap. During overlapping
+   * periods the greatest min_required_replicas of all scaling schedules is
+   * applied. Up to 128 scaling schedules are allowed.
    * </pre>
    *
    * <code>
@@ -784,7 +878,10 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler, and they can overlap. During overlapping periods the greatest min_required_replicas of all scaling schedules is applied. Up to 128 scaling schedules are allowed.
+   * Scaling schedules defined for an autoscaler. Multiple schedules
+   * can be set on an autoscaler, and they can overlap. During overlapping
+   * periods the greatest min_required_replicas of all scaling schedules is
+   * applied. Up to 128 scaling schedules are allowed.
    * </pre>
    *
    * <code>
@@ -802,7 +899,10 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler, and they can overlap. During overlapping periods the greatest min_required_replicas of all scaling schedules is applied. Up to 128 scaling schedules are allowed.
+   * Scaling schedules defined for an autoscaler. Multiple schedules
+   * can be set on an autoscaler, and they can overlap. During overlapping
+   * periods the greatest min_required_replicas of all scaling schedules is
+   * applied. Up to 128 scaling schedules are allowed.
    * </pre>
    *
    * <code>
@@ -827,7 +927,10 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler, and they can overlap. During overlapping periods the greatest min_required_replicas of all scaling schedules is applied. Up to 128 scaling schedules are allowed.
+   * Scaling schedules defined for an autoscaler. Multiple schedules
+   * can be set on an autoscaler, and they can overlap. During overlapping
+   * periods the greatest min_required_replicas of all scaling schedules is
+   * applied. Up to 128 scaling schedules are allowed.
    * </pre>
    *
    * <code>
@@ -1551,7 +1654,19 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The number of seconds that your application takes to initialize on a VM instance. This is referred to as the [initialization period](/compute/docs/autoscaler#cool_down_period). Specifying an accurate initialization period improves autoscaler decisions. For example, when scaling out, the autoscaler ignores data from VMs that are still initializing because those VMs might not yet represent normal usage of your application. The default initialization period is 60 seconds. Initialization periods might vary because of numerous factors. We recommend that you test how long your application takes to initialize. To do this, create a VM and time your application's startup process.
+     * The number of seconds that your application takes to initialize on a VM
+     * instance. This is referred to as the
+     * [initialization period](/compute/docs/autoscaler#cool_down_period).
+     * Specifying an accurate initialization period improves
+     * autoscaler decisions. For example, when scaling out, the autoscaler ignores
+     * data from VMs that are still initializing because those VMs might not yet
+     * represent normal usage of your application. The default initialization
+     * period is 60 seconds.
+     *
+     * Initialization periods might vary because of numerous
+     * factors. We recommend that you test how long your application takes to
+     * initialize. To do this, create a VM and time your application's startup
+     * process.
      * </pre>
      *
      * <code>optional int32 cool_down_period_sec = 107692954;</code>
@@ -1567,7 +1682,19 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The number of seconds that your application takes to initialize on a VM instance. This is referred to as the [initialization period](/compute/docs/autoscaler#cool_down_period). Specifying an accurate initialization period improves autoscaler decisions. For example, when scaling out, the autoscaler ignores data from VMs that are still initializing because those VMs might not yet represent normal usage of your application. The default initialization period is 60 seconds. Initialization periods might vary because of numerous factors. We recommend that you test how long your application takes to initialize. To do this, create a VM and time your application's startup process.
+     * The number of seconds that your application takes to initialize on a VM
+     * instance. This is referred to as the
+     * [initialization period](/compute/docs/autoscaler#cool_down_period).
+     * Specifying an accurate initialization period improves
+     * autoscaler decisions. For example, when scaling out, the autoscaler ignores
+     * data from VMs that are still initializing because those VMs might not yet
+     * represent normal usage of your application. The default initialization
+     * period is 60 seconds.
+     *
+     * Initialization periods might vary because of numerous
+     * factors. We recommend that you test how long your application takes to
+     * initialize. To do this, create a VM and time your application's startup
+     * process.
      * </pre>
      *
      * <code>optional int32 cool_down_period_sec = 107692954;</code>
@@ -1583,7 +1710,19 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The number of seconds that your application takes to initialize on a VM instance. This is referred to as the [initialization period](/compute/docs/autoscaler#cool_down_period). Specifying an accurate initialization period improves autoscaler decisions. For example, when scaling out, the autoscaler ignores data from VMs that are still initializing because those VMs might not yet represent normal usage of your application. The default initialization period is 60 seconds. Initialization periods might vary because of numerous factors. We recommend that you test how long your application takes to initialize. To do this, create a VM and time your application's startup process.
+     * The number of seconds that your application takes to initialize on a VM
+     * instance. This is referred to as the
+     * [initialization period](/compute/docs/autoscaler#cool_down_period).
+     * Specifying an accurate initialization period improves
+     * autoscaler decisions. For example, when scaling out, the autoscaler ignores
+     * data from VMs that are still initializing because those VMs might not yet
+     * represent normal usage of your application. The default initialization
+     * period is 60 seconds.
+     *
+     * Initialization periods might vary because of numerous
+     * factors. We recommend that you test how long your application takes to
+     * initialize. To do this, create a VM and time your application's startup
+     * process.
      * </pre>
      *
      * <code>optional int32 cool_down_period_sec = 107692954;</code>
@@ -1603,7 +1742,19 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The number of seconds that your application takes to initialize on a VM instance. This is referred to as the [initialization period](/compute/docs/autoscaler#cool_down_period). Specifying an accurate initialization period improves autoscaler decisions. For example, when scaling out, the autoscaler ignores data from VMs that are still initializing because those VMs might not yet represent normal usage of your application. The default initialization period is 60 seconds. Initialization periods might vary because of numerous factors. We recommend that you test how long your application takes to initialize. To do this, create a VM and time your application's startup process.
+     * The number of seconds that your application takes to initialize on a VM
+     * instance. This is referred to as the
+     * [initialization period](/compute/docs/autoscaler#cool_down_period).
+     * Specifying an accurate initialization period improves
+     * autoscaler decisions. For example, when scaling out, the autoscaler ignores
+     * data from VMs that are still initializing because those VMs might not yet
+     * represent normal usage of your application. The default initialization
+     * period is 60 seconds.
+     *
+     * Initialization periods might vary because of numerous
+     * factors. We recommend that you test how long your application takes to
+     * initialize. To do this, create a VM and time your application's startup
+     * process.
      * </pre>
      *
      * <code>optional int32 cool_down_period_sec = 107692954;</code>
@@ -1628,7 +1779,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
+     * Defines the CPU utilization policy that allows the autoscaler to scale
+     * based on the average CPU utilization of a managed instance group.
      * </pre>
      *
      * <code>
@@ -1645,7 +1797,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
+     * Defines the CPU utilization policy that allows the autoscaler to scale
+     * based on the average CPU utilization of a managed instance group.
      * </pre>
      *
      * <code>
@@ -1668,7 +1821,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
+     * Defines the CPU utilization policy that allows the autoscaler to scale
+     * based on the average CPU utilization of a managed instance group.
      * </pre>
      *
      * <code>
@@ -1694,7 +1848,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
+     * Defines the CPU utilization policy that allows the autoscaler to scale
+     * based on the average CPU utilization of a managed instance group.
      * </pre>
      *
      * <code>
@@ -1717,7 +1872,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
+     * Defines the CPU utilization policy that allows the autoscaler to scale
+     * based on the average CPU utilization of a managed instance group.
      * </pre>
      *
      * <code>
@@ -1750,7 +1906,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
+     * Defines the CPU utilization policy that allows the autoscaler to scale
+     * based on the average CPU utilization of a managed instance group.
      * </pre>
      *
      * <code>
@@ -1772,7 +1929,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
+     * Defines the CPU utilization policy that allows the autoscaler to scale
+     * based on the average CPU utilization of a managed instance group.
      * </pre>
      *
      * <code>
@@ -1790,7 +1948,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
+     * Defines the CPU utilization policy that allows the autoscaler to scale
+     * based on the average CPU utilization of a managed instance group.
      * </pre>
      *
      * <code>
@@ -1812,7 +1971,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU utilization of a managed instance group.
+     * Defines the CPU utilization policy that allows the autoscaler to scale
+     * based on the average CPU utilization of a managed instance group.
      * </pre>
      *
      * <code>
@@ -2498,7 +2658,9 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The maximum number of instances that the autoscaler can scale out to. This is required when creating or updating an autoscaler. The maximum number of replicas must not be lower than minimal number of replicas.
+     * The maximum number of instances that the autoscaler can scale out to. This
+     * is required when creating or updating an autoscaler. The maximum number
+     * of replicas must not be lower than minimal number of replicas.
      * </pre>
      *
      * <code>optional int32 max_num_replicas = 62327375;</code>
@@ -2514,7 +2676,9 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The maximum number of instances that the autoscaler can scale out to. This is required when creating or updating an autoscaler. The maximum number of replicas must not be lower than minimal number of replicas.
+     * The maximum number of instances that the autoscaler can scale out to. This
+     * is required when creating or updating an autoscaler. The maximum number
+     * of replicas must not be lower than minimal number of replicas.
      * </pre>
      *
      * <code>optional int32 max_num_replicas = 62327375;</code>
@@ -2530,7 +2694,9 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The maximum number of instances that the autoscaler can scale out to. This is required when creating or updating an autoscaler. The maximum number of replicas must not be lower than minimal number of replicas.
+     * The maximum number of instances that the autoscaler can scale out to. This
+     * is required when creating or updating an autoscaler. The maximum number
+     * of replicas must not be lower than minimal number of replicas.
      * </pre>
      *
      * <code>optional int32 max_num_replicas = 62327375;</code>
@@ -2550,7 +2716,9 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The maximum number of instances that the autoscaler can scale out to. This is required when creating or updating an autoscaler. The maximum number of replicas must not be lower than minimal number of replicas.
+     * The maximum number of instances that the autoscaler can scale out to. This
+     * is required when creating or updating an autoscaler. The maximum number
+     * of replicas must not be lower than minimal number of replicas.
      * </pre>
      *
      * <code>optional int32 max_num_replicas = 62327375;</code>
@@ -2570,7 +2738,9 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The minimum number of replicas that the autoscaler can scale in to. This cannot be less than 0. If not provided, autoscaler chooses a default value depending on maximum number of instances allowed.
+     * The minimum number of replicas that the autoscaler can scale in to.
+     * This cannot be less than 0. If not provided, autoscaler chooses a
+     * default value depending on maximum number of instances allowed.
      * </pre>
      *
      * <code>optional int32 min_num_replicas = 535329825;</code>
@@ -2586,7 +2756,9 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The minimum number of replicas that the autoscaler can scale in to. This cannot be less than 0. If not provided, autoscaler chooses a default value depending on maximum number of instances allowed.
+     * The minimum number of replicas that the autoscaler can scale in to.
+     * This cannot be less than 0. If not provided, autoscaler chooses a
+     * default value depending on maximum number of instances allowed.
      * </pre>
      *
      * <code>optional int32 min_num_replicas = 535329825;</code>
@@ -2602,7 +2774,9 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The minimum number of replicas that the autoscaler can scale in to. This cannot be less than 0. If not provided, autoscaler chooses a default value depending on maximum number of instances allowed.
+     * The minimum number of replicas that the autoscaler can scale in to.
+     * This cannot be less than 0. If not provided, autoscaler chooses a
+     * default value depending on maximum number of instances allowed.
      * </pre>
      *
      * <code>optional int32 min_num_replicas = 535329825;</code>
@@ -2622,7 +2796,9 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The minimum number of replicas that the autoscaler can scale in to. This cannot be less than 0. If not provided, autoscaler chooses a default value depending on maximum number of instances allowed.
+     * The minimum number of replicas that the autoscaler can scale in to.
+     * This cannot be less than 0. If not provided, autoscaler chooses a
+     * default value depending on maximum number of instances allowed.
      * </pre>
      *
      * <code>optional int32 min_num_replicas = 535329825;</code>
@@ -2642,7 +2818,19 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Defines the operating mode for this policy. The following modes are available: - OFF: Disables the autoscaler but maintains its configuration. - ONLY_SCALE_OUT: Restricts the autoscaler to add VM instances only. - ON: Enables all autoscaler activities according to its policy. For more information, see "Turning off or restricting an autoscaler"
+     * Defines the operating mode for this policy.
+     * The following modes are available:
+     *
+     *    - OFF: Disables the autoscaler but maintains its
+     *    configuration.
+     *    - ONLY_SCALE_OUT: Restricts the autoscaler to add
+     *    VM instances only.
+     *    - ON: Enables all autoscaler activities according to its
+     *    policy.
+     *
+     *
+     * For more information, see
+     * "Turning off or restricting an autoscaler"
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -2658,7 +2846,19 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Defines the operating mode for this policy. The following modes are available: - OFF: Disables the autoscaler but maintains its configuration. - ONLY_SCALE_OUT: Restricts the autoscaler to add VM instances only. - ON: Enables all autoscaler activities according to its policy. For more information, see "Turning off or restricting an autoscaler"
+     * Defines the operating mode for this policy.
+     * The following modes are available:
+     *
+     *    - OFF: Disables the autoscaler but maintains its
+     *    configuration.
+     *    - ONLY_SCALE_OUT: Restricts the autoscaler to add
+     *    VM instances only.
+     *    - ON: Enables all autoscaler activities according to its
+     *    policy.
+     *
+     *
+     * For more information, see
+     * "Turning off or restricting an autoscaler"
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -2682,7 +2882,19 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Defines the operating mode for this policy. The following modes are available: - OFF: Disables the autoscaler but maintains its configuration. - ONLY_SCALE_OUT: Restricts the autoscaler to add VM instances only. - ON: Enables all autoscaler activities according to its policy. For more information, see "Turning off or restricting an autoscaler"
+     * Defines the operating mode for this policy.
+     * The following modes are available:
+     *
+     *    - OFF: Disables the autoscaler but maintains its
+     *    configuration.
+     *    - ONLY_SCALE_OUT: Restricts the autoscaler to add
+     *    VM instances only.
+     *    - ON: Enables all autoscaler activities according to its
+     *    policy.
+     *
+     *
+     * For more information, see
+     * "Turning off or restricting an autoscaler"
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -2706,7 +2918,19 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Defines the operating mode for this policy. The following modes are available: - OFF: Disables the autoscaler but maintains its configuration. - ONLY_SCALE_OUT: Restricts the autoscaler to add VM instances only. - ON: Enables all autoscaler activities according to its policy. For more information, see "Turning off or restricting an autoscaler"
+     * Defines the operating mode for this policy.
+     * The following modes are available:
+     *
+     *    - OFF: Disables the autoscaler but maintains its
+     *    configuration.
+     *    - ONLY_SCALE_OUT: Restricts the autoscaler to add
+     *    VM instances only.
+     *    - ON: Enables all autoscaler activities according to its
+     *    policy.
+     *
+     *
+     * For more information, see
+     * "Turning off or restricting an autoscaler"
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -2729,7 +2953,19 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Defines the operating mode for this policy. The following modes are available: - OFF: Disables the autoscaler but maintains its configuration. - ONLY_SCALE_OUT: Restricts the autoscaler to add VM instances only. - ON: Enables all autoscaler activities according to its policy. For more information, see "Turning off or restricting an autoscaler"
+     * Defines the operating mode for this policy.
+     * The following modes are available:
+     *
+     *    - OFF: Disables the autoscaler but maintains its
+     *    configuration.
+     *    - ONLY_SCALE_OUT: Restricts the autoscaler to add
+     *    VM instances only.
+     *    - ON: Enables all autoscaler activities according to its
+     *    policy.
+     *
+     *
+     * For more information, see
+     * "Turning off or restricting an autoscaler"
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -2748,7 +2984,19 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Defines the operating mode for this policy. The following modes are available: - OFF: Disables the autoscaler but maintains its configuration. - ONLY_SCALE_OUT: Restricts the autoscaler to add VM instances only. - ON: Enables all autoscaler activities according to its policy. For more information, see "Turning off or restricting an autoscaler"
+     * Defines the operating mode for this policy.
+     * The following modes are available:
+     *
+     *    - OFF: Disables the autoscaler but maintains its
+     *    configuration.
+     *    - ONLY_SCALE_OUT: Restricts the autoscaler to add
+     *    VM instances only.
+     *    - ON: Enables all autoscaler activities according to its
+     *    policy.
+     *
+     *
+     * For more information, see
+     * "Turning off or restricting an autoscaler"
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -3000,7 +3248,10 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler, and they can overlap. During overlapping periods the greatest min_required_replicas of all scaling schedules is applied. Up to 128 scaling schedules are allowed.
+     * Scaling schedules defined for an autoscaler. Multiple schedules
+     * can be set on an autoscaler, and they can overlap. During overlapping
+     * periods the greatest min_required_replicas of all scaling schedules is
+     * applied. Up to 128 scaling schedules are allowed.
      * </pre>
      *
      * <code>
@@ -3028,7 +3279,10 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler, and they can overlap. During overlapping periods the greatest min_required_replicas of all scaling schedules is applied. Up to 128 scaling schedules are allowed.
+     * Scaling schedules defined for an autoscaler. Multiple schedules
+     * can be set on an autoscaler, and they can overlap. During overlapping
+     * periods the greatest min_required_replicas of all scaling schedules is
+     * applied. Up to 128 scaling schedules are allowed.
      * </pre>
      *
      * <code>
@@ -3046,7 +3300,10 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler, and they can overlap. During overlapping periods the greatest min_required_replicas of all scaling schedules is applied. Up to 128 scaling schedules are allowed.
+     * Scaling schedules defined for an autoscaler. Multiple schedules
+     * can be set on an autoscaler, and they can overlap. During overlapping
+     * periods the greatest min_required_replicas of all scaling schedules is
+     * applied. Up to 128 scaling schedules are allowed.
      * </pre>
      *
      * <code>
@@ -3073,7 +3330,10 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler, and they can overlap. During overlapping periods the greatest min_required_replicas of all scaling schedules is applied. Up to 128 scaling schedules are allowed.
+     * Scaling schedules defined for an autoscaler. Multiple schedules
+     * can be set on an autoscaler, and they can overlap. During overlapping
+     * periods the greatest min_required_replicas of all scaling schedules is
+     * applied. Up to 128 scaling schedules are allowed.
      * </pre>
      *
      * <code>
@@ -3106,7 +3366,10 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler, and they can overlap. During overlapping periods the greatest min_required_replicas of all scaling schedules is applied. Up to 128 scaling schedules are allowed.
+     * Scaling schedules defined for an autoscaler. Multiple schedules
+     * can be set on an autoscaler, and they can overlap. During overlapping
+     * periods the greatest min_required_replicas of all scaling schedules is
+     * applied. Up to 128 scaling schedules are allowed.
      * </pre>
      *
      * <code>
@@ -3134,7 +3397,10 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler, and they can overlap. During overlapping periods the greatest min_required_replicas of all scaling schedules is applied. Up to 128 scaling schedules are allowed.
+     * Scaling schedules defined for an autoscaler. Multiple schedules
+     * can be set on an autoscaler, and they can overlap. During overlapping
+     * periods the greatest min_required_replicas of all scaling schedules is
+     * applied. Up to 128 scaling schedules are allowed.
      * </pre>
      *
      * <code>
@@ -3158,7 +3424,10 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler, and they can overlap. During overlapping periods the greatest min_required_replicas of all scaling schedules is applied. Up to 128 scaling schedules are allowed.
+     * Scaling schedules defined for an autoscaler. Multiple schedules
+     * can be set on an autoscaler, and they can overlap. During overlapping
+     * periods the greatest min_required_replicas of all scaling schedules is
+     * applied. Up to 128 scaling schedules are allowed.
      * </pre>
      *
      * <code>
@@ -3185,7 +3454,10 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler, and they can overlap. During overlapping periods the greatest min_required_replicas of all scaling schedules is applied. Up to 128 scaling schedules are allowed.
+     * Scaling schedules defined for an autoscaler. Multiple schedules
+     * can be set on an autoscaler, and they can overlap. During overlapping
+     * periods the greatest min_required_replicas of all scaling schedules is
+     * applied. Up to 128 scaling schedules are allowed.
      * </pre>
      *
      * <code>

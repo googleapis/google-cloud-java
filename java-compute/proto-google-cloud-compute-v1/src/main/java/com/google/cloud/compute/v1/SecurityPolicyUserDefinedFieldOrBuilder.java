@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,19 @@ public interface SecurityPolicyUserDefinedFieldOrBuilder
    *
    *
    * <pre>
-   * The base relative to which 'offset' is measured. Possible values are: - IPV4: Points to the beginning of the IPv4 header. - IPV6: Points to the beginning of the IPv6 header. - TCP: Points to the beginning of the TCP header, skipping over any IPv4 options or IPv6 extension headers. Not present for non-first fragments. - UDP: Points to the beginning of the UDP header, skipping over any IPv4 options or IPv6 extension headers. Not present for non-first fragments. required
+   * The base relative to which 'offset' is measured. Possible values are:
+   *
+   *    - IPV4: Points to the beginning of the IPv4 header.
+   *    - IPV6: Points to the beginning of the IPv6 header.
+   *    - TCP: Points to the beginning of the TCP header, skipping
+   *    over any IPv4 options or IPv6 extension headers. Not present for
+   *    non-first fragments.
+   *    - UDP: Points to the beginning of the UDP header, skipping
+   *    over any IPv4 options or IPv6 extension headers. Not present for
+   *    non-first fragments.
+   *
+   *
+   * required
    * Check the Base enum for the list of possible values.
    * </pre>
    *
@@ -42,7 +54,19 @@ public interface SecurityPolicyUserDefinedFieldOrBuilder
    *
    *
    * <pre>
-   * The base relative to which 'offset' is measured. Possible values are: - IPV4: Points to the beginning of the IPv4 header. - IPV6: Points to the beginning of the IPv6 header. - TCP: Points to the beginning of the TCP header, skipping over any IPv4 options or IPv6 extension headers. Not present for non-first fragments. - UDP: Points to the beginning of the UDP header, skipping over any IPv4 options or IPv6 extension headers. Not present for non-first fragments. required
+   * The base relative to which 'offset' is measured. Possible values are:
+   *
+   *    - IPV4: Points to the beginning of the IPv4 header.
+   *    - IPV6: Points to the beginning of the IPv6 header.
+   *    - TCP: Points to the beginning of the TCP header, skipping
+   *    over any IPv4 options or IPv6 extension headers. Not present for
+   *    non-first fragments.
+   *    - UDP: Points to the beginning of the UDP header, skipping
+   *    over any IPv4 options or IPv6 extension headers. Not present for
+   *    non-first fragments.
+   *
+   *
+   * required
    * Check the Base enum for the list of possible values.
    * </pre>
    *
@@ -56,7 +80,19 @@ public interface SecurityPolicyUserDefinedFieldOrBuilder
    *
    *
    * <pre>
-   * The base relative to which 'offset' is measured. Possible values are: - IPV4: Points to the beginning of the IPv4 header. - IPV6: Points to the beginning of the IPv6 header. - TCP: Points to the beginning of the TCP header, skipping over any IPv4 options or IPv6 extension headers. Not present for non-first fragments. - UDP: Points to the beginning of the UDP header, skipping over any IPv4 options or IPv6 extension headers. Not present for non-first fragments. required
+   * The base relative to which 'offset' is measured. Possible values are:
+   *
+   *    - IPV4: Points to the beginning of the IPv4 header.
+   *    - IPV6: Points to the beginning of the IPv6 header.
+   *    - TCP: Points to the beginning of the TCP header, skipping
+   *    over any IPv4 options or IPv6 extension headers. Not present for
+   *    non-first fragments.
+   *    - UDP: Points to the beginning of the UDP header, skipping
+   *    over any IPv4 options or IPv6 extension headers. Not present for
+   *    non-first fragments.
+   *
+   *
+   * required
    * Check the Base enum for the list of possible values.
    * </pre>
    *
@@ -70,7 +106,10 @@ public interface SecurityPolicyUserDefinedFieldOrBuilder
    *
    *
    * <pre>
-   * If specified, apply this mask (bitwise AND) to the field to ignore bits before matching. Encoded as a hexadecimal number (starting with "0x"). The last byte of the field (in network byte order) corresponds to the least significant byte of the mask.
+   * If specified, apply this mask (bitwise AND) to the field to ignore bits
+   * before matching. Encoded as a hexadecimal number (starting with "0x").
+   * The last byte of the field (in network byte order) corresponds to the
+   * least significant byte of the mask.
    * </pre>
    *
    * <code>optional string mask = 3344108;</code>
@@ -83,7 +122,10 @@ public interface SecurityPolicyUserDefinedFieldOrBuilder
    *
    *
    * <pre>
-   * If specified, apply this mask (bitwise AND) to the field to ignore bits before matching. Encoded as a hexadecimal number (starting with "0x"). The last byte of the field (in network byte order) corresponds to the least significant byte of the mask.
+   * If specified, apply this mask (bitwise AND) to the field to ignore bits
+   * before matching. Encoded as a hexadecimal number (starting with "0x").
+   * The last byte of the field (in network byte order) corresponds to the
+   * least significant byte of the mask.
    * </pre>
    *
    * <code>optional string mask = 3344108;</code>
@@ -96,7 +138,10 @@ public interface SecurityPolicyUserDefinedFieldOrBuilder
    *
    *
    * <pre>
-   * If specified, apply this mask (bitwise AND) to the field to ignore bits before matching. Encoded as a hexadecimal number (starting with "0x"). The last byte of the field (in network byte order) corresponds to the least significant byte of the mask.
+   * If specified, apply this mask (bitwise AND) to the field to ignore bits
+   * before matching. Encoded as a hexadecimal number (starting with "0x").
+   * The last byte of the field (in network byte order) corresponds to the
+   * least significant byte of the mask.
    * </pre>
    *
    * <code>optional string mask = 3344108;</code>
@@ -148,7 +193,8 @@ public interface SecurityPolicyUserDefinedFieldOrBuilder
    *
    *
    * <pre>
-   * Offset of the first byte of the field (in network byte order) relative to 'base'.
+   * Offset of the first byte of the field (in network byte order) relative to
+   * 'base'.
    * </pre>
    *
    * <code>optional int32 offset = 53961875;</code>
@@ -161,7 +207,8 @@ public interface SecurityPolicyUserDefinedFieldOrBuilder
    *
    *
    * <pre>
-   * Offset of the first byte of the field (in network byte order) relative to 'base'.
+   * Offset of the first byte of the field (in network byte order) relative to
+   * 'base'.
    * </pre>
    *
    * <code>optional int32 offset = 53961875;</code>

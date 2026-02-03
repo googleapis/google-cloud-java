@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,7 +65,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetCmsMetadataValue</td>
- *      <td><p> API to retrieve a `CmsMetadataKey` object.</td>
+ *      <td><p> API to retrieve a `CmsMetadataValue` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -198,7 +198,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CmsMetadataKey` object.
+   * API to retrieve a `CmsMetadataValue` object.
    *
    * <p>Sample code:
    *
@@ -215,7 +215,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of the CmsMetadataKey. Format:
+   * @param name Required. The resource name of the CmsMetadataValue. Format:
    *     `networks/{network_code}/cmsMetadataValues/{cms_metadata_value_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -229,7 +229,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CmsMetadataKey` object.
+   * API to retrieve a `CmsMetadataValue` object.
    *
    * <p>Sample code:
    *
@@ -246,7 +246,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of the CmsMetadataKey. Format:
+   * @param name Required. The resource name of the CmsMetadataValue. Format:
    *     `networks/{network_code}/cmsMetadataValues/{cms_metadata_value_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -258,7 +258,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CmsMetadataKey` object.
+   * API to retrieve a `CmsMetadataValue` object.
    *
    * <p>Sample code:
    *
@@ -287,7 +287,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CmsMetadataKey` object.
+   * API to retrieve a `CmsMetadataValue` object.
    *
    * <p>Sample code:
    *

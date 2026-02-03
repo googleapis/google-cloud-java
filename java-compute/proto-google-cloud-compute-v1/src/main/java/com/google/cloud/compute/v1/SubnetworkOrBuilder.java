@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,72 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Whether this subnetwork's ranges can conflict with existing static routes.
+   * Setting this to true allows this subnetwork's primary and secondary ranges
+   * to overlap with (and contain) static routes that have already been
+   * configured on the corresponding network.
+   *
+   * For example if a static route has range 10.1.0.0/16, a subnet
+   * range 10.0.0.0/8 could only be created if allow_conflicting_routes=true.
+   *
+   * Overlapping is only allowed on subnetwork operations; routes
+   * whose ranges conflict with this subnetwork's ranges won't be allowed unless
+   * route.allow_conflicting_subnetworks is set to true.
+   *
+   * Typically packets destined to IPs within the subnetwork (which may contain
+   * private/sensitive data) are prevented from leaving the virtual network.
+   * Setting this field to true will disable this feature.
+   *
+   * The default value is false and applies to all existing subnetworks and
+   * automatically created subnetworks.
+   *
+   * This field cannot be set to true at resource creation time.
+   * </pre>
+   *
+   * <code>optional bool allow_subnet_cidr_routes_overlap = 67856209;</code>
+   *
+   * @return Whether the allowSubnetCidrRoutesOverlap field is set.
+   */
+  boolean hasAllowSubnetCidrRoutesOverlap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether this subnetwork's ranges can conflict with existing static routes.
+   * Setting this to true allows this subnetwork's primary and secondary ranges
+   * to overlap with (and contain) static routes that have already been
+   * configured on the corresponding network.
+   *
+   * For example if a static route has range 10.1.0.0/16, a subnet
+   * range 10.0.0.0/8 could only be created if allow_conflicting_routes=true.
+   *
+   * Overlapping is only allowed on subnetwork operations; routes
+   * whose ranges conflict with this subnetwork's ranges won't be allowed unless
+   * route.allow_conflicting_subnetworks is set to true.
+   *
+   * Typically packets destined to IPs within the subnetwork (which may contain
+   * private/sensitive data) are prevented from leaving the virtual network.
+   * Setting this field to true will disable this feature.
+   *
+   * The default value is false and applies to all existing subnetworks and
+   * automatically created subnetworks.
+   *
+   * This field cannot be set to true at resource creation time.
+   * </pre>
+   *
+   * <code>optional bool allow_subnet_cidr_routes_overlap = 67856209;</code>
+   *
+   * @return The allowSubnetCidrRoutesOverlap.
+   */
+  boolean getAllowSubnetCidrRoutesOverlap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -41,7 +106,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -54,7 +120,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -67,7 +134,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource. This field can be set only at resource creation time.
+   * An optional description of this resource. Provide this property when you
+   * create the resource. This field can be set only at resource creation time.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -80,7 +148,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource. This field can be set only at resource creation time.
+   * An optional description of this resource. Provide this property when you
+   * create the resource. This field can be set only at resource creation time.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -93,7 +162,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource. This field can be set only at resource creation time.
+   * An optional description of this resource. Provide this property when you
+   * create the resource. This field can be set only at resource creation time.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -106,7 +176,11 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled. This field isn't supported if the subnet purpose field is set to REGIONAL_MANAGED_PROXY.
+   * Whether to enable flow logging for this subnetwork. If this field is not
+   * explicitly set, it will not appear in get listings. If not set
+   * the default behavior is determined by the org policy, if there is no org
+   * policy specified, then it will default to disabled. This field isn't
+   * supported if the subnet purpose field is set toREGIONAL_MANAGED_PROXY. It is recommended to uselogConfig.enable field instead.
    * </pre>
    *
    * <code>optional bool enable_flow_logs = 151544420;</code>
@@ -119,7 +193,11 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled. This field isn't supported if the subnet purpose field is set to REGIONAL_MANAGED_PROXY.
+   * Whether to enable flow logging for this subnetwork. If this field is not
+   * explicitly set, it will not appear in get listings. If not set
+   * the default behavior is determined by the org policy, if there is no org
+   * policy specified, then it will default to disabled. This field isn't
+   * supported if the subnet purpose field is set toREGIONAL_MANAGED_PROXY. It is recommended to uselogConfig.enable field instead.
    * </pre>
    *
    * <code>optional bool enable_flow_logs = 151544420;</code>
@@ -132,7 +210,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The external IPv6 address range that is owned by this subnetwork.
+   * The external IPv6 address range that is owned by this
+   * subnetwork.
    * </pre>
    *
    * <code>optional string external_ipv6_prefix = 139299190;</code>
@@ -145,7 +224,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The external IPv6 address range that is owned by this subnetwork.
+   * The external IPv6 address range that is owned by this
+   * subnetwork.
    * </pre>
    *
    * <code>optional string external_ipv6_prefix = 139299190;</code>
@@ -158,7 +238,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The external IPv6 address range that is owned by this subnetwork.
+   * The external IPv6 address range that is owned by this
+   * subnetwork.
    * </pre>
    *
    * <code>optional string external_ipv6_prefix = 139299190;</code>
@@ -171,7 +252,14 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
+   * Fingerprint of this resource. A hash of the contents stored in this object.
+   * This field is used in optimistic locking. This field will be ignored when
+   * inserting a Subnetwork. An up-to-date fingerprint must be
+   * provided in order to update the Subnetwork, otherwise the
+   * request will fail with error 412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve a Subnetwork.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -184,7 +272,14 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
+   * Fingerprint of this resource. A hash of the contents stored in this object.
+   * This field is used in optimistic locking. This field will be ignored when
+   * inserting a Subnetwork. An up-to-date fingerprint must be
+   * provided in order to update the Subnetwork, otherwise the
+   * request will fail with error 412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve a Subnetwork.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -197,7 +292,14 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
+   * Fingerprint of this resource. A hash of the contents stored in this object.
+   * This field is used in optimistic locking. This field will be ignored when
+   * inserting a Subnetwork. An up-to-date fingerprint must be
+   * provided in order to update the Subnetwork, otherwise the
+   * request will fail with error 412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve a Subnetwork.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -210,7 +312,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The gateway address for default routes to reach destination addresses outside this subnetwork.
+   * Output only. [Output Only] The gateway address for default routes to reach destination
+   * addresses outside this subnetwork.
    * </pre>
    *
    * <code>optional string gateway_address = 459867385;</code>
@@ -223,7 +326,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The gateway address for default routes to reach destination addresses outside this subnetwork.
+   * Output only. [Output Only] The gateway address for default routes to reach destination
+   * addresses outside this subnetwork.
    * </pre>
    *
    * <code>optional string gateway_address = 459867385;</code>
@@ -236,7 +340,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The gateway address for default routes to reach destination addresses outside this subnetwork.
+   * Output only. [Output Only] The gateway address for default routes to reach destination
+   * addresses outside this subnetwork.
    * </pre>
    *
    * <code>optional string gateway_address = 459867385;</code>
@@ -249,7 +354,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -262,7 +368,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -275,7 +382,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The internal IPv6 address range that is owned by this subnetwork.
+   * The internal IPv6 address range that is owned by this
+   * subnetwork.
    * </pre>
    *
    * <code>optional string internal_ipv6_prefix = 506270056;</code>
@@ -288,7 +396,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The internal IPv6 address range that is owned by this subnetwork.
+   * The internal IPv6 address range that is owned by this
+   * subnetwork.
    * </pre>
    *
    * <code>optional string internal_ipv6_prefix = 506270056;</code>
@@ -301,7 +410,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The internal IPv6 address range that is owned by this subnetwork.
+   * The internal IPv6 address range that is owned by this
+   * subnetwork.
    * </pre>
    *
    * <code>optional string internal_ipv6_prefix = 506270056;</code>
@@ -314,7 +424,12 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The range of internal addresses that are owned by this subnetwork. Provide this property when you create the subnetwork. For example, 10.0.0.0/8 or 100.64.0.0/10. Ranges must be unique and non-overlapping within a network. Only IPv4 is supported. This field is set at resource creation time. The range can be any range listed in the Valid ranges list. The range can be expanded after creation using expandIpCidrRange.
+   * The range of internal addresses that are owned by this subnetwork.
+   * Provide this property when you create the subnetwork. For example,10.0.0.0/8 or 100.64.0.0/10. Ranges must
+   * be unique and non-overlapping within a network. Only IPv4 is supported.
+   * This field is set at resource creation time. The range can be any range
+   * listed in theValid
+   * ranges list. The range can be expanded after creation usingexpandIpCidrRange.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -327,7 +442,12 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The range of internal addresses that are owned by this subnetwork. Provide this property when you create the subnetwork. For example, 10.0.0.0/8 or 100.64.0.0/10. Ranges must be unique and non-overlapping within a network. Only IPv4 is supported. This field is set at resource creation time. The range can be any range listed in the Valid ranges list. The range can be expanded after creation using expandIpCidrRange.
+   * The range of internal addresses that are owned by this subnetwork.
+   * Provide this property when you create the subnetwork. For example,10.0.0.0/8 or 100.64.0.0/10. Ranges must
+   * be unique and non-overlapping within a network. Only IPv4 is supported.
+   * This field is set at resource creation time. The range can be any range
+   * listed in theValid
+   * ranges list. The range can be expanded after creation usingexpandIpCidrRange.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -340,7 +460,12 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The range of internal addresses that are owned by this subnetwork. Provide this property when you create the subnetwork. For example, 10.0.0.0/8 or 100.64.0.0/10. Ranges must be unique and non-overlapping within a network. Only IPv4 is supported. This field is set at resource creation time. The range can be any range listed in the Valid ranges list. The range can be expanded after creation using expandIpCidrRange.
+   * The range of internal addresses that are owned by this subnetwork.
+   * Provide this property when you create the subnetwork. For example,10.0.0.0/8 or 100.64.0.0/10. Ranges must
+   * be unique and non-overlapping within a network. Only IPv4 is supported.
+   * This field is set at resource creation time. The range can be any range
+   * listed in theValid
+   * ranges list. The range can be expanded after creation usingexpandIpCidrRange.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -353,7 +478,22 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Reference to the source of IP, like a PublicDelegatedPrefix (PDP) for BYOIP. The PDP must be a sub-PDP in EXTERNAL_IPV6_SUBNETWORK_CREATION mode. Use one of the following formats to specify a sub-PDP when creating a dual stack subnetwork with external access using BYOIP: - Full resource URL, as in https://www.googleapis.com/compute/v1/projects/projectId/regions/region /publicDelegatedPrefixes/sub-pdp-name - Partial URL, as in - projects/projectId/regions/region/publicDelegatedPrefixes/ sub-pdp-name - regions/region/publicDelegatedPrefixes/sub-pdp-name
+   * Reference to the source of IP, like a PublicDelegatedPrefix
+   * (PDP) for BYOIP. The PDP must be a sub-PDP in
+   * EXTERNAL_IPV6_SUBNETWORK_CREATION or INTERNAL_IPV6_SUBNETWORK_CREATION
+   * mode.
+   *
+   * Use one of the following formats to specify a sub-PDP when creating a dual
+   * stack or IPv6-only subnetwork with external access using BYOIP:
+   *
+   *    -
+   *    Full resource URL, as inhttps://www.googleapis.com/compute/v1/projects/projectId/regions/region/publicDelegatedPrefixes/sub-pdp-name
+   *    -
+   *    Partial URL, as in
+   *
+   *
+   *           - projects/projectId/regions/region/publicDelegatedPrefixes/sub-pdp-name
+   *           - regions/region/publicDelegatedPrefixes/sub-pdp-name
    * </pre>
    *
    * <code>optional string ip_collection = 176818358;</code>
@@ -366,7 +506,22 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Reference to the source of IP, like a PublicDelegatedPrefix (PDP) for BYOIP. The PDP must be a sub-PDP in EXTERNAL_IPV6_SUBNETWORK_CREATION mode. Use one of the following formats to specify a sub-PDP when creating a dual stack subnetwork with external access using BYOIP: - Full resource URL, as in https://www.googleapis.com/compute/v1/projects/projectId/regions/region /publicDelegatedPrefixes/sub-pdp-name - Partial URL, as in - projects/projectId/regions/region/publicDelegatedPrefixes/ sub-pdp-name - regions/region/publicDelegatedPrefixes/sub-pdp-name
+   * Reference to the source of IP, like a PublicDelegatedPrefix
+   * (PDP) for BYOIP. The PDP must be a sub-PDP in
+   * EXTERNAL_IPV6_SUBNETWORK_CREATION or INTERNAL_IPV6_SUBNETWORK_CREATION
+   * mode.
+   *
+   * Use one of the following formats to specify a sub-PDP when creating a dual
+   * stack or IPv6-only subnetwork with external access using BYOIP:
+   *
+   *    -
+   *    Full resource URL, as inhttps://www.googleapis.com/compute/v1/projects/projectId/regions/region/publicDelegatedPrefixes/sub-pdp-name
+   *    -
+   *    Partial URL, as in
+   *
+   *
+   *           - projects/projectId/regions/region/publicDelegatedPrefixes/sub-pdp-name
+   *           - regions/region/publicDelegatedPrefixes/sub-pdp-name
    * </pre>
    *
    * <code>optional string ip_collection = 176818358;</code>
@@ -379,7 +534,22 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Reference to the source of IP, like a PublicDelegatedPrefix (PDP) for BYOIP. The PDP must be a sub-PDP in EXTERNAL_IPV6_SUBNETWORK_CREATION mode. Use one of the following formats to specify a sub-PDP when creating a dual stack subnetwork with external access using BYOIP: - Full resource URL, as in https://www.googleapis.com/compute/v1/projects/projectId/regions/region /publicDelegatedPrefixes/sub-pdp-name - Partial URL, as in - projects/projectId/regions/region/publicDelegatedPrefixes/ sub-pdp-name - regions/region/publicDelegatedPrefixes/sub-pdp-name
+   * Reference to the source of IP, like a PublicDelegatedPrefix
+   * (PDP) for BYOIP. The PDP must be a sub-PDP in
+   * EXTERNAL_IPV6_SUBNETWORK_CREATION or INTERNAL_IPV6_SUBNETWORK_CREATION
+   * mode.
+   *
+   * Use one of the following formats to specify a sub-PDP when creating a dual
+   * stack or IPv6-only subnetwork with external access using BYOIP:
+   *
+   *    -
+   *    Full resource URL, as inhttps://www.googleapis.com/compute/v1/projects/projectId/regions/region/publicDelegatedPrefixes/sub-pdp-name
+   *    -
+   *    Partial URL, as in
+   *
+   *
+   *           - projects/projectId/regions/region/publicDelegatedPrefixes/sub-pdp-name
+   *           - regions/region/publicDelegatedPrefixes/sub-pdp-name
    * </pre>
    *
    * <code>optional string ip_collection = 176818358;</code>
@@ -392,7 +562,9 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack.
+   * The access type of IPv6 address this subnet holds. It's immutable and can
+   * only be specified during creation or the first time the subnet is updated
+   * into IPV4_IPV6 dual stack.
    * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
    *
@@ -406,7 +578,9 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack.
+   * The access type of IPv6 address this subnet holds. It's immutable and can
+   * only be specified during creation or the first time the subnet is updated
+   * into IPV4_IPV6 dual stack.
    * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
    *
@@ -420,7 +594,9 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack.
+   * The access type of IPv6 address this subnet holds. It's immutable and can
+   * only be specified during creation or the first time the subnet is updated
+   * into IPV4_IPV6 dual stack.
    * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
    *
@@ -434,7 +610,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] This field is for internal use.
+   * Output only. [Output Only] This field is for internal use.
    * </pre>
    *
    * <code>optional string ipv6_cidr_range = 273141258;</code>
@@ -447,7 +623,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] This field is for internal use.
+   * Output only. [Output Only] This field is for internal use.
    * </pre>
    *
    * <code>optional string ipv6_cidr_range = 273141258;</code>
@@ -460,7 +636,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] This field is for internal use.
+   * Output only. [Output Only] This field is for internal use.
    * </pre>
    *
    * <code>optional string ipv6_cidr_range = 273141258;</code>
@@ -473,7 +649,16 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Possible endpoints of this subnetwork. It can be one of the following: - VM_ONLY: The subnetwork can be used for creating instances and IPv6 addresses with VM endpoint type. Such a subnetwork gets external IPv6 ranges from a public delegated prefix and cannot be used to create NetLb. - VM_AND_FR: The subnetwork can be used for creating both VM instances and Forwarding Rules. It can also be used to reserve IPv6 addresses with both VM and FR endpoint types. Such a subnetwork gets its IPv6 range from Google IP Pool directly.
+   * Output only. [Output Only] Possible endpoints of this subnetwork. It can be one of the
+   * following:
+   *
+   *    - VM_ONLY: The subnetwork can be used for creating instances and
+   *    IPv6 addresses with VM endpoint type. Such a subnetwork gets external IPv6
+   *    ranges from a public delegated prefix and cannot be used to create NetLb.
+   *    - VM_AND_FR: The subnetwork can be used for creating both VM
+   *    instances and Forwarding Rules. It can also be used to reserve IPv6
+   *    addresses with both VM and FR endpoint types. Such a subnetwork gets its
+   *    IPv6 range from Google IP Pool directly.
    * Check the Ipv6GceEndpoint enum for the list of possible values.
    * </pre>
    *
@@ -487,7 +672,16 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Possible endpoints of this subnetwork. It can be one of the following: - VM_ONLY: The subnetwork can be used for creating instances and IPv6 addresses with VM endpoint type. Such a subnetwork gets external IPv6 ranges from a public delegated prefix and cannot be used to create NetLb. - VM_AND_FR: The subnetwork can be used for creating both VM instances and Forwarding Rules. It can also be used to reserve IPv6 addresses with both VM and FR endpoint types. Such a subnetwork gets its IPv6 range from Google IP Pool directly.
+   * Output only. [Output Only] Possible endpoints of this subnetwork. It can be one of the
+   * following:
+   *
+   *    - VM_ONLY: The subnetwork can be used for creating instances and
+   *    IPv6 addresses with VM endpoint type. Such a subnetwork gets external IPv6
+   *    ranges from a public delegated prefix and cannot be used to create NetLb.
+   *    - VM_AND_FR: The subnetwork can be used for creating both VM
+   *    instances and Forwarding Rules. It can also be used to reserve IPv6
+   *    addresses with both VM and FR endpoint types. Such a subnetwork gets its
+   *    IPv6 range from Google IP Pool directly.
    * Check the Ipv6GceEndpoint enum for the list of possible values.
    * </pre>
    *
@@ -501,7 +695,16 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Possible endpoints of this subnetwork. It can be one of the following: - VM_ONLY: The subnetwork can be used for creating instances and IPv6 addresses with VM endpoint type. Such a subnetwork gets external IPv6 ranges from a public delegated prefix and cannot be used to create NetLb. - VM_AND_FR: The subnetwork can be used for creating both VM instances and Forwarding Rules. It can also be used to reserve IPv6 addresses with both VM and FR endpoint types. Such a subnetwork gets its IPv6 range from Google IP Pool directly.
+   * Output only. [Output Only] Possible endpoints of this subnetwork. It can be one of the
+   * following:
+   *
+   *    - VM_ONLY: The subnetwork can be used for creating instances and
+   *    IPv6 addresses with VM endpoint type. Such a subnetwork gets external IPv6
+   *    ranges from a public delegated prefix and cannot be used to create NetLb.
+   *    - VM_AND_FR: The subnetwork can be used for creating both VM
+   *    instances and Forwarding Rules. It can also be used to reserve IPv6
+   *    addresses with both VM and FR endpoint types. Such a subnetwork gets its
+   *    IPv6 range from Google IP Pool directly.
    * Check the Ipv6GceEndpoint enum for the list of possible values.
    * </pre>
    *
@@ -515,7 +718,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#subnetwork for Subnetwork resources.
+   * Output only. [Output Only] Type of the resource. Always compute#subnetwork
+   * for Subnetwork resources.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -528,7 +732,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#subnetwork for Subnetwork resources.
+   * Output only. [Output Only] Type of the resource. Always compute#subnetwork
+   * for Subnetwork resources.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -541,7 +746,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#subnetwork for Subnetwork resources.
+   * Output only. [Output Only] Type of the resource. Always compute#subnetwork
+   * for Subnetwork resources.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -554,7 +760,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
+   * This field denotes the VPC flow logging options for this subnetwork.
+   * If logging is enabled, logs are exported to Cloud Logging.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
@@ -567,7 +774,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
+   * This field denotes the VPC flow logging options for this subnetwork.
+   * If logging is enabled, logs are exported to Cloud Logging.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
@@ -580,7 +788,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
+   * This field denotes the VPC flow logging options for this subnetwork.
+   * If logging is enabled, logs are exported to Cloud Logging.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
@@ -591,7 +800,13 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The name of the resource, provided by the client when initially creating the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * The name of the resource, provided by the client when initially creating
+   * the resource. The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -604,7 +819,13 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The name of the resource, provided by the client when initially creating the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * The name of the resource, provided by the client when initially creating
+   * the resource. The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -617,7 +838,13 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The name of the resource, provided by the client when initially creating the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * The name of the resource, provided by the client when initially creating
+   * the resource. The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -630,7 +857,9 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. This field can be set only at resource creation time.
+   * The URL of the network to which this subnetwork belongs, provided by the
+   * client when initially creating the subnetwork. This field can be set only
+   * at resource creation time.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -643,7 +872,9 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. This field can be set only at resource creation time.
+   * The URL of the network to which this subnetwork belongs, provided by the
+   * client when initially creating the subnetwork. This field can be set only
+   * at resource creation time.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -656,7 +887,9 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. This field can be set only at resource creation time.
+   * The URL of the network to which this subnetwork belongs, provided by the
+   * client when initially creating the subnetwork. This field can be set only
+   * at resource creation time.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -669,7 +902,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.SubnetworkParams params = 78313862;</code>
@@ -682,7 +916,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.SubnetworkParams params = 78313862;</code>
@@ -695,7 +930,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.SubnetworkParams params = 78313862;</code>
@@ -706,7 +942,9 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Whether the VMs in this subnet can access Google services without assigned external IP addresses. This field can be both set at resource creation time and updated using setPrivateIpGoogleAccess.
+   * Whether the VMs in this subnet can access Google services without assigned
+   * external IP addresses. This field can be both set at resource creation
+   * time and updated using setPrivateIpGoogleAccess.
    * </pre>
    *
    * <code>optional bool private_ip_google_access = 421491790;</code>
@@ -719,7 +957,9 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Whether the VMs in this subnet can access Google services without assigned external IP addresses. This field can be both set at resource creation time and updated using setPrivateIpGoogleAccess.
+   * Whether the VMs in this subnet can access Google services without assigned
+   * external IP addresses. This field can be both set at resource creation
+   * time and updated using setPrivateIpGoogleAccess.
    * </pre>
    *
    * <code>optional bool private_ip_google_access = 421491790;</code>
@@ -732,7 +972,9 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * This field is for internal use. This field can be both set at resource creation time and updated using patch.
+   * This field is for internal use.
+   *
+   * This field can be both set at resource creation time and updated usingpatch.
    * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
@@ -746,7 +988,9 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * This field is for internal use. This field can be both set at resource creation time and updated using patch.
+   * This field is for internal use.
+   *
+   * This field can be both set at resource creation time and updated usingpatch.
    * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
@@ -760,7 +1004,9 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * This field is for internal use. This field can be both set at resource creation time and updated using patch.
+   * This field is for internal use.
+   *
+   * This field can be both set at resource creation time and updated usingpatch.
    * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
@@ -816,7 +1062,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * URL of the region where the Subnetwork resides. This field can be set only at resource creation time.
+   * URL of the region where the Subnetwork resides. This
+   * field can be set only at resource creation time.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -829,7 +1076,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * URL of the region where the Subnetwork resides. This field can be set only at resource creation time.
+   * URL of the region where the Subnetwork resides. This
+   * field can be set only at resource creation time.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -842,7 +1090,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * URL of the region where the Subnetwork resides. This field can be set only at resource creation time.
+   * URL of the region where the Subnetwork resides. This
+   * field can be set only at resource creation time.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -894,7 +1143,12 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The role of subnetwork. Currently, this field is only used when purpose is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+   * The role of subnetwork. Currently, this field is only used when
+   * purpose is set to GLOBAL_MANAGED_PROXY orREGIONAL_MANAGED_PROXY. The value can be set toACTIVE or BACKUP. An ACTIVE
+   * subnetwork is one that is currently being used for Envoy-based load
+   * balancers in a region. A BACKUP subnetwork is one that is
+   * ready to be promoted to ACTIVE or is currently draining.
+   * This field can be updated with a patch request.
    * Check the Role enum for the list of possible values.
    * </pre>
    *
@@ -908,7 +1162,12 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The role of subnetwork. Currently, this field is only used when purpose is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+   * The role of subnetwork. Currently, this field is only used when
+   * purpose is set to GLOBAL_MANAGED_PROXY orREGIONAL_MANAGED_PROXY. The value can be set toACTIVE or BACKUP. An ACTIVE
+   * subnetwork is one that is currently being used for Envoy-based load
+   * balancers in a region. A BACKUP subnetwork is one that is
+   * ready to be promoted to ACTIVE or is currently draining.
+   * This field can be updated with a patch request.
    * Check the Role enum for the list of possible values.
    * </pre>
    *
@@ -922,7 +1181,12 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The role of subnetwork. Currently, this field is only used when purpose is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+   * The role of subnetwork. Currently, this field is only used when
+   * purpose is set to GLOBAL_MANAGED_PROXY orREGIONAL_MANAGED_PROXY. The value can be set toACTIVE or BACKUP. An ACTIVE
+   * subnetwork is one that is currently being used for Envoy-based load
+   * balancers in a region. A BACKUP subnetwork is one that is
+   * ready to be promoted to ACTIVE or is currently draining.
+   * This field can be updated with a patch request.
    * Check the Role enum for the list of possible values.
    * </pre>
    *
@@ -936,7 +1200,10 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * An array of configurations for secondary IP ranges for VM instances contained in this subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be updated with a patch request.
+   * An array of configurations for secondary IP ranges for VM instances
+   * contained in this subnetwork. The primary IP of such VM must belong to the
+   * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
+   * primary or secondary ranges. This field can be updated with apatch request.
    * </pre>
    *
    * <code>
@@ -949,7 +1216,10 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * An array of configurations for secondary IP ranges for VM instances contained in this subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be updated with a patch request.
+   * An array of configurations for secondary IP ranges for VM instances
+   * contained in this subnetwork. The primary IP of such VM must belong to the
+   * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
+   * primary or secondary ranges. This field can be updated with apatch request.
    * </pre>
    *
    * <code>
@@ -962,7 +1232,10 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * An array of configurations for secondary IP ranges for VM instances contained in this subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be updated with a patch request.
+   * An array of configurations for secondary IP ranges for VM instances
+   * contained in this subnetwork. The primary IP of such VM must belong to the
+   * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
+   * primary or secondary ranges. This field can be updated with apatch request.
    * </pre>
    *
    * <code>
@@ -975,7 +1248,10 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * An array of configurations for secondary IP ranges for VM instances contained in this subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be updated with a patch request.
+   * An array of configurations for secondary IP ranges for VM instances
+   * contained in this subnetwork. The primary IP of such VM must belong to the
+   * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
+   * primary or secondary ranges. This field can be updated with apatch request.
    * </pre>
    *
    * <code>
@@ -989,7 +1265,10 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * An array of configurations for secondary IP ranges for VM instances contained in this subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be updated with a patch request.
+   * An array of configurations for secondary IP ranges for VM instances
+   * contained in this subnetwork. The primary IP of such VM must belong to the
+   * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
+   * primary or secondary ranges. This field can be updated with apatch request.
    * </pre>
    *
    * <code>
@@ -1042,7 +1321,11 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The stack type for the subnet. If set to IPV4_ONLY, new VMs in the subnet are assigned IPv4 addresses only. If set to IPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and IPv6 addresses. If not specified, IPV4_ONLY is used. This field can be both set at resource creation time and updated using patch.
+   * The stack type for the subnet. If set to IPV4_ONLY, new VMs
+   * in the subnet are assigned IPv4 addresses only. If set toIPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and
+   * IPv6 addresses. If not specified, IPV4_ONLY is used.
+   *
+   * This field can be both set at resource creation time and updated usingpatch.
    * Check the StackType enum for the list of possible values.
    * </pre>
    *
@@ -1056,7 +1339,11 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The stack type for the subnet. If set to IPV4_ONLY, new VMs in the subnet are assigned IPv4 addresses only. If set to IPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and IPv6 addresses. If not specified, IPV4_ONLY is used. This field can be both set at resource creation time and updated using patch.
+   * The stack type for the subnet. If set to IPV4_ONLY, new VMs
+   * in the subnet are assigned IPv4 addresses only. If set toIPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and
+   * IPv6 addresses. If not specified, IPV4_ONLY is used.
+   *
+   * This field can be both set at resource creation time and updated usingpatch.
    * Check the StackType enum for the list of possible values.
    * </pre>
    *
@@ -1070,7 +1357,11 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The stack type for the subnet. If set to IPV4_ONLY, new VMs in the subnet are assigned IPv4 addresses only. If set to IPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and IPv6 addresses. If not specified, IPV4_ONLY is used. This field can be both set at resource creation time and updated using patch.
+   * The stack type for the subnet. If set to IPV4_ONLY, new VMs
+   * in the subnet are assigned IPv4 addresses only. If set toIPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and
+   * IPv6 addresses. If not specified, IPV4_ONLY is used.
+   *
+   * This field can be both set at resource creation time and updated usingpatch.
    * Check the StackType enum for the list of possible values.
    * </pre>
    *
@@ -1084,7 +1375,11 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
+   * Output only. [Output Only] The state of the subnetwork, which can be one of the
+   * following values:READY: Subnetwork is created and ready to useDRAINING: only applicable to subnetworks that have the
+   * purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that
+   * connections to the load balancer are being drained. A subnetwork that is
+   * draining cannot be used or modified until it reaches a status ofREADY
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -1098,7 +1393,11 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
+   * Output only. [Output Only] The state of the subnetwork, which can be one of the
+   * following values:READY: Subnetwork is created and ready to useDRAINING: only applicable to subnetworks that have the
+   * purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that
+   * connections to the load balancer are being drained. A subnetwork that is
+   * draining cannot be used or modified until it reaches a status ofREADY
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -1112,7 +1411,11 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
+   * Output only. [Output Only] The state of the subnetwork, which can be one of the
+   * following values:READY: Subnetwork is created and ready to useDRAINING: only applicable to subnetworks that have the
+   * purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that
+   * connections to the load balancer are being drained. A subnetwork that is
+   * draining cannot be used or modified until it reaches a status ofREADY
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -1126,7 +1429,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The array of external IPv6 network ranges reserved from the subnetwork's external IPv6 range for system use.
+   * Output only. [Output Only] The array of external IPv6 network ranges reserved from
+   * the subnetwork's external IPv6 range for system use.
    * </pre>
    *
    * <code>repeated string system_reserved_external_ipv6_ranges = 65324129;</code>
@@ -1139,7 +1443,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The array of external IPv6 network ranges reserved from the subnetwork's external IPv6 range for system use.
+   * Output only. [Output Only] The array of external IPv6 network ranges reserved from
+   * the subnetwork's external IPv6 range for system use.
    * </pre>
    *
    * <code>repeated string system_reserved_external_ipv6_ranges = 65324129;</code>
@@ -1152,7 +1457,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The array of external IPv6 network ranges reserved from the subnetwork's external IPv6 range for system use.
+   * Output only. [Output Only] The array of external IPv6 network ranges reserved from
+   * the subnetwork's external IPv6 range for system use.
    * </pre>
    *
    * <code>repeated string system_reserved_external_ipv6_ranges = 65324129;</code>
@@ -1166,7 +1472,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The array of external IPv6 network ranges reserved from the subnetwork's external IPv6 range for system use.
+   * Output only. [Output Only] The array of external IPv6 network ranges reserved from
+   * the subnetwork's external IPv6 range for system use.
    * </pre>
    *
    * <code>repeated string system_reserved_external_ipv6_ranges = 65324129;</code>
@@ -1180,7 +1487,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The array of internal IPv6 network ranges reserved from the subnetwork's internal IPv6 range for system use.
+   * Output only. [Output Only] The array of internal IPv6 network ranges reserved from
+   * the subnetwork's internal IPv6 range for system use.
    * </pre>
    *
    * <code>repeated string system_reserved_internal_ipv6_ranges = 432294995;</code>
@@ -1193,7 +1501,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The array of internal IPv6 network ranges reserved from the subnetwork's internal IPv6 range for system use.
+   * Output only. [Output Only] The array of internal IPv6 network ranges reserved from
+   * the subnetwork's internal IPv6 range for system use.
    * </pre>
    *
    * <code>repeated string system_reserved_internal_ipv6_ranges = 432294995;</code>
@@ -1206,7 +1515,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The array of internal IPv6 network ranges reserved from the subnetwork's internal IPv6 range for system use.
+   * Output only. [Output Only] The array of internal IPv6 network ranges reserved from
+   * the subnetwork's internal IPv6 range for system use.
    * </pre>
    *
    * <code>repeated string system_reserved_internal_ipv6_ranges = 432294995;</code>
@@ -1220,7 +1530,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The array of internal IPv6 network ranges reserved from the subnetwork's internal IPv6 range for system use.
+   * Output only. [Output Only] The array of internal IPv6 network ranges reserved from
+   * the subnetwork's internal IPv6 range for system use.
    * </pre>
    *
    * <code>repeated string system_reserved_internal_ipv6_ranges = 432294995;</code>
@@ -1234,7 +1545,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The current IP utilization of all subnetwork ranges. Contains the total number of allocated and free IPs in each range.
+   * Output only. [Output Only] The current IP utilization of all subnetwork ranges. Contains
+   * the total number of allocated and free IPs in each range.
    * </pre>
    *
    * <code>
@@ -1249,7 +1561,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The current IP utilization of all subnetwork ranges. Contains the total number of allocated and free IPs in each range.
+   * Output only. [Output Only] The current IP utilization of all subnetwork ranges. Contains
+   * the total number of allocated and free IPs in each range.
    * </pre>
    *
    * <code>
@@ -1264,7 +1577,8 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The current IP utilization of all subnetwork ranges. Contains the total number of allocated and free IPs in each range.
+   * Output only. [Output Only] The current IP utilization of all subnetwork ranges. Contains
+   * the total number of allocated and free IPs in each range.
    * </pre>
    *
    * <code>

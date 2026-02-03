@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,6 +56,10 @@ public final class UserProto {
       internal_static_google_shopping_merchant_accounts_v1_ListUsersResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_shopping_merchant_accounts_v1_ListUsersResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_accounts_v1_VerifySelfRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_shopping_merchant_accounts_v1_VerifySelfRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -107,32 +111,38 @@ public final class UserProto {
           + "page_token\030\003 \001(\tB\003\340A\001\"g\n"
           + "\021ListUsersResponse\0229\n"
           + "\005users\030\001 \003(\0132*.google.shopping.merchant.accounts.v1.User\022\027\n"
-          + "\017next_page_token\030\002 \001(\t2\314\007\n"
+          + "\017next_page_token\030\002 \001(\t\"P\n"
+          + "\021VerifySelfRequest\022;\n"
+          + "\007account\030\001 \001(\tB*\340A\002\372A$\n"
+          + "\"merchantapi.googleapis.com/Account2\214\t\n"
           + "\013UserService\022\242\001\n"
-          + "\007GetUser\0224.google.shopping.merchant.accounts.v1.G"
-          + "etUserRequest\032*.google.shopping.merchant"
-          + ".accounts.v1.User\"5\332A\004name\202\323\344\223\002(\022&/accounts/v1/{name=accounts/*/users/*}\022\275\001\n\n"
-          + "CreateUser\0227.google.shopping.merchant.accou"
-          + "nts.v1.CreateUserRequest\032*.google.shoppi"
-          + "ng.merchant.accounts.v1.User\"J\332A\023parent,"
-          + "user,user_id\202\323\344\223\002.\"&/accounts/v1/{parent=accounts/*}/users:\004user\022\224\001\n\n"
-          + "DeleteUser\0227.google.shopping.merchant.accounts.v1.D"
-          + "eleteUserRequest\032\026.google.protobuf.Empty"
-          + "\"5\332A\004name\202\323\344\223\002(*&/accounts/v1/{name=accounts/*/users/*}\022\277\001\n\n"
-          + "UpdateUser\0227.google.shopping.merchant.accounts.v1.UpdateUser"
-          + "Request\032*.google.shopping.merchant.accou"
-          + "nts.v1.User\"L\332A\020user,update_mask\202\323\344\223\00232+"
-          + "/accounts/v1/{user.name=accounts/*/users/*}:\004user\022\265\001\n"
-          + "\tListUsers\0226.google.shopping.merchant.accounts.v1.ListUsersRequest\032"
-          + "7.google.shopping.merchant.accounts.v1.L"
-          + "istUsersResponse\"7\332A\006parent\202\323\344\223\002(\022&/acco"
-          + "unts/v1/{parent=accounts/*}/users\032G\312A\032me"
-          + "rchantapi.googleapis.com\322A\'https://www.googleapis.com/auth/contentB\374\001\n"
-          + "(com.google.shopping.merchant.accounts.v1B\tUserPro"
-          + "toP\001ZJcloud.google.com/go/shopping/merchant/accounts/apiv1/accountspb;accountspb"
-          + "\252\002$Google.Shopping.Merchant.Accounts.V1\312"
-          + "\002$Google\\Shopping\\Merchant\\Accounts\\V1\352\002"
-          + "(Google::Shopping::Merchant::Accounts::V1b\006proto3"
+          + "\007GetUser\0224.google.shopping.merchant.accounts.v1"
+          + ".GetUserRequest\032*.google.shopping.mercha"
+          + "nt.accounts.v1.User\"5\332A\004name\202\323\344\223\002(\022&/accounts/v1/{name=accounts/*/users/*}\022\275\001\n\n"
+          + "CreateUser\0227.google.shopping.merchant.acc"
+          + "ounts.v1.CreateUserRequest\032*.google.shop"
+          + "ping.merchant.accounts.v1.User\"J\332A\023paren"
+          + "t,user,user_id\202\323\344\223\002.\"&/accounts/v1/{parent=accounts/*}/users:\004user\022\224\001\n\n"
+          + "DeleteUser\0227.google.shopping.merchant.accounts.v1"
+          + ".DeleteUserRequest\032\026.google.protobuf.Emp"
+          + "ty\"5\332A\004name\202\323\344\223\002(*&/accounts/v1/{name=accounts/*/users/*}\022\277\001\n\n"
+          + "UpdateUser\0227.google.shopping.merchant.accounts.v1.UpdateUs"
+          + "erRequest\032*.google.shopping.merchant.acc"
+          + "ounts.v1.User\"L\332A\020user,update_mask\202\323\344\223\0023"
+          + "2+/accounts/v1/{user.name=accounts/*/users/*}:\004user\022\265\001\n"
+          + "\tListUsers\0226.google.shopping.merchant.accounts.v1.ListUsersReques"
+          + "t\0327.google.shopping.merchant.accounts.v1"
+          + ".ListUsersResponse\"7\332A\006parent\202\323\344\223\002(\022&/accounts/v1/{parent=accounts/*}/users\022\275\001\n\n"
+          + "VerifySelf\0227.google.shopping.merchant.accounts.v1.VerifySelfRequest\032*.google.sho"
+          + "pping.merchant.accounts.v1.User\"J\332A\007acco"
+          + "unt\202\323\344\223\002:25/accounts/v1/{account=account"
+          + "s/*}/users/me:verifySelf:\001*\032G\312A\032merchant"
+          + "api.googleapis.com\322A\'https://www.googleapis.com/auth/contentB\374\001\n"
+          + "(com.google.shopping.merchant.accounts.v1B\tUserProtoP\001ZJ"
+          + "cloud.google.com/go/shopping/merchant/accounts/apiv1/accountspb;accountspb\252\002$Goo"
+          + "gle.Shopping.Merchant.Accounts.V1\312\002$Goog"
+          + "le\\Shopping\\Merchant\\Accounts\\V1\352\002(Googl"
+          + "e::Shopping::Merchant::Accounts::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -201,6 +211,14 @@ public final class UserProto {
             internal_static_google_shopping_merchant_accounts_v1_ListUsersResponse_descriptor,
             new java.lang.String[] {
               "Users", "NextPageToken",
+            });
+    internal_static_google_shopping_merchant_accounts_v1_VerifySelfRequest_descriptor =
+        getDescriptor().getMessageTypes().get(7);
+    internal_static_google_shopping_merchant_accounts_v1_VerifySelfRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_shopping_merchant_accounts_v1_VerifySelfRequest_descriptor,
+            new java.lang.String[] {
+              "Account",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

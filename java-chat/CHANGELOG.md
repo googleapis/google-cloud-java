@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.46.0 (2026-01-15)
+
+### Bug Fixes
+
+* Improve documentation of attachment.proto, event_payload.proto and space.proto ([c70c873](https://github.com/googleapis/google-cloud-java/commit/c70c8739f2caffdc87535f2e729c1d967d550e8c))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.55.1 ([#11863](https://github.com/googleapis/google-cloud-java/issues/11863)) ([50cda6e](https://github.com/googleapis/google-cloud-java/commit/50cda6ec7be56bf1900737a6aaf12fc494be20c2))
+
+
+## 0.45.0 (2025-12-16)
+
+### Features
+
+* Addition of GMAIL_MESSAGE value for RichLinkType enum in the RichLinkMetadata proto ([02a9cd4](https://github.com/googleapis/google-cloud-java/commit/02a9cd49fcb54515e6094af962ef34f37740a498))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.54.2 ([#11819](https://github.com/googleapis/google-cloud-java/issues/11819)) ([f32924a](https://github.com/googleapis/google-cloud-java/commit/f32924af0899a0b34646e88ffa8c527163b3bb24))
+
+
 ## 0.42.0 (2025-10-21)
 
 ### Dependencies

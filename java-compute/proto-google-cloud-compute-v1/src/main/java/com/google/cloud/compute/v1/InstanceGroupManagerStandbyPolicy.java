@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,7 +68,8 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
    *
    *
    * <pre>
-   * Defines how a MIG resumes or starts VMs from a standby pool when the group scales out. The default mode is `MANUAL`.
+   * Defines how a MIG resumes or starts VMs from a standby pool when the
+   * group scales out. The default mode is `MANUAL`.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.InstanceGroupManagerStandbyPolicy.Mode}
@@ -88,7 +89,8 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
      *
      *
      * <pre>
-     * MIG does not automatically resume or start VMs in the standby pool when the group scales out.
+     * MIG does not automatically resume or start VMs in the standby pool when
+     * the group scales out.
      * </pre>
      *
      * <code>MANUAL = 119397318;</code>
@@ -98,7 +100,8 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
      *
      *
      * <pre>
-     * MIG automatically resumes or starts VMs in the standby pool when the group scales out, and replenishes the standby pool afterwards.
+     * MIG automatically resumes or starts VMs in the standby pool when the
+     * group scales out, and replenishes the standby pool afterwards.
      * </pre>
      *
      * <code>SCALE_OUT_POOL = 635394;</code>
@@ -122,7 +125,8 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
      *
      *
      * <pre>
-     * MIG does not automatically resume or start VMs in the standby pool when the group scales out.
+     * MIG does not automatically resume or start VMs in the standby pool when
+     * the group scales out.
      * </pre>
      *
      * <code>MANUAL = 119397318;</code>
@@ -133,7 +137,8 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
      *
      *
      * <pre>
-     * MIG automatically resumes or starts VMs in the standby pool when the group scales out, and replenishes the standby pool afterwards.
+     * MIG automatically resumes or starts VMs in the standby pool when the
+     * group scales out, and replenishes the standby pool afterwards.
      * </pre>
      *
      * <code>SCALE_OUT_POOL = 635394;</code>
@@ -233,7 +238,11 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
    *
    *
    * <pre>
-   * Specifies the number of seconds that the MIG should wait to suspend or stop a VM after that VM was created. The initial delay gives the initialization script the time to prepare your VM for a quick scale out. The value of initial delay must be between 0 and 3600 seconds. The default value is 0.
+   * Specifies the number of seconds that the MIG should wait to suspend or
+   * stop a VM after that VM was created. The initial delay gives the
+   * initialization script the time to prepare your VM for a quick scale out.
+   * The value of initial delay must be between 0 and 3600 seconds. The
+   * default value is 0.
    * </pre>
    *
    * <code>optional int32 initial_delay_sec = 263207002;</code>
@@ -249,7 +258,11 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
    *
    *
    * <pre>
-   * Specifies the number of seconds that the MIG should wait to suspend or stop a VM after that VM was created. The initial delay gives the initialization script the time to prepare your VM for a quick scale out. The value of initial delay must be between 0 and 3600 seconds. The default value is 0.
+   * Specifies the number of seconds that the MIG should wait to suspend or
+   * stop a VM after that VM was created. The initial delay gives the
+   * initialization script the time to prepare your VM for a quick scale out.
+   * The value of initial delay must be between 0 and 3600 seconds. The
+   * default value is 0.
    * </pre>
    *
    * <code>optional int32 initial_delay_sec = 263207002;</code>
@@ -270,7 +283,8 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
    *
    *
    * <pre>
-   * Defines how a MIG resumes or starts VMs from a standby pool when the group scales out. The default mode is `MANUAL`.
+   * Defines how a MIG resumes or starts VMs from a standby pool when the
+   * group scales out. The default mode is `MANUAL`.
    * Check the Mode enum for the list of possible values.
    * </pre>
    *
@@ -287,7 +301,8 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
    *
    *
    * <pre>
-   * Defines how a MIG resumes or starts VMs from a standby pool when the group scales out. The default mode is `MANUAL`.
+   * Defines how a MIG resumes or starts VMs from a standby pool when the
+   * group scales out. The default mode is `MANUAL`.
    * Check the Mode enum for the list of possible values.
    * </pre>
    *
@@ -312,7 +327,8 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
    *
    *
    * <pre>
-   * Defines how a MIG resumes or starts VMs from a standby pool when the group scales out. The default mode is `MANUAL`.
+   * Defines how a MIG resumes or starts VMs from a standby pool when the
+   * group scales out. The default mode is `MANUAL`.
    * Check the Mode enum for the list of possible values.
    * </pre>
    *
@@ -721,7 +737,11 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
      *
      *
      * <pre>
-     * Specifies the number of seconds that the MIG should wait to suspend or stop a VM after that VM was created. The initial delay gives the initialization script the time to prepare your VM for a quick scale out. The value of initial delay must be between 0 and 3600 seconds. The default value is 0.
+     * Specifies the number of seconds that the MIG should wait to suspend or
+     * stop a VM after that VM was created. The initial delay gives the
+     * initialization script the time to prepare your VM for a quick scale out.
+     * The value of initial delay must be between 0 and 3600 seconds. The
+     * default value is 0.
      * </pre>
      *
      * <code>optional int32 initial_delay_sec = 263207002;</code>
@@ -737,7 +757,11 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
      *
      *
      * <pre>
-     * Specifies the number of seconds that the MIG should wait to suspend or stop a VM after that VM was created. The initial delay gives the initialization script the time to prepare your VM for a quick scale out. The value of initial delay must be between 0 and 3600 seconds. The default value is 0.
+     * Specifies the number of seconds that the MIG should wait to suspend or
+     * stop a VM after that VM was created. The initial delay gives the
+     * initialization script the time to prepare your VM for a quick scale out.
+     * The value of initial delay must be between 0 and 3600 seconds. The
+     * default value is 0.
      * </pre>
      *
      * <code>optional int32 initial_delay_sec = 263207002;</code>
@@ -753,7 +777,11 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
      *
      *
      * <pre>
-     * Specifies the number of seconds that the MIG should wait to suspend or stop a VM after that VM was created. The initial delay gives the initialization script the time to prepare your VM for a quick scale out. The value of initial delay must be between 0 and 3600 seconds. The default value is 0.
+     * Specifies the number of seconds that the MIG should wait to suspend or
+     * stop a VM after that VM was created. The initial delay gives the
+     * initialization script the time to prepare your VM for a quick scale out.
+     * The value of initial delay must be between 0 and 3600 seconds. The
+     * default value is 0.
      * </pre>
      *
      * <code>optional int32 initial_delay_sec = 263207002;</code>
@@ -773,7 +801,11 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
      *
      *
      * <pre>
-     * Specifies the number of seconds that the MIG should wait to suspend or stop a VM after that VM was created. The initial delay gives the initialization script the time to prepare your VM for a quick scale out. The value of initial delay must be between 0 and 3600 seconds. The default value is 0.
+     * Specifies the number of seconds that the MIG should wait to suspend or
+     * stop a VM after that VM was created. The initial delay gives the
+     * initialization script the time to prepare your VM for a quick scale out.
+     * The value of initial delay must be between 0 and 3600 seconds. The
+     * default value is 0.
      * </pre>
      *
      * <code>optional int32 initial_delay_sec = 263207002;</code>
@@ -793,7 +825,8 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
      *
      *
      * <pre>
-     * Defines how a MIG resumes or starts VMs from a standby pool when the group scales out. The default mode is `MANUAL`.
+     * Defines how a MIG resumes or starts VMs from a standby pool when the
+     * group scales out. The default mode is `MANUAL`.
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -809,7 +842,8 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
      *
      *
      * <pre>
-     * Defines how a MIG resumes or starts VMs from a standby pool when the group scales out. The default mode is `MANUAL`.
+     * Defines how a MIG resumes or starts VMs from a standby pool when the
+     * group scales out. The default mode is `MANUAL`.
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -833,7 +867,8 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
      *
      *
      * <pre>
-     * Defines how a MIG resumes or starts VMs from a standby pool when the group scales out. The default mode is `MANUAL`.
+     * Defines how a MIG resumes or starts VMs from a standby pool when the
+     * group scales out. The default mode is `MANUAL`.
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -857,7 +892,8 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
      *
      *
      * <pre>
-     * Defines how a MIG resumes or starts VMs from a standby pool when the group scales out. The default mode is `MANUAL`.
+     * Defines how a MIG resumes or starts VMs from a standby pool when the
+     * group scales out. The default mode is `MANUAL`.
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -880,7 +916,8 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
      *
      *
      * <pre>
-     * Defines how a MIG resumes or starts VMs from a standby pool when the group scales out. The default mode is `MANUAL`.
+     * Defines how a MIG resumes or starts VMs from a standby pool when the
+     * group scales out. The default mode is `MANUAL`.
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -899,7 +936,8 @@ public final class InstanceGroupManagerStandbyPolicy extends com.google.protobuf
      *
      *
      * <pre>
-     * Defines how a MIG resumes or starts VMs from a standby pool when the group scales out. The default mode is `MANUAL`.
+     * Defines how a MIG resumes or starts VMs from a standby pool when the
+     * group scales out. The default mode is `MANUAL`.
      * Check the Mode enum for the list of possible values.
      * </pre>
      *

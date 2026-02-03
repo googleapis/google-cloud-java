@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,7 +73,9 @@ public interface ResourcePolicySnapshotSchedulePolicyOrBuilder
    *
    *
    * <pre>
-   * A Vm Maintenance Policy specifies what kind of infrastructure maintenance we are allowed to perform on this VM and when. Schedule that is applied to disks covered by this policy.
+   * A Vm Maintenance Policy specifies what kind of infrastructure
+   * maintenance we are allowed to perform on this VM and when. Schedule
+   * that is applied to disks covered by this policy.
    * </pre>
    *
    * <code>
@@ -88,7 +90,9 @@ public interface ResourcePolicySnapshotSchedulePolicyOrBuilder
    *
    *
    * <pre>
-   * A Vm Maintenance Policy specifies what kind of infrastructure maintenance we are allowed to perform on this VM and when. Schedule that is applied to disks covered by this policy.
+   * A Vm Maintenance Policy specifies what kind of infrastructure
+   * maintenance we are allowed to perform on this VM and when. Schedule
+   * that is applied to disks covered by this policy.
    * </pre>
    *
    * <code>
@@ -103,7 +107,9 @@ public interface ResourcePolicySnapshotSchedulePolicyOrBuilder
    *
    *
    * <pre>
-   * A Vm Maintenance Policy specifies what kind of infrastructure maintenance we are allowed to perform on this VM and when. Schedule that is applied to disks covered by this policy.
+   * A Vm Maintenance Policy specifies what kind of infrastructure
+   * maintenance we are allowed to perform on this VM and when. Schedule
+   * that is applied to disks covered by this policy.
    * </pre>
    *
    * <code>
@@ -117,7 +123,8 @@ public interface ResourcePolicySnapshotSchedulePolicyOrBuilder
    *
    *
    * <pre>
-   * Properties with which snapshots are created such as labels, encryption keys.
+   * Properties with which snapshots are created such as labels, encryption
+   * keys.
    * </pre>
    *
    * <code>
@@ -132,7 +139,8 @@ public interface ResourcePolicySnapshotSchedulePolicyOrBuilder
    *
    *
    * <pre>
-   * Properties with which snapshots are created such as labels, encryption keys.
+   * Properties with which snapshots are created such as labels, encryption
+   * keys.
    * </pre>
    *
    * <code>
@@ -148,7 +156,8 @@ public interface ResourcePolicySnapshotSchedulePolicyOrBuilder
    *
    *
    * <pre>
-   * Properties with which snapshots are created such as labels, encryption keys.
+   * Properties with which snapshots are created such as labels, encryption
+   * keys.
    * </pre>
    *
    * <code>

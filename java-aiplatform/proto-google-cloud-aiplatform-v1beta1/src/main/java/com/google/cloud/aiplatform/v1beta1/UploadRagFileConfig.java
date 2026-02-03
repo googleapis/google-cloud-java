@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -78,7 +78,7 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.UploadRagFileConfig.rag_file_chunking_config is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=644
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=665
    * @return Whether the ragFileChunkingConfig field is set.
    */
   @java.lang.Override
@@ -99,7 +99,7 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.UploadRagFileConfig.rag_file_chunking_config is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=644
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=665
    * @return The ragFileChunkingConfig.
    */
   @java.lang.Override
@@ -821,7 +821,7 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.UploadRagFileConfig.rag_file_chunking_config is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=644
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=665
      * @return Whether the ragFileChunkingConfig field is set.
      */
     @java.lang.Deprecated
@@ -841,7 +841,7 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.UploadRagFileConfig.rag_file_chunking_config is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=644
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=665
      * @return The ragFileChunkingConfig.
      */
     @java.lang.Deprecated

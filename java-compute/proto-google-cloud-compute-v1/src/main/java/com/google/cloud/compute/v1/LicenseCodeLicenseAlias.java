@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,7 +74,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * [Output Only] Description of this License Code.
+   * Output only. [Output Only] Description of this License Code.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -90,7 +90,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * [Output Only] Description of this License Code.
+   * Output only. [Output Only] Description of this License Code.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -114,7 +114,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * [Output Only] Description of this License Code.
+   * Output only. [Output Only] Description of this License Code.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -143,7 +143,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * [Output Only] URL of license corresponding to this License Code.
+   * Output only. [Output Only] URL of license corresponding to this License Code.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -159,7 +159,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * [Output Only] URL of license corresponding to this License Code.
+   * Output only. [Output Only] URL of license corresponding to this License Code.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -183,7 +183,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * [Output Only] URL of license corresponding to this License Code.
+   * Output only. [Output Only] URL of license corresponding to this License Code.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -589,7 +589,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] Description of this License Code.
+     * Output only. [Output Only] Description of this License Code.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -604,7 +604,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] Description of this License Code.
+     * Output only. [Output Only] Description of this License Code.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -627,7 +627,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] Description of this License Code.
+     * Output only. [Output Only] Description of this License Code.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -650,7 +650,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] Description of this License Code.
+     * Output only. [Output Only] Description of this License Code.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -672,7 +672,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] Description of this License Code.
+     * Output only. [Output Only] Description of this License Code.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -690,7 +690,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] Description of this License Code.
+     * Output only. [Output Only] Description of this License Code.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -715,7 +715,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] URL of license corresponding to this License Code.
+     * Output only. [Output Only] URL of license corresponding to this License Code.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -730,7 +730,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] URL of license corresponding to this License Code.
+     * Output only. [Output Only] URL of license corresponding to this License Code.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -753,7 +753,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] URL of license corresponding to this License Code.
+     * Output only. [Output Only] URL of license corresponding to this License Code.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -776,7 +776,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] URL of license corresponding to this License Code.
+     * Output only. [Output Only] URL of license corresponding to this License Code.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -798,7 +798,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] URL of license corresponding to this License Code.
+     * Output only. [Output Only] URL of license corresponding to this License Code.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -816,7 +816,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] URL of license corresponding to this License Code.
+     * Output only. [Output Only] URL of license corresponding to this License Code.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>

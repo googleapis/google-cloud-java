@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,7 +65,7 @@ public final class AttachmentProto {
           + "\037google/chat/v1/attachment.proto\022\016googl"
           + "e.chat.v1\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\"\375\003\n\n"
           + "Attachment\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\001\022\031\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\031\n"
           + "\014content_name\030\002 \001(\tB\003\340A\003\022\031\n"
           + "\014content_type\030\003 \001(\tB\003\340A\003\022E\n"
           + "\023attachment_data_ref\030\004"

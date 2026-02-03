@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,9 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * A VPN connection contains all VPN tunnels connected from this VpnGateway to the same peer gateway. The peer gateway could either be an external VPN gateway or a Google Cloud VPN gateway.
+ * A VPN connection contains all VPN tunnels connected from this VpnGateway
+ * to the same peer gateway. The peer gateway could either be an external VPN
+ * gateway or a Google Cloud VPN gateway.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.VpnGatewayStatusVpnConnection}
@@ -76,7 +78,9 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * URL reference to the peer external VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
+   * Output only. URL reference to the peer external VPN gateways to which the VPN tunnels
+   * in this VPN connection are connected.
+   * This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
    *
    * <code>optional string peer_external_gateway = 384956173;</code>
@@ -92,7 +96,9 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * URL reference to the peer external VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
+   * Output only. URL reference to the peer external VPN gateways to which the VPN tunnels
+   * in this VPN connection are connected.
+   * This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
    *
    * <code>optional string peer_external_gateway = 384956173;</code>
@@ -116,7 +122,9 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * URL reference to the peer external VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
+   * Output only. URL reference to the peer external VPN gateways to which the VPN tunnels
+   * in this VPN connection are connected.
+   * This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
    *
    * <code>optional string peer_external_gateway = 384956173;</code>
@@ -145,7 +153,9 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * URL reference to the peer side VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
+   * Output only. URL reference to the peer side VPN gateways to which the VPN tunnels in
+   * this VPN connection are connected.
+   * This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
    *
    * <code>optional string peer_gcp_gateway = 281867452;</code>
@@ -161,7 +171,9 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * URL reference to the peer side VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
+   * Output only. URL reference to the peer side VPN gateways to which the VPN tunnels in
+   * this VPN connection are connected.
+   * This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
    *
    * <code>optional string peer_gcp_gateway = 281867452;</code>
@@ -185,7 +197,9 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * URL reference to the peer side VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
+   * Output only. URL reference to the peer side VPN gateways to which the VPN tunnels in
+   * this VPN connection are connected.
+   * This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
    *
    * <code>optional string peer_gcp_gateway = 281867452;</code>
@@ -554,7 +568,9 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * A VPN connection contains all VPN tunnels connected from this VpnGateway to the same peer gateway. The peer gateway could either be an external VPN gateway or a Google Cloud VPN gateway.
+   * A VPN connection contains all VPN tunnels connected from this VpnGateway
+   * to the same peer gateway. The peer gateway could either be an external VPN
+   * gateway or a Google Cloud VPN gateway.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.VpnGatewayStatusVpnConnection}
@@ -848,7 +864,9 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URL reference to the peer external VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
+     * Output only. URL reference to the peer external VPN gateways to which the VPN tunnels
+     * in this VPN connection are connected.
+     * This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
      *
      * <code>optional string peer_external_gateway = 384956173;</code>
@@ -863,7 +881,9 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URL reference to the peer external VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
+     * Output only. URL reference to the peer external VPN gateways to which the VPN tunnels
+     * in this VPN connection are connected.
+     * This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
      *
      * <code>optional string peer_external_gateway = 384956173;</code>
@@ -886,7 +906,9 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URL reference to the peer external VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
+     * Output only. URL reference to the peer external VPN gateways to which the VPN tunnels
+     * in this VPN connection are connected.
+     * This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
      *
      * <code>optional string peer_external_gateway = 384956173;</code>
@@ -909,7 +931,9 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URL reference to the peer external VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
+     * Output only. URL reference to the peer external VPN gateways to which the VPN tunnels
+     * in this VPN connection are connected.
+     * This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
      *
      * <code>optional string peer_external_gateway = 384956173;</code>
@@ -931,7 +955,9 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URL reference to the peer external VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
+     * Output only. URL reference to the peer external VPN gateways to which the VPN tunnels
+     * in this VPN connection are connected.
+     * This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
      *
      * <code>optional string peer_external_gateway = 384956173;</code>
@@ -949,7 +975,9 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URL reference to the peer external VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
+     * Output only. URL reference to the peer external VPN gateways to which the VPN tunnels
+     * in this VPN connection are connected.
+     * This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
      *
      * <code>optional string peer_external_gateway = 384956173;</code>
@@ -974,7 +1002,9 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URL reference to the peer side VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
+     * Output only. URL reference to the peer side VPN gateways to which the VPN tunnels in
+     * this VPN connection are connected.
+     * This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
      *
      * <code>optional string peer_gcp_gateway = 281867452;</code>
@@ -989,7 +1019,9 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URL reference to the peer side VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
+     * Output only. URL reference to the peer side VPN gateways to which the VPN tunnels in
+     * this VPN connection are connected.
+     * This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
      *
      * <code>optional string peer_gcp_gateway = 281867452;</code>
@@ -1012,7 +1044,9 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URL reference to the peer side VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
+     * Output only. URL reference to the peer side VPN gateways to which the VPN tunnels in
+     * this VPN connection are connected.
+     * This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
      *
      * <code>optional string peer_gcp_gateway = 281867452;</code>
@@ -1035,7 +1069,9 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URL reference to the peer side VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
+     * Output only. URL reference to the peer side VPN gateways to which the VPN tunnels in
+     * this VPN connection are connected.
+     * This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
      *
      * <code>optional string peer_gcp_gateway = 281867452;</code>
@@ -1057,7 +1093,9 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URL reference to the peer side VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
+     * Output only. URL reference to the peer side VPN gateways to which the VPN tunnels in
+     * this VPN connection are connected.
+     * This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
      *
      * <code>optional string peer_gcp_gateway = 281867452;</code>
@@ -1075,7 +1113,9 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URL reference to the peer side VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
+     * Output only. URL reference to the peer side VPN gateways to which the VPN tunnels in
+     * this VPN connection are connected.
+     * This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
      *
      * <code>optional string peer_gcp_gateway = 281867452;</code>

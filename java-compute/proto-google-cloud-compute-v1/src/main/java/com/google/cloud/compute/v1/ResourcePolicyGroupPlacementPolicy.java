@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * A GroupPlacementPolicy specifies resource placement configuration. It specifies the failure bucket separation
+ * A GroupPlacementPolicy specifies resource placement configuration.
+ * It specifies the failure bucket separation
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy}
@@ -203,7 +204,9 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
    *
    *
    * <pre>
-   * The number of availability domains to spread instances across. If two instances are in different availability domain, they are not in the same low latency network.
+   * The number of availability domains to spread instances across. If two
+   * instances are in different availability domain, they are not in the same
+   * low latency network.
    * </pre>
    *
    * <code>optional int32 availability_domain_count = 12453432;</code>
@@ -219,7 +222,9 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
    *
    *
    * <pre>
-   * The number of availability domains to spread instances across. If two instances are in different availability domain, they are not in the same low latency network.
+   * The number of availability domains to spread instances across. If two
+   * instances are in different availability domain, they are not in the same
+   * low latency network.
    * </pre>
    *
    * <code>optional int32 availability_domain_count = 12453432;</code>
@@ -312,7 +317,8 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
    *
    *
    * <pre>
-   * Specifies the shape of the GPU slice, in slice based GPU families eg. A4X.
+   * Specifies the shape of the GPU slice, in slice based GPU families eg.
+   * A4X.
    * </pre>
    *
    * <code>optional string gpu_topology = 247948450;</code>
@@ -328,7 +334,8 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
    *
    *
    * <pre>
-   * Specifies the shape of the GPU slice, in slice based GPU families eg. A4X.
+   * Specifies the shape of the GPU slice, in slice based GPU families eg.
+   * A4X.
    * </pre>
    *
    * <code>optional string gpu_topology = 247948450;</code>
@@ -352,7 +359,8 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
    *
    *
    * <pre>
-   * Specifies the shape of the GPU slice, in slice based GPU families eg. A4X.
+   * Specifies the shape of the GPU slice, in slice based GPU families eg.
+   * A4X.
    * </pre>
    *
    * <code>optional string gpu_topology = 247948450;</code>
@@ -379,7 +387,9 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
    *
    *
    * <pre>
-   * Number of VMs in this placement group. Google does not recommend that you use this field unless you use a compact policy and you want your policy to work only if it contains this exact number of VMs.
+   * Number of VMs in this placement group. Google does not recommend that you
+   * use this field unless you use a compact policy and you want your policy
+   * to work only if it contains this exact number of VMs.
    * </pre>
    *
    * <code>optional int32 vm_count = 261463431;</code>
@@ -395,7 +405,9 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
    *
    *
    * <pre>
-   * Number of VMs in this placement group. Google does not recommend that you use this field unless you use a compact policy and you want your policy to work only if it contains this exact number of VMs.
+   * Number of VMs in this placement group. Google does not recommend that you
+   * use this field unless you use a compact policy and you want your policy
+   * to work only if it contains this exact number of VMs.
    * </pre>
    *
    * <code>optional int32 vm_count = 261463431;</code>
@@ -621,7 +633,8 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
    *
    *
    * <pre>
-   * A GroupPlacementPolicy specifies resource placement configuration. It specifies the failure bucket separation
+   * A GroupPlacementPolicy specifies resource placement configuration.
+   * It specifies the failure bucket separation
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy}
@@ -856,7 +869,9 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      *
      *
      * <pre>
-     * The number of availability domains to spread instances across. If two instances are in different availability domain, they are not in the same low latency network.
+     * The number of availability domains to spread instances across. If two
+     * instances are in different availability domain, they are not in the same
+     * low latency network.
      * </pre>
      *
      * <code>optional int32 availability_domain_count = 12453432;</code>
@@ -872,7 +887,9 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      *
      *
      * <pre>
-     * The number of availability domains to spread instances across. If two instances are in different availability domain, they are not in the same low latency network.
+     * The number of availability domains to spread instances across. If two
+     * instances are in different availability domain, they are not in the same
+     * low latency network.
      * </pre>
      *
      * <code>optional int32 availability_domain_count = 12453432;</code>
@@ -888,7 +905,9 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      *
      *
      * <pre>
-     * The number of availability domains to spread instances across. If two instances are in different availability domain, they are not in the same low latency network.
+     * The number of availability domains to spread instances across. If two
+     * instances are in different availability domain, they are not in the same
+     * low latency network.
      * </pre>
      *
      * <code>optional int32 availability_domain_count = 12453432;</code>
@@ -908,7 +927,9 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      *
      *
      * <pre>
-     * The number of availability domains to spread instances across. If two instances are in different availability domain, they are not in the same low latency network.
+     * The number of availability domains to spread instances across. If two
+     * instances are in different availability domain, they are not in the same
+     * low latency network.
      * </pre>
      *
      * <code>optional int32 availability_domain_count = 12453432;</code>
@@ -1060,7 +1081,8 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      *
      *
      * <pre>
-     * Specifies the shape of the GPU slice, in slice based GPU families eg. A4X.
+     * Specifies the shape of the GPU slice, in slice based GPU families eg.
+     * A4X.
      * </pre>
      *
      * <code>optional string gpu_topology = 247948450;</code>
@@ -1075,7 +1097,8 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      *
      *
      * <pre>
-     * Specifies the shape of the GPU slice, in slice based GPU families eg. A4X.
+     * Specifies the shape of the GPU slice, in slice based GPU families eg.
+     * A4X.
      * </pre>
      *
      * <code>optional string gpu_topology = 247948450;</code>
@@ -1098,7 +1121,8 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      *
      *
      * <pre>
-     * Specifies the shape of the GPU slice, in slice based GPU families eg. A4X.
+     * Specifies the shape of the GPU slice, in slice based GPU families eg.
+     * A4X.
      * </pre>
      *
      * <code>optional string gpu_topology = 247948450;</code>
@@ -1121,7 +1145,8 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      *
      *
      * <pre>
-     * Specifies the shape of the GPU slice, in slice based GPU families eg. A4X.
+     * Specifies the shape of the GPU slice, in slice based GPU families eg.
+     * A4X.
      * </pre>
      *
      * <code>optional string gpu_topology = 247948450;</code>
@@ -1143,7 +1168,8 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      *
      *
      * <pre>
-     * Specifies the shape of the GPU slice, in slice based GPU families eg. A4X.
+     * Specifies the shape of the GPU slice, in slice based GPU families eg.
+     * A4X.
      * </pre>
      *
      * <code>optional string gpu_topology = 247948450;</code>
@@ -1161,7 +1187,8 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      *
      *
      * <pre>
-     * Specifies the shape of the GPU slice, in slice based GPU families eg. A4X.
+     * Specifies the shape of the GPU slice, in slice based GPU families eg.
+     * A4X.
      * </pre>
      *
      * <code>optional string gpu_topology = 247948450;</code>
@@ -1186,7 +1213,9 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      *
      *
      * <pre>
-     * Number of VMs in this placement group. Google does not recommend that you use this field unless you use a compact policy and you want your policy to work only if it contains this exact number of VMs.
+     * Number of VMs in this placement group. Google does not recommend that you
+     * use this field unless you use a compact policy and you want your policy
+     * to work only if it contains this exact number of VMs.
      * </pre>
      *
      * <code>optional int32 vm_count = 261463431;</code>
@@ -1202,7 +1231,9 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      *
      *
      * <pre>
-     * Number of VMs in this placement group. Google does not recommend that you use this field unless you use a compact policy and you want your policy to work only if it contains this exact number of VMs.
+     * Number of VMs in this placement group. Google does not recommend that you
+     * use this field unless you use a compact policy and you want your policy
+     * to work only if it contains this exact number of VMs.
      * </pre>
      *
      * <code>optional int32 vm_count = 261463431;</code>
@@ -1218,7 +1249,9 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      *
      *
      * <pre>
-     * Number of VMs in this placement group. Google does not recommend that you use this field unless you use a compact policy and you want your policy to work only if it contains this exact number of VMs.
+     * Number of VMs in this placement group. Google does not recommend that you
+     * use this field unless you use a compact policy and you want your policy
+     * to work only if it contains this exact number of VMs.
      * </pre>
      *
      * <code>optional int32 vm_count = 261463431;</code>
@@ -1238,7 +1271,9 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      *
      *
      * <pre>
-     * Number of VMs in this placement group. Google does not recommend that you use this field unless you use a compact policy and you want your policy to work only if it contains this exact number of VMs.
+     * Number of VMs in this placement group. Google does not recommend that you
+     * use this field unless you use a compact policy and you want your policy
+     * to work only if it contains this exact number of VMs.
      * </pre>
      *
      * <code>optional int32 vm_count = 261463431;</code>

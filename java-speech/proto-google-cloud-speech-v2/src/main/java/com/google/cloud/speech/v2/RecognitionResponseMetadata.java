@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,7 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
 
   private RecognitionResponseMetadata() {
     requestId_ = "";
+    prompt_ = "";
   }
 
   @java.lang.Override
@@ -171,6 +172,84 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
         : totalBilledDuration_;
   }
 
+  public static final int PROMPT_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object prompt_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Provides the prompt used for the recognition
+   * request.
+   * </pre>
+   *
+   * <code>
+   * optional string prompt = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the prompt field is set.
+   */
+  @java.lang.Override
+  public boolean hasPrompt() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Provides the prompt used for the recognition
+   * request.
+   * </pre>
+   *
+   * <code>
+   * optional string prompt = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The prompt.
+   */
+  @java.lang.Override
+  public java.lang.String getPrompt() {
+    java.lang.Object ref = prompt_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      prompt_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Provides the prompt used for the recognition
+   * request.
+   * </pre>
+   *
+   * <code>
+   * optional string prompt = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for prompt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPromptBytes() {
+    java.lang.Object ref = prompt_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      prompt_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -191,6 +270,9 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, requestId_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, prompt_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -205,6 +287,9 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, requestId_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, prompt_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -227,6 +312,10 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
     if (hasTotalBilledDuration()) {
       if (!getTotalBilledDuration().equals(other.getTotalBilledDuration())) return false;
     }
+    if (hasPrompt() != other.hasPrompt()) return false;
+    if (hasPrompt()) {
+      if (!getPrompt().equals(other.getPrompt())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -243,6 +332,10 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
     if (hasTotalBilledDuration()) {
       hash = (37 * hash) + TOTAL_BILLED_DURATION_FIELD_NUMBER;
       hash = (53 * hash) + getTotalBilledDuration().hashCode();
+    }
+    if (hasPrompt()) {
+      hash = (37 * hash) + PROMPT_FIELD_NUMBER;
+      hash = (53 * hash) + getPrompt().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -400,6 +493,7 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
         totalBilledDurationBuilder_.dispose();
         totalBilledDurationBuilder_ = null;
       }
+      prompt_ = "";
       return this;
     }
 
@@ -446,6 +540,10 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
                 ? totalBilledDuration_
                 : totalBilledDurationBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.prompt_ = prompt_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -504,6 +602,11 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
       if (other.hasTotalBilledDuration()) {
         mergeTotalBilledDuration(other.getTotalBilledDuration());
       }
+      if (other.hasPrompt()) {
+        prompt_ = other.prompt_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -543,6 +646,12 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
                 bitField0_ |= 0x00000001;
                 break;
               } // case 74
+            case 82:
+              {
+                prompt_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -865,6 +974,150 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
         totalBilledDuration_ = null;
       }
       return totalBilledDurationBuilder_;
+    }
+
+    private java.lang.Object prompt_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Provides the prompt used for the recognition
+     * request.
+     * </pre>
+     *
+     * <code>
+     * optional string prompt = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the prompt field is set.
+     */
+    public boolean hasPrompt() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Provides the prompt used for the recognition
+     * request.
+     * </pre>
+     *
+     * <code>
+     * optional string prompt = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The prompt.
+     */
+    public java.lang.String getPrompt() {
+      java.lang.Object ref = prompt_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        prompt_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Provides the prompt used for the recognition
+     * request.
+     * </pre>
+     *
+     * <code>
+     * optional string prompt = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for prompt.
+     */
+    public com.google.protobuf.ByteString getPromptBytes() {
+      java.lang.Object ref = prompt_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        prompt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Provides the prompt used for the recognition
+     * request.
+     * </pre>
+     *
+     * <code>
+     * optional string prompt = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The prompt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrompt(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      prompt_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Provides the prompt used for the recognition
+     * request.
+     * </pre>
+     *
+     * <code>
+     * optional string prompt = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPrompt() {
+      prompt_ = getDefaultInstance().getPrompt();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Provides the prompt used for the recognition
+     * request.
+     * </pre>
+     *
+     * <code>
+     * optional string prompt = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes for prompt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPromptBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      prompt_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

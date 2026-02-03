@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * HttpRouteRuleMatch criteria for field values that must stay within the specified integer range.
+ * HttpRouteRuleMatch criteria for field values that must stay
+ * within the specified integer range.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Int64RangeMatch}
@@ -316,7 +317,8 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * HttpRouteRuleMatch criteria for field values that must stay within the specified integer range.
+   * HttpRouteRuleMatch criteria for field values that must stay
+   * within the specified integer range.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Int64RangeMatch}

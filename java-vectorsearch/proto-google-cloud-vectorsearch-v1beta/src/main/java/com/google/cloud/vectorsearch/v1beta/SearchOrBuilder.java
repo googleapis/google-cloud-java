@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -97,6 +97,43 @@ public interface SearchOrBuilder
    * <code>.google.cloud.vectorsearch.v1beta.SemanticSearch semantic_search = 2;</code>
    */
   com.google.cloud.vectorsearch.v1beta.SemanticSearchOrBuilder getSemanticSearchOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A text search operation.
+   * </pre>
+   *
+   * <code>.google.cloud.vectorsearch.v1beta.TextSearch text_search = 3;</code>
+   *
+   * @return Whether the textSearch field is set.
+   */
+  boolean hasTextSearch();
+
+  /**
+   *
+   *
+   * <pre>
+   * A text search operation.
+   * </pre>
+   *
+   * <code>.google.cloud.vectorsearch.v1beta.TextSearch text_search = 3;</code>
+   *
+   * @return The textSearch.
+   */
+  com.google.cloud.vectorsearch.v1beta.TextSearch getTextSearch();
+
+  /**
+   *
+   *
+   * <pre>
+   * A text search operation.
+   * </pre>
+   *
+   * <code>.google.cloud.vectorsearch.v1beta.TextSearch text_search = 3;</code>
+   */
+  com.google.cloud.vectorsearch.v1beta.TextSearchOrBuilder getTextSearchOrBuilder();
 
   com.google.cloud.vectorsearch.v1beta.Search.SearchTypeCase getSearchTypeCase();
 }

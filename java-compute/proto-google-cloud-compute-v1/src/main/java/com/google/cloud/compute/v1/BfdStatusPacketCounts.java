@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,7 +69,8 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Number of packets received since the beginning of the current BFD session.
+   * Number of packets received since the beginning of the current BFD
+   * session.
    * </pre>
    *
    * <code>optional uint32 num_rx = 39375263;</code>
@@ -85,7 +86,8 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Number of packets received since the beginning of the current BFD session.
+   * Number of packets received since the beginning of the current BFD
+   * session.
    * </pre>
    *
    * <code>optional uint32 num_rx = 39375263;</code>
@@ -104,7 +106,8 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Number of packets received that were rejected because of errors since the beginning of the current BFD session.
+   * Number of packets received that were rejected because of errors since the
+   * beginning of the current BFD session.
    * </pre>
    *
    * <code>optional uint32 num_rx_rejected = 281007902;</code>
@@ -120,7 +123,8 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Number of packets received that were rejected because of errors since the beginning of the current BFD session.
+   * Number of packets received that were rejected because of errors since the
+   * beginning of the current BFD session.
    * </pre>
    *
    * <code>optional uint32 num_rx_rejected = 281007902;</code>
@@ -139,7 +143,8 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Number of packets received that were successfully processed since the beginning of the current BFD session.
+   * Number of packets received that were successfully processed since the
+   * beginning of the current BFD session.
    * </pre>
    *
    * <code>optional uint32 num_rx_successful = 455361850;</code>
@@ -155,7 +160,8 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Number of packets received that were successfully processed since the beginning of the current BFD session.
+   * Number of packets received that were successfully processed since the
+   * beginning of the current BFD session.
    * </pre>
    *
    * <code>optional uint32 num_rx_successful = 455361850;</code>
@@ -174,7 +180,8 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Number of packets transmitted since the beginning of the current BFD session.
+   * Number of packets transmitted since the beginning of the current BFD
+   * session.
    * </pre>
    *
    * <code>optional uint32 num_tx = 39375325;</code>
@@ -190,7 +197,8 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Number of packets transmitted since the beginning of the current BFD session.
+   * Number of packets transmitted since the beginning of the current BFD
+   * session.
    * </pre>
    *
    * <code>optional uint32 num_tx = 39375325;</code>
@@ -640,7 +648,8 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Number of packets received since the beginning of the current BFD session.
+     * Number of packets received since the beginning of the current BFD
+     * session.
      * </pre>
      *
      * <code>optional uint32 num_rx = 39375263;</code>
@@ -656,7 +665,8 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Number of packets received since the beginning of the current BFD session.
+     * Number of packets received since the beginning of the current BFD
+     * session.
      * </pre>
      *
      * <code>optional uint32 num_rx = 39375263;</code>
@@ -672,7 +682,8 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Number of packets received since the beginning of the current BFD session.
+     * Number of packets received since the beginning of the current BFD
+     * session.
      * </pre>
      *
      * <code>optional uint32 num_rx = 39375263;</code>
@@ -692,7 +703,8 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Number of packets received since the beginning of the current BFD session.
+     * Number of packets received since the beginning of the current BFD
+     * session.
      * </pre>
      *
      * <code>optional uint32 num_rx = 39375263;</code>
@@ -712,7 +724,8 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Number of packets received that were rejected because of errors since the beginning of the current BFD session.
+     * Number of packets received that were rejected because of errors since the
+     * beginning of the current BFD session.
      * </pre>
      *
      * <code>optional uint32 num_rx_rejected = 281007902;</code>
@@ -728,7 +741,8 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Number of packets received that were rejected because of errors since the beginning of the current BFD session.
+     * Number of packets received that were rejected because of errors since the
+     * beginning of the current BFD session.
      * </pre>
      *
      * <code>optional uint32 num_rx_rejected = 281007902;</code>
@@ -744,7 +758,8 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Number of packets received that were rejected because of errors since the beginning of the current BFD session.
+     * Number of packets received that were rejected because of errors since the
+     * beginning of the current BFD session.
      * </pre>
      *
      * <code>optional uint32 num_rx_rejected = 281007902;</code>
@@ -764,7 +779,8 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Number of packets received that were rejected because of errors since the beginning of the current BFD session.
+     * Number of packets received that were rejected because of errors since the
+     * beginning of the current BFD session.
      * </pre>
      *
      * <code>optional uint32 num_rx_rejected = 281007902;</code>
@@ -784,7 +800,8 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Number of packets received that were successfully processed since the beginning of the current BFD session.
+     * Number of packets received that were successfully processed since the
+     * beginning of the current BFD session.
      * </pre>
      *
      * <code>optional uint32 num_rx_successful = 455361850;</code>
@@ -800,7 +817,8 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Number of packets received that were successfully processed since the beginning of the current BFD session.
+     * Number of packets received that were successfully processed since the
+     * beginning of the current BFD session.
      * </pre>
      *
      * <code>optional uint32 num_rx_successful = 455361850;</code>
@@ -816,7 +834,8 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Number of packets received that were successfully processed since the beginning of the current BFD session.
+     * Number of packets received that were successfully processed since the
+     * beginning of the current BFD session.
      * </pre>
      *
      * <code>optional uint32 num_rx_successful = 455361850;</code>
@@ -836,7 +855,8 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Number of packets received that were successfully processed since the beginning of the current BFD session.
+     * Number of packets received that were successfully processed since the
+     * beginning of the current BFD session.
      * </pre>
      *
      * <code>optional uint32 num_rx_successful = 455361850;</code>
@@ -856,7 +876,8 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Number of packets transmitted since the beginning of the current BFD session.
+     * Number of packets transmitted since the beginning of the current BFD
+     * session.
      * </pre>
      *
      * <code>optional uint32 num_tx = 39375325;</code>
@@ -872,7 +893,8 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Number of packets transmitted since the beginning of the current BFD session.
+     * Number of packets transmitted since the beginning of the current BFD
+     * session.
      * </pre>
      *
      * <code>optional uint32 num_tx = 39375325;</code>
@@ -888,7 +910,8 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Number of packets transmitted since the beginning of the current BFD session.
+     * Number of packets transmitted since the beginning of the current BFD
+     * session.
      * </pre>
      *
      * <code>optional uint32 num_tx = 39375325;</code>
@@ -908,7 +931,8 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Number of packets transmitted since the beginning of the current BFD session.
+     * Number of packets transmitted since the beginning of the current BFD
+     * session.
      * </pre>
      *
      * <code>optional uint32 num_tx = 39375325;</code>

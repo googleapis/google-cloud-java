@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ public interface GuestAttributesOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#guestAttributes for guest attributes entry.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#guestAttributes for guest attributes entry.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -41,7 +41,7 @@ public interface GuestAttributesOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#guestAttributes for guest attributes entry.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#guestAttributes for guest attributes entry.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -54,7 +54,7 @@ public interface GuestAttributesOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#guestAttributes for guest attributes entry.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#guestAttributes for guest attributes entry.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -67,7 +67,9 @@ public interface GuestAttributesOrBuilder
    *
    *
    * <pre>
-   * The path to be queried. This can be the default namespace ('') or a nested namespace ('&#92;/') or a specified key ('&#92;/&#92;').
+   * The path to be queried. This can be the default namespace ('') or a
+   * nested namespace ('&#92;/') or a specified key
+   * ('&#92;/&#92;').
    * </pre>
    *
    * <code>optional string query_path = 368591164;</code>
@@ -80,7 +82,9 @@ public interface GuestAttributesOrBuilder
    *
    *
    * <pre>
-   * The path to be queried. This can be the default namespace ('') or a nested namespace ('&#92;/') or a specified key ('&#92;/&#92;').
+   * The path to be queried. This can be the default namespace ('') or a
+   * nested namespace ('&#92;/') or a specified key
+   * ('&#92;/&#92;').
    * </pre>
    *
    * <code>optional string query_path = 368591164;</code>
@@ -93,7 +97,9 @@ public interface GuestAttributesOrBuilder
    *
    *
    * <pre>
-   * The path to be queried. This can be the default namespace ('') or a nested namespace ('&#92;/') or a specified key ('&#92;/&#92;').
+   * The path to be queried. This can be the default namespace ('') or a
+   * nested namespace ('&#92;/') or a specified key
+   * ('&#92;/&#92;').
    * </pre>
    *
    * <code>optional string query_path = 368591164;</code>
@@ -106,7 +112,7 @@ public interface GuestAttributesOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The value of the requested queried path.
+   * Output only. [Output Only] The value of the requested queried path.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
@@ -119,7 +125,7 @@ public interface GuestAttributesOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The value of the requested queried path.
+   * Output only. [Output Only] The value of the requested queried path.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
@@ -132,7 +138,7 @@ public interface GuestAttributesOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The value of the requested queried path.
+   * Output only. [Output Only] The value of the requested queried path.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
@@ -143,7 +149,7 @@ public interface GuestAttributesOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -156,7 +162,7 @@ public interface GuestAttributesOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -169,7 +175,7 @@ public interface GuestAttributesOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -221,7 +227,7 @@ public interface GuestAttributesOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The value found for the requested key.
+   * Output only. [Output Only] The value found for the requested key.
    * </pre>
    *
    * <code>optional string variable_value = 124582382;</code>
@@ -234,7 +240,7 @@ public interface GuestAttributesOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The value found for the requested key.
+   * Output only. [Output Only] The value found for the requested key.
    * </pre>
    *
    * <code>optional string variable_value = 124582382;</code>
@@ -247,7 +253,7 @@ public interface GuestAttributesOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The value found for the requested key.
+   * Output only. [Output Only] The value found for the requested key.
    * </pre>
    *
    * <code>optional string variable_value = 124582382;</code>

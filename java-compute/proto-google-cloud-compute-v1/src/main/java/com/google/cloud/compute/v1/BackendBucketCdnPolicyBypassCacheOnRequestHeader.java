@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,9 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Bypass the cache when the specified request headers are present, e.g. Pragma or Authorization headers. Values are case insensitive. The presence of such a header overrides the cache_mode setting.
+ * Bypass the cache when the specified request headers are present,
+ * e.g. Pragma or Authorization headers. Values are case insensitive.
+ * The presence of such a header overrides the cache_mode setting.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.BackendBucketCdnPolicyBypassCacheOnRequestHeader}
@@ -77,7 +79,8 @@ public final class BackendBucketCdnPolicyBypassCacheOnRequestHeader
    *
    *
    * <pre>
-   * The header field name to match on when bypassing cache. Values are case-insensitive.
+   * The header field name to match on when bypassing cache.
+   * Values are case-insensitive.
    * </pre>
    *
    * <code>optional string header_name = 110223613;</code>
@@ -93,7 +96,8 @@ public final class BackendBucketCdnPolicyBypassCacheOnRequestHeader
    *
    *
    * <pre>
-   * The header field name to match on when bypassing cache. Values are case-insensitive.
+   * The header field name to match on when bypassing cache.
+   * Values are case-insensitive.
    * </pre>
    *
    * <code>optional string header_name = 110223613;</code>
@@ -117,7 +121,8 @@ public final class BackendBucketCdnPolicyBypassCacheOnRequestHeader
    *
    *
    * <pre>
-   * The header field name to match on when bypassing cache. Values are case-insensitive.
+   * The header field name to match on when bypassing cache.
+   * Values are case-insensitive.
    * </pre>
    *
    * <code>optional string header_name = 110223613;</code>
@@ -314,7 +319,9 @@ public final class BackendBucketCdnPolicyBypassCacheOnRequestHeader
    *
    *
    * <pre>
-   * Bypass the cache when the specified request headers are present, e.g. Pragma or Authorization headers. Values are case insensitive. The presence of such a header overrides the cache_mode setting.
+   * Bypass the cache when the specified request headers are present,
+   * e.g. Pragma or Authorization headers. Values are case insensitive.
+   * The presence of such a header overrides the cache_mode setting.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.BackendBucketCdnPolicyBypassCacheOnRequestHeader}
@@ -513,7 +520,8 @@ public final class BackendBucketCdnPolicyBypassCacheOnRequestHeader
      *
      *
      * <pre>
-     * The header field name to match on when bypassing cache. Values are case-insensitive.
+     * The header field name to match on when bypassing cache.
+     * Values are case-insensitive.
      * </pre>
      *
      * <code>optional string header_name = 110223613;</code>
@@ -528,7 +536,8 @@ public final class BackendBucketCdnPolicyBypassCacheOnRequestHeader
      *
      *
      * <pre>
-     * The header field name to match on when bypassing cache. Values are case-insensitive.
+     * The header field name to match on when bypassing cache.
+     * Values are case-insensitive.
      * </pre>
      *
      * <code>optional string header_name = 110223613;</code>
@@ -551,7 +560,8 @@ public final class BackendBucketCdnPolicyBypassCacheOnRequestHeader
      *
      *
      * <pre>
-     * The header field name to match on when bypassing cache. Values are case-insensitive.
+     * The header field name to match on when bypassing cache.
+     * Values are case-insensitive.
      * </pre>
      *
      * <code>optional string header_name = 110223613;</code>
@@ -574,7 +584,8 @@ public final class BackendBucketCdnPolicyBypassCacheOnRequestHeader
      *
      *
      * <pre>
-     * The header field name to match on when bypassing cache. Values are case-insensitive.
+     * The header field name to match on when bypassing cache.
+     * Values are case-insensitive.
      * </pre>
      *
      * <code>optional string header_name = 110223613;</code>
@@ -596,7 +607,8 @@ public final class BackendBucketCdnPolicyBypassCacheOnRequestHeader
      *
      *
      * <pre>
-     * The header field name to match on when bypassing cache. Values are case-insensitive.
+     * The header field name to match on when bypassing cache.
+     * Values are case-insensitive.
      * </pre>
      *
      * <code>optional string header_name = 110223613;</code>
@@ -614,7 +626,8 @@ public final class BackendBucketCdnPolicyBypassCacheOnRequestHeader
      *
      *
      * <pre>
-     * The header field name to match on when bypassing cache. Values are case-insensitive.
+     * The header field name to match on when bypassing cache.
+     * Values are case-insensitive.
      * </pre>
      *
      * <code>optional string header_name = 110223613;</code>

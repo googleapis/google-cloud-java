@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,12 +28,9 @@ public interface SuggestionInputOrBuilder
    *
    *
    * <pre>
-   * Required. The ID of a suggestion selected by the human agent.
-   * The suggestion(s) were generated in a previous call to
-   * request Dialogflow assist.
-   * The format is:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/answerRecords/&lt;Answer Record
-   * ID&gt;` where &lt;Answer Record ID&gt; is an alphanumeric string.
+   * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`
+   * The answer record associated with the tool call.
    * </pre>
    *
    * <code>string answer_record = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -46,12 +43,9 @@ public interface SuggestionInputOrBuilder
    *
    *
    * <pre>
-   * Required. The ID of a suggestion selected by the human agent.
-   * The suggestion(s) were generated in a previous call to
-   * request Dialogflow assist.
-   * The format is:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/answerRecords/&lt;Answer Record
-   * ID&gt;` where &lt;Answer Record ID&gt; is an alphanumeric string.
+   * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`
+   * The answer record associated with the tool call.
    * </pre>
    *
    * <code>string answer_record = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -59,4 +53,120 @@ public interface SuggestionInputOrBuilder
    * @return The bytes for answerRecord.
    */
   com.google.protobuf.ByteString getAnswerRecordBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Parameters to be used for the tool call.  If not provided, the
+   * tool will be called without any parameters.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct parameters = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the parameters field is set.
+   */
+  boolean hasParameters();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Parameters to be used for the tool call.  If not provided, the
+   * tool will be called without any parameters.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct parameters = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The parameters.
+   */
+  com.google.protobuf.Struct getParameters();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Parameters to be used for the tool call.  If not provided, the
+   * tool will be called without any parameters.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct parameters = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  com.google.protobuf.StructOrBuilder getParametersOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of action to take with the tool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SuggestionInput.Action action = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for action.
+   */
+  int getActionValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of action to take with the tool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SuggestionInput.Action action = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The action.
+   */
+  com.google.cloud.dialogflow.v2.SuggestionInput.Action getAction();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Time when the current suggest input is sent. For tool calls, this
+   * timestamp (along with the answer record) will be included in the
+   * corresponding tool call result so that it can be identified.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp send_time = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sendTime field is set.
+   */
+  boolean hasSendTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Time when the current suggest input is sent. For tool calls, this
+   * timestamp (along with the answer record) will be included in the
+   * corresponding tool call result so that it can be identified.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp send_time = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sendTime.
+   */
+  com.google.protobuf.Timestamp getSendTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Time when the current suggest input is sent. For tool calls, this
+   * timestamp (along with the answer record) will be included in the
+   * corresponding tool call result so that it can be identified.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp send_time = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getSendTimeOrBuilder();
 }

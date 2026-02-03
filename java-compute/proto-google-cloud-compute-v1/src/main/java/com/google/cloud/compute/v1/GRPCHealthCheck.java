@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,7 +69,28 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Not supported by target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for passthrough load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
+   * Specifies how a port is selected for health checking. Can be one of the
+   * following values:
+   * USE_FIXED_PORT: Specifies a port number explicitly using theport field  in the health check. Supported by backend services
+   * for passthrough load balancers and backend services for proxy load
+   * balancers. Not supported by target pools. The health check supports all
+   * backends supported by the backend service provided the backend can be
+   * health checked. For example, GCE_VM_IP network endpoint
+   * groups, GCE_VM_IP_PORT network endpoint groups, and instance
+   * group backends.
+   *  USE_NAMED_PORT: Not supported.
+   * USE_SERVING_PORT: Provides an indirect method of specifying
+   * the health check port by referring to the backend service. Only supported
+   * by backend services for proxy load balancers. Not supported by target
+   * pools.  Not supported by backend services for passthrough load balancers.
+   * Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group
+   * backends.
+   *
+   * For GCE_VM_IP_PORT network endpoint group backends, the health
+   * check uses the port number specified for each endpoint in the network
+   * endpoint group.  For instance group backends, the health check uses the
+   * port number determined by looking up the backend service's named port in
+   * the instance group's list of named ports.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.GRPCHealthCheck.PortSpecification}
@@ -89,7 +110,8 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The port number in the health check's port is used for health checking. Applies to network endpoint group and instance group backends.
+     * The port number in the health check's port is used for health
+     * checking. Applies to network endpoint group and instance group backends.
      * </pre>
      *
      * <code>USE_FIXED_PORT = 190235748;</code>
@@ -109,7 +131,10 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * For network endpoint group backends, the health check uses the port number specified on each endpoint in the network endpoint group. For instance group backends, the health check uses the port number specified for the backend service's named port defined in the instance group's named ports.
+     * For network endpoint group backends, the health check uses the port number
+     * specified on each endpoint in the network endpoint group. For instance
+     * group backends, the health check uses the port number specified for the
+     * backend service's named port defined in the instance group's named ports.
      * </pre>
      *
      * <code>USE_SERVING_PORT = 362637516;</code>
@@ -133,7 +158,8 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The port number in the health check's port is used for health checking. Applies to network endpoint group and instance group backends.
+     * The port number in the health check's port is used for health
+     * checking. Applies to network endpoint group and instance group backends.
      * </pre>
      *
      * <code>USE_FIXED_PORT = 190235748;</code>
@@ -155,7 +181,10 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * For network endpoint group backends, the health check uses the port number specified on each endpoint in the network endpoint group. For instance group backends, the health check uses the port number specified for the backend service's named port defined in the instance group's named ports.
+     * For network endpoint group backends, the health check uses the port number
+     * specified on each endpoint in the network endpoint group. For instance
+     * group backends, the health check uses the port number specified for the
+     * backend service's named port defined in the instance group's named ports.
      * </pre>
      *
      * <code>USE_SERVING_PORT = 362637516;</code>
@@ -260,7 +289,16 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII.
+   * The gRPC service name for the health check. This field is optional. The
+   * value of grpc_service_name has the following meanings by convention:
+   *
+   * - Empty service_name means the overall status of all services at the
+   * backend.
+   *
+   * - Non-empty service_name means the health of that gRPC service, as defined
+   * by the owner of the service.
+   *
+   * The grpc_service_name can only be ASCII.
    * </pre>
    *
    * <code>optional string grpc_service_name = 136533078;</code>
@@ -276,7 +314,16 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII.
+   * The gRPC service name for the health check. This field is optional. The
+   * value of grpc_service_name has the following meanings by convention:
+   *
+   * - Empty service_name means the overall status of all services at the
+   * backend.
+   *
+   * - Non-empty service_name means the health of that gRPC service, as defined
+   * by the owner of the service.
+   *
+   * The grpc_service_name can only be ASCII.
    * </pre>
    *
    * <code>optional string grpc_service_name = 136533078;</code>
@@ -300,7 +347,16 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII.
+   * The gRPC service name for the health check. This field is optional. The
+   * value of grpc_service_name has the following meanings by convention:
+   *
+   * - Empty service_name means the overall status of all services at the
+   * backend.
+   *
+   * - Non-empty service_name means the health of that gRPC service, as defined
+   * by the owner of the service.
+   *
+   * The grpc_service_name can only be ASCII.
    * </pre>
    *
    * <code>optional string grpc_service_name = 136533078;</code>
@@ -327,7 +383,8 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The TCP port number to which the health check prober sends packets. Valid values are 1 through 65535.
+   * The TCP port number to which the health check prober sends packets. Valid
+   * values are 1 through 65535.
    * </pre>
    *
    * <code>optional int32 port = 3446913;</code>
@@ -343,7 +400,8 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The TCP port number to which the health check prober sends packets. Valid values are 1 through 65535.
+   * The TCP port number to which the health check prober sends packets. Valid
+   * values are 1 through 65535.
    * </pre>
    *
    * <code>optional int32 port = 3446913;</code>
@@ -433,7 +491,28 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Not supported by target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for passthrough load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
+   * Specifies how a port is selected for health checking. Can be one of the
+   * following values:
+   * USE_FIXED_PORT: Specifies a port number explicitly using theport field  in the health check. Supported by backend services
+   * for passthrough load balancers and backend services for proxy load
+   * balancers. Not supported by target pools. The health check supports all
+   * backends supported by the backend service provided the backend can be
+   * health checked. For example, GCE_VM_IP network endpoint
+   * groups, GCE_VM_IP_PORT network endpoint groups, and instance
+   * group backends.
+   *  USE_NAMED_PORT: Not supported.
+   * USE_SERVING_PORT: Provides an indirect method of specifying
+   * the health check port by referring to the backend service. Only supported
+   * by backend services for proxy load balancers. Not supported by target
+   * pools.  Not supported by backend services for passthrough load balancers.
+   * Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group
+   * backends.
+   *
+   * For GCE_VM_IP_PORT network endpoint group backends, the health
+   * check uses the port number specified for each endpoint in the network
+   * endpoint group.  For instance group backends, the health check uses the
+   * port number determined by looking up the backend service's named port in
+   * the instance group's list of named ports.
    * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
@@ -450,7 +529,28 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Not supported by target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for passthrough load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
+   * Specifies how a port is selected for health checking. Can be one of the
+   * following values:
+   * USE_FIXED_PORT: Specifies a port number explicitly using theport field  in the health check. Supported by backend services
+   * for passthrough load balancers and backend services for proxy load
+   * balancers. Not supported by target pools. The health check supports all
+   * backends supported by the backend service provided the backend can be
+   * health checked. For example, GCE_VM_IP network endpoint
+   * groups, GCE_VM_IP_PORT network endpoint groups, and instance
+   * group backends.
+   *  USE_NAMED_PORT: Not supported.
+   * USE_SERVING_PORT: Provides an indirect method of specifying
+   * the health check port by referring to the backend service. Only supported
+   * by backend services for proxy load balancers. Not supported by target
+   * pools.  Not supported by backend services for passthrough load balancers.
+   * Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group
+   * backends.
+   *
+   * For GCE_VM_IP_PORT network endpoint group backends, the health
+   * check uses the port number specified for each endpoint in the network
+   * endpoint group.  For instance group backends, the health check uses the
+   * port number determined by looking up the backend service's named port in
+   * the instance group's list of named ports.
    * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
@@ -475,7 +575,28 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Not supported by target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for passthrough load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
+   * Specifies how a port is selected for health checking. Can be one of the
+   * following values:
+   * USE_FIXED_PORT: Specifies a port number explicitly using theport field  in the health check. Supported by backend services
+   * for passthrough load balancers and backend services for proxy load
+   * balancers. Not supported by target pools. The health check supports all
+   * backends supported by the backend service provided the backend can be
+   * health checked. For example, GCE_VM_IP network endpoint
+   * groups, GCE_VM_IP_PORT network endpoint groups, and instance
+   * group backends.
+   *  USE_NAMED_PORT: Not supported.
+   * USE_SERVING_PORT: Provides an indirect method of specifying
+   * the health check port by referring to the backend service. Only supported
+   * by backend services for proxy load balancers. Not supported by target
+   * pools.  Not supported by backend services for passthrough load balancers.
+   * Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group
+   * backends.
+   *
+   * For GCE_VM_IP_PORT network endpoint group backends, the health
+   * check uses the port number specified for each endpoint in the network
+   * endpoint group.  For instance group backends, the health check uses the
+   * port number determined by looking up the backend service's named port in
+   * the instance group's list of named ports.
    * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
@@ -940,7 +1061,16 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII.
+     * The gRPC service name for the health check. This field is optional. The
+     * value of grpc_service_name has the following meanings by convention:
+     *
+     * - Empty service_name means the overall status of all services at the
+     * backend.
+     *
+     * - Non-empty service_name means the health of that gRPC service, as defined
+     * by the owner of the service.
+     *
+     * The grpc_service_name can only be ASCII.
      * </pre>
      *
      * <code>optional string grpc_service_name = 136533078;</code>
@@ -955,7 +1085,16 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII.
+     * The gRPC service name for the health check. This field is optional. The
+     * value of grpc_service_name has the following meanings by convention:
+     *
+     * - Empty service_name means the overall status of all services at the
+     * backend.
+     *
+     * - Non-empty service_name means the health of that gRPC service, as defined
+     * by the owner of the service.
+     *
+     * The grpc_service_name can only be ASCII.
      * </pre>
      *
      * <code>optional string grpc_service_name = 136533078;</code>
@@ -978,7 +1117,16 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII.
+     * The gRPC service name for the health check. This field is optional. The
+     * value of grpc_service_name has the following meanings by convention:
+     *
+     * - Empty service_name means the overall status of all services at the
+     * backend.
+     *
+     * - Non-empty service_name means the health of that gRPC service, as defined
+     * by the owner of the service.
+     *
+     * The grpc_service_name can only be ASCII.
      * </pre>
      *
      * <code>optional string grpc_service_name = 136533078;</code>
@@ -1001,7 +1149,16 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII.
+     * The gRPC service name for the health check. This field is optional. The
+     * value of grpc_service_name has the following meanings by convention:
+     *
+     * - Empty service_name means the overall status of all services at the
+     * backend.
+     *
+     * - Non-empty service_name means the health of that gRPC service, as defined
+     * by the owner of the service.
+     *
+     * The grpc_service_name can only be ASCII.
      * </pre>
      *
      * <code>optional string grpc_service_name = 136533078;</code>
@@ -1023,7 +1180,16 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII.
+     * The gRPC service name for the health check. This field is optional. The
+     * value of grpc_service_name has the following meanings by convention:
+     *
+     * - Empty service_name means the overall status of all services at the
+     * backend.
+     *
+     * - Non-empty service_name means the health of that gRPC service, as defined
+     * by the owner of the service.
+     *
+     * The grpc_service_name can only be ASCII.
      * </pre>
      *
      * <code>optional string grpc_service_name = 136533078;</code>
@@ -1041,7 +1207,16 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII.
+     * The gRPC service name for the health check. This field is optional. The
+     * value of grpc_service_name has the following meanings by convention:
+     *
+     * - Empty service_name means the overall status of all services at the
+     * backend.
+     *
+     * - Non-empty service_name means the health of that gRPC service, as defined
+     * by the owner of the service.
+     *
+     * The grpc_service_name can only be ASCII.
      * </pre>
      *
      * <code>optional string grpc_service_name = 136533078;</code>
@@ -1066,7 +1241,8 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The TCP port number to which the health check prober sends packets. Valid values are 1 through 65535.
+     * The TCP port number to which the health check prober sends packets. Valid
+     * values are 1 through 65535.
      * </pre>
      *
      * <code>optional int32 port = 3446913;</code>
@@ -1082,7 +1258,8 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The TCP port number to which the health check prober sends packets. Valid values are 1 through 65535.
+     * The TCP port number to which the health check prober sends packets. Valid
+     * values are 1 through 65535.
      * </pre>
      *
      * <code>optional int32 port = 3446913;</code>
@@ -1098,7 +1275,8 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The TCP port number to which the health check prober sends packets. Valid values are 1 through 65535.
+     * The TCP port number to which the health check prober sends packets. Valid
+     * values are 1 through 65535.
      * </pre>
      *
      * <code>optional int32 port = 3446913;</code>
@@ -1118,7 +1296,8 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The TCP port number to which the health check prober sends packets. Valid values are 1 through 65535.
+     * The TCP port number to which the health check prober sends packets. Valid
+     * values are 1 through 65535.
      * </pre>
      *
      * <code>optional int32 port = 3446913;</code>
@@ -1264,7 +1443,28 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Not supported by target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for passthrough load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
+     * Specifies how a port is selected for health checking. Can be one of the
+     * following values:
+     * USE_FIXED_PORT: Specifies a port number explicitly using theport field  in the health check. Supported by backend services
+     * for passthrough load balancers and backend services for proxy load
+     * balancers. Not supported by target pools. The health check supports all
+     * backends supported by the backend service provided the backend can be
+     * health checked. For example, GCE_VM_IP network endpoint
+     * groups, GCE_VM_IP_PORT network endpoint groups, and instance
+     * group backends.
+     *  USE_NAMED_PORT: Not supported.
+     * USE_SERVING_PORT: Provides an indirect method of specifying
+     * the health check port by referring to the backend service. Only supported
+     * by backend services for proxy load balancers. Not supported by target
+     * pools.  Not supported by backend services for passthrough load balancers.
+     * Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group
+     * backends.
+     *
+     * For GCE_VM_IP_PORT network endpoint group backends, the health
+     * check uses the port number specified for each endpoint in the network
+     * endpoint group.  For instance group backends, the health check uses the
+     * port number determined by looking up the backend service's named port in
+     * the instance group's list of named ports.
      * Check the PortSpecification enum for the list of possible values.
      * </pre>
      *
@@ -1280,7 +1480,28 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Not supported by target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for passthrough load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
+     * Specifies how a port is selected for health checking. Can be one of the
+     * following values:
+     * USE_FIXED_PORT: Specifies a port number explicitly using theport field  in the health check. Supported by backend services
+     * for passthrough load balancers and backend services for proxy load
+     * balancers. Not supported by target pools. The health check supports all
+     * backends supported by the backend service provided the backend can be
+     * health checked. For example, GCE_VM_IP network endpoint
+     * groups, GCE_VM_IP_PORT network endpoint groups, and instance
+     * group backends.
+     *  USE_NAMED_PORT: Not supported.
+     * USE_SERVING_PORT: Provides an indirect method of specifying
+     * the health check port by referring to the backend service. Only supported
+     * by backend services for proxy load balancers. Not supported by target
+     * pools.  Not supported by backend services for passthrough load balancers.
+     * Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group
+     * backends.
+     *
+     * For GCE_VM_IP_PORT network endpoint group backends, the health
+     * check uses the port number specified for each endpoint in the network
+     * endpoint group.  For instance group backends, the health check uses the
+     * port number determined by looking up the backend service's named port in
+     * the instance group's list of named ports.
      * Check the PortSpecification enum for the list of possible values.
      * </pre>
      *
@@ -1304,7 +1525,28 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Not supported by target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for passthrough load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
+     * Specifies how a port is selected for health checking. Can be one of the
+     * following values:
+     * USE_FIXED_PORT: Specifies a port number explicitly using theport field  in the health check. Supported by backend services
+     * for passthrough load balancers and backend services for proxy load
+     * balancers. Not supported by target pools. The health check supports all
+     * backends supported by the backend service provided the backend can be
+     * health checked. For example, GCE_VM_IP network endpoint
+     * groups, GCE_VM_IP_PORT network endpoint groups, and instance
+     * group backends.
+     *  USE_NAMED_PORT: Not supported.
+     * USE_SERVING_PORT: Provides an indirect method of specifying
+     * the health check port by referring to the backend service. Only supported
+     * by backend services for proxy load balancers. Not supported by target
+     * pools.  Not supported by backend services for passthrough load balancers.
+     * Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group
+     * backends.
+     *
+     * For GCE_VM_IP_PORT network endpoint group backends, the health
+     * check uses the port number specified for each endpoint in the network
+     * endpoint group.  For instance group backends, the health check uses the
+     * port number determined by looking up the backend service's named port in
+     * the instance group's list of named ports.
      * Check the PortSpecification enum for the list of possible values.
      * </pre>
      *
@@ -1328,7 +1570,28 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Not supported by target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for passthrough load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
+     * Specifies how a port is selected for health checking. Can be one of the
+     * following values:
+     * USE_FIXED_PORT: Specifies a port number explicitly using theport field  in the health check. Supported by backend services
+     * for passthrough load balancers and backend services for proxy load
+     * balancers. Not supported by target pools. The health check supports all
+     * backends supported by the backend service provided the backend can be
+     * health checked. For example, GCE_VM_IP network endpoint
+     * groups, GCE_VM_IP_PORT network endpoint groups, and instance
+     * group backends.
+     *  USE_NAMED_PORT: Not supported.
+     * USE_SERVING_PORT: Provides an indirect method of specifying
+     * the health check port by referring to the backend service. Only supported
+     * by backend services for proxy load balancers. Not supported by target
+     * pools.  Not supported by backend services for passthrough load balancers.
+     * Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group
+     * backends.
+     *
+     * For GCE_VM_IP_PORT network endpoint group backends, the health
+     * check uses the port number specified for each endpoint in the network
+     * endpoint group.  For instance group backends, the health check uses the
+     * port number determined by looking up the backend service's named port in
+     * the instance group's list of named ports.
      * Check the PortSpecification enum for the list of possible values.
      * </pre>
      *
@@ -1351,7 +1614,28 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Not supported by target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for passthrough load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
+     * Specifies how a port is selected for health checking. Can be one of the
+     * following values:
+     * USE_FIXED_PORT: Specifies a port number explicitly using theport field  in the health check. Supported by backend services
+     * for passthrough load balancers and backend services for proxy load
+     * balancers. Not supported by target pools. The health check supports all
+     * backends supported by the backend service provided the backend can be
+     * health checked. For example, GCE_VM_IP network endpoint
+     * groups, GCE_VM_IP_PORT network endpoint groups, and instance
+     * group backends.
+     *  USE_NAMED_PORT: Not supported.
+     * USE_SERVING_PORT: Provides an indirect method of specifying
+     * the health check port by referring to the backend service. Only supported
+     * by backend services for proxy load balancers. Not supported by target
+     * pools.  Not supported by backend services for passthrough load balancers.
+     * Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group
+     * backends.
+     *
+     * For GCE_VM_IP_PORT network endpoint group backends, the health
+     * check uses the port number specified for each endpoint in the network
+     * endpoint group.  For instance group backends, the health check uses the
+     * port number determined by looking up the backend service's named port in
+     * the instance group's list of named ports.
      * Check the PortSpecification enum for the list of possible values.
      * </pre>
      *
@@ -1370,7 +1654,28 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Not supported by target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for passthrough load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
+     * Specifies how a port is selected for health checking. Can be one of the
+     * following values:
+     * USE_FIXED_PORT: Specifies a port number explicitly using theport field  in the health check. Supported by backend services
+     * for passthrough load balancers and backend services for proxy load
+     * balancers. Not supported by target pools. The health check supports all
+     * backends supported by the backend service provided the backend can be
+     * health checked. For example, GCE_VM_IP network endpoint
+     * groups, GCE_VM_IP_PORT network endpoint groups, and instance
+     * group backends.
+     *  USE_NAMED_PORT: Not supported.
+     * USE_SERVING_PORT: Provides an indirect method of specifying
+     * the health check port by referring to the backend service. Only supported
+     * by backend services for proxy load balancers. Not supported by target
+     * pools.  Not supported by backend services for passthrough load balancers.
+     * Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group
+     * backends.
+     *
+     * For GCE_VM_IP_PORT network endpoint group backends, the health
+     * check uses the port number specified for each endpoint in the network
+     * endpoint group.  For instance group backends, the health check uses the
+     * port number determined by looking up the backend service's named port in
+     * the instance group's list of named ports.
      * Check the PortSpecification enum for the list of possible values.
      * </pre>
      *

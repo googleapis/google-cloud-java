@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,25 +52,32 @@ public final class AgentCoachingInstructionProto {
       "\n@google/cloud/dialogflow/v2beta1/agent_"
           + "coaching_instruction.proto\022\037google.cloud"
           + ".dialogflow.v2beta1\032\037google/api/field_be"
-          + "havior.proto\"\252\004\n\030AgentCoachingInstructio"
+          + "havior.proto\"\253\006\n\030AgentCoachingInstructio"
           + "n\022\031\n\014display_name\030\001 \001(\tB\003\340A\001\022\034\n\017display_"
           + "details\030\002 \001(\tB\003\340A\001\022\026\n\tcondition\030\003 \001(\tB\003\340"
           + "A\001\022\031\n\014agent_action\030\004 \001(\tB\003\340A\001\022\032\n\rsystem_"
           + "action\030\005 \001(\tB\003\340A\001\022s\n\026duplicate_check_res"
           + "ult\030\010 \001(\0132N.google.cloud.dialogflow.v2be"
           + "ta1.AgentCoachingInstruction.DuplicateCh"
-          + "eckResultB\003\340A\003\032\220\002\n\024DuplicateCheckResult\022"
-          + "\206\001\n\025duplicate_suggestions\030\001 \003(\0132b.google"
-          + ".cloud.dialogflow.v2beta1.AgentCoachingI"
-          + "nstruction.DuplicateCheckResult.Duplicat"
-          + "eSuggestionB\003\340A\003\032o\n\023DuplicateSuggestion\022"
-          + "\032\n\ranswer_record\030\001 \001(\tB\003\340A\003\022\035\n\020suggestio"
-          + "n_index\030\003 \001(\005B\003\340A\003\022\035\n\020similarity_score\030\004"
-          + " \001(\002B\003\340A\003B\262\001\n#com.google.cloud.dialogflo"
-          + "w.v2beta1B\035AgentCoachingInstructionProto"
-          + "P\001ZCcloud.google.com/go/dialogflow/apiv2"
-          + "beta1/dialogflowpb;dialogflowpb\242\002\002DF\252\002\037G"
-          + "oogle.Cloud.Dialogflow.V2Beta1b\006proto3"
+          + "eckResultB\003\340A\003\022e\n\020triggering_event\030\n \001(\016"
+          + "2F.google.cloud.dialogflow.v2beta1.Agent"
+          + "CoachingInstruction.TriggerEventB\003\340A\001\032\220\002"
+          + "\n\024DuplicateCheckResult\022\206\001\n\025duplicate_sug"
+          + "gestions\030\001 \003(\0132b.google.cloud.dialogflow"
+          + ".v2beta1.AgentCoachingInstruction.Duplic"
+          + "ateCheckResult.DuplicateSuggestionB\003\340A\003\032"
+          + "o\n\023DuplicateSuggestion\022\032\n\ranswer_record\030"
+          + "\001 \001(\tB\003\340A\003\022\035\n\020suggestion_index\030\003 \001(\005B\003\340A"
+          + "\003\022\035\n\020similarity_score\030\004 \001(\002B\003\340A\003\"\227\001\n\014Tri"
+          + "ggerEvent\022\035\n\031TRIGGER_EVENT_UNSPECIFIED\020\000"
+          + "\022\024\n\020END_OF_UTTERANCE\020\001\022\017\n\013MANUAL_CALL\020\002\022"
+          + "\024\n\020CUSTOMER_MESSAGE\020\003\022\021\n\rAGENT_MESSAGE\020\004"
+          + "\022\030\n\024TOOL_CALL_COMPLETION\020\005B\262\001\n#com.googl"
+          + "e.cloud.dialogflow.v2beta1B\035AgentCoachin"
+          + "gInstructionProtoP\001ZCcloud.google.com/go"
+          + "/dialogflow/apiv2beta1/dialogflowpb;dial"
+          + "ogflowpb\242\002\002DF\252\002\037Google.Cloud.Dialogflow."
+          + "V2Beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -90,6 +97,7 @@ public final class AgentCoachingInstructionProto {
               "AgentAction",
               "SystemAction",
               "DuplicateCheckResult",
+              "TriggeringEvent",
             });
     internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingInstruction_DuplicateCheckResult_descriptor =
         internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingInstruction_descriptor

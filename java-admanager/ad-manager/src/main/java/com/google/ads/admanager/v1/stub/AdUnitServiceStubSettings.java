@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,11 +21,23 @@ import static com.google.ads.admanager.v1.AdUnitServiceClient.ListAdUnitsPagedRe
 
 import com.google.ads.admanager.v1.AdUnit;
 import com.google.ads.admanager.v1.AdUnitSize;
+import com.google.ads.admanager.v1.BatchActivateAdUnitsRequest;
+import com.google.ads.admanager.v1.BatchActivateAdUnitsResponse;
+import com.google.ads.admanager.v1.BatchArchiveAdUnitsRequest;
+import com.google.ads.admanager.v1.BatchArchiveAdUnitsResponse;
+import com.google.ads.admanager.v1.BatchCreateAdUnitsRequest;
+import com.google.ads.admanager.v1.BatchCreateAdUnitsResponse;
+import com.google.ads.admanager.v1.BatchDeactivateAdUnitsRequest;
+import com.google.ads.admanager.v1.BatchDeactivateAdUnitsResponse;
+import com.google.ads.admanager.v1.BatchUpdateAdUnitsRequest;
+import com.google.ads.admanager.v1.BatchUpdateAdUnitsResponse;
+import com.google.ads.admanager.v1.CreateAdUnitRequest;
 import com.google.ads.admanager.v1.GetAdUnitRequest;
 import com.google.ads.admanager.v1.ListAdUnitSizesRequest;
 import com.google.ads.admanager.v1.ListAdUnitSizesResponse;
 import com.google.ads.admanager.v1.ListAdUnitsRequest;
 import com.google.ads.admanager.v1.ListAdUnitsResponse;
+import com.google.ads.admanager.v1.UpdateAdUnitRequest;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ObsoleteApi;
@@ -103,8 +115,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @Generated("by gapic-generator-java")
 public class AdUnitServiceStubSettings extends StubSettings<AdUnitServiceStubSettings> {
@@ -118,6 +130,18 @@ public class AdUnitServiceStubSettings extends StubSettings<AdUnitServiceStubSet
   private final PagedCallSettings<
           ListAdUnitSizesRequest, ListAdUnitSizesResponse, ListAdUnitSizesPagedResponse>
       listAdUnitSizesSettings;
+  private final UnaryCallSettings<CreateAdUnitRequest, AdUnit> createAdUnitSettings;
+  private final UnaryCallSettings<UpdateAdUnitRequest, AdUnit> updateAdUnitSettings;
+  private final UnaryCallSettings<BatchCreateAdUnitsRequest, BatchCreateAdUnitsResponse>
+      batchCreateAdUnitsSettings;
+  private final UnaryCallSettings<BatchUpdateAdUnitsRequest, BatchUpdateAdUnitsResponse>
+      batchUpdateAdUnitsSettings;
+  private final UnaryCallSettings<BatchActivateAdUnitsRequest, BatchActivateAdUnitsResponse>
+      batchActivateAdUnitsSettings;
+  private final UnaryCallSettings<BatchDeactivateAdUnitsRequest, BatchDeactivateAdUnitsResponse>
+      batchDeactivateAdUnitsSettings;
+  private final UnaryCallSettings<BatchArchiveAdUnitsRequest, BatchArchiveAdUnitsResponse>
+      batchArchiveAdUnitsSettings;
 
   private static final PagedListDescriptor<ListAdUnitsRequest, ListAdUnitsResponse, AdUnit>
       LIST_AD_UNITS_PAGE_STR_DESC =
@@ -242,6 +266,46 @@ public class AdUnitServiceStubSettings extends StubSettings<AdUnitServiceStubSet
     return listAdUnitSizesSettings;
   }
 
+  /** Returns the object with the settings used for calls to createAdUnit. */
+  public UnaryCallSettings<CreateAdUnitRequest, AdUnit> createAdUnitSettings() {
+    return createAdUnitSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAdUnit. */
+  public UnaryCallSettings<UpdateAdUnitRequest, AdUnit> updateAdUnitSettings() {
+    return updateAdUnitSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateAdUnits. */
+  public UnaryCallSettings<BatchCreateAdUnitsRequest, BatchCreateAdUnitsResponse>
+      batchCreateAdUnitsSettings() {
+    return batchCreateAdUnitsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateAdUnits. */
+  public UnaryCallSettings<BatchUpdateAdUnitsRequest, BatchUpdateAdUnitsResponse>
+      batchUpdateAdUnitsSettings() {
+    return batchUpdateAdUnitsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchActivateAdUnits. */
+  public UnaryCallSettings<BatchActivateAdUnitsRequest, BatchActivateAdUnitsResponse>
+      batchActivateAdUnitsSettings() {
+    return batchActivateAdUnitsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchDeactivateAdUnits. */
+  public UnaryCallSettings<BatchDeactivateAdUnitsRequest, BatchDeactivateAdUnitsResponse>
+      batchDeactivateAdUnitsSettings() {
+    return batchDeactivateAdUnitsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchArchiveAdUnits. */
+  public UnaryCallSettings<BatchArchiveAdUnitsRequest, BatchArchiveAdUnitsResponse>
+      batchArchiveAdUnitsSettings() {
+    return batchArchiveAdUnitsSettings;
+  }
+
   public AdUnitServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -327,6 +391,13 @@ public class AdUnitServiceStubSettings extends StubSettings<AdUnitServiceStubSet
     getAdUnitSettings = settingsBuilder.getAdUnitSettings().build();
     listAdUnitsSettings = settingsBuilder.listAdUnitsSettings().build();
     listAdUnitSizesSettings = settingsBuilder.listAdUnitSizesSettings().build();
+    createAdUnitSettings = settingsBuilder.createAdUnitSettings().build();
+    updateAdUnitSettings = settingsBuilder.updateAdUnitSettings().build();
+    batchCreateAdUnitsSettings = settingsBuilder.batchCreateAdUnitsSettings().build();
+    batchUpdateAdUnitsSettings = settingsBuilder.batchUpdateAdUnitsSettings().build();
+    batchActivateAdUnitsSettings = settingsBuilder.batchActivateAdUnitsSettings().build();
+    batchDeactivateAdUnitsSettings = settingsBuilder.batchDeactivateAdUnitsSettings().build();
+    batchArchiveAdUnitsSettings = settingsBuilder.batchArchiveAdUnitsSettings().build();
   }
 
   /** Builder for AdUnitServiceStubSettings. */
@@ -339,6 +410,20 @@ public class AdUnitServiceStubSettings extends StubSettings<AdUnitServiceStubSet
     private final PagedCallSettings.Builder<
             ListAdUnitSizesRequest, ListAdUnitSizesResponse, ListAdUnitSizesPagedResponse>
         listAdUnitSizesSettings;
+    private final UnaryCallSettings.Builder<CreateAdUnitRequest, AdUnit> createAdUnitSettings;
+    private final UnaryCallSettings.Builder<UpdateAdUnitRequest, AdUnit> updateAdUnitSettings;
+    private final UnaryCallSettings.Builder<BatchCreateAdUnitsRequest, BatchCreateAdUnitsResponse>
+        batchCreateAdUnitsSettings;
+    private final UnaryCallSettings.Builder<BatchUpdateAdUnitsRequest, BatchUpdateAdUnitsResponse>
+        batchUpdateAdUnitsSettings;
+    private final UnaryCallSettings.Builder<
+            BatchActivateAdUnitsRequest, BatchActivateAdUnitsResponse>
+        batchActivateAdUnitsSettings;
+    private final UnaryCallSettings.Builder<
+            BatchDeactivateAdUnitsRequest, BatchDeactivateAdUnitsResponse>
+        batchDeactivateAdUnitsSettings;
+    private final UnaryCallSettings.Builder<BatchArchiveAdUnitsRequest, BatchArchiveAdUnitsResponse>
+        batchArchiveAdUnitsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -369,10 +454,26 @@ public class AdUnitServiceStubSettings extends StubSettings<AdUnitServiceStubSet
       getAdUnitSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listAdUnitsSettings = PagedCallSettings.newBuilder(LIST_AD_UNITS_PAGE_STR_FACT);
       listAdUnitSizesSettings = PagedCallSettings.newBuilder(LIST_AD_UNIT_SIZES_PAGE_STR_FACT);
+      createAdUnitSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateAdUnitSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchCreateAdUnitsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchUpdateAdUnitsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchActivateAdUnitsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchDeactivateAdUnitsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchArchiveAdUnitsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getAdUnitSettings, listAdUnitsSettings, listAdUnitSizesSettings);
+              getAdUnitSettings,
+              listAdUnitsSettings,
+              listAdUnitSizesSettings,
+              createAdUnitSettings,
+              updateAdUnitSettings,
+              batchCreateAdUnitsSettings,
+              batchUpdateAdUnitsSettings,
+              batchActivateAdUnitsSettings,
+              batchDeactivateAdUnitsSettings,
+              batchArchiveAdUnitsSettings);
       initDefaults(this);
     }
 
@@ -382,10 +483,26 @@ public class AdUnitServiceStubSettings extends StubSettings<AdUnitServiceStubSet
       getAdUnitSettings = settings.getAdUnitSettings.toBuilder();
       listAdUnitsSettings = settings.listAdUnitsSettings.toBuilder();
       listAdUnitSizesSettings = settings.listAdUnitSizesSettings.toBuilder();
+      createAdUnitSettings = settings.createAdUnitSettings.toBuilder();
+      updateAdUnitSettings = settings.updateAdUnitSettings.toBuilder();
+      batchCreateAdUnitsSettings = settings.batchCreateAdUnitsSettings.toBuilder();
+      batchUpdateAdUnitsSettings = settings.batchUpdateAdUnitsSettings.toBuilder();
+      batchActivateAdUnitsSettings = settings.batchActivateAdUnitsSettings.toBuilder();
+      batchDeactivateAdUnitsSettings = settings.batchDeactivateAdUnitsSettings.toBuilder();
+      batchArchiveAdUnitsSettings = settings.batchArchiveAdUnitsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getAdUnitSettings, listAdUnitsSettings, listAdUnitSizesSettings);
+              getAdUnitSettings,
+              listAdUnitsSettings,
+              listAdUnitSizesSettings,
+              createAdUnitSettings,
+              updateAdUnitSettings,
+              batchCreateAdUnitsSettings,
+              batchUpdateAdUnitsSettings,
+              batchActivateAdUnitsSettings,
+              batchDeactivateAdUnitsSettings,
+              batchArchiveAdUnitsSettings);
     }
 
     private static Builder createDefault() {
@@ -413,6 +530,41 @@ public class AdUnitServiceStubSettings extends StubSettings<AdUnitServiceStubSet
 
       builder
           .listAdUnitSizesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createAdUnitSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateAdUnitSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchCreateAdUnitsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchUpdateAdUnitsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchActivateAdUnitsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchDeactivateAdUnitsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchArchiveAdUnitsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -451,6 +603,46 @@ public class AdUnitServiceStubSettings extends StubSettings<AdUnitServiceStubSet
             ListAdUnitSizesRequest, ListAdUnitSizesResponse, ListAdUnitSizesPagedResponse>
         listAdUnitSizesSettings() {
       return listAdUnitSizesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAdUnit. */
+    public UnaryCallSettings.Builder<CreateAdUnitRequest, AdUnit> createAdUnitSettings() {
+      return createAdUnitSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAdUnit. */
+    public UnaryCallSettings.Builder<UpdateAdUnitRequest, AdUnit> updateAdUnitSettings() {
+      return updateAdUnitSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateAdUnits. */
+    public UnaryCallSettings.Builder<BatchCreateAdUnitsRequest, BatchCreateAdUnitsResponse>
+        batchCreateAdUnitsSettings() {
+      return batchCreateAdUnitsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateAdUnits. */
+    public UnaryCallSettings.Builder<BatchUpdateAdUnitsRequest, BatchUpdateAdUnitsResponse>
+        batchUpdateAdUnitsSettings() {
+      return batchUpdateAdUnitsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchActivateAdUnits. */
+    public UnaryCallSettings.Builder<BatchActivateAdUnitsRequest, BatchActivateAdUnitsResponse>
+        batchActivateAdUnitsSettings() {
+      return batchActivateAdUnitsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeactivateAdUnits. */
+    public UnaryCallSettings.Builder<BatchDeactivateAdUnitsRequest, BatchDeactivateAdUnitsResponse>
+        batchDeactivateAdUnitsSettings() {
+      return batchDeactivateAdUnitsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchArchiveAdUnits. */
+    public UnaryCallSettings.Builder<BatchArchiveAdUnitsRequest, BatchArchiveAdUnitsResponse>
+        batchArchiveAdUnitsSettings() {
+      return batchArchiveAdUnitsSettings;
     }
 
     @Override

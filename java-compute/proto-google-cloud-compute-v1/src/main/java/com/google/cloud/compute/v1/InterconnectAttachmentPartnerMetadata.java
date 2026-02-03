@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,9 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Informational metadata about Partner attachments from Partners to display to customers. These fields are propagated from PARTNER_PROVIDER attachments to their corresponding PARTNER attachments.
+ * Informational metadata about Partner attachments from Partners to display
+ * to customers.  These fields are propagated from PARTNER_PROVIDER
+ * attachments to their corresponding PARTNER attachments.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.InterconnectAttachmentPartnerMetadata}
@@ -78,7 +80,9 @@ public final class InterconnectAttachmentPartnerMetadata
    *
    *
    * <pre>
-   * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
+   * Plain text name of the Interconnect this attachment is connected to, as
+   * displayed in the Partner's portal. For instance "Chicago 1".
+   * This value may be validated to match approved Partner values.
    * </pre>
    *
    * <code>optional string interconnect_name = 514963356;</code>
@@ -94,7 +98,9 @@ public final class InterconnectAttachmentPartnerMetadata
    *
    *
    * <pre>
-   * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
+   * Plain text name of the Interconnect this attachment is connected to, as
+   * displayed in the Partner's portal. For instance "Chicago 1".
+   * This value may be validated to match approved Partner values.
    * </pre>
    *
    * <code>optional string interconnect_name = 514963356;</code>
@@ -118,7 +124,9 @@ public final class InterconnectAttachmentPartnerMetadata
    *
    *
    * <pre>
-   * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
+   * Plain text name of the Interconnect this attachment is connected to, as
+   * displayed in the Partner's portal. For instance "Chicago 1".
+   * This value may be validated to match approved Partner values.
    * </pre>
    *
    * <code>optional string interconnect_name = 514963356;</code>
@@ -147,7 +155,8 @@ public final class InterconnectAttachmentPartnerMetadata
    *
    *
    * <pre>
-   * Plain text name of the Partner providing this attachment. This value may be validated to match approved Partner values.
+   * Plain text name of the Partner providing this attachment.
+   * This value may be validated to match approved Partner values.
    * </pre>
    *
    * <code>optional string partner_name = 161747874;</code>
@@ -163,7 +172,8 @@ public final class InterconnectAttachmentPartnerMetadata
    *
    *
    * <pre>
-   * Plain text name of the Partner providing this attachment. This value may be validated to match approved Partner values.
+   * Plain text name of the Partner providing this attachment.
+   * This value may be validated to match approved Partner values.
    * </pre>
    *
    * <code>optional string partner_name = 161747874;</code>
@@ -187,7 +197,8 @@ public final class InterconnectAttachmentPartnerMetadata
    *
    *
    * <pre>
-   * Plain text name of the Partner providing this attachment. This value may be validated to match approved Partner values.
+   * Plain text name of the Partner providing this attachment.
+   * This value may be validated to match approved Partner values.
    * </pre>
    *
    * <code>optional string partner_name = 161747874;</code>
@@ -216,7 +227,9 @@ public final class InterconnectAttachmentPartnerMetadata
    *
    *
    * <pre>
-   * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
+   * URL of the Partner's portal for this Attachment. Partners may customise
+   * this to be a deep link to the specific resource on the Partner portal.
+   * This value may be validated to match approved Partner values.
    * </pre>
    *
    * <code>optional string portal_url = 269182748;</code>
@@ -232,7 +245,9 @@ public final class InterconnectAttachmentPartnerMetadata
    *
    *
    * <pre>
-   * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
+   * URL of the Partner's portal for this Attachment. Partners may customise
+   * this to be a deep link to the specific resource on the Partner portal.
+   * This value may be validated to match approved Partner values.
    * </pre>
    *
    * <code>optional string portal_url = 269182748;</code>
@@ -256,7 +271,9 @@ public final class InterconnectAttachmentPartnerMetadata
    *
    *
    * <pre>
-   * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
+   * URL of the Partner's portal for this Attachment. Partners may customise
+   * this to be a deep link to the specific resource on the Partner portal.
+   * This value may be validated to match approved Partner values.
    * </pre>
    *
    * <code>optional string portal_url = 269182748;</code>
@@ -476,7 +493,9 @@ public final class InterconnectAttachmentPartnerMetadata
    *
    *
    * <pre>
-   * Informational metadata about Partner attachments from Partners to display to customers. These fields are propagated from PARTNER_PROVIDER attachments to their corresponding PARTNER attachments.
+   * Informational metadata about Partner attachments from Partners to display
+   * to customers.  These fields are propagated from PARTNER_PROVIDER
+   * attachments to their corresponding PARTNER attachments.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.InterconnectAttachmentPartnerMetadata}
@@ -701,7 +720,9 @@ public final class InterconnectAttachmentPartnerMetadata
      *
      *
      * <pre>
-     * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
+     * Plain text name of the Interconnect this attachment is connected to, as
+     * displayed in the Partner's portal. For instance "Chicago 1".
+     * This value may be validated to match approved Partner values.
      * </pre>
      *
      * <code>optional string interconnect_name = 514963356;</code>
@@ -716,7 +737,9 @@ public final class InterconnectAttachmentPartnerMetadata
      *
      *
      * <pre>
-     * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
+     * Plain text name of the Interconnect this attachment is connected to, as
+     * displayed in the Partner's portal. For instance "Chicago 1".
+     * This value may be validated to match approved Partner values.
      * </pre>
      *
      * <code>optional string interconnect_name = 514963356;</code>
@@ -739,7 +762,9 @@ public final class InterconnectAttachmentPartnerMetadata
      *
      *
      * <pre>
-     * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
+     * Plain text name of the Interconnect this attachment is connected to, as
+     * displayed in the Partner's portal. For instance "Chicago 1".
+     * This value may be validated to match approved Partner values.
      * </pre>
      *
      * <code>optional string interconnect_name = 514963356;</code>
@@ -762,7 +787,9 @@ public final class InterconnectAttachmentPartnerMetadata
      *
      *
      * <pre>
-     * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
+     * Plain text name of the Interconnect this attachment is connected to, as
+     * displayed in the Partner's portal. For instance "Chicago 1".
+     * This value may be validated to match approved Partner values.
      * </pre>
      *
      * <code>optional string interconnect_name = 514963356;</code>
@@ -784,7 +811,9 @@ public final class InterconnectAttachmentPartnerMetadata
      *
      *
      * <pre>
-     * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
+     * Plain text name of the Interconnect this attachment is connected to, as
+     * displayed in the Partner's portal. For instance "Chicago 1".
+     * This value may be validated to match approved Partner values.
      * </pre>
      *
      * <code>optional string interconnect_name = 514963356;</code>
@@ -802,7 +831,9 @@ public final class InterconnectAttachmentPartnerMetadata
      *
      *
      * <pre>
-     * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
+     * Plain text name of the Interconnect this attachment is connected to, as
+     * displayed in the Partner's portal. For instance "Chicago 1".
+     * This value may be validated to match approved Partner values.
      * </pre>
      *
      * <code>optional string interconnect_name = 514963356;</code>
@@ -827,7 +858,8 @@ public final class InterconnectAttachmentPartnerMetadata
      *
      *
      * <pre>
-     * Plain text name of the Partner providing this attachment. This value may be validated to match approved Partner values.
+     * Plain text name of the Partner providing this attachment.
+     * This value may be validated to match approved Partner values.
      * </pre>
      *
      * <code>optional string partner_name = 161747874;</code>
@@ -842,7 +874,8 @@ public final class InterconnectAttachmentPartnerMetadata
      *
      *
      * <pre>
-     * Plain text name of the Partner providing this attachment. This value may be validated to match approved Partner values.
+     * Plain text name of the Partner providing this attachment.
+     * This value may be validated to match approved Partner values.
      * </pre>
      *
      * <code>optional string partner_name = 161747874;</code>
@@ -865,7 +898,8 @@ public final class InterconnectAttachmentPartnerMetadata
      *
      *
      * <pre>
-     * Plain text name of the Partner providing this attachment. This value may be validated to match approved Partner values.
+     * Plain text name of the Partner providing this attachment.
+     * This value may be validated to match approved Partner values.
      * </pre>
      *
      * <code>optional string partner_name = 161747874;</code>
@@ -888,7 +922,8 @@ public final class InterconnectAttachmentPartnerMetadata
      *
      *
      * <pre>
-     * Plain text name of the Partner providing this attachment. This value may be validated to match approved Partner values.
+     * Plain text name of the Partner providing this attachment.
+     * This value may be validated to match approved Partner values.
      * </pre>
      *
      * <code>optional string partner_name = 161747874;</code>
@@ -910,7 +945,8 @@ public final class InterconnectAttachmentPartnerMetadata
      *
      *
      * <pre>
-     * Plain text name of the Partner providing this attachment. This value may be validated to match approved Partner values.
+     * Plain text name of the Partner providing this attachment.
+     * This value may be validated to match approved Partner values.
      * </pre>
      *
      * <code>optional string partner_name = 161747874;</code>
@@ -928,7 +964,8 @@ public final class InterconnectAttachmentPartnerMetadata
      *
      *
      * <pre>
-     * Plain text name of the Partner providing this attachment. This value may be validated to match approved Partner values.
+     * Plain text name of the Partner providing this attachment.
+     * This value may be validated to match approved Partner values.
      * </pre>
      *
      * <code>optional string partner_name = 161747874;</code>
@@ -953,7 +990,9 @@ public final class InterconnectAttachmentPartnerMetadata
      *
      *
      * <pre>
-     * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
+     * URL of the Partner's portal for this Attachment. Partners may customise
+     * this to be a deep link to the specific resource on the Partner portal.
+     * This value may be validated to match approved Partner values.
      * </pre>
      *
      * <code>optional string portal_url = 269182748;</code>
@@ -968,7 +1007,9 @@ public final class InterconnectAttachmentPartnerMetadata
      *
      *
      * <pre>
-     * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
+     * URL of the Partner's portal for this Attachment. Partners may customise
+     * this to be a deep link to the specific resource on the Partner portal.
+     * This value may be validated to match approved Partner values.
      * </pre>
      *
      * <code>optional string portal_url = 269182748;</code>
@@ -991,7 +1032,9 @@ public final class InterconnectAttachmentPartnerMetadata
      *
      *
      * <pre>
-     * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
+     * URL of the Partner's portal for this Attachment. Partners may customise
+     * this to be a deep link to the specific resource on the Partner portal.
+     * This value may be validated to match approved Partner values.
      * </pre>
      *
      * <code>optional string portal_url = 269182748;</code>
@@ -1014,7 +1057,9 @@ public final class InterconnectAttachmentPartnerMetadata
      *
      *
      * <pre>
-     * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
+     * URL of the Partner's portal for this Attachment. Partners may customise
+     * this to be a deep link to the specific resource on the Partner portal.
+     * This value may be validated to match approved Partner values.
      * </pre>
      *
      * <code>optional string portal_url = 269182748;</code>
@@ -1036,7 +1081,9 @@ public final class InterconnectAttachmentPartnerMetadata
      *
      *
      * <pre>
-     * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
+     * URL of the Partner's portal for this Attachment. Partners may customise
+     * this to be a deep link to the specific resource on the Partner portal.
+     * This value may be validated to match approved Partner values.
      * </pre>
      *
      * <code>optional string portal_url = 269182748;</code>
@@ -1054,7 +1101,9 @@ public final class InterconnectAttachmentPartnerMetadata
      *
      *
      * <pre>
-     * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
+     * URL of the Partner's portal for this Attachment. Partners may customise
+     * this to be a deep link to the specific resource on the Partner portal.
+     * This value may be validated to match approved Partner values.
      * </pre>
      *
      * <code>optional string portal_url = 269182748;</code>

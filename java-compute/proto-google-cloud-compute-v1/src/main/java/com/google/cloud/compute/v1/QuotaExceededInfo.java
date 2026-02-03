@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -102,7 +102,8 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * IN_PROGRESS - A rollout is in process which will change the limit value to future limit.
+     * IN_PROGRESS - A rollout is in process which will change the limit value
+     * to future limit.
      * </pre>
      *
      * <code>IN_PROGRESS = 469193735;</code>
@@ -112,7 +113,8 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * ROLLOUT_STATUS_UNSPECIFIED - Rollout status is not specified. The default value.
+     * ROLLOUT_STATUS_UNSPECIFIED - Rollout status is not specified. The default
+     * value.
      * </pre>
      *
      * <code>ROLLOUT_STATUS_UNSPECIFIED = 26864568;</code>
@@ -136,7 +138,8 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * IN_PROGRESS - A rollout is in process which will change the limit value to future limit.
+     * IN_PROGRESS - A rollout is in process which will change the limit value
+     * to future limit.
      * </pre>
      *
      * <code>IN_PROGRESS = 469193735;</code>
@@ -147,7 +150,8 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * ROLLOUT_STATUS_UNSPECIFIED - Rollout status is not specified. The default value.
+     * ROLLOUT_STATUS_UNSPECIFIED - Rollout status is not specified. The default
+     * value.
      * </pre>
      *
      * <code>ROLLOUT_STATUS_UNSPECIFIED = 26864568;</code>
@@ -352,7 +356,8 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Future quota limit being rolled out. The limit's unit depends on the quota type or metric.
+   * Future quota limit being rolled out. The limit's unit depends on the quota
+   *  type or metric.
    * </pre>
    *
    * <code>optional double future_limit = 456564287;</code>
@@ -368,7 +373,8 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Future quota limit being rolled out. The limit's unit depends on the quota type or metric.
+   * Future quota limit being rolled out. The limit's unit depends on the quota
+   *  type or metric.
    * </pre>
    *
    * <code>optional double future_limit = 456564287;</code>
@@ -387,7 +393,8 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Current effective quota limit. The limit's unit depends on the quota type or metric.
+   * Current effective quota limit. The limit's unit depends on the quota type
+   * or metric.
    * </pre>
    *
    * <code>optional double limit = 102976443;</code>
@@ -403,7 +410,8 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Current effective quota limit. The limit's unit depends on the quota type or metric.
+   * Current effective quota limit. The limit's unit depends on the quota type
+   * or metric.
    * </pre>
    *
    * <code>optional double limit = 102976443;</code>
@@ -1338,7 +1346,8 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Future quota limit being rolled out. The limit's unit depends on the quota type or metric.
+     * Future quota limit being rolled out. The limit's unit depends on the quota
+     *  type or metric.
      * </pre>
      *
      * <code>optional double future_limit = 456564287;</code>
@@ -1354,7 +1363,8 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Future quota limit being rolled out. The limit's unit depends on the quota type or metric.
+     * Future quota limit being rolled out. The limit's unit depends on the quota
+     *  type or metric.
      * </pre>
      *
      * <code>optional double future_limit = 456564287;</code>
@@ -1370,7 +1380,8 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Future quota limit being rolled out. The limit's unit depends on the quota type or metric.
+     * Future quota limit being rolled out. The limit's unit depends on the quota
+     *  type or metric.
      * </pre>
      *
      * <code>optional double future_limit = 456564287;</code>
@@ -1390,7 +1401,8 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Future quota limit being rolled out. The limit's unit depends on the quota type or metric.
+     * Future quota limit being rolled out. The limit's unit depends on the quota
+     *  type or metric.
      * </pre>
      *
      * <code>optional double future_limit = 456564287;</code>
@@ -1410,7 +1422,8 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Current effective quota limit. The limit's unit depends on the quota type or metric.
+     * Current effective quota limit. The limit's unit depends on the quota type
+     * or metric.
      * </pre>
      *
      * <code>optional double limit = 102976443;</code>
@@ -1426,7 +1439,8 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Current effective quota limit. The limit's unit depends on the quota type or metric.
+     * Current effective quota limit. The limit's unit depends on the quota type
+     * or metric.
      * </pre>
      *
      * <code>optional double limit = 102976443;</code>
@@ -1442,7 +1456,8 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Current effective quota limit. The limit's unit depends on the quota type or metric.
+     * Current effective quota limit. The limit's unit depends on the quota type
+     * or metric.
      * </pre>
      *
      * <code>optional double limit = 102976443;</code>
@@ -1462,7 +1477,8 @@ public final class QuotaExceededInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Current effective quota limit. The limit's unit depends on the quota type or metric.
+     * Current effective quota limit. The limit's unit depends on the quota type
+     * or metric.
      * </pre>
      *
      * <code>optional double limit = 102976443;</code>

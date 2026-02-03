@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -94,7 +94,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
      *
      *
      * <pre>
-     * The operator matches if the field value contains the specified value.
+     * The operator matches if the field value contains the specified
+     * value.
      * </pre>
      *
      * <code>CONTAINS = 215180831;</code>
@@ -104,7 +105,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
      *
      *
      * <pre>
-     * The operator matches if the field value ends with the specified value.
+     * The operator matches if the field value ends with the specified
+     * value.
      * </pre>
      *
      * <code>ENDS_WITH = 490402221;</code>
@@ -114,7 +116,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
      *
      *
      * <pre>
-     * The operator matches if the field value equals the specified value.
+     * The operator matches if the field value equals the specified
+     * value.
      * </pre>
      *
      * <code>EQUALS = 442201023;</code>
@@ -134,7 +137,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
      *
      *
      * <pre>
-     * The operator matches if the field value starts with the specified value.
+     * The operator matches if the field value starts with the specified
+     * value.
      * </pre>
      *
      * <code>STARTS_WITH = 139505652;</code>
@@ -158,7 +162,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
      *
      *
      * <pre>
-     * The operator matches if the field value contains the specified value.
+     * The operator matches if the field value contains the specified
+     * value.
      * </pre>
      *
      * <code>CONTAINS = 215180831;</code>
@@ -169,7 +174,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
      *
      *
      * <pre>
-     * The operator matches if the field value ends with the specified value.
+     * The operator matches if the field value ends with the specified
+     * value.
      * </pre>
      *
      * <code>ENDS_WITH = 490402221;</code>
@@ -180,7 +186,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
      *
      *
      * <pre>
-     * The operator matches if the field value equals the specified value.
+     * The operator matches if the field value equals the specified
+     * value.
      * </pre>
      *
      * <code>EQUALS = 442201023;</code>
@@ -202,7 +209,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
      *
      *
      * <pre>
-     * The operator matches if the field value starts with the specified value.
+     * The operator matches if the field value starts with the specified
+     * value.
      * </pre>
      *
      * <code>STARTS_WITH = 139505652;</code>

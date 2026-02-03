@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -142,7 +142,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Patch</td>
- *      <td><p> Patches the specified TargetGrpcProxy resource with the data included in the request. This method supports PATCH semantics and uses JSON merge patch format and processing rules.</td>
+ *      <td><p> Patches the specified TargetGrpcProxy resource with the data included in the request. This method supports PATCH semantics and usesJSON merge patch format and processing rules.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -737,7 +737,7 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified TargetGrpcProxy resource with the data included in the request. This
-   * method supports PATCH semantics and uses JSON merge patch format and processing rules.
+   * method supports PATCH semantics and usesJSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -777,7 +777,7 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified TargetGrpcProxy resource with the data included in the request. This
-   * method supports PATCH semantics and uses JSON merge patch format and processing rules.
+   * method supports PATCH semantics and usesJSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -810,7 +810,7 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified TargetGrpcProxy resource with the data included in the request. This
-   * method supports PATCH semantics and uses JSON merge patch format and processing rules.
+   * method supports PATCH semantics and usesJSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -843,7 +843,7 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified TargetGrpcProxy resource with the data included in the request. This
-   * method supports PATCH semantics and uses JSON merge patch format and processing rules.
+   * method supports PATCH semantics and usesJSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *

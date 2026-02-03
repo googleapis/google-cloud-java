@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -287,7 +287,8 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -303,7 +304,8 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -327,7 +329,8 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -356,7 +359,7 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Description of the feature.
+   * Output only. [Output Only] Description of the feature.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -372,7 +375,7 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Description of the feature.
+   * Output only. [Output Only] Description of the feature.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -396,7 +399,7 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Description of the feature.
+   * Output only. [Output Only] Description of the feature.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -423,7 +426,8 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -439,7 +443,8 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -460,7 +465,8 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] The type of the feature. Always "compute#previewFeature" for preview features.
+   * Output only. [Output only] The type of the feature. Always "compute#previewFeature" for
+   * preview features.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -476,7 +482,8 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] The type of the feature. Always "compute#previewFeature" for preview features.
+   * Output only. [Output only] The type of the feature. Always "compute#previewFeature" for
+   * preview features.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -500,7 +507,8 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] The type of the feature. Always "compute#previewFeature" for preview features.
+   * Output only. [Output only] The type of the feature. Always "compute#previewFeature" for
+   * preview features.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -658,7 +666,7 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -674,7 +682,7 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -698,7 +706,7 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -725,7 +733,7 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Status of the feature.
+   * Output only. [Output only] Status of the feature.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.PreviewFeatureStatus status = 181260274;</code>
@@ -741,7 +749,7 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Status of the feature.
+   * Output only. [Output only] Status of the feature.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.PreviewFeatureStatus status = 181260274;</code>
@@ -759,7 +767,7 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Status of the feature.
+   * Output only. [Output only] Status of the feature.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.PreviewFeatureStatus status = 181260274;</code>
@@ -1516,7 +1524,8 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1531,7 +1540,8 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1554,7 +1564,8 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1577,7 +1588,8 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1599,7 +1611,8 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1617,7 +1630,8 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1642,7 +1656,7 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Description of the feature.
+     * Output only. [Output Only] Description of the feature.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1657,7 +1671,7 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Description of the feature.
+     * Output only. [Output Only] Description of the feature.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1680,7 +1694,7 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Description of the feature.
+     * Output only. [Output Only] Description of the feature.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1703,7 +1717,7 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Description of the feature.
+     * Output only. [Output Only] Description of the feature.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1725,7 +1739,7 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Description of the feature.
+     * Output only. [Output Only] Description of the feature.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1743,7 +1757,7 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Description of the feature.
+     * Output only. [Output Only] Description of the feature.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1768,7 +1782,8 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -1784,7 +1799,8 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -1800,7 +1816,8 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -1820,7 +1837,8 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -1840,7 +1858,8 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] The type of the feature. Always "compute#previewFeature" for preview features.
+     * Output only. [Output only] The type of the feature. Always "compute#previewFeature" for
+     * preview features.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1855,7 +1874,8 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] The type of the feature. Always "compute#previewFeature" for preview features.
+     * Output only. [Output only] The type of the feature. Always "compute#previewFeature" for
+     * preview features.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1878,7 +1898,8 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] The type of the feature. Always "compute#previewFeature" for preview features.
+     * Output only. [Output only] The type of the feature. Always "compute#previewFeature" for
+     * preview features.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1901,7 +1922,8 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] The type of the feature. Always "compute#previewFeature" for preview features.
+     * Output only. [Output only] The type of the feature. Always "compute#previewFeature" for
+     * preview features.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1923,7 +1945,8 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] The type of the feature. Always "compute#previewFeature" for preview features.
+     * Output only. [Output only] The type of the feature. Always "compute#previewFeature" for
+     * preview features.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1941,7 +1964,8 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] The type of the feature. Always "compute#previewFeature" for preview features.
+     * Output only. [Output only] The type of the feature. Always "compute#previewFeature" for
+     * preview features.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2311,7 +2335,7 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2326,7 +2350,7 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2349,7 +2373,7 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2372,7 +2396,7 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2394,7 +2418,7 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2412,7 +2436,7 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2442,7 +2466,7 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Status of the feature.
+     * Output only. [Output only] Status of the feature.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.PreviewFeatureStatus status = 181260274;</code>
@@ -2457,7 +2481,7 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Status of the feature.
+     * Output only. [Output only] Status of the feature.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.PreviewFeatureStatus status = 181260274;</code>
@@ -2478,7 +2502,7 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Status of the feature.
+     * Output only. [Output only] Status of the feature.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.PreviewFeatureStatus status = 181260274;</code>
@@ -2501,7 +2525,7 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Status of the feature.
+     * Output only. [Output only] Status of the feature.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.PreviewFeatureStatus status = 181260274;</code>
@@ -2522,7 +2546,7 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Status of the feature.
+     * Output only. [Output only] Status of the feature.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.PreviewFeatureStatus status = 181260274;</code>
@@ -2550,7 +2574,7 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Status of the feature.
+     * Output only. [Output only] Status of the feature.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.PreviewFeatureStatus status = 181260274;</code>
@@ -2570,7 +2594,7 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Status of the feature.
+     * Output only. [Output only] Status of the feature.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.PreviewFeatureStatus status = 181260274;</code>
@@ -2585,7 +2609,7 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Status of the feature.
+     * Output only. [Output only] Status of the feature.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.PreviewFeatureStatus status = 181260274;</code>
@@ -2604,7 +2628,7 @@ public final class PreviewFeature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Status of the feature.
+     * Output only. [Output only] Status of the feature.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.PreviewFeatureStatus status = 181260274;</code>

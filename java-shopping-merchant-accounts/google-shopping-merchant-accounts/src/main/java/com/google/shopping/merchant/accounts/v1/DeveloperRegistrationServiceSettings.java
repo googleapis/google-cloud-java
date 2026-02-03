@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -81,8 +81,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @Generated("by gapic-generator-java")
 public class DeveloperRegistrationServiceSettings
@@ -103,6 +103,13 @@ public class DeveloperRegistrationServiceSettings
   /** Returns the object with the settings used for calls to unregisterGcp. */
   public UnaryCallSettings<UnregisterGcpRequest, Empty> unregisterGcpSettings() {
     return ((DeveloperRegistrationServiceStubSettings) getStubSettings()).unregisterGcpSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAccountForGcpRegistration. */
+  public UnaryCallSettings<Empty, GetAccountForGcpRegistrationResponse>
+      getAccountForGcpRegistrationSettings() {
+    return ((DeveloperRegistrationServiceStubSettings) getStubSettings())
+        .getAccountForGcpRegistrationSettings();
   }
 
   public static final DeveloperRegistrationServiceSettings create(
@@ -233,6 +240,12 @@ public class DeveloperRegistrationServiceSettings
     /** Returns the builder for the settings used for calls to unregisterGcp. */
     public UnaryCallSettings.Builder<UnregisterGcpRequest, Empty> unregisterGcpSettings() {
       return getStubSettingsBuilder().unregisterGcpSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAccountForGcpRegistration. */
+    public UnaryCallSettings.Builder<Empty, GetAccountForGcpRegistrationResponse>
+        getAccountForGcpRegistrationSettings() {
+      return getStubSettingsBuilder().getAccountForGcpRegistrationSettings();
     }
 
     @Override

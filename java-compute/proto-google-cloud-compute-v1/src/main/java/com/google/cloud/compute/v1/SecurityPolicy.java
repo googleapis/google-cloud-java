@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,11 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a Google Cloud Armor security policy resource. Only external backend services that use load balancers can reference a security policy. For more information, see Google Cloud Armor security policy overview.
+ * Represents a Google Cloud Armor security policy resource.
+ *
+ * Only external backend services that use load balancers can
+ * reference a security policy. For more information, see
+ * Google Cloud Armor security policy overview.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.SecurityPolicy}
@@ -47,6 +51,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     kind_ = "";
     labelFingerprint_ = "";
     name_ = "";
+    parent_ = "";
     region_ = "";
     rules_ = java.util.Collections.emptyList();
     selfLink_ = "";
@@ -92,7 +97,28 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type indicates the intended use of the security policy. - CLOUD_ARMOR: Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache. - CLOUD_ARMOR_INTERNAL_SERVICE (preview only): Cloud Armor internal service policies can be configured to filter HTTP requests targeting services managed by Traffic Director in a service mesh. They filter requests before the request is served from the application. - CLOUD_ARMOR_NETWORK: Cloud Armor network policies can be configured to filter packets targeting network load balancing resources such as backend services, target pools, target instances, and instances with external IPs. They filter requests before the request is served from the application. This field can be set only at resource creation time.
+   * The type indicates the intended use of the security policy.
+   *
+   *    - CLOUD_ARMOR: Cloud Armor backend security policies can
+   *    be configured to filter incoming HTTP requests targeting backend services.
+   *    They filter requests before they hit the origin servers.
+   *    - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can
+   *    be configured to filter incoming HTTP requests targeting backend services
+   *    (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage).
+   *    They filter requests before the request is served from Google's cache.
+   *    - CLOUD_ARMOR_INTERNAL_SERVICE (preview only): Cloud Armor
+   *    internal service policies can be configured to filter HTTP requests
+   *    targeting services managed by Traffic Director in a service mesh. They
+   *    filter requests before the request is served from the application.
+   *
+   * - CLOUD_ARMOR_NETWORK: Cloud Armor network policies
+   * can be configured to filter packets targeting network load balancing
+   * resources such as backend services, target pools, target instances, and
+   * instances with external IPs. They filter requests before the request is
+   * served from the application.
+   *
+   *
+   * This field can be set only at resource creation time.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.SecurityPolicy.Type}
@@ -402,7 +428,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -418,7 +445,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -442,7 +470,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -513,7 +542,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -529,7 +559,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -553,7 +584,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -582,7 +614,15 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the security policy.
+   * Specifies a fingerprint for this resource, which is essentially a hash of
+   * the metadata's contents and used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update metadata. You must always provide an
+   * up-to-date fingerprint hash in order to update or change metadata,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make get() request to the
+   * security policy.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -598,7 +638,15 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the security policy.
+   * Specifies a fingerprint for this resource, which is essentially a hash of
+   * the metadata's contents and used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update metadata. You must always provide an
+   * up-to-date fingerprint hash in order to update or change metadata,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make get() request to the
+   * security policy.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -622,7 +670,15 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the security policy.
+   * Specifies a fingerprint for this resource, which is essentially a hash of
+   * the metadata's contents and used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update metadata. You must always provide an
+   * up-to-date fingerprint hash in order to update or change metadata,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make get() request to the
+   * security policy.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -649,7 +705,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -665,7 +722,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -686,7 +744,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Always compute#securityPolicyfor security policies
+   * Output only. [Output only] Type of the resource. Alwayscompute#securityPolicyfor security policies
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -702,7 +760,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Always compute#securityPolicyfor security policies
+   * Output only. [Output only] Type of the resource. Alwayscompute#securityPolicyfor security policies
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -726,7 +784,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Always compute#securityPolicyfor security policies
+   * Output only. [Output only] Type of the resource. Alwayscompute#securityPolicyfor security policies
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -755,7 +813,14 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this security policy, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the security policy.
+   * A fingerprint for the labels being applied to this security policy, which
+   * is essentially a hash of the labels set used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels.
+   *
+   * To see the latest fingerprint, make get() request to the
+   * security policy.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -771,7 +836,14 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this security policy, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the security policy.
+   * A fingerprint for the labels being applied to this security policy, which
+   * is essentially a hash of the labels set used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels.
+   *
+   * To see the latest fingerprint, make get() request to the
+   * security policy.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -795,7 +867,14 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this security policy, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the security policy.
+   * A fingerprint for the labels being applied to this security policy, which
+   * is essentially a hash of the labels set used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels.
+   *
+   * To see the latest fingerprint, make get() request to the
+   * security policy.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -846,7 +925,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+   * Label values may be empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -870,7 +950,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+   * Label values may be empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -884,7 +965,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+   * Label values may be empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -905,7 +987,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+   * Label values may be empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -931,7 +1014,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -947,7 +1036,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -971,7 +1066,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -991,6 +1092,75 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int PARENT_FIELD_NUMBER = 78317738;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The parent of the security policy.
+   * </pre>
+   *
+   * <code>optional string parent = 78317738;</code>
+   *
+   * @return Whether the parent field is set.
+   */
+  @java.lang.Override
+  public boolean hasParent() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The parent of the security policy.
+   * </pre>
+   *
+   * <code>optional string parent = 78317738;</code>
+   *
+   * @return The parent.
+   */
+  @java.lang.Override
+  public java.lang.String getParent() {
+    java.lang.Object ref = parent_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      parent_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The parent of the security policy.
+   * </pre>
+   *
+   * <code>optional string parent = 78317738;</code>
+   *
+   * @return The bytes for parent.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getParentBytes() {
+    java.lang.Object ref = parent_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      parent_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int RECAPTCHA_OPTIONS_CONFIG_FIELD_NUMBER = 519006811;
   private com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig recaptchaOptionsConfig_;
 
@@ -1003,7 +1173,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRecaptchaOptionsConfig() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
@@ -1043,7 +1213,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional security policy resides. This field is not applicable to global security policies.
+   * Output only. [Output Only] URL of the region where the regional security policy
+   * resides. This field is not applicable to global security policies.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -1052,14 +1223,15 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRegion() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional security policy resides. This field is not applicable to global security policies.
+   * Output only. [Output Only] URL of the region where the regional security policy
+   * resides. This field is not applicable to global security policies.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -1083,7 +1255,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional security policy resides. This field is not applicable to global security policies.
+   * Output only. [Output Only] URL of the region where the regional security policy
+   * resides. This field is not applicable to global security policies.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -1112,7 +1285,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of rules that belong to this policy. There must always be a default rule which is a rule with priority 2147483647 and match all condition (for the match condition this means match "*" for srcIpRanges and for the networkMatch condition every field must be either match "*" or not set). If no rules are provided when creating a security policy, a default rule with action "allow" will be added.
+   * A list of rules that belong to this policy.
+   * There must always be a default rule which is a rule with priority
+   * 2147483647 and match all condition (for the match condition this means
+   * match  "*" for srcIpRanges and for the networkMatch condition every field
+   * must be either match "*" or not set). If no rules are provided when
+   * creating a security policy, a default rule with action "allow" will be
+   * added.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.SecurityPolicyRule rules = 108873975;</code>
@@ -1126,7 +1305,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of rules that belong to this policy. There must always be a default rule which is a rule with priority 2147483647 and match all condition (for the match condition this means match "*" for srcIpRanges and for the networkMatch condition every field must be either match "*" or not set). If no rules are provided when creating a security policy, a default rule with action "allow" will be added.
+   * A list of rules that belong to this policy.
+   * There must always be a default rule which is a rule with priority
+   * 2147483647 and match all condition (for the match condition this means
+   * match  "*" for srcIpRanges and for the networkMatch condition every field
+   * must be either match "*" or not set). If no rules are provided when
+   * creating a security policy, a default rule with action "allow" will be
+   * added.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.SecurityPolicyRule rules = 108873975;</code>
@@ -1141,7 +1326,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of rules that belong to this policy. There must always be a default rule which is a rule with priority 2147483647 and match all condition (for the match condition this means match "*" for srcIpRanges and for the networkMatch condition every field must be either match "*" or not set). If no rules are provided when creating a security policy, a default rule with action "allow" will be added.
+   * A list of rules that belong to this policy.
+   * There must always be a default rule which is a rule with priority
+   * 2147483647 and match all condition (for the match condition this means
+   * match  "*" for srcIpRanges and for the networkMatch condition every field
+   * must be either match "*" or not set). If no rules are provided when
+   * creating a security policy, a default rule with action "allow" will be
+   * added.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.SecurityPolicyRule rules = 108873975;</code>
@@ -1155,7 +1346,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of rules that belong to this policy. There must always be a default rule which is a rule with priority 2147483647 and match all condition (for the match condition this means match "*" for srcIpRanges and for the networkMatch condition every field must be either match "*" or not set). If no rules are provided when creating a security policy, a default rule with action "allow" will be added.
+   * A list of rules that belong to this policy.
+   * There must always be a default rule which is a rule with priority
+   * 2147483647 and match all condition (for the match condition this means
+   * match  "*" for srcIpRanges and for the networkMatch condition every field
+   * must be either match "*" or not set). If no rules are provided when
+   * creating a security policy, a default rule with action "allow" will be
+   * added.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.SecurityPolicyRule rules = 108873975;</code>
@@ -1169,7 +1366,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of rules that belong to this policy. There must always be a default rule which is a rule with priority 2147483647 and match all condition (for the match condition this means match "*" for srcIpRanges and for the networkMatch condition every field must be either match "*" or not set). If no rules are provided when creating a security policy, a default rule with action "allow" will be added.
+   * A list of rules that belong to this policy.
+   * There must always be a default rule which is a rule with priority
+   * 2147483647 and match all condition (for the match condition this means
+   * match  "*" for srcIpRanges and for the networkMatch condition every field
+   * must be either match "*" or not set). If no rules are provided when
+   * creating a security policy, a default rule with action "allow" will be
+   * added.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.SecurityPolicyRule rules = 108873975;</code>
@@ -1188,7 +1391,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1197,14 +1400,14 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1228,7 +1431,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1257,7 +1460,15 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User-provided name of the organization security policy. The name should be unique in the organization in which the security policy is created. This should only be used when SecurityPolicyType is CLOUD_ARMOR. The name must be 1-63 characters long, and comply with https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * User-provided name of the organization security policy. The name should be
+   * unique in the organization in which the security policy is created. This
+   * should only be used when SecurityPolicyType is CLOUD_ARMOR.
+   * The name must be 1-63 characters long, and comply with
+   * https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63
+   * characters long and match the regular expression
+   * `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a
+   * lowercase letter, and all following characters must be a dash, lowercase
+   * letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
    * <code>optional string short_name = 492051566;</code>
@@ -1266,14 +1477,22 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasShortName() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * User-provided name of the organization security policy. The name should be unique in the organization in which the security policy is created. This should only be used when SecurityPolicyType is CLOUD_ARMOR. The name must be 1-63 characters long, and comply with https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * User-provided name of the organization security policy. The name should be
+   * unique in the organization in which the security policy is created. This
+   * should only be used when SecurityPolicyType is CLOUD_ARMOR.
+   * The name must be 1-63 characters long, and comply with
+   * https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63
+   * characters long and match the regular expression
+   * `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a
+   * lowercase letter, and all following characters must be a dash, lowercase
+   * letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
    * <code>optional string short_name = 492051566;</code>
@@ -1297,7 +1516,15 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User-provided name of the organization security policy. The name should be unique in the organization in which the security policy is created. This should only be used when SecurityPolicyType is CLOUD_ARMOR. The name must be 1-63 characters long, and comply with https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * User-provided name of the organization security policy. The name should be
+   * unique in the organization in which the security policy is created. This
+   * should only be used when SecurityPolicyType is CLOUD_ARMOR.
+   * The name must be 1-63 characters long, and comply with
+   * https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63
+   * characters long and match the regular expression
+   * `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a
+   * lowercase letter, and all following characters must be a dash, lowercase
+   * letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
    * <code>optional string short_name = 492051566;</code>
@@ -1326,7 +1553,28 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type indicates the intended use of the security policy. - CLOUD_ARMOR: Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache. - CLOUD_ARMOR_INTERNAL_SERVICE (preview only): Cloud Armor internal service policies can be configured to filter HTTP requests targeting services managed by Traffic Director in a service mesh. They filter requests before the request is served from the application. - CLOUD_ARMOR_NETWORK: Cloud Armor network policies can be configured to filter packets targeting network load balancing resources such as backend services, target pools, target instances, and instances with external IPs. They filter requests before the request is served from the application. This field can be set only at resource creation time.
+   * The type indicates the intended use of the security policy.
+   *
+   *    - CLOUD_ARMOR: Cloud Armor backend security policies can
+   *    be configured to filter incoming HTTP requests targeting backend services.
+   *    They filter requests before they hit the origin servers.
+   *    - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can
+   *    be configured to filter incoming HTTP requests targeting backend services
+   *    (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage).
+   *    They filter requests before the request is served from Google's cache.
+   *    - CLOUD_ARMOR_INTERNAL_SERVICE (preview only): Cloud Armor
+   *    internal service policies can be configured to filter HTTP requests
+   *    targeting services managed by Traffic Director in a service mesh. They
+   *    filter requests before the request is served from the application.
+   *
+   * - CLOUD_ARMOR_NETWORK: Cloud Armor network policies
+   * can be configured to filter packets targeting network load balancing
+   * resources such as backend services, target pools, target instances, and
+   * instances with external IPs. They filter requests before the request is
+   * served from the application.
+   *
+   *
+   * This field can be set only at resource creation time.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -1336,14 +1584,35 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasType() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * The type indicates the intended use of the security policy. - CLOUD_ARMOR: Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache. - CLOUD_ARMOR_INTERNAL_SERVICE (preview only): Cloud Armor internal service policies can be configured to filter HTTP requests targeting services managed by Traffic Director in a service mesh. They filter requests before the request is served from the application. - CLOUD_ARMOR_NETWORK: Cloud Armor network policies can be configured to filter packets targeting network load balancing resources such as backend services, target pools, target instances, and instances with external IPs. They filter requests before the request is served from the application. This field can be set only at resource creation time.
+   * The type indicates the intended use of the security policy.
+   *
+   *    - CLOUD_ARMOR: Cloud Armor backend security policies can
+   *    be configured to filter incoming HTTP requests targeting backend services.
+   *    They filter requests before they hit the origin servers.
+   *    - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can
+   *    be configured to filter incoming HTTP requests targeting backend services
+   *    (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage).
+   *    They filter requests before the request is served from Google's cache.
+   *    - CLOUD_ARMOR_INTERNAL_SERVICE (preview only): Cloud Armor
+   *    internal service policies can be configured to filter HTTP requests
+   *    targeting services managed by Traffic Director in a service mesh. They
+   *    filter requests before the request is served from the application.
+   *
+   * - CLOUD_ARMOR_NETWORK: Cloud Armor network policies
+   * can be configured to filter packets targeting network load balancing
+   * resources such as backend services, target pools, target instances, and
+   * instances with external IPs. They filter requests before the request is
+   * served from the application.
+   *
+   *
+   * This field can be set only at resource creation time.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -1368,7 +1637,28 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type indicates the intended use of the security policy. - CLOUD_ARMOR: Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache. - CLOUD_ARMOR_INTERNAL_SERVICE (preview only): Cloud Armor internal service policies can be configured to filter HTTP requests targeting services managed by Traffic Director in a service mesh. They filter requests before the request is served from the application. - CLOUD_ARMOR_NETWORK: Cloud Armor network policies can be configured to filter packets targeting network load balancing resources such as backend services, target pools, target instances, and instances with external IPs. They filter requests before the request is served from the application. This field can be set only at resource creation time.
+   * The type indicates the intended use of the security policy.
+   *
+   *    - CLOUD_ARMOR: Cloud Armor backend security policies can
+   *    be configured to filter incoming HTTP requests targeting backend services.
+   *    They filter requests before they hit the origin servers.
+   *    - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can
+   *    be configured to filter incoming HTTP requests targeting backend services
+   *    (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage).
+   *    They filter requests before the request is served from Google's cache.
+   *    - CLOUD_ARMOR_INTERNAL_SERVICE (preview only): Cloud Armor
+   *    internal service policies can be configured to filter HTTP requests
+   *    targeting services managed by Traffic Director in a service mesh. They
+   *    filter requests before the request is served from the application.
+   *
+   * - CLOUD_ARMOR_NETWORK: Cloud Armor network policies
+   * can be configured to filter packets targeting network load balancing
+   * resources such as backend services, target pools, target instances, and
+   * instances with external IPs. They filter requests before the request is
+   * served from the application.
+   *
+   *
+   * This field can be set only at resource creation time.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -1399,7 +1689,20 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+   * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A
+   * user-defined field consists of up to 4 bytes extracted from a fixed offset
+   * in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an
+   * optional mask to select certain bits. Rules may then specify matching
+   * values for these fields.
+   *
+   * Example:
+   *
+   *  userDefinedFields:
+   *  - name: "ipv4_fragment_offset"
+   *    base: IPV4
+   *    offset: 6
+   *    size: 2
+   *    mask: "0x1fff"
    * </pre>
    *
    * <code>
@@ -1416,7 +1719,20 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+   * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A
+   * user-defined field consists of up to 4 bytes extracted from a fixed offset
+   * in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an
+   * optional mask to select certain bits. Rules may then specify matching
+   * values for these fields.
+   *
+   * Example:
+   *
+   *  userDefinedFields:
+   *  - name: "ipv4_fragment_offset"
+   *    base: IPV4
+   *    offset: 6
+   *    size: 2
+   *    mask: "0x1fff"
    * </pre>
    *
    * <code>
@@ -1434,7 +1750,20 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+   * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A
+   * user-defined field consists of up to 4 bytes extracted from a fixed offset
+   * in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an
+   * optional mask to select certain bits. Rules may then specify matching
+   * values for these fields.
+   *
+   * Example:
+   *
+   *  userDefinedFields:
+   *  - name: "ipv4_fragment_offset"
+   *    base: IPV4
+   *    offset: 6
+   *    size: 2
+   *    mask: "0x1fff"
    * </pre>
    *
    * <code>
@@ -1450,7 +1779,20 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+   * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A
+   * user-defined field consists of up to 4 bytes extracted from a fixed offset
+   * in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an
+   * optional mask to select certain bits. Rules may then specify matching
+   * values for these fields.
+   *
+   * Example:
+   *
+   *  userDefinedFields:
+   *  - name: "ipv4_fragment_offset"
+   *    base: IPV4
+   *    offset: 6
+   *    size: 2
+   *    mask: "0x1fff"
    * </pre>
    *
    * <code>
@@ -1467,7 +1809,20 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+   * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A
+   * user-defined field consists of up to 4 bytes extracted from a fixed offset
+   * in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an
+   * optional mask to select certain bits. Rules may then specify matching
+   * values for these fields.
+   *
+   * Example:
+   *
+   *  userDefinedFields:
+   *  - name: "ipv4_fragment_offset"
+   *    base: IPV4
+   *    offset: 6
+   *    size: 2
+   *    mask: "0x1fff"
    * </pre>
    *
    * <code>
@@ -1503,7 +1858,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3575610, type_);
     }
     for (int i = 0; i < userDefinedFields_.size(); i++) {
@@ -1515,10 +1870,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(50315853, getDdosProtectionConfig());
     }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 78317738, parent_);
+    }
     for (int i = 0; i < rules_.size(); i++) {
       output.writeMessage(108873975, rules_.get(i));
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -1536,10 +1894,10 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(449276352, getAdvancedOptionsConfig());
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 492051566, shortName_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -1547,7 +1905,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < associations_.size(); i++) {
       output.writeMessage(508736530, associations_.get(i));
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeMessage(519006811, getRecaptchaOptionsConfig());
     }
     getUnknownFields().writeTo(output);
@@ -1568,7 +1926,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3575610, type_);
     }
     for (int i = 0; i < userDefinedFields_.size(); i++) {
@@ -1585,10 +1943,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               50315853, getDdosProtectionConfig());
     }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(78317738, parent_);
+    }
     for (int i = 0; i < rules_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(108873975, rules_.get(i));
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -1611,10 +1972,10 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               449276352, getAdvancedOptionsConfig());
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(492051566, shortName_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -1631,7 +1992,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(508736530, associations_.get(i));
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               519006811, getRecaptchaOptionsConfig());
@@ -1693,6 +2054,10 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasName() != other.hasName()) return false;
     if (hasName()) {
       if (!getName().equals(other.getName())) return false;
+    }
+    if (hasParent() != other.hasParent()) return false;
+    if (hasParent()) {
+      if (!getParent().equals(other.getParent())) return false;
     }
     if (hasRecaptchaOptionsConfig() != other.hasRecaptchaOptionsConfig()) return false;
     if (hasRecaptchaOptionsConfig()) {
@@ -1774,6 +2139,10 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasName()) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasParent()) {
+      hash = (37 * hash) + PARENT_FIELD_NUMBER;
+      hash = (53 * hash) + getParent().hashCode();
     }
     if (hasRecaptchaOptionsConfig()) {
       hash = (37 * hash) + RECAPTCHA_OPTIONS_CONFIG_FIELD_NUMBER;
@@ -1908,7 +2277,11 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a Google Cloud Armor security policy resource. Only external backend services that use load balancers can reference a security policy. For more information, see Google Cloud Armor security policy overview.
+   * Represents a Google Cloud Armor security policy resource.
+   *
+   * Only external backend services that use load balancers can
+   * reference a security policy. For more information, see
+   * Google Cloud Armor security policy overview.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.SecurityPolicy}
@@ -2010,6 +2383,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       labelFingerprint_ = "";
       internalGetMutableLabels().clear();
       name_ = "";
+      parent_ = "";
       recaptchaOptionsConfig_ = null;
       if (recaptchaOptionsConfigBuilder_ != null) {
         recaptchaOptionsConfigBuilder_.dispose();
@@ -2022,7 +2396,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         rules_ = null;
         rulesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       selfLink_ = "";
       shortName_ = "";
       type_ = "";
@@ -2032,7 +2406,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         userDefinedFields_ = null;
         userDefinedFieldsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       return this;
     }
 
@@ -2079,18 +2453,18 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         result.associations_ = associationsBuilder_.build();
       }
       if (rulesBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)) {
+        if (((bitField0_ & 0x00008000) != 0)) {
           rules_ = java.util.Collections.unmodifiableList(rules_);
-          bitField0_ = (bitField0_ & ~0x00004000);
+          bitField0_ = (bitField0_ & ~0x00008000);
         }
         result.rules_ = rules_;
       } else {
         result.rules_ = rulesBuilder_.build();
       }
       if (userDefinedFieldsBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) != 0)) {
+        if (((bitField0_ & 0x00080000) != 0)) {
           userDefinedFields_ = java.util.Collections.unmodifiableList(userDefinedFields_);
-          bitField0_ = (bitField0_ & ~0x00040000);
+          bitField0_ = (bitField0_ & ~0x00080000);
         }
         result.userDefinedFields_ = userDefinedFields_;
       } else {
@@ -2155,27 +2529,31 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.parent_ = parent_;
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.recaptchaOptionsConfig_ =
             recaptchaOptionsConfigBuilder_ == null
                 ? recaptchaOptionsConfig_
                 : recaptchaOptionsConfigBuilder_.build();
-        to_bitField0_ |= 0x00000400;
-      }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.region_ = region_;
         to_bitField0_ |= 0x00000800;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.selfLink_ = selfLink_;
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.region_ = region_;
         to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.shortName_ = shortName_;
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.type_ = type_;
+        result.shortName_ = shortName_;
         to_bitField0_ |= 0x00004000;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.type_ = type_;
+        to_bitField0_ |= 0x00008000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2296,19 +2674,24 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000800;
         onChanged();
       }
+      if (other.hasParent()) {
+        parent_ = other.parent_;
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
       if (other.hasRecaptchaOptionsConfig()) {
         mergeRecaptchaOptionsConfig(other.getRecaptchaOptionsConfig());
       }
       if (other.hasRegion()) {
         region_ = other.region_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (rulesBuilder_ == null) {
         if (!other.rules_.isEmpty()) {
           if (rules_.isEmpty()) {
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00008000);
           } else {
             ensureRulesIsMutable();
             rules_.addAll(other.rules_);
@@ -2321,7 +2704,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
             rulesBuilder_.dispose();
             rulesBuilder_ = null;
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00008000);
             rulesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRulesFieldBuilder()
@@ -2333,24 +2716,24 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (other.hasShortName()) {
         shortName_ = other.shortName_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (other.hasType()) {
         type_ = other.type_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (userDefinedFieldsBuilder_ == null) {
         if (!other.userDefinedFields_.isEmpty()) {
           if (userDefinedFields_.isEmpty()) {
             userDefinedFields_ = other.userDefinedFields_;
-            bitField0_ = (bitField0_ & ~0x00040000);
+            bitField0_ = (bitField0_ & ~0x00080000);
           } else {
             ensureUserDefinedFieldsIsMutable();
             userDefinedFields_.addAll(other.userDefinedFields_);
@@ -2363,7 +2746,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
             userDefinedFieldsBuilder_.dispose();
             userDefinedFieldsBuilder_ = null;
             userDefinedFields_ = other.userDefinedFields_;
-            bitField0_ = (bitField0_ & ~0x00040000);
+            bitField0_ = (bitField0_ & ~0x00080000);
             userDefinedFieldsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getUserDefinedFieldsFieldBuilder()
@@ -2420,7 +2803,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
             case 28604882:
               {
                 type_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 28604882
             case 226501914:
@@ -2450,6 +2833,12 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 402526826
+            case 626541906:
+              {
+                parent_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 626541906
             case 870991802:
               {
                 com.google.cloud.compute.v1.SecurityPolicyRule m =
@@ -2466,7 +2855,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 1111570338
             case 1201925882:
@@ -2504,13 +2893,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case -645248918
             case -358554766:
               {
                 shortName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case -358554766
             case -293404678:
@@ -2543,7 +2932,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getRecaptchaOptionsConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case -142912806
             default:
@@ -3302,7 +3691,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -3317,7 +3707,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -3340,7 +3731,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -3363,7 +3755,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -3385,7 +3778,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -3403,7 +3797,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -3594,7 +3989,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -3609,7 +4005,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -3632,7 +4029,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -3655,7 +4053,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -3677,7 +4076,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -3695,7 +4095,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -3720,7 +4121,15 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the security policy.
+     * Specifies a fingerprint for this resource, which is essentially a hash of
+     * the metadata's contents and used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update metadata. You must always provide an
+     * up-to-date fingerprint hash in order to update or change metadata,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * security policy.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -3735,7 +4144,15 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the security policy.
+     * Specifies a fingerprint for this resource, which is essentially a hash of
+     * the metadata's contents and used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update metadata. You must always provide an
+     * up-to-date fingerprint hash in order to update or change metadata,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * security policy.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -3758,7 +4175,15 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the security policy.
+     * Specifies a fingerprint for this resource, which is essentially a hash of
+     * the metadata's contents and used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update metadata. You must always provide an
+     * up-to-date fingerprint hash in order to update or change metadata,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * security policy.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -3781,7 +4206,15 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the security policy.
+     * Specifies a fingerprint for this resource, which is essentially a hash of
+     * the metadata's contents and used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update metadata. You must always provide an
+     * up-to-date fingerprint hash in order to update or change metadata,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * security policy.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -3803,7 +4236,15 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the security policy.
+     * Specifies a fingerprint for this resource, which is essentially a hash of
+     * the metadata's contents and used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update metadata. You must always provide an
+     * up-to-date fingerprint hash in order to update or change metadata,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * security policy.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -3821,7 +4262,15 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the security policy.
+     * Specifies a fingerprint for this resource, which is essentially a hash of
+     * the metadata's contents and used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update metadata. You must always provide an
+     * up-to-date fingerprint hash in order to update or change metadata,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * security policy.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -3846,7 +4295,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -3862,7 +4312,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -3878,7 +4329,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -3898,7 +4350,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -3918,7 +4371,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Always compute#securityPolicyfor security policies
+     * Output only. [Output only] Type of the resource. Alwayscompute#securityPolicyfor security policies
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3933,7 +4386,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Always compute#securityPolicyfor security policies
+     * Output only. [Output only] Type of the resource. Alwayscompute#securityPolicyfor security policies
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3956,7 +4409,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Always compute#securityPolicyfor security policies
+     * Output only. [Output only] Type of the resource. Alwayscompute#securityPolicyfor security policies
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3979,7 +4432,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Always compute#securityPolicyfor security policies
+     * Output only. [Output only] Type of the resource. Alwayscompute#securityPolicyfor security policies
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4001,7 +4454,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Always compute#securityPolicyfor security policies
+     * Output only. [Output only] Type of the resource. Alwayscompute#securityPolicyfor security policies
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4019,7 +4472,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Always compute#securityPolicyfor security policies
+     * Output only. [Output only] Type of the resource. Alwayscompute#securityPolicyfor security policies
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4044,7 +4497,14 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this security policy, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the security policy.
+     * A fingerprint for the labels being applied to this security policy, which
+     * is essentially a hash of the labels set used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * security policy.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -4059,7 +4519,14 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this security policy, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the security policy.
+     * A fingerprint for the labels being applied to this security policy, which
+     * is essentially a hash of the labels set used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * security policy.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -4082,7 +4549,14 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this security policy, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the security policy.
+     * A fingerprint for the labels being applied to this security policy, which
+     * is essentially a hash of the labels set used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * security policy.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -4105,7 +4579,14 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this security policy, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the security policy.
+     * A fingerprint for the labels being applied to this security policy, which
+     * is essentially a hash of the labels set used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * security policy.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -4127,7 +4608,14 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this security policy, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the security policy.
+     * A fingerprint for the labels being applied to this security policy, which
+     * is essentially a hash of the labels set used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * security policy.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -4145,7 +4633,14 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this security policy, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the security policy.
+     * A fingerprint for the labels being applied to this security policy, which
+     * is essentially a hash of the labels set used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * security policy.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -4194,7 +4689,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+     * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+     * Label values may be empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -4218,7 +4714,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+     * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+     * Label values may be empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -4232,7 +4729,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+     * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+     * Label values may be empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -4253,7 +4751,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+     * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+     * Label values may be empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -4280,7 +4779,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+     * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+     * Label values may be empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -4304,7 +4804,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+     * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+     * Label values may be empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -4325,7 +4826,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+     * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+     * Label values may be empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -4342,7 +4844,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -4357,7 +4865,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -4380,7 +4894,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -4403,7 +4923,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -4425,7 +4951,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -4443,7 +4975,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -4458,6 +4996,132 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       name_ = value;
       bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object parent_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The parent of the security policy.
+     * </pre>
+     *
+     * <code>optional string parent = 78317738;</code>
+     *
+     * @return Whether the parent field is set.
+     */
+    public boolean hasParent() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The parent of the security policy.
+     * </pre>
+     *
+     * <code>optional string parent = 78317738;</code>
+     *
+     * @return The parent.
+     */
+    public java.lang.String getParent() {
+      java.lang.Object ref = parent_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        parent_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The parent of the security policy.
+     * </pre>
+     *
+     * <code>optional string parent = 78317738;</code>
+     *
+     * @return The bytes for parent.
+     */
+    public com.google.protobuf.ByteString getParentBytes() {
+      java.lang.Object ref = parent_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        parent_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The parent of the security policy.
+     * </pre>
+     *
+     * <code>optional string parent = 78317738;</code>
+     *
+     * @param value The parent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParent(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      parent_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The parent of the security policy.
+     * </pre>
+     *
+     * <code>optional string parent = 78317738;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearParent() {
+      parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The parent of the security policy.
+     * </pre>
+     *
+     * <code>optional string parent = 78317738;</code>
+     *
+     * @param value The bytes for parent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      parent_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4478,7 +5142,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the recaptchaOptionsConfig field is set.
      */
     public boolean hasRecaptchaOptionsConfig() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -4514,7 +5178,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       } else {
         recaptchaOptionsConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4531,7 +5195,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       } else {
         recaptchaOptionsConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4544,7 +5208,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeRecaptchaOptionsConfig(
         com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig value) {
       if (recaptchaOptionsConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && recaptchaOptionsConfig_ != null
             && recaptchaOptionsConfig_
                 != com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig
@@ -4557,7 +5221,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         recaptchaOptionsConfigBuilder_.mergeFrom(value);
       }
       if (recaptchaOptionsConfig_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -4569,7 +5233,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearRecaptchaOptionsConfig() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       recaptchaOptionsConfig_ = null;
       if (recaptchaOptionsConfigBuilder_ != null) {
         recaptchaOptionsConfigBuilder_.dispose();
@@ -4586,7 +5250,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig.Builder
         getRecaptchaOptionsConfigBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getRecaptchaOptionsConfigFieldBuilder().getBuilder();
     }
@@ -4635,7 +5299,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the regional security policy resides. This field is not applicable to global security policies.
+     * Output only. [Output Only] URL of the region where the regional security policy
+     * resides. This field is not applicable to global security policies.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -4643,14 +5308,15 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the regional security policy resides. This field is not applicable to global security policies.
+     * Output only. [Output Only] URL of the region where the regional security policy
+     * resides. This field is not applicable to global security policies.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -4673,7 +5339,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the regional security policy resides. This field is not applicable to global security policies.
+     * Output only. [Output Only] URL of the region where the regional security policy
+     * resides. This field is not applicable to global security policies.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -4696,7 +5363,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the regional security policy resides. This field is not applicable to global security policies.
+     * Output only. [Output Only] URL of the region where the regional security policy
+     * resides. This field is not applicable to global security policies.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -4709,7 +5377,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       region_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4718,7 +5386,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the regional security policy resides. This field is not applicable to global security policies.
+     * Output only. [Output Only] URL of the region where the regional security policy
+     * resides. This field is not applicable to global security policies.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -4727,7 +5396,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRegion() {
       region_ = getDefaultInstance().getRegion();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -4736,7 +5405,8 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the regional security policy resides. This field is not applicable to global security policies.
+     * Output only. [Output Only] URL of the region where the regional security policy
+     * resides. This field is not applicable to global security policies.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -4750,7 +5420,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       region_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4759,9 +5429,9 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureRulesIsMutable() {
-      if (!((bitField0_ & 0x00004000) != 0)) {
+      if (!((bitField0_ & 0x00008000) != 0)) {
         rules_ = new java.util.ArrayList<com.google.cloud.compute.v1.SecurityPolicyRule>(rules_);
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
       }
     }
 
@@ -4775,7 +5445,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule which is a rule with priority 2147483647 and match all condition (for the match condition this means match "*" for srcIpRanges and for the networkMatch condition every field must be either match "*" or not set). If no rules are provided when creating a security policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule which is a rule with priority
+     * 2147483647 and match all condition (for the match condition this means
+     * match  "*" for srcIpRanges and for the networkMatch condition every field
+     * must be either match "*" or not set). If no rules are provided when
+     * creating a security policy, a default rule with action "allow" will be
+     * added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SecurityPolicyRule rules = 108873975;</code>
@@ -4792,7 +5468,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule which is a rule with priority 2147483647 and match all condition (for the match condition this means match "*" for srcIpRanges and for the networkMatch condition every field must be either match "*" or not set). If no rules are provided when creating a security policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule which is a rule with priority
+     * 2147483647 and match all condition (for the match condition this means
+     * match  "*" for srcIpRanges and for the networkMatch condition every field
+     * must be either match "*" or not set). If no rules are provided when
+     * creating a security policy, a default rule with action "allow" will be
+     * added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SecurityPolicyRule rules = 108873975;</code>
@@ -4809,7 +5491,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule which is a rule with priority 2147483647 and match all condition (for the match condition this means match "*" for srcIpRanges and for the networkMatch condition every field must be either match "*" or not set). If no rules are provided when creating a security policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule which is a rule with priority
+     * 2147483647 and match all condition (for the match condition this means
+     * match  "*" for srcIpRanges and for the networkMatch condition every field
+     * must be either match "*" or not set). If no rules are provided when
+     * creating a security policy, a default rule with action "allow" will be
+     * added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SecurityPolicyRule rules = 108873975;</code>
@@ -4826,7 +5514,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule which is a rule with priority 2147483647 and match all condition (for the match condition this means match "*" for srcIpRanges and for the networkMatch condition every field must be either match "*" or not set). If no rules are provided when creating a security policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule which is a rule with priority
+     * 2147483647 and match all condition (for the match condition this means
+     * match  "*" for srcIpRanges and for the networkMatch condition every field
+     * must be either match "*" or not set). If no rules are provided when
+     * creating a security policy, a default rule with action "allow" will be
+     * added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SecurityPolicyRule rules = 108873975;</code>
@@ -4849,7 +5543,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule which is a rule with priority 2147483647 and match all condition (for the match condition this means match "*" for srcIpRanges and for the networkMatch condition every field must be either match "*" or not set). If no rules are provided when creating a security policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule which is a rule with priority
+     * 2147483647 and match all condition (for the match condition this means
+     * match  "*" for srcIpRanges and for the networkMatch condition every field
+     * must be either match "*" or not set). If no rules are provided when
+     * creating a security policy, a default rule with action "allow" will be
+     * added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SecurityPolicyRule rules = 108873975;</code>
@@ -4870,7 +5570,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule which is a rule with priority 2147483647 and match all condition (for the match condition this means match "*" for srcIpRanges and for the networkMatch condition every field must be either match "*" or not set). If no rules are provided when creating a security policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule which is a rule with priority
+     * 2147483647 and match all condition (for the match condition this means
+     * match  "*" for srcIpRanges and for the networkMatch condition every field
+     * must be either match "*" or not set). If no rules are provided when
+     * creating a security policy, a default rule with action "allow" will be
+     * added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SecurityPolicyRule rules = 108873975;</code>
@@ -4893,7 +5599,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule which is a rule with priority 2147483647 and match all condition (for the match condition this means match "*" for srcIpRanges and for the networkMatch condition every field must be either match "*" or not set). If no rules are provided when creating a security policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule which is a rule with priority
+     * 2147483647 and match all condition (for the match condition this means
+     * match  "*" for srcIpRanges and for the networkMatch condition every field
+     * must be either match "*" or not set). If no rules are provided when
+     * creating a security policy, a default rule with action "allow" will be
+     * added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SecurityPolicyRule rules = 108873975;</code>
@@ -4916,7 +5628,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule which is a rule with priority 2147483647 and match all condition (for the match condition this means match "*" for srcIpRanges and for the networkMatch condition every field must be either match "*" or not set). If no rules are provided when creating a security policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule which is a rule with priority
+     * 2147483647 and match all condition (for the match condition this means
+     * match  "*" for srcIpRanges and for the networkMatch condition every field
+     * must be either match "*" or not set). If no rules are provided when
+     * creating a security policy, a default rule with action "allow" will be
+     * added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SecurityPolicyRule rules = 108873975;</code>
@@ -4937,7 +5655,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule which is a rule with priority 2147483647 and match all condition (for the match condition this means match "*" for srcIpRanges and for the networkMatch condition every field must be either match "*" or not set). If no rules are provided when creating a security policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule which is a rule with priority
+     * 2147483647 and match all condition (for the match condition this means
+     * match  "*" for srcIpRanges and for the networkMatch condition every field
+     * must be either match "*" or not set). If no rules are provided when
+     * creating a security policy, a default rule with action "allow" will be
+     * added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SecurityPolicyRule rules = 108873975;</code>
@@ -4958,7 +5682,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule which is a rule with priority 2147483647 and match all condition (for the match condition this means match "*" for srcIpRanges and for the networkMatch condition every field must be either match "*" or not set). If no rules are provided when creating a security policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule which is a rule with priority
+     * 2147483647 and match all condition (for the match condition this means
+     * match  "*" for srcIpRanges and for the networkMatch condition every field
+     * must be either match "*" or not set). If no rules are provided when
+     * creating a security policy, a default rule with action "allow" will be
+     * added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SecurityPolicyRule rules = 108873975;</code>
@@ -4979,7 +5709,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule which is a rule with priority 2147483647 and match all condition (for the match condition this means match "*" for srcIpRanges and for the networkMatch condition every field must be either match "*" or not set). If no rules are provided when creating a security policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule which is a rule with priority
+     * 2147483647 and match all condition (for the match condition this means
+     * match  "*" for srcIpRanges and for the networkMatch condition every field
+     * must be either match "*" or not set). If no rules are provided when
+     * creating a security policy, a default rule with action "allow" will be
+     * added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SecurityPolicyRule rules = 108873975;</code>
@@ -4987,7 +5723,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder clearRules() {
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         onChanged();
       } else {
         rulesBuilder_.clear();
@@ -4999,7 +5735,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule which is a rule with priority 2147483647 and match all condition (for the match condition this means match "*" for srcIpRanges and for the networkMatch condition every field must be either match "*" or not set). If no rules are provided when creating a security policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule which is a rule with priority
+     * 2147483647 and match all condition (for the match condition this means
+     * match  "*" for srcIpRanges and for the networkMatch condition every field
+     * must be either match "*" or not set). If no rules are provided when
+     * creating a security policy, a default rule with action "allow" will be
+     * added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SecurityPolicyRule rules = 108873975;</code>
@@ -5019,7 +5761,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule which is a rule with priority 2147483647 and match all condition (for the match condition this means match "*" for srcIpRanges and for the networkMatch condition every field must be either match "*" or not set). If no rules are provided when creating a security policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule which is a rule with priority
+     * 2147483647 and match all condition (for the match condition this means
+     * match  "*" for srcIpRanges and for the networkMatch condition every field
+     * must be either match "*" or not set). If no rules are provided when
+     * creating a security policy, a default rule with action "allow" will be
+     * added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SecurityPolicyRule rules = 108873975;</code>
@@ -5032,7 +5780,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule which is a rule with priority 2147483647 and match all condition (for the match condition this means match "*" for srcIpRanges and for the networkMatch condition every field must be either match "*" or not set). If no rules are provided when creating a security policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule which is a rule with priority
+     * 2147483647 and match all condition (for the match condition this means
+     * match  "*" for srcIpRanges and for the networkMatch condition every field
+     * must be either match "*" or not set). If no rules are provided when
+     * creating a security policy, a default rule with action "allow" will be
+     * added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SecurityPolicyRule rules = 108873975;</code>
@@ -5049,7 +5803,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule which is a rule with priority 2147483647 and match all condition (for the match condition this means match "*" for srcIpRanges and for the networkMatch condition every field must be either match "*" or not set). If no rules are provided when creating a security policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule which is a rule with priority
+     * 2147483647 and match all condition (for the match condition this means
+     * match  "*" for srcIpRanges and for the networkMatch condition every field
+     * must be either match "*" or not set). If no rules are provided when
+     * creating a security policy, a default rule with action "allow" will be
+     * added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SecurityPolicyRule rules = 108873975;</code>
@@ -5067,7 +5827,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule which is a rule with priority 2147483647 and match all condition (for the match condition this means match "*" for srcIpRanges and for the networkMatch condition every field must be either match "*" or not set). If no rules are provided when creating a security policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule which is a rule with priority
+     * 2147483647 and match all condition (for the match condition this means
+     * match  "*" for srcIpRanges and for the networkMatch condition every field
+     * must be either match "*" or not set). If no rules are provided when
+     * creating a security policy, a default rule with action "allow" will be
+     * added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SecurityPolicyRule rules = 108873975;</code>
@@ -5081,7 +5847,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule which is a rule with priority 2147483647 and match all condition (for the match condition this means match "*" for srcIpRanges and for the networkMatch condition every field must be either match "*" or not set). If no rules are provided when creating a security policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule which is a rule with priority
+     * 2147483647 and match all condition (for the match condition this means
+     * match  "*" for srcIpRanges and for the networkMatch condition every field
+     * must be either match "*" or not set). If no rules are provided when
+     * creating a security policy, a default rule with action "allow" will be
+     * added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SecurityPolicyRule rules = 108873975;</code>
@@ -5095,7 +5867,13 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule which is a rule with priority 2147483647 and match all condition (for the match condition this means match "*" for srcIpRanges and for the networkMatch condition every field must be either match "*" or not set). If no rules are provided when creating a security policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule which is a rule with priority
+     * 2147483647 and match all condition (for the match condition this means
+     * match  "*" for srcIpRanges and for the networkMatch condition every field
+     * must be either match "*" or not set). If no rules are provided when
+     * creating a security policy, a default rule with action "allow" will be
+     * added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SecurityPolicyRule rules = 108873975;</code>
@@ -5116,7 +5894,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.SecurityPolicyRule,
                 com.google.cloud.compute.v1.SecurityPolicyRule.Builder,
                 com.google.cloud.compute.v1.SecurityPolicyRuleOrBuilder>(
-                rules_, ((bitField0_ & 0x00004000) != 0), getParentForChildren(), isClean());
+                rules_, ((bitField0_ & 0x00008000) != 0), getParentForChildren(), isClean());
         rules_ = null;
       }
       return rulesBuilder_;
@@ -5128,7 +5906,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -5136,14 +5914,14 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -5166,7 +5944,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -5189,7 +5967,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -5202,7 +5980,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5211,7 +5989,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -5220,7 +5998,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -5229,7 +6007,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -5243,7 +6021,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5254,7 +6032,15 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-provided name of the organization security policy. The name should be unique in the organization in which the security policy is created. This should only be used when SecurityPolicyType is CLOUD_ARMOR. The name must be 1-63 characters long, and comply with https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * User-provided name of the organization security policy. The name should be
+     * unique in the organization in which the security policy is created. This
+     * should only be used when SecurityPolicyType is CLOUD_ARMOR.
+     * The name must be 1-63 characters long, and comply with
+     * https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63
+     * characters long and match the regular expression
+     * `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a
+     * lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
      * <code>optional string short_name = 492051566;</code>
@@ -5262,14 +6048,22 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the shortName field is set.
      */
     public boolean hasShortName() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * User-provided name of the organization security policy. The name should be unique in the organization in which the security policy is created. This should only be used when SecurityPolicyType is CLOUD_ARMOR. The name must be 1-63 characters long, and comply with https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * User-provided name of the organization security policy. The name should be
+     * unique in the organization in which the security policy is created. This
+     * should only be used when SecurityPolicyType is CLOUD_ARMOR.
+     * The name must be 1-63 characters long, and comply with
+     * https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63
+     * characters long and match the regular expression
+     * `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a
+     * lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
      * <code>optional string short_name = 492051566;</code>
@@ -5292,7 +6086,15 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-provided name of the organization security policy. The name should be unique in the organization in which the security policy is created. This should only be used when SecurityPolicyType is CLOUD_ARMOR. The name must be 1-63 characters long, and comply with https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * User-provided name of the organization security policy. The name should be
+     * unique in the organization in which the security policy is created. This
+     * should only be used when SecurityPolicyType is CLOUD_ARMOR.
+     * The name must be 1-63 characters long, and comply with
+     * https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63
+     * characters long and match the regular expression
+     * `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a
+     * lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
      * <code>optional string short_name = 492051566;</code>
@@ -5315,7 +6117,15 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-provided name of the organization security policy. The name should be unique in the organization in which the security policy is created. This should only be used when SecurityPolicyType is CLOUD_ARMOR. The name must be 1-63 characters long, and comply with https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * User-provided name of the organization security policy. The name should be
+     * unique in the organization in which the security policy is created. This
+     * should only be used when SecurityPolicyType is CLOUD_ARMOR.
+     * The name must be 1-63 characters long, and comply with
+     * https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63
+     * characters long and match the regular expression
+     * `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a
+     * lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
      * <code>optional string short_name = 492051566;</code>
@@ -5328,7 +6138,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       shortName_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5337,7 +6147,15 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-provided name of the organization security policy. The name should be unique in the organization in which the security policy is created. This should only be used when SecurityPolicyType is CLOUD_ARMOR. The name must be 1-63 characters long, and comply with https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * User-provided name of the organization security policy. The name should be
+     * unique in the organization in which the security policy is created. This
+     * should only be used when SecurityPolicyType is CLOUD_ARMOR.
+     * The name must be 1-63 characters long, and comply with
+     * https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63
+     * characters long and match the regular expression
+     * `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a
+     * lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
      * <code>optional string short_name = 492051566;</code>
@@ -5346,7 +6164,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearShortName() {
       shortName_ = getDefaultInstance().getShortName();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -5355,7 +6173,15 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-provided name of the organization security policy. The name should be unique in the organization in which the security policy is created. This should only be used when SecurityPolicyType is CLOUD_ARMOR. The name must be 1-63 characters long, and comply with https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * User-provided name of the organization security policy. The name should be
+     * unique in the organization in which the security policy is created. This
+     * should only be used when SecurityPolicyType is CLOUD_ARMOR.
+     * The name must be 1-63 characters long, and comply with
+     * https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63
+     * characters long and match the regular expression
+     * `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a
+     * lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
      * <code>optional string short_name = 492051566;</code>
@@ -5369,7 +6195,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       shortName_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5380,7 +6206,28 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type indicates the intended use of the security policy. - CLOUD_ARMOR: Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache. - CLOUD_ARMOR_INTERNAL_SERVICE (preview only): Cloud Armor internal service policies can be configured to filter HTTP requests targeting services managed by Traffic Director in a service mesh. They filter requests before the request is served from the application. - CLOUD_ARMOR_NETWORK: Cloud Armor network policies can be configured to filter packets targeting network load balancing resources such as backend services, target pools, target instances, and instances with external IPs. They filter requests before the request is served from the application. This field can be set only at resource creation time.
+     * The type indicates the intended use of the security policy.
+     *
+     *    - CLOUD_ARMOR: Cloud Armor backend security policies can
+     *    be configured to filter incoming HTTP requests targeting backend services.
+     *    They filter requests before they hit the origin servers.
+     *    - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can
+     *    be configured to filter incoming HTTP requests targeting backend services
+     *    (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage).
+     *    They filter requests before the request is served from Google's cache.
+     *    - CLOUD_ARMOR_INTERNAL_SERVICE (preview only): Cloud Armor
+     *    internal service policies can be configured to filter HTTP requests
+     *    targeting services managed by Traffic Director in a service mesh. They
+     *    filter requests before the request is served from the application.
+     *
+     * - CLOUD_ARMOR_NETWORK: Cloud Armor network policies
+     * can be configured to filter packets targeting network load balancing
+     * resources such as backend services, target pools, target instances, and
+     * instances with external IPs. They filter requests before the request is
+     * served from the application.
+     *
+     *
+     * This field can be set only at resource creation time.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -5389,14 +6236,35 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the type field is set.
      */
     public boolean hasType() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * The type indicates the intended use of the security policy. - CLOUD_ARMOR: Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache. - CLOUD_ARMOR_INTERNAL_SERVICE (preview only): Cloud Armor internal service policies can be configured to filter HTTP requests targeting services managed by Traffic Director in a service mesh. They filter requests before the request is served from the application. - CLOUD_ARMOR_NETWORK: Cloud Armor network policies can be configured to filter packets targeting network load balancing resources such as backend services, target pools, target instances, and instances with external IPs. They filter requests before the request is served from the application. This field can be set only at resource creation time.
+     * The type indicates the intended use of the security policy.
+     *
+     *    - CLOUD_ARMOR: Cloud Armor backend security policies can
+     *    be configured to filter incoming HTTP requests targeting backend services.
+     *    They filter requests before they hit the origin servers.
+     *    - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can
+     *    be configured to filter incoming HTTP requests targeting backend services
+     *    (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage).
+     *    They filter requests before the request is served from Google's cache.
+     *    - CLOUD_ARMOR_INTERNAL_SERVICE (preview only): Cloud Armor
+     *    internal service policies can be configured to filter HTTP requests
+     *    targeting services managed by Traffic Director in a service mesh. They
+     *    filter requests before the request is served from the application.
+     *
+     * - CLOUD_ARMOR_NETWORK: Cloud Armor network policies
+     * can be configured to filter packets targeting network load balancing
+     * resources such as backend services, target pools, target instances, and
+     * instances with external IPs. They filter requests before the request is
+     * served from the application.
+     *
+     *
+     * This field can be set only at resource creation time.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -5420,7 +6288,28 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type indicates the intended use of the security policy. - CLOUD_ARMOR: Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache. - CLOUD_ARMOR_INTERNAL_SERVICE (preview only): Cloud Armor internal service policies can be configured to filter HTTP requests targeting services managed by Traffic Director in a service mesh. They filter requests before the request is served from the application. - CLOUD_ARMOR_NETWORK: Cloud Armor network policies can be configured to filter packets targeting network load balancing resources such as backend services, target pools, target instances, and instances with external IPs. They filter requests before the request is served from the application. This field can be set only at resource creation time.
+     * The type indicates the intended use of the security policy.
+     *
+     *    - CLOUD_ARMOR: Cloud Armor backend security policies can
+     *    be configured to filter incoming HTTP requests targeting backend services.
+     *    They filter requests before they hit the origin servers.
+     *    - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can
+     *    be configured to filter incoming HTTP requests targeting backend services
+     *    (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage).
+     *    They filter requests before the request is served from Google's cache.
+     *    - CLOUD_ARMOR_INTERNAL_SERVICE (preview only): Cloud Armor
+     *    internal service policies can be configured to filter HTTP requests
+     *    targeting services managed by Traffic Director in a service mesh. They
+     *    filter requests before the request is served from the application.
+     *
+     * - CLOUD_ARMOR_NETWORK: Cloud Armor network policies
+     * can be configured to filter packets targeting network load balancing
+     * resources such as backend services, target pools, target instances, and
+     * instances with external IPs. They filter requests before the request is
+     * served from the application.
+     *
+     *
+     * This field can be set only at resource creation time.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -5444,7 +6333,28 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type indicates the intended use of the security policy. - CLOUD_ARMOR: Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache. - CLOUD_ARMOR_INTERNAL_SERVICE (preview only): Cloud Armor internal service policies can be configured to filter HTTP requests targeting services managed by Traffic Director in a service mesh. They filter requests before the request is served from the application. - CLOUD_ARMOR_NETWORK: Cloud Armor network policies can be configured to filter packets targeting network load balancing resources such as backend services, target pools, target instances, and instances with external IPs. They filter requests before the request is served from the application. This field can be set only at resource creation time.
+     * The type indicates the intended use of the security policy.
+     *
+     *    - CLOUD_ARMOR: Cloud Armor backend security policies can
+     *    be configured to filter incoming HTTP requests targeting backend services.
+     *    They filter requests before they hit the origin servers.
+     *    - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can
+     *    be configured to filter incoming HTTP requests targeting backend services
+     *    (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage).
+     *    They filter requests before the request is served from Google's cache.
+     *    - CLOUD_ARMOR_INTERNAL_SERVICE (preview only): Cloud Armor
+     *    internal service policies can be configured to filter HTTP requests
+     *    targeting services managed by Traffic Director in a service mesh. They
+     *    filter requests before the request is served from the application.
+     *
+     * - CLOUD_ARMOR_NETWORK: Cloud Armor network policies
+     * can be configured to filter packets targeting network load balancing
+     * resources such as backend services, target pools, target instances, and
+     * instances with external IPs. They filter requests before the request is
+     * served from the application.
+     *
+     *
+     * This field can be set only at resource creation time.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -5458,7 +6368,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       type_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5467,7 +6377,28 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type indicates the intended use of the security policy. - CLOUD_ARMOR: Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache. - CLOUD_ARMOR_INTERNAL_SERVICE (preview only): Cloud Armor internal service policies can be configured to filter HTTP requests targeting services managed by Traffic Director in a service mesh. They filter requests before the request is served from the application. - CLOUD_ARMOR_NETWORK: Cloud Armor network policies can be configured to filter packets targeting network load balancing resources such as backend services, target pools, target instances, and instances with external IPs. They filter requests before the request is served from the application. This field can be set only at resource creation time.
+     * The type indicates the intended use of the security policy.
+     *
+     *    - CLOUD_ARMOR: Cloud Armor backend security policies can
+     *    be configured to filter incoming HTTP requests targeting backend services.
+     *    They filter requests before they hit the origin servers.
+     *    - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can
+     *    be configured to filter incoming HTTP requests targeting backend services
+     *    (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage).
+     *    They filter requests before the request is served from Google's cache.
+     *    - CLOUD_ARMOR_INTERNAL_SERVICE (preview only): Cloud Armor
+     *    internal service policies can be configured to filter HTTP requests
+     *    targeting services managed by Traffic Director in a service mesh. They
+     *    filter requests before the request is served from the application.
+     *
+     * - CLOUD_ARMOR_NETWORK: Cloud Armor network policies
+     * can be configured to filter packets targeting network load balancing
+     * resources such as backend services, target pools, target instances, and
+     * instances with external IPs. They filter requests before the request is
+     * served from the application.
+     *
+     *
+     * This field can be set only at resource creation time.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -5477,7 +6408,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearType() {
       type_ = getDefaultInstance().getType();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -5486,7 +6417,28 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type indicates the intended use of the security policy. - CLOUD_ARMOR: Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache. - CLOUD_ARMOR_INTERNAL_SERVICE (preview only): Cloud Armor internal service policies can be configured to filter HTTP requests targeting services managed by Traffic Director in a service mesh. They filter requests before the request is served from the application. - CLOUD_ARMOR_NETWORK: Cloud Armor network policies can be configured to filter packets targeting network load balancing resources such as backend services, target pools, target instances, and instances with external IPs. They filter requests before the request is served from the application. This field can be set only at resource creation time.
+     * The type indicates the intended use of the security policy.
+     *
+     *    - CLOUD_ARMOR: Cloud Armor backend security policies can
+     *    be configured to filter incoming HTTP requests targeting backend services.
+     *    They filter requests before they hit the origin servers.
+     *    - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can
+     *    be configured to filter incoming HTTP requests targeting backend services
+     *    (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage).
+     *    They filter requests before the request is served from Google's cache.
+     *    - CLOUD_ARMOR_INTERNAL_SERVICE (preview only): Cloud Armor
+     *    internal service policies can be configured to filter HTTP requests
+     *    targeting services managed by Traffic Director in a service mesh. They
+     *    filter requests before the request is served from the application.
+     *
+     * - CLOUD_ARMOR_NETWORK: Cloud Armor network policies
+     * can be configured to filter packets targeting network load balancing
+     * resources such as backend services, target pools, target instances, and
+     * instances with external IPs. They filter requests before the request is
+     * served from the application.
+     *
+     *
+     * This field can be set only at resource creation time.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -5501,7 +6453,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       type_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5510,11 +6462,11 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
         userDefinedFields_ = java.util.Collections.emptyList();
 
     private void ensureUserDefinedFieldsIsMutable() {
-      if (!((bitField0_ & 0x00040000) != 0)) {
+      if (!((bitField0_ & 0x00080000) != 0)) {
         userDefinedFields_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.SecurityPolicyUserDefinedField>(
                 userDefinedFields_);
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
       }
     }
 
@@ -5528,7 +6480,20 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A
+     * user-defined field consists of up to 4 bytes extracted from a fixed offset
+     * in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an
+     * optional mask to select certain bits. Rules may then specify matching
+     * values for these fields.
+     *
+     * Example:
+     *
+     *  userDefinedFields:
+     *  - name: "ipv4_fragment_offset"
+     *    base: IPV4
+     *    offset: 6
+     *    size: 2
+     *    mask: "0x1fff"
      * </pre>
      *
      * <code>
@@ -5548,7 +6513,20 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A
+     * user-defined field consists of up to 4 bytes extracted from a fixed offset
+     * in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an
+     * optional mask to select certain bits. Rules may then specify matching
+     * values for these fields.
+     *
+     * Example:
+     *
+     *  userDefinedFields:
+     *  - name: "ipv4_fragment_offset"
+     *    base: IPV4
+     *    offset: 6
+     *    size: 2
+     *    mask: "0x1fff"
      * </pre>
      *
      * <code>
@@ -5567,7 +6545,20 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A
+     * user-defined field consists of up to 4 bytes extracted from a fixed offset
+     * in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an
+     * optional mask to select certain bits. Rules may then specify matching
+     * values for these fields.
+     *
+     * Example:
+     *
+     *  userDefinedFields:
+     *  - name: "ipv4_fragment_offset"
+     *    base: IPV4
+     *    offset: 6
+     *    size: 2
+     *    mask: "0x1fff"
      * </pre>
      *
      * <code>
@@ -5587,7 +6578,20 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A
+     * user-defined field consists of up to 4 bytes extracted from a fixed offset
+     * in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an
+     * optional mask to select certain bits. Rules may then specify matching
+     * values for these fields.
+     *
+     * Example:
+     *
+     *  userDefinedFields:
+     *  - name: "ipv4_fragment_offset"
+     *    base: IPV4
+     *    offset: 6
+     *    size: 2
+     *    mask: "0x1fff"
      * </pre>
      *
      * <code>
@@ -5613,7 +6617,20 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A
+     * user-defined field consists of up to 4 bytes extracted from a fixed offset
+     * in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an
+     * optional mask to select certain bits. Rules may then specify matching
+     * values for these fields.
+     *
+     * Example:
+     *
+     *  userDefinedFields:
+     *  - name: "ipv4_fragment_offset"
+     *    base: IPV4
+     *    offset: 6
+     *    size: 2
+     *    mask: "0x1fff"
      * </pre>
      *
      * <code>
@@ -5637,7 +6654,20 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A
+     * user-defined field consists of up to 4 bytes extracted from a fixed offset
+     * in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an
+     * optional mask to select certain bits. Rules may then specify matching
+     * values for these fields.
+     *
+     * Example:
+     *
+     *  userDefinedFields:
+     *  - name: "ipv4_fragment_offset"
+     *    base: IPV4
+     *    offset: 6
+     *    size: 2
+     *    mask: "0x1fff"
      * </pre>
      *
      * <code>
@@ -5663,7 +6693,20 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A
+     * user-defined field consists of up to 4 bytes extracted from a fixed offset
+     * in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an
+     * optional mask to select certain bits. Rules may then specify matching
+     * values for these fields.
+     *
+     * Example:
+     *
+     *  userDefinedFields:
+     *  - name: "ipv4_fragment_offset"
+     *    base: IPV4
+     *    offset: 6
+     *    size: 2
+     *    mask: "0x1fff"
      * </pre>
      *
      * <code>
@@ -5689,7 +6732,20 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A
+     * user-defined field consists of up to 4 bytes extracted from a fixed offset
+     * in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an
+     * optional mask to select certain bits. Rules may then specify matching
+     * values for these fields.
+     *
+     * Example:
+     *
+     *  userDefinedFields:
+     *  - name: "ipv4_fragment_offset"
+     *    base: IPV4
+     *    offset: 6
+     *    size: 2
+     *    mask: "0x1fff"
      * </pre>
      *
      * <code>
@@ -5712,7 +6768,20 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A
+     * user-defined field consists of up to 4 bytes extracted from a fixed offset
+     * in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an
+     * optional mask to select certain bits. Rules may then specify matching
+     * values for these fields.
+     *
+     * Example:
+     *
+     *  userDefinedFields:
+     *  - name: "ipv4_fragment_offset"
+     *    base: IPV4
+     *    offset: 6
+     *    size: 2
+     *    mask: "0x1fff"
      * </pre>
      *
      * <code>
@@ -5736,7 +6805,20 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A
+     * user-defined field consists of up to 4 bytes extracted from a fixed offset
+     * in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an
+     * optional mask to select certain bits. Rules may then specify matching
+     * values for these fields.
+     *
+     * Example:
+     *
+     *  userDefinedFields:
+     *  - name: "ipv4_fragment_offset"
+     *    base: IPV4
+     *    offset: 6
+     *    size: 2
+     *    mask: "0x1fff"
      * </pre>
      *
      * <code>
@@ -5760,7 +6842,20 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A
+     * user-defined field consists of up to 4 bytes extracted from a fixed offset
+     * in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an
+     * optional mask to select certain bits. Rules may then specify matching
+     * values for these fields.
+     *
+     * Example:
+     *
+     *  userDefinedFields:
+     *  - name: "ipv4_fragment_offset"
+     *    base: IPV4
+     *    offset: 6
+     *    size: 2
+     *    mask: "0x1fff"
      * </pre>
      *
      * <code>
@@ -5770,7 +6865,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder clearUserDefinedFields() {
       if (userDefinedFieldsBuilder_ == null) {
         userDefinedFields_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00040000);
+        bitField0_ = (bitField0_ & ~0x00080000);
         onChanged();
       } else {
         userDefinedFieldsBuilder_.clear();
@@ -5782,7 +6877,20 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A
+     * user-defined field consists of up to 4 bytes extracted from a fixed offset
+     * in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an
+     * optional mask to select certain bits. Rules may then specify matching
+     * values for these fields.
+     *
+     * Example:
+     *
+     *  userDefinedFields:
+     *  - name: "ipv4_fragment_offset"
+     *    base: IPV4
+     *    offset: 6
+     *    size: 2
+     *    mask: "0x1fff"
      * </pre>
      *
      * <code>
@@ -5804,7 +6912,20 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A
+     * user-defined field consists of up to 4 bytes extracted from a fixed offset
+     * in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an
+     * optional mask to select certain bits. Rules may then specify matching
+     * values for these fields.
+     *
+     * Example:
+     *
+     *  userDefinedFields:
+     *  - name: "ipv4_fragment_offset"
+     *    base: IPV4
+     *    offset: 6
+     *    size: 2
+     *    mask: "0x1fff"
      * </pre>
      *
      * <code>
@@ -5820,7 +6941,20 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A
+     * user-defined field consists of up to 4 bytes extracted from a fixed offset
+     * in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an
+     * optional mask to select certain bits. Rules may then specify matching
+     * values for these fields.
+     *
+     * Example:
+     *
+     *  userDefinedFields:
+     *  - name: "ipv4_fragment_offset"
+     *    base: IPV4
+     *    offset: 6
+     *    size: 2
+     *    mask: "0x1fff"
      * </pre>
      *
      * <code>
@@ -5840,7 +6974,20 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A
+     * user-defined field consists of up to 4 bytes extracted from a fixed offset
+     * in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an
+     * optional mask to select certain bits. Rules may then specify matching
+     * values for these fields.
+     *
+     * Example:
+     *
+     *  userDefinedFields:
+     *  - name: "ipv4_fragment_offset"
+     *    base: IPV4
+     *    offset: 6
+     *    size: 2
+     *    mask: "0x1fff"
      * </pre>
      *
      * <code>
@@ -5861,7 +7008,20 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A
+     * user-defined field consists of up to 4 bytes extracted from a fixed offset
+     * in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an
+     * optional mask to select certain bits. Rules may then specify matching
+     * values for these fields.
+     *
+     * Example:
+     *
+     *  userDefinedFields:
+     *  - name: "ipv4_fragment_offset"
+     *    base: IPV4
+     *    offset: 6
+     *    size: 2
+     *    mask: "0x1fff"
      * </pre>
      *
      * <code>
@@ -5879,7 +7039,20 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A
+     * user-defined field consists of up to 4 bytes extracted from a fixed offset
+     * in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an
+     * optional mask to select certain bits. Rules may then specify matching
+     * values for these fields.
+     *
+     * Example:
+     *
+     *  userDefinedFields:
+     *  - name: "ipv4_fragment_offset"
+     *    base: IPV4
+     *    offset: 6
+     *    size: 2
+     *    mask: "0x1fff"
      * </pre>
      *
      * <code>
@@ -5898,7 +7071,20 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+     * Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A
+     * user-defined field consists of up to 4 bytes extracted from a fixed offset
+     * in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an
+     * optional mask to select certain bits. Rules may then specify matching
+     * values for these fields.
+     *
+     * Example:
+     *
+     *  userDefinedFields:
+     *  - name: "ipv4_fragment_offset"
+     *    base: IPV4
+     *    offset: 6
+     *    size: 2
+     *    mask: "0x1fff"
      * </pre>
      *
      * <code>
@@ -5922,7 +7108,7 @@ public final class SecurityPolicy extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.SecurityPolicyUserDefinedField.Builder,
                 com.google.cloud.compute.v1.SecurityPolicyUserDefinedFieldOrBuilder>(
                 userDefinedFields_,
-                ((bitField0_ & 0x00040000) != 0),
+                ((bitField0_ & 0x00080000) != 0),
                 getParentForChildren(),
                 isClean());
         userDefinedFields_ = null;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * [Output Only] Which SLA this group is configured to support, and why this group does or does not meet that SLA's requirements.
+ * [Output Only] Which SLA this group is configured to support, and why this
+ * group does or does not meet that SLA's requirements.
  * </pre>
  *
  * Protobuf type {@code
@@ -546,7 +547,8 @@ public final class InterconnectAttachmentGroupConfiguredAvailabilitySLA
    *
    *
    * <pre>
-   * [Output Only] Which SLA this group is configured to support, and why this group does or does not meet that SLA's requirements.
+   * [Output Only] Which SLA this group is configured to support, and why this
+   * group does or does not meet that SLA's requirements.
    * </pre>
    *
    * Protobuf type {@code

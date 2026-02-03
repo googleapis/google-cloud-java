@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ public interface ResourceGroupReferenceOrBuilder
    *
    *
    * <pre>
-   * A URI referencing one of the instance groups or network endpoint groups listed in the backend service.
+   * A URI referencing one of the instance groups or network endpoint groups
+   * listed in the backend service.
    * </pre>
    *
    * <code>optional string group = 98629247;</code>
@@ -41,7 +42,8 @@ public interface ResourceGroupReferenceOrBuilder
    *
    *
    * <pre>
-   * A URI referencing one of the instance groups or network endpoint groups listed in the backend service.
+   * A URI referencing one of the instance groups or network endpoint groups
+   * listed in the backend service.
    * </pre>
    *
    * <code>optional string group = 98629247;</code>
@@ -54,7 +56,8 @@ public interface ResourceGroupReferenceOrBuilder
    *
    *
    * <pre>
-   * A URI referencing one of the instance groups or network endpoint groups listed in the backend service.
+   * A URI referencing one of the instance groups or network endpoint groups
+   * listed in the backend service.
    * </pre>
    *
    * <code>optional string group = 98629247;</code>

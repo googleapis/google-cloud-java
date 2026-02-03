@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,7 +74,8 @@ public final class BgpRouteNetworkLayerReachabilityInformation
    *
    *
    * <pre>
-   * If the BGP session supports multiple paths (RFC 7911), the path identifier for this route.
+   * If the BGP session supports multiple paths (RFC 7911), the path
+   * identifier for this route.
    * </pre>
    *
    * <code>optional uint32 path_id = 282287989;</code>
@@ -90,7 +91,8 @@ public final class BgpRouteNetworkLayerReachabilityInformation
    *
    *
    * <pre>
-   * If the BGP session supports multiple paths (RFC 7911), the path identifier for this route.
+   * If the BGP session supports multiple paths (RFC 7911), the path
+   * identifier for this route.
    * </pre>
    *
    * <code>optional uint32 path_id = 282287989;</code>
@@ -568,7 +570,8 @@ public final class BgpRouteNetworkLayerReachabilityInformation
      *
      *
      * <pre>
-     * If the BGP session supports multiple paths (RFC 7911), the path identifier for this route.
+     * If the BGP session supports multiple paths (RFC 7911), the path
+     * identifier for this route.
      * </pre>
      *
      * <code>optional uint32 path_id = 282287989;</code>
@@ -584,7 +587,8 @@ public final class BgpRouteNetworkLayerReachabilityInformation
      *
      *
      * <pre>
-     * If the BGP session supports multiple paths (RFC 7911), the path identifier for this route.
+     * If the BGP session supports multiple paths (RFC 7911), the path
+     * identifier for this route.
      * </pre>
      *
      * <code>optional uint32 path_id = 282287989;</code>
@@ -600,7 +604,8 @@ public final class BgpRouteNetworkLayerReachabilityInformation
      *
      *
      * <pre>
-     * If the BGP session supports multiple paths (RFC 7911), the path identifier for this route.
+     * If the BGP session supports multiple paths (RFC 7911), the path
+     * identifier for this route.
      * </pre>
      *
      * <code>optional uint32 path_id = 282287989;</code>
@@ -620,7 +625,8 @@ public final class BgpRouteNetworkLayerReachabilityInformation
      *
      *
      * <pre>
-     * If the BGP session supports multiple paths (RFC 7911), the path identifier for this route.
+     * If the BGP session supports multiple paths (RFC 7911), the path
+     * identifier for this route.
      * </pre>
      *
      * <code>optional uint32 path_id = 282287989;</code>

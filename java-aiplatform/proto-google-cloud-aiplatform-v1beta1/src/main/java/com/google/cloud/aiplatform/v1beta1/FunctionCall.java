@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,7 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
   private FunctionCall() {
     id_ = "";
     name_ = "";
+    partialArgs_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -132,11 +133,11 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The name of the function to call.
+   * Optional. The name of the function to call.
    * Matches [FunctionDeclaration.name].
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The name.
    */
@@ -157,11 +158,11 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The name of the function to call.
+   * Optional. The name of the function to call.
    * Matches [FunctionDeclaration.name].
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for name.
    */
@@ -185,8 +186,8 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Required. The function parameters and values in JSON object
-   * format. See [FunctionDeclaration.parameters] for parameter details.
+   * Optional. The function parameters and values in JSON object format.
+   * See [FunctionDeclaration.parameters] for parameter details.
    * </pre>
    *
    * <code>.google.protobuf.Struct args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -202,8 +203,8 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Required. The function parameters and values in JSON object
-   * format. See [FunctionDeclaration.parameters] for parameter details.
+   * Optional. The function parameters and values in JSON object format.
+   * See [FunctionDeclaration.parameters] for parameter details.
    * </pre>
    *
    * <code>.google.protobuf.Struct args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -219,8 +220,8 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Required. The function parameters and values in JSON object
-   * format. See [FunctionDeclaration.parameters] for parameter details.
+   * Optional. The function parameters and values in JSON object format.
+   * See [FunctionDeclaration.parameters] for parameter details.
    * </pre>
    *
    * <code>.google.protobuf.Struct args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -228,6 +229,124 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getArgsOrBuilder() {
     return args_ == null ? com.google.protobuf.Struct.getDefaultInstance() : args_;
+  }
+
+  public static final int PARTIAL_ARGS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.aiplatform.v1beta1.PartialArg> partialArgs_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The partial argument value of the function call.
+   * If provided, represents the arguments/fields that are streamed
+   * incrementally.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PartialArg partial_args = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.aiplatform.v1beta1.PartialArg> getPartialArgsList() {
+    return partialArgs_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The partial argument value of the function call.
+   * If provided, represents the arguments/fields that are streamed
+   * incrementally.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PartialArg partial_args = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.PartialArgOrBuilder>
+      getPartialArgsOrBuilderList() {
+    return partialArgs_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The partial argument value of the function call.
+   * If provided, represents the arguments/fields that are streamed
+   * incrementally.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PartialArg partial_args = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getPartialArgsCount() {
+    return partialArgs_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The partial argument value of the function call.
+   * If provided, represents the arguments/fields that are streamed
+   * incrementally.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PartialArg partial_args = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.PartialArg getPartialArgs(int index) {
+    return partialArgs_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The partial argument value of the function call.
+   * If provided, represents the arguments/fields that are streamed
+   * incrementally.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.PartialArg partial_args = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.PartialArgOrBuilder getPartialArgsOrBuilder(
+      int index) {
+    return partialArgs_.get(index);
+  }
+
+  public static final int WILL_CONTINUE_FIELD_NUMBER = 5;
+  private boolean willContinue_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether this is the last part of the FunctionCall.
+   * If true, another partial message for the current FunctionCall is expected
+   * to follow.
+   * </pre>
+   *
+   * <code>bool will_continue = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The willContinue.
+   */
+  @java.lang.Override
+  public boolean getWillContinue() {
+    return willContinue_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -253,6 +372,12 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, id_);
     }
+    for (int i = 0; i < partialArgs_.size(); i++) {
+      output.writeMessage(4, partialArgs_.get(i));
+    }
+    if (willContinue_ != false) {
+      output.writeBool(5, willContinue_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -270,6 +395,12 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, id_);
+    }
+    for (int i = 0; i < partialArgs_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, partialArgs_.get(i));
+    }
+    if (willContinue_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, willContinue_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -293,6 +424,8 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
     if (hasArgs()) {
       if (!getArgs().equals(other.getArgs())) return false;
     }
+    if (!getPartialArgsList().equals(other.getPartialArgsList())) return false;
+    if (getWillContinue() != other.getWillContinue()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -312,6 +445,12 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ARGS_FIELD_NUMBER;
       hash = (53 * hash) + getArgs().hashCode();
     }
+    if (getPartialArgsCount() > 0) {
+      hash = (37 * hash) + PARTIAL_ARGS_FIELD_NUMBER;
+      hash = (53 * hash) + getPartialArgsList().hashCode();
+    }
+    hash = (37 * hash) + WILL_CONTINUE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getWillContinue());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -456,6 +595,7 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getArgsFieldBuilder();
+        getPartialArgsFieldBuilder();
       }
     }
 
@@ -470,6 +610,14 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
         argsBuilder_.dispose();
         argsBuilder_ = null;
       }
+      if (partialArgsBuilder_ == null) {
+        partialArgs_ = java.util.Collections.emptyList();
+      } else {
+        partialArgs_ = null;
+        partialArgsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000008);
+      willContinue_ = false;
       return this;
     }
 
@@ -497,11 +645,25 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1beta1.FunctionCall buildPartial() {
       com.google.cloud.aiplatform.v1beta1.FunctionCall result =
           new com.google.cloud.aiplatform.v1beta1.FunctionCall(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.FunctionCall result) {
+      if (partialArgsBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          partialArgs_ = java.util.Collections.unmodifiableList(partialArgs_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.partialArgs_ = partialArgs_;
+      } else {
+        result.partialArgs_ = partialArgsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.FunctionCall result) {
@@ -516,6 +678,9 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.args_ = argsBuilder_ == null ? args_ : argsBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.willContinue_ = willContinue_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -579,6 +744,36 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
       if (other.hasArgs()) {
         mergeArgs(other.getArgs());
       }
+      if (partialArgsBuilder_ == null) {
+        if (!other.partialArgs_.isEmpty()) {
+          if (partialArgs_.isEmpty()) {
+            partialArgs_ = other.partialArgs_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensurePartialArgsIsMutable();
+            partialArgs_.addAll(other.partialArgs_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.partialArgs_.isEmpty()) {
+          if (partialArgsBuilder_.isEmpty()) {
+            partialArgsBuilder_.dispose();
+            partialArgsBuilder_ = null;
+            partialArgs_ = other.partialArgs_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            partialArgsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getPartialArgsFieldBuilder()
+                    : null;
+          } else {
+            partialArgsBuilder_.addAllMessages(other.partialArgs_);
+          }
+        }
+      }
+      if (other.getWillContinue() != false) {
+        setWillContinue(other.getWillContinue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -623,6 +818,25 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 26
+            case 34:
+              {
+                com.google.cloud.aiplatform.v1beta1.PartialArg m =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1beta1.PartialArg.parser(), extensionRegistry);
+                if (partialArgsBuilder_ == null) {
+                  ensurePartialArgsIsMutable();
+                  partialArgs_.add(m);
+                } else {
+                  partialArgsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+            case 40:
+              {
+                willContinue_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -764,11 +978,11 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the function to call.
+     * Optional. The name of the function to call.
      * Matches [FunctionDeclaration.name].
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The name.
      */
@@ -788,11 +1002,11 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the function to call.
+     * Optional. The name of the function to call.
      * Matches [FunctionDeclaration.name].
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for name.
      */
@@ -812,11 +1026,11 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the function to call.
+     * Optional. The name of the function to call.
      * Matches [FunctionDeclaration.name].
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -835,11 +1049,11 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the function to call.
+     * Optional. The name of the function to call.
      * Matches [FunctionDeclaration.name].
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -854,11 +1068,11 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the function to call.
+     * Optional. The name of the function to call.
      * Matches [FunctionDeclaration.name].
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -885,8 +1099,8 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Required. The function parameters and values in JSON object
-     * format. See [FunctionDeclaration.parameters] for parameter details.
+     * Optional. The function parameters and values in JSON object format.
+     * See [FunctionDeclaration.parameters] for parameter details.
      * </pre>
      *
      * <code>.google.protobuf.Struct args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -901,8 +1115,8 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Required. The function parameters and values in JSON object
-     * format. See [FunctionDeclaration.parameters] for parameter details.
+     * Optional. The function parameters and values in JSON object format.
+     * See [FunctionDeclaration.parameters] for parameter details.
      * </pre>
      *
      * <code>.google.protobuf.Struct args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -921,8 +1135,8 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Required. The function parameters and values in JSON object
-     * format. See [FunctionDeclaration.parameters] for parameter details.
+     * Optional. The function parameters and values in JSON object format.
+     * See [FunctionDeclaration.parameters] for parameter details.
      * </pre>
      *
      * <code>.google.protobuf.Struct args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -945,8 +1159,8 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Required. The function parameters and values in JSON object
-     * format. See [FunctionDeclaration.parameters] for parameter details.
+     * Optional. The function parameters and values in JSON object format.
+     * See [FunctionDeclaration.parameters] for parameter details.
      * </pre>
      *
      * <code>.google.protobuf.Struct args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -966,8 +1180,8 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Required. The function parameters and values in JSON object
-     * format. See [FunctionDeclaration.parameters] for parameter details.
+     * Optional. The function parameters and values in JSON object format.
+     * See [FunctionDeclaration.parameters] for parameter details.
      * </pre>
      *
      * <code>.google.protobuf.Struct args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -995,8 +1209,8 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Required. The function parameters and values in JSON object
-     * format. See [FunctionDeclaration.parameters] for parameter details.
+     * Optional. The function parameters and values in JSON object format.
+     * See [FunctionDeclaration.parameters] for parameter details.
      * </pre>
      *
      * <code>.google.protobuf.Struct args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1016,8 +1230,8 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Required. The function parameters and values in JSON object
-     * format. See [FunctionDeclaration.parameters] for parameter details.
+     * Optional. The function parameters and values in JSON object format.
+     * See [FunctionDeclaration.parameters] for parameter details.
      * </pre>
      *
      * <code>.google.protobuf.Struct args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1032,8 +1246,8 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Required. The function parameters and values in JSON object
-     * format. See [FunctionDeclaration.parameters] for parameter details.
+     * Optional. The function parameters and values in JSON object format.
+     * See [FunctionDeclaration.parameters] for parameter details.
      * </pre>
      *
      * <code>.google.protobuf.Struct args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1050,8 +1264,8 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Required. The function parameters and values in JSON object
-     * format. See [FunctionDeclaration.parameters] for parameter details.
+     * Optional. The function parameters and values in JSON object format.
+     * See [FunctionDeclaration.parameters] for parameter details.
      * </pre>
      *
      * <code>.google.protobuf.Struct args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1070,6 +1284,509 @@ public final class FunctionCall extends com.google.protobuf.GeneratedMessageV3
         args_ = null;
       }
       return argsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.aiplatform.v1beta1.PartialArg> partialArgs_ =
+        java.util.Collections.emptyList();
+
+    private void ensurePartialArgsIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        partialArgs_ =
+            new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.PartialArg>(partialArgs_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.PartialArg,
+            com.google.cloud.aiplatform.v1beta1.PartialArg.Builder,
+            com.google.cloud.aiplatform.v1beta1.PartialArgOrBuilder>
+        partialArgsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The partial argument value of the function call.
+     * If provided, represents the arguments/fields that are streamed
+     * incrementally.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PartialArg partial_args = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.PartialArg> getPartialArgsList() {
+      if (partialArgsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(partialArgs_);
+      } else {
+        return partialArgsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The partial argument value of the function call.
+     * If provided, represents the arguments/fields that are streamed
+     * incrementally.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PartialArg partial_args = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getPartialArgsCount() {
+      if (partialArgsBuilder_ == null) {
+        return partialArgs_.size();
+      } else {
+        return partialArgsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The partial argument value of the function call.
+     * If provided, represents the arguments/fields that are streamed
+     * incrementally.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PartialArg partial_args = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.PartialArg getPartialArgs(int index) {
+      if (partialArgsBuilder_ == null) {
+        return partialArgs_.get(index);
+      } else {
+        return partialArgsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The partial argument value of the function call.
+     * If provided, represents the arguments/fields that are streamed
+     * incrementally.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PartialArg partial_args = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPartialArgs(int index, com.google.cloud.aiplatform.v1beta1.PartialArg value) {
+      if (partialArgsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePartialArgsIsMutable();
+        partialArgs_.set(index, value);
+        onChanged();
+      } else {
+        partialArgsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The partial argument value of the function call.
+     * If provided, represents the arguments/fields that are streamed
+     * incrementally.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PartialArg partial_args = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPartialArgs(
+        int index, com.google.cloud.aiplatform.v1beta1.PartialArg.Builder builderForValue) {
+      if (partialArgsBuilder_ == null) {
+        ensurePartialArgsIsMutable();
+        partialArgs_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        partialArgsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The partial argument value of the function call.
+     * If provided, represents the arguments/fields that are streamed
+     * incrementally.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PartialArg partial_args = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addPartialArgs(com.google.cloud.aiplatform.v1beta1.PartialArg value) {
+      if (partialArgsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePartialArgsIsMutable();
+        partialArgs_.add(value);
+        onChanged();
+      } else {
+        partialArgsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The partial argument value of the function call.
+     * If provided, represents the arguments/fields that are streamed
+     * incrementally.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PartialArg partial_args = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addPartialArgs(int index, com.google.cloud.aiplatform.v1beta1.PartialArg value) {
+      if (partialArgsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePartialArgsIsMutable();
+        partialArgs_.add(index, value);
+        onChanged();
+      } else {
+        partialArgsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The partial argument value of the function call.
+     * If provided, represents the arguments/fields that are streamed
+     * incrementally.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PartialArg partial_args = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addPartialArgs(
+        com.google.cloud.aiplatform.v1beta1.PartialArg.Builder builderForValue) {
+      if (partialArgsBuilder_ == null) {
+        ensurePartialArgsIsMutable();
+        partialArgs_.add(builderForValue.build());
+        onChanged();
+      } else {
+        partialArgsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The partial argument value of the function call.
+     * If provided, represents the arguments/fields that are streamed
+     * incrementally.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PartialArg partial_args = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addPartialArgs(
+        int index, com.google.cloud.aiplatform.v1beta1.PartialArg.Builder builderForValue) {
+      if (partialArgsBuilder_ == null) {
+        ensurePartialArgsIsMutable();
+        partialArgs_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        partialArgsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The partial argument value of the function call.
+     * If provided, represents the arguments/fields that are streamed
+     * incrementally.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PartialArg partial_args = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllPartialArgs(
+        java.lang.Iterable<? extends com.google.cloud.aiplatform.v1beta1.PartialArg> values) {
+      if (partialArgsBuilder_ == null) {
+        ensurePartialArgsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, partialArgs_);
+        onChanged();
+      } else {
+        partialArgsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The partial argument value of the function call.
+     * If provided, represents the arguments/fields that are streamed
+     * incrementally.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PartialArg partial_args = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearPartialArgs() {
+      if (partialArgsBuilder_ == null) {
+        partialArgs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        partialArgsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The partial argument value of the function call.
+     * If provided, represents the arguments/fields that are streamed
+     * incrementally.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PartialArg partial_args = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removePartialArgs(int index) {
+      if (partialArgsBuilder_ == null) {
+        ensurePartialArgsIsMutable();
+        partialArgs_.remove(index);
+        onChanged();
+      } else {
+        partialArgsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The partial argument value of the function call.
+     * If provided, represents the arguments/fields that are streamed
+     * incrementally.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PartialArg partial_args = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.PartialArg.Builder getPartialArgsBuilder(int index) {
+      return getPartialArgsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The partial argument value of the function call.
+     * If provided, represents the arguments/fields that are streamed
+     * incrementally.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PartialArg partial_args = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.PartialArgOrBuilder getPartialArgsOrBuilder(
+        int index) {
+      if (partialArgsBuilder_ == null) {
+        return partialArgs_.get(index);
+      } else {
+        return partialArgsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The partial argument value of the function call.
+     * If provided, represents the arguments/fields that are streamed
+     * incrementally.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PartialArg partial_args = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.PartialArgOrBuilder>
+        getPartialArgsOrBuilderList() {
+      if (partialArgsBuilder_ != null) {
+        return partialArgsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(partialArgs_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The partial argument value of the function call.
+     * If provided, represents the arguments/fields that are streamed
+     * incrementally.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PartialArg partial_args = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.PartialArg.Builder addPartialArgsBuilder() {
+      return getPartialArgsFieldBuilder()
+          .addBuilder(com.google.cloud.aiplatform.v1beta1.PartialArg.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The partial argument value of the function call.
+     * If provided, represents the arguments/fields that are streamed
+     * incrementally.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PartialArg partial_args = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.PartialArg.Builder addPartialArgsBuilder(int index) {
+      return getPartialArgsFieldBuilder()
+          .addBuilder(index, com.google.cloud.aiplatform.v1beta1.PartialArg.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The partial argument value of the function call.
+     * If provided, represents the arguments/fields that are streamed
+     * incrementally.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.PartialArg partial_args = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.PartialArg.Builder>
+        getPartialArgsBuilderList() {
+      return getPartialArgsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.PartialArg,
+            com.google.cloud.aiplatform.v1beta1.PartialArg.Builder,
+            com.google.cloud.aiplatform.v1beta1.PartialArgOrBuilder>
+        getPartialArgsFieldBuilder() {
+      if (partialArgsBuilder_ == null) {
+        partialArgsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.PartialArg,
+                com.google.cloud.aiplatform.v1beta1.PartialArg.Builder,
+                com.google.cloud.aiplatform.v1beta1.PartialArgOrBuilder>(
+                partialArgs_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+        partialArgs_ = null;
+      }
+      return partialArgsBuilder_;
+    }
+
+    private boolean willContinue_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether this is the last part of the FunctionCall.
+     * If true, another partial message for the current FunctionCall is expected
+     * to follow.
+     * </pre>
+     *
+     * <code>bool will_continue = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The willContinue.
+     */
+    @java.lang.Override
+    public boolean getWillContinue() {
+      return willContinue_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether this is the last part of the FunctionCall.
+     * If true, another partial message for the current FunctionCall is expected
+     * to follow.
+     * </pre>
+     *
+     * <code>bool will_continue = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The willContinue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWillContinue(boolean value) {
+
+      willContinue_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether this is the last part of the FunctionCall.
+     * If true, another partial message for the current FunctionCall is expected
+     * to follow.
+     * </pre>
+     *
+     * <code>bool will_continue = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearWillContinue() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      willContinue_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

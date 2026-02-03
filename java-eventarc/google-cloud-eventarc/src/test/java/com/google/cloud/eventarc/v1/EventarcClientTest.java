@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -130,6 +130,7 @@ public class EventarcClientTest {
             .putAllConditions(new HashMap<String, StateCondition>())
             .setEventDataContentType("eventDataContentType1497299791")
             .setSatisfiesPzs(true)
+            .setRetryPolicy(Trigger.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     mockEventarc.addResponse(expectedResponse);
@@ -181,6 +182,7 @@ public class EventarcClientTest {
             .putAllConditions(new HashMap<String, StateCondition>())
             .setEventDataContentType("eventDataContentType1497299791")
             .setSatisfiesPzs(true)
+            .setRetryPolicy(Trigger.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     mockEventarc.addResponse(expectedResponse);
@@ -320,6 +322,7 @@ public class EventarcClientTest {
             .putAllConditions(new HashMap<String, StateCondition>())
             .setEventDataContentType("eventDataContentType1497299791")
             .setSatisfiesPzs(true)
+            .setRetryPolicy(Trigger.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -385,6 +388,7 @@ public class EventarcClientTest {
             .putAllConditions(new HashMap<String, StateCondition>())
             .setEventDataContentType("eventDataContentType1497299791")
             .setSatisfiesPzs(true)
+            .setRetryPolicy(Trigger.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -450,6 +454,7 @@ public class EventarcClientTest {
             .putAllConditions(new HashMap<String, StateCondition>())
             .setEventDataContentType("eventDataContentType1497299791")
             .setSatisfiesPzs(true)
+            .setRetryPolicy(Trigger.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -515,6 +520,7 @@ public class EventarcClientTest {
             .putAllConditions(new HashMap<String, StateCondition>())
             .setEventDataContentType("eventDataContentType1497299791")
             .setSatisfiesPzs(true)
+            .setRetryPolicy(Trigger.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -577,6 +583,7 @@ public class EventarcClientTest {
             .putAllConditions(new HashMap<String, StateCondition>())
             .setEventDataContentType("eventDataContentType1497299791")
             .setSatisfiesPzs(true)
+            .setRetryPolicy(Trigger.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =

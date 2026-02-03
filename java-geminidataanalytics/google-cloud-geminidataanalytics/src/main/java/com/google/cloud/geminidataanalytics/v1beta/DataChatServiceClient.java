@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -178,6 +178,20 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> listMessagesPagedCallable()
  *           <li><p> listMessagesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> QueryData</td>
+ *      <td><p> Queries data from a natural language user query.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> queryData(QueryDataRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> queryDataCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1059,6 +1073,68 @@ public class DataChatServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<ListMessagesRequest, ListMessagesResponse> listMessagesCallable() {
     return stub.listMessagesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Queries data from a natural language user query.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataChatServiceClient dataChatServiceClient = DataChatServiceClient.create()) {
+   *   QueryDataRequest request =
+   *       QueryDataRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPrompt("prompt-979805852")
+   *           .setContext(QueryDataContext.newBuilder().build())
+   *           .setGenerationOptions(GenerationOptions.newBuilder().build())
+   *           .build();
+   *   QueryDataResponse response = dataChatServiceClient.queryData(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryDataResponse queryData(QueryDataRequest request) {
+    return queryDataCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Queries data from a natural language user query.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataChatServiceClient dataChatServiceClient = DataChatServiceClient.create()) {
+   *   QueryDataRequest request =
+   *       QueryDataRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPrompt("prompt-979805852")
+   *           .setContext(QueryDataContext.newBuilder().build())
+   *           .setGenerationOptions(GenerationOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<QueryDataResponse> future =
+   *       dataChatServiceClient.queryDataCallable().futureCall(request);
+   *   // Do something.
+   *   QueryDataResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<QueryDataRequest, QueryDataResponse> queryDataCallable() {
+    return stub.queryDataCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

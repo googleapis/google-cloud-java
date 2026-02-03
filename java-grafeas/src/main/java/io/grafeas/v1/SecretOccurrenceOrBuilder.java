@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 The Grafeas Authors. All rights reserved.
+ * Copyright 2026 The Grafeas Authors. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -175,4 +175,81 @@ public interface SecretOccurrenceOrBuilder
    * </code>
    */
   io.grafeas.v1.SecretStatusOrBuilder getStatusesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Scan result of the secret.
+   * </pre>
+   *
+   * <code>.google.protobuf.Any data = 4;</code>
+   *
+   * @return Whether the data field is set.
+   */
+  boolean hasData();
+
+  /**
+   *
+   *
+   * <pre>
+   * Scan result of the secret.
+   * </pre>
+   *
+   * <code>.google.protobuf.Any data = 4;</code>
+   *
+   * @return The data.
+   */
+  com.google.protobuf.Any getData();
+
+  /**
+   *
+   *
+   * <pre>
+   * Scan result of the secret.
+   * </pre>
+   *
+   * <code>.google.protobuf.Any data = 4;</code>
+   */
+  com.google.protobuf.AnyOrBuilder getDataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Hash value, typically a digest for the secret data, that allows unique
+   * identification of a specific secret.
+   * </pre>
+   *
+   * <code>.grafeas.v1.Digest digest = 5;</code>
+   *
+   * @return Whether the digest field is set.
+   */
+  boolean hasDigest();
+
+  /**
+   *
+   *
+   * <pre>
+   * Hash value, typically a digest for the secret data, that allows unique
+   * identification of a specific secret.
+   * </pre>
+   *
+   * <code>.grafeas.v1.Digest digest = 5;</code>
+   *
+   * @return The digest.
+   */
+  io.grafeas.v1.Digest getDigest();
+
+  /**
+   *
+   *
+   * <pre>
+   * Hash value, typically a digest for the secret data, that allows unique
+   * identification of a specific secret.
+   * </pre>
+   *
+   * <code>.grafeas.v1.Digest digest = 5;</code>
+   */
+  io.grafeas.v1.DigestOrBuilder getDigestOrBuilder();
 }

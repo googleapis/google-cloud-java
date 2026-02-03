@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,11 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Provides links to documentation or for performing an out of band action. For example, if a quota check failed with an error indicating the calling project hasn't enabled the accessed service, this can contain a URL pointing directly to the right place in the developer console to flip the bit.
+ * Provides links to documentation or for performing an out of band action.
+ *
+ * For example, if a quota check failed with an error indicating the calling
+ * project hasn't enabled the accessed service, this can contain a URL pointing
+ * directly to the right place in the developer console to flip the bit.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Help}
@@ -303,7 +307,11 @@ public final class Help extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Provides links to documentation or for performing an out of band action. For example, if a quota check failed with an error indicating the calling project hasn't enabled the accessed service, this can contain a URL pointing directly to the right place in the developer console to flip the bit.
+   * Provides links to documentation or for performing an out of band action.
+   *
+   * For example, if a quota check failed with an error indicating the calling
+   * project hasn't enabled the accessed service, this can contain a URL pointing
+   * directly to the right place in the developer console to flip the bit.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Help}

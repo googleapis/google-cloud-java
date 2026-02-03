@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -311,7 +311,7 @@ public final class KmsResourcesProto {
           + "\010SOFTWARE\020\001\022\007\n"
           + "\003HSM\020\002\022\014\n"
           + "\010EXTERNAL\020\003\022\020\n"
-          + "\014EXTERNAL_VPC\020\004*\253\003\n"
+          + "\014EXTERNAL_VPC\020\004*\263\003\n"
           + "\014AccessReason\022\026\n"
           + "\022REASON_UNSPECIFIED\020\000\022\036\n"
           + "\032CUSTOMER_INITIATED_SUPPORT\020\001\022\034\n"
@@ -320,15 +320,15 @@ public final class KmsResourcesProto {
           + "\027GOOGLE_INITIATED_REVIEW\020\004\022\035\n"
           + "\031CUSTOMER_INITIATED_ACCESS\020\005\022%\n"
           + "!GOOGLE_INITIATED_SYSTEM_OPERATION\020\006\022\027\n"
-          + "\023REASON_NOT_EXPECTED\020\007\022&\n"
-          + "\"MODIFIED_CUSTOMER_INITIATED_ACCESS\020\010\022.\n"
-          + "*MODIFIED_GOOGLE_INITIATED_SYSTEM_OPERATION\020\t\022\'\n"
+          + "\023REASON_NOT_EXPECTED\020\007\022*\n"
+          + "\"MODIFIED_CUSTOMER_INITIATED_ACCESS\020\010\032\002\010\001\0222\n"
+          + "*MODIFIED_GOOGLE_INITIATED_SYSTEM_OPERATION\020\t\032\002\010\001\022\'\n"
           + "#GOOGLE_RESPONSE_TO_PRODUCTION_ALERT\020\n"
           + "\022*\n"
           + "&CUSTOMER_AUTHORIZED_WORKFLOW_SERVICING\020\013B\205\001\n"
-          + "\027com.google.cloud.kms.v1B\021KmsResourcesProtoP\001Z)cloud.google.com/go/kms"
-          + "/apiv1/kmspb;kmspb\252\002\023Google.Cloud.Kms.V1"
-          + "\312\002\023Google\\Cloud\\Kms\\V1b\006proto3"
+          + "\027com.google.cloud.kms.v1B\021KmsResourcesProtoP\001Z)cloud.google.co"
+          + "m/go/kms/apiv1/kmspb;kmspb\252\002\023Google.Clou"
+          + "d.Kms.V1\312\002\023Google\\Cloud\\Kms\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

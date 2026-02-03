@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -108,7 +108,8 @@ public interface CacheKeyPolicyOrBuilder
    *
    *
    * <pre>
-   * Allows HTTP cookies (by name) to be used in the cache key. The name=value pair will be used in the cache key Cloud CDN generates.
+   * Allows HTTP cookies (by name) to be used in the cache key.
+   * The name=value pair will be used in the cache key Cloud CDN generates.
    * </pre>
    *
    * <code>repeated string include_named_cookies = 87316530;</code>
@@ -121,7 +122,8 @@ public interface CacheKeyPolicyOrBuilder
    *
    *
    * <pre>
-   * Allows HTTP cookies (by name) to be used in the cache key. The name=value pair will be used in the cache key Cloud CDN generates.
+   * Allows HTTP cookies (by name) to be used in the cache key.
+   * The name=value pair will be used in the cache key Cloud CDN generates.
    * </pre>
    *
    * <code>repeated string include_named_cookies = 87316530;</code>
@@ -134,7 +136,8 @@ public interface CacheKeyPolicyOrBuilder
    *
    *
    * <pre>
-   * Allows HTTP cookies (by name) to be used in the cache key. The name=value pair will be used in the cache key Cloud CDN generates.
+   * Allows HTTP cookies (by name) to be used in the cache key.
+   * The name=value pair will be used in the cache key Cloud CDN generates.
    * </pre>
    *
    * <code>repeated string include_named_cookies = 87316530;</code>
@@ -148,7 +151,8 @@ public interface CacheKeyPolicyOrBuilder
    *
    *
    * <pre>
-   * Allows HTTP cookies (by name) to be used in the cache key. The name=value pair will be used in the cache key Cloud CDN generates.
+   * Allows HTTP cookies (by name) to be used in the cache key.
+   * The name=value pair will be used in the cache key Cloud CDN generates.
    * </pre>
    *
    * <code>repeated string include_named_cookies = 87316530;</code>
@@ -188,7 +192,10 @@ public interface CacheKeyPolicyOrBuilder
    *
    *
    * <pre>
-   * If true, include query string parameters in the cache key according to query_string_whitelist and query_string_blacklist. If neither is set, the entire query string will be included. If false, the query string will be excluded from the cache key entirely.
+   * If true, include query string parameters in the cache key according to
+   * query_string_whitelist and query_string_blacklist. If neither is set, the
+   * entire query string will be included. If false, the query string will be
+   * excluded from the cache key entirely.
    * </pre>
    *
    * <code>optional bool include_query_string = 474036639;</code>
@@ -201,7 +208,10 @@ public interface CacheKeyPolicyOrBuilder
    *
    *
    * <pre>
-   * If true, include query string parameters in the cache key according to query_string_whitelist and query_string_blacklist. If neither is set, the entire query string will be included. If false, the query string will be excluded from the cache key entirely.
+   * If true, include query string parameters in the cache key according to
+   * query_string_whitelist and query_string_blacklist. If neither is set, the
+   * entire query string will be included. If false, the query string will be
+   * excluded from the cache key entirely.
    * </pre>
    *
    * <code>optional bool include_query_string = 474036639;</code>
@@ -214,7 +224,10 @@ public interface CacheKeyPolicyOrBuilder
    *
    *
    * <pre>
-   * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+   * Names of query string parameters to exclude in cache keys. All other
+   * parameters will be included. Either specify query_string_whitelist or
+   * query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and
+   * not treated as delimiters.
    * </pre>
    *
    * <code>repeated string query_string_blacklist = 354964742;</code>
@@ -227,7 +240,10 @@ public interface CacheKeyPolicyOrBuilder
    *
    *
    * <pre>
-   * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+   * Names of query string parameters to exclude in cache keys. All other
+   * parameters will be included. Either specify query_string_whitelist or
+   * query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and
+   * not treated as delimiters.
    * </pre>
    *
    * <code>repeated string query_string_blacklist = 354964742;</code>
@@ -240,7 +256,10 @@ public interface CacheKeyPolicyOrBuilder
    *
    *
    * <pre>
-   * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+   * Names of query string parameters to exclude in cache keys. All other
+   * parameters will be included. Either specify query_string_whitelist or
+   * query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and
+   * not treated as delimiters.
    * </pre>
    *
    * <code>repeated string query_string_blacklist = 354964742;</code>
@@ -254,7 +273,10 @@ public interface CacheKeyPolicyOrBuilder
    *
    *
    * <pre>
-   * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+   * Names of query string parameters to exclude in cache keys. All other
+   * parameters will be included. Either specify query_string_whitelist or
+   * query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and
+   * not treated as delimiters.
    * </pre>
    *
    * <code>repeated string query_string_blacklist = 354964742;</code>
@@ -268,7 +290,10 @@ public interface CacheKeyPolicyOrBuilder
    *
    *
    * <pre>
-   * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+   * Names of query string parameters to include in cache keys. All other
+   * parameters will be excluded. Either specify query_string_whitelist or
+   * query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and
+   * not treated as delimiters.
    * </pre>
    *
    * <code>repeated string query_string_whitelist = 52456496;</code>
@@ -281,7 +306,10 @@ public interface CacheKeyPolicyOrBuilder
    *
    *
    * <pre>
-   * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+   * Names of query string parameters to include in cache keys. All other
+   * parameters will be excluded. Either specify query_string_whitelist or
+   * query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and
+   * not treated as delimiters.
    * </pre>
    *
    * <code>repeated string query_string_whitelist = 52456496;</code>
@@ -294,7 +322,10 @@ public interface CacheKeyPolicyOrBuilder
    *
    *
    * <pre>
-   * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+   * Names of query string parameters to include in cache keys. All other
+   * parameters will be excluded. Either specify query_string_whitelist or
+   * query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and
+   * not treated as delimiters.
    * </pre>
    *
    * <code>repeated string query_string_whitelist = 52456496;</code>
@@ -308,7 +339,10 @@ public interface CacheKeyPolicyOrBuilder
    *
    *
    * <pre>
-   * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+   * Names of query string parameters to include in cache keys. All other
+   * parameters will be excluded. Either specify query_string_whitelist or
+   * query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and
+   * not treated as delimiters.
    * </pre>
    *
    * <code>repeated string query_string_whitelist = 52456496;</code>

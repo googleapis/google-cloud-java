@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,7 +85,9 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Fingerprint of the previous set of labels for this resource, used to prevent conflicts. Provide the latest fingerprint value when making a request to add or change labels.
+   * Fingerprint of the previous set of labels for this resource,
+   * used to prevent conflicts. Provide the latest fingerprint value when making
+   * a request to add or change labels.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -101,7 +103,9 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Fingerprint of the previous set of labels for this resource, used to prevent conflicts. Provide the latest fingerprint value when making a request to add or change labels.
+   * Fingerprint of the previous set of labels for this resource,
+   * used to prevent conflicts. Provide the latest fingerprint value when making
+   * a request to add or change labels.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -125,7 +129,9 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Fingerprint of the previous set of labels for this resource, used to prevent conflicts. Provide the latest fingerprint value when making a request to add or change labels.
+   * Fingerprint of the previous set of labels for this resource,
+   * used to prevent conflicts. Provide the latest fingerprint value when making
+   * a request to add or change labels.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -636,7 +642,9 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Fingerprint of the previous set of labels for this resource, used to prevent conflicts. Provide the latest fingerprint value when making a request to add or change labels.
+     * Fingerprint of the previous set of labels for this resource,
+     * used to prevent conflicts. Provide the latest fingerprint value when making
+     * a request to add or change labels.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -651,7 +659,9 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Fingerprint of the previous set of labels for this resource, used to prevent conflicts. Provide the latest fingerprint value when making a request to add or change labels.
+     * Fingerprint of the previous set of labels for this resource,
+     * used to prevent conflicts. Provide the latest fingerprint value when making
+     * a request to add or change labels.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -674,7 +684,9 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Fingerprint of the previous set of labels for this resource, used to prevent conflicts. Provide the latest fingerprint value when making a request to add or change labels.
+     * Fingerprint of the previous set of labels for this resource,
+     * used to prevent conflicts. Provide the latest fingerprint value when making
+     * a request to add or change labels.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -697,7 +709,9 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Fingerprint of the previous set of labels for this resource, used to prevent conflicts. Provide the latest fingerprint value when making a request to add or change labels.
+     * Fingerprint of the previous set of labels for this resource,
+     * used to prevent conflicts. Provide the latest fingerprint value when making
+     * a request to add or change labels.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -719,7 +733,9 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Fingerprint of the previous set of labels for this resource, used to prevent conflicts. Provide the latest fingerprint value when making a request to add or change labels.
+     * Fingerprint of the previous set of labels for this resource,
+     * used to prevent conflicts. Provide the latest fingerprint value when making
+     * a request to add or change labels.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -737,7 +753,9 @@ public final class InstancesSetLabelsRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Fingerprint of the previous set of labels for this resource, used to prevent conflicts. Provide the latest fingerprint value when making a request to add or change labels.
+     * Fingerprint of the previous set of labels for this resource,
+     * used to prevent conflicts. Provide the latest fingerprint value when making
+     * a request to add or change labels.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>

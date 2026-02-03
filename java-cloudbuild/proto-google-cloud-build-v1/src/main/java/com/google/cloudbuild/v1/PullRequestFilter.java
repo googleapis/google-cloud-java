@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,14 +70,14 @@ public final class PullRequestFilter extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Controls whether or not a `/gcbrun` comment is required from a user with
-   * repository write permission or above in order to
-   * trigger Build runs for pull requests. Pull Request update events differ
-   * between repo types.
-   * Check repo specific guides
+   *  repository write permission or above in order to
+   *  trigger Build runs for pull requests. Pull Request update events differ
+   *  between repo types.
+   *  Check repo specific guides
    * ([GitHub](https://cloud.google.com/build/docs/automating-builds/github/build-repos-from-github-enterprise#creating_a_github_enterprise_trigger),
    * [Bitbucket](https://cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-server#creating_a_bitbucket_server_trigger),
    * [GitLab](https://cloud.google.com/build/docs/automating-builds/gitlab/build-repos-from-gitlab#creating_a_gitlab_trigger)
-   * for details.
+   *  for details.
    * </pre>
    *
    * Protobuf enum {@code google.devtools.cloudbuild.v1.PullRequestFilter.CommentControl}

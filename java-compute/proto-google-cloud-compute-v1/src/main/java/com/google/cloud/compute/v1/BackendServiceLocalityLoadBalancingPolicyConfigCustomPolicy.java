@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * The configuration for a custom policy implemented by the user and deployed with the client.
+ * The configuration for a custom policy implemented by the user and
+ * deployed with the client.
  * </pre>
  *
  * Protobuf type {@code
@@ -80,7 +81,8 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
    *
    *
    * <pre>
-   * An optional, arbitrary JSON object with configuration data, understood by a locally installed custom policy implementation.
+   * An optional, arbitrary JSON object with configuration data, understood
+   * by a locally installed custom policy implementation.
    * </pre>
    *
    * <code>optional string data = 3076010;</code>
@@ -96,7 +98,8 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
    *
    *
    * <pre>
-   * An optional, arbitrary JSON object with configuration data, understood by a locally installed custom policy implementation.
+   * An optional, arbitrary JSON object with configuration data, understood
+   * by a locally installed custom policy implementation.
    * </pre>
    *
    * <code>optional string data = 3076010;</code>
@@ -120,7 +123,8 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
    *
    *
    * <pre>
-   * An optional, arbitrary JSON object with configuration data, understood by a locally installed custom policy implementation.
+   * An optional, arbitrary JSON object with configuration data, understood
+   * by a locally installed custom policy implementation.
    * </pre>
    *
    * <code>optional string data = 3076010;</code>
@@ -149,7 +153,18 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
    *
    *
    * <pre>
-   * Identifies the custom policy. The value should match the name of a custom implementation registered on the gRPC clients. It should follow protocol buffer message naming conventions and include the full path (for example, myorg.CustomLbPolicy). The maximum length is 256 characters. Do not specify the same custom policy more than once for a backend. If you do, the configuration is rejected. For an example of how to use this field, see Use a custom policy.
+   * Identifies the custom policy.
+   *
+   * The value should match the name of a custom implementation registered
+   * on the gRPC clients. It should follow protocol buffer message naming
+   * conventions and include the full path (for example,
+   * myorg.CustomLbPolicy). The maximum length is 256 characters.
+   *
+   * Do not specify the same custom policy more than once for a
+   * backend. If you do, the configuration is rejected.
+   *
+   * For an example of how to use this field, seeUse
+   * a custom policy.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -165,7 +180,18 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
    *
    *
    * <pre>
-   * Identifies the custom policy. The value should match the name of a custom implementation registered on the gRPC clients. It should follow protocol buffer message naming conventions and include the full path (for example, myorg.CustomLbPolicy). The maximum length is 256 characters. Do not specify the same custom policy more than once for a backend. If you do, the configuration is rejected. For an example of how to use this field, see Use a custom policy.
+   * Identifies the custom policy.
+   *
+   * The value should match the name of a custom implementation registered
+   * on the gRPC clients. It should follow protocol buffer message naming
+   * conventions and include the full path (for example,
+   * myorg.CustomLbPolicy). The maximum length is 256 characters.
+   *
+   * Do not specify the same custom policy more than once for a
+   * backend. If you do, the configuration is rejected.
+   *
+   * For an example of how to use this field, seeUse
+   * a custom policy.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -189,7 +215,18 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
    *
    *
    * <pre>
-   * Identifies the custom policy. The value should match the name of a custom implementation registered on the gRPC clients. It should follow protocol buffer message naming conventions and include the full path (for example, myorg.CustomLbPolicy). The maximum length is 256 characters. Do not specify the same custom policy more than once for a backend. If you do, the configuration is rejected. For an example of how to use this field, see Use a custom policy.
+   * Identifies the custom policy.
+   *
+   * The value should match the name of a custom implementation registered
+   * on the gRPC clients. It should follow protocol buffer message naming
+   * conventions and include the full path (for example,
+   * myorg.CustomLbPolicy). The maximum length is 256 characters.
+   *
+   * Do not specify the same custom policy more than once for a
+   * backend. If you do, the configuration is rejected.
+   *
+   * For an example of how to use this field, seeUse
+   * a custom policy.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -415,7 +452,8 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
    *
    *
    * <pre>
-   * The configuration for a custom policy implemented by the user and deployed with the client.
+   * The configuration for a custom policy implemented by the user and
+   * deployed with the client.
    * </pre>
    *
    * Protobuf type {@code
@@ -641,7 +679,8 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
      *
      *
      * <pre>
-     * An optional, arbitrary JSON object with configuration data, understood by a locally installed custom policy implementation.
+     * An optional, arbitrary JSON object with configuration data, understood
+     * by a locally installed custom policy implementation.
      * </pre>
      *
      * <code>optional string data = 3076010;</code>
@@ -656,7 +695,8 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
      *
      *
      * <pre>
-     * An optional, arbitrary JSON object with configuration data, understood by a locally installed custom policy implementation.
+     * An optional, arbitrary JSON object with configuration data, understood
+     * by a locally installed custom policy implementation.
      * </pre>
      *
      * <code>optional string data = 3076010;</code>
@@ -679,7 +719,8 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
      *
      *
      * <pre>
-     * An optional, arbitrary JSON object with configuration data, understood by a locally installed custom policy implementation.
+     * An optional, arbitrary JSON object with configuration data, understood
+     * by a locally installed custom policy implementation.
      * </pre>
      *
      * <code>optional string data = 3076010;</code>
@@ -702,7 +743,8 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
      *
      *
      * <pre>
-     * An optional, arbitrary JSON object with configuration data, understood by a locally installed custom policy implementation.
+     * An optional, arbitrary JSON object with configuration data, understood
+     * by a locally installed custom policy implementation.
      * </pre>
      *
      * <code>optional string data = 3076010;</code>
@@ -724,7 +766,8 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
      *
      *
      * <pre>
-     * An optional, arbitrary JSON object with configuration data, understood by a locally installed custom policy implementation.
+     * An optional, arbitrary JSON object with configuration data, understood
+     * by a locally installed custom policy implementation.
      * </pre>
      *
      * <code>optional string data = 3076010;</code>
@@ -742,7 +785,8 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
      *
      *
      * <pre>
-     * An optional, arbitrary JSON object with configuration data, understood by a locally installed custom policy implementation.
+     * An optional, arbitrary JSON object with configuration data, understood
+     * by a locally installed custom policy implementation.
      * </pre>
      *
      * <code>optional string data = 3076010;</code>
@@ -767,7 +811,18 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
      *
      *
      * <pre>
-     * Identifies the custom policy. The value should match the name of a custom implementation registered on the gRPC clients. It should follow protocol buffer message naming conventions and include the full path (for example, myorg.CustomLbPolicy). The maximum length is 256 characters. Do not specify the same custom policy more than once for a backend. If you do, the configuration is rejected. For an example of how to use this field, see Use a custom policy.
+     * Identifies the custom policy.
+     *
+     * The value should match the name of a custom implementation registered
+     * on the gRPC clients. It should follow protocol buffer message naming
+     * conventions and include the full path (for example,
+     * myorg.CustomLbPolicy). The maximum length is 256 characters.
+     *
+     * Do not specify the same custom policy more than once for a
+     * backend. If you do, the configuration is rejected.
+     *
+     * For an example of how to use this field, seeUse
+     * a custom policy.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -782,7 +837,18 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
      *
      *
      * <pre>
-     * Identifies the custom policy. The value should match the name of a custom implementation registered on the gRPC clients. It should follow protocol buffer message naming conventions and include the full path (for example, myorg.CustomLbPolicy). The maximum length is 256 characters. Do not specify the same custom policy more than once for a backend. If you do, the configuration is rejected. For an example of how to use this field, see Use a custom policy.
+     * Identifies the custom policy.
+     *
+     * The value should match the name of a custom implementation registered
+     * on the gRPC clients. It should follow protocol buffer message naming
+     * conventions and include the full path (for example,
+     * myorg.CustomLbPolicy). The maximum length is 256 characters.
+     *
+     * Do not specify the same custom policy more than once for a
+     * backend. If you do, the configuration is rejected.
+     *
+     * For an example of how to use this field, seeUse
+     * a custom policy.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -805,7 +871,18 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
      *
      *
      * <pre>
-     * Identifies the custom policy. The value should match the name of a custom implementation registered on the gRPC clients. It should follow protocol buffer message naming conventions and include the full path (for example, myorg.CustomLbPolicy). The maximum length is 256 characters. Do not specify the same custom policy more than once for a backend. If you do, the configuration is rejected. For an example of how to use this field, see Use a custom policy.
+     * Identifies the custom policy.
+     *
+     * The value should match the name of a custom implementation registered
+     * on the gRPC clients. It should follow protocol buffer message naming
+     * conventions and include the full path (for example,
+     * myorg.CustomLbPolicy). The maximum length is 256 characters.
+     *
+     * Do not specify the same custom policy more than once for a
+     * backend. If you do, the configuration is rejected.
+     *
+     * For an example of how to use this field, seeUse
+     * a custom policy.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -828,7 +905,18 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
      *
      *
      * <pre>
-     * Identifies the custom policy. The value should match the name of a custom implementation registered on the gRPC clients. It should follow protocol buffer message naming conventions and include the full path (for example, myorg.CustomLbPolicy). The maximum length is 256 characters. Do not specify the same custom policy more than once for a backend. If you do, the configuration is rejected. For an example of how to use this field, see Use a custom policy.
+     * Identifies the custom policy.
+     *
+     * The value should match the name of a custom implementation registered
+     * on the gRPC clients. It should follow protocol buffer message naming
+     * conventions and include the full path (for example,
+     * myorg.CustomLbPolicy). The maximum length is 256 characters.
+     *
+     * Do not specify the same custom policy more than once for a
+     * backend. If you do, the configuration is rejected.
+     *
+     * For an example of how to use this field, seeUse
+     * a custom policy.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -850,7 +938,18 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
      *
      *
      * <pre>
-     * Identifies the custom policy. The value should match the name of a custom implementation registered on the gRPC clients. It should follow protocol buffer message naming conventions and include the full path (for example, myorg.CustomLbPolicy). The maximum length is 256 characters. Do not specify the same custom policy more than once for a backend. If you do, the configuration is rejected. For an example of how to use this field, see Use a custom policy.
+     * Identifies the custom policy.
+     *
+     * The value should match the name of a custom implementation registered
+     * on the gRPC clients. It should follow protocol buffer message naming
+     * conventions and include the full path (for example,
+     * myorg.CustomLbPolicy). The maximum length is 256 characters.
+     *
+     * Do not specify the same custom policy more than once for a
+     * backend. If you do, the configuration is rejected.
+     *
+     * For an example of how to use this field, seeUse
+     * a custom policy.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -868,7 +967,18 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
      *
      *
      * <pre>
-     * Identifies the custom policy. The value should match the name of a custom implementation registered on the gRPC clients. It should follow protocol buffer message naming conventions and include the full path (for example, myorg.CustomLbPolicy). The maximum length is 256 characters. Do not specify the same custom policy more than once for a backend. If you do, the configuration is rejected. For an example of how to use this field, see Use a custom policy.
+     * Identifies the custom policy.
+     *
+     * The value should match the name of a custom implementation registered
+     * on the gRPC clients. It should follow protocol buffer message naming
+     * conventions and include the full path (for example,
+     * myorg.CustomLbPolicy). The maximum length is 256 characters.
+     *
+     * Do not specify the same custom policy more than once for a
+     * backend. If you do, the configuration is rejected.
+     *
+     * For an example of how to use this field, seeUse
+     * a custom policy.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>

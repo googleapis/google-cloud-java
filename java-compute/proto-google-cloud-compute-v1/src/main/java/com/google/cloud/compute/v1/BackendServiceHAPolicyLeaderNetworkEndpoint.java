@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,7 +75,13 @@ public final class BackendServiceHAPolicyLeaderNetworkEndpoint
    *
    *
    * <pre>
-   * The name of the VM instance of the leader network endpoint. The instance must already be attached to the NEG specified in the haPolicy.leader.backendGroup. The name must be 1-63 characters long, and comply with RFC1035. Authorization requires the following IAM permission on the specified resource instance: compute.instances.use
+   * The name of the VM instance of the leader network endpoint. The
+   * instance must already be attached to the NEG specified in the
+   * haPolicy.leader.backendGroup.
+   *
+   * The name must be 1-63 characters long, and comply with RFC1035.
+   * Authorization requires the following IAM permission on the
+   * specified resource instance: compute.instances.use
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -91,7 +97,13 @@ public final class BackendServiceHAPolicyLeaderNetworkEndpoint
    *
    *
    * <pre>
-   * The name of the VM instance of the leader network endpoint. The instance must already be attached to the NEG specified in the haPolicy.leader.backendGroup. The name must be 1-63 characters long, and comply with RFC1035. Authorization requires the following IAM permission on the specified resource instance: compute.instances.use
+   * The name of the VM instance of the leader network endpoint. The
+   * instance must already be attached to the NEG specified in the
+   * haPolicy.leader.backendGroup.
+   *
+   * The name must be 1-63 characters long, and comply with RFC1035.
+   * Authorization requires the following IAM permission on the
+   * specified resource instance: compute.instances.use
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -115,7 +127,13 @@ public final class BackendServiceHAPolicyLeaderNetworkEndpoint
    *
    *
    * <pre>
-   * The name of the VM instance of the leader network endpoint. The instance must already be attached to the NEG specified in the haPolicy.leader.backendGroup. The name must be 1-63 characters long, and comply with RFC1035. Authorization requires the following IAM permission on the specified resource instance: compute.instances.use
+   * The name of the VM instance of the leader network endpoint. The
+   * instance must already be attached to the NEG specified in the
+   * haPolicy.leader.backendGroup.
+   *
+   * The name must be 1-63 characters long, and comply with RFC1035.
+   * Authorization requires the following IAM permission on the
+   * specified resource instance: compute.instances.use
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -503,7 +521,13 @@ public final class BackendServiceHAPolicyLeaderNetworkEndpoint
      *
      *
      * <pre>
-     * The name of the VM instance of the leader network endpoint. The instance must already be attached to the NEG specified in the haPolicy.leader.backendGroup. The name must be 1-63 characters long, and comply with RFC1035. Authorization requires the following IAM permission on the specified resource instance: compute.instances.use
+     * The name of the VM instance of the leader network endpoint. The
+     * instance must already be attached to the NEG specified in the
+     * haPolicy.leader.backendGroup.
+     *
+     * The name must be 1-63 characters long, and comply with RFC1035.
+     * Authorization requires the following IAM permission on the
+     * specified resource instance: compute.instances.use
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -518,7 +542,13 @@ public final class BackendServiceHAPolicyLeaderNetworkEndpoint
      *
      *
      * <pre>
-     * The name of the VM instance of the leader network endpoint. The instance must already be attached to the NEG specified in the haPolicy.leader.backendGroup. The name must be 1-63 characters long, and comply with RFC1035. Authorization requires the following IAM permission on the specified resource instance: compute.instances.use
+     * The name of the VM instance of the leader network endpoint. The
+     * instance must already be attached to the NEG specified in the
+     * haPolicy.leader.backendGroup.
+     *
+     * The name must be 1-63 characters long, and comply with RFC1035.
+     * Authorization requires the following IAM permission on the
+     * specified resource instance: compute.instances.use
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -541,7 +571,13 @@ public final class BackendServiceHAPolicyLeaderNetworkEndpoint
      *
      *
      * <pre>
-     * The name of the VM instance of the leader network endpoint. The instance must already be attached to the NEG specified in the haPolicy.leader.backendGroup. The name must be 1-63 characters long, and comply with RFC1035. Authorization requires the following IAM permission on the specified resource instance: compute.instances.use
+     * The name of the VM instance of the leader network endpoint. The
+     * instance must already be attached to the NEG specified in the
+     * haPolicy.leader.backendGroup.
+     *
+     * The name must be 1-63 characters long, and comply with RFC1035.
+     * Authorization requires the following IAM permission on the
+     * specified resource instance: compute.instances.use
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -564,7 +600,13 @@ public final class BackendServiceHAPolicyLeaderNetworkEndpoint
      *
      *
      * <pre>
-     * The name of the VM instance of the leader network endpoint. The instance must already be attached to the NEG specified in the haPolicy.leader.backendGroup. The name must be 1-63 characters long, and comply with RFC1035. Authorization requires the following IAM permission on the specified resource instance: compute.instances.use
+     * The name of the VM instance of the leader network endpoint. The
+     * instance must already be attached to the NEG specified in the
+     * haPolicy.leader.backendGroup.
+     *
+     * The name must be 1-63 characters long, and comply with RFC1035.
+     * Authorization requires the following IAM permission on the
+     * specified resource instance: compute.instances.use
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -586,7 +628,13 @@ public final class BackendServiceHAPolicyLeaderNetworkEndpoint
      *
      *
      * <pre>
-     * The name of the VM instance of the leader network endpoint. The instance must already be attached to the NEG specified in the haPolicy.leader.backendGroup. The name must be 1-63 characters long, and comply with RFC1035. Authorization requires the following IAM permission on the specified resource instance: compute.instances.use
+     * The name of the VM instance of the leader network endpoint. The
+     * instance must already be attached to the NEG specified in the
+     * haPolicy.leader.backendGroup.
+     *
+     * The name must be 1-63 characters long, and comply with RFC1035.
+     * Authorization requires the following IAM permission on the
+     * specified resource instance: compute.instances.use
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -604,7 +652,13 @@ public final class BackendServiceHAPolicyLeaderNetworkEndpoint
      *
      *
      * <pre>
-     * The name of the VM instance of the leader network endpoint. The instance must already be attached to the NEG specified in the haPolicy.leader.backendGroup. The name must be 1-63 characters long, and comply with RFC1035. Authorization requires the following IAM permission on the specified resource instance: compute.instances.use
+     * The name of the VM instance of the leader network endpoint. The
+     * instance must already be attached to the NEG specified in the
+     * haPolicy.leader.backendGroup.
+     *
+     * The name must be 1-63 characters long, and comply with RFC1035.
+     * Authorization requires the following IAM permission on the
+     * specified resource instance: compute.instances.use
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>

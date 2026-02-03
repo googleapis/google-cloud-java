@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,7 +68,10 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The diagnostic code specifies the local system's reason for the last change in session state. This allows remote systems to determine the reason that the previous session failed, for example. These diagnostic codes are specified in section 4.1 of RFC5880
+   * The diagnostic code specifies the local system's reason for the last change
+   * in session state. This allows remote systems to determine the reason that
+   * the previous session failed, for example. These diagnostic codes are
+   * specified in section 4.1 ofRFC5880
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.BfdPacket.Diagnostic}
@@ -251,7 +254,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The current BFD session state as seen by the transmitting system. These states are specified in section 4.1 of RFC5880
+   * The current BFD session state as seen by the transmitting system. These
+   * states are specified in section 4.1 ofRFC5880
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.BfdPacket.State}
@@ -403,7 +407,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Authentication Present bit of the BFD packet. This is specified in section 4.1 of RFC5880
+   * The Authentication Present bit of the BFD packet. This is specified in
+   * section 4.1 ofRFC5880
    * </pre>
    *
    * <code>optional bool authentication_present = 105974260;</code>
@@ -419,7 +424,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Authentication Present bit of the BFD packet. This is specified in section 4.1 of RFC5880
+   * The Authentication Present bit of the BFD packet. This is specified in
+   * section 4.1 ofRFC5880
    * </pre>
    *
    * <code>optional bool authentication_present = 105974260;</code>
@@ -438,7 +444,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Control Plane Independent bit of the BFD packet. This is specified in section 4.1 of RFC5880
+   * The Control Plane Independent bit of the BFD packet. This is specified in
+   * section 4.1 ofRFC5880
    * </pre>
    *
    * <code>optional bool control_plane_independent = 62363573;</code>
@@ -454,7 +461,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Control Plane Independent bit of the BFD packet. This is specified in section 4.1 of RFC5880
+   * The Control Plane Independent bit of the BFD packet. This is specified in
+   * section 4.1 ofRFC5880
    * </pre>
    *
    * <code>optional bool control_plane_independent = 62363573;</code>
@@ -473,7 +481,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The demand bit of the BFD packet. This is specified in section 4.1 of RFC5880
+   * The demand bit of the BFD packet. This is specified in section 4.1 ofRFC5880
    * </pre>
    *
    * <code>optional bool demand = 275180107;</code>
@@ -489,7 +497,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The demand bit of the BFD packet. This is specified in section 4.1 of RFC5880
+   * The demand bit of the BFD packet. This is specified in section 4.1 ofRFC5880
    * </pre>
    *
    * <code>optional bool demand = 275180107;</code>
@@ -510,7 +518,10 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The diagnostic code specifies the local system's reason for the last change in session state. This allows remote systems to determine the reason that the previous session failed, for example. These diagnostic codes are specified in section 4.1 of RFC5880
+   * The diagnostic code specifies the local system's reason for the last change
+   * in session state. This allows remote systems to determine the reason that
+   * the previous session failed, for example. These diagnostic codes are
+   * specified in section 4.1 ofRFC5880
    * Check the Diagnostic enum for the list of possible values.
    * </pre>
    *
@@ -527,7 +538,10 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The diagnostic code specifies the local system's reason for the last change in session state. This allows remote systems to determine the reason that the previous session failed, for example. These diagnostic codes are specified in section 4.1 of RFC5880
+   * The diagnostic code specifies the local system's reason for the last change
+   * in session state. This allows remote systems to determine the reason that
+   * the previous session failed, for example. These diagnostic codes are
+   * specified in section 4.1 ofRFC5880
    * Check the Diagnostic enum for the list of possible values.
    * </pre>
    *
@@ -552,7 +566,10 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The diagnostic code specifies the local system's reason for the last change in session state. This allows remote systems to determine the reason that the previous session failed, for example. These diagnostic codes are specified in section 4.1 of RFC5880
+   * The diagnostic code specifies the local system's reason for the last change
+   * in session state. This allows remote systems to determine the reason that
+   * the previous session failed, for example. These diagnostic codes are
+   * specified in section 4.1 ofRFC5880
    * Check the Diagnostic enum for the list of possible values.
    * </pre>
    *
@@ -580,7 +597,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Final bit of the BFD packet. This is specified in section 4.1 of RFC5880
+   * The Final bit of the BFD packet. This is specified in section 4.1 ofRFC5880
    * </pre>
    *
    * <code>optional bool final = 97436022;</code>
@@ -596,7 +613,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Final bit of the BFD packet. This is specified in section 4.1 of RFC5880
+   * The Final bit of the BFD packet. This is specified in section 4.1 ofRFC5880
    * </pre>
    *
    * <code>optional bool final = 97436022;</code>
@@ -615,7 +632,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The length of the BFD Control packet in bytes. This is specified in section 4.1 of RFC5880
+   * The length of the BFD Control packet in bytes. This is specified in section
+   * 4.1 ofRFC5880
    * </pre>
    *
    * <code>optional uint32 length = 504249062;</code>
@@ -631,7 +649,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The length of the BFD Control packet in bytes. This is specified in section 4.1 of RFC5880
+   * The length of the BFD Control packet in bytes. This is specified in section
+   * 4.1 ofRFC5880
    * </pre>
    *
    * <code>optional uint32 length = 504249062;</code>
@@ -650,7 +669,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Required Min Echo RX Interval value in the BFD packet. This is specified in section 4.1 of RFC5880
+   * The Required Min Echo RX Interval value in the BFD packet. This is
+   * specified in section 4.1 ofRFC5880
    * </pre>
    *
    * <code>optional uint32 min_echo_rx_interval_ms = 97286868;</code>
@@ -666,7 +686,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Required Min Echo RX Interval value in the BFD packet. This is specified in section 4.1 of RFC5880
+   * The Required Min Echo RX Interval value in the BFD packet. This is
+   * specified in section 4.1 ofRFC5880
    * </pre>
    *
    * <code>optional uint32 min_echo_rx_interval_ms = 97286868;</code>
@@ -685,7 +706,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Required Min RX Interval value in the BFD packet. This is specified in section 4.1 of RFC5880
+   * The Required Min RX Interval value in the BFD packet. This is specified in
+   * section 4.1 ofRFC5880
    * </pre>
    *
    * <code>optional uint32 min_rx_interval_ms = 463399028;</code>
@@ -701,7 +723,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Required Min RX Interval value in the BFD packet. This is specified in section 4.1 of RFC5880
+   * The Required Min RX Interval value in the BFD packet. This is specified in
+   * section 4.1 ofRFC5880
    * </pre>
    *
    * <code>optional uint32 min_rx_interval_ms = 463399028;</code>
@@ -720,7 +743,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Desired Min TX Interval value in the BFD packet. This is specified in section 4.1 of RFC5880
+   * The Desired Min TX Interval value in the BFD packet. This is specified in
+   * section 4.1 ofRFC5880
    * </pre>
    *
    * <code>optional uint32 min_tx_interval_ms = 526023602;</code>
@@ -736,7 +760,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Desired Min TX Interval value in the BFD packet. This is specified in section 4.1 of RFC5880
+   * The Desired Min TX Interval value in the BFD packet. This is specified in
+   * section 4.1 ofRFC5880
    * </pre>
    *
    * <code>optional uint32 min_tx_interval_ms = 526023602;</code>
@@ -755,7 +780,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The detection time multiplier of the BFD packet. This is specified in section 4.1 of RFC5880
+   * The detection time multiplier of the BFD packet. This is specified in
+   * section 4.1 ofRFC5880
    * </pre>
    *
    * <code>optional uint32 multiplier = 191331777;</code>
@@ -771,7 +797,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The detection time multiplier of the BFD packet. This is specified in section 4.1 of RFC5880
+   * The detection time multiplier of the BFD packet. This is specified in
+   * section 4.1 ofRFC5880
    * </pre>
    *
    * <code>optional uint32 multiplier = 191331777;</code>
@@ -790,7 +817,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The multipoint bit of the BFD packet. This is specified in section 4.1 of RFC5880
+   * The multipoint bit of the BFD packet. This is specified in section 4.1 ofRFC5880
    * </pre>
    *
    * <code>optional bool multipoint = 191421431;</code>
@@ -806,7 +833,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The multipoint bit of the BFD packet. This is specified in section 4.1 of RFC5880
+   * The multipoint bit of the BFD packet. This is specified in section 4.1 ofRFC5880
    * </pre>
    *
    * <code>optional bool multipoint = 191421431;</code>
@@ -825,7 +852,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The My Discriminator value in the BFD packet. This is specified in section 4.1 of RFC5880
+   * The My Discriminator value in the BFD packet. This is specified in section
+   * 4.1 ofRFC5880
    * </pre>
    *
    * <code>optional uint32 my_discriminator = 76663113;</code>
@@ -841,7 +869,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The My Discriminator value in the BFD packet. This is specified in section 4.1 of RFC5880
+   * The My Discriminator value in the BFD packet. This is specified in section
+   * 4.1 ofRFC5880
    * </pre>
    *
    * <code>optional uint32 my_discriminator = 76663113;</code>
@@ -860,7 +889,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Poll bit of the BFD packet. This is specified in section 4.1 of RFC5880
+   * The Poll bit of the BFD packet. This is specified in section 4.1 ofRFC5880
    * </pre>
    *
    * <code>optional bool poll = 3446719;</code>
@@ -876,7 +905,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Poll bit of the BFD packet. This is specified in section 4.1 of RFC5880
+   * The Poll bit of the BFD packet. This is specified in section 4.1 ofRFC5880
    * </pre>
    *
    * <code>optional bool poll = 3446719;</code>
@@ -897,7 +926,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The current BFD session state as seen by the transmitting system. These states are specified in section 4.1 of RFC5880
+   * The current BFD session state as seen by the transmitting system. These
+   * states are specified in section 4.1 ofRFC5880
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -914,7 +944,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The current BFD session state as seen by the transmitting system. These states are specified in section 4.1 of RFC5880
+   * The current BFD session state as seen by the transmitting system. These
+   * states are specified in section 4.1 ofRFC5880
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -939,7 +970,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The current BFD session state as seen by the transmitting system. These states are specified in section 4.1 of RFC5880
+   * The current BFD session state as seen by the transmitting system. These
+   * states are specified in section 4.1 ofRFC5880
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -967,7 +999,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The version number of the BFD protocol, as specified in section 4.1 of RFC5880.
+   * The version number of the BFD protocol, as specified in section 4.1 ofRFC5880.
    * </pre>
    *
    * <code>optional uint32 version = 351608024;</code>
@@ -983,7 +1015,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The version number of the BFD protocol, as specified in section 4.1 of RFC5880.
+   * The version number of the BFD protocol, as specified in section 4.1 ofRFC5880.
    * </pre>
    *
    * <code>optional uint32 version = 351608024;</code>
@@ -1002,7 +1034,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Your Discriminator value in the BFD packet. This is specified in section 4.1 of RFC5880
+   * The Your Discriminator value in the BFD packet. This is specified in
+   * section 4.1 ofRFC5880
    * </pre>
    *
    * <code>optional uint32 your_discriminator = 515634064;</code>
@@ -1018,7 +1051,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Your Discriminator value in the BFD packet. This is specified in section 4.1 of RFC5880
+   * The Your Discriminator value in the BFD packet. This is specified in
+   * section 4.1 ofRFC5880
    * </pre>
    *
    * <code>optional uint32 your_discriminator = 515634064;</code>
@@ -1809,7 +1843,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Authentication Present bit of the BFD packet. This is specified in section 4.1 of RFC5880
+     * The Authentication Present bit of the BFD packet. This is specified in
+     * section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional bool authentication_present = 105974260;</code>
@@ -1825,7 +1860,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Authentication Present bit of the BFD packet. This is specified in section 4.1 of RFC5880
+     * The Authentication Present bit of the BFD packet. This is specified in
+     * section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional bool authentication_present = 105974260;</code>
@@ -1841,7 +1877,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Authentication Present bit of the BFD packet. This is specified in section 4.1 of RFC5880
+     * The Authentication Present bit of the BFD packet. This is specified in
+     * section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional bool authentication_present = 105974260;</code>
@@ -1861,7 +1898,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Authentication Present bit of the BFD packet. This is specified in section 4.1 of RFC5880
+     * The Authentication Present bit of the BFD packet. This is specified in
+     * section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional bool authentication_present = 105974260;</code>
@@ -1881,7 +1919,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Control Plane Independent bit of the BFD packet. This is specified in section 4.1 of RFC5880
+     * The Control Plane Independent bit of the BFD packet. This is specified in
+     * section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional bool control_plane_independent = 62363573;</code>
@@ -1897,7 +1936,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Control Plane Independent bit of the BFD packet. This is specified in section 4.1 of RFC5880
+     * The Control Plane Independent bit of the BFD packet. This is specified in
+     * section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional bool control_plane_independent = 62363573;</code>
@@ -1913,7 +1953,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Control Plane Independent bit of the BFD packet. This is specified in section 4.1 of RFC5880
+     * The Control Plane Independent bit of the BFD packet. This is specified in
+     * section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional bool control_plane_independent = 62363573;</code>
@@ -1933,7 +1974,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Control Plane Independent bit of the BFD packet. This is specified in section 4.1 of RFC5880
+     * The Control Plane Independent bit of the BFD packet. This is specified in
+     * section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional bool control_plane_independent = 62363573;</code>
@@ -1953,7 +1995,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The demand bit of the BFD packet. This is specified in section 4.1 of RFC5880
+     * The demand bit of the BFD packet. This is specified in section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional bool demand = 275180107;</code>
@@ -1969,7 +2011,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The demand bit of the BFD packet. This is specified in section 4.1 of RFC5880
+     * The demand bit of the BFD packet. This is specified in section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional bool demand = 275180107;</code>
@@ -1985,7 +2027,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The demand bit of the BFD packet. This is specified in section 4.1 of RFC5880
+     * The demand bit of the BFD packet. This is specified in section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional bool demand = 275180107;</code>
@@ -2005,7 +2047,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The demand bit of the BFD packet. This is specified in section 4.1 of RFC5880
+     * The demand bit of the BFD packet. This is specified in section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional bool demand = 275180107;</code>
@@ -2025,7 +2067,10 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The diagnostic code specifies the local system's reason for the last change in session state. This allows remote systems to determine the reason that the previous session failed, for example. These diagnostic codes are specified in section 4.1 of RFC5880
+     * The diagnostic code specifies the local system's reason for the last change
+     * in session state. This allows remote systems to determine the reason that
+     * the previous session failed, for example. These diagnostic codes are
+     * specified in section 4.1 ofRFC5880
      * Check the Diagnostic enum for the list of possible values.
      * </pre>
      *
@@ -2041,7 +2086,10 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The diagnostic code specifies the local system's reason for the last change in session state. This allows remote systems to determine the reason that the previous session failed, for example. These diagnostic codes are specified in section 4.1 of RFC5880
+     * The diagnostic code specifies the local system's reason for the last change
+     * in session state. This allows remote systems to determine the reason that
+     * the previous session failed, for example. These diagnostic codes are
+     * specified in section 4.1 ofRFC5880
      * Check the Diagnostic enum for the list of possible values.
      * </pre>
      *
@@ -2065,7 +2113,10 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The diagnostic code specifies the local system's reason for the last change in session state. This allows remote systems to determine the reason that the previous session failed, for example. These diagnostic codes are specified in section 4.1 of RFC5880
+     * The diagnostic code specifies the local system's reason for the last change
+     * in session state. This allows remote systems to determine the reason that
+     * the previous session failed, for example. These diagnostic codes are
+     * specified in section 4.1 ofRFC5880
      * Check the Diagnostic enum for the list of possible values.
      * </pre>
      *
@@ -2089,7 +2140,10 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The diagnostic code specifies the local system's reason for the last change in session state. This allows remote systems to determine the reason that the previous session failed, for example. These diagnostic codes are specified in section 4.1 of RFC5880
+     * The diagnostic code specifies the local system's reason for the last change
+     * in session state. This allows remote systems to determine the reason that
+     * the previous session failed, for example. These diagnostic codes are
+     * specified in section 4.1 ofRFC5880
      * Check the Diagnostic enum for the list of possible values.
      * </pre>
      *
@@ -2112,7 +2166,10 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The diagnostic code specifies the local system's reason for the last change in session state. This allows remote systems to determine the reason that the previous session failed, for example. These diagnostic codes are specified in section 4.1 of RFC5880
+     * The diagnostic code specifies the local system's reason for the last change
+     * in session state. This allows remote systems to determine the reason that
+     * the previous session failed, for example. These diagnostic codes are
+     * specified in section 4.1 ofRFC5880
      * Check the Diagnostic enum for the list of possible values.
      * </pre>
      *
@@ -2131,7 +2188,10 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The diagnostic code specifies the local system's reason for the last change in session state. This allows remote systems to determine the reason that the previous session failed, for example. These diagnostic codes are specified in section 4.1 of RFC5880
+     * The diagnostic code specifies the local system's reason for the last change
+     * in session state. This allows remote systems to determine the reason that
+     * the previous session failed, for example. These diagnostic codes are
+     * specified in section 4.1 ofRFC5880
      * Check the Diagnostic enum for the list of possible values.
      * </pre>
      *
@@ -2157,7 +2217,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Final bit of the BFD packet. This is specified in section 4.1 of RFC5880
+     * The Final bit of the BFD packet. This is specified in section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional bool final = 97436022;</code>
@@ -2173,7 +2233,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Final bit of the BFD packet. This is specified in section 4.1 of RFC5880
+     * The Final bit of the BFD packet. This is specified in section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional bool final = 97436022;</code>
@@ -2189,7 +2249,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Final bit of the BFD packet. This is specified in section 4.1 of RFC5880
+     * The Final bit of the BFD packet. This is specified in section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional bool final = 97436022;</code>
@@ -2209,7 +2269,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Final bit of the BFD packet. This is specified in section 4.1 of RFC5880
+     * The Final bit of the BFD packet. This is specified in section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional bool final = 97436022;</code>
@@ -2229,7 +2289,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The length of the BFD Control packet in bytes. This is specified in section 4.1 of RFC5880
+     * The length of the BFD Control packet in bytes. This is specified in section
+     * 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional uint32 length = 504249062;</code>
@@ -2245,7 +2306,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The length of the BFD Control packet in bytes. This is specified in section 4.1 of RFC5880
+     * The length of the BFD Control packet in bytes. This is specified in section
+     * 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional uint32 length = 504249062;</code>
@@ -2261,7 +2323,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The length of the BFD Control packet in bytes. This is specified in section 4.1 of RFC5880
+     * The length of the BFD Control packet in bytes. This is specified in section
+     * 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional uint32 length = 504249062;</code>
@@ -2281,7 +2344,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The length of the BFD Control packet in bytes. This is specified in section 4.1 of RFC5880
+     * The length of the BFD Control packet in bytes. This is specified in section
+     * 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional uint32 length = 504249062;</code>
@@ -2301,7 +2365,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Required Min Echo RX Interval value in the BFD packet. This is specified in section 4.1 of RFC5880
+     * The Required Min Echo RX Interval value in the BFD packet. This is
+     * specified in section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional uint32 min_echo_rx_interval_ms = 97286868;</code>
@@ -2317,7 +2382,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Required Min Echo RX Interval value in the BFD packet. This is specified in section 4.1 of RFC5880
+     * The Required Min Echo RX Interval value in the BFD packet. This is
+     * specified in section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional uint32 min_echo_rx_interval_ms = 97286868;</code>
@@ -2333,7 +2399,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Required Min Echo RX Interval value in the BFD packet. This is specified in section 4.1 of RFC5880
+     * The Required Min Echo RX Interval value in the BFD packet. This is
+     * specified in section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional uint32 min_echo_rx_interval_ms = 97286868;</code>
@@ -2353,7 +2420,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Required Min Echo RX Interval value in the BFD packet. This is specified in section 4.1 of RFC5880
+     * The Required Min Echo RX Interval value in the BFD packet. This is
+     * specified in section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional uint32 min_echo_rx_interval_ms = 97286868;</code>
@@ -2373,7 +2441,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Required Min RX Interval value in the BFD packet. This is specified in section 4.1 of RFC5880
+     * The Required Min RX Interval value in the BFD packet. This is specified in
+     * section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional uint32 min_rx_interval_ms = 463399028;</code>
@@ -2389,7 +2458,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Required Min RX Interval value in the BFD packet. This is specified in section 4.1 of RFC5880
+     * The Required Min RX Interval value in the BFD packet. This is specified in
+     * section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional uint32 min_rx_interval_ms = 463399028;</code>
@@ -2405,7 +2475,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Required Min RX Interval value in the BFD packet. This is specified in section 4.1 of RFC5880
+     * The Required Min RX Interval value in the BFD packet. This is specified in
+     * section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional uint32 min_rx_interval_ms = 463399028;</code>
@@ -2425,7 +2496,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Required Min RX Interval value in the BFD packet. This is specified in section 4.1 of RFC5880
+     * The Required Min RX Interval value in the BFD packet. This is specified in
+     * section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional uint32 min_rx_interval_ms = 463399028;</code>
@@ -2445,7 +2517,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Desired Min TX Interval value in the BFD packet. This is specified in section 4.1 of RFC5880
+     * The Desired Min TX Interval value in the BFD packet. This is specified in
+     * section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional uint32 min_tx_interval_ms = 526023602;</code>
@@ -2461,7 +2534,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Desired Min TX Interval value in the BFD packet. This is specified in section 4.1 of RFC5880
+     * The Desired Min TX Interval value in the BFD packet. This is specified in
+     * section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional uint32 min_tx_interval_ms = 526023602;</code>
@@ -2477,7 +2551,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Desired Min TX Interval value in the BFD packet. This is specified in section 4.1 of RFC5880
+     * The Desired Min TX Interval value in the BFD packet. This is specified in
+     * section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional uint32 min_tx_interval_ms = 526023602;</code>
@@ -2497,7 +2572,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Desired Min TX Interval value in the BFD packet. This is specified in section 4.1 of RFC5880
+     * The Desired Min TX Interval value in the BFD packet. This is specified in
+     * section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional uint32 min_tx_interval_ms = 526023602;</code>
@@ -2517,7 +2593,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The detection time multiplier of the BFD packet. This is specified in section 4.1 of RFC5880
+     * The detection time multiplier of the BFD packet. This is specified in
+     * section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional uint32 multiplier = 191331777;</code>
@@ -2533,7 +2610,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The detection time multiplier of the BFD packet. This is specified in section 4.1 of RFC5880
+     * The detection time multiplier of the BFD packet. This is specified in
+     * section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional uint32 multiplier = 191331777;</code>
@@ -2549,7 +2627,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The detection time multiplier of the BFD packet. This is specified in section 4.1 of RFC5880
+     * The detection time multiplier of the BFD packet. This is specified in
+     * section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional uint32 multiplier = 191331777;</code>
@@ -2569,7 +2648,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The detection time multiplier of the BFD packet. This is specified in section 4.1 of RFC5880
+     * The detection time multiplier of the BFD packet. This is specified in
+     * section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional uint32 multiplier = 191331777;</code>
@@ -2589,7 +2669,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The multipoint bit of the BFD packet. This is specified in section 4.1 of RFC5880
+     * The multipoint bit of the BFD packet. This is specified in section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional bool multipoint = 191421431;</code>
@@ -2605,7 +2685,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The multipoint bit of the BFD packet. This is specified in section 4.1 of RFC5880
+     * The multipoint bit of the BFD packet. This is specified in section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional bool multipoint = 191421431;</code>
@@ -2621,7 +2701,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The multipoint bit of the BFD packet. This is specified in section 4.1 of RFC5880
+     * The multipoint bit of the BFD packet. This is specified in section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional bool multipoint = 191421431;</code>
@@ -2641,7 +2721,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The multipoint bit of the BFD packet. This is specified in section 4.1 of RFC5880
+     * The multipoint bit of the BFD packet. This is specified in section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional bool multipoint = 191421431;</code>
@@ -2661,7 +2741,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The My Discriminator value in the BFD packet. This is specified in section 4.1 of RFC5880
+     * The My Discriminator value in the BFD packet. This is specified in section
+     * 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional uint32 my_discriminator = 76663113;</code>
@@ -2677,7 +2758,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The My Discriminator value in the BFD packet. This is specified in section 4.1 of RFC5880
+     * The My Discriminator value in the BFD packet. This is specified in section
+     * 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional uint32 my_discriminator = 76663113;</code>
@@ -2693,7 +2775,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The My Discriminator value in the BFD packet. This is specified in section 4.1 of RFC5880
+     * The My Discriminator value in the BFD packet. This is specified in section
+     * 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional uint32 my_discriminator = 76663113;</code>
@@ -2713,7 +2796,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The My Discriminator value in the BFD packet. This is specified in section 4.1 of RFC5880
+     * The My Discriminator value in the BFD packet. This is specified in section
+     * 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional uint32 my_discriminator = 76663113;</code>
@@ -2733,7 +2817,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Poll bit of the BFD packet. This is specified in section 4.1 of RFC5880
+     * The Poll bit of the BFD packet. This is specified in section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional bool poll = 3446719;</code>
@@ -2749,7 +2833,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Poll bit of the BFD packet. This is specified in section 4.1 of RFC5880
+     * The Poll bit of the BFD packet. This is specified in section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional bool poll = 3446719;</code>
@@ -2765,7 +2849,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Poll bit of the BFD packet. This is specified in section 4.1 of RFC5880
+     * The Poll bit of the BFD packet. This is specified in section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional bool poll = 3446719;</code>
@@ -2785,7 +2869,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Poll bit of the BFD packet. This is specified in section 4.1 of RFC5880
+     * The Poll bit of the BFD packet. This is specified in section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional bool poll = 3446719;</code>
@@ -2805,7 +2889,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The current BFD session state as seen by the transmitting system. These states are specified in section 4.1 of RFC5880
+     * The current BFD session state as seen by the transmitting system. These
+     * states are specified in section 4.1 ofRFC5880
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -2821,7 +2906,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The current BFD session state as seen by the transmitting system. These states are specified in section 4.1 of RFC5880
+     * The current BFD session state as seen by the transmitting system. These
+     * states are specified in section 4.1 ofRFC5880
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -2845,7 +2931,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The current BFD session state as seen by the transmitting system. These states are specified in section 4.1 of RFC5880
+     * The current BFD session state as seen by the transmitting system. These
+     * states are specified in section 4.1 ofRFC5880
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -2869,7 +2956,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The current BFD session state as seen by the transmitting system. These states are specified in section 4.1 of RFC5880
+     * The current BFD session state as seen by the transmitting system. These
+     * states are specified in section 4.1 ofRFC5880
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -2892,7 +2980,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The current BFD session state as seen by the transmitting system. These states are specified in section 4.1 of RFC5880
+     * The current BFD session state as seen by the transmitting system. These
+     * states are specified in section 4.1 ofRFC5880
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -2911,7 +3000,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The current BFD session state as seen by the transmitting system. These states are specified in section 4.1 of RFC5880
+     * The current BFD session state as seen by the transmitting system. These
+     * states are specified in section 4.1 ofRFC5880
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -2937,7 +3027,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The version number of the BFD protocol, as specified in section 4.1 of RFC5880.
+     * The version number of the BFD protocol, as specified in section 4.1 ofRFC5880.
      * </pre>
      *
      * <code>optional uint32 version = 351608024;</code>
@@ -2953,7 +3043,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The version number of the BFD protocol, as specified in section 4.1 of RFC5880.
+     * The version number of the BFD protocol, as specified in section 4.1 ofRFC5880.
      * </pre>
      *
      * <code>optional uint32 version = 351608024;</code>
@@ -2969,7 +3059,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The version number of the BFD protocol, as specified in section 4.1 of RFC5880.
+     * The version number of the BFD protocol, as specified in section 4.1 ofRFC5880.
      * </pre>
      *
      * <code>optional uint32 version = 351608024;</code>
@@ -2989,7 +3079,7 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The version number of the BFD protocol, as specified in section 4.1 of RFC5880.
+     * The version number of the BFD protocol, as specified in section 4.1 ofRFC5880.
      * </pre>
      *
      * <code>optional uint32 version = 351608024;</code>
@@ -3009,7 +3099,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Your Discriminator value in the BFD packet. This is specified in section 4.1 of RFC5880
+     * The Your Discriminator value in the BFD packet. This is specified in
+     * section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional uint32 your_discriminator = 515634064;</code>
@@ -3025,7 +3116,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Your Discriminator value in the BFD packet. This is specified in section 4.1 of RFC5880
+     * The Your Discriminator value in the BFD packet. This is specified in
+     * section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional uint32 your_discriminator = 515634064;</code>
@@ -3041,7 +3133,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Your Discriminator value in the BFD packet. This is specified in section 4.1 of RFC5880
+     * The Your Discriminator value in the BFD packet. This is specified in
+     * section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional uint32 your_discriminator = 515634064;</code>
@@ -3061,7 +3154,8 @@ public final class BfdPacket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Your Discriminator value in the BFD packet. This is specified in section 4.1 of RFC5880
+     * The Your Discriminator value in the BFD packet. This is specified in
+     * section 4.1 ofRFC5880
      * </pre>
      *
      * <code>optional uint32 your_discriminator = 515634064;</code>

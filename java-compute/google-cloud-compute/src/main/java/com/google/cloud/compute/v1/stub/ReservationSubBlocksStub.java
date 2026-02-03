@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,13 +21,18 @@ import static com.google.cloud.compute.v1.ReservationSubBlocksClient.ListPagedRe
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.GetIamPolicyReservationSubBlockRequest;
 import com.google.cloud.compute.v1.GetReservationSubBlockRequest;
 import com.google.cloud.compute.v1.ListReservationSubBlocksRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PerformMaintenanceReservationSubBlockRequest;
+import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.ReportFaultyReservationSubBlockRequest;
 import com.google.cloud.compute.v1.ReservationSubBlocksGetResponse;
 import com.google.cloud.compute.v1.ReservationSubBlocksListResponse;
+import com.google.cloud.compute.v1.SetIamPolicyReservationSubBlockRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsReservationSubBlockRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -42,6 +47,10 @@ public abstract class ReservationSubBlocksStub implements BackgroundResource {
   public UnaryCallable<GetReservationSubBlockRequest, ReservationSubBlocksGetResponse>
       getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public UnaryCallable<GetIamPolicyReservationSubBlockRequest, Policy> getIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
   }
 
   public UnaryCallable<ListReservationSubBlocksRequest, ListPagedResponse> listPagedCallable() {
@@ -71,6 +80,15 @@ public abstract class ReservationSubBlocksStub implements BackgroundResource {
 
   public UnaryCallable<ReportFaultyReservationSubBlockRequest, Operation> reportFaultyCallable() {
     throw new UnsupportedOperationException("Not implemented: reportFaultyCallable()");
+  }
+
+  public UnaryCallable<SetIamPolicyReservationSubBlockRequest, Policy> setIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsReservationSubBlockRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

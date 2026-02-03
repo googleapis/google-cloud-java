@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -99,7 +99,8 @@ public final class ProjectsSetDefaultNetworkTierRequest
      *
      *
      * <pre>
-     * High quality, Google-grade network tier, support for all networking products.
+     * High quality, Google-grade network tier, support for all networking
+     * products.
      * </pre>
      *
      * <code>PREMIUM = 399530551;</code>
@@ -109,7 +110,8 @@ public final class ProjectsSetDefaultNetworkTierRequest
      *
      *
      * <pre>
-     * Public internet quality, only limited support for other networking products.
+     * Public internet quality, only limited support for other networking
+     * products.
      * </pre>
      *
      * <code>STANDARD = 484642493;</code>
@@ -119,7 +121,8 @@ public final class ProjectsSetDefaultNetworkTierRequest
      *
      *
      * <pre>
-     * (Output only) Temporary tier for FIXED_STANDARD when fixed standard tier is expired or not configured.
+     * (Output only) Temporary tier for FIXED_STANDARD when fixed standard tier
+     * is expired or not configured.
      * </pre>
      *
      * <code>STANDARD_OVERRIDES_FIXED_STANDARD = 465847234;</code>
@@ -154,7 +157,8 @@ public final class ProjectsSetDefaultNetworkTierRequest
      *
      *
      * <pre>
-     * High quality, Google-grade network tier, support for all networking products.
+     * High quality, Google-grade network tier, support for all networking
+     * products.
      * </pre>
      *
      * <code>PREMIUM = 399530551;</code>
@@ -165,7 +169,8 @@ public final class ProjectsSetDefaultNetworkTierRequest
      *
      *
      * <pre>
-     * Public internet quality, only limited support for other networking products.
+     * Public internet quality, only limited support for other networking
+     * products.
      * </pre>
      *
      * <code>STANDARD = 484642493;</code>
@@ -176,7 +181,8 @@ public final class ProjectsSetDefaultNetworkTierRequest
      *
      *
      * <pre>
-     * (Output only) Temporary tier for FIXED_STANDARD when fixed standard tier is expired or not configured.
+     * (Output only) Temporary tier for FIXED_STANDARD when fixed standard tier
+     * is expired or not configured.
      * </pre>
      *
      * <code>STANDARD_OVERRIDES_FIXED_STANDARD = 465847234;</code>

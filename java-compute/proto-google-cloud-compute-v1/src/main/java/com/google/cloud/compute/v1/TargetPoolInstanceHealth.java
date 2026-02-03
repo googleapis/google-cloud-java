@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -110,7 +110,8 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#targetPoolInstanceHealth when checking the health of an instance.
+   * Output only. [Output Only] Type of resource. Alwayscompute#targetPoolInstanceHealth when checking the health of
+   * an instance.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -126,7 +127,8 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#targetPoolInstanceHealth when checking the health of an instance.
+   * Output only. [Output Only] Type of resource. Alwayscompute#targetPoolInstanceHealth when checking the health of
+   * an instance.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -150,7 +152,8 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#targetPoolInstanceHealth when checking the health of an instance.
+   * Output only. [Output Only] Type of resource. Alwayscompute#targetPoolInstanceHealth when checking the health of
+   * an instance.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -823,7 +826,8 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#targetPoolInstanceHealth when checking the health of an instance.
+     * Output only. [Output Only] Type of resource. Alwayscompute#targetPoolInstanceHealth when checking the health of
+     * an instance.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -838,7 +842,8 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#targetPoolInstanceHealth when checking the health of an instance.
+     * Output only. [Output Only] Type of resource. Alwayscompute#targetPoolInstanceHealth when checking the health of
+     * an instance.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -861,7 +866,8 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#targetPoolInstanceHealth when checking the health of an instance.
+     * Output only. [Output Only] Type of resource. Alwayscompute#targetPoolInstanceHealth when checking the health of
+     * an instance.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -884,7 +890,8 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#targetPoolInstanceHealth when checking the health of an instance.
+     * Output only. [Output Only] Type of resource. Alwayscompute#targetPoolInstanceHealth when checking the health of
+     * an instance.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -906,7 +913,8 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#targetPoolInstanceHealth when checking the health of an instance.
+     * Output only. [Output Only] Type of resource. Alwayscompute#targetPoolInstanceHealth when checking the health of
+     * an instance.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -924,7 +932,8 @@ public final class TargetPoolInstanceHealth extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#targetPoolInstanceHealth when checking the health of an instance.
+     * Output only. [Output Only] Type of resource. Alwayscompute#targetPoolInstanceHealth when checking the health of
+     * an instance.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>

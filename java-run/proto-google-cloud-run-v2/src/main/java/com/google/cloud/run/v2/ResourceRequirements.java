@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -105,7 +105,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Only `memory` and `cpu` keys in the map are supported.
+   * Only `memory`, `cpu` and `nvidia.com/gpu` keys in the map are supported.
    *
    * &lt;p&gt;Notes:
    *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
@@ -113,6 +113,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
    * https://cloud.google.com/run/docs/configuring/cpu.
    *   * For supported 'memory' values and syntax, go to
    *  https://cloud.google.com/run/docs/configuring/memory-limits
+   *  * The only supported 'nvidia.com/gpu' value is '1'.
    * </pre>
    *
    * <code>map&lt;string, string&gt; limits = 1;</code>
@@ -136,7 +137,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Only `memory` and `cpu` keys in the map are supported.
+   * Only `memory`, `cpu` and `nvidia.com/gpu` keys in the map are supported.
    *
    * &lt;p&gt;Notes:
    *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
@@ -144,6 +145,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
    * https://cloud.google.com/run/docs/configuring/cpu.
    *   * For supported 'memory' values and syntax, go to
    *  https://cloud.google.com/run/docs/configuring/memory-limits
+   *  * The only supported 'nvidia.com/gpu' value is '1'.
    * </pre>
    *
    * <code>map&lt;string, string&gt; limits = 1;</code>
@@ -157,7 +159,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Only `memory` and `cpu` keys in the map are supported.
+   * Only `memory`, `cpu` and `nvidia.com/gpu` keys in the map are supported.
    *
    * &lt;p&gt;Notes:
    *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
@@ -165,6 +167,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
    * https://cloud.google.com/run/docs/configuring/cpu.
    *   * For supported 'memory' values and syntax, go to
    *  https://cloud.google.com/run/docs/configuring/memory-limits
+   *  * The only supported 'nvidia.com/gpu' value is '1'.
    * </pre>
    *
    * <code>map&lt;string, string&gt; limits = 1;</code>
@@ -185,7 +188,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Only `memory` and `cpu` keys in the map are supported.
+   * Only `memory`, `cpu` and `nvidia.com/gpu` keys in the map are supported.
    *
    * &lt;p&gt;Notes:
    *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
@@ -193,6 +196,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
    * https://cloud.google.com/run/docs/configuring/cpu.
    *   * For supported 'memory' values and syntax, go to
    *  https://cloud.google.com/run/docs/configuring/memory-limits
+   *  * The only supported 'nvidia.com/gpu' value is '1'.
    * </pre>
    *
    * <code>map&lt;string, string&gt; limits = 1;</code>
@@ -701,7 +705,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only `memory` and `cpu` keys in the map are supported.
+     * Only `memory`, `cpu` and `nvidia.com/gpu` keys in the map are supported.
      *
      * &lt;p&gt;Notes:
      *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
@@ -709,6 +713,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      * https://cloud.google.com/run/docs/configuring/cpu.
      *   * For supported 'memory' values and syntax, go to
      *  https://cloud.google.com/run/docs/configuring/memory-limits
+     *  * The only supported 'nvidia.com/gpu' value is '1'.
      * </pre>
      *
      * <code>map&lt;string, string&gt; limits = 1;</code>
@@ -732,7 +737,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only `memory` and `cpu` keys in the map are supported.
+     * Only `memory`, `cpu` and `nvidia.com/gpu` keys in the map are supported.
      *
      * &lt;p&gt;Notes:
      *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
@@ -740,6 +745,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      * https://cloud.google.com/run/docs/configuring/cpu.
      *   * For supported 'memory' values and syntax, go to
      *  https://cloud.google.com/run/docs/configuring/memory-limits
+     *  * The only supported 'nvidia.com/gpu' value is '1'.
      * </pre>
      *
      * <code>map&lt;string, string&gt; limits = 1;</code>
@@ -753,7 +759,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only `memory` and `cpu` keys in the map are supported.
+     * Only `memory`, `cpu` and `nvidia.com/gpu` keys in the map are supported.
      *
      * &lt;p&gt;Notes:
      *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
@@ -761,6 +767,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      * https://cloud.google.com/run/docs/configuring/cpu.
      *   * For supported 'memory' values and syntax, go to
      *  https://cloud.google.com/run/docs/configuring/memory-limits
+     *  * The only supported 'nvidia.com/gpu' value is '1'.
      * </pre>
      *
      * <code>map&lt;string, string&gt; limits = 1;</code>
@@ -781,7 +788,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only `memory` and `cpu` keys in the map are supported.
+     * Only `memory`, `cpu` and `nvidia.com/gpu` keys in the map are supported.
      *
      * &lt;p&gt;Notes:
      *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
@@ -789,6 +796,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      * https://cloud.google.com/run/docs/configuring/cpu.
      *   * For supported 'memory' values and syntax, go to
      *  https://cloud.google.com/run/docs/configuring/memory-limits
+     *  * The only supported 'nvidia.com/gpu' value is '1'.
      * </pre>
      *
      * <code>map&lt;string, string&gt; limits = 1;</code>
@@ -815,7 +823,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only `memory` and `cpu` keys in the map are supported.
+     * Only `memory`, `cpu` and `nvidia.com/gpu` keys in the map are supported.
      *
      * &lt;p&gt;Notes:
      *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
@@ -823,6 +831,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      * https://cloud.google.com/run/docs/configuring/cpu.
      *   * For supported 'memory' values and syntax, go to
      *  https://cloud.google.com/run/docs/configuring/memory-limits
+     *  * The only supported 'nvidia.com/gpu' value is '1'.
      * </pre>
      *
      * <code>map&lt;string, string&gt; limits = 1;</code>
@@ -846,7 +855,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only `memory` and `cpu` keys in the map are supported.
+     * Only `memory`, `cpu` and `nvidia.com/gpu` keys in the map are supported.
      *
      * &lt;p&gt;Notes:
      *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
@@ -854,6 +863,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      * https://cloud.google.com/run/docs/configuring/cpu.
      *   * For supported 'memory' values and syntax, go to
      *  https://cloud.google.com/run/docs/configuring/memory-limits
+     *  * The only supported 'nvidia.com/gpu' value is '1'.
      * </pre>
      *
      * <code>map&lt;string, string&gt; limits = 1;</code>
@@ -874,7 +884,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only `memory` and `cpu` keys in the map are supported.
+     * Only `memory`, `cpu` and `nvidia.com/gpu` keys in the map are supported.
      *
      * &lt;p&gt;Notes:
      *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
@@ -882,6 +892,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      * https://cloud.google.com/run/docs/configuring/cpu.
      *   * For supported 'memory' values and syntax, go to
      *  https://cloud.google.com/run/docs/configuring/memory-limits
+     *  * The only supported 'nvidia.com/gpu' value is '1'.
      * </pre>
      *
      * <code>map&lt;string, string&gt; limits = 1;</code>

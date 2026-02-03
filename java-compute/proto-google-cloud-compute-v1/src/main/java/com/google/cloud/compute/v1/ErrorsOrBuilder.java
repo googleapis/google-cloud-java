@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,7 +67,11 @@ public interface ErrorsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
+   * [Output Only] An optional list of messages that contain the error
+   * details. There is a set of defined message types to use for providing
+   * details.The syntax depends on the error code. For example,
+   * QuotaExceededInfo will have details when the error code is
+   * QUOTA_EXCEEDED.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
@@ -78,7 +82,11 @@ public interface ErrorsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
+   * [Output Only] An optional list of messages that contain the error
+   * details. There is a set of defined message types to use for providing
+   * details.The syntax depends on the error code. For example,
+   * QuotaExceededInfo will have details when the error code is
+   * QUOTA_EXCEEDED.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
@@ -89,7 +97,11 @@ public interface ErrorsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
+   * [Output Only] An optional list of messages that contain the error
+   * details. There is a set of defined message types to use for providing
+   * details.The syntax depends on the error code. For example,
+   * QuotaExceededInfo will have details when the error code is
+   * QUOTA_EXCEEDED.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
@@ -100,7 +112,11 @@ public interface ErrorsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
+   * [Output Only] An optional list of messages that contain the error
+   * details. There is a set of defined message types to use for providing
+   * details.The syntax depends on the error code. For example,
+   * QuotaExceededInfo will have details when the error code is
+   * QUOTA_EXCEEDED.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
@@ -112,7 +128,11 @@ public interface ErrorsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
+   * [Output Only] An optional list of messages that contain the error
+   * details. There is a set of defined message types to use for providing
+   * details.The syntax depends on the error code. For example,
+   * QuotaExceededInfo will have details when the error code is
+   * QUOTA_EXCEEDED.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
@@ -123,7 +143,8 @@ public interface ErrorsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Indicates the field in the request that caused the error. This property is optional.
+   * [Output Only] Indicates the field in the request that caused the error.
+   * This property is optional.
    * </pre>
    *
    * <code>optional string location = 290430901;</code>
@@ -136,7 +157,8 @@ public interface ErrorsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Indicates the field in the request that caused the error. This property is optional.
+   * [Output Only] Indicates the field in the request that caused the error.
+   * This property is optional.
    * </pre>
    *
    * <code>optional string location = 290430901;</code>
@@ -149,7 +171,8 @@ public interface ErrorsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Indicates the field in the request that caused the error. This property is optional.
+   * [Output Only] Indicates the field in the request that caused the error.
+   * This property is optional.
    * </pre>
    *
    * <code>optional string location = 290430901;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Configurations to specifc granular traffic units processed by Adaptive Protection.
+ * Configurations to specifc granular traffic units processed by
+ * Adaptive Protection.
  * </pre>
  *
  * Protobuf type {@code
@@ -223,7 +224,9 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
    *
    *
    * <pre>
-   * If enabled, traffic matching each unique value for the specified type constitutes a separate traffic unit. It can only be set to true if `value` is empty.
+   * If enabled, traffic matching each unique value for the specified
+   * type constitutes a separate traffic unit.
+   * It can only be set to true if `value` is empty.
    * </pre>
    *
    * <code>optional bool enable_each_unique_value = 469206341;</code>
@@ -239,7 +242,9 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
    *
    *
    * <pre>
-   * If enabled, traffic matching each unique value for the specified type constitutes a separate traffic unit. It can only be set to true if `value` is empty.
+   * If enabled, traffic matching each unique value for the specified
+   * type constitutes a separate traffic unit.
+   * It can only be set to true if `value` is empty.
    * </pre>
    *
    * <code>optional bool enable_each_unique_value = 469206341;</code>
@@ -618,7 +623,8 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
    *
    *
    * <pre>
-   * Configurations to specifc granular traffic units processed by Adaptive Protection.
+   * Configurations to specifc granular traffic units processed by
+   * Adaptive Protection.
    * </pre>
    *
    * Protobuf type {@code
@@ -871,7 +877,9 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
      *
      *
      * <pre>
-     * If enabled, traffic matching each unique value for the specified type constitutes a separate traffic unit. It can only be set to true if `value` is empty.
+     * If enabled, traffic matching each unique value for the specified
+     * type constitutes a separate traffic unit.
+     * It can only be set to true if `value` is empty.
      * </pre>
      *
      * <code>optional bool enable_each_unique_value = 469206341;</code>
@@ -887,7 +895,9 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
      *
      *
      * <pre>
-     * If enabled, traffic matching each unique value for the specified type constitutes a separate traffic unit. It can only be set to true if `value` is empty.
+     * If enabled, traffic matching each unique value for the specified
+     * type constitutes a separate traffic unit.
+     * It can only be set to true if `value` is empty.
      * </pre>
      *
      * <code>optional bool enable_each_unique_value = 469206341;</code>
@@ -903,7 +913,9 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
      *
      *
      * <pre>
-     * If enabled, traffic matching each unique value for the specified type constitutes a separate traffic unit. It can only be set to true if `value` is empty.
+     * If enabled, traffic matching each unique value for the specified
+     * type constitutes a separate traffic unit.
+     * It can only be set to true if `value` is empty.
      * </pre>
      *
      * <code>optional bool enable_each_unique_value = 469206341;</code>
@@ -923,7 +935,9 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
      *
      *
      * <pre>
-     * If enabled, traffic matching each unique value for the specified type constitutes a separate traffic unit. It can only be set to true if `value` is empty.
+     * If enabled, traffic matching each unique value for the specified
+     * type constitutes a separate traffic unit.
+     * It can only be set to true if `value` is empty.
      * </pre>
      *
      * <code>optional bool enable_each_unique_value = 469206341;</code>

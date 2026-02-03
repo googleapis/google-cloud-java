@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ public interface BackendServiceFailoverPolicyOrBuilder
    *
    *
    * <pre>
-   * This can be set to true only if the protocol is TCP. The default is false.
+   * This can be set to true only if the protocol isTCP.
+   *
+   * The default is false.
    * </pre>
    *
    * <code>optional bool disable_connection_drain_on_failover = 182150753;</code>
@@ -41,7 +43,9 @@ public interface BackendServiceFailoverPolicyOrBuilder
    *
    *
    * <pre>
-   * This can be set to true only if the protocol is TCP. The default is false.
+   * This can be set to true only if the protocol isTCP.
+   *
+   * The default is false.
    * </pre>
    *
    * <code>optional bool disable_connection_drain_on_failover = 182150753;</code>
@@ -54,7 +58,20 @@ public interface BackendServiceFailoverPolicyOrBuilder
    *
    *
    * <pre>
-   * If set to true, connections to the load balancer are dropped when all primary and all backup backend VMs are unhealthy.If set to false, connections are distributed among all primary VMs when all primary and all backup backend VMs are unhealthy. For load balancers that have configurable failover: [Internal passthrough Network Load Balancers](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external passthrough Network Load Balancers](https://cloud.google.com/load-balancing/docs/network/networklb-failover-overview). The default is false.
+   * If set to true, connections to the
+   * load balancer are dropped when all primary and all backup backend VMs are
+   * unhealthy.If set to false, connections are distributed
+   * among all primary VMs when all primary and all backup backend VMs are
+   *  unhealthy.
+   * For load balancers that have configurable
+   * failover:
+   * [Internal passthrough
+   * Network Load
+   * Balancers](https://cloud.google.com/load-balancing/docs/internal/failover-overview)
+   * and [external passthrough
+   * Network Load
+   * Balancers](https://cloud.google.com/load-balancing/docs/network/networklb-failover-overview).
+   * The default is false.
    * </pre>
    *
    * <code>optional bool drop_traffic_if_unhealthy = 112289428;</code>
@@ -67,7 +84,20 @@ public interface BackendServiceFailoverPolicyOrBuilder
    *
    *
    * <pre>
-   * If set to true, connections to the load balancer are dropped when all primary and all backup backend VMs are unhealthy.If set to false, connections are distributed among all primary VMs when all primary and all backup backend VMs are unhealthy. For load balancers that have configurable failover: [Internal passthrough Network Load Balancers](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external passthrough Network Load Balancers](https://cloud.google.com/load-balancing/docs/network/networklb-failover-overview). The default is false.
+   * If set to true, connections to the
+   * load balancer are dropped when all primary and all backup backend VMs are
+   * unhealthy.If set to false, connections are distributed
+   * among all primary VMs when all primary and all backup backend VMs are
+   *  unhealthy.
+   * For load balancers that have configurable
+   * failover:
+   * [Internal passthrough
+   * Network Load
+   * Balancers](https://cloud.google.com/load-balancing/docs/internal/failover-overview)
+   * and [external passthrough
+   * Network Load
+   * Balancers](https://cloud.google.com/load-balancing/docs/network/networklb-failover-overview).
+   * The default is false.
    * </pre>
    *
    * <code>optional bool drop_traffic_if_unhealthy = 112289428;</code>
@@ -80,7 +110,16 @@ public interface BackendServiceFailoverPolicyOrBuilder
    *
    *
    * <pre>
-   * The value of the field must be in the range [0, 1]. If the value is 0, the load balancer performs a failover when the number of healthy primary VMs equals zero. For all other values, the load balancer performs a failover when the total number of healthy primary VMs is less than this ratio. For load balancers that have configurable failover: [Internal TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/network/networklb-failover-overview).
+   * The value of the field must be in the range[0, 1]. If the value is 0, the load balancer performs a
+   * failover when the number of healthy primary VMs equals zero.
+   * For all other values, the load balancer performs a failover when the
+   * total number of healthy primary VMs is less than this ratio.
+   * For load balancers that have configurable
+   * failover:
+   * [Internal TCP/UDP Load
+   * Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview)
+   * and [external TCP/UDP Load
+   * Balancing](https://cloud.google.com/load-balancing/docs/network/networklb-failover-overview).
    * </pre>
    *
    * <code>optional float failover_ratio = 212667006;</code>
@@ -93,7 +132,16 @@ public interface BackendServiceFailoverPolicyOrBuilder
    *
    *
    * <pre>
-   * The value of the field must be in the range [0, 1]. If the value is 0, the load balancer performs a failover when the number of healthy primary VMs equals zero. For all other values, the load balancer performs a failover when the total number of healthy primary VMs is less than this ratio. For load balancers that have configurable failover: [Internal TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview) and [external TCP/UDP Load Balancing](https://cloud.google.com/load-balancing/docs/network/networklb-failover-overview).
+   * The value of the field must be in the range[0, 1]. If the value is 0, the load balancer performs a
+   * failover when the number of healthy primary VMs equals zero.
+   * For all other values, the load balancer performs a failover when the
+   * total number of healthy primary VMs is less than this ratio.
+   * For load balancers that have configurable
+   * failover:
+   * [Internal TCP/UDP Load
+   * Balancing](https://cloud.google.com/load-balancing/docs/internal/failover-overview)
+   * and [external TCP/UDP Load
+   * Balancing](https://cloud.google.com/load-balancing/docs/network/networklb-failover-overview).
    * </pre>
    *
    * <code>optional float failover_ratio = 212667006;</code>

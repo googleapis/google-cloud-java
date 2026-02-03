@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ public interface SavedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The architecture of the attached disk.
+   * Output only. [Output Only] The architecture of the attached disk.
    * Check the Architecture enum for the list of possible values.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface SavedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The architecture of the attached disk.
+   * Output only. [Output Only] The architecture of the attached disk.
    * Check the Architecture enum for the list of possible values.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface SavedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The architecture of the attached disk.
+   * Output only. [Output Only] The architecture of the attached disk.
    * Check the Architecture enum for the list of possible values.
    * </pre>
    *
@@ -70,7 +70,8 @@ public interface SavedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#savedDisk for attached disks.
+   * Output only. [Output Only] Type of the resource. Always compute#savedDisk
+   * for attached disks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -83,7 +84,8 @@ public interface SavedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#savedDisk for attached disks.
+   * Output only. [Output Only] Type of the resource. Always compute#savedDisk
+   * for attached disks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -96,7 +98,8 @@ public interface SavedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#savedDisk for attached disks.
+   * Output only. [Output Only] Type of the resource. Always compute#savedDisk
+   * for attached disks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -109,7 +112,7 @@ public interface SavedDiskOrBuilder
    *
    *
    * <pre>
-   * Specifies a URL of the disk attached to the source instance.
+   * Output only. Specifies a URL of the disk attached to the source instance.
    * </pre>
    *
    * <code>optional string source_disk = 451753793;</code>
@@ -122,7 +125,7 @@ public interface SavedDiskOrBuilder
    *
    *
    * <pre>
-   * Specifies a URL of the disk attached to the source instance.
+   * Output only. Specifies a URL of the disk attached to the source instance.
    * </pre>
    *
    * <code>optional string source_disk = 451753793;</code>
@@ -135,7 +138,7 @@ public interface SavedDiskOrBuilder
    *
    *
    * <pre>
-   * Specifies a URL of the disk attached to the source instance.
+   * Output only. Specifies a URL of the disk attached to the source instance.
    * </pre>
    *
    * <code>optional string source_disk = 451753793;</code>
@@ -148,7 +151,8 @@ public interface SavedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Size of the individual disk snapshot used by this machine image.
+   * Output only. [Output Only] Size of the individual disk snapshot used by this machine
+   * image.
    * </pre>
    *
    * <code>optional int64 storage_bytes = 424631719;</code>
@@ -161,7 +165,8 @@ public interface SavedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Size of the individual disk snapshot used by this machine image.
+   * Output only. [Output Only] Size of the individual disk snapshot used by this machine
+   * image.
    * </pre>
    *
    * <code>optional int64 storage_bytes = 424631719;</code>
@@ -174,7 +179,11 @@ public interface SavedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+   * Output only. [Output Only] An indicator whether storageBytes is in a
+   * stable state or it is being adjusted as a result of shared storage
+   * reallocation. This status can either be UPDATING, meaning
+   * the size of the snapshot is being updated, or UP_TO_DATE,
+   * meaning the size of the snapshot is up-to-date.
    * Check the StorageBytesStatus enum for the list of possible values.
    * </pre>
    *
@@ -188,7 +197,11 @@ public interface SavedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+   * Output only. [Output Only] An indicator whether storageBytes is in a
+   * stable state or it is being adjusted as a result of shared storage
+   * reallocation. This status can either be UPDATING, meaning
+   * the size of the snapshot is being updated, or UP_TO_DATE,
+   * meaning the size of the snapshot is up-to-date.
    * Check the StorageBytesStatus enum for the list of possible values.
    * </pre>
    *
@@ -202,7 +215,11 @@ public interface SavedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+   * Output only. [Output Only] An indicator whether storageBytes is in a
+   * stable state or it is being adjusted as a result of shared storage
+   * reallocation. This status can either be UPDATING, meaning
+   * the size of the snapshot is being updated, or UP_TO_DATE,
+   * meaning the size of the snapshot is up-to-date.
    * Check the StorageBytesStatus enum for the list of possible values.
    * </pre>
    *

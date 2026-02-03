@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -198,7 +198,7 @@ public final class RelatedAccountGroupMembership extends com.google.protobuf.Gen
    * <code>bytes hashed_account_id = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.recaptchaenterprise.v1.RelatedAccountGroupMembership.hashed_account_id
-   *     is deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=2084
+   *     is deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=2241
    * @return The hashedAccountId.
    */
   @java.lang.Override
@@ -864,7 +864,7 @@ public final class RelatedAccountGroupMembership extends com.google.protobuf.Gen
      *
      * @deprecated
      *     google.cloud.recaptchaenterprise.v1.RelatedAccountGroupMembership.hashed_account_id is
-     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=2084
+     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=2241
      * @return The hashedAccountId.
      */
     @java.lang.Override
@@ -887,7 +887,7 @@ public final class RelatedAccountGroupMembership extends com.google.protobuf.Gen
      *
      * @deprecated
      *     google.cloud.recaptchaenterprise.v1.RelatedAccountGroupMembership.hashed_account_id is
-     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=2084
+     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=2241
      * @param value The hashedAccountId to set.
      * @return This builder for chaining.
      */
@@ -916,7 +916,7 @@ public final class RelatedAccountGroupMembership extends com.google.protobuf.Gen
      *
      * @deprecated
      *     google.cloud.recaptchaenterprise.v1.RelatedAccountGroupMembership.hashed_account_id is
-     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=2084
+     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=2241
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

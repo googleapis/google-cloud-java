@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -108,7 +108,8 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Maintenance is not synchronized for this reservation. Instead, each instance has its own maintenance window.
+     * Maintenance is not synchronized for this reservation. Instead, each
+     * instance has its own maintenance window.
      * </pre>
      *
      * <code>INDEPENDENT = 127011674;</code>
@@ -154,7 +155,8 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Maintenance is not synchronized for this reservation. Instead, each instance has its own maintenance window.
+     * Maintenance is not synchronized for this reservation. Instead, each
+     * instance has its own maintenance window.
      * </pre>
      *
      * <code>INDEPENDENT = 127011674;</code>
@@ -324,7 +326,8 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Progress for ongoing maintenance for this group of VMs/hosts. Describes number of hosts in the block that have ongoing maintenance.
+   * Progress for ongoing maintenance for this group of VMs/hosts.
+   * Describes number of hosts in the block that have ongoing maintenance.
    * </pre>
    *
    * <code>optional int32 maintenance_ongoing_count = 219781919;</code>
@@ -340,7 +343,8 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Progress for ongoing maintenance for this group of VMs/hosts. Describes number of hosts in the block that have ongoing maintenance.
+   * Progress for ongoing maintenance for this group of VMs/hosts.
+   * Describes number of hosts in the block that have ongoing maintenance.
    * </pre>
    *
    * <code>optional int32 maintenance_ongoing_count = 219781919;</code>
@@ -359,7 +363,8 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Progress for ongoing maintenance for this group of VMs/hosts. Describes number of hosts in the block that have pending maintenance.
+   * Progress for ongoing maintenance for this group of VMs/hosts.
+   * Describes number of hosts in the block that have pending maintenance.
    * </pre>
    *
    * <code>optional int32 maintenance_pending_count = 158783547;</code>
@@ -375,7 +380,8 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Progress for ongoing maintenance for this group of VMs/hosts. Describes number of hosts in the block that have pending maintenance.
+   * Progress for ongoing maintenance for this group of VMs/hosts.
+   * Describes number of hosts in the block that have pending maintenance.
    * </pre>
    *
    * <code>optional int32 maintenance_pending_count = 158783547;</code>
@@ -466,7 +472,10 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Describes number of subblock Infrastructure that has ongoing maintenance. Here, Subblock Infrastructure Maintenance pertains to upstream hardware contained in the Subblock that is necessary for a VM Family(e.g. NVLink Domains). Not all VM Families will support this field.
+   * Describes number of subblock Infrastructure that has ongoing maintenance.
+   * Here, Subblock Infrastructure Maintenance pertains to upstream hardware
+   * contained in the Subblock that is necessary for a VM Family(e.g. NVLink
+   * Domains). Not all VM Families will support this field.
    * </pre>
    *
    * <code>optional int32 subblock_infra_maintenance_ongoing_count = 366161790;</code>
@@ -482,7 +491,10 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Describes number of subblock Infrastructure that has ongoing maintenance. Here, Subblock Infrastructure Maintenance pertains to upstream hardware contained in the Subblock that is necessary for a VM Family(e.g. NVLink Domains). Not all VM Families will support this field.
+   * Describes number of subblock Infrastructure that has ongoing maintenance.
+   * Here, Subblock Infrastructure Maintenance pertains to upstream hardware
+   * contained in the Subblock that is necessary for a VM Family(e.g. NVLink
+   * Domains). Not all VM Families will support this field.
    * </pre>
    *
    * <code>optional int32 subblock_infra_maintenance_ongoing_count = 366161790;</code>
@@ -501,7 +513,10 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Describes number of subblock Infrastructure that has pending maintenance. Here, Subblock Infrastructure Maintenance pertains to upstream hardware contained in the Subblock that is necessary for a VM Family (e.g. NVLink Domains). Not all VM Families will support this field.
+   * Describes number of subblock Infrastructure that has pending maintenance.
+   *  Here, Subblock Infrastructure Maintenance pertains to upstream hardware
+   *  contained in the Subblock that is necessary for a VM Family (e.g. NVLink
+   *  Domains). Not all VM Families will support this field.
    * </pre>
    *
    * <code>optional int32 subblock_infra_maintenance_pending_count = 305163418;</code>
@@ -517,7 +532,10 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Describes number of subblock Infrastructure that has pending maintenance. Here, Subblock Infrastructure Maintenance pertains to upstream hardware contained in the Subblock that is necessary for a VM Family (e.g. NVLink Domains). Not all VM Families will support this field.
+   * Describes number of subblock Infrastructure that has pending maintenance.
+   *  Here, Subblock Infrastructure Maintenance pertains to upstream hardware
+   *  contained in the Subblock that is necessary for a VM Family (e.g. NVLink
+   *  Domains). Not all VM Families will support this field.
    * </pre>
    *
    * <code>optional int32 subblock_infra_maintenance_pending_count = 305163418;</code>
@@ -1325,7 +1343,8 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Progress for ongoing maintenance for this group of VMs/hosts. Describes number of hosts in the block that have ongoing maintenance.
+     * Progress for ongoing maintenance for this group of VMs/hosts.
+     * Describes number of hosts in the block that have ongoing maintenance.
      * </pre>
      *
      * <code>optional int32 maintenance_ongoing_count = 219781919;</code>
@@ -1341,7 +1360,8 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Progress for ongoing maintenance for this group of VMs/hosts. Describes number of hosts in the block that have ongoing maintenance.
+     * Progress for ongoing maintenance for this group of VMs/hosts.
+     * Describes number of hosts in the block that have ongoing maintenance.
      * </pre>
      *
      * <code>optional int32 maintenance_ongoing_count = 219781919;</code>
@@ -1357,7 +1377,8 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Progress for ongoing maintenance for this group of VMs/hosts. Describes number of hosts in the block that have ongoing maintenance.
+     * Progress for ongoing maintenance for this group of VMs/hosts.
+     * Describes number of hosts in the block that have ongoing maintenance.
      * </pre>
      *
      * <code>optional int32 maintenance_ongoing_count = 219781919;</code>
@@ -1377,7 +1398,8 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Progress for ongoing maintenance for this group of VMs/hosts. Describes number of hosts in the block that have ongoing maintenance.
+     * Progress for ongoing maintenance for this group of VMs/hosts.
+     * Describes number of hosts in the block that have ongoing maintenance.
      * </pre>
      *
      * <code>optional int32 maintenance_ongoing_count = 219781919;</code>
@@ -1397,7 +1419,8 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Progress for ongoing maintenance for this group of VMs/hosts. Describes number of hosts in the block that have pending maintenance.
+     * Progress for ongoing maintenance for this group of VMs/hosts.
+     * Describes number of hosts in the block that have pending maintenance.
      * </pre>
      *
      * <code>optional int32 maintenance_pending_count = 158783547;</code>
@@ -1413,7 +1436,8 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Progress for ongoing maintenance for this group of VMs/hosts. Describes number of hosts in the block that have pending maintenance.
+     * Progress for ongoing maintenance for this group of VMs/hosts.
+     * Describes number of hosts in the block that have pending maintenance.
      * </pre>
      *
      * <code>optional int32 maintenance_pending_count = 158783547;</code>
@@ -1429,7 +1453,8 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Progress for ongoing maintenance for this group of VMs/hosts. Describes number of hosts in the block that have pending maintenance.
+     * Progress for ongoing maintenance for this group of VMs/hosts.
+     * Describes number of hosts in the block that have pending maintenance.
      * </pre>
      *
      * <code>optional int32 maintenance_pending_count = 158783547;</code>
@@ -1449,7 +1474,8 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Progress for ongoing maintenance for this group of VMs/hosts. Describes number of hosts in the block that have pending maintenance.
+     * Progress for ongoing maintenance for this group of VMs/hosts.
+     * Describes number of hosts in the block that have pending maintenance.
      * </pre>
      *
      * <code>optional int32 maintenance_pending_count = 158783547;</code>
@@ -1601,7 +1627,10 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Describes number of subblock Infrastructure that has ongoing maintenance. Here, Subblock Infrastructure Maintenance pertains to upstream hardware contained in the Subblock that is necessary for a VM Family(e.g. NVLink Domains). Not all VM Families will support this field.
+     * Describes number of subblock Infrastructure that has ongoing maintenance.
+     * Here, Subblock Infrastructure Maintenance pertains to upstream hardware
+     * contained in the Subblock that is necessary for a VM Family(e.g. NVLink
+     * Domains). Not all VM Families will support this field.
      * </pre>
      *
      * <code>optional int32 subblock_infra_maintenance_ongoing_count = 366161790;</code>
@@ -1617,7 +1646,10 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Describes number of subblock Infrastructure that has ongoing maintenance. Here, Subblock Infrastructure Maintenance pertains to upstream hardware contained in the Subblock that is necessary for a VM Family(e.g. NVLink Domains). Not all VM Families will support this field.
+     * Describes number of subblock Infrastructure that has ongoing maintenance.
+     * Here, Subblock Infrastructure Maintenance pertains to upstream hardware
+     * contained in the Subblock that is necessary for a VM Family(e.g. NVLink
+     * Domains). Not all VM Families will support this field.
      * </pre>
      *
      * <code>optional int32 subblock_infra_maintenance_ongoing_count = 366161790;</code>
@@ -1633,7 +1665,10 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Describes number of subblock Infrastructure that has ongoing maintenance. Here, Subblock Infrastructure Maintenance pertains to upstream hardware contained in the Subblock that is necessary for a VM Family(e.g. NVLink Domains). Not all VM Families will support this field.
+     * Describes number of subblock Infrastructure that has ongoing maintenance.
+     * Here, Subblock Infrastructure Maintenance pertains to upstream hardware
+     * contained in the Subblock that is necessary for a VM Family(e.g. NVLink
+     * Domains). Not all VM Families will support this field.
      * </pre>
      *
      * <code>optional int32 subblock_infra_maintenance_ongoing_count = 366161790;</code>
@@ -1653,7 +1688,10 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Describes number of subblock Infrastructure that has ongoing maintenance. Here, Subblock Infrastructure Maintenance pertains to upstream hardware contained in the Subblock that is necessary for a VM Family(e.g. NVLink Domains). Not all VM Families will support this field.
+     * Describes number of subblock Infrastructure that has ongoing maintenance.
+     * Here, Subblock Infrastructure Maintenance pertains to upstream hardware
+     * contained in the Subblock that is necessary for a VM Family(e.g. NVLink
+     * Domains). Not all VM Families will support this field.
      * </pre>
      *
      * <code>optional int32 subblock_infra_maintenance_ongoing_count = 366161790;</code>
@@ -1673,7 +1711,10 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Describes number of subblock Infrastructure that has pending maintenance. Here, Subblock Infrastructure Maintenance pertains to upstream hardware contained in the Subblock that is necessary for a VM Family (e.g. NVLink Domains). Not all VM Families will support this field.
+     * Describes number of subblock Infrastructure that has pending maintenance.
+     *  Here, Subblock Infrastructure Maintenance pertains to upstream hardware
+     *  contained in the Subblock that is necessary for a VM Family (e.g. NVLink
+     *  Domains). Not all VM Families will support this field.
      * </pre>
      *
      * <code>optional int32 subblock_infra_maintenance_pending_count = 305163418;</code>
@@ -1689,7 +1730,10 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Describes number of subblock Infrastructure that has pending maintenance. Here, Subblock Infrastructure Maintenance pertains to upstream hardware contained in the Subblock that is necessary for a VM Family (e.g. NVLink Domains). Not all VM Families will support this field.
+     * Describes number of subblock Infrastructure that has pending maintenance.
+     *  Here, Subblock Infrastructure Maintenance pertains to upstream hardware
+     *  contained in the Subblock that is necessary for a VM Family (e.g. NVLink
+     *  Domains). Not all VM Families will support this field.
      * </pre>
      *
      * <code>optional int32 subblock_infra_maintenance_pending_count = 305163418;</code>
@@ -1705,7 +1749,10 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Describes number of subblock Infrastructure that has pending maintenance. Here, Subblock Infrastructure Maintenance pertains to upstream hardware contained in the Subblock that is necessary for a VM Family (e.g. NVLink Domains). Not all VM Families will support this field.
+     * Describes number of subblock Infrastructure that has pending maintenance.
+     *  Here, Subblock Infrastructure Maintenance pertains to upstream hardware
+     *  contained in the Subblock that is necessary for a VM Family (e.g. NVLink
+     *  Domains). Not all VM Families will support this field.
      * </pre>
      *
      * <code>optional int32 subblock_infra_maintenance_pending_count = 305163418;</code>
@@ -1725,7 +1772,10 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Describes number of subblock Infrastructure that has pending maintenance. Here, Subblock Infrastructure Maintenance pertains to upstream hardware contained in the Subblock that is necessary for a VM Family (e.g. NVLink Domains). Not all VM Families will support this field.
+     * Describes number of subblock Infrastructure that has pending maintenance.
+     *  Here, Subblock Infrastructure Maintenance pertains to upstream hardware
+     *  contained in the Subblock that is necessary for a VM Family (e.g. NVLink
+     *  Domains). Not all VM Families will support this field.
      * </pre>
      *
      * <code>optional int32 subblock_infra_maintenance_pending_count = 305163418;</code>

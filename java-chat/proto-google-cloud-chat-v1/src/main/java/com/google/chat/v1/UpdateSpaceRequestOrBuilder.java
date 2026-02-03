@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,8 +76,10 @@ public interface UpdateSpaceRequestOrBuilder
    *
    * You can update the following fields for a space:
    *
-   * `space_details`: Updates the space's description. Supports up to 150
-   * characters.
+   * `space_details`: Updates the space's description and guidelines. You must
+   * pass both description and guidelines in the update request as
+   * [`SpaceDetails`][google.chat.v1.Space.SpaceDetails]. If you only want to
+   * update one of the fields, pass the existing value for the other field.
    *
    * `display_name`: Only supports updating the display name for spaces where
    * `spaceType` field is `SPACE`.
@@ -121,8 +123,7 @@ public interface UpdateSpaceRequestOrBuilder
    * of a space.
    * When updating permission settings, you can only specify
    * `permissionSettings` field masks; you cannot update other field masks
-   * at the same time. `permissionSettings` is not supported with
-   * `useAdminAccess`.
+   * at the same time.
    * The supported field masks include:
    *
    * - `permission_settings.manageMembersAndGroups`
@@ -150,8 +151,10 @@ public interface UpdateSpaceRequestOrBuilder
    *
    * You can update the following fields for a space:
    *
-   * `space_details`: Updates the space's description. Supports up to 150
-   * characters.
+   * `space_details`: Updates the space's description and guidelines. You must
+   * pass both description and guidelines in the update request as
+   * [`SpaceDetails`][google.chat.v1.Space.SpaceDetails]. If you only want to
+   * update one of the fields, pass the existing value for the other field.
    *
    * `display_name`: Only supports updating the display name for spaces where
    * `spaceType` field is `SPACE`.
@@ -195,8 +198,7 @@ public interface UpdateSpaceRequestOrBuilder
    * of a space.
    * When updating permission settings, you can only specify
    * `permissionSettings` field masks; you cannot update other field masks
-   * at the same time. `permissionSettings` is not supported with
-   * `useAdminAccess`.
+   * at the same time.
    * The supported field masks include:
    *
    * - `permission_settings.manageMembersAndGroups`
@@ -224,8 +226,10 @@ public interface UpdateSpaceRequestOrBuilder
    *
    * You can update the following fields for a space:
    *
-   * `space_details`: Updates the space's description. Supports up to 150
-   * characters.
+   * `space_details`: Updates the space's description and guidelines. You must
+   * pass both description and guidelines in the update request as
+   * [`SpaceDetails`][google.chat.v1.Space.SpaceDetails]. If you only want to
+   * update one of the fields, pass the existing value for the other field.
    *
    * `display_name`: Only supports updating the display name for spaces where
    * `spaceType` field is `SPACE`.
@@ -269,8 +273,7 @@ public interface UpdateSpaceRequestOrBuilder
    * of a space.
    * When updating permission settings, you can only specify
    * `permissionSettings` field masks; you cannot update other field masks
-   * at the same time. `permissionSettings` is not supported with
-   * `useAdminAccess`.
+   * at the same time.
    * The supported field masks include:
    *
    * - `permission_settings.manageMembersAndGroups`

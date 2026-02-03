@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ public interface AllocationSpecificSKUReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Indicates how many instances are actually usable currently.
+   * Output only. [Output Only] Indicates how many instances are actually usable currently.
    * </pre>
    *
    * <code>optional int64 assured_count = 281197645;</code>
@@ -41,7 +41,7 @@ public interface AllocationSpecificSKUReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Indicates how many instances are actually usable currently.
+   * Output only. [Output Only] Indicates how many instances are actually usable currently.
    * </pre>
    *
    * <code>optional int64 assured_count = 281197645;</code>
@@ -80,7 +80,7 @@ public interface AllocationSpecificSKUReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Indicates how many instances are in use.
+   * Output only. [Output Only] Indicates how many instances are in use.
    * </pre>
    *
    * <code>optional int64 in_use_count = 493458877;</code>
@@ -93,7 +93,7 @@ public interface AllocationSpecificSKUReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Indicates how many instances are in use.
+   * Output only. [Output Only] Indicates how many instances are in use.
    * </pre>
    *
    * <code>optional int64 in_use_count = 493458877;</code>
@@ -151,7 +151,16 @@ public interface AllocationSpecificSKUReservationOrBuilder
    *
    *
    * <pre>
-   * Specifies the instance template to create the reservation. If you use this field, you must exclude the instanceProperties field. This field is optional, and it can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
+   * Specifies the instance template to create the reservation. If you use
+   * this field, you must exclude the instanceProperties field.
+   *
+   * This field is optional, and it can be a full or partial URL. For example,
+   * the following are all valid URLs to an instance template:
+   *
+   *
+   *       - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
+   *       - projects/project/global/instanceTemplates/instanceTemplate
+   *       - global/instanceTemplates/instanceTemplate
    * </pre>
    *
    * <code>optional string source_instance_template = 332423616;</code>
@@ -164,7 +173,16 @@ public interface AllocationSpecificSKUReservationOrBuilder
    *
    *
    * <pre>
-   * Specifies the instance template to create the reservation. If you use this field, you must exclude the instanceProperties field. This field is optional, and it can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
+   * Specifies the instance template to create the reservation. If you use
+   * this field, you must exclude the instanceProperties field.
+   *
+   * This field is optional, and it can be a full or partial URL. For example,
+   * the following are all valid URLs to an instance template:
+   *
+   *
+   *       - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
+   *       - projects/project/global/instanceTemplates/instanceTemplate
+   *       - global/instanceTemplates/instanceTemplate
    * </pre>
    *
    * <code>optional string source_instance_template = 332423616;</code>
@@ -177,7 +195,16 @@ public interface AllocationSpecificSKUReservationOrBuilder
    *
    *
    * <pre>
-   * Specifies the instance template to create the reservation. If you use this field, you must exclude the instanceProperties field. This field is optional, and it can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
+   * Specifies the instance template to create the reservation. If you use
+   * this field, you must exclude the instanceProperties field.
+   *
+   * This field is optional, and it can be a full or partial URL. For example,
+   * the following are all valid URLs to an instance template:
+   *
+   *
+   *       - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
+   *       - projects/project/global/instanceTemplates/instanceTemplate
+   *       - global/instanceTemplates/instanceTemplate
    * </pre>
    *
    * <code>optional string source_instance_template = 332423616;</code>

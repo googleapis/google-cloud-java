@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -6855,6 +6855,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     SAVE_FINDINGS(1),
     PUB_SUB(2),
     PUBLISH_SUMMARY_TO_CSCC(3),
+    @java.lang.Deprecated
     PUBLISH_FINDINGS_TO_CLOUD_DATA_CATALOG(5),
     PUBLISH_FINDINGS_TO_DATAPLEX_CATALOG(10),
     DEIDENTIFY(7),
@@ -7080,16 +7081,21 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Publish findings to Cloud Datahub.
+   * Deprecated because Data Catalog is being turned down. Use
+   * publish_findings_to_dataplex_catalog to publish findings to Dataplex
+   * Universal Catalog.
    * </pre>
    *
    * <code>
-   * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
+   * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5 [deprecated = true];
    * </code>
    *
+   * @deprecated google.privacy.dlp.v2.Action.publish_findings_to_cloud_data_catalog is deprecated.
+   *     See google/privacy/dlp/v2/dlp.proto;l=4399
    * @return Whether the publishFindingsToCloudDataCatalog field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasPublishFindingsToCloudDataCatalog() {
     return actionCase_ == 5;
   }
@@ -7098,16 +7104,21 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Publish findings to Cloud Datahub.
+   * Deprecated because Data Catalog is being turned down. Use
+   * publish_findings_to_dataplex_catalog to publish findings to Dataplex
+   * Universal Catalog.
    * </pre>
    *
    * <code>
-   * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
+   * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5 [deprecated = true];
    * </code>
    *
+   * @deprecated google.privacy.dlp.v2.Action.publish_findings_to_cloud_data_catalog is deprecated.
+   *     See google/privacy/dlp/v2/dlp.proto;l=4399
    * @return The publishFindingsToCloudDataCatalog.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog
       getPublishFindingsToCloudDataCatalog() {
     if (actionCase_ == 5) {
@@ -7120,14 +7131,17 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Publish findings to Cloud Datahub.
+   * Deprecated because Data Catalog is being turned down. Use
+   * publish_findings_to_dataplex_catalog to publish findings to Dataplex
+   * Universal Catalog.
    * </pre>
    *
    * <code>
-   * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
+   * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5 [deprecated = true];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalogOrBuilder
       getPublishFindingsToCloudDataCatalogOrBuilder() {
     if (actionCase_ == 5) {
@@ -8658,16 +8672,21 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Publish findings to Cloud Datahub.
+     * Deprecated because Data Catalog is being turned down. Use
+     * publish_findings_to_dataplex_catalog to publish findings to Dataplex
+     * Universal Catalog.
      * </pre>
      *
      * <code>
-     * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
+     * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5 [deprecated = true];
      * </code>
      *
+     * @deprecated google.privacy.dlp.v2.Action.publish_findings_to_cloud_data_catalog is
+     *     deprecated. See google/privacy/dlp/v2/dlp.proto;l=4399
      * @return Whether the publishFindingsToCloudDataCatalog field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasPublishFindingsToCloudDataCatalog() {
       return actionCase_ == 5;
     }
@@ -8676,16 +8695,21 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Publish findings to Cloud Datahub.
+     * Deprecated because Data Catalog is being turned down. Use
+     * publish_findings_to_dataplex_catalog to publish findings to Dataplex
+     * Universal Catalog.
      * </pre>
      *
      * <code>
-     * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
+     * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5 [deprecated = true];
      * </code>
      *
+     * @deprecated google.privacy.dlp.v2.Action.publish_findings_to_cloud_data_catalog is
+     *     deprecated. See google/privacy/dlp/v2/dlp.proto;l=4399
      * @return The publishFindingsToCloudDataCatalog.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog
         getPublishFindingsToCloudDataCatalog() {
       if (publishFindingsToCloudDataCatalogBuilder_ == null) {
@@ -8707,13 +8731,16 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Publish findings to Cloud Datahub.
+     * Deprecated because Data Catalog is being turned down. Use
+     * publish_findings_to_dataplex_catalog to publish findings to Dataplex
+     * Universal Catalog.
      * </pre>
      *
      * <code>
-     * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
+     * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setPublishFindingsToCloudDataCatalog(
         com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog value) {
       if (publishFindingsToCloudDataCatalogBuilder_ == null) {
@@ -8733,13 +8760,16 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Publish findings to Cloud Datahub.
+     * Deprecated because Data Catalog is being turned down. Use
+     * publish_findings_to_dataplex_catalog to publish findings to Dataplex
+     * Universal Catalog.
      * </pre>
      *
      * <code>
-     * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
+     * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setPublishFindingsToCloudDataCatalog(
         com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog.Builder
             builderForValue) {
@@ -8757,13 +8787,16 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Publish findings to Cloud Datahub.
+     * Deprecated because Data Catalog is being turned down. Use
+     * publish_findings_to_dataplex_catalog to publish findings to Dataplex
+     * Universal Catalog.
      * </pre>
      *
      * <code>
-     * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
+     * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergePublishFindingsToCloudDataCatalog(
         com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog value) {
       if (publishFindingsToCloudDataCatalogBuilder_ == null) {
@@ -8795,13 +8828,16 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Publish findings to Cloud Datahub.
+     * Deprecated because Data Catalog is being turned down. Use
+     * publish_findings_to_dataplex_catalog to publish findings to Dataplex
+     * Universal Catalog.
      * </pre>
      *
      * <code>
-     * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
+     * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearPublishFindingsToCloudDataCatalog() {
       if (publishFindingsToCloudDataCatalogBuilder_ == null) {
         if (actionCase_ == 5) {
@@ -8823,13 +8859,16 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Publish findings to Cloud Datahub.
+     * Deprecated because Data Catalog is being turned down. Use
+     * publish_findings_to_dataplex_catalog to publish findings to Dataplex
+     * Universal Catalog.
      * </pre>
      *
      * <code>
-     * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
+     * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog.Builder
         getPublishFindingsToCloudDataCatalogBuilder() {
       return getPublishFindingsToCloudDataCatalogFieldBuilder().getBuilder();
@@ -8839,14 +8878,17 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Publish findings to Cloud Datahub.
+     * Deprecated because Data Catalog is being turned down. Use
+     * publish_findings_to_dataplex_catalog to publish findings to Dataplex
+     * Universal Catalog.
      * </pre>
      *
      * <code>
-     * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
+     * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5 [deprecated = true];
      * </code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalogOrBuilder
         getPublishFindingsToCloudDataCatalogOrBuilder() {
       if ((actionCase_ == 5) && (publishFindingsToCloudDataCatalogBuilder_ != null)) {
@@ -8864,11 +8906,13 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Publish findings to Cloud Datahub.
+     * Deprecated because Data Catalog is being turned down. Use
+     * publish_findings_to_dataplex_catalog to publish findings to Dataplex
+     * Universal Catalog.
      * </pre>
      *
      * <code>
-     * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5;
+     * .google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog publish_findings_to_cloud_data_catalog = 5 [deprecated = true];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

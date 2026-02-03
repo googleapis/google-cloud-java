@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,6 +56,7 @@ import com.google.shopping.merchant.accounts.v1.ListUsersRequest;
 import com.google.shopping.merchant.accounts.v1.ListUsersResponse;
 import com.google.shopping.merchant.accounts.v1.UpdateUserRequest;
 import com.google.shopping.merchant.accounts.v1.User;
+import com.google.shopping.merchant.accounts.v1.VerifySelfRequest;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
@@ -108,8 +109,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  */
 @Generated("by gapic-generator-java")
 public class UserServiceStubSettings extends StubSettings<UserServiceStubSettings> {
@@ -123,6 +124,7 @@ public class UserServiceStubSettings extends StubSettings<UserServiceStubSetting
   private final UnaryCallSettings<UpdateUserRequest, User> updateUserSettings;
   private final PagedCallSettings<ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>
       listUsersSettings;
+  private final UnaryCallSettings<VerifySelfRequest, User> verifySelfSettings;
 
   private static final PagedListDescriptor<ListUsersRequest, ListUsersResponse, User>
       LIST_USERS_PAGE_STR_DESC =
@@ -199,6 +201,11 @@ public class UserServiceStubSettings extends StubSettings<UserServiceStubSetting
   public PagedCallSettings<ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>
       listUsersSettings() {
     return listUsersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to verifySelf. */
+  public UnaryCallSettings<VerifySelfRequest, User> verifySelfSettings() {
+    return verifySelfSettings;
   }
 
   public UserServiceStub createStub() throws IOException {
@@ -317,6 +324,7 @@ public class UserServiceStubSettings extends StubSettings<UserServiceStubSetting
     deleteUserSettings = settingsBuilder.deleteUserSettings().build();
     updateUserSettings = settingsBuilder.updateUserSettings().build();
     listUsersSettings = settingsBuilder.listUsersSettings().build();
+    verifySelfSettings = settingsBuilder.verifySelfSettings().build();
   }
 
   /** Builder for UserServiceStubSettings. */
@@ -329,6 +337,7 @@ public class UserServiceStubSettings extends StubSettings<UserServiceStubSetting
     private final PagedCallSettings.Builder<
             ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>
         listUsersSettings;
+    private final UnaryCallSettings.Builder<VerifySelfRequest, User> verifySelfSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -372,6 +381,7 @@ public class UserServiceStubSettings extends StubSettings<UserServiceStubSetting
       deleteUserSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateUserSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listUsersSettings = PagedCallSettings.newBuilder(LIST_USERS_PAGE_STR_FACT);
+      verifySelfSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -379,7 +389,8 @@ public class UserServiceStubSettings extends StubSettings<UserServiceStubSetting
               createUserSettings,
               deleteUserSettings,
               updateUserSettings,
-              listUsersSettings);
+              listUsersSettings,
+              verifySelfSettings);
       initDefaults(this);
     }
 
@@ -391,6 +402,7 @@ public class UserServiceStubSettings extends StubSettings<UserServiceStubSetting
       deleteUserSettings = settings.deleteUserSettings.toBuilder();
       updateUserSettings = settings.updateUserSettings.toBuilder();
       listUsersSettings = settings.listUsersSettings.toBuilder();
+      verifySelfSettings = settings.verifySelfSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -398,7 +410,8 @@ public class UserServiceStubSettings extends StubSettings<UserServiceStubSetting
               createUserSettings,
               deleteUserSettings,
               updateUserSettings,
-              listUsersSettings);
+              listUsersSettings,
+              verifySelfSettings);
     }
 
     private static Builder createDefault() {
@@ -451,6 +464,11 @@ public class UserServiceStubSettings extends StubSettings<UserServiceStubSetting
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
+      builder
+          .verifySelfSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
       return builder;
     }
 
@@ -493,6 +511,11 @@ public class UserServiceStubSettings extends StubSettings<UserServiceStubSetting
     public PagedCallSettings.Builder<ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>
         listUsersSettings() {
       return listUsersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to verifySelf. */
+    public UnaryCallSettings.Builder<VerifySelfRequest, User> verifySelfSettings() {
+      return verifySelfSettings;
     }
 
     @Override

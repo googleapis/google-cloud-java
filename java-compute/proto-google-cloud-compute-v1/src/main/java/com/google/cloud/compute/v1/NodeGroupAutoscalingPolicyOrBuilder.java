@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ public interface NodeGroupAutoscalingPolicyOrBuilder
    *
    *
    * <pre>
-   * The maximum number of nodes that the group should have. Must be set if autoscaling is enabled. Maximum value allowed is 100.
+   * The maximum number of nodes that the group should have. Must be set if
+   * autoscaling is enabled. Maximum value allowed is 100.
    * </pre>
    *
    * <code>optional int32 max_nodes = 297762838;</code>
@@ -41,7 +42,8 @@ public interface NodeGroupAutoscalingPolicyOrBuilder
    *
    *
    * <pre>
-   * The maximum number of nodes that the group should have. Must be set if autoscaling is enabled. Maximum value allowed is 100.
+   * The maximum number of nodes that the group should have. Must be set if
+   * autoscaling is enabled. Maximum value allowed is 100.
    * </pre>
    *
    * <code>optional int32 max_nodes = 297762838;</code>
@@ -80,7 +82,9 @@ public interface NodeGroupAutoscalingPolicyOrBuilder
    *
    *
    * <pre>
-   * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
+   * The autoscaling mode. Set to one of: ON, OFF,
+   * or ONLY_SCALE_OUT. For more information, see
+   * Autoscaler modes.
    * Check the Mode enum for the list of possible values.
    * </pre>
    *
@@ -94,7 +98,9 @@ public interface NodeGroupAutoscalingPolicyOrBuilder
    *
    *
    * <pre>
-   * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
+   * The autoscaling mode. Set to one of: ON, OFF,
+   * or ONLY_SCALE_OUT. For more information, see
+   * Autoscaler modes.
    * Check the Mode enum for the list of possible values.
    * </pre>
    *
@@ -108,7 +114,9 @@ public interface NodeGroupAutoscalingPolicyOrBuilder
    *
    *
    * <pre>
-   * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
+   * The autoscaling mode. Set to one of: ON, OFF,
+   * or ONLY_SCALE_OUT. For more information, see
+   * Autoscaler modes.
    * Check the Mode enum for the list of possible values.
    * </pre>
    *

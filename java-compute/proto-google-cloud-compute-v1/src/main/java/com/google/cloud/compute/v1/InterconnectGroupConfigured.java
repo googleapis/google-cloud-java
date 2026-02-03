@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,10 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * [Output Only] The status of the group as configured. This has the same structure as the operational field reported by the OperationalStatus method, but does not take into account the operational status of each resource.
+ * [Output Only] The status of the group as configured. This has the same
+ * structure as the operational field reported by the OperationalStatus
+ * method, but does not take into account the operational status of each
+ * resource.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.InterconnectGroupConfigured}
@@ -281,7 +284,10 @@ public final class InterconnectGroupConfigured extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * [Output Only] The status of the group as configured. This has the same structure as the operational field reported by the OperationalStatus method, but does not take into account the operational status of each resource.
+   * [Output Only] The status of the group as configured. This has the same
+   * structure as the operational field reported by the OperationalStatus
+   * method, but does not take into account the operational status of each
+   * resource.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.InterconnectGroupConfigured}

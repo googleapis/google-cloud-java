@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,9 @@ package com.google.cloud.geminidataanalytics.v1beta;
  *
  *
  * <pre>
- * Message representing references to BigQuery tables.
+ * Message representing references to BigQuery tables and property graphs.
+ * At least one of `table_references` or `property_graph_references` must be
+ * populated.
  * </pre>
  *
  * Protobuf type {@code google.cloud.geminidataanalytics.v1beta.BigQueryTableReferences}
@@ -74,11 +76,11 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. References to BigQuery tables.
+   * Optional. References to BigQuery tables.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -91,11 +93,11 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. References to BigQuery tables.
+   * Optional. References to BigQuery tables.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -109,11 +111,11 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. References to BigQuery tables.
+   * Optional. References to BigQuery tables.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -125,11 +127,11 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. References to BigQuery tables.
+   * Optional. References to BigQuery tables.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -142,11 +144,11 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. References to BigQuery tables.
+   * Optional. References to BigQuery tables.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -323,7 +325,9 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Message representing references to BigQuery tables.
+   * Message representing references to BigQuery tables and property graphs.
+   * At least one of `table_references` or `property_graph_references` must be
+   * populated.
    * </pre>
    *
    * Protobuf type {@code google.cloud.geminidataanalytics.v1beta.BigQueryTableReferences}
@@ -579,11 +583,11 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. References to BigQuery tables.
+     * Optional. References to BigQuery tables.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReference>
@@ -599,11 +603,11 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. References to BigQuery tables.
+     * Optional. References to BigQuery tables.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public int getTableReferencesCount() {
@@ -618,11 +622,11 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. References to BigQuery tables.
+     * Optional. References to BigQuery tables.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReference getTableReferences(
@@ -638,11 +642,11 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. References to BigQuery tables.
+     * Optional. References to BigQuery tables.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setTableReferences(
@@ -664,11 +668,11 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. References to BigQuery tables.
+     * Optional. References to BigQuery tables.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setTableReferences(
@@ -689,11 +693,11 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. References to BigQuery tables.
+     * Optional. References to BigQuery tables.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addTableReferences(
@@ -715,11 +719,11 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. References to BigQuery tables.
+     * Optional. References to BigQuery tables.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addTableReferences(
@@ -741,11 +745,11 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. References to BigQuery tables.
+     * Optional. References to BigQuery tables.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addTableReferences(
@@ -765,11 +769,11 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. References to BigQuery tables.
+     * Optional. References to BigQuery tables.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addTableReferences(
@@ -790,11 +794,11 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. References to BigQuery tables.
+     * Optional. References to BigQuery tables.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAllTableReferences(
@@ -815,11 +819,11 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. References to BigQuery tables.
+     * Optional. References to BigQuery tables.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearTableReferences() {
@@ -837,11 +841,11 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. References to BigQuery tables.
+     * Optional. References to BigQuery tables.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder removeTableReferences(int index) {
@@ -859,11 +863,11 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. References to BigQuery tables.
+     * Optional. References to BigQuery tables.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReference.Builder
@@ -875,11 +879,11 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. References to BigQuery tables.
+     * Optional. References to BigQuery tables.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReferenceOrBuilder
@@ -895,11 +899,11 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. References to BigQuery tables.
+     * Optional. References to BigQuery tables.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<
@@ -916,11 +920,11 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. References to BigQuery tables.
+     * Optional. References to BigQuery tables.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReference.Builder
@@ -935,11 +939,11 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. References to BigQuery tables.
+     * Optional. References to BigQuery tables.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReference.Builder
@@ -955,11 +959,11 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. References to BigQuery tables.
+     * Optional. References to BigQuery tables.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = REQUIRED];
+     * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference table_references = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<

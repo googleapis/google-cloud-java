@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,7 @@ public final class ImageImportOsAdaptationParameters extends com.google.protobuf
   private ImageImportOsAdaptationParameters() {
     licenseType_ = 0;
     bootConversion_ = 0;
+    adaptationModifiers_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -179,6 +180,99 @@ public final class ImageImportOsAdaptationParameters extends com.google.protobuf
     return result == null ? com.google.cloud.vmmigration.v1.BootConversion.UNRECOGNIZED : result;
   }
 
+  public static final int ADAPTATION_MODIFIERS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.vmmigration.v1.AdaptationModifier> adaptationModifiers_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Modifiers to be used as configuration of the OS adaptation
+   * process.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.vmmigration.v1.AdaptationModifier>
+      getAdaptationModifiersList() {
+    return adaptationModifiers_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Modifiers to be used as configuration of the OS adaptation
+   * process.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.vmmigration.v1.AdaptationModifierOrBuilder>
+      getAdaptationModifiersOrBuilderList() {
+    return adaptationModifiers_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Modifiers to be used as configuration of the OS adaptation
+   * process.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getAdaptationModifiersCount() {
+    return adaptationModifiers_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Modifiers to be used as configuration of the OS adaptation
+   * process.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.AdaptationModifier getAdaptationModifiers(int index) {
+    return adaptationModifiers_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Modifiers to be used as configuration of the OS adaptation
+   * process.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.AdaptationModifierOrBuilder
+      getAdaptationModifiersOrBuilder(int index) {
+    return adaptationModifiers_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -206,6 +300,9 @@ public final class ImageImportOsAdaptationParameters extends com.google.protobuf
         != com.google.cloud.vmmigration.v1.BootConversion.BOOT_CONVERSION_UNSPECIFIED.getNumber()) {
       output.writeEnum(3, bootConversion_);
     }
+    for (int i = 0; i < adaptationModifiers_.size(); i++) {
+      output.writeMessage(4, adaptationModifiers_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -228,6 +325,10 @@ public final class ImageImportOsAdaptationParameters extends com.google.protobuf
         != com.google.cloud.vmmigration.v1.BootConversion.BOOT_CONVERSION_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, bootConversion_);
     }
+    for (int i = 0; i < adaptationModifiers_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(4, adaptationModifiers_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -247,6 +348,7 @@ public final class ImageImportOsAdaptationParameters extends com.google.protobuf
     if (getGeneralize() != other.getGeneralize()) return false;
     if (licenseType_ != other.licenseType_) return false;
     if (bootConversion_ != other.bootConversion_) return false;
+    if (!getAdaptationModifiersList().equals(other.getAdaptationModifiersList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -264,6 +366,10 @@ public final class ImageImportOsAdaptationParameters extends com.google.protobuf
     hash = (53 * hash) + licenseType_;
     hash = (37 * hash) + BOOT_CONVERSION_FIELD_NUMBER;
     hash = (53 * hash) + bootConversion_;
+    if (getAdaptationModifiersCount() > 0) {
+      hash = (37 * hash) + ADAPTATION_MODIFIERS_FIELD_NUMBER;
+      hash = (53 * hash) + getAdaptationModifiersList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -410,6 +516,13 @@ public final class ImageImportOsAdaptationParameters extends com.google.protobuf
       generalize_ = false;
       licenseType_ = 0;
       bootConversion_ = 0;
+      if (adaptationModifiersBuilder_ == null) {
+        adaptationModifiers_ = java.util.Collections.emptyList();
+      } else {
+        adaptationModifiers_ = null;
+        adaptationModifiersBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -438,11 +551,25 @@ public final class ImageImportOsAdaptationParameters extends com.google.protobuf
     public com.google.cloud.vmmigration.v1.ImageImportOsAdaptationParameters buildPartial() {
       com.google.cloud.vmmigration.v1.ImageImportOsAdaptationParameters result =
           new com.google.cloud.vmmigration.v1.ImageImportOsAdaptationParameters(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.vmmigration.v1.ImageImportOsAdaptationParameters result) {
+      if (adaptationModifiersBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          adaptationModifiers_ = java.util.Collections.unmodifiableList(adaptationModifiers_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.adaptationModifiers_ = adaptationModifiers_;
+      } else {
+        result.adaptationModifiers_ = adaptationModifiersBuilder_.build();
+      }
     }
 
     private void buildPartial0(
@@ -516,6 +643,33 @@ public final class ImageImportOsAdaptationParameters extends com.google.protobuf
       if (other.bootConversion_ != 0) {
         setBootConversionValue(other.getBootConversionValue());
       }
+      if (adaptationModifiersBuilder_ == null) {
+        if (!other.adaptationModifiers_.isEmpty()) {
+          if (adaptationModifiers_.isEmpty()) {
+            adaptationModifiers_ = other.adaptationModifiers_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureAdaptationModifiersIsMutable();
+            adaptationModifiers_.addAll(other.adaptationModifiers_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.adaptationModifiers_.isEmpty()) {
+          if (adaptationModifiersBuilder_.isEmpty()) {
+            adaptationModifiersBuilder_.dispose();
+            adaptationModifiersBuilder_ = null;
+            adaptationModifiers_ = other.adaptationModifiers_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            adaptationModifiersBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getAdaptationModifiersFieldBuilder()
+                    : null;
+          } else {
+            adaptationModifiersBuilder_.addAllMessages(other.adaptationModifiers_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -560,6 +714,20 @@ public final class ImageImportOsAdaptationParameters extends com.google.protobuf
                 bitField0_ |= 0x00000004;
                 break;
               } // case 24
+            case 34:
+              {
+                com.google.cloud.vmmigration.v1.AdaptationModifier m =
+                    input.readMessage(
+                        com.google.cloud.vmmigration.v1.AdaptationModifier.parser(),
+                        extensionRegistry);
+                if (adaptationModifiersBuilder_ == null) {
+                  ensureAdaptationModifiersIsMutable();
+                  adaptationModifiers_.add(m);
+                } else {
+                  adaptationModifiersBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -872,6 +1040,441 @@ public final class ImageImportOsAdaptationParameters extends com.google.protobuf
       bootConversion_ = 0;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.vmmigration.v1.AdaptationModifier>
+        adaptationModifiers_ = java.util.Collections.emptyList();
+
+    private void ensureAdaptationModifiersIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        adaptationModifiers_ =
+            new java.util.ArrayList<com.google.cloud.vmmigration.v1.AdaptationModifier>(
+                adaptationModifiers_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.AdaptationModifier,
+            com.google.cloud.vmmigration.v1.AdaptationModifier.Builder,
+            com.google.cloud.vmmigration.v1.AdaptationModifierOrBuilder>
+        adaptationModifiersBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.vmmigration.v1.AdaptationModifier>
+        getAdaptationModifiersList() {
+      if (adaptationModifiersBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(adaptationModifiers_);
+      } else {
+        return adaptationModifiersBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getAdaptationModifiersCount() {
+      if (adaptationModifiersBuilder_ == null) {
+        return adaptationModifiers_.size();
+      } else {
+        return adaptationModifiersBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.AdaptationModifier getAdaptationModifiers(int index) {
+      if (adaptationModifiersBuilder_ == null) {
+        return adaptationModifiers_.get(index);
+      } else {
+        return adaptationModifiersBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAdaptationModifiers(
+        int index, com.google.cloud.vmmigration.v1.AdaptationModifier value) {
+      if (adaptationModifiersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAdaptationModifiersIsMutable();
+        adaptationModifiers_.set(index, value);
+        onChanged();
+      } else {
+        adaptationModifiersBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAdaptationModifiers(
+        int index, com.google.cloud.vmmigration.v1.AdaptationModifier.Builder builderForValue) {
+      if (adaptationModifiersBuilder_ == null) {
+        ensureAdaptationModifiersIsMutable();
+        adaptationModifiers_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        adaptationModifiersBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAdaptationModifiers(
+        com.google.cloud.vmmigration.v1.AdaptationModifier value) {
+      if (adaptationModifiersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAdaptationModifiersIsMutable();
+        adaptationModifiers_.add(value);
+        onChanged();
+      } else {
+        adaptationModifiersBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAdaptationModifiers(
+        int index, com.google.cloud.vmmigration.v1.AdaptationModifier value) {
+      if (adaptationModifiersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAdaptationModifiersIsMutable();
+        adaptationModifiers_.add(index, value);
+        onChanged();
+      } else {
+        adaptationModifiersBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAdaptationModifiers(
+        com.google.cloud.vmmigration.v1.AdaptationModifier.Builder builderForValue) {
+      if (adaptationModifiersBuilder_ == null) {
+        ensureAdaptationModifiersIsMutable();
+        adaptationModifiers_.add(builderForValue.build());
+        onChanged();
+      } else {
+        adaptationModifiersBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAdaptationModifiers(
+        int index, com.google.cloud.vmmigration.v1.AdaptationModifier.Builder builderForValue) {
+      if (adaptationModifiersBuilder_ == null) {
+        ensureAdaptationModifiersIsMutable();
+        adaptationModifiers_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        adaptationModifiersBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllAdaptationModifiers(
+        java.lang.Iterable<? extends com.google.cloud.vmmigration.v1.AdaptationModifier> values) {
+      if (adaptationModifiersBuilder_ == null) {
+        ensureAdaptationModifiersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, adaptationModifiers_);
+        onChanged();
+      } else {
+        adaptationModifiersBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAdaptationModifiers() {
+      if (adaptationModifiersBuilder_ == null) {
+        adaptationModifiers_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        adaptationModifiersBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeAdaptationModifiers(int index) {
+      if (adaptationModifiersBuilder_ == null) {
+        ensureAdaptationModifiersIsMutable();
+        adaptationModifiers_.remove(index);
+        onChanged();
+      } else {
+        adaptationModifiersBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.AdaptationModifier.Builder getAdaptationModifiersBuilder(
+        int index) {
+      return getAdaptationModifiersFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.AdaptationModifierOrBuilder
+        getAdaptationModifiersOrBuilder(int index) {
+      if (adaptationModifiersBuilder_ == null) {
+        return adaptationModifiers_.get(index);
+      } else {
+        return adaptationModifiersBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.vmmigration.v1.AdaptationModifierOrBuilder>
+        getAdaptationModifiersOrBuilderList() {
+      if (adaptationModifiersBuilder_ != null) {
+        return adaptationModifiersBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(adaptationModifiers_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.AdaptationModifier.Builder
+        addAdaptationModifiersBuilder() {
+      return getAdaptationModifiersFieldBuilder()
+          .addBuilder(com.google.cloud.vmmigration.v1.AdaptationModifier.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.AdaptationModifier.Builder addAdaptationModifiersBuilder(
+        int index) {
+      return getAdaptationModifiersFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.vmmigration.v1.AdaptationModifier.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Modifiers to be used as configuration of the OS adaptation
+     * process.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.vmmigration.v1.AdaptationModifier.Builder>
+        getAdaptationModifiersBuilderList() {
+      return getAdaptationModifiersFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.AdaptationModifier,
+            com.google.cloud.vmmigration.v1.AdaptationModifier.Builder,
+            com.google.cloud.vmmigration.v1.AdaptationModifierOrBuilder>
+        getAdaptationModifiersFieldBuilder() {
+      if (adaptationModifiersBuilder_ == null) {
+        adaptationModifiersBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.vmmigration.v1.AdaptationModifier,
+                com.google.cloud.vmmigration.v1.AdaptationModifier.Builder,
+                com.google.cloud.vmmigration.v1.AdaptationModifierOrBuilder>(
+                adaptationModifiers_,
+                ((bitField0_ & 0x00000008) != 0),
+                getParentForChildren(),
+                isClean());
+        adaptationModifiers_ = null;
+      }
+      return adaptationModifiersBuilder_;
     }
 
     @java.lang.Override

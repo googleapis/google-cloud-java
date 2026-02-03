@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,7 +106,9 @@ public interface ResourcePolicyInstanceSchedulePolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the time zone to be used in interpreting Schedule.schedule. The value of this field must be a time zone name from the tz database: https://wikipedia.org/wiki/Tz_database.
+   * Specifies the time zone to be used in interpreting Schedule.schedule.
+   * The value of this field must be a time zone name from the tz database:
+   * https://wikipedia.org/wiki/Tz_database.
    * </pre>
    *
    * <code>optional string time_zone = 36848094;</code>
@@ -119,7 +121,9 @@ public interface ResourcePolicyInstanceSchedulePolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the time zone to be used in interpreting Schedule.schedule. The value of this field must be a time zone name from the tz database: https://wikipedia.org/wiki/Tz_database.
+   * Specifies the time zone to be used in interpreting Schedule.schedule.
+   * The value of this field must be a time zone name from the tz database:
+   * https://wikipedia.org/wiki/Tz_database.
    * </pre>
    *
    * <code>optional string time_zone = 36848094;</code>
@@ -132,7 +136,9 @@ public interface ResourcePolicyInstanceSchedulePolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the time zone to be used in interpreting Schedule.schedule. The value of this field must be a time zone name from the tz database: https://wikipedia.org/wiki/Tz_database.
+   * Specifies the time zone to be used in interpreting Schedule.schedule.
+   * The value of this field must be a time zone name from the tz database:
+   * https://wikipedia.org/wiki/Tz_database.
    * </pre>
    *
    * <code>optional string time_zone = 36848094;</code>

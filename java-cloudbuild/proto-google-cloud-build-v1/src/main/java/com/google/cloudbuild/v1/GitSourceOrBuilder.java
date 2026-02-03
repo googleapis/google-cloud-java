@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,13 +28,13 @@ public interface GitSourceOrBuilder
    *
    *
    * <pre>
-   * Location of the Git repo to build.
+   * Required. Location of the Git repo to build.
    *
    * This will be used as a `git remote`, see
    * https://git-scm.com/docs/git-remote.
    * </pre>
    *
-   * <code>string url = 1;</code>
+   * <code>string url = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The url.
    */
@@ -44,13 +44,13 @@ public interface GitSourceOrBuilder
    *
    *
    * <pre>
-   * Location of the Git repo to build.
+   * Required. Location of the Git repo to build.
    *
    * This will be used as a `git remote`, see
    * https://git-scm.com/docs/git-remote.
    * </pre>
    *
-   * <code>string url = 1;</code>
+   * <code>string url = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for url.
    */
@@ -60,13 +60,14 @@ public interface GitSourceOrBuilder
    *
    *
    * <pre>
-   * Directory, relative to the source root, in which to run the build.
+   * Optional. Directory, relative to the source root, in which to run the
+   * build.
    *
    * This must be a relative path. If a step's `dir` is specified and is an
    * absolute path, this value is ignored for that step's execution.
    * </pre>
    *
-   * <code>string dir = 5;</code>
+   * <code>string dir = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The dir.
    */
@@ -76,13 +77,14 @@ public interface GitSourceOrBuilder
    *
    *
    * <pre>
-   * Directory, relative to the source root, in which to run the build.
+   * Optional. Directory, relative to the source root, in which to run the
+   * build.
    *
    * This must be a relative path. If a step's `dir` is specified and is an
    * absolute path, this value is ignored for that step's execution.
    * </pre>
    *
-   * <code>string dir = 5;</code>
+   * <code>string dir = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for dir.
    */
@@ -92,8 +94,8 @@ public interface GitSourceOrBuilder
    *
    *
    * <pre>
-   * The revision to fetch from the Git repository such as a branch, a tag, a
-   * commit SHA, or any Git ref.
+   * Optional. The revision to fetch from the Git repository such as a branch, a
+   * tag, a commit SHA, or any Git ref.
    *
    * Cloud Build uses `git fetch` to fetch the revision from the Git
    * repository; therefore make sure that the string you provide for `revision`
@@ -103,7 +105,7 @@ public interface GitSourceOrBuilder
    * information on `git fetch`, see https://git-scm.com/docs/git-fetch.
    * </pre>
    *
-   * <code>string revision = 6;</code>
+   * <code>string revision = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The revision.
    */
@@ -113,8 +115,8 @@ public interface GitSourceOrBuilder
    *
    *
    * <pre>
-   * The revision to fetch from the Git repository such as a branch, a tag, a
-   * commit SHA, or any Git ref.
+   * Optional. The revision to fetch from the Git repository such as a branch, a
+   * tag, a commit SHA, or any Git ref.
    *
    * Cloud Build uses `git fetch` to fetch the revision from the Git
    * repository; therefore make sure that the string you provide for `revision`
@@ -124,7 +126,7 @@ public interface GitSourceOrBuilder
    * information on `git fetch`, see https://git-scm.com/docs/git-fetch.
    * </pre>
    *
-   * <code>string revision = 6;</code>
+   * <code>string revision = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for revision.
    */

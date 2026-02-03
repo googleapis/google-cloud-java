@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -408,6 +408,103 @@ public final class BackupCollection extends com.google.protobuf.GeneratedMessage
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
+  public static final int TOTAL_BACKUP_SIZE_BYTES_FIELD_NUMBER = 8;
+  private long totalBackupSizeBytes_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Total size of all backups in the backup collection.
+   * </pre>
+   *
+   * <code>int64 total_backup_size_bytes = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The totalBackupSizeBytes.
+   */
+  @java.lang.Override
+  public long getTotalBackupSizeBytes() {
+    return totalBackupSizeBytes_;
+  }
+
+  public static final int TOTAL_BACKUP_COUNT_FIELD_NUMBER = 10;
+  private long totalBackupCount_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Total number of backups in the backup collection.
+   * </pre>
+   *
+   * <code>int64 total_backup_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The totalBackupCount.
+   */
+  @java.lang.Override
+  public long getTotalBackupCount() {
+    return totalBackupCount_;
+  }
+
+  public static final int LAST_BACKUP_TIME_FIELD_NUMBER = 11;
+  private com.google.protobuf.Timestamp lastBackupTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The last time a backup was created in the backup collection.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp last_backup_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the lastBackupTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasLastBackupTime() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The last time a backup was created in the backup collection.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp last_backup_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The lastBackupTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getLastBackupTime() {
+    return lastBackupTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastBackupTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The last time a backup was created in the backup collection.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp last_backup_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getLastBackupTimeOrBuilder() {
+    return lastBackupTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastBackupTime_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -440,6 +537,15 @@ public final class BackupCollection extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(7, getCreateTime());
     }
+    if (totalBackupSizeBytes_ != 0L) {
+      output.writeInt64(8, totalBackupSizeBytes_);
+    }
+    if (totalBackupCount_ != 0L) {
+      output.writeInt64(10, totalBackupCount_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(11, getLastBackupTime());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -467,6 +573,15 @@ public final class BackupCollection extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getCreateTime());
     }
+    if (totalBackupSizeBytes_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(8, totalBackupSizeBytes_);
+    }
+    if (totalBackupCount_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(10, totalBackupCount_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getLastBackupTime());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -492,6 +607,12 @@ public final class BackupCollection extends com.google.protobuf.GeneratedMessage
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
+    if (getTotalBackupSizeBytes() != other.getTotalBackupSizeBytes()) return false;
+    if (getTotalBackupCount() != other.getTotalBackupCount()) return false;
+    if (hasLastBackupTime() != other.hasLastBackupTime()) return false;
+    if (hasLastBackupTime()) {
+      if (!getLastBackupTime().equals(other.getLastBackupTime())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -516,6 +637,14 @@ public final class BackupCollection extends com.google.protobuf.GeneratedMessage
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
+    }
+    hash = (37 * hash) + TOTAL_BACKUP_SIZE_BYTES_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTotalBackupSizeBytes());
+    hash = (37 * hash) + TOTAL_BACKUP_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTotalBackupCount());
+    if (hasLastBackupTime()) {
+      hash = (37 * hash) + LAST_BACKUP_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getLastBackupTime().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -659,6 +788,7 @@ public final class BackupCollection extends com.google.protobuf.GeneratedMessage
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCreateTimeFieldBuilder();
+        getLastBackupTimeFieldBuilder();
       }
     }
 
@@ -675,6 +805,13 @@ public final class BackupCollection extends com.google.protobuf.GeneratedMessage
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
+      }
+      totalBackupSizeBytes_ = 0L;
+      totalBackupCount_ = 0L;
+      lastBackupTime_ = null;
+      if (lastBackupTimeBuilder_ != null) {
+        lastBackupTimeBuilder_.dispose();
+        lastBackupTimeBuilder_ = null;
       }
       return this;
     }
@@ -731,6 +868,17 @@ public final class BackupCollection extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.totalBackupSizeBytes_ = totalBackupSizeBytes_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.totalBackupCount_ = totalBackupCount_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.lastBackupTime_ =
+            lastBackupTimeBuilder_ == null ? lastBackupTime_ : lastBackupTimeBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -809,6 +957,15 @@ public final class BackupCollection extends com.google.protobuf.GeneratedMessage
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
+      if (other.getTotalBackupSizeBytes() != 0L) {
+        setTotalBackupSizeBytes(other.getTotalBackupSizeBytes());
+      }
+      if (other.getTotalBackupCount() != 0L) {
+        setTotalBackupCount(other.getTotalBackupCount());
+      }
+      if (other.hasLastBackupTime()) {
+        mergeLastBackupTime(other.getLastBackupTime());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -871,6 +1028,24 @@ public final class BackupCollection extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000020;
                 break;
               } // case 58
+            case 64:
+              {
+                totalBackupSizeBytes_ = input.readInt64();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 64
+            case 80:
+              {
+                totalBackupCount_ = input.readInt64();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 80
+            case 90:
+              {
+                input.readMessage(getLastBackupTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1710,6 +1885,330 @@ public final class BackupCollection extends com.google.protobuf.GeneratedMessage
         createTime_ = null;
       }
       return createTimeBuilder_;
+    }
+
+    private long totalBackupSizeBytes_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total size of all backups in the backup collection.
+     * </pre>
+     *
+     * <code>int64 total_backup_size_bytes = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The totalBackupSizeBytes.
+     */
+    @java.lang.Override
+    public long getTotalBackupSizeBytes() {
+      return totalBackupSizeBytes_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total size of all backups in the backup collection.
+     * </pre>
+     *
+     * <code>int64 total_backup_size_bytes = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The totalBackupSizeBytes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotalBackupSizeBytes(long value) {
+
+      totalBackupSizeBytes_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total size of all backups in the backup collection.
+     * </pre>
+     *
+     * <code>int64 total_backup_size_bytes = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTotalBackupSizeBytes() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      totalBackupSizeBytes_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long totalBackupCount_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total number of backups in the backup collection.
+     * </pre>
+     *
+     * <code>int64 total_backup_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The totalBackupCount.
+     */
+    @java.lang.Override
+    public long getTotalBackupCount() {
+      return totalBackupCount_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total number of backups in the backup collection.
+     * </pre>
+     *
+     * <code>int64 total_backup_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The totalBackupCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotalBackupCount(long value) {
+
+      totalBackupCount_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total number of backups in the backup collection.
+     * </pre>
+     *
+     * <code>int64 total_backup_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTotalBackupCount() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      totalBackupCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Timestamp lastBackupTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        lastBackupTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last time a backup was created in the backup collection.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_backup_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the lastBackupTime field is set.
+     */
+    public boolean hasLastBackupTime() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last time a backup was created in the backup collection.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_backup_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The lastBackupTime.
+     */
+    public com.google.protobuf.Timestamp getLastBackupTime() {
+      if (lastBackupTimeBuilder_ == null) {
+        return lastBackupTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastBackupTime_;
+      } else {
+        return lastBackupTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last time a backup was created in the backup collection.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_backup_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setLastBackupTime(com.google.protobuf.Timestamp value) {
+      if (lastBackupTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        lastBackupTime_ = value;
+      } else {
+        lastBackupTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last time a backup was created in the backup collection.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_backup_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setLastBackupTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (lastBackupTimeBuilder_ == null) {
+        lastBackupTime_ = builderForValue.build();
+      } else {
+        lastBackupTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last time a backup was created in the backup collection.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_backup_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeLastBackupTime(com.google.protobuf.Timestamp value) {
+      if (lastBackupTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && lastBackupTime_ != null
+            && lastBackupTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastBackupTimeBuilder().mergeFrom(value);
+        } else {
+          lastBackupTime_ = value;
+        }
+      } else {
+        lastBackupTimeBuilder_.mergeFrom(value);
+      }
+      if (lastBackupTime_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last time a backup was created in the backup collection.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_backup_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearLastBackupTime() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      lastBackupTime_ = null;
+      if (lastBackupTimeBuilder_ != null) {
+        lastBackupTimeBuilder_.dispose();
+        lastBackupTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last time a backup was created in the backup collection.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_backup_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getLastBackupTimeBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getLastBackupTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last time a backup was created in the backup collection.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_backup_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getLastBackupTimeOrBuilder() {
+      if (lastBackupTimeBuilder_ != null) {
+        return lastBackupTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return lastBackupTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastBackupTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last time a backup was created in the backup collection.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_backup_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getLastBackupTimeFieldBuilder() {
+      if (lastBackupTimeBuilder_ == null) {
+        lastBackupTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getLastBackupTime(), getParentForChildren(), isClean());
+        lastBackupTime_ = null;
+      }
+      return lastBackupTimeBuilder_;
     }
 
     @java.lang.Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -5768,6 +5768,725 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public interface RagManagedVertexVectorSearchOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the Vector Search 2.0 Collection that
+     * RAG Created for the corpus. Only populated after the corpus is
+     * successfully created. Format:
+     * `projects/{project}/locations/{location}/collections/{collection_id}`
+     * </pre>
+     *
+     * <code>string collection_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The collectionName.
+     */
+    java.lang.String getCollectionName();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the Vector Search 2.0 Collection that
+     * RAG Created for the corpus. Only populated after the corpus is
+     * successfully created. Format:
+     * `projects/{project}/locations/{location}/collections/{collection_id}`
+     * </pre>
+     *
+     * <code>string collection_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for collectionName.
+     */
+    com.google.protobuf.ByteString getCollectionNameBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The config for the RAG-managed Vertex Vector Search 2.0.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch}
+   */
+  public static final class RagManagedVertexVectorSearch
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch)
+      RagManagedVertexVectorSearchOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use RagManagedVertexVectorSearch.newBuilder() to construct.
+    private RagManagedVertexVectorSearch(
+        com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private RagManagedVertexVectorSearch() {
+      collectionName_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new RagManagedVertexVectorSearch();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+          .internal_static_google_cloud_aiplatform_v1beta1_RagVectorDbConfig_RagManagedVertexVectorSearch_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+          .internal_static_google_cloud_aiplatform_v1beta1_RagVectorDbConfig_RagManagedVertexVectorSearch_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+                  .class,
+              com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+                  .Builder.class);
+    }
+
+    public static final int COLLECTION_NAME_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object collectionName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the Vector Search 2.0 Collection that
+     * RAG Created for the corpus. Only populated after the corpus is
+     * successfully created. Format:
+     * `projects/{project}/locations/{location}/collections/{collection_id}`
+     * </pre>
+     *
+     * <code>string collection_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The collectionName.
+     */
+    @java.lang.Override
+    public java.lang.String getCollectionName() {
+      java.lang.Object ref = collectionName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        collectionName_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the Vector Search 2.0 Collection that
+     * RAG Created for the corpus. Only populated after the corpus is
+     * successfully created. Format:
+     * `projects/{project}/locations/{location}/collections/{collection_id}`
+     * </pre>
+     *
+     * <code>string collection_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for collectionName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getCollectionNameBytes() {
+      java.lang.Object ref = collectionName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        collectionName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(collectionName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, collectionName_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(collectionName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, collectionName_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch other =
+          (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch) obj;
+
+      if (!getCollectionName().equals(other.getCollectionName())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + COLLECTION_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getCollectionName().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The config for the RAG-managed Vertex Vector Search 2.0.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch)
+        com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig
+            .RagManagedVertexVectorSearchOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+            .internal_static_google_cloud_aiplatform_v1beta1_RagVectorDbConfig_RagManagedVertexVectorSearch_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+            .internal_static_google_cloud_aiplatform_v1beta1_RagVectorDbConfig_RagManagedVertexVectorSearch_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+                    .class,
+                com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        collectionName_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+            .internal_static_google_cloud_aiplatform_v1beta1_RagVectorDbConfig_RagManagedVertexVectorSearch_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+          build() {
+        com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+          buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch result =
+            new com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch(
+                this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.collectionName_ = collectionName_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+              other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+                .getDefaultInstance()) return this;
+        if (!other.getCollectionName().isEmpty()) {
+          collectionName_ = other.collectionName_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  collectionName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object collectionName_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The resource name of the Vector Search 2.0 Collection that
+       * RAG Created for the corpus. Only populated after the corpus is
+       * successfully created. Format:
+       * `projects/{project}/locations/{location}/collections/{collection_id}`
+       * </pre>
+       *
+       * <code>string collection_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The collectionName.
+       */
+      public java.lang.String getCollectionName() {
+        java.lang.Object ref = collectionName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          collectionName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The resource name of the Vector Search 2.0 Collection that
+       * RAG Created for the corpus. Only populated after the corpus is
+       * successfully created. Format:
+       * `projects/{project}/locations/{location}/collections/{collection_id}`
+       * </pre>
+       *
+       * <code>string collection_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for collectionName.
+       */
+      public com.google.protobuf.ByteString getCollectionNameBytes() {
+        java.lang.Object ref = collectionName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          collectionName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The resource name of the Vector Search 2.0 Collection that
+       * RAG Created for the corpus. Only populated after the corpus is
+       * successfully created. Format:
+       * `projects/{project}/locations/{location}/collections/{collection_id}`
+       * </pre>
+       *
+       * <code>string collection_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The collectionName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCollectionName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        collectionName_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The resource name of the Vector Search 2.0 Collection that
+       * RAG Created for the corpus. Only populated after the corpus is
+       * successfully created. Format:
+       * `projects/{project}/locations/{location}/collections/{collection_id}`
+       * </pre>
+       *
+       * <code>string collection_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCollectionName() {
+        collectionName_ = getDefaultInstance().getCollectionName();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The resource name of the Vector Search 2.0 Collection that
+       * RAG Created for the corpus. Only populated after the corpus is
+       * successfully created. Format:
+       * `projects/{project}/locations/{location}/collections/{collection_id}`
+       * </pre>
+       *
+       * <code>string collection_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for collectionName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCollectionNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        collectionName_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch)
+    private static final com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig
+            .RagManagedVertexVectorSearch
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RagManagedVertexVectorSearch> PARSER =
+        new com.google.protobuf.AbstractParser<RagManagedVertexVectorSearch>() {
+          @java.lang.Override
+          public RagManagedVertexVectorSearch parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<RagManagedVertexVectorSearch> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RagManagedVertexVectorSearch> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int vectorDbCase_ = 0;
 
@@ -5783,6 +6502,7 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
     PINECONE(3),
     VERTEX_FEATURE_STORE(4),
     VERTEX_VECTOR_SEARCH(6),
+    RAG_MANAGED_VERTEX_VECTOR_SEARCH(8),
     VECTORDB_NOT_SET(0);
     private final int value;
 
@@ -5812,6 +6532,8 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
           return VERTEX_FEATURE_STORE;
         case 6:
           return VERTEX_VECTOR_SEARCH;
+        case 8:
+          return RAG_MANAGED_VERTEX_VECTOR_SEARCH;
         case 0:
           return VECTORDB_NOT_SET;
         default:
@@ -6124,6 +6846,72 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         .getDefaultInstance();
   }
 
+  public static final int RAG_MANAGED_VERTEX_VECTOR_SEARCH_FIELD_NUMBER = 8;
+
+  /**
+   *
+   *
+   * <pre>
+   * The config for the RAG-managed Vertex Vector Search 2.0.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch rag_managed_vertex_vector_search = 8;
+   * </code>
+   *
+   * @return Whether the ragManagedVertexVectorSearch field is set.
+   */
+  @java.lang.Override
+  public boolean hasRagManagedVertexVectorSearch() {
+    return vectorDbCase_ == 8;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The config for the RAG-managed Vertex Vector Search 2.0.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch rag_managed_vertex_vector_search = 8;
+   * </code>
+   *
+   * @return The ragManagedVertexVectorSearch.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+      getRagManagedVertexVectorSearch() {
+    if (vectorDbCase_ == 8) {
+      return (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch)
+          vectorDb_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+        .getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The config for the RAG-managed Vertex Vector Search 2.0.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch rag_managed_vertex_vector_search = 8;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearchOrBuilder
+      getRagManagedVertexVectorSearchOrBuilder() {
+    if (vectorDbCase_ == 8) {
+      return (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch)
+          vectorDb_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+        .getDefaultInstance();
+  }
+
   public static final int API_AUTH_FIELD_NUMBER = 5;
   private com.google.cloud.aiplatform.v1beta1.ApiAuth apiAuth_;
 
@@ -6277,6 +7065,12 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(7, getRagEmbeddingModelConfig());
     }
+    if (vectorDbCase_ == 8) {
+      output.writeMessage(
+          8,
+          (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch)
+              vectorDb_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -6320,6 +7114,13 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(7, getRagEmbeddingModelConfig());
     }
+    if (vectorDbCase_ == 8) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8,
+              (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch)
+                  vectorDb_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -6360,6 +7161,10 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         break;
       case 6:
         if (!getVertexVectorSearch().equals(other.getVertexVectorSearch())) return false;
+        break;
+      case 8:
+        if (!getRagManagedVertexVectorSearch().equals(other.getRagManagedVertexVectorSearch()))
+          return false;
         break;
       case 0:
       default:
@@ -6403,6 +7208,10 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       case 6:
         hash = (37 * hash) + VERTEX_VECTOR_SEARCH_FIELD_NUMBER;
         hash = (53 * hash) + getVertexVectorSearch().hashCode();
+        break;
+      case 8:
+        hash = (37 * hash) + RAG_MANAGED_VERTEX_VECTOR_SEARCH_FIELD_NUMBER;
+        hash = (53 * hash) + getRagManagedVertexVectorSearch().hashCode();
         break;
       case 0:
       default:
@@ -6573,6 +7382,9 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       if (vertexVectorSearchBuilder_ != null) {
         vertexVectorSearchBuilder_.clear();
       }
+      if (ragManagedVertexVectorSearchBuilder_ != null) {
+        ragManagedVertexVectorSearchBuilder_.clear();
+      }
       apiAuth_ = null;
       if (apiAuthBuilder_ != null) {
         apiAuthBuilder_.dispose();
@@ -6623,11 +7435,11 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.apiAuth_ = apiAuthBuilder_ == null ? apiAuth_ : apiAuthBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.ragEmbeddingModelConfig_ =
             ragEmbeddingModelConfigBuilder_ == null
                 ? ragEmbeddingModelConfig_
@@ -6654,6 +7466,9 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       }
       if (vectorDbCase_ == 6 && vertexVectorSearchBuilder_ != null) {
         result.vectorDb_ = vertexVectorSearchBuilder_.build();
+      }
+      if (vectorDbCase_ == 8 && ragManagedVertexVectorSearchBuilder_ != null) {
+        result.vectorDb_ = ragManagedVertexVectorSearchBuilder_.build();
       }
     }
 
@@ -6735,6 +7550,11 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
             mergeVertexVectorSearch(other.getVertexVectorSearch());
             break;
           }
+        case RAG_MANAGED_VERTEX_VECTOR_SEARCH:
+          {
+            mergeRagManagedVertexVectorSearch(other.getRagManagedVertexVectorSearch());
+            break;
+          }
         case VECTORDB_NOT_SET:
           {
             break;
@@ -6794,7 +7614,7 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
             case 42:
               {
                 input.readMessage(getApiAuthFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 42
             case 50:
@@ -6808,9 +7628,16 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
               {
                 input.readMessage(
                     getRagEmbeddingModelConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
+            case 66:
+              {
+                input.readMessage(
+                    getRagManagedVertexVectorSearchFieldBuilder().getBuilder(), extensionRegistry);
+                vectorDbCase_ = 8;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8040,6 +8867,271 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       return vertexVectorSearchBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch,
+            com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+                .Builder,
+            com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig
+                .RagManagedVertexVectorSearchOrBuilder>
+        ragManagedVertexVectorSearchBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The config for the RAG-managed Vertex Vector Search 2.0.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch rag_managed_vertex_vector_search = 8;
+     * </code>
+     *
+     * @return Whether the ragManagedVertexVectorSearch field is set.
+     */
+    @java.lang.Override
+    public boolean hasRagManagedVertexVectorSearch() {
+      return vectorDbCase_ == 8;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The config for the RAG-managed Vertex Vector Search 2.0.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch rag_managed_vertex_vector_search = 8;
+     * </code>
+     *
+     * @return The ragManagedVertexVectorSearch.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+        getRagManagedVertexVectorSearch() {
+      if (ragManagedVertexVectorSearchBuilder_ == null) {
+        if (vectorDbCase_ == 8) {
+          return (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig
+                  .RagManagedVertexVectorSearch)
+              vectorDb_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+            .getDefaultInstance();
+      } else {
+        if (vectorDbCase_ == 8) {
+          return ragManagedVertexVectorSearchBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The config for the RAG-managed Vertex Vector Search 2.0.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch rag_managed_vertex_vector_search = 8;
+     * </code>
+     */
+    public Builder setRagManagedVertexVectorSearch(
+        com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch value) {
+      if (ragManagedVertexVectorSearchBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        vectorDb_ = value;
+        onChanged();
+      } else {
+        ragManagedVertexVectorSearchBuilder_.setMessage(value);
+      }
+      vectorDbCase_ = 8;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The config for the RAG-managed Vertex Vector Search 2.0.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch rag_managed_vertex_vector_search = 8;
+     * </code>
+     */
+    public Builder setRagManagedVertexVectorSearch(
+        com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch.Builder
+            builderForValue) {
+      if (ragManagedVertexVectorSearchBuilder_ == null) {
+        vectorDb_ = builderForValue.build();
+        onChanged();
+      } else {
+        ragManagedVertexVectorSearchBuilder_.setMessage(builderForValue.build());
+      }
+      vectorDbCase_ = 8;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The config for the RAG-managed Vertex Vector Search 2.0.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch rag_managed_vertex_vector_search = 8;
+     * </code>
+     */
+    public Builder mergeRagManagedVertexVectorSearch(
+        com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch value) {
+      if (ragManagedVertexVectorSearchBuilder_ == null) {
+        if (vectorDbCase_ == 8
+            && vectorDb_
+                != com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig
+                    .RagManagedVertexVectorSearch.getDefaultInstance()) {
+          vectorDb_ =
+              com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+                  .newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig
+                              .RagManagedVertexVectorSearch)
+                          vectorDb_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          vectorDb_ = value;
+        }
+        onChanged();
+      } else {
+        if (vectorDbCase_ == 8) {
+          ragManagedVertexVectorSearchBuilder_.mergeFrom(value);
+        } else {
+          ragManagedVertexVectorSearchBuilder_.setMessage(value);
+        }
+      }
+      vectorDbCase_ = 8;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The config for the RAG-managed Vertex Vector Search 2.0.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch rag_managed_vertex_vector_search = 8;
+     * </code>
+     */
+    public Builder clearRagManagedVertexVectorSearch() {
+      if (ragManagedVertexVectorSearchBuilder_ == null) {
+        if (vectorDbCase_ == 8) {
+          vectorDbCase_ = 0;
+          vectorDb_ = null;
+          onChanged();
+        }
+      } else {
+        if (vectorDbCase_ == 8) {
+          vectorDbCase_ = 0;
+          vectorDb_ = null;
+        }
+        ragManagedVertexVectorSearchBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The config for the RAG-managed Vertex Vector Search 2.0.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch rag_managed_vertex_vector_search = 8;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+            .Builder
+        getRagManagedVertexVectorSearchBuilder() {
+      return getRagManagedVertexVectorSearchFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The config for the RAG-managed Vertex Vector Search 2.0.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch rag_managed_vertex_vector_search = 8;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig
+            .RagManagedVertexVectorSearchOrBuilder
+        getRagManagedVertexVectorSearchOrBuilder() {
+      if ((vectorDbCase_ == 8) && (ragManagedVertexVectorSearchBuilder_ != null)) {
+        return ragManagedVertexVectorSearchBuilder_.getMessageOrBuilder();
+      } else {
+        if (vectorDbCase_ == 8) {
+          return (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig
+                  .RagManagedVertexVectorSearch)
+              vectorDb_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The config for the RAG-managed Vertex Vector Search 2.0.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch rag_managed_vertex_vector_search = 8;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch,
+            com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+                .Builder,
+            com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig
+                .RagManagedVertexVectorSearchOrBuilder>
+        getRagManagedVertexVectorSearchFieldBuilder() {
+      if (ragManagedVertexVectorSearchBuilder_ == null) {
+        if (!(vectorDbCase_ == 8)) {
+          vectorDb_ =
+              com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+                  .getDefaultInstance();
+        }
+        ragManagedVertexVectorSearchBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch,
+                com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+                    .Builder,
+                com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig
+                    .RagManagedVertexVectorSearchOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch)
+                    vectorDb_,
+                getParentForChildren(),
+                isClean());
+        vectorDb_ = null;
+      }
+      vectorDbCase_ = 8;
+      onChanged();
+      return ragManagedVertexVectorSearchBuilder_;
+    }
+
     private com.google.cloud.aiplatform.v1beta1.ApiAuth apiAuth_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.ApiAuth,
@@ -8059,7 +9151,7 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the apiAuth field is set.
      */
     public boolean hasApiAuth() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -8101,7 +9193,7 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       } else {
         apiAuthBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -8121,7 +9213,7 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       } else {
         apiAuthBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -8137,7 +9229,7 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeApiAuth(com.google.cloud.aiplatform.v1beta1.ApiAuth value) {
       if (apiAuthBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && apiAuth_ != null
             && apiAuth_ != com.google.cloud.aiplatform.v1beta1.ApiAuth.getDefaultInstance()) {
           getApiAuthBuilder().mergeFrom(value);
@@ -8148,7 +9240,7 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         apiAuthBuilder_.mergeFrom(value);
       }
       if (apiAuth_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -8164,7 +9256,7 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.aiplatform.v1beta1.ApiAuth api_auth = 5;</code>
      */
     public Builder clearApiAuth() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       apiAuth_ = null;
       if (apiAuthBuilder_ != null) {
         apiAuthBuilder_.dispose();
@@ -8184,7 +9276,7 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.aiplatform.v1beta1.ApiAuth api_auth = 5;</code>
      */
     public com.google.cloud.aiplatform.v1beta1.ApiAuth.Builder getApiAuthBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getApiAuthFieldBuilder().getBuilder();
     }
@@ -8255,7 +9347,7 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the ragEmbeddingModelConfig field is set.
      */
     public boolean hasRagEmbeddingModelConfig() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -8303,7 +9395,7 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       } else {
         ragEmbeddingModelConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -8326,7 +9418,7 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
       } else {
         ragEmbeddingModelConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -8345,7 +9437,7 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
     public Builder mergeRagEmbeddingModelConfig(
         com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig value) {
       if (ragEmbeddingModelConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && ragEmbeddingModelConfig_ != null
             && ragEmbeddingModelConfig_
                 != com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
@@ -8358,7 +9450,7 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
         ragEmbeddingModelConfigBuilder_.mergeFrom(value);
       }
       if (ragEmbeddingModelConfig_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -8376,7 +9468,7 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearRagEmbeddingModelConfig() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       ragEmbeddingModelConfig_ = null;
       if (ragEmbeddingModelConfigBuilder_ != null) {
         ragEmbeddingModelConfigBuilder_.dispose();
@@ -8399,7 +9491,7 @@ public final class RagVectorDbConfig extends com.google.protobuf.GeneratedMessag
      */
     public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.Builder
         getRagEmbeddingModelConfigBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getRagEmbeddingModelConfigFieldBuilder().getBuilder();
     }

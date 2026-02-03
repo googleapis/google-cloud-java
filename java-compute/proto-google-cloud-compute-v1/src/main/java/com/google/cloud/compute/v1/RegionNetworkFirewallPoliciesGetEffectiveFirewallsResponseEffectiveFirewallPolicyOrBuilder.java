@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    *
    *
    * <pre>
-   * [Output Only] The display name of the firewall policy.
+   * Output only. [Output Only] The display name of the firewall policy.
    * </pre>
    *
    * <code>optional string display_name = 4473832;</code>
@@ -42,7 +42,7 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    *
    *
    * <pre>
-   * [Output Only] The display name of the firewall policy.
+   * Output only. [Output Only] The display name of the firewall policy.
    * </pre>
    *
    * <code>optional string display_name = 4473832;</code>
@@ -55,7 +55,7 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    *
    *
    * <pre>
-   * [Output Only] The display name of the firewall policy.
+   * Output only. [Output Only] The display name of the firewall policy.
    * </pre>
    *
    * <code>optional string display_name = 4473832;</code>
@@ -68,7 +68,7 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    *
    *
    * <pre>
-   * [Output Only] The name of the firewall policy.
+   * Output only. [Output Only] The name of the firewall policy.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -81,7 +81,7 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    *
    *
    * <pre>
-   * [Output Only] The name of the firewall policy.
+   * Output only. [Output Only] The name of the firewall policy.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -94,7 +94,7 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    *
    *
    * <pre>
-   * [Output Only] The name of the firewall policy.
+   * Output only. [Output Only] The name of the firewall policy.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -107,7 +107,7 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    *
    *
    * <pre>
-   * [Output only] The packet mirroring rules that apply to the network.
+   * Output only. [Output only] The packet mirroring rules that apply to the network.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
@@ -119,7 +119,7 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    *
    *
    * <pre>
-   * [Output only] The packet mirroring rules that apply to the network.
+   * Output only. [Output only] The packet mirroring rules that apply to the network.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
@@ -131,7 +131,7 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    *
    *
    * <pre>
-   * [Output only] The packet mirroring rules that apply to the network.
+   * Output only. [Output only] The packet mirroring rules that apply to the network.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
@@ -143,7 +143,7 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    *
    *
    * <pre>
-   * [Output only] The packet mirroring rules that apply to the network.
+   * Output only. [Output only] The packet mirroring rules that apply to the network.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
@@ -156,7 +156,7 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    *
    *
    * <pre>
-   * [Output only] The packet mirroring rules that apply to the network.
+   * Output only. [Output only] The packet mirroring rules that apply to the network.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
@@ -169,7 +169,8 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    *
    *
    * <pre>
-   * [Output only] Priority of firewall policy association. Not applicable for type=HIERARCHY.
+   * Output only. [Output only] Priority of firewall policy association. Not applicable for
+   * type=HIERARCHY.
    * </pre>
    *
    * <code>optional int32 priority = 445151652;</code>
@@ -182,7 +183,8 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    *
    *
    * <pre>
-   * [Output only] Priority of firewall policy association. Not applicable for type=HIERARCHY.
+   * Output only. [Output only] Priority of firewall policy association. Not applicable for
+   * type=HIERARCHY.
    * </pre>
    *
    * <code>optional int32 priority = 445151652;</code>
@@ -195,7 +197,7 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    *
    *
    * <pre>
-   * [Output only] The rules that apply to the network.
+   * Output only. [Output only] The rules that apply to the network.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -206,7 +208,7 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    *
    *
    * <pre>
-   * [Output only] The rules that apply to the network.
+   * Output only. [Output only] The rules that apply to the network.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -217,7 +219,7 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    *
    *
    * <pre>
-   * [Output only] The rules that apply to the network.
+   * Output only. [Output only] The rules that apply to the network.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -228,7 +230,7 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    *
    *
    * <pre>
-   * [Output only] The rules that apply to the network.
+   * Output only. [Output only] The rules that apply to the network.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -240,7 +242,7 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    *
    *
    * <pre>
-   * [Output only] The rules that apply to the network.
+   * Output only. [Output only] The rules that apply to the network.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -251,7 +253,8 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    *
    *
    * <pre>
-   * [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
+   * Output only. [Output Only] The type of the firewall policy. Can be one of HIERARCHY,
+   * NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -265,7 +268,8 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    *
    *
    * <pre>
-   * [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
+   * Output only. [Output Only] The type of the firewall policy. Can be one of HIERARCHY,
+   * NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -279,7 +283,8 @@ interface RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEffectiveFir
    *
    *
    * <pre>
-   * [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
+   * Output only. [Output Only] The type of the firewall policy. Can be one of HIERARCHY,
+   * NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
    * Check the Type enum for the list of possible values.
    * </pre>
    *

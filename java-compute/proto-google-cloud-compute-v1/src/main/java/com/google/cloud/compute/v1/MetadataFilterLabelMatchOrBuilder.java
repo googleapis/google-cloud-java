@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,10 @@ public interface MetadataFilterLabelMatchOrBuilder
    *
    *
    * <pre>
-   * Name of metadata label. The name can have a maximum length of 1024 characters and must be at least 1 character long.
+   * Name of metadata label.
+   *
+   *  The name can have a maximum length of 1024 characters and must be at
+   * least 1 character long.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -41,7 +44,10 @@ public interface MetadataFilterLabelMatchOrBuilder
    *
    *
    * <pre>
-   * Name of metadata label. The name can have a maximum length of 1024 characters and must be at least 1 character long.
+   * Name of metadata label.
+   *
+   *  The name can have a maximum length of 1024 characters and must be at
+   * least 1 character long.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -54,7 +60,10 @@ public interface MetadataFilterLabelMatchOrBuilder
    *
    *
    * <pre>
-   * Name of metadata label. The name can have a maximum length of 1024 characters and must be at least 1 character long.
+   * Name of metadata label.
+   *
+   *  The name can have a maximum length of 1024 characters and must be at
+   * least 1 character long.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -67,7 +76,9 @@ public interface MetadataFilterLabelMatchOrBuilder
    *
    *
    * <pre>
-   * The value of the label must match the specified value. value can have a maximum length of 1024 characters.
+   * The value of the label must match the specified value.
+   *
+   * value can have a maximum length of 1024 characters.
    * </pre>
    *
    * <code>optional string value = 111972721;</code>
@@ -80,7 +91,9 @@ public interface MetadataFilterLabelMatchOrBuilder
    *
    *
    * <pre>
-   * The value of the label must match the specified value. value can have a maximum length of 1024 characters.
+   * The value of the label must match the specified value.
+   *
+   * value can have a maximum length of 1024 characters.
    * </pre>
    *
    * <code>optional string value = 111972721;</code>
@@ -93,7 +106,9 @@ public interface MetadataFilterLabelMatchOrBuilder
    *
    *
    * <pre>
-   * The value of the label must match the specified value. value can have a maximum length of 1024 characters.
+   * The value of the label must match the specified value.
+   *
+   * value can have a maximum length of 1024 characters.
    * </pre>
    *
    * <code>optional string value = 111972721;</code>

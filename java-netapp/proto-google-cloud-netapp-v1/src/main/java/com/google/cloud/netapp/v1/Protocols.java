@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,6 +69,16 @@ public enum Protocols implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SMB = 3;</code>
    */
   SMB(3),
+  /**
+   *
+   *
+   * <pre>
+   * ISCSI protocol
+   * </pre>
+   *
+   * <code>ISCSI = 4;</code>
+   */
+  ISCSI(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -116,6 +126,17 @@ public enum Protocols implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int SMB_VALUE = 3;
 
+  /**
+   *
+   *
+   * <pre>
+   * ISCSI protocol
+   * </pre>
+   *
+   * <code>ISCSI = 4;</code>
+   */
+  public static final int ISCSI_VALUE = 4;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -148,6 +169,8 @@ public enum Protocols implements com.google.protobuf.ProtocolMessageEnum {
         return NFSV4;
       case 3:
         return SMB;
+      case 4:
+        return ISCSI;
       default:
         return null;
     }

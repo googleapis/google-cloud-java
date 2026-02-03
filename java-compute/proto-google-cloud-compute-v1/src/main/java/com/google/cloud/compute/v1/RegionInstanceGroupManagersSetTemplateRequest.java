@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,7 +76,8 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
    *
    *
    * <pre>
-   * URL of the InstanceTemplate resource from which all new instances will be created.
+   * URL of the InstanceTemplate resource from which all new instances will be
+   * created.
    * </pre>
    *
    * <code>optional string instance_template = 309248228;</code>
@@ -92,7 +93,8 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
    *
    *
    * <pre>
-   * URL of the InstanceTemplate resource from which all new instances will be created.
+   * URL of the InstanceTemplate resource from which all new instances will be
+   * created.
    * </pre>
    *
    * <code>optional string instance_template = 309248228;</code>
@@ -116,7 +118,8 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
    *
    *
    * <pre>
-   * URL of the InstanceTemplate resource from which all new instances will be created.
+   * URL of the InstanceTemplate resource from which all new instances will be
+   * created.
    * </pre>
    *
    * <code>optional string instance_template = 309248228;</code>
@@ -507,7 +510,8 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
      *
      *
      * <pre>
-     * URL of the InstanceTemplate resource from which all new instances will be created.
+     * URL of the InstanceTemplate resource from which all new instances will be
+     * created.
      * </pre>
      *
      * <code>optional string instance_template = 309248228;</code>
@@ -522,7 +526,8 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
      *
      *
      * <pre>
-     * URL of the InstanceTemplate resource from which all new instances will be created.
+     * URL of the InstanceTemplate resource from which all new instances will be
+     * created.
      * </pre>
      *
      * <code>optional string instance_template = 309248228;</code>
@@ -545,7 +550,8 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
      *
      *
      * <pre>
-     * URL of the InstanceTemplate resource from which all new instances will be created.
+     * URL of the InstanceTemplate resource from which all new instances will be
+     * created.
      * </pre>
      *
      * <code>optional string instance_template = 309248228;</code>
@@ -568,7 +574,8 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
      *
      *
      * <pre>
-     * URL of the InstanceTemplate resource from which all new instances will be created.
+     * URL of the InstanceTemplate resource from which all new instances will be
+     * created.
      * </pre>
      *
      * <code>optional string instance_template = 309248228;</code>
@@ -590,7 +597,8 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
      *
      *
      * <pre>
-     * URL of the InstanceTemplate resource from which all new instances will be created.
+     * URL of the InstanceTemplate resource from which all new instances will be
+     * created.
      * </pre>
      *
      * <code>optional string instance_template = 309248228;</code>
@@ -608,7 +616,8 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
      *
      *
      * <pre>
-     * URL of the InstanceTemplate resource from which all new instances will be created.
+     * URL of the InstanceTemplate resource from which all new instances will be
+     * created.
      * </pre>
      *
      * <code>optional string instance_template = 309248228;</code>

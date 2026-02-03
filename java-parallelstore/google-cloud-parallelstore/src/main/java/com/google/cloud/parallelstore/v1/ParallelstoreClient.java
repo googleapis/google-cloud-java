@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1137,6 +1137,7 @@ public class ParallelstoreClient implements BackgroundResource {
    *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
    *           .setRequestId("requestId693933066")
    *           .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .setMetadataOptions(TransferMetadataOptions.newBuilder().build())
    *           .build();
    *   ImportDataResponse response = parallelstoreClient.importDataAsync(request).get();
    * }
@@ -1168,6 +1169,7 @@ public class ParallelstoreClient implements BackgroundResource {
    *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
    *           .setRequestId("requestId693933066")
    *           .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .setMetadataOptions(TransferMetadataOptions.newBuilder().build())
    *           .build();
    *   OperationFuture<ImportDataResponse, ImportDataMetadata> future =
    *       parallelstoreClient.importDataOperationCallable().futureCall(request);
@@ -1199,6 +1201,7 @@ public class ParallelstoreClient implements BackgroundResource {
    *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
    *           .setRequestId("requestId693933066")
    *           .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .setMetadataOptions(TransferMetadataOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future = parallelstoreClient.importDataCallable().futureCall(request);
    *   // Do something.
@@ -1228,6 +1231,7 @@ public class ParallelstoreClient implements BackgroundResource {
    *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
    *           .setRequestId("requestId693933066")
    *           .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .setMetadataOptions(TransferMetadataOptions.newBuilder().build())
    *           .build();
    *   ExportDataResponse response = parallelstoreClient.exportDataAsync(request).get();
    * }
@@ -1259,6 +1263,7 @@ public class ParallelstoreClient implements BackgroundResource {
    *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
    *           .setRequestId("requestId693933066")
    *           .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .setMetadataOptions(TransferMetadataOptions.newBuilder().build())
    *           .build();
    *   OperationFuture<ExportDataResponse, ExportDataMetadata> future =
    *       parallelstoreClient.exportDataOperationCallable().futureCall(request);
@@ -1290,6 +1295,7 @@ public class ParallelstoreClient implements BackgroundResource {
    *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
    *           .setRequestId("requestId693933066")
    *           .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+   *           .setMetadataOptions(TransferMetadataOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future = parallelstoreClient.exportDataCallable().futureCall(request);
    *   // Do something.

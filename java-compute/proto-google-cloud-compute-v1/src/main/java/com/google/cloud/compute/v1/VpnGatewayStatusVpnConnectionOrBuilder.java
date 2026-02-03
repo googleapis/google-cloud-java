@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ public interface VpnGatewayStatusVpnConnectionOrBuilder
    *
    *
    * <pre>
-   * URL reference to the peer external VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
+   * Output only. URL reference to the peer external VPN gateways to which the VPN tunnels
+   * in this VPN connection are connected.
+   * This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
    *
    * <code>optional string peer_external_gateway = 384956173;</code>
@@ -41,7 +43,9 @@ public interface VpnGatewayStatusVpnConnectionOrBuilder
    *
    *
    * <pre>
-   * URL reference to the peer external VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
+   * Output only. URL reference to the peer external VPN gateways to which the VPN tunnels
+   * in this VPN connection are connected.
+   * This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
    *
    * <code>optional string peer_external_gateway = 384956173;</code>
@@ -54,7 +58,9 @@ public interface VpnGatewayStatusVpnConnectionOrBuilder
    *
    *
    * <pre>
-   * URL reference to the peer external VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
+   * Output only. URL reference to the peer external VPN gateways to which the VPN tunnels
+   * in this VPN connection are connected.
+   * This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
    *
    * <code>optional string peer_external_gateway = 384956173;</code>
@@ -67,7 +73,9 @@ public interface VpnGatewayStatusVpnConnectionOrBuilder
    *
    *
    * <pre>
-   * URL reference to the peer side VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
+   * Output only. URL reference to the peer side VPN gateways to which the VPN tunnels in
+   * this VPN connection are connected.
+   * This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
    *
    * <code>optional string peer_gcp_gateway = 281867452;</code>
@@ -80,7 +88,9 @@ public interface VpnGatewayStatusVpnConnectionOrBuilder
    *
    *
    * <pre>
-   * URL reference to the peer side VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
+   * Output only. URL reference to the peer side VPN gateways to which the VPN tunnels in
+   * this VPN connection are connected.
+   * This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
    *
    * <code>optional string peer_gcp_gateway = 281867452;</code>
@@ -93,7 +103,9 @@ public interface VpnGatewayStatusVpnConnectionOrBuilder
    *
    *
    * <pre>
-   * URL reference to the peer side VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
+   * Output only. URL reference to the peer side VPN gateways to which the VPN tunnels in
+   * this VPN connection are connected.
+   * This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
    *
    * <code>optional string peer_gcp_gateway = 281867452;</code>

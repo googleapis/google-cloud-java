@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,7 +68,9 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * This field can only be specified for a particular firewall rule if logging is enabled for that rule. This field denotes whether to include or exclude metadata for firewall logs.
+   * This field can only be specified for a particular firewall rule if
+   * logging is enabled for that rule. This field denotes whether to include
+   * or exclude metadata for firewall logs.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.FirewallLogConfig.Metadata}
@@ -199,7 +201,8 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * This field denotes whether to enable logging for a particular firewall rule.
+   * This field denotes whether to enable logging for a particular firewall
+   * rule.
    * </pre>
    *
    * <code>optional bool enable = 311764355;</code>
@@ -215,7 +218,8 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * This field denotes whether to enable logging for a particular firewall rule.
+   * This field denotes whether to enable logging for a particular firewall
+   * rule.
    * </pre>
    *
    * <code>optional bool enable = 311764355;</code>
@@ -236,7 +240,9 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * This field can only be specified for a particular firewall rule if logging is enabled for that rule. This field denotes whether to include or exclude metadata for firewall logs.
+   * This field can only be specified for a particular firewall rule if
+   * logging is enabled for that rule. This field denotes whether to include
+   * or exclude metadata for firewall logs.
    * Check the Metadata enum for the list of possible values.
    * </pre>
    *
@@ -253,7 +259,9 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * This field can only be specified for a particular firewall rule if logging is enabled for that rule. This field denotes whether to include or exclude metadata for firewall logs.
+   * This field can only be specified for a particular firewall rule if
+   * logging is enabled for that rule. This field denotes whether to include
+   * or exclude metadata for firewall logs.
    * Check the Metadata enum for the list of possible values.
    * </pre>
    *
@@ -278,7 +286,9 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * This field can only be specified for a particular firewall rule if logging is enabled for that rule. This field denotes whether to include or exclude metadata for firewall logs.
+   * This field can only be specified for a particular firewall rule if
+   * logging is enabled for that rule. This field denotes whether to include
+   * or exclude metadata for firewall logs.
    * Check the Metadata enum for the list of possible values.
    * </pre>
    *
@@ -683,7 +693,8 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * This field denotes whether to enable logging for a particular firewall rule.
+     * This field denotes whether to enable logging for a particular firewall
+     * rule.
      * </pre>
      *
      * <code>optional bool enable = 311764355;</code>
@@ -699,7 +710,8 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * This field denotes whether to enable logging for a particular firewall rule.
+     * This field denotes whether to enable logging for a particular firewall
+     * rule.
      * </pre>
      *
      * <code>optional bool enable = 311764355;</code>
@@ -715,7 +727,8 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * This field denotes whether to enable logging for a particular firewall rule.
+     * This field denotes whether to enable logging for a particular firewall
+     * rule.
      * </pre>
      *
      * <code>optional bool enable = 311764355;</code>
@@ -735,7 +748,8 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * This field denotes whether to enable logging for a particular firewall rule.
+     * This field denotes whether to enable logging for a particular firewall
+     * rule.
      * </pre>
      *
      * <code>optional bool enable = 311764355;</code>
@@ -755,7 +769,9 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * This field can only be specified for a particular firewall rule if logging is enabled for that rule. This field denotes whether to include or exclude metadata for firewall logs.
+     * This field can only be specified for a particular firewall rule if
+     * logging is enabled for that rule. This field denotes whether to include
+     * or exclude metadata for firewall logs.
      * Check the Metadata enum for the list of possible values.
      * </pre>
      *
@@ -771,7 +787,9 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * This field can only be specified for a particular firewall rule if logging is enabled for that rule. This field denotes whether to include or exclude metadata for firewall logs.
+     * This field can only be specified for a particular firewall rule if
+     * logging is enabled for that rule. This field denotes whether to include
+     * or exclude metadata for firewall logs.
      * Check the Metadata enum for the list of possible values.
      * </pre>
      *
@@ -795,7 +813,9 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * This field can only be specified for a particular firewall rule if logging is enabled for that rule. This field denotes whether to include or exclude metadata for firewall logs.
+     * This field can only be specified for a particular firewall rule if
+     * logging is enabled for that rule. This field denotes whether to include
+     * or exclude metadata for firewall logs.
      * Check the Metadata enum for the list of possible values.
      * </pre>
      *
@@ -819,7 +839,9 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * This field can only be specified for a particular firewall rule if logging is enabled for that rule. This field denotes whether to include or exclude metadata for firewall logs.
+     * This field can only be specified for a particular firewall rule if
+     * logging is enabled for that rule. This field denotes whether to include
+     * or exclude metadata for firewall logs.
      * Check the Metadata enum for the list of possible values.
      * </pre>
      *
@@ -842,7 +864,9 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * This field can only be specified for a particular firewall rule if logging is enabled for that rule. This field denotes whether to include or exclude metadata for firewall logs.
+     * This field can only be specified for a particular firewall rule if
+     * logging is enabled for that rule. This field denotes whether to include
+     * or exclude metadata for firewall logs.
      * Check the Metadata enum for the list of possible values.
      * </pre>
      *
@@ -861,7 +885,9 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * This field can only be specified for a particular firewall rule if logging is enabled for that rule. This field denotes whether to include or exclude metadata for firewall logs.
+     * This field can only be specified for a particular firewall rule if
+     * logging is enabled for that rule. This field denotes whether to include
+     * or exclude metadata for firewall logs.
      * Check the Metadata enum for the list of possible values.
      * </pre>
      *

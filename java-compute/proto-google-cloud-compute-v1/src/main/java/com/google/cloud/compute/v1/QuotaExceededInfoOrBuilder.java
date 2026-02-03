@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,7 +91,8 @@ public interface QuotaExceededInfoOrBuilder
    *
    *
    * <pre>
-   * Future quota limit being rolled out. The limit's unit depends on the quota type or metric.
+   * Future quota limit being rolled out. The limit's unit depends on the quota
+   *  type or metric.
    * </pre>
    *
    * <code>optional double future_limit = 456564287;</code>
@@ -104,7 +105,8 @@ public interface QuotaExceededInfoOrBuilder
    *
    *
    * <pre>
-   * Future quota limit being rolled out. The limit's unit depends on the quota type or metric.
+   * Future quota limit being rolled out. The limit's unit depends on the quota
+   *  type or metric.
    * </pre>
    *
    * <code>optional double future_limit = 456564287;</code>
@@ -117,7 +119,8 @@ public interface QuotaExceededInfoOrBuilder
    *
    *
    * <pre>
-   * Current effective quota limit. The limit's unit depends on the quota type or metric.
+   * Current effective quota limit. The limit's unit depends on the quota type
+   * or metric.
    * </pre>
    *
    * <code>optional double limit = 102976443;</code>
@@ -130,7 +133,8 @@ public interface QuotaExceededInfoOrBuilder
    *
    *
    * <pre>
-   * Current effective quota limit. The limit's unit depends on the quota type or metric.
+   * Current effective quota limit. The limit's unit depends on the quota type
+   * or metric.
    * </pre>
    *
    * <code>optional double limit = 102976443;</code>

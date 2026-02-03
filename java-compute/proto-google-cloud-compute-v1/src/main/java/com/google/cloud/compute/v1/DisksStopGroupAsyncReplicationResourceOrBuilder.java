@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,18 @@ public interface DisksStopGroupAsyncReplicationResourceOrBuilder
    *
    *
    * <pre>
-   * The URL of the DiskConsistencyGroupPolicy for the group of disks to stop. This may be a full or partial URL, such as: - https://www.googleapis.com/compute/v1/projects/project/regions/region /resourcePolicies/resourcePolicy - projects/project/regions/region/resourcePolicies/resourcePolicy - regions/region/resourcePolicies/resourcePolicy
+   * The URL of the DiskConsistencyGroupPolicy for the group of disks to stop.
+   * This may be a full or partial URL, such as:
+   *
+   *
+   *      -
+   *        https://www.googleapis.com/compute/v1/projects/project/regions/region/resourcePolicies/resourcePolicy
+   *
+   *      -
+   *        projects/project/regions/region/resourcePolicies/resourcePolicy
+   *
+   *      -
+   *        regions/region/resourcePolicies/resourcePolicy
    * </pre>
    *
    * <code>optional string resource_policy = 159240835;</code>
@@ -41,7 +52,18 @@ public interface DisksStopGroupAsyncReplicationResourceOrBuilder
    *
    *
    * <pre>
-   * The URL of the DiskConsistencyGroupPolicy for the group of disks to stop. This may be a full or partial URL, such as: - https://www.googleapis.com/compute/v1/projects/project/regions/region /resourcePolicies/resourcePolicy - projects/project/regions/region/resourcePolicies/resourcePolicy - regions/region/resourcePolicies/resourcePolicy
+   * The URL of the DiskConsistencyGroupPolicy for the group of disks to stop.
+   * This may be a full or partial URL, such as:
+   *
+   *
+   *      -
+   *        https://www.googleapis.com/compute/v1/projects/project/regions/region/resourcePolicies/resourcePolicy
+   *
+   *      -
+   *        projects/project/regions/region/resourcePolicies/resourcePolicy
+   *
+   *      -
+   *        regions/region/resourcePolicies/resourcePolicy
    * </pre>
    *
    * <code>optional string resource_policy = 159240835;</code>
@@ -54,7 +76,18 @@ public interface DisksStopGroupAsyncReplicationResourceOrBuilder
    *
    *
    * <pre>
-   * The URL of the DiskConsistencyGroupPolicy for the group of disks to stop. This may be a full or partial URL, such as: - https://www.googleapis.com/compute/v1/projects/project/regions/region /resourcePolicies/resourcePolicy - projects/project/regions/region/resourcePolicies/resourcePolicy - regions/region/resourcePolicies/resourcePolicy
+   * The URL of the DiskConsistencyGroupPolicy for the group of disks to stop.
+   * This may be a full or partial URL, such as:
+   *
+   *
+   *      -
+   *        https://www.googleapis.com/compute/v1/projects/project/regions/region/resourcePolicies/resourcePolicy
+   *
+   *      -
+   *        projects/project/regions/region/resourcePolicies/resourcePolicy
+   *
+   *      -
+   *        regions/region/resourcePolicies/resourcePolicy
    * </pre>
    *
    * <code>optional string resource_policy = 159240835;</code>

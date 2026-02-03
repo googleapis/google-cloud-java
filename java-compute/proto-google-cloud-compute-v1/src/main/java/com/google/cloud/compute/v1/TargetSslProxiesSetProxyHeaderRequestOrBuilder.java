@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ public interface TargetSslProxiesSetProxyHeaderRequestOrBuilder
    *
    *
    * <pre>
-   * The new type of proxy header to append before sending data to the backend. NONE or PROXY_V1 are allowed.
+   * The new type of proxy header to append before sending data to the
+   * backend.  NONE or PROXY_V1 are allowed.
    * Check the ProxyHeader enum for the list of possible values.
    * </pre>
    *
@@ -42,7 +43,8 @@ public interface TargetSslProxiesSetProxyHeaderRequestOrBuilder
    *
    *
    * <pre>
-   * The new type of proxy header to append before sending data to the backend. NONE or PROXY_V1 are allowed.
+   * The new type of proxy header to append before sending data to the
+   * backend.  NONE or PROXY_V1 are allowed.
    * Check the ProxyHeader enum for the list of possible values.
    * </pre>
    *
@@ -56,7 +58,8 @@ public interface TargetSslProxiesSetProxyHeaderRequestOrBuilder
    *
    *
    * <pre>
-   * The new type of proxy header to append before sending data to the backend. NONE or PROXY_V1 are allowed.
+   * The new type of proxy header to append before sending data to the
+   * backend.  NONE or PROXY_V1 are allowed.
    * Check the ProxyHeader enum for the list of possible values.
    * </pre>
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ public interface PreservedStateOrBuilder
    *
    *
    * <pre>
-   * Preserved disks defined for this instance. This map is keyed with the device names of the disks.
+   * Preserved disks defined for this instance.
+   * This map is keyed with the device names of the disks.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedDisk&gt; disks = 95594102;
@@ -40,7 +41,8 @@ public interface PreservedStateOrBuilder
    *
    *
    * <pre>
-   * Preserved disks defined for this instance. This map is keyed with the device names of the disks.
+   * Preserved disks defined for this instance.
+   * This map is keyed with the device names of the disks.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedDisk&gt; disks = 95594102;
@@ -57,7 +59,8 @@ public interface PreservedStateOrBuilder
    *
    *
    * <pre>
-   * Preserved disks defined for this instance. This map is keyed with the device names of the disks.
+   * Preserved disks defined for this instance.
+   * This map is keyed with the device names of the disks.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedDisk&gt; disks = 95594102;
@@ -70,7 +73,8 @@ public interface PreservedStateOrBuilder
    *
    *
    * <pre>
-   * Preserved disks defined for this instance. This map is keyed with the device names of the disks.
+   * Preserved disks defined for this instance.
+   * This map is keyed with the device names of the disks.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedDisk&gt; disks = 95594102;
@@ -86,7 +90,8 @@ public interface PreservedStateOrBuilder
    *
    *
    * <pre>
-   * Preserved disks defined for this instance. This map is keyed with the device names of the disks.
+   * Preserved disks defined for this instance.
+   * This map is keyed with the device names of the disks.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedDisk&gt; disks = 95594102;
@@ -98,7 +103,8 @@ public interface PreservedStateOrBuilder
    *
    *
    * <pre>
-   * Preserved external IPs defined for this instance. This map is keyed with the name of the network interface.
+   * Preserved external IPs defined for this instance.
+   * This map is keyed with the name of the network interface.
    * </pre>
    *
    * <code>
@@ -111,7 +117,8 @@ public interface PreservedStateOrBuilder
    *
    *
    * <pre>
-   * Preserved external IPs defined for this instance. This map is keyed with the name of the network interface.
+   * Preserved external IPs defined for this instance.
+   * This map is keyed with the name of the network interface.
    * </pre>
    *
    * <code>
@@ -129,7 +136,8 @@ public interface PreservedStateOrBuilder
    *
    *
    * <pre>
-   * Preserved external IPs defined for this instance. This map is keyed with the name of the network interface.
+   * Preserved external IPs defined for this instance.
+   * This map is keyed with the name of the network interface.
    * </pre>
    *
    * <code>
@@ -143,7 +151,8 @@ public interface PreservedStateOrBuilder
    *
    *
    * <pre>
-   * Preserved external IPs defined for this instance. This map is keyed with the name of the network interface.
+   * Preserved external IPs defined for this instance.
+   * This map is keyed with the name of the network interface.
    * </pre>
    *
    * <code>
@@ -160,7 +169,8 @@ public interface PreservedStateOrBuilder
    *
    *
    * <pre>
-   * Preserved external IPs defined for this instance. This map is keyed with the name of the network interface.
+   * Preserved external IPs defined for this instance.
+   * This map is keyed with the name of the network interface.
    * </pre>
    *
    * <code>
@@ -174,7 +184,8 @@ public interface PreservedStateOrBuilder
    *
    *
    * <pre>
-   * Preserved internal IPs defined for this instance. This map is keyed with the name of the network interface.
+   * Preserved internal IPs defined for this instance.
+   * This map is keyed with the name of the network interface.
    * </pre>
    *
    * <code>
@@ -187,7 +198,8 @@ public interface PreservedStateOrBuilder
    *
    *
    * <pre>
-   * Preserved internal IPs defined for this instance. This map is keyed with the name of the network interface.
+   * Preserved internal IPs defined for this instance.
+   * This map is keyed with the name of the network interface.
    * </pre>
    *
    * <code>
@@ -205,7 +217,8 @@ public interface PreservedStateOrBuilder
    *
    *
    * <pre>
-   * Preserved internal IPs defined for this instance. This map is keyed with the name of the network interface.
+   * Preserved internal IPs defined for this instance.
+   * This map is keyed with the name of the network interface.
    * </pre>
    *
    * <code>
@@ -219,7 +232,8 @@ public interface PreservedStateOrBuilder
    *
    *
    * <pre>
-   * Preserved internal IPs defined for this instance. This map is keyed with the name of the network interface.
+   * Preserved internal IPs defined for this instance.
+   * This map is keyed with the name of the network interface.
    * </pre>
    *
    * <code>
@@ -236,7 +250,8 @@ public interface PreservedStateOrBuilder
    *
    *
    * <pre>
-   * Preserved internal IPs defined for this instance. This map is keyed with the name of the network interface.
+   * Preserved internal IPs defined for this instance.
+   * This map is keyed with the name of the network interface.
    * </pre>
    *
    * <code>

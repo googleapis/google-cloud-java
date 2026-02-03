@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ public interface ExprOrBuilder
    *
    *
    * <pre>
-   * Optional. Description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.
+   * Optional. Description of the expression. This is a longer text which
+   * describes the expression, e.g. when hovered over it in a UI.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -41,7 +42,8 @@ public interface ExprOrBuilder
    *
    *
    * <pre>
-   * Optional. Description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.
+   * Optional. Description of the expression. This is a longer text which
+   * describes the expression, e.g. when hovered over it in a UI.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -54,7 +56,8 @@ public interface ExprOrBuilder
    *
    *
    * <pre>
-   * Optional. Description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.
+   * Optional. Description of the expression. This is a longer text which
+   * describes the expression, e.g. when hovered over it in a UI.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -67,7 +70,8 @@ public interface ExprOrBuilder
    *
    *
    * <pre>
-   * Textual representation of an expression in Common Expression Language syntax.
+   * Textual representation of an expression in Common Expression Language
+   * syntax.
    * </pre>
    *
    * <code>optional string expression = 352031384;</code>
@@ -80,7 +84,8 @@ public interface ExprOrBuilder
    *
    *
    * <pre>
-   * Textual representation of an expression in Common Expression Language syntax.
+   * Textual representation of an expression in Common Expression Language
+   * syntax.
    * </pre>
    *
    * <code>optional string expression = 352031384;</code>
@@ -93,7 +98,8 @@ public interface ExprOrBuilder
    *
    *
    * <pre>
-   * Textual representation of an expression in Common Expression Language syntax.
+   * Textual representation of an expression in Common Expression Language
+   * syntax.
    * </pre>
    *
    * <code>optional string expression = 352031384;</code>
@@ -106,7 +112,8 @@ public interface ExprOrBuilder
    *
    *
    * <pre>
-   * Optional. String indicating the location of the expression for error reporting, e.g. a file name and a position in the file.
+   * Optional. String indicating the location of the expression for error
+   * reporting, e.g. a file name and a position in the file.
    * </pre>
    *
    * <code>optional string location = 290430901;</code>
@@ -119,7 +126,8 @@ public interface ExprOrBuilder
    *
    *
    * <pre>
-   * Optional. String indicating the location of the expression for error reporting, e.g. a file name and a position in the file.
+   * Optional. String indicating the location of the expression for error
+   * reporting, e.g. a file name and a position in the file.
    * </pre>
    *
    * <code>optional string location = 290430901;</code>
@@ -132,7 +140,8 @@ public interface ExprOrBuilder
    *
    *
    * <pre>
-   * Optional. String indicating the location of the expression for error reporting, e.g. a file name and a position in the file.
+   * Optional. String indicating the location of the expression for error
+   * reporting, e.g. a file name and a position in the file.
    * </pre>
    *
    * <code>optional string location = 290430901;</code>
@@ -145,7 +154,9 @@ public interface ExprOrBuilder
    *
    *
    * <pre>
-   * Optional. Title for the expression, i.e. a short string describing its purpose. This can be used e.g. in UIs which allow to enter the expression.
+   * Optional. Title for the expression, i.e. a short string describing
+   * its purpose. This can be used e.g. in UIs which allow to enter the
+   * expression.
    * </pre>
    *
    * <code>optional string title = 110371416;</code>
@@ -158,7 +169,9 @@ public interface ExprOrBuilder
    *
    *
    * <pre>
-   * Optional. Title for the expression, i.e. a short string describing its purpose. This can be used e.g. in UIs which allow to enter the expression.
+   * Optional. Title for the expression, i.e. a short string describing
+   * its purpose. This can be used e.g. in UIs which allow to enter the
+   * expression.
    * </pre>
    *
    * <code>optional string title = 110371416;</code>
@@ -171,7 +184,9 @@ public interface ExprOrBuilder
    *
    *
    * <pre>
-   * Optional. Title for the expression, i.e. a short string describing its purpose. This can be used e.g. in UIs which allow to enter the expression.
+   * Optional. Title for the expression, i.e. a short string describing
+   * its purpose. This can be used e.g. in UIs which allow to enter the
+   * expression.
    * </pre>
    *
    * <code>optional string title = 110371416;</code>

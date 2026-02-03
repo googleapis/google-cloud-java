@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,9 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * The status of update/delete for a consensus peering connection. Only set when connection_status.update_strategy is CONSENSUS or a network peering is proposing to update the strategy to CONSENSUS.
+ * The status of update/delete for a consensus peering connection. Only set
+ * when connection_status.update_strategy isCONSENSUS or a network peering is proposing to update the
+ * strategy to CONSENSUS.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.NetworkPeeringConnectionStatusConsensusState}
@@ -92,7 +94,8 @@ public final class NetworkPeeringConnectionStatusConsensusState
      *
      *
      * <pre>
-     * Both network admins have agreed this consensus peering connection can be deleted.
+     * Both network admins have agreed this consensus peering connection can
+     * be deleted.
      * </pre>
      *
      * <code>DELETE_ACKNOWLEDGED = 325293916;</code>
@@ -114,7 +117,8 @@ public final class NetworkPeeringConnectionStatusConsensusState
      *
      *
      * <pre>
-     * The peer network admin has requested deletion of this peering connection.
+     * The peer network admin has requested deletion of this peering
+     * connection.
      * </pre>
      *
      * <code>PEER_DELETE_REQUESTED = 197847799;</code>
@@ -138,7 +142,8 @@ public final class NetworkPeeringConnectionStatusConsensusState
      *
      *
      * <pre>
-     * Both network admins have agreed this consensus peering connection can be deleted.
+     * Both network admins have agreed this consensus peering connection can
+     * be deleted.
      * </pre>
      *
      * <code>DELETE_ACKNOWLEDGED = 325293916;</code>
@@ -163,7 +168,8 @@ public final class NetworkPeeringConnectionStatusConsensusState
      *
      *
      * <pre>
-     * The peer network admin has requested deletion of this peering connection.
+     * The peer network admin has requested deletion of this peering
+     * connection.
      * </pre>
      *
      * <code>PEER_DELETE_REQUESTED = 197847799;</code>
@@ -285,7 +291,7 @@ public final class NetworkPeeringConnectionStatusConsensusState
      *
      *
      * <pre>
-     * No pending configuration update proposals to the peering connection.
+     * No pending configuration update proposals to the  peering connection.
      * </pre>
      *
      * <code>IN_SYNC = 2273653;</code>
@@ -295,7 +301,8 @@ public final class NetworkPeeringConnectionStatusConsensusState
      *
      *
      * <pre>
-     * The peer network admin has made an updatePeering call. The change is awaiting acknowledgment from this peering's network admin.
+     * The peer network admin has made an updatePeering call. The change is
+     * awaiting acknowledgment from this peering's network admin.
      * </pre>
      *
      * <code>PENDING_LOCAL_ACKNOWLEDMENT = 229926592;</code>
@@ -305,7 +312,8 @@ public final class NetworkPeeringConnectionStatusConsensusState
      *
      *
      * <pre>
-     * The local network admin has made an updatePeering call. The change is awaiting acknowledgment from the peer network admin.
+     * The local network admin has made an updatePeering call. The change
+     * is awaiting acknowledgment from the peer network admin.
      * </pre>
      *
      * <code>PENDING_PEER_ACKNOWLEDGEMENT = 420185797;</code>
@@ -331,7 +339,7 @@ public final class NetworkPeeringConnectionStatusConsensusState
      *
      *
      * <pre>
-     * No pending configuration update proposals to the peering connection.
+     * No pending configuration update proposals to the  peering connection.
      * </pre>
      *
      * <code>IN_SYNC = 2273653;</code>
@@ -342,7 +350,8 @@ public final class NetworkPeeringConnectionStatusConsensusState
      *
      *
      * <pre>
-     * The peer network admin has made an updatePeering call. The change is awaiting acknowledgment from this peering's network admin.
+     * The peer network admin has made an updatePeering call. The change is
+     * awaiting acknowledgment from this peering's network admin.
      * </pre>
      *
      * <code>PENDING_LOCAL_ACKNOWLEDMENT = 229926592;</code>
@@ -353,7 +362,8 @@ public final class NetworkPeeringConnectionStatusConsensusState
      *
      *
      * <pre>
-     * The local network admin has made an updatePeering call. The change is awaiting acknowledgment from the peer network admin.
+     * The local network admin has made an updatePeering call. The change
+     * is awaiting acknowledgment from the peer network admin.
      * </pre>
      *
      * <code>PENDING_PEER_ACKNOWLEDGEMENT = 420185797;</code>
@@ -784,7 +794,9 @@ public final class NetworkPeeringConnectionStatusConsensusState
    *
    *
    * <pre>
-   * The status of update/delete for a consensus peering connection. Only set when connection_status.update_strategy is CONSENSUS or a network peering is proposing to update the strategy to CONSENSUS.
+   * The status of update/delete for a consensus peering connection. Only set
+   * when connection_status.update_strategy isCONSENSUS or a network peering is proposing to update the
+   * strategy to CONSENSUS.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.NetworkPeeringConnectionStatusConsensusState}

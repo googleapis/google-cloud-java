@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,9 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * [Output Only] The redundancy this group is configured to support. The way a user queries what SLA their Attachment gets is by looking at this field of the Attachment's AttachmentGroup.
+ * [Output Only] The redundancy this group is configured to support. The way a
+ * user queries what SLA their Attachment gets is by looking at this field of
+ * the Attachment's AttachmentGroup.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.InterconnectAttachmentGroupConfigured}
@@ -283,7 +285,9 @@ public final class InterconnectAttachmentGroupConfigured
    *
    *
    * <pre>
-   * [Output Only] The redundancy this group is configured to support. The way a user queries what SLA their Attachment gets is by looking at this field of the Attachment's AttachmentGroup.
+   * [Output Only] The redundancy this group is configured to support. The way a
+   * user queries what SLA their Attachment gets is by looking at this field of
+   * the Attachment's AttachmentGroup.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.InterconnectAttachmentGroupConfigured}

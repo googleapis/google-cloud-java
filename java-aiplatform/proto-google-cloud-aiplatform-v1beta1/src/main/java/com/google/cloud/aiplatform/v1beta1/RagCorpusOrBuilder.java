@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -205,7 +205,7 @@ public interface RagCorpusOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_embedding_model_config is deprecated.
-   *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=348
+   *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=360
    * @return Whether the ragEmbeddingModelConfig field is set.
    */
   @java.lang.Deprecated
@@ -223,7 +223,7 @@ public interface RagCorpusOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_embedding_model_config is deprecated.
-   *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=348
+   *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=360
    * @return The ragEmbeddingModelConfig.
    */
   @java.lang.Deprecated
@@ -256,7 +256,7 @@ public interface RagCorpusOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_vector_db_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=355
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=367
    * @return Whether the ragVectorDbConfig field is set.
    */
   @java.lang.Deprecated
@@ -274,7 +274,7 @@ public interface RagCorpusOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_vector_db_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=355
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=367
    * @return The ragVectorDbConfig.
    */
   @java.lang.Deprecated
@@ -422,6 +422,9 @@ public interface RagCorpusOrBuilder
    *
    * <pre>
    * Output only. Number of RagFiles in the RagCorpus.
+   *
+   * NOTE: This field is not populated in the response of
+   * [VertexRagDataService.ListRagCorpora][google.cloud.aiplatform.v1beta1.VertexRagDataService.ListRagCorpora].
    * </pre>
    *
    * <code>int32 rag_files_count = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -525,6 +528,32 @@ public interface RagCorpusOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.RagCorpus.CorpusTypeConfigOrBuilder
       getCorpusTypeConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzi = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  boolean getSatisfiesPzi();
 
   com.google.cloud.aiplatform.v1beta1.RagCorpus.BackendConfigCase getBackendConfigCase();
 }

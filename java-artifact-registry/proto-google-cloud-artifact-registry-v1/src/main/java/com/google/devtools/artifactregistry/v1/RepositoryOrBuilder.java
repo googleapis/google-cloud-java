@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -624,7 +624,7 @@ public interface RepositoryOrBuilder
    *
    *
    * <pre>
-   * Output only. If set, the repository satisfies physical zone separation.
+   * Output only. Whether or not this repository satisfies PZS.
    * </pre>
    *
    * <code>bool satisfies_pzs = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -713,7 +713,7 @@ public interface RepositoryOrBuilder
    *
    *
    * <pre>
-   * Output only. If set, the repository satisfies physical zone isolation.
+   * Output only. Whether or not this repository satisfies PZI.
    * </pre>
    *
    * <code>bool satisfies_pzi = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

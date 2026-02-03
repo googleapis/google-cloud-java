@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ public interface SpeechConfigOrBuilder
    *
    *
    * <pre>
-   * The configuration for the speaker to use.
+   * The configuration for the voice to use.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.VoiceConfig voice_config = 1;</code>
@@ -41,7 +41,7 @@ public interface SpeechConfigOrBuilder
    *
    *
    * <pre>
-   * The configuration for the speaker to use.
+   * The configuration for the voice to use.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.VoiceConfig voice_config = 1;</code>
@@ -54,10 +54,80 @@ public interface SpeechConfigOrBuilder
    *
    *
    * <pre>
-   * The configuration for the speaker to use.
+   * The configuration for the voice to use.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.VoiceConfig voice_config = 1;</code>
    */
   com.google.cloud.aiplatform.v1beta1.VoiceConfigOrBuilder getVoiceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The language code (ISO 639-1) for the speech synthesis.
+   * </pre>
+   *
+   * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The languageCode.
+   */
+  java.lang.String getLanguageCode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The language code (ISO 639-1) for the speech synthesis.
+   * </pre>
+   *
+   * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for languageCode.
+   */
+  com.google.protobuf.ByteString getLanguageCodeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for a multi-speaker text-to-speech request.
+   * This field is mutually exclusive with `voice_config`.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig multi_speaker_voice_config = 3;
+   * </code>
+   *
+   * @return Whether the multiSpeakerVoiceConfig field is set.
+   */
+  boolean hasMultiSpeakerVoiceConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for a multi-speaker text-to-speech request.
+   * This field is mutually exclusive with `voice_config`.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig multi_speaker_voice_config = 3;
+   * </code>
+   *
+   * @return The multiSpeakerVoiceConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig getMultiSpeakerVoiceConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for a multi-speaker text-to-speech request.
+   * This field is mutually exclusive with `voice_config`.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig multi_speaker_voice_config = 3;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfigOrBuilder
+      getMultiSpeakerVoiceConfigOrBuilder();
 }

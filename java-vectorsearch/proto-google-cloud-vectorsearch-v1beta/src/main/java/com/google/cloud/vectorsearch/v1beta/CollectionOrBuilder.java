@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -300,7 +300,8 @@ public interface CollectionOrBuilder
    *
    * <pre>
    * Optional. Schema for vector fields. Only vector fields in this schema will
-   * be searchable.
+   * be searchable. Field names must contain only alphanumeric characters,
+   * underscores, and hyphens.
    * </pre>
    *
    * <code>
@@ -314,7 +315,8 @@ public interface CollectionOrBuilder
    *
    * <pre>
    * Optional. Schema for vector fields. Only vector fields in this schema will
-   * be searchable.
+   * be searchable. Field names must contain only alphanumeric characters,
+   * underscores, and hyphens.
    * </pre>
    *
    * <code>
@@ -333,7 +335,8 @@ public interface CollectionOrBuilder
    *
    * <pre>
    * Optional. Schema for vector fields. Only vector fields in this schema will
-   * be searchable.
+   * be searchable. Field names must contain only alphanumeric characters,
+   * underscores, and hyphens.
    * </pre>
    *
    * <code>
@@ -348,7 +351,8 @@ public interface CollectionOrBuilder
    *
    * <pre>
    * Optional. Schema for vector fields. Only vector fields in this schema will
-   * be searchable.
+   * be searchable. Field names must contain only alphanumeric characters,
+   * underscores, and hyphens.
    * </pre>
    *
    * <code>
@@ -366,7 +370,8 @@ public interface CollectionOrBuilder
    *
    * <pre>
    * Optional. Schema for vector fields. Only vector fields in this schema will
-   * be searchable.
+   * be searchable. Field names must contain only alphanumeric characters,
+   * underscores, and hyphens.
    * </pre>
    *
    * <code>
@@ -380,6 +385,8 @@ public interface CollectionOrBuilder
    *
    * <pre>
    * Optional. JSON Schema for data.
+   * Field names must contain only alphanumeric characters,
+   * underscores, and hyphens.
    * </pre>
    *
    * <code>.google.protobuf.Struct data_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -394,6 +401,8 @@ public interface CollectionOrBuilder
    *
    * <pre>
    * Optional. JSON Schema for data.
+   * Field names must contain only alphanumeric characters,
+   * underscores, and hyphens.
    * </pre>
    *
    * <code>.google.protobuf.Struct data_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -408,6 +417,8 @@ public interface CollectionOrBuilder
    *
    * <pre>
    * Optional. JSON Schema for data.
+   * Field names must contain only alphanumeric characters,
+   * underscores, and hyphens.
    * </pre>
    *
    * <code>.google.protobuf.Struct data_schema = 10 [(.google.api.field_behavior) = OPTIONAL];

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -525,7 +525,7 @@ public interface RagFileOrBuilder
    *
    *
    * <pre>
-   * Output only. The metadata for metadata search. The contents will be
+   * Output only. The metadata for metadata search. The user_metadata Needs to
    * be in JSON format.
    * </pre>
    *
@@ -539,7 +539,7 @@ public interface RagFileOrBuilder
    *
    *
    * <pre>
-   * Output only. The metadata for metadata search. The contents will be
+   * Output only. The metadata for metadata search. The user_metadata Needs to
    * be in JSON format.
    * </pre>
    *

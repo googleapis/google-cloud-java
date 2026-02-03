@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,12 @@ public interface BackendServiceLocalityLoadBalancingPolicyConfigPolicyOrBuilder
    *
    *
    * <pre>
-   * The name of a locality load-balancing policy. Valid values include ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information about these values, see the description of localityLbPolicy. Do not specify the same policy more than once for a backend. If you do, the configuration is rejected.
+   * The name of a locality load-balancing policy. Valid values include
+   * ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information
+   * about these values, see the description of localityLbPolicy.
+   *
+   * Do not specify the same policy more than once for a
+   * backend. If you do, the configuration is rejected.
    * Check the Name enum for the list of possible values.
    * </pre>
    *
@@ -42,7 +47,12 @@ public interface BackendServiceLocalityLoadBalancingPolicyConfigPolicyOrBuilder
    *
    *
    * <pre>
-   * The name of a locality load-balancing policy. Valid values include ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information about these values, see the description of localityLbPolicy. Do not specify the same policy more than once for a backend. If you do, the configuration is rejected.
+   * The name of a locality load-balancing policy. Valid values include
+   * ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information
+   * about these values, see the description of localityLbPolicy.
+   *
+   * Do not specify the same policy more than once for a
+   * backend. If you do, the configuration is rejected.
    * Check the Name enum for the list of possible values.
    * </pre>
    *
@@ -56,7 +66,12 @@ public interface BackendServiceLocalityLoadBalancingPolicyConfigPolicyOrBuilder
    *
    *
    * <pre>
-   * The name of a locality load-balancing policy. Valid values include ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information about these values, see the description of localityLbPolicy. Do not specify the same policy more than once for a backend. If you do, the configuration is rejected.
+   * The name of a locality load-balancing policy. Valid values include
+   * ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information
+   * about these values, see the description of localityLbPolicy.
+   *
+   * Do not specify the same policy more than once for a
+   * backend. If you do, the configuration is rejected.
    * Check the Name enum for the list of possible values.
    * </pre>
    *

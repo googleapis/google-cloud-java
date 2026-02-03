@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ public interface WarningsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+   * [Output Only] A warning code, if applicable. For example, Compute
+   * Engine returns NO_RESULTS_ON_PAGE if there
+   * are no results in the response.
    * Check the Code enum for the list of possible values.
    * </pre>
    *
@@ -42,7 +44,9 @@ public interface WarningsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+   * [Output Only] A warning code, if applicable. For example, Compute
+   * Engine returns NO_RESULTS_ON_PAGE if there
+   * are no results in the response.
    * Check the Code enum for the list of possible values.
    * </pre>
    *
@@ -56,7 +60,9 @@ public interface WarningsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+   * [Output Only] A warning code, if applicable. For example, Compute
+   * Engine returns NO_RESULTS_ON_PAGE if there
+   * are no results in the response.
    * Check the Code enum for the list of possible values.
    * </pre>
    *
@@ -70,7 +76,14 @@ public interface WarningsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+   * [Output Only] Metadata about this warning in key:
+   * value format. For example:
+   *
+   * "data": [
+   *   {
+   *    "key": "scope",
+   *    "value": "zones/us-east1-d"
+   *   }
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -81,7 +94,14 @@ public interface WarningsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+   * [Output Only] Metadata about this warning in key:
+   * value format. For example:
+   *
+   * "data": [
+   *   {
+   *    "key": "scope",
+   *    "value": "zones/us-east1-d"
+   *   }
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -92,7 +112,14 @@ public interface WarningsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+   * [Output Only] Metadata about this warning in key:
+   * value format. For example:
+   *
+   * "data": [
+   *   {
+   *    "key": "scope",
+   *    "value": "zones/us-east1-d"
+   *   }
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -103,7 +130,14 @@ public interface WarningsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+   * [Output Only] Metadata about this warning in key:
+   * value format. For example:
+   *
+   * "data": [
+   *   {
+   *    "key": "scope",
+   *    "value": "zones/us-east1-d"
+   *   }
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -114,7 +148,14 @@ public interface WarningsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+   * [Output Only] Metadata about this warning in key:
+   * value format. For example:
+   *
+   * "data": [
+   *   {
+   *    "key": "scope",
+   *    "value": "zones/us-east1-d"
+   *   }
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>

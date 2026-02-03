@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,9 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Contains output only fields. Use this sub-message for actual values set on Instance attributes as compared to the value requested by the user (intent) in their instance CRUD calls.
+ * Contains output only fields.
+ * Use this sub-message for actual values set on Instance attributes as compared
+ * to the value requested by the user (intent) in their instance CRUD calls.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.ResourceStatus}
@@ -73,7 +75,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Effective metadata is a field that consolidates project, zonal instance settings, and instance-level predefined metadata keys to provide the overridden value for those metadata keys at the instance level.
+   * Output only. [Output Only] Effective metadata is a field that consolidates project,
+   * zonal instance settings, and instance-level predefined metadata keys to
+   * provide the overridden value for those metadata keys at the instance level.
    * </pre>
    *
    * <code>
@@ -91,7 +95,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Effective metadata is a field that consolidates project, zonal instance settings, and instance-level predefined metadata keys to provide the overridden value for those metadata keys at the instance level.
+   * Output only. [Output Only] Effective metadata is a field that consolidates project,
+   * zonal instance settings, and instance-level predefined metadata keys to
+   * provide the overridden value for those metadata keys at the instance level.
    * </pre>
    *
    * <code>
@@ -112,7 +118,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Effective metadata is a field that consolidates project, zonal instance settings, and instance-level predefined metadata keys to provide the overridden value for those metadata keys at the instance level.
+   * Output only. [Output Only] Effective metadata is a field that consolidates project,
+   * zonal instance settings, and instance-level predefined metadata keys to
+   * provide the overridden value for those metadata keys at the instance level.
    * </pre>
    *
    * <code>
@@ -136,7 +144,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The precise location of your instance within the zone's data center, including the block, sub-block, and host. The field is formatted as follows: blockId/subBlockId/hostId.
+   * Output only. [Output Only] The precise location of your instance within the zone's data
+   * center, including the block, sub-block, and host. The field is formatted as
+   * follows: blockId/subBlockId/hostId.
    * </pre>
    *
    * <code>optional string physical_host = 464370704;</code>
@@ -152,7 +162,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The precise location of your instance within the zone's data center, including the block, sub-block, and host. The field is formatted as follows: blockId/subBlockId/hostId.
+   * Output only. [Output Only] The precise location of your instance within the zone's data
+   * center, including the block, sub-block, and host. The field is formatted as
+   * follows: blockId/subBlockId/hostId.
    * </pre>
    *
    * <code>optional string physical_host = 464370704;</code>
@@ -176,7 +188,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The precise location of your instance within the zone's data center, including the block, sub-block, and host. The field is formatted as follows: blockId/subBlockId/hostId.
+   * Output only. [Output Only] The precise location of your instance within the zone's data
+   * center, including the block, sub-block, and host. The field is formatted as
+   * follows: blockId/subBlockId/hostId.
    * </pre>
    *
    * <code>optional string physical_host = 464370704;</code>
@@ -203,7 +217,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A series of fields containing the global name of the Compute Engine cluster, as well as the ID of the block, sub-block, and host on which the running instance is located.
+   * Output only. [Output Only] A series of fields containing the global name of the Compute
+   * Engine cluster, as well as the ID of the block, sub-block, and host on
+   * which the running instance is located.
    * </pre>
    *
    * <code>
@@ -221,7 +237,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A series of fields containing the global name of the Compute Engine cluster, as well as the ID of the block, sub-block, and host on which the running instance is located.
+   * Output only. [Output Only] A series of fields containing the global name of the Compute
+   * Engine cluster, as well as the ID of the block, sub-block, and host on
+   * which the running instance is located.
    * </pre>
    *
    * <code>
@@ -241,7 +259,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A series of fields containing the global name of the Compute Engine cluster, as well as the ID of the block, sub-block, and host on which the running instance is located.
+   * Output only. [Output Only] A series of fields containing the global name of the Compute
+   * Engine cluster, as well as the ID of the block, sub-block, and host on
+   * which the running instance is located.
    * </pre>
    *
    * <code>
@@ -256,6 +276,68 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
         : physicalHostTopology_;
   }
 
+  public static final int RESERVATION_CONSUMPTION_INFO_FIELD_NUMBER = 201056997;
+  private com.google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo
+      reservationConsumptionInfo_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Reservation information that the instance is consuming from.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo reservation_consumption_info = 201056997;
+   * </code>
+   *
+   * @return Whether the reservationConsumptionInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasReservationConsumptionInfo() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Reservation information that the instance is consuming from.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo reservation_consumption_info = 201056997;
+   * </code>
+   *
+   * @return The reservationConsumptionInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo
+      getReservationConsumptionInfo() {
+    return reservationConsumptionInfo_ == null
+        ? com.google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo.getDefaultInstance()
+        : reservationConsumptionInfo_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Reservation information that the instance is consuming from.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo reservation_consumption_info = 201056997;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ResourceStatusReservationConsumptionInfoOrBuilder
+      getReservationConsumptionInfoOrBuilder() {
+    return reservationConsumptionInfo_ == null
+        ? com.google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo.getDefaultInstance()
+        : reservationConsumptionInfo_;
+  }
+
   public static final int SCHEDULING_FIELD_NUMBER = 386688404;
   private com.google.cloud.compute.v1.ResourceStatusScheduling scheduling_;
 
@@ -266,7 +348,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasScheduling() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -302,7 +384,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasUpcomingMaintenance() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -347,10 +429,13 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(55052033, getEffectiveInstanceMetadata());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(201056997, getReservationConsumptionInfo());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(227348592, getUpcomingMaintenance());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(386688404, getScheduling());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
@@ -373,12 +458,17 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               55052033, getEffectiveInstanceMetadata());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              201056997, getReservationConsumptionInfo());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               227348592, getUpcomingMaintenance());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(386688404, getScheduling());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
@@ -418,6 +508,11 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
     if (hasPhysicalHostTopology()) {
       if (!getPhysicalHostTopology().equals(other.getPhysicalHostTopology())) return false;
     }
+    if (hasReservationConsumptionInfo() != other.hasReservationConsumptionInfo()) return false;
+    if (hasReservationConsumptionInfo()) {
+      if (!getReservationConsumptionInfo().equals(other.getReservationConsumptionInfo()))
+        return false;
+    }
     if (hasScheduling() != other.hasScheduling()) return false;
     if (hasScheduling()) {
       if (!getScheduling().equals(other.getScheduling())) return false;
@@ -448,6 +543,10 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
     if (hasPhysicalHostTopology()) {
       hash = (37 * hash) + PHYSICAL_HOST_TOPOLOGY_FIELD_NUMBER;
       hash = (53 * hash) + getPhysicalHostTopology().hashCode();
+    }
+    if (hasReservationConsumptionInfo()) {
+      hash = (37 * hash) + RESERVATION_CONSUMPTION_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getReservationConsumptionInfo().hashCode();
     }
     if (hasScheduling()) {
       hash = (37 * hash) + SCHEDULING_FIELD_NUMBER;
@@ -562,7 +661,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Contains output only fields. Use this sub-message for actual values set on Instance attributes as compared to the value requested by the user (intent) in their instance CRUD calls.
+   * Contains output only fields.
+   * Use this sub-message for actual values set on Instance attributes as compared
+   * to the value requested by the user (intent) in their instance CRUD calls.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.ResourceStatus}
@@ -600,6 +701,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getEffectiveInstanceMetadataFieldBuilder();
         getPhysicalHostTopologyFieldBuilder();
+        getReservationConsumptionInfoFieldBuilder();
         getSchedulingFieldBuilder();
         getUpcomingMaintenanceFieldBuilder();
       }
@@ -619,6 +721,11 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       if (physicalHostTopologyBuilder_ != null) {
         physicalHostTopologyBuilder_.dispose();
         physicalHostTopologyBuilder_ = null;
+      }
+      reservationConsumptionInfo_ = null;
+      if (reservationConsumptionInfoBuilder_ != null) {
+        reservationConsumptionInfoBuilder_.dispose();
+        reservationConsumptionInfoBuilder_ = null;
       }
       scheduling_ = null;
       if (schedulingBuilder_ != null) {
@@ -686,15 +793,22 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.scheduling_ = schedulingBuilder_ == null ? scheduling_ : schedulingBuilder_.build();
+        result.reservationConsumptionInfo_ =
+            reservationConsumptionInfoBuilder_ == null
+                ? reservationConsumptionInfo_
+                : reservationConsumptionInfoBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.scheduling_ = schedulingBuilder_ == null ? scheduling_ : schedulingBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.upcomingMaintenance_ =
             upcomingMaintenanceBuilder_ == null
                 ? upcomingMaintenance_
                 : upcomingMaintenanceBuilder_.build();
-        to_bitField0_ |= 0x00000010;
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -755,6 +869,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       if (other.hasPhysicalHostTopology()) {
         mergePhysicalHostTopology(other.getPhysicalHostTopology());
       }
+      if (other.hasReservationConsumptionInfo()) {
+        mergeReservationConsumptionInfo(other.getReservationConsumptionInfo());
+      }
       if (other.hasScheduling()) {
         mergeScheduling(other.getScheduling());
       }
@@ -794,17 +911,24 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 440416266
+            case 1608455978:
+              {
+                input.readMessage(
+                    getReservationConsumptionInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 1608455978
             case 1818788738:
               {
                 input.readMessage(
                     getUpcomingMaintenanceFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 1818788738
             case -1201460062:
               {
                 input.readMessage(getSchedulingFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case -1201460062
             case -1168224782:
@@ -851,7 +975,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Effective metadata is a field that consolidates project, zonal instance settings, and instance-level predefined metadata keys to provide the overridden value for those metadata keys at the instance level.
+     * Output only. [Output Only] Effective metadata is a field that consolidates project,
+     * zonal instance settings, and instance-level predefined metadata keys to
+     * provide the overridden value for those metadata keys at the instance level.
      * </pre>
      *
      * <code>
@@ -868,7 +994,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Effective metadata is a field that consolidates project, zonal instance settings, and instance-level predefined metadata keys to provide the overridden value for those metadata keys at the instance level.
+     * Output only. [Output Only] Effective metadata is a field that consolidates project,
+     * zonal instance settings, and instance-level predefined metadata keys to
+     * provide the overridden value for those metadata keys at the instance level.
      * </pre>
      *
      * <code>
@@ -893,7 +1021,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Effective metadata is a field that consolidates project, zonal instance settings, and instance-level predefined metadata keys to provide the overridden value for those metadata keys at the instance level.
+     * Output only. [Output Only] Effective metadata is a field that consolidates project,
+     * zonal instance settings, and instance-level predefined metadata keys to
+     * provide the overridden value for those metadata keys at the instance level.
      * </pre>
      *
      * <code>
@@ -919,7 +1049,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Effective metadata is a field that consolidates project, zonal instance settings, and instance-level predefined metadata keys to provide the overridden value for those metadata keys at the instance level.
+     * Output only. [Output Only] Effective metadata is a field that consolidates project,
+     * zonal instance settings, and instance-level predefined metadata keys to
+     * provide the overridden value for those metadata keys at the instance level.
      * </pre>
      *
      * <code>
@@ -943,7 +1075,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Effective metadata is a field that consolidates project, zonal instance settings, and instance-level predefined metadata keys to provide the overridden value for those metadata keys at the instance level.
+     * Output only. [Output Only] Effective metadata is a field that consolidates project,
+     * zonal instance settings, and instance-level predefined metadata keys to
+     * provide the overridden value for those metadata keys at the instance level.
      * </pre>
      *
      * <code>
@@ -976,7 +1110,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Effective metadata is a field that consolidates project, zonal instance settings, and instance-level predefined metadata keys to provide the overridden value for those metadata keys at the instance level.
+     * Output only. [Output Only] Effective metadata is a field that consolidates project,
+     * zonal instance settings, and instance-level predefined metadata keys to
+     * provide the overridden value for those metadata keys at the instance level.
      * </pre>
      *
      * <code>
@@ -998,7 +1134,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Effective metadata is a field that consolidates project, zonal instance settings, and instance-level predefined metadata keys to provide the overridden value for those metadata keys at the instance level.
+     * Output only. [Output Only] Effective metadata is a field that consolidates project,
+     * zonal instance settings, and instance-level predefined metadata keys to
+     * provide the overridden value for those metadata keys at the instance level.
      * </pre>
      *
      * <code>
@@ -1016,7 +1154,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Effective metadata is a field that consolidates project, zonal instance settings, and instance-level predefined metadata keys to provide the overridden value for those metadata keys at the instance level.
+     * Output only. [Output Only] Effective metadata is a field that consolidates project,
+     * zonal instance settings, and instance-level predefined metadata keys to
+     * provide the overridden value for those metadata keys at the instance level.
      * </pre>
      *
      * <code>
@@ -1039,7 +1179,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Effective metadata is a field that consolidates project, zonal instance settings, and instance-level predefined metadata keys to provide the overridden value for those metadata keys at the instance level.
+     * Output only. [Output Only] Effective metadata is a field that consolidates project,
+     * zonal instance settings, and instance-level predefined metadata keys to
+     * provide the overridden value for those metadata keys at the instance level.
      * </pre>
      *
      * <code>
@@ -1069,7 +1211,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The precise location of your instance within the zone's data center, including the block, sub-block, and host. The field is formatted as follows: blockId/subBlockId/hostId.
+     * Output only. [Output Only] The precise location of your instance within the zone's data
+     * center, including the block, sub-block, and host. The field is formatted as
+     * follows: blockId/subBlockId/hostId.
      * </pre>
      *
      * <code>optional string physical_host = 464370704;</code>
@@ -1084,7 +1228,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The precise location of your instance within the zone's data center, including the block, sub-block, and host. The field is formatted as follows: blockId/subBlockId/hostId.
+     * Output only. [Output Only] The precise location of your instance within the zone's data
+     * center, including the block, sub-block, and host. The field is formatted as
+     * follows: blockId/subBlockId/hostId.
      * </pre>
      *
      * <code>optional string physical_host = 464370704;</code>
@@ -1107,7 +1253,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The precise location of your instance within the zone's data center, including the block, sub-block, and host. The field is formatted as follows: blockId/subBlockId/hostId.
+     * Output only. [Output Only] The precise location of your instance within the zone's data
+     * center, including the block, sub-block, and host. The field is formatted as
+     * follows: blockId/subBlockId/hostId.
      * </pre>
      *
      * <code>optional string physical_host = 464370704;</code>
@@ -1130,7 +1278,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The precise location of your instance within the zone's data center, including the block, sub-block, and host. The field is formatted as follows: blockId/subBlockId/hostId.
+     * Output only. [Output Only] The precise location of your instance within the zone's data
+     * center, including the block, sub-block, and host. The field is formatted as
+     * follows: blockId/subBlockId/hostId.
      * </pre>
      *
      * <code>optional string physical_host = 464370704;</code>
@@ -1152,7 +1302,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The precise location of your instance within the zone's data center, including the block, sub-block, and host. The field is formatted as follows: blockId/subBlockId/hostId.
+     * Output only. [Output Only] The precise location of your instance within the zone's data
+     * center, including the block, sub-block, and host. The field is formatted as
+     * follows: blockId/subBlockId/hostId.
      * </pre>
      *
      * <code>optional string physical_host = 464370704;</code>
@@ -1170,7 +1322,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The precise location of your instance within the zone's data center, including the block, sub-block, and host. The field is formatted as follows: blockId/subBlockId/hostId.
+     * Output only. [Output Only] The precise location of your instance within the zone's data
+     * center, including the block, sub-block, and host. The field is formatted as
+     * follows: blockId/subBlockId/hostId.
      * </pre>
      *
      * <code>optional string physical_host = 464370704;</code>
@@ -1200,7 +1354,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A series of fields containing the global name of the Compute Engine cluster, as well as the ID of the block, sub-block, and host on which the running instance is located.
+     * Output only. [Output Only] A series of fields containing the global name of the Compute
+     * Engine cluster, as well as the ID of the block, sub-block, and host on
+     * which the running instance is located.
      * </pre>
      *
      * <code>
@@ -1217,7 +1373,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A series of fields containing the global name of the Compute Engine cluster, as well as the ID of the block, sub-block, and host on which the running instance is located.
+     * Output only. [Output Only] A series of fields containing the global name of the Compute
+     * Engine cluster, as well as the ID of the block, sub-block, and host on
+     * which the running instance is located.
      * </pre>
      *
      * <code>
@@ -1241,7 +1399,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A series of fields containing the global name of the Compute Engine cluster, as well as the ID of the block, sub-block, and host on which the running instance is located.
+     * Output only. [Output Only] A series of fields containing the global name of the Compute
+     * Engine cluster, as well as the ID of the block, sub-block, and host on
+     * which the running instance is located.
      * </pre>
      *
      * <code>
@@ -1267,7 +1427,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A series of fields containing the global name of the Compute Engine cluster, as well as the ID of the block, sub-block, and host on which the running instance is located.
+     * Output only. [Output Only] A series of fields containing the global name of the Compute
+     * Engine cluster, as well as the ID of the block, sub-block, and host on
+     * which the running instance is located.
      * </pre>
      *
      * <code>
@@ -1290,7 +1452,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A series of fields containing the global name of the Compute Engine cluster, as well as the ID of the block, sub-block, and host on which the running instance is located.
+     * Output only. [Output Only] A series of fields containing the global name of the Compute
+     * Engine cluster, as well as the ID of the block, sub-block, and host on
+     * which the running instance is located.
      * </pre>
      *
      * <code>
@@ -1323,7 +1487,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A series of fields containing the global name of the Compute Engine cluster, as well as the ID of the block, sub-block, and host on which the running instance is located.
+     * Output only. [Output Only] A series of fields containing the global name of the Compute
+     * Engine cluster, as well as the ID of the block, sub-block, and host on
+     * which the running instance is located.
      * </pre>
      *
      * <code>
@@ -1345,7 +1511,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A series of fields containing the global name of the Compute Engine cluster, as well as the ID of the block, sub-block, and host on which the running instance is located.
+     * Output only. [Output Only] A series of fields containing the global name of the Compute
+     * Engine cluster, as well as the ID of the block, sub-block, and host on
+     * which the running instance is located.
      * </pre>
      *
      * <code>
@@ -1363,7 +1531,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A series of fields containing the global name of the Compute Engine cluster, as well as the ID of the block, sub-block, and host on which the running instance is located.
+     * Output only. [Output Only] A series of fields containing the global name of the Compute
+     * Engine cluster, as well as the ID of the block, sub-block, and host on
+     * which the running instance is located.
      * </pre>
      *
      * <code>
@@ -1385,7 +1555,9 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A series of fields containing the global name of the Compute Engine cluster, as well as the ID of the block, sub-block, and host on which the running instance is located.
+     * Output only. [Output Only] A series of fields containing the global name of the Compute
+     * Engine cluster, as well as the ID of the block, sub-block, and host on
+     * which the running instance is located.
      * </pre>
      *
      * <code>
@@ -1409,6 +1581,230 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       return physicalHostTopologyBuilder_;
     }
 
+    private com.google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo
+        reservationConsumptionInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo,
+            com.google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo.Builder,
+            com.google.cloud.compute.v1.ResourceStatusReservationConsumptionInfoOrBuilder>
+        reservationConsumptionInfoBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Reservation information that the instance is consuming from.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo reservation_consumption_info = 201056997;
+     * </code>
+     *
+     * @return Whether the reservationConsumptionInfo field is set.
+     */
+    public boolean hasReservationConsumptionInfo() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Reservation information that the instance is consuming from.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo reservation_consumption_info = 201056997;
+     * </code>
+     *
+     * @return The reservationConsumptionInfo.
+     */
+    public com.google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo
+        getReservationConsumptionInfo() {
+      if (reservationConsumptionInfoBuilder_ == null) {
+        return reservationConsumptionInfo_ == null
+            ? com.google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo
+                .getDefaultInstance()
+            : reservationConsumptionInfo_;
+      } else {
+        return reservationConsumptionInfoBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Reservation information that the instance is consuming from.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo reservation_consumption_info = 201056997;
+     * </code>
+     */
+    public Builder setReservationConsumptionInfo(
+        com.google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo value) {
+      if (reservationConsumptionInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        reservationConsumptionInfo_ = value;
+      } else {
+        reservationConsumptionInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Reservation information that the instance is consuming from.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo reservation_consumption_info = 201056997;
+     * </code>
+     */
+    public Builder setReservationConsumptionInfo(
+        com.google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo.Builder
+            builderForValue) {
+      if (reservationConsumptionInfoBuilder_ == null) {
+        reservationConsumptionInfo_ = builderForValue.build();
+      } else {
+        reservationConsumptionInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Reservation information that the instance is consuming from.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo reservation_consumption_info = 201056997;
+     * </code>
+     */
+    public Builder mergeReservationConsumptionInfo(
+        com.google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo value) {
+      if (reservationConsumptionInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && reservationConsumptionInfo_ != null
+            && reservationConsumptionInfo_
+                != com.google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo
+                    .getDefaultInstance()) {
+          getReservationConsumptionInfoBuilder().mergeFrom(value);
+        } else {
+          reservationConsumptionInfo_ = value;
+        }
+      } else {
+        reservationConsumptionInfoBuilder_.mergeFrom(value);
+      }
+      if (reservationConsumptionInfo_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Reservation information that the instance is consuming from.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo reservation_consumption_info = 201056997;
+     * </code>
+     */
+    public Builder clearReservationConsumptionInfo() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      reservationConsumptionInfo_ = null;
+      if (reservationConsumptionInfoBuilder_ != null) {
+        reservationConsumptionInfoBuilder_.dispose();
+        reservationConsumptionInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Reservation information that the instance is consuming from.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo reservation_consumption_info = 201056997;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo.Builder
+        getReservationConsumptionInfoBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getReservationConsumptionInfoFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Reservation information that the instance is consuming from.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo reservation_consumption_info = 201056997;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.ResourceStatusReservationConsumptionInfoOrBuilder
+        getReservationConsumptionInfoOrBuilder() {
+      if (reservationConsumptionInfoBuilder_ != null) {
+        return reservationConsumptionInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return reservationConsumptionInfo_ == null
+            ? com.google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo
+                .getDefaultInstance()
+            : reservationConsumptionInfo_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Reservation information that the instance is consuming from.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo reservation_consumption_info = 201056997;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo,
+            com.google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo.Builder,
+            com.google.cloud.compute.v1.ResourceStatusReservationConsumptionInfoOrBuilder>
+        getReservationConsumptionInfoFieldBuilder() {
+      if (reservationConsumptionInfoBuilder_ == null) {
+        reservationConsumptionInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo,
+                com.google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo.Builder,
+                com.google.cloud.compute.v1.ResourceStatusReservationConsumptionInfoOrBuilder>(
+                getReservationConsumptionInfo(), getParentForChildren(), isClean());
+        reservationConsumptionInfo_ = null;
+      }
+      return reservationConsumptionInfoBuilder_;
+    }
+
     private com.google.cloud.compute.v1.ResourceStatusScheduling scheduling_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.ResourceStatusScheduling,
@@ -1423,7 +1819,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the scheduling field is set.
      */
     public boolean hasScheduling() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -1455,7 +1851,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       } else {
         schedulingBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1471,7 +1867,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       } else {
         schedulingBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1482,7 +1878,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeScheduling(com.google.cloud.compute.v1.ResourceStatusScheduling value) {
       if (schedulingBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && scheduling_ != null
             && scheduling_
                 != com.google.cloud.compute.v1.ResourceStatusScheduling.getDefaultInstance()) {
@@ -1494,7 +1890,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
         schedulingBuilder_.mergeFrom(value);
       }
       if (scheduling_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -1505,7 +1901,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearScheduling() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       scheduling_ = null;
       if (schedulingBuilder_ != null) {
         schedulingBuilder_.dispose();
@@ -1520,7 +1916,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.compute.v1.ResourceStatusScheduling.Builder getSchedulingBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getSchedulingFieldBuilder().getBuilder();
     }
@@ -1574,7 +1970,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the upcomingMaintenance field is set.
      */
     public boolean hasUpcomingMaintenance() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -1606,7 +2002,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       } else {
         upcomingMaintenanceBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1622,7 +2018,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       } else {
         upcomingMaintenanceBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1633,7 +2029,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpcomingMaintenance(com.google.cloud.compute.v1.UpcomingMaintenance value) {
       if (upcomingMaintenanceBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && upcomingMaintenance_ != null
             && upcomingMaintenance_
                 != com.google.cloud.compute.v1.UpcomingMaintenance.getDefaultInstance()) {
@@ -1645,7 +2041,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
         upcomingMaintenanceBuilder_.mergeFrom(value);
       }
       if (upcomingMaintenance_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -1656,7 +2052,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpcomingMaintenance() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       upcomingMaintenance_ = null;
       if (upcomingMaintenanceBuilder_ != null) {
         upcomingMaintenanceBuilder_.dispose();
@@ -1671,7 +2067,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.compute.v1.UpcomingMaintenance.Builder getUpcomingMaintenanceBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getUpcomingMaintenanceFieldBuilder().getBuilder();
     }

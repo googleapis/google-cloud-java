@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -80,6 +80,107 @@ public final class DatabaseCenterGrpc {
     return getQueryProductsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.databasecenter.v1beta.AggregateFleetRequest,
+          com.google.cloud.databasecenter.v1beta.AggregateFleetResponse>
+      getAggregateFleetMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AggregateFleet",
+      requestType = com.google.cloud.databasecenter.v1beta.AggregateFleetRequest.class,
+      responseType = com.google.cloud.databasecenter.v1beta.AggregateFleetResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.databasecenter.v1beta.AggregateFleetRequest,
+          com.google.cloud.databasecenter.v1beta.AggregateFleetResponse>
+      getAggregateFleetMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.databasecenter.v1beta.AggregateFleetRequest,
+            com.google.cloud.databasecenter.v1beta.AggregateFleetResponse>
+        getAggregateFleetMethod;
+    if ((getAggregateFleetMethod = DatabaseCenterGrpc.getAggregateFleetMethod) == null) {
+      synchronized (DatabaseCenterGrpc.class) {
+        if ((getAggregateFleetMethod = DatabaseCenterGrpc.getAggregateFleetMethod) == null) {
+          DatabaseCenterGrpc.getAggregateFleetMethod =
+              getAggregateFleetMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.databasecenter.v1beta.AggregateFleetRequest,
+                          com.google.cloud.databasecenter.v1beta.AggregateFleetResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AggregateFleet"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.databasecenter.v1beta.AggregateFleetRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.databasecenter.v1beta.AggregateFleetResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DatabaseCenterMethodDescriptorSupplier("AggregateFleet"))
+                      .build();
+        }
+      }
+    }
+    return getAggregateFleetMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsRequest,
+          com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsResponse>
+      getQueryDatabaseResourceGroupsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "QueryDatabaseResourceGroups",
+      requestType = com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsRequest.class,
+      responseType =
+          com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsRequest,
+          com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsResponse>
+      getQueryDatabaseResourceGroupsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsRequest,
+            com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsResponse>
+        getQueryDatabaseResourceGroupsMethod;
+    if ((getQueryDatabaseResourceGroupsMethod =
+            DatabaseCenterGrpc.getQueryDatabaseResourceGroupsMethod)
+        == null) {
+      synchronized (DatabaseCenterGrpc.class) {
+        if ((getQueryDatabaseResourceGroupsMethod =
+                DatabaseCenterGrpc.getQueryDatabaseResourceGroupsMethod)
+            == null) {
+          DatabaseCenterGrpc.getQueryDatabaseResourceGroupsMethod =
+              getQueryDatabaseResourceGroupsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsRequest,
+                          com.google.cloud.databasecenter.v1beta
+                              .QueryDatabaseResourceGroupsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "QueryDatabaseResourceGroups"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.databasecenter.v1beta
+                                  .QueryDatabaseResourceGroupsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.databasecenter.v1beta
+                                  .QueryDatabaseResourceGroupsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DatabaseCenterMethodDescriptorSupplier("QueryDatabaseResourceGroups"))
+                      .build();
+        }
+      }
+    }
+    return getQueryDatabaseResourceGroupsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static DatabaseCenterStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<DatabaseCenterStub> factory =
@@ -158,6 +259,38 @@ public final class DatabaseCenterGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getQueryProductsMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * AggregateFleet provides statistics about the fleet grouped by various
+     * fields.
+     * </pre>
+     */
+    default void aggregateFleet(
+        com.google.cloud.databasecenter.v1beta.AggregateFleetRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.databasecenter.v1beta.AggregateFleetResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAggregateFleetMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * QueryDatabaseResourceGroups returns paginated results of database groups.
+     * </pre>
+     */
+    default void queryDatabaseResourceGroups(
+        com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getQueryDatabaseResourceGroupsMethod(), responseObserver);
+    }
   }
 
   /**
@@ -211,6 +344,42 @@ public final class DatabaseCenterGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * AggregateFleet provides statistics about the fleet grouped by various
+     * fields.
+     * </pre>
+     */
+    public void aggregateFleet(
+        com.google.cloud.databasecenter.v1beta.AggregateFleetRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.databasecenter.v1beta.AggregateFleetResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAggregateFleetMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * QueryDatabaseResourceGroups returns paginated results of database groups.
+     * </pre>
+     */
+    public void queryDatabaseResourceGroups(
+        com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getQueryDatabaseResourceGroupsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -246,6 +415,36 @@ public final class DatabaseCenterGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getQueryProductsMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * AggregateFleet provides statistics about the fleet grouped by various
+     * fields.
+     * </pre>
+     */
+    public com.google.cloud.databasecenter.v1beta.AggregateFleetResponse aggregateFleet(
+        com.google.cloud.databasecenter.v1beta.AggregateFleetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getAggregateFleetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * QueryDatabaseResourceGroups returns paginated results of database groups.
+     * </pre>
+     */
+    public com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsResponse
+        queryDatabaseResourceGroups(
+            com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getQueryDatabaseResourceGroupsMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -279,6 +478,34 @@ public final class DatabaseCenterGrpc {
         com.google.cloud.databasecenter.v1beta.QueryProductsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getQueryProductsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * AggregateFleet provides statistics about the fleet grouped by various
+     * fields.
+     * </pre>
+     */
+    public com.google.cloud.databasecenter.v1beta.AggregateFleetResponse aggregateFleet(
+        com.google.cloud.databasecenter.v1beta.AggregateFleetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAggregateFleetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * QueryDatabaseResourceGroups returns paginated results of database groups.
+     * </pre>
+     */
+    public com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsResponse
+        queryDatabaseResourceGroups(
+            com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getQueryDatabaseResourceGroupsMethod(), getCallOptions(), request);
     }
   }
 
@@ -315,9 +542,41 @@ public final class DatabaseCenterGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getQueryProductsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * AggregateFleet provides statistics about the fleet grouped by various
+     * fields.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.databasecenter.v1beta.AggregateFleetResponse>
+        aggregateFleet(com.google.cloud.databasecenter.v1beta.AggregateFleetRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAggregateFleetMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * QueryDatabaseResourceGroups returns paginated results of database groups.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsResponse>
+        queryDatabaseResourceGroups(
+            com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getQueryDatabaseResourceGroupsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_QUERY_PRODUCTS = 0;
+  private static final int METHODID_AGGREGATE_FLEET = 1;
+  private static final int METHODID_QUERY_DATABASE_RESOURCE_GROUPS = 2;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -341,6 +600,20 @@ public final class DatabaseCenterGrpc {
               (com.google.cloud.databasecenter.v1beta.QueryProductsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.databasecenter.v1beta.QueryProductsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_AGGREGATE_FLEET:
+          serviceImpl.aggregateFleet(
+              (com.google.cloud.databasecenter.v1beta.AggregateFleetRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.databasecenter.v1beta.AggregateFleetResponse>)
+                  responseObserver);
+          break;
+        case METHODID_QUERY_DATABASE_RESOURCE_GROUPS:
+          serviceImpl.queryDatabaseResourceGroups(
+              (com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsResponse>)
                   responseObserver);
           break;
         default:
@@ -368,6 +641,20 @@ public final class DatabaseCenterGrpc {
                     com.google.cloud.databasecenter.v1beta.QueryProductsRequest,
                     com.google.cloud.databasecenter.v1beta.QueryProductsResponse>(
                     service, METHODID_QUERY_PRODUCTS)))
+        .addMethod(
+            getAggregateFleetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.databasecenter.v1beta.AggregateFleetRequest,
+                    com.google.cloud.databasecenter.v1beta.AggregateFleetResponse>(
+                    service, METHODID_AGGREGATE_FLEET)))
+        .addMethod(
+            getQueryDatabaseResourceGroupsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsRequest,
+                    com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsResponse>(
+                    service, METHODID_QUERY_DATABASE_RESOURCE_GROUPS)))
         .build();
   }
 
@@ -420,6 +707,8 @@ public final class DatabaseCenterGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new DatabaseCenterFileDescriptorSupplier())
                       .addMethod(getQueryProductsMethod())
+                      .addMethod(getAggregateFleetMethod())
+                      .addMethod(getQueryDatabaseResourceGroupsMethod())
                       .build();
         }
       }

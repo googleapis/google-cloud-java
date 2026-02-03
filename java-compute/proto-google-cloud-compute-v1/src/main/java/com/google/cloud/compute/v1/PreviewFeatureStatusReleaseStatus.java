@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,7 +69,7 @@ public final class PreviewFeatureStatusReleaseStatus extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] The stage of the feature.
+   * Output only. [Output Only] The stage of the feature.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.PreviewFeatureStatusReleaseStatus.Stage}
@@ -218,7 +218,7 @@ public final class PreviewFeatureStatusReleaseStatus extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] The stage of the feature.
+   * Output only. [Output Only] The stage of the feature.
    * Check the Stage enum for the list of possible values.
    * </pre>
    *
@@ -235,7 +235,7 @@ public final class PreviewFeatureStatusReleaseStatus extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] The stage of the feature.
+   * Output only. [Output Only] The stage of the feature.
    * Check the Stage enum for the list of possible values.
    * </pre>
    *
@@ -260,7 +260,7 @@ public final class PreviewFeatureStatusReleaseStatus extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] The stage of the feature.
+   * Output only. [Output Only] The stage of the feature.
    * Check the Stage enum for the list of possible values.
    * </pre>
    *
@@ -736,7 +736,7 @@ public final class PreviewFeatureStatusReleaseStatus extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The stage of the feature.
+     * Output only. [Output Only] The stage of the feature.
      * Check the Stage enum for the list of possible values.
      * </pre>
      *
@@ -752,7 +752,7 @@ public final class PreviewFeatureStatusReleaseStatus extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The stage of the feature.
+     * Output only. [Output Only] The stage of the feature.
      * Check the Stage enum for the list of possible values.
      * </pre>
      *
@@ -776,7 +776,7 @@ public final class PreviewFeatureStatusReleaseStatus extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The stage of the feature.
+     * Output only. [Output Only] The stage of the feature.
      * Check the Stage enum for the list of possible values.
      * </pre>
      *
@@ -800,7 +800,7 @@ public final class PreviewFeatureStatusReleaseStatus extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The stage of the feature.
+     * Output only. [Output Only] The stage of the feature.
      * Check the Stage enum for the list of possible values.
      * </pre>
      *
@@ -823,7 +823,7 @@ public final class PreviewFeatureStatusReleaseStatus extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The stage of the feature.
+     * Output only. [Output Only] The stage of the feature.
      * Check the Stage enum for the list of possible values.
      * </pre>
      *
@@ -842,7 +842,7 @@ public final class PreviewFeatureStatusReleaseStatus extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The stage of the feature.
+     * Output only. [Output Only] The stage of the feature.
      * Check the Stage enum for the list of possible values.
      * </pre>
      *

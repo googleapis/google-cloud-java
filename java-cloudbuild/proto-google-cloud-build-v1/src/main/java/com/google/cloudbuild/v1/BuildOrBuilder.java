@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -166,10 +166,12 @@ public interface BuildOrBuilder
    *
    *
    * <pre>
-   * The location of the source files to build.
+   * Optional. The location of the source files to build.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.Source source = 3;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.Source source = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the source field is set.
    */
@@ -179,10 +181,12 @@ public interface BuildOrBuilder
    *
    *
    * <pre>
-   * The location of the source files to build.
+   * Optional. The location of the source files to build.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.Source source = 3;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.Source source = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The source.
    */
@@ -192,10 +196,12 @@ public interface BuildOrBuilder
    *
    *
    * <pre>
-   * The location of the source files to build.
+   * Optional. The location of the source files to build.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.Source source = 3;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.Source source = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloudbuild.v1.SourceOrBuilder getSourceOrBuilder();
 

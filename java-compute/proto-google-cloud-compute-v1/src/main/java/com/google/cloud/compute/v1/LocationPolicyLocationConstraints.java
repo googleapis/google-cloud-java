@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,7 +71,8 @@ public final class LocationPolicyLocationConstraints extends com.google.protobuf
    *
    *
    * <pre>
-   * Maximum number of items that are allowed to be placed in this zone. The value must be non-negative.
+   * Maximum number of items that are allowed to be placed in this zone.
+   * The value must be non-negative.
    * </pre>
    *
    * <code>optional int32 max_count = 287620724;</code>
@@ -87,7 +88,8 @@ public final class LocationPolicyLocationConstraints extends com.google.protobuf
    *
    *
    * <pre>
-   * Maximum number of items that are allowed to be placed in this zone. The value must be non-negative.
+   * Maximum number of items that are allowed to be placed in this zone.
+   * The value must be non-negative.
    * </pre>
    *
    * <code>optional int32 max_count = 287620724;</code>
@@ -458,7 +460,8 @@ public final class LocationPolicyLocationConstraints extends com.google.protobuf
      *
      *
      * <pre>
-     * Maximum number of items that are allowed to be placed in this zone. The value must be non-negative.
+     * Maximum number of items that are allowed to be placed in this zone.
+     * The value must be non-negative.
      * </pre>
      *
      * <code>optional int32 max_count = 287620724;</code>
@@ -474,7 +477,8 @@ public final class LocationPolicyLocationConstraints extends com.google.protobuf
      *
      *
      * <pre>
-     * Maximum number of items that are allowed to be placed in this zone. The value must be non-negative.
+     * Maximum number of items that are allowed to be placed in this zone.
+     * The value must be non-negative.
      * </pre>
      *
      * <code>optional int32 max_count = 287620724;</code>
@@ -490,7 +494,8 @@ public final class LocationPolicyLocationConstraints extends com.google.protobuf
      *
      *
      * <pre>
-     * Maximum number of items that are allowed to be placed in this zone. The value must be non-negative.
+     * Maximum number of items that are allowed to be placed in this zone.
+     * The value must be non-negative.
      * </pre>
      *
      * <code>optional int32 max_count = 287620724;</code>
@@ -510,7 +515,8 @@ public final class LocationPolicyLocationConstraints extends com.google.protobuf
      *
      *
      * <pre>
-     * Maximum number of items that are allowed to be placed in this zone. The value must be non-negative.
+     * Maximum number of items that are allowed to be placed in this zone.
+     * The value must be non-negative.
      * </pre>
      *
      * <code>optional int32 max_count = 287620724;</code>

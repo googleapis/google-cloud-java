@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,7 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
 
   private Price() {
     externalPriceUri_ = "";
+    discountComponents_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -183,6 +184,65 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
     return effectivePrice_ == null ? com.google.type.Money.getDefaultInstance() : effectivePrice_;
   }
 
+  public static final int PRICE_PERIOD_FIELD_NUMBER = 6;
+  private com.google.cloud.channel.v1.Period pricePeriod_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The time period with respect to which base and effective prices are
+   * defined.
+   * Example: 1 month, 6 months, 1 year, etc.
+   * </pre>
+   *
+   * <code>.google.cloud.channel.v1.Period price_period = 6;</code>
+   *
+   * @return Whether the pricePeriod field is set.
+   */
+  @java.lang.Override
+  public boolean hasPricePeriod() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The time period with respect to which base and effective prices are
+   * defined.
+   * Example: 1 month, 6 months, 1 year, etc.
+   * </pre>
+   *
+   * <code>.google.cloud.channel.v1.Period price_period = 6;</code>
+   *
+   * @return The pricePeriod.
+   */
+  @java.lang.Override
+  public com.google.cloud.channel.v1.Period getPricePeriod() {
+    return pricePeriod_ == null
+        ? com.google.cloud.channel.v1.Period.getDefaultInstance()
+        : pricePeriod_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The time period with respect to which base and effective prices are
+   * defined.
+   * Example: 1 month, 6 months, 1 year, etc.
+   * </pre>
+   *
+   * <code>.google.cloud.channel.v1.Period price_period = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.channel.v1.PeriodOrBuilder getPricePeriodOrBuilder() {
+    return pricePeriod_ == null
+        ? com.google.cloud.channel.v1.Period.getDefaultInstance()
+        : pricePeriod_;
+  }
+
   public static final int EXTERNAL_PRICE_URI_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
@@ -236,6 +296,88 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int DISCOUNT_COMPONENTS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.channel.v1.DiscountComponent> discountComponents_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Breakdown of the discount into its components.
+   * This will be empty if there is no discount present.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.channel.v1.DiscountComponent discount_components = 5;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.channel.v1.DiscountComponent> getDiscountComponentsList() {
+    return discountComponents_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Breakdown of the discount into its components.
+   * This will be empty if there is no discount present.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.channel.v1.DiscountComponent discount_components = 5;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.channel.v1.DiscountComponentOrBuilder>
+      getDiscountComponentsOrBuilderList() {
+    return discountComponents_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Breakdown of the discount into its components.
+   * This will be empty if there is no discount present.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.channel.v1.DiscountComponent discount_components = 5;</code>
+   */
+  @java.lang.Override
+  public int getDiscountComponentsCount() {
+    return discountComponents_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Breakdown of the discount into its components.
+   * This will be empty if there is no discount present.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.channel.v1.DiscountComponent discount_components = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.channel.v1.DiscountComponent getDiscountComponents(int index) {
+    return discountComponents_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Breakdown of the discount into its components.
+   * This will be empty if there is no discount present.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.channel.v1.DiscountComponent discount_components = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.channel.v1.DiscountComponentOrBuilder getDiscountComponentsOrBuilder(
+      int index) {
+    return discountComponents_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -262,6 +404,12 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalPriceUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, externalPriceUri_);
     }
+    for (int i = 0; i < discountComponents_.size(); i++) {
+      output.writeMessage(5, discountComponents_.get(i));
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(6, getPricePeriod());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -282,6 +430,13 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalPriceUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, externalPriceUri_);
+    }
+    for (int i = 0; i < discountComponents_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(5, discountComponents_.get(i));
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getPricePeriod());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -308,7 +463,12 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
     if (hasEffectivePrice()) {
       if (!getEffectivePrice().equals(other.getEffectivePrice())) return false;
     }
+    if (hasPricePeriod() != other.hasPricePeriod()) return false;
+    if (hasPricePeriod()) {
+      if (!getPricePeriod().equals(other.getPricePeriod())) return false;
+    }
     if (!getExternalPriceUri().equals(other.getExternalPriceUri())) return false;
+    if (!getDiscountComponentsList().equals(other.getDiscountComponentsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -333,8 +493,16 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + EFFECTIVE_PRICE_FIELD_NUMBER;
       hash = (53 * hash) + getEffectivePrice().hashCode();
     }
+    if (hasPricePeriod()) {
+      hash = (37 * hash) + PRICE_PERIOD_FIELD_NUMBER;
+      hash = (53 * hash) + getPricePeriod().hashCode();
+    }
     hash = (37 * hash) + EXTERNAL_PRICE_URI_FIELD_NUMBER;
     hash = (53 * hash) + getExternalPriceUri().hashCode();
+    if (getDiscountComponentsCount() > 0) {
+      hash = (37 * hash) + DISCOUNT_COMPONENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getDiscountComponentsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -477,6 +645,8 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getBasePriceFieldBuilder();
         getEffectivePriceFieldBuilder();
+        getPricePeriodFieldBuilder();
+        getDiscountComponentsFieldBuilder();
       }
     }
 
@@ -495,7 +665,19 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
         effectivePriceBuilder_.dispose();
         effectivePriceBuilder_ = null;
       }
+      pricePeriod_ = null;
+      if (pricePeriodBuilder_ != null) {
+        pricePeriodBuilder_.dispose();
+        pricePeriodBuilder_ = null;
+      }
       externalPriceUri_ = "";
+      if (discountComponentsBuilder_ == null) {
+        discountComponents_ = java.util.Collections.emptyList();
+      } else {
+        discountComponents_ = null;
+        discountComponentsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -522,11 +704,24 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.channel.v1.Price buildPartial() {
       com.google.cloud.channel.v1.Price result = new com.google.cloud.channel.v1.Price(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.channel.v1.Price result) {
+      if (discountComponentsBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          discountComponents_ = java.util.Collections.unmodifiableList(discountComponents_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.discountComponents_ = discountComponents_;
+      } else {
+        result.discountComponents_ = discountComponentsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.channel.v1.Price result) {
@@ -545,6 +740,11 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.pricePeriod_ =
+            pricePeriodBuilder_ == null ? pricePeriod_ : pricePeriodBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.externalPriceUri_ = externalPriceUri_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -604,10 +804,40 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
       if (other.hasEffectivePrice()) {
         mergeEffectivePrice(other.getEffectivePrice());
       }
+      if (other.hasPricePeriod()) {
+        mergePricePeriod(other.getPricePeriod());
+      }
       if (!other.getExternalPriceUri().isEmpty()) {
         externalPriceUri_ = other.externalPriceUri_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
+      }
+      if (discountComponentsBuilder_ == null) {
+        if (!other.discountComponents_.isEmpty()) {
+          if (discountComponents_.isEmpty()) {
+            discountComponents_ = other.discountComponents_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureDiscountComponentsIsMutable();
+            discountComponents_.addAll(other.discountComponents_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.discountComponents_.isEmpty()) {
+          if (discountComponentsBuilder_.isEmpty()) {
+            discountComponentsBuilder_.dispose();
+            discountComponentsBuilder_ = null;
+            discountComponents_ = other.discountComponents_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            discountComponentsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getDiscountComponentsFieldBuilder()
+                    : null;
+          } else {
+            discountComponentsBuilder_.addAllMessages(other.discountComponents_);
+          }
+        }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -656,9 +886,28 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 externalPriceUri_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
+            case 42:
+              {
+                com.google.cloud.channel.v1.DiscountComponent m =
+                    input.readMessage(
+                        com.google.cloud.channel.v1.DiscountComponent.parser(), extensionRegistry);
+                if (discountComponentsBuilder_ == null) {
+                  ensureDiscountComponentsIsMutable();
+                  discountComponents_.add(m);
+                } else {
+                  discountComponentsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getPricePeriodFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1112,6 +1361,218 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
       return effectivePriceBuilder_;
     }
 
+    private com.google.cloud.channel.v1.Period pricePeriod_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.channel.v1.Period,
+            com.google.cloud.channel.v1.Period.Builder,
+            com.google.cloud.channel.v1.PeriodOrBuilder>
+        pricePeriodBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The time period with respect to which base and effective prices are
+     * defined.
+     * Example: 1 month, 6 months, 1 year, etc.
+     * </pre>
+     *
+     * <code>.google.cloud.channel.v1.Period price_period = 6;</code>
+     *
+     * @return Whether the pricePeriod field is set.
+     */
+    public boolean hasPricePeriod() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The time period with respect to which base and effective prices are
+     * defined.
+     * Example: 1 month, 6 months, 1 year, etc.
+     * </pre>
+     *
+     * <code>.google.cloud.channel.v1.Period price_period = 6;</code>
+     *
+     * @return The pricePeriod.
+     */
+    public com.google.cloud.channel.v1.Period getPricePeriod() {
+      if (pricePeriodBuilder_ == null) {
+        return pricePeriod_ == null
+            ? com.google.cloud.channel.v1.Period.getDefaultInstance()
+            : pricePeriod_;
+      } else {
+        return pricePeriodBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The time period with respect to which base and effective prices are
+     * defined.
+     * Example: 1 month, 6 months, 1 year, etc.
+     * </pre>
+     *
+     * <code>.google.cloud.channel.v1.Period price_period = 6;</code>
+     */
+    public Builder setPricePeriod(com.google.cloud.channel.v1.Period value) {
+      if (pricePeriodBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        pricePeriod_ = value;
+      } else {
+        pricePeriodBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The time period with respect to which base and effective prices are
+     * defined.
+     * Example: 1 month, 6 months, 1 year, etc.
+     * </pre>
+     *
+     * <code>.google.cloud.channel.v1.Period price_period = 6;</code>
+     */
+    public Builder setPricePeriod(com.google.cloud.channel.v1.Period.Builder builderForValue) {
+      if (pricePeriodBuilder_ == null) {
+        pricePeriod_ = builderForValue.build();
+      } else {
+        pricePeriodBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The time period with respect to which base and effective prices are
+     * defined.
+     * Example: 1 month, 6 months, 1 year, etc.
+     * </pre>
+     *
+     * <code>.google.cloud.channel.v1.Period price_period = 6;</code>
+     */
+    public Builder mergePricePeriod(com.google.cloud.channel.v1.Period value) {
+      if (pricePeriodBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && pricePeriod_ != null
+            && pricePeriod_ != com.google.cloud.channel.v1.Period.getDefaultInstance()) {
+          getPricePeriodBuilder().mergeFrom(value);
+        } else {
+          pricePeriod_ = value;
+        }
+      } else {
+        pricePeriodBuilder_.mergeFrom(value);
+      }
+      if (pricePeriod_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The time period with respect to which base and effective prices are
+     * defined.
+     * Example: 1 month, 6 months, 1 year, etc.
+     * </pre>
+     *
+     * <code>.google.cloud.channel.v1.Period price_period = 6;</code>
+     */
+    public Builder clearPricePeriod() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      pricePeriod_ = null;
+      if (pricePeriodBuilder_ != null) {
+        pricePeriodBuilder_.dispose();
+        pricePeriodBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The time period with respect to which base and effective prices are
+     * defined.
+     * Example: 1 month, 6 months, 1 year, etc.
+     * </pre>
+     *
+     * <code>.google.cloud.channel.v1.Period price_period = 6;</code>
+     */
+    public com.google.cloud.channel.v1.Period.Builder getPricePeriodBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getPricePeriodFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The time period with respect to which base and effective prices are
+     * defined.
+     * Example: 1 month, 6 months, 1 year, etc.
+     * </pre>
+     *
+     * <code>.google.cloud.channel.v1.Period price_period = 6;</code>
+     */
+    public com.google.cloud.channel.v1.PeriodOrBuilder getPricePeriodOrBuilder() {
+      if (pricePeriodBuilder_ != null) {
+        return pricePeriodBuilder_.getMessageOrBuilder();
+      } else {
+        return pricePeriod_ == null
+            ? com.google.cloud.channel.v1.Period.getDefaultInstance()
+            : pricePeriod_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The time period with respect to which base and effective prices are
+     * defined.
+     * Example: 1 month, 6 months, 1 year, etc.
+     * </pre>
+     *
+     * <code>.google.cloud.channel.v1.Period price_period = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.channel.v1.Period,
+            com.google.cloud.channel.v1.Period.Builder,
+            com.google.cloud.channel.v1.PeriodOrBuilder>
+        getPricePeriodFieldBuilder() {
+      if (pricePeriodBuilder_ == null) {
+        pricePeriodBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.channel.v1.Period,
+                com.google.cloud.channel.v1.Period.Builder,
+                com.google.cloud.channel.v1.PeriodOrBuilder>(
+                getPricePeriod(), getParentForChildren(), isClean());
+        pricePeriod_ = null;
+      }
+      return pricePeriodBuilder_;
+    }
+
     private java.lang.Object externalPriceUri_ = "";
 
     /**
@@ -1177,7 +1638,7 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       externalPriceUri_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1195,7 +1656,7 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearExternalPriceUri() {
       externalPriceUri_ = getDefaultInstance().getExternalPriceUri();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1218,9 +1679,405 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       externalPriceUri_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.channel.v1.DiscountComponent> discountComponents_ =
+        java.util.Collections.emptyList();
+
+    private void ensureDiscountComponentsIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        discountComponents_ =
+            new java.util.ArrayList<com.google.cloud.channel.v1.DiscountComponent>(
+                discountComponents_);
+        bitField0_ |= 0x00000020;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.channel.v1.DiscountComponent,
+            com.google.cloud.channel.v1.DiscountComponent.Builder,
+            com.google.cloud.channel.v1.DiscountComponentOrBuilder>
+        discountComponentsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Breakdown of the discount into its components.
+     * This will be empty if there is no discount present.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.DiscountComponent discount_components = 5;</code>
+     */
+    public java.util.List<com.google.cloud.channel.v1.DiscountComponent>
+        getDiscountComponentsList() {
+      if (discountComponentsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(discountComponents_);
+      } else {
+        return discountComponentsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Breakdown of the discount into its components.
+     * This will be empty if there is no discount present.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.DiscountComponent discount_components = 5;</code>
+     */
+    public int getDiscountComponentsCount() {
+      if (discountComponentsBuilder_ == null) {
+        return discountComponents_.size();
+      } else {
+        return discountComponentsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Breakdown of the discount into its components.
+     * This will be empty if there is no discount present.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.DiscountComponent discount_components = 5;</code>
+     */
+    public com.google.cloud.channel.v1.DiscountComponent getDiscountComponents(int index) {
+      if (discountComponentsBuilder_ == null) {
+        return discountComponents_.get(index);
+      } else {
+        return discountComponentsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Breakdown of the discount into its components.
+     * This will be empty if there is no discount present.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.DiscountComponent discount_components = 5;</code>
+     */
+    public Builder setDiscountComponents(
+        int index, com.google.cloud.channel.v1.DiscountComponent value) {
+      if (discountComponentsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDiscountComponentsIsMutable();
+        discountComponents_.set(index, value);
+        onChanged();
+      } else {
+        discountComponentsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Breakdown of the discount into its components.
+     * This will be empty if there is no discount present.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.DiscountComponent discount_components = 5;</code>
+     */
+    public Builder setDiscountComponents(
+        int index, com.google.cloud.channel.v1.DiscountComponent.Builder builderForValue) {
+      if (discountComponentsBuilder_ == null) {
+        ensureDiscountComponentsIsMutable();
+        discountComponents_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        discountComponentsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Breakdown of the discount into its components.
+     * This will be empty if there is no discount present.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.DiscountComponent discount_components = 5;</code>
+     */
+    public Builder addDiscountComponents(com.google.cloud.channel.v1.DiscountComponent value) {
+      if (discountComponentsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDiscountComponentsIsMutable();
+        discountComponents_.add(value);
+        onChanged();
+      } else {
+        discountComponentsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Breakdown of the discount into its components.
+     * This will be empty if there is no discount present.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.DiscountComponent discount_components = 5;</code>
+     */
+    public Builder addDiscountComponents(
+        int index, com.google.cloud.channel.v1.DiscountComponent value) {
+      if (discountComponentsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDiscountComponentsIsMutable();
+        discountComponents_.add(index, value);
+        onChanged();
+      } else {
+        discountComponentsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Breakdown of the discount into its components.
+     * This will be empty if there is no discount present.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.DiscountComponent discount_components = 5;</code>
+     */
+    public Builder addDiscountComponents(
+        com.google.cloud.channel.v1.DiscountComponent.Builder builderForValue) {
+      if (discountComponentsBuilder_ == null) {
+        ensureDiscountComponentsIsMutable();
+        discountComponents_.add(builderForValue.build());
+        onChanged();
+      } else {
+        discountComponentsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Breakdown of the discount into its components.
+     * This will be empty if there is no discount present.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.DiscountComponent discount_components = 5;</code>
+     */
+    public Builder addDiscountComponents(
+        int index, com.google.cloud.channel.v1.DiscountComponent.Builder builderForValue) {
+      if (discountComponentsBuilder_ == null) {
+        ensureDiscountComponentsIsMutable();
+        discountComponents_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        discountComponentsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Breakdown of the discount into its components.
+     * This will be empty if there is no discount present.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.DiscountComponent discount_components = 5;</code>
+     */
+    public Builder addAllDiscountComponents(
+        java.lang.Iterable<? extends com.google.cloud.channel.v1.DiscountComponent> values) {
+      if (discountComponentsBuilder_ == null) {
+        ensureDiscountComponentsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, discountComponents_);
+        onChanged();
+      } else {
+        discountComponentsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Breakdown of the discount into its components.
+     * This will be empty if there is no discount present.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.DiscountComponent discount_components = 5;</code>
+     */
+    public Builder clearDiscountComponents() {
+      if (discountComponentsBuilder_ == null) {
+        discountComponents_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+      } else {
+        discountComponentsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Breakdown of the discount into its components.
+     * This will be empty if there is no discount present.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.DiscountComponent discount_components = 5;</code>
+     */
+    public Builder removeDiscountComponents(int index) {
+      if (discountComponentsBuilder_ == null) {
+        ensureDiscountComponentsIsMutable();
+        discountComponents_.remove(index);
+        onChanged();
+      } else {
+        discountComponentsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Breakdown of the discount into its components.
+     * This will be empty if there is no discount present.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.DiscountComponent discount_components = 5;</code>
+     */
+    public com.google.cloud.channel.v1.DiscountComponent.Builder getDiscountComponentsBuilder(
+        int index) {
+      return getDiscountComponentsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Breakdown of the discount into its components.
+     * This will be empty if there is no discount present.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.DiscountComponent discount_components = 5;</code>
+     */
+    public com.google.cloud.channel.v1.DiscountComponentOrBuilder getDiscountComponentsOrBuilder(
+        int index) {
+      if (discountComponentsBuilder_ == null) {
+        return discountComponents_.get(index);
+      } else {
+        return discountComponentsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Breakdown of the discount into its components.
+     * This will be empty if there is no discount present.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.DiscountComponent discount_components = 5;</code>
+     */
+    public java.util.List<? extends com.google.cloud.channel.v1.DiscountComponentOrBuilder>
+        getDiscountComponentsOrBuilderList() {
+      if (discountComponentsBuilder_ != null) {
+        return discountComponentsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(discountComponents_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Breakdown of the discount into its components.
+     * This will be empty if there is no discount present.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.DiscountComponent discount_components = 5;</code>
+     */
+    public com.google.cloud.channel.v1.DiscountComponent.Builder addDiscountComponentsBuilder() {
+      return getDiscountComponentsFieldBuilder()
+          .addBuilder(com.google.cloud.channel.v1.DiscountComponent.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Breakdown of the discount into its components.
+     * This will be empty if there is no discount present.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.DiscountComponent discount_components = 5;</code>
+     */
+    public com.google.cloud.channel.v1.DiscountComponent.Builder addDiscountComponentsBuilder(
+        int index) {
+      return getDiscountComponentsFieldBuilder()
+          .addBuilder(index, com.google.cloud.channel.v1.DiscountComponent.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Breakdown of the discount into its components.
+     * This will be empty if there is no discount present.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.DiscountComponent discount_components = 5;</code>
+     */
+    public java.util.List<com.google.cloud.channel.v1.DiscountComponent.Builder>
+        getDiscountComponentsBuilderList() {
+      return getDiscountComponentsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.channel.v1.DiscountComponent,
+            com.google.cloud.channel.v1.DiscountComponent.Builder,
+            com.google.cloud.channel.v1.DiscountComponentOrBuilder>
+        getDiscountComponentsFieldBuilder() {
+      if (discountComponentsBuilder_ == null) {
+        discountComponentsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.channel.v1.DiscountComponent,
+                com.google.cloud.channel.v1.DiscountComponent.Builder,
+                com.google.cloud.channel.v1.DiscountComponentOrBuilder>(
+                discountComponents_,
+                ((bitField0_ & 0x00000020) != 0),
+                getParentForChildren(),
+                isClean());
+        discountComponents_ = null;
+      }
+      return discountComponentsBuilder_;
     }
 
     @java.lang.Override

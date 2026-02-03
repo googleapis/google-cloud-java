@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,6 +51,8 @@ import com.google.cloud.compute.v1.ListRegionNotificationEndpointsRequest;
 import com.google.cloud.compute.v1.NotificationEndpoint;
 import com.google.cloud.compute.v1.NotificationEndpointList;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.TestIamPermissionsRegionNotificationEndpointRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -108,8 +110,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -160,6 +162,9 @@ public class RegionNotificationEndpointsStubSettings
   private final PagedCallSettings<
           ListRegionNotificationEndpointsRequest, NotificationEndpointList, ListPagedResponse>
       listSettings;
+  private final UnaryCallSettings<
+          TestIamPermissionsRegionNotificationEndpointRequest, TestPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<
           ListRegionNotificationEndpointsRequest, NotificationEndpointList, NotificationEndpoint>
@@ -264,6 +269,13 @@ public class RegionNotificationEndpointsStubSettings
     return listSettings;
   }
 
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<
+          TestIamPermissionsRegionNotificationEndpointRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
   public RegionNotificationEndpointsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -352,6 +364,7 @@ public class RegionNotificationEndpointsStubSettings
     insertSettings = settingsBuilder.insertSettings().build();
     insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   /** Builder for RegionNotificationEndpointsStubSettings. */
@@ -374,6 +387,9 @@ public class RegionNotificationEndpointsStubSettings
     private final PagedCallSettings.Builder<
             ListRegionNotificationEndpointsRequest, NotificationEndpointList, ListPagedResponse>
         listSettings;
+    private final UnaryCallSettings.Builder<
+            TestIamPermissionsRegionNotificationEndpointRequest, TestPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -430,10 +446,15 @@ public class RegionNotificationEndpointsStubSettings
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteSettings, getSettings, insertSettings, listSettings);
+              deleteSettings,
+              getSettings,
+              insertSettings,
+              listSettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -446,10 +467,15 @@ public class RegionNotificationEndpointsStubSettings
       insertSettings = settings.insertSettings.toBuilder();
       insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteSettings, getSettings, insertSettings, listSettings);
+              deleteSettings,
+              getSettings,
+              insertSettings,
+              listSettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -484,6 +510,11 @@ public class RegionNotificationEndpointsStubSettings
           .listSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .deleteOperationSettings()
@@ -590,6 +621,13 @@ public class RegionNotificationEndpointsStubSettings
             ListRegionNotificationEndpointsRequest, NotificationEndpointList, ListPagedResponse>
         listSettings() {
       return listSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsRegionNotificationEndpointRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

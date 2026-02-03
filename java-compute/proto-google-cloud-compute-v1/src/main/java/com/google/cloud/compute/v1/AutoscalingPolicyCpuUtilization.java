@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,7 +69,14 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are: * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+   * Indicates whether predictive autoscaling based on CPU metric is enabled.
+   * Valid values are:
+   *
+   * * NONE (default). No predictive method is used. The autoscaler scales the
+   * group to meet current demand based on real-time metrics.
+   * * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by
+   * monitoring daily and weekly load patterns and scaling out ahead of
+   * anticipated demand.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod}
@@ -89,7 +96,8 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
      *
      *
      * <pre>
-     * No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics
+     * No predictive method is used. The autoscaler scales the group to meet
+     * current demand based on real-time metrics
      * </pre>
      *
      * <code>NONE = 2402104;</code>
@@ -99,7 +107,8 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+     * Predictive autoscaling improves availability by monitoring daily and
+     * weekly load patterns and scaling out ahead of anticipated demand.
      * </pre>
      *
      * <code>OPTIMIZE_AVAILABILITY = 11629437;</code>
@@ -123,7 +132,8 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
      *
      *
      * <pre>
-     * No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics
+     * No predictive method is used. The autoscaler scales the group to meet
+     * current demand based on real-time metrics
      * </pre>
      *
      * <code>NONE = 2402104;</code>
@@ -134,7 +144,8 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+     * Predictive autoscaling improves availability by monitoring daily and
+     * weekly load patterns and scaling out ahead of anticipated demand.
      * </pre>
      *
      * <code>OPTIMIZE_AVAILABILITY = 11629437;</code>
@@ -238,7 +249,14 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are: * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+   * Indicates whether predictive autoscaling based on CPU metric is enabled.
+   * Valid values are:
+   *
+   * * NONE (default). No predictive method is used. The autoscaler scales the
+   * group to meet current demand based on real-time metrics.
+   * * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by
+   * monitoring daily and weekly load patterns and scaling out ahead of
+   * anticipated demand.
    * Check the PredictiveMethod enum for the list of possible values.
    * </pre>
    *
@@ -255,7 +273,14 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are: * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+   * Indicates whether predictive autoscaling based on CPU metric is enabled.
+   * Valid values are:
+   *
+   * * NONE (default). No predictive method is used. The autoscaler scales the
+   * group to meet current demand based on real-time metrics.
+   * * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by
+   * monitoring daily and weekly load patterns and scaling out ahead of
+   * anticipated demand.
    * Check the PredictiveMethod enum for the list of possible values.
    * </pre>
    *
@@ -280,7 +305,14 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are: * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+   * Indicates whether predictive autoscaling based on CPU metric is enabled.
+   * Valid values are:
+   *
+   * * NONE (default). No predictive method is used. The autoscaler scales the
+   * group to meet current demand based on real-time metrics.
+   * * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by
+   * monitoring daily and weekly load patterns and scaling out ahead of
+   * anticipated demand.
    * Check the PredictiveMethod enum for the list of possible values.
    * </pre>
    *
@@ -308,7 +340,18 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The target CPU utilization that the autoscaler maintains. Must be a float value in the range (0, 1]. If not specified, the default is 0.6. If the CPU level is below the target utilization, the autoscaler scales in the number of instances until it reaches the minimum number of instances you specified or until the average CPU of your instances reaches the target utilization. If the average CPU is above the target utilization, the autoscaler scales out until it reaches the maximum number of instances you specified or until the average utilization reaches the target utilization.
+   * The target CPU utilization that the autoscaler maintains. Must be
+   * a float value in the range (0, 1]. If not specified, the default is0.6.
+   *
+   * If the CPU level is below the target utilization, the autoscaler scales
+   * in the number of instances until it reaches the minimum number of
+   * instances you specified or until the average CPU of your instances
+   * reaches the target utilization.
+   *
+   * If the average CPU is above the target utilization, the autoscaler
+   * scales out until it reaches the maximum number of instances you
+   * specified or until the average utilization reaches the target
+   * utilization.
    * </pre>
    *
    * <code>optional double utilization_target = 215905870;</code>
@@ -324,7 +367,18 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The target CPU utilization that the autoscaler maintains. Must be a float value in the range (0, 1]. If not specified, the default is 0.6. If the CPU level is below the target utilization, the autoscaler scales in the number of instances until it reaches the minimum number of instances you specified or until the average CPU of your instances reaches the target utilization. If the average CPU is above the target utilization, the autoscaler scales out until it reaches the maximum number of instances you specified or until the average utilization reaches the target utilization.
+   * The target CPU utilization that the autoscaler maintains. Must be
+   * a float value in the range (0, 1]. If not specified, the default is0.6.
+   *
+   * If the CPU level is below the target utilization, the autoscaler scales
+   * in the number of instances until it reaches the minimum number of
+   * instances you specified or until the average CPU of your instances
+   * reaches the target utilization.
+   *
+   * If the average CPU is above the target utilization, the autoscaler
+   * scales out until it reaches the maximum number of instances you
+   * specified or until the average utilization reaches the target
+   * utilization.
    * </pre>
    *
    * <code>optional double utilization_target = 215905870;</code>
@@ -728,7 +782,14 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are: * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+     * Indicates whether predictive autoscaling based on CPU metric is enabled.
+     * Valid values are:
+     *
+     * * NONE (default). No predictive method is used. The autoscaler scales the
+     * group to meet current demand based on real-time metrics.
+     * * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by
+     * monitoring daily and weekly load patterns and scaling out ahead of
+     * anticipated demand.
      * Check the PredictiveMethod enum for the list of possible values.
      * </pre>
      *
@@ -744,7 +805,14 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are: * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+     * Indicates whether predictive autoscaling based on CPU metric is enabled.
+     * Valid values are:
+     *
+     * * NONE (default). No predictive method is used. The autoscaler scales the
+     * group to meet current demand based on real-time metrics.
+     * * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by
+     * monitoring daily and weekly load patterns and scaling out ahead of
+     * anticipated demand.
      * Check the PredictiveMethod enum for the list of possible values.
      * </pre>
      *
@@ -768,7 +836,14 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are: * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+     * Indicates whether predictive autoscaling based on CPU metric is enabled.
+     * Valid values are:
+     *
+     * * NONE (default). No predictive method is used. The autoscaler scales the
+     * group to meet current demand based on real-time metrics.
+     * * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by
+     * monitoring daily and weekly load patterns and scaling out ahead of
+     * anticipated demand.
      * Check the PredictiveMethod enum for the list of possible values.
      * </pre>
      *
@@ -792,7 +867,14 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are: * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+     * Indicates whether predictive autoscaling based on CPU metric is enabled.
+     * Valid values are:
+     *
+     * * NONE (default). No predictive method is used. The autoscaler scales the
+     * group to meet current demand based on real-time metrics.
+     * * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by
+     * monitoring daily and weekly load patterns and scaling out ahead of
+     * anticipated demand.
      * Check the PredictiveMethod enum for the list of possible values.
      * </pre>
      *
@@ -815,7 +897,14 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are: * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+     * Indicates whether predictive autoscaling based on CPU metric is enabled.
+     * Valid values are:
+     *
+     * * NONE (default). No predictive method is used. The autoscaler scales the
+     * group to meet current demand based on real-time metrics.
+     * * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by
+     * monitoring daily and weekly load patterns and scaling out ahead of
+     * anticipated demand.
      * Check the PredictiveMethod enum for the list of possible values.
      * </pre>
      *
@@ -834,7 +923,14 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are: * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+     * Indicates whether predictive autoscaling based on CPU metric is enabled.
+     * Valid values are:
+     *
+     * * NONE (default). No predictive method is used. The autoscaler scales the
+     * group to meet current demand based on real-time metrics.
+     * * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by
+     * monitoring daily and weekly load patterns and scaling out ahead of
+     * anticipated demand.
      * Check the PredictiveMethod enum for the list of possible values.
      * </pre>
      *
@@ -860,7 +956,18 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The target CPU utilization that the autoscaler maintains. Must be a float value in the range (0, 1]. If not specified, the default is 0.6. If the CPU level is below the target utilization, the autoscaler scales in the number of instances until it reaches the minimum number of instances you specified or until the average CPU of your instances reaches the target utilization. If the average CPU is above the target utilization, the autoscaler scales out until it reaches the maximum number of instances you specified or until the average utilization reaches the target utilization.
+     * The target CPU utilization that the autoscaler maintains. Must be
+     * a float value in the range (0, 1]. If not specified, the default is0.6.
+     *
+     * If the CPU level is below the target utilization, the autoscaler scales
+     * in the number of instances until it reaches the minimum number of
+     * instances you specified or until the average CPU of your instances
+     * reaches the target utilization.
+     *
+     * If the average CPU is above the target utilization, the autoscaler
+     * scales out until it reaches the maximum number of instances you
+     * specified or until the average utilization reaches the target
+     * utilization.
      * </pre>
      *
      * <code>optional double utilization_target = 215905870;</code>
@@ -876,7 +983,18 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The target CPU utilization that the autoscaler maintains. Must be a float value in the range (0, 1]. If not specified, the default is 0.6. If the CPU level is below the target utilization, the autoscaler scales in the number of instances until it reaches the minimum number of instances you specified or until the average CPU of your instances reaches the target utilization. If the average CPU is above the target utilization, the autoscaler scales out until it reaches the maximum number of instances you specified or until the average utilization reaches the target utilization.
+     * The target CPU utilization that the autoscaler maintains. Must be
+     * a float value in the range (0, 1]. If not specified, the default is0.6.
+     *
+     * If the CPU level is below the target utilization, the autoscaler scales
+     * in the number of instances until it reaches the minimum number of
+     * instances you specified or until the average CPU of your instances
+     * reaches the target utilization.
+     *
+     * If the average CPU is above the target utilization, the autoscaler
+     * scales out until it reaches the maximum number of instances you
+     * specified or until the average utilization reaches the target
+     * utilization.
      * </pre>
      *
      * <code>optional double utilization_target = 215905870;</code>
@@ -892,7 +1010,18 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The target CPU utilization that the autoscaler maintains. Must be a float value in the range (0, 1]. If not specified, the default is 0.6. If the CPU level is below the target utilization, the autoscaler scales in the number of instances until it reaches the minimum number of instances you specified or until the average CPU of your instances reaches the target utilization. If the average CPU is above the target utilization, the autoscaler scales out until it reaches the maximum number of instances you specified or until the average utilization reaches the target utilization.
+     * The target CPU utilization that the autoscaler maintains. Must be
+     * a float value in the range (0, 1]. If not specified, the default is0.6.
+     *
+     * If the CPU level is below the target utilization, the autoscaler scales
+     * in the number of instances until it reaches the minimum number of
+     * instances you specified or until the average CPU of your instances
+     * reaches the target utilization.
+     *
+     * If the average CPU is above the target utilization, the autoscaler
+     * scales out until it reaches the maximum number of instances you
+     * specified or until the average utilization reaches the target
+     * utilization.
      * </pre>
      *
      * <code>optional double utilization_target = 215905870;</code>
@@ -912,7 +1041,18 @@ public final class AutoscalingPolicyCpuUtilization extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The target CPU utilization that the autoscaler maintains. Must be a float value in the range (0, 1]. If not specified, the default is 0.6. If the CPU level is below the target utilization, the autoscaler scales in the number of instances until it reaches the minimum number of instances you specified or until the average CPU of your instances reaches the target utilization. If the average CPU is above the target utilization, the autoscaler scales out until it reaches the maximum number of instances you specified or until the average utilization reaches the target utilization.
+     * The target CPU utilization that the autoscaler maintains. Must be
+     * a float value in the range (0, 1]. If not specified, the default is0.6.
+     *
+     * If the CPU level is below the target utilization, the autoscaler scales
+     * in the number of instances until it reaches the minimum number of
+     * instances you specified or until the average CPU of your instances
+     * reaches the target utilization.
+     *
+     * If the average CPU is above the target utilization, the autoscaler
+     * scales out until it reaches the maximum number of instances you
+     * specified or until the average utilization reaches the target
+     * utilization.
      * </pre>
      *
      * <code>optional double utilization_target = 215905870;</code>

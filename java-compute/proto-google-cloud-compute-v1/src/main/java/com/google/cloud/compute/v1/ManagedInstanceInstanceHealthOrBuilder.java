@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ public interface ManagedInstanceInstanceHealthOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The current detailed instance health state.
+   * Output only. [Output Only] The current detailed instance health state.
    * Check the DetailedHealthState enum for the list of possible values.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface ManagedInstanceInstanceHealthOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The current detailed instance health state.
+   * Output only. [Output Only] The current detailed instance health state.
    * Check the DetailedHealthState enum for the list of possible values.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface ManagedInstanceInstanceHealthOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The current detailed instance health state.
+   * Output only. [Output Only] The current detailed instance health state.
    * Check the DetailedHealthState enum for the list of possible values.
    * </pre>
    *
@@ -70,7 +70,8 @@ public interface ManagedInstanceInstanceHealthOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL for the health check that verifies whether the instance is healthy.
+   * Output only. [Output Only] The URL for the health check that verifies whether the
+   * instance is healthy.
    * </pre>
    *
    * <code>optional string health_check = 308876645;</code>
@@ -83,7 +84,8 @@ public interface ManagedInstanceInstanceHealthOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL for the health check that verifies whether the instance is healthy.
+   * Output only. [Output Only] The URL for the health check that verifies whether the
+   * instance is healthy.
    * </pre>
    *
    * <code>optional string health_check = 308876645;</code>
@@ -96,7 +98,8 @@ public interface ManagedInstanceInstanceHealthOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL for the health check that verifies whether the instance is healthy.
+   * Output only. [Output Only] The URL for the health check that verifies whether the
+   * instance is healthy.
    * </pre>
    *
    * <code>optional string health_check = 308876645;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -118,6 +118,43 @@ public interface GeneratorOrBuilder
    * <code>.google.cloud.dialogflow.v2.FreeFormContext free_form_context = 11;</code>
    */
   com.google.cloud.dialogflow.v2.FreeFormContextOrBuilder getFreeFormContextOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input of prebuilt Agent Coaching feature.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.AgentCoachingContext agent_coaching_context = 12;</code>
+   *
+   * @return Whether the agentCoachingContext field is set.
+   */
+  boolean hasAgentCoachingContext();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input of prebuilt Agent Coaching feature.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.AgentCoachingContext agent_coaching_context = 12;</code>
+   *
+   * @return The agentCoachingContext.
+   */
+  com.google.cloud.dialogflow.v2.AgentCoachingContext getAgentCoachingContext();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input of prebuilt Agent Coaching feature.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.AgentCoachingContext agent_coaching_context = 12;</code>
+   */
+  com.google.cloud.dialogflow.v2.AgentCoachingContextOrBuilder getAgentCoachingContextOrBuilder();
 
   /**
    *
@@ -361,6 +398,119 @@ public interface GeneratorOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource names of the tools that the generator can choose from.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/tools/&lt;tool ID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * repeated string tools = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the tools.
+   */
+  java.util.List<java.lang.String> getToolsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource names of the tools that the generator can choose from.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/tools/&lt;tool ID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * repeated string tools = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of tools.
+   */
+  int getToolsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource names of the tools that the generator can choose from.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/tools/&lt;tool ID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * repeated string tools = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The tools at the given index.
+   */
+  java.lang.String getTools(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource names of the tools that the generator can choose from.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/tools/&lt;tool ID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * repeated string tools = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the tools at the given index.
+   */
+  com.google.protobuf.ByteString getToolsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for suggestion deduping. This is only applicable to
+   * AI Coach feature.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SuggestionDedupingConfig suggestion_deduping_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the suggestionDedupingConfig field is set.
+   */
+  boolean hasSuggestionDedupingConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for suggestion deduping. This is only applicable to
+   * AI Coach feature.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SuggestionDedupingConfig suggestion_deduping_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The suggestionDedupingConfig.
+   */
+  com.google.cloud.dialogflow.v2.SuggestionDedupingConfig getSuggestionDedupingConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for suggestion deduping. This is only applicable to
+   * AI Coach feature.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SuggestionDedupingConfig suggestion_deduping_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.SuggestionDedupingConfigOrBuilder
+      getSuggestionDedupingConfigOrBuilder();
 
   com.google.cloud.dialogflow.v2.Generator.ContextCase getContextCase();
 

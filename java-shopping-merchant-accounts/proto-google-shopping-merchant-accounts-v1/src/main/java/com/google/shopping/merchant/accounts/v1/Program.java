@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ package com.google.shopping.merchant.accounts.v1;
  * The following list is the available set of program resource IDs accessible
  * through the API:
  *
+ * * `checkout`
  * * `free-listings`
  * * `shopping-ads`
  * * `youtube-shopping-checkout`
@@ -2159,6 +2160,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
    * The following list is the available set of program resource IDs accessible
    * through the API:
    *
+   * * `checkout`
    * * `free-listings`
    * * `shopping-ads`
    * * `youtube-shopping-checkout`

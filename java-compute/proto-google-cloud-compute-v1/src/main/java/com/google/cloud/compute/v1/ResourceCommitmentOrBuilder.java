@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ public interface ResourceCommitmentOrBuilder
    *
    *
    * <pre>
-   * Name of the accelerator type or GPU resource. Specify this field only when the type of hardware resource is ACCELERATOR.
+   * Name of the accelerator type or GPU resource. Specify this field only when
+   * the type of hardware resource is ACCELERATOR.
    * </pre>
    *
    * <code>optional string accelerator_type = 138031246;</code>
@@ -41,7 +42,8 @@ public interface ResourceCommitmentOrBuilder
    *
    *
    * <pre>
-   * Name of the accelerator type or GPU resource. Specify this field only when the type of hardware resource is ACCELERATOR.
+   * Name of the accelerator type or GPU resource. Specify this field only when
+   * the type of hardware resource is ACCELERATOR.
    * </pre>
    *
    * <code>optional string accelerator_type = 138031246;</code>
@@ -54,7 +56,8 @@ public interface ResourceCommitmentOrBuilder
    *
    *
    * <pre>
-   * Name of the accelerator type or GPU resource. Specify this field only when the type of hardware resource is ACCELERATOR.
+   * Name of the accelerator type or GPU resource. Specify this field only when
+   * the type of hardware resource is ACCELERATOR.
    * </pre>
    *
    * <code>optional string accelerator_type = 138031246;</code>
@@ -67,7 +70,16 @@ public interface ResourceCommitmentOrBuilder
    *
    *
    * <pre>
-   * The quantity of the hardware resource that you want to commit to purchasing (in a type-dependent unit). - For vCPUs, you must specify an integer value. - For memory, you specify the amount of MB that you want. The value you specify must be a multiple of 256 MB, with up to 6.5 GB of memory per every vCPU. - For GPUs, you must specify an integer value. - For Local SSD disks, you must specify the amount in GB. The size of a single Local SSD disk is 375 GB.
+   * The quantity of the hardware resource that you want to commit to purchasing
+   * (in a type-dependent unit).
+   *
+   *    - For vCPUs, you must specify an integer value.
+   *    - For memory, you specify the amount of MB that you want. The value you
+   *    specify must be a multiple of 256 MB, with up to 6.5 GB of
+   *    memory per every vCPU.
+   *    - For GPUs, you must specify an integer value.
+   *    - For Local SSD disks, you must specify the amount in GB. The size of a
+   *    single Local SSD disk is 375 GB.
    * </pre>
    *
    * <code>optional int64 amount = 196759640;</code>
@@ -80,7 +92,16 @@ public interface ResourceCommitmentOrBuilder
    *
    *
    * <pre>
-   * The quantity of the hardware resource that you want to commit to purchasing (in a type-dependent unit). - For vCPUs, you must specify an integer value. - For memory, you specify the amount of MB that you want. The value you specify must be a multiple of 256 MB, with up to 6.5 GB of memory per every vCPU. - For GPUs, you must specify an integer value. - For Local SSD disks, you must specify the amount in GB. The size of a single Local SSD disk is 375 GB.
+   * The quantity of the hardware resource that you want to commit to purchasing
+   * (in a type-dependent unit).
+   *
+   *    - For vCPUs, you must specify an integer value.
+   *    - For memory, you specify the amount of MB that you want. The value you
+   *    specify must be a multiple of 256 MB, with up to 6.5 GB of
+   *    memory per every vCPU.
+   *    - For GPUs, you must specify an integer value.
+   *    - For Local SSD disks, you must specify the amount in GB. The size of a
+   *    single Local SSD disk is 375 GB.
    * </pre>
    *
    * <code>optional int64 amount = 196759640;</code>
@@ -93,7 +114,18 @@ public interface ResourceCommitmentOrBuilder
    *
    *
    * <pre>
-   * The type of hardware resource that you want to specify. You can specify any of the following values: - VCPU - MEMORY - LOCAL_SSD - ACCELERATOR Specify as a separate entry in the list for each individual resource type.
+   * The type of hardware resource that you want to specify.
+   * You can specify any of the following values:
+   *
+   *    - VCPU
+   *    - MEMORY
+   *    - LOCAL_SSD
+   *    - ACCELERATOR
+   *
+   *
+   *
+   * Specify as a separate entry in the list for each
+   * individual resource type.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -107,7 +139,18 @@ public interface ResourceCommitmentOrBuilder
    *
    *
    * <pre>
-   * The type of hardware resource that you want to specify. You can specify any of the following values: - VCPU - MEMORY - LOCAL_SSD - ACCELERATOR Specify as a separate entry in the list for each individual resource type.
+   * The type of hardware resource that you want to specify.
+   * You can specify any of the following values:
+   *
+   *    - VCPU
+   *    - MEMORY
+   *    - LOCAL_SSD
+   *    - ACCELERATOR
+   *
+   *
+   *
+   * Specify as a separate entry in the list for each
+   * individual resource type.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -121,7 +164,18 @@ public interface ResourceCommitmentOrBuilder
    *
    *
    * <pre>
-   * The type of hardware resource that you want to specify. You can specify any of the following values: - VCPU - MEMORY - LOCAL_SSD - ACCELERATOR Specify as a separate entry in the list for each individual resource type.
+   * The type of hardware resource that you want to specify.
+   * You can specify any of the following values:
+   *
+   *    - VCPU
+   *    - MEMORY
+   *    - LOCAL_SSD
+   *    - ACCELERATOR
+   *
+   *
+   *
+   * Specify as a separate entry in the list for each
+   * individual resource type.
    * Check the Type enum for the list of possible values.
    * </pre>
    *

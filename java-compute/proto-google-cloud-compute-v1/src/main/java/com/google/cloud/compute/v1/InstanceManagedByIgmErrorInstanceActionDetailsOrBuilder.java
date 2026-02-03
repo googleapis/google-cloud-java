@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+   * Output only. [Output Only] Action that managed instance group was executing on
+   * the instance when the error occurred. Possible values:
    * Check the Action enum for the list of possible values.
    * </pre>
    *
@@ -42,7 +43,8 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+   * Output only. [Output Only] Action that managed instance group was executing on
+   * the instance when the error occurred. Possible values:
    * Check the Action enum for the list of possible values.
    * </pre>
    *
@@ -56,7 +58,8 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+   * Output only. [Output Only] Action that managed instance group was executing on
+   * the instance when the error occurred. Possible values:
    * Check the Action enum for the list of possible values.
    * </pre>
    *
@@ -70,7 +73,8 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the instance. The URL can be set even if the instance has not yet been created.
+   * Output only. [Output Only] The URL of the instance.
+   * The URL can be set even if the instance has not yet been created.
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -83,7 +87,8 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the instance. The URL can be set even if the instance has not yet been created.
+   * Output only. [Output Only] The URL of the instance.
+   * The URL can be set even if the instance has not yet been created.
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -96,7 +101,8 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the instance. The URL can be set even if the instance has not yet been created.
+   * Output only. [Output Only] The URL of the instance.
+   * The URL can be set even if the instance has not yet been created.
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -109,7 +115,10 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Version this instance was created from, or was being created from, but the creation failed. Corresponds to one of the versions that were set on the Instance Group Manager resource at the time this instance was being created.
+   * Output only. [Output Only] Version this instance was created from, or was being
+   * created from, but the creation failed. Corresponds to one of the versions
+   * that were set on the Instance Group Manager resource at the time this
+   * instance was being created.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
@@ -122,7 +131,10 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Version this instance was created from, or was being created from, but the creation failed. Corresponds to one of the versions that were set on the Instance Group Manager resource at the time this instance was being created.
+   * Output only. [Output Only] Version this instance was created from, or was being
+   * created from, but the creation failed. Corresponds to one of the versions
+   * that were set on the Instance Group Manager resource at the time this
+   * instance was being created.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
@@ -135,7 +147,10 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Version this instance was created from, or was being created from, but the creation failed. Corresponds to one of the versions that were set on the Instance Group Manager resource at the time this instance was being created.
+   * Output only. [Output Only] Version this instance was created from, or was being
+   * created from, but the creation failed. Corresponds to one of the versions
+   * that were set on the Instance Group Manager resource at the time this
+   * instance was being created.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>

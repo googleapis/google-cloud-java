@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ public interface RegionInstanceGroupManagersSuspendInstancesRequestOrBuilder
    *
    *
    * <pre>
-   * If this flag is set to true, the Instance Group Manager will proceed to suspend the instances, skipping initialization on them.
+   * If this flag is set to true, the Instance Group Manager will proceed to
+   * suspend the instances, skipping initialization on them.
    * </pre>
    *
    * <code>optional bool force_suspend = 27637480;</code>
@@ -41,7 +42,8 @@ public interface RegionInstanceGroupManagersSuspendInstancesRequestOrBuilder
    *
    *
    * <pre>
-   * If this flag is set to true, the Instance Group Manager will proceed to suspend the instances, skipping initialization on them.
+   * If this flag is set to true, the Instance Group Manager will proceed to
+   * suspend the instances, skipping initialization on them.
    * </pre>
    *
    * <code>optional bool force_suspend = 27637480;</code>
@@ -54,7 +56,8 @@ public interface RegionInstanceGroupManagersSuspendInstancesRequestOrBuilder
    *
    *
    * <pre>
-   * The URLs of one or more instances to suspend. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
+   * The URLs of one or more instances to suspend. This can be a full URL or
+   * a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
    * </pre>
    *
    * <code>repeated string instances = 29097598;</code>
@@ -67,7 +70,8 @@ public interface RegionInstanceGroupManagersSuspendInstancesRequestOrBuilder
    *
    *
    * <pre>
-   * The URLs of one or more instances to suspend. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
+   * The URLs of one or more instances to suspend. This can be a full URL or
+   * a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
    * </pre>
    *
    * <code>repeated string instances = 29097598;</code>
@@ -80,7 +84,8 @@ public interface RegionInstanceGroupManagersSuspendInstancesRequestOrBuilder
    *
    *
    * <pre>
-   * The URLs of one or more instances to suspend. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
+   * The URLs of one or more instances to suspend. This can be a full URL or
+   * a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
    * </pre>
    *
    * <code>repeated string instances = 29097598;</code>
@@ -94,7 +99,8 @@ public interface RegionInstanceGroupManagersSuspendInstancesRequestOrBuilder
    *
    *
    * <pre>
-   * The URLs of one or more instances to suspend. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
+   * The URLs of one or more instances to suspend. This can be a full URL or
+   * a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
    * </pre>
    *
    * <code>repeated string instances = 29097598;</code>

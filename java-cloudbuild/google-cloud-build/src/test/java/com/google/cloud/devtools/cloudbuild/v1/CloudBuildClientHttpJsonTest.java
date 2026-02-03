@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,8 @@ import com.google.cloudbuild.v1.BuildOptions;
 import com.google.cloudbuild.v1.BuildStep;
 import com.google.cloudbuild.v1.BuildTrigger;
 import com.google.cloudbuild.v1.BuildTriggerName;
+import com.google.cloudbuild.v1.DefaultServiceAccount;
+import com.google.cloudbuild.v1.DefaultServiceAccountName;
 import com.google.cloudbuild.v1.Dependency;
 import com.google.cloudbuild.v1.GitConfig;
 import com.google.cloudbuild.v1.GitHubEventsConfig;
@@ -48,6 +50,7 @@ import com.google.cloudbuild.v1.ListBuildTriggersResponse;
 import com.google.cloudbuild.v1.ListBuildsResponse;
 import com.google.cloudbuild.v1.ListWorkerPoolsResponse;
 import com.google.cloudbuild.v1.LocationName;
+import com.google.cloudbuild.v1.ProjectName;
 import com.google.cloudbuild.v1.PubsubConfig;
 import com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest;
 import com.google.cloudbuild.v1.ReceiveTriggerWebhookResponse;
@@ -160,10 +163,9 @@ public class CloudBuildClientHttpJsonTest {
             .build();
     mockService.addResponse(resultOperation);
 
-    String projectId = "projectId-1530";
-    Build build = Build.newBuilder().build();
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
-    Build actualResponse = client.createBuildAsync(projectId, build).get();
+    Build actualResponse = client.createBuildAsync(parent).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -189,6 +191,241 @@ public class CloudBuildClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.createBuildAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createBuildTest2() throws Exception {
+    Build expectedResponse =
+        Build.newBuilder()
+            .setName(BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]").toString())
+            .setId("id3355")
+            .setProjectId("projectId-894832108")
+            .setStatusDetail("statusDetail1651087075")
+            .setSource(Source.newBuilder().build())
+            .addAllSteps(new ArrayList<BuildStep>())
+            .setResults(Results.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setFinishTime(Timestamp.newBuilder().build())
+            .setTimeout(Duration.newBuilder().build())
+            .addAllImages(new ArrayList<String>())
+            .setQueueTtl(Duration.newBuilder().build())
+            .setArtifacts(Artifacts.newBuilder().build())
+            .setLogsBucket("logsBucket1592573049")
+            .setSourceProvenance(SourceProvenance.newBuilder().build())
+            .setBuildTriggerId("buildTriggerId781747749")
+            .setOptions(BuildOptions.newBuilder().build())
+            .setLogUrl("logUrl-1097354357")
+            .putAllSubstitutions(new HashMap<String, String>())
+            .addAllTags(new ArrayList<String>())
+            .addAllSecrets(new ArrayList<Secret>())
+            .putAllTiming(new HashMap<String, TimeSpan>())
+            .setApproval(BuildApproval.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
+            .setAvailableSecrets(Secrets.newBuilder().build())
+            .addAllWarnings(new ArrayList<Build.Warning>())
+            .setGitConfig(GitConfig.newBuilder().build())
+            .setFailureInfo(Build.FailureInfo.newBuilder().build())
+            .addAllDependencies(new ArrayList<Dependency>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createBuildTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+
+    Build actualResponse = client.createBuildAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createBuildExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      client.createBuildAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createBuildTest3() throws Exception {
+    Build expectedResponse =
+        Build.newBuilder()
+            .setName(BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]").toString())
+            .setId("id3355")
+            .setProjectId("projectId-894832108")
+            .setStatusDetail("statusDetail1651087075")
+            .setSource(Source.newBuilder().build())
+            .addAllSteps(new ArrayList<BuildStep>())
+            .setResults(Results.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setFinishTime(Timestamp.newBuilder().build())
+            .setTimeout(Duration.newBuilder().build())
+            .addAllImages(new ArrayList<String>())
+            .setQueueTtl(Duration.newBuilder().build())
+            .setArtifacts(Artifacts.newBuilder().build())
+            .setLogsBucket("logsBucket1592573049")
+            .setSourceProvenance(SourceProvenance.newBuilder().build())
+            .setBuildTriggerId("buildTriggerId781747749")
+            .setOptions(BuildOptions.newBuilder().build())
+            .setLogUrl("logUrl-1097354357")
+            .putAllSubstitutions(new HashMap<String, String>())
+            .addAllTags(new ArrayList<String>())
+            .addAllSecrets(new ArrayList<Secret>())
+            .putAllTiming(new HashMap<String, TimeSpan>())
+            .setApproval(BuildApproval.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
+            .setAvailableSecrets(Secrets.newBuilder().build())
+            .addAllWarnings(new ArrayList<Build.Warning>())
+            .setGitConfig(GitConfig.newBuilder().build())
+            .setFailureInfo(Build.FailureInfo.newBuilder().build())
+            .addAllDependencies(new ArrayList<Dependency>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createBuildTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+
+    Build actualResponse = client.createBuildAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createBuildExceptionTest3() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.createBuildAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createBuildTest4() throws Exception {
+    Build expectedResponse =
+        Build.newBuilder()
+            .setName(BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]").toString())
+            .setId("id3355")
+            .setProjectId("projectId-894832108")
+            .setStatusDetail("statusDetail1651087075")
+            .setSource(Source.newBuilder().build())
+            .addAllSteps(new ArrayList<BuildStep>())
+            .setResults(Results.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setFinishTime(Timestamp.newBuilder().build())
+            .setTimeout(Duration.newBuilder().build())
+            .addAllImages(new ArrayList<String>())
+            .setQueueTtl(Duration.newBuilder().build())
+            .setArtifacts(Artifacts.newBuilder().build())
+            .setLogsBucket("logsBucket1592573049")
+            .setSourceProvenance(SourceProvenance.newBuilder().build())
+            .setBuildTriggerId("buildTriggerId781747749")
+            .setOptions(BuildOptions.newBuilder().build())
+            .setLogUrl("logUrl-1097354357")
+            .putAllSubstitutions(new HashMap<String, String>())
+            .addAllTags(new ArrayList<String>())
+            .addAllSecrets(new ArrayList<Secret>())
+            .putAllTiming(new HashMap<String, TimeSpan>())
+            .setApproval(BuildApproval.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
+            .setAvailableSecrets(Secrets.newBuilder().build())
+            .addAllWarnings(new ArrayList<Build.Warning>())
+            .setGitConfig(GitConfig.newBuilder().build())
+            .setFailureInfo(Build.FailureInfo.newBuilder().build())
+            .addAllDependencies(new ArrayList<Dependency>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createBuildTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String projectId = "projectId-1530";
+    Build build = Build.newBuilder().build();
+
+    Build actualResponse = client.createBuildAsync(projectId, build).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createBuildExceptionTest4() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
       String projectId = "projectId-1530";
       Build build = Build.newBuilder().build();
       client.createBuildAsync(projectId, build).get();
@@ -199,6 +436,152 @@ public class CloudBuildClientHttpJsonTest {
 
   @Test
   public void getBuildTest() throws Exception {
+    Build expectedResponse =
+        Build.newBuilder()
+            .setName(BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]").toString())
+            .setId("id3355")
+            .setProjectId("projectId-894832108")
+            .setStatusDetail("statusDetail1651087075")
+            .setSource(Source.newBuilder().build())
+            .addAllSteps(new ArrayList<BuildStep>())
+            .setResults(Results.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setFinishTime(Timestamp.newBuilder().build())
+            .setTimeout(Duration.newBuilder().build())
+            .addAllImages(new ArrayList<String>())
+            .setQueueTtl(Duration.newBuilder().build())
+            .setArtifacts(Artifacts.newBuilder().build())
+            .setLogsBucket("logsBucket1592573049")
+            .setSourceProvenance(SourceProvenance.newBuilder().build())
+            .setBuildTriggerId("buildTriggerId781747749")
+            .setOptions(BuildOptions.newBuilder().build())
+            .setLogUrl("logUrl-1097354357")
+            .putAllSubstitutions(new HashMap<String, String>())
+            .addAllTags(new ArrayList<String>())
+            .addAllSecrets(new ArrayList<Secret>())
+            .putAllTiming(new HashMap<String, TimeSpan>())
+            .setApproval(BuildApproval.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
+            .setAvailableSecrets(Secrets.newBuilder().build())
+            .addAllWarnings(new ArrayList<Build.Warning>())
+            .setGitConfig(GitConfig.newBuilder().build())
+            .setFailureInfo(Build.FailureInfo.newBuilder().build())
+            .addAllDependencies(new ArrayList<Dependency>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    BuildName name = BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]");
+
+    Build actualResponse = client.getBuild(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getBuildExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      BuildName name = BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]");
+      client.getBuild(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBuildTest2() throws Exception {
+    Build expectedResponse =
+        Build.newBuilder()
+            .setName(BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]").toString())
+            .setId("id3355")
+            .setProjectId("projectId-894832108")
+            .setStatusDetail("statusDetail1651087075")
+            .setSource(Source.newBuilder().build())
+            .addAllSteps(new ArrayList<BuildStep>())
+            .setResults(Results.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setFinishTime(Timestamp.newBuilder().build())
+            .setTimeout(Duration.newBuilder().build())
+            .addAllImages(new ArrayList<String>())
+            .setQueueTtl(Duration.newBuilder().build())
+            .setArtifacts(Artifacts.newBuilder().build())
+            .setLogsBucket("logsBucket1592573049")
+            .setSourceProvenance(SourceProvenance.newBuilder().build())
+            .setBuildTriggerId("buildTriggerId781747749")
+            .setOptions(BuildOptions.newBuilder().build())
+            .setLogUrl("logUrl-1097354357")
+            .putAllSubstitutions(new HashMap<String, String>())
+            .addAllTags(new ArrayList<String>())
+            .addAllSecrets(new ArrayList<Secret>())
+            .putAllTiming(new HashMap<String, TimeSpan>())
+            .setApproval(BuildApproval.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
+            .setAvailableSecrets(Secrets.newBuilder().build())
+            .addAllWarnings(new ArrayList<Build.Warning>())
+            .setGitConfig(GitConfig.newBuilder().build())
+            .setFailureInfo(Build.FailureInfo.newBuilder().build())
+            .addAllDependencies(new ArrayList<Dependency>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Build actualResponse = client.getBuild(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getBuildExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getBuild(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBuildTest3() throws Exception {
     Build expectedResponse =
         Build.newBuilder()
             .setName(BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]").toString())
@@ -256,7 +639,7 @@ public class CloudBuildClientHttpJsonTest {
   }
 
   @Test
-  public void getBuildExceptionTest() throws Exception {
+  public void getBuildExceptionTest3() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -361,10 +744,9 @@ public class CloudBuildClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String projectId = "projectId-1530";
-    String id = "id-4047";
+    BuildName name = BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]");
 
-    Build actualResponse = client.cancelBuild(projectId, id);
+    Build actualResponse = client.cancelBuild(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -390,6 +772,153 @@ public class CloudBuildClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
+      BuildName name = BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]");
+      client.cancelBuild(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void cancelBuildTest2() throws Exception {
+    Build expectedResponse =
+        Build.newBuilder()
+            .setName(BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]").toString())
+            .setId("id3355")
+            .setProjectId("projectId-894832108")
+            .setStatusDetail("statusDetail1651087075")
+            .setSource(Source.newBuilder().build())
+            .addAllSteps(new ArrayList<BuildStep>())
+            .setResults(Results.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setFinishTime(Timestamp.newBuilder().build())
+            .setTimeout(Duration.newBuilder().build())
+            .addAllImages(new ArrayList<String>())
+            .setQueueTtl(Duration.newBuilder().build())
+            .setArtifacts(Artifacts.newBuilder().build())
+            .setLogsBucket("logsBucket1592573049")
+            .setSourceProvenance(SourceProvenance.newBuilder().build())
+            .setBuildTriggerId("buildTriggerId781747749")
+            .setOptions(BuildOptions.newBuilder().build())
+            .setLogUrl("logUrl-1097354357")
+            .putAllSubstitutions(new HashMap<String, String>())
+            .addAllTags(new ArrayList<String>())
+            .addAllSecrets(new ArrayList<Secret>())
+            .putAllTiming(new HashMap<String, TimeSpan>())
+            .setApproval(BuildApproval.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
+            .setAvailableSecrets(Secrets.newBuilder().build())
+            .addAllWarnings(new ArrayList<Build.Warning>())
+            .setGitConfig(GitConfig.newBuilder().build())
+            .setFailureInfo(Build.FailureInfo.newBuilder().build())
+            .addAllDependencies(new ArrayList<Dependency>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Build actualResponse = client.cancelBuild(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void cancelBuildExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.cancelBuild(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void cancelBuildTest3() throws Exception {
+    Build expectedResponse =
+        Build.newBuilder()
+            .setName(BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]").toString())
+            .setId("id3355")
+            .setProjectId("projectId-894832108")
+            .setStatusDetail("statusDetail1651087075")
+            .setSource(Source.newBuilder().build())
+            .addAllSteps(new ArrayList<BuildStep>())
+            .setResults(Results.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setFinishTime(Timestamp.newBuilder().build())
+            .setTimeout(Duration.newBuilder().build())
+            .addAllImages(new ArrayList<String>())
+            .setQueueTtl(Duration.newBuilder().build())
+            .setArtifacts(Artifacts.newBuilder().build())
+            .setLogsBucket("logsBucket1592573049")
+            .setSourceProvenance(SourceProvenance.newBuilder().build())
+            .setBuildTriggerId("buildTriggerId781747749")
+            .setOptions(BuildOptions.newBuilder().build())
+            .setLogUrl("logUrl-1097354357")
+            .putAllSubstitutions(new HashMap<String, String>())
+            .addAllTags(new ArrayList<String>())
+            .addAllSecrets(new ArrayList<Secret>())
+            .putAllTiming(new HashMap<String, TimeSpan>())
+            .setApproval(BuildApproval.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
+            .setAvailableSecrets(Secrets.newBuilder().build())
+            .addAllWarnings(new ArrayList<Build.Warning>())
+            .setGitConfig(GitConfig.newBuilder().build())
+            .setFailureInfo(Build.FailureInfo.newBuilder().build())
+            .addAllDependencies(new ArrayList<Dependency>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String projectId = "projectId-1530";
+    String id = "id-4047";
+
+    Build actualResponse = client.cancelBuild(projectId, id);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void cancelBuildExceptionTest3() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
       String projectId = "projectId-1530";
       String id = "id-4047";
       client.cancelBuild(projectId, id);
@@ -401,6 +930,162 @@ public class CloudBuildClientHttpJsonTest {
 
   @Test
   public void retryBuildTest() throws Exception {
+    Build expectedResponse =
+        Build.newBuilder()
+            .setName(BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]").toString())
+            .setId("id3355")
+            .setProjectId("projectId-894832108")
+            .setStatusDetail("statusDetail1651087075")
+            .setSource(Source.newBuilder().build())
+            .addAllSteps(new ArrayList<BuildStep>())
+            .setResults(Results.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setFinishTime(Timestamp.newBuilder().build())
+            .setTimeout(Duration.newBuilder().build())
+            .addAllImages(new ArrayList<String>())
+            .setQueueTtl(Duration.newBuilder().build())
+            .setArtifacts(Artifacts.newBuilder().build())
+            .setLogsBucket("logsBucket1592573049")
+            .setSourceProvenance(SourceProvenance.newBuilder().build())
+            .setBuildTriggerId("buildTriggerId781747749")
+            .setOptions(BuildOptions.newBuilder().build())
+            .setLogUrl("logUrl-1097354357")
+            .putAllSubstitutions(new HashMap<String, String>())
+            .addAllTags(new ArrayList<String>())
+            .addAllSecrets(new ArrayList<Secret>())
+            .putAllTiming(new HashMap<String, TimeSpan>())
+            .setApproval(BuildApproval.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
+            .setAvailableSecrets(Secrets.newBuilder().build())
+            .addAllWarnings(new ArrayList<Build.Warning>())
+            .setGitConfig(GitConfig.newBuilder().build())
+            .setFailureInfo(Build.FailureInfo.newBuilder().build())
+            .addAllDependencies(new ArrayList<Dependency>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("retryBuildTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    BuildName name = BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]");
+
+    Build actualResponse = client.retryBuildAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void retryBuildExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      BuildName name = BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]");
+      client.retryBuildAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void retryBuildTest2() throws Exception {
+    Build expectedResponse =
+        Build.newBuilder()
+            .setName(BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]").toString())
+            .setId("id3355")
+            .setProjectId("projectId-894832108")
+            .setStatusDetail("statusDetail1651087075")
+            .setSource(Source.newBuilder().build())
+            .addAllSteps(new ArrayList<BuildStep>())
+            .setResults(Results.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setFinishTime(Timestamp.newBuilder().build())
+            .setTimeout(Duration.newBuilder().build())
+            .addAllImages(new ArrayList<String>())
+            .setQueueTtl(Duration.newBuilder().build())
+            .setArtifacts(Artifacts.newBuilder().build())
+            .setLogsBucket("logsBucket1592573049")
+            .setSourceProvenance(SourceProvenance.newBuilder().build())
+            .setBuildTriggerId("buildTriggerId781747749")
+            .setOptions(BuildOptions.newBuilder().build())
+            .setLogUrl("logUrl-1097354357")
+            .putAllSubstitutions(new HashMap<String, String>())
+            .addAllTags(new ArrayList<String>())
+            .addAllSecrets(new ArrayList<Secret>())
+            .putAllTiming(new HashMap<String, TimeSpan>())
+            .setApproval(BuildApproval.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
+            .setAvailableSecrets(Secrets.newBuilder().build())
+            .addAllWarnings(new ArrayList<Build.Warning>())
+            .setGitConfig(GitConfig.newBuilder().build())
+            .setFailureInfo(Build.FailureInfo.newBuilder().build())
+            .addAllDependencies(new ArrayList<Dependency>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("retryBuildTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    Build actualResponse = client.retryBuildAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void retryBuildExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.retryBuildAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void retryBuildTest3() throws Exception {
     Build expectedResponse =
         Build.newBuilder()
             .setName(BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]").toString())
@@ -464,7 +1149,7 @@ public class CloudBuildClientHttpJsonTest {
   }
 
   @Test
-  public void retryBuildExceptionTest() throws Exception {
+  public void retryBuildExceptionTest3() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -584,10 +1269,9 @@ public class CloudBuildClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String projectId = "projectId-1530";
-    BuildTrigger trigger = BuildTrigger.newBuilder().build();
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
-    BuildTrigger actualResponse = client.createBuildTrigger(projectId, trigger);
+    BuildTrigger actualResponse = client.createBuildTrigger(parent);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -613,6 +1297,190 @@ public class CloudBuildClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.createBuildTrigger(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createBuildTriggerTest2() throws Exception {
+    BuildTrigger expectedResponse =
+        BuildTrigger.newBuilder()
+            .setResourceName("resourceName-384566343")
+            .setId("id3355")
+            .setDescription("description-1724546052")
+            .setName(BuildTriggerName.ofProjectTriggerName("[PROJECT]", "[TRIGGER]").toString())
+            .addAllTags(new ArrayList<String>())
+            .setTriggerTemplate(RepoSource.newBuilder().build())
+            .setGithub(GitHubEventsConfig.newBuilder().build())
+            .setPubsubConfig(PubsubConfig.newBuilder().build())
+            .setWebhookConfig(WebhookConfig.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDisabled(true)
+            .putAllSubstitutions(new HashMap<String, String>())
+            .addAllIgnoredFiles(new ArrayList<String>())
+            .addAllIncludedFiles(new ArrayList<String>())
+            .setFilter("filter-1274492040")
+            .setSourceToBuild(GitRepoSource.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
+            .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+
+    BuildTrigger actualResponse = client.createBuildTrigger(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createBuildTriggerExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      client.createBuildTrigger(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createBuildTriggerTest3() throws Exception {
+    BuildTrigger expectedResponse =
+        BuildTrigger.newBuilder()
+            .setResourceName("resourceName-384566343")
+            .setId("id3355")
+            .setDescription("description-1724546052")
+            .setName(BuildTriggerName.ofProjectTriggerName("[PROJECT]", "[TRIGGER]").toString())
+            .addAllTags(new ArrayList<String>())
+            .setTriggerTemplate(RepoSource.newBuilder().build())
+            .setGithub(GitHubEventsConfig.newBuilder().build())
+            .setPubsubConfig(PubsubConfig.newBuilder().build())
+            .setWebhookConfig(WebhookConfig.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDisabled(true)
+            .putAllSubstitutions(new HashMap<String, String>())
+            .addAllIgnoredFiles(new ArrayList<String>())
+            .addAllIncludedFiles(new ArrayList<String>())
+            .setFilter("filter-1274492040")
+            .setSourceToBuild(GitRepoSource.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
+            .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    BuildTrigger actualResponse = client.createBuildTrigger(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createBuildTriggerExceptionTest3() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.createBuildTrigger(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createBuildTriggerTest4() throws Exception {
+    BuildTrigger expectedResponse =
+        BuildTrigger.newBuilder()
+            .setResourceName("resourceName-384566343")
+            .setId("id3355")
+            .setDescription("description-1724546052")
+            .setName(BuildTriggerName.ofProjectTriggerName("[PROJECT]", "[TRIGGER]").toString())
+            .addAllTags(new ArrayList<String>())
+            .setTriggerTemplate(RepoSource.newBuilder().build())
+            .setGithub(GitHubEventsConfig.newBuilder().build())
+            .setPubsubConfig(PubsubConfig.newBuilder().build())
+            .setWebhookConfig(WebhookConfig.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDisabled(true)
+            .putAllSubstitutions(new HashMap<String, String>())
+            .addAllIgnoredFiles(new ArrayList<String>())
+            .addAllIncludedFiles(new ArrayList<String>())
+            .setFilter("filter-1274492040")
+            .setSourceToBuild(GitRepoSource.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
+            .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String projectId = "projectId-1530";
+    BuildTrigger trigger = BuildTrigger.newBuilder().build();
+
+    BuildTrigger actualResponse = client.createBuildTrigger(projectId, trigger);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createBuildTriggerExceptionTest4() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
       String projectId = "projectId-1530";
       BuildTrigger trigger = BuildTrigger.newBuilder().build();
       client.createBuildTrigger(projectId, trigger);
@@ -624,6 +1492,128 @@ public class CloudBuildClientHttpJsonTest {
 
   @Test
   public void getBuildTriggerTest() throws Exception {
+    BuildTrigger expectedResponse =
+        BuildTrigger.newBuilder()
+            .setResourceName("resourceName-384566343")
+            .setId("id3355")
+            .setDescription("description-1724546052")
+            .setName(BuildTriggerName.ofProjectTriggerName("[PROJECT]", "[TRIGGER]").toString())
+            .addAllTags(new ArrayList<String>())
+            .setTriggerTemplate(RepoSource.newBuilder().build())
+            .setGithub(GitHubEventsConfig.newBuilder().build())
+            .setPubsubConfig(PubsubConfig.newBuilder().build())
+            .setWebhookConfig(WebhookConfig.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDisabled(true)
+            .putAllSubstitutions(new HashMap<String, String>())
+            .addAllIgnoredFiles(new ArrayList<String>())
+            .addAllIncludedFiles(new ArrayList<String>())
+            .setFilter("filter-1274492040")
+            .setSourceToBuild(GitRepoSource.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
+            .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    BuildTriggerName name = BuildTriggerName.ofProjectTriggerName("[PROJECT]", "[TRIGGER]");
+
+    BuildTrigger actualResponse = client.getBuildTrigger(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getBuildTriggerExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      BuildTriggerName name = BuildTriggerName.ofProjectTriggerName("[PROJECT]", "[TRIGGER]");
+      client.getBuildTrigger(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBuildTriggerTest2() throws Exception {
+    BuildTrigger expectedResponse =
+        BuildTrigger.newBuilder()
+            .setResourceName("resourceName-384566343")
+            .setId("id3355")
+            .setDescription("description-1724546052")
+            .setName(BuildTriggerName.ofProjectTriggerName("[PROJECT]", "[TRIGGER]").toString())
+            .addAllTags(new ArrayList<String>())
+            .setTriggerTemplate(RepoSource.newBuilder().build())
+            .setGithub(GitHubEventsConfig.newBuilder().build())
+            .setPubsubConfig(PubsubConfig.newBuilder().build())
+            .setWebhookConfig(WebhookConfig.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDisabled(true)
+            .putAllSubstitutions(new HashMap<String, String>())
+            .addAllIgnoredFiles(new ArrayList<String>())
+            .addAllIncludedFiles(new ArrayList<String>())
+            .setFilter("filter-1274492040")
+            .setSourceToBuild(GitRepoSource.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
+            .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    BuildTrigger actualResponse = client.getBuildTrigger(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getBuildTriggerExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getBuildTrigger(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBuildTriggerTest3() throws Exception {
     BuildTrigger expectedResponse =
         BuildTrigger.newBuilder()
             .setResourceName("resourceName-384566343")
@@ -669,7 +1659,7 @@ public class CloudBuildClientHttpJsonTest {
   }
 
   @Test
-  public void getBuildTriggerExceptionTest() throws Exception {
+  public void getBuildTriggerExceptionTest3() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -740,6 +1730,86 @@ public class CloudBuildClientHttpJsonTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockService.addResponse(expectedResponse);
 
+    BuildTriggerName name = BuildTriggerName.ofProjectTriggerName("[PROJECT]", "[TRIGGER]");
+
+    client.deleteBuildTrigger(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteBuildTriggerExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      BuildTriggerName name = BuildTriggerName.ofProjectTriggerName("[PROJECT]", "[TRIGGER]");
+      client.deleteBuildTrigger(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteBuildTriggerTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteBuildTrigger(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteBuildTriggerExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteBuildTrigger(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteBuildTriggerTest3() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
     String projectId = "projectId-1530";
     String triggerId = "triggerId-6343";
 
@@ -761,7 +1831,7 @@ public class CloudBuildClientHttpJsonTest {
   }
 
   @Test
-  public void deleteBuildTriggerExceptionTest() throws Exception {
+  public void deleteBuildTriggerExceptionTest3() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -1506,6 +2576,96 @@ public class CloudBuildClientHttpJsonTest {
     try {
       String parent = "projects/project-5833/locations/location-5833";
       client.listWorkerPools(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDefaultServiceAccountTest() throws Exception {
+    DefaultServiceAccount expectedResponse =
+        DefaultServiceAccount.newBuilder()
+            .setName(DefaultServiceAccountName.of("[PROJECT]", "[LOCATION]").toString())
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DefaultServiceAccountName name = DefaultServiceAccountName.of("[PROJECT]", "[LOCATION]");
+
+    DefaultServiceAccount actualResponse = client.getDefaultServiceAccount(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getDefaultServiceAccountExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DefaultServiceAccountName name = DefaultServiceAccountName.of("[PROJECT]", "[LOCATION]");
+      client.getDefaultServiceAccount(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDefaultServiceAccountTest2() throws Exception {
+    DefaultServiceAccount expectedResponse =
+        DefaultServiceAccount.newBuilder()
+            .setName(DefaultServiceAccountName.of("[PROJECT]", "[LOCATION]").toString())
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-6372/locations/location-6372/defaultServiceAccount";
+
+    DefaultServiceAccount actualResponse = client.getDefaultServiceAccount(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getDefaultServiceAccountExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-6372/locations/location-6372/defaultServiceAccount";
+      client.getDefaultServiceAccount(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

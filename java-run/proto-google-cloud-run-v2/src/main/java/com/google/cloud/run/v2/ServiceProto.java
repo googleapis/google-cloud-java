@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,6 +57,10 @@ public final class ServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_run_v2_Service_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_run_v2_Service_MultiRegionSettings_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_run_v2_Service_MultiRegionSettings_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_run_v2_Service_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_run_v2_Service_LabelsEntry_fieldAccessorTable;
@@ -104,10 +108,11 @@ public final class ServiceProto {
           + "\tB\"\340A\002\372A\034\022\032run.googleapis.com/Service\022\021\n"
           + "\tpage_size\030\002 \001(\005\022\022\n\n"
           + "page_token\030\003 \001(\t\022\024\n"
-          + "\014show_deleted\030\004 \001(\010\"_\n"
+          + "\014show_deleted\030\004 \001(\010\"y\n"
           + "\024ListServicesResponse\022.\n"
           + "\010services\030\001 \003(\0132\034.google.cloud.run.v2.Service\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"E\n"
+          + "\017next_page_token\030\002 \001(\t\022\030\n"
+          + "\013unreachable\030\003 \003(\tB\003\340A\003\"E\n"
           + "\021GetServiceRequest\0220\n"
           + "\004name\030\001 \001(\tB\"\340A\002\372A\034\n"
           + "\032run.googleapis.com/Service\"m\n"
@@ -115,16 +120,16 @@ public final class ServiceProto {
           + "\004name\030\001 \001(\tB\"\340A\002\372A\034\n"
           + "\032run.googleapis.com/Service\022\025\n\r"
           + "validate_only\030\002 \001(\010\022\014\n"
-          + "\004etag\030\003 \001(\t\"\275\r\n"
-          + "\007Service\022\014\n"
-          + "\004name\030\001 \001(\t\022\023\n"
+          + "\004etag\030\003 \001(\t\"\244\017\n"
+          + "\007Service\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\023\n"
           + "\013description\030\002 \001(\t\022\020\n"
           + "\003uid\030\003 \001(\tB\003\340A\003\022\027\n\n"
           + "generation\030\004 \001(\003B\003\340A\003\022=\n"
-          + "\006labels\030\005 \003(\013"
-          + "2(.google.cloud.run.v2.Service.LabelsEntryB\003\340A\001\022G\n"
-          + "\013annotations\030\006 \003(\0132-.google.cl"
-          + "oud.run.v2.Service.AnnotationsEntryB\003\340A\001\0224\n"
+          + "\006labels\030\005 \003(\0132(.google"
+          + ".cloud.run.v2.Service.LabelsEntryB\003\340A\001\022G\n"
+          + "\013annotations\030\006"
+          + " \003(\0132-.google.cloud.run.v2.Service.AnnotationsEntryB\003\340A\001\0224\n"
           + "\013create_time\030\007 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\010 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013delete_time\030\t \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
@@ -135,11 +140,11 @@ public final class ServiceProto {
           + "\006client\030\r"
           + " \001(\t\022\026\n"
           + "\016client_version\030\016 \001(\t\0229\n"
-          + "\007ingress\030\017 "
-          + "\001(\0162#.google.cloud.run.v2.IngressTrafficB\003\340A\001\0222\n"
+          + "\007ingress\030\017"
+          + " \001(\0162#.google.cloud.run.v2.IngressTrafficB\003\340A\001\0222\n"
           + "\014launch_stage\030\020 \001(\0162\027.google.api.LaunchStageB\003\340A\001\022K\n"
-          + "\024binary_authorization\030\021"
-          + " \001(\0132(.google.cloud.run.v2.BinaryAuthorizationB\003\340A\001\022<\n"
+          + "\024binary_authorization\030\021 \001(\0132("
+          + ".google.cloud.run.v2.BinaryAuthorizationB\003\340A\001\022<\n"
           + "\010template\030\022"
           + " \001(\0132%.google.cloud.run.v2.RevisionTemplateB\003\340A\002\0228\n"
           + "\007traffic\030\023"
@@ -149,6 +154,9 @@ public final class ServiceProto {
           + "\024invoker_iam_disabled\030\025 \001(\010B\003\340A\001\022!\n"
           + "\024default_uri_disabled\030\026 \001(\010B\003\340A\001\022\021\n"
           + "\004urls\030\030 \003(\tB\003\340A\003\022\030\n"
+          + "\013iap_enabled\030\031 \001(\010B\003\340A\001\022T\n"
+          + "\025multi_region_settings\030\032"
+          + " \001(\01320.google.cloud.run.v2.Service.MultiRegionSettingsB\003\340A\001\022\030\n"
           + "\020custom_audiences\030% \003(\t\022 \n"
           + "\023observed_generation\030\036 \001(\003B\003\340A\003\022?\n"
           + "\022terminal_condition\030\037"
@@ -161,58 +169,61 @@ public final class ServiceProto {
           + "\020traffic_statuses\030#"
           + " \003(\0132(.google.cloud.run.v2.TrafficTargetStatusB\003\340A\003\022\020\n"
           + "\003uri\030$ \001(\tB\003\340A\003\022\032\n\r"
-          + "satisfies_pzs\030& \001(\010B\003\340A\003\022;\n"
+          + "satisfies_pzs\030& \001(\010B\003\340A\003\022%\n"
+          + "\030threat_detection_enabled\030( \001(\010B\003\340A\003\022;\n"
           + "\014build_config\030) \001(\0132"
           + " .google.cloud.run.v2.BuildConfigB\003\340A\001\022\030\n"
           + "\013reconciling\030b \001(\010B\003\340A\003\022\021\n"
-          + "\004etag\030c \001(\tB\003\340A\003\032-\n"
+          + "\004etag\030c \001(\tB\003\340A\001\032I\n"
+          + "\023MultiRegionSettings\022\024\n"
+          + "\007regions\030\001 \003(\tB\003\340A\002\022\034\n"
+          + "\017multi_region_id\030\002 \001(\tB\003\340A\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\0322\n"
           + "\020AnnotationsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:^\352A[\n"
-          + "\032run.googleapis.com/Service\022"
-          + ":projects/{project}/locations/{location}/services/{service}R\001\0012\315\r\n"
+          + "\032run.googleapis.com/Service\022:projects/{project}/loc"
+          + "ations/{location}/services/{service}R\001\0012\315\r\n"
           + "\010Services\022\375\001\n\r"
-          + "CreateService\022).google.cloud.run.v2.Crea"
-          + "teServiceRequest\032\035.google.longrunning.Operation\"\241\001\312A\022\n"
-          + "\007Service\022\007Service\332A\031parent"
-          + ",service,service_id\202\323\344\223\0027\",/v2/{parent=p"
-          + "rojects/*/locations/*}/services:\007service\212\323\344\223\002-\022+\n"
+          + "CreateService\022).google."
+          + "cloud.run.v2.CreateServiceRequest\032\035.google.longrunning.Operation\"\241\001\312A\022\n"
+          + "\007Service\022\007Service\332A\031parent,service,service_id\202\323\344\223"
+          + "\0027\",/v2/{parent=projects/*/locations/*}/services:\007service\212\323\344\223\002-\022+\n"
           + "\006parent\022!projects/*/locations/{location=*}\022\303\001\n\n"
-          + "GetService\022&.google.cloud.run.v2.GetServiceRequest\032\034.google.clou"
-          + "d.run.v2.Service\"o\332A\004name\202\323\344\223\002.\022,/v2/{na"
-          + "me=projects/*/locations/*/services/*}\212\323\344\223\002.\022,\n"
+          + "GetService\022&.google.cloud.run.v2.GetServiceRequ"
+          + "est\032\034.google.cloud.run.v2.Service\"o\332A\004na"
+          + "me\202\323\344\223\002.\022,/v2/{name=projects/*/locations/*/services/*}\212\323\344\223\002.\022,\n"
           + "\004name\022$projects/*/locations/{location=*}/**\022\325\001\n"
-          + "\014ListServices\022(.google.cloud.run.v2.ListServicesRequest\032).google.cl"
-          + "oud.run.v2.ListServicesResponse\"p\332A\006pare"
-          + "nt\202\323\344\223\002.\022,/v2/{parent=projects/*/locations/*}/services\212\323\344\223\002-\022+\n"
+          + "\014ListServices\022(.google.cloud.run.v2.ListServicesRe"
+          + "quest\032).google.cloud.run.v2.ListServices"
+          + "Response\"p\332A\006parent\202\323\344\223\002.\022,/v2/{parent=projects/*/locations/*}/services\212\323\344\223\002-\022+\n"
           + "\006parent\022!projects/*/locations/{location=*}\022\222\002\n\r"
-          + "UpdateService\022).google.cloud.run.v2.UpdateServiceR"
-          + "equest\032\035.google.longrunning.Operation\"\266\001\312A\022\n"
-          + "\007Service\022\007Service\332A\007service\332A\023servic"
-          + "e,update_mask\202\323\344\223\002?24/v2/{service.name=p"
-          + "rojects/*/locations/*/services/*}:\007service\212\323\344\223\0026\0224\n"
+          + "UpdateService\022).google.cloud.run."
+          + "v2.UpdateServiceRequest\032\035.google.longrunning.Operation\"\266\001\312A\022\n"
+          + "\007Service\022\007Service\332A"
+          + "\007service\332A\023service,update_mask\202\323\344\223\002?24/v"
+          + "2/{service.name=projects/*/locations/*/services/*}:\007service\212\323\344\223\0026\0224\n"
           + "\014service.name\022$projects/*/locations/{location=*}/**\022\340\001\n\r"
-          + "DeleteService\022).google.cloud.run.v2.DeleteServiceRequ"
-          + "est\032\035.google.longrunning.Operation\"\204\001\312A\022\n"
-          + "\007Service\022\007Service\332A\004name\202\323\344\223\002.*,/v2/{na"
-          + "me=projects/*/locations/*/services/*}\212\323\344\223\002.\022,\n"
+          + "DeleteService\022).google.cloud.run.v2."
+          + "DeleteServiceRequest\032\035.google.longrunning.Operation\"\204\001\312A\022\n"
+          + "\007Service\022\007Service\332A\004na"
+          + "me\202\323\344\223\002.*,/v2/{name=projects/*/locations/*/services/*}\212\323\344\223\002.\022,\n"
           + "\004name\022$projects/*/locations/{location=*}/**\022\220\001\n"
-          + "\014GetIamPolicy\022\".google.iam.v1.GetIamPolicyRequest\032\025.google.iam.v1.P"
-          + "olicy\"E\202\323\344\223\002?\022=/v2/{resource=projects/*/locations/*/services/*}:getIamPolicy\022\223\001\n"
-          + "\014SetIamPolicy\022\".google.iam.v1.SetIamPoli"
-          + "cyRequest\032\025.google.iam.v1.Policy\"H\202\323\344\223\002B"
-          + "\"=/v2/{resource=projects/*/locations/*/services/*}:setIamPolicy:\001*\022\271\001\n"
-          + "\022TestIamPermissions\022(.google.iam.v1.TestIamPermiss"
-          + "ionsRequest\032).google.iam.v1.TestIamPermi"
-          + "ssionsResponse\"N\202\323\344\223\002H\"C/v2/{resource=pr"
-          + "ojects/*/locations/*/services/*}:testIam"
-          + "Permissions:\001*\032F\312A\022run.googleapis.com\322A."
-          + "https://www.googleapis.com/auth/cloud-platformBT\n"
-          + "\027com.google.cloud.run.v2B\014ServiceProtoP\001Z)cloud.google.com/go/run/apiv2"
-          + "/runpb;runpbb\006proto3"
+          + "\014GetIamPolicy\022\".google.iam.v1.GetIamPolicyRequest\032"
+          + "\025.google.iam.v1.Policy\"E\202\323\344\223\002?\022=/v2/{res"
+          + "ource=projects/*/locations/*/services/*}:getIamPolicy\022\223\001\n"
+          + "\014SetIamPolicy\022\".google.iam.v1.SetIamPolicyRequest\032\025.google.iam."
+          + "v1.Policy\"H\202\323\344\223\002B\"=/v2/{resource=project"
+          + "s/*/locations/*/services/*}:setIamPolicy:\001*\022\271\001\n"
+          + "\022TestIamPermissions\022(.google.iam.v1.TestIamPermissionsRequest\032).google.ia"
+          + "m.v1.TestIamPermissionsResponse\"N\202\323\344\223\002H\""
+          + "C/v2/{resource=projects/*/locations/*/se"
+          + "rvices/*}:testIamPermissions:\001*\032F\312A\022run."
+          + "googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformBT\n"
+          + "\027com.google.cloud.run.v2B\014ServiceProtoP\001Z)cloud.google"
+          + ".com/go/run/apiv2/runpb;runpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -264,7 +275,7 @@ public final class ServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_run_v2_ListServicesResponse_descriptor,
             new java.lang.String[] {
-              "Services", "NextPageToken",
+              "Services", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_run_v2_GetServiceRequest_descriptor =
         getDescriptor().getMessageTypes().get(4);
@@ -311,6 +322,8 @@ public final class ServiceProto {
               "InvokerIamDisabled",
               "DefaultUriDisabled",
               "Urls",
+              "IapEnabled",
+              "MultiRegionSettings",
               "CustomAudiences",
               "ObservedGeneration",
               "TerminalCondition",
@@ -320,12 +333,21 @@ public final class ServiceProto {
               "TrafficStatuses",
               "Uri",
               "SatisfiesPzs",
+              "ThreatDetectionEnabled",
               "BuildConfig",
               "Reconciling",
               "Etag",
             });
-    internal_static_google_cloud_run_v2_Service_LabelsEntry_descriptor =
+    internal_static_google_cloud_run_v2_Service_MultiRegionSettings_descriptor =
         internal_static_google_cloud_run_v2_Service_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_run_v2_Service_MultiRegionSettings_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_run_v2_Service_MultiRegionSettings_descriptor,
+            new java.lang.String[] {
+              "Regions", "MultiRegionId",
+            });
+    internal_static_google_cloud_run_v2_Service_LabelsEntry_descriptor =
+        internal_static_google_cloud_run_v2_Service_descriptor.getNestedTypes().get(1);
     internal_static_google_cloud_run_v2_Service_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_run_v2_Service_LabelsEntry_descriptor,
@@ -333,7 +355,7 @@ public final class ServiceProto {
               "Key", "Value",
             });
     internal_static_google_cloud_run_v2_Service_AnnotationsEntry_descriptor =
-        internal_static_google_cloud_run_v2_Service_descriptor.getNestedTypes().get(1);
+        internal_static_google_cloud_run_v2_Service_descriptor.getNestedTypes().get(2);
     internal_static_google_cloud_run_v2_Service_AnnotationsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_run_v2_Service_AnnotationsEntry_descriptor,

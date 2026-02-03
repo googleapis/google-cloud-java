@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -270,4 +270,47 @@ public interface RegionOrBuilder
    * </code>
    */
   com.google.protobuf.BoolValueOrBuilder getShippingEligibleOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A radius area that defines the region area.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.accounts.v1.Region.RadiusArea radius_area = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the radiusArea field is set.
+   */
+  boolean hasRadiusArea();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A radius area that defines the region area.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.accounts.v1.Region.RadiusArea radius_area = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The radiusArea.
+   */
+  com.google.shopping.merchant.accounts.v1.Region.RadiusArea getRadiusArea();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A radius area that defines the region area.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.accounts.v1.Region.RadiusArea radius_area = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.shopping.merchant.accounts.v1.Region.RadiusAreaOrBuilder getRadiusAreaOrBuilder();
 }

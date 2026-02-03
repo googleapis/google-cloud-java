@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,7 +70,8 @@ public final class NetworkPeeringConnectionStatusTrafficConfiguration
    *
    *
    * <pre>
-   * Which IP version(s) of traffic and routes are being imported or exported between peer networks.
+   * Which IP version(s) of traffic and routes are being imported or
+   * exported between peer networks.
    * </pre>
    *
    * Protobuf enum {@code
@@ -91,7 +92,10 @@ public final class NetworkPeeringConnectionStatusTrafficConfiguration
      *
      *
      * <pre>
-     * This Peering will allow IPv4 traffic and routes to be exchanged. Additionally if the matching peering is IPV4_IPV6, IPv6 traffic and routes will be exchanged as well.
+     * This Peering will allow IPv4 traffic and routes to be
+     * exchanged. Additionally if the matching peering is
+     * IPV4_IPV6, IPv6 traffic and routes will be exchanged as
+     * well.
      * </pre>
      *
      * <code>IPV4_IPV6 = 22197249;</code>
@@ -101,7 +105,8 @@ public final class NetworkPeeringConnectionStatusTrafficConfiguration
      *
      *
      * <pre>
-     * This Peering will only allow IPv4 traffic and routes to be exchanged, even if the matching peering is IPV4_IPV6.
+     * This Peering will only allow IPv4 traffic and routes to be
+     * exchanged, even if the matching peering is IPV4_IPV6.
      * </pre>
      *
      * <code>IPV4_ONLY = 22373798;</code>
@@ -125,7 +130,10 @@ public final class NetworkPeeringConnectionStatusTrafficConfiguration
      *
      *
      * <pre>
-     * This Peering will allow IPv4 traffic and routes to be exchanged. Additionally if the matching peering is IPV4_IPV6, IPv6 traffic and routes will be exchanged as well.
+     * This Peering will allow IPv4 traffic and routes to be
+     * exchanged. Additionally if the matching peering is
+     * IPV4_IPV6, IPv6 traffic and routes will be exchanged as
+     * well.
      * </pre>
      *
      * <code>IPV4_IPV6 = 22197249;</code>
@@ -136,7 +144,8 @@ public final class NetworkPeeringConnectionStatusTrafficConfiguration
      *
      *
      * <pre>
-     * This Peering will only allow IPv4 traffic and routes to be exchanged, even if the matching peering is IPV4_IPV6.
+     * This Peering will only allow IPv4 traffic and routes to be
+     * exchanged, even if the matching peering is IPV4_IPV6.
      * </pre>
      *
      * <code>IPV4_ONLY = 22373798;</code>
@@ -272,7 +281,8 @@ public final class NetworkPeeringConnectionStatusTrafficConfiguration
    *
    *
    * <pre>
-   * Whether subnet routes with public IP ranges are being exported to the peer network.
+   * Whether subnet routes with public IP ranges are being exported to the
+   * peer network.
    * </pre>
    *
    * <code>optional bool export_subnet_routes_with_public_ip_to_peer = 8358601;</code>
@@ -288,7 +298,8 @@ public final class NetworkPeeringConnectionStatusTrafficConfiguration
    *
    *
    * <pre>
-   * Whether subnet routes with public IP ranges are being exported to the peer network.
+   * Whether subnet routes with public IP ranges are being exported to the
+   * peer network.
    * </pre>
    *
    * <code>optional bool export_subnet_routes_with_public_ip_to_peer = 8358601;</code>
@@ -342,7 +353,8 @@ public final class NetworkPeeringConnectionStatusTrafficConfiguration
    *
    *
    * <pre>
-   * Whether subnet routes with public IP ranges are being imported from the peer network.
+   * Whether subnet routes with public IP ranges are being imported
+   * from the peer network.
    * </pre>
    *
    * <code>optional bool import_subnet_routes_with_public_ip_from_peer = 234712361;</code>
@@ -358,7 +370,8 @@ public final class NetworkPeeringConnectionStatusTrafficConfiguration
    *
    *
    * <pre>
-   * Whether subnet routes with public IP ranges are being imported from the peer network.
+   * Whether subnet routes with public IP ranges are being imported
+   * from the peer network.
    * </pre>
    *
    * <code>optional bool import_subnet_routes_with_public_ip_from_peer = 234712361;</code>
@@ -379,7 +392,8 @@ public final class NetworkPeeringConnectionStatusTrafficConfiguration
    *
    *
    * <pre>
-   * Which IP version(s) of traffic and routes are being imported or exported between peer networks.
+   * Which IP version(s) of traffic and routes are being imported or
+   * exported between peer networks.
    * Check the StackType enum for the list of possible values.
    * </pre>
    *
@@ -396,7 +410,8 @@ public final class NetworkPeeringConnectionStatusTrafficConfiguration
    *
    *
    * <pre>
-   * Which IP version(s) of traffic and routes are being imported or exported between peer networks.
+   * Which IP version(s) of traffic and routes are being imported or
+   * exported between peer networks.
    * Check the StackType enum for the list of possible values.
    * </pre>
    *
@@ -421,7 +436,8 @@ public final class NetworkPeeringConnectionStatusTrafficConfiguration
    *
    *
    * <pre>
-   * Which IP version(s) of traffic and routes are being imported or exported between peer networks.
+   * Which IP version(s) of traffic and routes are being imported or
+   * exported between peer networks.
    * Check the StackType enum for the list of possible values.
    * </pre>
    *
@@ -1023,7 +1039,8 @@ public final class NetworkPeeringConnectionStatusTrafficConfiguration
      *
      *
      * <pre>
-     * Whether subnet routes with public IP ranges are being exported to the peer network.
+     * Whether subnet routes with public IP ranges are being exported to the
+     * peer network.
      * </pre>
      *
      * <code>optional bool export_subnet_routes_with_public_ip_to_peer = 8358601;</code>
@@ -1039,7 +1056,8 @@ public final class NetworkPeeringConnectionStatusTrafficConfiguration
      *
      *
      * <pre>
-     * Whether subnet routes with public IP ranges are being exported to the peer network.
+     * Whether subnet routes with public IP ranges are being exported to the
+     * peer network.
      * </pre>
      *
      * <code>optional bool export_subnet_routes_with_public_ip_to_peer = 8358601;</code>
@@ -1055,7 +1073,8 @@ public final class NetworkPeeringConnectionStatusTrafficConfiguration
      *
      *
      * <pre>
-     * Whether subnet routes with public IP ranges are being exported to the peer network.
+     * Whether subnet routes with public IP ranges are being exported to the
+     * peer network.
      * </pre>
      *
      * <code>optional bool export_subnet_routes_with_public_ip_to_peer = 8358601;</code>
@@ -1075,7 +1094,8 @@ public final class NetworkPeeringConnectionStatusTrafficConfiguration
      *
      *
      * <pre>
-     * Whether subnet routes with public IP ranges are being exported to the peer network.
+     * Whether subnet routes with public IP ranges are being exported to the
+     * peer network.
      * </pre>
      *
      * <code>optional bool export_subnet_routes_with_public_ip_to_peer = 8358601;</code>
@@ -1167,7 +1187,8 @@ public final class NetworkPeeringConnectionStatusTrafficConfiguration
      *
      *
      * <pre>
-     * Whether subnet routes with public IP ranges are being imported from the peer network.
+     * Whether subnet routes with public IP ranges are being imported
+     * from the peer network.
      * </pre>
      *
      * <code>optional bool import_subnet_routes_with_public_ip_from_peer = 234712361;</code>
@@ -1183,7 +1204,8 @@ public final class NetworkPeeringConnectionStatusTrafficConfiguration
      *
      *
      * <pre>
-     * Whether subnet routes with public IP ranges are being imported from the peer network.
+     * Whether subnet routes with public IP ranges are being imported
+     * from the peer network.
      * </pre>
      *
      * <code>optional bool import_subnet_routes_with_public_ip_from_peer = 234712361;</code>
@@ -1199,7 +1221,8 @@ public final class NetworkPeeringConnectionStatusTrafficConfiguration
      *
      *
      * <pre>
-     * Whether subnet routes with public IP ranges are being imported from the peer network.
+     * Whether subnet routes with public IP ranges are being imported
+     * from the peer network.
      * </pre>
      *
      * <code>optional bool import_subnet_routes_with_public_ip_from_peer = 234712361;</code>
@@ -1219,7 +1242,8 @@ public final class NetworkPeeringConnectionStatusTrafficConfiguration
      *
      *
      * <pre>
-     * Whether subnet routes with public IP ranges are being imported from the peer network.
+     * Whether subnet routes with public IP ranges are being imported
+     * from the peer network.
      * </pre>
      *
      * <code>optional bool import_subnet_routes_with_public_ip_from_peer = 234712361;</code>
@@ -1239,7 +1263,8 @@ public final class NetworkPeeringConnectionStatusTrafficConfiguration
      *
      *
      * <pre>
-     * Which IP version(s) of traffic and routes are being imported or exported between peer networks.
+     * Which IP version(s) of traffic and routes are being imported or
+     * exported between peer networks.
      * Check the StackType enum for the list of possible values.
      * </pre>
      *
@@ -1255,7 +1280,8 @@ public final class NetworkPeeringConnectionStatusTrafficConfiguration
      *
      *
      * <pre>
-     * Which IP version(s) of traffic and routes are being imported or exported between peer networks.
+     * Which IP version(s) of traffic and routes are being imported or
+     * exported between peer networks.
      * Check the StackType enum for the list of possible values.
      * </pre>
      *
@@ -1279,7 +1305,8 @@ public final class NetworkPeeringConnectionStatusTrafficConfiguration
      *
      *
      * <pre>
-     * Which IP version(s) of traffic and routes are being imported or exported between peer networks.
+     * Which IP version(s) of traffic and routes are being imported or
+     * exported between peer networks.
      * Check the StackType enum for the list of possible values.
      * </pre>
      *
@@ -1303,7 +1330,8 @@ public final class NetworkPeeringConnectionStatusTrafficConfiguration
      *
      *
      * <pre>
-     * Which IP version(s) of traffic and routes are being imported or exported between peer networks.
+     * Which IP version(s) of traffic and routes are being imported or
+     * exported between peer networks.
      * Check the StackType enum for the list of possible values.
      * </pre>
      *
@@ -1326,7 +1354,8 @@ public final class NetworkPeeringConnectionStatusTrafficConfiguration
      *
      *
      * <pre>
-     * Which IP version(s) of traffic and routes are being imported or exported between peer networks.
+     * Which IP version(s) of traffic and routes are being imported or
+     * exported between peer networks.
      * Check the StackType enum for the list of possible values.
      * </pre>
      *
@@ -1345,7 +1374,8 @@ public final class NetworkPeeringConnectionStatusTrafficConfiguration
      *
      *
      * <pre>
-     * Which IP version(s) of traffic and routes are being imported or exported between peer networks.
+     * Which IP version(s) of traffic and routes are being imported or
+     * exported between peer networks.
      * Check the StackType enum for the list of possible values.
      * </pre>
      *

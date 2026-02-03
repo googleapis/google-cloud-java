@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ public interface RawDiskOrBuilder
    *
    *
    * <pre>
-   * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
+   * The format used to encode and transmit the block device, which should beTAR. This is just a container and transmission format and not
+   * a runtime format. Provided by the client when the disk image is created.
    * Check the ContainerType enum for the list of possible values.
    * </pre>
    *
@@ -42,7 +43,8 @@ public interface RawDiskOrBuilder
    *
    *
    * <pre>
-   * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
+   * The format used to encode and transmit the block device, which should beTAR. This is just a container and transmission format and not
+   * a runtime format. Provided by the client when the disk image is created.
    * Check the ContainerType enum for the list of possible values.
    * </pre>
    *
@@ -56,7 +58,8 @@ public interface RawDiskOrBuilder
    *
    *
    * <pre>
-   * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
+   * The format used to encode and transmit the block device, which should beTAR. This is just a container and transmission format and not
+   * a runtime format. Provided by the client when the disk image is created.
    * Check the ContainerType enum for the list of possible values.
    * </pre>
    *
@@ -70,7 +73,9 @@ public interface RawDiskOrBuilder
    *
    *
    * <pre>
-   * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
+   * [Deprecated] This field is deprecated.
+   * An optional SHA1 checksum of the disk image before unpackaging provided
+   * by the client when the disk image is created.
    * </pre>
    *
    * <code>optional string sha1_checksum = 314444349;</code>
@@ -83,7 +88,9 @@ public interface RawDiskOrBuilder
    *
    *
    * <pre>
-   * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
+   * [Deprecated] This field is deprecated.
+   * An optional SHA1 checksum of the disk image before unpackaging provided
+   * by the client when the disk image is created.
    * </pre>
    *
    * <code>optional string sha1_checksum = 314444349;</code>
@@ -96,7 +103,9 @@ public interface RawDiskOrBuilder
    *
    *
    * <pre>
-   * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
+   * [Deprecated] This field is deprecated.
+   * An optional SHA1 checksum of the disk image before unpackaging provided
+   * by the client when the disk image is created.
    * </pre>
    *
    * <code>optional string sha1_checksum = 314444349;</code>
@@ -109,7 +118,22 @@ public interface RawDiskOrBuilder
    *
    *
    * <pre>
-   * The full Google Cloud Storage URL where the raw disk image archive is stored. The following are valid formats for the URL: - https://storage.googleapis.com/bucket_name/image_archive_name - https://storage.googleapis.com/bucket_name/folder_name/ image_archive_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+   * The full Google Cloud Storage URL where the raw disk image archive is
+   * stored.
+   * The following are valid formats for the URL:
+   *
+   *    - https://storage.googleapis.com/bucket_name/image_archive_name
+   *    - https://storage.googleapis.com/bucket_name/folder_name/image_archive_name
+   *
+   *
+   *
+   * In order to create an image, you must provide the full or partial URL of
+   * one of the following:
+   *
+   *    - The rawDisk.source URL
+   *    - The sourceDisk URL
+   *    - The sourceImage URL
+   *    - The sourceSnapshot URL
    * </pre>
    *
    * <code>optional string source = 177235995;</code>
@@ -122,7 +146,22 @@ public interface RawDiskOrBuilder
    *
    *
    * <pre>
-   * The full Google Cloud Storage URL where the raw disk image archive is stored. The following are valid formats for the URL: - https://storage.googleapis.com/bucket_name/image_archive_name - https://storage.googleapis.com/bucket_name/folder_name/ image_archive_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+   * The full Google Cloud Storage URL where the raw disk image archive is
+   * stored.
+   * The following are valid formats for the URL:
+   *
+   *    - https://storage.googleapis.com/bucket_name/image_archive_name
+   *    - https://storage.googleapis.com/bucket_name/folder_name/image_archive_name
+   *
+   *
+   *
+   * In order to create an image, you must provide the full or partial URL of
+   * one of the following:
+   *
+   *    - The rawDisk.source URL
+   *    - The sourceDisk URL
+   *    - The sourceImage URL
+   *    - The sourceSnapshot URL
    * </pre>
    *
    * <code>optional string source = 177235995;</code>
@@ -135,7 +174,22 @@ public interface RawDiskOrBuilder
    *
    *
    * <pre>
-   * The full Google Cloud Storage URL where the raw disk image archive is stored. The following are valid formats for the URL: - https://storage.googleapis.com/bucket_name/image_archive_name - https://storage.googleapis.com/bucket_name/folder_name/ image_archive_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+   * The full Google Cloud Storage URL where the raw disk image archive is
+   * stored.
+   * The following are valid formats for the URL:
+   *
+   *    - https://storage.googleapis.com/bucket_name/image_archive_name
+   *    - https://storage.googleapis.com/bucket_name/folder_name/image_archive_name
+   *
+   *
+   *
+   * In order to create an image, you must provide the full or partial URL of
+   * one of the following:
+   *
+   *    - The rawDisk.source URL
+   *    - The sourceDisk URL
+   *    - The sourceImage URL
+   *    - The sourceSnapshot URL
    * </pre>
    *
    * <code>optional string source = 177235995;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -148,7 +148,9 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetro
    *
    *
    * <pre>
-   * [Output Only] The name of the metro, as a three-letter lowercase string like "iad". This is the first component of the location of an Interconnect.
+   * Output only. [Output Only] The name of the metro, as a three-letter lowercase
+   * string like "iad". This is the first component of the location of an
+   * Interconnect.
    * </pre>
    *
    * <code>optional string metro = 103787801;</code>
@@ -164,7 +166,9 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetro
    *
    *
    * <pre>
-   * [Output Only] The name of the metro, as a three-letter lowercase string like "iad". This is the first component of the location of an Interconnect.
+   * Output only. [Output Only] The name of the metro, as a three-letter lowercase
+   * string like "iad". This is the first component of the location of an
+   * Interconnect.
    * </pre>
    *
    * <code>optional string metro = 103787801;</code>
@@ -188,7 +192,9 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetro
    *
    *
    * <pre>
-   * [Output Only] The name of the metro, as a three-letter lowercase string like "iad". This is the first component of the location of an Interconnect.
+   * Output only. [Output Only] The name of the metro, as a three-letter lowercase
+   * string like "iad". This is the first component of the location of an
+   * Interconnect.
    * </pre>
    *
    * <code>optional string metro = 103787801;</code>
@@ -1024,7 +1030,9 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetro
      *
      *
      * <pre>
-     * [Output Only] The name of the metro, as a three-letter lowercase string like "iad". This is the first component of the location of an Interconnect.
+     * Output only. [Output Only] The name of the metro, as a three-letter lowercase
+     * string like "iad". This is the first component of the location of an
+     * Interconnect.
      * </pre>
      *
      * <code>optional string metro = 103787801;</code>
@@ -1039,7 +1047,9 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetro
      *
      *
      * <pre>
-     * [Output Only] The name of the metro, as a three-letter lowercase string like "iad". This is the first component of the location of an Interconnect.
+     * Output only. [Output Only] The name of the metro, as a three-letter lowercase
+     * string like "iad". This is the first component of the location of an
+     * Interconnect.
      * </pre>
      *
      * <code>optional string metro = 103787801;</code>
@@ -1062,7 +1072,9 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetro
      *
      *
      * <pre>
-     * [Output Only] The name of the metro, as a three-letter lowercase string like "iad". This is the first component of the location of an Interconnect.
+     * Output only. [Output Only] The name of the metro, as a three-letter lowercase
+     * string like "iad". This is the first component of the location of an
+     * Interconnect.
      * </pre>
      *
      * <code>optional string metro = 103787801;</code>
@@ -1085,7 +1097,9 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetro
      *
      *
      * <pre>
-     * [Output Only] The name of the metro, as a three-letter lowercase string like "iad". This is the first component of the location of an Interconnect.
+     * Output only. [Output Only] The name of the metro, as a three-letter lowercase
+     * string like "iad". This is the first component of the location of an
+     * Interconnect.
      * </pre>
      *
      * <code>optional string metro = 103787801;</code>
@@ -1107,7 +1121,9 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetro
      *
      *
      * <pre>
-     * [Output Only] The name of the metro, as a three-letter lowercase string like "iad". This is the first component of the location of an Interconnect.
+     * Output only. [Output Only] The name of the metro, as a three-letter lowercase
+     * string like "iad". This is the first component of the location of an
+     * Interconnect.
      * </pre>
      *
      * <code>optional string metro = 103787801;</code>
@@ -1125,7 +1141,9 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetro
      *
      *
      * <pre>
-     * [Output Only] The name of the metro, as a three-letter lowercase string like "iad". This is the first component of the location of an Interconnect.
+     * Output only. [Output Only] The name of the metro, as a three-letter lowercase
+     * string like "iad". This is the first component of the location of an
+     * Interconnect.
      * </pre>
      *
      * <code>optional string metro = 103787801;</code>

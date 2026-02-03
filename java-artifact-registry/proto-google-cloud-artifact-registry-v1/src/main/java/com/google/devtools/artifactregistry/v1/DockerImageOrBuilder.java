@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ public interface DockerImageOrBuilder
    * <pre>
    * Required. registry_location, project_id, repository_name and image id forms
    * a unique image
-   * name:`projects/&lt;project_id&gt;/locations/&lt;location&gt;/repository/&lt;repository_name&gt;/dockerImages/&lt;docker_image&gt;`.
+   * name:`projects/&lt;project_id&gt;/locations/&lt;location&gt;/repositories/&lt;repository_name&gt;/dockerImages/&lt;docker_image&gt;`.
    * For example,
    * "projects/test-project/locations/us-west4/repositories/test-repo/dockerImages/
    * nginx&#64;sha256:e9954c1fc875017be1c3e36eca16be2d9e9bccc4bf072163515467d6a823c7cf",
@@ -52,7 +52,7 @@ public interface DockerImageOrBuilder
    * <pre>
    * Required. registry_location, project_id, repository_name and image id forms
    * a unique image
-   * name:`projects/&lt;project_id&gt;/locations/&lt;location&gt;/repository/&lt;repository_name&gt;/dockerImages/&lt;docker_image&gt;`.
+   * name:`projects/&lt;project_id&gt;/locations/&lt;location&gt;/repositories/&lt;repository_name&gt;/dockerImages/&lt;docker_image&gt;`.
    * For example,
    * "projects/test-project/locations/us-west4/repositories/test-repo/dockerImages/
    * nginx&#64;sha256:e9954c1fc875017be1c3e36eca16be2d9e9bccc4bf072163515467d6a823c7cf",
@@ -324,4 +324,108 @@ public interface DockerImageOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * ArtifactType of this image, e.g. "application/vnd.example+type".
+   * If the `subject_digest` is set and no `artifact_type` is given, the
+   * `media_type` will be considered as the `artifact_type`. This field is
+   * returned as the `metadata.artifactType` field in the Version resource.
+   * </pre>
+   *
+   * <code>string artifact_type = 9;</code>
+   *
+   * @return The artifactType.
+   */
+  java.lang.String getArtifactType();
+
+  /**
+   *
+   *
+   * <pre>
+   * ArtifactType of this image, e.g. "application/vnd.example+type".
+   * If the `subject_digest` is set and no `artifact_type` is given, the
+   * `media_type` will be considered as the `artifact_type`. This field is
+   * returned as the `metadata.artifactType` field in the Version resource.
+   * </pre>
+   *
+   * <code>string artifact_type = 9;</code>
+   *
+   * @return The bytes for artifactType.
+   */
+  com.google.protobuf.ByteString getArtifactTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. For multi-arch images (manifest lists), this field contains the
+   * list of image manifests.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.artifactregistry.v1.ImageManifest image_manifests = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.devtools.artifactregistry.v1.ImageManifest> getImageManifestsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. For multi-arch images (manifest lists), this field contains the
+   * list of image manifests.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.artifactregistry.v1.ImageManifest image_manifests = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.devtools.artifactregistry.v1.ImageManifest getImageManifests(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. For multi-arch images (manifest lists), this field contains the
+   * list of image manifests.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.artifactregistry.v1.ImageManifest image_manifests = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getImageManifestsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. For multi-arch images (manifest lists), this field contains the
+   * list of image manifests.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.artifactregistry.v1.ImageManifest image_manifests = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.devtools.artifactregistry.v1.ImageManifestOrBuilder>
+      getImageManifestsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. For multi-arch images (manifest lists), this field contains the
+   * list of image manifests.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devtools.artifactregistry.v1.ImageManifest image_manifests = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.devtools.artifactregistry.v1.ImageManifestOrBuilder getImageManifestsOrBuilder(
+      int index);
 }

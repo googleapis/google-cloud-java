@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1008,6 +1008,45 @@ public final class WorkerPoolRevisionTemplate extends com.google.protobuf.Genera
         : nodeSelector_;
   }
 
+  public static final int GPU_ZONAL_REDUNDANCY_DISABLED_FIELD_NUMBER = 16;
+  private boolean gpuZonalRedundancyDisabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. True if GPU zonal redundancy is disabled on this worker pool.
+   * </pre>
+   *
+   * <code>
+   * optional bool gpu_zonal_redundancy_disabled = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the gpuZonalRedundancyDisabled field is set.
+   */
+  @java.lang.Override
+  public boolean hasGpuZonalRedundancyDisabled() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. True if GPU zonal redundancy is disabled on this worker pool.
+   * </pre>
+   *
+   * <code>
+   * optional bool gpu_zonal_redundancy_disabled = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The gpuZonalRedundancyDisabled.
+   */
+  @java.lang.Override
+  public boolean getGpuZonalRedundancyDisabled() {
+    return gpuZonalRedundancyDisabled_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1058,6 +1097,9 @@ public final class WorkerPoolRevisionTemplate extends com.google.protobuf.Genera
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(13, getNodeSelector());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeBool(16, gpuZonalRedundancyDisabled_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1124,6 +1166,10 @@ public final class WorkerPoolRevisionTemplate extends com.google.protobuf.Genera
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getNodeSelector());
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(16, gpuZonalRedundancyDisabled_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1165,6 +1211,10 @@ public final class WorkerPoolRevisionTemplate extends com.google.protobuf.Genera
     if (hasNodeSelector() != other.hasNodeSelector()) return false;
     if (hasNodeSelector()) {
       if (!getNodeSelector().equals(other.getNodeSelector())) return false;
+    }
+    if (hasGpuZonalRedundancyDisabled() != other.hasGpuZonalRedundancyDisabled()) return false;
+    if (hasGpuZonalRedundancyDisabled()) {
+      if (getGpuZonalRedundancyDisabled() != other.getGpuZonalRedundancyDisabled()) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1216,6 +1266,11 @@ public final class WorkerPoolRevisionTemplate extends com.google.protobuf.Genera
     if (hasNodeSelector()) {
       hash = (37 * hash) + NODE_SELECTOR_FIELD_NUMBER;
       hash = (53 * hash) + getNodeSelector().hashCode();
+    }
+    if (hasGpuZonalRedundancyDisabled()) {
+      hash = (37 * hash) + GPU_ZONAL_REDUNDANCY_DISABLED_FIELD_NUMBER;
+      hash =
+          (53 * hash) + com.google.protobuf.Internal.hashBoolean(getGpuZonalRedundancyDisabled());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1438,6 +1493,7 @@ public final class WorkerPoolRevisionTemplate extends com.google.protobuf.Genera
         nodeSelectorBuilder_.dispose();
         nodeSelectorBuilder_ = null;
       }
+      gpuZonalRedundancyDisabled_ = false;
       return this;
     }
 
@@ -1538,6 +1594,10 @@ public final class WorkerPoolRevisionTemplate extends com.google.protobuf.Genera
         result.nodeSelector_ =
             nodeSelectorBuilder_ == null ? nodeSelector_ : nodeSelectorBuilder_.build();
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.gpuZonalRedundancyDisabled_ = gpuZonalRedundancyDisabled_;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1676,6 +1736,9 @@ public final class WorkerPoolRevisionTemplate extends com.google.protobuf.Genera
       if (other.hasNodeSelector()) {
         mergeNodeSelector(other.getNodeSelector());
       }
+      if (other.hasGpuZonalRedundancyDisabled()) {
+        setGpuZonalRedundancyDisabled(other.getGpuZonalRedundancyDisabled());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1800,6 +1863,12 @@ public final class WorkerPoolRevisionTemplate extends com.google.protobuf.Genera
                 bitField0_ |= 0x00000800;
                 break;
               } // case 106
+            case 128:
+              {
+                gpuZonalRedundancyDisabled_ = input.readBool();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 128
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4453,6 +4522,86 @@ public final class WorkerPoolRevisionTemplate extends com.google.protobuf.Genera
         nodeSelector_ = null;
       }
       return nodeSelectorBuilder_;
+    }
+
+    private boolean gpuZonalRedundancyDisabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. True if GPU zonal redundancy is disabled on this worker pool.
+     * </pre>
+     *
+     * <code>
+     * optional bool gpu_zonal_redundancy_disabled = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the gpuZonalRedundancyDisabled field is set.
+     */
+    @java.lang.Override
+    public boolean hasGpuZonalRedundancyDisabled() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. True if GPU zonal redundancy is disabled on this worker pool.
+     * </pre>
+     *
+     * <code>
+     * optional bool gpu_zonal_redundancy_disabled = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The gpuZonalRedundancyDisabled.
+     */
+    @java.lang.Override
+    public boolean getGpuZonalRedundancyDisabled() {
+      return gpuZonalRedundancyDisabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. True if GPU zonal redundancy is disabled on this worker pool.
+     * </pre>
+     *
+     * <code>
+     * optional bool gpu_zonal_redundancy_disabled = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The gpuZonalRedundancyDisabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGpuZonalRedundancyDisabled(boolean value) {
+
+      gpuZonalRedundancyDisabled_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. True if GPU zonal redundancy is disabled on this worker pool.
+     * </pre>
+     *
+     * <code>
+     * optional bool gpu_zonal_redundancy_disabled = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearGpuZonalRedundancyDisabled() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      gpuZonalRedundancyDisabled_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

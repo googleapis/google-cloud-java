@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -277,6 +277,58 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessageV3
         : outputFields_;
   }
 
+  public static final int FILTER_FIELD_NUMBER = 6;
+  private com.google.protobuf.Struct filter_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A JSON filter expression, e.g. {"genre": {"$eq": "sci-fi"}},
+   * represented as a google.protobuf.Struct.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the filter field is set.
+   */
+  @java.lang.Override
+  public boolean hasFilter() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A JSON filter expression, e.g. {"genre": {"$eq": "sci-fi"}},
+   * represented as a google.protobuf.Struct.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Struct getFilter() {
+    return filter_ == null ? com.google.protobuf.Struct.getDefaultInstance() : filter_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A JSON filter expression, e.g. {"genre": {"$eq": "sci-fi"}},
+   * represented as a google.protobuf.Struct.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StructOrBuilder getFilterOrBuilder() {
+    return filter_ == null ? com.google.protobuf.Struct.getDefaultInstance() : filter_;
+  }
+
   public static final int TOP_K_FIELD_NUMBER = 4;
   private int topK_ = 0;
 
@@ -293,7 +345,7 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasTopK() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -335,13 +387,16 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(3, getOutputFields());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeInt32(4, topK_);
     }
     if (taskType_
         != com.google.cloud.vectorsearch.v1beta.EmbeddingTaskType.EMBEDDING_TASK_TYPE_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(5, taskType_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(6, getFilter());
     }
     getUnknownFields().writeTo(output);
   }
@@ -361,13 +416,16 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getOutputFields());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, topK_);
     }
     if (taskType_
         != com.google.cloud.vectorsearch.v1beta.EmbeddingTaskType.EMBEDDING_TASK_TYPE_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, taskType_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getFilter());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -391,6 +449,10 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessageV3
     if (hasOutputFields() != other.hasOutputFields()) return false;
     if (hasOutputFields()) {
       if (!getOutputFields().equals(other.getOutputFields())) return false;
+    }
+    if (hasFilter() != other.hasFilter()) return false;
+    if (hasFilter()) {
+      if (!getFilter().equals(other.getFilter())) return false;
     }
     if (hasTopK() != other.hasTopK()) return false;
     if (hasTopK()) {
@@ -416,6 +478,10 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessageV3
     if (hasOutputFields()) {
       hash = (37 * hash) + OUTPUT_FIELDS_FIELD_NUMBER;
       hash = (53 * hash) + getOutputFields().hashCode();
+    }
+    if (hasFilter()) {
+      hash = (37 * hash) + FILTER_FIELD_NUMBER;
+      hash = (53 * hash) + getFilter().hashCode();
     }
     if (hasTopK()) {
       hash = (37 * hash) + TOP_K_FIELD_NUMBER;
@@ -563,6 +629,7 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getOutputFieldsFieldBuilder();
+        getFilterFieldBuilder();
       }
     }
 
@@ -577,6 +644,11 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessageV3
       if (outputFieldsBuilder_ != null) {
         outputFieldsBuilder_.dispose();
         outputFieldsBuilder_ = null;
+      }
+      filter_ = null;
+      if (filterBuilder_ != null) {
+        filterBuilder_.dispose();
+        filterBuilder_ = null;
       }
       topK_ = 0;
       return this;
@@ -631,8 +703,12 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.topK_ = topK_;
+        result.filter_ = filterBuilder_ == null ? filter_ : filterBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.topK_ = topK_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -699,6 +775,9 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessageV3
       if (other.hasOutputFields()) {
         mergeOutputFields(other.getOutputFields());
       }
+      if (other.hasFilter()) {
+        mergeFilter(other.getFilter());
+      }
       if (other.hasTopK()) {
         setTopK(other.getTopK());
       }
@@ -749,7 +828,7 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessageV3
             case 32:
               {
                 topK_ = input.readInt32();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 32
             case 40:
@@ -758,6 +837,12 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 40
+            case 50:
+              {
+                input.readMessage(getFilterFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1325,6 +1410,205 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessageV3
       return outputFieldsBuilder_;
     }
 
+    private com.google.protobuf.Struct filter_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        filterBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A JSON filter expression, e.g. {"genre": {"$eq": "sci-fi"}},
+     * represented as a google.protobuf.Struct.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the filter field is set.
+     */
+    public boolean hasFilter() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A JSON filter expression, e.g. {"genre": {"$eq": "sci-fi"}},
+     * represented as a google.protobuf.Struct.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The filter.
+     */
+    public com.google.protobuf.Struct getFilter() {
+      if (filterBuilder_ == null) {
+        return filter_ == null ? com.google.protobuf.Struct.getDefaultInstance() : filter_;
+      } else {
+        return filterBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A JSON filter expression, e.g. {"genre": {"$eq": "sci-fi"}},
+     * represented as a google.protobuf.Struct.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setFilter(com.google.protobuf.Struct value) {
+      if (filterBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        filter_ = value;
+      } else {
+        filterBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A JSON filter expression, e.g. {"genre": {"$eq": "sci-fi"}},
+     * represented as a google.protobuf.Struct.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setFilter(com.google.protobuf.Struct.Builder builderForValue) {
+      if (filterBuilder_ == null) {
+        filter_ = builderForValue.build();
+      } else {
+        filterBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A JSON filter expression, e.g. {"genre": {"$eq": "sci-fi"}},
+     * represented as a google.protobuf.Struct.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder mergeFilter(com.google.protobuf.Struct value) {
+      if (filterBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && filter_ != null
+            && filter_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getFilterBuilder().mergeFrom(value);
+        } else {
+          filter_ = value;
+        }
+      } else {
+        filterBuilder_.mergeFrom(value);
+      }
+      if (filter_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A JSON filter expression, e.g. {"genre": {"$eq": "sci-fi"}},
+     * represented as a google.protobuf.Struct.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder clearFilter() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      filter_ = null;
+      if (filterBuilder_ != null) {
+        filterBuilder_.dispose();
+        filterBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A JSON filter expression, e.g. {"genre": {"$eq": "sci-fi"}},
+     * represented as a google.protobuf.Struct.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.protobuf.Struct.Builder getFilterBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getFilterFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A JSON filter expression, e.g. {"genre": {"$eq": "sci-fi"}},
+     * represented as a google.protobuf.Struct.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.protobuf.StructOrBuilder getFilterOrBuilder() {
+      if (filterBuilder_ != null) {
+        return filterBuilder_.getMessageOrBuilder();
+      } else {
+        return filter_ == null ? com.google.protobuf.Struct.getDefaultInstance() : filter_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A JSON filter expression, e.g. {"genre": {"$eq": "sci-fi"}},
+     * represented as a google.protobuf.Struct.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        getFilterFieldBuilder() {
+      if (filterBuilder_ == null) {
+        filterBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>(
+                getFilter(), getParentForChildren(), isClean());
+        filter_ = null;
+      }
+      return filterBuilder_;
+    }
+
     private int topK_;
 
     /**
@@ -1340,7 +1624,7 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasTopK() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -1374,7 +1658,7 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessageV3
     public Builder setTopK(int value) {
 
       topK_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1391,7 +1675,7 @@ public final class SemanticSearch extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTopK() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       topK_ = 0;
       onChanged();
       return this;

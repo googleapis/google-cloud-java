@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * A specification of the desired way to instantiate a disk in the instance template when its created from a source instance.
+ * A specification of the desired way to instantiate a disk in the instance
+ * template when its created from a source instance.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.DiskInstantiationConfig}
@@ -70,7 +71,24 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
+   * Specifies whether to include the disk and what image to use. Possible
+   * values are:
+   *
+   *
+   *      - source-image: to use the same image that was used to
+   *      create the source instance's corresponding disk. Applicable to the boot
+   *      disk and additional read-write disks.
+   *      - source-image-family: to use the same image family that
+   *      was used to create the source instance's corresponding disk. Applicable
+   *      to the boot disk and additional read-write disks.
+   *      - custom-image: to use a user-provided image url for disk
+   *      creation. Applicable to the boot disk and additional read-write
+   *      disks.
+   *    - attach-read-only: to attach a read-only
+   *      disk. Applicable to read-only disks.
+   *      - do-not-include: to exclude a disk from the template.
+   *      Applicable to additional read-write disks, local SSDs, and read-only
+   *      disks.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom}
@@ -90,7 +108,9 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Attach the existing disk in read-only mode. The request will fail if the disk was attached in read-write mode on the source instance. Applicable to: read-only disks.
+     * Attach the existing disk in read-only mode. The request will fail if the
+     * disk was attached in read-write mode on the source instance. Applicable
+     * to: read-only disks.
      * </pre>
      *
      * <code>ATTACH_READ_ONLY = 513775419;</code>
@@ -100,7 +120,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Create a blank disk. The disk will be created unformatted. Applicable to: additional read-write disks, local SSDs.
+     * Create a blank disk. The disk will be created unformatted. Applicable to:
+     * additional read-write disks, local SSDs.
      * </pre>
      *
      * <code>BLANK = 63281460;</code>
@@ -110,7 +131,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Use the custom image specified in the custom_image field. Applicable to: boot disk, additional read-write disks.
+     * Use the custom image specified in the custom_image field. Applicable to:
+     * boot disk, additional read-write disks.
      * </pre>
      *
      * <code>CUSTOM_IMAGE = 196311789;</code>
@@ -120,7 +142,10 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Use the default instantiation option for the corresponding type of disk. For boot disk and any other R/W disks, new custom images will be created from each disk. For read-only disks, they will be attached in read-only mode. Local SSD disks will be created as blank volumes.
+     * Use the default instantiation option for the corresponding type of disk.
+     * For boot disk and any other R/W disks, new custom images will be created
+     * from each disk. For read-only disks, they will be attached in read-only
+     * mode. Local SSD disks will be created as blank volumes.
      * </pre>
      *
      * <code>DEFAULT = 115302945;</code>
@@ -130,7 +155,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Do not include the disk in the instance template. Applicable to: additional read-write disks, local SSDs, read-only disks.
+     * Do not include the disk in the instance template. Applicable to:
+     * additional read-write disks, local SSDs, read-only disks.
      * </pre>
      *
      * <code>DO_NOT_INCLUDE = 104218952;</code>
@@ -140,7 +166,10 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Use the same source image used for creation of the source instance's corresponding disk. The request will fail if the source VM's disk was created from a snapshot. Applicable to: boot disk, additional read-write disks.
+     * Use the same source image used for creation of the source instance's
+     * corresponding disk. The request will fail if the source VM's disk was
+     * created from a snapshot. Applicable to: boot disk, additional read-write
+     * disks.
      * </pre>
      *
      * <code>SOURCE_IMAGE = 62631959;</code>
@@ -150,7 +179,10 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Use the same source image family used for creation of the source instance's corresponding disk. The request will fail if the source image of the source disk does not belong to any image family. Applicable to: boot disk, additional read-write disks.
+     * Use the same source image family used for creation of the source
+     * instance's corresponding disk. The request will fail if the source image
+     * of the source disk does not belong to any image family. Applicable to:
+     * boot disk, additional read-write disks.
      * </pre>
      *
      * <code>SOURCE_IMAGE_FAMILY = 76850316;</code>
@@ -174,7 +206,9 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Attach the existing disk in read-only mode. The request will fail if the disk was attached in read-write mode on the source instance. Applicable to: read-only disks.
+     * Attach the existing disk in read-only mode. The request will fail if the
+     * disk was attached in read-write mode on the source instance. Applicable
+     * to: read-only disks.
      * </pre>
      *
      * <code>ATTACH_READ_ONLY = 513775419;</code>
@@ -185,7 +219,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Create a blank disk. The disk will be created unformatted. Applicable to: additional read-write disks, local SSDs.
+     * Create a blank disk. The disk will be created unformatted. Applicable to:
+     * additional read-write disks, local SSDs.
      * </pre>
      *
      * <code>BLANK = 63281460;</code>
@@ -196,7 +231,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Use the custom image specified in the custom_image field. Applicable to: boot disk, additional read-write disks.
+     * Use the custom image specified in the custom_image field. Applicable to:
+     * boot disk, additional read-write disks.
      * </pre>
      *
      * <code>CUSTOM_IMAGE = 196311789;</code>
@@ -207,7 +243,10 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Use the default instantiation option for the corresponding type of disk. For boot disk and any other R/W disks, new custom images will be created from each disk. For read-only disks, they will be attached in read-only mode. Local SSD disks will be created as blank volumes.
+     * Use the default instantiation option for the corresponding type of disk.
+     * For boot disk and any other R/W disks, new custom images will be created
+     * from each disk. For read-only disks, they will be attached in read-only
+     * mode. Local SSD disks will be created as blank volumes.
      * </pre>
      *
      * <code>DEFAULT = 115302945;</code>
@@ -218,7 +257,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Do not include the disk in the instance template. Applicable to: additional read-write disks, local SSDs, read-only disks.
+     * Do not include the disk in the instance template. Applicable to:
+     * additional read-write disks, local SSDs, read-only disks.
      * </pre>
      *
      * <code>DO_NOT_INCLUDE = 104218952;</code>
@@ -229,7 +269,10 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Use the same source image used for creation of the source instance's corresponding disk. The request will fail if the source VM's disk was created from a snapshot. Applicable to: boot disk, additional read-write disks.
+     * Use the same source image used for creation of the source instance's
+     * corresponding disk. The request will fail if the source VM's disk was
+     * created from a snapshot. Applicable to: boot disk, additional read-write
+     * disks.
      * </pre>
      *
      * <code>SOURCE_IMAGE = 62631959;</code>
@@ -240,7 +283,10 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Use the same source image family used for creation of the source instance's corresponding disk. The request will fail if the source image of the source disk does not belong to any image family. Applicable to: boot disk, additional read-write disks.
+     * Use the same source image family used for creation of the source
+     * instance's corresponding disk. The request will fail if the source image
+     * of the source disk does not belong to any image family. Applicable to:
+     * boot disk, additional read-write disks.
      * </pre>
      *
      * <code>SOURCE_IMAGE_FAMILY = 76850316;</code>
@@ -352,7 +398,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
+   * Specifies whether the disk will be auto-deleted when the instance is
+   * deleted (but not when the disk is detached from the instance).
    * </pre>
    *
    * <code>optional bool auto_delete = 464761403;</code>
@@ -368,7 +415,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
+   * Specifies whether the disk will be auto-deleted when the instance is
+   * deleted (but not when the disk is detached from the instance).
    * </pre>
    *
    * <code>optional bool auto_delete = 464761403;</code>
@@ -389,7 +437,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The custom source image to be used to restore this disk when instantiating this instance template.
+   * The custom source image to be used to restore this disk when instantiating
+   * this instance template.
    * </pre>
    *
    * <code>optional string custom_image = 184123149;</code>
@@ -405,7 +454,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The custom source image to be used to restore this disk when instantiating this instance template.
+   * The custom source image to be used to restore this disk when instantiating
+   * this instance template.
    * </pre>
    *
    * <code>optional string custom_image = 184123149;</code>
@@ -429,7 +479,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The custom source image to be used to restore this disk when instantiating this instance template.
+   * The custom source image to be used to restore this disk when instantiating
+   * this instance template.
    * </pre>
    *
    * <code>optional string custom_image = 184123149;</code>
@@ -527,7 +578,24 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
+   * Specifies whether to include the disk and what image to use. Possible
+   * values are:
+   *
+   *
+   *      - source-image: to use the same image that was used to
+   *      create the source instance's corresponding disk. Applicable to the boot
+   *      disk and additional read-write disks.
+   *      - source-image-family: to use the same image family that
+   *      was used to create the source instance's corresponding disk. Applicable
+   *      to the boot disk and additional read-write disks.
+   *      - custom-image: to use a user-provided image url for disk
+   *      creation. Applicable to the boot disk and additional read-write
+   *      disks.
+   *    - attach-read-only: to attach a read-only
+   *      disk. Applicable to read-only disks.
+   *      - do-not-include: to exclude a disk from the template.
+   *      Applicable to additional read-write disks, local SSDs, and read-only
+   *      disks.
    * Check the InstantiateFrom enum for the list of possible values.
    * </pre>
    *
@@ -544,7 +612,24 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
+   * Specifies whether to include the disk and what image to use. Possible
+   * values are:
+   *
+   *
+   *      - source-image: to use the same image that was used to
+   *      create the source instance's corresponding disk. Applicable to the boot
+   *      disk and additional read-write disks.
+   *      - source-image-family: to use the same image family that
+   *      was used to create the source instance's corresponding disk. Applicable
+   *      to the boot disk and additional read-write disks.
+   *      - custom-image: to use a user-provided image url for disk
+   *      creation. Applicable to the boot disk and additional read-write
+   *      disks.
+   *    - attach-read-only: to attach a read-only
+   *      disk. Applicable to read-only disks.
+   *      - do-not-include: to exclude a disk from the template.
+   *      Applicable to additional read-write disks, local SSDs, and read-only
+   *      disks.
    * Check the InstantiateFrom enum for the list of possible values.
    * </pre>
    *
@@ -569,7 +654,24 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
+   * Specifies whether to include the disk and what image to use. Possible
+   * values are:
+   *
+   *
+   *      - source-image: to use the same image that was used to
+   *      create the source instance's corresponding disk. Applicable to the boot
+   *      disk and additional read-write disks.
+   *      - source-image-family: to use the same image family that
+   *      was used to create the source instance's corresponding disk. Applicable
+   *      to the boot disk and additional read-write disks.
+   *      - custom-image: to use a user-provided image url for disk
+   *      creation. Applicable to the boot disk and additional read-write
+   *      disks.
+   *    - attach-read-only: to attach a read-only
+   *      disk. Applicable to read-only disks.
+   *      - do-not-include: to exclude a disk from the template.
+   *      Applicable to additional read-write disks, local SSDs, and read-only
+   *      disks.
    * Check the InstantiateFrom enum for the list of possible values.
    * </pre>
    *
@@ -801,7 +903,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * A specification of the desired way to instantiate a disk in the instance template when its created from a source instance.
+   * A specification of the desired way to instantiate a disk in the instance
+   * template when its created from a source instance.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.DiskInstantiationConfig}
@@ -1035,7 +1138,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
+     * Specifies whether the disk will be auto-deleted when the instance is
+     * deleted (but not when the disk is detached from the instance).
      * </pre>
      *
      * <code>optional bool auto_delete = 464761403;</code>
@@ -1051,7 +1155,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
+     * Specifies whether the disk will be auto-deleted when the instance is
+     * deleted (but not when the disk is detached from the instance).
      * </pre>
      *
      * <code>optional bool auto_delete = 464761403;</code>
@@ -1067,7 +1172,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
+     * Specifies whether the disk will be auto-deleted when the instance is
+     * deleted (but not when the disk is detached from the instance).
      * </pre>
      *
      * <code>optional bool auto_delete = 464761403;</code>
@@ -1087,7 +1193,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
+     * Specifies whether the disk will be auto-deleted when the instance is
+     * deleted (but not when the disk is detached from the instance).
      * </pre>
      *
      * <code>optional bool auto_delete = 464761403;</code>
@@ -1107,7 +1214,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The custom source image to be used to restore this disk when instantiating this instance template.
+     * The custom source image to be used to restore this disk when instantiating
+     * this instance template.
      * </pre>
      *
      * <code>optional string custom_image = 184123149;</code>
@@ -1122,7 +1230,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The custom source image to be used to restore this disk when instantiating this instance template.
+     * The custom source image to be used to restore this disk when instantiating
+     * this instance template.
      * </pre>
      *
      * <code>optional string custom_image = 184123149;</code>
@@ -1145,7 +1254,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The custom source image to be used to restore this disk when instantiating this instance template.
+     * The custom source image to be used to restore this disk when instantiating
+     * this instance template.
      * </pre>
      *
      * <code>optional string custom_image = 184123149;</code>
@@ -1168,7 +1278,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The custom source image to be used to restore this disk when instantiating this instance template.
+     * The custom source image to be used to restore this disk when instantiating
+     * this instance template.
      * </pre>
      *
      * <code>optional string custom_image = 184123149;</code>
@@ -1190,7 +1301,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The custom source image to be used to restore this disk when instantiating this instance template.
+     * The custom source image to be used to restore this disk when instantiating
+     * this instance template.
      * </pre>
      *
      * <code>optional string custom_image = 184123149;</code>
@@ -1208,7 +1320,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The custom source image to be used to restore this disk when instantiating this instance template.
+     * The custom source image to be used to restore this disk when instantiating
+     * this instance template.
      * </pre>
      *
      * <code>optional string custom_image = 184123149;</code>
@@ -1359,7 +1472,24 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
+     * Specifies whether to include the disk and what image to use. Possible
+     * values are:
+     *
+     *
+     *      - source-image: to use the same image that was used to
+     *      create the source instance's corresponding disk. Applicable to the boot
+     *      disk and additional read-write disks.
+     *      - source-image-family: to use the same image family that
+     *      was used to create the source instance's corresponding disk. Applicable
+     *      to the boot disk and additional read-write disks.
+     *      - custom-image: to use a user-provided image url for disk
+     *      creation. Applicable to the boot disk and additional read-write
+     *      disks.
+     *    - attach-read-only: to attach a read-only
+     *      disk. Applicable to read-only disks.
+     *      - do-not-include: to exclude a disk from the template.
+     *      Applicable to additional read-write disks, local SSDs, and read-only
+     *      disks.
      * Check the InstantiateFrom enum for the list of possible values.
      * </pre>
      *
@@ -1375,7 +1505,24 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
+     * Specifies whether to include the disk and what image to use. Possible
+     * values are:
+     *
+     *
+     *      - source-image: to use the same image that was used to
+     *      create the source instance's corresponding disk. Applicable to the boot
+     *      disk and additional read-write disks.
+     *      - source-image-family: to use the same image family that
+     *      was used to create the source instance's corresponding disk. Applicable
+     *      to the boot disk and additional read-write disks.
+     *      - custom-image: to use a user-provided image url for disk
+     *      creation. Applicable to the boot disk and additional read-write
+     *      disks.
+     *    - attach-read-only: to attach a read-only
+     *      disk. Applicable to read-only disks.
+     *      - do-not-include: to exclude a disk from the template.
+     *      Applicable to additional read-write disks, local SSDs, and read-only
+     *      disks.
      * Check the InstantiateFrom enum for the list of possible values.
      * </pre>
      *
@@ -1399,7 +1546,24 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
+     * Specifies whether to include the disk and what image to use. Possible
+     * values are:
+     *
+     *
+     *      - source-image: to use the same image that was used to
+     *      create the source instance's corresponding disk. Applicable to the boot
+     *      disk and additional read-write disks.
+     *      - source-image-family: to use the same image family that
+     *      was used to create the source instance's corresponding disk. Applicable
+     *      to the boot disk and additional read-write disks.
+     *      - custom-image: to use a user-provided image url for disk
+     *      creation. Applicable to the boot disk and additional read-write
+     *      disks.
+     *    - attach-read-only: to attach a read-only
+     *      disk. Applicable to read-only disks.
+     *      - do-not-include: to exclude a disk from the template.
+     *      Applicable to additional read-write disks, local SSDs, and read-only
+     *      disks.
      * Check the InstantiateFrom enum for the list of possible values.
      * </pre>
      *
@@ -1423,7 +1587,24 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
+     * Specifies whether to include the disk and what image to use. Possible
+     * values are:
+     *
+     *
+     *      - source-image: to use the same image that was used to
+     *      create the source instance's corresponding disk. Applicable to the boot
+     *      disk and additional read-write disks.
+     *      - source-image-family: to use the same image family that
+     *      was used to create the source instance's corresponding disk. Applicable
+     *      to the boot disk and additional read-write disks.
+     *      - custom-image: to use a user-provided image url for disk
+     *      creation. Applicable to the boot disk and additional read-write
+     *      disks.
+     *    - attach-read-only: to attach a read-only
+     *      disk. Applicable to read-only disks.
+     *      - do-not-include: to exclude a disk from the template.
+     *      Applicable to additional read-write disks, local SSDs, and read-only
+     *      disks.
      * Check the InstantiateFrom enum for the list of possible values.
      * </pre>
      *
@@ -1446,7 +1627,24 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
+     * Specifies whether to include the disk and what image to use. Possible
+     * values are:
+     *
+     *
+     *      - source-image: to use the same image that was used to
+     *      create the source instance's corresponding disk. Applicable to the boot
+     *      disk and additional read-write disks.
+     *      - source-image-family: to use the same image family that
+     *      was used to create the source instance's corresponding disk. Applicable
+     *      to the boot disk and additional read-write disks.
+     *      - custom-image: to use a user-provided image url for disk
+     *      creation. Applicable to the boot disk and additional read-write
+     *      disks.
+     *    - attach-read-only: to attach a read-only
+     *      disk. Applicable to read-only disks.
+     *      - do-not-include: to exclude a disk from the template.
+     *      Applicable to additional read-write disks, local SSDs, and read-only
+     *      disks.
      * Check the InstantiateFrom enum for the list of possible values.
      * </pre>
      *
@@ -1465,7 +1663,24 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
+     * Specifies whether to include the disk and what image to use. Possible
+     * values are:
+     *
+     *
+     *      - source-image: to use the same image that was used to
+     *      create the source instance's corresponding disk. Applicable to the boot
+     *      disk and additional read-write disks.
+     *      - source-image-family: to use the same image family that
+     *      was used to create the source instance's corresponding disk. Applicable
+     *      to the boot disk and additional read-write disks.
+     *      - custom-image: to use a user-provided image url for disk
+     *      creation. Applicable to the boot disk and additional read-write
+     *      disks.
+     *    - attach-read-only: to attach a read-only
+     *      disk. Applicable to read-only disks.
+     *      - do-not-include: to exclude a disk from the template.
+     *      Applicable to additional read-write disks, local SSDs, and read-only
+     *      disks.
      * Check the InstantiateFrom enum for the list of possible values.
      * </pre>
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,4 +106,76 @@ public interface ImageImportOsAdaptationParametersOrBuilder
    * @return The bootConversion.
    */
   com.google.cloud.vmmigration.v1.BootConversion getBootConversion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Modifiers to be used as configuration of the OS adaptation
+   * process.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.vmmigration.v1.AdaptationModifier> getAdaptationModifiersList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Modifiers to be used as configuration of the OS adaptation
+   * process.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.vmmigration.v1.AdaptationModifier getAdaptationModifiers(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Modifiers to be used as configuration of the OS adaptation
+   * process.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getAdaptationModifiersCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Modifiers to be used as configuration of the OS adaptation
+   * process.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.vmmigration.v1.AdaptationModifierOrBuilder>
+      getAdaptationModifiersOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Modifiers to be used as configuration of the OS adaptation
+   * process.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.vmmigration.v1.AdaptationModifierOrBuilder getAdaptationModifiersOrBuilder(
+      int index);
 }

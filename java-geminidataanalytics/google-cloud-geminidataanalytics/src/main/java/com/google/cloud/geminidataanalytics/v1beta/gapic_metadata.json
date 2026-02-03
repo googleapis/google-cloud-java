@@ -13,8 +13,14 @@
             "CreateDataAgent": {
               "methods": ["createDataAgentAsync", "createDataAgentAsync", "createDataAgentAsync", "createDataAgentOperationCallable", "createDataAgentCallable"]
             },
+            "CreateDataAgentSync": {
+              "methods": ["createDataAgentSync", "createDataAgentSync", "createDataAgentSync", "createDataAgentSyncCallable"]
+            },
             "DeleteDataAgent": {
               "methods": ["deleteDataAgentAsync", "deleteDataAgentAsync", "deleteDataAgentAsync", "deleteDataAgentOperationCallable", "deleteDataAgentCallable"]
+            },
+            "DeleteDataAgentSync": {
+              "methods": ["deleteDataAgentSync", "deleteDataAgentSync", "deleteDataAgentSync", "deleteDataAgentSyncCallable"]
             },
             "GetDataAgent": {
               "methods": ["getDataAgent", "getDataAgent", "getDataAgent", "getDataAgentCallable"]
@@ -39,6 +45,9 @@
             },
             "UpdateDataAgent": {
               "methods": ["updateDataAgentAsync", "updateDataAgentAsync", "updateDataAgentOperationCallable", "updateDataAgentCallable"]
+            },
+            "UpdateDataAgentSync": {
+              "methods": ["updateDataAgentSync", "updateDataAgentSync", "updateDataAgentSyncCallable"]
             }
           }
         }
@@ -72,6 +81,9 @@
             },
             "ListMessages": {
               "methods": ["listMessages", "listMessages", "listMessages", "listMessagesPagedCallable", "listMessagesCallable"]
+            },
+            "QueryData": {
+              "methods": ["queryData", "queryDataCallable"]
             }
           }
         }

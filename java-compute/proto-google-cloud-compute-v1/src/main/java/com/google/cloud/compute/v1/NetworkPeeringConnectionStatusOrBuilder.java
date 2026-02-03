@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ public interface NetworkPeeringConnectionStatusOrBuilder
    *
    *
    * <pre>
-   * The consensus state contains information about the status of update and delete for a consensus peering connection.
+   * The consensus state contains information about the status of update
+   * and delete for a consensus peering connection.
    * </pre>
    *
    * <code>
@@ -43,7 +44,8 @@ public interface NetworkPeeringConnectionStatusOrBuilder
    *
    *
    * <pre>
-   * The consensus state contains information about the status of update and delete for a consensus peering connection.
+   * The consensus state contains information about the status of update
+   * and delete for a consensus peering connection.
    * </pre>
    *
    * <code>
@@ -58,7 +60,8 @@ public interface NetworkPeeringConnectionStatusOrBuilder
    *
    *
    * <pre>
-   * The consensus state contains information about the status of update and delete for a consensus peering connection.
+   * The consensus state contains information about the status of update
+   * and delete for a consensus peering connection.
    * </pre>
    *
    * <code>
@@ -72,7 +75,8 @@ public interface NetworkPeeringConnectionStatusOrBuilder
    *
    *
    * <pre>
-   * The active connectivity settings for the peering connection based on the settings of the network peerings.
+   * The active connectivity settings for the peering connection based on the
+   * settings of the network peerings.
    * </pre>
    *
    * <code>
@@ -87,7 +91,8 @@ public interface NetworkPeeringConnectionStatusOrBuilder
    *
    *
    * <pre>
-   * The active connectivity settings for the peering connection based on the settings of the network peerings.
+   * The active connectivity settings for the peering connection based on the
+   * settings of the network peerings.
    * </pre>
    *
    * <code>
@@ -103,7 +108,8 @@ public interface NetworkPeeringConnectionStatusOrBuilder
    *
    *
    * <pre>
-   * The active connectivity settings for the peering connection based on the settings of the network peerings.
+   * The active connectivity settings for the peering connection based on the
+   * settings of the network peerings.
    * </pre>
    *
    * <code>
@@ -117,7 +123,8 @@ public interface NetworkPeeringConnectionStatusOrBuilder
    *
    *
    * <pre>
-   * The update strategy determines the update/delete semantics for this peering connection.
+   * The update strategy determines the update/delete semantics for this
+   * peering connection.
    * Check the UpdateStrategy enum for the list of possible values.
    * </pre>
    *
@@ -131,7 +138,8 @@ public interface NetworkPeeringConnectionStatusOrBuilder
    *
    *
    * <pre>
-   * The update strategy determines the update/delete semantics for this peering connection.
+   * The update strategy determines the update/delete semantics for this
+   * peering connection.
    * Check the UpdateStrategy enum for the list of possible values.
    * </pre>
    *
@@ -145,7 +153,8 @@ public interface NetworkPeeringConnectionStatusOrBuilder
    *
    *
    * <pre>
-   * The update strategy determines the update/delete semantics for this peering connection.
+   * The update strategy determines the update/delete semantics for this
+   * peering connection.
    * Check the UpdateStrategy enum for the list of possible values.
    * </pre>
    *

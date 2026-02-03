@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -359,6 +359,36 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      */
     com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadataOrBuilder
         getBigtableMetadataOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The zone where the underlying Bigtable cluster for the primary
+     * Bigtable instance will be provisioned. Only the zone must be provided.
+     * For example, only "us-central1-a" should be provided.
+     * </pre>
+     *
+     * <code>string zone = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The zone.
+     */
+    java.lang.String getZone();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The zone where the underlying Bigtable cluster for the primary
+     * Bigtable instance will be provisioned. Only the zone must be provided.
+     * For example, only "us-central1-a" should be provided.
+     * </pre>
+     *
+     * <code>string zone = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for zone.
+     */
+    com.google.protobuf.ByteString getZoneBytes();
   }
 
   /** Protobuf type {@code google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable} */
@@ -373,7 +403,9 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       super(builder);
     }
 
-    private Bigtable() {}
+    private Bigtable() {
+      zone_ = "";
+    }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
@@ -2472,6 +2504,63 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
           : bigtableMetadata_;
     }
 
+    public static final int ZONE_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object zone_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The zone where the underlying Bigtable cluster for the primary
+     * Bigtable instance will be provisioned. Only the zone must be provided.
+     * For example, only "us-central1-a" should be provided.
+     * </pre>
+     *
+     * <code>string zone = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The zone.
+     */
+    @java.lang.Override
+    public java.lang.String getZone() {
+      java.lang.Object ref = zone_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        zone_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The zone where the underlying Bigtable cluster for the primary
+     * Bigtable instance will be provisioned. Only the zone must be provided.
+     * For example, only "us-central1-a" should be provided.
+     * </pre>
+     *
+     * <code>string zone = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for zone.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getZoneBytes() {
+      java.lang.Object ref = zone_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        zone_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2495,6 +2584,9 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(4, getBigtableMetadata());
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, zone_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2513,6 +2605,9 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getBigtableMetadata());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, zone_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2539,6 +2634,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       if (hasBigtableMetadata()) {
         if (!getBigtableMetadata().equals(other.getBigtableMetadata())) return false;
       }
+      if (!getZone().equals(other.getZone())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2561,6 +2657,8 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         hash = (37 * hash) + BIGTABLE_METADATA_FIELD_NUMBER;
         hash = (53 * hash) + getBigtableMetadata().hashCode();
       }
+      hash = (37 * hash) + ZONE_FIELD_NUMBER;
+      hash = (53 * hash) + getZone().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2717,6 +2815,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
           bigtableMetadataBuilder_.dispose();
           bigtableMetadataBuilder_ = null;
         }
+        zone_ = "";
         return this;
       }
 
@@ -2770,6 +2869,9 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
                   ? bigtableMetadata_
                   : bigtableMetadataBuilder_.build();
           to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.zone_ = zone_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -2832,6 +2934,11 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         if (other.hasBigtableMetadata()) {
           mergeBigtableMetadata(other.getBigtableMetadata());
         }
+        if (!other.getZone().isEmpty()) {
+          zone_ = other.zone_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2877,6 +2984,12 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 34
+              case 42:
+                {
+                  zone_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 42
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3405,6 +3518,127 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
           bigtableMetadata_ = null;
         }
         return bigtableMetadataBuilder_;
+      }
+
+      private java.lang.Object zone_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The zone where the underlying Bigtable cluster for the primary
+       * Bigtable instance will be provisioned. Only the zone must be provided.
+       * For example, only "us-central1-a" should be provided.
+       * </pre>
+       *
+       * <code>string zone = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The zone.
+       */
+      public java.lang.String getZone() {
+        java.lang.Object ref = zone_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          zone_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The zone where the underlying Bigtable cluster for the primary
+       * Bigtable instance will be provisioned. Only the zone must be provided.
+       * For example, only "us-central1-a" should be provided.
+       * </pre>
+       *
+       * <code>string zone = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for zone.
+       */
+      public com.google.protobuf.ByteString getZoneBytes() {
+        java.lang.Object ref = zone_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          zone_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The zone where the underlying Bigtable cluster for the primary
+       * Bigtable instance will be provisioned. Only the zone must be provided.
+       * For example, only "us-central1-a" should be provided.
+       * </pre>
+       *
+       * <code>string zone = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The zone to set.
+       * @return This builder for chaining.
+       */
+      public Builder setZone(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        zone_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The zone where the underlying Bigtable cluster for the primary
+       * Bigtable instance will be provisioned. Only the zone must be provided.
+       * For example, only "us-central1-a" should be provided.
+       * </pre>
+       *
+       * <code>string zone = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearZone() {
+        zone_ = getDefaultInstance().getZone();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The zone where the underlying Bigtable cluster for the primary
+       * Bigtable instance will be provisioned. Only the zone must be provided.
+       * For example, only "us-central1-a" should be provided.
+       * </pre>
+       *
+       * <code>string zone = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for zone to set.
+       * @return This builder for chaining.
+       */
+      public Builder setZoneBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        zone_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
       }
 
       @java.lang.Override

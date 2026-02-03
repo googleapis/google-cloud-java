@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Specified snapshot properties for scheduled snapshots created by this policy.
+ * Specified snapshot properties for scheduled snapshots created by this
+ * policy.
  * </pre>
  *
  * Protobuf type {@code
@@ -218,7 +219,8 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
    *
    *
    * <pre>
-   * Labels to apply to scheduled snapshots. These can be later modified by the setLabels method. Label values may be empty.
+   * Labels to apply to scheduled snapshots. These can be later modified
+   * by the setLabels method. Label values may be empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -242,7 +244,8 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
    *
    *
    * <pre>
-   * Labels to apply to scheduled snapshots. These can be later modified by the setLabels method. Label values may be empty.
+   * Labels to apply to scheduled snapshots. These can be later modified
+   * by the setLabels method. Label values may be empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -256,7 +259,8 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
    *
    *
    * <pre>
-   * Labels to apply to scheduled snapshots. These can be later modified by the setLabels method. Label values may be empty.
+   * Labels to apply to scheduled snapshots. These can be later modified
+   * by the setLabels method. Label values may be empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -277,7 +281,8 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
    *
    *
    * <pre>
-   * Labels to apply to scheduled snapshots. These can be later modified by the setLabels method. Label values may be empty.
+   * Labels to apply to scheduled snapshots. These can be later modified
+   * by the setLabels method. Label values may be empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -304,7 +309,8 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
    *
    *
    * <pre>
-   * Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional).
+   * Cloud Storage bucket storage location of the auto snapshot (regional or
+   * multi-regional).
    * </pre>
    *
    * <code>repeated string storage_locations = 328005274;</code>
@@ -319,7 +325,8 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
    *
    *
    * <pre>
-   * Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional).
+   * Cloud Storage bucket storage location of the auto snapshot (regional or
+   * multi-regional).
    * </pre>
    *
    * <code>repeated string storage_locations = 328005274;</code>
@@ -334,7 +341,8 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
    *
    *
    * <pre>
-   * Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional).
+   * Cloud Storage bucket storage location of the auto snapshot (regional or
+   * multi-regional).
    * </pre>
    *
    * <code>repeated string storage_locations = 328005274;</code>
@@ -350,7 +358,8 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
    *
    *
    * <pre>
-   * Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional).
+   * Cloud Storage bucket storage location of the auto snapshot (regional or
+   * multi-regional).
    * </pre>
    *
    * <code>repeated string storage_locations = 328005274;</code>
@@ -589,7 +598,8 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
    *
    *
    * <pre>
-   * Specified snapshot properties for scheduled snapshots created by this policy.
+   * Specified snapshot properties for scheduled snapshots created by this
+   * policy.
    * </pre>
    *
    * Protobuf type {@code
@@ -1093,7 +1103,8 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      *
      *
      * <pre>
-     * Labels to apply to scheduled snapshots. These can be later modified by the setLabels method. Label values may be empty.
+     * Labels to apply to scheduled snapshots. These can be later modified
+     * by the setLabels method. Label values may be empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -1117,7 +1128,8 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      *
      *
      * <pre>
-     * Labels to apply to scheduled snapshots. These can be later modified by the setLabels method. Label values may be empty.
+     * Labels to apply to scheduled snapshots. These can be later modified
+     * by the setLabels method. Label values may be empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -1131,7 +1143,8 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      *
      *
      * <pre>
-     * Labels to apply to scheduled snapshots. These can be later modified by the setLabels method. Label values may be empty.
+     * Labels to apply to scheduled snapshots. These can be later modified
+     * by the setLabels method. Label values may be empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -1152,7 +1165,8 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      *
      *
      * <pre>
-     * Labels to apply to scheduled snapshots. These can be later modified by the setLabels method. Label values may be empty.
+     * Labels to apply to scheduled snapshots. These can be later modified
+     * by the setLabels method. Label values may be empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -1179,7 +1193,8 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      *
      *
      * <pre>
-     * Labels to apply to scheduled snapshots. These can be later modified by the setLabels method. Label values may be empty.
+     * Labels to apply to scheduled snapshots. These can be later modified
+     * by the setLabels method. Label values may be empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -1203,7 +1218,8 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      *
      *
      * <pre>
-     * Labels to apply to scheduled snapshots. These can be later modified by the setLabels method. Label values may be empty.
+     * Labels to apply to scheduled snapshots. These can be later modified
+     * by the setLabels method. Label values may be empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -1224,7 +1240,8 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      *
      *
      * <pre>
-     * Labels to apply to scheduled snapshots. These can be later modified by the setLabels method. Label values may be empty.
+     * Labels to apply to scheduled snapshots. These can be later modified
+     * by the setLabels method. Label values may be empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -1249,7 +1266,8 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      *
      *
      * <pre>
-     * Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional).
+     * Cloud Storage bucket storage location of the auto snapshot (regional or
+     * multi-regional).
      * </pre>
      *
      * <code>repeated string storage_locations = 328005274;</code>
@@ -1265,7 +1283,8 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      *
      *
      * <pre>
-     * Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional).
+     * Cloud Storage bucket storage location of the auto snapshot (regional or
+     * multi-regional).
      * </pre>
      *
      * <code>repeated string storage_locations = 328005274;</code>
@@ -1280,7 +1299,8 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      *
      *
      * <pre>
-     * Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional).
+     * Cloud Storage bucket storage location of the auto snapshot (regional or
+     * multi-regional).
      * </pre>
      *
      * <code>repeated string storage_locations = 328005274;</code>
@@ -1296,7 +1316,8 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      *
      *
      * <pre>
-     * Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional).
+     * Cloud Storage bucket storage location of the auto snapshot (regional or
+     * multi-regional).
      * </pre>
      *
      * <code>repeated string storage_locations = 328005274;</code>
@@ -1312,7 +1333,8 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      *
      *
      * <pre>
-     * Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional).
+     * Cloud Storage bucket storage location of the auto snapshot (regional or
+     * multi-regional).
      * </pre>
      *
      * <code>repeated string storage_locations = 328005274;</code>
@@ -1336,7 +1358,8 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      *
      *
      * <pre>
-     * Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional).
+     * Cloud Storage bucket storage location of the auto snapshot (regional or
+     * multi-regional).
      * </pre>
      *
      * <code>repeated string storage_locations = 328005274;</code>
@@ -1359,7 +1382,8 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      *
      *
      * <pre>
-     * Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional).
+     * Cloud Storage bucket storage location of the auto snapshot (regional or
+     * multi-regional).
      * </pre>
      *
      * <code>repeated string storage_locations = 328005274;</code>
@@ -1379,7 +1403,8 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      *
      *
      * <pre>
-     * Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional).
+     * Cloud Storage bucket storage location of the auto snapshot (regional or
+     * multi-regional).
      * </pre>
      *
      * <code>repeated string storage_locations = 328005274;</code>
@@ -1398,7 +1423,8 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      *
      *
      * <pre>
-     * Cloud Storage bucket storage location of the auto snapshot (regional or multi-regional).
+     * Cloud Storage bucket storage location of the auto snapshot (regional or
+     * multi-regional).
      * </pre>
      *
      * <code>repeated string storage_locations = 328005274;</code>

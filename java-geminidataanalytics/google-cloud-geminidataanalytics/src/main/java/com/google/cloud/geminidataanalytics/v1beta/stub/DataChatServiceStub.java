@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,8 @@ import com.google.cloud.geminidataanalytics.v1beta.ListConversationsResponse;
 import com.google.cloud.geminidataanalytics.v1beta.ListMessagesRequest;
 import com.google.cloud.geminidataanalytics.v1beta.ListMessagesResponse;
 import com.google.cloud.geminidataanalytics.v1beta.Message;
+import com.google.cloud.geminidataanalytics.v1beta.QueryDataRequest;
+import com.google.cloud.geminidataanalytics.v1beta.QueryDataResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -83,6 +85,10 @@ public abstract class DataChatServiceStub implements BackgroundResource {
 
   public UnaryCallable<ListMessagesRequest, ListMessagesResponse> listMessagesCallable() {
     throw new UnsupportedOperationException("Not implemented: listMessagesCallable()");
+  }
+
+  public UnaryCallable<QueryDataRequest, QueryDataResponse> queryDataCallable() {
+    throw new UnsupportedOperationException("Not implemented: queryDataCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

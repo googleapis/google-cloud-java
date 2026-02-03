@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+   * Address groups which should be matched against the traffic destination.
+   * Maximum number of destination address groups is 10.
    * </pre>
    *
    * <code>repeated string dest_address_groups = 468760508;</code>
@@ -41,7 +42,8 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+   * Address groups which should be matched against the traffic destination.
+   * Maximum number of destination address groups is 10.
    * </pre>
    *
    * <code>repeated string dest_address_groups = 468760508;</code>
@@ -54,7 +56,8 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+   * Address groups which should be matched against the traffic destination.
+   * Maximum number of destination address groups is 10.
    * </pre>
    *
    * <code>repeated string dest_address_groups = 468760508;</code>
@@ -68,7 +71,8 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+   * Address groups which should be matched against the traffic destination.
+   * Maximum number of destination address groups is 10.
    * </pre>
    *
    * <code>repeated string dest_address_groups = 468760508;</code>
@@ -82,7 +86,9 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+   * Fully Qualified Domain Name (FQDN) which should be matched against
+   * traffic destination.
+   * Maximum number of destination fqdn allowed is 100.
    * </pre>
    *
    * <code>repeated string dest_fqdns = 370712737;</code>
@@ -95,7 +101,9 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+   * Fully Qualified Domain Name (FQDN) which should be matched against
+   * traffic destination.
+   * Maximum number of destination fqdn allowed is 100.
    * </pre>
    *
    * <code>repeated string dest_fqdns = 370712737;</code>
@@ -108,7 +116,9 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+   * Fully Qualified Domain Name (FQDN) which should be matched against
+   * traffic destination.
+   * Maximum number of destination fqdn allowed is 100.
    * </pre>
    *
    * <code>repeated string dest_fqdns = 370712737;</code>
@@ -122,7 +132,9 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+   * Fully Qualified Domain Name (FQDN) which should be matched against
+   * traffic destination.
+   * Maximum number of destination fqdn allowed is 100.
    * </pre>
    *
    * <code>repeated string dest_fqdns = 370712737;</code>
@@ -136,7 +148,8 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * CIDR IP address range. Maximum number of destination CIDR IP ranges allowed is 5000.
+   * CIDR IP address range.
+   * Maximum number of destination CIDR IP ranges allowed is 5000.
    * </pre>
    *
    * <code>repeated string dest_ip_ranges = 337357713;</code>
@@ -149,7 +162,8 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * CIDR IP address range. Maximum number of destination CIDR IP ranges allowed is 5000.
+   * CIDR IP address range.
+   * Maximum number of destination CIDR IP ranges allowed is 5000.
    * </pre>
    *
    * <code>repeated string dest_ip_ranges = 337357713;</code>
@@ -162,7 +176,8 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * CIDR IP address range. Maximum number of destination CIDR IP ranges allowed is 5000.
+   * CIDR IP address range.
+   * Maximum number of destination CIDR IP ranges allowed is 5000.
    * </pre>
    *
    * <code>repeated string dest_ip_ranges = 337357713;</code>
@@ -176,7 +191,8 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * CIDR IP address range. Maximum number of destination CIDR IP ranges allowed is 5000.
+   * CIDR IP address range.
+   * Maximum number of destination CIDR IP ranges allowed is 5000.
    * </pre>
    *
    * <code>repeated string dest_ip_ranges = 337357713;</code>
@@ -190,7 +206,69 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Network type of the traffic destination. Allowed values are: - UNSPECIFIED - INTERNET - NON_INTERNET
+   * Network context of the traffic destination. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - NON_INTERNET
+   * Check the DestNetworkContext enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string dest_network_context = 76347649;</code>
+   *
+   * @return Whether the destNetworkContext field is set.
+   */
+  boolean hasDestNetworkContext();
+
+  /**
+   *
+   *
+   * <pre>
+   * Network context of the traffic destination. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - NON_INTERNET
+   * Check the DestNetworkContext enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string dest_network_context = 76347649;</code>
+   *
+   * @return The destNetworkContext.
+   */
+  java.lang.String getDestNetworkContext();
+
+  /**
+   *
+   *
+   * <pre>
+   * Network context of the traffic destination. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - NON_INTERNET
+   * Check the DestNetworkContext enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string dest_network_context = 76347649;</code>
+   *
+   * @return The bytes for destNetworkContext.
+   */
+  com.google.protobuf.ByteString getDestNetworkContextBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Network type of the traffic destination. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - NON_INTERNET
    * Check the DestNetworkType enum for the list of possible values.
    * </pre>
    *
@@ -204,7 +282,12 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Network type of the traffic destination. Allowed values are: - UNSPECIFIED - INTERNET - NON_INTERNET
+   * Network type of the traffic destination. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - NON_INTERNET
    * Check the DestNetworkType enum for the list of possible values.
    * </pre>
    *
@@ -218,7 +301,12 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Network type of the traffic destination. Allowed values are: - UNSPECIFIED - INTERNET - NON_INTERNET
+   * Network type of the traffic destination. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - NON_INTERNET
    * Check the DestNetworkType enum for the list of possible values.
    * </pre>
    *
@@ -232,7 +320,10 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+   * Region codes whose IP addresses will be used to match for destination
+   * of traffic. Should be specified as 2 letter country code defined as per
+   * ISO 3166 alpha-2 country codes. ex."US"
+   * Maximum number of dest region codes allowed is 5000.
    * </pre>
    *
    * <code>repeated string dest_region_codes = 199120280;</code>
@@ -245,7 +336,10 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+   * Region codes whose IP addresses will be used to match for destination
+   * of traffic. Should be specified as 2 letter country code defined as per
+   * ISO 3166 alpha-2 country codes. ex."US"
+   * Maximum number of dest region codes allowed is 5000.
    * </pre>
    *
    * <code>repeated string dest_region_codes = 199120280;</code>
@@ -258,7 +352,10 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+   * Region codes whose IP addresses will be used to match for destination
+   * of traffic. Should be specified as 2 letter country code defined as per
+   * ISO 3166 alpha-2 country codes. ex."US"
+   * Maximum number of dest region codes allowed is 5000.
    * </pre>
    *
    * <code>repeated string dest_region_codes = 199120280;</code>
@@ -272,7 +369,10 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+   * Region codes whose IP addresses will be used to match for destination
+   * of traffic. Should be specified as 2 letter country code defined as per
+   * ISO 3166 alpha-2 country codes. ex."US"
+   * Maximum number of dest region codes allowed is 5000.
    * </pre>
    *
    * <code>repeated string dest_region_codes = 199120280;</code>
@@ -286,7 +386,8 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+   * Names of Network Threat Intelligence lists.
+   * The IPs in these lists will be matched against traffic destination.
    * </pre>
    *
    * <code>repeated string dest_threat_intelligences = 119896492;</code>
@@ -299,7 +400,8 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+   * Names of Network Threat Intelligence lists.
+   * The IPs in these lists will be matched against traffic destination.
    * </pre>
    *
    * <code>repeated string dest_threat_intelligences = 119896492;</code>
@@ -312,7 +414,8 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+   * Names of Network Threat Intelligence lists.
+   * The IPs in these lists will be matched against traffic destination.
    * </pre>
    *
    * <code>repeated string dest_threat_intelligences = 119896492;</code>
@@ -326,7 +429,8 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+   * Names of Network Threat Intelligence lists.
+   * The IPs in these lists will be matched against traffic destination.
    * </pre>
    *
    * <code>repeated string dest_threat_intelligences = 119896492;</code>
@@ -409,7 +513,8 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+   * Address groups which should be matched against the traffic source.
+   * Maximum number of source address groups is 10.
    * </pre>
    *
    * <code>repeated string src_address_groups = 436423738;</code>
@@ -422,7 +527,8 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+   * Address groups which should be matched against the traffic source.
+   * Maximum number of source address groups is 10.
    * </pre>
    *
    * <code>repeated string src_address_groups = 436423738;</code>
@@ -435,7 +541,8 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+   * Address groups which should be matched against the traffic source.
+   * Maximum number of source address groups is 10.
    * </pre>
    *
    * <code>repeated string src_address_groups = 436423738;</code>
@@ -449,7 +556,8 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+   * Address groups which should be matched against the traffic source.
+   * Maximum number of source address groups is 10.
    * </pre>
    *
    * <code>repeated string src_address_groups = 436423738;</code>
@@ -463,7 +571,9 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+   * Fully Qualified Domain Name (FQDN) which should be matched against
+   * traffic source.
+   * Maximum number of source fqdn allowed is 100.
    * </pre>
    *
    * <code>repeated string src_fqdns = 435906147;</code>
@@ -476,7 +586,9 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+   * Fully Qualified Domain Name (FQDN) which should be matched against
+   * traffic source.
+   * Maximum number of source fqdn allowed is 100.
    * </pre>
    *
    * <code>repeated string src_fqdns = 435906147;</code>
@@ -489,7 +601,9 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+   * Fully Qualified Domain Name (FQDN) which should be matched against
+   * traffic source.
+   * Maximum number of source fqdn allowed is 100.
    * </pre>
    *
    * <code>repeated string src_fqdns = 435906147;</code>
@@ -503,7 +617,9 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+   * Fully Qualified Domain Name (FQDN) which should be matched against
+   * traffic source.
+   * Maximum number of source fqdn allowed is 100.
    * </pre>
    *
    * <code>repeated string src_fqdns = 435906147;</code>
@@ -517,7 +633,8 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 5000.
+   * CIDR IP address range.
+   * Maximum number of source CIDR IP ranges allowed is 5000.
    * </pre>
    *
    * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -530,7 +647,8 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 5000.
+   * CIDR IP address range.
+   * Maximum number of source CIDR IP ranges allowed is 5000.
    * </pre>
    *
    * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -543,7 +661,8 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 5000.
+   * CIDR IP address range.
+   * Maximum number of source CIDR IP ranges allowed is 5000.
    * </pre>
    *
    * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -557,7 +676,8 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 5000.
+   * CIDR IP address range.
+   * Maximum number of source CIDR IP ranges allowed is 5000.
    * </pre>
    *
    * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -571,7 +691,77 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Network type of the traffic source. Allowed values are: - UNSPECIFIED - INTERNET - INTRA_VPC - NON_INTERNET - VPC_NETWORKS
+   * Network context of the traffic source. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - INTRA_VPC
+   *      - NON_INTERNET
+   *      - VPC_NETWORKS
+   * Check the SrcNetworkContext enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string src_network_context = 147649603;</code>
+   *
+   * @return Whether the srcNetworkContext field is set.
+   */
+  boolean hasSrcNetworkContext();
+
+  /**
+   *
+   *
+   * <pre>
+   * Network context of the traffic source. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - INTRA_VPC
+   *      - NON_INTERNET
+   *      - VPC_NETWORKS
+   * Check the SrcNetworkContext enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string src_network_context = 147649603;</code>
+   *
+   * @return The srcNetworkContext.
+   */
+  java.lang.String getSrcNetworkContext();
+
+  /**
+   *
+   *
+   * <pre>
+   * Network context of the traffic source. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - INTRA_VPC
+   *      - NON_INTERNET
+   *      - VPC_NETWORKS
+   * Check the SrcNetworkContext enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string src_network_context = 147649603;</code>
+   *
+   * @return The bytes for srcNetworkContext.
+   */
+  com.google.protobuf.ByteString getSrcNetworkContextBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Network type of the traffic source. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - INTRA_VPC
+   *      - NON_INTERNET
+   *      - VPC_NETWORKS
    * Check the SrcNetworkType enum for the list of possible values.
    * </pre>
    *
@@ -585,7 +775,14 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Network type of the traffic source. Allowed values are: - UNSPECIFIED - INTERNET - INTRA_VPC - NON_INTERNET - VPC_NETWORKS
+   * Network type of the traffic source. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - INTRA_VPC
+   *      - NON_INTERNET
+   *      - VPC_NETWORKS
    * Check the SrcNetworkType enum for the list of possible values.
    * </pre>
    *
@@ -599,7 +796,14 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Network type of the traffic source. Allowed values are: - UNSPECIFIED - INTERNET - INTRA_VPC - NON_INTERNET - VPC_NETWORKS
+   * Network type of the traffic source. Allowed values are:
+   *
+   *
+   *      - UNSPECIFIED
+   *      - INTERNET
+   *      - INTRA_VPC
+   *      - NON_INTERNET
+   *      - VPC_NETWORKS
    * Check the SrcNetworkType enum for the list of possible values.
    * </pre>
    *
@@ -667,7 +871,10 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+   * Region codes whose IP addresses will be used to match for source
+   * of traffic. Should be specified as 2 letter country code defined as per
+   * ISO 3166 alpha-2 country codes. ex."US"
+   * Maximum number of source region codes allowed is 5000.
    * </pre>
    *
    * <code>repeated string src_region_codes = 99086742;</code>
@@ -680,7 +887,10 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+   * Region codes whose IP addresses will be used to match for source
+   * of traffic. Should be specified as 2 letter country code defined as per
+   * ISO 3166 alpha-2 country codes. ex."US"
+   * Maximum number of source region codes allowed is 5000.
    * </pre>
    *
    * <code>repeated string src_region_codes = 99086742;</code>
@@ -693,7 +903,10 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+   * Region codes whose IP addresses will be used to match for source
+   * of traffic. Should be specified as 2 letter country code defined as per
+   * ISO 3166 alpha-2 country codes. ex."US"
+   * Maximum number of source region codes allowed is 5000.
    * </pre>
    *
    * <code>repeated string src_region_codes = 99086742;</code>
@@ -707,7 +920,10 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+   * Region codes whose IP addresses will be used to match for source
+   * of traffic. Should be specified as 2 letter country code defined as per
+   * ISO 3166 alpha-2 country codes. ex."US"
+   * Maximum number of source region codes allowed is 5000.
    * </pre>
    *
    * <code>repeated string src_region_codes = 99086742;</code>
@@ -721,7 +937,11 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+   * List of secure tag values, which should be matched at the source
+   * of the traffic.
+   * For INGRESS rule, if all the srcSecureTag are INEFFECTIVE,
+   * and there is no srcIpRange, this rule will be ignored.
+   * Maximum number of source tag values allowed is 256.
    * </pre>
    *
    * <code>
@@ -734,7 +954,11 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+   * List of secure tag values, which should be matched at the source
+   * of the traffic.
+   * For INGRESS rule, if all the srcSecureTag are INEFFECTIVE,
+   * and there is no srcIpRange, this rule will be ignored.
+   * Maximum number of source tag values allowed is 256.
    * </pre>
    *
    * <code>
@@ -747,7 +971,11 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+   * List of secure tag values, which should be matched at the source
+   * of the traffic.
+   * For INGRESS rule, if all the srcSecureTag are INEFFECTIVE,
+   * and there is no srcIpRange, this rule will be ignored.
+   * Maximum number of source tag values allowed is 256.
    * </pre>
    *
    * <code>
@@ -760,7 +988,11 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+   * List of secure tag values, which should be matched at the source
+   * of the traffic.
+   * For INGRESS rule, if all the srcSecureTag are INEFFECTIVE,
+   * and there is no srcIpRange, this rule will be ignored.
+   * Maximum number of source tag values allowed is 256.
    * </pre>
    *
    * <code>
@@ -774,7 +1006,11 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+   * List of secure tag values, which should be matched at the source
+   * of the traffic.
+   * For INGRESS rule, if all the srcSecureTag are INEFFECTIVE,
+   * and there is no srcIpRange, this rule will be ignored.
+   * Maximum number of source tag values allowed is 256.
    * </pre>
    *
    * <code>
@@ -788,7 +1024,8 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+   * Names of Network Threat Intelligence lists.
+   * The IPs in these lists will be matched against traffic source.
    * </pre>
    *
    * <code>repeated string src_threat_intelligences = 323631018;</code>
@@ -801,7 +1038,8 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+   * Names of Network Threat Intelligence lists.
+   * The IPs in these lists will be matched against traffic source.
    * </pre>
    *
    * <code>repeated string src_threat_intelligences = 323631018;</code>
@@ -814,7 +1052,8 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+   * Names of Network Threat Intelligence lists.
+   * The IPs in these lists will be matched against traffic source.
    * </pre>
    *
    * <code>repeated string src_threat_intelligences = 323631018;</code>
@@ -828,7 +1067,8 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
-   * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+   * Names of Network Threat Intelligence lists.
+   * The IPs in these lists will be matched against traffic source.
    * </pre>
    *
    * <code>repeated string src_threat_intelligences = 323631018;</code>

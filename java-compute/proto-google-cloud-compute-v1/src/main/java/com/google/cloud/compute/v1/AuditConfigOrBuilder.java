@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -114,7 +114,9 @@ public interface AuditConfigOrBuilder
    *
    *
    * <pre>
-   * Specifies a service that will be enabled for audit logging. For example, `storage.googleapis.com`, `cloudsql.googleapis.com`. `allServices` is a special value that covers all services.
+   * Specifies a service that will be enabled for audit logging.
+   * For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
+   * `allServices` is a special value that covers all services.
    * </pre>
    *
    * <code>optional string service = 373540533;</code>
@@ -127,7 +129,9 @@ public interface AuditConfigOrBuilder
    *
    *
    * <pre>
-   * Specifies a service that will be enabled for audit logging. For example, `storage.googleapis.com`, `cloudsql.googleapis.com`. `allServices` is a special value that covers all services.
+   * Specifies a service that will be enabled for audit logging.
+   * For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
+   * `allServices` is a special value that covers all services.
    * </pre>
    *
    * <code>optional string service = 373540533;</code>
@@ -140,7 +144,9 @@ public interface AuditConfigOrBuilder
    *
    *
    * <pre>
-   * Specifies a service that will be enabled for audit logging. For example, `storage.googleapis.com`, `cloudsql.googleapis.com`. `allServices` is a special value that covers all services.
+   * Specifies a service that will be enabled for audit logging.
+   * For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
+   * `allServices` is a special value that covers all services.
    * </pre>
    *
    * <code>optional string service = 373540533;</code>

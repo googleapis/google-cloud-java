@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,14 +44,19 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.GetIamPolicyReservationSubBlockRequest;
 import com.google.cloud.compute.v1.GetReservationSubBlockRequest;
 import com.google.cloud.compute.v1.ListReservationSubBlocksRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PerformMaintenanceReservationSubBlockRequest;
+import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.ReportFaultyReservationSubBlockRequest;
 import com.google.cloud.compute.v1.ReservationSubBlock;
 import com.google.cloud.compute.v1.ReservationSubBlocksGetResponse;
 import com.google.cloud.compute.v1.ReservationSubBlocksListResponse;
+import com.google.cloud.compute.v1.SetIamPolicyReservationSubBlockRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsReservationSubBlockRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -109,8 +114,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -150,6 +155,8 @@ public class ReservationSubBlocksStubSettings
 
   private final UnaryCallSettings<GetReservationSubBlockRequest, ReservationSubBlocksGetResponse>
       getSettings;
+  private final UnaryCallSettings<GetIamPolicyReservationSubBlockRequest, Policy>
+      getIamPolicySettings;
   private final PagedCallSettings<
           ListReservationSubBlocksRequest, ReservationSubBlocksListResponse, ListPagedResponse>
       listSettings;
@@ -162,6 +169,11 @@ public class ReservationSubBlocksStubSettings
       reportFaultySettings;
   private final OperationCallSettings<ReportFaultyReservationSubBlockRequest, Operation, Operation>
       reportFaultyOperationSettings;
+  private final UnaryCallSettings<SetIamPolicyReservationSubBlockRequest, Policy>
+      setIamPolicySettings;
+  private final UnaryCallSettings<
+          TestIamPermissionsReservationSubBlockRequest, TestPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<
           ListReservationSubBlocksRequest, ReservationSubBlocksListResponse, ReservationSubBlock>
@@ -237,6 +249,11 @@ public class ReservationSubBlocksStubSettings
     return getSettings;
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyReservationSubBlockRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
   /** Returns the object with the settings used for calls to list. */
   public PagedCallSettings<
           ListReservationSubBlocksRequest, ReservationSubBlocksListResponse, ListPagedResponse>
@@ -266,6 +283,17 @@ public class ReservationSubBlocksStubSettings
   public OperationCallSettings<ReportFaultyReservationSubBlockRequest, Operation, Operation>
       reportFaultyOperationSettings() {
     return reportFaultyOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyReservationSubBlockRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsReservationSubBlockRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
   }
 
   public ReservationSubBlocksStub createStub() throws IOException {
@@ -351,12 +379,15 @@ public class ReservationSubBlocksStubSettings
     super(settingsBuilder);
 
     getSettings = settingsBuilder.getSettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     listSettings = settingsBuilder.listSettings().build();
     performMaintenanceSettings = settingsBuilder.performMaintenanceSettings().build();
     performMaintenanceOperationSettings =
         settingsBuilder.performMaintenanceOperationSettings().build();
     reportFaultySettings = settingsBuilder.reportFaultySettings().build();
     reportFaultyOperationSettings = settingsBuilder.reportFaultyOperationSettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   /** Builder for ReservationSubBlocksStubSettings. */
@@ -366,6 +397,8 @@ public class ReservationSubBlocksStubSettings
     private final UnaryCallSettings.Builder<
             GetReservationSubBlockRequest, ReservationSubBlocksGetResponse>
         getSettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyReservationSubBlockRequest, Policy>
+        getIamPolicySettings;
     private final PagedCallSettings.Builder<
             ListReservationSubBlocksRequest, ReservationSubBlocksListResponse, ListPagedResponse>
         listSettings;
@@ -379,6 +412,11 @@ public class ReservationSubBlocksStubSettings
     private final OperationCallSettings.Builder<
             ReportFaultyReservationSubBlockRequest, Operation, Operation>
         reportFaultyOperationSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyReservationSubBlockRequest, Policy>
+        setIamPolicySettings;
+    private final UnaryCallSettings.Builder<
+            TestIamPermissionsReservationSubBlockRequest, TestPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -430,15 +468,24 @@ public class ReservationSubBlocksStubSettings
       super(clientContext);
 
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       performMaintenanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       performMaintenanceOperationSettings = OperationCallSettings.newBuilder();
       reportFaultySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       reportFaultyOperationSettings = OperationCallSettings.newBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getSettings, listSettings, performMaintenanceSettings, reportFaultySettings);
+              getSettings,
+              getIamPolicySettings,
+              listSettings,
+              performMaintenanceSettings,
+              reportFaultySettings,
+              setIamPolicySettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -446,16 +493,25 @@ public class ReservationSubBlocksStubSettings
       super(settings);
 
       getSettings = settings.getSettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
       performMaintenanceSettings = settings.performMaintenanceSettings.toBuilder();
       performMaintenanceOperationSettings =
           settings.performMaintenanceOperationSettings.toBuilder();
       reportFaultySettings = settings.reportFaultySettings.toBuilder();
       reportFaultyOperationSettings = settings.reportFaultyOperationSettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getSettings, listSettings, performMaintenanceSettings, reportFaultySettings);
+              getSettings,
+              getIamPolicySettings,
+              listSettings,
+              performMaintenanceSettings,
+              reportFaultySettings,
+              setIamPolicySettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -477,6 +533,11 @@ public class ReservationSubBlocksStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .listSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -488,6 +549,16 @@ public class ReservationSubBlocksStubSettings
 
       builder
           .reportFaultySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -565,6 +636,12 @@ public class ReservationSubBlocksStubSettings
       return getSettings;
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyReservationSubBlockRequest, Policy>
+        getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
     /** Returns the builder for the settings used for calls to list. */
     public PagedCallSettings.Builder<
             ListReservationSubBlocksRequest, ReservationSubBlocksListResponse, ListPagedResponse>
@@ -596,6 +673,19 @@ public class ReservationSubBlocksStubSettings
             ReportFaultyReservationSubBlockRequest, Operation, Operation>
         reportFaultyOperationSettings() {
       return reportFaultyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyReservationSubBlockRequest, Policy>
+        setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsReservationSubBlockRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

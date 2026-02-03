@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1445,6 +1445,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("account", String.valueOf(request.getAccount()));
+                      builder.add("integrator", String.valueOf(request.getIntegrator()));
                       return builder.build();
                     })
                 .build();
@@ -1456,6 +1457,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("account", String.valueOf(request.getAccount()));
+                      builder.add("integrator", String.valueOf(request.getIntegrator()));
                       return builder.build();
                     })
                 .build();
@@ -1467,6 +1469,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("account", String.valueOf(request.getAccount()));
+                      builder.add("integrator", String.valueOf(request.getIntegrator()));
                       return builder.build();
                     })
                 .build();

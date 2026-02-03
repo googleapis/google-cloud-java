@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ public interface VmEndpointNatMappingsOrBuilder
    *
    *
    * <pre>
-   * Name of the VM instance which the endpoint belongs to
+   * Output only. Name of the VM instance which the endpoint belongs to
    * </pre>
    *
    * <code>optional string instance_name = 227947509;</code>
@@ -41,7 +41,7 @@ public interface VmEndpointNatMappingsOrBuilder
    *
    *
    * <pre>
-   * Name of the VM instance which the endpoint belongs to
+   * Output only. Name of the VM instance which the endpoint belongs to
    * </pre>
    *
    * <code>optional string instance_name = 227947509;</code>
@@ -54,7 +54,7 @@ public interface VmEndpointNatMappingsOrBuilder
    *
    *
    * <pre>
-   * Name of the VM instance which the endpoint belongs to
+   * Output only. Name of the VM instance which the endpoint belongs to
    * </pre>
    *
    * <code>optional string instance_name = 227947509;</code>

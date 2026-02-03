@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -628,6 +628,49 @@ public interface GenerationConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1.GenerationConfig.RoutingConfigOrBuilder
       getRoutingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The speech generation config.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.SpeechConfig speech_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the speechConfig field is set.
+   */
+  boolean hasSpeechConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The speech generation config.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.SpeechConfig speech_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The speechConfig.
+   */
+  com.google.cloud.aiplatform.v1.SpeechConfig getSpeechConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The speech generation config.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.SpeechConfig speech_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.SpeechConfigOrBuilder getSpeechConfigOrBuilder();
 
   /**
    *

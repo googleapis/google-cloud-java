@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,7 +69,11 @@ public final class StatefulPolicyPreservedStateDiskDevice
    *
    *
    * <pre>
-   * These stateful disks will never be deleted during autohealing, update or VM instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole group is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+   * These stateful disks will never be deleted during autohealing,
+   * update or VM instance recreate operations.
+   * This flag is used to configure if the disk should be deleted after it
+   * is no longer used by the group, e.g. when the given instance or
+   * the whole group is deleted. Note: disks attached inREAD_ONLY mode cannot be auto-deleted.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete}
@@ -204,7 +208,11 @@ public final class StatefulPolicyPreservedStateDiskDevice
    *
    *
    * <pre>
-   * These stateful disks will never be deleted during autohealing, update or VM instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole group is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+   * These stateful disks will never be deleted during autohealing,
+   * update or VM instance recreate operations.
+   * This flag is used to configure if the disk should be deleted after it
+   * is no longer used by the group, e.g. when the given instance or
+   * the whole group is deleted. Note: disks attached inREAD_ONLY mode cannot be auto-deleted.
    * Check the AutoDelete enum for the list of possible values.
    * </pre>
    *
@@ -221,7 +229,11 @@ public final class StatefulPolicyPreservedStateDiskDevice
    *
    *
    * <pre>
-   * These stateful disks will never be deleted during autohealing, update or VM instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole group is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+   * These stateful disks will never be deleted during autohealing,
+   * update or VM instance recreate operations.
+   * This flag is used to configure if the disk should be deleted after it
+   * is no longer used by the group, e.g. when the given instance or
+   * the whole group is deleted. Note: disks attached inREAD_ONLY mode cannot be auto-deleted.
    * Check the AutoDelete enum for the list of possible values.
    * </pre>
    *
@@ -246,7 +258,11 @@ public final class StatefulPolicyPreservedStateDiskDevice
    *
    *
    * <pre>
-   * These stateful disks will never be deleted during autohealing, update or VM instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole group is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+   * These stateful disks will never be deleted during autohealing,
+   * update or VM instance recreate operations.
+   * This flag is used to configure if the disk should be deleted after it
+   * is no longer used by the group, e.g. when the given instance or
+   * the whole group is deleted. Note: disks attached inREAD_ONLY mode cannot be auto-deleted.
    * Check the AutoDelete enum for the list of possible values.
    * </pre>
    *
@@ -632,7 +648,11 @@ public final class StatefulPolicyPreservedStateDiskDevice
      *
      *
      * <pre>
-     * These stateful disks will never be deleted during autohealing, update or VM instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole group is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+     * These stateful disks will never be deleted during autohealing,
+     * update or VM instance recreate operations.
+     * This flag is used to configure if the disk should be deleted after it
+     * is no longer used by the group, e.g. when the given instance or
+     * the whole group is deleted. Note: disks attached inREAD_ONLY mode cannot be auto-deleted.
      * Check the AutoDelete enum for the list of possible values.
      * </pre>
      *
@@ -648,7 +668,11 @@ public final class StatefulPolicyPreservedStateDiskDevice
      *
      *
      * <pre>
-     * These stateful disks will never be deleted during autohealing, update or VM instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole group is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+     * These stateful disks will never be deleted during autohealing,
+     * update or VM instance recreate operations.
+     * This flag is used to configure if the disk should be deleted after it
+     * is no longer used by the group, e.g. when the given instance or
+     * the whole group is deleted. Note: disks attached inREAD_ONLY mode cannot be auto-deleted.
      * Check the AutoDelete enum for the list of possible values.
      * </pre>
      *
@@ -672,7 +696,11 @@ public final class StatefulPolicyPreservedStateDiskDevice
      *
      *
      * <pre>
-     * These stateful disks will never be deleted during autohealing, update or VM instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole group is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+     * These stateful disks will never be deleted during autohealing,
+     * update or VM instance recreate operations.
+     * This flag is used to configure if the disk should be deleted after it
+     * is no longer used by the group, e.g. when the given instance or
+     * the whole group is deleted. Note: disks attached inREAD_ONLY mode cannot be auto-deleted.
      * Check the AutoDelete enum for the list of possible values.
      * </pre>
      *
@@ -696,7 +724,11 @@ public final class StatefulPolicyPreservedStateDiskDevice
      *
      *
      * <pre>
-     * These stateful disks will never be deleted during autohealing, update or VM instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole group is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+     * These stateful disks will never be deleted during autohealing,
+     * update or VM instance recreate operations.
+     * This flag is used to configure if the disk should be deleted after it
+     * is no longer used by the group, e.g. when the given instance or
+     * the whole group is deleted. Note: disks attached inREAD_ONLY mode cannot be auto-deleted.
      * Check the AutoDelete enum for the list of possible values.
      * </pre>
      *
@@ -719,7 +751,11 @@ public final class StatefulPolicyPreservedStateDiskDevice
      *
      *
      * <pre>
-     * These stateful disks will never be deleted during autohealing, update or VM instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole group is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+     * These stateful disks will never be deleted during autohealing,
+     * update or VM instance recreate operations.
+     * This flag is used to configure if the disk should be deleted after it
+     * is no longer used by the group, e.g. when the given instance or
+     * the whole group is deleted. Note: disks attached inREAD_ONLY mode cannot be auto-deleted.
      * Check the AutoDelete enum for the list of possible values.
      * </pre>
      *
@@ -738,7 +774,11 @@ public final class StatefulPolicyPreservedStateDiskDevice
      *
      *
      * <pre>
-     * These stateful disks will never be deleted during autohealing, update or VM instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole group is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+     * These stateful disks will never be deleted during autohealing,
+     * update or VM instance recreate operations.
+     * This flag is used to configure if the disk should be deleted after it
+     * is no longer used by the group, e.g. when the given instance or
+     * the whole group is deleted. Note: disks attached inREAD_ONLY mode cannot be auto-deleted.
      * Check the AutoDelete enum for the list of possible values.
      * </pre>
      *

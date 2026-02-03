@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -98,6 +98,1003 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.run.v2.Service.class, com.google.cloud.run.v2.Service.Builder.class);
   }
 
+  public interface MultiRegionSettingsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.run.v2.Service.MultiRegionSettings)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. List of regions to deploy to, including primary region.
+     * </pre>
+     *
+     * <code>repeated string regions = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return A list containing the regions.
+     */
+    java.util.List<java.lang.String> getRegionsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. List of regions to deploy to, including primary region.
+     * </pre>
+     *
+     * <code>repeated string regions = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The count of regions.
+     */
+    int getRegionsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. List of regions to deploy to, including primary region.
+     * </pre>
+     *
+     * <code>repeated string regions = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The regions at the given index.
+     */
+    java.lang.String getRegions(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. List of regions to deploy to, including primary region.
+     * </pre>
+     *
+     * <code>repeated string regions = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the regions at the given index.
+     */
+    com.google.protobuf.ByteString getRegionsBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. System-generated unique id for the multi-region Service.
+     * </pre>
+     *
+     * <code>string multi_region_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The multiRegionId.
+     */
+    java.lang.String getMultiRegionId();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. System-generated unique id for the multi-region Service.
+     * </pre>
+     *
+     * <code>string multi_region_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for multiRegionId.
+     */
+    com.google.protobuf.ByteString getMultiRegionIdBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Settings for multi-region deployment.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.run.v2.Service.MultiRegionSettings}
+   */
+  public static final class MultiRegionSettings extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.run.v2.Service.MultiRegionSettings)
+      MultiRegionSettingsOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use MultiRegionSettings.newBuilder() to construct.
+    private MultiRegionSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private MultiRegionSettings() {
+      regions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      multiRegionId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new MultiRegionSettings();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.run.v2.ServiceProto
+          .internal_static_google_cloud_run_v2_Service_MultiRegionSettings_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.run.v2.ServiceProto
+          .internal_static_google_cloud_run_v2_Service_MultiRegionSettings_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.run.v2.Service.MultiRegionSettings.class,
+              com.google.cloud.run.v2.Service.MultiRegionSettings.Builder.class);
+    }
+
+    public static final int REGIONS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList regions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. List of regions to deploy to, including primary region.
+     * </pre>
+     *
+     * <code>repeated string regions = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return A list containing the regions.
+     */
+    public com.google.protobuf.ProtocolStringList getRegionsList() {
+      return regions_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. List of regions to deploy to, including primary region.
+     * </pre>
+     *
+     * <code>repeated string regions = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The count of regions.
+     */
+    public int getRegionsCount() {
+      return regions_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. List of regions to deploy to, including primary region.
+     * </pre>
+     *
+     * <code>repeated string regions = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The regions at the given index.
+     */
+    public java.lang.String getRegions(int index) {
+      return regions_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. List of regions to deploy to, including primary region.
+     * </pre>
+     *
+     * <code>repeated string regions = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the regions at the given index.
+     */
+    public com.google.protobuf.ByteString getRegionsBytes(int index) {
+      return regions_.getByteString(index);
+    }
+
+    public static final int MULTI_REGION_ID_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object multiRegionId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. System-generated unique id for the multi-region Service.
+     * </pre>
+     *
+     * <code>string multi_region_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The multiRegionId.
+     */
+    @java.lang.Override
+    public java.lang.String getMultiRegionId() {
+      java.lang.Object ref = multiRegionId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        multiRegionId_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. System-generated unique id for the multi-region Service.
+     * </pre>
+     *
+     * <code>string multi_region_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for multiRegionId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getMultiRegionIdBytes() {
+      java.lang.Object ref = multiRegionId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        multiRegionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < regions_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, regions_.getRaw(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(multiRegionId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, multiRegionId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < regions_.size(); i++) {
+          dataSize += computeStringSizeNoTag(regions_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getRegionsList().size();
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(multiRegionId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, multiRegionId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.run.v2.Service.MultiRegionSettings)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.run.v2.Service.MultiRegionSettings other =
+          (com.google.cloud.run.v2.Service.MultiRegionSettings) obj;
+
+      if (!getRegionsList().equals(other.getRegionsList())) return false;
+      if (!getMultiRegionId().equals(other.getMultiRegionId())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getRegionsCount() > 0) {
+        hash = (37 * hash) + REGIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getRegionsList().hashCode();
+      }
+      hash = (37 * hash) + MULTI_REGION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getMultiRegionId().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.run.v2.Service.MultiRegionSettings parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.run.v2.Service.MultiRegionSettings parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.run.v2.Service.MultiRegionSettings parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.run.v2.Service.MultiRegionSettings parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.run.v2.Service.MultiRegionSettings parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.run.v2.Service.MultiRegionSettings parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.run.v2.Service.MultiRegionSettings parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.run.v2.Service.MultiRegionSettings parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.run.v2.Service.MultiRegionSettings parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.run.v2.Service.MultiRegionSettings parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.run.v2.Service.MultiRegionSettings parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.run.v2.Service.MultiRegionSettings parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.run.v2.Service.MultiRegionSettings prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Settings for multi-region deployment.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.run.v2.Service.MultiRegionSettings}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.run.v2.Service.MultiRegionSettings)
+        com.google.cloud.run.v2.Service.MultiRegionSettingsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.run.v2.ServiceProto
+            .internal_static_google_cloud_run_v2_Service_MultiRegionSettings_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.run.v2.ServiceProto
+            .internal_static_google_cloud_run_v2_Service_MultiRegionSettings_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.run.v2.Service.MultiRegionSettings.class,
+                com.google.cloud.run.v2.Service.MultiRegionSettings.Builder.class);
+      }
+
+      // Construct using com.google.cloud.run.v2.Service.MultiRegionSettings.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        regions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        multiRegionId_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.run.v2.ServiceProto
+            .internal_static_google_cloud_run_v2_Service_MultiRegionSettings_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.run.v2.Service.MultiRegionSettings getDefaultInstanceForType() {
+        return com.google.cloud.run.v2.Service.MultiRegionSettings.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.run.v2.Service.MultiRegionSettings build() {
+        com.google.cloud.run.v2.Service.MultiRegionSettings result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.run.v2.Service.MultiRegionSettings buildPartial() {
+        com.google.cloud.run.v2.Service.MultiRegionSettings result =
+            new com.google.cloud.run.v2.Service.MultiRegionSettings(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.run.v2.Service.MultiRegionSettings result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          regions_.makeImmutable();
+          result.regions_ = regions_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.multiRegionId_ = multiRegionId_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.run.v2.Service.MultiRegionSettings) {
+          return mergeFrom((com.google.cloud.run.v2.Service.MultiRegionSettings) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.run.v2.Service.MultiRegionSettings other) {
+        if (other == com.google.cloud.run.v2.Service.MultiRegionSettings.getDefaultInstance())
+          return this;
+        if (!other.regions_.isEmpty()) {
+          if (regions_.isEmpty()) {
+            regions_ = other.regions_;
+            bitField0_ |= 0x00000001;
+          } else {
+            ensureRegionsIsMutable();
+            regions_.addAll(other.regions_);
+          }
+          onChanged();
+        }
+        if (!other.getMultiRegionId().isEmpty()) {
+          multiRegionId_ = other.multiRegionId_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureRegionsIsMutable();
+                  regions_.add(s);
+                  break;
+                } // case 10
+              case 18:
+                {
+                  multiRegionId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringArrayList regions_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureRegionsIsMutable() {
+        if (!regions_.isModifiable()) {
+          regions_ = new com.google.protobuf.LazyStringArrayList(regions_);
+        }
+        bitField0_ |= 0x00000001;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. List of regions to deploy to, including primary region.
+       * </pre>
+       *
+       * <code>repeated string regions = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return A list containing the regions.
+       */
+      public com.google.protobuf.ProtocolStringList getRegionsList() {
+        regions_.makeImmutable();
+        return regions_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. List of regions to deploy to, including primary region.
+       * </pre>
+       *
+       * <code>repeated string regions = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The count of regions.
+       */
+      public int getRegionsCount() {
+        return regions_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. List of regions to deploy to, including primary region.
+       * </pre>
+       *
+       * <code>repeated string regions = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The regions at the given index.
+       */
+      public java.lang.String getRegions(int index) {
+        return regions_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. List of regions to deploy to, including primary region.
+       * </pre>
+       *
+       * <code>repeated string regions = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the regions at the given index.
+       */
+      public com.google.protobuf.ByteString getRegionsBytes(int index) {
+        return regions_.getByteString(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. List of regions to deploy to, including primary region.
+       * </pre>
+       *
+       * <code>repeated string regions = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The regions to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRegions(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRegionsIsMutable();
+        regions_.set(index, value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. List of regions to deploy to, including primary region.
+       * </pre>
+       *
+       * <code>repeated string regions = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The regions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addRegions(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRegionsIsMutable();
+        regions_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. List of regions to deploy to, including primary region.
+       * </pre>
+       *
+       * <code>repeated string regions = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param values The regions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllRegions(java.lang.Iterable<java.lang.String> values) {
+        ensureRegionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, regions_);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. List of regions to deploy to, including primary region.
+       * </pre>
+       *
+       * <code>repeated string regions = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRegions() {
+        regions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        ;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. List of regions to deploy to, including primary region.
+       * </pre>
+       *
+       * <code>repeated string regions = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes of the regions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addRegionsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureRegionsIsMutable();
+        regions_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object multiRegionId_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. System-generated unique id for the multi-region Service.
+       * </pre>
+       *
+       * <code>string multi_region_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The multiRegionId.
+       */
+      public java.lang.String getMultiRegionId() {
+        java.lang.Object ref = multiRegionId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          multiRegionId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. System-generated unique id for the multi-region Service.
+       * </pre>
+       *
+       * <code>string multi_region_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for multiRegionId.
+       */
+      public com.google.protobuf.ByteString getMultiRegionIdBytes() {
+        java.lang.Object ref = multiRegionId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          multiRegionId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. System-generated unique id for the multi-region Service.
+       * </pre>
+       *
+       * <code>string multi_region_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The multiRegionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMultiRegionId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        multiRegionId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. System-generated unique id for the multi-region Service.
+       * </pre>
+       *
+       * <code>string multi_region_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMultiRegionId() {
+        multiRegionId_ = getDefaultInstance().getMultiRegionId();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. System-generated unique id for the multi-region Service.
+       * </pre>
+       *
+       * <code>string multi_region_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for multiRegionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMultiRegionIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        multiRegionId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.run.v2.Service.MultiRegionSettings)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.run.v2.Service.MultiRegionSettings)
+    private static final com.google.cloud.run.v2.Service.MultiRegionSettings DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.run.v2.Service.MultiRegionSettings();
+    }
+
+    public static com.google.cloud.run.v2.Service.MultiRegionSettings getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MultiRegionSettings> PARSER =
+        new com.google.protobuf.AbstractParser<MultiRegionSettings>() {
+          @java.lang.Override
+          public MultiRegionSettings parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<MultiRegionSettings> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MultiRegionSettings> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.run.v2.Service.MultiRegionSettings getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -108,15 +1105,15 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The fully qualified name of this Service. In CreateServiceRequest, this
-   * field is ignored, and instead composed from CreateServiceRequest.parent and
-   * CreateServiceRequest.service_id.
+   * Identifier. The fully qualified name of this Service. In
+   * CreateServiceRequest, this field is ignored, and instead composed from
+   * CreateServiceRequest.parent and CreateServiceRequest.service_id.
    *
    * Format:
    * projects/{project}/locations/{location}/services/{service_id}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -137,15 +1134,15 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The fully qualified name of this Service. In CreateServiceRequest, this
-   * field is ignored, and instead composed from CreateServiceRequest.parent and
-   * CreateServiceRequest.service_id.
+   * Identifier. The fully qualified name of this Service. In
+   * CreateServiceRequest, this field is ignored, and instead composed from
+   * CreateServiceRequest.parent and CreateServiceRequest.service_id.
    *
    * Format:
    * projects/{project}/locations/{location}/services/{service_id}
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -1403,8 +2400,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Disables IAM permission check for run.routes.invoke for callers
-   * of this service. This feature is available by invitation only. For more
-   * information, visit
+   * of this service. For more information, visit
    * https://cloud.google.com/run/docs/securing/managing-access#invoker_check.
    * </pre>
    *
@@ -1502,6 +2498,85 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    */
   public com.google.protobuf.ByteString getUrlsBytes(int index) {
     return urls_.getByteString(index);
+  }
+
+  public static final int IAP_ENABLED_FIELD_NUMBER = 25;
+  private boolean iapEnabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. IAP settings on the Service.
+   * </pre>
+   *
+   * <code>bool iap_enabled = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The iapEnabled.
+   */
+  @java.lang.Override
+  public boolean getIapEnabled() {
+    return iapEnabled_;
+  }
+
+  public static final int MULTI_REGION_SETTINGS_FIELD_NUMBER = 26;
+  private com.google.cloud.run.v2.Service.MultiRegionSettings multiRegionSettings_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for multi-region deployment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.Service.MultiRegionSettings multi_region_settings = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the multiRegionSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasMultiRegionSettings() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for multi-region deployment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.Service.MultiRegionSettings multi_region_settings = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The multiRegionSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.Service.MultiRegionSettings getMultiRegionSettings() {
+    return multiRegionSettings_ == null
+        ? com.google.cloud.run.v2.Service.MultiRegionSettings.getDefaultInstance()
+        : multiRegionSettings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for multi-region deployment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.Service.MultiRegionSettings multi_region_settings = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.Service.MultiRegionSettingsOrBuilder
+      getMultiRegionSettingsOrBuilder() {
+    return multiRegionSettings_ == null
+        ? com.google.cloud.run.v2.Service.MultiRegionSettings.getDefaultInstance()
+        : multiRegionSettings_;
   }
 
   public static final int CUSTOM_AUDIENCES_FIELD_NUMBER = 37;
@@ -1632,7 +2707,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasTerminalCondition() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
@@ -2071,6 +3146,26 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     return satisfiesPzs_;
   }
 
+  public static final int THREAT_DETECTION_ENABLED_FIELD_NUMBER = 40;
+  private boolean threatDetectionEnabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. True if Cloud Run Threat Detection monitoring is enabled for
+   * the parent project of this Service.
+   * </pre>
+   *
+   * <code>bool threat_detection_enabled = 40 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The threatDetectionEnabled.
+   */
+  @java.lang.Override
+  public boolean getThreatDetectionEnabled() {
+    return threatDetectionEnabled_;
+  }
+
   public static final int BUILD_CONFIG_FIELD_NUMBER = 41;
   private com.google.cloud.run.v2.BuildConfig buildConfig_;
 
@@ -2089,7 +3184,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasBuildConfig() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -2179,11 +3274,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A system-generated fingerprint for this version of the
+   * Optional. A system-generated fingerprint for this version of the
    * resource. May be used to detect modification conflict during updates.
    * </pre>
    *
-   * <code>string etag = 99 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string etag = 99 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The etag.
    */
@@ -2204,11 +3299,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A system-generated fingerprint for this version of the
+   * Optional. A system-generated fingerprint for this version of the
    * resource. May be used to detect modification conflict during updates.
    * </pre>
    *
-   * <code>string etag = 99 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string etag = 99 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for etag.
    */
@@ -2307,10 +3402,16 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < urls_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 24, urls_.getRaw(i));
     }
+    if (iapEnabled_ != false) {
+      output.writeBool(25, iapEnabled_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeMessage(26, getMultiRegionSettings());
+    }
     if (observedGeneration_ != 0L) {
       output.writeInt64(30, observedGeneration_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(31, getTerminalCondition());
     }
     for (int i = 0; i < conditions_.size(); i++) {
@@ -2334,7 +3435,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     if (satisfiesPzs_ != false) {
       output.writeBool(38, satisfiesPzs_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (threatDetectionEnabled_ != false) {
+      output.writeBool(40, threatDetectionEnabled_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(41, getBuildConfig());
     }
     if (reconciling_ != false) {
@@ -2442,10 +3546,17 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 2 * getUrlsList().size();
     }
+    if (iapEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(25, iapEnabled_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(26, getMultiRegionSettings());
+    }
     if (observedGeneration_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(30, observedGeneration_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(31, getTerminalCondition());
     }
     for (int i = 0; i < conditions_.size(); i++) {
@@ -2474,7 +3585,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     if (satisfiesPzs_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(38, satisfiesPzs_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (threatDetectionEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(40, threatDetectionEnabled_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(41, getBuildConfig());
     }
     if (reconciling_ != false) {
@@ -2542,6 +3656,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     if (getInvokerIamDisabled() != other.getInvokerIamDisabled()) return false;
     if (getDefaultUriDisabled() != other.getDefaultUriDisabled()) return false;
     if (!getUrlsList().equals(other.getUrlsList())) return false;
+    if (getIapEnabled() != other.getIapEnabled()) return false;
+    if (hasMultiRegionSettings() != other.hasMultiRegionSettings()) return false;
+    if (hasMultiRegionSettings()) {
+      if (!getMultiRegionSettings().equals(other.getMultiRegionSettings())) return false;
+    }
     if (!getCustomAudiencesList().equals(other.getCustomAudiencesList())) return false;
     if (getObservedGeneration() != other.getObservedGeneration()) return false;
     if (hasTerminalCondition() != other.hasTerminalCondition()) return false;
@@ -2554,6 +3673,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     if (!getTrafficStatusesList().equals(other.getTrafficStatusesList())) return false;
     if (!getUri().equals(other.getUri())) return false;
     if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    if (getThreatDetectionEnabled() != other.getThreatDetectionEnabled()) return false;
     if (hasBuildConfig() != other.hasBuildConfig()) return false;
     if (hasBuildConfig()) {
       if (!getBuildConfig().equals(other.getBuildConfig())) return false;
@@ -2639,6 +3759,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + URLS_FIELD_NUMBER;
       hash = (53 * hash) + getUrlsList().hashCode();
     }
+    hash = (37 * hash) + IAP_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIapEnabled());
+    if (hasMultiRegionSettings()) {
+      hash = (37 * hash) + MULTI_REGION_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getMultiRegionSettings().hashCode();
+    }
     if (getCustomAudiencesCount() > 0) {
       hash = (37 * hash) + CUSTOM_AUDIENCES_FIELD_NUMBER;
       hash = (53 * hash) + getCustomAudiencesList().hashCode();
@@ -2665,6 +3791,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getUri().hashCode();
     hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    hash = (37 * hash) + THREAT_DETECTION_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getThreatDetectionEnabled());
     if (hasBuildConfig()) {
       hash = (37 * hash) + BUILD_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getBuildConfig().hashCode();
@@ -2850,6 +3978,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         getTemplateFieldBuilder();
         getTrafficFieldBuilder();
         getScalingFieldBuilder();
+        getMultiRegionSettingsFieldBuilder();
         getTerminalConditionFieldBuilder();
         getConditionsFieldBuilder();
         getTrafficStatusesFieldBuilder();
@@ -2919,6 +4048,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       invokerIamDisabled_ = false;
       defaultUriDisabled_ = false;
       urls_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      iapEnabled_ = false;
+      multiRegionSettings_ = null;
+      if (multiRegionSettingsBuilder_ != null) {
+        multiRegionSettingsBuilder_.dispose();
+        multiRegionSettingsBuilder_ = null;
+      }
       customAudiences_ = com.google.protobuf.LazyStringArrayList.emptyList();
       observedGeneration_ = 0L;
       terminalCondition_ = null;
@@ -2932,7 +4067,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         conditions_ = null;
         conditionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       latestReadyRevision_ = "";
       latestCreatedRevision_ = "";
       if (trafficStatusesBuilder_ == null) {
@@ -2941,9 +4076,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         trafficStatuses_ = null;
         trafficStatusesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField0_ = (bitField0_ & ~0x80000000);
       uri_ = "";
       satisfiesPzs_ = false;
+      threatDetectionEnabled_ = false;
       buildConfig_ = null;
       if (buildConfigBuilder_ != null) {
         buildConfigBuilder_.dispose();
@@ -2999,18 +4135,18 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         result.traffic_ = trafficBuilder_.build();
       }
       if (conditionsBuilder_ == null) {
-        if (((bitField0_ & 0x04000000) != 0)) {
+        if (((bitField0_ & 0x10000000) != 0)) {
           conditions_ = java.util.Collections.unmodifiableList(conditions_);
-          bitField0_ = (bitField0_ & ~0x04000000);
+          bitField0_ = (bitField0_ & ~0x10000000);
         }
         result.conditions_ = conditions_;
       } else {
         result.conditions_ = conditionsBuilder_.build();
       }
       if (trafficStatusesBuilder_ == null) {
-        if (((bitField0_ & 0x20000000) != 0)) {
+        if (((bitField0_ & 0x80000000) != 0)) {
           trafficStatuses_ = java.util.Collections.unmodifiableList(trafficStatuses_);
-          bitField0_ = (bitField0_ & ~0x20000000);
+          bitField0_ = (bitField0_ & ~0x80000000);
         }
         result.trafficStatuses_ = trafficStatuses_;
       } else {
@@ -3101,46 +4237,59 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         result.urls_ = urls_;
       }
       if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.iapEnabled_ = iapEnabled_;
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.multiRegionSettings_ =
+            multiRegionSettingsBuilder_ == null
+                ? multiRegionSettings_
+                : multiRegionSettingsBuilder_.build();
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x02000000) != 0)) {
         customAudiences_.makeImmutable();
         result.customAudiences_ = customAudiences_;
       }
-      if (((from_bitField0_ & 0x01000000) != 0)) {
+      if (((from_bitField0_ & 0x04000000) != 0)) {
         result.observedGeneration_ = observedGeneration_;
       }
-      if (((from_bitField0_ & 0x02000000) != 0)) {
+      if (((from_bitField0_ & 0x08000000) != 0)) {
         result.terminalCondition_ =
             terminalConditionBuilder_ == null
                 ? terminalCondition_
                 : terminalConditionBuilder_.build();
-        to_bitField0_ |= 0x00000080;
+        to_bitField0_ |= 0x00000100;
       }
-      if (((from_bitField0_ & 0x08000000) != 0)) {
+      if (((from_bitField0_ & 0x20000000) != 0)) {
         result.latestReadyRevision_ = latestReadyRevision_;
       }
-      if (((from_bitField0_ & 0x10000000) != 0)) {
-        result.latestCreatedRevision_ = latestCreatedRevision_;
-      }
       if (((from_bitField0_ & 0x40000000) != 0)) {
-        result.uri_ = uri_;
-      }
-      if (((from_bitField0_ & 0x80000000) != 0)) {
-        result.satisfiesPzs_ = satisfiesPzs_;
+        result.latestCreatedRevision_ = latestCreatedRevision_;
       }
       result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartial1(com.google.cloud.run.v2.Service result) {
       int from_bitField1_ = bitField1_;
-      int to_bitField0_ = 0;
       if (((from_bitField1_ & 0x00000001) != 0)) {
-        result.buildConfig_ =
-            buildConfigBuilder_ == null ? buildConfig_ : buildConfigBuilder_.build();
-        to_bitField0_ |= 0x00000100;
+        result.uri_ = uri_;
       }
       if (((from_bitField1_ & 0x00000002) != 0)) {
-        result.reconciling_ = reconciling_;
+        result.satisfiesPzs_ = satisfiesPzs_;
       }
       if (((from_bitField1_ & 0x00000004) != 0)) {
+        result.threatDetectionEnabled_ = threatDetectionEnabled_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField1_ & 0x00000008) != 0)) {
+        result.buildConfig_ =
+            buildConfigBuilder_ == null ? buildConfig_ : buildConfigBuilder_.build();
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField1_ & 0x00000010) != 0)) {
+        result.reconciling_ = reconciling_;
+      }
+      if (((from_bitField1_ & 0x00000020) != 0)) {
         result.etag_ = etag_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -3303,10 +4452,16 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
+      if (other.getIapEnabled() != false) {
+        setIapEnabled(other.getIapEnabled());
+      }
+      if (other.hasMultiRegionSettings()) {
+        mergeMultiRegionSettings(other.getMultiRegionSettings());
+      }
       if (!other.customAudiences_.isEmpty()) {
         if (customAudiences_.isEmpty()) {
           customAudiences_ = other.customAudiences_;
-          bitField0_ |= 0x00800000;
+          bitField0_ |= 0x02000000;
         } else {
           ensureCustomAudiencesIsMutable();
           customAudiences_.addAll(other.customAudiences_);
@@ -3323,7 +4478,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         if (!other.conditions_.isEmpty()) {
           if (conditions_.isEmpty()) {
             conditions_ = other.conditions_;
-            bitField0_ = (bitField0_ & ~0x04000000);
+            bitField0_ = (bitField0_ & ~0x10000000);
           } else {
             ensureConditionsIsMutable();
             conditions_.addAll(other.conditions_);
@@ -3336,7 +4491,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
             conditionsBuilder_.dispose();
             conditionsBuilder_ = null;
             conditions_ = other.conditions_;
-            bitField0_ = (bitField0_ & ~0x04000000);
+            bitField0_ = (bitField0_ & ~0x10000000);
             conditionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getConditionsFieldBuilder()
@@ -3348,19 +4503,19 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getLatestReadyRevision().isEmpty()) {
         latestReadyRevision_ = other.latestReadyRevision_;
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x20000000;
         onChanged();
       }
       if (!other.getLatestCreatedRevision().isEmpty()) {
         latestCreatedRevision_ = other.latestCreatedRevision_;
-        bitField0_ |= 0x10000000;
+        bitField0_ |= 0x40000000;
         onChanged();
       }
       if (trafficStatusesBuilder_ == null) {
         if (!other.trafficStatuses_.isEmpty()) {
           if (trafficStatuses_.isEmpty()) {
             trafficStatuses_ = other.trafficStatuses_;
-            bitField0_ = (bitField0_ & ~0x20000000);
+            bitField0_ = (bitField0_ & ~0x80000000);
           } else {
             ensureTrafficStatusesIsMutable();
             trafficStatuses_.addAll(other.trafficStatuses_);
@@ -3373,7 +4528,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
             trafficStatusesBuilder_.dispose();
             trafficStatusesBuilder_ = null;
             trafficStatuses_ = other.trafficStatuses_;
-            bitField0_ = (bitField0_ & ~0x20000000);
+            bitField0_ = (bitField0_ & ~0x80000000);
             trafficStatusesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTrafficStatusesFieldBuilder()
@@ -3385,11 +4540,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getUri().isEmpty()) {
         uri_ = other.uri_;
-        bitField0_ |= 0x40000000;
+        bitField1_ |= 0x00000001;
         onChanged();
       }
       if (other.getSatisfiesPzs() != false) {
         setSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (other.getThreatDetectionEnabled() != false) {
+        setThreatDetectionEnabled(other.getThreatDetectionEnabled());
       }
       if (other.hasBuildConfig()) {
         mergeBuildConfig(other.getBuildConfig());
@@ -3399,7 +4557,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField1_ |= 0x00000004;
+        bitField1_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -3587,17 +4745,30 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
                 urls_.add(s);
                 break;
               } // case 194
+            case 200:
+              {
+                iapEnabled_ = input.readBool();
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 200
+            case 210:
+              {
+                input.readMessage(
+                    getMultiRegionSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x01000000;
+                break;
+              } // case 210
             case 240:
               {
                 observedGeneration_ = input.readInt64();
-                bitField0_ |= 0x01000000;
+                bitField0_ |= 0x04000000;
                 break;
               } // case 240
             case 250:
               {
                 input.readMessage(
                     getTerminalConditionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x08000000;
                 break;
               } // case 250
             case 258:
@@ -3616,13 +4787,13 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
             case 266:
               {
                 latestReadyRevision_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x20000000;
                 break;
               } // case 266
             case 274:
               {
                 latestCreatedRevision_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x10000000;
+                bitField0_ |= 0x40000000;
                 break;
               } // case 274
             case 282:
@@ -3641,7 +4812,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
             case 290:
               {
                 uri_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x40000000;
+                bitField1_ |= 0x00000001;
                 break;
               } // case 290
             case 298:
@@ -3654,25 +4825,31 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
             case 304:
               {
                 satisfiesPzs_ = input.readBool();
-                bitField0_ |= 0x80000000;
+                bitField1_ |= 0x00000002;
                 break;
               } // case 304
+            case 320:
+              {
+                threatDetectionEnabled_ = input.readBool();
+                bitField1_ |= 0x00000004;
+                break;
+              } // case 320
             case 330:
               {
                 input.readMessage(getBuildConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000001;
+                bitField1_ |= 0x00000008;
                 break;
               } // case 330
             case 784:
               {
                 reconciling_ = input.readBool();
-                bitField1_ |= 0x00000002;
+                bitField1_ |= 0x00000010;
                 break;
               } // case 784
             case 794:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000004;
+                bitField1_ |= 0x00000020;
                 break;
               } // case 794
             default:
@@ -3701,15 +4878,15 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The fully qualified name of this Service. In CreateServiceRequest, this
-     * field is ignored, and instead composed from CreateServiceRequest.parent and
-     * CreateServiceRequest.service_id.
+     * Identifier. The fully qualified name of this Service. In
+     * CreateServiceRequest, this field is ignored, and instead composed from
+     * CreateServiceRequest.parent and CreateServiceRequest.service_id.
      *
      * Format:
      * projects/{project}/locations/{location}/services/{service_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -3729,15 +4906,15 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The fully qualified name of this Service. In CreateServiceRequest, this
-     * field is ignored, and instead composed from CreateServiceRequest.parent and
-     * CreateServiceRequest.service_id.
+     * Identifier. The fully qualified name of this Service. In
+     * CreateServiceRequest, this field is ignored, and instead composed from
+     * CreateServiceRequest.parent and CreateServiceRequest.service_id.
      *
      * Format:
      * projects/{project}/locations/{location}/services/{service_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -3757,15 +4934,15 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The fully qualified name of this Service. In CreateServiceRequest, this
-     * field is ignored, and instead composed from CreateServiceRequest.parent and
-     * CreateServiceRequest.service_id.
+     * Identifier. The fully qualified name of this Service. In
+     * CreateServiceRequest, this field is ignored, and instead composed from
+     * CreateServiceRequest.parent and CreateServiceRequest.service_id.
      *
      * Format:
      * projects/{project}/locations/{location}/services/{service_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -3784,15 +4961,15 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The fully qualified name of this Service. In CreateServiceRequest, this
-     * field is ignored, and instead composed from CreateServiceRequest.parent and
-     * CreateServiceRequest.service_id.
+     * Identifier. The fully qualified name of this Service. In
+     * CreateServiceRequest, this field is ignored, and instead composed from
+     * CreateServiceRequest.parent and CreateServiceRequest.service_id.
      *
      * Format:
      * projects/{project}/locations/{location}/services/{service_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -3807,15 +4984,15 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The fully qualified name of this Service. In CreateServiceRequest, this
-     * field is ignored, and instead composed from CreateServiceRequest.parent and
-     * CreateServiceRequest.service_id.
+     * Identifier. The fully qualified name of this Service. In
+     * CreateServiceRequest, this field is ignored, and instead composed from
+     * CreateServiceRequest.parent and CreateServiceRequest.service_id.
      *
      * Format:
      * projects/{project}/locations/{location}/services/{service_id}
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -7278,8 +8455,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Disables IAM permission check for run.routes.invoke for callers
-     * of this service. This feature is available by invitation only. For more
-     * information, visit
+     * of this service. For more information, visit
      * https://cloud.google.com/run/docs/securing/managing-access#invoker_check.
      * </pre>
      *
@@ -7297,8 +8473,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Disables IAM permission check for run.routes.invoke for callers
-     * of this service. This feature is available by invitation only. For more
-     * information, visit
+     * of this service. For more information, visit
      * https://cloud.google.com/run/docs/securing/managing-access#invoker_check.
      * </pre>
      *
@@ -7320,8 +8495,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Disables IAM permission check for run.routes.invoke for callers
-     * of this service. This feature is available by invitation only. For more
-     * information, visit
+     * of this service. For more information, visit
      * https://cloud.google.com/run/docs/securing/managing-access#invoker_check.
      * </pre>
      *
@@ -7575,6 +8749,280 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private boolean iapEnabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. IAP settings on the Service.
+     * </pre>
+     *
+     * <code>bool iap_enabled = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The iapEnabled.
+     */
+    @java.lang.Override
+    public boolean getIapEnabled() {
+      return iapEnabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. IAP settings on the Service.
+     * </pre>
+     *
+     * <code>bool iap_enabled = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The iapEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIapEnabled(boolean value) {
+
+      iapEnabled_ = value;
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. IAP settings on the Service.
+     * </pre>
+     *
+     * <code>bool iap_enabled = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIapEnabled() {
+      bitField0_ = (bitField0_ & ~0x00800000);
+      iapEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.run.v2.Service.MultiRegionSettings multiRegionSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.run.v2.Service.MultiRegionSettings,
+            com.google.cloud.run.v2.Service.MultiRegionSettings.Builder,
+            com.google.cloud.run.v2.Service.MultiRegionSettingsOrBuilder>
+        multiRegionSettingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for multi-region deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.Service.MultiRegionSettings multi_region_settings = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the multiRegionSettings field is set.
+     */
+    public boolean hasMultiRegionSettings() {
+      return ((bitField0_ & 0x01000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for multi-region deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.Service.MultiRegionSettings multi_region_settings = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The multiRegionSettings.
+     */
+    public com.google.cloud.run.v2.Service.MultiRegionSettings getMultiRegionSettings() {
+      if (multiRegionSettingsBuilder_ == null) {
+        return multiRegionSettings_ == null
+            ? com.google.cloud.run.v2.Service.MultiRegionSettings.getDefaultInstance()
+            : multiRegionSettings_;
+      } else {
+        return multiRegionSettingsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for multi-region deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.Service.MultiRegionSettings multi_region_settings = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMultiRegionSettings(
+        com.google.cloud.run.v2.Service.MultiRegionSettings value) {
+      if (multiRegionSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        multiRegionSettings_ = value;
+      } else {
+        multiRegionSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for multi-region deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.Service.MultiRegionSettings multi_region_settings = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMultiRegionSettings(
+        com.google.cloud.run.v2.Service.MultiRegionSettings.Builder builderForValue) {
+      if (multiRegionSettingsBuilder_ == null) {
+        multiRegionSettings_ = builderForValue.build();
+      } else {
+        multiRegionSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for multi-region deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.Service.MultiRegionSettings multi_region_settings = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeMultiRegionSettings(
+        com.google.cloud.run.v2.Service.MultiRegionSettings value) {
+      if (multiRegionSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x01000000) != 0)
+            && multiRegionSettings_ != null
+            && multiRegionSettings_
+                != com.google.cloud.run.v2.Service.MultiRegionSettings.getDefaultInstance()) {
+          getMultiRegionSettingsBuilder().mergeFrom(value);
+        } else {
+          multiRegionSettings_ = value;
+        }
+      } else {
+        multiRegionSettingsBuilder_.mergeFrom(value);
+      }
+      if (multiRegionSettings_ != null) {
+        bitField0_ |= 0x01000000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for multi-region deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.Service.MultiRegionSettings multi_region_settings = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearMultiRegionSettings() {
+      bitField0_ = (bitField0_ & ~0x01000000);
+      multiRegionSettings_ = null;
+      if (multiRegionSettingsBuilder_ != null) {
+        multiRegionSettingsBuilder_.dispose();
+        multiRegionSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for multi-region deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.Service.MultiRegionSettings multi_region_settings = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.run.v2.Service.MultiRegionSettings.Builder
+        getMultiRegionSettingsBuilder() {
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return getMultiRegionSettingsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for multi-region deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.Service.MultiRegionSettings multi_region_settings = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.run.v2.Service.MultiRegionSettingsOrBuilder
+        getMultiRegionSettingsOrBuilder() {
+      if (multiRegionSettingsBuilder_ != null) {
+        return multiRegionSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return multiRegionSettings_ == null
+            ? com.google.cloud.run.v2.Service.MultiRegionSettings.getDefaultInstance()
+            : multiRegionSettings_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for multi-region deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.Service.MultiRegionSettings multi_region_settings = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.run.v2.Service.MultiRegionSettings,
+            com.google.cloud.run.v2.Service.MultiRegionSettings.Builder,
+            com.google.cloud.run.v2.Service.MultiRegionSettingsOrBuilder>
+        getMultiRegionSettingsFieldBuilder() {
+      if (multiRegionSettingsBuilder_ == null) {
+        multiRegionSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.run.v2.Service.MultiRegionSettings,
+                com.google.cloud.run.v2.Service.MultiRegionSettings.Builder,
+                com.google.cloud.run.v2.Service.MultiRegionSettingsOrBuilder>(
+                getMultiRegionSettings(), getParentForChildren(), isClean());
+        multiRegionSettings_ = null;
+      }
+      return multiRegionSettingsBuilder_;
+    }
+
     private com.google.protobuf.LazyStringArrayList customAudiences_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
 
@@ -7582,7 +9030,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       if (!customAudiences_.isModifiable()) {
         customAudiences_ = new com.google.protobuf.LazyStringArrayList(customAudiences_);
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
     }
 
     /**
@@ -7687,7 +9135,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       ensureCustomAudiencesIsMutable();
       customAudiences_.set(index, value);
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -7714,7 +9162,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       ensureCustomAudiencesIsMutable();
       customAudiences_.add(value);
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -7738,7 +9186,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllCustomAudiences(java.lang.Iterable<java.lang.String> values) {
       ensureCustomAudiencesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, customAudiences_);
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -7760,7 +9208,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearCustomAudiences() {
       customAudiences_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       ;
       onChanged();
       return this;
@@ -7789,7 +9237,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureCustomAudiencesIsMutable();
       customAudiences_.add(value);
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -7835,7 +9283,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public Builder setObservedGeneration(long value) {
 
       observedGeneration_ = value;
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -7856,7 +9304,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearObservedGeneration() {
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       observedGeneration_ = 0L;
       onChanged();
       return this;
@@ -7886,7 +9334,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the terminalCondition field is set.
      */
     public boolean hasTerminalCondition() {
-      return ((bitField0_ & 0x02000000) != 0);
+      return ((bitField0_ & 0x08000000) != 0);
     }
 
     /**
@@ -7938,7 +9386,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       } else {
         terminalConditionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -7963,7 +9411,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       } else {
         terminalConditionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -7984,7 +9432,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTerminalCondition(com.google.cloud.run.v2.Condition value) {
       if (terminalConditionBuilder_ == null) {
-        if (((bitField0_ & 0x02000000) != 0)
+        if (((bitField0_ & 0x08000000) != 0)
             && terminalCondition_ != null
             && terminalCondition_ != com.google.cloud.run.v2.Condition.getDefaultInstance()) {
           getTerminalConditionBuilder().mergeFrom(value);
@@ -7995,7 +9443,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         terminalConditionBuilder_.mergeFrom(value);
       }
       if (terminalCondition_ != null) {
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x08000000;
         onChanged();
       }
       return this;
@@ -8016,7 +9464,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearTerminalCondition() {
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       terminalCondition_ = null;
       if (terminalConditionBuilder_ != null) {
         terminalConditionBuilder_.dispose();
@@ -8041,7 +9489,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.run.v2.Condition.Builder getTerminalConditionBuilder() {
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return getTerminalConditionFieldBuilder().getBuilder();
     }
@@ -8105,9 +9553,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureConditionsIsMutable() {
-      if (!((bitField0_ & 0x04000000) != 0)) {
+      if (!((bitField0_ & 0x10000000) != 0)) {
         conditions_ = new java.util.ArrayList<com.google.cloud.run.v2.Condition>(conditions_);
-        bitField0_ |= 0x04000000;
+        bitField0_ |= 0x10000000;
       }
     }
 
@@ -8387,7 +9835,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public Builder clearConditions() {
       if (conditionsBuilder_ == null) {
         conditions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x04000000);
+        bitField0_ = (bitField0_ & ~0x10000000);
         onChanged();
       } else {
         conditionsBuilder_.clear();
@@ -8550,7 +9998,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.run.v2.Condition,
                 com.google.cloud.run.v2.Condition.Builder,
                 com.google.cloud.run.v2.ConditionOrBuilder>(
-                conditions_, ((bitField0_ & 0x04000000) != 0), getParentForChildren(), isClean());
+                conditions_, ((bitField0_ & 0x10000000) != 0), getParentForChildren(), isClean());
         conditions_ = null;
       }
       return conditionsBuilder_;
@@ -8633,7 +10081,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       latestReadyRevision_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -8655,7 +10103,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearLatestReadyRevision() {
       latestReadyRevision_ = getDefaultInstance().getLatestReadyRevision();
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       onChanged();
       return this;
     }
@@ -8682,7 +10130,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       latestReadyRevision_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -8764,7 +10212,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       latestCreatedRevision_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -8786,7 +10234,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearLatestCreatedRevision() {
       latestCreatedRevision_ = getDefaultInstance().getLatestCreatedRevision();
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       onChanged();
       return this;
     }
@@ -8813,7 +10261,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       latestCreatedRevision_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -8822,10 +10270,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureTrafficStatusesIsMutable() {
-      if (!((bitField0_ & 0x20000000) != 0)) {
+      if (!((bitField0_ & 0x80000000) != 0)) {
         trafficStatuses_ =
             new java.util.ArrayList<com.google.cloud.run.v2.TrafficTargetStatus>(trafficStatuses_);
-        bitField0_ |= 0x20000000;
+        bitField0_ |= 0x80000000;
       }
     }
 
@@ -9097,7 +10545,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public Builder clearTrafficStatuses() {
       if (trafficStatusesBuilder_ == null) {
         trafficStatuses_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x20000000);
+        bitField0_ = (bitField0_ & ~0x80000000);
         onChanged();
       } else {
         trafficStatusesBuilder_.clear();
@@ -9258,7 +10706,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.run.v2.TrafficTargetStatus.Builder,
                 com.google.cloud.run.v2.TrafficTargetStatusOrBuilder>(
                 trafficStatuses_,
-                ((bitField0_ & 0x20000000) != 0),
+                ((bitField0_ & 0x80000000) != 0),
                 getParentForChildren(),
                 isClean());
         trafficStatuses_ = null;
@@ -9331,7 +10779,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       uri_ = value;
-      bitField0_ |= 0x40000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -9349,7 +10797,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearUri() {
       uri_ = getDefaultInstance().getUri();
-      bitField0_ = (bitField0_ & ~0x40000000);
+      bitField1_ = (bitField1_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -9372,7 +10820,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       uri_ = value;
-      bitField0_ |= 0x40000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -9410,7 +10858,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public Builder setSatisfiesPzs(boolean value) {
 
       satisfiesPzs_ = value;
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -9427,8 +10875,67 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzs() {
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField1_ = (bitField1_ & ~0x00000002);
       satisfiesPzs_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean threatDetectionEnabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. True if Cloud Run Threat Detection monitoring is enabled for
+     * the parent project of this Service.
+     * </pre>
+     *
+     * <code>bool threat_detection_enabled = 40 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The threatDetectionEnabled.
+     */
+    @java.lang.Override
+    public boolean getThreatDetectionEnabled() {
+      return threatDetectionEnabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. True if Cloud Run Threat Detection monitoring is enabled for
+     * the parent project of this Service.
+     * </pre>
+     *
+     * <code>bool threat_detection_enabled = 40 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The threatDetectionEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setThreatDetectionEnabled(boolean value) {
+
+      threatDetectionEnabled_ = value;
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. True if Cloud Run Threat Detection monitoring is enabled for
+     * the parent project of this Service.
+     * </pre>
+     *
+     * <code>bool threat_detection_enabled = 40 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearThreatDetectionEnabled() {
+      bitField1_ = (bitField1_ & ~0x00000004);
+      threatDetectionEnabled_ = false;
       onChanged();
       return this;
     }
@@ -9454,7 +10961,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the buildConfig field is set.
      */
     public boolean hasBuildConfig() {
-      return ((bitField1_ & 0x00000001) != 0);
+      return ((bitField1_ & 0x00000008) != 0);
     }
 
     /**
@@ -9500,7 +11007,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       } else {
         buildConfigBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -9522,7 +11029,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       } else {
         buildConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -9540,7 +11047,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeBuildConfig(com.google.cloud.run.v2.BuildConfig value) {
       if (buildConfigBuilder_ == null) {
-        if (((bitField1_ & 0x00000001) != 0)
+        if (((bitField1_ & 0x00000008) != 0)
             && buildConfig_ != null
             && buildConfig_ != com.google.cloud.run.v2.BuildConfig.getDefaultInstance()) {
           getBuildConfigBuilder().mergeFrom(value);
@@ -9551,7 +11058,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         buildConfigBuilder_.mergeFrom(value);
       }
       if (buildConfig_ != null) {
-        bitField1_ |= 0x00000001;
+        bitField1_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -9569,7 +11076,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearBuildConfig() {
-      bitField1_ = (bitField1_ & ~0x00000001);
+      bitField1_ = (bitField1_ & ~0x00000008);
       buildConfig_ = null;
       if (buildConfigBuilder_ != null) {
         buildConfigBuilder_.dispose();
@@ -9591,7 +11098,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.run.v2.BuildConfig.Builder getBuildConfigBuilder() {
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000008;
       onChanged();
       return getBuildConfigFieldBuilder().getBuilder();
     }
@@ -9720,7 +11227,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public Builder setReconciling(boolean value) {
 
       reconciling_ = value;
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -9758,7 +11265,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReconciling() {
-      bitField1_ = (bitField1_ & ~0x00000002);
+      bitField1_ = (bitField1_ & ~0x00000010);
       reconciling_ = false;
       onChanged();
       return this;
@@ -9770,11 +11277,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A system-generated fingerprint for this version of the
+     * Optional. A system-generated fingerprint for this version of the
      * resource. May be used to detect modification conflict during updates.
      * </pre>
      *
-     * <code>string etag = 99 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string etag = 99 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The etag.
      */
@@ -9794,11 +11301,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A system-generated fingerprint for this version of the
+     * Optional. A system-generated fingerprint for this version of the
      * resource. May be used to detect modification conflict during updates.
      * </pre>
      *
-     * <code>string etag = 99 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string etag = 99 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for etag.
      */
@@ -9818,11 +11325,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A system-generated fingerprint for this version of the
+     * Optional. A system-generated fingerprint for this version of the
      * resource. May be used to detect modification conflict during updates.
      * </pre>
      *
-     * <code>string etag = 99 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string etag = 99 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The etag to set.
      * @return This builder for chaining.
@@ -9832,7 +11339,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -9841,17 +11348,17 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A system-generated fingerprint for this version of the
+     * Optional. A system-generated fingerprint for this version of the
      * resource. May be used to detect modification conflict during updates.
      * </pre>
      *
-     * <code>string etag = 99 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string etag = 99 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField1_ = (bitField1_ & ~0x00000004);
+      bitField1_ = (bitField1_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -9860,11 +11367,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A system-generated fingerprint for this version of the
+     * Optional. A system-generated fingerprint for this version of the
      * resource. May be used to detect modification conflict during updates.
      * </pre>
      *
-     * <code>string etag = 99 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string etag = 99 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for etag to set.
      * @return This builder for chaining.
@@ -9875,7 +11382,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000020;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,7 +54,9 @@ public interface AllocationSpecificSKUAllocationAllocatedInstancePropertiesReser
    *
    *
    * <pre>
-   * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+   * Specifies the disk interface to use for attaching this disk, which is
+   * either SCSI or NVME. The default isSCSI.
+   * For performance characteristics of SCSI over NVMe, seeLocal SSD performance.
    * Check the Interface enum for the list of possible values.
    * </pre>
    *
@@ -68,7 +70,9 @@ public interface AllocationSpecificSKUAllocationAllocatedInstancePropertiesReser
    *
    *
    * <pre>
-   * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+   * Specifies the disk interface to use for attaching this disk, which is
+   * either SCSI or NVME. The default isSCSI.
+   * For performance characteristics of SCSI over NVMe, seeLocal SSD performance.
    * Check the Interface enum for the list of possible values.
    * </pre>
    *
@@ -82,7 +86,9 @@ public interface AllocationSpecificSKUAllocationAllocatedInstancePropertiesReser
    *
    *
    * <pre>
-   * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+   * Specifies the disk interface to use for attaching this disk, which is
+   * either SCSI or NVME. The default isSCSI.
+   * For performance characteristics of SCSI over NVMe, seeLocal SSD performance.
    * Check the Interface enum for the list of possible values.
    * </pre>
    *

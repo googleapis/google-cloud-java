@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,7 +73,8 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
    *
    *
    * <pre>
-   * Whether this interconnect is participating in the redundant configuration.
+   * Output only. Whether this interconnect is participating in the redundant
+   * configuration.
    * </pre>
    *
    * Protobuf enum {@code
@@ -215,7 +216,7 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
    *
    *
    * <pre>
-   * Whether the Interconnect is enabled.
+   * Output only. Whether the Interconnect is enabled.
    * </pre>
    *
    * <code>optional bool admin_enabled = 445675089;</code>
@@ -231,7 +232,7 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
    *
    *
    * <pre>
-   * Whether the Interconnect is enabled.
+   * Output only. Whether the Interconnect is enabled.
    * </pre>
    *
    * <code>optional bool admin_enabled = 445675089;</code>
@@ -250,7 +251,8 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
    *
    *
    * <pre>
-   * The diagnostics of the Interconnect, as returned by the existing get-diagnostics method.
+   * Output only. The diagnostics of the Interconnect, as returned by the existing
+   * get-diagnostics method.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InterconnectDiagnostics diagnostics = 333355436;</code>
@@ -266,7 +268,8 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
    *
    *
    * <pre>
-   * The diagnostics of the Interconnect, as returned by the existing get-diagnostics method.
+   * Output only. The diagnostics of the Interconnect, as returned by the existing
+   * get-diagnostics method.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InterconnectDiagnostics diagnostics = 333355436;</code>
@@ -284,7 +287,8 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
    *
    *
    * <pre>
-   * The diagnostics of the Interconnect, as returned by the existing get-diagnostics method.
+   * Output only. The diagnostics of the Interconnect, as returned by the existing
+   * get-diagnostics method.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InterconnectDiagnostics diagnostics = 333355436;</code>
@@ -305,7 +309,7 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
    *
    *
    * <pre>
-   * The URL of the Interconnect being described.
+   * Output only. The URL of the Interconnect being described.
    * </pre>
    *
    * <code>optional string interconnect = 224601230;</code>
@@ -321,7 +325,7 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
    *
    *
    * <pre>
-   * The URL of the Interconnect being described.
+   * Output only. The URL of the Interconnect being described.
    * </pre>
    *
    * <code>optional string interconnect = 224601230;</code>
@@ -345,7 +349,7 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
    *
    *
    * <pre>
-   * The URL of the Interconnect being described.
+   * Output only. The URL of the Interconnect being described.
    * </pre>
    *
    * <code>optional string interconnect = 224601230;</code>
@@ -374,7 +378,8 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
    *
    *
    * <pre>
-   * Whether this interconnect is participating in the redundant configuration.
+   * Output only. Whether this interconnect is participating in the redundant
+   * configuration.
    * Check the IsActive enum for the list of possible values.
    * </pre>
    *
@@ -391,7 +396,8 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
    *
    *
    * <pre>
-   * Whether this interconnect is participating in the redundant configuration.
+   * Output only. Whether this interconnect is participating in the redundant
+   * configuration.
    * Check the IsActive enum for the list of possible values.
    * </pre>
    *
@@ -416,7 +422,8 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
    *
    *
    * <pre>
-   * Whether this interconnect is participating in the redundant configuration.
+   * Output only. Whether this interconnect is participating in the redundant
+   * configuration.
    * Check the IsActive enum for the list of possible values.
    * </pre>
    *
@@ -920,7 +927,7 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
      *
      *
      * <pre>
-     * Whether the Interconnect is enabled.
+     * Output only. Whether the Interconnect is enabled.
      * </pre>
      *
      * <code>optional bool admin_enabled = 445675089;</code>
@@ -936,7 +943,7 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
      *
      *
      * <pre>
-     * Whether the Interconnect is enabled.
+     * Output only. Whether the Interconnect is enabled.
      * </pre>
      *
      * <code>optional bool admin_enabled = 445675089;</code>
@@ -952,7 +959,7 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
      *
      *
      * <pre>
-     * Whether the Interconnect is enabled.
+     * Output only. Whether the Interconnect is enabled.
      * </pre>
      *
      * <code>optional bool admin_enabled = 445675089;</code>
@@ -972,7 +979,7 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
      *
      *
      * <pre>
-     * Whether the Interconnect is enabled.
+     * Output only. Whether the Interconnect is enabled.
      * </pre>
      *
      * <code>optional bool admin_enabled = 445675089;</code>
@@ -997,7 +1004,8 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
      *
      *
      * <pre>
-     * The diagnostics of the Interconnect, as returned by the existing get-diagnostics method.
+     * Output only. The diagnostics of the Interconnect, as returned by the existing
+     * get-diagnostics method.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectDiagnostics diagnostics = 333355436;
@@ -1013,7 +1021,8 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
      *
      *
      * <pre>
-     * The diagnostics of the Interconnect, as returned by the existing get-diagnostics method.
+     * Output only. The diagnostics of the Interconnect, as returned by the existing
+     * get-diagnostics method.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectDiagnostics diagnostics = 333355436;
@@ -1035,7 +1044,8 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
      *
      *
      * <pre>
-     * The diagnostics of the Interconnect, as returned by the existing get-diagnostics method.
+     * Output only. The diagnostics of the Interconnect, as returned by the existing
+     * get-diagnostics method.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectDiagnostics diagnostics = 333355436;
@@ -1059,7 +1069,8 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
      *
      *
      * <pre>
-     * The diagnostics of the Interconnect, as returned by the existing get-diagnostics method.
+     * Output only. The diagnostics of the Interconnect, as returned by the existing
+     * get-diagnostics method.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectDiagnostics diagnostics = 333355436;
@@ -1081,7 +1092,8 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
      *
      *
      * <pre>
-     * The diagnostics of the Interconnect, as returned by the existing get-diagnostics method.
+     * Output only. The diagnostics of the Interconnect, as returned by the existing
+     * get-diagnostics method.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectDiagnostics diagnostics = 333355436;
@@ -1111,7 +1123,8 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
      *
      *
      * <pre>
-     * The diagnostics of the Interconnect, as returned by the existing get-diagnostics method.
+     * Output only. The diagnostics of the Interconnect, as returned by the existing
+     * get-diagnostics method.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectDiagnostics diagnostics = 333355436;
@@ -1132,7 +1145,8 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
      *
      *
      * <pre>
-     * The diagnostics of the Interconnect, as returned by the existing get-diagnostics method.
+     * Output only. The diagnostics of the Interconnect, as returned by the existing
+     * get-diagnostics method.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectDiagnostics diagnostics = 333355436;
@@ -1148,7 +1162,8 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
      *
      *
      * <pre>
-     * The diagnostics of the Interconnect, as returned by the existing get-diagnostics method.
+     * Output only. The diagnostics of the Interconnect, as returned by the existing
+     * get-diagnostics method.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectDiagnostics diagnostics = 333355436;
@@ -1168,7 +1183,8 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
      *
      *
      * <pre>
-     * The diagnostics of the Interconnect, as returned by the existing get-diagnostics method.
+     * Output only. The diagnostics of the Interconnect, as returned by the existing
+     * get-diagnostics method.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectDiagnostics diagnostics = 333355436;
@@ -1197,7 +1213,7 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
      *
      *
      * <pre>
-     * The URL of the Interconnect being described.
+     * Output only. The URL of the Interconnect being described.
      * </pre>
      *
      * <code>optional string interconnect = 224601230;</code>
@@ -1212,7 +1228,7 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
      *
      *
      * <pre>
-     * The URL of the Interconnect being described.
+     * Output only. The URL of the Interconnect being described.
      * </pre>
      *
      * <code>optional string interconnect = 224601230;</code>
@@ -1235,7 +1251,7 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
      *
      *
      * <pre>
-     * The URL of the Interconnect being described.
+     * Output only. The URL of the Interconnect being described.
      * </pre>
      *
      * <code>optional string interconnect = 224601230;</code>
@@ -1258,7 +1274,7 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
      *
      *
      * <pre>
-     * The URL of the Interconnect being described.
+     * Output only. The URL of the Interconnect being described.
      * </pre>
      *
      * <code>optional string interconnect = 224601230;</code>
@@ -1280,7 +1296,7 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
      *
      *
      * <pre>
-     * The URL of the Interconnect being described.
+     * Output only. The URL of the Interconnect being described.
      * </pre>
      *
      * <code>optional string interconnect = 224601230;</code>
@@ -1298,7 +1314,7 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
      *
      *
      * <pre>
-     * The URL of the Interconnect being described.
+     * Output only. The URL of the Interconnect being described.
      * </pre>
      *
      * <code>optional string interconnect = 224601230;</code>
@@ -1323,7 +1339,8 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
      *
      *
      * <pre>
-     * Whether this interconnect is participating in the redundant configuration.
+     * Output only. Whether this interconnect is participating in the redundant
+     * configuration.
      * Check the IsActive enum for the list of possible values.
      * </pre>
      *
@@ -1339,7 +1356,8 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
      *
      *
      * <pre>
-     * Whether this interconnect is participating in the redundant configuration.
+     * Output only. Whether this interconnect is participating in the redundant
+     * configuration.
      * Check the IsActive enum for the list of possible values.
      * </pre>
      *
@@ -1363,7 +1381,8 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
      *
      *
      * <pre>
-     * Whether this interconnect is participating in the redundant configuration.
+     * Output only. Whether this interconnect is participating in the redundant
+     * configuration.
      * Check the IsActive enum for the list of possible values.
      * </pre>
      *
@@ -1387,7 +1406,8 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
      *
      *
      * <pre>
-     * Whether this interconnect is participating in the redundant configuration.
+     * Output only. Whether this interconnect is participating in the redundant
+     * configuration.
      * Check the IsActive enum for the list of possible values.
      * </pre>
      *
@@ -1410,7 +1430,8 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
      *
      *
      * <pre>
-     * Whether this interconnect is participating in the redundant configuration.
+     * Output only. Whether this interconnect is participating in the redundant
+     * configuration.
      * Check the IsActive enum for the list of possible values.
      * </pre>
      *
@@ -1429,7 +1450,8 @@ public final class InterconnectGroupsOperationalStatusInterconnectStatus
      *
      *
      * <pre>
-     * Whether this interconnect is participating in the redundant configuration.
+     * Output only. Whether this interconnect is participating in the redundant
+     * configuration.
      * Check the IsActive enum for the list of possible values.
      * </pre>
      *

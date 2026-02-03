@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ public interface InstanceGroupManagerStatusStatefulPerInstanceConfigsOrBuilder
    *
    *
    * <pre>
-   * A bit indicating if all of the group's per-instance configurations (listed in the output of a listPerInstanceConfigs API call) have status EFFECTIVE or there are no per-instance-configs.
+   * Output only. A bit indicating if all of the group's per-instance configurations
+   * (listed in the output of a listPerInstanceConfigs API call) have
+   * status EFFECTIVE or there are no per-instance-configs.
    * </pre>
    *
    * <code>optional bool all_effective = 516540553;</code>
@@ -41,7 +43,9 @@ public interface InstanceGroupManagerStatusStatefulPerInstanceConfigsOrBuilder
    *
    *
    * <pre>
-   * A bit indicating if all of the group's per-instance configurations (listed in the output of a listPerInstanceConfigs API call) have status EFFECTIVE or there are no per-instance-configs.
+   * Output only. A bit indicating if all of the group's per-instance configurations
+   * (listed in the output of a listPerInstanceConfigs API call) have
+   * status EFFECTIVE or there are no per-instance-configs.
    * </pre>
    *
    * <code>optional bool all_effective = 516540553;</code>

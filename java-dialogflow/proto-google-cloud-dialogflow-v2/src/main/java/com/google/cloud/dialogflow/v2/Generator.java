@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     description_ = "";
     triggerEvent_ = 0;
+    tools_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -77,6 +78,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     FREE_FORM_CONTEXT(11),
+    AGENT_COACHING_CONTEXT(12),
     SUMMARIZATION_CONTEXT(13),
     CONTEXT_NOT_SET(0);
     private final int value;
@@ -99,6 +101,8 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 11:
           return FREE_FORM_CONTEXT;
+        case 12:
+          return AGENT_COACHING_CONTEXT;
         case 13:
           return SUMMARIZATION_CONTEXT;
         case 0:
@@ -328,6 +332,61 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.dialogflow.v2.FreeFormContext) context_;
     }
     return com.google.cloud.dialogflow.v2.FreeFormContext.getDefaultInstance();
+  }
+
+  public static final int AGENT_COACHING_CONTEXT_FIELD_NUMBER = 12;
+
+  /**
+   *
+   *
+   * <pre>
+   * Input of prebuilt Agent Coaching feature.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.AgentCoachingContext agent_coaching_context = 12;</code>
+   *
+   * @return Whether the agentCoachingContext field is set.
+   */
+  @java.lang.Override
+  public boolean hasAgentCoachingContext() {
+    return contextCase_ == 12;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input of prebuilt Agent Coaching feature.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.AgentCoachingContext agent_coaching_context = 12;</code>
+   *
+   * @return The agentCoachingContext.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.AgentCoachingContext getAgentCoachingContext() {
+    if (contextCase_ == 12) {
+      return (com.google.cloud.dialogflow.v2.AgentCoachingContext) context_;
+    }
+    return com.google.cloud.dialogflow.v2.AgentCoachingContext.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input of prebuilt Agent Coaching feature.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.AgentCoachingContext agent_coaching_context = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.AgentCoachingContextOrBuilder
+      getAgentCoachingContextOrBuilder() {
+    if (contextCase_ == 12) {
+      return (com.google.cloud.dialogflow.v2.AgentCoachingContext) context_;
+    }
+    return com.google.cloud.dialogflow.v2.AgentCoachingContext.getDefaultInstance();
   }
 
   public static final int SUMMARIZATION_CONTEXT_FIELD_NUMBER = 13;
@@ -677,6 +736,149 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
+  public static final int TOOLS_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList tools_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource names of the tools that the generator can choose from.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/tools/&lt;tool ID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * repeated string tools = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the tools.
+   */
+  public com.google.protobuf.ProtocolStringList getToolsList() {
+    return tools_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource names of the tools that the generator can choose from.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/tools/&lt;tool ID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * repeated string tools = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of tools.
+   */
+  public int getToolsCount() {
+    return tools_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource names of the tools that the generator can choose from.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/tools/&lt;tool ID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * repeated string tools = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The tools at the given index.
+   */
+  public java.lang.String getTools(int index) {
+    return tools_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource names of the tools that the generator can choose from.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/tools/&lt;tool ID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * repeated string tools = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the tools at the given index.
+   */
+  public com.google.protobuf.ByteString getToolsBytes(int index) {
+    return tools_.getByteString(index);
+  }
+
+  public static final int SUGGESTION_DEDUPING_CONFIG_FIELD_NUMBER = 23;
+  private com.google.cloud.dialogflow.v2.SuggestionDedupingConfig suggestionDedupingConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for suggestion deduping. This is only applicable to
+   * AI Coach feature.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SuggestionDedupingConfig suggestion_deduping_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the suggestionDedupingConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasSuggestionDedupingConfig() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for suggestion deduping. This is only applicable to
+   * AI Coach feature.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SuggestionDedupingConfig suggestion_deduping_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The suggestionDedupingConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.SuggestionDedupingConfig getSuggestionDedupingConfig() {
+    return suggestionDedupingConfig_ == null
+        ? com.google.cloud.dialogflow.v2.SuggestionDedupingConfig.getDefaultInstance()
+        : suggestionDedupingConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for suggestion deduping. This is only applicable to
+   * AI Coach feature.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SuggestionDedupingConfig suggestion_deduping_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.SuggestionDedupingConfigOrBuilder
+      getSuggestionDedupingConfigOrBuilder() {
+    return suggestionDedupingConfig_ == null
+        ? com.google.cloud.dialogflow.v2.SuggestionDedupingConfig.getDefaultInstance()
+        : suggestionDedupingConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -713,11 +915,20 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     if (contextCase_ == 11) {
       output.writeMessage(11, (com.google.cloud.dialogflow.v2.FreeFormContext) context_);
     }
+    if (contextCase_ == 12) {
+      output.writeMessage(12, (com.google.cloud.dialogflow.v2.AgentCoachingContext) context_);
+    }
     if (contextCase_ == 13) {
       output.writeMessage(13, (com.google.cloud.dialogflow.v2.SummarizationContext) context_);
     }
+    for (int i = 0; i < tools_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, tools_.getRaw(i));
+    }
     if (foundationModelCase_ == 15) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, foundationModel_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(23, getSuggestionDedupingConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -752,13 +963,31 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               11, (com.google.cloud.dialogflow.v2.FreeFormContext) context_);
     }
+    if (contextCase_ == 12) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12, (com.google.cloud.dialogflow.v2.AgentCoachingContext) context_);
+    }
     if (contextCase_ == 13) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               13, (com.google.cloud.dialogflow.v2.SummarizationContext) context_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < tools_.size(); i++) {
+        dataSize += computeStringSizeNoTag(tools_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getToolsList().size();
+    }
     if (foundationModelCase_ == 15) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, foundationModel_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              23, getSuggestionDedupingConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -790,10 +1019,18 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
+    if (!getToolsList().equals(other.getToolsList())) return false;
+    if (hasSuggestionDedupingConfig() != other.hasSuggestionDedupingConfig()) return false;
+    if (hasSuggestionDedupingConfig()) {
+      if (!getSuggestionDedupingConfig().equals(other.getSuggestionDedupingConfig())) return false;
+    }
     if (!getContextCase().equals(other.getContextCase())) return false;
     switch (contextCase_) {
       case 11:
         if (!getFreeFormContext().equals(other.getFreeFormContext())) return false;
+        break;
+      case 12:
+        if (!getAgentCoachingContext().equals(other.getAgentCoachingContext())) return false;
         break;
       case 13:
         if (!getSummarizationContext().equals(other.getSummarizationContext())) return false;
@@ -838,10 +1075,22 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
     }
+    if (getToolsCount() > 0) {
+      hash = (37 * hash) + TOOLS_FIELD_NUMBER;
+      hash = (53 * hash) + getToolsList().hashCode();
+    }
+    if (hasSuggestionDedupingConfig()) {
+      hash = (37 * hash) + SUGGESTION_DEDUPING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getSuggestionDedupingConfig().hashCode();
+    }
     switch (contextCase_) {
       case 11:
         hash = (37 * hash) + FREE_FORM_CONTEXT_FIELD_NUMBER;
         hash = (53 * hash) + getFreeFormContext().hashCode();
+        break;
+      case 12:
+        hash = (37 * hash) + AGENT_COACHING_CONTEXT_FIELD_NUMBER;
+        hash = (53 * hash) + getAgentCoachingContext().hashCode();
         break;
       case 13:
         hash = (37 * hash) + SUMMARIZATION_CONTEXT_FIELD_NUMBER;
@@ -1002,6 +1251,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
         getInferenceParameterFieldBuilder();
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
+        getSuggestionDedupingConfigFieldBuilder();
       }
     }
 
@@ -1013,6 +1263,9 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       description_ = "";
       if (freeFormContextBuilder_ != null) {
         freeFormContextBuilder_.clear();
+      }
+      if (agentCoachingContextBuilder_ != null) {
+        agentCoachingContextBuilder_.clear();
       }
       if (summarizationContextBuilder_ != null) {
         summarizationContextBuilder_.clear();
@@ -1032,6 +1285,12 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
+      }
+      tools_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      suggestionDedupingConfig_ = null;
+      if (suggestionDedupingConfigBuilder_ != null) {
+        suggestionDedupingConfigBuilder_.dispose();
+        suggestionDedupingConfigBuilder_ = null;
       }
       contextCase_ = 0;
       context_ = null;
@@ -1081,23 +1340,34 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
         result.description_ = description_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.inferenceParameter_ =
             inferenceParameterBuilder_ == null
                 ? inferenceParameter_
                 : inferenceParameterBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.triggerEvent_ = triggerEvent_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        tools_.makeImmutable();
+        result.tools_ = tools_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.suggestionDedupingConfig_ =
+            suggestionDedupingConfigBuilder_ == null
+                ? suggestionDedupingConfig_
+                : suggestionDedupingConfigBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1107,6 +1377,9 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       result.context_ = this.context_;
       if (contextCase_ == 11 && freeFormContextBuilder_ != null) {
         result.context_ = freeFormContextBuilder_.build();
+      }
+      if (contextCase_ == 12 && agentCoachingContextBuilder_ != null) {
+        result.context_ = agentCoachingContextBuilder_.build();
       }
       if (contextCase_ == 13 && summarizationContextBuilder_ != null) {
         result.context_ = summarizationContextBuilder_.build();
@@ -1182,10 +1455,28 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
       }
+      if (!other.tools_.isEmpty()) {
+        if (tools_.isEmpty()) {
+          tools_ = other.tools_;
+          bitField0_ |= 0x00000400;
+        } else {
+          ensureToolsIsMutable();
+          tools_.addAll(other.tools_);
+        }
+        onChanged();
+      }
+      if (other.hasSuggestionDedupingConfig()) {
+        mergeSuggestionDedupingConfig(other.getSuggestionDedupingConfig());
+      }
       switch (other.getContextCase()) {
         case FREE_FORM_CONTEXT:
           {
             mergeFreeFormContext(other.getFreeFormContext());
+            break;
+          }
+        case AGENT_COACHING_CONTEXT:
+          {
+            mergeAgentCoachingContext(other.getAgentCoachingContext());
             break;
           }
         case SUMMARIZATION_CONTEXT:
@@ -1253,25 +1544,25 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getInferenceParameterFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
             case 40:
               {
                 triggerEvent_ = input.readEnum();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 40
             case 66:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 74
             case 90:
@@ -1280,6 +1571,13 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
                 contextCase_ = 11;
                 break;
               } // case 90
+            case 98:
+              {
+                input.readMessage(
+                    getAgentCoachingContextFieldBuilder().getBuilder(), extensionRegistry);
+                contextCase_ = 12;
+                break;
+              } // case 98
             case 106:
               {
                 input.readMessage(
@@ -1287,6 +1585,13 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
                 contextCase_ = 13;
                 break;
               } // case 106
+            case 114:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureToolsIsMutable();
+                tools_.add(s);
+                break;
+              } // case 114
             case 122:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -1294,6 +1599,13 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
                 foundationModel_ = s;
                 break;
               } // case 122
+            case 186:
+              {
+                input.readMessage(
+                    getSuggestionDedupingConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 186
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1797,6 +2109,229 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.AgentCoachingContext,
+            com.google.cloud.dialogflow.v2.AgentCoachingContext.Builder,
+            com.google.cloud.dialogflow.v2.AgentCoachingContextOrBuilder>
+        agentCoachingContextBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Input of prebuilt Agent Coaching feature.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.AgentCoachingContext agent_coaching_context = 12;</code>
+     *
+     * @return Whether the agentCoachingContext field is set.
+     */
+    @java.lang.Override
+    public boolean hasAgentCoachingContext() {
+      return contextCase_ == 12;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input of prebuilt Agent Coaching feature.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.AgentCoachingContext agent_coaching_context = 12;</code>
+     *
+     * @return The agentCoachingContext.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.AgentCoachingContext getAgentCoachingContext() {
+      if (agentCoachingContextBuilder_ == null) {
+        if (contextCase_ == 12) {
+          return (com.google.cloud.dialogflow.v2.AgentCoachingContext) context_;
+        }
+        return com.google.cloud.dialogflow.v2.AgentCoachingContext.getDefaultInstance();
+      } else {
+        if (contextCase_ == 12) {
+          return agentCoachingContextBuilder_.getMessage();
+        }
+        return com.google.cloud.dialogflow.v2.AgentCoachingContext.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input of prebuilt Agent Coaching feature.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.AgentCoachingContext agent_coaching_context = 12;</code>
+     */
+    public Builder setAgentCoachingContext(
+        com.google.cloud.dialogflow.v2.AgentCoachingContext value) {
+      if (agentCoachingContextBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        context_ = value;
+        onChanged();
+      } else {
+        agentCoachingContextBuilder_.setMessage(value);
+      }
+      contextCase_ = 12;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input of prebuilt Agent Coaching feature.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.AgentCoachingContext agent_coaching_context = 12;</code>
+     */
+    public Builder setAgentCoachingContext(
+        com.google.cloud.dialogflow.v2.AgentCoachingContext.Builder builderForValue) {
+      if (agentCoachingContextBuilder_ == null) {
+        context_ = builderForValue.build();
+        onChanged();
+      } else {
+        agentCoachingContextBuilder_.setMessage(builderForValue.build());
+      }
+      contextCase_ = 12;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input of prebuilt Agent Coaching feature.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.AgentCoachingContext agent_coaching_context = 12;</code>
+     */
+    public Builder mergeAgentCoachingContext(
+        com.google.cloud.dialogflow.v2.AgentCoachingContext value) {
+      if (agentCoachingContextBuilder_ == null) {
+        if (contextCase_ == 12
+            && context_
+                != com.google.cloud.dialogflow.v2.AgentCoachingContext.getDefaultInstance()) {
+          context_ =
+              com.google.cloud.dialogflow.v2.AgentCoachingContext.newBuilder(
+                      (com.google.cloud.dialogflow.v2.AgentCoachingContext) context_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          context_ = value;
+        }
+        onChanged();
+      } else {
+        if (contextCase_ == 12) {
+          agentCoachingContextBuilder_.mergeFrom(value);
+        } else {
+          agentCoachingContextBuilder_.setMessage(value);
+        }
+      }
+      contextCase_ = 12;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input of prebuilt Agent Coaching feature.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.AgentCoachingContext agent_coaching_context = 12;</code>
+     */
+    public Builder clearAgentCoachingContext() {
+      if (agentCoachingContextBuilder_ == null) {
+        if (contextCase_ == 12) {
+          contextCase_ = 0;
+          context_ = null;
+          onChanged();
+        }
+      } else {
+        if (contextCase_ == 12) {
+          contextCase_ = 0;
+          context_ = null;
+        }
+        agentCoachingContextBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input of prebuilt Agent Coaching feature.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.AgentCoachingContext agent_coaching_context = 12;</code>
+     */
+    public com.google.cloud.dialogflow.v2.AgentCoachingContext.Builder
+        getAgentCoachingContextBuilder() {
+      return getAgentCoachingContextFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input of prebuilt Agent Coaching feature.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.AgentCoachingContext agent_coaching_context = 12;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.AgentCoachingContextOrBuilder
+        getAgentCoachingContextOrBuilder() {
+      if ((contextCase_ == 12) && (agentCoachingContextBuilder_ != null)) {
+        return agentCoachingContextBuilder_.getMessageOrBuilder();
+      } else {
+        if (contextCase_ == 12) {
+          return (com.google.cloud.dialogflow.v2.AgentCoachingContext) context_;
+        }
+        return com.google.cloud.dialogflow.v2.AgentCoachingContext.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input of prebuilt Agent Coaching feature.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.AgentCoachingContext agent_coaching_context = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.AgentCoachingContext,
+            com.google.cloud.dialogflow.v2.AgentCoachingContext.Builder,
+            com.google.cloud.dialogflow.v2.AgentCoachingContextOrBuilder>
+        getAgentCoachingContextFieldBuilder() {
+      if (agentCoachingContextBuilder_ == null) {
+        if (!(contextCase_ == 12)) {
+          context_ = com.google.cloud.dialogflow.v2.AgentCoachingContext.getDefaultInstance();
+        }
+        agentCoachingContextBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2.AgentCoachingContext,
+                com.google.cloud.dialogflow.v2.AgentCoachingContext.Builder,
+                com.google.cloud.dialogflow.v2.AgentCoachingContextOrBuilder>(
+                (com.google.cloud.dialogflow.v2.AgentCoachingContext) context_,
+                getParentForChildren(),
+                isClean());
+        context_ = null;
+      }
+      contextCase_ = 12;
+      onChanged();
+      return agentCoachingContextBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2.SummarizationContext,
             com.google.cloud.dialogflow.v2.SummarizationContext.Builder,
             com.google.cloud.dialogflow.v2.SummarizationContextOrBuilder>
@@ -2040,7 +2575,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the inferenceParameter field is set.
      */
     public boolean hasInferenceParameter() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -2086,7 +2621,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       } else {
         inferenceParameterBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2109,7 +2644,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       } else {
         inferenceParameterBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2128,7 +2663,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeInferenceParameter(
         com.google.cloud.dialogflow.v2.InferenceParameter value) {
       if (inferenceParameterBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && inferenceParameter_ != null
             && inferenceParameter_
                 != com.google.cloud.dialogflow.v2.InferenceParameter.getDefaultInstance()) {
@@ -2140,7 +2675,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
         inferenceParameterBuilder_.mergeFrom(value);
       }
       if (inferenceParameter_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -2158,7 +2693,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearInferenceParameter() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       inferenceParameter_ = null;
       if (inferenceParameterBuilder_ != null) {
         inferenceParameterBuilder_.dispose();
@@ -2181,7 +2716,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.v2.InferenceParameter.Builder
         getInferenceParameterBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getInferenceParameterFieldBuilder().getBuilder();
     }
@@ -2274,7 +2809,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setTriggerEventValue(int value) {
       triggerEvent_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2319,7 +2854,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       triggerEvent_ = value.getNumber();
       onChanged();
       return this;
@@ -2340,7 +2875,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTriggerEvent() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       triggerEvent_ = 0;
       onChanged();
       return this;
@@ -2530,7 +3065,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -2576,7 +3111,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2598,7 +3133,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2616,7 +3151,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -2627,7 +3162,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -2645,7 +3180,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -2667,7 +3202,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2742,7 +3277,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -2788,7 +3323,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2810,7 +3345,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2828,7 +3363,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -2839,7 +3374,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -2857,7 +3392,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -2879,7 +3414,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -2931,6 +3466,443 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
         updateTime_ = null;
       }
       return updateTimeBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList tools_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureToolsIsMutable() {
+      if (!tools_.isModifiable()) {
+        tools_ = new com.google.protobuf.LazyStringArrayList(tools_);
+      }
+      bitField0_ |= 0x00000400;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource names of the tools that the generator can choose from.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/tools/&lt;tool ID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * repeated string tools = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the tools.
+     */
+    public com.google.protobuf.ProtocolStringList getToolsList() {
+      tools_.makeImmutable();
+      return tools_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource names of the tools that the generator can choose from.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/tools/&lt;tool ID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * repeated string tools = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of tools.
+     */
+    public int getToolsCount() {
+      return tools_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource names of the tools that the generator can choose from.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/tools/&lt;tool ID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * repeated string tools = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The tools at the given index.
+     */
+    public java.lang.String getTools(int index) {
+      return tools_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource names of the tools that the generator can choose from.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/tools/&lt;tool ID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * repeated string tools = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the tools at the given index.
+     */
+    public com.google.protobuf.ByteString getToolsBytes(int index) {
+      return tools_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource names of the tools that the generator can choose from.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/tools/&lt;tool ID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * repeated string tools = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The tools to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTools(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureToolsIsMutable();
+      tools_.set(index, value);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource names of the tools that the generator can choose from.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/tools/&lt;tool ID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * repeated string tools = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The tools to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTools(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureToolsIsMutable();
+      tools_.add(value);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource names of the tools that the generator can choose from.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/tools/&lt;tool ID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * repeated string tools = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param values The tools to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllTools(java.lang.Iterable<java.lang.String> values) {
+      ensureToolsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tools_);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource names of the tools that the generator can choose from.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/tools/&lt;tool ID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * repeated string tools = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTools() {
+      tools_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource names of the tools that the generator can choose from.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/tools/&lt;tool ID&gt;`.
+     * </pre>
+     *
+     * <code>
+     * repeated string tools = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes of the tools to add.
+     * @return This builder for chaining.
+     */
+    public Builder addToolsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureToolsIsMutable();
+      tools_.add(value);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.dialogflow.v2.SuggestionDedupingConfig suggestionDedupingConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.SuggestionDedupingConfig,
+            com.google.cloud.dialogflow.v2.SuggestionDedupingConfig.Builder,
+            com.google.cloud.dialogflow.v2.SuggestionDedupingConfigOrBuilder>
+        suggestionDedupingConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for suggestion deduping. This is only applicable to
+     * AI Coach feature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SuggestionDedupingConfig suggestion_deduping_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the suggestionDedupingConfig field is set.
+     */
+    public boolean hasSuggestionDedupingConfig() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for suggestion deduping. This is only applicable to
+     * AI Coach feature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SuggestionDedupingConfig suggestion_deduping_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The suggestionDedupingConfig.
+     */
+    public com.google.cloud.dialogflow.v2.SuggestionDedupingConfig getSuggestionDedupingConfig() {
+      if (suggestionDedupingConfigBuilder_ == null) {
+        return suggestionDedupingConfig_ == null
+            ? com.google.cloud.dialogflow.v2.SuggestionDedupingConfig.getDefaultInstance()
+            : suggestionDedupingConfig_;
+      } else {
+        return suggestionDedupingConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for suggestion deduping. This is only applicable to
+     * AI Coach feature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SuggestionDedupingConfig suggestion_deduping_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSuggestionDedupingConfig(
+        com.google.cloud.dialogflow.v2.SuggestionDedupingConfig value) {
+      if (suggestionDedupingConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        suggestionDedupingConfig_ = value;
+      } else {
+        suggestionDedupingConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for suggestion deduping. This is only applicable to
+     * AI Coach feature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SuggestionDedupingConfig suggestion_deduping_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSuggestionDedupingConfig(
+        com.google.cloud.dialogflow.v2.SuggestionDedupingConfig.Builder builderForValue) {
+      if (suggestionDedupingConfigBuilder_ == null) {
+        suggestionDedupingConfig_ = builderForValue.build();
+      } else {
+        suggestionDedupingConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for suggestion deduping. This is only applicable to
+     * AI Coach feature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SuggestionDedupingConfig suggestion_deduping_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSuggestionDedupingConfig(
+        com.google.cloud.dialogflow.v2.SuggestionDedupingConfig value) {
+      if (suggestionDedupingConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)
+            && suggestionDedupingConfig_ != null
+            && suggestionDedupingConfig_
+                != com.google.cloud.dialogflow.v2.SuggestionDedupingConfig.getDefaultInstance()) {
+          getSuggestionDedupingConfigBuilder().mergeFrom(value);
+        } else {
+          suggestionDedupingConfig_ = value;
+        }
+      } else {
+        suggestionDedupingConfigBuilder_.mergeFrom(value);
+      }
+      if (suggestionDedupingConfig_ != null) {
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for suggestion deduping. This is only applicable to
+     * AI Coach feature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SuggestionDedupingConfig suggestion_deduping_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSuggestionDedupingConfig() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      suggestionDedupingConfig_ = null;
+      if (suggestionDedupingConfigBuilder_ != null) {
+        suggestionDedupingConfigBuilder_.dispose();
+        suggestionDedupingConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for suggestion deduping. This is only applicable to
+     * AI Coach feature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SuggestionDedupingConfig suggestion_deduping_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.SuggestionDedupingConfig.Builder
+        getSuggestionDedupingConfigBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return getSuggestionDedupingConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for suggestion deduping. This is only applicable to
+     * AI Coach feature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SuggestionDedupingConfig suggestion_deduping_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.SuggestionDedupingConfigOrBuilder
+        getSuggestionDedupingConfigOrBuilder() {
+      if (suggestionDedupingConfigBuilder_ != null) {
+        return suggestionDedupingConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return suggestionDedupingConfig_ == null
+            ? com.google.cloud.dialogflow.v2.SuggestionDedupingConfig.getDefaultInstance()
+            : suggestionDedupingConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for suggestion deduping. This is only applicable to
+     * AI Coach feature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SuggestionDedupingConfig suggestion_deduping_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.SuggestionDedupingConfig,
+            com.google.cloud.dialogflow.v2.SuggestionDedupingConfig.Builder,
+            com.google.cloud.dialogflow.v2.SuggestionDedupingConfigOrBuilder>
+        getSuggestionDedupingConfigFieldBuilder() {
+      if (suggestionDedupingConfigBuilder_ == null) {
+        suggestionDedupingConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2.SuggestionDedupingConfig,
+                com.google.cloud.dialogflow.v2.SuggestionDedupingConfig.Builder,
+                com.google.cloud.dialogflow.v2.SuggestionDedupingConfigOrBuilder>(
+                getSuggestionDedupingConfig(), getParentForChildren(), isClean());
+        suggestionDedupingConfig_ = null;
+      }
+      return suggestionDedupingConfigBuilder_;
     }
 
     @java.lang.Override

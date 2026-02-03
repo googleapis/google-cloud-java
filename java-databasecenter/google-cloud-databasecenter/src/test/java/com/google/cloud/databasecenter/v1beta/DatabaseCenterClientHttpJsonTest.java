@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,8 @@
 
 package com.google.cloud.databasecenter.v1beta;
 
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.AggregateFleetPagedResponse;
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryDatabaseResourceGroupsPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryProductsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -29,7 +31,9 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.cloud.databasecenter.v1beta.stub.HttpJsonDatabaseCenterStub;
 import com.google.common.collect.Lists;
+import com.google.type.Date;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import javax.annotation.Generated;
@@ -129,6 +133,143 @@ public class DatabaseCenterClientHttpJsonTest {
               .setPageToken("pageToken873572522")
               .build();
       client.queryProducts(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void aggregateFleetTest() throws Exception {
+    AggregateFleetRow responsesElement = AggregateFleetRow.newBuilder().build();
+    AggregateFleetResponse expectedResponse =
+        AggregateFleetResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRows(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AggregateFleetRequest request =
+        AggregateFleetRequest.newBuilder()
+            .setParent("parent-995424086")
+            .setFilter("filter-1274492040")
+            .setGroupBy("groupBy293428022")
+            .setOrderBy("orderBy-1207110587")
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .setBaselineDate(Date.newBuilder().build())
+            .build();
+
+    AggregateFleetPagedResponse pagedListResponse = client.aggregateFleet(request);
+
+    List<AggregateFleetRow> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRowsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void aggregateFleetExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AggregateFleetRequest request =
+          AggregateFleetRequest.newBuilder()
+              .setParent("parent-995424086")
+              .setFilter("filter-1274492040")
+              .setGroupBy("groupBy293428022")
+              .setOrderBy("orderBy-1207110587")
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .setBaselineDate(Date.newBuilder().build())
+              .build();
+      client.aggregateFleet(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void queryDatabaseResourceGroupsTest() throws Exception {
+    DatabaseResourceGroup responsesElement = DatabaseResourceGroup.newBuilder().build();
+    QueryDatabaseResourceGroupsResponse expectedResponse =
+        QueryDatabaseResourceGroupsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllResourceGroups(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    QueryDatabaseResourceGroupsRequest request =
+        QueryDatabaseResourceGroupsRequest.newBuilder()
+            .setParent("parent-995424086")
+            .setFilter("filter-1274492040")
+            .addAllSignalTypeGroups(new ArrayList<SignalTypeGroup>())
+            .addAllSignalFilters(new ArrayList<SignalFilter>())
+            .setOrderBy("orderBy-1207110587")
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+
+    QueryDatabaseResourceGroupsPagedResponse pagedListResponse =
+        client.queryDatabaseResourceGroups(request);
+
+    List<DatabaseResourceGroup> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResourceGroupsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void queryDatabaseResourceGroupsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      QueryDatabaseResourceGroupsRequest request =
+          QueryDatabaseResourceGroupsRequest.newBuilder()
+              .setParent("parent-995424086")
+              .setFilter("filter-1274492040")
+              .addAllSignalTypeGroups(new ArrayList<SignalTypeGroup>())
+              .addAllSignalFilters(new ArrayList<SignalFilter>())
+              .setOrderBy("orderBy-1207110587")
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      client.queryDatabaseResourceGroups(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

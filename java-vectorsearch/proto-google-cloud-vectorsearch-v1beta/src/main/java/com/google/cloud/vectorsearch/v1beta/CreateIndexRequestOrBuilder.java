@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,9 +62,11 @@ public interface CreateIndexRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Id of the requesting object
-   * If auto-generating Id server-side, remove this field and
-   * index_id from the method_signature of Create RPC
+   * Required. ID of the Index to create.
+   * The id must be 1-63 characters long, and comply with
+   * &lt;a href="https://www.ietf.org/rfc/rfc1035.txt" target="_blank"&gt;RFC1035&lt;/a&gt;.
+   * Specifically, it must be 1-63 characters long and match the regular
+   * expression `[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?`.
    * </pre>
    *
    * <code>string index_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -77,9 +79,11 @@ public interface CreateIndexRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Id of the requesting object
-   * If auto-generating Id server-side, remove this field and
-   * index_id from the method_signature of Create RPC
+   * Required. ID of the Index to create.
+   * The id must be 1-63 characters long, and comply with
+   * &lt;a href="https://www.ietf.org/rfc/rfc1035.txt" target="_blank"&gt;RFC1035&lt;/a&gt;.
+   * Specifically, it must be 1-63 characters long and match the regular
+   * expression `[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?`.
    * </pre>
    *
    * <code>string index_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>

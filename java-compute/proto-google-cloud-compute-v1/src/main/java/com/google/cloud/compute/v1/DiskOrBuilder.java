@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,18 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * The access mode of the disk. - READ_WRITE_SINGLE: The default AccessMode, means the disk can be attached to single instance in RW mode. - READ_WRITE_MANY: The AccessMode means the disk can be attached to multiple instances in RW mode. - READ_ONLY_MANY: The AccessMode means the disk can be attached to multiple instances in RO mode. The AccessMode is only valid for Hyperdisk disk types.
+   * The access mode of the disk.
+   *
+   *
+   *      - READ_WRITE_SINGLE: The default AccessMode, means the
+   *      disk can be attached to single instance in RW mode.
+   *      - READ_WRITE_MANY: The AccessMode means the disk can be
+   *      attached to multiple instances in RW mode.
+   *      - READ_ONLY_MANY: The AccessMode means the disk can be
+   *      attached to multiple instances in RO mode.
+   *
+   *
+   * The AccessMode is only valid for Hyperdisk disk types.
    * Check the AccessMode enum for the list of possible values.
    * </pre>
    *
@@ -42,7 +53,18 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * The access mode of the disk. - READ_WRITE_SINGLE: The default AccessMode, means the disk can be attached to single instance in RW mode. - READ_WRITE_MANY: The AccessMode means the disk can be attached to multiple instances in RW mode. - READ_ONLY_MANY: The AccessMode means the disk can be attached to multiple instances in RO mode. The AccessMode is only valid for Hyperdisk disk types.
+   * The access mode of the disk.
+   *
+   *
+   *      - READ_WRITE_SINGLE: The default AccessMode, means the
+   *      disk can be attached to single instance in RW mode.
+   *      - READ_WRITE_MANY: The AccessMode means the disk can be
+   *      attached to multiple instances in RW mode.
+   *      - READ_ONLY_MANY: The AccessMode means the disk can be
+   *      attached to multiple instances in RO mode.
+   *
+   *
+   * The AccessMode is only valid for Hyperdisk disk types.
    * Check the AccessMode enum for the list of possible values.
    * </pre>
    *
@@ -56,7 +78,18 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * The access mode of the disk. - READ_WRITE_SINGLE: The default AccessMode, means the disk can be attached to single instance in RW mode. - READ_WRITE_MANY: The AccessMode means the disk can be attached to multiple instances in RW mode. - READ_ONLY_MANY: The AccessMode means the disk can be attached to multiple instances in RO mode. The AccessMode is only valid for Hyperdisk disk types.
+   * The access mode of the disk.
+   *
+   *
+   *      - READ_WRITE_SINGLE: The default AccessMode, means the
+   *      disk can be attached to single instance in RW mode.
+   *      - READ_WRITE_MANY: The AccessMode means the disk can be
+   *      attached to multiple instances in RW mode.
+   *      - READ_ONLY_MANY: The AccessMode means the disk can be
+   *      attached to multiple instances in RO mode.
+   *
+   *
+   * The AccessMode is only valid for Hyperdisk disk types.
    * Check the AccessMode enum for the list of possible values.
    * </pre>
    *
@@ -70,7 +103,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * The architecture of the disk. Valid values are ARM64 or X86_64.
+   * The architecture of the disk. Valid values are
+   * ARM64 or X86_64.
    * Check the Architecture enum for the list of possible values.
    * </pre>
    *
@@ -84,7 +118,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * The architecture of the disk. Valid values are ARM64 or X86_64.
+   * The architecture of the disk. Valid values are
+   * ARM64 or X86_64.
    * Check the Architecture enum for the list of possible values.
    * </pre>
    *
@@ -98,7 +133,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * The architecture of the disk. Valid values are ARM64 or X86_64.
+   * The architecture of the disk. Valid values are
+   * ARM64 or X86_64.
    * Check the Architecture enum for the list of possible values.
    * </pre>
    *
@@ -152,7 +188,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of disks this disk is asynchronously replicated to.
+   * Output only. [Output Only] A list of disks this disk is asynchronously replicated to.
    * </pre>
    *
    * <code>
@@ -165,7 +201,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of disks this disk is asynchronously replicated to.
+   * Output only. [Output Only] A list of disks this disk is asynchronously replicated to.
    * </pre>
    *
    * <code>
@@ -183,7 +219,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of disks this disk is asynchronously replicated to.
+   * Output only. [Output Only] A list of disks this disk is asynchronously replicated to.
    * </pre>
    *
    * <code>
@@ -197,7 +233,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of disks this disk is asynchronously replicated to.
+   * Output only. [Output Only] A list of disks this disk is asynchronously replicated to.
    * </pre>
    *
    * <code>
@@ -214,7 +250,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of disks this disk is asynchronously replicated to.
+   * Output only. [Output Only] A list of disks this disk is asynchronously replicated to.
    * </pre>
    *
    * <code>
@@ -228,7 +264,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -241,7 +278,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -254,7 +292,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -267,7 +306,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -280,7 +320,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -293,7 +334,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -306,7 +348,30 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * Encrypts the disk using a customer-supplied encryption key or a customer-managed encryption key. Encryption keys do not protect access to metadata of the disk. After you encrypt a disk with a customer-supplied key, you must provide the same key if you use the disk later. For example, to create a disk snapshot, to create a disk image, to create a machine image, or to attach the disk to a virtual machine. After you encrypt a disk with a customer-managed key, the diskEncryptionKey.kmsKeyName is set to a key *version* name once the disk is created. The disk is encrypted with this version of the key. In the response, diskEncryptionKey.kmsKeyName appears in the following format: "diskEncryptionKey.kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key /cryptoKeysVersions/version If you do not provide an encryption key when creating the disk, then the disk is encrypted using an automatically generated key and you don't need to provide a key to use the disk later.
+   * Encrypts the disk using a
+   * customer-supplied encryption key or a
+   * customer-managed encryption key.
+   *
+   * Encryption keys do not protect access to metadata of the disk.
+   *
+   * After you encrypt a disk with a customer-supplied key, you must provide the
+   * same key if you use the disk later. For example, to create a disk snapshot,
+   * to create a disk image, to create a machine image, or to attach the disk to
+   * a virtual machine.
+   *
+   * After you encrypt a disk with a customer-managed key, thediskEncryptionKey.kmsKeyName is set to a key *version*
+   * name once the disk is created. The disk is encrypted with this version of
+   * the key. In the response, diskEncryptionKey.kmsKeyName appears
+   * in the following format:
+   *
+   * "diskEncryptionKey.kmsKeyName":
+   * "projects/kms_project_id/locations/region/keyRings/
+   * key_region/cryptoKeys/key
+   * /cryptoKeysVersions/version
+   *
+   * If you do not provide an encryption key when creating the disk, then the
+   * disk is encrypted using an automatically generated key and you don't need
+   * to provide a key to use the disk later.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
@@ -320,7 +385,30 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * Encrypts the disk using a customer-supplied encryption key or a customer-managed encryption key. Encryption keys do not protect access to metadata of the disk. After you encrypt a disk with a customer-supplied key, you must provide the same key if you use the disk later. For example, to create a disk snapshot, to create a disk image, to create a machine image, or to attach the disk to a virtual machine. After you encrypt a disk with a customer-managed key, the diskEncryptionKey.kmsKeyName is set to a key *version* name once the disk is created. The disk is encrypted with this version of the key. In the response, diskEncryptionKey.kmsKeyName appears in the following format: "diskEncryptionKey.kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key /cryptoKeysVersions/version If you do not provide an encryption key when creating the disk, then the disk is encrypted using an automatically generated key and you don't need to provide a key to use the disk later.
+   * Encrypts the disk using a
+   * customer-supplied encryption key or a
+   * customer-managed encryption key.
+   *
+   * Encryption keys do not protect access to metadata of the disk.
+   *
+   * After you encrypt a disk with a customer-supplied key, you must provide the
+   * same key if you use the disk later. For example, to create a disk snapshot,
+   * to create a disk image, to create a machine image, or to attach the disk to
+   * a virtual machine.
+   *
+   * After you encrypt a disk with a customer-managed key, thediskEncryptionKey.kmsKeyName is set to a key *version*
+   * name once the disk is created. The disk is encrypted with this version of
+   * the key. In the response, diskEncryptionKey.kmsKeyName appears
+   * in the following format:
+   *
+   * "diskEncryptionKey.kmsKeyName":
+   * "projects/kms_project_id/locations/region/keyRings/
+   * key_region/cryptoKeys/key
+   * /cryptoKeysVersions/version
+   *
+   * If you do not provide an encryption key when creating the disk, then the
+   * disk is encrypted using an automatically generated key and you don't need
+   * to provide a key to use the disk later.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
@@ -334,7 +422,30 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * Encrypts the disk using a customer-supplied encryption key or a customer-managed encryption key. Encryption keys do not protect access to metadata of the disk. After you encrypt a disk with a customer-supplied key, you must provide the same key if you use the disk later. For example, to create a disk snapshot, to create a disk image, to create a machine image, or to attach the disk to a virtual machine. After you encrypt a disk with a customer-managed key, the diskEncryptionKey.kmsKeyName is set to a key *version* name once the disk is created. The disk is encrypted with this version of the key. In the response, diskEncryptionKey.kmsKeyName appears in the following format: "diskEncryptionKey.kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key /cryptoKeysVersions/version If you do not provide an encryption key when creating the disk, then the disk is encrypted using an automatically generated key and you don't need to provide a key to use the disk later.
+   * Encrypts the disk using a
+   * customer-supplied encryption key or a
+   * customer-managed encryption key.
+   *
+   * Encryption keys do not protect access to metadata of the disk.
+   *
+   * After you encrypt a disk with a customer-supplied key, you must provide the
+   * same key if you use the disk later. For example, to create a disk snapshot,
+   * to create a disk image, to create a machine image, or to attach the disk to
+   * a virtual machine.
+   *
+   * After you encrypt a disk with a customer-managed key, thediskEncryptionKey.kmsKeyName is set to a key *version*
+   * name once the disk is created. The disk is encrypted with this version of
+   * the key. In the response, diskEncryptionKey.kmsKeyName appears
+   * in the following format:
+   *
+   * "diskEncryptionKey.kmsKeyName":
+   * "projects/kms_project_id/locations/region/keyRings/
+   * key_region/cryptoKeys/key
+   * /cryptoKeysVersions/version
+   *
+   * If you do not provide an encryption key when creating the disk, then the
+   * disk is encrypted using an automatically generated key and you don't need
+   * to provide a key to use the disk later.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;
@@ -372,7 +483,10 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable
+   * only for bootable images. Read
+   * Enabling guest operating system features to see a list of available
+   * options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -383,7 +497,10 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable
+   * only for bootable images. Read
+   * Enabling guest operating system features to see a list of available
+   * options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -394,7 +511,10 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable
+   * only for bootable images. Read
+   * Enabling guest operating system features to see a list of available
+   * options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -405,7 +525,10 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable
+   * only for bootable images. Read
+   * Enabling guest operating system features to see a list of available
+   * options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -417,7 +540,10 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable
+   * only for bootable images. Read
+   * Enabling guest operating system features to see a list of available
+   * options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -428,7 +554,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -441,7 +568,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -454,7 +582,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#disk for disks.
+   * Output only. [Output Only] Type of the resource. Always compute#disk for
+   * disks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -467,7 +596,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#disk for disks.
+   * Output only. [Output Only] Type of the resource. Always compute#disk for
+   * disks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -480,7 +610,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#disk for disks.
+   * Output only. [Output Only] Type of the resource. Always compute#disk for
+   * disks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -493,7 +624,15 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this disk, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a disk.
+   * A fingerprint for the labels being applied to this disk, which is
+   * essentially a hash of the labels set used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve a disk.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -506,7 +645,15 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this disk, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a disk.
+   * A fingerprint for the labels being applied to this disk, which is
+   * essentially a hash of the labels set used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve a disk.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -519,7 +666,15 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this disk, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a disk.
+   * A fingerprint for the labels being applied to this disk, which is
+   * essentially a hash of the labels set used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve a disk.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -532,7 +687,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * Labels to apply to this disk. These can be later modified by the setLabels method.
+   * Labels to apply to this disk. These can be later modified by
+   * the setLabels method.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -543,7 +699,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * Labels to apply to this disk. These can be later modified by the setLabels method.
+   * Labels to apply to this disk. These can be later modified by
+   * the setLabels method.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -558,7 +715,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * Labels to apply to this disk. These can be later modified by the setLabels method.
+   * Labels to apply to this disk. These can be later modified by
+   * the setLabels method.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -569,7 +727,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * Labels to apply to this disk. These can be later modified by the setLabels method.
+   * Labels to apply to this disk. These can be later modified by
+   * the setLabels method.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -584,7 +743,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * Labels to apply to this disk. These can be later modified by the setLabels method.
+   * Labels to apply to this disk. These can be later modified by
+   * the setLabels method.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -595,7 +755,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Last attach timestamp in RFC3339 text format.
+   * Output only. [Output Only] Last attach timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string last_attach_timestamp = 42159653;</code>
@@ -608,7 +769,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Last attach timestamp in RFC3339 text format.
+   * Output only. [Output Only] Last attach timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string last_attach_timestamp = 42159653;</code>
@@ -621,7 +783,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Last attach timestamp in RFC3339 text format.
+   * Output only. [Output Only] Last attach timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string last_attach_timestamp = 42159653;</code>
@@ -634,7 +797,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Last detach timestamp in RFC3339 text format.
+   * Output only. [Output Only] Last detach timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string last_detach_timestamp = 56471027;</code>
@@ -647,7 +811,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Last detach timestamp in RFC3339 text format.
+   * Output only. [Output Only] Last detach timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string last_detach_timestamp = 56471027;</code>
@@ -660,7 +825,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Last detach timestamp in RFC3339 text format.
+   * Output only. [Output Only] Last detach timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string last_detach_timestamp = 56471027;</code>
@@ -767,7 +933,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * An opaque location hint used to place the disk close to other resources. This field is for use by internal tools that use the public API.
+   * An opaque location hint used to place the disk close to other resources.
+   * This field is for use by internal tools that use the public API.
    * </pre>
    *
    * <code>optional string location_hint = 350519505;</code>
@@ -780,7 +947,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * An opaque location hint used to place the disk close to other resources. This field is for use by internal tools that use the public API.
+   * An opaque location hint used to place the disk close to other resources.
+   * This field is for use by internal tools that use the public API.
    * </pre>
    *
    * <code>optional string location_hint = 350519505;</code>
@@ -793,7 +961,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * An opaque location hint used to place the disk close to other resources. This field is for use by internal tools that use the public API.
+   * An opaque location hint used to place the disk close to other resources.
+   * This field is for use by internal tools that use the public API.
    * </pre>
    *
    * <code>optional string location_hint = 350519505;</code>
@@ -806,7 +975,13 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?`
+   * which means the first character must be a lowercase letter, and all
+   * following characters must be a dash, lowercase letter, or digit, except
+   * the last character, which cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -819,7 +994,13 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?`
+   * which means the first character must be a lowercase letter, and all
+   * following characters must be a dash, lowercase letter, or digit, except
+   * the last character, which cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -832,7 +1013,13 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?`
+   * which means the first character must be a lowercase letter, and all
+   * following characters must be a dash, lowercase letter, or digit, except
+   * the last character, which cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -884,7 +1071,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.DiskParams params = 78313862;</code>
@@ -897,7 +1085,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.DiskParams params = 78313862;</code>
@@ -910,7 +1099,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.DiskParams params = 78313862;</code>
@@ -921,7 +1111,12 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
+   * Physical block size of the persistent disk, in bytes.
+   * If not present in a request, a default value is used.
+   * The currently supported size is 4096, other sizes may be added in
+   * the future.
+   * If an unsupported value is requested, the error message will list
+   * the supported values for the caller's project.
    * </pre>
    *
    * <code>optional int64 physical_block_size_bytes = 420007943;</code>
@@ -934,7 +1129,12 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
+   * Physical block size of the persistent disk, in bytes.
+   * If not present in a request, a default value is used.
+   * The currently supported size is 4096, other sizes may be added in
+   * the future.
+   * If an unsupported value is requested, the error message will list
+   * the supported values for the caller's project.
    * </pre>
    *
    * <code>optional int64 physical_block_size_bytes = 420007943;</code>
@@ -947,7 +1147,10 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * Indicates how many IOPS to provision for the disk. This sets the number of I/O operations per second that the disk can handle. Values must be between 10,000 and 120,000. For more details, see the Extreme persistent disk documentation.
+   * Indicates how many IOPS to provision for the disk. This sets the number
+   * of I/O operations per second that the disk can handle. Values must be
+   * between 10,000 and 120,000. For more details, see theExtreme persistent
+   * disk documentation.
    * </pre>
    *
    * <code>optional int64 provisioned_iops = 186769108;</code>
@@ -960,7 +1163,10 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * Indicates how many IOPS to provision for the disk. This sets the number of I/O operations per second that the disk can handle. Values must be between 10,000 and 120,000. For more details, see the Extreme persistent disk documentation.
+   * Indicates how many IOPS to provision for the disk. This sets the number
+   * of I/O operations per second that the disk can handle. Values must be
+   * between 10,000 and 120,000. For more details, see theExtreme persistent
+   * disk documentation.
    * </pre>
    *
    * <code>optional int64 provisioned_iops = 186769108;</code>
@@ -973,7 +1179,9 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be greater than or equal to 1.
+   * Indicates how much throughput to provision for the disk. This sets the
+   * number of throughput mb per second that the disk can handle. Values must be
+   * greater than or equal to 1.
    * </pre>
    *
    * <code>optional int64 provisioned_throughput = 526524181;</code>
@@ -986,7 +1194,9 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be greater than or equal to 1.
+   * Indicates how much throughput to provision for the disk. This sets the
+   * number of throughput mb per second that the disk can handle. Values must be
+   * greater than or equal to 1.
    * </pre>
    *
    * <code>optional int64 provisioned_throughput = 526524181;</code>
@@ -999,7 +1209,10 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the disk resides. Only applicable for regional resources. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * Output only. [Output Only] URL of the region where the disk resides. Only applicable for
+   * regional resources.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -1012,7 +1225,10 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the disk resides. Only applicable for regional resources. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * Output only. [Output Only] URL of the region where the disk resides. Only applicable for
+   * regional resources.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -1025,7 +1241,10 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the disk resides. Only applicable for regional resources. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * Output only. [Output Only] URL of the region where the disk resides. Only applicable for
+   * regional resources.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -1038,7 +1257,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * URLs of the zones where the disk should be replicated to. Only applicable for regional resources.
+   * URLs of the zones where the disk should be replicated to. Only applicable
+   * for regional resources.
    * </pre>
    *
    * <code>repeated string replica_zones = 48438272;</code>
@@ -1051,7 +1271,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * URLs of the zones where the disk should be replicated to. Only applicable for regional resources.
+   * URLs of the zones where the disk should be replicated to. Only applicable
+   * for regional resources.
    * </pre>
    *
    * <code>repeated string replica_zones = 48438272;</code>
@@ -1064,7 +1285,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * URLs of the zones where the disk should be replicated to. Only applicable for regional resources.
+   * URLs of the zones where the disk should be replicated to. Only applicable
+   * for regional resources.
    * </pre>
    *
    * <code>repeated string replica_zones = 48438272;</code>
@@ -1078,7 +1300,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * URLs of the zones where the disk should be replicated to. Only applicable for regional resources.
+   * URLs of the zones where the disk should be replicated to. Only applicable
+   * for regional resources.
    * </pre>
    *
    * <code>repeated string replica_zones = 48438272;</code>
@@ -1146,7 +1369,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Status information for the disk resource.
+   * Output only. [Output Only] Status information for the disk resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.DiskResourceStatus resource_status = 249429315;</code>
@@ -1159,7 +1382,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Status information for the disk resource.
+   * Output only. [Output Only] Status information for the disk resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.DiskResourceStatus resource_status = 249429315;</code>
@@ -1172,7 +1395,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Status information for the disk resource.
+   * Output only. [Output Only] Status information for the disk resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.DiskResourceStatus resource_status = 249429315;</code>
@@ -1209,7 +1432,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -1222,7 +1445,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -1235,7 +1458,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1248,7 +1471,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1261,7 +1484,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1274,7 +1497,13 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * Size, in GB, of the persistent disk. You can specify this field when creating a persistent disk using the sourceImage, sourceSnapshot, or sourceDisk parameter, or specify it alone to create an empty persistent disk. If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are greater than 0.
+   * Size, in GB, of the persistent disk. You can specify
+   * this field when creating a persistent disk using thesourceImage, sourceSnapshot, orsourceDisk parameter, or specify it alone to create an empty
+   * persistent disk.
+   *
+   * If you specify this field along with a source, the value ofsizeGb must not be less than the size of the
+   * source.
+   * Acceptable values are greater than 0.
    * </pre>
    *
    * <code>optional int64 size_gb = 494929369;</code>
@@ -1287,7 +1516,13 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * Size, in GB, of the persistent disk. You can specify this field when creating a persistent disk using the sourceImage, sourceSnapshot, or sourceDisk parameter, or specify it alone to create an empty persistent disk. If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are greater than 0.
+   * Size, in GB, of the persistent disk. You can specify
+   * this field when creating a persistent disk using thesourceImage, sourceSnapshot, orsourceDisk parameter, or specify it alone to create an empty
+   * persistent disk.
+   *
+   * If you specify this field along with a source, the value ofsizeGb must not be less than the size of the
+   * source.
+   * Acceptable values are greater than 0.
    * </pre>
    *
    * <code>optional int64 size_gb = 494929369;</code>
@@ -1300,7 +1535,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the DiskConsistencyGroupPolicy for a secondary disk that was created using a consistency group.
+   * Output only. [Output Only] URL of the DiskConsistencyGroupPolicy for a secondary disk
+   * that was created using a consistency group.
    * </pre>
    *
    * <code>optional string source_consistency_group_policy = 19616093;</code>
@@ -1313,7 +1549,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the DiskConsistencyGroupPolicy for a secondary disk that was created using a consistency group.
+   * Output only. [Output Only] URL of the DiskConsistencyGroupPolicy for a secondary disk
+   * that was created using a consistency group.
    * </pre>
    *
    * <code>optional string source_consistency_group_policy = 19616093;</code>
@@ -1326,7 +1563,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the DiskConsistencyGroupPolicy for a secondary disk that was created using a consistency group.
+   * Output only. [Output Only] URL of the DiskConsistencyGroupPolicy for a secondary disk
+   * that was created using a consistency group.
    * </pre>
    *
    * <code>optional string source_consistency_group_policy = 19616093;</code>
@@ -1339,7 +1577,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] ID of the DiskConsistencyGroupPolicy for a secondary disk that was created using a consistency group.
+   * Output only. [Output Only] ID of the DiskConsistencyGroupPolicy for a secondary disk
+   * that was created using a consistency group.
    * </pre>
    *
    * <code>optional string source_consistency_group_policy_id = 267568957;</code>
@@ -1352,7 +1591,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] ID of the DiskConsistencyGroupPolicy for a secondary disk that was created using a consistency group.
+   * Output only. [Output Only] ID of the DiskConsistencyGroupPolicy for a secondary disk
+   * that was created using a consistency group.
    * </pre>
    *
    * <code>optional string source_consistency_group_policy_id = 267568957;</code>
@@ -1365,7 +1605,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] ID of the DiskConsistencyGroupPolicy for a secondary disk that was created using a consistency group.
+   * Output only. [Output Only] ID of the DiskConsistencyGroupPolicy for a secondary disk
+   * that was created using a consistency group.
    * </pre>
    *
    * <code>optional string source_consistency_group_policy_id = 267568957;</code>
@@ -1378,7 +1619,28 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * The source disk used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - https://www.googleapis.com/compute/v1/projects/project/regions/region /disks/disk - projects/project/zones/zone/disks/disk - projects/project/regions/region/disks/disk - zones/zone/disks/disk - regions/region/disks/disk
+   * The source disk used to create this disk. You can provide this as a
+   * partial or full URL to the resource. For example, the following are valid
+   * values:
+   *
+   *
+   *      -
+   *        https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
+   *
+   *      -
+   *        https://www.googleapis.com/compute/v1/projects/project/regions/region/disks/disk
+   *
+   *      -
+   *        projects/project/zones/zone/disks/disk
+   *
+   *      -
+   *        projects/project/regions/region/disks/disk
+   *
+   *      -
+   *        zones/zone/disks/disk
+   *
+   *      -
+   *        regions/region/disks/disk
    * </pre>
    *
    * <code>optional string source_disk = 451753793;</code>
@@ -1391,7 +1653,28 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * The source disk used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - https://www.googleapis.com/compute/v1/projects/project/regions/region /disks/disk - projects/project/zones/zone/disks/disk - projects/project/regions/region/disks/disk - zones/zone/disks/disk - regions/region/disks/disk
+   * The source disk used to create this disk. You can provide this as a
+   * partial or full URL to the resource. For example, the following are valid
+   * values:
+   *
+   *
+   *      -
+   *        https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
+   *
+   *      -
+   *        https://www.googleapis.com/compute/v1/projects/project/regions/region/disks/disk
+   *
+   *      -
+   *        projects/project/zones/zone/disks/disk
+   *
+   *      -
+   *        projects/project/regions/region/disks/disk
+   *
+   *      -
+   *        zones/zone/disks/disk
+   *
+   *      -
+   *        regions/region/disks/disk
    * </pre>
    *
    * <code>optional string source_disk = 451753793;</code>
@@ -1404,7 +1687,28 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * The source disk used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - https://www.googleapis.com/compute/v1/projects/project/regions/region /disks/disk - projects/project/zones/zone/disks/disk - projects/project/regions/region/disks/disk - zones/zone/disks/disk - regions/region/disks/disk
+   * The source disk used to create this disk. You can provide this as a
+   * partial or full URL to the resource. For example, the following are valid
+   * values:
+   *
+   *
+   *      -
+   *        https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
+   *
+   *      -
+   *        https://www.googleapis.com/compute/v1/projects/project/regions/region/disks/disk
+   *
+   *      -
+   *        projects/project/zones/zone/disks/disk
+   *
+   *      -
+   *        projects/project/regions/region/disks/disk
+   *
+   *      -
+   *        zones/zone/disks/disk
+   *
+   *      -
+   *        regions/region/disks/disk
    * </pre>
    *
    * <code>optional string source_disk = 451753793;</code>
@@ -1417,7 +1721,11 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique ID of the disk used to create this disk. This value identifies the exact disk that was used to create this persistent disk. For example, if you created the persistent disk from a disk that was later deleted and recreated under the same name, the source disk ID would identify the exact version of the disk that was used.
+   * Output only. [Output Only] The unique ID of the disk used to create this disk. This
+   * value identifies the exact disk that was used to create this persistent
+   * disk. For example, if you created the persistent disk from a disk that
+   * was later deleted and recreated under the same name, the source disk ID
+   * would identify the exact version of the disk that was used.
    * </pre>
    *
    * <code>optional string source_disk_id = 454190809;</code>
@@ -1430,7 +1738,11 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique ID of the disk used to create this disk. This value identifies the exact disk that was used to create this persistent disk. For example, if you created the persistent disk from a disk that was later deleted and recreated under the same name, the source disk ID would identify the exact version of the disk that was used.
+   * Output only. [Output Only] The unique ID of the disk used to create this disk. This
+   * value identifies the exact disk that was used to create this persistent
+   * disk. For example, if you created the persistent disk from a disk that
+   * was later deleted and recreated under the same name, the source disk ID
+   * would identify the exact version of the disk that was used.
    * </pre>
    *
    * <code>optional string source_disk_id = 454190809;</code>
@@ -1443,7 +1755,11 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique ID of the disk used to create this disk. This value identifies the exact disk that was used to create this persistent disk. For example, if you created the persistent disk from a disk that was later deleted and recreated under the same name, the source disk ID would identify the exact version of the disk that was used.
+   * Output only. [Output Only] The unique ID of the disk used to create this disk. This
+   * value identifies the exact disk that was used to create this persistent
+   * disk. For example, if you created the persistent disk from a disk that
+   * was later deleted and recreated under the same name, the source disk ID
+   * would identify the exact version of the disk that was used.
    * </pre>
    *
    * <code>optional string source_disk_id = 454190809;</code>
@@ -1456,7 +1772,31 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * The source image used to create this disk. If the source image is deleted, this field will not be set. To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9 Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family
+   * The source image used to create this disk. If the source image is
+   * deleted, this field will not be set.
+   *
+   * To create a disk with one of the public operating system images, specify
+   * the image by its family name. For example, specifyfamily/debian-9 to use the latest Debian 9 image:
+   *
+   * projects/debian-cloud/global/images/family/debian-9
+   *
+   *
+   * Alternatively, use a specific version of a public operating system image:
+   *
+   * projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD
+   *
+   *
+   * To create a disk with a custom image that you created, specify the
+   * image name in the following format:
+   *
+   * global/images/my-custom-image
+   *
+   *
+   * You can also specify a custom image by its image family, which returns
+   * the latest version of the image in that family. Replace the image name
+   * with family/family-name:
+   *
+   * global/images/family/my-image-family
    * </pre>
    *
    * <code>optional string source_image = 50443319;</code>
@@ -1469,7 +1809,31 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * The source image used to create this disk. If the source image is deleted, this field will not be set. To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9 Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family
+   * The source image used to create this disk. If the source image is
+   * deleted, this field will not be set.
+   *
+   * To create a disk with one of the public operating system images, specify
+   * the image by its family name. For example, specifyfamily/debian-9 to use the latest Debian 9 image:
+   *
+   * projects/debian-cloud/global/images/family/debian-9
+   *
+   *
+   * Alternatively, use a specific version of a public operating system image:
+   *
+   * projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD
+   *
+   *
+   * To create a disk with a custom image that you created, specify the
+   * image name in the following format:
+   *
+   * global/images/my-custom-image
+   *
+   *
+   * You can also specify a custom image by its image family, which returns
+   * the latest version of the image in that family. Replace the image name
+   * with family/family-name:
+   *
+   * global/images/family/my-image-family
    * </pre>
    *
    * <code>optional string source_image = 50443319;</code>
@@ -1482,7 +1846,31 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * The source image used to create this disk. If the source image is deleted, this field will not be set. To create a disk with one of the public operating system images, specify the image by its family name. For example, specify family/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9 Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family
+   * The source image used to create this disk. If the source image is
+   * deleted, this field will not be set.
+   *
+   * To create a disk with one of the public operating system images, specify
+   * the image by its family name. For example, specifyfamily/debian-9 to use the latest Debian 9 image:
+   *
+   * projects/debian-cloud/global/images/family/debian-9
+   *
+   *
+   * Alternatively, use a specific version of a public operating system image:
+   *
+   * projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD
+   *
+   *
+   * To create a disk with a custom image that you created, specify the
+   * image name in the following format:
+   *
+   * global/images/my-custom-image
+   *
+   *
+   * You can also specify a custom image by its image family, which returns
+   * the latest version of the image in that family. Replace the image name
+   * with family/family-name:
+   *
+   * global/images/family/my-image-family
    * </pre>
    *
    * <code>optional string source_image = 50443319;</code>
@@ -1495,7 +1883,9 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
+   * Thecustomer-supplied
+   * encryption key of the source image. Required if the source image is
+   * protected by a customer-supplied encryption key.
    * </pre>
    *
    * <code>
@@ -1510,7 +1900,9 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
+   * Thecustomer-supplied
+   * encryption key of the source image. Required if the source image is
+   * protected by a customer-supplied encryption key.
    * </pre>
    *
    * <code>
@@ -1525,7 +1917,9 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
+   * Thecustomer-supplied
+   * encryption key of the source image. Required if the source image is
+   * protected by a customer-supplied encryption key.
    * </pre>
    *
    * <code>
@@ -1538,7 +1932,11 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The ID value of the image used to create this disk. This value identifies the exact image that was used to create this persistent disk. For example, if you created the persistent disk from an image that was later deleted and recreated under the same name, the source image ID would identify the exact version of the image that was used.
+   * Output only. [Output Only] The ID value of the image used to create this disk. This
+   * value identifies the exact image that was used to create this persistent
+   * disk. For example, if you created the persistent disk from an image that
+   * was later deleted and recreated under the same name, the source image ID
+   * would identify the exact version of the image that was used.
    * </pre>
    *
    * <code>optional string source_image_id = 55328291;</code>
@@ -1551,7 +1949,11 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The ID value of the image used to create this disk. This value identifies the exact image that was used to create this persistent disk. For example, if you created the persistent disk from an image that was later deleted and recreated under the same name, the source image ID would identify the exact version of the image that was used.
+   * Output only. [Output Only] The ID value of the image used to create this disk. This
+   * value identifies the exact image that was used to create this persistent
+   * disk. For example, if you created the persistent disk from an image that
+   * was later deleted and recreated under the same name, the source image ID
+   * would identify the exact version of the image that was used.
    * </pre>
    *
    * <code>optional string source_image_id = 55328291;</code>
@@ -1564,7 +1966,11 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The ID value of the image used to create this disk. This value identifies the exact image that was used to create this persistent disk. For example, if you created the persistent disk from an image that was later deleted and recreated under the same name, the source image ID would identify the exact version of the image that was used.
+   * Output only. [Output Only] The ID value of the image used to create this disk. This
+   * value identifies the exact image that was used to create this persistent
+   * disk. For example, if you created the persistent disk from an image that
+   * was later deleted and recreated under the same name, the source image ID
+   * would identify the exact version of the image that was used.
    * </pre>
    *
    * <code>optional string source_image_id = 55328291;</code>
@@ -1577,7 +1983,14 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * The source instant snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
+   * The source instant snapshot used to create this disk. You can provide
+   * this as a partial or full URL to the resource. For example, the following
+   * are valid values:
+   *
+   *
+   *      - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instantSnapshots/instantSnapshot
+   *      - projects/project/zones/zone/instantSnapshots/instantSnapshot
+   *    - zones/zone/instantSnapshots/instantSnapshot
    * </pre>
    *
    * <code>optional string source_instant_snapshot = 219202054;</code>
@@ -1590,7 +2003,14 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * The source instant snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
+   * The source instant snapshot used to create this disk. You can provide
+   * this as a partial or full URL to the resource. For example, the following
+   * are valid values:
+   *
+   *
+   *      - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instantSnapshots/instantSnapshot
+   *      - projects/project/zones/zone/instantSnapshots/instantSnapshot
+   *    - zones/zone/instantSnapshots/instantSnapshot
    * </pre>
    *
    * <code>optional string source_instant_snapshot = 219202054;</code>
@@ -1603,7 +2023,14 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * The source instant snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
+   * The source instant snapshot used to create this disk. You can provide
+   * this as a partial or full URL to the resource. For example, the following
+   * are valid values:
+   *
+   *
+   *      - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instantSnapshots/instantSnapshot
+   *      - projects/project/zones/zone/instantSnapshots/instantSnapshot
+   *    - zones/zone/instantSnapshots/instantSnapshot
    * </pre>
    *
    * <code>optional string source_instant_snapshot = 219202054;</code>
@@ -1616,7 +2043,12 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique ID of the instant snapshot used to create this disk. This value identifies the exact instant snapshot that was used to create this persistent disk. For example, if you created the persistent disk from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact version of the instant snapshot that was used.
+   * Output only. [Output Only] The unique ID of the instant snapshot used to create this
+   * disk. This value identifies the exact instant snapshot that was used to
+   * create this persistent disk. For example, if you created the persistent
+   * disk from an instant snapshot that was later deleted and recreated under
+   * the same name, the source instant snapshot ID would identify the exact
+   * version of the instant snapshot that was used.
    * </pre>
    *
    * <code>optional string source_instant_snapshot_id = 287582708;</code>
@@ -1629,7 +2061,12 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique ID of the instant snapshot used to create this disk. This value identifies the exact instant snapshot that was used to create this persistent disk. For example, if you created the persistent disk from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact version of the instant snapshot that was used.
+   * Output only. [Output Only] The unique ID of the instant snapshot used to create this
+   * disk. This value identifies the exact instant snapshot that was used to
+   * create this persistent disk. For example, if you created the persistent
+   * disk from an instant snapshot that was later deleted and recreated under
+   * the same name, the source instant snapshot ID would identify the exact
+   * version of the instant snapshot that was used.
    * </pre>
    *
    * <code>optional string source_instant_snapshot_id = 287582708;</code>
@@ -1642,7 +2079,12 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique ID of the instant snapshot used to create this disk. This value identifies the exact instant snapshot that was used to create this persistent disk. For example, if you created the persistent disk from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact version of the instant snapshot that was used.
+   * Output only. [Output Only] The unique ID of the instant snapshot used to create this
+   * disk. This value identifies the exact instant snapshot that was used to
+   * create this persistent disk. For example, if you created the persistent
+   * disk from an instant snapshot that was later deleted and recreated under
+   * the same name, the source instant snapshot ID would identify the exact
+   * version of the instant snapshot that was used.
    * </pre>
    *
    * <code>optional string source_instant_snapshot_id = 287582708;</code>
@@ -1655,7 +2097,14 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * The source snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project /global/snapshots/snapshot - projects/project/global/snapshots/snapshot - global/snapshots/snapshot
+   * The source snapshot used to create this disk. You can provide this as a
+   * partial or full URL to the resource. For example, the following are valid
+   * values:
+   *
+   *
+   *      - https://www.googleapis.com/compute/v1/projects/project/global/snapshots/snapshot
+   *    - projects/project/global/snapshots/snapshot
+   *      - global/snapshots/snapshot
    * </pre>
    *
    * <code>optional string source_snapshot = 126061928;</code>
@@ -1668,7 +2117,14 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * The source snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project /global/snapshots/snapshot - projects/project/global/snapshots/snapshot - global/snapshots/snapshot
+   * The source snapshot used to create this disk. You can provide this as a
+   * partial or full URL to the resource. For example, the following are valid
+   * values:
+   *
+   *
+   *      - https://www.googleapis.com/compute/v1/projects/project/global/snapshots/snapshot
+   *    - projects/project/global/snapshots/snapshot
+   *      - global/snapshots/snapshot
    * </pre>
    *
    * <code>optional string source_snapshot = 126061928;</code>
@@ -1681,7 +2137,14 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * The source snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project /global/snapshots/snapshot - projects/project/global/snapshots/snapshot - global/snapshots/snapshot
+   * The source snapshot used to create this disk. You can provide this as a
+   * partial or full URL to the resource. For example, the following are valid
+   * values:
+   *
+   *
+   *      - https://www.googleapis.com/compute/v1/projects/project/global/snapshots/snapshot
+   *    - projects/project/global/snapshots/snapshot
+   *      - global/snapshots/snapshot
    * </pre>
    *
    * <code>optional string source_snapshot = 126061928;</code>
@@ -1694,7 +2157,9 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
+   * Thecustomer-supplied
+   * encryption key of the source snapshot. Required if the source snapshot
+   * is protected by a customer-supplied encryption key.
    * </pre>
    *
    * <code>
@@ -1709,7 +2174,9 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
+   * Thecustomer-supplied
+   * encryption key of the source snapshot. Required if the source snapshot
+   * is protected by a customer-supplied encryption key.
    * </pre>
    *
    * <code>
@@ -1724,7 +2191,9 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
+   * Thecustomer-supplied
+   * encryption key of the source snapshot. Required if the source snapshot
+   * is protected by a customer-supplied encryption key.
    * </pre>
    *
    * <code>
@@ -1738,7 +2207,11 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique ID of the snapshot used to create this disk. This value identifies the exact snapshot that was used to create this persistent disk. For example, if you created the persistent disk from a snapshot that was later deleted and recreated under the same name, the source snapshot ID would identify the exact version of the snapshot that was used.
+   * Output only. [Output Only] The unique ID of the snapshot used to create this disk. This
+   * value identifies the exact snapshot that was used to create this persistent
+   * disk. For example, if you created the persistent disk from a snapshot that
+   * was later deleted and recreated under the same name, the source snapshot ID
+   * would identify the exact version of the snapshot that was used.
    * </pre>
    *
    * <code>optional string source_snapshot_id = 98962258;</code>
@@ -1751,7 +2224,11 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique ID of the snapshot used to create this disk. This value identifies the exact snapshot that was used to create this persistent disk. For example, if you created the persistent disk from a snapshot that was later deleted and recreated under the same name, the source snapshot ID would identify the exact version of the snapshot that was used.
+   * Output only. [Output Only] The unique ID of the snapshot used to create this disk. This
+   * value identifies the exact snapshot that was used to create this persistent
+   * disk. For example, if you created the persistent disk from a snapshot that
+   * was later deleted and recreated under the same name, the source snapshot ID
+   * would identify the exact version of the snapshot that was used.
    * </pre>
    *
    * <code>optional string source_snapshot_id = 98962258;</code>
@@ -1764,7 +2241,11 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique ID of the snapshot used to create this disk. This value identifies the exact snapshot that was used to create this persistent disk. For example, if you created the persistent disk from a snapshot that was later deleted and recreated under the same name, the source snapshot ID would identify the exact version of the snapshot that was used.
+   * Output only. [Output Only] The unique ID of the snapshot used to create this disk. This
+   * value identifies the exact snapshot that was used to create this persistent
+   * disk. For example, if you created the persistent disk from a snapshot that
+   * was later deleted and recreated under the same name, the source snapshot ID
+   * would identify the exact version of the snapshot that was used.
    * </pre>
    *
    * <code>optional string source_snapshot_id = 98962258;</code>
@@ -1777,7 +2258,13 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * The full Google Cloud Storage URI where the disk image is stored. This file must be a gzip-compressed tarball whose name ends in .tar.gz or virtual machine disk whose name ends in vmdk. Valid URIs may start with gs:// or https://storage.googleapis.com/. This flag is not optimized for creating multiple disks from a source storage object. To create many disks from a source storage object, use gcloud compute images import instead.
+   * The full Google Cloud Storage URI where the disk image is stored. This file
+   * must be a gzip-compressed tarball whose name ends in .tar.gz or virtual
+   * machine disk whose name ends in vmdk. Valid URIs may start with gs:// or
+   * https://storage.googleapis.com/. This flag is not optimized for creating
+   * multiple disks from a source storage object. To create many disks from a
+   * source storage object, use gcloud compute images
+   * import instead.
    * </pre>
    *
    * <code>optional string source_storage_object = 233052711;</code>
@@ -1790,7 +2277,13 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * The full Google Cloud Storage URI where the disk image is stored. This file must be a gzip-compressed tarball whose name ends in .tar.gz or virtual machine disk whose name ends in vmdk. Valid URIs may start with gs:// or https://storage.googleapis.com/. This flag is not optimized for creating multiple disks from a source storage object. To create many disks from a source storage object, use gcloud compute images import instead.
+   * The full Google Cloud Storage URI where the disk image is stored. This file
+   * must be a gzip-compressed tarball whose name ends in .tar.gz or virtual
+   * machine disk whose name ends in vmdk. Valid URIs may start with gs:// or
+   * https://storage.googleapis.com/. This flag is not optimized for creating
+   * multiple disks from a source storage object. To create many disks from a
+   * source storage object, use gcloud compute images
+   * import instead.
    * </pre>
    *
    * <code>optional string source_storage_object = 233052711;</code>
@@ -1803,7 +2296,13 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * The full Google Cloud Storage URI where the disk image is stored. This file must be a gzip-compressed tarball whose name ends in .tar.gz or virtual machine disk whose name ends in vmdk. Valid URIs may start with gs:// or https://storage.googleapis.com/. This flag is not optimized for creating multiple disks from a source storage object. To create many disks from a source storage object, use gcloud compute images import instead.
+   * The full Google Cloud Storage URI where the disk image is stored. This file
+   * must be a gzip-compressed tarball whose name ends in .tar.gz or virtual
+   * machine disk whose name ends in vmdk. Valid URIs may start with gs:// or
+   * https://storage.googleapis.com/. This flag is not optimized for creating
+   * multiple disks from a source storage object. To create many disks from a
+   * source storage object, use gcloud compute images
+   * import instead.
    * </pre>
    *
    * <code>optional string source_storage_object = 233052711;</code>
@@ -1816,7 +2315,15 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of disk creation. - CREATING: Disk is provisioning. - RESTORING: Source data is being copied into the disk. - FAILED: Disk creation failed. - READY: Disk is ready for use. - DELETING: Disk is deleting.
+   * Output only. [Output Only] The status of disk creation.
+   *
+   *
+   *      - CREATING: Disk is provisioning.
+   *      - RESTORING: Source data is being copied into the
+   *      disk.
+   *      - FAILED: Disk creation failed.
+   *      - READY: Disk is ready for use.
+   *      - DELETING: Disk is deleting.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -1830,7 +2337,15 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of disk creation. - CREATING: Disk is provisioning. - RESTORING: Source data is being copied into the disk. - FAILED: Disk creation failed. - READY: Disk is ready for use. - DELETING: Disk is deleting.
+   * Output only. [Output Only] The status of disk creation.
+   *
+   *
+   *      - CREATING: Disk is provisioning.
+   *      - RESTORING: Source data is being copied into the
+   *      disk.
+   *      - FAILED: Disk creation failed.
+   *      - READY: Disk is ready for use.
+   *      - DELETING: Disk is deleting.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -1844,7 +2359,15 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of disk creation. - CREATING: Disk is provisioning. - RESTORING: Source data is being copied into the disk. - FAILED: Disk creation failed. - READY: Disk is ready for use. - DELETING: Disk is deleting.
+   * Output only. [Output Only] The status of disk creation.
+   *
+   *
+   *      - CREATING: Disk is provisioning.
+   *      - RESTORING: Source data is being copied into the
+   *      disk.
+   *      - FAILED: Disk creation failed.
+   *      - READY: Disk is ready for use.
+   *      - DELETING: Disk is deleting.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -1858,7 +2381,14 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * The storage pool in which the new disk is created. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /storagePools/storagePool - projects/project/zones/zone/storagePools/storagePool - zones/zone/storagePools/storagePool
+   * The storage pool in which the new disk is created. You can provide
+   * this as a partial or full URL to the resource. For example, the following
+   * are valid values:
+   *
+   *
+   *      - https://www.googleapis.com/compute/v1/projects/project/zones/zone/storagePools/storagePool
+   *      - projects/project/zones/zone/storagePools/storagePool
+   *    - zones/zone/storagePools/storagePool
    * </pre>
    *
    * <code>optional string storage_pool = 360473440;</code>
@@ -1871,7 +2401,14 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * The storage pool in which the new disk is created. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /storagePools/storagePool - projects/project/zones/zone/storagePools/storagePool - zones/zone/storagePools/storagePool
+   * The storage pool in which the new disk is created. You can provide
+   * this as a partial or full URL to the resource. For example, the following
+   * are valid values:
+   *
+   *
+   *      - https://www.googleapis.com/compute/v1/projects/project/zones/zone/storagePools/storagePool
+   *      - projects/project/zones/zone/storagePools/storagePool
+   *    - zones/zone/storagePools/storagePool
    * </pre>
    *
    * <code>optional string storage_pool = 360473440;</code>
@@ -1884,7 +2421,14 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * The storage pool in which the new disk is created. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /storagePools/storagePool - projects/project/zones/zone/storagePools/storagePool - zones/zone/storagePools/storagePool
+   * The storage pool in which the new disk is created. You can provide
+   * this as a partial or full URL to the resource. For example, the following
+   * are valid values:
+   *
+   *
+   *      - https://www.googleapis.com/compute/v1/projects/project/zones/zone/storagePools/storagePool
+   *      - projects/project/zones/zone/storagePools/storagePool
+   *    - zones/zone/storagePools/storagePool
    * </pre>
    *
    * <code>optional string storage_pool = 360473440;</code>
@@ -1897,7 +2441,9 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * URL of the disk type resource describing which disk type to use to create the disk. Provide this when creating the disk. For example: projects/project /zones/zone/diskTypes/pd-ssd . See Persistent disk types.
+   * URL of the disk type resource describing which disk type to use to create
+   * the disk. Provide this when creating the disk. For example:projects/project/zones/zone/diskTypes/pd-ssd. See Persistent disk
+   * types.
    * </pre>
    *
    * <code>optional string type = 3575610;</code>
@@ -1910,7 +2456,9 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * URL of the disk type resource describing which disk type to use to create the disk. Provide this when creating the disk. For example: projects/project /zones/zone/diskTypes/pd-ssd . See Persistent disk types.
+   * URL of the disk type resource describing which disk type to use to create
+   * the disk. Provide this when creating the disk. For example:projects/project/zones/zone/diskTypes/pd-ssd. See Persistent disk
+   * types.
    * </pre>
    *
    * <code>optional string type = 3575610;</code>
@@ -1923,7 +2471,9 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * URL of the disk type resource describing which disk type to use to create the disk. Provide this when creating the disk. For example: projects/project /zones/zone/diskTypes/pd-ssd . See Persistent disk types.
+   * URL of the disk type resource describing which disk type to use to create
+   * the disk. Provide this when creating the disk. For example:projects/project/zones/zone/diskTypes/pd-ssd. See Persistent disk
+   * types.
    * </pre>
    *
    * <code>optional string type = 3575610;</code>
@@ -1936,7 +2486,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Links to the users of the disk (attached instances) in form: projects/project/zones/zone/instances/instance
+   * Output only. [Output Only] Links to the users of the disk (attached instances)
+   * in form:projects/project/zones/zone/instances/instance
    * </pre>
    *
    * <code>repeated string users = 111578632;</code>
@@ -1949,7 +2500,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Links to the users of the disk (attached instances) in form: projects/project/zones/zone/instances/instance
+   * Output only. [Output Only] Links to the users of the disk (attached instances)
+   * in form:projects/project/zones/zone/instances/instance
    * </pre>
    *
    * <code>repeated string users = 111578632;</code>
@@ -1962,7 +2514,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Links to the users of the disk (attached instances) in form: projects/project/zones/zone/instances/instance
+   * Output only. [Output Only] Links to the users of the disk (attached instances)
+   * in form:projects/project/zones/zone/instances/instance
    * </pre>
    *
    * <code>repeated string users = 111578632;</code>
@@ -1976,7 +2529,8 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Links to the users of the disk (attached instances) in form: projects/project/zones/zone/instances/instance
+   * Output only. [Output Only] Links to the users of the disk (attached instances)
+   * in form:projects/project/zones/zone/instances/instance
    * </pre>
    *
    * <code>repeated string users = 111578632;</code>
@@ -1990,7 +2544,9 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the disk resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * Output only. [Output Only] URL of the zone where the disk resides.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -2003,7 +2559,9 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the disk resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * Output only. [Output Only] URL of the zone where the disk resides.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -2016,7 +2574,9 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the disk resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * Output only. [Output Only] URL of the zone where the disk resides.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>

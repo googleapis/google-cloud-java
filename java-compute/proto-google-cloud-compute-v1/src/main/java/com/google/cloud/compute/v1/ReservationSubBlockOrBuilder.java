@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,52 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The number of hosts that are allocated in this reservation subBlock.
+   * Output only. [Output Only] Slice info for the reservation subBlock.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.AcceleratorTopologiesInfo accelerator_topologies_info = 84833420;
+   * </code>
+   *
+   * @return Whether the acceleratorTopologiesInfo field is set.
+   */
+  boolean hasAcceleratorTopologiesInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Slice info for the reservation subBlock.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.AcceleratorTopologiesInfo accelerator_topologies_info = 84833420;
+   * </code>
+   *
+   * @return The acceleratorTopologiesInfo.
+   */
+  com.google.cloud.compute.v1.AcceleratorTopologiesInfo getAcceleratorTopologiesInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Slice info for the reservation subBlock.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.AcceleratorTopologiesInfo accelerator_topologies_info = 84833420;
+   * </code>
+   */
+  com.google.cloud.compute.v1.AcceleratorTopologiesInfoOrBuilder
+      getAcceleratorTopologiesInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The number of hosts that are allocated in this
+   * reservation subBlock.
    * </pre>
    *
    * <code>optional int32 count = 94851343;</code>
@@ -41,7 +86,8 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The number of hosts that are allocated in this reservation subBlock.
+   * Output only. [Output Only] The number of hosts that are allocated in this
+   * reservation subBlock.
    * </pre>
    *
    * <code>optional int32 count = 94851343;</code>
@@ -54,7 +100,7 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -67,7 +113,7 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -80,7 +126,7 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -93,7 +139,7 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Health information for the reservation subBlock.
+   * Output only. [Output Only] Health information for the reservation subBlock.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ReservationSubBlockHealthInfo health_info = 235287729;
@@ -107,7 +153,7 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Health information for the reservation subBlock.
+   * Output only. [Output Only] Health information for the reservation subBlock.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ReservationSubBlockHealthInfo health_info = 235287729;
@@ -121,7 +167,7 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Health information for the reservation subBlock.
+   * Output only. [Output Only] Health information for the reservation subBlock.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ReservationSubBlockHealthInfo health_info = 235287729;
@@ -133,7 +179,8 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -146,7 +193,8 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -159,7 +207,8 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The number of instances that are currently in use on this reservation subBlock.
+   * Output only. [Output Only] The number of instances that are currently in use on this
+   * reservation subBlock.
    * </pre>
    *
    * <code>optional int32 in_use_count = 493458877;</code>
@@ -172,7 +221,8 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The number of instances that are currently in use on this reservation subBlock.
+   * Output only. [Output Only] The number of instances that are currently in use on this
+   * reservation subBlock.
    * </pre>
    *
    * <code>optional int32 in_use_count = 493458877;</code>
@@ -185,7 +235,35 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#reservationSubBlock for reservation subBlocks.
+   * Output only. Number of hosts currently in use. If there is one or more Instances running
+   * on the host, it is considered in use.
+   * </pre>
+   *
+   * <code>optional int32 in_use_host_count = 364069834;</code>
+   *
+   * @return Whether the inUseHostCount field is set.
+   */
+  boolean hasInUseHostCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Number of hosts currently in use. If there is one or more Instances running
+   * on the host, it is considered in use.
+   * </pre>
+   *
+   * <code>optional int32 in_use_host_count = 364069834;</code>
+   *
+   * @return The inUseHostCount.
+   */
+  int getInUseHostCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Type of the resource. Alwayscompute#reservationSubBlock for reservation subBlocks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -198,7 +276,7 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#reservationSubBlock for reservation subBlocks.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#reservationSubBlock for reservation subBlocks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -211,7 +289,7 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#reservationSubBlock for reservation subBlocks.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#reservationSubBlock for reservation subBlocks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -224,7 +302,9 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of this reservation subBlock generated by Google Compute Engine. The name must be 1-63 characters long, and comply with RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
+   * Output only. [Output Only] The name of this reservation subBlock generated by Google
+   * Compute Engine. The name must be 1-63 characters long, and comply with
+   * RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -237,7 +317,9 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of this reservation subBlock generated by Google Compute Engine. The name must be 1-63 characters long, and comply with RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
+   * Output only. [Output Only] The name of this reservation subBlock generated by Google
+   * Compute Engine. The name must be 1-63 characters long, and comply with
+   * RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -250,7 +332,9 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of this reservation subBlock generated by Google Compute Engine. The name must be 1-63 characters long, and comply with RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
+   * Output only. [Output Only] The name of this reservation subBlock generated by Google
+   * Compute Engine. The name must be 1-63 characters long, and comply with
+   * RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -263,7 +347,7 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The physical topology of the reservation subBlock.
+   * Output only. [Output Only] The physical topology of the reservation subBlock.
    * </pre>
    *
    * <code>
@@ -278,7 +362,7 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The physical topology of the reservation subBlock.
+   * Output only. [Output Only] The physical topology of the reservation subBlock.
    * </pre>
    *
    * <code>
@@ -293,7 +377,7 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The physical topology of the reservation subBlock.
+   * Output only. [Output Only] The physical topology of the reservation subBlock.
    * </pre>
    *
    * <code>
@@ -307,7 +391,7 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * Maintenance information for this reservation subBlock.
+   * Output only. Maintenance information for this reservation subBlock.
    * </pre>
    *
    * <code>
@@ -322,7 +406,7 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * Maintenance information for this reservation subBlock.
+   * Output only. Maintenance information for this reservation subBlock.
    * </pre>
    *
    * <code>
@@ -337,7 +421,7 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * Maintenance information for this reservation subBlock.
+   * Output only. Maintenance information for this reservation subBlock.
    * </pre>
    *
    * <code>
@@ -351,7 +435,7 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -364,7 +448,7 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -377,7 +461,7 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -390,7 +474,7 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -403,7 +487,7 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -416,7 +500,7 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -429,7 +513,7 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Status of the reservation subBlock.
+   * Output only. [Output Only] Status of the reservation subBlock.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -443,7 +527,7 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Status of the reservation subBlock.
+   * Output only. [Output Only] Status of the reservation subBlock.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -457,7 +541,7 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Status of the reservation subBlock.
+   * Output only. [Output Only] Status of the reservation subBlock.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -471,7 +555,7 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Zone in which the reservation subBlock resides.
+   * Output only. [Output Only] Zone in which the reservation subBlock resides.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -484,7 +568,7 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Zone in which the reservation subBlock resides.
+   * Output only. [Output Only] Zone in which the reservation subBlock resides.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -497,7 +581,7 @@ public interface ReservationSubBlockOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Zone in which the reservation subBlock resides.
+   * Output only. [Output Only] Zone in which the reservation subBlock resides.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>

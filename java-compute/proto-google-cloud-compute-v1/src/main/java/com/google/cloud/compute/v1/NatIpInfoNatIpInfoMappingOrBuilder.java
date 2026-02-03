@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ public interface NatIpInfoNatIpInfoMappingOrBuilder
    *
    *
    * <pre>
-   * Specifies whether NAT IP is auto or manual.
+   * Output only. Specifies whether NAT IP is auto or manual.
    * Check the Mode enum for the list of possible values.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface NatIpInfoNatIpInfoMappingOrBuilder
    *
    *
    * <pre>
-   * Specifies whether NAT IP is auto or manual.
+   * Output only. Specifies whether NAT IP is auto or manual.
    * Check the Mode enum for the list of possible values.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface NatIpInfoNatIpInfoMappingOrBuilder
    *
    *
    * <pre>
-   * Specifies whether NAT IP is auto or manual.
+   * Output only. Specifies whether NAT IP is auto or manual.
    * Check the Mode enum for the list of possible values.
    * </pre>
    *
@@ -70,7 +70,7 @@ public interface NatIpInfoNatIpInfoMappingOrBuilder
    *
    *
    * <pre>
-   * NAT IP address. For example: 203.0.113.11.
+   * Output only. NAT IP address. For example: 203.0.113.11.
    * </pre>
    *
    * <code>optional string nat_ip = 21113093;</code>
@@ -83,7 +83,7 @@ public interface NatIpInfoNatIpInfoMappingOrBuilder
    *
    *
    * <pre>
-   * NAT IP address. For example: 203.0.113.11.
+   * Output only. NAT IP address. For example: 203.0.113.11.
    * </pre>
    *
    * <code>optional string nat_ip = 21113093;</code>
@@ -96,7 +96,7 @@ public interface NatIpInfoNatIpInfoMappingOrBuilder
    *
    *
    * <pre>
-   * NAT IP address. For example: 203.0.113.11.
+   * Output only. NAT IP address. For example: 203.0.113.11.
    * </pre>
    *
    * <code>optional string nat_ip = 21113093;</code>
@@ -109,7 +109,8 @@ public interface NatIpInfoNatIpInfoMappingOrBuilder
    *
    *
    * <pre>
-   * Specifies whether NAT IP is currently serving at least one endpoint or not.
+   * Output only. Specifies whether NAT IP is currently serving at least one endpoint or
+   * not.
    * Check the Usage enum for the list of possible values.
    * </pre>
    *
@@ -123,7 +124,8 @@ public interface NatIpInfoNatIpInfoMappingOrBuilder
    *
    *
    * <pre>
-   * Specifies whether NAT IP is currently serving at least one endpoint or not.
+   * Output only. Specifies whether NAT IP is currently serving at least one endpoint or
+   * not.
    * Check the Usage enum for the list of possible values.
    * </pre>
    *
@@ -137,7 +139,8 @@ public interface NatIpInfoNatIpInfoMappingOrBuilder
    *
    *
    * <pre>
-   * Specifies whether NAT IP is currently serving at least one endpoint or not.
+   * Output only. Specifies whether NAT IP is currently serving at least one endpoint or
+   * not.
    * Check the Usage enum for the list of possible values.
    * </pre>
    *

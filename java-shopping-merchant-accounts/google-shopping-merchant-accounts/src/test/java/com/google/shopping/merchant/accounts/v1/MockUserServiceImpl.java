@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -156,6 +156,26 @@ public class MockUserServiceImpl extends UserServiceImplBase {
                   "Unrecognized response type %s for method ListUsers, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListUsersResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void verifySelf(VerifySelfRequest request, StreamObserver<User> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof User) {
+      requests.add(request);
+      responseObserver.onNext(((User) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method VerifySelf, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  User.class.getName(),
                   Exception.class.getName())));
     }
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -112,7 +112,7 @@ public final class StoragePoolProto {
           + "!netapp.googleapis.com/StoragePool\"Y\n"
           + "\036SwitchActiveReplicaZoneRequest\0227\n"
           + "\004name\030\001 \001(\tB)\340A\002\372A#\n"
-          + "!netapp.googleapis.com/StoragePool\"\344\014\n"
+          + "!netapp.googleapis.com/StoragePool\"\256\r\n"
           + "\013StoragePool\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022@\n\r"
           + "service_level\030\002"
@@ -155,7 +155,9 @@ public final class StoragePoolProto {
           + " \001(\0162\037.google.cloud.netapp.v1.QosTypeB\003\340A\001\022\'\n"
           + "\032available_throughput_mibps\030\037 \001(\001B\003\340A\003\022$\n"
           + "\027cold_tier_size_used_gib\030! \001(\003B\003\340A\003\022#\n"
-          + "\026hot_tier_size_used_gib\030\" \001(\003B\003\340A\003\032-\n"
+          + "\026hot_tier_size_used_gib\030\" \001(\003B\003\340A\003\022?\n"
+          + "\004type\030#"
+          + " \001(\0162\'.google.cloud.netapp.v1.StoragePoolTypeB\003\340A\001H\002\210\001\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"{\n"
@@ -168,19 +170,20 @@ public final class StoragePoolProto {
           + "\tRESTORING\020\005\022\014\n"
           + "\010DISABLED\020\006\022\t\n"
           + "\005ERROR\020\007:\207\001\352A\203\001\n"
-          + "!netapp.googleapis.com/StoragePool\022Cprojects/{project}/l"
-          + "ocations/{location}/storagePools/{storage_pool}*\014storagePools2\013storagePoolB\030\n"
+          + "!netapp.googleapis.com/StoragePool\022Cprojects/{project}/locations/{locat"
+          + "ion}/storagePools/{storage_pool}*\014storagePools2\013storagePoolB\030\n"
           + "\026_global_access_allowedB\036\n"
-          + "\034_enable_hot_tier_auto_resize\"\250\001\n"
+          + "\034_enable_hot_tier_auto_resizeB\007\n"
+          + "\005_type\"\250\001\n"
           + "\037ValidateDirectoryServiceRequest\0227\n"
           + "\004name\030\001 \001(\tB)\340A\002\372A#\n"
           + "!netapp.googleapis.com/StoragePool\022L\n"
           + "\026directory_service_type\030\002"
           + " \001(\0162,.google.cloud.netapp.v1.DirectoryServiceTypeB\262\001\n"
-          + "\032com.google.cloud.netapp.v1B\020StoragePoolProtoP\001Z2clou"
-          + "d.google.com/go/netapp/apiv1/netapppb;ne"
-          + "tapppb\252\002\026Google.Cloud.NetApp.V1\312\002\026Google"
-          + "\\Cloud\\NetApp\\V1\352\002\031Google::Cloud::NetApp::V1b\006proto3"
+          + "\032com.google.cloud.netapp.v1B\020StoragePoolProtoP\001Z2cloud.goog"
+          + "le.com/go/netapp/apiv1/netapppb;netapppb"
+          + "\252\002\026Google.Cloud.NetApp.V1\312\002\026Google\\Cloud"
+          + "\\NetApp\\V1\352\002\031Google::Cloud::NetApp::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -285,6 +288,7 @@ public final class StoragePoolProto {
               "AvailableThroughputMibps",
               "ColdTierSizeUsedGib",
               "HotTierSizeUsedGib",
+              "Type",
             });
     internal_static_google_cloud_netapp_v1_StoragePool_LabelsEntry_descriptor =
         internal_static_google_cloud_netapp_v1_StoragePool_descriptor.getNestedTypes().get(0);

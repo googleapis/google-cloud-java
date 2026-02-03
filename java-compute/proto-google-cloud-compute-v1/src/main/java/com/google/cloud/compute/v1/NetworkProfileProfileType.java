@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -288,6 +288,16 @@ public final class NetworkProfileProfileType extends com.google.protobuf.Generat
      * <code>ROCE = 2520927;</code>
      */
     ROCE(2520927),
+    /**
+     *
+     *
+     * <pre>
+     * RDMA over Converged Ethernet (RoCE) for Bare Metal.
+     * </pre>
+     *
+     * <code>ROCE_METAL = 421218823;</code>
+     */
+    ROCE_METAL(421218823),
     UNRECOGNIZED(-1),
     ;
 
@@ -324,6 +334,17 @@ public final class NetworkProfileProfileType extends com.google.protobuf.Generat
      */
     public static final int ROCE_VALUE = 2520927;
 
+    /**
+     *
+     *
+     * <pre>
+     * RDMA over Converged Ethernet (RoCE) for Bare Metal.
+     * </pre>
+     *
+     * <code>ROCE_METAL = 421218823;</code>
+     */
+    public static final int ROCE_METAL_VALUE = 421218823;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -354,6 +375,8 @@ public final class NetworkProfileProfileType extends com.google.protobuf.Generat
           return FALCON;
         case 2520927:
           return ROCE;
+        case 421218823:
+          return ROCE_METAL;
         default:
           return null;
       }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ import com.google.cloud.geminidataanalytics.v1beta.ListConversationsResponse;
 import com.google.cloud.geminidataanalytics.v1beta.ListMessagesRequest;
 import com.google.cloud.geminidataanalytics.v1beta.ListMessagesResponse;
 import com.google.cloud.geminidataanalytics.v1beta.Message;
+import com.google.cloud.geminidataanalytics.v1beta.QueryDataRequest;
+import com.google.cloud.geminidataanalytics.v1beta.QueryDataResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -290,6 +292,44 @@ public class HttpJsonDataChatServiceStub extends DataChatServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<QueryDataRequest, QueryDataResponse>
+      queryDataMethodDescriptor =
+          ApiMethodDescriptor.<QueryDataRequest, QueryDataResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.geminidataanalytics.v1beta.DataChatService/QueryData")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<QueryDataRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{parent=projects/*/locations/*}:queryData",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<QueryDataRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<QueryDataRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<QueryDataResponse>newBuilder()
+                      .setDefaultInstance(QueryDataResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -369,6 +409,7 @@ public class HttpJsonDataChatServiceStub extends DataChatServiceStub {
   private final UnaryCallable<ListMessagesRequest, ListMessagesResponse> listMessagesCallable;
   private final UnaryCallable<ListMessagesRequest, ListMessagesPagedResponse>
       listMessagesPagedCallable;
+  private final UnaryCallable<QueryDataRequest, QueryDataResponse> queryDataCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -484,6 +525,17 @@ public class HttpJsonDataChatServiceStub extends DataChatServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<QueryDataRequest, QueryDataResponse> queryDataTransportSettings =
+        HttpJsonCallSettings.<QueryDataRequest, QueryDataResponse>newBuilder()
+            .setMethodDescriptor(queryDataMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -540,6 +592,9 @@ public class HttpJsonDataChatServiceStub extends DataChatServiceStub {
     this.listMessagesPagedCallable =
         callableFactory.createPagedCallable(
             listMessagesTransportSettings, settings.listMessagesSettings(), clientContext);
+    this.queryDataCallable =
+        callableFactory.createUnaryCallable(
+            queryDataTransportSettings, settings.queryDataSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -563,6 +618,7 @@ public class HttpJsonDataChatServiceStub extends DataChatServiceStub {
     methodDescriptors.add(getConversationMethodDescriptor);
     methodDescriptors.add(listConversationsMethodDescriptor);
     methodDescriptors.add(listMessagesMethodDescriptor);
+    methodDescriptors.add(queryDataMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -608,6 +664,11 @@ public class HttpJsonDataChatServiceStub extends DataChatServiceStub {
   @Override
   public UnaryCallable<ListMessagesRequest, ListMessagesPagedResponse> listMessagesPagedCallable() {
     return listMessagesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryDataRequest, QueryDataResponse> queryDataCallable() {
+    return queryDataCallable;
   }
 
   @Override

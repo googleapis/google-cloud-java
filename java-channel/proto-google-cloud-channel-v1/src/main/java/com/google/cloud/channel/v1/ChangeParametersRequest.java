@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Request message for [CloudChannelService.ChangeParametersRequest][].
+ * Request message for
+ * [CloudChannelService.ChangeParameters][google.cloud.channel.v1.CloudChannelService.ChangeParameters].
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.ChangeParametersRequest}
@@ -556,7 +557,8 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Request message for [CloudChannelService.ChangeParametersRequest][].
+   * Request message for
+   * [CloudChannelService.ChangeParameters][google.cloud.channel.v1.CloudChannelService.ChangeParameters].
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.ChangeParametersRequest}

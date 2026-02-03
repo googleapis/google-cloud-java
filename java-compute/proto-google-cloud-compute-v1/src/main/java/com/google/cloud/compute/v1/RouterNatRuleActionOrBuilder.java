@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,10 @@ public interface RouterNatRuleActionOrBuilder
    *
    *
    * <pre>
-   * A list of URLs of the IP resources used for this NAT rule. These IP addresses must be valid static external IP addresses assigned to the project. This field is used for public NAT.
+   * A list of URLs of the IP resources used for this NAT rule. These IP
+   * addresses must be valid static external IP addresses assigned to the
+   * project.
+   * This field is used for public NAT.
    * </pre>
    *
    * <code>repeated string source_nat_active_ips = 210378229;</code>
@@ -41,7 +44,10 @@ public interface RouterNatRuleActionOrBuilder
    *
    *
    * <pre>
-   * A list of URLs of the IP resources used for this NAT rule. These IP addresses must be valid static external IP addresses assigned to the project. This field is used for public NAT.
+   * A list of URLs of the IP resources used for this NAT rule. These IP
+   * addresses must be valid static external IP addresses assigned to the
+   * project.
+   * This field is used for public NAT.
    * </pre>
    *
    * <code>repeated string source_nat_active_ips = 210378229;</code>
@@ -54,7 +60,10 @@ public interface RouterNatRuleActionOrBuilder
    *
    *
    * <pre>
-   * A list of URLs of the IP resources used for this NAT rule. These IP addresses must be valid static external IP addresses assigned to the project. This field is used for public NAT.
+   * A list of URLs of the IP resources used for this NAT rule. These IP
+   * addresses must be valid static external IP addresses assigned to the
+   * project.
+   * This field is used for public NAT.
    * </pre>
    *
    * <code>repeated string source_nat_active_ips = 210378229;</code>
@@ -68,7 +77,10 @@ public interface RouterNatRuleActionOrBuilder
    *
    *
    * <pre>
-   * A list of URLs of the IP resources used for this NAT rule. These IP addresses must be valid static external IP addresses assigned to the project. This field is used for public NAT.
+   * A list of URLs of the IP resources used for this NAT rule. These IP
+   * addresses must be valid static external IP addresses assigned to the
+   * project.
+   * This field is used for public NAT.
    * </pre>
    *
    * <code>repeated string source_nat_active_ips = 210378229;</code>
@@ -82,7 +94,9 @@ public interface RouterNatRuleActionOrBuilder
    *
    *
    * <pre>
-   * A list of URLs of the subnetworks used as source ranges for this NAT Rule. These subnetworks must have purpose set to PRIVATE_NAT. This field is used for private NAT.
+   * A list of URLs of the subnetworks used as source ranges for this
+   * NAT Rule. These subnetworks must have purpose set to PRIVATE_NAT.
+   * This field is used for private NAT.
    * </pre>
    *
    * <code>repeated string source_nat_active_ranges = 190556269;</code>
@@ -95,7 +109,9 @@ public interface RouterNatRuleActionOrBuilder
    *
    *
    * <pre>
-   * A list of URLs of the subnetworks used as source ranges for this NAT Rule. These subnetworks must have purpose set to PRIVATE_NAT. This field is used for private NAT.
+   * A list of URLs of the subnetworks used as source ranges for this
+   * NAT Rule. These subnetworks must have purpose set to PRIVATE_NAT.
+   * This field is used for private NAT.
    * </pre>
    *
    * <code>repeated string source_nat_active_ranges = 190556269;</code>
@@ -108,7 +124,9 @@ public interface RouterNatRuleActionOrBuilder
    *
    *
    * <pre>
-   * A list of URLs of the subnetworks used as source ranges for this NAT Rule. These subnetworks must have purpose set to PRIVATE_NAT. This field is used for private NAT.
+   * A list of URLs of the subnetworks used as source ranges for this
+   * NAT Rule. These subnetworks must have purpose set to PRIVATE_NAT.
+   * This field is used for private NAT.
    * </pre>
    *
    * <code>repeated string source_nat_active_ranges = 190556269;</code>
@@ -122,7 +140,9 @@ public interface RouterNatRuleActionOrBuilder
    *
    *
    * <pre>
-   * A list of URLs of the subnetworks used as source ranges for this NAT Rule. These subnetworks must have purpose set to PRIVATE_NAT. This field is used for private NAT.
+   * A list of URLs of the subnetworks used as source ranges for this
+   * NAT Rule. These subnetworks must have purpose set to PRIVATE_NAT.
+   * This field is used for private NAT.
    * </pre>
    *
    * <code>repeated string source_nat_active_ranges = 190556269;</code>
@@ -136,7 +156,10 @@ public interface RouterNatRuleActionOrBuilder
    *
    *
    * <pre>
-   * A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. These IPs should be used for updating/patching a NAT rule only. This field is used for public NAT.
+   * A list of URLs of the IP resources to be drained. These IPs
+   * must be valid static external IPs that have been assigned to the NAT.
+   * These IPs should be used for updating/patching a NAT rule only.
+   * This field is used for public NAT.
    * </pre>
    *
    * <code>repeated string source_nat_drain_ips = 340812451;</code>
@@ -149,7 +172,10 @@ public interface RouterNatRuleActionOrBuilder
    *
    *
    * <pre>
-   * A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. These IPs should be used for updating/patching a NAT rule only. This field is used for public NAT.
+   * A list of URLs of the IP resources to be drained. These IPs
+   * must be valid static external IPs that have been assigned to the NAT.
+   * These IPs should be used for updating/patching a NAT rule only.
+   * This field is used for public NAT.
    * </pre>
    *
    * <code>repeated string source_nat_drain_ips = 340812451;</code>
@@ -162,7 +188,10 @@ public interface RouterNatRuleActionOrBuilder
    *
    *
    * <pre>
-   * A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. These IPs should be used for updating/patching a NAT rule only. This field is used for public NAT.
+   * A list of URLs of the IP resources to be drained. These IPs
+   * must be valid static external IPs that have been assigned to the NAT.
+   * These IPs should be used for updating/patching a NAT rule only.
+   * This field is used for public NAT.
    * </pre>
    *
    * <code>repeated string source_nat_drain_ips = 340812451;</code>
@@ -176,7 +205,10 @@ public interface RouterNatRuleActionOrBuilder
    *
    *
    * <pre>
-   * A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. These IPs should be used for updating/patching a NAT rule only. This field is used for public NAT.
+   * A list of URLs of the IP resources to be drained. These IPs
+   * must be valid static external IPs that have been assigned to the NAT.
+   * These IPs should be used for updating/patching a NAT rule only.
+   * This field is used for public NAT.
    * </pre>
    *
    * <code>repeated string source_nat_drain_ips = 340812451;</code>
@@ -190,7 +222,11 @@ public interface RouterNatRuleActionOrBuilder
    *
    *
    * <pre>
-   * A list of URLs of subnetworks representing source ranges to be drained. This is only supported on patch/update, and these subnetworks must have previously been used as active ranges in this NAT Rule. This field is used for private NAT.
+   * A list of URLs of subnetworks representing source ranges to be
+   * drained. This is only supported on patch/update, and these
+   * subnetworks must have previously been used as active ranges in this
+   * NAT Rule.
+   * This field is used for private NAT.
    * </pre>
    *
    * <code>repeated string source_nat_drain_ranges = 84802815;</code>
@@ -203,7 +239,11 @@ public interface RouterNatRuleActionOrBuilder
    *
    *
    * <pre>
-   * A list of URLs of subnetworks representing source ranges to be drained. This is only supported on patch/update, and these subnetworks must have previously been used as active ranges in this NAT Rule. This field is used for private NAT.
+   * A list of URLs of subnetworks representing source ranges to be
+   * drained. This is only supported on patch/update, and these
+   * subnetworks must have previously been used as active ranges in this
+   * NAT Rule.
+   * This field is used for private NAT.
    * </pre>
    *
    * <code>repeated string source_nat_drain_ranges = 84802815;</code>
@@ -216,7 +256,11 @@ public interface RouterNatRuleActionOrBuilder
    *
    *
    * <pre>
-   * A list of URLs of subnetworks representing source ranges to be drained. This is only supported on patch/update, and these subnetworks must have previously been used as active ranges in this NAT Rule. This field is used for private NAT.
+   * A list of URLs of subnetworks representing source ranges to be
+   * drained. This is only supported on patch/update, and these
+   * subnetworks must have previously been used as active ranges in this
+   * NAT Rule.
+   * This field is used for private NAT.
    * </pre>
    *
    * <code>repeated string source_nat_drain_ranges = 84802815;</code>
@@ -230,7 +274,11 @@ public interface RouterNatRuleActionOrBuilder
    *
    *
    * <pre>
-   * A list of URLs of subnetworks representing source ranges to be drained. This is only supported on patch/update, and these subnetworks must have previously been used as active ranges in this NAT Rule. This field is used for private NAT.
+   * A list of URLs of subnetworks representing source ranges to be
+   * drained. This is only supported on patch/update, and these
+   * subnetworks must have previously been used as active ranges in this
+   * NAT Rule.
+   * This field is used for private NAT.
    * </pre>
    *
    * <code>repeated string source_nat_drain_ranges = 84802815;</code>

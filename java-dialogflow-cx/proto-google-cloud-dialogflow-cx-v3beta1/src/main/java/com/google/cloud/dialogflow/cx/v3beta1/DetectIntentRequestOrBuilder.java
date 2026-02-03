@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -202,4 +202,38 @@ public interface DetectIntentRequestOrBuilder
    * <code>.google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig output_audio_config = 4;</code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.OutputAudioConfigOrBuilder getOutputAudioConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies which fields in the
+   * [QueryResult][google.cloud.dialogflow.cx.v3beta1.QueryResult] to return. If
+   * not set, the default is DETECT_INTENT_RESPONSE_VIEW_FULL.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.DetectIntentResponseView response_view = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for responseView.
+   */
+  int getResponseViewValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies which fields in the
+   * [QueryResult][google.cloud.dialogflow.cx.v3beta1.QueryResult] to return. If
+   * not set, the default is DETECT_INTENT_RESPONSE_VIEW_FULL.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.DetectIntentResponseView response_view = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The responseView.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponseView getResponseView();
 }

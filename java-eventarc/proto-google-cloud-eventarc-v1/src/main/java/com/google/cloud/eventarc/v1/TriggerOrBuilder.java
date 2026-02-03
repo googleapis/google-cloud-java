@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -593,6 +593,58 @@ public interface TriggerOrBuilder
    * @return The satisfiesPzs.
    */
   boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The retry policy to use in the Trigger.
+   *
+   * If unset, event delivery will be retried for up to 24 hours by default:
+   * https://cloud.google.com/eventarc/docs/retry-events
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.eventarc.v1.Trigger.RetryPolicy retry_policy = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the retryPolicy field is set.
+   */
+  boolean hasRetryPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The retry policy to use in the Trigger.
+   *
+   * If unset, event delivery will be retried for up to 24 hours by default:
+   * https://cloud.google.com/eventarc/docs/retry-events
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.eventarc.v1.Trigger.RetryPolicy retry_policy = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The retryPolicy.
+   */
+  com.google.cloud.eventarc.v1.Trigger.RetryPolicy getRetryPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The retry policy to use in the Trigger.
+   *
+   * If unset, event delivery will be retried for up to 24 hours by default:
+   * https://cloud.google.com/eventarc/docs/retry-events
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.eventarc.v1.Trigger.RetryPolicy retry_policy = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.eventarc.v1.Trigger.RetryPolicyOrBuilder getRetryPolicyOrBuilder();
 
   /**
    *

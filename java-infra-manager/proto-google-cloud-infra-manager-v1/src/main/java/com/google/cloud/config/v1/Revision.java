@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -507,6 +507,16 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      * <code>QUOTA_VALIDATION_FAILED = 7;</code>
      */
     QUOTA_VALIDATION_FAILED(7),
+    /**
+     *
+     *
+     * <pre>
+     * Failed to import values from an external source.
+     * </pre>
+     *
+     * <code>EXTERNAL_VALUE_SOURCE_IMPORT_FAILED = 8;</code>
+     */
+    EXTERNAL_VALUE_SOURCE_IMPORT_FAILED(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -568,6 +578,17 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int QUOTA_VALIDATION_FAILED_VALUE = 7;
 
+    /**
+     *
+     *
+     * <pre>
+     * Failed to import values from an external source.
+     * </pre>
+     *
+     * <code>EXTERNAL_VALUE_SOURCE_IMPORT_FAILED = 8;</code>
+     */
+    public static final int EXTERNAL_VALUE_SOURCE_IMPORT_FAILED_VALUE = 8;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -602,6 +623,8 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
           return APPLY_BUILD_RUN_FAILED;
         case 7:
           return QUOTA_VALIDATION_FAILED;
+        case 8:
+          return EXTERNAL_VALUE_SOURCE_IMPORT_FAILED;
         default:
           return null;
       }

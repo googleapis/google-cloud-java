@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,7 +54,8 @@ public interface NetworkPeeringConnectionStatusTrafficConfigurationOrBuilder
    *
    *
    * <pre>
-   * Whether subnet routes with public IP ranges are being exported to the peer network.
+   * Whether subnet routes with public IP ranges are being exported to the
+   * peer network.
    * </pre>
    *
    * <code>optional bool export_subnet_routes_with_public_ip_to_peer = 8358601;</code>
@@ -67,7 +68,8 @@ public interface NetworkPeeringConnectionStatusTrafficConfigurationOrBuilder
    *
    *
    * <pre>
-   * Whether subnet routes with public IP ranges are being exported to the peer network.
+   * Whether subnet routes with public IP ranges are being exported to the
+   * peer network.
    * </pre>
    *
    * <code>optional bool export_subnet_routes_with_public_ip_to_peer = 8358601;</code>
@@ -106,7 +108,8 @@ public interface NetworkPeeringConnectionStatusTrafficConfigurationOrBuilder
    *
    *
    * <pre>
-   * Whether subnet routes with public IP ranges are being imported from the peer network.
+   * Whether subnet routes with public IP ranges are being imported
+   * from the peer network.
    * </pre>
    *
    * <code>optional bool import_subnet_routes_with_public_ip_from_peer = 234712361;</code>
@@ -119,7 +122,8 @@ public interface NetworkPeeringConnectionStatusTrafficConfigurationOrBuilder
    *
    *
    * <pre>
-   * Whether subnet routes with public IP ranges are being imported from the peer network.
+   * Whether subnet routes with public IP ranges are being imported
+   * from the peer network.
    * </pre>
    *
    * <code>optional bool import_subnet_routes_with_public_ip_from_peer = 234712361;</code>
@@ -132,7 +136,8 @@ public interface NetworkPeeringConnectionStatusTrafficConfigurationOrBuilder
    *
    *
    * <pre>
-   * Which IP version(s) of traffic and routes are being imported or exported between peer networks.
+   * Which IP version(s) of traffic and routes are being imported or
+   * exported between peer networks.
    * Check the StackType enum for the list of possible values.
    * </pre>
    *
@@ -146,7 +151,8 @@ public interface NetworkPeeringConnectionStatusTrafficConfigurationOrBuilder
    *
    *
    * <pre>
-   * Which IP version(s) of traffic and routes are being imported or exported between peer networks.
+   * Which IP version(s) of traffic and routes are being imported or
+   * exported between peer networks.
    * Check the StackType enum for the list of possible values.
    * </pre>
    *
@@ -160,7 +166,8 @@ public interface NetworkPeeringConnectionStatusTrafficConfigurationOrBuilder
    *
    *
    * <pre>
-   * Which IP version(s) of traffic and routes are being imported or exported between peer networks.
+   * Which IP version(s) of traffic and routes are being imported or
+   * exported between peer networks.
    * Check the StackType enum for the list of possible values.
    * </pre>
    *

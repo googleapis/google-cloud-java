@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,7 +69,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The status of the instance.
+   * Output only. [Output Only] The status of the instance.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.InstanceWithNamedPorts.Status}
@@ -89,7 +89,8 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The instance is halted and we are performing tear down tasks like network deprogramming, releasing quota, IP, tearing down disks etc.
+     * The instance is halted and we are performing tear down tasks like network
+     * deprogramming, releasing quota, IP, tearing down disks etc.
      * </pre>
      *
      * <code>DEPROVISIONING = 428935662;</code>
@@ -99,7 +100,8 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * For Flex Start provisioning instance is waiting for available capacity from Dynamic Workload Scheduler (DWS).
+     * For Flex Start provisioning instance is waiting for available capacity
+     * from Dynamic Workload Scheduler (DWS).
      * </pre>
      *
      * <code>PENDING = 35394935;</code>
@@ -139,7 +141,8 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * All required resources have been allocated and the instance is being started.
+     * All required resources have been allocated and the instance
+     * is being started.
      * </pre>
      *
      * <code>STAGING = 431072283;</code>
@@ -189,7 +192,8 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The instance has stopped (either by explicit action or underlying failure).
+     * The instance has stopped (either by explicit action or underlying
+     * failure).
      * </pre>
      *
      * <code>TERMINATED = 250018339;</code>
@@ -213,7 +217,8 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The instance is halted and we are performing tear down tasks like network deprogramming, releasing quota, IP, tearing down disks etc.
+     * The instance is halted and we are performing tear down tasks like network
+     * deprogramming, releasing quota, IP, tearing down disks etc.
      * </pre>
      *
      * <code>DEPROVISIONING = 428935662;</code>
@@ -224,7 +229,8 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * For Flex Start provisioning instance is waiting for available capacity from Dynamic Workload Scheduler (DWS).
+     * For Flex Start provisioning instance is waiting for available capacity
+     * from Dynamic Workload Scheduler (DWS).
      * </pre>
      *
      * <code>PENDING = 35394935;</code>
@@ -268,7 +274,8 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * All required resources have been allocated and the instance is being started.
+     * All required resources have been allocated and the instance
+     * is being started.
      * </pre>
      *
      * <code>STAGING = 431072283;</code>
@@ -323,7 +330,8 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The instance has stopped (either by explicit action or underlying failure).
+     * The instance has stopped (either by explicit action or underlying
+     * failure).
      * </pre>
      *
      * <code>TERMINATED = 250018339;</code>
@@ -443,7 +451,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The URL of the instance.
+   * Output only. [Output Only] The URL of the instance.
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -459,7 +467,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The URL of the instance.
+   * Output only. [Output Only] The URL of the instance.
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -483,7 +491,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The URL of the instance.
+   * Output only. [Output Only] The URL of the instance.
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -512,7 +520,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The named ports that belong to this instance group.
+   * Output only. [Output Only] The named ports that belong to this instance group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -526,7 +534,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The named ports that belong to this instance group.
+   * Output only. [Output Only] The named ports that belong to this instance group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -541,7 +549,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The named ports that belong to this instance group.
+   * Output only. [Output Only] The named ports that belong to this instance group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -555,7 +563,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The named ports that belong to this instance group.
+   * Output only. [Output Only] The named ports that belong to this instance group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -569,7 +577,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The named ports that belong to this instance group.
+   * Output only. [Output Only] The named ports that belong to this instance group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -588,7 +596,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The status of the instance.
+   * Output only. [Output Only] The status of the instance.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -605,7 +613,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The status of the instance.
+   * Output only. [Output Only] The status of the instance.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -630,7 +638,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The status of the instance.
+   * Output only. [Output Only] The status of the instance.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -1110,7 +1118,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The URL of the instance.
+     * Output only. [Output Only] The URL of the instance.
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -1125,7 +1133,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The URL of the instance.
+     * Output only. [Output Only] The URL of the instance.
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -1148,7 +1156,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The URL of the instance.
+     * Output only. [Output Only] The URL of the instance.
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -1171,7 +1179,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The URL of the instance.
+     * Output only. [Output Only] The URL of the instance.
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -1193,7 +1201,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The URL of the instance.
+     * Output only. [Output Only] The URL of the instance.
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -1211,7 +1219,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The URL of the instance.
+     * Output only. [Output Only] The URL of the instance.
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -1250,7 +1258,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The named ports that belong to this instance group.
+     * Output only. [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -1267,7 +1275,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The named ports that belong to this instance group.
+     * Output only. [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -1284,7 +1292,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The named ports that belong to this instance group.
+     * Output only. [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -1301,7 +1309,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The named ports that belong to this instance group.
+     * Output only. [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -1324,7 +1332,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The named ports that belong to this instance group.
+     * Output only. [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -1345,7 +1353,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The named ports that belong to this instance group.
+     * Output only. [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -1368,7 +1376,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The named ports that belong to this instance group.
+     * Output only. [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -1391,7 +1399,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The named ports that belong to this instance group.
+     * Output only. [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -1411,7 +1419,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The named ports that belong to this instance group.
+     * Output only. [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -1432,7 +1440,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The named ports that belong to this instance group.
+     * Output only. [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -1453,7 +1461,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The named ports that belong to this instance group.
+     * Output only. [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -1473,7 +1481,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The named ports that belong to this instance group.
+     * Output only. [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -1493,7 +1501,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The named ports that belong to this instance group.
+     * Output only. [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -1506,7 +1514,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The named ports that belong to this instance group.
+     * Output only. [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -1523,7 +1531,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The named ports that belong to this instance group.
+     * Output only. [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -1541,7 +1549,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The named ports that belong to this instance group.
+     * Output only. [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -1555,7 +1563,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The named ports that belong to this instance group.
+     * Output only. [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -1569,7 +1577,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The named ports that belong to this instance group.
+     * Output only. [Output Only] The named ports that belong to this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -1602,7 +1610,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The status of the instance.
+     * Output only. [Output Only] The status of the instance.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -1618,7 +1626,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The status of the instance.
+     * Output only. [Output Only] The status of the instance.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -1642,7 +1650,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The status of the instance.
+     * Output only. [Output Only] The status of the instance.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -1666,7 +1674,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The status of the instance.
+     * Output only. [Output Only] The status of the instance.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -1689,7 +1697,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The status of the instance.
+     * Output only. [Output Only] The status of the instance.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -1708,7 +1716,7 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The status of the instance.
+     * Output only. [Output Only] The status of the instance.
      * Check the Status enum for the list of possible values.
      * </pre>
      *

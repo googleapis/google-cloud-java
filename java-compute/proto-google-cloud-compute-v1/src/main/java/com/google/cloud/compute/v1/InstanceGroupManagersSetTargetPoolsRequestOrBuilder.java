@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,12 @@ public interface InstanceGroupManagersSetTargetPoolsRequestOrBuilder
    *
    *
    * <pre>
-   * The fingerprint of the target pools information. Use this optional property to prevent conflicts when multiple users change the target pools settings concurrently. Obtain the fingerprint with the instanceGroupManagers.get method. Then, include the fingerprint in your request to ensure that you do not overwrite changes that were applied from another concurrent request.
+   * The fingerprint of the target pools information. Use this optional
+   * property to prevent conflicts when multiple users change the target pools
+   * settings concurrently. Obtain the fingerprint with theinstanceGroupManagers.get
+   * method. Then, include the fingerprint in your request to ensure that you
+   * do not overwrite changes that were applied from another
+   * concurrent request.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -41,7 +46,12 @@ public interface InstanceGroupManagersSetTargetPoolsRequestOrBuilder
    *
    *
    * <pre>
-   * The fingerprint of the target pools information. Use this optional property to prevent conflicts when multiple users change the target pools settings concurrently. Obtain the fingerprint with the instanceGroupManagers.get method. Then, include the fingerprint in your request to ensure that you do not overwrite changes that were applied from another concurrent request.
+   * The fingerprint of the target pools information. Use this optional
+   * property to prevent conflicts when multiple users change the target pools
+   * settings concurrently. Obtain the fingerprint with theinstanceGroupManagers.get
+   * method. Then, include the fingerprint in your request to ensure that you
+   * do not overwrite changes that were applied from another
+   * concurrent request.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -54,7 +64,12 @@ public interface InstanceGroupManagersSetTargetPoolsRequestOrBuilder
    *
    *
    * <pre>
-   * The fingerprint of the target pools information. Use this optional property to prevent conflicts when multiple users change the target pools settings concurrently. Obtain the fingerprint with the instanceGroupManagers.get method. Then, include the fingerprint in your request to ensure that you do not overwrite changes that were applied from another concurrent request.
+   * The fingerprint of the target pools information. Use this optional
+   * property to prevent conflicts when multiple users change the target pools
+   * settings concurrently. Obtain the fingerprint with theinstanceGroupManagers.get
+   * method. Then, include the fingerprint in your request to ensure that you
+   * do not overwrite changes that were applied from another
+   * concurrent request.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -67,7 +82,10 @@ public interface InstanceGroupManagersSetTargetPoolsRequestOrBuilder
    *
    *
    * <pre>
-   * The list of target pool URLs that instances in this managed instance group belong to. The managed instance group applies these target pools to all of the instances in the group. Existing instances and new instances in the group all receive these target pool settings.
+   * The list of target pool URLs that instances in this managed instance group
+   * belong to. The managed instance group applies these target pools to all
+   * of the instances in the group. Existing instances and new instances in the
+   * group all receive these target pool settings.
    * </pre>
    *
    * <code>repeated string target_pools = 336072617;</code>
@@ -80,7 +98,10 @@ public interface InstanceGroupManagersSetTargetPoolsRequestOrBuilder
    *
    *
    * <pre>
-   * The list of target pool URLs that instances in this managed instance group belong to. The managed instance group applies these target pools to all of the instances in the group. Existing instances and new instances in the group all receive these target pool settings.
+   * The list of target pool URLs that instances in this managed instance group
+   * belong to. The managed instance group applies these target pools to all
+   * of the instances in the group. Existing instances and new instances in the
+   * group all receive these target pool settings.
    * </pre>
    *
    * <code>repeated string target_pools = 336072617;</code>
@@ -93,7 +114,10 @@ public interface InstanceGroupManagersSetTargetPoolsRequestOrBuilder
    *
    *
    * <pre>
-   * The list of target pool URLs that instances in this managed instance group belong to. The managed instance group applies these target pools to all of the instances in the group. Existing instances and new instances in the group all receive these target pool settings.
+   * The list of target pool URLs that instances in this managed instance group
+   * belong to. The managed instance group applies these target pools to all
+   * of the instances in the group. Existing instances and new instances in the
+   * group all receive these target pool settings.
    * </pre>
    *
    * <code>repeated string target_pools = 336072617;</code>
@@ -107,7 +131,10 @@ public interface InstanceGroupManagersSetTargetPoolsRequestOrBuilder
    *
    *
    * <pre>
-   * The list of target pool URLs that instances in this managed instance group belong to. The managed instance group applies these target pools to all of the instances in the group. Existing instances and new instances in the group all receive these target pool settings.
+   * The list of target pool URLs that instances in this managed instance group
+   * belong to. The managed instance group applies these target pools to all
+   * of the instances in the group. Existing instances and new instances in the
+   * group all receive these target pool settings.
    * </pre>
    *
    * <code>repeated string target_pools = 336072617;</code>

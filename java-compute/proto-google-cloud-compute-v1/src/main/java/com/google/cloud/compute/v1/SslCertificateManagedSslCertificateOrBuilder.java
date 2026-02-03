@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output only] Detailed statuses of the domains specified for managed certificate resource.
+   * Output only. [Output only] Detailed statuses of the domains specified for managed
+   * certificate resource.
    * </pre>
    *
    * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
@@ -39,7 +40,8 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output only] Detailed statuses of the domains specified for managed certificate resource.
+   * Output only. [Output only] Detailed statuses of the domains specified for managed
+   * certificate resource.
    * </pre>
    *
    * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
@@ -54,7 +56,8 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output only] Detailed statuses of the domains specified for managed certificate resource.
+   * Output only. [Output only] Detailed statuses of the domains specified for managed
+   * certificate resource.
    * </pre>
    *
    * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
@@ -65,7 +68,8 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output only] Detailed statuses of the domains specified for managed certificate resource.
+   * Output only. [Output only] Detailed statuses of the domains specified for managed
+   * certificate resource.
    * </pre>
    *
    * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
@@ -80,7 +84,8 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output only] Detailed statuses of the domains specified for managed certificate resource.
+   * Output only. [Output only] Detailed statuses of the domains specified for managed
+   * certificate resource.
    * </pre>
    *
    * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
@@ -91,7 +96,10 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    *
    *
    * <pre>
-   * The domains for which a managed SSL certificate will be generated. Each Google-managed SSL certificate supports up to the [maximum number of domains per Google-managed SSL certificate](/load-balancing/docs/quotas#ssl_certificates).
+   * The domains for which a managed SSL certificate will be generated. Each
+   * Google-managed SSL certificate supports up to the [maximum number of
+   * domains per Google-managed SSL
+   * certificate](/load-balancing/docs/quotas#ssl_certificates).
    * </pre>
    *
    * <code>repeated string domains = 226935855;</code>
@@ -104,7 +112,10 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    *
    *
    * <pre>
-   * The domains for which a managed SSL certificate will be generated. Each Google-managed SSL certificate supports up to the [maximum number of domains per Google-managed SSL certificate](/load-balancing/docs/quotas#ssl_certificates).
+   * The domains for which a managed SSL certificate will be generated. Each
+   * Google-managed SSL certificate supports up to the [maximum number of
+   * domains per Google-managed SSL
+   * certificate](/load-balancing/docs/quotas#ssl_certificates).
    * </pre>
    *
    * <code>repeated string domains = 226935855;</code>
@@ -117,7 +128,10 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    *
    *
    * <pre>
-   * The domains for which a managed SSL certificate will be generated. Each Google-managed SSL certificate supports up to the [maximum number of domains per Google-managed SSL certificate](/load-balancing/docs/quotas#ssl_certificates).
+   * The domains for which a managed SSL certificate will be generated. Each
+   * Google-managed SSL certificate supports up to the [maximum number of
+   * domains per Google-managed SSL
+   * certificate](/load-balancing/docs/quotas#ssl_certificates).
    * </pre>
    *
    * <code>repeated string domains = 226935855;</code>
@@ -131,7 +145,10 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    *
    *
    * <pre>
-   * The domains for which a managed SSL certificate will be generated. Each Google-managed SSL certificate supports up to the [maximum number of domains per Google-managed SSL certificate](/load-balancing/docs/quotas#ssl_certificates).
+   * The domains for which a managed SSL certificate will be generated. Each
+   * Google-managed SSL certificate supports up to the [maximum number of
+   * domains per Google-managed SSL
+   * certificate](/load-balancing/docs/quotas#ssl_certificates).
    * </pre>
    *
    * <code>repeated string domains = 226935855;</code>
@@ -145,7 +162,7 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output only] Status of the managed certificate resource.
+   * Output only. [Output only] Status of the managed certificate resource.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -159,7 +176,7 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output only] Status of the managed certificate resource.
+   * Output only. [Output only] Status of the managed certificate resource.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -173,7 +190,7 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output only] Status of the managed certificate resource.
+   * Output only. [Output only] Status of the managed certificate resource.
    * Check the Status enum for the list of possible values.
    * </pre>
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -440,7 +440,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Node resources that are reserved by all instances.
+   * Output only. Node resources that are reserved by all instances.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InstanceConsumptionInfo consumed_resources = 334527118;
@@ -457,7 +457,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Node resources that are reserved by all instances.
+   * Output only. Node resources that are reserved by all instances.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InstanceConsumptionInfo consumed_resources = 334527118;
@@ -476,7 +476,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Node resources that are reserved by all instances.
+   * Output only. Node resources that are reserved by all instances.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InstanceConsumptionInfo consumed_resources = 334527118;
@@ -648,7 +648,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Instance data that shows consumed resources on the node.
+   * Output only. Instance data that shows consumed resources on the node.
    * </pre>
    *
    * <code>
@@ -665,7 +665,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Instance data that shows consumed resources on the node.
+   * Output only. Instance data that shows consumed resources on the node.
    * </pre>
    *
    * <code>
@@ -682,7 +682,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Instance data that shows consumed resources on the node.
+   * Output only. Instance data that shows consumed resources on the node.
    * </pre>
    *
    * <code>
@@ -698,7 +698,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Instance data that shows consumed resources on the node.
+   * Output only. Instance data that shows consumed resources on the node.
    * </pre>
    *
    * <code>
@@ -714,7 +714,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Instance data that shows consumed resources on the node.
+   * Output only. Instance data that shows consumed resources on the node.
    * </pre>
    *
    * <code>
@@ -940,7 +940,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -956,7 +956,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -1169,7 +1169,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Total amount of available resources on the node.
+   * Output only. Total amount of available resources on the node.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InstanceConsumptionInfo total_resources = 97406698;
@@ -1186,7 +1186,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Total amount of available resources on the node.
+   * Output only. Total amount of available resources on the node.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InstanceConsumptionInfo total_resources = 97406698;
@@ -1205,7 +1205,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Total amount of available resources on the node.
+   * Output only. Total amount of available resources on the node.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InstanceConsumptionInfo total_resources = 97406698;
@@ -1225,7 +1225,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The information about an upcoming maintenance event.
+   * Output only. [Output Only] The information about an upcoming maintenance event.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
@@ -1242,7 +1242,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The information about an upcoming maintenance event.
+   * Output only. [Output Only] The information about an upcoming maintenance event.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
@@ -1261,7 +1261,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The information about an upcoming maintenance event.
+   * Output only. [Output Only] The information about an upcoming maintenance event.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
@@ -2561,7 +2561,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Node resources that are reserved by all instances.
+     * Output only. Node resources that are reserved by all instances.
      * </pre>
      *
      * <code>
@@ -2578,7 +2578,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Node resources that are reserved by all instances.
+     * Output only. Node resources that are reserved by all instances.
      * </pre>
      *
      * <code>
@@ -2601,7 +2601,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Node resources that are reserved by all instances.
+     * Output only. Node resources that are reserved by all instances.
      * </pre>
      *
      * <code>
@@ -2626,7 +2626,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Node resources that are reserved by all instances.
+     * Output only. Node resources that are reserved by all instances.
      * </pre>
      *
      * <code>
@@ -2649,7 +2649,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Node resources that are reserved by all instances.
+     * Output only. Node resources that are reserved by all instances.
      * </pre>
      *
      * <code>
@@ -2681,7 +2681,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Node resources that are reserved by all instances.
+     * Output only. Node resources that are reserved by all instances.
      * </pre>
      *
      * <code>
@@ -2703,7 +2703,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Node resources that are reserved by all instances.
+     * Output only. Node resources that are reserved by all instances.
      * </pre>
      *
      * <code>
@@ -2721,7 +2721,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Node resources that are reserved by all instances.
+     * Output only. Node resources that are reserved by all instances.
      * </pre>
      *
      * <code>
@@ -2743,7 +2743,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Node resources that are reserved by all instances.
+     * Output only. Node resources that are reserved by all instances.
      * </pre>
      *
      * <code>
@@ -3286,7 +3286,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instance data that shows consumed resources on the node.
+     * Output only. Instance data that shows consumed resources on the node.
      * </pre>
      *
      * <code>
@@ -3306,7 +3306,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instance data that shows consumed resources on the node.
+     * Output only. Instance data that shows consumed resources on the node.
      * </pre>
      *
      * <code>
@@ -3325,7 +3325,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instance data that shows consumed resources on the node.
+     * Output only. Instance data that shows consumed resources on the node.
      * </pre>
      *
      * <code>
@@ -3345,7 +3345,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instance data that shows consumed resources on the node.
+     * Output only. Instance data that shows consumed resources on the node.
      * </pre>
      *
      * <code>
@@ -3371,7 +3371,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instance data that shows consumed resources on the node.
+     * Output only. Instance data that shows consumed resources on the node.
      * </pre>
      *
      * <code>
@@ -3394,7 +3394,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instance data that shows consumed resources on the node.
+     * Output only. Instance data that shows consumed resources on the node.
      * </pre>
      *
      * <code>
@@ -3420,7 +3420,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instance data that shows consumed resources on the node.
+     * Output only. Instance data that shows consumed resources on the node.
      * </pre>
      *
      * <code>
@@ -3446,7 +3446,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instance data that shows consumed resources on the node.
+     * Output only. Instance data that shows consumed resources on the node.
      * </pre>
      *
      * <code>
@@ -3469,7 +3469,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instance data that shows consumed resources on the node.
+     * Output only. Instance data that shows consumed resources on the node.
      * </pre>
      *
      * <code>
@@ -3492,7 +3492,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instance data that shows consumed resources on the node.
+     * Output only. Instance data that shows consumed resources on the node.
      * </pre>
      *
      * <code>
@@ -3515,7 +3515,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instance data that shows consumed resources on the node.
+     * Output only. Instance data that shows consumed resources on the node.
      * </pre>
      *
      * <code>
@@ -3537,7 +3537,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instance data that shows consumed resources on the node.
+     * Output only. Instance data that shows consumed resources on the node.
      * </pre>
      *
      * <code>
@@ -3559,7 +3559,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instance data that shows consumed resources on the node.
+     * Output only. Instance data that shows consumed resources on the node.
      * </pre>
      *
      * <code>
@@ -3575,7 +3575,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instance data that shows consumed resources on the node.
+     * Output only. Instance data that shows consumed resources on the node.
      * </pre>
      *
      * <code>
@@ -3595,7 +3595,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instance data that shows consumed resources on the node.
+     * Output only. Instance data that shows consumed resources on the node.
      * </pre>
      *
      * <code>
@@ -3615,7 +3615,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instance data that shows consumed resources on the node.
+     * Output only. Instance data that shows consumed resources on the node.
      * </pre>
      *
      * <code>
@@ -3632,7 +3632,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instance data that shows consumed resources on the node.
+     * Output only. Instance data that shows consumed resources on the node.
      * </pre>
      *
      * <code>
@@ -3650,7 +3650,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instance data that shows consumed resources on the node.
+     * Output only. Instance data that shows consumed resources on the node.
      * </pre>
      *
      * <code>
@@ -4123,7 +4123,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -4139,7 +4139,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -4155,7 +4155,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -4175,7 +4175,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -4653,7 +4653,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Total amount of available resources on the node.
+     * Output only. Total amount of available resources on the node.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InstanceConsumptionInfo total_resources = 97406698;
@@ -4669,7 +4669,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Total amount of available resources on the node.
+     * Output only. Total amount of available resources on the node.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InstanceConsumptionInfo total_resources = 97406698;
@@ -4691,7 +4691,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Total amount of available resources on the node.
+     * Output only. Total amount of available resources on the node.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InstanceConsumptionInfo total_resources = 97406698;
@@ -4715,7 +4715,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Total amount of available resources on the node.
+     * Output only. Total amount of available resources on the node.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InstanceConsumptionInfo total_resources = 97406698;
@@ -4737,7 +4737,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Total amount of available resources on the node.
+     * Output only. Total amount of available resources on the node.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InstanceConsumptionInfo total_resources = 97406698;
@@ -4767,7 +4767,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Total amount of available resources on the node.
+     * Output only. Total amount of available resources on the node.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InstanceConsumptionInfo total_resources = 97406698;
@@ -4788,7 +4788,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Total amount of available resources on the node.
+     * Output only. Total amount of available resources on the node.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InstanceConsumptionInfo total_resources = 97406698;
@@ -4804,7 +4804,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Total amount of available resources on the node.
+     * Output only. Total amount of available resources on the node.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InstanceConsumptionInfo total_resources = 97406698;
@@ -4825,7 +4825,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Total amount of available resources on the node.
+     * Output only. Total amount of available resources on the node.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InstanceConsumptionInfo total_resources = 97406698;
@@ -4859,7 +4859,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The information about an upcoming maintenance event.
+     * Output only. [Output Only] The information about an upcoming maintenance event.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
@@ -4875,7 +4875,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The information about an upcoming maintenance event.
+     * Output only. [Output Only] The information about an upcoming maintenance event.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
@@ -4897,7 +4897,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The information about an upcoming maintenance event.
+     * Output only. [Output Only] The information about an upcoming maintenance event.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
@@ -4921,7 +4921,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The information about an upcoming maintenance event.
+     * Output only. [Output Only] The information about an upcoming maintenance event.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
@@ -4943,7 +4943,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The information about an upcoming maintenance event.
+     * Output only. [Output Only] The information about an upcoming maintenance event.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
@@ -4973,7 +4973,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The information about an upcoming maintenance event.
+     * Output only. [Output Only] The information about an upcoming maintenance event.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
@@ -4994,7 +4994,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The information about an upcoming maintenance event.
+     * Output only. [Output Only] The information about an upcoming maintenance event.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
@@ -5010,7 +5010,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The information about an upcoming maintenance event.
+     * Output only. [Output Only] The information about an upcoming maintenance event.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
@@ -5031,7 +5031,7 @@ public final class NodeGroupNode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The information about an upcoming maintenance event.
+     * Output only. [Output Only] The information about an upcoming maintenance event.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;

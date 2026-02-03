@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,7 +72,12 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
    *
    *
    * <pre>
-   * The name of a locality load-balancing policy. Valid values include ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information about these values, see the description of localityLbPolicy. Do not specify the same policy more than once for a backend. If you do, the configuration is rejected.
+   * The name of a locality load-balancing policy. Valid values include
+   * ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information
+   * about these values, see the description of localityLbPolicy.
+   *
+   * Do not specify the same policy more than once for a
+   * backend. If you do, the configuration is rejected.
    * </pre>
    *
    * Protobuf enum {@code
@@ -95,7 +100,8 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests.
+     * An O(1) algorithm which selects two random healthy hosts and
+     * picks the host which has fewer active requests.
      * </pre>
      *
      * <code>LEAST_REQUEST = 46604921;</code>
@@ -105,7 +111,11 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * This algorithm implements consistent hashing to backends. Maglev can be used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see Maglev: A Fast and Reliable Software Network Load Balancer.
+     * This algorithm implements consistent hashing to backends. Maglev can be
+     * used as a drop in replacement for the ring hash load balancer. Maglev is
+     * not as stable as ring hash but has faster table lookup build times and
+     * host selection times. For more information about Maglev, seeMaglev:
+     * A Fast and Reliable Software Network Load Balancer.
      * </pre>
      *
      * <code>MAGLEV = 119180266;</code>
@@ -115,7 +125,10 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer.
+     * Backend host is selected based on the client connection metadata, i.e.,
+     * connections are opened to the same address as the destination address of
+     * the incoming connection before the connection was redirected to the load
+     * balancer.
      * </pre>
      *
      * <code>ORIGINAL_DESTINATION = 166297216;</code>
@@ -135,7 +148,9 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests.
+     * The ring/modulo hash load balancer implements consistent hashing to
+     * backends. The algorithm has the property that the addition/removal
+     * of a host from a set of N hosts only affects 1/N of the requests.
      * </pre>
      *
      * <code>RING_HASH = 432795069;</code>
@@ -145,7 +160,8 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * This is a simple policy in which each healthy backend is selected in round robin order. This is the default.
+     * This is a simple policy in which each healthy backend is selected
+     * in round robin order. This is the default.
      * </pre>
      *
      * <code>ROUND_ROBIN = 153895801;</code>
@@ -155,7 +171,11 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * Per-instance weighted Load Balancing via health check reported weights. In internal passthrough network load balancing, it is weighted rendezvous hashing. This option is only supported in internal passthrough network load balancing.
+     * Per-instance weighted Load Balancing via health check reported weights.
+     * In internal passthrough network load balancing, it is weighted
+     * rendezvous hashing.
+     * This option is only supported in internal passthrough network load
+     * balancing.
      * </pre>
      *
      * <code>WEIGHTED_GCP_RENDEZVOUS = 82501640;</code>
@@ -165,7 +185,16 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * Per-instance weighted Load Balancing via health check reported weights. If set, the Backend Service must configure a non legacy HTTP-based Health Check, and health check replies are expected to contain non-standard HTTP response header field X-Load-Balancing-Endpoint-Weight to specify the per-instance weights. If set, Load Balancing is weighted based on the per-instance weights reported in the last processed health check replies, as long as every instance either reported a valid weight or had UNAVAILABLE_WEIGHT. Otherwise, Load Balancing remains equal-weight. This option is only supported in Network Load Balancing.
+     * Per-instance weighted Load Balancing via health check reported weights.
+     * If set, the Backend Service must configure a non legacy HTTP-based Health
+     * Check, and health check replies are expected to contain non-standard HTTP
+     * response header field X-Load-Balancing-Endpoint-Weight to specify the
+     * per-instance weights.
+     * If set, Load Balancing is weighted based on the
+     * per-instance weights reported in the last processed health check replies,
+     * as long as every instance either reported a valid weight or had
+     * UNAVAILABLE_WEIGHT. Otherwise, Load Balancing remains equal-weight.
+     * This option is only supported in Network Load Balancing.
      * </pre>
      *
      * <code>WEIGHTED_MAGLEV = 254930962;</code>
@@ -175,7 +204,12 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * Per-endpoint weighted round-robin Load Balancing using weights computed from Backend reported Custom Metrics. If set, the Backend Service responses are expected to contain non-standard HTTP response header field Endpoint-Load-Metrics. The reported metrics to use for computing the weights are specified via the customMetrics fields.
+     * Per-endpoint weighted round-robin Load Balancing using weights computed
+     * from Backend reported Custom Metrics. If set, the Backend Service
+     * responses are expected to contain non-standard HTTP response header field
+     * Endpoint-Load-Metrics. The reported metrics
+     * to use for computing the weights are specified via the
+     * customMetrics fields.
      * </pre>
      *
      * <code>WEIGHTED_ROUND_ROBIN = 5584977;</code>
@@ -202,7 +236,8 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests.
+     * An O(1) algorithm which selects two random healthy hosts and
+     * picks the host which has fewer active requests.
      * </pre>
      *
      * <code>LEAST_REQUEST = 46604921;</code>
@@ -213,7 +248,11 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * This algorithm implements consistent hashing to backends. Maglev can be used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see Maglev: A Fast and Reliable Software Network Load Balancer.
+     * This algorithm implements consistent hashing to backends. Maglev can be
+     * used as a drop in replacement for the ring hash load balancer. Maglev is
+     * not as stable as ring hash but has faster table lookup build times and
+     * host selection times. For more information about Maglev, seeMaglev:
+     * A Fast and Reliable Software Network Load Balancer.
      * </pre>
      *
      * <code>MAGLEV = 119180266;</code>
@@ -224,7 +263,10 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer.
+     * Backend host is selected based on the client connection metadata, i.e.,
+     * connections are opened to the same address as the destination address of
+     * the incoming connection before the connection was redirected to the load
+     * balancer.
      * </pre>
      *
      * <code>ORIGINAL_DESTINATION = 166297216;</code>
@@ -246,7 +288,9 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests.
+     * The ring/modulo hash load balancer implements consistent hashing to
+     * backends. The algorithm has the property that the addition/removal
+     * of a host from a set of N hosts only affects 1/N of the requests.
      * </pre>
      *
      * <code>RING_HASH = 432795069;</code>
@@ -257,7 +301,8 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * This is a simple policy in which each healthy backend is selected in round robin order. This is the default.
+     * This is a simple policy in which each healthy backend is selected
+     * in round robin order. This is the default.
      * </pre>
      *
      * <code>ROUND_ROBIN = 153895801;</code>
@@ -268,7 +313,11 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * Per-instance weighted Load Balancing via health check reported weights. In internal passthrough network load balancing, it is weighted rendezvous hashing. This option is only supported in internal passthrough network load balancing.
+     * Per-instance weighted Load Balancing via health check reported weights.
+     * In internal passthrough network load balancing, it is weighted
+     * rendezvous hashing.
+     * This option is only supported in internal passthrough network load
+     * balancing.
      * </pre>
      *
      * <code>WEIGHTED_GCP_RENDEZVOUS = 82501640;</code>
@@ -279,7 +328,16 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * Per-instance weighted Load Balancing via health check reported weights. If set, the Backend Service must configure a non legacy HTTP-based Health Check, and health check replies are expected to contain non-standard HTTP response header field X-Load-Balancing-Endpoint-Weight to specify the per-instance weights. If set, Load Balancing is weighted based on the per-instance weights reported in the last processed health check replies, as long as every instance either reported a valid weight or had UNAVAILABLE_WEIGHT. Otherwise, Load Balancing remains equal-weight. This option is only supported in Network Load Balancing.
+     * Per-instance weighted Load Balancing via health check reported weights.
+     * If set, the Backend Service must configure a non legacy HTTP-based Health
+     * Check, and health check replies are expected to contain non-standard HTTP
+     * response header field X-Load-Balancing-Endpoint-Weight to specify the
+     * per-instance weights.
+     * If set, Load Balancing is weighted based on the
+     * per-instance weights reported in the last processed health check replies,
+     * as long as every instance either reported a valid weight or had
+     * UNAVAILABLE_WEIGHT. Otherwise, Load Balancing remains equal-weight.
+     * This option is only supported in Network Load Balancing.
      * </pre>
      *
      * <code>WEIGHTED_MAGLEV = 254930962;</code>
@@ -290,7 +348,12 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * Per-endpoint weighted round-robin Load Balancing using weights computed from Backend reported Custom Metrics. If set, the Backend Service responses are expected to contain non-standard HTTP response header field Endpoint-Load-Metrics. The reported metrics to use for computing the weights are specified via the customMetrics fields.
+     * Per-endpoint weighted round-robin Load Balancing using weights computed
+     * from Backend reported Custom Metrics. If set, the Backend Service
+     * responses are expected to contain non-standard HTTP response header field
+     * Endpoint-Load-Metrics. The reported metrics
+     * to use for computing the weights are specified via the
+     * customMetrics fields.
      * </pre>
      *
      * <code>WEIGHTED_ROUND_ROBIN = 5584977;</code>
@@ -409,7 +472,12 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
    *
    *
    * <pre>
-   * The name of a locality load-balancing policy. Valid values include ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information about these values, see the description of localityLbPolicy. Do not specify the same policy more than once for a backend. If you do, the configuration is rejected.
+   * The name of a locality load-balancing policy. Valid values include
+   * ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information
+   * about these values, see the description of localityLbPolicy.
+   *
+   * Do not specify the same policy more than once for a
+   * backend. If you do, the configuration is rejected.
    * Check the Name enum for the list of possible values.
    * </pre>
    *
@@ -426,7 +494,12 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
    *
    *
    * <pre>
-   * The name of a locality load-balancing policy. Valid values include ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information about these values, see the description of localityLbPolicy. Do not specify the same policy more than once for a backend. If you do, the configuration is rejected.
+   * The name of a locality load-balancing policy. Valid values include
+   * ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information
+   * about these values, see the description of localityLbPolicy.
+   *
+   * Do not specify the same policy more than once for a
+   * backend. If you do, the configuration is rejected.
    * Check the Name enum for the list of possible values.
    * </pre>
    *
@@ -451,7 +524,12 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
    *
    *
    * <pre>
-   * The name of a locality load-balancing policy. Valid values include ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information about these values, see the description of localityLbPolicy. Do not specify the same policy more than once for a backend. If you do, the configuration is rejected.
+   * The name of a locality load-balancing policy. Valid values include
+   * ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information
+   * about these values, see the description of localityLbPolicy.
+   *
+   * Do not specify the same policy more than once for a
+   * backend. If you do, the configuration is rejected.
    * Check the Name enum for the list of possible values.
    * </pre>
    *
@@ -855,7 +933,12 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * The name of a locality load-balancing policy. Valid values include ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information about these values, see the description of localityLbPolicy. Do not specify the same policy more than once for a backend. If you do, the configuration is rejected.
+     * The name of a locality load-balancing policy. Valid values include
+     * ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information
+     * about these values, see the description of localityLbPolicy.
+     *
+     * Do not specify the same policy more than once for a
+     * backend. If you do, the configuration is rejected.
      * Check the Name enum for the list of possible values.
      * </pre>
      *
@@ -871,7 +954,12 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * The name of a locality load-balancing policy. Valid values include ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information about these values, see the description of localityLbPolicy. Do not specify the same policy more than once for a backend. If you do, the configuration is rejected.
+     * The name of a locality load-balancing policy. Valid values include
+     * ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information
+     * about these values, see the description of localityLbPolicy.
+     *
+     * Do not specify the same policy more than once for a
+     * backend. If you do, the configuration is rejected.
      * Check the Name enum for the list of possible values.
      * </pre>
      *
@@ -895,7 +983,12 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * The name of a locality load-balancing policy. Valid values include ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information about these values, see the description of localityLbPolicy. Do not specify the same policy more than once for a backend. If you do, the configuration is rejected.
+     * The name of a locality load-balancing policy. Valid values include
+     * ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information
+     * about these values, see the description of localityLbPolicy.
+     *
+     * Do not specify the same policy more than once for a
+     * backend. If you do, the configuration is rejected.
      * Check the Name enum for the list of possible values.
      * </pre>
      *
@@ -919,7 +1012,12 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * The name of a locality load-balancing policy. Valid values include ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information about these values, see the description of localityLbPolicy. Do not specify the same policy more than once for a backend. If you do, the configuration is rejected.
+     * The name of a locality load-balancing policy. Valid values include
+     * ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information
+     * about these values, see the description of localityLbPolicy.
+     *
+     * Do not specify the same policy more than once for a
+     * backend. If you do, the configuration is rejected.
      * Check the Name enum for the list of possible values.
      * </pre>
      *
@@ -942,7 +1040,12 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * The name of a locality load-balancing policy. Valid values include ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information about these values, see the description of localityLbPolicy. Do not specify the same policy more than once for a backend. If you do, the configuration is rejected.
+     * The name of a locality load-balancing policy. Valid values include
+     * ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information
+     * about these values, see the description of localityLbPolicy.
+     *
+     * Do not specify the same policy more than once for a
+     * backend. If you do, the configuration is rejected.
      * Check the Name enum for the list of possible values.
      * </pre>
      *
@@ -961,7 +1064,12 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * The name of a locality load-balancing policy. Valid values include ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information about these values, see the description of localityLbPolicy. Do not specify the same policy more than once for a backend. If you do, the configuration is rejected.
+     * The name of a locality load-balancing policy. Valid values include
+     * ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information
+     * about these values, see the description of localityLbPolicy.
+     *
+     * Do not specify the same policy more than once for a
+     * backend. If you do, the configuration is rejected.
      * Check the Name enum for the list of possible values.
      * </pre>
      *

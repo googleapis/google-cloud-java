@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ public interface XpnResourceIdOrBuilder
    *
    *
    * <pre>
-   * The ID of the service resource. In the case of projects, this field supports project id (e.g., my-project-123) and project number (e.g. 12345678).
+   * The ID of the service resource. In the case of projects, this field
+   * supports project id (e.g., my-project-123) and project number
+   * (e.g. 12345678).
    * </pre>
    *
    * <code>optional string id = 3355;</code>
@@ -41,7 +43,9 @@ public interface XpnResourceIdOrBuilder
    *
    *
    * <pre>
-   * The ID of the service resource. In the case of projects, this field supports project id (e.g., my-project-123) and project number (e.g. 12345678).
+   * The ID of the service resource. In the case of projects, this field
+   * supports project id (e.g., my-project-123) and project number
+   * (e.g. 12345678).
    * </pre>
    *
    * <code>optional string id = 3355;</code>
@@ -54,7 +58,9 @@ public interface XpnResourceIdOrBuilder
    *
    *
    * <pre>
-   * The ID of the service resource. In the case of projects, this field supports project id (e.g., my-project-123) and project number (e.g. 12345678).
+   * The ID of the service resource. In the case of projects, this field
+   * supports project id (e.g., my-project-123) and project number
+   * (e.g. 12345678).
    * </pre>
    *
    * <code>optional string id = 3355;</code>

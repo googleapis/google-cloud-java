@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,6 +49,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     packetMirroringRules_ = java.util.Collections.emptyList();
     parent_ = "";
+    policyType_ = "";
     region_ = "";
     rules_ = java.util.Collections.emptyList();
     selfLink_ = "";
@@ -75,6 +76,135 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.FirewallPolicy.class,
             com.google.cloud.compute.v1.FirewallPolicy.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of the firewall policy. This field can be eitherVPC_POLICY or RDMA_ROCE_POLICY.
+   *
+   * Note: if not specified then VPC_POLICY will be used.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.FirewallPolicy.PolicyType}
+   */
+  public enum PolicyType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_POLICY_TYPE = 0;</code>
+     */
+    UNDEFINED_POLICY_TYPE(0),
+    /** <code>RDMA_ROCE_POLICY = 148757145;</code> */
+    RDMA_ROCE_POLICY(148757145),
+    /** <code>VPC_POLICY = 74319208;</code> */
+    VPC_POLICY(74319208),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_POLICY_TYPE = 0;</code>
+     */
+    public static final int UNDEFINED_POLICY_TYPE_VALUE = 0;
+
+    /** <code>RDMA_ROCE_POLICY = 148757145;</code> */
+    public static final int RDMA_ROCE_POLICY_VALUE = 148757145;
+
+    /** <code>VPC_POLICY = 74319208;</code> */
+    public static final int VPC_POLICY_VALUE = 74319208;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static PolicyType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static PolicyType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_POLICY_TYPE;
+        case 148757145:
+          return RDMA_ROCE_POLICY;
+        case 74319208:
+          return VPC_POLICY;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PolicyType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<PolicyType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<PolicyType>() {
+          public PolicyType findValueByNumber(int number) {
+            return PolicyType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.FirewallPolicy.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final PolicyType[] VALUES = values();
+
+    public static PolicyType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private PolicyType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.FirewallPolicy.PolicyType)
   }
 
   private int bitField0_;
@@ -170,7 +300,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -186,7 +317,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -210,7 +342,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -239,7 +372,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -255,7 +389,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -279,7 +414,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -308,7 +444,17 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Deprecated, please use short name instead. User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This field is not applicable to network firewall policies. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Deprecated, please use short name instead. User-provided name of the
+   * Organization firewall policy. The name should be unique in the organization
+   * in which the firewall policy is created.
+   * This field is not applicable to network firewall policies.
+   * This name must be set on creation and cannot be changed.
+   * The name must be 1-63 characters long, and comply
+   * with RFC1035. Specifically, the name must be 1-63 characters
+   * long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which
+   * means the first character must be a lowercase letter, and all following
+   * characters must be a dash, lowercase letter, or digit, except the last
+   * character, which cannot be a dash.
    * </pre>
    *
    * <code>optional string display_name = 4473832;</code>
@@ -324,7 +470,17 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Deprecated, please use short name instead. User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This field is not applicable to network firewall policies. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Deprecated, please use short name instead. User-provided name of the
+   * Organization firewall policy. The name should be unique in the organization
+   * in which the firewall policy is created.
+   * This field is not applicable to network firewall policies.
+   * This name must be set on creation and cannot be changed.
+   * The name must be 1-63 characters long, and comply
+   * with RFC1035. Specifically, the name must be 1-63 characters
+   * long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which
+   * means the first character must be a lowercase letter, and all following
+   * characters must be a dash, lowercase letter, or digit, except the last
+   * character, which cannot be a dash.
    * </pre>
    *
    * <code>optional string display_name = 4473832;</code>
@@ -348,7 +504,17 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Deprecated, please use short name instead. User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This field is not applicable to network firewall policies. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Deprecated, please use short name instead. User-provided name of the
+   * Organization firewall policy. The name should be unique in the organization
+   * in which the firewall policy is created.
+   * This field is not applicable to network firewall policies.
+   * This name must be set on creation and cannot be changed.
+   * The name must be 1-63 characters long, and comply
+   * with RFC1035. Specifically, the name must be 1-63 characters
+   * long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which
+   * means the first character must be a lowercase letter, and all following
+   * characters must be a dash, lowercase letter, or digit, except the last
+   * character, which cannot be a dash.
    * </pre>
    *
    * <code>optional string display_name = 4473832;</code>
@@ -377,7 +543,15 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the firewall policy.
+   * Specifies a fingerprint for this resource, which is essentially a hash of
+   * the metadata's contents and used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update metadata. You must always provide an
+   * up-to-date fingerprint hash in order to update or change metadata,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make get() request to the
+   * firewall policy.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -393,7 +567,15 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the firewall policy.
+   * Specifies a fingerprint for this resource, which is essentially a hash of
+   * the metadata's contents and used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update metadata. You must always provide an
+   * up-to-date fingerprint hash in order to update or change metadata,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make get() request to the
+   * firewall policy.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -417,7 +599,15 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the firewall policy.
+   * Specifies a fingerprint for this resource, which is essentially a hash of
+   * the metadata's contents and used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update metadata. You must always provide an
+   * up-to-date fingerprint hash in order to update or change metadata,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make get() request to the
+   * firewall policy.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -444,7 +634,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -460,7 +651,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -481,7 +673,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Always compute#firewallPolicyfor firewall policies
+   * Output only. [Output only] Type of the resource. Alwayscompute#firewallPolicyfor firewall policies
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -497,7 +689,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Always compute#firewallPolicyfor firewall policies
+   * Output only. [Output only] Type of the resource. Alwayscompute#firewallPolicyfor firewall policies
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -521,7 +713,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Always compute#firewallPolicyfor firewall policies
+   * Output only. [Output only] Type of the resource. Alwayscompute#firewallPolicyfor firewall policies
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -550,7 +742,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource. For Organization Firewall Policies it's a [Output Only] numeric ID allocated by Google Cloud which uniquely identifies the Organization Firewall Policy.
+   * Name of the resource. For Organization Firewall Policies it's a
+   * [Output Only] numeric ID allocated by Google Cloud which uniquely
+   * identifies the Organization Firewall Policy.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -566,7 +760,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource. For Organization Firewall Policies it's a [Output Only] numeric ID allocated by Google Cloud which uniquely identifies the Organization Firewall Policy.
+   * Name of the resource. For Organization Firewall Policies it's a
+   * [Output Only] numeric ID allocated by Google Cloud which uniquely
+   * identifies the Organization Firewall Policy.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -590,7 +786,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource. For Organization Firewall Policies it's a [Output Only] numeric ID allocated by Google Cloud which uniquely identifies the Organization Firewall Policy.
+   * Name of the resource. For Organization Firewall Policies it's a
+   * [Output Only] numeric ID allocated by Google Cloud which uniquely
+   * identifies the Organization Firewall Policy.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -702,7 +900,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The parent of the firewall policy. This field is not applicable to network firewall policies.
+   * Output only. [Output Only] The parent of the firewall policy.
+   * This field is not applicable to network firewall policies.
    * </pre>
    *
    * <code>optional string parent = 78317738;</code>
@@ -718,7 +917,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The parent of the firewall policy. This field is not applicable to network firewall policies.
+   * Output only. [Output Only] The parent of the firewall policy.
+   * This field is not applicable to network firewall policies.
    * </pre>
    *
    * <code>optional string parent = 78317738;</code>
@@ -742,7 +942,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The parent of the firewall policy. This field is not applicable to network firewall policies.
+   * Output only. [Output Only] The parent of the firewall policy.
+   * This field is not applicable to network firewall policies.
    * </pre>
    *
    * <code>optional string parent = 78317738;</code>
@@ -762,6 +963,84 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int POLICY_TYPE_FIELD_NUMBER = 18158119;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object policyType_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of the firewall policy. This field can be eitherVPC_POLICY or RDMA_ROCE_POLICY.
+   *
+   * Note: if not specified then VPC_POLICY will be used.
+   * Check the PolicyType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string policy_type = 18158119;</code>
+   *
+   * @return Whether the policyType field is set.
+   */
+  @java.lang.Override
+  public boolean hasPolicyType() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of the firewall policy. This field can be eitherVPC_POLICY or RDMA_ROCE_POLICY.
+   *
+   * Note: if not specified then VPC_POLICY will be used.
+   * Check the PolicyType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string policy_type = 18158119;</code>
+   *
+   * @return The policyType.
+   */
+  @java.lang.Override
+  public java.lang.String getPolicyType() {
+    java.lang.Object ref = policyType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      policyType_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of the firewall policy. This field can be eitherVPC_POLICY or RDMA_ROCE_POLICY.
+   *
+   * Note: if not specified then VPC_POLICY will be used.
+   * Check the PolicyType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string policy_type = 18158119;</code>
+   *
+   * @return The bytes for policyType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPolicyTypeBytes() {
+    java.lang.Object ref = policyType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      policyType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int REGION_FIELD_NUMBER = 138946292;
 
   @SuppressWarnings("serial")
@@ -771,7 +1050,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional firewall policy resides. This field is not applicable to global firewall policies. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * Output only. [Output Only] URL of the region where the regional firewall policy resides.
+   * This field is not applicable to global firewall policies.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -780,14 +1062,17 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRegion() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional firewall policy resides. This field is not applicable to global firewall policies. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * Output only. [Output Only] URL of the region where the regional firewall policy resides.
+   * This field is not applicable to global firewall policies.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -811,7 +1096,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional firewall policy resides. This field is not applicable to global firewall policies. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * Output only. [Output Only] URL of the region where the regional firewall policy resides.
+   * This field is not applicable to global firewall policies.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -838,7 +1126,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Total count of all firewall policy rule tuples. A firewall policy can not exceed a set number of tuples.
+   * Output only. [Output Only] Total count of all firewall policy rule tuples. A firewall
+   * policy can not exceed a set number of tuples.
    * </pre>
    *
    * <code>optional int32 rule_tuple_count = 388342037;</code>
@@ -847,14 +1136,15 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRuleTupleCount() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] Total count of all firewall policy rule tuples. A firewall policy can not exceed a set number of tuples.
+   * Output only. [Output Only] Total count of all firewall policy rule tuples. A firewall
+   * policy can not exceed a set number of tuples.
    * </pre>
    *
    * <code>optional int32 rule_tuple_count = 388342037;</code>
@@ -875,7 +1165,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of rules that belong to this policy. There must always be a default rule (rule with priority 2147483647 and match "*"). If no rules are provided when creating a firewall policy, a default rule with action "allow" will be added.
+   * A list of rules that belong to this policy.
+   * There must always be a default rule (rule with priority 2147483647 and
+   * match "*"). If no rules are provided when creating a firewall policy, a
+   * default rule with action "allow" will be added.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -889,7 +1182,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of rules that belong to this policy. There must always be a default rule (rule with priority 2147483647 and match "*"). If no rules are provided when creating a firewall policy, a default rule with action "allow" will be added.
+   * A list of rules that belong to this policy.
+   * There must always be a default rule (rule with priority 2147483647 and
+   * match "*"). If no rules are provided when creating a firewall policy, a
+   * default rule with action "allow" will be added.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -904,7 +1200,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of rules that belong to this policy. There must always be a default rule (rule with priority 2147483647 and match "*"). If no rules are provided when creating a firewall policy, a default rule with action "allow" will be added.
+   * A list of rules that belong to this policy.
+   * There must always be a default rule (rule with priority 2147483647 and
+   * match "*"). If no rules are provided when creating a firewall policy, a
+   * default rule with action "allow" will be added.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -918,7 +1217,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of rules that belong to this policy. There must always be a default rule (rule with priority 2147483647 and match "*"). If no rules are provided when creating a firewall policy, a default rule with action "allow" will be added.
+   * A list of rules that belong to this policy.
+   * There must always be a default rule (rule with priority 2147483647 and
+   * match "*"). If no rules are provided when creating a firewall policy, a
+   * default rule with action "allow" will be added.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -932,7 +1234,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of rules that belong to this policy. There must always be a default rule (rule with priority 2147483647 and match "*"). If no rules are provided when creating a firewall policy, a default rule with action "allow" will be added.
+   * A list of rules that belong to this policy.
+   * There must always be a default rule (rule with priority 2147483647 and
+   * match "*"). If no rules are provided when creating a firewall policy, a
+   * default rule with action "allow" will be added.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -960,7 +1265,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
@@ -1020,7 +1325,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -1029,14 +1334,14 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLinkWithId() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -1060,7 +1365,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -1089,7 +1394,16 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This field is not applicable to network firewall policies. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * User-provided name of the Organization firewall policy. The name should be
+   * unique in the organization in which the firewall policy is created.
+   * This field is not applicable to network firewall policies.
+   * This name must be set on creation and cannot be changed. The name must be
+   * 1-63 characters long, and comply with RFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string short_name = 492051566;</code>
@@ -1098,14 +1412,23 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasShortName() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This field is not applicable to network firewall policies. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * User-provided name of the Organization firewall policy. The name should be
+   * unique in the organization in which the firewall policy is created.
+   * This field is not applicable to network firewall policies.
+   * This name must be set on creation and cannot be changed. The name must be
+   * 1-63 characters long, and comply with RFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string short_name = 492051566;</code>
@@ -1129,7 +1452,16 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This field is not applicable to network firewall policies. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * User-provided name of the Organization firewall policy. The name should be
+   * unique in the organization in which the firewall policy is created.
+   * This field is not applicable to network firewall policies.
+   * This name must be set on creation and cannot be changed. The name must be
+   * 1-63 characters long, and comply with RFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string short_name = 492051566;</code>
@@ -1175,10 +1507,13 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4473832, displayName_);
     }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18158119, policyType_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 44520962, selfLinkWithId_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
@@ -1187,22 +1522,22 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < rules_.size(); i++) {
       output.writeMessage(108873975, rules_.get(i));
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeInt32(388342037, ruleTupleCount_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 492051566, shortName_);
     }
     for (int i = 0; i < associations_.size(); i++) {
@@ -1232,11 +1567,14 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4473832, displayName_);
     }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18158119, policyType_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(44520962, selfLinkWithId_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
@@ -1245,22 +1583,22 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < rules_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(108873975, rules_.get(i));
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(388342037, ruleTupleCount_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(492051566, shortName_);
     }
     for (int i = 0; i < associations_.size(); i++) {
@@ -1321,6 +1659,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasParent() != other.hasParent()) return false;
     if (hasParent()) {
       if (!getParent().equals(other.getParent())) return false;
+    }
+    if (hasPolicyType() != other.hasPolicyType()) return false;
+    if (hasPolicyType()) {
+      if (!getPolicyType().equals(other.getPolicyType())) return false;
     }
     if (hasRegion() != other.hasRegion()) return false;
     if (hasRegion()) {
@@ -1393,6 +1735,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasParent()) {
       hash = (37 * hash) + PARENT_FIELD_NUMBER;
       hash = (53 * hash) + getParent().hashCode();
+    }
+    if (hasPolicyType()) {
+      hash = (37 * hash) + POLICY_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getPolicyType().hashCode();
     }
     if (hasRegion()) {
       hash = (37 * hash) + REGION_FIELD_NUMBER;
@@ -1580,6 +1926,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000100);
       parent_ = "";
+      policyType_ = "";
       region_ = "";
       ruleTupleCount_ = 0;
       if (rulesBuilder_ == null) {
@@ -1588,7 +1935,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         rules_ = null;
         rulesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       selfLink_ = "";
       selfLinkWithId_ = "";
       shortName_ = "";
@@ -1647,9 +1994,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         result.packetMirroringRules_ = packetMirroringRulesBuilder_.build();
       }
       if (rulesBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)) {
+        if (((bitField0_ & 0x00002000) != 0)) {
           rules_ = java.util.Collections.unmodifiableList(rules_);
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00002000);
         }
         result.rules_ = rules_;
       } else {
@@ -1693,24 +2040,28 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.region_ = region_;
+        result.policyType_ = policyType_;
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.ruleTupleCount_ = ruleTupleCount_;
+        result.region_ = region_;
         to_bitField0_ |= 0x00000200;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.selfLink_ = selfLink_;
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.ruleTupleCount_ = ruleTupleCount_;
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.selfLinkWithId_ = selfLinkWithId_;
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.shortName_ = shortName_;
+        result.selfLinkWithId_ = selfLinkWithId_;
         to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.shortName_ = shortName_;
+        to_bitField0_ |= 0x00002000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1852,9 +2203,14 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000200;
         onChanged();
       }
+      if (other.hasPolicyType()) {
+        policyType_ = other.policyType_;
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
       if (other.hasRegion()) {
         region_ = other.region_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasRuleTupleCount()) {
@@ -1864,7 +2220,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         if (!other.rules_.isEmpty()) {
           if (rules_.isEmpty()) {
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
           } else {
             ensureRulesIsMutable();
             rules_.addAll(other.rules_);
@@ -1877,7 +2233,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
             rulesBuilder_.dispose();
             rulesBuilder_ = null;
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
             rulesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRulesFieldBuilder()
@@ -1889,17 +2245,17 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (other.hasSelfLinkWithId()) {
         selfLinkWithId_ = other.selfLinkWithId_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.hasShortName()) {
         shortName_ = other.shortName_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1952,6 +2308,12 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 35790658
+            case 145264954:
+              {
+                policyType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 145264954
             case 244202930:
               {
                 creationTimestamp_ = input.readStringRequireUtf8();
@@ -1961,7 +2323,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
             case 356167698:
               {
                 selfLinkWithId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 356167698
             case 626541906:
@@ -1986,7 +2348,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 1111570338
             case 1877428002:
@@ -1998,7 +2360,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
             case -1188231000:
               {
                 ruleTupleCount_ = input.readInt32();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case -1188231000
             case -911466526:
@@ -2010,13 +2372,13 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case -645248918
             case -358554766:
               {
                 shortName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case -358554766
             case -225075054:
@@ -2466,7 +2828,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2481,7 +2844,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2504,7 +2868,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2527,7 +2892,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2549,7 +2915,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2567,7 +2934,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2592,7 +2960,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2607,7 +2976,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2630,7 +3000,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2653,7 +3024,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2675,7 +3047,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2693,7 +3066,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2718,7 +3092,17 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated, please use short name instead. User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This field is not applicable to network firewall policies. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Deprecated, please use short name instead. User-provided name of the
+     * Organization firewall policy. The name should be unique in the organization
+     * in which the firewall policy is created.
+     * This field is not applicable to network firewall policies.
+     * This name must be set on creation and cannot be changed.
+     * The name must be 1-63 characters long, and comply
+     * with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which
+     * means the first character must be a lowercase letter, and all following
+     * characters must be a dash, lowercase letter, or digit, except the last
+     * character, which cannot be a dash.
      * </pre>
      *
      * <code>optional string display_name = 4473832;</code>
@@ -2733,7 +3117,17 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated, please use short name instead. User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This field is not applicable to network firewall policies. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Deprecated, please use short name instead. User-provided name of the
+     * Organization firewall policy. The name should be unique in the organization
+     * in which the firewall policy is created.
+     * This field is not applicable to network firewall policies.
+     * This name must be set on creation and cannot be changed.
+     * The name must be 1-63 characters long, and comply
+     * with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which
+     * means the first character must be a lowercase letter, and all following
+     * characters must be a dash, lowercase letter, or digit, except the last
+     * character, which cannot be a dash.
      * </pre>
      *
      * <code>optional string display_name = 4473832;</code>
@@ -2756,7 +3150,17 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated, please use short name instead. User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This field is not applicable to network firewall policies. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Deprecated, please use short name instead. User-provided name of the
+     * Organization firewall policy. The name should be unique in the organization
+     * in which the firewall policy is created.
+     * This field is not applicable to network firewall policies.
+     * This name must be set on creation and cannot be changed.
+     * The name must be 1-63 characters long, and comply
+     * with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which
+     * means the first character must be a lowercase letter, and all following
+     * characters must be a dash, lowercase letter, or digit, except the last
+     * character, which cannot be a dash.
      * </pre>
      *
      * <code>optional string display_name = 4473832;</code>
@@ -2779,7 +3183,17 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated, please use short name instead. User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This field is not applicable to network firewall policies. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Deprecated, please use short name instead. User-provided name of the
+     * Organization firewall policy. The name should be unique in the organization
+     * in which the firewall policy is created.
+     * This field is not applicable to network firewall policies.
+     * This name must be set on creation and cannot be changed.
+     * The name must be 1-63 characters long, and comply
+     * with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which
+     * means the first character must be a lowercase letter, and all following
+     * characters must be a dash, lowercase letter, or digit, except the last
+     * character, which cannot be a dash.
      * </pre>
      *
      * <code>optional string display_name = 4473832;</code>
@@ -2801,7 +3215,17 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated, please use short name instead. User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This field is not applicable to network firewall policies. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Deprecated, please use short name instead. User-provided name of the
+     * Organization firewall policy. The name should be unique in the organization
+     * in which the firewall policy is created.
+     * This field is not applicable to network firewall policies.
+     * This name must be set on creation and cannot be changed.
+     * The name must be 1-63 characters long, and comply
+     * with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which
+     * means the first character must be a lowercase letter, and all following
+     * characters must be a dash, lowercase letter, or digit, except the last
+     * character, which cannot be a dash.
      * </pre>
      *
      * <code>optional string display_name = 4473832;</code>
@@ -2819,7 +3243,17 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated, please use short name instead. User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This field is not applicable to network firewall policies. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Deprecated, please use short name instead. User-provided name of the
+     * Organization firewall policy. The name should be unique in the organization
+     * in which the firewall policy is created.
+     * This field is not applicable to network firewall policies.
+     * This name must be set on creation and cannot be changed.
+     * The name must be 1-63 characters long, and comply
+     * with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which
+     * means the first character must be a lowercase letter, and all following
+     * characters must be a dash, lowercase letter, or digit, except the last
+     * character, which cannot be a dash.
      * </pre>
      *
      * <code>optional string display_name = 4473832;</code>
@@ -2844,7 +3278,15 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the firewall policy.
+     * Specifies a fingerprint for this resource, which is essentially a hash of
+     * the metadata's contents and used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update metadata. You must always provide an
+     * up-to-date fingerprint hash in order to update or change metadata,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * firewall policy.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -2859,7 +3301,15 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the firewall policy.
+     * Specifies a fingerprint for this resource, which is essentially a hash of
+     * the metadata's contents and used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update metadata. You must always provide an
+     * up-to-date fingerprint hash in order to update or change metadata,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * firewall policy.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -2882,7 +3332,15 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the firewall policy.
+     * Specifies a fingerprint for this resource, which is essentially a hash of
+     * the metadata's contents and used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update metadata. You must always provide an
+     * up-to-date fingerprint hash in order to update or change metadata,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * firewall policy.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -2905,7 +3363,15 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the firewall policy.
+     * Specifies a fingerprint for this resource, which is essentially a hash of
+     * the metadata's contents and used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update metadata. You must always provide an
+     * up-to-date fingerprint hash in order to update or change metadata,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * firewall policy.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -2927,7 +3393,15 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the firewall policy.
+     * Specifies a fingerprint for this resource, which is essentially a hash of
+     * the metadata's contents and used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update metadata. You must always provide an
+     * up-to-date fingerprint hash in order to update or change metadata,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * firewall policy.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -2945,7 +3419,15 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make get() request to the firewall policy.
+     * Specifies a fingerprint for this resource, which is essentially a hash of
+     * the metadata's contents and used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update metadata. You must always provide an
+     * up-to-date fingerprint hash in order to update or change metadata,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * firewall policy.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -2970,7 +3452,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2986,7 +3469,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -3002,7 +3486,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -3022,7 +3507,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -3042,7 +3528,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Always compute#firewallPolicyfor firewall policies
+     * Output only. [Output only] Type of the resource. Alwayscompute#firewallPolicyfor firewall policies
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3057,7 +3543,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Always compute#firewallPolicyfor firewall policies
+     * Output only. [Output only] Type of the resource. Alwayscompute#firewallPolicyfor firewall policies
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3080,7 +3566,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Always compute#firewallPolicyfor firewall policies
+     * Output only. [Output only] Type of the resource. Alwayscompute#firewallPolicyfor firewall policies
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3103,7 +3589,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Always compute#firewallPolicyfor firewall policies
+     * Output only. [Output only] Type of the resource. Alwayscompute#firewallPolicyfor firewall policies
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3125,7 +3611,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Always compute#firewallPolicyfor firewall policies
+     * Output only. [Output only] Type of the resource. Alwayscompute#firewallPolicyfor firewall policies
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3143,7 +3629,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Always compute#firewallPolicyfor firewall policies
+     * Output only. [Output only] Type of the resource. Alwayscompute#firewallPolicyfor firewall policies
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3168,7 +3654,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. For Organization Firewall Policies it's a [Output Only] numeric ID allocated by Google Cloud which uniquely identifies the Organization Firewall Policy.
+     * Name of the resource. For Organization Firewall Policies it's a
+     * [Output Only] numeric ID allocated by Google Cloud which uniquely
+     * identifies the Organization Firewall Policy.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3183,7 +3671,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. For Organization Firewall Policies it's a [Output Only] numeric ID allocated by Google Cloud which uniquely identifies the Organization Firewall Policy.
+     * Name of the resource. For Organization Firewall Policies it's a
+     * [Output Only] numeric ID allocated by Google Cloud which uniquely
+     * identifies the Organization Firewall Policy.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3206,7 +3696,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. For Organization Firewall Policies it's a [Output Only] numeric ID allocated by Google Cloud which uniquely identifies the Organization Firewall Policy.
+     * Name of the resource. For Organization Firewall Policies it's a
+     * [Output Only] numeric ID allocated by Google Cloud which uniquely
+     * identifies the Organization Firewall Policy.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3229,7 +3721,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. For Organization Firewall Policies it's a [Output Only] numeric ID allocated by Google Cloud which uniquely identifies the Organization Firewall Policy.
+     * Name of the resource. For Organization Firewall Policies it's a
+     * [Output Only] numeric ID allocated by Google Cloud which uniquely
+     * identifies the Organization Firewall Policy.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3251,7 +3745,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. For Organization Firewall Policies it's a [Output Only] numeric ID allocated by Google Cloud which uniquely identifies the Organization Firewall Policy.
+     * Name of the resource. For Organization Firewall Policies it's a
+     * [Output Only] numeric ID allocated by Google Cloud which uniquely
+     * identifies the Organization Firewall Policy.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3269,7 +3765,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. For Organization Firewall Policies it's a [Output Only] numeric ID allocated by Google Cloud which uniquely identifies the Organization Firewall Policy.
+     * Name of the resource. For Organization Firewall Policies it's a
+     * [Output Only] numeric ID allocated by Google Cloud which uniquely
+     * identifies the Organization Firewall Policy.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3708,7 +4206,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The parent of the firewall policy. This field is not applicable to network firewall policies.
+     * Output only. [Output Only] The parent of the firewall policy.
+     * This field is not applicable to network firewall policies.
      * </pre>
      *
      * <code>optional string parent = 78317738;</code>
@@ -3723,7 +4222,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The parent of the firewall policy. This field is not applicable to network firewall policies.
+     * Output only. [Output Only] The parent of the firewall policy.
+     * This field is not applicable to network firewall policies.
      * </pre>
      *
      * <code>optional string parent = 78317738;</code>
@@ -3746,7 +4246,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The parent of the firewall policy. This field is not applicable to network firewall policies.
+     * Output only. [Output Only] The parent of the firewall policy.
+     * This field is not applicable to network firewall policies.
      * </pre>
      *
      * <code>optional string parent = 78317738;</code>
@@ -3769,7 +4270,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The parent of the firewall policy. This field is not applicable to network firewall policies.
+     * Output only. [Output Only] The parent of the firewall policy.
+     * This field is not applicable to network firewall policies.
      * </pre>
      *
      * <code>optional string parent = 78317738;</code>
@@ -3791,7 +4293,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The parent of the firewall policy. This field is not applicable to network firewall policies.
+     * Output only. [Output Only] The parent of the firewall policy.
+     * This field is not applicable to network firewall policies.
      * </pre>
      *
      * <code>optional string parent = 78317738;</code>
@@ -3809,7 +4312,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The parent of the firewall policy. This field is not applicable to network firewall policies.
+     * Output only. [Output Only] The parent of the firewall policy.
+     * This field is not applicable to network firewall policies.
      * </pre>
      *
      * <code>optional string parent = 78317738;</code>
@@ -3828,20 +4332,23 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private java.lang.Object region_ = "";
+    private java.lang.Object policyType_ = "";
 
     /**
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the regional firewall policy resides. This field is not applicable to global firewall policies. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * The type of the firewall policy. This field can be eitherVPC_POLICY or RDMA_ROCE_POLICY.
+     *
+     * Note: if not specified then VPC_POLICY will be used.
+     * Check the PolicyType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional string region = 138946292;</code>
+     * <code>optional string policy_type = 18158119;</code>
      *
-     * @return Whether the region field is set.
+     * @return Whether the policyType field is set.
      */
-    public boolean hasRegion() {
+    public boolean hasPolicyType() {
       return ((bitField0_ & 0x00000400) != 0);
     }
 
@@ -3849,7 +4356,154 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the regional firewall policy resides. This field is not applicable to global firewall policies. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * The type of the firewall policy. This field can be eitherVPC_POLICY or RDMA_ROCE_POLICY.
+     *
+     * Note: if not specified then VPC_POLICY will be used.
+     * Check the PolicyType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string policy_type = 18158119;</code>
+     *
+     * @return The policyType.
+     */
+    public java.lang.String getPolicyType() {
+      java.lang.Object ref = policyType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        policyType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of the firewall policy. This field can be eitherVPC_POLICY or RDMA_ROCE_POLICY.
+     *
+     * Note: if not specified then VPC_POLICY will be used.
+     * Check the PolicyType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string policy_type = 18158119;</code>
+     *
+     * @return The bytes for policyType.
+     */
+    public com.google.protobuf.ByteString getPolicyTypeBytes() {
+      java.lang.Object ref = policyType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        policyType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of the firewall policy. This field can be eitherVPC_POLICY or RDMA_ROCE_POLICY.
+     *
+     * Note: if not specified then VPC_POLICY will be used.
+     * Check the PolicyType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string policy_type = 18158119;</code>
+     *
+     * @param value The policyType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPolicyType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      policyType_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of the firewall policy. This field can be eitherVPC_POLICY or RDMA_ROCE_POLICY.
+     *
+     * Note: if not specified then VPC_POLICY will be used.
+     * Check the PolicyType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string policy_type = 18158119;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPolicyType() {
+      policyType_ = getDefaultInstance().getPolicyType();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of the firewall policy. This field can be eitherVPC_POLICY or RDMA_ROCE_POLICY.
+     *
+     * Note: if not specified then VPC_POLICY will be used.
+     * Check the PolicyType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string policy_type = 18158119;</code>
+     *
+     * @param value The bytes for policyType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPolicyTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      policyType_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object region_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] URL of the region where the regional firewall policy resides.
+     * This field is not applicable to global firewall policies.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @return Whether the region field is set.
+     */
+    public boolean hasRegion() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] URL of the region where the regional firewall policy resides.
+     * This field is not applicable to global firewall policies.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -3872,7 +4526,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the regional firewall policy resides. This field is not applicable to global firewall policies. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * Output only. [Output Only] URL of the region where the regional firewall policy resides.
+     * This field is not applicable to global firewall policies.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -3895,7 +4552,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the regional firewall policy resides. This field is not applicable to global firewall policies. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * Output only. [Output Only] URL of the region where the regional firewall policy resides.
+     * This field is not applicable to global firewall policies.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -3908,7 +4568,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       region_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3917,7 +4577,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the regional firewall policy resides. This field is not applicable to global firewall policies. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * Output only. [Output Only] URL of the region where the regional firewall policy resides.
+     * This field is not applicable to global firewall policies.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -3926,7 +4589,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRegion() {
       region_ = getDefaultInstance().getRegion();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3935,7 +4598,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the regional firewall policy resides. This field is not applicable to global firewall policies. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * Output only. [Output Only] URL of the region where the regional firewall policy resides.
+     * This field is not applicable to global firewall policies.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -3949,7 +4615,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       region_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3960,7 +4626,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Total count of all firewall policy rule tuples. A firewall policy can not exceed a set number of tuples.
+     * Output only. [Output Only] Total count of all firewall policy rule tuples. A firewall
+     * policy can not exceed a set number of tuples.
      * </pre>
      *
      * <code>optional int32 rule_tuple_count = 388342037;</code>
@@ -3969,14 +4636,15 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasRuleTupleCount() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] Total count of all firewall policy rule tuples. A firewall policy can not exceed a set number of tuples.
+     * Output only. [Output Only] Total count of all firewall policy rule tuples. A firewall
+     * policy can not exceed a set number of tuples.
      * </pre>
      *
      * <code>optional int32 rule_tuple_count = 388342037;</code>
@@ -3992,7 +4660,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Total count of all firewall policy rule tuples. A firewall policy can not exceed a set number of tuples.
+     * Output only. [Output Only] Total count of all firewall policy rule tuples. A firewall
+     * policy can not exceed a set number of tuples.
      * </pre>
      *
      * <code>optional int32 rule_tuple_count = 388342037;</code>
@@ -4003,7 +4672,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder setRuleTupleCount(int value) {
 
       ruleTupleCount_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4012,7 +4681,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Total count of all firewall policy rule tuples. A firewall policy can not exceed a set number of tuples.
+     * Output only. [Output Only] Total count of all firewall policy rule tuples. A firewall
+     * policy can not exceed a set number of tuples.
      * </pre>
      *
      * <code>optional int32 rule_tuple_count = 388342037;</code>
@@ -4020,7 +4690,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRuleTupleCount() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       ruleTupleCount_ = 0;
       onChanged();
       return this;
@@ -4030,9 +4700,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureRulesIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         rules_ = new java.util.ArrayList<com.google.cloud.compute.v1.FirewallPolicyRule>(rules_);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
       }
     }
 
@@ -4046,7 +4716,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule (rule with priority 2147483647 and match "*"). If no rules are provided when creating a firewall policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule (rule with priority 2147483647 and
+     * match "*"). If no rules are provided when creating a firewall policy, a
+     * default rule with action "allow" will be added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -4063,7 +4736,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule (rule with priority 2147483647 and match "*"). If no rules are provided when creating a firewall policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule (rule with priority 2147483647 and
+     * match "*"). If no rules are provided when creating a firewall policy, a
+     * default rule with action "allow" will be added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -4080,7 +4756,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule (rule with priority 2147483647 and match "*"). If no rules are provided when creating a firewall policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule (rule with priority 2147483647 and
+     * match "*"). If no rules are provided when creating a firewall policy, a
+     * default rule with action "allow" will be added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -4097,7 +4776,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule (rule with priority 2147483647 and match "*"). If no rules are provided when creating a firewall policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule (rule with priority 2147483647 and
+     * match "*"). If no rules are provided when creating a firewall policy, a
+     * default rule with action "allow" will be added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -4120,7 +4802,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule (rule with priority 2147483647 and match "*"). If no rules are provided when creating a firewall policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule (rule with priority 2147483647 and
+     * match "*"). If no rules are provided when creating a firewall policy, a
+     * default rule with action "allow" will be added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -4141,7 +4826,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule (rule with priority 2147483647 and match "*"). If no rules are provided when creating a firewall policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule (rule with priority 2147483647 and
+     * match "*"). If no rules are provided when creating a firewall policy, a
+     * default rule with action "allow" will be added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -4164,7 +4852,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule (rule with priority 2147483647 and match "*"). If no rules are provided when creating a firewall policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule (rule with priority 2147483647 and
+     * match "*"). If no rules are provided when creating a firewall policy, a
+     * default rule with action "allow" will be added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -4187,7 +4878,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule (rule with priority 2147483647 and match "*"). If no rules are provided when creating a firewall policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule (rule with priority 2147483647 and
+     * match "*"). If no rules are provided when creating a firewall policy, a
+     * default rule with action "allow" will be added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -4208,7 +4902,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule (rule with priority 2147483647 and match "*"). If no rules are provided when creating a firewall policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule (rule with priority 2147483647 and
+     * match "*"). If no rules are provided when creating a firewall policy, a
+     * default rule with action "allow" will be added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -4229,7 +4926,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule (rule with priority 2147483647 and match "*"). If no rules are provided when creating a firewall policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule (rule with priority 2147483647 and
+     * match "*"). If no rules are provided when creating a firewall policy, a
+     * default rule with action "allow" will be added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -4250,7 +4950,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule (rule with priority 2147483647 and match "*"). If no rules are provided when creating a firewall policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule (rule with priority 2147483647 and
+     * match "*"). If no rules are provided when creating a firewall policy, a
+     * default rule with action "allow" will be added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -4258,7 +4961,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder clearRules() {
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
       } else {
         rulesBuilder_.clear();
@@ -4270,7 +4973,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule (rule with priority 2147483647 and match "*"). If no rules are provided when creating a firewall policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule (rule with priority 2147483647 and
+     * match "*"). If no rules are provided when creating a firewall policy, a
+     * default rule with action "allow" will be added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -4290,7 +4996,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule (rule with priority 2147483647 and match "*"). If no rules are provided when creating a firewall policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule (rule with priority 2147483647 and
+     * match "*"). If no rules are provided when creating a firewall policy, a
+     * default rule with action "allow" will be added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -4303,7 +5012,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule (rule with priority 2147483647 and match "*"). If no rules are provided when creating a firewall policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule (rule with priority 2147483647 and
+     * match "*"). If no rules are provided when creating a firewall policy, a
+     * default rule with action "allow" will be added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -4320,7 +5032,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule (rule with priority 2147483647 and match "*"). If no rules are provided when creating a firewall policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule (rule with priority 2147483647 and
+     * match "*"). If no rules are provided when creating a firewall policy, a
+     * default rule with action "allow" will be added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -4338,7 +5053,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule (rule with priority 2147483647 and match "*"). If no rules are provided when creating a firewall policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule (rule with priority 2147483647 and
+     * match "*"). If no rules are provided when creating a firewall policy, a
+     * default rule with action "allow" will be added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -4352,7 +5070,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule (rule with priority 2147483647 and match "*"). If no rules are provided when creating a firewall policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule (rule with priority 2147483647 and
+     * match "*"). If no rules are provided when creating a firewall policy, a
+     * default rule with action "allow" will be added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -4366,7 +5087,10 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of rules that belong to this policy. There must always be a default rule (rule with priority 2147483647 and match "*"). If no rules are provided when creating a firewall policy, a default rule with action "allow" will be added.
+     * A list of rules that belong to this policy.
+     * There must always be a default rule (rule with priority 2147483647 and
+     * match "*"). If no rules are provided when creating a firewall policy, a
+     * default rule with action "allow" will be added.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -4387,7 +5111,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.FirewallPolicyRule,
                 com.google.cloud.compute.v1.FirewallPolicyRule.Builder,
                 com.google.cloud.compute.v1.FirewallPolicyRuleOrBuilder>(
-                rules_, ((bitField0_ & 0x00001000) != 0), getParentForChildren(), isClean());
+                rules_, ((bitField0_ & 0x00002000) != 0), getParentForChildren(), isClean());
         rules_ = null;
       }
       return rulesBuilder_;
@@ -4407,7 +5131,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -4473,7 +5197,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4491,7 +5215,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -4514,7 +5238,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4525,7 +5249,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -4533,14 +5257,14 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLinkWithId field is set.
      */
     public boolean hasSelfLinkWithId() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -4563,7 +5287,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -4586,7 +5310,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -4599,7 +5323,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       selfLinkWithId_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4608,7 +5332,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -4617,7 +5341,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSelfLinkWithId() {
       selfLinkWithId_ = getDefaultInstance().getSelfLinkWithId();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -4626,7 +5350,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -4640,7 +5364,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       selfLinkWithId_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4651,7 +5375,16 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This field is not applicable to network firewall policies. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * User-provided name of the Organization firewall policy. The name should be
+     * unique in the organization in which the firewall policy is created.
+     * This field is not applicable to network firewall policies.
+     * This name must be set on creation and cannot be changed. The name must be
+     * 1-63 characters long, and comply with RFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string short_name = 492051566;</code>
@@ -4659,14 +5392,23 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the shortName field is set.
      */
     public boolean hasShortName() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This field is not applicable to network firewall policies. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * User-provided name of the Organization firewall policy. The name should be
+     * unique in the organization in which the firewall policy is created.
+     * This field is not applicable to network firewall policies.
+     * This name must be set on creation and cannot be changed. The name must be
+     * 1-63 characters long, and comply with RFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string short_name = 492051566;</code>
@@ -4689,7 +5431,16 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This field is not applicable to network firewall policies. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * User-provided name of the Organization firewall policy. The name should be
+     * unique in the organization in which the firewall policy is created.
+     * This field is not applicable to network firewall policies.
+     * This name must be set on creation and cannot be changed. The name must be
+     * 1-63 characters long, and comply with RFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string short_name = 492051566;</code>
@@ -4712,7 +5463,16 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This field is not applicable to network firewall policies. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * User-provided name of the Organization firewall policy. The name should be
+     * unique in the organization in which the firewall policy is created.
+     * This field is not applicable to network firewall policies.
+     * This name must be set on creation and cannot be changed. The name must be
+     * 1-63 characters long, and comply with RFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string short_name = 492051566;</code>
@@ -4725,7 +5485,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       shortName_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4734,7 +5494,16 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This field is not applicable to network firewall policies. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * User-provided name of the Organization firewall policy. The name should be
+     * unique in the organization in which the firewall policy is created.
+     * This field is not applicable to network firewall policies.
+     * This name must be set on creation and cannot be changed. The name must be
+     * 1-63 characters long, and comply with RFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string short_name = 492051566;</code>
@@ -4743,7 +5512,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearShortName() {
       shortName_ = getDefaultInstance().getShortName();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -4752,7 +5521,16 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This field is not applicable to network firewall policies. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * User-provided name of the Organization firewall policy. The name should be
+     * unique in the organization in which the firewall policy is created.
+     * This field is not applicable to network firewall policies.
+     * This name must be set on creation and cannot be changed. The name must be
+     * 1-63 characters long, and comply with RFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string short_name = 492051566;</code>
@@ -4766,7 +5544,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       shortName_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,6 +45,7 @@ public final class AgentCoachingInstruction extends com.google.protobuf.Generate
     condition_ = "";
     agentAction_ = "";
     systemAction_ = "";
+    triggeringEvent_ = 0;
   }
 
   @java.lang.Override
@@ -66,6 +67,236 @@ public final class AgentCoachingInstruction extends com.google.protobuf.Generate
         .ensureFieldAccessorsInitialized(
             com.google.cloud.dialogflow.v2beta1.AgentCoachingInstruction.class,
             com.google.cloud.dialogflow.v2beta1.AgentCoachingInstruction.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The event that should trigger this instruction.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.dialogflow.v2beta1.AgentCoachingInstruction.TriggerEvent}
+   */
+  public enum TriggerEvent implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default value for TriggerEvent.
+     * </pre>
+     *
+     * <code>TRIGGER_EVENT_UNSPECIFIED = 0;</code>
+     */
+    TRIGGER_EVENT_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Triggers when each chat message or voice utterance ends.
+     * </pre>
+     *
+     * <code>END_OF_UTTERANCE = 1;</code>
+     */
+    END_OF_UTTERANCE(1),
+    /**
+     *
+     *
+     * <pre>
+     * Triggers on the conversation manually by API calls.
+     * </pre>
+     *
+     * <code>MANUAL_CALL = 2;</code>
+     */
+    MANUAL_CALL(2),
+    /**
+     *
+     *
+     * <pre>
+     * Triggers after each customer message.
+     * </pre>
+     *
+     * <code>CUSTOMER_MESSAGE = 3;</code>
+     */
+    CUSTOMER_MESSAGE(3),
+    /**
+     *
+     *
+     * <pre>
+     * Triggers after each agent message.
+     * </pre>
+     *
+     * <code>AGENT_MESSAGE = 4;</code>
+     */
+    AGENT_MESSAGE(4),
+    /**
+     *
+     *
+     * <pre>
+     * Triggers on tool call completion.
+     * </pre>
+     *
+     * <code>TOOL_CALL_COMPLETION = 5;</code>
+     */
+    TOOL_CALL_COMPLETION(5),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default value for TriggerEvent.
+     * </pre>
+     *
+     * <code>TRIGGER_EVENT_UNSPECIFIED = 0;</code>
+     */
+    public static final int TRIGGER_EVENT_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Triggers when each chat message or voice utterance ends.
+     * </pre>
+     *
+     * <code>END_OF_UTTERANCE = 1;</code>
+     */
+    public static final int END_OF_UTTERANCE_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Triggers on the conversation manually by API calls.
+     * </pre>
+     *
+     * <code>MANUAL_CALL = 2;</code>
+     */
+    public static final int MANUAL_CALL_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Triggers after each customer message.
+     * </pre>
+     *
+     * <code>CUSTOMER_MESSAGE = 3;</code>
+     */
+    public static final int CUSTOMER_MESSAGE_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * Triggers after each agent message.
+     * </pre>
+     *
+     * <code>AGENT_MESSAGE = 4;</code>
+     */
+    public static final int AGENT_MESSAGE_VALUE = 4;
+
+    /**
+     *
+     *
+     * <pre>
+     * Triggers on tool call completion.
+     * </pre>
+     *
+     * <code>TOOL_CALL_COMPLETION = 5;</code>
+     */
+    public static final int TOOL_CALL_COMPLETION_VALUE = 5;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TriggerEvent valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static TriggerEvent forNumber(int value) {
+      switch (value) {
+        case 0:
+          return TRIGGER_EVENT_UNSPECIFIED;
+        case 1:
+          return END_OF_UTTERANCE;
+        case 2:
+          return MANUAL_CALL;
+        case 3:
+          return CUSTOMER_MESSAGE;
+        case 4:
+          return AGENT_MESSAGE;
+        case 5:
+          return TOOL_CALL_COMPLETION;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<TriggerEvent> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<TriggerEvent> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<TriggerEvent>() {
+          public TriggerEvent findValueByNumber(int number) {
+            return TriggerEvent.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2beta1.AgentCoachingInstruction.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final TriggerEvent[] VALUES = values();
+
+    public static TriggerEvent valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private TriggerEvent(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2beta1.AgentCoachingInstruction.TriggerEvent)
   }
 
   public interface DuplicateCheckResultOrBuilder
@@ -2560,6 +2791,55 @@ public final class AgentCoachingInstruction extends com.google.protobuf.Generate
         : duplicateCheckResult_;
   }
 
+  public static final int TRIGGERING_EVENT_FIELD_NUMBER = 10;
+  private int triggeringEvent_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The event that should trigger this instruction.
+   * If UNSPECIFIED, the instruction triggering will be same as the generator's
+   * trigger_event.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.AgentCoachingInstruction.TriggerEvent triggering_event = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for triggeringEvent.
+   */
+  @java.lang.Override
+  public int getTriggeringEventValue() {
+    return triggeringEvent_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The event that should trigger this instruction.
+   * If UNSPECIFIED, the instruction triggering will be same as the generator's
+   * trigger_event.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.AgentCoachingInstruction.TriggerEvent triggering_event = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The triggeringEvent.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.AgentCoachingInstruction.TriggerEvent
+      getTriggeringEvent() {
+    com.google.cloud.dialogflow.v2beta1.AgentCoachingInstruction.TriggerEvent result =
+        com.google.cloud.dialogflow.v2beta1.AgentCoachingInstruction.TriggerEvent.forNumber(
+            triggeringEvent_);
+    return result == null
+        ? com.google.cloud.dialogflow.v2beta1.AgentCoachingInstruction.TriggerEvent.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2592,6 +2872,12 @@ public final class AgentCoachingInstruction extends com.google.protobuf.Generate
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(8, getDuplicateCheckResult());
     }
+    if (triggeringEvent_
+        != com.google.cloud.dialogflow.v2beta1.AgentCoachingInstruction.TriggerEvent
+            .TRIGGER_EVENT_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(10, triggeringEvent_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2620,6 +2906,12 @@ public final class AgentCoachingInstruction extends com.google.protobuf.Generate
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(8, getDuplicateCheckResult());
     }
+    if (triggeringEvent_
+        != com.google.cloud.dialogflow.v2beta1.AgentCoachingInstruction.TriggerEvent
+            .TRIGGER_EVENT_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, triggeringEvent_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2645,6 +2937,7 @@ public final class AgentCoachingInstruction extends com.google.protobuf.Generate
     if (hasDuplicateCheckResult()) {
       if (!getDuplicateCheckResult().equals(other.getDuplicateCheckResult())) return false;
     }
+    if (triggeringEvent_ != other.triggeringEvent_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2670,6 +2963,8 @@ public final class AgentCoachingInstruction extends com.google.protobuf.Generate
       hash = (37 * hash) + DUPLICATE_CHECK_RESULT_FIELD_NUMBER;
       hash = (53 * hash) + getDuplicateCheckResult().hashCode();
     }
+    hash = (37 * hash) + TRIGGERING_EVENT_FIELD_NUMBER;
+    hash = (53 * hash) + triggeringEvent_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2830,6 +3125,7 @@ public final class AgentCoachingInstruction extends com.google.protobuf.Generate
         duplicateCheckResultBuilder_.dispose();
         duplicateCheckResultBuilder_ = null;
       }
+      triggeringEvent_ = 0;
       return this;
     }
 
@@ -2890,6 +3186,9 @@ public final class AgentCoachingInstruction extends com.google.protobuf.Generate
                 ? duplicateCheckResult_
                 : duplicateCheckResultBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.triggeringEvent_ = triggeringEvent_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2969,6 +3268,9 @@ public final class AgentCoachingInstruction extends com.google.protobuf.Generate
       if (other.hasDuplicateCheckResult()) {
         mergeDuplicateCheckResult(other.getDuplicateCheckResult());
       }
+      if (other.triggeringEvent_ != 0) {
+        setTriggeringEventValue(other.getTriggeringEventValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -3032,6 +3334,12 @@ public final class AgentCoachingInstruction extends com.google.protobuf.Generate
                 bitField0_ |= 0x00000020;
                 break;
               } // case 66
+            case 80:
+              {
+                triggeringEvent_ = input.readEnum();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 80
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3870,6 +4178,126 @@ public final class AgentCoachingInstruction extends com.google.protobuf.Generate
         duplicateCheckResult_ = null;
       }
       return duplicateCheckResultBuilder_;
+    }
+
+    private int triggeringEvent_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The event that should trigger this instruction.
+     * If UNSPECIFIED, the instruction triggering will be same as the generator's
+     * trigger_event.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.AgentCoachingInstruction.TriggerEvent triggering_event = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for triggeringEvent.
+     */
+    @java.lang.Override
+    public int getTriggeringEventValue() {
+      return triggeringEvent_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The event that should trigger this instruction.
+     * If UNSPECIFIED, the instruction triggering will be same as the generator's
+     * trigger_event.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.AgentCoachingInstruction.TriggerEvent triggering_event = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for triggeringEvent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTriggeringEventValue(int value) {
+      triggeringEvent_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The event that should trigger this instruction.
+     * If UNSPECIFIED, the instruction triggering will be same as the generator's
+     * trigger_event.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.AgentCoachingInstruction.TriggerEvent triggering_event = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The triggeringEvent.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2beta1.AgentCoachingInstruction.TriggerEvent
+        getTriggeringEvent() {
+      com.google.cloud.dialogflow.v2beta1.AgentCoachingInstruction.TriggerEvent result =
+          com.google.cloud.dialogflow.v2beta1.AgentCoachingInstruction.TriggerEvent.forNumber(
+              triggeringEvent_);
+      return result == null
+          ? com.google.cloud.dialogflow.v2beta1.AgentCoachingInstruction.TriggerEvent.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The event that should trigger this instruction.
+     * If UNSPECIFIED, the instruction triggering will be same as the generator's
+     * trigger_event.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.AgentCoachingInstruction.TriggerEvent triggering_event = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The triggeringEvent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTriggeringEvent(
+        com.google.cloud.dialogflow.v2beta1.AgentCoachingInstruction.TriggerEvent value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000040;
+      triggeringEvent_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The event that should trigger this instruction.
+     * If UNSPECIFIED, the instruction triggering will be same as the generator's
+     * trigger_event.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.AgentCoachingInstruction.TriggerEvent triggering_event = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTriggeringEvent() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      triggeringEvent_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

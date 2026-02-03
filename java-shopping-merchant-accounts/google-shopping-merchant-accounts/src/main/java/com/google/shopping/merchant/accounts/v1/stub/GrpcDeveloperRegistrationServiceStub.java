@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import com.google.shopping.merchant.accounts.v1.DeveloperRegistration;
+import com.google.shopping.merchant.accounts.v1.GetAccountForGcpRegistrationResponse;
 import com.google.shopping.merchant.accounts.v1.GetDeveloperRegistrationRequest;
 import com.google.shopping.merchant.accounts.v1.RegisterGcpRequest;
 import com.google.shopping.merchant.accounts.v1.UnregisterGcpRequest;
@@ -78,10 +79,24 @@ public class GrpcDeveloperRegistrationServiceStub extends DeveloperRegistrationS
           .setSampledToLocalTracing(true)
           .build();
 
+  private static final MethodDescriptor<Empty, GetAccountForGcpRegistrationResponse>
+      getAccountForGcpRegistrationMethodDescriptor =
+          MethodDescriptor.<Empty, GetAccountForGcpRegistrationResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.shopping.merchant.accounts.v1.DeveloperRegistrationService/GetAccountForGcpRegistration")
+              .setRequestMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(GetAccountForGcpRegistrationResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private final UnaryCallable<RegisterGcpRequest, DeveloperRegistration> registerGcpCallable;
   private final UnaryCallable<GetDeveloperRegistrationRequest, DeveloperRegistration>
       getDeveloperRegistrationCallable;
   private final UnaryCallable<UnregisterGcpRequest, Empty> unregisterGcpCallable;
+  private final UnaryCallable<Empty, GetAccountForGcpRegistrationResponse>
+      getAccountForGcpRegistrationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -161,6 +176,11 @@ public class GrpcDeveloperRegistrationServiceStub extends DeveloperRegistrationS
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<Empty, GetAccountForGcpRegistrationResponse>
+        getAccountForGcpRegistrationTransportSettings =
+            GrpcCallSettings.<Empty, GetAccountForGcpRegistrationResponse>newBuilder()
+                .setMethodDescriptor(getAccountForGcpRegistrationMethodDescriptor)
+                .build();
 
     this.registerGcpCallable =
         callableFactory.createUnaryCallable(
@@ -173,6 +193,11 @@ public class GrpcDeveloperRegistrationServiceStub extends DeveloperRegistrationS
     this.unregisterGcpCallable =
         callableFactory.createUnaryCallable(
             unregisterGcpTransportSettings, settings.unregisterGcpSettings(), clientContext);
+    this.getAccountForGcpRegistrationCallable =
+        callableFactory.createUnaryCallable(
+            getAccountForGcpRegistrationTransportSettings,
+            settings.getAccountForGcpRegistrationSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -196,6 +221,12 @@ public class GrpcDeveloperRegistrationServiceStub extends DeveloperRegistrationS
   @Override
   public UnaryCallable<UnregisterGcpRequest, Empty> unregisterGcpCallable() {
     return unregisterGcpCallable;
+  }
+
+  @Override
+  public UnaryCallable<Empty, GetAccountForGcpRegistrationResponse>
+      getAccountForGcpRegistrationCallable() {
+    return getAccountForGcpRegistrationCallable;
   }
 
   @Override

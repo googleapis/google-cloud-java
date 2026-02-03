@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,10 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * [Output Only] Describes the state of a peering connection, not just the local peering. This field provides information about the effective settings for the connection as a whole, including pending delete/update requests for CONSENSUS peerings.
+ * [Output Only] Describes the state of a peering connection, not just the
+ * local peering. This field provides information about the effective settings
+ * for the connection as a whole, including pending delete/update requests for
+ * CONSENSUS peerings.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.NetworkPeeringConnectionStatus}
@@ -69,7 +72,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The update strategy determines the update/delete semantics for this peering connection.
+   * The update strategy determines the update/delete semantics for this
+   * peering connection.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.NetworkPeeringConnectionStatus.UpdateStrategy}
@@ -89,7 +93,12 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Updates are reflected in the local peering but aren't applied to the peering connection until a complementary change is made to the matching peering. To delete a peering with the consensus update strategy, both the peerings must request the deletion of the peering before the peering can be deleted.
+     * Updates are reflected in the local peering but aren't applied to the
+     * peering connection until a complementary change is made to the
+     * matching peering.
+     * To delete a peering with the consensus update strategy, both the peerings
+     * must request the deletion of the peering before the peering can be
+     * deleted.
      * </pre>
      *
      * <code>CONSENSUS = 203373655;</code>
@@ -99,7 +108,9 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * In this mode, changes to the peering configuration can be unilaterally altered by changing either side of the peering. This is the default value if the field is unspecified.
+     * In this mode, changes to the peering configuration can
+     * be unilaterally altered by changing either side of the peering.
+     * This is the default value if the field is unspecified.
      * </pre>
      *
      * <code>INDEPENDENT = 127011674;</code>
@@ -109,7 +120,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Peerings with update strategy UNSPECIFIED are created with update strategy INDEPENDENT.
+     * Peerings with update strategy UNSPECIFIED are created with
+     * update strategy INDEPENDENT.
      * </pre>
      *
      * <code>UNSPECIFIED = 526786327;</code>
@@ -133,7 +145,12 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Updates are reflected in the local peering but aren't applied to the peering connection until a complementary change is made to the matching peering. To delete a peering with the consensus update strategy, both the peerings must request the deletion of the peering before the peering can be deleted.
+     * Updates are reflected in the local peering but aren't applied to the
+     * peering connection until a complementary change is made to the
+     * matching peering.
+     * To delete a peering with the consensus update strategy, both the peerings
+     * must request the deletion of the peering before the peering can be
+     * deleted.
      * </pre>
      *
      * <code>CONSENSUS = 203373655;</code>
@@ -144,7 +161,9 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * In this mode, changes to the peering configuration can be unilaterally altered by changing either side of the peering. This is the default value if the field is unspecified.
+     * In this mode, changes to the peering configuration can
+     * be unilaterally altered by changing either side of the peering.
+     * This is the default value if the field is unspecified.
      * </pre>
      *
      * <code>INDEPENDENT = 127011674;</code>
@@ -155,7 +174,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Peerings with update strategy UNSPECIFIED are created with update strategy INDEPENDENT.
+     * Peerings with update strategy UNSPECIFIED are created with
+     * update strategy INDEPENDENT.
      * </pre>
      *
      * <code>UNSPECIFIED = 526786327;</code>
@@ -257,7 +277,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The consensus state contains information about the status of update and delete for a consensus peering connection.
+   * The consensus state contains information about the status of update
+   * and delete for a consensus peering connection.
    * </pre>
    *
    * <code>
@@ -275,7 +296,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The consensus state contains information about the status of update and delete for a consensus peering connection.
+   * The consensus state contains information about the status of update
+   * and delete for a consensus peering connection.
    * </pre>
    *
    * <code>
@@ -297,7 +319,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The consensus state contains information about the status of update and delete for a consensus peering connection.
+   * The consensus state contains information about the status of update
+   * and delete for a consensus peering connection.
    * </pre>
    *
    * <code>
@@ -321,7 +344,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The active connectivity settings for the peering connection based on the settings of the network peerings.
+   * The active connectivity settings for the peering connection based on the
+   * settings of the network peerings.
    * </pre>
    *
    * <code>
@@ -339,7 +363,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The active connectivity settings for the peering connection based on the settings of the network peerings.
+   * The active connectivity settings for the peering connection based on the
+   * settings of the network peerings.
    * </pre>
    *
    * <code>
@@ -361,7 +386,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The active connectivity settings for the peering connection based on the settings of the network peerings.
+   * The active connectivity settings for the peering connection based on the
+   * settings of the network peerings.
    * </pre>
    *
    * <code>
@@ -386,7 +412,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The update strategy determines the update/delete semantics for this peering connection.
+   * The update strategy determines the update/delete semantics for this
+   * peering connection.
    * Check the UpdateStrategy enum for the list of possible values.
    * </pre>
    *
@@ -403,7 +430,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The update strategy determines the update/delete semantics for this peering connection.
+   * The update strategy determines the update/delete semantics for this
+   * peering connection.
    * Check the UpdateStrategy enum for the list of possible values.
    * </pre>
    *
@@ -428,7 +456,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The update strategy determines the update/delete semantics for this peering connection.
+   * The update strategy determines the update/delete semantics for this
+   * peering connection.
    * Check the UpdateStrategy enum for the list of possible values.
    * </pre>
    *
@@ -650,7 +679,10 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * [Output Only] Describes the state of a peering connection, not just the local peering. This field provides information about the effective settings for the connection as a whole, including pending delete/update requests for CONSENSUS peerings.
+   * [Output Only] Describes the state of a peering connection, not just the
+   * local peering. This field provides information about the effective settings
+   * for the connection as a whole, including pending delete/update requests for
+   * CONSENSUS peerings.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.NetworkPeeringConnectionStatus}
@@ -895,7 +927,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The consensus state contains information about the status of update and delete for a consensus peering connection.
+     * The consensus state contains information about the status of update
+     * and delete for a consensus peering connection.
      * </pre>
      *
      * <code>
@@ -912,7 +945,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The consensus state contains information about the status of update and delete for a consensus peering connection.
+     * The consensus state contains information about the status of update
+     * and delete for a consensus peering connection.
      * </pre>
      *
      * <code>
@@ -937,7 +971,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The consensus state contains information about the status of update and delete for a consensus peering connection.
+     * The consensus state contains information about the status of update
+     * and delete for a consensus peering connection.
      * </pre>
      *
      * <code>
@@ -963,7 +998,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The consensus state contains information about the status of update and delete for a consensus peering connection.
+     * The consensus state contains information about the status of update
+     * and delete for a consensus peering connection.
      * </pre>
      *
      * <code>
@@ -987,7 +1023,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The consensus state contains information about the status of update and delete for a consensus peering connection.
+     * The consensus state contains information about the status of update
+     * and delete for a consensus peering connection.
      * </pre>
      *
      * <code>
@@ -1020,7 +1057,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The consensus state contains information about the status of update and delete for a consensus peering connection.
+     * The consensus state contains information about the status of update
+     * and delete for a consensus peering connection.
      * </pre>
      *
      * <code>
@@ -1042,7 +1080,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The consensus state contains information about the status of update and delete for a consensus peering connection.
+     * The consensus state contains information about the status of update
+     * and delete for a consensus peering connection.
      * </pre>
      *
      * <code>
@@ -1060,7 +1099,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The consensus state contains information about the status of update and delete for a consensus peering connection.
+     * The consensus state contains information about the status of update
+     * and delete for a consensus peering connection.
      * </pre>
      *
      * <code>
@@ -1083,7 +1123,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The consensus state contains information about the status of update and delete for a consensus peering connection.
+     * The consensus state contains information about the status of update
+     * and delete for a consensus peering connection.
      * </pre>
      *
      * <code>
@@ -1119,7 +1160,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The active connectivity settings for the peering connection based on the settings of the network peerings.
+     * The active connectivity settings for the peering connection based on the
+     * settings of the network peerings.
      * </pre>
      *
      * <code>
@@ -1136,7 +1178,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The active connectivity settings for the peering connection based on the settings of the network peerings.
+     * The active connectivity settings for the peering connection based on the
+     * settings of the network peerings.
      * </pre>
      *
      * <code>
@@ -1161,7 +1204,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The active connectivity settings for the peering connection based on the settings of the network peerings.
+     * The active connectivity settings for the peering connection based on the
+     * settings of the network peerings.
      * </pre>
      *
      * <code>
@@ -1187,7 +1231,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The active connectivity settings for the peering connection based on the settings of the network peerings.
+     * The active connectivity settings for the peering connection based on the
+     * settings of the network peerings.
      * </pre>
      *
      * <code>
@@ -1211,7 +1256,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The active connectivity settings for the peering connection based on the settings of the network peerings.
+     * The active connectivity settings for the peering connection based on the
+     * settings of the network peerings.
      * </pre>
      *
      * <code>
@@ -1244,7 +1290,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The active connectivity settings for the peering connection based on the settings of the network peerings.
+     * The active connectivity settings for the peering connection based on the
+     * settings of the network peerings.
      * </pre>
      *
      * <code>
@@ -1266,7 +1313,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The active connectivity settings for the peering connection based on the settings of the network peerings.
+     * The active connectivity settings for the peering connection based on the
+     * settings of the network peerings.
      * </pre>
      *
      * <code>
@@ -1284,7 +1332,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The active connectivity settings for the peering connection based on the settings of the network peerings.
+     * The active connectivity settings for the peering connection based on the
+     * settings of the network peerings.
      * </pre>
      *
      * <code>
@@ -1307,7 +1356,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The active connectivity settings for the peering connection based on the settings of the network peerings.
+     * The active connectivity settings for the peering connection based on the
+     * settings of the network peerings.
      * </pre>
      *
      * <code>
@@ -1339,7 +1389,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The update strategy determines the update/delete semantics for this peering connection.
+     * The update strategy determines the update/delete semantics for this
+     * peering connection.
      * Check the UpdateStrategy enum for the list of possible values.
      * </pre>
      *
@@ -1355,7 +1406,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The update strategy determines the update/delete semantics for this peering connection.
+     * The update strategy determines the update/delete semantics for this
+     * peering connection.
      * Check the UpdateStrategy enum for the list of possible values.
      * </pre>
      *
@@ -1379,7 +1431,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The update strategy determines the update/delete semantics for this peering connection.
+     * The update strategy determines the update/delete semantics for this
+     * peering connection.
      * Check the UpdateStrategy enum for the list of possible values.
      * </pre>
      *
@@ -1403,7 +1456,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The update strategy determines the update/delete semantics for this peering connection.
+     * The update strategy determines the update/delete semantics for this
+     * peering connection.
      * Check the UpdateStrategy enum for the list of possible values.
      * </pre>
      *
@@ -1426,7 +1480,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The update strategy determines the update/delete semantics for this peering connection.
+     * The update strategy determines the update/delete semantics for this
+     * peering connection.
      * Check the UpdateStrategy enum for the list of possible values.
      * </pre>
      *
@@ -1445,7 +1500,8 @@ public final class NetworkPeeringConnectionStatus extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The update strategy determines the update/delete semantics for this peering connection.
+     * The update strategy determines the update/delete semantics for this
+     * peering connection.
      * Check the UpdateStrategy enum for the list of possible values.
      * </pre>
      *

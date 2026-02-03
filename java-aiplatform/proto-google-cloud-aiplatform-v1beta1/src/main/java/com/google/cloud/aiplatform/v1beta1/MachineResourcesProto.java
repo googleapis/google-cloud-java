@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,6 +49,10 @@ public final class MachineResourcesProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_BatchDedicatedResources_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_FullFineTunedResources_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_FullFineTunedResources_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_ResourcesConsumed_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_ResourcesConsumed_fieldAccessorTable;
@@ -64,6 +68,10 @@ public final class MachineResourcesProto {
       internal_static_google_cloud_aiplatform_v1beta1_NfsMount_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_NfsMount_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_LustreMount_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_LustreMount_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_AutoscalingMetricSpec_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -93,7 +101,7 @@ public final class MachineResourcesProto {
           + "7google/cloud/aiplatform/v1beta1/machine_resources.proto\022\037google.cloud.aiplatfo"
           + "rm.v1beta1\032\037google/api/field_behavior.pr"
           + "oto\0326google/cloud/aiplatform/v1beta1/accelerator_type.proto\032:google/cloud/aiplat"
-          + "form/v1beta1/reservation_affinity.proto\032\036google/protobuf/duration.proto\"\331\002\n"
+          + "form/v1beta1/reservation_affinity.proto\032\036google/protobuf/duration.proto\"\201\003\n"
           + "\013MachineSpec\022\031\n"
           + "\014machine_type\030\001 \001(\tB\003\340A\005\022O\n"
           + "\020accelerator_type\030\002"
@@ -103,7 +111,8 @@ public final class MachineResourcesProto {
           + "\014tpu_topology\030\004 \001(\tB\003\340A\005\022(\n"
           + "\030multihost_gpu_node_count\030\006 \001(\005B\006\340A\005\340A\001\022Z\n"
           + "\024reservation_affinity\030\005 \001(\01324."
-          + "google.cloud.aiplatform.v1beta1.ReservationAffinityB\006\340A\005\340A\001\"\233\005\n"
+          + "google.cloud.aiplatform.v1beta1.ReservationAffinityB\006\340A\005\340A\001\022&\n"
+          + "\026min_gpu_driver_version\030\t \001(\tB\006\340A\001\340A\005\"\233\005\n"
           + "\022DedicatedResources\022J\n"
           + "\014machine_spec\030\001 \001(\0132,.google.cloud."
           + "aiplatform.v1beta1.MachineSpecB\006\340A\002\340A\005\022!\n"
@@ -133,7 +142,15 @@ public final class MachineResourcesProto {
           + "\021max_replica_count\030\003 \001(\005B\003\340A\005\022F\n\n"
           + "flex_start\030\004"
           + " \001(\0132*.google.cloud.aiplatform.v1beta1.FlexStartB\006\340A\005\340A\001\022\021\n"
-          + "\004spot\030\005 \001(\010B\003\340A\001\"/\n"
+          + "\004spot\030\005 \001(\010B\003\340A\001\"\216\002\n"
+          + "\026FullFineTunedResources\022d\n"
+          + "\017deployment_type\030\001 \001(\0162F.google.cloud.aiplatform.v1"
+          + "beta1.FullFineTunedResources.DeploymentTypeB\003\340A\002\022\'\n"
+          + "\032model_inference_unit_count\030\002 \001(\005B\003\340A\001\"e\n"
+          + "\016DeploymentType\022\037\n"
+          + "\033DEPLOYMENT_TYPE_UNSPECIFIED\020\000\022\030\n"
+          + "\024DEPLOYMENT_TYPE_EVAL\020\001\022\030\n"
+          + "\024DEPLOYMENT_TYPE_PROD\020\002\"/\n"
           + "\021ResourcesConsumed\022\032\n\r"
           + "replica_hours\030\001 \001(\001B\003\340A\003\"=\n"
           + "\010DiskSpec\022\026\n"
@@ -145,13 +162,18 @@ public final class MachineResourcesProto {
           + "\010NfsMount\022\023\n"
           + "\006server\030\001 \001(\tB\003\340A\002\022\021\n"
           + "\004path\030\002 \001(\tB\003\340A\002\022\030\n"
-          + "\013mount_point\030\003 \001(\tB\003\340A\002\"\376\001\n"
+          + "\013mount_point\030\003 \001(\tB\003\340A\002\"v\n"
+          + "\013LustreMount\022\030\n"
+          + "\013instance_ip\030\001 \001(\tB\003\340A\002\022\032\n\r"
+          + "volume_handle\030\002 \001(\tB\003\340A\002\022\027\n\n"
+          + "filesystem\030\003 \001(\tB\003\340A\002\022\030\n"
+          + "\013mount_point\030\004 \001(\tB\003\340A\002\"\376\001\n"
           + "\025AutoscalingMetricSpec\022\030\n"
           + "\013metric_name\030\001 \001(\tB\003\340A\002\022\016\n"
           + "\006target\030\002 \001(\005\022{\n"
-          + "\031monitored_resource_labels\030\003 \003(\0132S.go"
-          + "ogle.cloud.aiplatform.v1beta1.Autoscalin"
-          + "gMetricSpec.MonitoredResourceLabelsEntryB\003\340A\001\032>\n"
+          + "\031monitored_resource_labels\030\003 \003(\0132S.google.cl"
+          + "oud.aiplatform.v1beta1.AutoscalingMetric"
+          + "Spec.MonitoredResourceLabelsEntryB\003\340A\001\032>\n"
           + "\034MonitoredResourceLabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\".\n"
@@ -159,11 +181,11 @@ public final class MachineResourcesProto {
           + "\022enable_secure_boot\030\001 \001(\010\"D\n"
           + "\tFlexStart\0227\n"
           + "\024max_runtime_duration\030\001 \001(\0132\031.google.protobuf.DurationB\354\001\n"
-          + "#com.google.cloud.aiplatform.v1beta1B\025MachineReso"
-          + "urcesProtoP\001ZCcloud.google.com/go/aiplatform/apiv1beta1/aiplatformpb;aiplatformp"
-          + "b\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Go"
-          + "ogle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::"
-          + "Cloud::AIPlatform::V1beta1b\006proto3"
+          + "#com.google.cloud.aiplatform.v1beta1B\025MachineResourcesPr"
+          + "otoP\001ZCcloud.google.com/go/aiplatform/ap"
+          + "iv1beta1/aiplatformpb;aiplatformpb\252\002\037Goo"
+          + "gle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Cl"
+          + "oud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -187,6 +209,7 @@ public final class MachineResourcesProto {
               "TpuTopology",
               "MultihostGpuNodeCount",
               "ReservationAffinity",
+              "MinGpuDriverVersion",
             });
     internal_static_google_cloud_aiplatform_v1beta1_DedicatedResources_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -230,8 +253,16 @@ public final class MachineResourcesProto {
             new java.lang.String[] {
               "MachineSpec", "StartingReplicaCount", "MaxReplicaCount", "FlexStart", "Spot",
             });
-    internal_static_google_cloud_aiplatform_v1beta1_ResourcesConsumed_descriptor =
+    internal_static_google_cloud_aiplatform_v1beta1_FullFineTunedResources_descriptor =
         getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_aiplatform_v1beta1_FullFineTunedResources_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_FullFineTunedResources_descriptor,
+            new java.lang.String[] {
+              "DeploymentType", "ModelInferenceUnitCount",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ResourcesConsumed_descriptor =
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_aiplatform_v1beta1_ResourcesConsumed_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ResourcesConsumed_descriptor,
@@ -239,7 +270,7 @@ public final class MachineResourcesProto {
               "ReplicaHours",
             });
     internal_static_google_cloud_aiplatform_v1beta1_DiskSpec_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_aiplatform_v1beta1_DiskSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_DiskSpec_descriptor,
@@ -247,7 +278,7 @@ public final class MachineResourcesProto {
               "BootDiskType", "BootDiskSizeGb",
             });
     internal_static_google_cloud_aiplatform_v1beta1_PersistentDiskSpec_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_aiplatform_v1beta1_PersistentDiskSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_PersistentDiskSpec_descriptor,
@@ -255,15 +286,23 @@ public final class MachineResourcesProto {
               "DiskType", "DiskSizeGb",
             });
     internal_static_google_cloud_aiplatform_v1beta1_NfsMount_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_aiplatform_v1beta1_NfsMount_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_NfsMount_descriptor,
             new java.lang.String[] {
               "Server", "Path", "MountPoint",
             });
+    internal_static_google_cloud_aiplatform_v1beta1_LustreMount_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_aiplatform_v1beta1_LustreMount_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_LustreMount_descriptor,
+            new java.lang.String[] {
+              "InstanceIp", "VolumeHandle", "Filesystem", "MountPoint",
+            });
     internal_static_google_cloud_aiplatform_v1beta1_AutoscalingMetricSpec_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_aiplatform_v1beta1_AutoscalingMetricSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_AutoscalingMetricSpec_descriptor,
@@ -281,7 +320,7 @@ public final class MachineResourcesProto {
               "Key", "Value",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ShieldedVmConfig_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_aiplatform_v1beta1_ShieldedVmConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ShieldedVmConfig_descriptor,
@@ -289,7 +328,7 @@ public final class MachineResourcesProto {
               "EnableSecureBoot",
             });
     internal_static_google_cloud_aiplatform_v1beta1_FlexStart_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_aiplatform_v1beta1_FlexStart_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_FlexStart_descriptor,

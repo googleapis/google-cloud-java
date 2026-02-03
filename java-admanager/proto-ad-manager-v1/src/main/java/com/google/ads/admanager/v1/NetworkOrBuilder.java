@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,7 +59,20 @@ public interface NetworkOrBuilder
    * Optional. Display name for Network.
    * </pre>
    *
-   * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the displayName field is set.
+   */
+  boolean hasDisplayName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Display name for Network.
+   * </pre>
+   *
+   * <code>optional string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The displayName.
    */
@@ -72,7 +85,7 @@ public interface NetworkOrBuilder
    * Optional. Display name for Network.
    * </pre>
    *
-   * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for displayName.
    */
@@ -85,7 +98,20 @@ public interface NetworkOrBuilder
    * Output only. Network Code.
    * </pre>
    *
-   * <code>string network_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string network_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the networkCode field is set.
+   */
+  boolean hasNetworkCode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Network Code.
+   * </pre>
+   *
+   * <code>optional string network_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The networkCode.
    */
@@ -98,7 +124,7 @@ public interface NetworkOrBuilder
    * Output only. Network Code.
    * </pre>
    *
-   * <code>string network_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string network_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for networkCode.
    */
@@ -111,7 +137,20 @@ public interface NetworkOrBuilder
    * Output only. Property code.
    * </pre>
    *
-   * <code>string property_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string property_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the propertyCode field is set.
+   */
+  boolean hasPropertyCode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Property code.
+   * </pre>
+   *
+   * <code>optional string property_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The propertyCode.
    */
@@ -124,7 +163,7 @@ public interface NetworkOrBuilder
    * Output only. Property code.
    * </pre>
    *
-   * <code>string property_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string property_code = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for propertyCode.
    */
@@ -138,7 +177,21 @@ public interface NetworkOrBuilder
    * reporting.
    * </pre>
    *
-   * <code>string time_zone = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string time_zone = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the timeZone field is set.
+   */
+  boolean hasTimeZone();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Time zone associated with the delivery of orders and
+   * reporting.
+   * </pre>
+   *
+   * <code>optional string time_zone = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The timeZone.
    */
@@ -152,7 +205,7 @@ public interface NetworkOrBuilder
    * reporting.
    * </pre>
    *
-   * <code>string time_zone = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string time_zone = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for timeZone.
    */
@@ -165,7 +218,20 @@ public interface NetworkOrBuilder
    * Output only. Primary currency code, in ISO-4217 format.
    * </pre>
    *
-   * <code>string currency_code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string currency_code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the currencyCode field is set.
+   */
+  boolean hasCurrencyCode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Primary currency code, in ISO-4217 format.
+   * </pre>
+   *
+   * <code>optional string currency_code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The currencyCode.
    */
@@ -178,7 +244,7 @@ public interface NetworkOrBuilder
    * Output only. Primary currency code, in ISO-4217 format.
    * </pre>
    *
-   * <code>string currency_code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string currency_code = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for currencyCode.
    */
@@ -256,7 +322,24 @@ public interface NetworkOrBuilder
    * </pre>
    *
    * <code>
-   * string effective_root_ad_unit = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * optional string effective_root_ad_unit = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the effectiveRootAdUnit field is set.
+   */
+  boolean hasEffectiveRootAdUnit();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Top most [Ad Unit](google.ads.admanager.v1.AdUnit) to which
+   * descendant Ad Units can be added.
+   * Format: networks/{network_code}/adUnits/{ad_unit}
+   * </pre>
+   *
+   * <code>
+   * optional string effective_root_ad_unit = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The effectiveRootAdUnit.
@@ -273,7 +356,7 @@ public interface NetworkOrBuilder
    * </pre>
    *
    * <code>
-   * string effective_root_ad_unit = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * optional string effective_root_ad_unit = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for effectiveRootAdUnit.
@@ -287,7 +370,20 @@ public interface NetworkOrBuilder
    * Output only. Whether this is a test network.
    * </pre>
    *
-   * <code>bool test_network = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool test_network = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the testNetwork field is set.
+   */
+  boolean hasTestNetwork();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether this is a test network.
+   * </pre>
+   *
+   * <code>optional bool test_network = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The testNetwork.
    */
@@ -300,7 +396,20 @@ public interface NetworkOrBuilder
    * Output only. Network ID.
    * </pre>
    *
-   * <code>int64 network_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional int64 network_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the networkId field is set.
+   */
+  boolean hasNetworkId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Network ID.
+   * </pre>
+   *
+   * <code>optional int64 network_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The networkId.
    */

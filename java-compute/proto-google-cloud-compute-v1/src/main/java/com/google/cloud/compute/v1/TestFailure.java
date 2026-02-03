@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -79,7 +79,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The actual output URL evaluated by a load balancer containing the scheme, host, path and query parameters.
+   * The actual output URL evaluated by a load balancer containing the scheme,
+   * host, path and query parameters.
    * </pre>
    *
    * <code>optional string actual_output_url = 287075458;</code>
@@ -95,7 +96,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The actual output URL evaluated by a load balancer containing the scheme, host, path and query parameters.
+   * The actual output URL evaluated by a load balancer containing the scheme,
+   * host, path and query parameters.
    * </pre>
    *
    * <code>optional string actual_output_url = 287075458;</code>
@@ -119,7 +121,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The actual output URL evaluated by a load balancer containing the scheme, host, path and query parameters.
+   * The actual output URL evaluated by a load balancer containing the scheme,
+   * host, path and query parameters.
    * </pre>
    *
    * <code>optional string actual_output_url = 287075458;</code>
@@ -146,7 +149,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Actual HTTP status code for rule with `urlRedirect` calculated by load balancer
+   * Actual HTTP status code for rule with `urlRedirect`
+   * calculated by load balancer
    * </pre>
    *
    * <code>optional int32 actual_redirect_response_code = 42926553;</code>
@@ -162,7 +166,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Actual HTTP status code for rule with `urlRedirect` calculated by load balancer
+   * Actual HTTP status code for rule with `urlRedirect`
+   * calculated by load balancer
    * </pre>
    *
    * <code>optional int32 actual_redirect_response_code = 42926553;</code>
@@ -183,7 +188,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * BackendService or BackendBucket returned by load balancer.
+   * BackendService or BackendBucket returned by load
+   * balancer.
    * </pre>
    *
    * <code>optional string actual_service = 440379652;</code>
@@ -199,7 +205,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * BackendService or BackendBucket returned by load balancer.
+   * BackendService or BackendBucket returned by load
+   * balancer.
    * </pre>
    *
    * <code>optional string actual_service = 440379652;</code>
@@ -223,7 +230,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * BackendService or BackendBucket returned by load balancer.
+   * BackendService or BackendBucket returned by load
+   * balancer.
    * </pre>
    *
    * <code>optional string actual_service = 440379652;</code>
@@ -252,7 +260,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The expected output URL evaluated by a load balancer containing the scheme, host, path and query parameters.
+   * The expected output URL evaluated by a load balancer containing the scheme,
+   * host, path and query parameters.
    * </pre>
    *
    * <code>optional string expected_output_url = 433967384;</code>
@@ -268,7 +277,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The expected output URL evaluated by a load balancer containing the scheme, host, path and query parameters.
+   * The expected output URL evaluated by a load balancer containing the scheme,
+   * host, path and query parameters.
    * </pre>
    *
    * <code>optional string expected_output_url = 433967384;</code>
@@ -292,7 +302,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The expected output URL evaluated by a load balancer containing the scheme, host, path and query parameters.
+   * The expected output URL evaluated by a load balancer containing the scheme,
+   * host, path and query parameters.
    * </pre>
    *
    * <code>optional string expected_output_url = 433967384;</code>
@@ -319,7 +330,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Expected HTTP status code for rule with `urlRedirect` calculated by load balancer
+   * Expected HTTP status code for rule with `urlRedirect`
+   * calculated by load balancer
    * </pre>
    *
    * <code>optional int32 expected_redirect_response_code = 18888047;</code>
@@ -335,7 +347,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Expected HTTP status code for rule with `urlRedirect` calculated by load balancer
+   * Expected HTTP status code for rule with `urlRedirect`
+   * calculated by load balancer
    * </pre>
    *
    * <code>optional int32 expected_redirect_response_code = 18888047;</code>
@@ -356,7 +369,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Expected BackendService or BackendBucket resource the given URL should be mapped to.
+   * Expected BackendService or BackendBucket resource
+   * the given URL should be mapped to.
    * </pre>
    *
    * <code>optional string expected_service = 133987374;</code>
@@ -372,7 +386,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Expected BackendService or BackendBucket resource the given URL should be mapped to.
+   * Expected BackendService or BackendBucket resource
+   * the given URL should be mapped to.
    * </pre>
    *
    * <code>optional string expected_service = 133987374;</code>
@@ -396,7 +411,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Expected BackendService or BackendBucket resource the given URL should be mapped to.
+   * Expected BackendService or BackendBucket resource
+   * the given URL should be mapped to.
    * </pre>
    *
    * <code>optional string expected_service = 133987374;</code>
@@ -1267,7 +1283,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The actual output URL evaluated by a load balancer containing the scheme, host, path and query parameters.
+     * The actual output URL evaluated by a load balancer containing the scheme,
+     * host, path and query parameters.
      * </pre>
      *
      * <code>optional string actual_output_url = 287075458;</code>
@@ -1282,7 +1299,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The actual output URL evaluated by a load balancer containing the scheme, host, path and query parameters.
+     * The actual output URL evaluated by a load balancer containing the scheme,
+     * host, path and query parameters.
      * </pre>
      *
      * <code>optional string actual_output_url = 287075458;</code>
@@ -1305,7 +1323,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The actual output URL evaluated by a load balancer containing the scheme, host, path and query parameters.
+     * The actual output URL evaluated by a load balancer containing the scheme,
+     * host, path and query parameters.
      * </pre>
      *
      * <code>optional string actual_output_url = 287075458;</code>
@@ -1328,7 +1347,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The actual output URL evaluated by a load balancer containing the scheme, host, path and query parameters.
+     * The actual output URL evaluated by a load balancer containing the scheme,
+     * host, path and query parameters.
      * </pre>
      *
      * <code>optional string actual_output_url = 287075458;</code>
@@ -1350,7 +1370,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The actual output URL evaluated by a load balancer containing the scheme, host, path and query parameters.
+     * The actual output URL evaluated by a load balancer containing the scheme,
+     * host, path and query parameters.
      * </pre>
      *
      * <code>optional string actual_output_url = 287075458;</code>
@@ -1368,7 +1389,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The actual output URL evaluated by a load balancer containing the scheme, host, path and query parameters.
+     * The actual output URL evaluated by a load balancer containing the scheme,
+     * host, path and query parameters.
      * </pre>
      *
      * <code>optional string actual_output_url = 287075458;</code>
@@ -1393,7 +1415,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Actual HTTP status code for rule with `urlRedirect` calculated by load balancer
+     * Actual HTTP status code for rule with `urlRedirect`
+     * calculated by load balancer
      * </pre>
      *
      * <code>optional int32 actual_redirect_response_code = 42926553;</code>
@@ -1409,7 +1432,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Actual HTTP status code for rule with `urlRedirect` calculated by load balancer
+     * Actual HTTP status code for rule with `urlRedirect`
+     * calculated by load balancer
      * </pre>
      *
      * <code>optional int32 actual_redirect_response_code = 42926553;</code>
@@ -1425,7 +1449,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Actual HTTP status code for rule with `urlRedirect` calculated by load balancer
+     * Actual HTTP status code for rule with `urlRedirect`
+     * calculated by load balancer
      * </pre>
      *
      * <code>optional int32 actual_redirect_response_code = 42926553;</code>
@@ -1445,7 +1470,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Actual HTTP status code for rule with `urlRedirect` calculated by load balancer
+     * Actual HTTP status code for rule with `urlRedirect`
+     * calculated by load balancer
      * </pre>
      *
      * <code>optional int32 actual_redirect_response_code = 42926553;</code>
@@ -1465,7 +1491,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * BackendService or BackendBucket returned by load balancer.
+     * BackendService or BackendBucket returned by load
+     * balancer.
      * </pre>
      *
      * <code>optional string actual_service = 440379652;</code>
@@ -1480,7 +1507,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * BackendService or BackendBucket returned by load balancer.
+     * BackendService or BackendBucket returned by load
+     * balancer.
      * </pre>
      *
      * <code>optional string actual_service = 440379652;</code>
@@ -1503,7 +1531,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * BackendService or BackendBucket returned by load balancer.
+     * BackendService or BackendBucket returned by load
+     * balancer.
      * </pre>
      *
      * <code>optional string actual_service = 440379652;</code>
@@ -1526,7 +1555,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * BackendService or BackendBucket returned by load balancer.
+     * BackendService or BackendBucket returned by load
+     * balancer.
      * </pre>
      *
      * <code>optional string actual_service = 440379652;</code>
@@ -1548,7 +1578,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * BackendService or BackendBucket returned by load balancer.
+     * BackendService or BackendBucket returned by load
+     * balancer.
      * </pre>
      *
      * <code>optional string actual_service = 440379652;</code>
@@ -1566,7 +1597,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * BackendService or BackendBucket returned by load balancer.
+     * BackendService or BackendBucket returned by load
+     * balancer.
      * </pre>
      *
      * <code>optional string actual_service = 440379652;</code>
@@ -1591,7 +1623,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The expected output URL evaluated by a load balancer containing the scheme, host, path and query parameters.
+     * The expected output URL evaluated by a load balancer containing the scheme,
+     * host, path and query parameters.
      * </pre>
      *
      * <code>optional string expected_output_url = 433967384;</code>
@@ -1606,7 +1639,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The expected output URL evaluated by a load balancer containing the scheme, host, path and query parameters.
+     * The expected output URL evaluated by a load balancer containing the scheme,
+     * host, path and query parameters.
      * </pre>
      *
      * <code>optional string expected_output_url = 433967384;</code>
@@ -1629,7 +1663,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The expected output URL evaluated by a load balancer containing the scheme, host, path and query parameters.
+     * The expected output URL evaluated by a load balancer containing the scheme,
+     * host, path and query parameters.
      * </pre>
      *
      * <code>optional string expected_output_url = 433967384;</code>
@@ -1652,7 +1687,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The expected output URL evaluated by a load balancer containing the scheme, host, path and query parameters.
+     * The expected output URL evaluated by a load balancer containing the scheme,
+     * host, path and query parameters.
      * </pre>
      *
      * <code>optional string expected_output_url = 433967384;</code>
@@ -1674,7 +1710,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The expected output URL evaluated by a load balancer containing the scheme, host, path and query parameters.
+     * The expected output URL evaluated by a load balancer containing the scheme,
+     * host, path and query parameters.
      * </pre>
      *
      * <code>optional string expected_output_url = 433967384;</code>
@@ -1692,7 +1729,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The expected output URL evaluated by a load balancer containing the scheme, host, path and query parameters.
+     * The expected output URL evaluated by a load balancer containing the scheme,
+     * host, path and query parameters.
      * </pre>
      *
      * <code>optional string expected_output_url = 433967384;</code>
@@ -1717,7 +1755,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Expected HTTP status code for rule with `urlRedirect` calculated by load balancer
+     * Expected HTTP status code for rule with `urlRedirect`
+     * calculated by load balancer
      * </pre>
      *
      * <code>optional int32 expected_redirect_response_code = 18888047;</code>
@@ -1733,7 +1772,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Expected HTTP status code for rule with `urlRedirect` calculated by load balancer
+     * Expected HTTP status code for rule with `urlRedirect`
+     * calculated by load balancer
      * </pre>
      *
      * <code>optional int32 expected_redirect_response_code = 18888047;</code>
@@ -1749,7 +1789,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Expected HTTP status code for rule with `urlRedirect` calculated by load balancer
+     * Expected HTTP status code for rule with `urlRedirect`
+     * calculated by load balancer
      * </pre>
      *
      * <code>optional int32 expected_redirect_response_code = 18888047;</code>
@@ -1769,7 +1810,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Expected HTTP status code for rule with `urlRedirect` calculated by load balancer
+     * Expected HTTP status code for rule with `urlRedirect`
+     * calculated by load balancer
      * </pre>
      *
      * <code>optional int32 expected_redirect_response_code = 18888047;</code>
@@ -1789,7 +1831,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Expected BackendService or BackendBucket resource the given URL should be mapped to.
+     * Expected BackendService or BackendBucket resource
+     * the given URL should be mapped to.
      * </pre>
      *
      * <code>optional string expected_service = 133987374;</code>
@@ -1804,7 +1847,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Expected BackendService or BackendBucket resource the given URL should be mapped to.
+     * Expected BackendService or BackendBucket resource
+     * the given URL should be mapped to.
      * </pre>
      *
      * <code>optional string expected_service = 133987374;</code>
@@ -1827,7 +1871,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Expected BackendService or BackendBucket resource the given URL should be mapped to.
+     * Expected BackendService or BackendBucket resource
+     * the given URL should be mapped to.
      * </pre>
      *
      * <code>optional string expected_service = 133987374;</code>
@@ -1850,7 +1895,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Expected BackendService or BackendBucket resource the given URL should be mapped to.
+     * Expected BackendService or BackendBucket resource
+     * the given URL should be mapped to.
      * </pre>
      *
      * <code>optional string expected_service = 133987374;</code>
@@ -1872,7 +1918,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Expected BackendService or BackendBucket resource the given URL should be mapped to.
+     * Expected BackendService or BackendBucket resource
+     * the given URL should be mapped to.
      * </pre>
      *
      * <code>optional string expected_service = 133987374;</code>
@@ -1890,7 +1937,8 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Expected BackendService or BackendBucket resource the given URL should be mapped to.
+     * Expected BackendService or BackendBucket resource
+     * the given URL should be mapped to.
      * </pre>
      *
      * <code>optional string expected_service = 133987374;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,7 +75,8 @@ public final class GetRegionOperationRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Name of the Operations resource to return, or its unique numeric identifier.
+   * Name of the Operations resource to return, or its unique numeric
+   * identifier.
    * </pre>
    *
    * <code>
@@ -101,7 +102,8 @@ public final class GetRegionOperationRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Name of the Operations resource to return, or its unique numeric identifier.
+   * Name of the Operations resource to return, or its unique numeric
+   * identifier.
    * </pre>
    *
    * <code>
@@ -627,7 +629,8 @@ public final class GetRegionOperationRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Name of the Operations resource to return, or its unique numeric identifier.
+     * Name of the Operations resource to return, or its unique numeric
+     * identifier.
      * </pre>
      *
      * <code>
@@ -652,7 +655,8 @@ public final class GetRegionOperationRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Name of the Operations resource to return, or its unique numeric identifier.
+     * Name of the Operations resource to return, or its unique numeric
+     * identifier.
      * </pre>
      *
      * <code>
@@ -677,7 +681,8 @@ public final class GetRegionOperationRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Name of the Operations resource to return, or its unique numeric identifier.
+     * Name of the Operations resource to return, or its unique numeric
+     * identifier.
      * </pre>
      *
      * <code>
@@ -701,7 +706,8 @@ public final class GetRegionOperationRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Name of the Operations resource to return, or its unique numeric identifier.
+     * Name of the Operations resource to return, or its unique numeric
+     * identifier.
      * </pre>
      *
      * <code>
@@ -721,7 +727,8 @@ public final class GetRegionOperationRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Name of the Operations resource to return, or its unique numeric identifier.
+     * Name of the Operations resource to return, or its unique numeric
+     * identifier.
      * </pre>
      *
      * <code>

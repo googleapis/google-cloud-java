@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    *
    *
    * <pre>
-   * URL of the backend service associated with the health state of the network endpoint.
+   * URL of the backend service associated with the health state of the network
+   * endpoint.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.BackendServiceReference backend_service = 306946058;
@@ -42,7 +43,8 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    *
    *
    * <pre>
-   * URL of the backend service associated with the health state of the network endpoint.
+   * URL of the backend service associated with the health state of the network
+   * endpoint.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.BackendServiceReference backend_service = 306946058;
@@ -56,7 +58,8 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    *
    *
    * <pre>
-   * URL of the backend service associated with the health state of the network endpoint.
+   * URL of the backend service associated with the health state of the network
+   * endpoint.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.BackendServiceReference backend_service = 306946058;
@@ -68,7 +71,8 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    *
    *
    * <pre>
-   * URL of the forwarding rule associated with the health state of the network endpoint.
+   * URL of the forwarding rule associated with the health state of the network
+   * endpoint.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 269964030;
@@ -82,7 +86,8 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    *
    *
    * <pre>
-   * URL of the forwarding rule associated with the health state of the network endpoint.
+   * URL of the forwarding rule associated with the health state of the network
+   * endpoint.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 269964030;
@@ -96,7 +101,8 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    *
    *
    * <pre>
-   * URL of the forwarding rule associated with the health state of the network endpoint.
+   * URL of the forwarding rule associated with the health state of the network
+   * endpoint.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 269964030;
@@ -108,7 +114,8 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    *
    *
    * <pre>
-   * URL of the health check associated with the health state of the network endpoint.
+   * URL of the health check associated with the health state of the network
+   * endpoint.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.HealthCheckReference health_check = 308876645;</code>
@@ -121,7 +128,8 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    *
    *
    * <pre>
-   * URL of the health check associated with the health state of the network endpoint.
+   * URL of the health check associated with the health state of the network
+   * endpoint.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.HealthCheckReference health_check = 308876645;</code>
@@ -134,7 +142,8 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    *
    *
    * <pre>
-   * URL of the health check associated with the health state of the network endpoint.
+   * URL of the health check associated with the health state of the network
+   * endpoint.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.HealthCheckReference health_check = 308876645;</code>
@@ -145,7 +154,8 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    *
    *
    * <pre>
-   * URL of the health check service associated with the health state of the network endpoint.
+   * URL of the health check service associated with the health state of the
+   * network endpoint.
    * </pre>
    *
    * <code>
@@ -160,7 +170,8 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    *
    *
    * <pre>
-   * URL of the health check service associated with the health state of the network endpoint.
+   * URL of the health check service associated with the health state of the
+   * network endpoint.
    * </pre>
    *
    * <code>
@@ -175,7 +186,8 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    *
    *
    * <pre>
-   * URL of the health check service associated with the health state of the network endpoint.
+   * URL of the health check service associated with the health state of the
+   * network endpoint.
    * </pre>
    *
    * <code>
@@ -188,7 +200,8 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    *
    *
    * <pre>
-   * Health state of the network endpoint determined based on the health checks configured.
+   * Health state of the network endpoint determined based on the health checks
+   * configured.
    * Check the HealthState enum for the list of possible values.
    * </pre>
    *
@@ -202,7 +215,8 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    *
    *
    * <pre>
-   * Health state of the network endpoint determined based on the health checks configured.
+   * Health state of the network endpoint determined based on the health checks
+   * configured.
    * Check the HealthState enum for the list of possible values.
    * </pre>
    *
@@ -216,7 +230,8 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    *
    *
    * <pre>
-   * Health state of the network endpoint determined based on the health checks configured.
+   * Health state of the network endpoint determined based on the health checks
+   * configured.
    * Check the HealthState enum for the list of possible values.
    * </pre>
    *
@@ -230,7 +245,8 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    *
    *
    * <pre>
-   * Health state of the ipv6 network endpoint determined based on the health checks configured.
+   * Health state of the ipv6 network endpoint determined based on the health
+   * checks configured.
    * Check the Ipv6HealthState enum for the list of possible values.
    * </pre>
    *
@@ -244,7 +260,8 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    *
    *
    * <pre>
-   * Health state of the ipv6 network endpoint determined based on the health checks configured.
+   * Health state of the ipv6 network endpoint determined based on the health
+   * checks configured.
    * Check the Ipv6HealthState enum for the list of possible values.
    * </pre>
    *
@@ -258,7 +275,8 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    *
    *
    * <pre>
-   * Health state of the ipv6 network endpoint determined based on the health checks configured.
+   * Health state of the ipv6 network endpoint determined based on the health
+   * checks configured.
    * Check the Ipv6HealthState enum for the list of possible values.
    * </pre>
    *

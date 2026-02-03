@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,9 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * MACsec configuration information for the Interconnect connection. Contains the generated Connectivity Association Key Name (CKN) and the key (CAK) for this Interconnect connection.
+ * MACsec configuration information for the Interconnect connection. Contains
+ * the generated Connectivity Association Key Name (CKN) and the key (CAK) for
+ * this Interconnect connection.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.InterconnectMacsecConfig}
@@ -74,7 +76,10 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * A keychain placeholder describing a set of named key objects along with their start times. A MACsec CKN/CAK is generated for each key in the key chain. Google router automatically picks the key with the most recent startTime when establishing or re-establishing a MACsec secure link.
+   * A keychain placeholder describing a set of named key objects
+   * along with their start times. A MACsec CKN/CAK is generated for each key in
+   * the key chain. Google router automatically picks the key with the most
+   * recent startTime when establishing or re-establishing a MACsec secure link.
    * </pre>
    *
    * <code>
@@ -91,7 +96,10 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * A keychain placeholder describing a set of named key objects along with their start times. A MACsec CKN/CAK is generated for each key in the key chain. Google router automatically picks the key with the most recent startTime when establishing or re-establishing a MACsec secure link.
+   * A keychain placeholder describing a set of named key objects
+   * along with their start times. A MACsec CKN/CAK is generated for each key in
+   * the key chain. Google router automatically picks the key with the most
+   * recent startTime when establishing or re-establishing a MACsec secure link.
    * </pre>
    *
    * <code>
@@ -109,7 +117,10 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * A keychain placeholder describing a set of named key objects along with their start times. A MACsec CKN/CAK is generated for each key in the key chain. Google router automatically picks the key with the most recent startTime when establishing or re-establishing a MACsec secure link.
+   * A keychain placeholder describing a set of named key objects
+   * along with their start times. A MACsec CKN/CAK is generated for each key in
+   * the key chain. Google router automatically picks the key with the most
+   * recent startTime when establishing or re-establishing a MACsec secure link.
    * </pre>
    *
    * <code>
@@ -125,7 +136,10 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * A keychain placeholder describing a set of named key objects along with their start times. A MACsec CKN/CAK is generated for each key in the key chain. Google router automatically picks the key with the most recent startTime when establishing or re-establishing a MACsec secure link.
+   * A keychain placeholder describing a set of named key objects
+   * along with their start times. A MACsec CKN/CAK is generated for each key in
+   * the key chain. Google router automatically picks the key with the most
+   * recent startTime when establishing or re-establishing a MACsec secure link.
    * </pre>
    *
    * <code>
@@ -142,7 +156,10 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * A keychain placeholder describing a set of named key objects along with their start times. A MACsec CKN/CAK is generated for each key in the key chain. Google router automatically picks the key with the most recent startTime when establishing or re-establishing a MACsec secure link.
+   * A keychain placeholder describing a set of named key objects
+   * along with their start times. A MACsec CKN/CAK is generated for each key in
+   * the key chain. Google router automatically picks the key with the most
+   * recent startTime when establishing or re-establishing a MACsec secure link.
    * </pre>
    *
    * <code>
@@ -323,7 +340,9 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * MACsec configuration information for the Interconnect connection. Contains the generated Connectivity Association Key Name (CKN) and the key (CAK) for this Interconnect connection.
+   * MACsec configuration information for the Interconnect connection. Contains
+   * the generated Connectivity Association Key Name (CKN) and the key (CAK) for
+   * this Interconnect connection.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.InterconnectMacsecConfig}
@@ -571,7 +590,10 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A keychain placeholder describing a set of named key objects along with their start times. A MACsec CKN/CAK is generated for each key in the key chain. Google router automatically picks the key with the most recent startTime when establishing or re-establishing a MACsec secure link.
+     * A keychain placeholder describing a set of named key objects
+     * along with their start times. A MACsec CKN/CAK is generated for each key in
+     * the key chain. Google router automatically picks the key with the most
+     * recent startTime when establishing or re-establishing a MACsec secure link.
      * </pre>
      *
      * <code>
@@ -591,7 +613,10 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A keychain placeholder describing a set of named key objects along with their start times. A MACsec CKN/CAK is generated for each key in the key chain. Google router automatically picks the key with the most recent startTime when establishing or re-establishing a MACsec secure link.
+     * A keychain placeholder describing a set of named key objects
+     * along with their start times. A MACsec CKN/CAK is generated for each key in
+     * the key chain. Google router automatically picks the key with the most
+     * recent startTime when establishing or re-establishing a MACsec secure link.
      * </pre>
      *
      * <code>
@@ -610,7 +635,10 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A keychain placeholder describing a set of named key objects along with their start times. A MACsec CKN/CAK is generated for each key in the key chain. Google router automatically picks the key with the most recent startTime when establishing or re-establishing a MACsec secure link.
+     * A keychain placeholder describing a set of named key objects
+     * along with their start times. A MACsec CKN/CAK is generated for each key in
+     * the key chain. Google router automatically picks the key with the most
+     * recent startTime when establishing or re-establishing a MACsec secure link.
      * </pre>
      *
      * <code>
@@ -630,7 +658,10 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A keychain placeholder describing a set of named key objects along with their start times. A MACsec CKN/CAK is generated for each key in the key chain. Google router automatically picks the key with the most recent startTime when establishing or re-establishing a MACsec secure link.
+     * A keychain placeholder describing a set of named key objects
+     * along with their start times. A MACsec CKN/CAK is generated for each key in
+     * the key chain. Google router automatically picks the key with the most
+     * recent startTime when establishing or re-establishing a MACsec secure link.
      * </pre>
      *
      * <code>
@@ -656,7 +687,10 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A keychain placeholder describing a set of named key objects along with their start times. A MACsec CKN/CAK is generated for each key in the key chain. Google router automatically picks the key with the most recent startTime when establishing or re-establishing a MACsec secure link.
+     * A keychain placeholder describing a set of named key objects
+     * along with their start times. A MACsec CKN/CAK is generated for each key in
+     * the key chain. Google router automatically picks the key with the most
+     * recent startTime when establishing or re-establishing a MACsec secure link.
      * </pre>
      *
      * <code>
@@ -680,7 +714,10 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A keychain placeholder describing a set of named key objects along with their start times. A MACsec CKN/CAK is generated for each key in the key chain. Google router automatically picks the key with the most recent startTime when establishing or re-establishing a MACsec secure link.
+     * A keychain placeholder describing a set of named key objects
+     * along with their start times. A MACsec CKN/CAK is generated for each key in
+     * the key chain. Google router automatically picks the key with the most
+     * recent startTime when establishing or re-establishing a MACsec secure link.
      * </pre>
      *
      * <code>
@@ -706,7 +743,10 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A keychain placeholder describing a set of named key objects along with their start times. A MACsec CKN/CAK is generated for each key in the key chain. Google router automatically picks the key with the most recent startTime when establishing or re-establishing a MACsec secure link.
+     * A keychain placeholder describing a set of named key objects
+     * along with their start times. A MACsec CKN/CAK is generated for each key in
+     * the key chain. Google router automatically picks the key with the most
+     * recent startTime when establishing or re-establishing a MACsec secure link.
      * </pre>
      *
      * <code>
@@ -732,7 +772,10 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A keychain placeholder describing a set of named key objects along with their start times. A MACsec CKN/CAK is generated for each key in the key chain. Google router automatically picks the key with the most recent startTime when establishing or re-establishing a MACsec secure link.
+     * A keychain placeholder describing a set of named key objects
+     * along with their start times. A MACsec CKN/CAK is generated for each key in
+     * the key chain. Google router automatically picks the key with the most
+     * recent startTime when establishing or re-establishing a MACsec secure link.
      * </pre>
      *
      * <code>
@@ -755,7 +798,10 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A keychain placeholder describing a set of named key objects along with their start times. A MACsec CKN/CAK is generated for each key in the key chain. Google router automatically picks the key with the most recent startTime when establishing or re-establishing a MACsec secure link.
+     * A keychain placeholder describing a set of named key objects
+     * along with their start times. A MACsec CKN/CAK is generated for each key in
+     * the key chain. Google router automatically picks the key with the most
+     * recent startTime when establishing or re-establishing a MACsec secure link.
      * </pre>
      *
      * <code>
@@ -779,7 +825,10 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A keychain placeholder describing a set of named key objects along with their start times. A MACsec CKN/CAK is generated for each key in the key chain. Google router automatically picks the key with the most recent startTime when establishing or re-establishing a MACsec secure link.
+     * A keychain placeholder describing a set of named key objects
+     * along with their start times. A MACsec CKN/CAK is generated for each key in
+     * the key chain. Google router automatically picks the key with the most
+     * recent startTime when establishing or re-establishing a MACsec secure link.
      * </pre>
      *
      * <code>
@@ -804,7 +853,10 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A keychain placeholder describing a set of named key objects along with their start times. A MACsec CKN/CAK is generated for each key in the key chain. Google router automatically picks the key with the most recent startTime when establishing or re-establishing a MACsec secure link.
+     * A keychain placeholder describing a set of named key objects
+     * along with their start times. A MACsec CKN/CAK is generated for each key in
+     * the key chain. Google router automatically picks the key with the most
+     * recent startTime when establishing or re-establishing a MACsec secure link.
      * </pre>
      *
      * <code>
@@ -826,7 +878,10 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A keychain placeholder describing a set of named key objects along with their start times. A MACsec CKN/CAK is generated for each key in the key chain. Google router automatically picks the key with the most recent startTime when establishing or re-establishing a MACsec secure link.
+     * A keychain placeholder describing a set of named key objects
+     * along with their start times. A MACsec CKN/CAK is generated for each key in
+     * the key chain. Google router automatically picks the key with the most
+     * recent startTime when establishing or re-establishing a MACsec secure link.
      * </pre>
      *
      * <code>
@@ -848,7 +903,10 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A keychain placeholder describing a set of named key objects along with their start times. A MACsec CKN/CAK is generated for each key in the key chain. Google router automatically picks the key with the most recent startTime when establishing or re-establishing a MACsec secure link.
+     * A keychain placeholder describing a set of named key objects
+     * along with their start times. A MACsec CKN/CAK is generated for each key in
+     * the key chain. Google router automatically picks the key with the most
+     * recent startTime when establishing or re-establishing a MACsec secure link.
      * </pre>
      *
      * <code>
@@ -864,7 +922,10 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A keychain placeholder describing a set of named key objects along with their start times. A MACsec CKN/CAK is generated for each key in the key chain. Google router automatically picks the key with the most recent startTime when establishing or re-establishing a MACsec secure link.
+     * A keychain placeholder describing a set of named key objects
+     * along with their start times. A MACsec CKN/CAK is generated for each key in
+     * the key chain. Google router automatically picks the key with the most
+     * recent startTime when establishing or re-establishing a MACsec secure link.
      * </pre>
      *
      * <code>
@@ -884,7 +945,10 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A keychain placeholder describing a set of named key objects along with their start times. A MACsec CKN/CAK is generated for each key in the key chain. Google router automatically picks the key with the most recent startTime when establishing or re-establishing a MACsec secure link.
+     * A keychain placeholder describing a set of named key objects
+     * along with their start times. A MACsec CKN/CAK is generated for each key in
+     * the key chain. Google router automatically picks the key with the most
+     * recent startTime when establishing or re-establishing a MACsec secure link.
      * </pre>
      *
      * <code>
@@ -905,7 +969,10 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A keychain placeholder describing a set of named key objects along with their start times. A MACsec CKN/CAK is generated for each key in the key chain. Google router automatically picks the key with the most recent startTime when establishing or re-establishing a MACsec secure link.
+     * A keychain placeholder describing a set of named key objects
+     * along with their start times. A MACsec CKN/CAK is generated for each key in
+     * the key chain. Google router automatically picks the key with the most
+     * recent startTime when establishing or re-establishing a MACsec secure link.
      * </pre>
      *
      * <code>
@@ -924,7 +991,10 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A keychain placeholder describing a set of named key objects along with their start times. A MACsec CKN/CAK is generated for each key in the key chain. Google router automatically picks the key with the most recent startTime when establishing or re-establishing a MACsec secure link.
+     * A keychain placeholder describing a set of named key objects
+     * along with their start times. A MACsec CKN/CAK is generated for each key in
+     * the key chain. Google router automatically picks the key with the most
+     * recent startTime when establishing or re-establishing a MACsec secure link.
      * </pre>
      *
      * <code>
@@ -944,7 +1014,10 @@ public final class InterconnectMacsecConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A keychain placeholder describing a set of named key objects along with their start times. A MACsec CKN/CAK is generated for each key in the key chain. Google router automatically picks the key with the most recent startTime when establishing or re-establishing a MACsec secure link.
+     * A keychain placeholder describing a set of named key objects
+     * along with their start times. A MACsec CKN/CAK is generated for each key in
+     * the key chain. Google router automatically picks the key with the most
+     * recent startTime when establishing or re-establishing a MACsec secure link.
      * </pre>
      *
      * <code>

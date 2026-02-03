@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Initial State for shielded instance, these are public keys which are safe to store in public
+ * Initial State for shielded instance,
+ * these are public keys which are safe to store in public
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.InitialStateConfig}
@@ -546,7 +547,8 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Initial State for shielded instance, these are public keys which are safe to store in public
+   * Initial State for shielded instance,
+   * these are public keys which are safe to store in public
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.InitialStateConfig}

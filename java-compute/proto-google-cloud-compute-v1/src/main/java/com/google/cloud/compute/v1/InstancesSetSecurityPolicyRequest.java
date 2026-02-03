@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,7 +76,9 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * The network interfaces that the security policy will be applied to. Network interfaces use the nicN naming format. You can only set a security policy for network interfaces with an access config.
+   * The network interfaces that the security policy will be applied to. Network
+   * interfaces use the nicN naming format. You can only set a
+   * security policy for network interfaces with an access config.
    * </pre>
    *
    * <code>repeated string network_interfaces = 52735243;</code>
@@ -91,7 +93,9 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * The network interfaces that the security policy will be applied to. Network interfaces use the nicN naming format. You can only set a security policy for network interfaces with an access config.
+   * The network interfaces that the security policy will be applied to. Network
+   * interfaces use the nicN naming format. You can only set a
+   * security policy for network interfaces with an access config.
    * </pre>
    *
    * <code>repeated string network_interfaces = 52735243;</code>
@@ -106,7 +110,9 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * The network interfaces that the security policy will be applied to. Network interfaces use the nicN naming format. You can only set a security policy for network interfaces with an access config.
+   * The network interfaces that the security policy will be applied to. Network
+   * interfaces use the nicN naming format. You can only set a
+   * security policy for network interfaces with an access config.
    * </pre>
    *
    * <code>repeated string network_interfaces = 52735243;</code>
@@ -122,7 +128,9 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * The network interfaces that the security policy will be applied to. Network interfaces use the nicN naming format. You can only set a security policy for network interfaces with an access config.
+   * The network interfaces that the security policy will be applied to. Network
+   * interfaces use the nicN naming format. You can only set a
+   * security policy for network interfaces with an access config.
    * </pre>
    *
    * <code>repeated string network_interfaces = 52735243;</code>
@@ -143,7 +151,9 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * A full or partial URL to a security policy to add to this instance. If this field is set to an empty string it will remove the associated security policy.
+   * A full or partial URL to a security policy to add to this instance.
+   * If this field is set to an empty string it will remove the associated
+   * security policy.
    * </pre>
    *
    * <code>optional string security_policy = 171082513;</code>
@@ -159,7 +169,9 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * A full or partial URL to a security policy to add to this instance. If this field is set to an empty string it will remove the associated security policy.
+   * A full or partial URL to a security policy to add to this instance.
+   * If this field is set to an empty string it will remove the associated
+   * security policy.
    * </pre>
    *
    * <code>optional string security_policy = 171082513;</code>
@@ -183,7 +195,9 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * A full or partial URL to a security policy to add to this instance. If this field is set to an empty string it will remove the associated security policy.
+   * A full or partial URL to a security policy to add to this instance.
+   * If this field is set to an empty string it will remove the associated
+   * security policy.
    * </pre>
    *
    * <code>optional string security_policy = 171082513;</code>
@@ -610,7 +624,9 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The network interfaces that the security policy will be applied to. Network interfaces use the nicN naming format. You can only set a security policy for network interfaces with an access config.
+     * The network interfaces that the security policy will be applied to. Network
+     * interfaces use the nicN naming format. You can only set a
+     * security policy for network interfaces with an access config.
      * </pre>
      *
      * <code>repeated string network_interfaces = 52735243;</code>
@@ -626,7 +642,9 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The network interfaces that the security policy will be applied to. Network interfaces use the nicN naming format. You can only set a security policy for network interfaces with an access config.
+     * The network interfaces that the security policy will be applied to. Network
+     * interfaces use the nicN naming format. You can only set a
+     * security policy for network interfaces with an access config.
      * </pre>
      *
      * <code>repeated string network_interfaces = 52735243;</code>
@@ -641,7 +659,9 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The network interfaces that the security policy will be applied to. Network interfaces use the nicN naming format. You can only set a security policy for network interfaces with an access config.
+     * The network interfaces that the security policy will be applied to. Network
+     * interfaces use the nicN naming format. You can only set a
+     * security policy for network interfaces with an access config.
      * </pre>
      *
      * <code>repeated string network_interfaces = 52735243;</code>
@@ -657,7 +677,9 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The network interfaces that the security policy will be applied to. Network interfaces use the nicN naming format. You can only set a security policy for network interfaces with an access config.
+     * The network interfaces that the security policy will be applied to. Network
+     * interfaces use the nicN naming format. You can only set a
+     * security policy for network interfaces with an access config.
      * </pre>
      *
      * <code>repeated string network_interfaces = 52735243;</code>
@@ -673,7 +695,9 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The network interfaces that the security policy will be applied to. Network interfaces use the nicN naming format. You can only set a security policy for network interfaces with an access config.
+     * The network interfaces that the security policy will be applied to. Network
+     * interfaces use the nicN naming format. You can only set a
+     * security policy for network interfaces with an access config.
      * </pre>
      *
      * <code>repeated string network_interfaces = 52735243;</code>
@@ -697,7 +721,9 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The network interfaces that the security policy will be applied to. Network interfaces use the nicN naming format. You can only set a security policy for network interfaces with an access config.
+     * The network interfaces that the security policy will be applied to. Network
+     * interfaces use the nicN naming format. You can only set a
+     * security policy for network interfaces with an access config.
      * </pre>
      *
      * <code>repeated string network_interfaces = 52735243;</code>
@@ -720,7 +746,9 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The network interfaces that the security policy will be applied to. Network interfaces use the nicN naming format. You can only set a security policy for network interfaces with an access config.
+     * The network interfaces that the security policy will be applied to. Network
+     * interfaces use the nicN naming format. You can only set a
+     * security policy for network interfaces with an access config.
      * </pre>
      *
      * <code>repeated string network_interfaces = 52735243;</code>
@@ -740,7 +768,9 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The network interfaces that the security policy will be applied to. Network interfaces use the nicN naming format. You can only set a security policy for network interfaces with an access config.
+     * The network interfaces that the security policy will be applied to. Network
+     * interfaces use the nicN naming format. You can only set a
+     * security policy for network interfaces with an access config.
      * </pre>
      *
      * <code>repeated string network_interfaces = 52735243;</code>
@@ -759,7 +789,9 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The network interfaces that the security policy will be applied to. Network interfaces use the nicN naming format. You can only set a security policy for network interfaces with an access config.
+     * The network interfaces that the security policy will be applied to. Network
+     * interfaces use the nicN naming format. You can only set a
+     * security policy for network interfaces with an access config.
      * </pre>
      *
      * <code>repeated string network_interfaces = 52735243;</code>
@@ -785,7 +817,9 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * A full or partial URL to a security policy to add to this instance. If this field is set to an empty string it will remove the associated security policy.
+     * A full or partial URL to a security policy to add to this instance.
+     * If this field is set to an empty string it will remove the associated
+     * security policy.
      * </pre>
      *
      * <code>optional string security_policy = 171082513;</code>
@@ -800,7 +834,9 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * A full or partial URL to a security policy to add to this instance. If this field is set to an empty string it will remove the associated security policy.
+     * A full or partial URL to a security policy to add to this instance.
+     * If this field is set to an empty string it will remove the associated
+     * security policy.
      * </pre>
      *
      * <code>optional string security_policy = 171082513;</code>
@@ -823,7 +859,9 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * A full or partial URL to a security policy to add to this instance. If this field is set to an empty string it will remove the associated security policy.
+     * A full or partial URL to a security policy to add to this instance.
+     * If this field is set to an empty string it will remove the associated
+     * security policy.
      * </pre>
      *
      * <code>optional string security_policy = 171082513;</code>
@@ -846,7 +884,9 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * A full or partial URL to a security policy to add to this instance. If this field is set to an empty string it will remove the associated security policy.
+     * A full or partial URL to a security policy to add to this instance.
+     * If this field is set to an empty string it will remove the associated
+     * security policy.
      * </pre>
      *
      * <code>optional string security_policy = 171082513;</code>
@@ -868,7 +908,9 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * A full or partial URL to a security policy to add to this instance. If this field is set to an empty string it will remove the associated security policy.
+     * A full or partial URL to a security policy to add to this instance.
+     * If this field is set to an empty string it will remove the associated
+     * security policy.
      * </pre>
      *
      * <code>optional string security_policy = 171082513;</code>
@@ -886,7 +928,9 @@ public final class InstancesSetSecurityPolicyRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * A full or partial URL to a security policy to add to this instance. If this field is set to an empty string it will remove the associated security policy.
+     * A full or partial URL to a security policy to add to this instance.
+     * If this field is set to an empty string it will remove the associated
+     * security policy.
      * </pre>
      *
      * <code>optional string security_policy = 171082513;</code>

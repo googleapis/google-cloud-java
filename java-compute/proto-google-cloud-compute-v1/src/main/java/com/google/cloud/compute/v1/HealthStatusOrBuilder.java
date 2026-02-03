@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,7 +91,8 @@ public interface HealthStatusOrBuilder
    *
    *
    * <pre>
-   * URL of the forwarding rule associated with the health status of the instance.
+   * URL of the forwarding rule associated with the health status of the
+   * instance.
    * </pre>
    *
    * <code>optional string forwarding_rule = 269964030;</code>
@@ -104,7 +105,8 @@ public interface HealthStatusOrBuilder
    *
    *
    * <pre>
-   * URL of the forwarding rule associated with the health status of the instance.
+   * URL of the forwarding rule associated with the health status of the
+   * instance.
    * </pre>
    *
    * <code>optional string forwarding_rule = 269964030;</code>
@@ -117,7 +119,8 @@ public interface HealthStatusOrBuilder
    *
    *
    * <pre>
-   * URL of the forwarding rule associated with the health status of the instance.
+   * URL of the forwarding rule associated with the health status of the
+   * instance.
    * </pre>
    *
    * <code>optional string forwarding_rule = 269964030;</code>
@@ -250,7 +253,9 @@ public interface HealthStatusOrBuilder
    *
    *
    * <pre>
-   * For target pool based Network Load Balancing, it indicates the forwarding rule's IP address assigned to this instance. For other types of load balancing, the field indicates VM internal ip.
+   * For target pool based Network Load Balancing, it indicates the forwarding
+   * rule's IP address assigned to this instance. For other types of load
+   * balancing, the field indicates VM internal ip.
    * </pre>
    *
    * <code>optional string ip_address = 406272220;</code>
@@ -263,7 +268,9 @@ public interface HealthStatusOrBuilder
    *
    *
    * <pre>
-   * For target pool based Network Load Balancing, it indicates the forwarding rule's IP address assigned to this instance. For other types of load balancing, the field indicates VM internal ip.
+   * For target pool based Network Load Balancing, it indicates the forwarding
+   * rule's IP address assigned to this instance. For other types of load
+   * balancing, the field indicates VM internal ip.
    * </pre>
    *
    * <code>optional string ip_address = 406272220;</code>
@@ -276,7 +283,9 @@ public interface HealthStatusOrBuilder
    *
    *
    * <pre>
-   * For target pool based Network Load Balancing, it indicates the forwarding rule's IP address assigned to this instance. For other types of load balancing, the field indicates VM internal ip.
+   * For target pool based Network Load Balancing, it indicates the forwarding
+   * rule's IP address assigned to this instance. For other types of load
+   * balancing, the field indicates VM internal ip.
    * </pre>
    *
    * <code>optional string ip_address = 406272220;</code>
@@ -352,7 +361,8 @@ public interface HealthStatusOrBuilder
    *
    *
    * <pre>
-   * The named port of the instance group, not necessarily the port that is health-checked.
+   * The named port of the instance group, not necessarily the port that is
+   * health-checked.
    * </pre>
    *
    * <code>optional int32 port = 3446913;</code>
@@ -365,7 +375,8 @@ public interface HealthStatusOrBuilder
    *
    *
    * <pre>
-   * The named port of the instance group, not necessarily the port that is health-checked.
+   * The named port of the instance group, not necessarily the port that is
+   * health-checked.
    * </pre>
    *
    * <code>optional int32 port = 3446913;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,22 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents an Instance Group resource. Instance Groups can be used to configure a target for load balancing. Instance groups can either be managed or unmanaged. To create managed instance groups, use the instanceGroupManager or regionInstanceGroupManager resource instead. Use zonal unmanaged instance groups if you need to apply load balancing to groups of heterogeneous instances or if you need to manage the instances yourself. You cannot create regional unmanaged instance groups. For more information, read Instance groups.
+ * Represents an Instance Group resource.
+ *
+ * Instance Groups can be used to configure a target forload
+ * balancing.
+ *
+ * Instance groups can either be managed or unmanaged.
+ *
+ * To create
+ * managed instance groups, use the instanceGroupManager orregionInstanceGroupManager resource instead.
+ *
+ * Use zonal unmanaged instance groups if you need to applyload
+ * balancing to groups of heterogeneous instances or if you need to manage
+ * the instances yourself. You cannot create regional unmanaged instance groups.
+ *
+ * For more information, readInstance
+ * groups.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.InstanceGroup}
@@ -84,7 +99,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The creation timestamp for this instance group in RFC3339 text format.
+   * Output only. [Output Only] The creation timestamp for this instance group inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -100,7 +116,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The creation timestamp for this instance group in RFC3339 text format.
+   * Output only. [Output Only] The creation timestamp for this instance group inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -124,7 +141,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The creation timestamp for this instance group in RFC3339 text format.
+   * Output only. [Output Only] The creation timestamp for this instance group inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -153,7 +171,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -169,7 +188,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -193,7 +213,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -222,7 +243,9 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The fingerprint of the named ports. The system uses this fingerprint to detect conflicts when multiple users change the named ports concurrently.
+   * Output only. [Output Only] The fingerprint of the named ports. The system
+   * uses this fingerprint to detect conflicts when multiple users change the
+   * named ports concurrently.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -238,7 +261,9 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The fingerprint of the named ports. The system uses this fingerprint to detect conflicts when multiple users change the named ports concurrently.
+   * Output only. [Output Only] The fingerprint of the named ports. The system
+   * uses this fingerprint to detect conflicts when multiple users change the
+   * named ports concurrently.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -262,7 +287,9 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The fingerprint of the named ports. The system uses this fingerprint to detect conflicts when multiple users change the named ports concurrently.
+   * Output only. [Output Only] The fingerprint of the named ports. The system
+   * uses this fingerprint to detect conflicts when multiple users change the
+   * named ports concurrently.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -289,7 +316,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A unique identifier for this instance group, generated by the server.
+   * Output only. [Output Only] A unique identifier for this instance group, generated
+   * by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -305,7 +333,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A unique identifier for this instance group, generated by the server.
+   * Output only. [Output Only] A unique identifier for this instance group, generated
+   * by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -326,7 +355,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is always compute#instanceGroup for instance groups.
+   * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroup for instance groups.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -342,7 +371,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is always compute#instanceGroup for instance groups.
+   * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroup for instance groups.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -366,7 +395,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is always compute#instanceGroup for instance groups.
+   * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroup for instance groups.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -395,7 +424,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the instance group. The name must be 1-63 characters long, and comply with RFC1035.
+   * The name of the instance group. The name must be 1-63 characters
+   * long, and comply withRFC1035.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -411,7 +441,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the instance group. The name must be 1-63 characters long, and comply with RFC1035.
+   * The name of the instance group. The name must be 1-63 characters
+   * long, and comply withRFC1035.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -435,7 +466,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the instance group. The name must be 1-63 characters long, and comply with RFC1035.
+   * The name of the instance group. The name must be 1-63 characters
+   * long, and comply withRFC1035.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -464,7 +496,15 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   *  Optional. Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "app1", port: 8080}, {name: "app1", port: 8081}, {name: "app2", port: 8082}] Named ports apply to all instances in this instance group.
+   * Optional. Assigns a name to a port number. For example:{name: "http", port: 80}
+   *
+   * This
+   * allows the system to reference ports by the assigned name instead of a
+   * port number. Named ports can also contain multiple ports. For example:[{name: "app1", port: 8080}, {name:
+   * "app1", port: 8081}, {name: "app2", port:
+   * 8082}]
+   *
+   * Named ports apply to all instances in this instance group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -478,7 +518,15 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   *  Optional. Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "app1", port: 8080}, {name: "app1", port: 8081}, {name: "app2", port: 8082}] Named ports apply to all instances in this instance group.
+   * Optional. Assigns a name to a port number. For example:{name: "http", port: 80}
+   *
+   * This
+   * allows the system to reference ports by the assigned name instead of a
+   * port number. Named ports can also contain multiple ports. For example:[{name: "app1", port: 8080}, {name:
+   * "app1", port: 8081}, {name: "app2", port:
+   * 8082}]
+   *
+   * Named ports apply to all instances in this instance group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -493,7 +541,15 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   *  Optional. Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "app1", port: 8080}, {name: "app1", port: 8081}, {name: "app2", port: 8082}] Named ports apply to all instances in this instance group.
+   * Optional. Assigns a name to a port number. For example:{name: "http", port: 80}
+   *
+   * This
+   * allows the system to reference ports by the assigned name instead of a
+   * port number. Named ports can also contain multiple ports. For example:[{name: "app1", port: 8080}, {name:
+   * "app1", port: 8081}, {name: "app2", port:
+   * 8082}]
+   *
+   * Named ports apply to all instances in this instance group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -507,7 +563,15 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   *  Optional. Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "app1", port: 8080}, {name: "app1", port: 8081}, {name: "app2", port: 8082}] Named ports apply to all instances in this instance group.
+   * Optional. Assigns a name to a port number. For example:{name: "http", port: 80}
+   *
+   * This
+   * allows the system to reference ports by the assigned name instead of a
+   * port number. Named ports can also contain multiple ports. For example:[{name: "app1", port: 8080}, {name:
+   * "app1", port: 8081}, {name: "app2", port:
+   * 8082}]
+   *
+   * Named ports apply to all instances in this instance group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -521,7 +585,15 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   *  Optional. Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "app1", port: 8080}, {name: "app1", port: 8081}, {name: "app2", port: 8082}] Named ports apply to all instances in this instance group.
+   * Optional. Assigns a name to a port number. For example:{name: "http", port: 80}
+   *
+   * This
+   * allows the system to reference ports by the assigned name instead of a
+   * port number. Named ports can also contain multiple ports. For example:[{name: "app1", port: 8080}, {name:
+   * "app1", port: 8081}, {name: "app2", port:
+   * 8082}]
+   *
+   * Named ports apply to all instances in this instance group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -540,7 +612,10 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL of the network to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
+   * [Output Only] The URL of the network to which all instances in the
+   * instance group belong. If your instance has multiple network interfaces,
+   * then the network and subnetwork fields only refer to the
+   * network and subnet used by your primary interface (nic0).
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -556,7 +631,10 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL of the network to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
+   * [Output Only] The URL of the network to which all instances in the
+   * instance group belong. If your instance has multiple network interfaces,
+   * then the network and subnetwork fields only refer to the
+   * network and subnet used by your primary interface (nic0).
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -580,7 +658,10 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL of the network to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
+   * [Output Only] The URL of the network to which all instances in the
+   * instance group belong. If your instance has multiple network interfaces,
+   * then the network and subnetwork fields only refer to the
+   * network and subnet used by your primary interface (nic0).
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -609,7 +690,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL of the region where the instance group is located (for regional resources).
+   * Output only. [Output Only] The URL of theregion
+   * where the instance group is located (for regional resources).
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -625,7 +707,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL of the region where the instance group is located (for regional resources).
+   * Output only. [Output Only] The URL of theregion
+   * where the instance group is located (for regional resources).
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -649,7 +732,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL of the region where the instance group is located (for regional resources).
+   * Output only. [Output Only] The URL of theregion
+   * where the instance group is located (for regional resources).
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -678,7 +762,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL for this instance group. The server generates this URL.
+   * Output only. [Output Only] The URL for this instance group. The server generates
+   * this URL.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -694,7 +779,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL for this instance group. The server generates this URL.
+   * Output only. [Output Only] The URL for this instance group. The server generates
+   * this URL.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -718,7 +804,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL for this instance group. The server generates this URL.
+   * Output only. [Output Only] The URL for this instance group. The server generates
+   * this URL.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -745,7 +832,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The total number of instances in the instance group.
+   * Output only. [Output Only] The total number of instances in the instance group.
    * </pre>
    *
    * <code>optional int32 size = 3530753;</code>
@@ -761,7 +848,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The total number of instances in the instance group.
+   * Output only. [Output Only] The total number of instances in the instance group.
    * </pre>
    *
    * <code>optional int32 size = 3530753;</code>
@@ -782,7 +869,10 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL of the subnetwork to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
+   * Output only. [Output Only] The URL of the subnetwork to which all instances in the
+   * instance group belong. If your instance has multiple network interfaces,
+   * then the network and subnetwork fields only refer to the
+   * network and subnet used by your primary interface (nic0).
    * </pre>
    *
    * <code>optional string subnetwork = 307827694;</code>
@@ -798,7 +888,10 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL of the subnetwork to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
+   * Output only. [Output Only] The URL of the subnetwork to which all instances in the
+   * instance group belong. If your instance has multiple network interfaces,
+   * then the network and subnetwork fields only refer to the
+   * network and subnet used by your primary interface (nic0).
    * </pre>
    *
    * <code>optional string subnetwork = 307827694;</code>
@@ -822,7 +915,10 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL of the subnetwork to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
+   * Output only. [Output Only] The URL of the subnetwork to which all instances in the
+   * instance group belong. If your instance has multiple network interfaces,
+   * then the network and subnetwork fields only refer to the
+   * network and subnet used by your primary interface (nic0).
    * </pre>
    *
    * <code>optional string subnetwork = 307827694;</code>
@@ -851,7 +947,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL of the zone where the instance group is located (for zonal resources).
+   * Output only. [Output Only] The URL of thezone
+   * where the instance group is located (for zonal resources).
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -867,7 +964,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL of the zone where the instance group is located (for zonal resources).
+   * Output only. [Output Only] The URL of thezone
+   * where the instance group is located (for zonal resources).
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -891,7 +989,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL of the zone where the instance group is located (for zonal resources).
+   * Output only. [Output Only] The URL of thezone
+   * where the instance group is located (for zonal resources).
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -1247,7 +1346,22 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents an Instance Group resource. Instance Groups can be used to configure a target for load balancing. Instance groups can either be managed or unmanaged. To create managed instance groups, use the instanceGroupManager or regionInstanceGroupManager resource instead. Use zonal unmanaged instance groups if you need to apply load balancing to groups of heterogeneous instances or if you need to manage the instances yourself. You cannot create regional unmanaged instance groups. For more information, read Instance groups.
+   * Represents an Instance Group resource.
+   *
+   * Instance Groups can be used to configure a target forload
+   * balancing.
+   *
+   * Instance groups can either be managed or unmanaged.
+   *
+   * To create
+   * managed instance groups, use the instanceGroupManager orregionInstanceGroupManager resource instead.
+   *
+   * Use zonal unmanaged instance groups if you need to applyload
+   * balancing to groups of heterogeneous instances or if you need to manage
+   * the instances yourself. You cannot create regional unmanaged instance groups.
+   *
+   * For more information, readInstance
+   * groups.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.InstanceGroup}
@@ -1666,7 +1780,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The creation timestamp for this instance group in RFC3339 text format.
+     * Output only. [Output Only] The creation timestamp for this instance group inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1681,7 +1796,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The creation timestamp for this instance group in RFC3339 text format.
+     * Output only. [Output Only] The creation timestamp for this instance group inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1704,7 +1820,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The creation timestamp for this instance group in RFC3339 text format.
+     * Output only. [Output Only] The creation timestamp for this instance group inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1727,7 +1844,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The creation timestamp for this instance group in RFC3339 text format.
+     * Output only. [Output Only] The creation timestamp for this instance group inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1749,7 +1867,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The creation timestamp for this instance group in RFC3339 text format.
+     * Output only. [Output Only] The creation timestamp for this instance group inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1767,7 +1886,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The creation timestamp for this instance group in RFC3339 text format.
+     * Output only. [Output Only] The creation timestamp for this instance group inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1792,7 +1912,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1807,7 +1928,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1830,7 +1952,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1853,7 +1976,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1875,7 +1999,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1893,7 +2018,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1918,7 +2044,9 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The fingerprint of the named ports. The system uses this fingerprint to detect conflicts when multiple users change the named ports concurrently.
+     * Output only. [Output Only] The fingerprint of the named ports. The system
+     * uses this fingerprint to detect conflicts when multiple users change the
+     * named ports concurrently.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -1933,7 +2061,9 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The fingerprint of the named ports. The system uses this fingerprint to detect conflicts when multiple users change the named ports concurrently.
+     * Output only. [Output Only] The fingerprint of the named ports. The system
+     * uses this fingerprint to detect conflicts when multiple users change the
+     * named ports concurrently.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -1956,7 +2086,9 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The fingerprint of the named ports. The system uses this fingerprint to detect conflicts when multiple users change the named ports concurrently.
+     * Output only. [Output Only] The fingerprint of the named ports. The system
+     * uses this fingerprint to detect conflicts when multiple users change the
+     * named ports concurrently.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -1979,7 +2111,9 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The fingerprint of the named ports. The system uses this fingerprint to detect conflicts when multiple users change the named ports concurrently.
+     * Output only. [Output Only] The fingerprint of the named ports. The system
+     * uses this fingerprint to detect conflicts when multiple users change the
+     * named ports concurrently.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -2001,7 +2135,9 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The fingerprint of the named ports. The system uses this fingerprint to detect conflicts when multiple users change the named ports concurrently.
+     * Output only. [Output Only] The fingerprint of the named ports. The system
+     * uses this fingerprint to detect conflicts when multiple users change the
+     * named ports concurrently.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -2019,7 +2155,9 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The fingerprint of the named ports. The system uses this fingerprint to detect conflicts when multiple users change the named ports concurrently.
+     * Output only. [Output Only] The fingerprint of the named ports. The system
+     * uses this fingerprint to detect conflicts when multiple users change the
+     * named ports concurrently.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -2044,7 +2182,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A unique identifier for this instance group, generated by the server.
+     * Output only. [Output Only] A unique identifier for this instance group, generated
+     * by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2060,7 +2199,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A unique identifier for this instance group, generated by the server.
+     * Output only. [Output Only] A unique identifier for this instance group, generated
+     * by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2076,7 +2216,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A unique identifier for this instance group, generated by the server.
+     * Output only. [Output Only] A unique identifier for this instance group, generated
+     * by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2096,7 +2237,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A unique identifier for this instance group, generated by the server.
+     * Output only. [Output Only] A unique identifier for this instance group, generated
+     * by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2116,7 +2258,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is always compute#instanceGroup for instance groups.
+     * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroup for instance groups.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2131,7 +2273,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is always compute#instanceGroup for instance groups.
+     * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroup for instance groups.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2154,7 +2296,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is always compute#instanceGroup for instance groups.
+     * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroup for instance groups.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2177,7 +2319,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is always compute#instanceGroup for instance groups.
+     * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroup for instance groups.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2199,7 +2341,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is always compute#instanceGroup for instance groups.
+     * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroup for instance groups.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2217,7 +2359,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is always compute#instanceGroup for instance groups.
+     * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroup for instance groups.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2242,7 +2384,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the instance group. The name must be 1-63 characters long, and comply with RFC1035.
+     * The name of the instance group. The name must be 1-63 characters
+     * long, and comply withRFC1035.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2257,7 +2400,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the instance group. The name must be 1-63 characters long, and comply with RFC1035.
+     * The name of the instance group. The name must be 1-63 characters
+     * long, and comply withRFC1035.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2280,7 +2424,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the instance group. The name must be 1-63 characters long, and comply with RFC1035.
+     * The name of the instance group. The name must be 1-63 characters
+     * long, and comply withRFC1035.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2303,7 +2448,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the instance group. The name must be 1-63 characters long, and comply with RFC1035.
+     * The name of the instance group. The name must be 1-63 characters
+     * long, and comply withRFC1035.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2325,7 +2471,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the instance group. The name must be 1-63 characters long, and comply with RFC1035.
+     * The name of the instance group. The name must be 1-63 characters
+     * long, and comply withRFC1035.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2343,7 +2490,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the instance group. The name must be 1-63 characters long, and comply with RFC1035.
+     * The name of the instance group. The name must be 1-63 characters
+     * long, and comply withRFC1035.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2382,7 +2530,15 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     *  Optional. Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "app1", port: 8080}, {name: "app1", port: 8081}, {name: "app2", port: 8082}] Named ports apply to all instances in this instance group.
+     * Optional. Assigns a name to a port number. For example:{name: "http", port: 80}
+     *
+     * This
+     * allows the system to reference ports by the assigned name instead of a
+     * port number. Named ports can also contain multiple ports. For example:[{name: "app1", port: 8080}, {name:
+     * "app1", port: 8081}, {name: "app2", port:
+     * 8082}]
+     *
+     * Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2399,7 +2555,15 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     *  Optional. Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "app1", port: 8080}, {name: "app1", port: 8081}, {name: "app2", port: 8082}] Named ports apply to all instances in this instance group.
+     * Optional. Assigns a name to a port number. For example:{name: "http", port: 80}
+     *
+     * This
+     * allows the system to reference ports by the assigned name instead of a
+     * port number. Named ports can also contain multiple ports. For example:[{name: "app1", port: 8080}, {name:
+     * "app1", port: 8081}, {name: "app2", port:
+     * 8082}]
+     *
+     * Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2416,7 +2580,15 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     *  Optional. Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "app1", port: 8080}, {name: "app1", port: 8081}, {name: "app2", port: 8082}] Named ports apply to all instances in this instance group.
+     * Optional. Assigns a name to a port number. For example:{name: "http", port: 80}
+     *
+     * This
+     * allows the system to reference ports by the assigned name instead of a
+     * port number. Named ports can also contain multiple ports. For example:[{name: "app1", port: 8080}, {name:
+     * "app1", port: 8081}, {name: "app2", port:
+     * 8082}]
+     *
+     * Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2433,7 +2605,15 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     *  Optional. Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "app1", port: 8080}, {name: "app1", port: 8081}, {name: "app2", port: 8082}] Named ports apply to all instances in this instance group.
+     * Optional. Assigns a name to a port number. For example:{name: "http", port: 80}
+     *
+     * This
+     * allows the system to reference ports by the assigned name instead of a
+     * port number. Named ports can also contain multiple ports. For example:[{name: "app1", port: 8080}, {name:
+     * "app1", port: 8081}, {name: "app2", port:
+     * 8082}]
+     *
+     * Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2456,7 +2636,15 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     *  Optional. Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "app1", port: 8080}, {name: "app1", port: 8081}, {name: "app2", port: 8082}] Named ports apply to all instances in this instance group.
+     * Optional. Assigns a name to a port number. For example:{name: "http", port: 80}
+     *
+     * This
+     * allows the system to reference ports by the assigned name instead of a
+     * port number. Named ports can also contain multiple ports. For example:[{name: "app1", port: 8080}, {name:
+     * "app1", port: 8081}, {name: "app2", port:
+     * 8082}]
+     *
+     * Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2477,7 +2665,15 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     *  Optional. Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "app1", port: 8080}, {name: "app1", port: 8081}, {name: "app2", port: 8082}] Named ports apply to all instances in this instance group.
+     * Optional. Assigns a name to a port number. For example:{name: "http", port: 80}
+     *
+     * This
+     * allows the system to reference ports by the assigned name instead of a
+     * port number. Named ports can also contain multiple ports. For example:[{name: "app1", port: 8080}, {name:
+     * "app1", port: 8081}, {name: "app2", port:
+     * 8082}]
+     *
+     * Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2500,7 +2696,15 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     *  Optional. Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "app1", port: 8080}, {name: "app1", port: 8081}, {name: "app2", port: 8082}] Named ports apply to all instances in this instance group.
+     * Optional. Assigns a name to a port number. For example:{name: "http", port: 80}
+     *
+     * This
+     * allows the system to reference ports by the assigned name instead of a
+     * port number. Named ports can also contain multiple ports. For example:[{name: "app1", port: 8080}, {name:
+     * "app1", port: 8081}, {name: "app2", port:
+     * 8082}]
+     *
+     * Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2523,7 +2727,15 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     *  Optional. Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "app1", port: 8080}, {name: "app1", port: 8081}, {name: "app2", port: 8082}] Named ports apply to all instances in this instance group.
+     * Optional. Assigns a name to a port number. For example:{name: "http", port: 80}
+     *
+     * This
+     * allows the system to reference ports by the assigned name instead of a
+     * port number. Named ports can also contain multiple ports. For example:[{name: "app1", port: 8080}, {name:
+     * "app1", port: 8081}, {name: "app2", port:
+     * 8082}]
+     *
+     * Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2543,7 +2755,15 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     *  Optional. Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "app1", port: 8080}, {name: "app1", port: 8081}, {name: "app2", port: 8082}] Named ports apply to all instances in this instance group.
+     * Optional. Assigns a name to a port number. For example:{name: "http", port: 80}
+     *
+     * This
+     * allows the system to reference ports by the assigned name instead of a
+     * port number. Named ports can also contain multiple ports. For example:[{name: "app1", port: 8080}, {name:
+     * "app1", port: 8081}, {name: "app2", port:
+     * 8082}]
+     *
+     * Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2564,7 +2784,15 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     *  Optional. Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "app1", port: 8080}, {name: "app1", port: 8081}, {name: "app2", port: 8082}] Named ports apply to all instances in this instance group.
+     * Optional. Assigns a name to a port number. For example:{name: "http", port: 80}
+     *
+     * This
+     * allows the system to reference ports by the assigned name instead of a
+     * port number. Named ports can also contain multiple ports. For example:[{name: "app1", port: 8080}, {name:
+     * "app1", port: 8081}, {name: "app2", port:
+     * 8082}]
+     *
+     * Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2585,7 +2813,15 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     *  Optional. Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "app1", port: 8080}, {name: "app1", port: 8081}, {name: "app2", port: 8082}] Named ports apply to all instances in this instance group.
+     * Optional. Assigns a name to a port number. For example:{name: "http", port: 80}
+     *
+     * This
+     * allows the system to reference ports by the assigned name instead of a
+     * port number. Named ports can also contain multiple ports. For example:[{name: "app1", port: 8080}, {name:
+     * "app1", port: 8081}, {name: "app2", port:
+     * 8082}]
+     *
+     * Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2605,7 +2841,15 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     *  Optional. Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "app1", port: 8080}, {name: "app1", port: 8081}, {name: "app2", port: 8082}] Named ports apply to all instances in this instance group.
+     * Optional. Assigns a name to a port number. For example:{name: "http", port: 80}
+     *
+     * This
+     * allows the system to reference ports by the assigned name instead of a
+     * port number. Named ports can also contain multiple ports. For example:[{name: "app1", port: 8080}, {name:
+     * "app1", port: 8081}, {name: "app2", port:
+     * 8082}]
+     *
+     * Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2625,7 +2869,15 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     *  Optional. Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "app1", port: 8080}, {name: "app1", port: 8081}, {name: "app2", port: 8082}] Named ports apply to all instances in this instance group.
+     * Optional. Assigns a name to a port number. For example:{name: "http", port: 80}
+     *
+     * This
+     * allows the system to reference ports by the assigned name instead of a
+     * port number. Named ports can also contain multiple ports. For example:[{name: "app1", port: 8080}, {name:
+     * "app1", port: 8081}, {name: "app2", port:
+     * 8082}]
+     *
+     * Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2638,7 +2890,15 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     *  Optional. Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "app1", port: 8080}, {name: "app1", port: 8081}, {name: "app2", port: 8082}] Named ports apply to all instances in this instance group.
+     * Optional. Assigns a name to a port number. For example:{name: "http", port: 80}
+     *
+     * This
+     * allows the system to reference ports by the assigned name instead of a
+     * port number. Named ports can also contain multiple ports. For example:[{name: "app1", port: 8080}, {name:
+     * "app1", port: 8081}, {name: "app2", port:
+     * 8082}]
+     *
+     * Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2655,7 +2915,15 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     *  Optional. Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "app1", port: 8080}, {name: "app1", port: 8081}, {name: "app2", port: 8082}] Named ports apply to all instances in this instance group.
+     * Optional. Assigns a name to a port number. For example:{name: "http", port: 80}
+     *
+     * This
+     * allows the system to reference ports by the assigned name instead of a
+     * port number. Named ports can also contain multiple ports. For example:[{name: "app1", port: 8080}, {name:
+     * "app1", port: 8081}, {name: "app2", port:
+     * 8082}]
+     *
+     * Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2673,7 +2941,15 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     *  Optional. Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "app1", port: 8080}, {name: "app1", port: 8081}, {name: "app2", port: 8082}] Named ports apply to all instances in this instance group.
+     * Optional. Assigns a name to a port number. For example:{name: "http", port: 80}
+     *
+     * This
+     * allows the system to reference ports by the assigned name instead of a
+     * port number. Named ports can also contain multiple ports. For example:[{name: "app1", port: 8080}, {name:
+     * "app1", port: 8081}, {name: "app2", port:
+     * 8082}]
+     *
+     * Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2687,7 +2963,15 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     *  Optional. Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "app1", port: 8080}, {name: "app1", port: 8081}, {name: "app2", port: 8082}] Named ports apply to all instances in this instance group.
+     * Optional. Assigns a name to a port number. For example:{name: "http", port: 80}
+     *
+     * This
+     * allows the system to reference ports by the assigned name instead of a
+     * port number. Named ports can also contain multiple ports. For example:[{name: "app1", port: 8080}, {name:
+     * "app1", port: 8081}, {name: "app2", port:
+     * 8082}]
+     *
+     * Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2701,7 +2985,15 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     *  Optional. Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "app1", port: 8080}, {name: "app1", port: 8081}, {name: "app2", port: 8082}] Named ports apply to all instances in this instance group.
+     * Optional. Assigns a name to a port number. For example:{name: "http", port: 80}
+     *
+     * This
+     * allows the system to reference ports by the assigned name instead of a
+     * port number. Named ports can also contain multiple ports. For example:[{name: "app1", port: 8080}, {name:
+     * "app1", port: 8081}, {name: "app2", port:
+     * 8082}]
+     *
+     * Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2734,7 +3026,10 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the network to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
+     * [Output Only] The URL of the network to which all instances in the
+     * instance group belong. If your instance has multiple network interfaces,
+     * then the network and subnetwork fields only refer to the
+     * network and subnet used by your primary interface (nic0).
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -2749,7 +3044,10 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the network to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
+     * [Output Only] The URL of the network to which all instances in the
+     * instance group belong. If your instance has multiple network interfaces,
+     * then the network and subnetwork fields only refer to the
+     * network and subnet used by your primary interface (nic0).
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -2772,7 +3070,10 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the network to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
+     * [Output Only] The URL of the network to which all instances in the
+     * instance group belong. If your instance has multiple network interfaces,
+     * then the network and subnetwork fields only refer to the
+     * network and subnet used by your primary interface (nic0).
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -2795,7 +3096,10 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the network to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
+     * [Output Only] The URL of the network to which all instances in the
+     * instance group belong. If your instance has multiple network interfaces,
+     * then the network and subnetwork fields only refer to the
+     * network and subnet used by your primary interface (nic0).
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -2817,7 +3121,10 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the network to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
+     * [Output Only] The URL of the network to which all instances in the
+     * instance group belong. If your instance has multiple network interfaces,
+     * then the network and subnetwork fields only refer to the
+     * network and subnet used by your primary interface (nic0).
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -2835,7 +3142,10 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the network to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
+     * [Output Only] The URL of the network to which all instances in the
+     * instance group belong. If your instance has multiple network interfaces,
+     * then the network and subnetwork fields only refer to the
+     * network and subnet used by your primary interface (nic0).
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -2860,7 +3170,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the region where the instance group is located (for regional resources).
+     * Output only. [Output Only] The URL of theregion
+     * where the instance group is located (for regional resources).
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -2875,7 +3186,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the region where the instance group is located (for regional resources).
+     * Output only. [Output Only] The URL of theregion
+     * where the instance group is located (for regional resources).
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -2898,7 +3210,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the region where the instance group is located (for regional resources).
+     * Output only. [Output Only] The URL of theregion
+     * where the instance group is located (for regional resources).
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -2921,7 +3234,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the region where the instance group is located (for regional resources).
+     * Output only. [Output Only] The URL of theregion
+     * where the instance group is located (for regional resources).
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -2943,7 +3257,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the region where the instance group is located (for regional resources).
+     * Output only. [Output Only] The URL of theregion
+     * where the instance group is located (for regional resources).
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -2961,7 +3276,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the region where the instance group is located (for regional resources).
+     * Output only. [Output Only] The URL of theregion
+     * where the instance group is located (for regional resources).
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -2986,7 +3302,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL for this instance group. The server generates this URL.
+     * Output only. [Output Only] The URL for this instance group. The server generates
+     * this URL.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3001,7 +3318,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL for this instance group. The server generates this URL.
+     * Output only. [Output Only] The URL for this instance group. The server generates
+     * this URL.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3024,7 +3342,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL for this instance group. The server generates this URL.
+     * Output only. [Output Only] The URL for this instance group. The server generates
+     * this URL.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3047,7 +3366,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL for this instance group. The server generates this URL.
+     * Output only. [Output Only] The URL for this instance group. The server generates
+     * this URL.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3069,7 +3389,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL for this instance group. The server generates this URL.
+     * Output only. [Output Only] The URL for this instance group. The server generates
+     * this URL.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3087,7 +3408,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL for this instance group. The server generates this URL.
+     * Output only. [Output Only] The URL for this instance group. The server generates
+     * this URL.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3112,7 +3434,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The total number of instances in the instance group.
+     * Output only. [Output Only] The total number of instances in the instance group.
      * </pre>
      *
      * <code>optional int32 size = 3530753;</code>
@@ -3128,7 +3450,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The total number of instances in the instance group.
+     * Output only. [Output Only] The total number of instances in the instance group.
      * </pre>
      *
      * <code>optional int32 size = 3530753;</code>
@@ -3144,7 +3466,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The total number of instances in the instance group.
+     * Output only. [Output Only] The total number of instances in the instance group.
      * </pre>
      *
      * <code>optional int32 size = 3530753;</code>
@@ -3164,7 +3486,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The total number of instances in the instance group.
+     * Output only. [Output Only] The total number of instances in the instance group.
      * </pre>
      *
      * <code>optional int32 size = 3530753;</code>
@@ -3184,7 +3506,10 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the subnetwork to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
+     * Output only. [Output Only] The URL of the subnetwork to which all instances in the
+     * instance group belong. If your instance has multiple network interfaces,
+     * then the network and subnetwork fields only refer to the
+     * network and subnet used by your primary interface (nic0).
      * </pre>
      *
      * <code>optional string subnetwork = 307827694;</code>
@@ -3199,7 +3524,10 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the subnetwork to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
+     * Output only. [Output Only] The URL of the subnetwork to which all instances in the
+     * instance group belong. If your instance has multiple network interfaces,
+     * then the network and subnetwork fields only refer to the
+     * network and subnet used by your primary interface (nic0).
      * </pre>
      *
      * <code>optional string subnetwork = 307827694;</code>
@@ -3222,7 +3550,10 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the subnetwork to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
+     * Output only. [Output Only] The URL of the subnetwork to which all instances in the
+     * instance group belong. If your instance has multiple network interfaces,
+     * then the network and subnetwork fields only refer to the
+     * network and subnet used by your primary interface (nic0).
      * </pre>
      *
      * <code>optional string subnetwork = 307827694;</code>
@@ -3245,7 +3576,10 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the subnetwork to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
+     * Output only. [Output Only] The URL of the subnetwork to which all instances in the
+     * instance group belong. If your instance has multiple network interfaces,
+     * then the network and subnetwork fields only refer to the
+     * network and subnet used by your primary interface (nic0).
      * </pre>
      *
      * <code>optional string subnetwork = 307827694;</code>
@@ -3267,7 +3601,10 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the subnetwork to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
+     * Output only. [Output Only] The URL of the subnetwork to which all instances in the
+     * instance group belong. If your instance has multiple network interfaces,
+     * then the network and subnetwork fields only refer to the
+     * network and subnet used by your primary interface (nic0).
      * </pre>
      *
      * <code>optional string subnetwork = 307827694;</code>
@@ -3285,7 +3622,10 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the subnetwork to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
+     * Output only. [Output Only] The URL of the subnetwork to which all instances in the
+     * instance group belong. If your instance has multiple network interfaces,
+     * then the network and subnetwork fields only refer to the
+     * network and subnet used by your primary interface (nic0).
      * </pre>
      *
      * <code>optional string subnetwork = 307827694;</code>
@@ -3310,7 +3650,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the zone where the instance group is located (for zonal resources).
+     * Output only. [Output Only] The URL of thezone
+     * where the instance group is located (for zonal resources).
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -3325,7 +3666,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the zone where the instance group is located (for zonal resources).
+     * Output only. [Output Only] The URL of thezone
+     * where the instance group is located (for zonal resources).
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -3348,7 +3690,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the zone where the instance group is located (for zonal resources).
+     * Output only. [Output Only] The URL of thezone
+     * where the instance group is located (for zonal resources).
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -3371,7 +3714,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the zone where the instance group is located (for zonal resources).
+     * Output only. [Output Only] The URL of thezone
+     * where the instance group is located (for zonal resources).
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -3393,7 +3737,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the zone where the instance group is located (for zonal resources).
+     * Output only. [Output Only] The URL of thezone
+     * where the instance group is located (for zonal resources).
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -3411,7 +3756,8 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the zone where the instance group is located (for zonal resources).
+     * Output only. [Output Only] The URL of thezone
+     * where the instance group is located (for zonal resources).
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>

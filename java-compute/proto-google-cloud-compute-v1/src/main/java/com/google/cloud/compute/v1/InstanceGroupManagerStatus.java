@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,7 +72,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output only] Status of all-instances configuration on the group.
+   * Output only. [Output only] Status of all-instances configuration on the group.
    * </pre>
    *
    * <code>
@@ -90,7 +90,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output only] Status of all-instances configuration on the group.
+   * Output only. [Output only] Status of all-instances configuration on the group.
    * </pre>
    *
    * <code>
@@ -112,7 +112,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output only] Status of all-instances configuration on the group.
+   * Output only. [Output only] Status of all-instances configuration on the group.
    * </pre>
    *
    * <code>
@@ -137,7 +137,8 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output Only] The URL of the Autoscaler that targets this instance group manager.
+   * Output only. [Output Only] The URL of theAutoscaler
+   * that targets this instance group manager.
    * </pre>
    *
    * <code>optional string autoscaler = 517258967;</code>
@@ -153,7 +154,8 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output Only] The URL of the Autoscaler that targets this instance group manager.
+   * Output only. [Output Only] The URL of theAutoscaler
+   * that targets this instance group manager.
    * </pre>
    *
    * <code>optional string autoscaler = 517258967;</code>
@@ -177,7 +179,8 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output Only] The URL of the Autoscaler that targets this instance group manager.
+   * Output only. [Output Only] The URL of theAutoscaler
+   * that targets this instance group manager.
    * </pre>
    *
    * <code>optional string autoscaler = 517258967;</code>
@@ -204,7 +207,12 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output Only] A bit indicating whether the managed instance group is in a stable state. A stable state means that: none of the instances in the managed instance group is currently undergoing any type of change (for example, creation, restart, or deletion); no future changes are scheduled for instances in the managed instance group; and the managed instance group itself is not being modified.
+   * Output only. [Output Only] A bit indicating whether the managed instance group is in a
+   * stable state. A stable state means that: none of the instances in the
+   * managed instance group is currently undergoing any type of change (for
+   * example, creation, restart, or deletion); no future changes are scheduled
+   * for instances in the managed instance group; and the managed instance
+   * group itself is not being modified.
    * </pre>
    *
    * <code>optional bool is_stable = 108410864;</code>
@@ -220,7 +228,12 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output Only] A bit indicating whether the managed instance group is in a stable state. A stable state means that: none of the instances in the managed instance group is currently undergoing any type of change (for example, creation, restart, or deletion); no future changes are scheduled for instances in the managed instance group; and the managed instance group itself is not being modified.
+   * Output only. [Output Only] A bit indicating whether the managed instance group is in a
+   * stable state. A stable state means that: none of the instances in the
+   * managed instance group is currently undergoing any type of change (for
+   * example, creation, restart, or deletion); no future changes are scheduled
+   * for instances in the managed instance group; and the managed instance
+   * group itself is not being modified.
    * </pre>
    *
    * <code>optional bool is_stable = 108410864;</code>
@@ -239,7 +252,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output Only] Stateful status of the given Instance Group Manager.
+   * Output only. [Output Only] Stateful status of the given Instance Group Manager.
    * </pre>
    *
    * <code>
@@ -257,7 +270,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output Only] Stateful status of the given Instance Group Manager.
+   * Output only. [Output Only] Stateful status of the given Instance Group Manager.
    * </pre>
    *
    * <code>
@@ -277,7 +290,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output Only] Stateful status of the given Instance Group Manager.
+   * Output only. [Output Only] Stateful status of the given Instance Group Manager.
    * </pre>
    *
    * <code>
@@ -299,7 +312,9 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output Only] A status of consistency of Instances' versions with their target version specified by version field on Instance Group Manager.
+   * Output only. [Output Only] A status of consistency of Instances' versions with their
+   * target version specified by version field on Instance Group
+   * Manager.
    * </pre>
    *
    * <code>
@@ -317,7 +332,9 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output Only] A status of consistency of Instances' versions with their target version specified by version field on Instance Group Manager.
+   * Output only. [Output Only] A status of consistency of Instances' versions with their
+   * target version specified by version field on Instance Group
+   * Manager.
    * </pre>
    *
    * <code>
@@ -337,7 +354,9 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output Only] A status of consistency of Instances' versions with their target version specified by version field on Instance Group Manager.
+   * Output only. [Output Only] A status of consistency of Instances' versions with their
+   * target version specified by version field on Instance Group
+   * Manager.
    * </pre>
    *
    * <code>
@@ -858,7 +877,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output only] Status of all-instances configuration on the group.
+     * Output only. [Output only] Status of all-instances configuration on the group.
      * </pre>
      *
      * <code>
@@ -875,7 +894,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output only] Status of all-instances configuration on the group.
+     * Output only. [Output only] Status of all-instances configuration on the group.
      * </pre>
      *
      * <code>
@@ -900,7 +919,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output only] Status of all-instances configuration on the group.
+     * Output only. [Output only] Status of all-instances configuration on the group.
      * </pre>
      *
      * <code>
@@ -926,7 +945,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output only] Status of all-instances configuration on the group.
+     * Output only. [Output only] Status of all-instances configuration on the group.
      * </pre>
      *
      * <code>
@@ -950,7 +969,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output only] Status of all-instances configuration on the group.
+     * Output only. [Output only] Status of all-instances configuration on the group.
      * </pre>
      *
      * <code>
@@ -983,7 +1002,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output only] Status of all-instances configuration on the group.
+     * Output only. [Output only] Status of all-instances configuration on the group.
      * </pre>
      *
      * <code>
@@ -1005,7 +1024,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output only] Status of all-instances configuration on the group.
+     * Output only. [Output only] Status of all-instances configuration on the group.
      * </pre>
      *
      * <code>
@@ -1023,7 +1042,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output only] Status of all-instances configuration on the group.
+     * Output only. [Output only] Status of all-instances configuration on the group.
      * </pre>
      *
      * <code>
@@ -1046,7 +1065,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output only] Status of all-instances configuration on the group.
+     * Output only. [Output only] Status of all-instances configuration on the group.
      * </pre>
      *
      * <code>
@@ -1076,7 +1095,8 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] The URL of the Autoscaler that targets this instance group manager.
+     * Output only. [Output Only] The URL of theAutoscaler
+     * that targets this instance group manager.
      * </pre>
      *
      * <code>optional string autoscaler = 517258967;</code>
@@ -1091,7 +1111,8 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] The URL of the Autoscaler that targets this instance group manager.
+     * Output only. [Output Only] The URL of theAutoscaler
+     * that targets this instance group manager.
      * </pre>
      *
      * <code>optional string autoscaler = 517258967;</code>
@@ -1114,7 +1135,8 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] The URL of the Autoscaler that targets this instance group manager.
+     * Output only. [Output Only] The URL of theAutoscaler
+     * that targets this instance group manager.
      * </pre>
      *
      * <code>optional string autoscaler = 517258967;</code>
@@ -1137,7 +1159,8 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] The URL of the Autoscaler that targets this instance group manager.
+     * Output only. [Output Only] The URL of theAutoscaler
+     * that targets this instance group manager.
      * </pre>
      *
      * <code>optional string autoscaler = 517258967;</code>
@@ -1159,7 +1182,8 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] The URL of the Autoscaler that targets this instance group manager.
+     * Output only. [Output Only] The URL of theAutoscaler
+     * that targets this instance group manager.
      * </pre>
      *
      * <code>optional string autoscaler = 517258967;</code>
@@ -1177,7 +1201,8 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] The URL of the Autoscaler that targets this instance group manager.
+     * Output only. [Output Only] The URL of theAutoscaler
+     * that targets this instance group manager.
      * </pre>
      *
      * <code>optional string autoscaler = 517258967;</code>
@@ -1202,7 +1227,12 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] A bit indicating whether the managed instance group is in a stable state. A stable state means that: none of the instances in the managed instance group is currently undergoing any type of change (for example, creation, restart, or deletion); no future changes are scheduled for instances in the managed instance group; and the managed instance group itself is not being modified.
+     * Output only. [Output Only] A bit indicating whether the managed instance group is in a
+     * stable state. A stable state means that: none of the instances in the
+     * managed instance group is currently undergoing any type of change (for
+     * example, creation, restart, or deletion); no future changes are scheduled
+     * for instances in the managed instance group; and the managed instance
+     * group itself is not being modified.
      * </pre>
      *
      * <code>optional bool is_stable = 108410864;</code>
@@ -1218,7 +1248,12 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] A bit indicating whether the managed instance group is in a stable state. A stable state means that: none of the instances in the managed instance group is currently undergoing any type of change (for example, creation, restart, or deletion); no future changes are scheduled for instances in the managed instance group; and the managed instance group itself is not being modified.
+     * Output only. [Output Only] A bit indicating whether the managed instance group is in a
+     * stable state. A stable state means that: none of the instances in the
+     * managed instance group is currently undergoing any type of change (for
+     * example, creation, restart, or deletion); no future changes are scheduled
+     * for instances in the managed instance group; and the managed instance
+     * group itself is not being modified.
      * </pre>
      *
      * <code>optional bool is_stable = 108410864;</code>
@@ -1234,7 +1269,12 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] A bit indicating whether the managed instance group is in a stable state. A stable state means that: none of the instances in the managed instance group is currently undergoing any type of change (for example, creation, restart, or deletion); no future changes are scheduled for instances in the managed instance group; and the managed instance group itself is not being modified.
+     * Output only. [Output Only] A bit indicating whether the managed instance group is in a
+     * stable state. A stable state means that: none of the instances in the
+     * managed instance group is currently undergoing any type of change (for
+     * example, creation, restart, or deletion); no future changes are scheduled
+     * for instances in the managed instance group; and the managed instance
+     * group itself is not being modified.
      * </pre>
      *
      * <code>optional bool is_stable = 108410864;</code>
@@ -1254,7 +1294,12 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] A bit indicating whether the managed instance group is in a stable state. A stable state means that: none of the instances in the managed instance group is currently undergoing any type of change (for example, creation, restart, or deletion); no future changes are scheduled for instances in the managed instance group; and the managed instance group itself is not being modified.
+     * Output only. [Output Only] A bit indicating whether the managed instance group is in a
+     * stable state. A stable state means that: none of the instances in the
+     * managed instance group is currently undergoing any type of change (for
+     * example, creation, restart, or deletion); no future changes are scheduled
+     * for instances in the managed instance group; and the managed instance
+     * group itself is not being modified.
      * </pre>
      *
      * <code>optional bool is_stable = 108410864;</code>
@@ -1279,7 +1324,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Stateful status of the given Instance Group Manager.
+     * Output only. [Output Only] Stateful status of the given Instance Group Manager.
      * </pre>
      *
      * <code>
@@ -1296,7 +1341,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Stateful status of the given Instance Group Manager.
+     * Output only. [Output Only] Stateful status of the given Instance Group Manager.
      * </pre>
      *
      * <code>
@@ -1319,7 +1364,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Stateful status of the given Instance Group Manager.
+     * Output only. [Output Only] Stateful status of the given Instance Group Manager.
      * </pre>
      *
      * <code>
@@ -1345,7 +1390,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Stateful status of the given Instance Group Manager.
+     * Output only. [Output Only] Stateful status of the given Instance Group Manager.
      * </pre>
      *
      * <code>
@@ -1368,7 +1413,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Stateful status of the given Instance Group Manager.
+     * Output only. [Output Only] Stateful status of the given Instance Group Manager.
      * </pre>
      *
      * <code>
@@ -1401,7 +1446,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Stateful status of the given Instance Group Manager.
+     * Output only. [Output Only] Stateful status of the given Instance Group Manager.
      * </pre>
      *
      * <code>
@@ -1423,7 +1468,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Stateful status of the given Instance Group Manager.
+     * Output only. [Output Only] Stateful status of the given Instance Group Manager.
      * </pre>
      *
      * <code>
@@ -1441,7 +1486,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Stateful status of the given Instance Group Manager.
+     * Output only. [Output Only] Stateful status of the given Instance Group Manager.
      * </pre>
      *
      * <code>
@@ -1463,7 +1508,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Stateful status of the given Instance Group Manager.
+     * Output only. [Output Only] Stateful status of the given Instance Group Manager.
      * </pre>
      *
      * <code>
@@ -1498,7 +1543,9 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] A status of consistency of Instances' versions with their target version specified by version field on Instance Group Manager.
+     * Output only. [Output Only] A status of consistency of Instances' versions with their
+     * target version specified by version field on Instance Group
+     * Manager.
      * </pre>
      *
      * <code>
@@ -1515,7 +1562,9 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] A status of consistency of Instances' versions with their target version specified by version field on Instance Group Manager.
+     * Output only. [Output Only] A status of consistency of Instances' versions with their
+     * target version specified by version field on Instance Group
+     * Manager.
      * </pre>
      *
      * <code>
@@ -1539,7 +1588,9 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] A status of consistency of Instances' versions with their target version specified by version field on Instance Group Manager.
+     * Output only. [Output Only] A status of consistency of Instances' versions with their
+     * target version specified by version field on Instance Group
+     * Manager.
      * </pre>
      *
      * <code>
@@ -1565,7 +1616,9 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] A status of consistency of Instances' versions with their target version specified by version field on Instance Group Manager.
+     * Output only. [Output Only] A status of consistency of Instances' versions with their
+     * target version specified by version field on Instance Group
+     * Manager.
      * </pre>
      *
      * <code>
@@ -1589,7 +1642,9 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] A status of consistency of Instances' versions with their target version specified by version field on Instance Group Manager.
+     * Output only. [Output Only] A status of consistency of Instances' versions with their
+     * target version specified by version field on Instance Group
+     * Manager.
      * </pre>
      *
      * <code>
@@ -1622,7 +1677,9 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] A status of consistency of Instances' versions with their target version specified by version field on Instance Group Manager.
+     * Output only. [Output Only] A status of consistency of Instances' versions with their
+     * target version specified by version field on Instance Group
+     * Manager.
      * </pre>
      *
      * <code>
@@ -1644,7 +1701,9 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] A status of consistency of Instances' versions with their target version specified by version field on Instance Group Manager.
+     * Output only. [Output Only] A status of consistency of Instances' versions with their
+     * target version specified by version field on Instance Group
+     * Manager.
      * </pre>
      *
      * <code>
@@ -1662,7 +1721,9 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] A status of consistency of Instances' versions with their target version specified by version field on Instance Group Manager.
+     * Output only. [Output Only] A status of consistency of Instances' versions with their
+     * target version specified by version field on Instance Group
+     * Manager.
      * </pre>
      *
      * <code>
@@ -1685,7 +1746,9 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] A status of consistency of Instances' versions with their target version specified by version field on Instance Group Manager.
+     * Output only. [Output Only] A status of consistency of Instances' versions with their
+     * target version specified by version field on Instance Group
+     * Manager.
      * </pre>
      *
      * <code>

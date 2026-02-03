@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -370,12 +370,13 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The resource names of Contacts from the advertiser of this Order.
-   * Format: "networks/{network_code}/contacts/{contact_id}"
+   * Optional. Unordered list. The resource names of Contacts from the
+   * advertiser of this Order. Format:
+   * "networks/{network_code}/contacts/{contact_id}"
    * </pre>
    *
    * <code>
-   * repeated string advertiser_contacts = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * repeated string advertiser_contacts = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return A list containing the advertiserContacts.
@@ -388,12 +389,13 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The resource names of Contacts from the advertiser of this Order.
-   * Format: "networks/{network_code}/contacts/{contact_id}"
+   * Optional. Unordered list. The resource names of Contacts from the
+   * advertiser of this Order. Format:
+   * "networks/{network_code}/contacts/{contact_id}"
    * </pre>
    *
    * <code>
-   * repeated string advertiser_contacts = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * repeated string advertiser_contacts = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The count of advertiserContacts.
@@ -406,12 +408,13 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The resource names of Contacts from the advertiser of this Order.
-   * Format: "networks/{network_code}/contacts/{contact_id}"
+   * Optional. Unordered list. The resource names of Contacts from the
+   * advertiser of this Order. Format:
+   * "networks/{network_code}/contacts/{contact_id}"
    * </pre>
    *
    * <code>
-   * repeated string advertiser_contacts = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * repeated string advertiser_contacts = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @param index The index of the element to return.
@@ -425,12 +428,13 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The resource names of Contacts from the advertiser of this Order.
-   * Format: "networks/{network_code}/contacts/{contact_id}"
+   * Optional. Unordered list. The resource names of Contacts from the
+   * advertiser of this Order. Format:
+   * "networks/{network_code}/contacts/{contact_id}"
    * </pre>
    *
    * <code>
-   * repeated string advertiser_contacts = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * repeated string advertiser_contacts = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @param index The index of the value to return.
@@ -3987,12 +3991,13 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The resource names of Contacts from the advertiser of this Order.
-     * Format: "networks/{network_code}/contacts/{contact_id}"
+     * Optional. Unordered list. The resource names of Contacts from the
+     * advertiser of this Order. Format:
+     * "networks/{network_code}/contacts/{contact_id}"
      * </pre>
      *
      * <code>
-     * repeated string advertiser_contacts = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * repeated string advertiser_contacts = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return A list containing the advertiserContacts.
@@ -4006,12 +4011,13 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The resource names of Contacts from the advertiser of this Order.
-     * Format: "networks/{network_code}/contacts/{contact_id}"
+     * Optional. Unordered list. The resource names of Contacts from the
+     * advertiser of this Order. Format:
+     * "networks/{network_code}/contacts/{contact_id}"
      * </pre>
      *
      * <code>
-     * repeated string advertiser_contacts = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * repeated string advertiser_contacts = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The count of advertiserContacts.
@@ -4024,12 +4030,13 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The resource names of Contacts from the advertiser of this Order.
-     * Format: "networks/{network_code}/contacts/{contact_id}"
+     * Optional. Unordered list. The resource names of Contacts from the
+     * advertiser of this Order. Format:
+     * "networks/{network_code}/contacts/{contact_id}"
      * </pre>
      *
      * <code>
-     * repeated string advertiser_contacts = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * repeated string advertiser_contacts = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param index The index of the element to return.
@@ -4043,12 +4050,13 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The resource names of Contacts from the advertiser of this Order.
-     * Format: "networks/{network_code}/contacts/{contact_id}"
+     * Optional. Unordered list. The resource names of Contacts from the
+     * advertiser of this Order. Format:
+     * "networks/{network_code}/contacts/{contact_id}"
      * </pre>
      *
      * <code>
-     * repeated string advertiser_contacts = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * repeated string advertiser_contacts = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param index The index of the value to return.
@@ -4062,12 +4070,13 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The resource names of Contacts from the advertiser of this Order.
-     * Format: "networks/{network_code}/contacts/{contact_id}"
+     * Optional. Unordered list. The resource names of Contacts from the
+     * advertiser of this Order. Format:
+     * "networks/{network_code}/contacts/{contact_id}"
      * </pre>
      *
      * <code>
-     * repeated string advertiser_contacts = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * repeated string advertiser_contacts = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param index The index to set the value at.
@@ -4089,12 +4098,13 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The resource names of Contacts from the advertiser of this Order.
-     * Format: "networks/{network_code}/contacts/{contact_id}"
+     * Optional. Unordered list. The resource names of Contacts from the
+     * advertiser of this Order. Format:
+     * "networks/{network_code}/contacts/{contact_id}"
      * </pre>
      *
      * <code>
-     * repeated string advertiser_contacts = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * repeated string advertiser_contacts = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The advertiserContacts to add.
@@ -4115,12 +4125,13 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The resource names of Contacts from the advertiser of this Order.
-     * Format: "networks/{network_code}/contacts/{contact_id}"
+     * Optional. Unordered list. The resource names of Contacts from the
+     * advertiser of this Order. Format:
+     * "networks/{network_code}/contacts/{contact_id}"
      * </pre>
      *
      * <code>
-     * repeated string advertiser_contacts = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * repeated string advertiser_contacts = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param values The advertiserContacts to add.
@@ -4138,12 +4149,13 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The resource names of Contacts from the advertiser of this Order.
-     * Format: "networks/{network_code}/contacts/{contact_id}"
+     * Optional. Unordered list. The resource names of Contacts from the
+     * advertiser of this Order. Format:
+     * "networks/{network_code}/contacts/{contact_id}"
      * </pre>
      *
      * <code>
-     * repeated string advertiser_contacts = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * repeated string advertiser_contacts = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -4160,12 +4172,13 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The resource names of Contacts from the advertiser of this Order.
-     * Format: "networks/{network_code}/contacts/{contact_id}"
+     * Optional. Unordered list. The resource names of Contacts from the
+     * advertiser of this Order. Format:
+     * "networks/{network_code}/contacts/{contact_id}"
      * </pre>
      *
      * <code>
-     * repeated string advertiser_contacts = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * repeated string advertiser_contacts = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes of the advertiserContacts to add.

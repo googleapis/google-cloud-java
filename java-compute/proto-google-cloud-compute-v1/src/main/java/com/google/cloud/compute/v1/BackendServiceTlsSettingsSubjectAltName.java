@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,9 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * A Subject Alternative Name that the load balancer matches against the SAN field in the TLS certificate provided by the backend, specified as either a DNS name or a URI, in accordance with RFC 5280 4.2.1.6
+ * A Subject Alternative Name that the load balancer matches against the SAN
+ * field in the TLS certificate provided by the backend, specified as either
+ * a DNS name or a URI, in accordance with RFC 5280 4.2.1.6
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.BackendServiceTlsSettingsSubjectAltName}
@@ -395,7 +397,9 @@ public final class BackendServiceTlsSettingsSubjectAltName
    *
    *
    * <pre>
-   * A Subject Alternative Name that the load balancer matches against the SAN field in the TLS certificate provided by the backend, specified as either a DNS name or a URI, in accordance with RFC 5280 4.2.1.6
+   * A Subject Alternative Name that the load balancer matches against the SAN
+   * field in the TLS certificate provided by the backend, specified as either
+   * a DNS name or a URI, in accordance with RFC 5280 4.2.1.6
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.BackendServiceTlsSettingsSubjectAltName}

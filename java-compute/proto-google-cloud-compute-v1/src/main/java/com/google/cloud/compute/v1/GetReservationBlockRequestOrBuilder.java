@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,7 +54,8 @@ public interface GetReservationBlockRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the reservation. Name should conform to RFC1035 or be a resource ID.
+   * The name of the reservation.
+   * Name should conform to RFC1035 or be a resource ID.
    * </pre>
    *
    * <code>string reservation = 47530956 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -67,7 +68,8 @@ public interface GetReservationBlockRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the reservation. Name should conform to RFC1035 or be a resource ID.
+   * The name of the reservation.
+   * Name should conform to RFC1035 or be a resource ID.
    * </pre>
    *
    * <code>string reservation = 47530956 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -80,7 +82,8 @@ public interface GetReservationBlockRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the reservation block. Name should conform to RFC1035 or be a resource ID.
+   * The name of the reservation block.
+   * Name should conform to RFC1035 or be a resource ID.
    * </pre>
    *
    * <code>string reservation_block = 532832858 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -93,7 +96,8 @@ public interface GetReservationBlockRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the reservation block. Name should conform to RFC1035 or be a resource ID.
+   * The name of the reservation block.
+   * Name should conform to RFC1035 or be a resource ID.
    * </pre>
    *
    * <code>string reservation_block = 532832858 [(.google.api.field_behavior) = REQUIRED];</code>

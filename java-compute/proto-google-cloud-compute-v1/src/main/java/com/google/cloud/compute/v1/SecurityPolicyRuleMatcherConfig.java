@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,7 +74,8 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
    *
    *
    * <pre>
-   * CIDR IP address range. Maximum number of src_ip_ranges allowed is 10.
+   * CIDR IP address range.
+   * Maximum number of src_ip_ranges allowed is 10.
    * </pre>
    *
    * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -89,7 +90,8 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
    *
    *
    * <pre>
-   * CIDR IP address range. Maximum number of src_ip_ranges allowed is 10.
+   * CIDR IP address range.
+   * Maximum number of src_ip_ranges allowed is 10.
    * </pre>
    *
    * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -104,7 +106,8 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
    *
    *
    * <pre>
-   * CIDR IP address range. Maximum number of src_ip_ranges allowed is 10.
+   * CIDR IP address range.
+   * Maximum number of src_ip_ranges allowed is 10.
    * </pre>
    *
    * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -120,7 +123,8 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
    *
    *
    * <pre>
-   * CIDR IP address range. Maximum number of src_ip_ranges allowed is 10.
+   * CIDR IP address range.
+   * Maximum number of src_ip_ranges allowed is 10.
    * </pre>
    *
    * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -503,7 +507,8 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
      *
      *
      * <pre>
-     * CIDR IP address range. Maximum number of src_ip_ranges allowed is 10.
+     * CIDR IP address range.
+     * Maximum number of src_ip_ranges allowed is 10.
      * </pre>
      *
      * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -519,7 +524,8 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
      *
      *
      * <pre>
-     * CIDR IP address range. Maximum number of src_ip_ranges allowed is 10.
+     * CIDR IP address range.
+     * Maximum number of src_ip_ranges allowed is 10.
      * </pre>
      *
      * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -534,7 +540,8 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
      *
      *
      * <pre>
-     * CIDR IP address range. Maximum number of src_ip_ranges allowed is 10.
+     * CIDR IP address range.
+     * Maximum number of src_ip_ranges allowed is 10.
      * </pre>
      *
      * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -550,7 +557,8 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
      *
      *
      * <pre>
-     * CIDR IP address range. Maximum number of src_ip_ranges allowed is 10.
+     * CIDR IP address range.
+     * Maximum number of src_ip_ranges allowed is 10.
      * </pre>
      *
      * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -566,7 +574,8 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
      *
      *
      * <pre>
-     * CIDR IP address range. Maximum number of src_ip_ranges allowed is 10.
+     * CIDR IP address range.
+     * Maximum number of src_ip_ranges allowed is 10.
      * </pre>
      *
      * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -590,7 +599,8 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
      *
      *
      * <pre>
-     * CIDR IP address range. Maximum number of src_ip_ranges allowed is 10.
+     * CIDR IP address range.
+     * Maximum number of src_ip_ranges allowed is 10.
      * </pre>
      *
      * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -613,7 +623,8 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
      *
      *
      * <pre>
-     * CIDR IP address range. Maximum number of src_ip_ranges allowed is 10.
+     * CIDR IP address range.
+     * Maximum number of src_ip_ranges allowed is 10.
      * </pre>
      *
      * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -633,7 +644,8 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
      *
      *
      * <pre>
-     * CIDR IP address range. Maximum number of src_ip_ranges allowed is 10.
+     * CIDR IP address range.
+     * Maximum number of src_ip_ranges allowed is 10.
      * </pre>
      *
      * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -652,7 +664,8 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
      *
      *
      * <pre>
-     * CIDR IP address range. Maximum number of src_ip_ranges allowed is 10.
+     * CIDR IP address range.
+     * Maximum number of src_ip_ranges allowed is 10.
      * </pre>
      *
      * <code>repeated string src_ip_ranges = 432128083;</code>

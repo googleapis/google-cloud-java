@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,10 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * A policy that specifies how requests intended for the route's backends are shadowed to a separate mirrored backend service. The load balancer doesn't wait for responses from the shadow service. Before sending traffic to the shadow service, the host or authority header is suffixed with -shadow.
+ * A policy that specifies how requests intended for the route's backends
+ * are shadowed to a separate mirrored backend service. The load balancer
+ * doesn't wait for responses from the shadow service. Before sending traffic
+ * to the shadow service, the host or authority header is suffixed with-shadow.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.RequestMirrorPolicy}
@@ -74,7 +77,15 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The full or partial URL to the BackendService resource being mirrored to. The backend service configured for a mirroring policy must reference backends that are of the same type as the original backend service matched in the URL map. Serverless NEG backends are not currently supported as a mirrored backend service.
+   * The full or partial URL to the BackendService resource being
+   * mirrored to.
+   *
+   * The backend service configured for a mirroring
+   * policy must reference backends that are of the same type as the original
+   * backend service matched in the URL map.
+   *
+   * Serverless NEG backends are not currently supported as a mirrored
+   * backend service.
    * </pre>
    *
    * <code>optional string backend_service = 306946058;</code>
@@ -90,7 +101,15 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The full or partial URL to the BackendService resource being mirrored to. The backend service configured for a mirroring policy must reference backends that are of the same type as the original backend service matched in the URL map. Serverless NEG backends are not currently supported as a mirrored backend service.
+   * The full or partial URL to the BackendService resource being
+   * mirrored to.
+   *
+   * The backend service configured for a mirroring
+   * policy must reference backends that are of the same type as the original
+   * backend service matched in the URL map.
+   *
+   * Serverless NEG backends are not currently supported as a mirrored
+   * backend service.
    * </pre>
    *
    * <code>optional string backend_service = 306946058;</code>
@@ -114,7 +133,15 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The full or partial URL to the BackendService resource being mirrored to. The backend service configured for a mirroring policy must reference backends that are of the same type as the original backend service matched in the URL map. Serverless NEG backends are not currently supported as a mirrored backend service.
+   * The full or partial URL to the BackendService resource being
+   * mirrored to.
+   *
+   * The backend service configured for a mirroring
+   * policy must reference backends that are of the same type as the original
+   * backend service matched in the URL map.
+   *
+   * Serverless NEG backends are not currently supported as a mirrored
+   * backend service.
    * </pre>
    *
    * <code>optional string backend_service = 306946058;</code>
@@ -356,7 +383,10 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * A policy that specifies how requests intended for the route's backends are shadowed to a separate mirrored backend service. The load balancer doesn't wait for responses from the shadow service. Before sending traffic to the shadow service, the host or authority header is suffixed with -shadow.
+   * A policy that specifies how requests intended for the route's backends
+   * are shadowed to a separate mirrored backend service. The load balancer
+   * doesn't wait for responses from the shadow service. Before sending traffic
+   * to the shadow service, the host or authority header is suffixed with-shadow.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.RequestMirrorPolicy}
@@ -558,7 +588,15 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The full or partial URL to the BackendService resource being mirrored to. The backend service configured for a mirroring policy must reference backends that are of the same type as the original backend service matched in the URL map. Serverless NEG backends are not currently supported as a mirrored backend service.
+     * The full or partial URL to the BackendService resource being
+     * mirrored to.
+     *
+     * The backend service configured for a mirroring
+     * policy must reference backends that are of the same type as the original
+     * backend service matched in the URL map.
+     *
+     * Serverless NEG backends are not currently supported as a mirrored
+     * backend service.
      * </pre>
      *
      * <code>optional string backend_service = 306946058;</code>
@@ -573,7 +611,15 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The full or partial URL to the BackendService resource being mirrored to. The backend service configured for a mirroring policy must reference backends that are of the same type as the original backend service matched in the URL map. Serverless NEG backends are not currently supported as a mirrored backend service.
+     * The full or partial URL to the BackendService resource being
+     * mirrored to.
+     *
+     * The backend service configured for a mirroring
+     * policy must reference backends that are of the same type as the original
+     * backend service matched in the URL map.
+     *
+     * Serverless NEG backends are not currently supported as a mirrored
+     * backend service.
      * </pre>
      *
      * <code>optional string backend_service = 306946058;</code>
@@ -596,7 +642,15 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The full or partial URL to the BackendService resource being mirrored to. The backend service configured for a mirroring policy must reference backends that are of the same type as the original backend service matched in the URL map. Serverless NEG backends are not currently supported as a mirrored backend service.
+     * The full or partial URL to the BackendService resource being
+     * mirrored to.
+     *
+     * The backend service configured for a mirroring
+     * policy must reference backends that are of the same type as the original
+     * backend service matched in the URL map.
+     *
+     * Serverless NEG backends are not currently supported as a mirrored
+     * backend service.
      * </pre>
      *
      * <code>optional string backend_service = 306946058;</code>
@@ -619,7 +673,15 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The full or partial URL to the BackendService resource being mirrored to. The backend service configured for a mirroring policy must reference backends that are of the same type as the original backend service matched in the URL map. Serverless NEG backends are not currently supported as a mirrored backend service.
+     * The full or partial URL to the BackendService resource being
+     * mirrored to.
+     *
+     * The backend service configured for a mirroring
+     * policy must reference backends that are of the same type as the original
+     * backend service matched in the URL map.
+     *
+     * Serverless NEG backends are not currently supported as a mirrored
+     * backend service.
      * </pre>
      *
      * <code>optional string backend_service = 306946058;</code>
@@ -641,7 +703,15 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The full or partial URL to the BackendService resource being mirrored to. The backend service configured for a mirroring policy must reference backends that are of the same type as the original backend service matched in the URL map. Serverless NEG backends are not currently supported as a mirrored backend service.
+     * The full or partial URL to the BackendService resource being
+     * mirrored to.
+     *
+     * The backend service configured for a mirroring
+     * policy must reference backends that are of the same type as the original
+     * backend service matched in the URL map.
+     *
+     * Serverless NEG backends are not currently supported as a mirrored
+     * backend service.
      * </pre>
      *
      * <code>optional string backend_service = 306946058;</code>
@@ -659,7 +729,15 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The full or partial URL to the BackendService resource being mirrored to. The backend service configured for a mirroring policy must reference backends that are of the same type as the original backend service matched in the URL map. Serverless NEG backends are not currently supported as a mirrored backend service.
+     * The full or partial URL to the BackendService resource being
+     * mirrored to.
+     *
+     * The backend service configured for a mirroring
+     * policy must reference backends that are of the same type as the original
+     * backend service matched in the URL map.
+     *
+     * Serverless NEG backends are not currently supported as a mirrored
+     * backend service.
      * </pre>
      *
      * <code>optional string backend_service = 306946058;</code>

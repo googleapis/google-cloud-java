@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +42,7 @@ public final class UploadedGoModule extends com.google.protobuf.GeneratedMessage
 
   private UploadedGoModule() {
     uri_ = "";
+    artifactRegistryPackage_ = "";
   }
 
   @java.lang.Override
@@ -231,6 +232,59 @@ public final class UploadedGoModule extends com.google.protobuf.GeneratedMessage
         : pushTiming_;
   }
 
+  public static final int ARTIFACT_REGISTRY_PACKAGE_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object artifactRegistryPackage_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Path to the artifact in Artifact Registry.
+   * </pre>
+   *
+   * <code>string artifact_registry_package = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The artifactRegistryPackage.
+   */
+  @java.lang.Override
+  public java.lang.String getArtifactRegistryPackage() {
+    java.lang.Object ref = artifactRegistryPackage_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      artifactRegistryPackage_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Path to the artifact in Artifact Registry.
+   * </pre>
+   *
+   * <code>string artifact_registry_package = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for artifactRegistryPackage.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getArtifactRegistryPackageBytes() {
+    java.lang.Object ref = artifactRegistryPackage_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      artifactRegistryPackage_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -254,6 +308,9 @@ public final class UploadedGoModule extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(3, getPushTiming());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(artifactRegistryPackage_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, artifactRegistryPackage_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -271,6 +328,9 @@ public final class UploadedGoModule extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getPushTiming());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(artifactRegistryPackage_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, artifactRegistryPackage_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -297,6 +357,7 @@ public final class UploadedGoModule extends com.google.protobuf.GeneratedMessage
     if (hasPushTiming()) {
       if (!getPushTiming().equals(other.getPushTiming())) return false;
     }
+    if (!getArtifactRegistryPackage().equals(other.getArtifactRegistryPackage())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -318,6 +379,8 @@ public final class UploadedGoModule extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + PUSH_TIMING_FIELD_NUMBER;
       hash = (53 * hash) + getPushTiming().hashCode();
     }
+    hash = (37 * hash) + ARTIFACT_REGISTRY_PACKAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getArtifactRegistryPackage().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -480,6 +543,7 @@ public final class UploadedGoModule extends com.google.protobuf.GeneratedMessage
         pushTimingBuilder_.dispose();
         pushTimingBuilder_ = null;
       }
+      artifactRegistryPackage_ = "";
       return this;
     }
 
@@ -527,6 +591,9 @@ public final class UploadedGoModule extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.pushTiming_ = pushTimingBuilder_ == null ? pushTiming_ : pushTimingBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.artifactRegistryPackage_ = artifactRegistryPackage_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -587,6 +654,11 @@ public final class UploadedGoModule extends com.google.protobuf.GeneratedMessage
       if (other.hasPushTiming()) {
         mergePushTiming(other.getPushTiming());
       }
+      if (!other.getArtifactRegistryPackage().isEmpty()) {
+        artifactRegistryPackage_ = other.artifactRegistryPackage_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -631,6 +703,12 @@ public final class UploadedGoModule extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                artifactRegistryPackage_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1165,6 +1243,122 @@ public final class UploadedGoModule extends com.google.protobuf.GeneratedMessage
         pushTiming_ = null;
       }
       return pushTimingBuilder_;
+    }
+
+    private java.lang.Object artifactRegistryPackage_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Path to the artifact in Artifact Registry.
+     * </pre>
+     *
+     * <code>string artifact_registry_package = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The artifactRegistryPackage.
+     */
+    public java.lang.String getArtifactRegistryPackage() {
+      java.lang.Object ref = artifactRegistryPackage_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        artifactRegistryPackage_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Path to the artifact in Artifact Registry.
+     * </pre>
+     *
+     * <code>string artifact_registry_package = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for artifactRegistryPackage.
+     */
+    public com.google.protobuf.ByteString getArtifactRegistryPackageBytes() {
+      java.lang.Object ref = artifactRegistryPackage_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        artifactRegistryPackage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Path to the artifact in Artifact Registry.
+     * </pre>
+     *
+     * <code>string artifact_registry_package = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The artifactRegistryPackage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setArtifactRegistryPackage(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      artifactRegistryPackage_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Path to the artifact in Artifact Registry.
+     * </pre>
+     *
+     * <code>string artifact_registry_package = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearArtifactRegistryPackage() {
+      artifactRegistryPackage_ = getDefaultInstance().getArtifactRegistryPackage();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Path to the artifact in Artifact Registry.
+     * </pre>
+     *
+     * <code>string artifact_registry_package = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for artifactRegistryPackage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setArtifactRegistryPackageBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      artifactRegistryPackage_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

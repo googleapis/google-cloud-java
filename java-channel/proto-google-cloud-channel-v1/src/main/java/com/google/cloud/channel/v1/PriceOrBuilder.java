@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -116,6 +116,49 @@ public interface PriceOrBuilder
    *
    *
    * <pre>
+   * The time period with respect to which base and effective prices are
+   * defined.
+   * Example: 1 month, 6 months, 1 year, etc.
+   * </pre>
+   *
+   * <code>.google.cloud.channel.v1.Period price_period = 6;</code>
+   *
+   * @return Whether the pricePeriod field is set.
+   */
+  boolean hasPricePeriod();
+
+  /**
+   *
+   *
+   * <pre>
+   * The time period with respect to which base and effective prices are
+   * defined.
+   * Example: 1 month, 6 months, 1 year, etc.
+   * </pre>
+   *
+   * <code>.google.cloud.channel.v1.Period price_period = 6;</code>
+   *
+   * @return The pricePeriod.
+   */
+  com.google.cloud.channel.v1.Period getPricePeriod();
+
+  /**
+   *
+   *
+   * <pre>
+   * The time period with respect to which base and effective prices are
+   * defined.
+   * Example: 1 month, 6 months, 1 year, etc.
+   * </pre>
+   *
+   * <code>.google.cloud.channel.v1.Period price_period = 6;</code>
+   */
+  com.google.cloud.channel.v1.PeriodOrBuilder getPricePeriodOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Link to external price list, such as link to Google Voice rate card.
    * </pre>
    *
@@ -137,4 +180,65 @@ public interface PriceOrBuilder
    * @return The bytes for externalPriceUri.
    */
   com.google.protobuf.ByteString getExternalPriceUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Breakdown of the discount into its components.
+   * This will be empty if there is no discount present.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.channel.v1.DiscountComponent discount_components = 5;</code>
+   */
+  java.util.List<com.google.cloud.channel.v1.DiscountComponent> getDiscountComponentsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Breakdown of the discount into its components.
+   * This will be empty if there is no discount present.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.channel.v1.DiscountComponent discount_components = 5;</code>
+   */
+  com.google.cloud.channel.v1.DiscountComponent getDiscountComponents(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Breakdown of the discount into its components.
+   * This will be empty if there is no discount present.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.channel.v1.DiscountComponent discount_components = 5;</code>
+   */
+  int getDiscountComponentsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Breakdown of the discount into its components.
+   * This will be empty if there is no discount present.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.channel.v1.DiscountComponent discount_components = 5;</code>
+   */
+  java.util.List<? extends com.google.cloud.channel.v1.DiscountComponentOrBuilder>
+      getDiscountComponentsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Breakdown of the discount into its components.
+   * This will be empty if there is no discount present.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.channel.v1.DiscountComponent discount_components = 5;</code>
+   */
+  com.google.cloud.channel.v1.DiscountComponentOrBuilder getDiscountComponentsOrBuilder(int index);
 }

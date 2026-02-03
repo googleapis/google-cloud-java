@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import static com.google.cloud.netapp.v1.NetAppClient.ListActiveDirectoriesPaged
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupPoliciesPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupVaultsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupsPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListHostGroupsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListKmsConfigsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListLocationsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListQuotaRulesPagedResponse;
@@ -98,8 +99,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -688,6 +689,63 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
   public OperationCallSettings<DeleteQuotaRuleRequest, Empty, OperationMetadata>
       deleteQuotaRuleOperationSettings() {
     return ((NetAppStubSettings) getStubSettings()).deleteQuotaRuleOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to restoreBackupFiles. */
+  public UnaryCallSettings<RestoreBackupFilesRequest, Operation> restoreBackupFilesSettings() {
+    return ((NetAppStubSettings) getStubSettings()).restoreBackupFilesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to restoreBackupFiles. */
+  public OperationCallSettings<
+          RestoreBackupFilesRequest, RestoreBackupFilesResponse, OperationMetadata>
+      restoreBackupFilesOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).restoreBackupFilesOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listHostGroups. */
+  public PagedCallSettings<
+          ListHostGroupsRequest, ListHostGroupsResponse, ListHostGroupsPagedResponse>
+      listHostGroupsSettings() {
+    return ((NetAppStubSettings) getStubSettings()).listHostGroupsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getHostGroup. */
+  public UnaryCallSettings<GetHostGroupRequest, HostGroup> getHostGroupSettings() {
+    return ((NetAppStubSettings) getStubSettings()).getHostGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createHostGroup. */
+  public UnaryCallSettings<CreateHostGroupRequest, Operation> createHostGroupSettings() {
+    return ((NetAppStubSettings) getStubSettings()).createHostGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createHostGroup. */
+  public OperationCallSettings<CreateHostGroupRequest, HostGroup, OperationMetadata>
+      createHostGroupOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).createHostGroupOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateHostGroup. */
+  public UnaryCallSettings<UpdateHostGroupRequest, Operation> updateHostGroupSettings() {
+    return ((NetAppStubSettings) getStubSettings()).updateHostGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateHostGroup. */
+  public OperationCallSettings<UpdateHostGroupRequest, HostGroup, OperationMetadata>
+      updateHostGroupOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).updateHostGroupOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteHostGroup. */
+  public UnaryCallSettings<DeleteHostGroupRequest, Operation> deleteHostGroupSettings() {
+    return ((NetAppStubSettings) getStubSettings()).deleteHostGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteHostGroup. */
+  public OperationCallSettings<DeleteHostGroupRequest, Empty, OperationMetadata>
+      deleteHostGroupOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).deleteHostGroupOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -1393,6 +1451,64 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
     public OperationCallSettings.Builder<DeleteQuotaRuleRequest, Empty, OperationMetadata>
         deleteQuotaRuleOperationSettings() {
       return getStubSettingsBuilder().deleteQuotaRuleOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to restoreBackupFiles. */
+    public UnaryCallSettings.Builder<RestoreBackupFilesRequest, Operation>
+        restoreBackupFilesSettings() {
+      return getStubSettingsBuilder().restoreBackupFilesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to restoreBackupFiles. */
+    public OperationCallSettings.Builder<
+            RestoreBackupFilesRequest, RestoreBackupFilesResponse, OperationMetadata>
+        restoreBackupFilesOperationSettings() {
+      return getStubSettingsBuilder().restoreBackupFilesOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listHostGroups. */
+    public PagedCallSettings.Builder<
+            ListHostGroupsRequest, ListHostGroupsResponse, ListHostGroupsPagedResponse>
+        listHostGroupsSettings() {
+      return getStubSettingsBuilder().listHostGroupsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getHostGroup. */
+    public UnaryCallSettings.Builder<GetHostGroupRequest, HostGroup> getHostGroupSettings() {
+      return getStubSettingsBuilder().getHostGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createHostGroup. */
+    public UnaryCallSettings.Builder<CreateHostGroupRequest, Operation> createHostGroupSettings() {
+      return getStubSettingsBuilder().createHostGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createHostGroup. */
+    public OperationCallSettings.Builder<CreateHostGroupRequest, HostGroup, OperationMetadata>
+        createHostGroupOperationSettings() {
+      return getStubSettingsBuilder().createHostGroupOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateHostGroup. */
+    public UnaryCallSettings.Builder<UpdateHostGroupRequest, Operation> updateHostGroupSettings() {
+      return getStubSettingsBuilder().updateHostGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateHostGroup. */
+    public OperationCallSettings.Builder<UpdateHostGroupRequest, HostGroup, OperationMetadata>
+        updateHostGroupOperationSettings() {
+      return getStubSettingsBuilder().updateHostGroupOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteHostGroup. */
+    public UnaryCallSettings.Builder<DeleteHostGroupRequest, Operation> deleteHostGroupSettings() {
+      return getStubSettingsBuilder().deleteHostGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteHostGroup. */
+    public OperationCallSettings.Builder<DeleteHostGroupRequest, Empty, OperationMetadata>
+        deleteHostGroupOperationSettings() {
+      return getStubSettingsBuilder().deleteHostGroupOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

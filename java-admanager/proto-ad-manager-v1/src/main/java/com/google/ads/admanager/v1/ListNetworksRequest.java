@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,9 @@ public final class ListNetworksRequest extends com.google.protobuf.GeneratedMess
     super(builder);
   }
 
-  private ListNetworksRequest() {}
+  private ListNetworksRequest() {
+    pageToken_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -62,6 +64,108 @@ public final class ListNetworksRequest extends com.google.protobuf.GeneratedMess
             com.google.ads.admanager.v1.ListNetworksRequest.Builder.class);
   }
 
+  public static final int PAGE_SIZE_FIELD_NUMBER = 3;
+  private int pageSize_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maximum number of `Network`s to return. The service may
+   * return fewer than this value. If unspecified, at most 50 `Network`s will be
+   * returned. The maximum value is 1000; values greater than 1000 will be
+   * coerced to 1000.
+   * </pre>
+   *
+   * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The pageSize.
+   */
+  @java.lang.Override
+  public int getPageSize() {
+    return pageSize_;
+  }
+
+  public static final int PAGE_TOKEN_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A page token, received from a previous `ListNetworks` call.
+   * Provide this to retrieve the subsequent page.
+   *
+   * When paginating, all other parameters provided to `ListNetworks` must match
+   * the call that provided the page token.
+   * </pre>
+   *
+   * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The pageToken.
+   */
+  @java.lang.Override
+  public java.lang.String getPageToken() {
+    java.lang.Object ref = pageToken_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      pageToken_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A page token, received from a previous `ListNetworks` call.
+   * Provide this to retrieve the subsequent page.
+   *
+   * When paginating, all other parameters provided to `ListNetworks` must match
+   * the call that provided the page token.
+   * </pre>
+   *
+   * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for pageToken.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPageTokenBytes() {
+    java.lang.Object ref = pageToken_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      pageToken_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SKIP_FIELD_NUMBER = 5;
+  private int skip_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Number of individual resources to skip while paginating.
+   * </pre>
+   *
+   * <code>int32 skip = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The skip.
+   */
+  @java.lang.Override
+  public int getSkip() {
+    return skip_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -76,6 +180,15 @@ public final class ListNetworksRequest extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (pageSize_ != 0) {
+      output.writeInt32(3, pageSize_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, pageToken_);
+    }
+    if (skip_ != 0) {
+      output.writeInt32(5, skip_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -85,6 +198,15 @@ public final class ListNetworksRequest extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
+    if (pageSize_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, pageSize_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, pageToken_);
+    }
+    if (skip_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, skip_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -101,6 +223,9 @@ public final class ListNetworksRequest extends com.google.protobuf.GeneratedMess
     com.google.ads.admanager.v1.ListNetworksRequest other =
         (com.google.ads.admanager.v1.ListNetworksRequest) obj;
 
+    if (getPageSize() != other.getPageSize()) return false;
+    if (!getPageToken().equals(other.getPageToken())) return false;
+    if (getSkip() != other.getSkip()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -112,6 +237,12 @@ public final class ListNetworksRequest extends com.google.protobuf.GeneratedMess
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
+    hash = (53 * hash) + getPageSize();
+    hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getPageToken().hashCode();
+    hash = (37 * hash) + SKIP_FIELD_NUMBER;
+    hash = (53 * hash) + getSkip();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -251,6 +382,10 @@ public final class ListNetworksRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
+      pageSize_ = 0;
+      pageToken_ = "";
+      skip_ = 0;
       return this;
     }
 
@@ -278,8 +413,24 @@ public final class ListNetworksRequest extends com.google.protobuf.GeneratedMess
     public com.google.ads.admanager.v1.ListNetworksRequest buildPartial() {
       com.google.ads.admanager.v1.ListNetworksRequest result =
           new com.google.ads.admanager.v1.ListNetworksRequest(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.ads.admanager.v1.ListNetworksRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.skip_ = skip_;
+      }
     }
 
     @java.lang.Override
@@ -328,6 +479,17 @@ public final class ListNetworksRequest extends com.google.protobuf.GeneratedMess
     public Builder mergeFrom(com.google.ads.admanager.v1.ListNetworksRequest other) {
       if (other == com.google.ads.admanager.v1.ListNetworksRequest.getDefaultInstance())
         return this;
+      if (other.getPageSize() != 0) {
+        setPageSize(other.getPageSize());
+      }
+      if (!other.getPageToken().isEmpty()) {
+        pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (other.getSkip() != 0) {
+        setSkip(other.getSkip());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -354,6 +516,24 @@ public final class ListNetworksRequest extends com.google.protobuf.GeneratedMess
             case 0:
               done = true;
               break;
+            case 24:
+              {
+                pageSize_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 24
+            case 34:
+              {
+                pageToken_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 34
+            case 40:
+              {
+                skip_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -368,6 +548,260 @@ public final class ListNetworksRequest extends com.google.protobuf.GeneratedMess
       } finally {
         onChanged();
       } // finally
+      return this;
+    }
+
+    private int bitField0_;
+
+    private int pageSize_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maximum number of `Network`s to return. The service may
+     * return fewer than this value. If unspecified, at most 50 `Network`s will be
+     * returned. The maximum value is 1000; values greater than 1000 will be
+     * coerced to 1000.
+     * </pre>
+     *
+     * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The pageSize.
+     */
+    @java.lang.Override
+    public int getPageSize() {
+      return pageSize_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maximum number of `Network`s to return. The service may
+     * return fewer than this value. If unspecified, at most 50 `Network`s will be
+     * returned. The maximum value is 1000; values greater than 1000 will be
+     * coerced to 1000.
+     * </pre>
+     *
+     * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The pageSize to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPageSize(int value) {
+
+      pageSize_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maximum number of `Network`s to return. The service may
+     * return fewer than this value. If unspecified, at most 50 `Network`s will be
+     * returned. The maximum value is 1000; values greater than 1000 will be
+     * coerced to 1000.
+     * </pre>
+     *
+     * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPageSize() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      pageSize_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object pageToken_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A page token, received from a previous `ListNetworks` call.
+     * Provide this to retrieve the subsequent page.
+     *
+     * When paginating, all other parameters provided to `ListNetworks` must match
+     * the call that provided the page token.
+     * </pre>
+     *
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The pageToken.
+     */
+    public java.lang.String getPageToken() {
+      java.lang.Object ref = pageToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pageToken_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A page token, received from a previous `ListNetworks` call.
+     * Provide this to retrieve the subsequent page.
+     *
+     * When paginating, all other parameters provided to `ListNetworks` must match
+     * the call that provided the page token.
+     * </pre>
+     *
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for pageToken.
+     */
+    public com.google.protobuf.ByteString getPageTokenBytes() {
+      java.lang.Object ref = pageToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        pageToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A page token, received from a previous `ListNetworks` call.
+     * Provide this to retrieve the subsequent page.
+     *
+     * When paginating, all other parameters provided to `ListNetworks` must match
+     * the call that provided the page token.
+     * </pre>
+     *
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The pageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPageToken(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      pageToken_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A page token, received from a previous `ListNetworks` call.
+     * Provide this to retrieve the subsequent page.
+     *
+     * When paginating, all other parameters provided to `ListNetworks` must match
+     * the call that provided the page token.
+     * </pre>
+     *
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPageToken() {
+      pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A page token, received from a previous `ListNetworks` call.
+     * Provide this to retrieve the subsequent page.
+     *
+     * When paginating, all other parameters provided to `ListNetworks` must match
+     * the call that provided the page token.
+     * </pre>
+     *
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for pageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      pageToken_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private int skip_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Number of individual resources to skip while paginating.
+     * </pre>
+     *
+     * <code>int32 skip = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The skip.
+     */
+    @java.lang.Override
+    public int getSkip() {
+      return skip_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Number of individual resources to skip while paginating.
+     * </pre>
+     *
+     * <code>int32 skip = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The skip to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSkip(int value) {
+
+      skip_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Number of individual resources to skip while paginating.
+     * </pre>
+     *
+     * <code>int32 skip = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSkip() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      skip_ = 0;
+      onChanged();
       return this;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,8 +106,8 @@ import javax.annotation.Generated;
  * }</pre>
  *
  * Please refer to the [Client Side Retry
- * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
- * additional support in setting retries.
+ * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
+ * retries.
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
@@ -464,6 +464,18 @@ public class ArtifactRegistrySettings extends ClientSettings<ArtifactRegistrySet
   public OperationCallSettings<DeleteAttachmentRequest, Empty, OperationMetadata>
       deleteAttachmentOperationSettings() {
     return ((ArtifactRegistryStubSettings) getStubSettings()).deleteAttachmentOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportArtifact. */
+  public UnaryCallSettings<ExportArtifactRequest, Operation> exportArtifactSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).exportArtifactSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportArtifact. */
+  public OperationCallSettings<
+          ExportArtifactRequest, ExportArtifactResponse, ExportArtifactMetadata>
+      exportArtifactOperationSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).exportArtifactOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -928,6 +940,18 @@ public class ArtifactRegistrySettings extends ClientSettings<ArtifactRegistrySet
     public OperationCallSettings.Builder<DeleteAttachmentRequest, Empty, OperationMetadata>
         deleteAttachmentOperationSettings() {
       return getStubSettingsBuilder().deleteAttachmentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportArtifact. */
+    public UnaryCallSettings.Builder<ExportArtifactRequest, Operation> exportArtifactSettings() {
+      return getStubSettingsBuilder().exportArtifactSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportArtifact. */
+    public OperationCallSettings.Builder<
+            ExportArtifactRequest, ExportArtifactResponse, ExportArtifactMetadata>
+        exportArtifactOperationSettings() {
+      return getStubSettingsBuilder().exportArtifactOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

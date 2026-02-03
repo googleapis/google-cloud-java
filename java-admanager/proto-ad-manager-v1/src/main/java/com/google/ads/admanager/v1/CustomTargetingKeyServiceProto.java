@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,46 @@ public final class CustomTargetingKeyServiceProto {
       internal_static_google_ads_admanager_v1_ListCustomTargetingKeysResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_ads_admanager_v1_ListCustomTargetingKeysResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_CreateCustomTargetingKeyRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_CreateCustomTargetingKeyRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchCreateCustomTargetingKeysRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchCreateCustomTargetingKeysRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchCreateCustomTargetingKeysResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchCreateCustomTargetingKeysResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_UpdateCustomTargetingKeyRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_UpdateCustomTargetingKeyRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchUpdateCustomTargetingKeysRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchUpdateCustomTargetingKeysRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchUpdateCustomTargetingKeysResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchUpdateCustomTargetingKeysResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchActivateCustomTargetingKeysRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchActivateCustomTargetingKeysRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchActivateCustomTargetingKeysResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchActivateCustomTargetingKeysResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchDeactivateCustomTargetingKeysRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchDeactivateCustomTargetingKeysRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchDeactivateCustomTargetingKeysResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchDeactivateCustomTargetingKeysResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -54,15 +94,15 @@ public final class CustomTargetingKeyServiceProto {
           + "er.v1\032;google/ads/admanager/v1/custom_ta"
           + "rgeting_key_messages.proto\032\034google/api/a"
           + "nnotations.proto\032\027google/api/client.prot"
-          + "o\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\"a\n"
+          + "o\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\032"
+          + " google/protobuf/field_mask.proto\"a\n"
           + "\034GetCustomTargetingKeyRequest\022A\n"
           + "\004name\030\001 \001(\tB3\340A\002\372A-\n"
           + "+admanager.googleapis.com/CustomTargetingKey\"\312\001\n"
           + "\036ListCustomTargetingKeysRequest\0228\n"
           + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
           + " admanager.googleapis.com/Network\022\026\n"
-          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n"
-          + "\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\022\021\n"
@@ -71,21 +111,85 @@ public final class CustomTargetingKeyServiceProto {
           + "\025custom_targeting_keys\030\001"
           + " \003(\0132+.google.ads.admanager.v1.CustomTargetingKey\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\022\n\n"
-          + "total_size\030\003 \001(\0052\353\003\n"
+          + "total_size\030\003 \001(\005\"\253\001\n"
+          + "\037CreateCustomTargetingKeyRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022N\n"
+          + "\024custom_targeting_key\030\002 \001(\013"
+          + "2+.google.ads.admanager.v1.CustomTargetingKeyB\003\340A\002\"\262\001\n"
+          + "%BatchCreateCustomTargetingKeysRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022O\n"
+          + "\010requests\030\002"
+          + " \003(\01328.google.ads.admanager.v1.CreateCustomTargetingKeyRequestB\003\340A\002\"t\n"
+          + "&BatchCreateCustomTargetingKeysResponse\022J\n"
+          + "\025custom_targeting_keys\030\001"
+          + " \003(\0132+.google.ads.admanager.v1.CustomTargetingKey\"\247\001\n"
+          + "\037UpdateCustomTargetingKeyRequest\022N\n"
+          + "\024custom_targeting_key\030\001"
+          + " \001(\0132+.google.ads.admanager.v1.CustomTargetingKeyB\003\340A\002\0224\n"
+          + "\013update_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\"\262\001\n"
+          + "%BatchUpdateCustomTargetingKeysRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022O\n"
+          + "\010requests\030\002 \003(\01328."
+          + "google.ads.admanager.v1.UpdateCustomTargetingKeyRequestB\003\340A\002\"t\n"
+          + "&BatchUpdateCustomTargetingKeysResponse\022J\n"
+          + "\025custom_targeting_keys\030\001"
+          + " \003(\0132+.google.ads.admanager.v1.CustomTargetingKey\"\247\001\n"
+          + "\'BatchActivateCustomTargetingKeysRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022B\n"
+          + "\005names\030\002 \003(\tB3\340A\002\372A-\n"
+          + "+admanager.googleapis.com/CustomTargetingKey\"*\n"
+          + "(BatchActivateCustomTargetingKeysResponse\"\251\001\n"
+          + ")BatchDeactivateCustomTargetingKeysRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022B\n"
+          + "\005names\030\002 \003(\tB3\340A\002\372A-\n"
+          + "+admanager.googleapis.com/CustomTargetingKey\",\n"
+          + "*BatchDeactivateCustomTargetingKeysResponse2\332\017\n"
           + "\031CustomTargetingKeyService\022\267\001\n"
-          + "\025GetCustomTargetingKey\0225.google.ads.admanage"
-          + "r.v1.GetCustomTargetingKeyRequest\032+.google.ads.admanager.v1.CustomTargetingKey\":"
-          + "\332A\004name\202\323\344\223\002-\022+/v1/{name=networks/*/customTargetingKeys/*}\022\312\001\n"
-          + "\027ListCustomTargetingKeys\0227.google.ads.admanager.v1.ListCus"
-          + "tomTargetingKeysRequest\0328.google.ads.admanager.v1.ListCustomTargetingKeysRespons"
-          + "e\"<\332A\006parent\202\323\344\223\002-\022+/v1/{parent=networks"
-          + "/*}/customTargetingKeys\032G\312A\030admanager.go"
-          + "ogleapis.com\322A)https://www.googleapis.com/auth/admanagerB\322\001\n"
-          + "\033com.google.ads.admanager.v1B\036CustomTargetingKeyServiceProto"
-          + "P\001Z@google.golang.org/genproto/googleapi"
-          + "s/ads/admanager/v1;admanager\252\002\027Google.Ad"
-          + "s.AdManager.V1\312\002\027Google\\Ads\\AdManager\\V1"
-          + "\352\002\032Google::Ads::AdManager::V1b\006proto3"
+          + "\025GetCustomTargetingKey\0225.google.ads.admanager.v1.GetCustomTargetingKeyReques"
+          + "t\032+.google.ads.admanager.v1.CustomTarget"
+          + "ingKey\":\332A\004name\202\323\344\223\002-\022+/v1/{name=networks/*/customTargetingKeys/*}\022\312\001\n"
+          + "\027ListCustomTargetingKeys\0227.google.ads.admanager.v1"
+          + ".ListCustomTargetingKeysRequest\0328.google.ads.admanager.v1.ListCustomTargetingKey"
+          + "sResponse\"<\332A\006parent\202\323\344\223\002-\022+/v1/{parent=networks/*}/customTargetingKeys\022\352\001\n"
+          + "\030CreateCustomTargetingKey\0228.google.ads.admana"
+          + "ger.v1.CreateCustomTargetingKeyRequest\032+.google.ads.admanager.v1.CustomTargeting"
+          + "Key\"g\332A\033parent,custom_targeting_key\202\323\344\223\002"
+          + "C\"+/v1/{parent=networks/*}/customTargetingKeys:\024custom_targeting_key\022\367\001\n"
+          + "\036BatchCreateCustomTargetingKeys\022>.google.ads.adm"
+          + "anager.v1.BatchCreateCustomTargetingKeysRequest\032?.google.ads.admanager.v1.BatchC"
+          + "reateCustomTargetingKeysResponse\"T\332A\017par"
+          + "ent,requests\202\323\344\223\002<\"7/v1/{parent=networks"
+          + "/*}/customTargetingKeys:batchCreate:\001*\022\205\002\n"
+          + "\030UpdateCustomTargetingKey\0228.google.ads.admanager.v1.UpdateCustomTargetingKeyRe"
+          + "quest\032+.google.ads.admanager.v1.CustomTargetingKey\"\201\001\332A"
+          + " custom_targeting_key,update_mask\202\323\344\223\002X2@/v1/{custom_targeting_ke"
+          + "y.name=networks/*/customTargetingKeys/*}:\024custom_targeting_key\022\367\001\n"
+          + "\036BatchUpdateCustomTargetingKeys\022>.google.ads.admanager"
+          + ".v1.BatchUpdateCustomTargetingKeysRequest\032?.google.ads.admanager.v1.BatchUpdateC"
+          + "ustomTargetingKeysResponse\"T\332A\017parent,re"
+          + "quests\202\323\344\223\002<\"7/v1/{parent=networks/*}/customTargetingKeys:batchUpdate:\001*\022\374\001\n"
+          + " BatchActivateCustomTargetingKeys\022@.google.a"
+          + "ds.admanager.v1.BatchActivateCustomTargetingKeysRequest\032A.google.ads.admanager.v"
+          + "1.BatchActivateCustomTargetingKeysRespon"
+          + "se\"S\332A\014parent,names\202\323\344\223\002>\"9/v1/{parent=n"
+          + "etworks/*}/customTargetingKeys:batchActivate:\001*\022\204\002\n"
+          + "\"BatchDeactivateCustomTargetingKeys\022B.google.ads.admanager.v1.BatchDe"
+          + "activateCustomTargetingKeysRequest\032C.google.ads.admanager.v1.BatchDeactivateCust"
+          + "omTargetingKeysResponse\"U\332A\014parent,names"
+          + "\202\323\344\223\002@\";/v1/{parent=networks/*}/customTa"
+          + "rgetingKeys:batchDeactivate:\001*\032G\312A\030adman"
+          + "ager.googleapis.com\322A)https://www.googleapis.com/auth/admanagerB\322\001\n"
+          + "\033com.google.ads.admanager.v1B\036CustomTargetingKeyServi"
+          + "ceProtoP\001Z@google.golang.org/genproto/go"
+          + "ogleapis/ads/admanager/v1;admanager\252\002\027Go"
+          + "ogle.Ads.AdManager.V1\312\002\027Google\\Ads\\AdMan"
+          + "ager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -96,6 +200,7 @@ public final class CustomTargetingKeyServiceProto {
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
             });
     internal_static_google_ads_admanager_v1_GetCustomTargetingKeyRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -121,6 +226,82 @@ public final class CustomTargetingKeyServiceProto {
             new java.lang.String[] {
               "CustomTargetingKeys", "NextPageToken", "TotalSize",
             });
+    internal_static_google_ads_admanager_v1_CreateCustomTargetingKeyRequest_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_ads_admanager_v1_CreateCustomTargetingKeyRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_CreateCustomTargetingKeyRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "CustomTargetingKey",
+            });
+    internal_static_google_ads_admanager_v1_BatchCreateCustomTargetingKeysRequest_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_ads_admanager_v1_BatchCreateCustomTargetingKeysRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchCreateCustomTargetingKeysRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Requests",
+            });
+    internal_static_google_ads_admanager_v1_BatchCreateCustomTargetingKeysResponse_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_ads_admanager_v1_BatchCreateCustomTargetingKeysResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchCreateCustomTargetingKeysResponse_descriptor,
+            new java.lang.String[] {
+              "CustomTargetingKeys",
+            });
+    internal_static_google_ads_admanager_v1_UpdateCustomTargetingKeyRequest_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_ads_admanager_v1_UpdateCustomTargetingKeyRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_UpdateCustomTargetingKeyRequest_descriptor,
+            new java.lang.String[] {
+              "CustomTargetingKey", "UpdateMask",
+            });
+    internal_static_google_ads_admanager_v1_BatchUpdateCustomTargetingKeysRequest_descriptor =
+        getDescriptor().getMessageTypes().get(7);
+    internal_static_google_ads_admanager_v1_BatchUpdateCustomTargetingKeysRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchUpdateCustomTargetingKeysRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Requests",
+            });
+    internal_static_google_ads_admanager_v1_BatchUpdateCustomTargetingKeysResponse_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_ads_admanager_v1_BatchUpdateCustomTargetingKeysResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchUpdateCustomTargetingKeysResponse_descriptor,
+            new java.lang.String[] {
+              "CustomTargetingKeys",
+            });
+    internal_static_google_ads_admanager_v1_BatchActivateCustomTargetingKeysRequest_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_ads_admanager_v1_BatchActivateCustomTargetingKeysRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchActivateCustomTargetingKeysRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchActivateCustomTargetingKeysResponse_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_ads_admanager_v1_BatchActivateCustomTargetingKeysResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchActivateCustomTargetingKeysResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchDeactivateCustomTargetingKeysRequest_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_ads_admanager_v1_BatchDeactivateCustomTargetingKeysRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchDeactivateCustomTargetingKeysRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchDeactivateCustomTargetingKeysResponse_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_ads_admanager_v1_BatchDeactivateCustomTargetingKeysResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchDeactivateCustomTargetingKeysResponse_descriptor,
+            new java.lang.String[] {});
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
@@ -136,6 +317,7 @@ public final class CustomTargetingKeyServiceProto {
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

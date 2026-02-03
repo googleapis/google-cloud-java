@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -254,6 +254,131 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
         : resolvedStorageSourceManifest_;
   }
 
+  public static final int RESOLVED_CONNECTED_REPOSITORY_FIELD_NUMBER = 10;
+  private com.google.cloudbuild.v1.ConnectedRepository resolvedConnectedRepository_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A copy of the build's `source.connected_repository`, if
+   * exists, with any revisions resolved.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.ConnectedRepository resolved_connected_repository = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the resolvedConnectedRepository field is set.
+   */
+  @java.lang.Override
+  public boolean hasResolvedConnectedRepository() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A copy of the build's `source.connected_repository`, if
+   * exists, with any revisions resolved.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.ConnectedRepository resolved_connected_repository = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The resolvedConnectedRepository.
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.ConnectedRepository getResolvedConnectedRepository() {
+    return resolvedConnectedRepository_ == null
+        ? com.google.cloudbuild.v1.ConnectedRepository.getDefaultInstance()
+        : resolvedConnectedRepository_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A copy of the build's `source.connected_repository`, if
+   * exists, with any revisions resolved.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.ConnectedRepository resolved_connected_repository = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.ConnectedRepositoryOrBuilder
+      getResolvedConnectedRepositoryOrBuilder() {
+    return resolvedConnectedRepository_ == null
+        ? com.google.cloudbuild.v1.ConnectedRepository.getDefaultInstance()
+        : resolvedConnectedRepository_;
+  }
+
+  public static final int RESOLVED_GIT_SOURCE_FIELD_NUMBER = 11;
+  private com.google.cloudbuild.v1.GitSource resolvedGitSource_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A copy of the build's `source.git_source`, if exists, with any
+   * revisions resolved.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.GitSource resolved_git_source = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the resolvedGitSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasResolvedGitSource() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A copy of the build's `source.git_source`, if exists, with any
+   * revisions resolved.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.GitSource resolved_git_source = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The resolvedGitSource.
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.GitSource getResolvedGitSource() {
+    return resolvedGitSource_ == null
+        ? com.google.cloudbuild.v1.GitSource.getDefaultInstance()
+        : resolvedGitSource_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A copy of the build's `source.git_source`, if exists, with any
+   * revisions resolved.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.GitSource resolved_git_source = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.GitSourceOrBuilder getResolvedGitSourceOrBuilder() {
+    return resolvedGitSource_ == null
+        ? com.google.cloudbuild.v1.GitSource.getDefaultInstance()
+        : resolvedGitSource_;
+  }
+
   public static final int FILE_HASHES_FIELD_NUMBER = 4;
 
   private static final class FileHashesDefaultEntryHolder {
@@ -436,6 +561,12 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(9, getResolvedStorageSourceManifest());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(10, getResolvedConnectedRepository());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(11, getResolvedGitSource());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -468,6 +599,14 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               9, getResolvedStorageSourceManifest());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, getResolvedConnectedRepository());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getResolvedGitSource());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -498,6 +637,15 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
       if (!getResolvedStorageSourceManifest().equals(other.getResolvedStorageSourceManifest()))
         return false;
     }
+    if (hasResolvedConnectedRepository() != other.hasResolvedConnectedRepository()) return false;
+    if (hasResolvedConnectedRepository()) {
+      if (!getResolvedConnectedRepository().equals(other.getResolvedConnectedRepository()))
+        return false;
+    }
+    if (hasResolvedGitSource() != other.hasResolvedGitSource()) return false;
+    if (hasResolvedGitSource()) {
+      if (!getResolvedGitSource().equals(other.getResolvedGitSource())) return false;
+    }
     if (!internalGetFileHashes().equals(other.internalGetFileHashes())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -521,6 +669,14 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
     if (hasResolvedStorageSourceManifest()) {
       hash = (37 * hash) + RESOLVED_STORAGE_SOURCE_MANIFEST_FIELD_NUMBER;
       hash = (53 * hash) + getResolvedStorageSourceManifest().hashCode();
+    }
+    if (hasResolvedConnectedRepository()) {
+      hash = (37 * hash) + RESOLVED_CONNECTED_REPOSITORY_FIELD_NUMBER;
+      hash = (53 * hash) + getResolvedConnectedRepository().hashCode();
+    }
+    if (hasResolvedGitSource()) {
+      hash = (37 * hash) + RESOLVED_GIT_SOURCE_FIELD_NUMBER;
+      hash = (53 * hash) + getResolvedGitSource().hashCode();
     }
     if (!internalGetFileHashes().getMap().isEmpty()) {
       hash = (37 * hash) + FILE_HASHES_FIELD_NUMBER;
@@ -693,6 +849,8 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
         getResolvedStorageSourceFieldBuilder();
         getResolvedRepoSourceFieldBuilder();
         getResolvedStorageSourceManifestFieldBuilder();
+        getResolvedConnectedRepositoryFieldBuilder();
+        getResolvedGitSourceFieldBuilder();
       }
     }
 
@@ -714,6 +872,16 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
       if (resolvedStorageSourceManifestBuilder_ != null) {
         resolvedStorageSourceManifestBuilder_.dispose();
         resolvedStorageSourceManifestBuilder_ = null;
+      }
+      resolvedConnectedRepository_ = null;
+      if (resolvedConnectedRepositoryBuilder_ != null) {
+        resolvedConnectedRepositoryBuilder_.dispose();
+        resolvedConnectedRepositoryBuilder_ = null;
+      }
+      resolvedGitSource_ = null;
+      if (resolvedGitSourceBuilder_ != null) {
+        resolvedGitSourceBuilder_.dispose();
+        resolvedGitSourceBuilder_ = null;
       }
       internalGetMutableFileHashes().clear();
       return this;
@@ -775,6 +943,20 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.resolvedConnectedRepository_ =
+            resolvedConnectedRepositoryBuilder_ == null
+                ? resolvedConnectedRepository_
+                : resolvedConnectedRepositoryBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.resolvedGitSource_ =
+            resolvedGitSourceBuilder_ == null
+                ? resolvedGitSource_
+                : resolvedGitSourceBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.fileHashes_ =
             internalGetFileHashes().build(FileHashesDefaultEntryHolder.defaultEntry);
       }
@@ -835,8 +1017,14 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
       if (other.hasResolvedStorageSourceManifest()) {
         mergeResolvedStorageSourceManifest(other.getResolvedStorageSourceManifest());
       }
+      if (other.hasResolvedConnectedRepository()) {
+        mergeResolvedConnectedRepository(other.getResolvedConnectedRepository());
+      }
+      if (other.hasResolvedGitSource()) {
+        mergeResolvedGitSource(other.getResolvedGitSource());
+      }
       internalGetMutableFileHashes().mergeFrom(other.internalGetFileHashes());
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -880,7 +1068,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
                 internalGetMutableFileHashes()
                     .ensureBuilderMap()
                     .put(fileHashes__.getKey(), fileHashes__.getValue());
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
             case 50:
@@ -897,6 +1085,20 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000004;
                 break;
               } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    getResolvedConnectedRepositoryFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 82
+            case 90:
+              {
+                input.readMessage(
+                    getResolvedGitSourceFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1561,6 +1763,455 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
       return resolvedStorageSourceManifestBuilder_;
     }
 
+    private com.google.cloudbuild.v1.ConnectedRepository resolvedConnectedRepository_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.ConnectedRepository,
+            com.google.cloudbuild.v1.ConnectedRepository.Builder,
+            com.google.cloudbuild.v1.ConnectedRepositoryOrBuilder>
+        resolvedConnectedRepositoryBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A copy of the build's `source.connected_repository`, if
+     * exists, with any revisions resolved.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.ConnectedRepository resolved_connected_repository = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the resolvedConnectedRepository field is set.
+     */
+    public boolean hasResolvedConnectedRepository() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A copy of the build's `source.connected_repository`, if
+     * exists, with any revisions resolved.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.ConnectedRepository resolved_connected_repository = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The resolvedConnectedRepository.
+     */
+    public com.google.cloudbuild.v1.ConnectedRepository getResolvedConnectedRepository() {
+      if (resolvedConnectedRepositoryBuilder_ == null) {
+        return resolvedConnectedRepository_ == null
+            ? com.google.cloudbuild.v1.ConnectedRepository.getDefaultInstance()
+            : resolvedConnectedRepository_;
+      } else {
+        return resolvedConnectedRepositoryBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A copy of the build's `source.connected_repository`, if
+     * exists, with any revisions resolved.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.ConnectedRepository resolved_connected_repository = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setResolvedConnectedRepository(
+        com.google.cloudbuild.v1.ConnectedRepository value) {
+      if (resolvedConnectedRepositoryBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        resolvedConnectedRepository_ = value;
+      } else {
+        resolvedConnectedRepositoryBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A copy of the build's `source.connected_repository`, if
+     * exists, with any revisions resolved.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.ConnectedRepository resolved_connected_repository = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setResolvedConnectedRepository(
+        com.google.cloudbuild.v1.ConnectedRepository.Builder builderForValue) {
+      if (resolvedConnectedRepositoryBuilder_ == null) {
+        resolvedConnectedRepository_ = builderForValue.build();
+      } else {
+        resolvedConnectedRepositoryBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A copy of the build's `source.connected_repository`, if
+     * exists, with any revisions resolved.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.ConnectedRepository resolved_connected_repository = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeResolvedConnectedRepository(
+        com.google.cloudbuild.v1.ConnectedRepository value) {
+      if (resolvedConnectedRepositoryBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && resolvedConnectedRepository_ != null
+            && resolvedConnectedRepository_
+                != com.google.cloudbuild.v1.ConnectedRepository.getDefaultInstance()) {
+          getResolvedConnectedRepositoryBuilder().mergeFrom(value);
+        } else {
+          resolvedConnectedRepository_ = value;
+        }
+      } else {
+        resolvedConnectedRepositoryBuilder_.mergeFrom(value);
+      }
+      if (resolvedConnectedRepository_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A copy of the build's `source.connected_repository`, if
+     * exists, with any revisions resolved.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.ConnectedRepository resolved_connected_repository = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearResolvedConnectedRepository() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      resolvedConnectedRepository_ = null;
+      if (resolvedConnectedRepositoryBuilder_ != null) {
+        resolvedConnectedRepositoryBuilder_.dispose();
+        resolvedConnectedRepositoryBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A copy of the build's `source.connected_repository`, if
+     * exists, with any revisions resolved.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.ConnectedRepository resolved_connected_repository = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.ConnectedRepository.Builder
+        getResolvedConnectedRepositoryBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getResolvedConnectedRepositoryFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A copy of the build's `source.connected_repository`, if
+     * exists, with any revisions resolved.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.ConnectedRepository resolved_connected_repository = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.ConnectedRepositoryOrBuilder
+        getResolvedConnectedRepositoryOrBuilder() {
+      if (resolvedConnectedRepositoryBuilder_ != null) {
+        return resolvedConnectedRepositoryBuilder_.getMessageOrBuilder();
+      } else {
+        return resolvedConnectedRepository_ == null
+            ? com.google.cloudbuild.v1.ConnectedRepository.getDefaultInstance()
+            : resolvedConnectedRepository_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A copy of the build's `source.connected_repository`, if
+     * exists, with any revisions resolved.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.ConnectedRepository resolved_connected_repository = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.ConnectedRepository,
+            com.google.cloudbuild.v1.ConnectedRepository.Builder,
+            com.google.cloudbuild.v1.ConnectedRepositoryOrBuilder>
+        getResolvedConnectedRepositoryFieldBuilder() {
+      if (resolvedConnectedRepositoryBuilder_ == null) {
+        resolvedConnectedRepositoryBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloudbuild.v1.ConnectedRepository,
+                com.google.cloudbuild.v1.ConnectedRepository.Builder,
+                com.google.cloudbuild.v1.ConnectedRepositoryOrBuilder>(
+                getResolvedConnectedRepository(), getParentForChildren(), isClean());
+        resolvedConnectedRepository_ = null;
+      }
+      return resolvedConnectedRepositoryBuilder_;
+    }
+
+    private com.google.cloudbuild.v1.GitSource resolvedGitSource_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.GitSource,
+            com.google.cloudbuild.v1.GitSource.Builder,
+            com.google.cloudbuild.v1.GitSourceOrBuilder>
+        resolvedGitSourceBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A copy of the build's `source.git_source`, if exists, with any
+     * revisions resolved.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.GitSource resolved_git_source = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the resolvedGitSource field is set.
+     */
+    public boolean hasResolvedGitSource() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A copy of the build's `source.git_source`, if exists, with any
+     * revisions resolved.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.GitSource resolved_git_source = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The resolvedGitSource.
+     */
+    public com.google.cloudbuild.v1.GitSource getResolvedGitSource() {
+      if (resolvedGitSourceBuilder_ == null) {
+        return resolvedGitSource_ == null
+            ? com.google.cloudbuild.v1.GitSource.getDefaultInstance()
+            : resolvedGitSource_;
+      } else {
+        return resolvedGitSourceBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A copy of the build's `source.git_source`, if exists, with any
+     * revisions resolved.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.GitSource resolved_git_source = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setResolvedGitSource(com.google.cloudbuild.v1.GitSource value) {
+      if (resolvedGitSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        resolvedGitSource_ = value;
+      } else {
+        resolvedGitSourceBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A copy of the build's `source.git_source`, if exists, with any
+     * revisions resolved.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.GitSource resolved_git_source = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setResolvedGitSource(
+        com.google.cloudbuild.v1.GitSource.Builder builderForValue) {
+      if (resolvedGitSourceBuilder_ == null) {
+        resolvedGitSource_ = builderForValue.build();
+      } else {
+        resolvedGitSourceBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A copy of the build's `source.git_source`, if exists, with any
+     * revisions resolved.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.GitSource resolved_git_source = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeResolvedGitSource(com.google.cloudbuild.v1.GitSource value) {
+      if (resolvedGitSourceBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && resolvedGitSource_ != null
+            && resolvedGitSource_ != com.google.cloudbuild.v1.GitSource.getDefaultInstance()) {
+          getResolvedGitSourceBuilder().mergeFrom(value);
+        } else {
+          resolvedGitSource_ = value;
+        }
+      } else {
+        resolvedGitSourceBuilder_.mergeFrom(value);
+      }
+      if (resolvedGitSource_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A copy of the build's `source.git_source`, if exists, with any
+     * revisions resolved.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.GitSource resolved_git_source = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearResolvedGitSource() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      resolvedGitSource_ = null;
+      if (resolvedGitSourceBuilder_ != null) {
+        resolvedGitSourceBuilder_.dispose();
+        resolvedGitSourceBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A copy of the build's `source.git_source`, if exists, with any
+     * revisions resolved.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.GitSource resolved_git_source = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.GitSource.Builder getResolvedGitSourceBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getResolvedGitSourceFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A copy of the build's `source.git_source`, if exists, with any
+     * revisions resolved.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.GitSource resolved_git_source = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.GitSourceOrBuilder getResolvedGitSourceOrBuilder() {
+      if (resolvedGitSourceBuilder_ != null) {
+        return resolvedGitSourceBuilder_.getMessageOrBuilder();
+      } else {
+        return resolvedGitSource_ == null
+            ? com.google.cloudbuild.v1.GitSource.getDefaultInstance()
+            : resolvedGitSource_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A copy of the build's `source.git_source`, if exists, with any
+     * revisions resolved.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.GitSource resolved_git_source = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.GitSource,
+            com.google.cloudbuild.v1.GitSource.Builder,
+            com.google.cloudbuild.v1.GitSourceOrBuilder>
+        getResolvedGitSourceFieldBuilder() {
+      if (resolvedGitSourceBuilder_ == null) {
+        resolvedGitSourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloudbuild.v1.GitSource,
+                com.google.cloudbuild.v1.GitSource.Builder,
+                com.google.cloudbuild.v1.GitSourceOrBuilder>(
+                getResolvedGitSource(), getParentForChildren(), isClean());
+        resolvedGitSource_ = null;
+      }
+      return resolvedGitSourceBuilder_;
+    }
+
     private static final class FileHashesConverter
         implements com.google.protobuf.MapFieldBuilder.Converter<
             java.lang.String,
@@ -1613,7 +2264,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
       if (fileHashes_ == null) {
         fileHashes_ = new com.google.protobuf.MapFieldBuilder<>(fileHashesConverter);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return fileHashes_;
     }
@@ -1749,7 +2400,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearFileHashes() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       internalGetMutableFileHashes().clear();
       return this;
     }
@@ -1786,7 +2437,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloudbuild.v1.FileHashes>
         getMutableFileHashes() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       return internalGetMutableFileHashes().ensureMessageMap();
     }
 
@@ -1818,7 +2469,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException("map value");
       }
       internalGetMutableFileHashes().ensureBuilderMap().put(key, value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       return this;
     }
 
@@ -1851,7 +2502,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
         }
       }
       internalGetMutableFileHashes().ensureBuilderMap().putAll(values);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       return this;
     }
 

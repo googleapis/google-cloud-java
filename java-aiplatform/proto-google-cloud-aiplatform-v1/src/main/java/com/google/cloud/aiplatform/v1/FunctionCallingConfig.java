@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -382,6 +382,27 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
     return allowedFunctionNames_.getByteString(index);
   }
 
+  public static final int STREAM_FUNCTION_CALL_ARGUMENTS_FIELD_NUMBER = 4;
+  private boolean streamFunctionCallArguments_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When set to true, arguments of a single function call will be
+   * streamed out in multiple parts/contents/responses. Partial parameter
+   * results will be returned in the [FunctionCall.partial_args] field.
+   * </pre>
+   *
+   * <code>bool stream_function_call_arguments = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The streamFunctionCallArguments.
+   */
+  @java.lang.Override
+  public boolean getStreamFunctionCallArguments() {
+    return streamFunctionCallArguments_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -404,6 +425,9 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 2, allowedFunctionNames_.getRaw(i));
     }
+    if (streamFunctionCallArguments_ != false) {
+      output.writeBool(4, streamFunctionCallArguments_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -425,6 +449,10 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
       size += dataSize;
       size += 1 * getAllowedFunctionNamesList().size();
     }
+    if (streamFunctionCallArguments_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(4, streamFunctionCallArguments_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -443,6 +471,7 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
 
     if (mode_ != other.mode_) return false;
     if (!getAllowedFunctionNamesList().equals(other.getAllowedFunctionNamesList())) return false;
+    if (getStreamFunctionCallArguments() != other.getStreamFunctionCallArguments()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -460,6 +489,8 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
       hash = (37 * hash) + ALLOWED_FUNCTION_NAMES_FIELD_NUMBER;
       hash = (53 * hash) + getAllowedFunctionNamesList().hashCode();
     }
+    hash = (37 * hash) + STREAM_FUNCTION_CALL_ARGUMENTS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getStreamFunctionCallArguments());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -602,6 +633,7 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
       bitField0_ = 0;
       mode_ = 0;
       allowedFunctionNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      streamFunctionCallArguments_ = false;
       return this;
     }
 
@@ -644,6 +676,9 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
       if (((from_bitField0_ & 0x00000002) != 0)) {
         allowedFunctionNames_.makeImmutable();
         result.allowedFunctionNames_ = allowedFunctionNames_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.streamFunctionCallArguments_ = streamFunctionCallArguments_;
       }
     }
 
@@ -706,6 +741,9 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
         }
         onChanged();
       }
+      if (other.getStreamFunctionCallArguments() != false) {
+        setStreamFunctionCallArguments(other.getStreamFunctionCallArguments());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -745,6 +783,12 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
                 allowedFunctionNames_.add(s);
                 break;
               } // case 18
+            case 32:
+              {
+                streamFunctionCallArguments_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1077,6 +1121,71 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
       ensureAllowedFunctionNamesIsMutable();
       allowedFunctionNames_.add(value);
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private boolean streamFunctionCallArguments_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When set to true, arguments of a single function call will be
+     * streamed out in multiple parts/contents/responses. Partial parameter
+     * results will be returned in the [FunctionCall.partial_args] field.
+     * </pre>
+     *
+     * <code>bool stream_function_call_arguments = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The streamFunctionCallArguments.
+     */
+    @java.lang.Override
+    public boolean getStreamFunctionCallArguments() {
+      return streamFunctionCallArguments_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When set to true, arguments of a single function call will be
+     * streamed out in multiple parts/contents/responses. Partial parameter
+     * results will be returned in the [FunctionCall.partial_args] field.
+     * </pre>
+     *
+     * <code>bool stream_function_call_arguments = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The streamFunctionCallArguments to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStreamFunctionCallArguments(boolean value) {
+
+      streamFunctionCallArguments_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When set to true, arguments of a single function call will be
+     * streamed out in multiple parts/contents/responses. Partial parameter
+     * results will be returned in the [FunctionCall.partial_args] field.
+     * </pre>
+     *
+     * <code>bool stream_function_call_arguments = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStreamFunctionCallArguments() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      streamFunctionCallArguments_ = false;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,6 +68,10 @@ public final class OffersProto {
       internal_static_google_cloud_channel_v1_Period_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_channel_v1_Period_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_channel_v1_DiscountComponent_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_channel_v1_DiscountComponent_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -129,12 +133,15 @@ public final class OffersProto {
           + "\017PriceByResource\022<\n\r"
           + "resource_type\030\001 \001(\0162%.google.cloud.channel.v1.ResourceType\022-\n"
           + "\005price\030\002 \001(\0132\036.google.cloud.channel.v1.Price\0229\n"
-          + "\014price_phases\030\003 \003(\0132#.google.cloud.channel.v1.PricePhase\"\212\001\n"
+          + "\014price_phases\030\003 \003(\0132#.google.cloud.channel.v1.PricePhase\"\212\002\n"
           + "\005Price\022&\n\n"
           + "base_price\030\001 \001(\0132\022.google.type.Money\022\020\n"
           + "\010discount\030\002 \001(\001\022+\n"
-          + "\017effective_price\030\003 \001(\0132\022.google.type.Money\022\032\n"
-          + "\022external_price_uri\030\004 \001(\t\"\331\001\n\n"
+          + "\017effective_price\030\003 \001(\0132\022.google.type.Money\0225\n"
+          + "\014price_period\030\006 \001(\0132\037.google.cloud.channel.v1.Period\022\032\n"
+          + "\022external_price_uri\030\004 \001(\t\022G\n"
+          + "\023discount_components\030\005"
+          + " \003(\0132*.google.cloud.channel.v1.DiscountComponent\"\331\001\n\n"
           + "PricePhase\0228\n"
           + "\013period_type\030\001 \001(\0162#.google.cloud.channel.v1.PeriodType\022\024\n"
           + "\014first_period\030\002 \001(\005\022\023\n"
@@ -142,12 +149,18 @@ public final class OffersProto {
           + "\005price\030\004 \001(\0132\036.google.cloud.channel.v1.Price\0227\n"
           + "\013price_tiers\030\005 \003(\0132\".google.cloud.channel.v1.PriceTier\"i\n"
           + "\tPriceTier\022\026\n"
-          + "\016first_resource\030\001 \001(\005\022\025\n\r"
+          + "\016first_resource\030\001 \001(\005\022\025\n"
+          + "\r"
           + "last_resource\030\002 \001(\005\022-\n"
           + "\005price\030\003 \001(\0132\036.google.cloud.channel.v1.Price\"T\n"
           + "\006Period\022\020\n"
           + "\010duration\030\001 \001(\005\0228\n"
-          + "\013period_type\030\002 \001(\0162#.google.cloud.channel.v1.PeriodType*m\n"
+          + "\013period_type\030\002 \001(\0162#.google.cloud.channel.v1.PeriodType\"\263\001\n"
+          + "\021DiscountComponent\022\035\n"
+          + "\023discount_percentage\030\003 \001(\001H\000\022/\n"
+          + "\021discount_absolute\030\004 \001(\0132\022.google.type.MoneyH\000\022<\n\r"
+          + "discount_type\030\002 \001(\0162%.google.cloud.channel.v1.DiscountTypeB\020\n"
+          + "\016discount_value*m\n"
           + "\024PromotionalOrderType\022 \n"
           + "\034PROMOTIONAL_TYPE_UNSPECIFIED\020\000\022\017\n"
           + "\013NEW_UPGRADE\020\001\022\014\n"
@@ -177,9 +190,16 @@ public final class OffersProto {
           + "\027PERIOD_TYPE_UNSPECIFIED\020\000\022\007\n"
           + "\003DAY\020\001\022\t\n"
           + "\005MONTH\020\002\022\010\n"
-          + "\004YEAR\020\003Bc\n"
-          + "\033com.google.cloud.channel.v1B\013OffersProtoP\001Z5cloud.google.com/go/cha"
-          + "nnel/apiv1/channelpb;channelpbb\006proto3"
+          + "\004YEAR\020\003*\226\001\n"
+          + "\014DiscountType\022\035\n"
+          + "\031DISCOUNT_TYPE_UNSPECIFIED\020\000\022\025\n"
+          + "\021REGIONAL_DISCOUNT\020\001\022\030\n"
+          + "\024PROMOTIONAL_DISCOUNT\020\002\022\022\n"
+          + "\016SALES_DISCOUNT\020\003\022\023\n"
+          + "\017RESELLER_MARGIN\020\004\022\r\n"
+          + "\tDEAL_CODE\020\005Bc\n"
+          + "\033com.google.cloud.channel.v1B\013OffersProtoP\001Z5"
+          + "cloud.google.com/go/channel/apiv1/channelpb;channelpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -255,7 +275,12 @@ public final class OffersProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_channel_v1_Price_descriptor,
             new java.lang.String[] {
-              "BasePrice", "Discount", "EffectivePrice", "ExternalPriceUri",
+              "BasePrice",
+              "Discount",
+              "EffectivePrice",
+              "PricePeriod",
+              "ExternalPriceUri",
+              "DiscountComponents",
             });
     internal_static_google_cloud_channel_v1_PricePhase_descriptor =
         getDescriptor().getMessageTypes().get(7);
@@ -280,6 +305,14 @@ public final class OffersProto {
             internal_static_google_cloud_channel_v1_Period_descriptor,
             new java.lang.String[] {
               "Duration", "PeriodType",
+            });
+    internal_static_google_cloud_channel_v1_DiscountComponent_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_channel_v1_DiscountComponent_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_channel_v1_DiscountComponent_descriptor,
+            new java.lang.String[] {
+              "DiscountPercentage", "DiscountAbsolute", "DiscountType", "DiscountValue",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

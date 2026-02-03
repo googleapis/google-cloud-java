@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,7 +76,18 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * A list of cache tags used to identify cached objects. - Cache tags are specified when the response is first cached, by setting the `Cache-Tag` response header at the origin. - Multiple cache tags in the same invalidation request are treated as Boolean `OR` - for example, `tag1 OR tag2 OR tag3`. - If other fields are also specified, these are treated as Boolean `AND` with any tags. Up to 10 tags can be specified in a single invalidation request.
+   * A list of cache tags used to identify cached objects.
+   *
+   *
+   *    - Cache tags are specified when the response is first cached, by setting
+   *    the `Cache-Tag` response header at the origin.
+   *    - Multiple cache tags in the same invalidation request are treated as
+   *    Boolean `OR` - for example, `tag1 OR tag2 OR tag3`.
+   *    - If other fields are also specified, these are treated as Boolean `AND`
+   *    with any tags.
+   *
+   *
+   * Up to 10 tags can be specified in a single invalidation request.
    * </pre>
    *
    * <code>repeated string cache_tags = 29073078;</code>
@@ -91,7 +102,18 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * A list of cache tags used to identify cached objects. - Cache tags are specified when the response is first cached, by setting the `Cache-Tag` response header at the origin. - Multiple cache tags in the same invalidation request are treated as Boolean `OR` - for example, `tag1 OR tag2 OR tag3`. - If other fields are also specified, these are treated as Boolean `AND` with any tags. Up to 10 tags can be specified in a single invalidation request.
+   * A list of cache tags used to identify cached objects.
+   *
+   *
+   *    - Cache tags are specified when the response is first cached, by setting
+   *    the `Cache-Tag` response header at the origin.
+   *    - Multiple cache tags in the same invalidation request are treated as
+   *    Boolean `OR` - for example, `tag1 OR tag2 OR tag3`.
+   *    - If other fields are also specified, these are treated as Boolean `AND`
+   *    with any tags.
+   *
+   *
+   * Up to 10 tags can be specified in a single invalidation request.
    * </pre>
    *
    * <code>repeated string cache_tags = 29073078;</code>
@@ -106,7 +128,18 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * A list of cache tags used to identify cached objects. - Cache tags are specified when the response is first cached, by setting the `Cache-Tag` response header at the origin. - Multiple cache tags in the same invalidation request are treated as Boolean `OR` - for example, `tag1 OR tag2 OR tag3`. - If other fields are also specified, these are treated as Boolean `AND` with any tags. Up to 10 tags can be specified in a single invalidation request.
+   * A list of cache tags used to identify cached objects.
+   *
+   *
+   *    - Cache tags are specified when the response is first cached, by setting
+   *    the `Cache-Tag` response header at the origin.
+   *    - Multiple cache tags in the same invalidation request are treated as
+   *    Boolean `OR` - for example, `tag1 OR tag2 OR tag3`.
+   *    - If other fields are also specified, these are treated as Boolean `AND`
+   *    with any tags.
+   *
+   *
+   * Up to 10 tags can be specified in a single invalidation request.
    * </pre>
    *
    * <code>repeated string cache_tags = 29073078;</code>
@@ -122,7 +155,18 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * A list of cache tags used to identify cached objects. - Cache tags are specified when the response is first cached, by setting the `Cache-Tag` response header at the origin. - Multiple cache tags in the same invalidation request are treated as Boolean `OR` - for example, `tag1 OR tag2 OR tag3`. - If other fields are also specified, these are treated as Boolean `AND` with any tags. Up to 10 tags can be specified in a single invalidation request.
+   * A list of cache tags used to identify cached objects.
+   *
+   *
+   *    - Cache tags are specified when the response is first cached, by setting
+   *    the `Cache-Tag` response header at the origin.
+   *    - Multiple cache tags in the same invalidation request are treated as
+   *    Boolean `OR` - for example, `tag1 OR tag2 OR tag3`.
+   *    - If other fields are also specified, these are treated as Boolean `AND`
+   *    with any tags.
+   *
+   *
+   * Up to 10 tags can be specified in a single invalidation request.
    * </pre>
    *
    * <code>repeated string cache_tags = 29073078;</code>
@@ -143,7 +187,8 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * If set, this invalidation rule will only apply to requests with a Host header matching host.
+   * If set, this invalidation rule will only apply to requests with a Host
+   * header matching host.
    * </pre>
    *
    * <code>optional string host = 3208616;</code>
@@ -159,7 +204,8 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * If set, this invalidation rule will only apply to requests with a Host header matching host.
+   * If set, this invalidation rule will only apply to requests with a Host
+   * header matching host.
    * </pre>
    *
    * <code>optional string host = 3208616;</code>
@@ -183,7 +229,8 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * If set, this invalidation rule will only apply to requests with a Host header matching host.
+   * If set, this invalidation rule will only apply to requests with a Host
+   * header matching host.
    * </pre>
    *
    * <code>optional string host = 3208616;</code>
@@ -686,7 +733,18 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * A list of cache tags used to identify cached objects. - Cache tags are specified when the response is first cached, by setting the `Cache-Tag` response header at the origin. - Multiple cache tags in the same invalidation request are treated as Boolean `OR` - for example, `tag1 OR tag2 OR tag3`. - If other fields are also specified, these are treated as Boolean `AND` with any tags. Up to 10 tags can be specified in a single invalidation request.
+     * A list of cache tags used to identify cached objects.
+     *
+     *
+     *    - Cache tags are specified when the response is first cached, by setting
+     *    the `Cache-Tag` response header at the origin.
+     *    - Multiple cache tags in the same invalidation request are treated as
+     *    Boolean `OR` - for example, `tag1 OR tag2 OR tag3`.
+     *    - If other fields are also specified, these are treated as Boolean `AND`
+     *    with any tags.
+     *
+     *
+     * Up to 10 tags can be specified in a single invalidation request.
      * </pre>
      *
      * <code>repeated string cache_tags = 29073078;</code>
@@ -702,7 +760,18 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * A list of cache tags used to identify cached objects. - Cache tags are specified when the response is first cached, by setting the `Cache-Tag` response header at the origin. - Multiple cache tags in the same invalidation request are treated as Boolean `OR` - for example, `tag1 OR tag2 OR tag3`. - If other fields are also specified, these are treated as Boolean `AND` with any tags. Up to 10 tags can be specified in a single invalidation request.
+     * A list of cache tags used to identify cached objects.
+     *
+     *
+     *    - Cache tags are specified when the response is first cached, by setting
+     *    the `Cache-Tag` response header at the origin.
+     *    - Multiple cache tags in the same invalidation request are treated as
+     *    Boolean `OR` - for example, `tag1 OR tag2 OR tag3`.
+     *    - If other fields are also specified, these are treated as Boolean `AND`
+     *    with any tags.
+     *
+     *
+     * Up to 10 tags can be specified in a single invalidation request.
      * </pre>
      *
      * <code>repeated string cache_tags = 29073078;</code>
@@ -717,7 +786,18 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * A list of cache tags used to identify cached objects. - Cache tags are specified when the response is first cached, by setting the `Cache-Tag` response header at the origin. - Multiple cache tags in the same invalidation request are treated as Boolean `OR` - for example, `tag1 OR tag2 OR tag3`. - If other fields are also specified, these are treated as Boolean `AND` with any tags. Up to 10 tags can be specified in a single invalidation request.
+     * A list of cache tags used to identify cached objects.
+     *
+     *
+     *    - Cache tags are specified when the response is first cached, by setting
+     *    the `Cache-Tag` response header at the origin.
+     *    - Multiple cache tags in the same invalidation request are treated as
+     *    Boolean `OR` - for example, `tag1 OR tag2 OR tag3`.
+     *    - If other fields are also specified, these are treated as Boolean `AND`
+     *    with any tags.
+     *
+     *
+     * Up to 10 tags can be specified in a single invalidation request.
      * </pre>
      *
      * <code>repeated string cache_tags = 29073078;</code>
@@ -733,7 +813,18 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * A list of cache tags used to identify cached objects. - Cache tags are specified when the response is first cached, by setting the `Cache-Tag` response header at the origin. - Multiple cache tags in the same invalidation request are treated as Boolean `OR` - for example, `tag1 OR tag2 OR tag3`. - If other fields are also specified, these are treated as Boolean `AND` with any tags. Up to 10 tags can be specified in a single invalidation request.
+     * A list of cache tags used to identify cached objects.
+     *
+     *
+     *    - Cache tags are specified when the response is first cached, by setting
+     *    the `Cache-Tag` response header at the origin.
+     *    - Multiple cache tags in the same invalidation request are treated as
+     *    Boolean `OR` - for example, `tag1 OR tag2 OR tag3`.
+     *    - If other fields are also specified, these are treated as Boolean `AND`
+     *    with any tags.
+     *
+     *
+     * Up to 10 tags can be specified in a single invalidation request.
      * </pre>
      *
      * <code>repeated string cache_tags = 29073078;</code>
@@ -749,7 +840,18 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * A list of cache tags used to identify cached objects. - Cache tags are specified when the response is first cached, by setting the `Cache-Tag` response header at the origin. - Multiple cache tags in the same invalidation request are treated as Boolean `OR` - for example, `tag1 OR tag2 OR tag3`. - If other fields are also specified, these are treated as Boolean `AND` with any tags. Up to 10 tags can be specified in a single invalidation request.
+     * A list of cache tags used to identify cached objects.
+     *
+     *
+     *    - Cache tags are specified when the response is first cached, by setting
+     *    the `Cache-Tag` response header at the origin.
+     *    - Multiple cache tags in the same invalidation request are treated as
+     *    Boolean `OR` - for example, `tag1 OR tag2 OR tag3`.
+     *    - If other fields are also specified, these are treated as Boolean `AND`
+     *    with any tags.
+     *
+     *
+     * Up to 10 tags can be specified in a single invalidation request.
      * </pre>
      *
      * <code>repeated string cache_tags = 29073078;</code>
@@ -773,7 +875,18 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * A list of cache tags used to identify cached objects. - Cache tags are specified when the response is first cached, by setting the `Cache-Tag` response header at the origin. - Multiple cache tags in the same invalidation request are treated as Boolean `OR` - for example, `tag1 OR tag2 OR tag3`. - If other fields are also specified, these are treated as Boolean `AND` with any tags. Up to 10 tags can be specified in a single invalidation request.
+     * A list of cache tags used to identify cached objects.
+     *
+     *
+     *    - Cache tags are specified when the response is first cached, by setting
+     *    the `Cache-Tag` response header at the origin.
+     *    - Multiple cache tags in the same invalidation request are treated as
+     *    Boolean `OR` - for example, `tag1 OR tag2 OR tag3`.
+     *    - If other fields are also specified, these are treated as Boolean `AND`
+     *    with any tags.
+     *
+     *
+     * Up to 10 tags can be specified in a single invalidation request.
      * </pre>
      *
      * <code>repeated string cache_tags = 29073078;</code>
@@ -796,7 +909,18 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * A list of cache tags used to identify cached objects. - Cache tags are specified when the response is first cached, by setting the `Cache-Tag` response header at the origin. - Multiple cache tags in the same invalidation request are treated as Boolean `OR` - for example, `tag1 OR tag2 OR tag3`. - If other fields are also specified, these are treated as Boolean `AND` with any tags. Up to 10 tags can be specified in a single invalidation request.
+     * A list of cache tags used to identify cached objects.
+     *
+     *
+     *    - Cache tags are specified when the response is first cached, by setting
+     *    the `Cache-Tag` response header at the origin.
+     *    - Multiple cache tags in the same invalidation request are treated as
+     *    Boolean `OR` - for example, `tag1 OR tag2 OR tag3`.
+     *    - If other fields are also specified, these are treated as Boolean `AND`
+     *    with any tags.
+     *
+     *
+     * Up to 10 tags can be specified in a single invalidation request.
      * </pre>
      *
      * <code>repeated string cache_tags = 29073078;</code>
@@ -816,7 +940,18 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * A list of cache tags used to identify cached objects. - Cache tags are specified when the response is first cached, by setting the `Cache-Tag` response header at the origin. - Multiple cache tags in the same invalidation request are treated as Boolean `OR` - for example, `tag1 OR tag2 OR tag3`. - If other fields are also specified, these are treated as Boolean `AND` with any tags. Up to 10 tags can be specified in a single invalidation request.
+     * A list of cache tags used to identify cached objects.
+     *
+     *
+     *    - Cache tags are specified when the response is first cached, by setting
+     *    the `Cache-Tag` response header at the origin.
+     *    - Multiple cache tags in the same invalidation request are treated as
+     *    Boolean `OR` - for example, `tag1 OR tag2 OR tag3`.
+     *    - If other fields are also specified, these are treated as Boolean `AND`
+     *    with any tags.
+     *
+     *
+     * Up to 10 tags can be specified in a single invalidation request.
      * </pre>
      *
      * <code>repeated string cache_tags = 29073078;</code>
@@ -835,7 +970,18 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * A list of cache tags used to identify cached objects. - Cache tags are specified when the response is first cached, by setting the `Cache-Tag` response header at the origin. - Multiple cache tags in the same invalidation request are treated as Boolean `OR` - for example, `tag1 OR tag2 OR tag3`. - If other fields are also specified, these are treated as Boolean `AND` with any tags. Up to 10 tags can be specified in a single invalidation request.
+     * A list of cache tags used to identify cached objects.
+     *
+     *
+     *    - Cache tags are specified when the response is first cached, by setting
+     *    the `Cache-Tag` response header at the origin.
+     *    - Multiple cache tags in the same invalidation request are treated as
+     *    Boolean `OR` - for example, `tag1 OR tag2 OR tag3`.
+     *    - If other fields are also specified, these are treated as Boolean `AND`
+     *    with any tags.
+     *
+     *
+     * Up to 10 tags can be specified in a single invalidation request.
      * </pre>
      *
      * <code>repeated string cache_tags = 29073078;</code>
@@ -861,7 +1007,8 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * If set, this invalidation rule will only apply to requests with a Host header matching host.
+     * If set, this invalidation rule will only apply to requests with a Host
+     * header matching host.
      * </pre>
      *
      * <code>optional string host = 3208616;</code>
@@ -876,7 +1023,8 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * If set, this invalidation rule will only apply to requests with a Host header matching host.
+     * If set, this invalidation rule will only apply to requests with a Host
+     * header matching host.
      * </pre>
      *
      * <code>optional string host = 3208616;</code>
@@ -899,7 +1047,8 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * If set, this invalidation rule will only apply to requests with a Host header matching host.
+     * If set, this invalidation rule will only apply to requests with a Host
+     * header matching host.
      * </pre>
      *
      * <code>optional string host = 3208616;</code>
@@ -922,7 +1071,8 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * If set, this invalidation rule will only apply to requests with a Host header matching host.
+     * If set, this invalidation rule will only apply to requests with a Host
+     * header matching host.
      * </pre>
      *
      * <code>optional string host = 3208616;</code>
@@ -944,7 +1094,8 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * If set, this invalidation rule will only apply to requests with a Host header matching host.
+     * If set, this invalidation rule will only apply to requests with a Host
+     * header matching host.
      * </pre>
      *
      * <code>optional string host = 3208616;</code>
@@ -962,7 +1113,8 @@ public final class CacheInvalidationRule extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * If set, this invalidation rule will only apply to requests with a Host header matching host.
+     * If set, this invalidation rule will only apply to requests with a Host
+     * header matching host.
      * </pre>
      *
      * <code>optional string host = 3208616;</code>

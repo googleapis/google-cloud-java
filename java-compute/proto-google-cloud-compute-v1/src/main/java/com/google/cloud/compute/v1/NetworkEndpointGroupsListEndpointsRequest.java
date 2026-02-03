@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,7 +69,10 @@ public final class NetworkEndpointGroupsListEndpointsRequest
    *
    *
    * <pre>
-   * Optional query parameter for showing the health status of each network endpoint. Valid options are SKIP or SHOW. If you don't specify this parameter, the health status of network endpoints will not be provided.
+   * Optional query parameter for showing the health status of each network
+   * endpoint. Valid options are SKIP or SHOW. If you
+   * don't specify this parameter, the health status of network endpoints will
+   * not be provided.
    * </pre>
    *
    * Protobuf enum {@code
@@ -90,7 +93,8 @@ public final class NetworkEndpointGroupsListEndpointsRequest
      *
      *
      * <pre>
-     * Show the health status for each network endpoint. Impacts latency of the call.
+     * Show the health status for each network endpoint. Impacts latency of the
+     * call.
      * </pre>
      *
      * <code>SHOW = 2544381;</code>
@@ -124,7 +128,8 @@ public final class NetworkEndpointGroupsListEndpointsRequest
      *
      *
      * <pre>
-     * Show the health status for each network endpoint. Impacts latency of the call.
+     * Show the health status for each network endpoint. Impacts latency of the
+     * call.
      * </pre>
      *
      * <code>SHOW = 2544381;</code>
@@ -237,7 +242,10 @@ public final class NetworkEndpointGroupsListEndpointsRequest
    *
    *
    * <pre>
-   * Optional query parameter for showing the health status of each network endpoint. Valid options are SKIP or SHOW. If you don't specify this parameter, the health status of network endpoints will not be provided.
+   * Optional query parameter for showing the health status of each network
+   * endpoint. Valid options are SKIP or SHOW. If you
+   * don't specify this parameter, the health status of network endpoints will
+   * not be provided.
    * Check the HealthStatus enum for the list of possible values.
    * </pre>
    *
@@ -254,7 +262,10 @@ public final class NetworkEndpointGroupsListEndpointsRequest
    *
    *
    * <pre>
-   * Optional query parameter for showing the health status of each network endpoint. Valid options are SKIP or SHOW. If you don't specify this parameter, the health status of network endpoints will not be provided.
+   * Optional query parameter for showing the health status of each network
+   * endpoint. Valid options are SKIP or SHOW. If you
+   * don't specify this parameter, the health status of network endpoints will
+   * not be provided.
    * Check the HealthStatus enum for the list of possible values.
    * </pre>
    *
@@ -279,7 +290,10 @@ public final class NetworkEndpointGroupsListEndpointsRequest
    *
    *
    * <pre>
-   * Optional query parameter for showing the health status of each network endpoint. Valid options are SKIP or SHOW. If you don't specify this parameter, the health status of network endpoints will not be provided.
+   * Optional query parameter for showing the health status of each network
+   * endpoint. Valid options are SKIP or SHOW. If you
+   * don't specify this parameter, the health status of network endpoints will
+   * not be provided.
    * Check the HealthStatus enum for the list of possible values.
    * </pre>
    *
@@ -665,7 +679,10 @@ public final class NetworkEndpointGroupsListEndpointsRequest
      *
      *
      * <pre>
-     * Optional query parameter for showing the health status of each network endpoint. Valid options are SKIP or SHOW. If you don't specify this parameter, the health status of network endpoints will not be provided.
+     * Optional query parameter for showing the health status of each network
+     * endpoint. Valid options are SKIP or SHOW. If you
+     * don't specify this parameter, the health status of network endpoints will
+     * not be provided.
      * Check the HealthStatus enum for the list of possible values.
      * </pre>
      *
@@ -681,7 +698,10 @@ public final class NetworkEndpointGroupsListEndpointsRequest
      *
      *
      * <pre>
-     * Optional query parameter for showing the health status of each network endpoint. Valid options are SKIP or SHOW. If you don't specify this parameter, the health status of network endpoints will not be provided.
+     * Optional query parameter for showing the health status of each network
+     * endpoint. Valid options are SKIP or SHOW. If you
+     * don't specify this parameter, the health status of network endpoints will
+     * not be provided.
      * Check the HealthStatus enum for the list of possible values.
      * </pre>
      *
@@ -705,7 +725,10 @@ public final class NetworkEndpointGroupsListEndpointsRequest
      *
      *
      * <pre>
-     * Optional query parameter for showing the health status of each network endpoint. Valid options are SKIP or SHOW. If you don't specify this parameter, the health status of network endpoints will not be provided.
+     * Optional query parameter for showing the health status of each network
+     * endpoint. Valid options are SKIP or SHOW. If you
+     * don't specify this parameter, the health status of network endpoints will
+     * not be provided.
      * Check the HealthStatus enum for the list of possible values.
      * </pre>
      *
@@ -729,7 +752,10 @@ public final class NetworkEndpointGroupsListEndpointsRequest
      *
      *
      * <pre>
-     * Optional query parameter for showing the health status of each network endpoint. Valid options are SKIP or SHOW. If you don't specify this parameter, the health status of network endpoints will not be provided.
+     * Optional query parameter for showing the health status of each network
+     * endpoint. Valid options are SKIP or SHOW. If you
+     * don't specify this parameter, the health status of network endpoints will
+     * not be provided.
      * Check the HealthStatus enum for the list of possible values.
      * </pre>
      *
@@ -752,7 +778,10 @@ public final class NetworkEndpointGroupsListEndpointsRequest
      *
      *
      * <pre>
-     * Optional query parameter for showing the health status of each network endpoint. Valid options are SKIP or SHOW. If you don't specify this parameter, the health status of network endpoints will not be provided.
+     * Optional query parameter for showing the health status of each network
+     * endpoint. Valid options are SKIP or SHOW. If you
+     * don't specify this parameter, the health status of network endpoints will
+     * not be provided.
      * Check the HealthStatus enum for the list of possible values.
      * </pre>
      *
@@ -771,7 +800,10 @@ public final class NetworkEndpointGroupsListEndpointsRequest
      *
      *
      * <pre>
-     * Optional query parameter for showing the health status of each network endpoint. Valid options are SKIP or SHOW. If you don't specify this parameter, the health status of network endpoints will not be provided.
+     * Optional query parameter for showing the health status of each network
+     * endpoint. Valid options are SKIP or SHOW. If you
+     * don't specify this parameter, the health status of network endpoints will
+     * not be provided.
      * Check the HealthStatus enum for the list of possible values.
      * </pre>
      *

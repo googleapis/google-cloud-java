@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,7 +68,18 @@ public interface RouteAsPathOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed
+   * [Output Only] The type of the AS Path, which can be one of the following
+   * values:
+   * - 'AS_SET': unordered set of autonomous systems that the route
+   * in has traversed
+   * - 'AS_SEQUENCE': ordered set of autonomous
+   * systems that the route has traversed
+   * - 'AS_CONFED_SEQUENCE':
+   * ordered set of Member Autonomous Systems in the local confederation that
+   * the route has traversed
+   * - 'AS_CONFED_SET': unordered set of
+   * Member Autonomous Systems in the local confederation that the route has
+   * traversed
    * Check the PathSegmentType enum for the list of possible values.
    * </pre>
    *
@@ -82,7 +93,18 @@ public interface RouteAsPathOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed
+   * [Output Only] The type of the AS Path, which can be one of the following
+   * values:
+   * - 'AS_SET': unordered set of autonomous systems that the route
+   * in has traversed
+   * - 'AS_SEQUENCE': ordered set of autonomous
+   * systems that the route has traversed
+   * - 'AS_CONFED_SEQUENCE':
+   * ordered set of Member Autonomous Systems in the local confederation that
+   * the route has traversed
+   * - 'AS_CONFED_SET': unordered set of
+   * Member Autonomous Systems in the local confederation that the route has
+   * traversed
    * Check the PathSegmentType enum for the list of possible values.
    * </pre>
    *
@@ -96,7 +118,18 @@ public interface RouteAsPathOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed
+   * [Output Only] The type of the AS Path, which can be one of the following
+   * values:
+   * - 'AS_SET': unordered set of autonomous systems that the route
+   * in has traversed
+   * - 'AS_SEQUENCE': ordered set of autonomous
+   * systems that the route has traversed
+   * - 'AS_CONFED_SEQUENCE':
+   * ordered set of Member Autonomous Systems in the local confederation that
+   * the route has traversed
+   * - 'AS_CONFED_SET': unordered set of
+   * Member Autonomous Systems in the local confederation that the route has
+   * traversed
    * Check the PathSegmentType enum for the list of possible values.
    * </pre>
    *

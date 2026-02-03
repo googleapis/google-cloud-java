@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -287,8 +287,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Output only. Deprecated 'daos_version' field.
-   * Output only. The version of DAOS software running in the instance.
+   * Output only. Deprecated: The version of DAOS software running in the
+   * instance.
    * </pre>
    *
    * <code>string daos_version = 9 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
@@ -305,8 +305,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Output only. Deprecated 'daos_version' field.
-   * Output only. The version of DAOS software running in the instance.
+   * Output only. Deprecated: The version of DAOS software running in the
+   * instance.
    * </pre>
    *
    * <code>string daos_version = 9 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];

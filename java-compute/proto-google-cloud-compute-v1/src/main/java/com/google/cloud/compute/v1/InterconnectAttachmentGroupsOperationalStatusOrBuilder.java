@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -97,7 +97,7 @@ public interface InterconnectAttachmentGroupsOperationalStatusOrBuilder
    *
    *
    * <pre>
-   * Summarizes the status of the group.
+   * Output only. Summarizes the status of the group.
    * Check the GroupStatus enum for the list of possible values.
    * </pre>
    *
@@ -111,7 +111,7 @@ public interface InterconnectAttachmentGroupsOperationalStatusOrBuilder
    *
    *
    * <pre>
-   * Summarizes the status of the group.
+   * Output only. Summarizes the status of the group.
    * Check the GroupStatus enum for the list of possible values.
    * </pre>
    *
@@ -125,7 +125,7 @@ public interface InterconnectAttachmentGroupsOperationalStatusOrBuilder
    *
    *
    * <pre>
-   * Summarizes the status of the group.
+   * Output only. Summarizes the status of the group.
    * Check the GroupStatus enum for the list of possible values.
    * </pre>
    *
@@ -161,7 +161,7 @@ public interface InterconnectAttachmentGroupsOperationalStatusOrBuilder
    *
    *
    * <pre>
-   * The operational state of the group, including only active Attachments.
+   * Output only. The operational state of the group, including only active Attachments.
    * </pre>
    *
    * <code>
@@ -176,7 +176,7 @@ public interface InterconnectAttachmentGroupsOperationalStatusOrBuilder
    *
    *
    * <pre>
-   * The operational state of the group, including only active Attachments.
+   * Output only. The operational state of the group, including only active Attachments.
    * </pre>
    *
    * <code>
@@ -191,7 +191,7 @@ public interface InterconnectAttachmentGroupsOperationalStatusOrBuilder
    *
    *
    * <pre>
-   * The operational state of the group, including only active Attachments.
+   * Output only. The operational state of the group, including only active Attachments.
    * </pre>
    *
    * <code>

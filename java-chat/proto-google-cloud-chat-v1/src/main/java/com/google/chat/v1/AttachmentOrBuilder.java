@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,11 +28,12 @@ public interface AttachmentOrBuilder
    *
    *
    * <pre>
-   * Optional. Resource name of the attachment, in the form
-   * `spaces/{space}/messages/{message}/attachments/{attachment}`.
+   * Identifier. Resource name of the attachment.
+   *
+   * Format: `spaces/{space}/messages/{message}/attachments/{attachment}`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -42,11 +43,12 @@ public interface AttachmentOrBuilder
    *
    *
    * <pre>
-   * Optional. Resource name of the attachment, in the form
-   * `spaces/{space}/messages/{message}/attachments/{attachment}`.
+   * Identifier. Resource name of the attachment.
+   *
+   * Format: `spaces/{space}/messages/{message}/attachments/{attachment}`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

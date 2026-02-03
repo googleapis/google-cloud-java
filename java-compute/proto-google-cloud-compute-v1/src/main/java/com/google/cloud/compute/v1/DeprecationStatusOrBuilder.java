@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,10 @@ public interface DeprecationStatusOrBuilder
    *
    *
    * <pre>
-   * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DELETED. This is only informational and the status will not change unless the client explicitly changes it.
+   * An optional RFC3339 timestamp on or after which the state of this
+   * resource is intended to change to DELETED. This is only
+   * informational and the status will not change unless the client explicitly
+   * changes it.
    * </pre>
    *
    * <code>optional string deleted = 476721177;</code>
@@ -41,7 +44,10 @@ public interface DeprecationStatusOrBuilder
    *
    *
    * <pre>
-   * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DELETED. This is only informational and the status will not change unless the client explicitly changes it.
+   * An optional RFC3339 timestamp on or after which the state of this
+   * resource is intended to change to DELETED. This is only
+   * informational and the status will not change unless the client explicitly
+   * changes it.
    * </pre>
    *
    * <code>optional string deleted = 476721177;</code>
@@ -54,7 +60,10 @@ public interface DeprecationStatusOrBuilder
    *
    *
    * <pre>
-   * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DELETED. This is only informational and the status will not change unless the client explicitly changes it.
+   * An optional RFC3339 timestamp on or after which the state of this
+   * resource is intended to change to DELETED. This is only
+   * informational and the status will not change unless the client explicitly
+   * changes it.
    * </pre>
    *
    * <code>optional string deleted = 476721177;</code>
@@ -67,7 +76,10 @@ public interface DeprecationStatusOrBuilder
    *
    *
    * <pre>
-   * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DEPRECATED. This is only informational and the status will not change unless the client explicitly changes it.
+   * An optional RFC3339 timestamp on or after which the state of this
+   * resource is intended to change to DEPRECATED. This is only
+   * informational and the status will not change unless the client explicitly
+   * changes it.
    * </pre>
    *
    * <code>optional string deprecated = 515138995;</code>
@@ -80,7 +92,10 @@ public interface DeprecationStatusOrBuilder
    *
    *
    * <pre>
-   * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DEPRECATED. This is only informational and the status will not change unless the client explicitly changes it.
+   * An optional RFC3339 timestamp on or after which the state of this
+   * resource is intended to change to DEPRECATED. This is only
+   * informational and the status will not change unless the client explicitly
+   * changes it.
    * </pre>
    *
    * <code>optional string deprecated = 515138995;</code>
@@ -93,7 +108,10 @@ public interface DeprecationStatusOrBuilder
    *
    *
    * <pre>
-   * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DEPRECATED. This is only informational and the status will not change unless the client explicitly changes it.
+   * An optional RFC3339 timestamp on or after which the state of this
+   * resource is intended to change to DEPRECATED. This is only
+   * informational and the status will not change unless the client explicitly
+   * changes it.
    * </pre>
    *
    * <code>optional string deprecated = 515138995;</code>
@@ -106,7 +124,10 @@ public interface DeprecationStatusOrBuilder
    *
    *
    * <pre>
-   * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to OBSOLETE. This is only informational and the status will not change unless the client explicitly changes it.
+   * An optional RFC3339 timestamp on or after which the state of this
+   * resource is intended to change to OBSOLETE. This is only
+   * informational and the status will not change unless the client explicitly
+   * changes it.
    * </pre>
    *
    * <code>optional string obsolete = 357647769;</code>
@@ -119,7 +140,10 @@ public interface DeprecationStatusOrBuilder
    *
    *
    * <pre>
-   * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to OBSOLETE. This is only informational and the status will not change unless the client explicitly changes it.
+   * An optional RFC3339 timestamp on or after which the state of this
+   * resource is intended to change to OBSOLETE. This is only
+   * informational and the status will not change unless the client explicitly
+   * changes it.
    * </pre>
    *
    * <code>optional string obsolete = 357647769;</code>
@@ -132,7 +156,10 @@ public interface DeprecationStatusOrBuilder
    *
    *
    * <pre>
-   * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to OBSOLETE. This is only informational and the status will not change unless the client explicitly changes it.
+   * An optional RFC3339 timestamp on or after which the state of this
+   * resource is intended to change to OBSOLETE. This is only
+   * informational and the status will not change unless the client explicitly
+   * changes it.
    * </pre>
    *
    * <code>optional string obsolete = 357647769;</code>
@@ -145,7 +172,9 @@ public interface DeprecationStatusOrBuilder
    *
    *
    * <pre>
-   * The URL of the suggested replacement for a deprecated resource. The suggested replacement resource must be the same kind of resource as the deprecated resource.
+   * The URL of the suggested replacement for a deprecated resource.
+   * The suggested replacement resource must be the same kind of resource as the
+   * deprecated resource.
    * </pre>
    *
    * <code>optional string replacement = 430919186;</code>
@@ -158,7 +187,9 @@ public interface DeprecationStatusOrBuilder
    *
    *
    * <pre>
-   * The URL of the suggested replacement for a deprecated resource. The suggested replacement resource must be the same kind of resource as the deprecated resource.
+   * The URL of the suggested replacement for a deprecated resource.
+   * The suggested replacement resource must be the same kind of resource as the
+   * deprecated resource.
    * </pre>
    *
    * <code>optional string replacement = 430919186;</code>
@@ -171,7 +202,9 @@ public interface DeprecationStatusOrBuilder
    *
    *
    * <pre>
-   * The URL of the suggested replacement for a deprecated resource. The suggested replacement resource must be the same kind of resource as the deprecated resource.
+   * The URL of the suggested replacement for a deprecated resource.
+   * The suggested replacement resource must be the same kind of resource as the
+   * deprecated resource.
    * </pre>
    *
    * <code>optional string replacement = 430919186;</code>
@@ -184,7 +217,10 @@ public interface DeprecationStatusOrBuilder
    *
    *
    * <pre>
-   * The deprecation state of this resource. This can be ACTIVE, DEPRECATED, OBSOLETE, or DELETED. Operations which communicate the end of life date for an image, can use ACTIVE. Operations which create a new resource using a DEPRECATED resource will return successfully, but with a warning indicating the deprecated resource and recommending its replacement. Operations which use OBSOLETE or DELETED resources will be rejected and result in an error.
+   * The deprecation state of this resource. This can be ACTIVE,DEPRECATED, OBSOLETE, or DELETED.
+   * Operations which communicate the end of life date for an image, can useACTIVE. Operations which create a new resource using aDEPRECATED resource will return successfully, but with a
+   * warning indicating the deprecated resource and recommending its
+   * replacement. Operations which use OBSOLETE orDELETED resources will be rejected and result in an error.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -198,7 +234,10 @@ public interface DeprecationStatusOrBuilder
    *
    *
    * <pre>
-   * The deprecation state of this resource. This can be ACTIVE, DEPRECATED, OBSOLETE, or DELETED. Operations which communicate the end of life date for an image, can use ACTIVE. Operations which create a new resource using a DEPRECATED resource will return successfully, but with a warning indicating the deprecated resource and recommending its replacement. Operations which use OBSOLETE or DELETED resources will be rejected and result in an error.
+   * The deprecation state of this resource. This can be ACTIVE,DEPRECATED, OBSOLETE, or DELETED.
+   * Operations which communicate the end of life date for an image, can useACTIVE. Operations which create a new resource using aDEPRECATED resource will return successfully, but with a
+   * warning indicating the deprecated resource and recommending its
+   * replacement. Operations which use OBSOLETE orDELETED resources will be rejected and result in an error.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -212,7 +251,10 @@ public interface DeprecationStatusOrBuilder
    *
    *
    * <pre>
-   * The deprecation state of this resource. This can be ACTIVE, DEPRECATED, OBSOLETE, or DELETED. Operations which communicate the end of life date for an image, can use ACTIVE. Operations which create a new resource using a DEPRECATED resource will return successfully, but with a warning indicating the deprecated resource and recommending its replacement. Operations which use OBSOLETE or DELETED resources will be rejected and result in an error.
+   * The deprecation state of this resource. This can be ACTIVE,DEPRECATED, OBSOLETE, or DELETED.
+   * Operations which communicate the end of life date for an image, can useACTIVE. Operations which create a new resource using aDEPRECATED resource will return successfully, but with a
+   * warning indicating the deprecated resource and recommending its
+   * replacement. Operations which use OBSOLETE orDELETED resources will be rejected and result in an error.
    * Check the State enum for the list of possible values.
    * </pre>
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ public interface InstancesSetNameRequestOrBuilder
    *
    *
    * <pre>
-   * The current name of this resource, used to prevent conflicts. Provide the latest name when making a request to change name.
+   * The current name of this resource, used to prevent conflicts. Provide the
+   * latest name when making a request to change name.
    * </pre>
    *
    * <code>optional string current_name = 394983825;</code>
@@ -41,7 +42,8 @@ public interface InstancesSetNameRequestOrBuilder
    *
    *
    * <pre>
-   * The current name of this resource, used to prevent conflicts. Provide the latest name when making a request to change name.
+   * The current name of this resource, used to prevent conflicts. Provide the
+   * latest name when making a request to change name.
    * </pre>
    *
    * <code>optional string current_name = 394983825;</code>
@@ -54,7 +56,8 @@ public interface InstancesSetNameRequestOrBuilder
    *
    *
    * <pre>
-   * The current name of this resource, used to prevent conflicts. Provide the latest name when making a request to change name.
+   * The current name of this resource, used to prevent conflicts. Provide the
+   * latest name when making a request to change name.
    * </pre>
    *
    * <code>optional string current_name = 394983825;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,25 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Provides the configuration for logging a type of permissions. Example: { "audit_log_configs": [ { "log_type": "DATA_READ", "exempted_members": [ "user:jose&#64;example.com" ] }, { "log_type": "DATA_WRITE" } ] } This enables 'DATA_READ' and 'DATA_WRITE' logging, while exempting jose&#64;example.com from DATA_READ logging.
+ * Provides the configuration for logging a type of permissions.
+ * Example:
+ *
+ *     {
+ *       "audit_log_configs": [
+ *         {
+ *           "log_type": "DATA_READ",
+ *           "exempted_members": [
+ *             "user:jose&#64;example.com"
+ *           ]
+ *         },
+ *         {
+ *           "log_type": "DATA_WRITE"
+ *         }
+ *       ]
+ *     }
+ *
+ * This enables 'DATA_READ' and 'DATA_WRITE' logging, while exempting
+ * jose&#64;example.com from DATA_READ logging.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.AuditLogConfig}
@@ -281,7 +299,9 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the identities that do not cause logging for this type of permission. Follows the same format of Binding.members.
+   * Specifies the identities that do not cause logging for this type of
+   * permission.
+   * Follows the same format of Binding.members.
    * </pre>
    *
    * <code>repeated string exempted_members = 232615576;</code>
@@ -296,7 +316,9 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the identities that do not cause logging for this type of permission. Follows the same format of Binding.members.
+   * Specifies the identities that do not cause logging for this type of
+   * permission.
+   * Follows the same format of Binding.members.
    * </pre>
    *
    * <code>repeated string exempted_members = 232615576;</code>
@@ -311,7 +333,9 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the identities that do not cause logging for this type of permission. Follows the same format of Binding.members.
+   * Specifies the identities that do not cause logging for this type of
+   * permission.
+   * Follows the same format of Binding.members.
    * </pre>
    *
    * <code>repeated string exempted_members = 232615576;</code>
@@ -327,7 +351,9 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the identities that do not cause logging for this type of permission. Follows the same format of Binding.members.
+   * Specifies the identities that do not cause logging for this type of
+   * permission.
+   * Follows the same format of Binding.members.
    * </pre>
    *
    * <code>repeated string exempted_members = 232615576;</code>
@@ -635,7 +661,25 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Provides the configuration for logging a type of permissions. Example: { "audit_log_configs": [ { "log_type": "DATA_READ", "exempted_members": [ "user:jose&#64;example.com" ] }, { "log_type": "DATA_WRITE" } ] } This enables 'DATA_READ' and 'DATA_WRITE' logging, while exempting jose&#64;example.com from DATA_READ logging.
+   * Provides the configuration for logging a type of permissions.
+   * Example:
+   *
+   *     {
+   *       "audit_log_configs": [
+   *         {
+   *           "log_type": "DATA_READ",
+   *           "exempted_members": [
+   *             "user:jose&#64;example.com"
+   *           ]
+   *         },
+   *         {
+   *           "log_type": "DATA_WRITE"
+   *         }
+   *       ]
+   *     }
+   *
+   * This enables 'DATA_READ' and 'DATA_WRITE' logging, while exempting
+   * jose&#64;example.com from DATA_READ logging.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.AuditLogConfig}
@@ -866,7 +910,9 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the identities that do not cause logging for this type of permission. Follows the same format of Binding.members.
+     * Specifies the identities that do not cause logging for this type of
+     * permission.
+     * Follows the same format of Binding.members.
      * </pre>
      *
      * <code>repeated string exempted_members = 232615576;</code>
@@ -882,7 +928,9 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the identities that do not cause logging for this type of permission. Follows the same format of Binding.members.
+     * Specifies the identities that do not cause logging for this type of
+     * permission.
+     * Follows the same format of Binding.members.
      * </pre>
      *
      * <code>repeated string exempted_members = 232615576;</code>
@@ -897,7 +945,9 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the identities that do not cause logging for this type of permission. Follows the same format of Binding.members.
+     * Specifies the identities that do not cause logging for this type of
+     * permission.
+     * Follows the same format of Binding.members.
      * </pre>
      *
      * <code>repeated string exempted_members = 232615576;</code>
@@ -913,7 +963,9 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the identities that do not cause logging for this type of permission. Follows the same format of Binding.members.
+     * Specifies the identities that do not cause logging for this type of
+     * permission.
+     * Follows the same format of Binding.members.
      * </pre>
      *
      * <code>repeated string exempted_members = 232615576;</code>
@@ -929,7 +981,9 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the identities that do not cause logging for this type of permission. Follows the same format of Binding.members.
+     * Specifies the identities that do not cause logging for this type of
+     * permission.
+     * Follows the same format of Binding.members.
      * </pre>
      *
      * <code>repeated string exempted_members = 232615576;</code>
@@ -953,7 +1007,9 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the identities that do not cause logging for this type of permission. Follows the same format of Binding.members.
+     * Specifies the identities that do not cause logging for this type of
+     * permission.
+     * Follows the same format of Binding.members.
      * </pre>
      *
      * <code>repeated string exempted_members = 232615576;</code>
@@ -976,7 +1032,9 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the identities that do not cause logging for this type of permission. Follows the same format of Binding.members.
+     * Specifies the identities that do not cause logging for this type of
+     * permission.
+     * Follows the same format of Binding.members.
      * </pre>
      *
      * <code>repeated string exempted_members = 232615576;</code>
@@ -996,7 +1054,9 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the identities that do not cause logging for this type of permission. Follows the same format of Binding.members.
+     * Specifies the identities that do not cause logging for this type of
+     * permission.
+     * Follows the same format of Binding.members.
      * </pre>
      *
      * <code>repeated string exempted_members = 232615576;</code>
@@ -1015,7 +1075,9 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the identities that do not cause logging for this type of permission. Follows the same format of Binding.members.
+     * Specifies the identities that do not cause logging for this type of
+     * permission.
+     * Follows the same format of Binding.members.
      * </pre>
      *
      * <code>repeated string exempted_members = 232615576;</code>

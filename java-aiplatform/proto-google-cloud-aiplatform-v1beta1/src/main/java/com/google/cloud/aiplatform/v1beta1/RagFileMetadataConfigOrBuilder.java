@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ public interface RagFileMetadataConfigOrBuilder
    * well as entire Google Cloud Storage directories. Sample formats:
    * - `gs://bucket_name/my_directory/object_name/metadata_schema.json`
    * - `gs://bucket_name/my_directory`
-   * If providing a directory, the metadata schema will be read from
+   * If the user provides a directory, the metadata schema will be read from
    * the files that ends with "metadata_schema.json" in the directory.
    * </pre>
    *
@@ -50,7 +50,7 @@ public interface RagFileMetadataConfigOrBuilder
    * well as entire Google Cloud Storage directories. Sample formats:
    * - `gs://bucket_name/my_directory/object_name/metadata_schema.json`
    * - `gs://bucket_name/my_directory`
-   * If providing a directory, the metadata schema will be read from
+   * If the user provides a directory, the metadata schema will be read from
    * the files that ends with "metadata_schema.json" in the directory.
    * </pre>
    *
@@ -68,7 +68,7 @@ public interface RagFileMetadataConfigOrBuilder
    * well as entire Google Cloud Storage directories. Sample formats:
    * - `gs://bucket_name/my_directory/object_name/metadata_schema.json`
    * - `gs://bucket_name/my_directory`
-   * If providing a directory, the metadata schema will be read from
+   * If the user provides a directory, the metadata schema will be read from
    * the files that ends with "metadata_schema.json" in the directory.
    * </pre>
    *
@@ -82,7 +82,7 @@ public interface RagFileMetadataConfigOrBuilder
    * <pre>
    * Google Drive location. Supports importing individual files as
    * well as Google Drive folders.
-   * If providing a folder, the metadata schema will be read from
+   * If the user provides a folder, the metadata schema will be read from
    * the files that ends with "metadata_schema.json" in the directory.
    * </pre>
    *
@@ -100,7 +100,7 @@ public interface RagFileMetadataConfigOrBuilder
    * <pre>
    * Google Drive location. Supports importing individual files as
    * well as Google Drive folders.
-   * If providing a folder, the metadata schema will be read from
+   * If the user provides a folder, the metadata schema will be read from
    * the files that ends with "metadata_schema.json" in the directory.
    * </pre>
    *
@@ -118,7 +118,7 @@ public interface RagFileMetadataConfigOrBuilder
    * <pre>
    * Google Drive location. Supports importing individual files as
    * well as Google Drive folders.
-   * If providing a folder, the metadata schema will be read from
+   * If the user provides a folder, the metadata schema will be read from
    * the files that ends with "metadata_schema.json" in the directory.
    * </pre>
    *
@@ -176,7 +176,7 @@ public interface RagFileMetadataConfigOrBuilder
    * well as entire Google Cloud Storage directories. Sample formats:
    * - `gs://bucket_name/my_directory/object_name/metadata.json`
    * - `gs://bucket_name/my_directory`
-   * If providing a directory, the metadata will be read from
+   * If the user provides a directory, the metadata will be read from
    * the files that ends with "metadata.json" in the directory.
    * </pre>
    *
@@ -194,7 +194,7 @@ public interface RagFileMetadataConfigOrBuilder
    * well as entire Google Cloud Storage directories. Sample formats:
    * - `gs://bucket_name/my_directory/object_name/metadata.json`
    * - `gs://bucket_name/my_directory`
-   * If providing a directory, the metadata will be read from
+   * If the user provides a directory, the metadata will be read from
    * the files that ends with "metadata.json" in the directory.
    * </pre>
    *
@@ -212,7 +212,7 @@ public interface RagFileMetadataConfigOrBuilder
    * well as entire Google Cloud Storage directories. Sample formats:
    * - `gs://bucket_name/my_directory/object_name/metadata.json`
    * - `gs://bucket_name/my_directory`
-   * If providing a directory, the metadata will be read from
+   * If the user provides a directory, the metadata will be read from
    * the files that ends with "metadata.json" in the directory.
    * </pre>
    *
@@ -226,7 +226,7 @@ public interface RagFileMetadataConfigOrBuilder
    * <pre>
    * Google Drive location. Supports importing individual files as
    * well as Google Drive folders.
-   * If providing a directory, the metadata will be read from
+   * If the user provides a directory, the metadata will be read from
    * the files that ends with "metadata.json" in the directory.
    * </pre>
    *
@@ -243,7 +243,7 @@ public interface RagFileMetadataConfigOrBuilder
    * <pre>
    * Google Drive location. Supports importing individual files as
    * well as Google Drive folders.
-   * If providing a directory, the metadata will be read from
+   * If the user provides a directory, the metadata will be read from
    * the files that ends with "metadata.json" in the directory.
    * </pre>
    *
@@ -260,7 +260,7 @@ public interface RagFileMetadataConfigOrBuilder
    * <pre>
    * Google Drive location. Supports importing individual files as
    * well as Google Drive folders.
-   * If providing a directory, the metadata will be read from
+   * If the user provides a directory, the metadata will be read from
    * the files that ends with "metadata.json" in the directory.
    * </pre>
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,6 +60,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     restrictedActions_ = java.util.Collections.emptyList();
     replicaZone_ = "";
     zone_ = "";
+    blockDevices_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -2389,6 +2390,65 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     return throughputMibps_;
   }
 
+  public static final int CACHE_PARAMETERS_FIELD_NUMBER = 42;
+  private com.google.cloud.netapp.v1.CacheParameters cacheParameters_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cache parameters for the volume.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.CacheParameters cache_parameters = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the cacheParameters field is set.
+   */
+  @java.lang.Override
+  public boolean hasCacheParameters() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cache parameters for the volume.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.CacheParameters cache_parameters = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The cacheParameters.
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.CacheParameters getCacheParameters() {
+    return cacheParameters_ == null
+        ? com.google.cloud.netapp.v1.CacheParameters.getDefaultInstance()
+        : cacheParameters_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cache parameters for the volume.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.CacheParameters cache_parameters = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.CacheParametersOrBuilder getCacheParametersOrBuilder() {
+    return cacheParameters_ == null
+        ? com.google.cloud.netapp.v1.CacheParameters.getDefaultInstance()
+        : cacheParameters_;
+  }
+
   public static final int HOT_TIER_SIZE_USED_GIB_FIELD_NUMBER = 44;
   private long hotTierSizeUsedGib_ = 0L;
 
@@ -2407,6 +2467,97 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public long getHotTierSizeUsedGib() {
     return hotTierSizeUsedGib_;
+  }
+
+  public static final int BLOCK_DEVICES_FIELD_NUMBER = 45;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.netapp.v1.BlockDevice> blockDevices_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Block devices for the volume.
+   * Currently, only one block device is permitted per Volume.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.netapp.v1.BlockDevice block_devices = 45 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.netapp.v1.BlockDevice> getBlockDevicesList() {
+    return blockDevices_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Block devices for the volume.
+   * Currently, only one block device is permitted per Volume.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.netapp.v1.BlockDevice block_devices = 45 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.netapp.v1.BlockDeviceOrBuilder>
+      getBlockDevicesOrBuilderList() {
+    return blockDevices_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Block devices for the volume.
+   * Currently, only one block device is permitted per Volume.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.netapp.v1.BlockDevice block_devices = 45 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getBlockDevicesCount() {
+    return blockDevices_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Block devices for the volume.
+   * Currently, only one block device is permitted per Volume.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.netapp.v1.BlockDevice block_devices = 45 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.BlockDevice getBlockDevices(int index) {
+    return blockDevices_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Block devices for the volume.
+   * Currently, only one block device is permitted per Volume.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.netapp.v1.BlockDevice block_devices = 45 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.BlockDeviceOrBuilder getBlockDevicesOrBuilder(int index) {
+    return blockDevices_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2555,8 +2706,14 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     if (java.lang.Double.doubleToRawLongBits(throughputMibps_) != 0) {
       output.writeDouble(41, throughputMibps_);
     }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeMessage(42, getCacheParameters());
+    }
     if (hotTierSizeUsedGib_ != 0L) {
       output.writeInt64(44, hotTierSizeUsedGib_);
+    }
+    for (int i = 0; i < blockDevices_.size(); i++) {
+      output.writeMessage(45, blockDevices_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -2724,8 +2881,14 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     if (java.lang.Double.doubleToRawLongBits(throughputMibps_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(41, throughputMibps_);
     }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(42, getCacheParameters());
+    }
     if (hotTierSizeUsedGib_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(44, hotTierSizeUsedGib_);
+    }
+    for (int i = 0; i < blockDevices_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(45, blockDevices_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2805,7 +2968,12 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
     if (java.lang.Double.doubleToLongBits(getThroughputMibps())
         != java.lang.Double.doubleToLongBits(other.getThroughputMibps())) return false;
+    if (hasCacheParameters() != other.hasCacheParameters()) return false;
+    if (hasCacheParameters()) {
+      if (!getCacheParameters().equals(other.getCacheParameters())) return false;
+    }
     if (getHotTierSizeUsedGib() != other.getHotTierSizeUsedGib()) return false;
+    if (!getBlockDevicesList().equals(other.getBlockDevicesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2925,8 +3093,16 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         (53 * hash)
             + com.google.protobuf.Internal.hashLong(
                 java.lang.Double.doubleToLongBits(getThroughputMibps()));
+    if (hasCacheParameters()) {
+      hash = (37 * hash) + CACHE_PARAMETERS_FIELD_NUMBER;
+      hash = (53 * hash) + getCacheParameters().hashCode();
+    }
     hash = (37 * hash) + HOT_TIER_SIZE_USED_GIB_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getHotTierSizeUsedGib());
+    if (getBlockDevicesCount() > 0) {
+      hash = (37 * hash) + BLOCK_DEVICES_FIELD_NUMBER;
+      hash = (53 * hash) + getBlockDevicesList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -3097,6 +3273,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         getBackupConfigFieldBuilder();
         getTieringPolicyFieldBuilder();
         getHybridReplicationParametersFieldBuilder();
+        getCacheParametersFieldBuilder();
+        getBlockDevicesFieldBuilder();
       }
     }
 
@@ -3181,7 +3359,19 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         hybridReplicationParametersBuilder_ = null;
       }
       throughputMibps_ = 0D;
+      cacheParameters_ = null;
+      if (cacheParametersBuilder_ != null) {
+        cacheParametersBuilder_.dispose();
+        cacheParametersBuilder_ = null;
+      }
       hotTierSizeUsedGib_ = 0L;
+      if (blockDevicesBuilder_ == null) {
+        blockDevices_ = java.util.Collections.emptyList();
+      } else {
+        blockDevices_ = null;
+        blockDevicesBuilder_.clear();
+      }
+      bitField1_ = (bitField1_ & ~0x00000200);
       return this;
     }
 
@@ -3244,6 +3434,15 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x40000000);
       }
       result.restrictedActions_ = restrictedActions_;
+      if (blockDevicesBuilder_ == null) {
+        if (((bitField1_ & 0x00000200) != 0)) {
+          blockDevices_ = java.util.Collections.unmodifiableList(blockDevices_);
+          bitField1_ = (bitField1_ & ~0x00000200);
+        }
+        result.blockDevices_ = blockDevices_;
+      } else {
+        result.blockDevices_ = blockDevicesBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.netapp.v1.Volume result) {
@@ -3379,6 +3578,11 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         result.throughputMibps_ = throughputMibps_;
       }
       if (((from_bitField1_ & 0x00000080) != 0)) {
+        result.cacheParameters_ =
+            cacheParametersBuilder_ == null ? cacheParameters_ : cacheParametersBuilder_.build();
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField1_ & 0x00000100) != 0)) {
         result.hotTierSizeUsedGib_ = hotTierSizeUsedGib_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -3614,8 +3818,38 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       if (other.getThroughputMibps() != 0D) {
         setThroughputMibps(other.getThroughputMibps());
       }
+      if (other.hasCacheParameters()) {
+        mergeCacheParameters(other.getCacheParameters());
+      }
       if (other.getHotTierSizeUsedGib() != 0L) {
         setHotTierSizeUsedGib(other.getHotTierSizeUsedGib());
+      }
+      if (blockDevicesBuilder_ == null) {
+        if (!other.blockDevices_.isEmpty()) {
+          if (blockDevices_.isEmpty()) {
+            blockDevices_ = other.blockDevices_;
+            bitField1_ = (bitField1_ & ~0x00000200);
+          } else {
+            ensureBlockDevicesIsMutable();
+            blockDevices_.addAll(other.blockDevices_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.blockDevices_.isEmpty()) {
+          if (blockDevicesBuilder_.isEmpty()) {
+            blockDevicesBuilder_.dispose();
+            blockDevicesBuilder_ = null;
+            blockDevices_ = other.blockDevices_;
+            bitField1_ = (bitField1_ & ~0x00000200);
+            blockDevicesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getBlockDevicesFieldBuilder()
+                    : null;
+          } else {
+            blockDevicesBuilder_.addAllMessages(other.blockDevices_);
+          }
+        }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3931,12 +4165,31 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x00000040;
                 break;
               } // case 329
+            case 338:
+              {
+                input.readMessage(getCacheParametersFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000080;
+                break;
+              } // case 338
             case 352:
               {
                 hotTierSizeUsedGib_ = input.readInt64();
-                bitField1_ |= 0x00000080;
+                bitField1_ |= 0x00000100;
                 break;
               } // case 352
+            case 362:
+              {
+                com.google.cloud.netapp.v1.BlockDevice m =
+                    input.readMessage(
+                        com.google.cloud.netapp.v1.BlockDevice.parser(), extensionRegistry);
+                if (blockDevicesBuilder_ == null) {
+                  ensureBlockDevicesIsMutable();
+                  blockDevices_.add(m);
+                } else {
+                  blockDevicesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 362
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9218,6 +9471,220 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.netapp.v1.CacheParameters cacheParameters_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.netapp.v1.CacheParameters,
+            com.google.cloud.netapp.v1.CacheParameters.Builder,
+            com.google.cloud.netapp.v1.CacheParametersOrBuilder>
+        cacheParametersBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cache parameters for the volume.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.CacheParameters cache_parameters = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the cacheParameters field is set.
+     */
+    public boolean hasCacheParameters() {
+      return ((bitField1_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cache parameters for the volume.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.CacheParameters cache_parameters = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The cacheParameters.
+     */
+    public com.google.cloud.netapp.v1.CacheParameters getCacheParameters() {
+      if (cacheParametersBuilder_ == null) {
+        return cacheParameters_ == null
+            ? com.google.cloud.netapp.v1.CacheParameters.getDefaultInstance()
+            : cacheParameters_;
+      } else {
+        return cacheParametersBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cache parameters for the volume.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.CacheParameters cache_parameters = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCacheParameters(com.google.cloud.netapp.v1.CacheParameters value) {
+      if (cacheParametersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cacheParameters_ = value;
+      } else {
+        cacheParametersBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cache parameters for the volume.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.CacheParameters cache_parameters = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCacheParameters(
+        com.google.cloud.netapp.v1.CacheParameters.Builder builderForValue) {
+      if (cacheParametersBuilder_ == null) {
+        cacheParameters_ = builderForValue.build();
+      } else {
+        cacheParametersBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cache parameters for the volume.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.CacheParameters cache_parameters = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeCacheParameters(com.google.cloud.netapp.v1.CacheParameters value) {
+      if (cacheParametersBuilder_ == null) {
+        if (((bitField1_ & 0x00000080) != 0)
+            && cacheParameters_ != null
+            && cacheParameters_
+                != com.google.cloud.netapp.v1.CacheParameters.getDefaultInstance()) {
+          getCacheParametersBuilder().mergeFrom(value);
+        } else {
+          cacheParameters_ = value;
+        }
+      } else {
+        cacheParametersBuilder_.mergeFrom(value);
+      }
+      if (cacheParameters_ != null) {
+        bitField1_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cache parameters for the volume.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.CacheParameters cache_parameters = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCacheParameters() {
+      bitField1_ = (bitField1_ & ~0x00000080);
+      cacheParameters_ = null;
+      if (cacheParametersBuilder_ != null) {
+        cacheParametersBuilder_.dispose();
+        cacheParametersBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cache parameters for the volume.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.CacheParameters cache_parameters = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.netapp.v1.CacheParameters.Builder getCacheParametersBuilder() {
+      bitField1_ |= 0x00000080;
+      onChanged();
+      return getCacheParametersFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cache parameters for the volume.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.CacheParameters cache_parameters = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.netapp.v1.CacheParametersOrBuilder getCacheParametersOrBuilder() {
+      if (cacheParametersBuilder_ != null) {
+        return cacheParametersBuilder_.getMessageOrBuilder();
+      } else {
+        return cacheParameters_ == null
+            ? com.google.cloud.netapp.v1.CacheParameters.getDefaultInstance()
+            : cacheParameters_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cache parameters for the volume.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.CacheParameters cache_parameters = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.netapp.v1.CacheParameters,
+            com.google.cloud.netapp.v1.CacheParameters.Builder,
+            com.google.cloud.netapp.v1.CacheParametersOrBuilder>
+        getCacheParametersFieldBuilder() {
+      if (cacheParametersBuilder_ == null) {
+        cacheParametersBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.netapp.v1.CacheParameters,
+                com.google.cloud.netapp.v1.CacheParameters.Builder,
+                com.google.cloud.netapp.v1.CacheParametersOrBuilder>(
+                getCacheParameters(), getParentForChildren(), isClean());
+        cacheParameters_ = null;
+      }
+      return cacheParametersBuilder_;
+    }
+
     private long hotTierSizeUsedGib_;
 
     /**
@@ -9253,7 +9720,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public Builder setHotTierSizeUsedGib(long value) {
 
       hotTierSizeUsedGib_ = value;
-      bitField1_ |= 0x00000080;
+      bitField1_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -9271,10 +9738,431 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHotTierSizeUsedGib() {
-      bitField1_ = (bitField1_ & ~0x00000080);
+      bitField1_ = (bitField1_ & ~0x00000100);
       hotTierSizeUsedGib_ = 0L;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.netapp.v1.BlockDevice> blockDevices_ =
+        java.util.Collections.emptyList();
+
+    private void ensureBlockDevicesIsMutable() {
+      if (!((bitField1_ & 0x00000200) != 0)) {
+        blockDevices_ =
+            new java.util.ArrayList<com.google.cloud.netapp.v1.BlockDevice>(blockDevices_);
+        bitField1_ |= 0x00000200;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.netapp.v1.BlockDevice,
+            com.google.cloud.netapp.v1.BlockDevice.Builder,
+            com.google.cloud.netapp.v1.BlockDeviceOrBuilder>
+        blockDevicesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Block devices for the volume.
+     * Currently, only one block device is permitted per Volume.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.BlockDevice block_devices = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.netapp.v1.BlockDevice> getBlockDevicesList() {
+      if (blockDevicesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(blockDevices_);
+      } else {
+        return blockDevicesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Block devices for the volume.
+     * Currently, only one block device is permitted per Volume.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.BlockDevice block_devices = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getBlockDevicesCount() {
+      if (blockDevicesBuilder_ == null) {
+        return blockDevices_.size();
+      } else {
+        return blockDevicesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Block devices for the volume.
+     * Currently, only one block device is permitted per Volume.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.BlockDevice block_devices = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.netapp.v1.BlockDevice getBlockDevices(int index) {
+      if (blockDevicesBuilder_ == null) {
+        return blockDevices_.get(index);
+      } else {
+        return blockDevicesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Block devices for the volume.
+     * Currently, only one block device is permitted per Volume.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.BlockDevice block_devices = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBlockDevices(int index, com.google.cloud.netapp.v1.BlockDevice value) {
+      if (blockDevicesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureBlockDevicesIsMutable();
+        blockDevices_.set(index, value);
+        onChanged();
+      } else {
+        blockDevicesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Block devices for the volume.
+     * Currently, only one block device is permitted per Volume.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.BlockDevice block_devices = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBlockDevices(
+        int index, com.google.cloud.netapp.v1.BlockDevice.Builder builderForValue) {
+      if (blockDevicesBuilder_ == null) {
+        ensureBlockDevicesIsMutable();
+        blockDevices_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        blockDevicesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Block devices for the volume.
+     * Currently, only one block device is permitted per Volume.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.BlockDevice block_devices = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addBlockDevices(com.google.cloud.netapp.v1.BlockDevice value) {
+      if (blockDevicesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureBlockDevicesIsMutable();
+        blockDevices_.add(value);
+        onChanged();
+      } else {
+        blockDevicesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Block devices for the volume.
+     * Currently, only one block device is permitted per Volume.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.BlockDevice block_devices = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addBlockDevices(int index, com.google.cloud.netapp.v1.BlockDevice value) {
+      if (blockDevicesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureBlockDevicesIsMutable();
+        blockDevices_.add(index, value);
+        onChanged();
+      } else {
+        blockDevicesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Block devices for the volume.
+     * Currently, only one block device is permitted per Volume.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.BlockDevice block_devices = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addBlockDevices(com.google.cloud.netapp.v1.BlockDevice.Builder builderForValue) {
+      if (blockDevicesBuilder_ == null) {
+        ensureBlockDevicesIsMutable();
+        blockDevices_.add(builderForValue.build());
+        onChanged();
+      } else {
+        blockDevicesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Block devices for the volume.
+     * Currently, only one block device is permitted per Volume.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.BlockDevice block_devices = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addBlockDevices(
+        int index, com.google.cloud.netapp.v1.BlockDevice.Builder builderForValue) {
+      if (blockDevicesBuilder_ == null) {
+        ensureBlockDevicesIsMutable();
+        blockDevices_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        blockDevicesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Block devices for the volume.
+     * Currently, only one block device is permitted per Volume.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.BlockDevice block_devices = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllBlockDevices(
+        java.lang.Iterable<? extends com.google.cloud.netapp.v1.BlockDevice> values) {
+      if (blockDevicesBuilder_ == null) {
+        ensureBlockDevicesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, blockDevices_);
+        onChanged();
+      } else {
+        blockDevicesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Block devices for the volume.
+     * Currently, only one block device is permitted per Volume.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.BlockDevice block_devices = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearBlockDevices() {
+      if (blockDevicesBuilder_ == null) {
+        blockDevices_ = java.util.Collections.emptyList();
+        bitField1_ = (bitField1_ & ~0x00000200);
+        onChanged();
+      } else {
+        blockDevicesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Block devices for the volume.
+     * Currently, only one block device is permitted per Volume.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.BlockDevice block_devices = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeBlockDevices(int index) {
+      if (blockDevicesBuilder_ == null) {
+        ensureBlockDevicesIsMutable();
+        blockDevices_.remove(index);
+        onChanged();
+      } else {
+        blockDevicesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Block devices for the volume.
+     * Currently, only one block device is permitted per Volume.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.BlockDevice block_devices = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.netapp.v1.BlockDevice.Builder getBlockDevicesBuilder(int index) {
+      return getBlockDevicesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Block devices for the volume.
+     * Currently, only one block device is permitted per Volume.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.BlockDevice block_devices = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.netapp.v1.BlockDeviceOrBuilder getBlockDevicesOrBuilder(int index) {
+      if (blockDevicesBuilder_ == null) {
+        return blockDevices_.get(index);
+      } else {
+        return blockDevicesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Block devices for the volume.
+     * Currently, only one block device is permitted per Volume.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.BlockDevice block_devices = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.netapp.v1.BlockDeviceOrBuilder>
+        getBlockDevicesOrBuilderList() {
+      if (blockDevicesBuilder_ != null) {
+        return blockDevicesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(blockDevices_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Block devices for the volume.
+     * Currently, only one block device is permitted per Volume.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.BlockDevice block_devices = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.netapp.v1.BlockDevice.Builder addBlockDevicesBuilder() {
+      return getBlockDevicesFieldBuilder()
+          .addBuilder(com.google.cloud.netapp.v1.BlockDevice.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Block devices for the volume.
+     * Currently, only one block device is permitted per Volume.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.BlockDevice block_devices = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.netapp.v1.BlockDevice.Builder addBlockDevicesBuilder(int index) {
+      return getBlockDevicesFieldBuilder()
+          .addBuilder(index, com.google.cloud.netapp.v1.BlockDevice.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Block devices for the volume.
+     * Currently, only one block device is permitted per Volume.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.BlockDevice block_devices = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.netapp.v1.BlockDevice.Builder>
+        getBlockDevicesBuilderList() {
+      return getBlockDevicesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.netapp.v1.BlockDevice,
+            com.google.cloud.netapp.v1.BlockDevice.Builder,
+            com.google.cloud.netapp.v1.BlockDeviceOrBuilder>
+        getBlockDevicesFieldBuilder() {
+      if (blockDevicesBuilder_ == null) {
+        blockDevicesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.netapp.v1.BlockDevice,
+                com.google.cloud.netapp.v1.BlockDevice.Builder,
+                com.google.cloud.netapp.v1.BlockDeviceOrBuilder>(
+                blockDevices_, ((bitField1_ & 0x00000200) != 0), getParentForChildren(), isClean());
+        blockDevices_ = null;
+      }
+      return blockDevicesBuilder_;
     }
 
     @java.lang.Override

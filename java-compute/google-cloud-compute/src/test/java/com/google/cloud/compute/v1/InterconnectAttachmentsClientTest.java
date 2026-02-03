@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -216,6 +216,10 @@ public class InterconnectAttachmentsClientTest {
             .setAdminEnabled(true)
             .setAttachmentGroup("attachmentGroup-695211236")
             .setBandwidth("bandwidth-1965768527")
+            .setCandidateCloudRouterIpAddress("candidateCloudRouterIpAddress1940847282")
+            .setCandidateCloudRouterIpv6Address("candidateCloudRouterIpv6Address-131900238")
+            .setCandidateCustomerRouterIpAddress("candidateCustomerRouterIpAddress1916307139")
+            .setCandidateCustomerRouterIpv6Address("candidateCustomerRouterIpv6Address2054826115")
             .addAllCandidateIpv6Subnets(new ArrayList<String>())
             .addAllCandidateSubnets(new ArrayList<String>())
             .setCloudRouterIpAddress("cloudRouterIpAddress586092687")
@@ -236,12 +240,14 @@ public class InterconnectAttachmentsClientTest {
             .setInterconnect("interconnect-849140594")
             .addAllIpsecInternalAddresses(new ArrayList<String>())
             .setKind("kind3292052")
+            .setL2Forwarding(InterconnectAttachmentL2Forwarding.newBuilder().build())
             .setLabelFingerprint("labelFingerprint379449680")
             .putAllLabels(new HashMap<String, String>())
             .setMtu(108462)
             .setName("name3373707")
             .setOperationalStatus("operationalStatus-2103166364")
             .setPairingKey("pairingKey-245611913")
+            .setParams(InterconnectAttachmentParams.newBuilder().build())
             .setPartnerAsn(975037061)
             .setPartnerMetadata(InterconnectAttachmentPartnerMetadata.newBuilder().build())
             .setPrivateInterconnectInfo(InterconnectAttachmentPrivateInfo.newBuilder().build())

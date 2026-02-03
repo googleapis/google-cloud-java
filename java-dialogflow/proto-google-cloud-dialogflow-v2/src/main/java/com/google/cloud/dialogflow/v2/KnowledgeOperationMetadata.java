@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -249,6 +249,7 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
     // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2.KnowledgeOperationMetadata.State)
   }
 
+  private int bitField0_;
   private int operationMetadataCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -447,6 +448,55 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
     return com.google.cloud.dialogflow.v2.ExportOperationMetadata.getDefaultInstance();
   }
 
+  public static final int DONE_TIME_FIELD_NUMBER = 5;
+  private com.google.protobuf.Timestamp doneTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The time when the operation finished.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp done_time = 5;</code>
+   *
+   * @return Whether the doneTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasDoneTime() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The time when the operation finished.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp done_time = 5;</code>
+   *
+   * @return The doneTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getDoneTime() {
+    return doneTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : doneTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The time when the operation finished.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp done_time = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getDoneTimeOrBuilder() {
+    return doneTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : doneTime_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -473,6 +523,9 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
       output.writeMessage(
           4, (com.google.cloud.dialogflow.v2.ExportOperationMetadata) operationMetadata_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(5, getDoneTime());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -495,6 +548,9 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               4, (com.google.cloud.dialogflow.v2.ExportOperationMetadata) operationMetadata_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getDoneTime());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -513,6 +569,10 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
 
     if (state_ != other.state_) return false;
     if (!getKnowledgeBase().equals(other.getKnowledgeBase())) return false;
+    if (hasDoneTime() != other.hasDoneTime()) return false;
+    if (hasDoneTime()) {
+      if (!getDoneTime().equals(other.getDoneTime())) return false;
+    }
     if (!getOperationMetadataCase().equals(other.getOperationMetadataCase())) return false;
     switch (operationMetadataCase_) {
       case 4:
@@ -536,6 +596,10 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
     hash = (53 * hash) + state_;
     hash = (37 * hash) + KNOWLEDGE_BASE_FIELD_NUMBER;
     hash = (53 * hash) + getKnowledgeBase().hashCode();
+    if (hasDoneTime()) {
+      hash = (37 * hash) + DONE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getDoneTime().hashCode();
+    }
     switch (operationMetadataCase_) {
       case 4:
         hash = (37 * hash) + EXPORT_OPERATION_METADATA_FIELD_NUMBER;
@@ -675,10 +739,19 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
     }
 
     // Construct using com.google.cloud.dialogflow.v2.KnowledgeOperationMetadata.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getDoneTimeFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -689,6 +762,11 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
       knowledgeBase_ = "";
       if (exportOperationMetadataBuilder_ != null) {
         exportOperationMetadataBuilder_.clear();
+      }
+      doneTime_ = null;
+      if (doneTimeBuilder_ != null) {
+        doneTimeBuilder_.dispose();
+        doneTimeBuilder_ = null;
       }
       operationMetadataCase_ = 0;
       operationMetadata_ = null;
@@ -735,6 +813,12 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.knowledgeBase_ = knowledgeBase_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.doneTime_ = doneTimeBuilder_ == null ? doneTime_ : doneTimeBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartialOneofs(
@@ -800,6 +884,9 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.hasDoneTime()) {
+        mergeDoneTime(other.getDoneTime());
+      }
       switch (other.getOperationMetadataCase()) {
         case EXPORT_OPERATION_METADATA:
           {
@@ -856,6 +943,12 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
                 operationMetadataCase_ = 4;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(getDoneTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1338,6 +1431,196 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
       operationMetadataCase_ = 4;
       onChanged();
       return exportOperationMetadataBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp doneTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        doneTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The time when the operation finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp done_time = 5;</code>
+     *
+     * @return Whether the doneTime field is set.
+     */
+    public boolean hasDoneTime() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The time when the operation finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp done_time = 5;</code>
+     *
+     * @return The doneTime.
+     */
+    public com.google.protobuf.Timestamp getDoneTime() {
+      if (doneTimeBuilder_ == null) {
+        return doneTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : doneTime_;
+      } else {
+        return doneTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The time when the operation finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp done_time = 5;</code>
+     */
+    public Builder setDoneTime(com.google.protobuf.Timestamp value) {
+      if (doneTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        doneTime_ = value;
+      } else {
+        doneTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The time when the operation finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp done_time = 5;</code>
+     */
+    public Builder setDoneTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (doneTimeBuilder_ == null) {
+        doneTime_ = builderForValue.build();
+      } else {
+        doneTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The time when the operation finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp done_time = 5;</code>
+     */
+    public Builder mergeDoneTime(com.google.protobuf.Timestamp value) {
+      if (doneTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && doneTime_ != null
+            && doneTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getDoneTimeBuilder().mergeFrom(value);
+        } else {
+          doneTime_ = value;
+        }
+      } else {
+        doneTimeBuilder_.mergeFrom(value);
+      }
+      if (doneTime_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The time when the operation finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp done_time = 5;</code>
+     */
+    public Builder clearDoneTime() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      doneTime_ = null;
+      if (doneTimeBuilder_ != null) {
+        doneTimeBuilder_.dispose();
+        doneTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The time when the operation finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp done_time = 5;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getDoneTimeBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getDoneTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The time when the operation finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp done_time = 5;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getDoneTimeOrBuilder() {
+      if (doneTimeBuilder_ != null) {
+        return doneTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return doneTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : doneTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The time when the operation finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp done_time = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getDoneTimeFieldBuilder() {
+      if (doneTimeBuilder_ == null) {
+        doneTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getDoneTime(), getParentForChildren(), isClean());
+        doneTime_ = null;
+      }
+      return doneTimeBuilder_;
     }
 
     @java.lang.Override

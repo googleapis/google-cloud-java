@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@
 // Protobuf Java Version: 3.25.8
 package com.google.cloud.gkemulticloud.v1;
 
+@java.lang.Deprecated
 public interface AzureOpenIdConfigOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.gkemulticloud.v1.AzureOpenIdConfig)
@@ -57,7 +58,7 @@ public interface AzureOpenIdConfigOrBuilder
    * JSON Web Key uri.
    * </pre>
    *
-   * <code>string jwks_uri = 2;</code>
+   * <code>string jwks_uri = 2 [json_name = "jwks_uri"];</code>
    *
    * @return The jwksUri.
    */
@@ -70,7 +71,7 @@ public interface AzureOpenIdConfigOrBuilder
    * JSON Web Key uri.
    * </pre>
    *
-   * <code>string jwks_uri = 2;</code>
+   * <code>string jwks_uri = 2 [json_name = "jwks_uri"];</code>
    *
    * @return The bytes for jwksUri.
    */
@@ -83,7 +84,8 @@ public interface AzureOpenIdConfigOrBuilder
    * Supported response types.
    * </pre>
    *
-   * <code>repeated string response_types_supported = 3;</code>
+   * <code>repeated string response_types_supported = 3 [json_name = "response_types_supported"];
+   * </code>
    *
    * @return A list containing the responseTypesSupported.
    */
@@ -96,7 +98,8 @@ public interface AzureOpenIdConfigOrBuilder
    * Supported response types.
    * </pre>
    *
-   * <code>repeated string response_types_supported = 3;</code>
+   * <code>repeated string response_types_supported = 3 [json_name = "response_types_supported"];
+   * </code>
    *
    * @return The count of responseTypesSupported.
    */
@@ -109,7 +112,8 @@ public interface AzureOpenIdConfigOrBuilder
    * Supported response types.
    * </pre>
    *
-   * <code>repeated string response_types_supported = 3;</code>
+   * <code>repeated string response_types_supported = 3 [json_name = "response_types_supported"];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The responseTypesSupported at the given index.
@@ -123,7 +127,8 @@ public interface AzureOpenIdConfigOrBuilder
    * Supported response types.
    * </pre>
    *
-   * <code>repeated string response_types_supported = 3;</code>
+   * <code>repeated string response_types_supported = 3 [json_name = "response_types_supported"];
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the responseTypesSupported at the given index.
@@ -137,7 +142,8 @@ public interface AzureOpenIdConfigOrBuilder
    * Supported subject types.
    * </pre>
    *
-   * <code>repeated string subject_types_supported = 4;</code>
+   * <code>repeated string subject_types_supported = 4 [json_name = "subject_types_supported"];
+   * </code>
    *
    * @return A list containing the subjectTypesSupported.
    */
@@ -150,7 +156,8 @@ public interface AzureOpenIdConfigOrBuilder
    * Supported subject types.
    * </pre>
    *
-   * <code>repeated string subject_types_supported = 4;</code>
+   * <code>repeated string subject_types_supported = 4 [json_name = "subject_types_supported"];
+   * </code>
    *
    * @return The count of subjectTypesSupported.
    */
@@ -163,7 +170,8 @@ public interface AzureOpenIdConfigOrBuilder
    * Supported subject types.
    * </pre>
    *
-   * <code>repeated string subject_types_supported = 4;</code>
+   * <code>repeated string subject_types_supported = 4 [json_name = "subject_types_supported"];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The subjectTypesSupported at the given index.
@@ -177,7 +185,8 @@ public interface AzureOpenIdConfigOrBuilder
    * Supported subject types.
    * </pre>
    *
-   * <code>repeated string subject_types_supported = 4;</code>
+   * <code>repeated string subject_types_supported = 4 [json_name = "subject_types_supported"];
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the subjectTypesSupported at the given index.
@@ -191,7 +200,9 @@ public interface AzureOpenIdConfigOrBuilder
    * supported ID Token signing Algorithms.
    * </pre>
    *
-   * <code>repeated string id_token_signing_alg_values_supported = 5;</code>
+   * <code>
+   * repeated string id_token_signing_alg_values_supported = 5 [json_name = "id_token_signing_alg_values_supported"];
+   * </code>
    *
    * @return A list containing the idTokenSigningAlgValuesSupported.
    */
@@ -204,7 +215,9 @@ public interface AzureOpenIdConfigOrBuilder
    * supported ID Token signing Algorithms.
    * </pre>
    *
-   * <code>repeated string id_token_signing_alg_values_supported = 5;</code>
+   * <code>
+   * repeated string id_token_signing_alg_values_supported = 5 [json_name = "id_token_signing_alg_values_supported"];
+   * </code>
    *
    * @return The count of idTokenSigningAlgValuesSupported.
    */
@@ -217,7 +230,9 @@ public interface AzureOpenIdConfigOrBuilder
    * supported ID Token signing Algorithms.
    * </pre>
    *
-   * <code>repeated string id_token_signing_alg_values_supported = 5;</code>
+   * <code>
+   * repeated string id_token_signing_alg_values_supported = 5 [json_name = "id_token_signing_alg_values_supported"];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The idTokenSigningAlgValuesSupported at the given index.
@@ -231,7 +246,9 @@ public interface AzureOpenIdConfigOrBuilder
    * supported ID Token signing Algorithms.
    * </pre>
    *
-   * <code>repeated string id_token_signing_alg_values_supported = 5;</code>
+   * <code>
+   * repeated string id_token_signing_alg_values_supported = 5 [json_name = "id_token_signing_alg_values_supported"];
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the idTokenSigningAlgValuesSupported at the given index.
@@ -245,7 +262,7 @@ public interface AzureOpenIdConfigOrBuilder
    * Supported claims.
    * </pre>
    *
-   * <code>repeated string claims_supported = 6;</code>
+   * <code>repeated string claims_supported = 6 [json_name = "claims_supported"];</code>
    *
    * @return A list containing the claimsSupported.
    */
@@ -258,7 +275,7 @@ public interface AzureOpenIdConfigOrBuilder
    * Supported claims.
    * </pre>
    *
-   * <code>repeated string claims_supported = 6;</code>
+   * <code>repeated string claims_supported = 6 [json_name = "claims_supported"];</code>
    *
    * @return The count of claimsSupported.
    */
@@ -271,7 +288,7 @@ public interface AzureOpenIdConfigOrBuilder
    * Supported claims.
    * </pre>
    *
-   * <code>repeated string claims_supported = 6;</code>
+   * <code>repeated string claims_supported = 6 [json_name = "claims_supported"];</code>
    *
    * @param index The index of the element to return.
    * @return The claimsSupported at the given index.
@@ -285,7 +302,7 @@ public interface AzureOpenIdConfigOrBuilder
    * Supported claims.
    * </pre>
    *
-   * <code>repeated string claims_supported = 6;</code>
+   * <code>repeated string claims_supported = 6 [json_name = "claims_supported"];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the claimsSupported at the given index.
@@ -299,7 +316,7 @@ public interface AzureOpenIdConfigOrBuilder
    * Supported grant types.
    * </pre>
    *
-   * <code>repeated string grant_types = 7;</code>
+   * <code>repeated string grant_types = 7 [json_name = "grant_types"];</code>
    *
    * @return A list containing the grantTypes.
    */
@@ -312,7 +329,7 @@ public interface AzureOpenIdConfigOrBuilder
    * Supported grant types.
    * </pre>
    *
-   * <code>repeated string grant_types = 7;</code>
+   * <code>repeated string grant_types = 7 [json_name = "grant_types"];</code>
    *
    * @return The count of grantTypes.
    */
@@ -325,7 +342,7 @@ public interface AzureOpenIdConfigOrBuilder
    * Supported grant types.
    * </pre>
    *
-   * <code>repeated string grant_types = 7;</code>
+   * <code>repeated string grant_types = 7 [json_name = "grant_types"];</code>
    *
    * @param index The index of the element to return.
    * @return The grantTypes at the given index.
@@ -339,7 +356,7 @@ public interface AzureOpenIdConfigOrBuilder
    * Supported grant types.
    * </pre>
    *
-   * <code>repeated string grant_types = 7;</code>
+   * <code>repeated string grant_types = 7 [json_name = "grant_types"];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the grantTypes at the given index.

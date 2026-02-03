@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,6 +74,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
     ARTICLE_SUGGESTION_ANSWER(5),
     FAQ_ANSWER(6),
     DIALOGFLOW_ASSIST_ANSWER(7),
+    GENERATOR_SUGGESTION(8),
     ANSWER_NOT_SET(0);
     private final int value;
 
@@ -99,6 +100,8 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
           return FAQ_ANSWER;
         case 7:
           return DIALOGFLOW_ASSIST_ANSWER;
+        case 8:
+          return GENERATOR_SUGGESTION;
         case 0:
           return ANSWER_NOT_SET;
         default:
@@ -297,6 +300,67 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
     return com.google.cloud.dialogflow.v2.DialogflowAssistAnswer.getDefaultInstance();
   }
 
+  public static final int GENERATOR_SUGGESTION_FIELD_NUMBER = 8;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The generator suggestion.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.GeneratorSuggestion generator_suggestion = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the generatorSuggestion field is set.
+   */
+  @java.lang.Override
+  public boolean hasGeneratorSuggestion() {
+    return answerCase_ == 8;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The generator suggestion.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.GeneratorSuggestion generator_suggestion = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The generatorSuggestion.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.GeneratorSuggestion getGeneratorSuggestion() {
+    if (answerCase_ == 8) {
+      return (com.google.cloud.dialogflow.v2.GeneratorSuggestion) answer_;
+    }
+    return com.google.cloud.dialogflow.v2.GeneratorSuggestion.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The generator suggestion.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.GeneratorSuggestion generator_suggestion = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.GeneratorSuggestionOrBuilder
+      getGeneratorSuggestionOrBuilder() {
+    if (answerCase_ == 8) {
+      return (com.google.cloud.dialogflow.v2.GeneratorSuggestion) answer_;
+    }
+    return com.google.cloud.dialogflow.v2.GeneratorSuggestion.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -319,6 +383,9 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
     }
     if (answerCase_ == 7) {
       output.writeMessage(7, (com.google.cloud.dialogflow.v2.DialogflowAssistAnswer) answer_);
+    }
+    if (answerCase_ == 8) {
+      output.writeMessage(8, (com.google.cloud.dialogflow.v2.GeneratorSuggestion) answer_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -343,6 +410,11 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               7, (com.google.cloud.dialogflow.v2.DialogflowAssistAnswer) answer_);
+    }
+    if (answerCase_ == 8) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8, (com.google.cloud.dialogflow.v2.GeneratorSuggestion) answer_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -371,6 +443,9 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       case 7:
         if (!getDialogflowAssistAnswer().equals(other.getDialogflowAssistAnswer())) return false;
         break;
+      case 8:
+        if (!getGeneratorSuggestion().equals(other.getGeneratorSuggestion())) return false;
+        break;
       case 0:
       default:
     }
@@ -397,6 +472,10 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       case 7:
         hash = (37 * hash) + DIALOGFLOW_ASSIST_ANSWER_FIELD_NUMBER;
         hash = (53 * hash) + getDialogflowAssistAnswer().hashCode();
+        break;
+      case 8:
+        hash = (37 * hash) + GENERATOR_SUGGESTION_FIELD_NUMBER;
+        hash = (53 * hash) + getGeneratorSuggestion().hashCode();
         break;
       case 0:
       default:
@@ -550,6 +629,9 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       if (dialogflowAssistAnswerBuilder_ != null) {
         dialogflowAssistAnswerBuilder_.clear();
       }
+      if (generatorSuggestionBuilder_ != null) {
+        generatorSuggestionBuilder_.clear();
+      }
       answerCase_ = 0;
       answer_ = null;
       return this;
@@ -602,6 +684,9 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       }
       if (answerCase_ == 7 && dialogflowAssistAnswerBuilder_ != null) {
         result.answer_ = dialogflowAssistAnswerBuilder_.build();
+      }
+      if (answerCase_ == 8 && generatorSuggestionBuilder_ != null) {
+        result.answer_ = generatorSuggestionBuilder_.build();
       }
     }
 
@@ -667,6 +752,11 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
             mergeDialogflowAssistAnswer(other.getDialogflowAssistAnswer());
             break;
           }
+        case GENERATOR_SUGGESTION:
+          {
+            mergeGeneratorSuggestion(other.getGeneratorSuggestion());
+            break;
+          }
         case ANSWER_NOT_SET:
           {
             break;
@@ -718,6 +808,13 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
                 answerCase_ = 7;
                 break;
               } // case 58
+            case 66:
+              {
+                input.readMessage(
+                    getGeneratorSuggestionFieldBuilder().getBuilder(), extensionRegistry);
+                answerCase_ = 8;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1464,6 +1561,246 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       answerCase_ = 7;
       onChanged();
       return dialogflowAssistAnswerBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.GeneratorSuggestion,
+            com.google.cloud.dialogflow.v2.GeneratorSuggestion.Builder,
+            com.google.cloud.dialogflow.v2.GeneratorSuggestionOrBuilder>
+        generatorSuggestionBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The generator suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.GeneratorSuggestion generator_suggestion = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the generatorSuggestion field is set.
+     */
+    @java.lang.Override
+    public boolean hasGeneratorSuggestion() {
+      return answerCase_ == 8;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The generator suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.GeneratorSuggestion generator_suggestion = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The generatorSuggestion.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.GeneratorSuggestion getGeneratorSuggestion() {
+      if (generatorSuggestionBuilder_ == null) {
+        if (answerCase_ == 8) {
+          return (com.google.cloud.dialogflow.v2.GeneratorSuggestion) answer_;
+        }
+        return com.google.cloud.dialogflow.v2.GeneratorSuggestion.getDefaultInstance();
+      } else {
+        if (answerCase_ == 8) {
+          return generatorSuggestionBuilder_.getMessage();
+        }
+        return com.google.cloud.dialogflow.v2.GeneratorSuggestion.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The generator suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.GeneratorSuggestion generator_suggestion = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setGeneratorSuggestion(
+        com.google.cloud.dialogflow.v2.GeneratorSuggestion value) {
+      if (generatorSuggestionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        answer_ = value;
+        onChanged();
+      } else {
+        generatorSuggestionBuilder_.setMessage(value);
+      }
+      answerCase_ = 8;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The generator suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.GeneratorSuggestion generator_suggestion = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setGeneratorSuggestion(
+        com.google.cloud.dialogflow.v2.GeneratorSuggestion.Builder builderForValue) {
+      if (generatorSuggestionBuilder_ == null) {
+        answer_ = builderForValue.build();
+        onChanged();
+      } else {
+        generatorSuggestionBuilder_.setMessage(builderForValue.build());
+      }
+      answerCase_ = 8;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The generator suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.GeneratorSuggestion generator_suggestion = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeGeneratorSuggestion(
+        com.google.cloud.dialogflow.v2.GeneratorSuggestion value) {
+      if (generatorSuggestionBuilder_ == null) {
+        if (answerCase_ == 8
+            && answer_ != com.google.cloud.dialogflow.v2.GeneratorSuggestion.getDefaultInstance()) {
+          answer_ =
+              com.google.cloud.dialogflow.v2.GeneratorSuggestion.newBuilder(
+                      (com.google.cloud.dialogflow.v2.GeneratorSuggestion) answer_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          answer_ = value;
+        }
+        onChanged();
+      } else {
+        if (answerCase_ == 8) {
+          generatorSuggestionBuilder_.mergeFrom(value);
+        } else {
+          generatorSuggestionBuilder_.setMessage(value);
+        }
+      }
+      answerCase_ = 8;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The generator suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.GeneratorSuggestion generator_suggestion = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearGeneratorSuggestion() {
+      if (generatorSuggestionBuilder_ == null) {
+        if (answerCase_ == 8) {
+          answerCase_ = 0;
+          answer_ = null;
+          onChanged();
+        }
+      } else {
+        if (answerCase_ == 8) {
+          answerCase_ = 0;
+          answer_ = null;
+        }
+        generatorSuggestionBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The generator suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.GeneratorSuggestion generator_suggestion = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.GeneratorSuggestion.Builder
+        getGeneratorSuggestionBuilder() {
+      return getGeneratorSuggestionFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The generator suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.GeneratorSuggestion generator_suggestion = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.GeneratorSuggestionOrBuilder
+        getGeneratorSuggestionOrBuilder() {
+      if ((answerCase_ == 8) && (generatorSuggestionBuilder_ != null)) {
+        return generatorSuggestionBuilder_.getMessageOrBuilder();
+      } else {
+        if (answerCase_ == 8) {
+          return (com.google.cloud.dialogflow.v2.GeneratorSuggestion) answer_;
+        }
+        return com.google.cloud.dialogflow.v2.GeneratorSuggestion.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The generator suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.GeneratorSuggestion generator_suggestion = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.GeneratorSuggestion,
+            com.google.cloud.dialogflow.v2.GeneratorSuggestion.Builder,
+            com.google.cloud.dialogflow.v2.GeneratorSuggestionOrBuilder>
+        getGeneratorSuggestionFieldBuilder() {
+      if (generatorSuggestionBuilder_ == null) {
+        if (!(answerCase_ == 8)) {
+          answer_ = com.google.cloud.dialogflow.v2.GeneratorSuggestion.getDefaultInstance();
+        }
+        generatorSuggestionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2.GeneratorSuggestion,
+                com.google.cloud.dialogflow.v2.GeneratorSuggestion.Builder,
+                com.google.cloud.dialogflow.v2.GeneratorSuggestionOrBuilder>(
+                (com.google.cloud.dialogflow.v2.GeneratorSuggestion) answer_,
+                getParentForChildren(),
+                isClean());
+        answer_ = null;
+      }
+      answerCase_ = 8;
+      onChanged();
+      return generatorSuggestionBuilder_;
     }
 
     @java.lang.Override

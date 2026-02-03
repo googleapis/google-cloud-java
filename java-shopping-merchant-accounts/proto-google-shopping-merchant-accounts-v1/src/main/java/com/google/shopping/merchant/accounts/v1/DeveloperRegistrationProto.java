@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,10 @@ public final class DeveloperRegistrationProto {
       internal_static_google_shopping_merchant_accounts_v1_GetDeveloperRegistrationRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_shopping_merchant_accounts_v1_GetDeveloperRegistrationRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_accounts_v1_GetAccountForGcpRegistrationResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_shopping_merchant_accounts_v1_GetAccountForGcpRegistrationResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -73,26 +77,33 @@ public final class DeveloperRegistrationProto {
           + "0merchantapi.googleapis.com/DeveloperRegistration\"i\n"
           + "\037GetDeveloperRegistrationRequest\022F\n"
           + "\004name\030\001 \001(\tB8\340A\002\372A2\n"
-          + "0merchantapi.googleapis.com/DeveloperRegistration2\326\005\n"
+          + "0merchantapi.googleapis.com/DeveloperRegistration\"4\n"
+          + "$GetAccountForGcpRegistrationResponse\022\014\n"
+          + "\004name\030\001 \001(\t2\227\007\n"
           + "\034DeveloperRegistrationService\022\321\001\n"
-          + "\013RegisterGcp\0228.google.shopping.merchant.accounts.v1.Regi"
-          + "sterGcpRequest\032;.google.shopping.merchan"
-          + "t.accounts.v1.DeveloperRegistration\"K\202\323\344"
-          + "\223\002E\"@/accounts/v1/{name=accounts/*/developerRegistration}:registerGcp:\001*\022\343\001\n"
-          + "\030GetDeveloperRegistration\022E.google.shopping."
-          + "merchant.accounts.v1.GetDeveloperRegistrationRequest\032;.google.shopping.merchant."
-          + "accounts.v1.DeveloperRegistration\"C\332A\004na"
-          + "me\202\323\344\223\0026\0224/accounts/v1/{name=accounts/*/developerRegistration}\022\262\001\n\r"
-          + "UnregisterGcp\022:.google.shopping.merchant.accounts.v1."
-          + "UnregisterGcpRequest\032\026.google.protobuf.E"
-          + "mpty\"M\202\323\344\223\002G\"B/accounts/v1/{name=account"
-          + "s/*/developerRegistration}:unregisterGcp"
-          + ":\001*\032G\312A\032merchantapi.googleapis.com\322A\'https://www.googleapis.com/auth/contentB\215\002\n"
-          + "(com.google.shopping.merchant.accounts.v1B\032DeveloperRegistrationProtoP\001ZJcloud.g"
-          + "oogle.com/go/shopping/merchant/accounts/apiv1/accountspb;accountspb\252\002$Google.Sho"
-          + "pping.Merchant.Accounts.V1\312\002$Google\\Shop"
-          + "ping\\Merchant\\Accounts\\V1\352\002(Google::Shop"
-          + "ping::Merchant::Accounts::V1b\006proto3"
+          + "\013RegisterGcp\0228.google.shopping.merchant.ac"
+          + "counts.v1.RegisterGcpRequest\032;.google.shopping.merchant.accounts.v1.DeveloperReg"
+          + "istration\"K\202\323\344\223\002E\"@/accounts/v1/{name=ac"
+          + "counts/*/developerRegistration}:registerGcp:\001*\022\343\001\n"
+          + "\030GetDeveloperRegistration\022E.google.shopping.merchant.accounts.v1.GetDe"
+          + "veloperRegistrationRequest\032;.google.shopping.merchant.accounts.v1.DeveloperRegis"
+          + "tration\"C\332A\004name\202\323\344\223\0026\0224/accounts/v1/{name=accounts/*/developerRegistration}\022\262\001\n"
+          + "\r"
+          + "UnregisterGcp\022:.google.shopping.merchan"
+          + "t.accounts.v1.UnregisterGcpRequest\032\026.goo"
+          + "gle.protobuf.Empty\"M\202\323\344\223\002G\"B/accounts/v1"
+          + "/{name=accounts/*/developerRegistration}:unregisterGcp:\001*\022\276\001\n"
+          + "\034GetAccountForGcpRegistration\022\026.google.protobuf.Empty\032J.goo"
+          + "gle.shopping.merchant.accounts.v1.GetAcc"
+          + "ountForGcpRegistrationResponse\":\202\323\344\223\0024\0222"
+          + "/accounts/v1/accounts:getAccountForGcpRe"
+          + "gistration\032G\312A\032merchantapi.googleapis.co"
+          + "m\322A\'https://www.googleapis.com/auth/contentB\215\002\n"
+          + "(com.google.shopping.merchant.accounts.v1B\032DeveloperRegistrationProtoP\001ZJ"
+          + "cloud.google.com/go/shopping/merchant/accounts/apiv1/accountspb;accountspb\252\002$Goo"
+          + "gle.Shopping.Merchant.Accounts.V1\312\002$Goog"
+          + "le\\Shopping\\Merchant\\Accounts\\V1\352\002(Googl"
+          + "e::Shopping::Merchant::Accounts::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -133,6 +144,14 @@ public final class DeveloperRegistrationProto {
     internal_static_google_shopping_merchant_accounts_v1_GetDeveloperRegistrationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_shopping_merchant_accounts_v1_GetDeveloperRegistrationRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_shopping_merchant_accounts_v1_GetAccountForGcpRegistrationResponse_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_shopping_merchant_accounts_v1_GetAccountForGcpRegistrationResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_shopping_merchant_accounts_v1_GetAccountForGcpRegistrationResponse_descriptor,
             new java.lang.String[] {
               "Name",
             });

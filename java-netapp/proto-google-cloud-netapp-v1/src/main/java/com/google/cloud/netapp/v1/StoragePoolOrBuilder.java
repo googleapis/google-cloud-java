@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -756,4 +756,61 @@ public interface StoragePoolOrBuilder
    * @return The hotTierSizeUsedGib.
    */
   long getHotTierSizeUsedGib();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of the storage pool. This field is used to control whether
+   * the pool supports `FILE` based volumes only or `UNIFIED` (both `FILE` and
+   * `BLOCK`) volumes or `UNIFIED_LARGE_CAPACITY` (both `FILE` and `BLOCK`)
+   * volumes with large capacity. If not specified during creation, it defaults
+   * to `FILE`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.netapp.v1.StoragePoolType type = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the type field is set.
+   */
+  boolean hasType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of the storage pool. This field is used to control whether
+   * the pool supports `FILE` based volumes only or `UNIFIED` (both `FILE` and
+   * `BLOCK`) volumes or `UNIFIED_LARGE_CAPACITY` (both `FILE` and `BLOCK`)
+   * volumes with large capacity. If not specified during creation, it defaults
+   * to `FILE`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.netapp.v1.StoragePoolType type = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for type.
+   */
+  int getTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of the storage pool. This field is used to control whether
+   * the pool supports `FILE` based volumes only or `UNIFIED` (both `FILE` and
+   * `BLOCK`) volumes or `UNIFIED_LARGE_CAPACITY` (both `FILE` and `BLOCK`)
+   * volumes with large capacity. If not specified during creation, it defaults
+   * to `FILE`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.netapp.v1.StoragePoolType type = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The type.
+   */
+  com.google.cloud.netapp.v1.StoragePoolType getType();
 }

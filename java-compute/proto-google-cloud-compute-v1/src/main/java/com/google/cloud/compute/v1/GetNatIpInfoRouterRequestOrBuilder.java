@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ public interface GetNatIpInfoRouterRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the nat service to filter the NAT IP information. If it is omitted, all nats for this router will be returned. Name should conform to RFC1035.
+   * Name of the nat service to filter the NAT IP information.
+   * If it is omitted, all nats for this router will be returned.
+   * Name should conform to RFC1035.
    * </pre>
    *
    * <code>optional string nat_name = 425596649;</code>
@@ -41,7 +43,9 @@ public interface GetNatIpInfoRouterRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the nat service to filter the NAT IP information. If it is omitted, all nats for this router will be returned. Name should conform to RFC1035.
+   * Name of the nat service to filter the NAT IP information.
+   * If it is omitted, all nats for this router will be returned.
+   * Name should conform to RFC1035.
    * </pre>
    *
    * <code>optional string nat_name = 425596649;</code>
@@ -54,7 +58,9 @@ public interface GetNatIpInfoRouterRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the nat service to filter the NAT IP information. If it is omitted, all nats for this router will be returned. Name should conform to RFC1035.
+   * Name of the nat service to filter the NAT IP information.
+   * If it is omitted, all nats for this router will be returned.
+   * Name should conform to RFC1035.
    * </pre>
    *
    * <code>optional string nat_name = 425596649;</code>
@@ -119,7 +125,8 @@ public interface GetNatIpInfoRouterRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the Router resource to query for Nat IP information. The name should conform to RFC1035.
+   * Name of the Router resource to query for Nat IP information. The name
+   * should conform to RFC1035.
    * </pre>
    *
    * <code>string router = 148608841 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -132,7 +139,8 @@ public interface GetNatIpInfoRouterRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the Router resource to query for Nat IP information. The name should conform to RFC1035.
+   * Name of the Router resource to query for Nat IP information. The name
+   * should conform to RFC1035.
    * </pre>
    *
    * <code>string router = 148608841 [(.google.api.field_behavior) = REQUIRED];</code>

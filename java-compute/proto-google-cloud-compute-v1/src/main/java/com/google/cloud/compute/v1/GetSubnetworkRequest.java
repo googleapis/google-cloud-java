@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,7 +71,11 @@ public final class GetSubnetworkRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Defines the extra views returned back in the subnetwork resource. Supported values: - WITH_UTILIZATION: Utilization data is included in the response.
+   * Defines the extra views returned back in the subnetwork resource.
+   * Supported values:
+   *
+   *    - WITH_UTILIZATION: Utilization data is included in the
+   *    response.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.GetSubnetworkRequest.Views}
@@ -379,7 +383,11 @@ public final class GetSubnetworkRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Defines the extra views returned back in the subnetwork resource. Supported values: - WITH_UTILIZATION: Utilization data is included in the response.
+   * Defines the extra views returned back in the subnetwork resource.
+   * Supported values:
+   *
+   *    - WITH_UTILIZATION: Utilization data is included in the
+   *    response.
    * Check the Views enum for the list of possible values.
    * </pre>
    *
@@ -396,7 +404,11 @@ public final class GetSubnetworkRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Defines the extra views returned back in the subnetwork resource. Supported values: - WITH_UTILIZATION: Utilization data is included in the response.
+   * Defines the extra views returned back in the subnetwork resource.
+   * Supported values:
+   *
+   *    - WITH_UTILIZATION: Utilization data is included in the
+   *    response.
    * Check the Views enum for the list of possible values.
    * </pre>
    *
@@ -421,7 +433,11 @@ public final class GetSubnetworkRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Defines the extra views returned back in the subnetwork resource. Supported values: - WITH_UTILIZATION: Utilization data is included in the response.
+   * Defines the extra views returned back in the subnetwork resource.
+   * Supported values:
+   *
+   *    - WITH_UTILIZATION: Utilization data is included in the
+   *    response.
    * Check the Views enum for the list of possible values.
    * </pre>
    *
@@ -1204,7 +1220,11 @@ public final class GetSubnetworkRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Defines the extra views returned back in the subnetwork resource. Supported values: - WITH_UTILIZATION: Utilization data is included in the response.
+     * Defines the extra views returned back in the subnetwork resource.
+     * Supported values:
+     *
+     *    - WITH_UTILIZATION: Utilization data is included in the
+     *    response.
      * Check the Views enum for the list of possible values.
      * </pre>
      *
@@ -1220,7 +1240,11 @@ public final class GetSubnetworkRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Defines the extra views returned back in the subnetwork resource. Supported values: - WITH_UTILIZATION: Utilization data is included in the response.
+     * Defines the extra views returned back in the subnetwork resource.
+     * Supported values:
+     *
+     *    - WITH_UTILIZATION: Utilization data is included in the
+     *    response.
      * Check the Views enum for the list of possible values.
      * </pre>
      *
@@ -1244,7 +1268,11 @@ public final class GetSubnetworkRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Defines the extra views returned back in the subnetwork resource. Supported values: - WITH_UTILIZATION: Utilization data is included in the response.
+     * Defines the extra views returned back in the subnetwork resource.
+     * Supported values:
+     *
+     *    - WITH_UTILIZATION: Utilization data is included in the
+     *    response.
      * Check the Views enum for the list of possible values.
      * </pre>
      *
@@ -1268,7 +1296,11 @@ public final class GetSubnetworkRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Defines the extra views returned back in the subnetwork resource. Supported values: - WITH_UTILIZATION: Utilization data is included in the response.
+     * Defines the extra views returned back in the subnetwork resource.
+     * Supported values:
+     *
+     *    - WITH_UTILIZATION: Utilization data is included in the
+     *    response.
      * Check the Views enum for the list of possible values.
      * </pre>
      *
@@ -1291,7 +1323,11 @@ public final class GetSubnetworkRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Defines the extra views returned back in the subnetwork resource. Supported values: - WITH_UTILIZATION: Utilization data is included in the response.
+     * Defines the extra views returned back in the subnetwork resource.
+     * Supported values:
+     *
+     *    - WITH_UTILIZATION: Utilization data is included in the
+     *    response.
      * Check the Views enum for the list of possible values.
      * </pre>
      *
@@ -1310,7 +1346,11 @@ public final class GetSubnetworkRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Defines the extra views returned back in the subnetwork resource. Supported values: - WITH_UTILIZATION: Utilization data is included in the response.
+     * Defines the extra views returned back in the subnetwork resource.
+     * Supported values:
+     *
+     *    - WITH_UTILIZATION: Utilization data is included in the
+     *    response.
      * Check the Views enum for the list of possible values.
      * </pre>
      *

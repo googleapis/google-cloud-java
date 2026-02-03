@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * How often (in seconds) to send a health check. The default value is 5 seconds.
+   * How often (in seconds) to send a health check. The default value is 5
+   * seconds.
    * </pre>
    *
    * <code>optional int32 check_interval_sec = 345561006;</code>
@@ -41,7 +42,8 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * How often (in seconds) to send a health check. The default value is 5 seconds.
+   * How often (in seconds) to send a health check. The default value is 5
+   * seconds.
    * </pre>
    *
    * <code>optional int32 check_interval_sec = 345561006;</code>
@@ -54,7 +56,8 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in 3339 text format.
+   * Output only. [Output Only] Creation timestamp in3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -67,7 +70,8 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in 3339 text format.
+   * Output only. [Output Only] Creation timestamp in3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -80,7 +84,8 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in 3339 text format.
+   * Output only. [Output Only] Creation timestamp in3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -93,7 +98,8 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -106,7 +112,8 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -119,7 +126,8 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -148,10 +156,33 @@ public interface HealthCheckOrBuilder
   com.google.cloud.compute.v1.GRPCHealthCheckOrBuilder getGrpcHealthCheckOrBuilder();
 
   /**
+   * <code>optional .google.cloud.compute.v1.GRPCTLSHealthCheck grpc_tls_health_check = 267273258;
+   * </code>
+   *
+   * @return Whether the grpcTlsHealthCheck field is set.
+   */
+  boolean hasGrpcTlsHealthCheck();
+
+  /**
+   * <code>optional .google.cloud.compute.v1.GRPCTLSHealthCheck grpc_tls_health_check = 267273258;
+   * </code>
+   *
+   * @return The grpcTlsHealthCheck.
+   */
+  com.google.cloud.compute.v1.GRPCTLSHealthCheck getGrpcTlsHealthCheck();
+
+  /**
+   * <code>optional .google.cloud.compute.v1.GRPCTLSHealthCheck grpc_tls_health_check = 267273258;
+   * </code>
+   */
+  com.google.cloud.compute.v1.GRPCTLSHealthCheckOrBuilder getGrpcTlsHealthCheckOrBuilder();
+
+  /**
    *
    *
    * <pre>
-   * A so-far unhealthy instance will be marked healthy after this many consecutive successes. The default value is 2.
+   * A so-far unhealthy instance will be marked healthy after this
+   * many consecutive successes. The default value is 2.
    * </pre>
    *
    * <code>optional int32 healthy_threshold = 403212361;</code>
@@ -164,7 +195,8 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * A so-far unhealthy instance will be marked healthy after this many consecutive successes. The default value is 2.
+   * A so-far unhealthy instance will be marked healthy after this
+   * many consecutive successes. The default value is 2.
    * </pre>
    *
    * <code>optional int32 healthy_threshold = 403212361;</code>
@@ -234,7 +266,8 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -247,7 +280,8 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -260,7 +294,7 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * Type of the resource.
+   * Output only. Type of the resource.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -273,7 +307,7 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * Type of the resource.
+   * Output only. Type of the resource.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -286,7 +320,7 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * Type of the resource.
+   * Output only. Type of the resource.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -336,7 +370,13 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. For example, a name that is 1-63 characters long, matches the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`, and otherwise complies with RFC1035. This regular expression describes a name where the first character is a lowercase letter, and all following characters are a dash, lowercase letter, or digit, except the last character, which isn't a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * For example, a name that is 1-63 characters long, matches the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?`, and otherwise complies with
+   * RFC1035. This regular expression describes a name where the first
+   * character is a lowercase letter, and all following characters are a dash,
+   * lowercase letter, or digit, except the last character, which isn't a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -349,7 +389,13 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. For example, a name that is 1-63 characters long, matches the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`, and otherwise complies with RFC1035. This regular expression describes a name where the first character is a lowercase letter, and all following characters are a dash, lowercase letter, or digit, except the last character, which isn't a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * For example, a name that is 1-63 characters long, matches the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?`, and otherwise complies with
+   * RFC1035. This regular expression describes a name where the first
+   * character is a lowercase letter, and all following characters are a dash,
+   * lowercase letter, or digit, except the last character, which isn't a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -362,7 +408,13 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. For example, a name that is 1-63 characters long, matches the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`, and otherwise complies with RFC1035. This regular expression describes a name where the first character is a lowercase letter, and all following characters are a dash, lowercase letter, or digit, except the last character, which isn't a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * For example, a name that is 1-63 characters long, matches the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?`, and otherwise complies with
+   * RFC1035. This regular expression describes a name where the first
+   * character is a lowercase letter, and all following characters are a dash,
+   * lowercase letter, or digit, except the last character, which isn't a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -375,7 +427,8 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Region where the health check resides. Not applicable to global health checks.
+   * Output only. [Output Only] Region where the health check resides.  Not applicable to
+   * global health checks.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -388,7 +441,8 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Region where the health check resides. Not applicable to global health checks.
+   * Output only. [Output Only] Region where the health check resides.  Not applicable to
+   * global health checks.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -401,7 +455,8 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Region where the health check resides. Not applicable to global health checks.
+   * Output only. [Output Only] Region where the health check resides.  Not applicable to
+   * global health checks.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -453,7 +508,21 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, and GRPC protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing.
+   * The list of cloud regions from which health checks are performed. If any
+   * regions are specified, then exactly 3 regions should be specified. The
+   * region names must be valid names of Google Cloud regions.
+   * This can only be set for global health check.
+   * If this list is non-empty, then there are restrictions
+   * on what other health check fields are supported and what other resources
+   * can use this health check:
+   *
+   *    - SSL, HTTP2, and GRPC protocols are not supported.
+   *    - The TCP request field is not supported.
+   *    - The proxyHeader field for HTTP, HTTPS, and TCP is not
+   *    supported.
+   *    - The checkIntervalSec field must be at least 30.
+   *    - The health check cannot be used with BackendService nor with managed
+   *    instance group auto-healing.
    * </pre>
    *
    * <code>repeated string source_regions = 405568475;</code>
@@ -466,7 +535,21 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, and GRPC protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing.
+   * The list of cloud regions from which health checks are performed. If any
+   * regions are specified, then exactly 3 regions should be specified. The
+   * region names must be valid names of Google Cloud regions.
+   * This can only be set for global health check.
+   * If this list is non-empty, then there are restrictions
+   * on what other health check fields are supported and what other resources
+   * can use this health check:
+   *
+   *    - SSL, HTTP2, and GRPC protocols are not supported.
+   *    - The TCP request field is not supported.
+   *    - The proxyHeader field for HTTP, HTTPS, and TCP is not
+   *    supported.
+   *    - The checkIntervalSec field must be at least 30.
+   *    - The health check cannot be used with BackendService nor with managed
+   *    instance group auto-healing.
    * </pre>
    *
    * <code>repeated string source_regions = 405568475;</code>
@@ -479,7 +562,21 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, and GRPC protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing.
+   * The list of cloud regions from which health checks are performed. If any
+   * regions are specified, then exactly 3 regions should be specified. The
+   * region names must be valid names of Google Cloud regions.
+   * This can only be set for global health check.
+   * If this list is non-empty, then there are restrictions
+   * on what other health check fields are supported and what other resources
+   * can use this health check:
+   *
+   *    - SSL, HTTP2, and GRPC protocols are not supported.
+   *    - The TCP request field is not supported.
+   *    - The proxyHeader field for HTTP, HTTPS, and TCP is not
+   *    supported.
+   *    - The checkIntervalSec field must be at least 30.
+   *    - The health check cannot be used with BackendService nor with managed
+   *    instance group auto-healing.
    * </pre>
    *
    * <code>repeated string source_regions = 405568475;</code>
@@ -493,7 +590,21 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, and GRPC protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing.
+   * The list of cloud regions from which health checks are performed. If any
+   * regions are specified, then exactly 3 regions should be specified. The
+   * region names must be valid names of Google Cloud regions.
+   * This can only be set for global health check.
+   * If this list is non-empty, then there are restrictions
+   * on what other health check fields are supported and what other resources
+   * can use this health check:
+   *
+   *    - SSL, HTTP2, and GRPC protocols are not supported.
+   *    - The TCP request field is not supported.
+   *    - The proxyHeader field for HTTP, HTTPS, and TCP is not
+   *    supported.
+   *    - The checkIntervalSec field must be at least 30.
+   *    - The health check cannot be used with BackendService nor with managed
+   *    instance group auto-healing.
    * </pre>
    *
    * <code>repeated string source_regions = 405568475;</code>
@@ -541,7 +652,9 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * How long (in seconds) to wait before claiming failure. The default value is 5 seconds. It is invalid for timeoutSec to have greater value than checkIntervalSec.
+   * How long (in seconds) to wait before claiming failure. The default value is
+   * 5 seconds. It is invalid for timeoutSec to have greater
+   * value than checkIntervalSec.
    * </pre>
    *
    * <code>optional int32 timeout_sec = 79994995;</code>
@@ -554,7 +667,9 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * How long (in seconds) to wait before claiming failure. The default value is 5 seconds. It is invalid for timeoutSec to have greater value than checkIntervalSec.
+   * How long (in seconds) to wait before claiming failure. The default value is
+   * 5 seconds. It is invalid for timeoutSec to have greater
+   * value than checkIntervalSec.
    * </pre>
    *
    * <code>optional int32 timeout_sec = 79994995;</code>
@@ -567,7 +682,8 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS, HTTP2 or GRPC. Exactly one of the protocol-specific health check fields must be specified, which must match type field.
+   * Specifies the type of the healthCheck, either TCP,SSL, HTTP, HTTPS,HTTP2 or GRPC. Exactly one of the
+   * protocol-specific health check fields must be specified, which must matchtype field.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -581,7 +697,8 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS, HTTP2 or GRPC. Exactly one of the protocol-specific health check fields must be specified, which must match type field.
+   * Specifies the type of the healthCheck, either TCP,SSL, HTTP, HTTPS,HTTP2 or GRPC. Exactly one of the
+   * protocol-specific health check fields must be specified, which must matchtype field.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -595,7 +712,8 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS, HTTP2 or GRPC. Exactly one of the protocol-specific health check fields must be specified, which must match type field.
+   * Specifies the type of the healthCheck, either TCP,SSL, HTTP, HTTPS,HTTP2 or GRPC. Exactly one of the
+   * protocol-specific health check fields must be specified, which must matchtype field.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -609,7 +727,8 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * A so-far healthy instance will be marked unhealthy after this many consecutive failures. The default value is 2.
+   * A so-far healthy instance will be marked unhealthy after this many
+   * consecutive failures. The default value is 2.
    * </pre>
    *
    * <code>optional int32 unhealthy_threshold = 227958480;</code>
@@ -622,7 +741,8 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * A so-far healthy instance will be marked unhealthy after this many consecutive failures. The default value is 2.
+   * A so-far healthy instance will be marked unhealthy after this many
+   * consecutive failures. The default value is 2.
    * </pre>
    *
    * <code>optional int32 unhealthy_threshold = 227958480;</code>

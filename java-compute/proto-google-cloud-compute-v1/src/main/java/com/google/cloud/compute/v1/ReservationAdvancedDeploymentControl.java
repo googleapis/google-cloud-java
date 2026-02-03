@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Advance control for cluster management, applicable only to DENSE deployment type reservations.
+ * Advance control for cluster management, applicable only to DENSE deployment
+ * type reservations.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.ReservationAdvancedDeploymentControl}
@@ -91,7 +92,8 @@ public final class ReservationAdvancedDeploymentControl
      *
      *
      * <pre>
-     * Google Cloud does not manage the failure of machines, but provides additional capacity, which is not guaranteed to be available.
+     * Google Cloud does not manage the failure of machines, but provides
+     * additional capacity, which is not guaranteed to be available.
      * </pre>
      *
      * <code>ALL_CAPACITY = 500029880;</code>
@@ -101,7 +103,8 @@ public final class ReservationAdvancedDeploymentControl
      *
      *
      * <pre>
-     * Google Cloud manages the failure of machines to provide high availability.
+     * Google Cloud manages the failure of machines to provide high
+     * availability.
      * </pre>
      *
      * <code>HIGHLY_AVAILABLE_CAPACITY = 110861600;</code>
@@ -127,7 +130,8 @@ public final class ReservationAdvancedDeploymentControl
      *
      *
      * <pre>
-     * Google Cloud does not manage the failure of machines, but provides additional capacity, which is not guaranteed to be available.
+     * Google Cloud does not manage the failure of machines, but provides
+     * additional capacity, which is not guaranteed to be available.
      * </pre>
      *
      * <code>ALL_CAPACITY = 500029880;</code>
@@ -138,7 +142,8 @@ public final class ReservationAdvancedDeploymentControl
      *
      *
      * <pre>
-     * Google Cloud manages the failure of machines to provide high availability.
+     * Google Cloud manages the failure of machines to provide high
+     * availability.
      * </pre>
      *
      * <code>HIGHLY_AVAILABLE_CAPACITY = 110861600;</code>
@@ -485,7 +490,8 @@ public final class ReservationAdvancedDeploymentControl
    *
    *
    * <pre>
-   * Advance control for cluster management, applicable only to DENSE deployment type reservations.
+   * Advance control for cluster management, applicable only to DENSE deployment
+   * type reservations.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.ReservationAdvancedDeploymentControl}

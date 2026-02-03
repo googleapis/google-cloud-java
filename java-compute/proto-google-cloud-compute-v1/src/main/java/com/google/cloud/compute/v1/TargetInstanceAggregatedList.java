@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -282,7 +282,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Type of resource.
+   * Output only. Type of resource.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -298,7 +298,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Type of resource.
+   * Output only. Type of resource.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -322,7 +322,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Type of resource.
+   * Output only. Type of resource.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -351,7 +351,11 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
+   * [Output Only] This token allows you to get the next page of results for
+   * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
+   * the query parameter pageToken in the next list request.
+   * Subsequent list requests will have their own nextPageToken to
+   * continue paging through the results.
    * </pre>
    *
    * <code>optional string next_page_token = 79797525;</code>
@@ -367,7 +371,11 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
+   * [Output Only] This token allows you to get the next page of results for
+   * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
+   * the query parameter pageToken in the next list request.
+   * Subsequent list requests will have their own nextPageToken to
+   * continue paging through the results.
    * </pre>
    *
    * <code>optional string next_page_token = 79797525;</code>
@@ -391,7 +399,11 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
+   * [Output Only] This token allows you to get the next page of results for
+   * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
+   * the query parameter pageToken in the next list request.
+   * Subsequent list requests will have their own nextPageToken to
+   * continue paging through the results.
    * </pre>
    *
    * <code>optional string next_page_token = 79797525;</code>
@@ -420,7 +432,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -436,7 +448,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -460,7 +472,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -490,7 +502,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -505,7 +517,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -520,7 +532,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -536,7 +548,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -1580,7 +1592,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Type of resource.
+     * Output only. Type of resource.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1595,7 +1607,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Type of resource.
+     * Output only. Type of resource.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1618,7 +1630,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Type of resource.
+     * Output only. Type of resource.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1641,7 +1653,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Type of resource.
+     * Output only. Type of resource.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1663,7 +1675,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Type of resource.
+     * Output only. Type of resource.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1681,7 +1693,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Type of resource.
+     * Output only. Type of resource.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1706,7 +1718,11 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
+     * [Output Only] This token allows you to get the next page of results for
+     * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
+     * the query parameter pageToken in the next list request.
+     * Subsequent list requests will have their own nextPageToken to
+     * continue paging through the results.
      * </pre>
      *
      * <code>optional string next_page_token = 79797525;</code>
@@ -1721,7 +1737,11 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
+     * [Output Only] This token allows you to get the next page of results for
+     * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
+     * the query parameter pageToken in the next list request.
+     * Subsequent list requests will have their own nextPageToken to
+     * continue paging through the results.
      * </pre>
      *
      * <code>optional string next_page_token = 79797525;</code>
@@ -1744,7 +1764,11 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
+     * [Output Only] This token allows you to get the next page of results for
+     * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
+     * the query parameter pageToken in the next list request.
+     * Subsequent list requests will have their own nextPageToken to
+     * continue paging through the results.
      * </pre>
      *
      * <code>optional string next_page_token = 79797525;</code>
@@ -1767,7 +1791,11 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
+     * [Output Only] This token allows you to get the next page of results for
+     * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
+     * the query parameter pageToken in the next list request.
+     * Subsequent list requests will have their own nextPageToken to
+     * continue paging through the results.
      * </pre>
      *
      * <code>optional string next_page_token = 79797525;</code>
@@ -1789,7 +1817,11 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
+     * [Output Only] This token allows you to get the next page of results for
+     * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
+     * the query parameter pageToken in the next list request.
+     * Subsequent list requests will have their own nextPageToken to
+     * continue paging through the results.
      * </pre>
      *
      * <code>optional string next_page_token = 79797525;</code>
@@ -1807,7 +1839,11 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
+     * [Output Only] This token allows you to get the next page of results for
+     * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
+     * the query parameter pageToken in the next list request.
+     * Subsequent list requests will have their own nextPageToken to
+     * continue paging through the results.
      * </pre>
      *
      * <code>optional string next_page_token = 79797525;</code>
@@ -1832,7 +1868,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1847,7 +1883,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1870,7 +1906,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1893,7 +1929,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1915,7 +1951,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1933,7 +1969,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1966,7 +2002,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -1982,7 +2018,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -1997,7 +2033,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2013,7 +2049,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2029,7 +2065,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2053,7 +2089,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2076,7 +2112,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2096,7 +2132,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2115,7 +2151,7 @@ public final class TargetInstanceAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>

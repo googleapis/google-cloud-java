@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,6 +48,9 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
     backupRegion_ = "";
     sourceBackupVault_ = "";
     destinationBackupVault_ = "";
+    kmsConfig_ = "";
+    encryptionState_ = 0;
+    backupsCryptoKeyVersion_ = "";
   }
 
   @java.lang.Override
@@ -470,6 +473,213 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.netapp.v1.BackupVault.BackupVaultType)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Encryption state of customer-managed encryption keys (CMEK) backups.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.netapp.v1.BackupVault.EncryptionState}
+   */
+  public enum EncryptionState implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Encryption state not set.
+     * </pre>
+     *
+     * <code>ENCRYPTION_STATE_UNSPECIFIED = 0;</code>
+     */
+    ENCRYPTION_STATE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Encryption state is pending.
+     * </pre>
+     *
+     * <code>ENCRYPTION_STATE_PENDING = 1;</code>
+     */
+    ENCRYPTION_STATE_PENDING(1),
+    /**
+     *
+     *
+     * <pre>
+     * Encryption is complete.
+     * </pre>
+     *
+     * <code>ENCRYPTION_STATE_COMPLETED = 2;</code>
+     */
+    ENCRYPTION_STATE_COMPLETED(2),
+    /**
+     *
+     *
+     * <pre>
+     * Encryption is in progress.
+     * </pre>
+     *
+     * <code>ENCRYPTION_STATE_IN_PROGRESS = 3;</code>
+     */
+    ENCRYPTION_STATE_IN_PROGRESS(3),
+    /**
+     *
+     *
+     * <pre>
+     * Encryption has failed.
+     * </pre>
+     *
+     * <code>ENCRYPTION_STATE_FAILED = 4;</code>
+     */
+    ENCRYPTION_STATE_FAILED(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Encryption state not set.
+     * </pre>
+     *
+     * <code>ENCRYPTION_STATE_UNSPECIFIED = 0;</code>
+     */
+    public static final int ENCRYPTION_STATE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Encryption state is pending.
+     * </pre>
+     *
+     * <code>ENCRYPTION_STATE_PENDING = 1;</code>
+     */
+    public static final int ENCRYPTION_STATE_PENDING_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Encryption is complete.
+     * </pre>
+     *
+     * <code>ENCRYPTION_STATE_COMPLETED = 2;</code>
+     */
+    public static final int ENCRYPTION_STATE_COMPLETED_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Encryption is in progress.
+     * </pre>
+     *
+     * <code>ENCRYPTION_STATE_IN_PROGRESS = 3;</code>
+     */
+    public static final int ENCRYPTION_STATE_IN_PROGRESS_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * Encryption has failed.
+     * </pre>
+     *
+     * <code>ENCRYPTION_STATE_FAILED = 4;</code>
+     */
+    public static final int ENCRYPTION_STATE_FAILED_VALUE = 4;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static EncryptionState valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static EncryptionState forNumber(int value) {
+      switch (value) {
+        case 0:
+          return ENCRYPTION_STATE_UNSPECIFIED;
+        case 1:
+          return ENCRYPTION_STATE_PENDING;
+        case 2:
+          return ENCRYPTION_STATE_COMPLETED;
+        case 3:
+          return ENCRYPTION_STATE_IN_PROGRESS;
+        case 4:
+          return ENCRYPTION_STATE_FAILED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<EncryptionState> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<EncryptionState>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<EncryptionState>() {
+              public EncryptionState findValueByNumber(int number) {
+                return EncryptionState.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.netapp.v1.BackupVault.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final EncryptionState[] VALUES = values();
+
+    public static EncryptionState valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private EncryptionState(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.netapp.v1.BackupVault.EncryptionState)
   }
 
   public interface BackupRetentionPolicyOrBuilder
@@ -2126,7 +2336,7 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Backup retention policy defining the retenton of backups.
+   * Optional. Backup retention policy defining the retention of backups.
    * </pre>
    *
    * <code>
@@ -2144,7 +2354,7 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Backup retention policy defining the retenton of backups.
+   * Optional. Backup retention policy defining the retention of backups.
    * </pre>
    *
    * <code>
@@ -2164,7 +2374,7 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Backup retention policy defining the retenton of backups.
+   * Optional. Backup retention policy defining the retention of backups.
    * </pre>
    *
    * <code>
@@ -2177,6 +2387,169 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
     return backupRetentionPolicy_ == null
         ? com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy.getDefaultInstance()
         : backupRetentionPolicy_;
+  }
+
+  public static final int KMS_CONFIG_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsConfig_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the Key Management System (KMS) configuration to be
+   * used for backup encryption. Format:
+   * `projects/{project}/locations/{location}/kmsConfigs/{kms_config}`
+   * </pre>
+   *
+   * <code>
+   * string kms_config = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The kmsConfig.
+   */
+  @java.lang.Override
+  public java.lang.String getKmsConfig() {
+    java.lang.Object ref = kmsConfig_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      kmsConfig_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the Key Management System (KMS) configuration to be
+   * used for backup encryption. Format:
+   * `projects/{project}/locations/{location}/kmsConfigs/{kms_config}`
+   * </pre>
+   *
+   * <code>
+   * string kms_config = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for kmsConfig.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getKmsConfigBytes() {
+    java.lang.Object ref = kmsConfig_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      kmsConfig_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ENCRYPTION_STATE_FIELD_NUMBER = 13;
+  private int encryptionState_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Field indicating encryption state of CMEK backups.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.BackupVault.EncryptionState encryption_state = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for encryptionState.
+   */
+  @java.lang.Override
+  public int getEncryptionStateValue() {
+    return encryptionState_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Field indicating encryption state of CMEK backups.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.BackupVault.EncryptionState encryption_state = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The encryptionState.
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.BackupVault.EncryptionState getEncryptionState() {
+    com.google.cloud.netapp.v1.BackupVault.EncryptionState result =
+        com.google.cloud.netapp.v1.BackupVault.EncryptionState.forNumber(encryptionState_);
+    return result == null
+        ? com.google.cloud.netapp.v1.BackupVault.EncryptionState.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int BACKUPS_CRYPTO_KEY_VERSION_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object backupsCryptoKeyVersion_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The crypto key version used to encrypt the backup vault.
+   * Format:
+   * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}`
+   * </pre>
+   *
+   * <code>string backups_crypto_key_version = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The backupsCryptoKeyVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getBackupsCryptoKeyVersion() {
+    java.lang.Object ref = backupsCryptoKeyVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      backupsCryptoKeyVersion_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The crypto key version used to encrypt the backup vault.
+   * Format:
+   * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}`
+   * </pre>
+   *
+   * <code>string backups_crypto_key_version = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for backupsCryptoKeyVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBackupsCryptoKeyVersionBytes() {
+    java.lang.Object ref = backupsCryptoKeyVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      backupsCryptoKeyVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2226,6 +2599,17 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(11, getBackupRetentionPolicy());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsConfig_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, kmsConfig_);
+    }
+    if (encryptionState_
+        != com.google.cloud.netapp.v1.BackupVault.EncryptionState.ENCRYPTION_STATE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(13, encryptionState_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backupsCryptoKeyVersion_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, backupsCryptoKeyVersion_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2279,6 +2663,18 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(11, getBackupRetentionPolicy());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsConfig_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, kmsConfig_);
+    }
+    if (encryptionState_
+        != com.google.cloud.netapp.v1.BackupVault.EncryptionState.ENCRYPTION_STATE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(13, encryptionState_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backupsCryptoKeyVersion_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(14, backupsCryptoKeyVersion_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2311,6 +2707,9 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
     if (hasBackupRetentionPolicy()) {
       if (!getBackupRetentionPolicy().equals(other.getBackupRetentionPolicy())) return false;
     }
+    if (!getKmsConfig().equals(other.getKmsConfig())) return false;
+    if (encryptionState_ != other.encryptionState_) return false;
+    if (!getBackupsCryptoKeyVersion().equals(other.getBackupsCryptoKeyVersion())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2350,6 +2749,12 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + BACKUP_RETENTION_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getBackupRetentionPolicy().hashCode();
     }
+    hash = (37 * hash) + KMS_CONFIG_FIELD_NUMBER;
+    hash = (53 * hash) + getKmsConfig().hashCode();
+    hash = (37 * hash) + ENCRYPTION_STATE_FIELD_NUMBER;
+    hash = (53 * hash) + encryptionState_;
+    hash = (37 * hash) + BACKUPS_CRYPTO_KEY_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getBackupsCryptoKeyVersion().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2541,6 +2946,9 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
         backupRetentionPolicyBuilder_.dispose();
         backupRetentionPolicyBuilder_ = null;
       }
+      kmsConfig_ = "";
+      encryptionState_ = 0;
+      backupsCryptoKeyVersion_ = "";
       return this;
     }
 
@@ -2616,6 +3024,15 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
                 ? backupRetentionPolicy_
                 : backupRetentionPolicyBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.kmsConfig_ = kmsConfig_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.encryptionState_ = encryptionState_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.backupsCryptoKeyVersion_ = backupsCryptoKeyVersion_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2708,6 +3125,19 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasBackupRetentionPolicy()) {
         mergeBackupRetentionPolicy(other.getBackupRetentionPolicy());
+      }
+      if (!other.getKmsConfig().isEmpty()) {
+        kmsConfig_ = other.kmsConfig_;
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      if (other.encryptionState_ != 0) {
+        setEncryptionStateValue(other.getEncryptionStateValue());
+      }
+      if (!other.getBackupsCryptoKeyVersion().isEmpty()) {
+        backupsCryptoKeyVersion_ = other.backupsCryptoKeyVersion_;
+        bitField0_ |= 0x00002000;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2808,6 +3238,24 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000400;
                 break;
               } // case 90
+            case 98:
+              {
+                kmsConfig_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 98
+            case 104:
+              {
+                encryptionState_ = input.readEnum();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 104
+            case 114:
+              {
+                backupsCryptoKeyVersion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4186,7 +4634,7 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Backup retention policy defining the retenton of backups.
+     * Optional. Backup retention policy defining the retention of backups.
      * </pre>
      *
      * <code>
@@ -4203,7 +4651,7 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Backup retention policy defining the retenton of backups.
+     * Optional. Backup retention policy defining the retention of backups.
      * </pre>
      *
      * <code>
@@ -4226,7 +4674,7 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Backup retention policy defining the retenton of backups.
+     * Optional. Backup retention policy defining the retention of backups.
      * </pre>
      *
      * <code>
@@ -4252,7 +4700,7 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Backup retention policy defining the retenton of backups.
+     * Optional. Backup retention policy defining the retention of backups.
      * </pre>
      *
      * <code>
@@ -4275,7 +4723,7 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Backup retention policy defining the retenton of backups.
+     * Optional. Backup retention policy defining the retention of backups.
      * </pre>
      *
      * <code>
@@ -4308,7 +4756,7 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Backup retention policy defining the retenton of backups.
+     * Optional. Backup retention policy defining the retention of backups.
      * </pre>
      *
      * <code>
@@ -4330,7 +4778,7 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Backup retention policy defining the retenton of backups.
+     * Optional. Backup retention policy defining the retention of backups.
      * </pre>
      *
      * <code>
@@ -4348,7 +4796,7 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Backup retention policy defining the retenton of backups.
+     * Optional. Backup retention policy defining the retention of backups.
      * </pre>
      *
      * <code>
@@ -4370,7 +4818,7 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Backup retention policy defining the retenton of backups.
+     * Optional. Backup retention policy defining the retention of backups.
      * </pre>
      *
      * <code>
@@ -4392,6 +4840,371 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
         backupRetentionPolicy_ = null;
       }
       return backupRetentionPolicyBuilder_;
+    }
+
+    private java.lang.Object kmsConfig_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the Key Management System (KMS) configuration to be
+     * used for backup encryption. Format:
+     * `projects/{project}/locations/{location}/kmsConfigs/{kms_config}`
+     * </pre>
+     *
+     * <code>
+     * string kms_config = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The kmsConfig.
+     */
+    public java.lang.String getKmsConfig() {
+      java.lang.Object ref = kmsConfig_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kmsConfig_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the Key Management System (KMS) configuration to be
+     * used for backup encryption. Format:
+     * `projects/{project}/locations/{location}/kmsConfigs/{kms_config}`
+     * </pre>
+     *
+     * <code>
+     * string kms_config = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for kmsConfig.
+     */
+    public com.google.protobuf.ByteString getKmsConfigBytes() {
+      java.lang.Object ref = kmsConfig_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        kmsConfig_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the Key Management System (KMS) configuration to be
+     * used for backup encryption. Format:
+     * `projects/{project}/locations/{location}/kmsConfigs/{kms_config}`
+     * </pre>
+     *
+     * <code>
+     * string kms_config = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The kmsConfig to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsConfig(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      kmsConfig_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the Key Management System (KMS) configuration to be
+     * used for backup encryption. Format:
+     * `projects/{project}/locations/{location}/kmsConfigs/{kms_config}`
+     * </pre>
+     *
+     * <code>
+     * string kms_config = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKmsConfig() {
+      kmsConfig_ = getDefaultInstance().getKmsConfig();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the Key Management System (KMS) configuration to be
+     * used for backup encryption. Format:
+     * `projects/{project}/locations/{location}/kmsConfigs/{kms_config}`
+     * </pre>
+     *
+     * <code>
+     * string kms_config = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for kmsConfig to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsConfigBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      kmsConfig_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    private int encryptionState_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Field indicating encryption state of CMEK backups.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.BackupVault.EncryptionState encryption_state = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for encryptionState.
+     */
+    @java.lang.Override
+    public int getEncryptionStateValue() {
+      return encryptionState_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Field indicating encryption state of CMEK backups.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.BackupVault.EncryptionState encryption_state = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for encryptionState to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEncryptionStateValue(int value) {
+      encryptionState_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Field indicating encryption state of CMEK backups.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.BackupVault.EncryptionState encryption_state = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The encryptionState.
+     */
+    @java.lang.Override
+    public com.google.cloud.netapp.v1.BackupVault.EncryptionState getEncryptionState() {
+      com.google.cloud.netapp.v1.BackupVault.EncryptionState result =
+          com.google.cloud.netapp.v1.BackupVault.EncryptionState.forNumber(encryptionState_);
+      return result == null
+          ? com.google.cloud.netapp.v1.BackupVault.EncryptionState.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Field indicating encryption state of CMEK backups.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.BackupVault.EncryptionState encryption_state = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The encryptionState to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEncryptionState(
+        com.google.cloud.netapp.v1.BackupVault.EncryptionState value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00001000;
+      encryptionState_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Field indicating encryption state of CMEK backups.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.BackupVault.EncryptionState encryption_state = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEncryptionState() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      encryptionState_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object backupsCryptoKeyVersion_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The crypto key version used to encrypt the backup vault.
+     * Format:
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}`
+     * </pre>
+     *
+     * <code>string backups_crypto_key_version = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The backupsCryptoKeyVersion.
+     */
+    public java.lang.String getBackupsCryptoKeyVersion() {
+      java.lang.Object ref = backupsCryptoKeyVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        backupsCryptoKeyVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The crypto key version used to encrypt the backup vault.
+     * Format:
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}`
+     * </pre>
+     *
+     * <code>string backups_crypto_key_version = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for backupsCryptoKeyVersion.
+     */
+    public com.google.protobuf.ByteString getBackupsCryptoKeyVersionBytes() {
+      java.lang.Object ref = backupsCryptoKeyVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        backupsCryptoKeyVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The crypto key version used to encrypt the backup vault.
+     * Format:
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}`
+     * </pre>
+     *
+     * <code>string backups_crypto_key_version = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The backupsCryptoKeyVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBackupsCryptoKeyVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      backupsCryptoKeyVersion_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The crypto key version used to encrypt the backup vault.
+     * Format:
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}`
+     * </pre>
+     *
+     * <code>string backups_crypto_key_version = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBackupsCryptoKeyVersion() {
+      backupsCryptoKeyVersion_ = getDefaultInstance().getBackupsCryptoKeyVersion();
+      bitField0_ = (bitField0_ & ~0x00002000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The crypto key version used to encrypt the backup vault.
+     * Format:
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}`
+     * </pre>
+     *
+     * <code>string backups_crypto_key_version = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for backupsCryptoKeyVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBackupsCryptoKeyVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      backupsCryptoKeyVersion_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

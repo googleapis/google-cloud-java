@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +42,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
   private MachineSpec() {
     machineType_ = "";
     acceleratorType_ = 0;
+    gpuPartitionSize_ = "";
     tpuTopology_ = "";
   }
 
@@ -208,6 +209,89 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     return acceleratorCount_;
   }
 
+  public static final int GPU_PARTITION_SIZE_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object gpuPartitionSize_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The Nvidia GPU partition size.
+   *
+   * When specified, the requested accelerators will be partitioned into
+   * smaller GPU partitions. For example, if the request is for 8 units of
+   * NVIDIA A100 GPUs, and gpu_partition_size="1g.10gb", the service will
+   * create 8 * 7 = 56 partitioned MIG instances.
+   *
+   * The partition size must be a value supported by the requested accelerator.
+   * Refer to
+   * [Nvidia GPU
+   * Partitioning](https://cloud.google.com/kubernetes-engine/docs/how-to/gpus-multi#multi-instance_gpu_partitions)
+   * for the available partition sizes.
+   *
+   * If set, the accelerator_count should be set to 1.
+   * </pre>
+   *
+   * <code>
+   * string gpu_partition_size = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The gpuPartitionSize.
+   */
+  @java.lang.Override
+  public java.lang.String getGpuPartitionSize() {
+    java.lang.Object ref = gpuPartitionSize_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      gpuPartitionSize_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The Nvidia GPU partition size.
+   *
+   * When specified, the requested accelerators will be partitioned into
+   * smaller GPU partitions. For example, if the request is for 8 units of
+   * NVIDIA A100 GPUs, and gpu_partition_size="1g.10gb", the service will
+   * create 8 * 7 = 56 partitioned MIG instances.
+   *
+   * The partition size must be a value supported by the requested accelerator.
+   * Refer to
+   * [Nvidia GPU
+   * Partitioning](https://cloud.google.com/kubernetes-engine/docs/how-to/gpus-multi#multi-instance_gpu_partitions)
+   * for the available partition sizes.
+   *
+   * If set, the accelerator_count should be set to 1.
+   * </pre>
+   *
+   * <code>
+   * string gpu_partition_size = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for gpuPartitionSize.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getGpuPartitionSizeBytes() {
+    java.lang.Object ref = gpuPartitionSize_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      gpuPartitionSize_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int TPU_TOPOLOGY_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
@@ -357,6 +441,9 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(5, getReservationAffinity());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gpuPartitionSize_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, gpuPartitionSize_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -383,6 +470,9 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getReservationAffinity());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gpuPartitionSize_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, gpuPartitionSize_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -402,6 +492,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     if (!getMachineType().equals(other.getMachineType())) return false;
     if (acceleratorType_ != other.acceleratorType_) return false;
     if (getAcceleratorCount() != other.getAcceleratorCount()) return false;
+    if (!getGpuPartitionSize().equals(other.getGpuPartitionSize())) return false;
     if (!getTpuTopology().equals(other.getTpuTopology())) return false;
     if (hasReservationAffinity() != other.hasReservationAffinity()) return false;
     if (hasReservationAffinity()) {
@@ -424,6 +515,8 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + acceleratorType_;
     hash = (37 * hash) + ACCELERATOR_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getAcceleratorCount();
+    hash = (37 * hash) + GPU_PARTITION_SIZE_FIELD_NUMBER;
+    hash = (53 * hash) + getGpuPartitionSize().hashCode();
     hash = (37 * hash) + TPU_TOPOLOGY_FIELD_NUMBER;
     hash = (53 * hash) + getTpuTopology().hashCode();
     if (hasReservationAffinity()) {
@@ -582,6 +675,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       machineType_ = "";
       acceleratorType_ = 0;
       acceleratorCount_ = 0;
+      gpuPartitionSize_ = "";
       tpuTopology_ = "";
       reservationAffinity_ = null;
       if (reservationAffinityBuilder_ != null) {
@@ -634,10 +728,13 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
         result.acceleratorCount_ = acceleratorCount_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.gpuPartitionSize_ = gpuPartitionSize_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.tpuTopology_ = tpuTopology_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.reservationAffinity_ =
             reservationAffinityBuilder_ == null
                 ? reservationAffinity_
@@ -703,9 +800,14 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       if (other.getAcceleratorCount() != 0) {
         setAcceleratorCount(other.getAcceleratorCount());
       }
+      if (!other.getGpuPartitionSize().isEmpty()) {
+        gpuPartitionSize_ = other.gpuPartitionSize_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       if (!other.getTpuTopology().isEmpty()) {
         tpuTopology_ = other.tpuTopology_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasReservationAffinity()) {
@@ -758,16 +860,22 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 tpuTopology_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(
                     getReservationAffinityFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
+            case 58:
+              {
+                gpuPartitionSize_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1129,6 +1237,192 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object gpuPartitionSize_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The Nvidia GPU partition size.
+     *
+     * When specified, the requested accelerators will be partitioned into
+     * smaller GPU partitions. For example, if the request is for 8 units of
+     * NVIDIA A100 GPUs, and gpu_partition_size="1g.10gb", the service will
+     * create 8 * 7 = 56 partitioned MIG instances.
+     *
+     * The partition size must be a value supported by the requested accelerator.
+     * Refer to
+     * [Nvidia GPU
+     * Partitioning](https://cloud.google.com/kubernetes-engine/docs/how-to/gpus-multi#multi-instance_gpu_partitions)
+     * for the available partition sizes.
+     *
+     * If set, the accelerator_count should be set to 1.
+     * </pre>
+     *
+     * <code>
+     * string gpu_partition_size = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The gpuPartitionSize.
+     */
+    public java.lang.String getGpuPartitionSize() {
+      java.lang.Object ref = gpuPartitionSize_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        gpuPartitionSize_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The Nvidia GPU partition size.
+     *
+     * When specified, the requested accelerators will be partitioned into
+     * smaller GPU partitions. For example, if the request is for 8 units of
+     * NVIDIA A100 GPUs, and gpu_partition_size="1g.10gb", the service will
+     * create 8 * 7 = 56 partitioned MIG instances.
+     *
+     * The partition size must be a value supported by the requested accelerator.
+     * Refer to
+     * [Nvidia GPU
+     * Partitioning](https://cloud.google.com/kubernetes-engine/docs/how-to/gpus-multi#multi-instance_gpu_partitions)
+     * for the available partition sizes.
+     *
+     * If set, the accelerator_count should be set to 1.
+     * </pre>
+     *
+     * <code>
+     * string gpu_partition_size = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for gpuPartitionSize.
+     */
+    public com.google.protobuf.ByteString getGpuPartitionSizeBytes() {
+      java.lang.Object ref = gpuPartitionSize_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        gpuPartitionSize_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The Nvidia GPU partition size.
+     *
+     * When specified, the requested accelerators will be partitioned into
+     * smaller GPU partitions. For example, if the request is for 8 units of
+     * NVIDIA A100 GPUs, and gpu_partition_size="1g.10gb", the service will
+     * create 8 * 7 = 56 partitioned MIG instances.
+     *
+     * The partition size must be a value supported by the requested accelerator.
+     * Refer to
+     * [Nvidia GPU
+     * Partitioning](https://cloud.google.com/kubernetes-engine/docs/how-to/gpus-multi#multi-instance_gpu_partitions)
+     * for the available partition sizes.
+     *
+     * If set, the accelerator_count should be set to 1.
+     * </pre>
+     *
+     * <code>
+     * string gpu_partition_size = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The gpuPartitionSize to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGpuPartitionSize(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      gpuPartitionSize_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The Nvidia GPU partition size.
+     *
+     * When specified, the requested accelerators will be partitioned into
+     * smaller GPU partitions. For example, if the request is for 8 units of
+     * NVIDIA A100 GPUs, and gpu_partition_size="1g.10gb", the service will
+     * create 8 * 7 = 56 partitioned MIG instances.
+     *
+     * The partition size must be a value supported by the requested accelerator.
+     * Refer to
+     * [Nvidia GPU
+     * Partitioning](https://cloud.google.com/kubernetes-engine/docs/how-to/gpus-multi#multi-instance_gpu_partitions)
+     * for the available partition sizes.
+     *
+     * If set, the accelerator_count should be set to 1.
+     * </pre>
+     *
+     * <code>
+     * string gpu_partition_size = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearGpuPartitionSize() {
+      gpuPartitionSize_ = getDefaultInstance().getGpuPartitionSize();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The Nvidia GPU partition size.
+     *
+     * When specified, the requested accelerators will be partitioned into
+     * smaller GPU partitions. For example, if the request is for 8 units of
+     * NVIDIA A100 GPUs, and gpu_partition_size="1g.10gb", the service will
+     * create 8 * 7 = 56 partitioned MIG instances.
+     *
+     * The partition size must be a value supported by the requested accelerator.
+     * Refer to
+     * [Nvidia GPU
+     * Partitioning](https://cloud.google.com/kubernetes-engine/docs/how-to/gpus-multi#multi-instance_gpu_partitions)
+     * for the available partition sizes.
+     *
+     * If set, the accelerator_count should be set to 1.
+     * </pre>
+     *
+     * <code>
+     * string gpu_partition_size = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes for gpuPartitionSize to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGpuPartitionSizeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      gpuPartitionSize_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object tpuTopology_ = "";
 
     /**
@@ -1197,7 +1491,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       tpuTopology_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1216,7 +1510,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearTpuTopology() {
       tpuTopology_ = getDefaultInstance().getTpuTopology();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1240,7 +1534,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       tpuTopology_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1267,7 +1561,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the reservationAffinity field is set.
      */
     public boolean hasReservationAffinity() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -1316,7 +1610,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       } else {
         reservationAffinityBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1340,7 +1634,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       } else {
         reservationAffinityBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1360,7 +1654,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeReservationAffinity(
         com.google.cloud.aiplatform.v1.ReservationAffinity value) {
       if (reservationAffinityBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && reservationAffinity_ != null
             && reservationAffinity_
                 != com.google.cloud.aiplatform.v1.ReservationAffinity.getDefaultInstance()) {
@@ -1372,7 +1666,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
         reservationAffinityBuilder_.mergeFrom(value);
       }
       if (reservationAffinity_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -1391,7 +1685,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearReservationAffinity() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       reservationAffinity_ = null;
       if (reservationAffinityBuilder_ != null) {
         reservationAffinityBuilder_.dispose();
@@ -1415,7 +1709,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.aiplatform.v1.ReservationAffinity.Builder
         getReservationAffinityBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getReservationAffinityFieldBuilder().getBuilder();
     }

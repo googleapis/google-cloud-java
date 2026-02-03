@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -153,11 +153,13 @@ public final class KmsProto {
           + "\tMIGRATING\020\013:|\352Ay\n"
           + "\037netapp.googleapis.com/KmsConfig\022?pr"
           + "ojects/{project}/locations/{location}/kmsConfigs/{kms_config}*\n"
-          + "kmsConfigs2\tkmsConfigB\252\001\n"
+          + "kmsConfigs2\tkmsConfigB\324\002\n"
           + "\032com.google.cloud.netapp.v1B\010KmsProtoP\001Z2cloud.google.com/go/netapp/apiv"
           + "1/netapppb;netapppb\252\002\026Google.Cloud.NetAp"
-          + "p.V1\312\002\026Google\\Cloud\\NetApp\\V1\352\002\031Google::"
-          + "Cloud::NetApp::V1b\006proto3"
+          + "p.V1\312\002\026Google\\Cloud\\NetApp\\V1\352\002\031Google::Cloud::NetApp::V1\352A\246\001\n"
+          + "(cloudkms.googleapis.com/CryptoKeyVersion\022zprojects/{proje"
+          + "ct}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVe"
+          + "rsions/{crypto_key_version}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -268,6 +270,7 @@ public final class KmsProto {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);

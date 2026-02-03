@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,14 @@ public final class GoogleApiSourceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_eventarc_v1_GoogleApiSource_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_eventarc_v1_GoogleApiSource_ProjectSubscriptions_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_eventarc_v1_GoogleApiSource_ProjectSubscriptions_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_eventarc_v1_GoogleApiSource_OrganizationSubscription_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_eventarc_v1_GoogleApiSource_OrganizationSubscription_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_eventarc_v1_GoogleApiSource_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_eventarc_v1_GoogleApiSource_LabelsEntry_fieldAccessorTable;
@@ -55,7 +63,7 @@ public final class GoogleApiSourceProto {
           + "ogle/api/field_behavior.proto\032\033google/ap"
           + "i/field_info.proto\032\031google/api/resource."
           + "proto\032-google/cloud/eventarc/v1/logging_"
-          + "config.proto\032\037google/protobuf/timestamp.proto\"\311\006\n"
+          + "config.proto\032\037google/protobuf/timestamp.proto\"\225\t\n"
           + "\017GoogleApiSource\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\030\n"
           + "\003uid\030\002 \001(\tB\013\340A\003\342\214\317\327\010\002\010\001\022\021\n"
@@ -73,20 +81,30 @@ public final class GoogleApiSourceProto {
           + " \001(\tB)\340A\001\372A#\n"
           + "!cloudkms.googleapis.com/CryptoKey\022D\n"
           + "\016logging_config\030\013"
-          + " \001(\0132\'.google.cloud.eventarc.v1.LoggingConfigB\003\340A\001\032-\n"
+          + " \001(\0132\'.google.cloud.eventarc.v1.LoggingConfigB\003\340A\001\022l\n"
+          + "\031organization_subscription\030\014 \001(\0132B.google.cloud."
+          + "eventarc.v1.GoogleApiSource.OrganizationSubscriptionB\003\340A\001H\000\022d\n"
+          + "\025project_subscriptions\030\r"
+          + " \001(\0132>.google.cloud.eventarc.v1.Go"
+          + "ogleApiSource.ProjectSubscriptionsB\003\340A\001H\000\032)\n"
+          + "\024ProjectSubscriptions\022\021\n"
+          + "\004list\030\001 \003(\tB\003\340A\002\0320\n"
+          + "\030OrganizationSubscription\022\024\n"
+          + "\007enabled\030\001 \001(\010B\003\340A\002\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\0322\n"
           + "\020AnnotationsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:\236\001\352A\232\001\n"
-          + "\'eventarc.googleapis.com/GoogleApiSource\022Lprojects/{project}/loc"
-          + "ations/{location}/googleApiSources/{goog"
-          + "le_api_source}*\020googleApiSources2\017googleApiSourceB\304\001\n"
-          + "\034com.google.cloud.eventarc.v1B\024GoogleApiSourceProtoP\001Z8cloud.google"
-          + ".com/go/eventarc/apiv1/eventarcpb;eventa"
-          + "rcpb\252\002\030Google.Cloud.Eventarc.V1\312\002\030Google"
-          + "\\Cloud\\Eventarc\\V1\352\002\033Google::Cloud::Eventarc::V1b\006proto3"
+          + "\'eventarc.googleapis.com/GoogleApiSource\022Lprojects/{project}/locations/{locatio"
+          + "n}/googleApiSources/{google_api_source}*\020googleApiSources2\017googleApiSourceB\031\n"
+          + "\027wide_scope_subscriptionB\304\001\n"
+          + "\034com.google.cloud.eventarc.v1B\024GoogleApiSourceProtoP\001Z8"
+          + "cloud.google.com/go/eventarc/apiv1/event"
+          + "arcpb;eventarcpb\252\002\030Google.Cloud.Eventarc"
+          + ".V1\312\002\030Google\\Cloud\\Eventarc\\V1\352\002\033Google:"
+          + ":Cloud::Eventarc::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -115,9 +133,28 @@ public final class GoogleApiSourceProto {
               "Destination",
               "CryptoKeyName",
               "LoggingConfig",
+              "OrganizationSubscription",
+              "ProjectSubscriptions",
+              "WideScopeSubscription",
+            });
+    internal_static_google_cloud_eventarc_v1_GoogleApiSource_ProjectSubscriptions_descriptor =
+        internal_static_google_cloud_eventarc_v1_GoogleApiSource_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_eventarc_v1_GoogleApiSource_ProjectSubscriptions_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_eventarc_v1_GoogleApiSource_ProjectSubscriptions_descriptor,
+            new java.lang.String[] {
+              "List",
+            });
+    internal_static_google_cloud_eventarc_v1_GoogleApiSource_OrganizationSubscription_descriptor =
+        internal_static_google_cloud_eventarc_v1_GoogleApiSource_descriptor.getNestedTypes().get(1);
+    internal_static_google_cloud_eventarc_v1_GoogleApiSource_OrganizationSubscription_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_eventarc_v1_GoogleApiSource_OrganizationSubscription_descriptor,
+            new java.lang.String[] {
+              "Enabled",
             });
     internal_static_google_cloud_eventarc_v1_GoogleApiSource_LabelsEntry_descriptor =
-        internal_static_google_cloud_eventarc_v1_GoogleApiSource_descriptor.getNestedTypes().get(0);
+        internal_static_google_cloud_eventarc_v1_GoogleApiSource_descriptor.getNestedTypes().get(2);
     internal_static_google_cloud_eventarc_v1_GoogleApiSource_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_eventarc_v1_GoogleApiSource_LabelsEntry_descriptor,
@@ -125,7 +162,7 @@ public final class GoogleApiSourceProto {
               "Key", "Value",
             });
     internal_static_google_cloud_eventarc_v1_GoogleApiSource_AnnotationsEntry_descriptor =
-        internal_static_google_cloud_eventarc_v1_GoogleApiSource_descriptor.getNestedTypes().get(1);
+        internal_static_google_cloud_eventarc_v1_GoogleApiSource_descriptor.getNestedTypes().get(3);
     internal_static_google_cloud_eventarc_v1_GoogleApiSource_AnnotationsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_eventarc_v1_GoogleApiSource_AnnotationsEntry_descriptor,

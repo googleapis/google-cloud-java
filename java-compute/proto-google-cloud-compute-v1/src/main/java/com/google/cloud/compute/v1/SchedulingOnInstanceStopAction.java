@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Defines the behaviour for instances with the instance_termination_action STOP.
+ * Defines the behaviour for instances with the instance_termination_actionSTOP.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.SchedulingOnInstanceStopAction}
@@ -71,7 +71,9 @@ public final class SchedulingOnInstanceStopAction extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * If true, the contents of any attached Local SSD disks will be discarded else, the Local SSD data will be preserved when the instance is stopped at the end of the run duration/termination time.
+   * If true, the contents of any attached Local SSD disks will be discarded
+   * else, the Local SSD data will be preserved when the instance is stopped
+   * at the end of the run duration/termination time.
    * </pre>
    *
    * <code>optional bool discard_local_ssd = 319517903;</code>
@@ -87,7 +89,9 @@ public final class SchedulingOnInstanceStopAction extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * If true, the contents of any attached Local SSD disks will be discarded else, the Local SSD data will be preserved when the instance is stopped at the end of the run duration/termination time.
+   * If true, the contents of any attached Local SSD disks will be discarded
+   * else, the Local SSD data will be preserved when the instance is stopped
+   * at the end of the run duration/termination time.
    * </pre>
    *
    * <code>optional bool discard_local_ssd = 319517903;</code>
@@ -269,7 +273,7 @@ public final class SchedulingOnInstanceStopAction extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Defines the behaviour for instances with the instance_termination_action STOP.
+   * Defines the behaviour for instances with the instance_termination_actionSTOP.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.SchedulingOnInstanceStopAction}
@@ -455,7 +459,9 @@ public final class SchedulingOnInstanceStopAction extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * If true, the contents of any attached Local SSD disks will be discarded else, the Local SSD data will be preserved when the instance is stopped at the end of the run duration/termination time.
+     * If true, the contents of any attached Local SSD disks will be discarded
+     * else, the Local SSD data will be preserved when the instance is stopped
+     * at the end of the run duration/termination time.
      * </pre>
      *
      * <code>optional bool discard_local_ssd = 319517903;</code>
@@ -471,7 +477,9 @@ public final class SchedulingOnInstanceStopAction extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * If true, the contents of any attached Local SSD disks will be discarded else, the Local SSD data will be preserved when the instance is stopped at the end of the run duration/termination time.
+     * If true, the contents of any attached Local SSD disks will be discarded
+     * else, the Local SSD data will be preserved when the instance is stopped
+     * at the end of the run duration/termination time.
      * </pre>
      *
      * <code>optional bool discard_local_ssd = 319517903;</code>
@@ -487,7 +495,9 @@ public final class SchedulingOnInstanceStopAction extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * If true, the contents of any attached Local SSD disks will be discarded else, the Local SSD data will be preserved when the instance is stopped at the end of the run duration/termination time.
+     * If true, the contents of any attached Local SSD disks will be discarded
+     * else, the Local SSD data will be preserved when the instance is stopped
+     * at the end of the run duration/termination time.
      * </pre>
      *
      * <code>optional bool discard_local_ssd = 319517903;</code>
@@ -507,7 +517,9 @@ public final class SchedulingOnInstanceStopAction extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * If true, the contents of any attached Local SSD disks will be discarded else, the Local SSD data will be preserved when the instance is stopped at the end of the run duration/termination time.
+     * If true, the contents of any attached Local SSD disks will be discarded
+     * else, the Local SSD data will be preserved when the instance is stopped
+     * at the end of the run duration/termination time.
      * </pre>
      *
      * <code>optional bool discard_local_ssd = 319517903;</code>

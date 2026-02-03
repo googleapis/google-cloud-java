@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    *
    *
    * <pre>
-   * A list of InterconnectDiagnostics.ARPEntry objects, describing the ARP neighbor entries seen on this link. This will be empty if the link is bundled
+   * A list of InterconnectDiagnostics.ARPEntry objects,
+   * describing the ARP neighbor entries seen on this link.
+   * This will be empty if the link is bundled
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
@@ -40,7 +42,9 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    *
    *
    * <pre>
-   * A list of InterconnectDiagnostics.ARPEntry objects, describing the ARP neighbor entries seen on this link. This will be empty if the link is bundled
+   * A list of InterconnectDiagnostics.ARPEntry objects,
+   * describing the ARP neighbor entries seen on this link.
+   * This will be empty if the link is bundled
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
@@ -52,7 +56,9 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    *
    *
    * <pre>
-   * A list of InterconnectDiagnostics.ARPEntry objects, describing the ARP neighbor entries seen on this link. This will be empty if the link is bundled
+   * A list of InterconnectDiagnostics.ARPEntry objects,
+   * describing the ARP neighbor entries seen on this link.
+   * This will be empty if the link is bundled
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
@@ -64,7 +70,9 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    *
    *
    * <pre>
-   * A list of InterconnectDiagnostics.ARPEntry objects, describing the ARP neighbor entries seen on this link. This will be empty if the link is bundled
+   * A list of InterconnectDiagnostics.ARPEntry objects,
+   * describing the ARP neighbor entries seen on this link.
+   * This will be empty if the link is bundled
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
@@ -77,7 +85,9 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    *
    *
    * <pre>
-   * A list of InterconnectDiagnostics.ARPEntry objects, describing the ARP neighbor entries seen on this link. This will be empty if the link is bundled
+   * A list of InterconnectDiagnostics.ARPEntry objects,
+   * describing the ARP neighbor entries seen on this link.
+   * This will be empty if the link is bundled
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
@@ -276,7 +286,8 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    *
    *
    * <pre>
-   * An InterconnectDiagnostics.LinkOpticalPower object, describing the current value and status of the received light level.
+   * An InterconnectDiagnostics.LinkOpticalPower object,
+   * describing the current value and status of the received light level.
    * </pre>
    *
    * <code>
@@ -291,7 +302,8 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    *
    *
    * <pre>
-   * An InterconnectDiagnostics.LinkOpticalPower object, describing the current value and status of the received light level.
+   * An InterconnectDiagnostics.LinkOpticalPower object,
+   * describing the current value and status of the received light level.
    * </pre>
    *
    * <code>
@@ -306,7 +318,8 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    *
    *
    * <pre>
-   * An InterconnectDiagnostics.LinkOpticalPower object, describing the current value and status of the received light level.
+   * An InterconnectDiagnostics.LinkOpticalPower object,
+   * describing the current value and status of the received light level.
    * </pre>
    *
    * <code>
@@ -320,7 +333,8 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    *
    *
    * <pre>
-   * An InterconnectDiagnostics.LinkOpticalPower object, describing the current value and status of the transmitted light level.
+   * An InterconnectDiagnostics.LinkOpticalPower object,
+   * describing the current value and status of the transmitted light level.
    * </pre>
    *
    * <code>
@@ -335,7 +349,8 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    *
    *
    * <pre>
-   * An InterconnectDiagnostics.LinkOpticalPower object, describing the current value and status of the transmitted light level.
+   * An InterconnectDiagnostics.LinkOpticalPower object,
+   * describing the current value and status of the transmitted light level.
    * </pre>
    *
    * <code>
@@ -350,7 +365,8 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    *
    *
    * <pre>
-   * An InterconnectDiagnostics.LinkOpticalPower object, describing the current value and status of the transmitted light level.
+   * An InterconnectDiagnostics.LinkOpticalPower object,
+   * describing the current value and status of the transmitted light level.
    * </pre>
    *
    * <code>

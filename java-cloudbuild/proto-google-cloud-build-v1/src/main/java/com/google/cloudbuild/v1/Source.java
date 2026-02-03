@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,6 +74,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     REPO_SOURCE(3),
     GIT_SOURCE(5),
     STORAGE_SOURCE_MANIFEST(8),
+    CONNECTED_REPOSITORY(9),
     SOURCE_NOT_SET(0);
     private final int value;
 
@@ -101,6 +102,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
           return GIT_SOURCE;
         case 8:
           return STORAGE_SOURCE_MANIFEST;
+        case 9:
+          return CONNECTED_REPOSITORY;
         case 0:
           return SOURCE_NOT_SET;
         default:
@@ -343,6 +346,69 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloudbuild.v1.StorageSourceManifest.getDefaultInstance();
   }
 
+  public static final int CONNECTED_REPOSITORY_FIELD_NUMBER = 9;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, get the source from this 2nd-gen Google Cloud
+   * Build repository resource.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.ConnectedRepository connected_repository = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the connectedRepository field is set.
+   */
+  @java.lang.Override
+  public boolean hasConnectedRepository() {
+    return sourceCase_ == 9;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, get the source from this 2nd-gen Google Cloud
+   * Build repository resource.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.ConnectedRepository connected_repository = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The connectedRepository.
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.ConnectedRepository getConnectedRepository() {
+    if (sourceCase_ == 9) {
+      return (com.google.cloudbuild.v1.ConnectedRepository) source_;
+    }
+    return com.google.cloudbuild.v1.ConnectedRepository.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, get the source from this 2nd-gen Google Cloud
+   * Build repository resource.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.ConnectedRepository connected_repository = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.ConnectedRepositoryOrBuilder getConnectedRepositoryOrBuilder() {
+    if (sourceCase_ == 9) {
+      return (com.google.cloudbuild.v1.ConnectedRepository) source_;
+    }
+    return com.google.cloudbuild.v1.ConnectedRepository.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -368,6 +434,9 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     }
     if (sourceCase_ == 8) {
       output.writeMessage(8, (com.google.cloudbuild.v1.StorageSourceManifest) source_);
+    }
+    if (sourceCase_ == 9) {
+      output.writeMessage(9, (com.google.cloudbuild.v1.ConnectedRepository) source_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -398,6 +467,11 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               8, (com.google.cloudbuild.v1.StorageSourceManifest) source_);
     }
+    if (sourceCase_ == 9) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9, (com.google.cloudbuild.v1.ConnectedRepository) source_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -426,6 +500,9 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
         break;
       case 8:
         if (!getStorageSourceManifest().equals(other.getStorageSourceManifest())) return false;
+        break;
+      case 9:
+        if (!getConnectedRepository().equals(other.getConnectedRepository())) return false;
         break;
       case 0:
       default:
@@ -457,6 +534,10 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       case 8:
         hash = (37 * hash) + STORAGE_SOURCE_MANIFEST_FIELD_NUMBER;
         hash = (53 * hash) + getStorageSourceManifest().hashCode();
+        break;
+      case 9:
+        hash = (37 * hash) + CONNECTED_REPOSITORY_FIELD_NUMBER;
+        hash = (53 * hash) + getConnectedRepository().hashCode();
         break;
       case 0:
       default:
@@ -611,6 +692,9 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       if (storageSourceManifestBuilder_ != null) {
         storageSourceManifestBuilder_.clear();
       }
+      if (connectedRepositoryBuilder_ != null) {
+        connectedRepositoryBuilder_.clear();
+      }
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -665,6 +749,9 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       }
       if (sourceCase_ == 8 && storageSourceManifestBuilder_ != null) {
         result.source_ = storageSourceManifestBuilder_.build();
+      }
+      if (sourceCase_ == 9 && connectedRepositoryBuilder_ != null) {
+        result.source_ = connectedRepositoryBuilder_.build();
       }
     }
 
@@ -734,6 +821,11 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
             mergeStorageSourceManifest(other.getStorageSourceManifest());
             break;
           }
+        case CONNECTED_REPOSITORY:
+          {
+            mergeConnectedRepository(other.getConnectedRepository());
+            break;
+          }
         case SOURCE_NOT_SET:
           {
             break;
@@ -790,6 +882,13 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
                 sourceCase_ = 8;
                 break;
               } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    getConnectedRepositoryFieldBuilder().getBuilder(), extensionRegistry);
+                sourceCase_ = 9;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1726,6 +1825,251 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 8;
       onChanged();
       return storageSourceManifestBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.ConnectedRepository,
+            com.google.cloudbuild.v1.ConnectedRepository.Builder,
+            com.google.cloudbuild.v1.ConnectedRepositoryOrBuilder>
+        connectedRepositoryBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, get the source from this 2nd-gen Google Cloud
+     * Build repository resource.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.ConnectedRepository connected_repository = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the connectedRepository field is set.
+     */
+    @java.lang.Override
+    public boolean hasConnectedRepository() {
+      return sourceCase_ == 9;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, get the source from this 2nd-gen Google Cloud
+     * Build repository resource.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.ConnectedRepository connected_repository = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The connectedRepository.
+     */
+    @java.lang.Override
+    public com.google.cloudbuild.v1.ConnectedRepository getConnectedRepository() {
+      if (connectedRepositoryBuilder_ == null) {
+        if (sourceCase_ == 9) {
+          return (com.google.cloudbuild.v1.ConnectedRepository) source_;
+        }
+        return com.google.cloudbuild.v1.ConnectedRepository.getDefaultInstance();
+      } else {
+        if (sourceCase_ == 9) {
+          return connectedRepositoryBuilder_.getMessage();
+        }
+        return com.google.cloudbuild.v1.ConnectedRepository.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, get the source from this 2nd-gen Google Cloud
+     * Build repository resource.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.ConnectedRepository connected_repository = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setConnectedRepository(com.google.cloudbuild.v1.ConnectedRepository value) {
+      if (connectedRepositoryBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        source_ = value;
+        onChanged();
+      } else {
+        connectedRepositoryBuilder_.setMessage(value);
+      }
+      sourceCase_ = 9;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, get the source from this 2nd-gen Google Cloud
+     * Build repository resource.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.ConnectedRepository connected_repository = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setConnectedRepository(
+        com.google.cloudbuild.v1.ConnectedRepository.Builder builderForValue) {
+      if (connectedRepositoryBuilder_ == null) {
+        source_ = builderForValue.build();
+        onChanged();
+      } else {
+        connectedRepositoryBuilder_.setMessage(builderForValue.build());
+      }
+      sourceCase_ = 9;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, get the source from this 2nd-gen Google Cloud
+     * Build repository resource.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.ConnectedRepository connected_repository = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeConnectedRepository(com.google.cloudbuild.v1.ConnectedRepository value) {
+      if (connectedRepositoryBuilder_ == null) {
+        if (sourceCase_ == 9
+            && source_ != com.google.cloudbuild.v1.ConnectedRepository.getDefaultInstance()) {
+          source_ =
+              com.google.cloudbuild.v1.ConnectedRepository.newBuilder(
+                      (com.google.cloudbuild.v1.ConnectedRepository) source_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          source_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceCase_ == 9) {
+          connectedRepositoryBuilder_.mergeFrom(value);
+        } else {
+          connectedRepositoryBuilder_.setMessage(value);
+        }
+      }
+      sourceCase_ = 9;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, get the source from this 2nd-gen Google Cloud
+     * Build repository resource.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.ConnectedRepository connected_repository = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearConnectedRepository() {
+      if (connectedRepositoryBuilder_ == null) {
+        if (sourceCase_ == 9) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceCase_ == 9) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        connectedRepositoryBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, get the source from this 2nd-gen Google Cloud
+     * Build repository resource.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.ConnectedRepository connected_repository = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.ConnectedRepository.Builder getConnectedRepositoryBuilder() {
+      return getConnectedRepositoryFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, get the source from this 2nd-gen Google Cloud
+     * Build repository resource.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.ConnectedRepository connected_repository = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloudbuild.v1.ConnectedRepositoryOrBuilder getConnectedRepositoryOrBuilder() {
+      if ((sourceCase_ == 9) && (connectedRepositoryBuilder_ != null)) {
+        return connectedRepositoryBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceCase_ == 9) {
+          return (com.google.cloudbuild.v1.ConnectedRepository) source_;
+        }
+        return com.google.cloudbuild.v1.ConnectedRepository.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, get the source from this 2nd-gen Google Cloud
+     * Build repository resource.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.ConnectedRepository connected_repository = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.ConnectedRepository,
+            com.google.cloudbuild.v1.ConnectedRepository.Builder,
+            com.google.cloudbuild.v1.ConnectedRepositoryOrBuilder>
+        getConnectedRepositoryFieldBuilder() {
+      if (connectedRepositoryBuilder_ == null) {
+        if (!(sourceCase_ == 9)) {
+          source_ = com.google.cloudbuild.v1.ConnectedRepository.getDefaultInstance();
+        }
+        connectedRepositoryBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloudbuild.v1.ConnectedRepository,
+                com.google.cloudbuild.v1.ConnectedRepository.Builder,
+                com.google.cloudbuild.v1.ConnectedRepositoryOrBuilder>(
+                (com.google.cloudbuild.v1.ConnectedRepository) source_,
+                getParentForChildren(),
+                isClean());
+        source_ = null;
+      }
+      sourceCase_ = 9;
+      onChanged();
+      return connectedRepositoryBuilder_;
     }
 
     @java.lang.Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -148,6 +148,50 @@ public interface DeployedModelOrBuilder
    * @return The bytes for sharedResources.
    */
   com.google.protobuf.ByteString getSharedResourcesBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resources for a full fine tuned model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FullFineTunedResources full_fine_tuned_resources = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the fullFineTunedResources field is set.
+   */
+  boolean hasFullFineTunedResources();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resources for a full fine tuned model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FullFineTunedResources full_fine_tuned_resources = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The fullFineTunedResources.
+   */
+  com.google.cloud.aiplatform.v1beta1.FullFineTunedResources getFullFineTunedResources();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resources for a full fine tuned model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FullFineTunedResources full_fine_tuned_resources = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.FullFineTunedResourcesOrBuilder
+      getFullFineTunedResourcesOrBuilder();
 
   /**
    *

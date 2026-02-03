@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1282,6 +1282,49 @@ public interface VolumeOrBuilder
    *
    *
    * <pre>
+   * Optional. Cache parameters for the volume.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.CacheParameters cache_parameters = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the cacheParameters field is set.
+   */
+  boolean hasCacheParameters();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cache parameters for the volume.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.CacheParameters cache_parameters = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The cacheParameters.
+   */
+  com.google.cloud.netapp.v1.CacheParameters getCacheParameters();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cache parameters for the volume.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.CacheParameters cache_parameters = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.netapp.v1.CacheParametersOrBuilder getCacheParametersOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Total hot tier data rounded down to the nearest GiB used by
    * the Volume. This field is only used for flex Service Level
    * </pre>
@@ -1291,4 +1334,75 @@ public interface VolumeOrBuilder
    * @return The hotTierSizeUsedGib.
    */
   long getHotTierSizeUsedGib();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Block devices for the volume.
+   * Currently, only one block device is permitted per Volume.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.netapp.v1.BlockDevice block_devices = 45 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.netapp.v1.BlockDevice> getBlockDevicesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Block devices for the volume.
+   * Currently, only one block device is permitted per Volume.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.netapp.v1.BlockDevice block_devices = 45 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.netapp.v1.BlockDevice getBlockDevices(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Block devices for the volume.
+   * Currently, only one block device is permitted per Volume.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.netapp.v1.BlockDevice block_devices = 45 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getBlockDevicesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Block devices for the volume.
+   * Currently, only one block device is permitted per Volume.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.netapp.v1.BlockDevice block_devices = 45 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.netapp.v1.BlockDeviceOrBuilder>
+      getBlockDevicesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Block devices for the volume.
+   * Currently, only one block device is permitted per Volume.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.netapp.v1.BlockDevice block_devices = 45 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.netapp.v1.BlockDeviceOrBuilder getBlockDevicesOrBuilder(int index);
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -326,7 +326,11 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * True if the peering route has been imported from a peer. The actual import happens if the field networkPeering.importCustomRoutes is true for this network, and networkPeering.exportCustomRoutes is true for the peer network, and the import does not result in a route conflict.
+   * True if the peering route has been imported from a peer. The actual import
+   * happens if the field networkPeering.importCustomRoutes is true
+   * for this network, and networkPeering.exportCustomRoutes is
+   * true for the peer network, and the import does not result in a route
+   * conflict.
    * </pre>
    *
    * <code>optional bool imported = 114502404;</code>
@@ -342,7 +346,11 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * True if the peering route has been imported from a peer. The actual import happens if the field networkPeering.importCustomRoutes is true for this network, and networkPeering.exportCustomRoutes is true for the peer network, and the import does not result in a route conflict.
+   * True if the peering route has been imported from a peer. The actual import
+   * happens if the field networkPeering.importCustomRoutes is true
+   * for this network, and networkPeering.exportCustomRoutes is
+   * true for the peer network, and the import does not result in a route
+   * conflict.
    * </pre>
    *
    * <code>optional bool imported = 114502404;</code>
@@ -1128,7 +1136,11 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * True if the peering route has been imported from a peer. The actual import happens if the field networkPeering.importCustomRoutes is true for this network, and networkPeering.exportCustomRoutes is true for the peer network, and the import does not result in a route conflict.
+     * True if the peering route has been imported from a peer. The actual import
+     * happens if the field networkPeering.importCustomRoutes is true
+     * for this network, and networkPeering.exportCustomRoutes is
+     * true for the peer network, and the import does not result in a route
+     * conflict.
      * </pre>
      *
      * <code>optional bool imported = 114502404;</code>
@@ -1144,7 +1156,11 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * True if the peering route has been imported from a peer. The actual import happens if the field networkPeering.importCustomRoutes is true for this network, and networkPeering.exportCustomRoutes is true for the peer network, and the import does not result in a route conflict.
+     * True if the peering route has been imported from a peer. The actual import
+     * happens if the field networkPeering.importCustomRoutes is true
+     * for this network, and networkPeering.exportCustomRoutes is
+     * true for the peer network, and the import does not result in a route
+     * conflict.
      * </pre>
      *
      * <code>optional bool imported = 114502404;</code>
@@ -1160,7 +1176,11 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * True if the peering route has been imported from a peer. The actual import happens if the field networkPeering.importCustomRoutes is true for this network, and networkPeering.exportCustomRoutes is true for the peer network, and the import does not result in a route conflict.
+     * True if the peering route has been imported from a peer. The actual import
+     * happens if the field networkPeering.importCustomRoutes is true
+     * for this network, and networkPeering.exportCustomRoutes is
+     * true for the peer network, and the import does not result in a route
+     * conflict.
      * </pre>
      *
      * <code>optional bool imported = 114502404;</code>
@@ -1180,7 +1200,11 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * True if the peering route has been imported from a peer. The actual import happens if the field networkPeering.importCustomRoutes is true for this network, and networkPeering.exportCustomRoutes is true for the peer network, and the import does not result in a route conflict.
+     * True if the peering route has been imported from a peer. The actual import
+     * happens if the field networkPeering.importCustomRoutes is true
+     * for this network, and networkPeering.exportCustomRoutes is
+     * true for the peer network, and the import does not result in a route
+     * conflict.
      * </pre>
      *
      * <code>optional bool imported = 114502404;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -96,7 +96,8 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Signifies that this will be used for Envoy-based global external Application Load Balancers.
+     * Signifies that this will be used for Envoy-based global external
+     * Application Load Balancers.
      * </pre>
      *
      * <code>EXTERNAL_MANAGED = 512006923;</code>
@@ -106,7 +107,9 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * If unspecified, the validation will try to infer the scheme from the backend service resources this Url map references. If the inference is not possible, EXTERNAL will be used as the default type.
+     * If unspecified, the validation will try to infer the scheme from the
+     * backend service resources this Url map references. If the inference is not
+     * possible, EXTERNAL will be used as the default type.
      * </pre>
      *
      * <code>LOAD_BALANCING_SCHEME_UNSPECIFIED = 526507452;</code>
@@ -141,7 +144,8 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Signifies that this will be used for Envoy-based global external Application Load Balancers.
+     * Signifies that this will be used for Envoy-based global external
+     * Application Load Balancers.
      * </pre>
      *
      * <code>EXTERNAL_MANAGED = 512006923;</code>
@@ -152,7 +156,9 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * If unspecified, the validation will try to infer the scheme from the backend service resources this Url map references. If the inference is not possible, EXTERNAL will be used as the default type.
+     * If unspecified, the validation will try to infer the scheme from the
+     * backend service resources this Url map references. If the inference is not
+     * possible, EXTERNAL will be used as the default type.
      * </pre>
      *
      * <code>LOAD_BALANCING_SCHEME_UNSPECIFIED = 526507452;</code>
@@ -260,7 +266,21 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Specifies the load balancer type(s) this validation request is for. Use EXTERNAL_MANAGED for global external Application Load Balancers and regional external Application Load Balancers. Use EXTERNAL for classic Application Load Balancers. Use INTERNAL_MANAGED for internal Application Load Balancers. For more information, refer to Choosing a load balancer. If unspecified, the load balancing scheme will be inferred from the backend service resources this URL map references. If that can not be inferred (for example, this URL map only references backend buckets, or this Url map is for rewrites and redirects only and doesn't reference any backends), EXTERNAL will be used as the default type. If specified, the scheme(s) must not conflict with the load balancing scheme of the backend service resources this Url map references.
+   * Specifies the load balancer type(s) this validation request is for. UseEXTERNAL_MANAGED for global external Application Load
+   * Balancers and regional external Application Load Balancers.
+   * Use EXTERNAL for classic Application Load Balancers.
+   *
+   * Use INTERNAL_MANAGED for internal Application Load Balancers. For more
+   * information, refer to Choosing
+   * a load balancer.
+   *
+   * If unspecified, the load balancing scheme will be inferred from the backend
+   * service resources this URL map references. If that can not be inferred (for
+   * example, this URL map only references backend buckets, or this Url map is
+   * for rewrites and redirects only and doesn't reference any backends),EXTERNAL will be used as the default type.
+   *
+   * If specified, the scheme(s) must not conflict with the load balancing
+   * scheme of the backend service resources this Url map references.
    * Check the LoadBalancingSchemes enum for the list of possible values.
    * </pre>
    *
@@ -276,7 +296,21 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Specifies the load balancer type(s) this validation request is for. Use EXTERNAL_MANAGED for global external Application Load Balancers and regional external Application Load Balancers. Use EXTERNAL for classic Application Load Balancers. Use INTERNAL_MANAGED for internal Application Load Balancers. For more information, refer to Choosing a load balancer. If unspecified, the load balancing scheme will be inferred from the backend service resources this URL map references. If that can not be inferred (for example, this URL map only references backend buckets, or this Url map is for rewrites and redirects only and doesn't reference any backends), EXTERNAL will be used as the default type. If specified, the scheme(s) must not conflict with the load balancing scheme of the backend service resources this Url map references.
+   * Specifies the load balancer type(s) this validation request is for. UseEXTERNAL_MANAGED for global external Application Load
+   * Balancers and regional external Application Load Balancers.
+   * Use EXTERNAL for classic Application Load Balancers.
+   *
+   * Use INTERNAL_MANAGED for internal Application Load Balancers. For more
+   * information, refer to Choosing
+   * a load balancer.
+   *
+   * If unspecified, the load balancing scheme will be inferred from the backend
+   * service resources this URL map references. If that can not be inferred (for
+   * example, this URL map only references backend buckets, or this Url map is
+   * for rewrites and redirects only and doesn't reference any backends),EXTERNAL will be used as the default type.
+   *
+   * If specified, the scheme(s) must not conflict with the load balancing
+   * scheme of the backend service resources this Url map references.
    * Check the LoadBalancingSchemes enum for the list of possible values.
    * </pre>
    *
@@ -292,7 +326,21 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Specifies the load balancer type(s) this validation request is for. Use EXTERNAL_MANAGED for global external Application Load Balancers and regional external Application Load Balancers. Use EXTERNAL for classic Application Load Balancers. Use INTERNAL_MANAGED for internal Application Load Balancers. For more information, refer to Choosing a load balancer. If unspecified, the load balancing scheme will be inferred from the backend service resources this URL map references. If that can not be inferred (for example, this URL map only references backend buckets, or this Url map is for rewrites and redirects only and doesn't reference any backends), EXTERNAL will be used as the default type. If specified, the scheme(s) must not conflict with the load balancing scheme of the backend service resources this Url map references.
+   * Specifies the load balancer type(s) this validation request is for. UseEXTERNAL_MANAGED for global external Application Load
+   * Balancers and regional external Application Load Balancers.
+   * Use EXTERNAL for classic Application Load Balancers.
+   *
+   * Use INTERNAL_MANAGED for internal Application Load Balancers. For more
+   * information, refer to Choosing
+   * a load balancer.
+   *
+   * If unspecified, the load balancing scheme will be inferred from the backend
+   * service resources this URL map references. If that can not be inferred (for
+   * example, this URL map only references backend buckets, or this Url map is
+   * for rewrites and redirects only and doesn't reference any backends),EXTERNAL will be used as the default type.
+   *
+   * If specified, the scheme(s) must not conflict with the load balancing
+   * scheme of the backend service resources this Url map references.
    * Check the LoadBalancingSchemes enum for the list of possible values.
    * </pre>
    *
@@ -309,7 +357,21 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Specifies the load balancer type(s) this validation request is for. Use EXTERNAL_MANAGED for global external Application Load Balancers and regional external Application Load Balancers. Use EXTERNAL for classic Application Load Balancers. Use INTERNAL_MANAGED for internal Application Load Balancers. For more information, refer to Choosing a load balancer. If unspecified, the load balancing scheme will be inferred from the backend service resources this URL map references. If that can not be inferred (for example, this URL map only references backend buckets, or this Url map is for rewrites and redirects only and doesn't reference any backends), EXTERNAL will be used as the default type. If specified, the scheme(s) must not conflict with the load balancing scheme of the backend service resources this Url map references.
+   * Specifies the load balancer type(s) this validation request is for. UseEXTERNAL_MANAGED for global external Application Load
+   * Balancers and regional external Application Load Balancers.
+   * Use EXTERNAL for classic Application Load Balancers.
+   *
+   * Use INTERNAL_MANAGED for internal Application Load Balancers. For more
+   * information, refer to Choosing
+   * a load balancer.
+   *
+   * If unspecified, the load balancing scheme will be inferred from the backend
+   * service resources this URL map references. If that can not be inferred (for
+   * example, this URL map only references backend buckets, or this Url map is
+   * for rewrites and redirects only and doesn't reference any backends),EXTERNAL will be used as the default type.
+   *
+   * If specified, the scheme(s) must not conflict with the load balancing
+   * scheme of the backend service resources this Url map references.
    * Check the LoadBalancingSchemes enum for the list of possible values.
    * </pre>
    *
@@ -785,7 +847,21 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Specifies the load balancer type(s) this validation request is for. Use EXTERNAL_MANAGED for global external Application Load Balancers and regional external Application Load Balancers. Use EXTERNAL for classic Application Load Balancers. Use INTERNAL_MANAGED for internal Application Load Balancers. For more information, refer to Choosing a load balancer. If unspecified, the load balancing scheme will be inferred from the backend service resources this URL map references. If that can not be inferred (for example, this URL map only references backend buckets, or this Url map is for rewrites and redirects only and doesn't reference any backends), EXTERNAL will be used as the default type. If specified, the scheme(s) must not conflict with the load balancing scheme of the backend service resources this Url map references.
+     * Specifies the load balancer type(s) this validation request is for. UseEXTERNAL_MANAGED for global external Application Load
+     * Balancers and regional external Application Load Balancers.
+     * Use EXTERNAL for classic Application Load Balancers.
+     *
+     * Use INTERNAL_MANAGED for internal Application Load Balancers. For more
+     * information, refer to Choosing
+     * a load balancer.
+     *
+     * If unspecified, the load balancing scheme will be inferred from the backend
+     * service resources this URL map references. If that can not be inferred (for
+     * example, this URL map only references backend buckets, or this Url map is
+     * for rewrites and redirects only and doesn't reference any backends),EXTERNAL will be used as the default type.
+     *
+     * If specified, the scheme(s) must not conflict with the load balancing
+     * scheme of the backend service resources this Url map references.
      * Check the LoadBalancingSchemes enum for the list of possible values.
      * </pre>
      *
@@ -802,7 +878,21 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Specifies the load balancer type(s) this validation request is for. Use EXTERNAL_MANAGED for global external Application Load Balancers and regional external Application Load Balancers. Use EXTERNAL for classic Application Load Balancers. Use INTERNAL_MANAGED for internal Application Load Balancers. For more information, refer to Choosing a load balancer. If unspecified, the load balancing scheme will be inferred from the backend service resources this URL map references. If that can not be inferred (for example, this URL map only references backend buckets, or this Url map is for rewrites and redirects only and doesn't reference any backends), EXTERNAL will be used as the default type. If specified, the scheme(s) must not conflict with the load balancing scheme of the backend service resources this Url map references.
+     * Specifies the load balancer type(s) this validation request is for. UseEXTERNAL_MANAGED for global external Application Load
+     * Balancers and regional external Application Load Balancers.
+     * Use EXTERNAL for classic Application Load Balancers.
+     *
+     * Use INTERNAL_MANAGED for internal Application Load Balancers. For more
+     * information, refer to Choosing
+     * a load balancer.
+     *
+     * If unspecified, the load balancing scheme will be inferred from the backend
+     * service resources this URL map references. If that can not be inferred (for
+     * example, this URL map only references backend buckets, or this Url map is
+     * for rewrites and redirects only and doesn't reference any backends),EXTERNAL will be used as the default type.
+     *
+     * If specified, the scheme(s) must not conflict with the load balancing
+     * scheme of the backend service resources this Url map references.
      * Check the LoadBalancingSchemes enum for the list of possible values.
      * </pre>
      *
@@ -818,7 +908,21 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Specifies the load balancer type(s) this validation request is for. Use EXTERNAL_MANAGED for global external Application Load Balancers and regional external Application Load Balancers. Use EXTERNAL for classic Application Load Balancers. Use INTERNAL_MANAGED for internal Application Load Balancers. For more information, refer to Choosing a load balancer. If unspecified, the load balancing scheme will be inferred from the backend service resources this URL map references. If that can not be inferred (for example, this URL map only references backend buckets, or this Url map is for rewrites and redirects only and doesn't reference any backends), EXTERNAL will be used as the default type. If specified, the scheme(s) must not conflict with the load balancing scheme of the backend service resources this Url map references.
+     * Specifies the load balancer type(s) this validation request is for. UseEXTERNAL_MANAGED for global external Application Load
+     * Balancers and regional external Application Load Balancers.
+     * Use EXTERNAL for classic Application Load Balancers.
+     *
+     * Use INTERNAL_MANAGED for internal Application Load Balancers. For more
+     * information, refer to Choosing
+     * a load balancer.
+     *
+     * If unspecified, the load balancing scheme will be inferred from the backend
+     * service resources this URL map references. If that can not be inferred (for
+     * example, this URL map only references backend buckets, or this Url map is
+     * for rewrites and redirects only and doesn't reference any backends),EXTERNAL will be used as the default type.
+     *
+     * If specified, the scheme(s) must not conflict with the load balancing
+     * scheme of the backend service resources this Url map references.
      * Check the LoadBalancingSchemes enum for the list of possible values.
      * </pre>
      *
@@ -835,7 +939,21 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Specifies the load balancer type(s) this validation request is for. Use EXTERNAL_MANAGED for global external Application Load Balancers and regional external Application Load Balancers. Use EXTERNAL for classic Application Load Balancers. Use INTERNAL_MANAGED for internal Application Load Balancers. For more information, refer to Choosing a load balancer. If unspecified, the load balancing scheme will be inferred from the backend service resources this URL map references. If that can not be inferred (for example, this URL map only references backend buckets, or this Url map is for rewrites and redirects only and doesn't reference any backends), EXTERNAL will be used as the default type. If specified, the scheme(s) must not conflict with the load balancing scheme of the backend service resources this Url map references.
+     * Specifies the load balancer type(s) this validation request is for. UseEXTERNAL_MANAGED for global external Application Load
+     * Balancers and regional external Application Load Balancers.
+     * Use EXTERNAL for classic Application Load Balancers.
+     *
+     * Use INTERNAL_MANAGED for internal Application Load Balancers. For more
+     * information, refer to Choosing
+     * a load balancer.
+     *
+     * If unspecified, the load balancing scheme will be inferred from the backend
+     * service resources this URL map references. If that can not be inferred (for
+     * example, this URL map only references backend buckets, or this Url map is
+     * for rewrites and redirects only and doesn't reference any backends),EXTERNAL will be used as the default type.
+     *
+     * If specified, the scheme(s) must not conflict with the load balancing
+     * scheme of the backend service resources this Url map references.
      * Check the LoadBalancingSchemes enum for the list of possible values.
      * </pre>
      *
@@ -852,7 +970,21 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Specifies the load balancer type(s) this validation request is for. Use EXTERNAL_MANAGED for global external Application Load Balancers and regional external Application Load Balancers. Use EXTERNAL for classic Application Load Balancers. Use INTERNAL_MANAGED for internal Application Load Balancers. For more information, refer to Choosing a load balancer. If unspecified, the load balancing scheme will be inferred from the backend service resources this URL map references. If that can not be inferred (for example, this URL map only references backend buckets, or this Url map is for rewrites and redirects only and doesn't reference any backends), EXTERNAL will be used as the default type. If specified, the scheme(s) must not conflict with the load balancing scheme of the backend service resources this Url map references.
+     * Specifies the load balancer type(s) this validation request is for. UseEXTERNAL_MANAGED for global external Application Load
+     * Balancers and regional external Application Load Balancers.
+     * Use EXTERNAL for classic Application Load Balancers.
+     *
+     * Use INTERNAL_MANAGED for internal Application Load Balancers. For more
+     * information, refer to Choosing
+     * a load balancer.
+     *
+     * If unspecified, the load balancing scheme will be inferred from the backend
+     * service resources this URL map references. If that can not be inferred (for
+     * example, this URL map only references backend buckets, or this Url map is
+     * for rewrites and redirects only and doesn't reference any backends),EXTERNAL will be used as the default type.
+     *
+     * If specified, the scheme(s) must not conflict with the load balancing
+     * scheme of the backend service resources this Url map references.
      * Check the LoadBalancingSchemes enum for the list of possible values.
      * </pre>
      *
@@ -877,7 +1009,21 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Specifies the load balancer type(s) this validation request is for. Use EXTERNAL_MANAGED for global external Application Load Balancers and regional external Application Load Balancers. Use EXTERNAL for classic Application Load Balancers. Use INTERNAL_MANAGED for internal Application Load Balancers. For more information, refer to Choosing a load balancer. If unspecified, the load balancing scheme will be inferred from the backend service resources this URL map references. If that can not be inferred (for example, this URL map only references backend buckets, or this Url map is for rewrites and redirects only and doesn't reference any backends), EXTERNAL will be used as the default type. If specified, the scheme(s) must not conflict with the load balancing scheme of the backend service resources this Url map references.
+     * Specifies the load balancer type(s) this validation request is for. UseEXTERNAL_MANAGED for global external Application Load
+     * Balancers and regional external Application Load Balancers.
+     * Use EXTERNAL for classic Application Load Balancers.
+     *
+     * Use INTERNAL_MANAGED for internal Application Load Balancers. For more
+     * information, refer to Choosing
+     * a load balancer.
+     *
+     * If unspecified, the load balancing scheme will be inferred from the backend
+     * service resources this URL map references. If that can not be inferred (for
+     * example, this URL map only references backend buckets, or this Url map is
+     * for rewrites and redirects only and doesn't reference any backends),EXTERNAL will be used as the default type.
+     *
+     * If specified, the scheme(s) must not conflict with the load balancing
+     * scheme of the backend service resources this Url map references.
      * Check the LoadBalancingSchemes enum for the list of possible values.
      * </pre>
      *
@@ -901,7 +1047,21 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Specifies the load balancer type(s) this validation request is for. Use EXTERNAL_MANAGED for global external Application Load Balancers and regional external Application Load Balancers. Use EXTERNAL for classic Application Load Balancers. Use INTERNAL_MANAGED for internal Application Load Balancers. For more information, refer to Choosing a load balancer. If unspecified, the load balancing scheme will be inferred from the backend service resources this URL map references. If that can not be inferred (for example, this URL map only references backend buckets, or this Url map is for rewrites and redirects only and doesn't reference any backends), EXTERNAL will be used as the default type. If specified, the scheme(s) must not conflict with the load balancing scheme of the backend service resources this Url map references.
+     * Specifies the load balancer type(s) this validation request is for. UseEXTERNAL_MANAGED for global external Application Load
+     * Balancers and regional external Application Load Balancers.
+     * Use EXTERNAL for classic Application Load Balancers.
+     *
+     * Use INTERNAL_MANAGED for internal Application Load Balancers. For more
+     * information, refer to Choosing
+     * a load balancer.
+     *
+     * If unspecified, the load balancing scheme will be inferred from the backend
+     * service resources this URL map references. If that can not be inferred (for
+     * example, this URL map only references backend buckets, or this Url map is
+     * for rewrites and redirects only and doesn't reference any backends),EXTERNAL will be used as the default type.
+     *
+     * If specified, the scheme(s) must not conflict with the load balancing
+     * scheme of the backend service resources this Url map references.
      * Check the LoadBalancingSchemes enum for the list of possible values.
      * </pre>
      *
@@ -922,7 +1082,21 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Specifies the load balancer type(s) this validation request is for. Use EXTERNAL_MANAGED for global external Application Load Balancers and regional external Application Load Balancers. Use EXTERNAL for classic Application Load Balancers. Use INTERNAL_MANAGED for internal Application Load Balancers. For more information, refer to Choosing a load balancer. If unspecified, the load balancing scheme will be inferred from the backend service resources this URL map references. If that can not be inferred (for example, this URL map only references backend buckets, or this Url map is for rewrites and redirects only and doesn't reference any backends), EXTERNAL will be used as the default type. If specified, the scheme(s) must not conflict with the load balancing scheme of the backend service resources this Url map references.
+     * Specifies the load balancer type(s) this validation request is for. UseEXTERNAL_MANAGED for global external Application Load
+     * Balancers and regional external Application Load Balancers.
+     * Use EXTERNAL for classic Application Load Balancers.
+     *
+     * Use INTERNAL_MANAGED for internal Application Load Balancers. For more
+     * information, refer to Choosing
+     * a load balancer.
+     *
+     * If unspecified, the load balancing scheme will be inferred from the backend
+     * service resources this URL map references. If that can not be inferred (for
+     * example, this URL map only references backend buckets, or this Url map is
+     * for rewrites and redirects only and doesn't reference any backends),EXTERNAL will be used as the default type.
+     *
+     * If specified, the scheme(s) must not conflict with the load balancing
+     * scheme of the backend service resources this Url map references.
      * Check the LoadBalancingSchemes enum for the list of possible values.
      * </pre>
      *
@@ -942,7 +1116,21 @@ public final class UrlMapsValidateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Specifies the load balancer type(s) this validation request is for. Use EXTERNAL_MANAGED for global external Application Load Balancers and regional external Application Load Balancers. Use EXTERNAL for classic Application Load Balancers. Use INTERNAL_MANAGED for internal Application Load Balancers. For more information, refer to Choosing a load balancer. If unspecified, the load balancing scheme will be inferred from the backend service resources this URL map references. If that can not be inferred (for example, this URL map only references backend buckets, or this Url map is for rewrites and redirects only and doesn't reference any backends), EXTERNAL will be used as the default type. If specified, the scheme(s) must not conflict with the load balancing scheme of the backend service resources this Url map references.
+     * Specifies the load balancer type(s) this validation request is for. UseEXTERNAL_MANAGED for global external Application Load
+     * Balancers and regional external Application Load Balancers.
+     * Use EXTERNAL for classic Application Load Balancers.
+     *
+     * Use INTERNAL_MANAGED for internal Application Load Balancers. For more
+     * information, refer to Choosing
+     * a load balancer.
+     *
+     * If unspecified, the load balancing scheme will be inferred from the backend
+     * service resources this URL map references. If that can not be inferred (for
+     * example, this URL map only references backend buckets, or this Url map is
+     * for rewrites and redirects only and doesn't reference any backends),EXTERNAL will be used as the default type.
+     *
+     * If specified, the scheme(s) must not conflict with the load balancing
+     * scheme of the backend service resources this Url map references.
      * Check the LoadBalancingSchemes enum for the list of possible values.
      * </pre>
      *

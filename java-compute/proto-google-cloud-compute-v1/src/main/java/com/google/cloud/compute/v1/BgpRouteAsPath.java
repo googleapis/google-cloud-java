@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
 
   private BgpRouteAsPath() {
     asns_ = emptyIntList();
+    asns32_ = emptyIntList();
     type_ = "";
   }
 
@@ -68,7 +69,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Type of AS-PATH segment (SEQUENCE or SET)
+   * Output only. [Output only] Type of AS-PATH segment (SEQUENCE or SET)
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.BgpRouteAsPath.Type}
@@ -201,7 +202,8 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] ASNs in the path segment. When type is SEQUENCE, these are ordered.
+   * Output only. [Output only] ASNs in the path segment. When type is SEQUENCE, these are
+   * ordered.
    * </pre>
    *
    * <code>repeated int32 asns = 3003767;</code>
@@ -217,7 +219,8 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] ASNs in the path segment. When type is SEQUENCE, these are ordered.
+   * Output only. [Output only] ASNs in the path segment. When type is SEQUENCE, these are
+   * ordered.
    * </pre>
    *
    * <code>repeated int32 asns = 3003767;</code>
@@ -232,7 +235,8 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] ASNs in the path segment. When type is SEQUENCE, these are ordered.
+   * Output only. [Output only] ASNs in the path segment. When type is SEQUENCE, these are
+   * ordered.
    * </pre>
    *
    * <code>repeated int32 asns = 3003767;</code>
@@ -246,6 +250,66 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
 
   private int asnsMemoizedSerializedSize = -1;
 
+  public static final int ASNS32_FIELD_NUMBER = 202267158;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.Internal.IntList asns32_ = emptyIntList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] ASNs in the path segment. This field is for better
+   * support of 32 bit ASNs as the other asns field suffers from overflow when
+   * the ASN is larger. When type is SEQUENCE, these are ordered.
+   * </pre>
+   *
+   * <code>repeated uint32 asns32 = 202267158;</code>
+   *
+   * @return A list containing the asns32.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getAsns32List() {
+    return asns32_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] ASNs in the path segment. This field is for better
+   * support of 32 bit ASNs as the other asns field suffers from overflow when
+   * the ASN is larger. When type is SEQUENCE, these are ordered.
+   * </pre>
+   *
+   * <code>repeated uint32 asns32 = 202267158;</code>
+   *
+   * @return The count of asns32.
+   */
+  public int getAsns32Count() {
+    return asns32_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] ASNs in the path segment. This field is for better
+   * support of 32 bit ASNs as the other asns field suffers from overflow when
+   * the ASN is larger. When type is SEQUENCE, these are ordered.
+   * </pre>
+   *
+   * <code>repeated uint32 asns32 = 202267158;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The asns32 at the given index.
+   */
+  public int getAsns32(int index) {
+    return asns32_.getInt(index);
+  }
+
+  private int asns32MemoizedSerializedSize = -1;
+
   public static final int TYPE_FIELD_NUMBER = 3575610;
 
   @SuppressWarnings("serial")
@@ -255,7 +319,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Type of AS-PATH segment (SEQUENCE or SET)
+   * Output only. [Output only] Type of AS-PATH segment (SEQUENCE or SET)
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -272,7 +336,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Type of AS-PATH segment (SEQUENCE or SET)
+   * Output only. [Output only] Type of AS-PATH segment (SEQUENCE or SET)
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -297,7 +361,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Type of AS-PATH segment (SEQUENCE or SET)
+   * Output only. [Output only] Type of AS-PATH segment (SEQUENCE or SET)
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -343,6 +407,13 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3575610, type_);
     }
+    if (getAsns32List().size() > 0) {
+      output.writeUInt32NoTag(1618137266);
+      output.writeUInt32NoTag(asns32MemoizedSerializedSize);
+    }
+    for (int i = 0; i < asns32_.size(); i++) {
+      output.writeUInt32NoTag(asns32_.getInt(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -367,6 +438,18 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3575610, type_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < asns32_.size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(asns32_.getInt(i));
+      }
+      size += dataSize;
+      if (!getAsns32List().isEmpty()) {
+        size += 5;
+        size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+      }
+      asns32MemoizedSerializedSize = dataSize;
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -384,6 +467,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.compute.v1.BgpRouteAsPath) obj;
 
     if (!getAsnsList().equals(other.getAsnsList())) return false;
+    if (!getAsns32List().equals(other.getAsns32List())) return false;
     if (hasType() != other.hasType()) return false;
     if (hasType()) {
       if (!getType().equals(other.getType())) return false;
@@ -402,6 +486,10 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
     if (getAsnsCount() > 0) {
       hash = (37 * hash) + ASNS_FIELD_NUMBER;
       hash = (53 * hash) + getAsnsList().hashCode();
+    }
+    if (getAsns32Count() > 0) {
+      hash = (37 * hash) + ASNS32_FIELD_NUMBER;
+      hash = (53 * hash) + getAsns32List().hashCode();
     }
     if (hasType()) {
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
@@ -547,6 +635,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       asns_ = emptyIntList();
+      asns32_ = emptyIntList();
       type_ = "";
       return this;
     }
@@ -588,8 +677,12 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
         asns_.makeImmutable();
         result.asns_ = asns_;
       }
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        asns32_.makeImmutable();
+        result.asns32_ = asns32_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.type_ = type_;
         to_bitField0_ |= 0x00000001;
       }
@@ -652,9 +745,20 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
+      if (!other.asns32_.isEmpty()) {
+        if (asns32_.isEmpty()) {
+          asns32_ = other.asns32_;
+          asns32_.makeImmutable();
+          bitField0_ |= 0x00000002;
+        } else {
+          ensureAsns32IsMutable();
+          asns32_.addAll(other.asns32_);
+        }
+        onChanged();
+      }
       if (other.hasType()) {
         type_ = other.type_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -704,9 +808,27 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
             case 28604882:
               {
                 type_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 28604882
+            case 1618137264:
+              {
+                int v = input.readUInt32();
+                ensureAsns32IsMutable();
+                asns32_.addInt(v);
+                break;
+              } // case 1618137264
+            case 1618137266:
+              {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureAsns32IsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  asns32_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 1618137266
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -739,7 +861,8 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] ASNs in the path segment. When type is SEQUENCE, these are ordered.
+     * Output only. [Output only] ASNs in the path segment. When type is SEQUENCE, these are
+     * ordered.
      * </pre>
      *
      * <code>repeated int32 asns = 3003767;</code>
@@ -755,7 +878,8 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] ASNs in the path segment. When type is SEQUENCE, these are ordered.
+     * Output only. [Output only] ASNs in the path segment. When type is SEQUENCE, these are
+     * ordered.
      * </pre>
      *
      * <code>repeated int32 asns = 3003767;</code>
@@ -770,7 +894,8 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] ASNs in the path segment. When type is SEQUENCE, these are ordered.
+     * Output only. [Output only] ASNs in the path segment. When type is SEQUENCE, these are
+     * ordered.
      * </pre>
      *
      * <code>repeated int32 asns = 3003767;</code>
@@ -786,7 +911,8 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] ASNs in the path segment. When type is SEQUENCE, these are ordered.
+     * Output only. [Output only] ASNs in the path segment. When type is SEQUENCE, these are
+     * ordered.
      * </pre>
      *
      * <code>repeated int32 asns = 3003767;</code>
@@ -808,7 +934,8 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] ASNs in the path segment. When type is SEQUENCE, these are ordered.
+     * Output only. [Output only] ASNs in the path segment. When type is SEQUENCE, these are
+     * ordered.
      * </pre>
      *
      * <code>repeated int32 asns = 3003767;</code>
@@ -829,7 +956,8 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] ASNs in the path segment. When type is SEQUENCE, these are ordered.
+     * Output only. [Output only] ASNs in the path segment. When type is SEQUENCE, these are
+     * ordered.
      * </pre>
      *
      * <code>repeated int32 asns = 3003767;</code>
@@ -849,7 +977,8 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] ASNs in the path segment. When type is SEQUENCE, these are ordered.
+     * Output only. [Output only] ASNs in the path segment. When type is SEQUENCE, these are
+     * ordered.
      * </pre>
      *
      * <code>repeated int32 asns = 3003767;</code>
@@ -863,13 +992,164 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.protobuf.Internal.IntList asns32_ = emptyIntList();
+
+    private void ensureAsns32IsMutable() {
+      if (!asns32_.isModifiable()) {
+        asns32_ = makeMutableCopy(asns32_);
+      }
+      bitField0_ |= 0x00000002;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] ASNs in the path segment. This field is for better
+     * support of 32 bit ASNs as the other asns field suffers from overflow when
+     * the ASN is larger. When type is SEQUENCE, these are ordered.
+     * </pre>
+     *
+     * <code>repeated uint32 asns32 = 202267158;</code>
+     *
+     * @return A list containing the asns32.
+     */
+    public java.util.List<java.lang.Integer> getAsns32List() {
+      asns32_.makeImmutable();
+      return asns32_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] ASNs in the path segment. This field is for better
+     * support of 32 bit ASNs as the other asns field suffers from overflow when
+     * the ASN is larger. When type is SEQUENCE, these are ordered.
+     * </pre>
+     *
+     * <code>repeated uint32 asns32 = 202267158;</code>
+     *
+     * @return The count of asns32.
+     */
+    public int getAsns32Count() {
+      return asns32_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] ASNs in the path segment. This field is for better
+     * support of 32 bit ASNs as the other asns field suffers from overflow when
+     * the ASN is larger. When type is SEQUENCE, these are ordered.
+     * </pre>
+     *
+     * <code>repeated uint32 asns32 = 202267158;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The asns32 at the given index.
+     */
+    public int getAsns32(int index) {
+      return asns32_.getInt(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] ASNs in the path segment. This field is for better
+     * support of 32 bit ASNs as the other asns field suffers from overflow when
+     * the ASN is larger. When type is SEQUENCE, these are ordered.
+     * </pre>
+     *
+     * <code>repeated uint32 asns32 = 202267158;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The asns32 to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAsns32(int index, int value) {
+
+      ensureAsns32IsMutable();
+      asns32_.setInt(index, value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] ASNs in the path segment. This field is for better
+     * support of 32 bit ASNs as the other asns field suffers from overflow when
+     * the ASN is larger. When type is SEQUENCE, these are ordered.
+     * </pre>
+     *
+     * <code>repeated uint32 asns32 = 202267158;</code>
+     *
+     * @param value The asns32 to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAsns32(int value) {
+
+      ensureAsns32IsMutable();
+      asns32_.addInt(value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] ASNs in the path segment. This field is for better
+     * support of 32 bit ASNs as the other asns field suffers from overflow when
+     * the ASN is larger. When type is SEQUENCE, these are ordered.
+     * </pre>
+     *
+     * <code>repeated uint32 asns32 = 202267158;</code>
+     *
+     * @param values The asns32 to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAsns32(java.lang.Iterable<? extends java.lang.Integer> values) {
+      ensureAsns32IsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, asns32_);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] ASNs in the path segment. This field is for better
+     * support of 32 bit ASNs as the other asns field suffers from overflow when
+     * the ASN is larger. When type is SEQUENCE, these are ordered.
+     * </pre>
+     *
+     * <code>repeated uint32 asns32 = 202267158;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAsns32() {
+      asns32_ = emptyIntList();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object type_ = "";
 
     /**
      *
      *
      * <pre>
-     * [Output only] Type of AS-PATH segment (SEQUENCE or SET)
+     * Output only. [Output only] Type of AS-PATH segment (SEQUENCE or SET)
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -878,14 +1158,14 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the type field is set.
      */
     public boolean hasType() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output only] Type of AS-PATH segment (SEQUENCE or SET)
+     * Output only. [Output only] Type of AS-PATH segment (SEQUENCE or SET)
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -909,7 +1189,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Type of AS-PATH segment (SEQUENCE or SET)
+     * Output only. [Output only] Type of AS-PATH segment (SEQUENCE or SET)
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -933,7 +1213,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Type of AS-PATH segment (SEQUENCE or SET)
+     * Output only. [Output only] Type of AS-PATH segment (SEQUENCE or SET)
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -947,7 +1227,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       type_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -956,7 +1236,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Type of AS-PATH segment (SEQUENCE or SET)
+     * Output only. [Output only] Type of AS-PATH segment (SEQUENCE or SET)
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -966,7 +1246,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearType() {
       type_ = getDefaultInstance().getType();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -975,7 +1255,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Type of AS-PATH segment (SEQUENCE or SET)
+     * Output only. [Output only] Type of AS-PATH segment (SEQUENCE or SET)
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -990,7 +1270,7 @@ public final class BgpRouteAsPath extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       type_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

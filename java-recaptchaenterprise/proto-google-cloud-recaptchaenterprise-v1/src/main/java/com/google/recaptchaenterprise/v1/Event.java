@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -79,6 +79,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Setting that controls Fraud Prevention assessments.
+   * Ensure that applications can handle values not explicitly listed.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.recaptchaenterprise.v1.Event.FraudPrevention}
@@ -541,7 +542,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.recaptchaenterprise.v1.Event.hashed_account_id is deprecated. See
-   *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=745
+   *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=765
    * @return The hashedAccountId.
    */
   @java.lang.Override
@@ -630,7 +631,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Flag for running WAF token assessment.
+   * Optional. Flag for running Web Application Firewall (WAF) token assessment.
    * If enabled, the token must be specified, and have been created by a
    * WAF-enabled key.
    * </pre>
@@ -2368,7 +2369,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.recaptchaenterprise.v1.Event.hashed_account_id is deprecated. See
-     *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=745
+     *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=765
      * @return The hashedAccountId.
      */
     @java.lang.Override
@@ -2391,7 +2392,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.recaptchaenterprise.v1.Event.hashed_account_id is deprecated. See
-     *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=745
+     *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=765
      * @param value The hashedAccountId to set.
      * @return This builder for chaining.
      */
@@ -2420,7 +2421,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.recaptchaenterprise.v1.Event.hashed_account_id is deprecated. See
-     *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=745
+     *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=765
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2607,7 +2608,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Flag for running WAF token assessment.
+     * Optional. Flag for running Web Application Firewall (WAF) token assessment.
      * If enabled, the token must be specified, and have been created by a
      * WAF-enabled key.
      * </pre>
@@ -2625,7 +2626,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Flag for running WAF token assessment.
+     * Optional. Flag for running Web Application Firewall (WAF) token assessment.
      * If enabled, the token must be specified, and have been created by a
      * WAF-enabled key.
      * </pre>
@@ -2647,7 +2648,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Flag for running WAF token assessment.
+     * Optional. Flag for running Web Application Firewall (WAF) token assessment.
      * If enabled, the token must be specified, and have been created by a
      * WAF-enabled key.
      * </pre>

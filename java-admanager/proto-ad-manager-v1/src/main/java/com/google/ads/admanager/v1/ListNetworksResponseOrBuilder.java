@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -78,4 +78,53 @@ public interface ListNetworksResponseOrBuilder
    * <code>repeated .google.ads.admanager.v1.Network networks = 1;</code>
    */
   com.google.ads.admanager.v1.NetworkOrBuilder getNetworksOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * A token, which can be sent as `page_token` to retrieve the next page.
+   * If this field is omitted, there are no subsequent pages.
+   * </pre>
+   *
+   * <code>string next_page_token = 2;</code>
+   *
+   * @return The nextPageToken.
+   */
+  java.lang.String getNextPageToken();
+
+  /**
+   *
+   *
+   * <pre>
+   * A token, which can be sent as `page_token` to retrieve the next page.
+   * If this field is omitted, there are no subsequent pages.
+   * </pre>
+   *
+   * <code>string next_page_token = 2;</code>
+   *
+   * @return The bytes for nextPageToken.
+   */
+  com.google.protobuf.ByteString getNextPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Total number of `Network`s.
+   *
+   * `total_size` won't be calculated in the response unless it has been
+   * included in a response field mask. The response field mask can be provided
+   * to the method by using the URL parameter `$fields` or `fields`, or by using
+   * the HTTP/gRPC header `X-Goog-FieldMask`.
+   *
+   * For more information, see
+   * https://developers.google.com/ad-manager/api/beta/field-masks
+   * </pre>
+   *
+   * <code>int32 total_size = 3;</code>
+   *
+   * @return The totalSize.
+   */
+  int getTotalSize();
 }

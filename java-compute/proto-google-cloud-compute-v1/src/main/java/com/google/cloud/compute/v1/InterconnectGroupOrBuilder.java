@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,7 +50,8 @@ public interface InterconnectGroupOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -63,7 +64,8 @@ public interface InterconnectGroupOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -76,7 +78,8 @@ public interface InterconnectGroupOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -89,7 +92,8 @@ public interface InterconnectGroupOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -102,7 +106,8 @@ public interface InterconnectGroupOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -115,7 +120,8 @@ public interface InterconnectGroupOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -128,7 +134,11 @@ public interface InterconnectGroupOrBuilder
    *
    *
    * <pre>
-   * Opaque system-generated token that uniquely identifies the configuration. If provided when patching a configuration in update mode, the provided token must match the current token or the update is rejected. This provides a reliable means of doing read-modify-write (optimistic locking) as described by API 154.
+   * Opaque system-generated token that uniquely identifies the configuration.
+   * If provided when patching a configuration in update mode, the provided
+   * token must match the current token or the update is rejected. This provides
+   * a reliable means of doing read-modify-write (optimistic locking) as
+   * described by AIP 154.
    * </pre>
    *
    * <code>optional string etag = 3123477;</code>
@@ -141,7 +151,11 @@ public interface InterconnectGroupOrBuilder
    *
    *
    * <pre>
-   * Opaque system-generated token that uniquely identifies the configuration. If provided when patching a configuration in update mode, the provided token must match the current token or the update is rejected. This provides a reliable means of doing read-modify-write (optimistic locking) as described by API 154.
+   * Opaque system-generated token that uniquely identifies the configuration.
+   * If provided when patching a configuration in update mode, the provided
+   * token must match the current token or the update is rejected. This provides
+   * a reliable means of doing read-modify-write (optimistic locking) as
+   * described by AIP 154.
    * </pre>
    *
    * <code>optional string etag = 3123477;</code>
@@ -154,7 +168,11 @@ public interface InterconnectGroupOrBuilder
    *
    *
    * <pre>
-   * Opaque system-generated token that uniquely identifies the configuration. If provided when patching a configuration in update mode, the provided token must match the current token or the update is rejected. This provides a reliable means of doing read-modify-write (optimistic locking) as described by API 154.
+   * Opaque system-generated token that uniquely identifies the configuration.
+   * If provided when patching a configuration in update mode, the provided
+   * token must match the current token or the update is rejected. This provides
+   * a reliable means of doing read-modify-write (optimistic locking) as
+   * described by AIP 154.
    * </pre>
    *
    * <code>optional string etag = 3123477;</code>
@@ -167,7 +185,8 @@ public interface InterconnectGroupOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource type. The server generates this identifier.
+   * Output only. [Output Only] The unique identifier for the resource type. The server
+   * generates this identifier.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -180,7 +199,8 @@ public interface InterconnectGroupOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource type. The server generates this identifier.
+   * Output only. [Output Only] The unique identifier for the resource type. The server
+   * generates this identifier.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -210,7 +230,11 @@ public interface InterconnectGroupOrBuilder
    *
    *
    * <pre>
-   * Interconnects in the InterconnectGroup. Keys are arbitrary user-specified strings. Users are encouraged, but not required, to use their preferred format for resource links as keys. Note that there are add-members and remove-members methods in gcloud. The size of this map is limited by an "Interconnects per group" quota.
+   * Interconnects in the InterconnectGroup. Keys are arbitrary user-specified
+   * strings. Users are encouraged, but not required, to use their preferred
+   * format for resource links as keys.
+   * Note that there are add-members and remove-members methods in gcloud.
+   * The size of this map is limited by an "Interconnects per group" quota.
    * </pre>
    *
    * <code>
@@ -223,7 +247,11 @@ public interface InterconnectGroupOrBuilder
    *
    *
    * <pre>
-   * Interconnects in the InterconnectGroup. Keys are arbitrary user-specified strings. Users are encouraged, but not required, to use their preferred format for resource links as keys. Note that there are add-members and remove-members methods in gcloud. The size of this map is limited by an "Interconnects per group" quota.
+   * Interconnects in the InterconnectGroup. Keys are arbitrary user-specified
+   * strings. Users are encouraged, but not required, to use their preferred
+   * format for resource links as keys.
+   * Note that there are add-members and remove-members methods in gcloud.
+   * The size of this map is limited by an "Interconnects per group" quota.
    * </pre>
    *
    * <code>
@@ -241,7 +269,11 @@ public interface InterconnectGroupOrBuilder
    *
    *
    * <pre>
-   * Interconnects in the InterconnectGroup. Keys are arbitrary user-specified strings. Users are encouraged, but not required, to use their preferred format for resource links as keys. Note that there are add-members and remove-members methods in gcloud. The size of this map is limited by an "Interconnects per group" quota.
+   * Interconnects in the InterconnectGroup. Keys are arbitrary user-specified
+   * strings. Users are encouraged, but not required, to use their preferred
+   * format for resource links as keys.
+   * Note that there are add-members and remove-members methods in gcloud.
+   * The size of this map is limited by an "Interconnects per group" quota.
    * </pre>
    *
    * <code>
@@ -255,7 +287,11 @@ public interface InterconnectGroupOrBuilder
    *
    *
    * <pre>
-   * Interconnects in the InterconnectGroup. Keys are arbitrary user-specified strings. Users are encouraged, but not required, to use their preferred format for resource links as keys. Note that there are add-members and remove-members methods in gcloud. The size of this map is limited by an "Interconnects per group" quota.
+   * Interconnects in the InterconnectGroup. Keys are arbitrary user-specified
+   * strings. Users are encouraged, but not required, to use their preferred
+   * format for resource links as keys.
+   * Note that there are add-members and remove-members methods in gcloud.
+   * The size of this map is limited by an "Interconnects per group" quota.
    * </pre>
    *
    * <code>
@@ -272,7 +308,11 @@ public interface InterconnectGroupOrBuilder
    *
    *
    * <pre>
-   * Interconnects in the InterconnectGroup. Keys are arbitrary user-specified strings. Users are encouraged, but not required, to use their preferred format for resource links as keys. Note that there are add-members and remove-members methods in gcloud. The size of this map is limited by an "Interconnects per group" quota.
+   * Interconnects in the InterconnectGroup. Keys are arbitrary user-specified
+   * strings. Users are encouraged, but not required, to use their preferred
+   * format for resource links as keys.
+   * Note that there are add-members and remove-members methods in gcloud.
+   * The size of this map is limited by an "Interconnects per group" quota.
    * </pre>
    *
    * <code>
@@ -286,7 +326,7 @@ public interface InterconnectGroupOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#InterconnectGroup
+   * Output only. [Output Only] Type of the resource. Always compute#InterconnectGroup
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -299,7 +339,7 @@ public interface InterconnectGroupOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#InterconnectGroup
+   * Output only. [Output Only] Type of the resource. Always compute#InterconnectGroup
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -312,7 +352,7 @@ public interface InterconnectGroupOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#InterconnectGroup
+   * Output only. [Output Only] Type of the resource. Always compute#InterconnectGroup
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -325,7 +365,13 @@ public interface InterconnectGroupOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -338,7 +384,13 @@ public interface InterconnectGroupOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -351,7 +403,13 @@ public interface InterconnectGroupOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -390,7 +448,7 @@ public interface InterconnectGroupOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -403,7 +461,7 @@ public interface InterconnectGroupOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -416,7 +474,7 @@ public interface InterconnectGroupOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,7 +68,60 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The type of error, warning, or notice returned. Current set of possible values: - ALL_INSTANCES_UNHEALTHY (WARNING): All instances in the instance group are unhealthy (not in RUNNING state). - BACKEND_SERVICE_DOES_NOT_EXIST (ERROR): There is no backend service attached to the instance group. - CAPPED_AT_MAX_NUM_REPLICAS (WARNING): Autoscaler recommends a size greater than maxNumReplicas. - CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE (WARNING): The custom metric samples are not exported often enough to be a credible base for autoscaling. - CUSTOM_METRIC_INVALID (ERROR): The custom metric that was specified does not exist or does not have the necessary labels. - MIN_EQUALS_MAX (WARNING): The minNumReplicas is equal to maxNumReplicas. This means the autoscaler cannot add or remove instances from the instance group. - MISSING_CUSTOM_METRIC_DATA_POINTS (WARNING): The autoscaler did not receive any data from the custom metric configured for autoscaling. - MISSING_LOAD_BALANCING_DATA_POINTS (WARNING): The autoscaler is configured to scale based on a load balancing signal but the instance group has not received any requests from the load balancer. - MODE_OFF (WARNING): Autoscaling is turned off. The number of instances in the group won't change automatically. The autoscaling configuration is preserved. - MODE_ONLY_UP (WARNING): Autoscaling is in the "Autoscale only out" mode. The autoscaler can add instances but not remove any. - MORE_THAN_ONE_BACKEND_SERVICE (ERROR): The instance group cannot be autoscaled because it has more than one backend service attached to it. - NOT_ENOUGH_QUOTA_AVAILABLE (ERROR): There is insufficient quota for the necessary resources, such as CPU or number of instances. - REGION_RESOURCE_STOCKOUT (ERROR): Shown only for regional autoscalers: there is a resource stockout in the chosen region. - SCALING_TARGET_DOES_NOT_EXIST (ERROR): The target to be scaled does not exist. - UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION (ERROR): Autoscaling does not work with an HTTP/S load balancer that has been configured for maxRate. - ZONE_RESOURCE_STOCKOUT (ERROR): For zonal autoscalers: there is a resource stockout in the chosen zone. For regional autoscalers: in at least one of the zones you're using there is a resource stockout. New values might be added in the future. Some of the values might not be available in all API versions.
+   * The type of error, warning, or notice returned. Current set of possible
+   * values:
+   *
+   *    - ALL_INSTANCES_UNHEALTHY (WARNING):
+   *      All instances in the instance group are unhealthy (not in RUNNING
+   *      state).
+   *    - BACKEND_SERVICE_DOES_NOT_EXIST (ERROR):
+   *      There is no backend service attached to the instance group.
+   *    - CAPPED_AT_MAX_NUM_REPLICAS (WARNING):
+   *      Autoscaler recommends a size greater than maxNumReplicas.
+   *    - CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE (WARNING):
+   *      The custom metric samples are not exported often enough to be
+   *      a credible base for autoscaling.
+   *    - CUSTOM_METRIC_INVALID (ERROR):
+   *      The custom metric that was specified does not exist or does not have
+   *      the necessary labels.
+   *    - MIN_EQUALS_MAX (WARNING):
+   *      The minNumReplicas is equal to maxNumReplicas. This means the
+   *      autoscaler cannot add or remove instances from the instance group.
+   *    - MISSING_CUSTOM_METRIC_DATA_POINTS (WARNING):
+   *      The autoscaler did not receive any data from the custom metric
+   *      configured for autoscaling.
+   *    - MISSING_LOAD_BALANCING_DATA_POINTS (WARNING):
+   *      The autoscaler is configured to scale based on a load balancing signal
+   *      but the instance group has not received any requests from the load
+   *      balancer.
+   *    - MODE_OFF (WARNING):
+   *      Autoscaling is turned off. The number of instances in the group won't
+   *      change automatically. The autoscaling configuration is preserved.
+   *    - MODE_ONLY_UP (WARNING):
+   *      Autoscaling is in the "Autoscale only out" mode. The autoscaler can add
+   *      instances but not remove any.
+   *    - MORE_THAN_ONE_BACKEND_SERVICE (ERROR):
+   *      The instance group cannot be autoscaled because it has more than one
+   *      backend service attached to it.
+   *    - NOT_ENOUGH_QUOTA_AVAILABLE (ERROR):
+   *      There is insufficient quota for the necessary resources, such as CPU or
+   *      number of instances.
+   *    - REGION_RESOURCE_STOCKOUT (ERROR):
+   *      Shown only for regional autoscalers: there is a resource stockout in
+   *      the chosen region.
+   *    - SCALING_TARGET_DOES_NOT_EXIST (ERROR):
+   *      The target to be scaled does not exist.
+   *    - UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION
+   *      (ERROR): Autoscaling does not work with an HTTP/S load balancer that
+   *      has been configured for maxRate.
+   *    - ZONE_RESOURCE_STOCKOUT (ERROR):
+   *      For zonal autoscalers: there is a resource stockout in the chosen zone.
+   *      For regional autoscalers: in at least one of the zones you're using
+   *      there is a resource stockout.
+   *
+   *
+   * New values might be added in the future. Some of the values might not be
+   * available in all API versions.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.AutoscalerStatusDetails.Type}
@@ -118,7 +171,8 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The custom metric samples are not exported often enough to be a credible base for autoscaling.
+     * The custom metric samples are not exported often enough to be a credible
+     * base for autoscaling.
      * </pre>
      *
      * <code>CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE = 328964659;</code>
@@ -128,7 +182,8 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The custom metric that was specified does not exist or does not have the necessary labels.
+     * The custom metric that was specified does not exist or does not have the
+     * necessary labels.
      * </pre>
      *
      * <code>CUSTOM_METRIC_INVALID = 204430550;</code>
@@ -138,7 +193,8 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The minNumReplicas is equal to maxNumReplicas. This means the autoscaler cannot add or remove instances from the instance group.
+     * The minNumReplicas is equal to maxNumReplicas. This means the autoscaler
+     * cannot add or remove instances from the instance group.
      * </pre>
      *
      * <code>MIN_EQUALS_MAX = 2821361;</code>
@@ -148,7 +204,8 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The autoscaler did not receive any data from the custom metric configured for autoscaling.
+     * The autoscaler did not receive any data from the custom metric configured
+     * for autoscaling.
      * </pre>
      *
      * <code>MISSING_CUSTOM_METRIC_DATA_POINTS = 94885086;</code>
@@ -158,7 +215,9 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The autoscaler is configured to scale based on a load balancing signal but the instance group has not received any requests from the load balancer.
+     * The autoscaler is configured to scale based on a load balancing signal
+     * but the instance group has not received any requests from the load
+     * balancer.
      * </pre>
      *
      * <code>MISSING_LOAD_BALANCING_DATA_POINTS = 509858898;</code>
@@ -168,7 +227,8 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Autoscaling is turned off. The number of instances in the group won't change automatically. The autoscaling configuration is preserved.
+     * Autoscaling is turned off. The number of instances in the group won't
+     * change automatically. The autoscaling configuration is preserved.
      * </pre>
      *
      * <code>MODE_OFF = 164169907;</code>
@@ -178,7 +238,8 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Autoscaling is in the "Autoscale only scale out" mode. Instances in the group will be only added.
+     * Autoscaling is in the "Autoscale only scale out" mode.
+     * Instances in the group will be only added.
      * </pre>
      *
      * <code>MODE_ONLY_SCALE_OUT = 3840994;</code>
@@ -188,7 +249,8 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Autoscaling is in the "Autoscale only out" mode. Instances in the group will be only added.
+     * Autoscaling is in the "Autoscale only out" mode. Instances in the group
+     * will be only added.
      * </pre>
      *
      * <code>MODE_ONLY_UP = 100969842;</code>
@@ -198,7 +260,8 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The instance group cannot be autoscaled because it has more than one backend service attached to it.
+     * The instance group cannot be autoscaled because it has more than one
+     * backend service attached to it.
      * </pre>
      *
      * <code>MORE_THAN_ONE_BACKEND_SERVICE = 151922141;</code>
@@ -208,7 +271,8 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * There is insufficient quota for the necessary resources, such as CPU or number of instances.
+     * There is insufficient quota for the necessary resources, such as CPU or
+     * number of instances.
      * </pre>
      *
      * <code>NOT_ENOUGH_QUOTA_AVAILABLE = 403101631;</code>
@@ -218,7 +282,8 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Showed only for regional autoscalers: there is a resource stockout in the chosen region.
+     * Showed only for regional autoscalers: there is a resource stockout in
+     * the chosen region.
      * </pre>
      *
      * <code>REGION_RESOURCE_STOCKOUT = 528622846;</code>
@@ -238,7 +303,9 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * For some scaling schedules minRequiredReplicas is greater than maxNumReplicas. Autoscaler always recommends at most maxNumReplicas instances.
+     * For some scaling schedules minRequiredReplicas is greater than
+     * maxNumReplicas. Autoscaler always recommends at most maxNumReplicas
+     * instances.
      * </pre>
      *
      * <code>SCHEDULED_INSTANCES_GREATER_THAN_AUTOSCALER_MAX = 29275586;</code>
@@ -248,7 +315,9 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * For some scaling schedules minRequiredReplicas is less than minNumReplicas. Autoscaler always recommends at least minNumReplicas instances.
+     * For some scaling schedules minRequiredReplicas is less than
+     * minNumReplicas. Autoscaler always recommends at least minNumReplicas
+     * instances.
      * </pre>
      *
      * <code>SCHEDULED_INSTANCES_LESS_THAN_AUTOSCALER_MIN = 398287669;</code>
@@ -260,7 +329,8 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Autoscaling does not work with an HTTP/S load balancer that has been configured for maxRate.
+     * Autoscaling does not work with an HTTP/S load balancer that has been
+     * configured for maxRate.
      * </pre>
      *
      * <code>UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION = 330845009;</code>
@@ -270,7 +340,9 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * For zonal autoscalers: there is a resource stockout in the chosen zone. For regional autoscalers: in at least one of the zones you're using there is a resource stockout.
+     * For zonal autoscalers: there is a resource stockout in the chosen zone.
+     * For regional autoscalers: in at least one of the zones you're using there
+     * is a resource stockout.
      * </pre>
      *
      * <code>ZONE_RESOURCE_STOCKOUT = 210200502;</code>
@@ -327,7 +399,8 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The custom metric samples are not exported often enough to be a credible base for autoscaling.
+     * The custom metric samples are not exported often enough to be a credible
+     * base for autoscaling.
      * </pre>
      *
      * <code>CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE = 328964659;</code>
@@ -338,7 +411,8 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The custom metric that was specified does not exist or does not have the necessary labels.
+     * The custom metric that was specified does not exist or does not have the
+     * necessary labels.
      * </pre>
      *
      * <code>CUSTOM_METRIC_INVALID = 204430550;</code>
@@ -349,7 +423,8 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The minNumReplicas is equal to maxNumReplicas. This means the autoscaler cannot add or remove instances from the instance group.
+     * The minNumReplicas is equal to maxNumReplicas. This means the autoscaler
+     * cannot add or remove instances from the instance group.
      * </pre>
      *
      * <code>MIN_EQUALS_MAX = 2821361;</code>
@@ -360,7 +435,8 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The autoscaler did not receive any data from the custom metric configured for autoscaling.
+     * The autoscaler did not receive any data from the custom metric configured
+     * for autoscaling.
      * </pre>
      *
      * <code>MISSING_CUSTOM_METRIC_DATA_POINTS = 94885086;</code>
@@ -371,7 +447,9 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The autoscaler is configured to scale based on a load balancing signal but the instance group has not received any requests from the load balancer.
+     * The autoscaler is configured to scale based on a load balancing signal
+     * but the instance group has not received any requests from the load
+     * balancer.
      * </pre>
      *
      * <code>MISSING_LOAD_BALANCING_DATA_POINTS = 509858898;</code>
@@ -382,7 +460,8 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Autoscaling is turned off. The number of instances in the group won't change automatically. The autoscaling configuration is preserved.
+     * Autoscaling is turned off. The number of instances in the group won't
+     * change automatically. The autoscaling configuration is preserved.
      * </pre>
      *
      * <code>MODE_OFF = 164169907;</code>
@@ -393,7 +472,8 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Autoscaling is in the "Autoscale only scale out" mode. Instances in the group will be only added.
+     * Autoscaling is in the "Autoscale only scale out" mode.
+     * Instances in the group will be only added.
      * </pre>
      *
      * <code>MODE_ONLY_SCALE_OUT = 3840994;</code>
@@ -404,7 +484,8 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Autoscaling is in the "Autoscale only out" mode. Instances in the group will be only added.
+     * Autoscaling is in the "Autoscale only out" mode. Instances in the group
+     * will be only added.
      * </pre>
      *
      * <code>MODE_ONLY_UP = 100969842;</code>
@@ -415,7 +496,8 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The instance group cannot be autoscaled because it has more than one backend service attached to it.
+     * The instance group cannot be autoscaled because it has more than one
+     * backend service attached to it.
      * </pre>
      *
      * <code>MORE_THAN_ONE_BACKEND_SERVICE = 151922141;</code>
@@ -426,7 +508,8 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * There is insufficient quota for the necessary resources, such as CPU or number of instances.
+     * There is insufficient quota for the necessary resources, such as CPU or
+     * number of instances.
      * </pre>
      *
      * <code>NOT_ENOUGH_QUOTA_AVAILABLE = 403101631;</code>
@@ -437,7 +520,8 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Showed only for regional autoscalers: there is a resource stockout in the chosen region.
+     * Showed only for regional autoscalers: there is a resource stockout in
+     * the chosen region.
      * </pre>
      *
      * <code>REGION_RESOURCE_STOCKOUT = 528622846;</code>
@@ -459,7 +543,9 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * For some scaling schedules minRequiredReplicas is greater than maxNumReplicas. Autoscaler always recommends at most maxNumReplicas instances.
+     * For some scaling schedules minRequiredReplicas is greater than
+     * maxNumReplicas. Autoscaler always recommends at most maxNumReplicas
+     * instances.
      * </pre>
      *
      * <code>SCHEDULED_INSTANCES_GREATER_THAN_AUTOSCALER_MAX = 29275586;</code>
@@ -470,7 +556,9 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * For some scaling schedules minRequiredReplicas is less than minNumReplicas. Autoscaler always recommends at least minNumReplicas instances.
+     * For some scaling schedules minRequiredReplicas is less than
+     * minNumReplicas. Autoscaler always recommends at least minNumReplicas
+     * instances.
      * </pre>
      *
      * <code>SCHEDULED_INSTANCES_LESS_THAN_AUTOSCALER_MIN = 398287669;</code>
@@ -484,7 +572,8 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Autoscaling does not work with an HTTP/S load balancer that has been configured for maxRate.
+     * Autoscaling does not work with an HTTP/S load balancer that has been
+     * configured for maxRate.
      * </pre>
      *
      * <code>UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION = 330845009;</code>
@@ -495,7 +584,9 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * For zonal autoscalers: there is a resource stockout in the chosen zone. For regional autoscalers: in at least one of the zones you're using there is a resource stockout.
+     * For zonal autoscalers: there is a resource stockout in the chosen zone.
+     * For regional autoscalers: in at least one of the zones you're using there
+     * is a resource stockout.
      * </pre>
      *
      * <code>ZONE_RESOURCE_STOCKOUT = 210200502;</code>
@@ -702,7 +793,60 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The type of error, warning, or notice returned. Current set of possible values: - ALL_INSTANCES_UNHEALTHY (WARNING): All instances in the instance group are unhealthy (not in RUNNING state). - BACKEND_SERVICE_DOES_NOT_EXIST (ERROR): There is no backend service attached to the instance group. - CAPPED_AT_MAX_NUM_REPLICAS (WARNING): Autoscaler recommends a size greater than maxNumReplicas. - CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE (WARNING): The custom metric samples are not exported often enough to be a credible base for autoscaling. - CUSTOM_METRIC_INVALID (ERROR): The custom metric that was specified does not exist or does not have the necessary labels. - MIN_EQUALS_MAX (WARNING): The minNumReplicas is equal to maxNumReplicas. This means the autoscaler cannot add or remove instances from the instance group. - MISSING_CUSTOM_METRIC_DATA_POINTS (WARNING): The autoscaler did not receive any data from the custom metric configured for autoscaling. - MISSING_LOAD_BALANCING_DATA_POINTS (WARNING): The autoscaler is configured to scale based on a load balancing signal but the instance group has not received any requests from the load balancer. - MODE_OFF (WARNING): Autoscaling is turned off. The number of instances in the group won't change automatically. The autoscaling configuration is preserved. - MODE_ONLY_UP (WARNING): Autoscaling is in the "Autoscale only out" mode. The autoscaler can add instances but not remove any. - MORE_THAN_ONE_BACKEND_SERVICE (ERROR): The instance group cannot be autoscaled because it has more than one backend service attached to it. - NOT_ENOUGH_QUOTA_AVAILABLE (ERROR): There is insufficient quota for the necessary resources, such as CPU or number of instances. - REGION_RESOURCE_STOCKOUT (ERROR): Shown only for regional autoscalers: there is a resource stockout in the chosen region. - SCALING_TARGET_DOES_NOT_EXIST (ERROR): The target to be scaled does not exist. - UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION (ERROR): Autoscaling does not work with an HTTP/S load balancer that has been configured for maxRate. - ZONE_RESOURCE_STOCKOUT (ERROR): For zonal autoscalers: there is a resource stockout in the chosen zone. For regional autoscalers: in at least one of the zones you're using there is a resource stockout. New values might be added in the future. Some of the values might not be available in all API versions.
+   * The type of error, warning, or notice returned. Current set of possible
+   * values:
+   *
+   *    - ALL_INSTANCES_UNHEALTHY (WARNING):
+   *      All instances in the instance group are unhealthy (not in RUNNING
+   *      state).
+   *    - BACKEND_SERVICE_DOES_NOT_EXIST (ERROR):
+   *      There is no backend service attached to the instance group.
+   *    - CAPPED_AT_MAX_NUM_REPLICAS (WARNING):
+   *      Autoscaler recommends a size greater than maxNumReplicas.
+   *    - CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE (WARNING):
+   *      The custom metric samples are not exported often enough to be
+   *      a credible base for autoscaling.
+   *    - CUSTOM_METRIC_INVALID (ERROR):
+   *      The custom metric that was specified does not exist or does not have
+   *      the necessary labels.
+   *    - MIN_EQUALS_MAX (WARNING):
+   *      The minNumReplicas is equal to maxNumReplicas. This means the
+   *      autoscaler cannot add or remove instances from the instance group.
+   *    - MISSING_CUSTOM_METRIC_DATA_POINTS (WARNING):
+   *      The autoscaler did not receive any data from the custom metric
+   *      configured for autoscaling.
+   *    - MISSING_LOAD_BALANCING_DATA_POINTS (WARNING):
+   *      The autoscaler is configured to scale based on a load balancing signal
+   *      but the instance group has not received any requests from the load
+   *      balancer.
+   *    - MODE_OFF (WARNING):
+   *      Autoscaling is turned off. The number of instances in the group won't
+   *      change automatically. The autoscaling configuration is preserved.
+   *    - MODE_ONLY_UP (WARNING):
+   *      Autoscaling is in the "Autoscale only out" mode. The autoscaler can add
+   *      instances but not remove any.
+   *    - MORE_THAN_ONE_BACKEND_SERVICE (ERROR):
+   *      The instance group cannot be autoscaled because it has more than one
+   *      backend service attached to it.
+   *    - NOT_ENOUGH_QUOTA_AVAILABLE (ERROR):
+   *      There is insufficient quota for the necessary resources, such as CPU or
+   *      number of instances.
+   *    - REGION_RESOURCE_STOCKOUT (ERROR):
+   *      Shown only for regional autoscalers: there is a resource stockout in
+   *      the chosen region.
+   *    - SCALING_TARGET_DOES_NOT_EXIST (ERROR):
+   *      The target to be scaled does not exist.
+   *    - UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION
+   *      (ERROR): Autoscaling does not work with an HTTP/S load balancer that
+   *      has been configured for maxRate.
+   *    - ZONE_RESOURCE_STOCKOUT (ERROR):
+   *      For zonal autoscalers: there is a resource stockout in the chosen zone.
+   *      For regional autoscalers: in at least one of the zones you're using
+   *      there is a resource stockout.
+   *
+   *
+   * New values might be added in the future. Some of the values might not be
+   * available in all API versions.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -719,7 +863,60 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The type of error, warning, or notice returned. Current set of possible values: - ALL_INSTANCES_UNHEALTHY (WARNING): All instances in the instance group are unhealthy (not in RUNNING state). - BACKEND_SERVICE_DOES_NOT_EXIST (ERROR): There is no backend service attached to the instance group. - CAPPED_AT_MAX_NUM_REPLICAS (WARNING): Autoscaler recommends a size greater than maxNumReplicas. - CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE (WARNING): The custom metric samples are not exported often enough to be a credible base for autoscaling. - CUSTOM_METRIC_INVALID (ERROR): The custom metric that was specified does not exist or does not have the necessary labels. - MIN_EQUALS_MAX (WARNING): The minNumReplicas is equal to maxNumReplicas. This means the autoscaler cannot add or remove instances from the instance group. - MISSING_CUSTOM_METRIC_DATA_POINTS (WARNING): The autoscaler did not receive any data from the custom metric configured for autoscaling. - MISSING_LOAD_BALANCING_DATA_POINTS (WARNING): The autoscaler is configured to scale based on a load balancing signal but the instance group has not received any requests from the load balancer. - MODE_OFF (WARNING): Autoscaling is turned off. The number of instances in the group won't change automatically. The autoscaling configuration is preserved. - MODE_ONLY_UP (WARNING): Autoscaling is in the "Autoscale only out" mode. The autoscaler can add instances but not remove any. - MORE_THAN_ONE_BACKEND_SERVICE (ERROR): The instance group cannot be autoscaled because it has more than one backend service attached to it. - NOT_ENOUGH_QUOTA_AVAILABLE (ERROR): There is insufficient quota for the necessary resources, such as CPU or number of instances. - REGION_RESOURCE_STOCKOUT (ERROR): Shown only for regional autoscalers: there is a resource stockout in the chosen region. - SCALING_TARGET_DOES_NOT_EXIST (ERROR): The target to be scaled does not exist. - UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION (ERROR): Autoscaling does not work with an HTTP/S load balancer that has been configured for maxRate. - ZONE_RESOURCE_STOCKOUT (ERROR): For zonal autoscalers: there is a resource stockout in the chosen zone. For regional autoscalers: in at least one of the zones you're using there is a resource stockout. New values might be added in the future. Some of the values might not be available in all API versions.
+   * The type of error, warning, or notice returned. Current set of possible
+   * values:
+   *
+   *    - ALL_INSTANCES_UNHEALTHY (WARNING):
+   *      All instances in the instance group are unhealthy (not in RUNNING
+   *      state).
+   *    - BACKEND_SERVICE_DOES_NOT_EXIST (ERROR):
+   *      There is no backend service attached to the instance group.
+   *    - CAPPED_AT_MAX_NUM_REPLICAS (WARNING):
+   *      Autoscaler recommends a size greater than maxNumReplicas.
+   *    - CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE (WARNING):
+   *      The custom metric samples are not exported often enough to be
+   *      a credible base for autoscaling.
+   *    - CUSTOM_METRIC_INVALID (ERROR):
+   *      The custom metric that was specified does not exist or does not have
+   *      the necessary labels.
+   *    - MIN_EQUALS_MAX (WARNING):
+   *      The minNumReplicas is equal to maxNumReplicas. This means the
+   *      autoscaler cannot add or remove instances from the instance group.
+   *    - MISSING_CUSTOM_METRIC_DATA_POINTS (WARNING):
+   *      The autoscaler did not receive any data from the custom metric
+   *      configured for autoscaling.
+   *    - MISSING_LOAD_BALANCING_DATA_POINTS (WARNING):
+   *      The autoscaler is configured to scale based on a load balancing signal
+   *      but the instance group has not received any requests from the load
+   *      balancer.
+   *    - MODE_OFF (WARNING):
+   *      Autoscaling is turned off. The number of instances in the group won't
+   *      change automatically. The autoscaling configuration is preserved.
+   *    - MODE_ONLY_UP (WARNING):
+   *      Autoscaling is in the "Autoscale only out" mode. The autoscaler can add
+   *      instances but not remove any.
+   *    - MORE_THAN_ONE_BACKEND_SERVICE (ERROR):
+   *      The instance group cannot be autoscaled because it has more than one
+   *      backend service attached to it.
+   *    - NOT_ENOUGH_QUOTA_AVAILABLE (ERROR):
+   *      There is insufficient quota for the necessary resources, such as CPU or
+   *      number of instances.
+   *    - REGION_RESOURCE_STOCKOUT (ERROR):
+   *      Shown only for regional autoscalers: there is a resource stockout in
+   *      the chosen region.
+   *    - SCALING_TARGET_DOES_NOT_EXIST (ERROR):
+   *      The target to be scaled does not exist.
+   *    - UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION
+   *      (ERROR): Autoscaling does not work with an HTTP/S load balancer that
+   *      has been configured for maxRate.
+   *    - ZONE_RESOURCE_STOCKOUT (ERROR):
+   *      For zonal autoscalers: there is a resource stockout in the chosen zone.
+   *      For regional autoscalers: in at least one of the zones you're using
+   *      there is a resource stockout.
+   *
+   *
+   * New values might be added in the future. Some of the values might not be
+   * available in all API versions.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -744,7 +941,60 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The type of error, warning, or notice returned. Current set of possible values: - ALL_INSTANCES_UNHEALTHY (WARNING): All instances in the instance group are unhealthy (not in RUNNING state). - BACKEND_SERVICE_DOES_NOT_EXIST (ERROR): There is no backend service attached to the instance group. - CAPPED_AT_MAX_NUM_REPLICAS (WARNING): Autoscaler recommends a size greater than maxNumReplicas. - CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE (WARNING): The custom metric samples are not exported often enough to be a credible base for autoscaling. - CUSTOM_METRIC_INVALID (ERROR): The custom metric that was specified does not exist or does not have the necessary labels. - MIN_EQUALS_MAX (WARNING): The minNumReplicas is equal to maxNumReplicas. This means the autoscaler cannot add or remove instances from the instance group. - MISSING_CUSTOM_METRIC_DATA_POINTS (WARNING): The autoscaler did not receive any data from the custom metric configured for autoscaling. - MISSING_LOAD_BALANCING_DATA_POINTS (WARNING): The autoscaler is configured to scale based on a load balancing signal but the instance group has not received any requests from the load balancer. - MODE_OFF (WARNING): Autoscaling is turned off. The number of instances in the group won't change automatically. The autoscaling configuration is preserved. - MODE_ONLY_UP (WARNING): Autoscaling is in the "Autoscale only out" mode. The autoscaler can add instances but not remove any. - MORE_THAN_ONE_BACKEND_SERVICE (ERROR): The instance group cannot be autoscaled because it has more than one backend service attached to it. - NOT_ENOUGH_QUOTA_AVAILABLE (ERROR): There is insufficient quota for the necessary resources, such as CPU or number of instances. - REGION_RESOURCE_STOCKOUT (ERROR): Shown only for regional autoscalers: there is a resource stockout in the chosen region. - SCALING_TARGET_DOES_NOT_EXIST (ERROR): The target to be scaled does not exist. - UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION (ERROR): Autoscaling does not work with an HTTP/S load balancer that has been configured for maxRate. - ZONE_RESOURCE_STOCKOUT (ERROR): For zonal autoscalers: there is a resource stockout in the chosen zone. For regional autoscalers: in at least one of the zones you're using there is a resource stockout. New values might be added in the future. Some of the values might not be available in all API versions.
+   * The type of error, warning, or notice returned. Current set of possible
+   * values:
+   *
+   *    - ALL_INSTANCES_UNHEALTHY (WARNING):
+   *      All instances in the instance group are unhealthy (not in RUNNING
+   *      state).
+   *    - BACKEND_SERVICE_DOES_NOT_EXIST (ERROR):
+   *      There is no backend service attached to the instance group.
+   *    - CAPPED_AT_MAX_NUM_REPLICAS (WARNING):
+   *      Autoscaler recommends a size greater than maxNumReplicas.
+   *    - CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE (WARNING):
+   *      The custom metric samples are not exported often enough to be
+   *      a credible base for autoscaling.
+   *    - CUSTOM_METRIC_INVALID (ERROR):
+   *      The custom metric that was specified does not exist or does not have
+   *      the necessary labels.
+   *    - MIN_EQUALS_MAX (WARNING):
+   *      The minNumReplicas is equal to maxNumReplicas. This means the
+   *      autoscaler cannot add or remove instances from the instance group.
+   *    - MISSING_CUSTOM_METRIC_DATA_POINTS (WARNING):
+   *      The autoscaler did not receive any data from the custom metric
+   *      configured for autoscaling.
+   *    - MISSING_LOAD_BALANCING_DATA_POINTS (WARNING):
+   *      The autoscaler is configured to scale based on a load balancing signal
+   *      but the instance group has not received any requests from the load
+   *      balancer.
+   *    - MODE_OFF (WARNING):
+   *      Autoscaling is turned off. The number of instances in the group won't
+   *      change automatically. The autoscaling configuration is preserved.
+   *    - MODE_ONLY_UP (WARNING):
+   *      Autoscaling is in the "Autoscale only out" mode. The autoscaler can add
+   *      instances but not remove any.
+   *    - MORE_THAN_ONE_BACKEND_SERVICE (ERROR):
+   *      The instance group cannot be autoscaled because it has more than one
+   *      backend service attached to it.
+   *    - NOT_ENOUGH_QUOTA_AVAILABLE (ERROR):
+   *      There is insufficient quota for the necessary resources, such as CPU or
+   *      number of instances.
+   *    - REGION_RESOURCE_STOCKOUT (ERROR):
+   *      Shown only for regional autoscalers: there is a resource stockout in
+   *      the chosen region.
+   *    - SCALING_TARGET_DOES_NOT_EXIST (ERROR):
+   *      The target to be scaled does not exist.
+   *    - UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION
+   *      (ERROR): Autoscaling does not work with an HTTP/S load balancer that
+   *      has been configured for maxRate.
+   *    - ZONE_RESOURCE_STOCKOUT (ERROR):
+   *      For zonal autoscalers: there is a resource stockout in the chosen zone.
+   *      For regional autoscalers: in at least one of the zones you're using
+   *      there is a resource stockout.
+   *
+   *
+   * New values might be added in the future. Some of the values might not be
+   * available in all API versions.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -1277,7 +1527,60 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The type of error, warning, or notice returned. Current set of possible values: - ALL_INSTANCES_UNHEALTHY (WARNING): All instances in the instance group are unhealthy (not in RUNNING state). - BACKEND_SERVICE_DOES_NOT_EXIST (ERROR): There is no backend service attached to the instance group. - CAPPED_AT_MAX_NUM_REPLICAS (WARNING): Autoscaler recommends a size greater than maxNumReplicas. - CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE (WARNING): The custom metric samples are not exported often enough to be a credible base for autoscaling. - CUSTOM_METRIC_INVALID (ERROR): The custom metric that was specified does not exist or does not have the necessary labels. - MIN_EQUALS_MAX (WARNING): The minNumReplicas is equal to maxNumReplicas. This means the autoscaler cannot add or remove instances from the instance group. - MISSING_CUSTOM_METRIC_DATA_POINTS (WARNING): The autoscaler did not receive any data from the custom metric configured for autoscaling. - MISSING_LOAD_BALANCING_DATA_POINTS (WARNING): The autoscaler is configured to scale based on a load balancing signal but the instance group has not received any requests from the load balancer. - MODE_OFF (WARNING): Autoscaling is turned off. The number of instances in the group won't change automatically. The autoscaling configuration is preserved. - MODE_ONLY_UP (WARNING): Autoscaling is in the "Autoscale only out" mode. The autoscaler can add instances but not remove any. - MORE_THAN_ONE_BACKEND_SERVICE (ERROR): The instance group cannot be autoscaled because it has more than one backend service attached to it. - NOT_ENOUGH_QUOTA_AVAILABLE (ERROR): There is insufficient quota for the necessary resources, such as CPU or number of instances. - REGION_RESOURCE_STOCKOUT (ERROR): Shown only for regional autoscalers: there is a resource stockout in the chosen region. - SCALING_TARGET_DOES_NOT_EXIST (ERROR): The target to be scaled does not exist. - UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION (ERROR): Autoscaling does not work with an HTTP/S load balancer that has been configured for maxRate. - ZONE_RESOURCE_STOCKOUT (ERROR): For zonal autoscalers: there is a resource stockout in the chosen zone. For regional autoscalers: in at least one of the zones you're using there is a resource stockout. New values might be added in the future. Some of the values might not be available in all API versions.
+     * The type of error, warning, or notice returned. Current set of possible
+     * values:
+     *
+     *    - ALL_INSTANCES_UNHEALTHY (WARNING):
+     *      All instances in the instance group are unhealthy (not in RUNNING
+     *      state).
+     *    - BACKEND_SERVICE_DOES_NOT_EXIST (ERROR):
+     *      There is no backend service attached to the instance group.
+     *    - CAPPED_AT_MAX_NUM_REPLICAS (WARNING):
+     *      Autoscaler recommends a size greater than maxNumReplicas.
+     *    - CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE (WARNING):
+     *      The custom metric samples are not exported often enough to be
+     *      a credible base for autoscaling.
+     *    - CUSTOM_METRIC_INVALID (ERROR):
+     *      The custom metric that was specified does not exist or does not have
+     *      the necessary labels.
+     *    - MIN_EQUALS_MAX (WARNING):
+     *      The minNumReplicas is equal to maxNumReplicas. This means the
+     *      autoscaler cannot add or remove instances from the instance group.
+     *    - MISSING_CUSTOM_METRIC_DATA_POINTS (WARNING):
+     *      The autoscaler did not receive any data from the custom metric
+     *      configured for autoscaling.
+     *    - MISSING_LOAD_BALANCING_DATA_POINTS (WARNING):
+     *      The autoscaler is configured to scale based on a load balancing signal
+     *      but the instance group has not received any requests from the load
+     *      balancer.
+     *    - MODE_OFF (WARNING):
+     *      Autoscaling is turned off. The number of instances in the group won't
+     *      change automatically. The autoscaling configuration is preserved.
+     *    - MODE_ONLY_UP (WARNING):
+     *      Autoscaling is in the "Autoscale only out" mode. The autoscaler can add
+     *      instances but not remove any.
+     *    - MORE_THAN_ONE_BACKEND_SERVICE (ERROR):
+     *      The instance group cannot be autoscaled because it has more than one
+     *      backend service attached to it.
+     *    - NOT_ENOUGH_QUOTA_AVAILABLE (ERROR):
+     *      There is insufficient quota for the necessary resources, such as CPU or
+     *      number of instances.
+     *    - REGION_RESOURCE_STOCKOUT (ERROR):
+     *      Shown only for regional autoscalers: there is a resource stockout in
+     *      the chosen region.
+     *    - SCALING_TARGET_DOES_NOT_EXIST (ERROR):
+     *      The target to be scaled does not exist.
+     *    - UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION
+     *      (ERROR): Autoscaling does not work with an HTTP/S load balancer that
+     *      has been configured for maxRate.
+     *    - ZONE_RESOURCE_STOCKOUT (ERROR):
+     *      For zonal autoscalers: there is a resource stockout in the chosen zone.
+     *      For regional autoscalers: in at least one of the zones you're using
+     *      there is a resource stockout.
+     *
+     *
+     * New values might be added in the future. Some of the values might not be
+     * available in all API versions.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -1293,7 +1596,60 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The type of error, warning, or notice returned. Current set of possible values: - ALL_INSTANCES_UNHEALTHY (WARNING): All instances in the instance group are unhealthy (not in RUNNING state). - BACKEND_SERVICE_DOES_NOT_EXIST (ERROR): There is no backend service attached to the instance group. - CAPPED_AT_MAX_NUM_REPLICAS (WARNING): Autoscaler recommends a size greater than maxNumReplicas. - CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE (WARNING): The custom metric samples are not exported often enough to be a credible base for autoscaling. - CUSTOM_METRIC_INVALID (ERROR): The custom metric that was specified does not exist or does not have the necessary labels. - MIN_EQUALS_MAX (WARNING): The minNumReplicas is equal to maxNumReplicas. This means the autoscaler cannot add or remove instances from the instance group. - MISSING_CUSTOM_METRIC_DATA_POINTS (WARNING): The autoscaler did not receive any data from the custom metric configured for autoscaling. - MISSING_LOAD_BALANCING_DATA_POINTS (WARNING): The autoscaler is configured to scale based on a load balancing signal but the instance group has not received any requests from the load balancer. - MODE_OFF (WARNING): Autoscaling is turned off. The number of instances in the group won't change automatically. The autoscaling configuration is preserved. - MODE_ONLY_UP (WARNING): Autoscaling is in the "Autoscale only out" mode. The autoscaler can add instances but not remove any. - MORE_THAN_ONE_BACKEND_SERVICE (ERROR): The instance group cannot be autoscaled because it has more than one backend service attached to it. - NOT_ENOUGH_QUOTA_AVAILABLE (ERROR): There is insufficient quota for the necessary resources, such as CPU or number of instances. - REGION_RESOURCE_STOCKOUT (ERROR): Shown only for regional autoscalers: there is a resource stockout in the chosen region. - SCALING_TARGET_DOES_NOT_EXIST (ERROR): The target to be scaled does not exist. - UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION (ERROR): Autoscaling does not work with an HTTP/S load balancer that has been configured for maxRate. - ZONE_RESOURCE_STOCKOUT (ERROR): For zonal autoscalers: there is a resource stockout in the chosen zone. For regional autoscalers: in at least one of the zones you're using there is a resource stockout. New values might be added in the future. Some of the values might not be available in all API versions.
+     * The type of error, warning, or notice returned. Current set of possible
+     * values:
+     *
+     *    - ALL_INSTANCES_UNHEALTHY (WARNING):
+     *      All instances in the instance group are unhealthy (not in RUNNING
+     *      state).
+     *    - BACKEND_SERVICE_DOES_NOT_EXIST (ERROR):
+     *      There is no backend service attached to the instance group.
+     *    - CAPPED_AT_MAX_NUM_REPLICAS (WARNING):
+     *      Autoscaler recommends a size greater than maxNumReplicas.
+     *    - CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE (WARNING):
+     *      The custom metric samples are not exported often enough to be
+     *      a credible base for autoscaling.
+     *    - CUSTOM_METRIC_INVALID (ERROR):
+     *      The custom metric that was specified does not exist or does not have
+     *      the necessary labels.
+     *    - MIN_EQUALS_MAX (WARNING):
+     *      The minNumReplicas is equal to maxNumReplicas. This means the
+     *      autoscaler cannot add or remove instances from the instance group.
+     *    - MISSING_CUSTOM_METRIC_DATA_POINTS (WARNING):
+     *      The autoscaler did not receive any data from the custom metric
+     *      configured for autoscaling.
+     *    - MISSING_LOAD_BALANCING_DATA_POINTS (WARNING):
+     *      The autoscaler is configured to scale based on a load balancing signal
+     *      but the instance group has not received any requests from the load
+     *      balancer.
+     *    - MODE_OFF (WARNING):
+     *      Autoscaling is turned off. The number of instances in the group won't
+     *      change automatically. The autoscaling configuration is preserved.
+     *    - MODE_ONLY_UP (WARNING):
+     *      Autoscaling is in the "Autoscale only out" mode. The autoscaler can add
+     *      instances but not remove any.
+     *    - MORE_THAN_ONE_BACKEND_SERVICE (ERROR):
+     *      The instance group cannot be autoscaled because it has more than one
+     *      backend service attached to it.
+     *    - NOT_ENOUGH_QUOTA_AVAILABLE (ERROR):
+     *      There is insufficient quota for the necessary resources, such as CPU or
+     *      number of instances.
+     *    - REGION_RESOURCE_STOCKOUT (ERROR):
+     *      Shown only for regional autoscalers: there is a resource stockout in
+     *      the chosen region.
+     *    - SCALING_TARGET_DOES_NOT_EXIST (ERROR):
+     *      The target to be scaled does not exist.
+     *    - UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION
+     *      (ERROR): Autoscaling does not work with an HTTP/S load balancer that
+     *      has been configured for maxRate.
+     *    - ZONE_RESOURCE_STOCKOUT (ERROR):
+     *      For zonal autoscalers: there is a resource stockout in the chosen zone.
+     *      For regional autoscalers: in at least one of the zones you're using
+     *      there is a resource stockout.
+     *
+     *
+     * New values might be added in the future. Some of the values might not be
+     * available in all API versions.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -1317,7 +1673,60 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The type of error, warning, or notice returned. Current set of possible values: - ALL_INSTANCES_UNHEALTHY (WARNING): All instances in the instance group are unhealthy (not in RUNNING state). - BACKEND_SERVICE_DOES_NOT_EXIST (ERROR): There is no backend service attached to the instance group. - CAPPED_AT_MAX_NUM_REPLICAS (WARNING): Autoscaler recommends a size greater than maxNumReplicas. - CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE (WARNING): The custom metric samples are not exported often enough to be a credible base for autoscaling. - CUSTOM_METRIC_INVALID (ERROR): The custom metric that was specified does not exist or does not have the necessary labels. - MIN_EQUALS_MAX (WARNING): The minNumReplicas is equal to maxNumReplicas. This means the autoscaler cannot add or remove instances from the instance group. - MISSING_CUSTOM_METRIC_DATA_POINTS (WARNING): The autoscaler did not receive any data from the custom metric configured for autoscaling. - MISSING_LOAD_BALANCING_DATA_POINTS (WARNING): The autoscaler is configured to scale based on a load balancing signal but the instance group has not received any requests from the load balancer. - MODE_OFF (WARNING): Autoscaling is turned off. The number of instances in the group won't change automatically. The autoscaling configuration is preserved. - MODE_ONLY_UP (WARNING): Autoscaling is in the "Autoscale only out" mode. The autoscaler can add instances but not remove any. - MORE_THAN_ONE_BACKEND_SERVICE (ERROR): The instance group cannot be autoscaled because it has more than one backend service attached to it. - NOT_ENOUGH_QUOTA_AVAILABLE (ERROR): There is insufficient quota for the necessary resources, such as CPU or number of instances. - REGION_RESOURCE_STOCKOUT (ERROR): Shown only for regional autoscalers: there is a resource stockout in the chosen region. - SCALING_TARGET_DOES_NOT_EXIST (ERROR): The target to be scaled does not exist. - UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION (ERROR): Autoscaling does not work with an HTTP/S load balancer that has been configured for maxRate. - ZONE_RESOURCE_STOCKOUT (ERROR): For zonal autoscalers: there is a resource stockout in the chosen zone. For regional autoscalers: in at least one of the zones you're using there is a resource stockout. New values might be added in the future. Some of the values might not be available in all API versions.
+     * The type of error, warning, or notice returned. Current set of possible
+     * values:
+     *
+     *    - ALL_INSTANCES_UNHEALTHY (WARNING):
+     *      All instances in the instance group are unhealthy (not in RUNNING
+     *      state).
+     *    - BACKEND_SERVICE_DOES_NOT_EXIST (ERROR):
+     *      There is no backend service attached to the instance group.
+     *    - CAPPED_AT_MAX_NUM_REPLICAS (WARNING):
+     *      Autoscaler recommends a size greater than maxNumReplicas.
+     *    - CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE (WARNING):
+     *      The custom metric samples are not exported often enough to be
+     *      a credible base for autoscaling.
+     *    - CUSTOM_METRIC_INVALID (ERROR):
+     *      The custom metric that was specified does not exist or does not have
+     *      the necessary labels.
+     *    - MIN_EQUALS_MAX (WARNING):
+     *      The minNumReplicas is equal to maxNumReplicas. This means the
+     *      autoscaler cannot add or remove instances from the instance group.
+     *    - MISSING_CUSTOM_METRIC_DATA_POINTS (WARNING):
+     *      The autoscaler did not receive any data from the custom metric
+     *      configured for autoscaling.
+     *    - MISSING_LOAD_BALANCING_DATA_POINTS (WARNING):
+     *      The autoscaler is configured to scale based on a load balancing signal
+     *      but the instance group has not received any requests from the load
+     *      balancer.
+     *    - MODE_OFF (WARNING):
+     *      Autoscaling is turned off. The number of instances in the group won't
+     *      change automatically. The autoscaling configuration is preserved.
+     *    - MODE_ONLY_UP (WARNING):
+     *      Autoscaling is in the "Autoscale only out" mode. The autoscaler can add
+     *      instances but not remove any.
+     *    - MORE_THAN_ONE_BACKEND_SERVICE (ERROR):
+     *      The instance group cannot be autoscaled because it has more than one
+     *      backend service attached to it.
+     *    - NOT_ENOUGH_QUOTA_AVAILABLE (ERROR):
+     *      There is insufficient quota for the necessary resources, such as CPU or
+     *      number of instances.
+     *    - REGION_RESOURCE_STOCKOUT (ERROR):
+     *      Shown only for regional autoscalers: there is a resource stockout in
+     *      the chosen region.
+     *    - SCALING_TARGET_DOES_NOT_EXIST (ERROR):
+     *      The target to be scaled does not exist.
+     *    - UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION
+     *      (ERROR): Autoscaling does not work with an HTTP/S load balancer that
+     *      has been configured for maxRate.
+     *    - ZONE_RESOURCE_STOCKOUT (ERROR):
+     *      For zonal autoscalers: there is a resource stockout in the chosen zone.
+     *      For regional autoscalers: in at least one of the zones you're using
+     *      there is a resource stockout.
+     *
+     *
+     * New values might be added in the future. Some of the values might not be
+     * available in all API versions.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -1341,7 +1750,60 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The type of error, warning, or notice returned. Current set of possible values: - ALL_INSTANCES_UNHEALTHY (WARNING): All instances in the instance group are unhealthy (not in RUNNING state). - BACKEND_SERVICE_DOES_NOT_EXIST (ERROR): There is no backend service attached to the instance group. - CAPPED_AT_MAX_NUM_REPLICAS (WARNING): Autoscaler recommends a size greater than maxNumReplicas. - CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE (WARNING): The custom metric samples are not exported often enough to be a credible base for autoscaling. - CUSTOM_METRIC_INVALID (ERROR): The custom metric that was specified does not exist or does not have the necessary labels. - MIN_EQUALS_MAX (WARNING): The minNumReplicas is equal to maxNumReplicas. This means the autoscaler cannot add or remove instances from the instance group. - MISSING_CUSTOM_METRIC_DATA_POINTS (WARNING): The autoscaler did not receive any data from the custom metric configured for autoscaling. - MISSING_LOAD_BALANCING_DATA_POINTS (WARNING): The autoscaler is configured to scale based on a load balancing signal but the instance group has not received any requests from the load balancer. - MODE_OFF (WARNING): Autoscaling is turned off. The number of instances in the group won't change automatically. The autoscaling configuration is preserved. - MODE_ONLY_UP (WARNING): Autoscaling is in the "Autoscale only out" mode. The autoscaler can add instances but not remove any. - MORE_THAN_ONE_BACKEND_SERVICE (ERROR): The instance group cannot be autoscaled because it has more than one backend service attached to it. - NOT_ENOUGH_QUOTA_AVAILABLE (ERROR): There is insufficient quota for the necessary resources, such as CPU or number of instances. - REGION_RESOURCE_STOCKOUT (ERROR): Shown only for regional autoscalers: there is a resource stockout in the chosen region. - SCALING_TARGET_DOES_NOT_EXIST (ERROR): The target to be scaled does not exist. - UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION (ERROR): Autoscaling does not work with an HTTP/S load balancer that has been configured for maxRate. - ZONE_RESOURCE_STOCKOUT (ERROR): For zonal autoscalers: there is a resource stockout in the chosen zone. For regional autoscalers: in at least one of the zones you're using there is a resource stockout. New values might be added in the future. Some of the values might not be available in all API versions.
+     * The type of error, warning, or notice returned. Current set of possible
+     * values:
+     *
+     *    - ALL_INSTANCES_UNHEALTHY (WARNING):
+     *      All instances in the instance group are unhealthy (not in RUNNING
+     *      state).
+     *    - BACKEND_SERVICE_DOES_NOT_EXIST (ERROR):
+     *      There is no backend service attached to the instance group.
+     *    - CAPPED_AT_MAX_NUM_REPLICAS (WARNING):
+     *      Autoscaler recommends a size greater than maxNumReplicas.
+     *    - CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE (WARNING):
+     *      The custom metric samples are not exported often enough to be
+     *      a credible base for autoscaling.
+     *    - CUSTOM_METRIC_INVALID (ERROR):
+     *      The custom metric that was specified does not exist or does not have
+     *      the necessary labels.
+     *    - MIN_EQUALS_MAX (WARNING):
+     *      The minNumReplicas is equal to maxNumReplicas. This means the
+     *      autoscaler cannot add or remove instances from the instance group.
+     *    - MISSING_CUSTOM_METRIC_DATA_POINTS (WARNING):
+     *      The autoscaler did not receive any data from the custom metric
+     *      configured for autoscaling.
+     *    - MISSING_LOAD_BALANCING_DATA_POINTS (WARNING):
+     *      The autoscaler is configured to scale based on a load balancing signal
+     *      but the instance group has not received any requests from the load
+     *      balancer.
+     *    - MODE_OFF (WARNING):
+     *      Autoscaling is turned off. The number of instances in the group won't
+     *      change automatically. The autoscaling configuration is preserved.
+     *    - MODE_ONLY_UP (WARNING):
+     *      Autoscaling is in the "Autoscale only out" mode. The autoscaler can add
+     *      instances but not remove any.
+     *    - MORE_THAN_ONE_BACKEND_SERVICE (ERROR):
+     *      The instance group cannot be autoscaled because it has more than one
+     *      backend service attached to it.
+     *    - NOT_ENOUGH_QUOTA_AVAILABLE (ERROR):
+     *      There is insufficient quota for the necessary resources, such as CPU or
+     *      number of instances.
+     *    - REGION_RESOURCE_STOCKOUT (ERROR):
+     *      Shown only for regional autoscalers: there is a resource stockout in
+     *      the chosen region.
+     *    - SCALING_TARGET_DOES_NOT_EXIST (ERROR):
+     *      The target to be scaled does not exist.
+     *    - UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION
+     *      (ERROR): Autoscaling does not work with an HTTP/S load balancer that
+     *      has been configured for maxRate.
+     *    - ZONE_RESOURCE_STOCKOUT (ERROR):
+     *      For zonal autoscalers: there is a resource stockout in the chosen zone.
+     *      For regional autoscalers: in at least one of the zones you're using
+     *      there is a resource stockout.
+     *
+     *
+     * New values might be added in the future. Some of the values might not be
+     * available in all API versions.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -1364,7 +1826,60 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The type of error, warning, or notice returned. Current set of possible values: - ALL_INSTANCES_UNHEALTHY (WARNING): All instances in the instance group are unhealthy (not in RUNNING state). - BACKEND_SERVICE_DOES_NOT_EXIST (ERROR): There is no backend service attached to the instance group. - CAPPED_AT_MAX_NUM_REPLICAS (WARNING): Autoscaler recommends a size greater than maxNumReplicas. - CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE (WARNING): The custom metric samples are not exported often enough to be a credible base for autoscaling. - CUSTOM_METRIC_INVALID (ERROR): The custom metric that was specified does not exist or does not have the necessary labels. - MIN_EQUALS_MAX (WARNING): The minNumReplicas is equal to maxNumReplicas. This means the autoscaler cannot add or remove instances from the instance group. - MISSING_CUSTOM_METRIC_DATA_POINTS (WARNING): The autoscaler did not receive any data from the custom metric configured for autoscaling. - MISSING_LOAD_BALANCING_DATA_POINTS (WARNING): The autoscaler is configured to scale based on a load balancing signal but the instance group has not received any requests from the load balancer. - MODE_OFF (WARNING): Autoscaling is turned off. The number of instances in the group won't change automatically. The autoscaling configuration is preserved. - MODE_ONLY_UP (WARNING): Autoscaling is in the "Autoscale only out" mode. The autoscaler can add instances but not remove any. - MORE_THAN_ONE_BACKEND_SERVICE (ERROR): The instance group cannot be autoscaled because it has more than one backend service attached to it. - NOT_ENOUGH_QUOTA_AVAILABLE (ERROR): There is insufficient quota for the necessary resources, such as CPU or number of instances. - REGION_RESOURCE_STOCKOUT (ERROR): Shown only for regional autoscalers: there is a resource stockout in the chosen region. - SCALING_TARGET_DOES_NOT_EXIST (ERROR): The target to be scaled does not exist. - UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION (ERROR): Autoscaling does not work with an HTTP/S load balancer that has been configured for maxRate. - ZONE_RESOURCE_STOCKOUT (ERROR): For zonal autoscalers: there is a resource stockout in the chosen zone. For regional autoscalers: in at least one of the zones you're using there is a resource stockout. New values might be added in the future. Some of the values might not be available in all API versions.
+     * The type of error, warning, or notice returned. Current set of possible
+     * values:
+     *
+     *    - ALL_INSTANCES_UNHEALTHY (WARNING):
+     *      All instances in the instance group are unhealthy (not in RUNNING
+     *      state).
+     *    - BACKEND_SERVICE_DOES_NOT_EXIST (ERROR):
+     *      There is no backend service attached to the instance group.
+     *    - CAPPED_AT_MAX_NUM_REPLICAS (WARNING):
+     *      Autoscaler recommends a size greater than maxNumReplicas.
+     *    - CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE (WARNING):
+     *      The custom metric samples are not exported often enough to be
+     *      a credible base for autoscaling.
+     *    - CUSTOM_METRIC_INVALID (ERROR):
+     *      The custom metric that was specified does not exist or does not have
+     *      the necessary labels.
+     *    - MIN_EQUALS_MAX (WARNING):
+     *      The minNumReplicas is equal to maxNumReplicas. This means the
+     *      autoscaler cannot add or remove instances from the instance group.
+     *    - MISSING_CUSTOM_METRIC_DATA_POINTS (WARNING):
+     *      The autoscaler did not receive any data from the custom metric
+     *      configured for autoscaling.
+     *    - MISSING_LOAD_BALANCING_DATA_POINTS (WARNING):
+     *      The autoscaler is configured to scale based on a load balancing signal
+     *      but the instance group has not received any requests from the load
+     *      balancer.
+     *    - MODE_OFF (WARNING):
+     *      Autoscaling is turned off. The number of instances in the group won't
+     *      change automatically. The autoscaling configuration is preserved.
+     *    - MODE_ONLY_UP (WARNING):
+     *      Autoscaling is in the "Autoscale only out" mode. The autoscaler can add
+     *      instances but not remove any.
+     *    - MORE_THAN_ONE_BACKEND_SERVICE (ERROR):
+     *      The instance group cannot be autoscaled because it has more than one
+     *      backend service attached to it.
+     *    - NOT_ENOUGH_QUOTA_AVAILABLE (ERROR):
+     *      There is insufficient quota for the necessary resources, such as CPU or
+     *      number of instances.
+     *    - REGION_RESOURCE_STOCKOUT (ERROR):
+     *      Shown only for regional autoscalers: there is a resource stockout in
+     *      the chosen region.
+     *    - SCALING_TARGET_DOES_NOT_EXIST (ERROR):
+     *      The target to be scaled does not exist.
+     *    - UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION
+     *      (ERROR): Autoscaling does not work with an HTTP/S load balancer that
+     *      has been configured for maxRate.
+     *    - ZONE_RESOURCE_STOCKOUT (ERROR):
+     *      For zonal autoscalers: there is a resource stockout in the chosen zone.
+     *      For regional autoscalers: in at least one of the zones you're using
+     *      there is a resource stockout.
+     *
+     *
+     * New values might be added in the future. Some of the values might not be
+     * available in all API versions.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -1383,7 +1898,60 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The type of error, warning, or notice returned. Current set of possible values: - ALL_INSTANCES_UNHEALTHY (WARNING): All instances in the instance group are unhealthy (not in RUNNING state). - BACKEND_SERVICE_DOES_NOT_EXIST (ERROR): There is no backend service attached to the instance group. - CAPPED_AT_MAX_NUM_REPLICAS (WARNING): Autoscaler recommends a size greater than maxNumReplicas. - CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE (WARNING): The custom metric samples are not exported often enough to be a credible base for autoscaling. - CUSTOM_METRIC_INVALID (ERROR): The custom metric that was specified does not exist or does not have the necessary labels. - MIN_EQUALS_MAX (WARNING): The minNumReplicas is equal to maxNumReplicas. This means the autoscaler cannot add or remove instances from the instance group. - MISSING_CUSTOM_METRIC_DATA_POINTS (WARNING): The autoscaler did not receive any data from the custom metric configured for autoscaling. - MISSING_LOAD_BALANCING_DATA_POINTS (WARNING): The autoscaler is configured to scale based on a load balancing signal but the instance group has not received any requests from the load balancer. - MODE_OFF (WARNING): Autoscaling is turned off. The number of instances in the group won't change automatically. The autoscaling configuration is preserved. - MODE_ONLY_UP (WARNING): Autoscaling is in the "Autoscale only out" mode. The autoscaler can add instances but not remove any. - MORE_THAN_ONE_BACKEND_SERVICE (ERROR): The instance group cannot be autoscaled because it has more than one backend service attached to it. - NOT_ENOUGH_QUOTA_AVAILABLE (ERROR): There is insufficient quota for the necessary resources, such as CPU or number of instances. - REGION_RESOURCE_STOCKOUT (ERROR): Shown only for regional autoscalers: there is a resource stockout in the chosen region. - SCALING_TARGET_DOES_NOT_EXIST (ERROR): The target to be scaled does not exist. - UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION (ERROR): Autoscaling does not work with an HTTP/S load balancer that has been configured for maxRate. - ZONE_RESOURCE_STOCKOUT (ERROR): For zonal autoscalers: there is a resource stockout in the chosen zone. For regional autoscalers: in at least one of the zones you're using there is a resource stockout. New values might be added in the future. Some of the values might not be available in all API versions.
+     * The type of error, warning, or notice returned. Current set of possible
+     * values:
+     *
+     *    - ALL_INSTANCES_UNHEALTHY (WARNING):
+     *      All instances in the instance group are unhealthy (not in RUNNING
+     *      state).
+     *    - BACKEND_SERVICE_DOES_NOT_EXIST (ERROR):
+     *      There is no backend service attached to the instance group.
+     *    - CAPPED_AT_MAX_NUM_REPLICAS (WARNING):
+     *      Autoscaler recommends a size greater than maxNumReplicas.
+     *    - CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE (WARNING):
+     *      The custom metric samples are not exported often enough to be
+     *      a credible base for autoscaling.
+     *    - CUSTOM_METRIC_INVALID (ERROR):
+     *      The custom metric that was specified does not exist or does not have
+     *      the necessary labels.
+     *    - MIN_EQUALS_MAX (WARNING):
+     *      The minNumReplicas is equal to maxNumReplicas. This means the
+     *      autoscaler cannot add or remove instances from the instance group.
+     *    - MISSING_CUSTOM_METRIC_DATA_POINTS (WARNING):
+     *      The autoscaler did not receive any data from the custom metric
+     *      configured for autoscaling.
+     *    - MISSING_LOAD_BALANCING_DATA_POINTS (WARNING):
+     *      The autoscaler is configured to scale based on a load balancing signal
+     *      but the instance group has not received any requests from the load
+     *      balancer.
+     *    - MODE_OFF (WARNING):
+     *      Autoscaling is turned off. The number of instances in the group won't
+     *      change automatically. The autoscaling configuration is preserved.
+     *    - MODE_ONLY_UP (WARNING):
+     *      Autoscaling is in the "Autoscale only out" mode. The autoscaler can add
+     *      instances but not remove any.
+     *    - MORE_THAN_ONE_BACKEND_SERVICE (ERROR):
+     *      The instance group cannot be autoscaled because it has more than one
+     *      backend service attached to it.
+     *    - NOT_ENOUGH_QUOTA_AVAILABLE (ERROR):
+     *      There is insufficient quota for the necessary resources, such as CPU or
+     *      number of instances.
+     *    - REGION_RESOURCE_STOCKOUT (ERROR):
+     *      Shown only for regional autoscalers: there is a resource stockout in
+     *      the chosen region.
+     *    - SCALING_TARGET_DOES_NOT_EXIST (ERROR):
+     *      The target to be scaled does not exist.
+     *    - UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION
+     *      (ERROR): Autoscaling does not work with an HTTP/S load balancer that
+     *      has been configured for maxRate.
+     *    - ZONE_RESOURCE_STOCKOUT (ERROR):
+     *      For zonal autoscalers: there is a resource stockout in the chosen zone.
+     *      For regional autoscalers: in at least one of the zones you're using
+     *      there is a resource stockout.
+     *
+     *
+     * New values might be added in the future. Some of the values might not be
+     * available in all API versions.
      * Check the Type enum for the list of possible values.
      * </pre>
      *

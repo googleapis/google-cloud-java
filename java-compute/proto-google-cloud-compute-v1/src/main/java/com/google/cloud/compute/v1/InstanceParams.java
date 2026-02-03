@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -82,7 +82,8 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Relative deadline for waiting for capacity. Relevant only for Instances.Insert API.
+   * Relative deadline for waiting for capacity. Relevant only for
+   * Instances.Insert API.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Duration request_valid_for_duration = 116247389;</code>
@@ -98,7 +99,8 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Relative deadline for waiting for capacity. Relevant only for Instances.Insert API.
+   * Relative deadline for waiting for capacity. Relevant only for
+   * Instances.Insert API.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Duration request_valid_for_duration = 116247389;</code>
@@ -116,7 +118,8 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Relative deadline for waiting for capacity. Relevant only for Instances.Insert API.
+   * Relative deadline for waiting for capacity. Relevant only for
+   * Instances.Insert API.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Duration request_valid_for_duration = 116247389;</code>
@@ -161,7 +164,13 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * Resource manager tags to be bound to the instance. Tag keys and values
+   * have the same definition as resource
+   * manager tags. Keys and values can be either in numeric format,
+   * such as `tagKeys/{tag_key_id}` and `tagValues/456` or in namespaced
+   * format such as `{org_id|project_id}/{tag_key_short_name}` and
+   * `{tag_value_short_name}`. The field is ignored (both PUT &amp;
+   * PATCH) when empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -185,7 +194,13 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * Resource manager tags to be bound to the instance. Tag keys and values
+   * have the same definition as resource
+   * manager tags. Keys and values can be either in numeric format,
+   * such as `tagKeys/{tag_key_id}` and `tagValues/456` or in namespaced
+   * format such as `{org_id|project_id}/{tag_key_short_name}` and
+   * `{tag_value_short_name}`. The field is ignored (both PUT &amp;
+   * PATCH) when empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -199,7 +214,13 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * Resource manager tags to be bound to the instance. Tag keys and values
+   * have the same definition as resource
+   * manager tags. Keys and values can be either in numeric format,
+   * such as `tagKeys/{tag_key_id}` and `tagValues/456` or in namespaced
+   * format such as `{org_id|project_id}/{tag_key_short_name}` and
+   * `{tag_value_short_name}`. The field is ignored (both PUT &amp;
+   * PATCH) when empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -221,7 +242,13 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * Resource manager tags to be bound to the instance. Tag keys and values
+   * have the same definition as resource
+   * manager tags. Keys and values can be either in numeric format,
+   * such as `tagKeys/{tag_key_id}` and `tagValues/456` or in namespaced
+   * format such as `{org_id|project_id}/{tag_key_short_name}` and
+   * `{tag_value_short_name}`. The field is ignored (both PUT &amp;
+   * PATCH) when empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -682,7 +709,8 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Relative deadline for waiting for capacity. Relevant only for Instances.Insert API.
+     * Relative deadline for waiting for capacity. Relevant only for
+     * Instances.Insert API.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration request_valid_for_duration = 116247389;
@@ -698,7 +726,8 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Relative deadline for waiting for capacity. Relevant only for Instances.Insert API.
+     * Relative deadline for waiting for capacity. Relevant only for
+     * Instances.Insert API.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration request_valid_for_duration = 116247389;
@@ -720,7 +749,8 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Relative deadline for waiting for capacity. Relevant only for Instances.Insert API.
+     * Relative deadline for waiting for capacity. Relevant only for
+     * Instances.Insert API.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration request_valid_for_duration = 116247389;
@@ -744,7 +774,8 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Relative deadline for waiting for capacity. Relevant only for Instances.Insert API.
+     * Relative deadline for waiting for capacity. Relevant only for
+     * Instances.Insert API.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration request_valid_for_duration = 116247389;
@@ -766,7 +797,8 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Relative deadline for waiting for capacity. Relevant only for Instances.Insert API.
+     * Relative deadline for waiting for capacity. Relevant only for
+     * Instances.Insert API.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration request_valid_for_duration = 116247389;
@@ -796,7 +828,8 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Relative deadline for waiting for capacity. Relevant only for Instances.Insert API.
+     * Relative deadline for waiting for capacity. Relevant only for
+     * Instances.Insert API.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration request_valid_for_duration = 116247389;
@@ -817,7 +850,8 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Relative deadline for waiting for capacity. Relevant only for Instances.Insert API.
+     * Relative deadline for waiting for capacity. Relevant only for
+     * Instances.Insert API.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration request_valid_for_duration = 116247389;
@@ -833,7 +867,8 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Relative deadline for waiting for capacity. Relevant only for Instances.Insert API.
+     * Relative deadline for waiting for capacity. Relevant only for
+     * Instances.Insert API.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration request_valid_for_duration = 116247389;
@@ -853,7 +888,8 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Relative deadline for waiting for capacity. Relevant only for Instances.Insert API.
+     * Relative deadline for waiting for capacity. Relevant only for
+     * Instances.Insert API.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration request_valid_for_duration = 116247389;
@@ -910,7 +946,13 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * Resource manager tags to be bound to the instance. Tag keys and values
+     * have the same definition as resource
+     * manager tags. Keys and values can be either in numeric format,
+     * such as `tagKeys/{tag_key_id}` and `tagValues/456` or in namespaced
+     * format such as `{org_id|project_id}/{tag_key_short_name}` and
+     * `{tag_value_short_name}`. The field is ignored (both PUT &amp;
+     * PATCH) when empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -934,7 +976,13 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * Resource manager tags to be bound to the instance. Tag keys and values
+     * have the same definition as resource
+     * manager tags. Keys and values can be either in numeric format,
+     * such as `tagKeys/{tag_key_id}` and `tagValues/456` or in namespaced
+     * format such as `{org_id|project_id}/{tag_key_short_name}` and
+     * `{tag_value_short_name}`. The field is ignored (both PUT &amp;
+     * PATCH) when empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -948,7 +996,13 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * Resource manager tags to be bound to the instance. Tag keys and values
+     * have the same definition as resource
+     * manager tags. Keys and values can be either in numeric format,
+     * such as `tagKeys/{tag_key_id}` and `tagValues/456` or in namespaced
+     * format such as `{org_id|project_id}/{tag_key_short_name}` and
+     * `{tag_value_short_name}`. The field is ignored (both PUT &amp;
+     * PATCH) when empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -970,7 +1024,13 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * Resource manager tags to be bound to the instance. Tag keys and values
+     * have the same definition as resource
+     * manager tags. Keys and values can be either in numeric format,
+     * such as `tagKeys/{tag_key_id}` and `tagValues/456` or in namespaced
+     * format such as `{org_id|project_id}/{tag_key_short_name}` and
+     * `{tag_value_short_name}`. The field is ignored (both PUT &amp;
+     * PATCH) when empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -998,7 +1058,13 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * Resource manager tags to be bound to the instance. Tag keys and values
+     * have the same definition as resource
+     * manager tags. Keys and values can be either in numeric format,
+     * such as `tagKeys/{tag_key_id}` and `tagValues/456` or in namespaced
+     * format such as `{org_id|project_id}/{tag_key_short_name}` and
+     * `{tag_value_short_name}`. The field is ignored (both PUT &amp;
+     * PATCH) when empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -1022,7 +1088,13 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * Resource manager tags to be bound to the instance. Tag keys and values
+     * have the same definition as resource
+     * manager tags. Keys and values can be either in numeric format,
+     * such as `tagKeys/{tag_key_id}` and `tagValues/456` or in namespaced
+     * format such as `{org_id|project_id}/{tag_key_short_name}` and
+     * `{tag_value_short_name}`. The field is ignored (both PUT &amp;
+     * PATCH) when empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -1043,7 +1115,13 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * Resource manager tags to be bound to the instance. Tag keys and values
+     * have the same definition as resource
+     * manager tags. Keys and values can be either in numeric format,
+     * such as `tagKeys/{tag_key_id}` and `tagValues/456` or in namespaced
+     * format such as `{org_id|project_id}/{tag_key_short_name}` and
+     * `{tag_value_short_name}`. The field is ignored (both PUT &amp;
+     * PATCH) when empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>

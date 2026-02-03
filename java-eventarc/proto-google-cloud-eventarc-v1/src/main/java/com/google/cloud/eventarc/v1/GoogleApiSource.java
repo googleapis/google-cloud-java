@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -83,7 +83,1497 @@ public final class GoogleApiSource extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.eventarc.v1.GoogleApiSource.Builder.class);
   }
 
+  public interface ProjectSubscriptionsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of projects to receive events from.
+     *
+     * All the projects must be in the same org. The listed projects should have
+     * the format project/{identifier} where identifier can be either the
+     * project id for project number. A single list may contain both formats. At
+     * most 100 projects can be listed.
+     * </pre>
+     *
+     * <code>repeated string list = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return A list containing the list.
+     */
+    java.util.List<java.lang.String> getListList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of projects to receive events from.
+     *
+     * All the projects must be in the same org. The listed projects should have
+     * the format project/{identifier} where identifier can be either the
+     * project id for project number. A single list may contain both formats. At
+     * most 100 projects can be listed.
+     * </pre>
+     *
+     * <code>repeated string list = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The count of list.
+     */
+    int getListCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of projects to receive events from.
+     *
+     * All the projects must be in the same org. The listed projects should have
+     * the format project/{identifier} where identifier can be either the
+     * project id for project number. A single list may contain both formats. At
+     * most 100 projects can be listed.
+     * </pre>
+     *
+     * <code>repeated string list = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The list at the given index.
+     */
+    java.lang.String getList(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of projects to receive events from.
+     *
+     * All the projects must be in the same org. The listed projects should have
+     * the format project/{identifier} where identifier can be either the
+     * project id for project number. A single list may contain both formats. At
+     * most 100 projects can be listed.
+     * </pre>
+     *
+     * <code>repeated string list = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the list at the given index.
+     */
+    com.google.protobuf.ByteString getListBytes(int index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Config to enable subscribing to all events from a list of projects.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions}
+   */
+  public static final class ProjectSubscriptions extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions)
+      ProjectSubscriptionsOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use ProjectSubscriptions.newBuilder() to construct.
+    private ProjectSubscriptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ProjectSubscriptions() {
+      list_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ProjectSubscriptions();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.eventarc.v1.GoogleApiSourceProto
+          .internal_static_google_cloud_eventarc_v1_GoogleApiSource_ProjectSubscriptions_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.eventarc.v1.GoogleApiSourceProto
+          .internal_static_google_cloud_eventarc_v1_GoogleApiSource_ProjectSubscriptions_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions.class,
+              com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions.Builder.class);
+    }
+
+    public static final int LIST_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList list_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of projects to receive events from.
+     *
+     * All the projects must be in the same org. The listed projects should have
+     * the format project/{identifier} where identifier can be either the
+     * project id for project number. A single list may contain both formats. At
+     * most 100 projects can be listed.
+     * </pre>
+     *
+     * <code>repeated string list = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return A list containing the list.
+     */
+    public com.google.protobuf.ProtocolStringList getListList() {
+      return list_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of projects to receive events from.
+     *
+     * All the projects must be in the same org. The listed projects should have
+     * the format project/{identifier} where identifier can be either the
+     * project id for project number. A single list may contain both formats. At
+     * most 100 projects can be listed.
+     * </pre>
+     *
+     * <code>repeated string list = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The count of list.
+     */
+    public int getListCount() {
+      return list_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of projects to receive events from.
+     *
+     * All the projects must be in the same org. The listed projects should have
+     * the format project/{identifier} where identifier can be either the
+     * project id for project number. A single list may contain both formats. At
+     * most 100 projects can be listed.
+     * </pre>
+     *
+     * <code>repeated string list = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The list at the given index.
+     */
+    public java.lang.String getList(int index) {
+      return list_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. A list of projects to receive events from.
+     *
+     * All the projects must be in the same org. The listed projects should have
+     * the format project/{identifier} where identifier can be either the
+     * project id for project number. A single list may contain both formats. At
+     * most 100 projects can be listed.
+     * </pre>
+     *
+     * <code>repeated string list = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the list at the given index.
+     */
+    public com.google.protobuf.ByteString getListBytes(int index) {
+      return list_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < list_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, list_.getRaw(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < list_.size(); i++) {
+          dataSize += computeStringSizeNoTag(list_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getListList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions other =
+          (com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions) obj;
+
+      if (!getListList().equals(other.getListList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getListCount() > 0) {
+        hash = (37 * hash) + LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getListList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Config to enable subscribing to all events from a list of projects.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions)
+        com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptionsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.eventarc.v1.GoogleApiSourceProto
+            .internal_static_google_cloud_eventarc_v1_GoogleApiSource_ProjectSubscriptions_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.eventarc.v1.GoogleApiSourceProto
+            .internal_static_google_cloud_eventarc_v1_GoogleApiSource_ProjectSubscriptions_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions.class,
+                com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        list_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.eventarc.v1.GoogleApiSourceProto
+            .internal_static_google_cloud_eventarc_v1_GoogleApiSource_ProjectSubscriptions_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions
+          getDefaultInstanceForType() {
+        return com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions build() {
+        com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions buildPartial() {
+        com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions result =
+            new com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          list_.makeImmutable();
+          result.list_ = list_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions) {
+          return mergeFrom(
+              (com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions other) {
+        if (other
+            == com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions
+                .getDefaultInstance()) return this;
+        if (!other.list_.isEmpty()) {
+          if (list_.isEmpty()) {
+            list_ = other.list_;
+            bitField0_ |= 0x00000001;
+          } else {
+            ensureListIsMutable();
+            list_.addAll(other.list_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureListIsMutable();
+                  list_.add(s);
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringArrayList list_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureListIsMutable() {
+        if (!list_.isModifiable()) {
+          list_ = new com.google.protobuf.LazyStringArrayList(list_);
+        }
+        bitField0_ |= 0x00000001;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of projects to receive events from.
+       *
+       * All the projects must be in the same org. The listed projects should have
+       * the format project/{identifier} where identifier can be either the
+       * project id for project number. A single list may contain both formats. At
+       * most 100 projects can be listed.
+       * </pre>
+       *
+       * <code>repeated string list = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return A list containing the list.
+       */
+      public com.google.protobuf.ProtocolStringList getListList() {
+        list_.makeImmutable();
+        return list_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of projects to receive events from.
+       *
+       * All the projects must be in the same org. The listed projects should have
+       * the format project/{identifier} where identifier can be either the
+       * project id for project number. A single list may contain both formats. At
+       * most 100 projects can be listed.
+       * </pre>
+       *
+       * <code>repeated string list = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The count of list.
+       */
+      public int getListCount() {
+        return list_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of projects to receive events from.
+       *
+       * All the projects must be in the same org. The listed projects should have
+       * the format project/{identifier} where identifier can be either the
+       * project id for project number. A single list may contain both formats. At
+       * most 100 projects can be listed.
+       * </pre>
+       *
+       * <code>repeated string list = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The list at the given index.
+       */
+      public java.lang.String getList(int index) {
+        return list_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of projects to receive events from.
+       *
+       * All the projects must be in the same org. The listed projects should have
+       * the format project/{identifier} where identifier can be either the
+       * project id for project number. A single list may contain both formats. At
+       * most 100 projects can be listed.
+       * </pre>
+       *
+       * <code>repeated string list = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the list at the given index.
+       */
+      public com.google.protobuf.ByteString getListBytes(int index) {
+        return list_.getByteString(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of projects to receive events from.
+       *
+       * All the projects must be in the same org. The listed projects should have
+       * the format project/{identifier} where identifier can be either the
+       * project id for project number. A single list may contain both formats. At
+       * most 100 projects can be listed.
+       * </pre>
+       *
+       * <code>repeated string list = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The list to set.
+       * @return This builder for chaining.
+       */
+      public Builder setList(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureListIsMutable();
+        list_.set(index, value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of projects to receive events from.
+       *
+       * All the projects must be in the same org. The listed projects should have
+       * the format project/{identifier} where identifier can be either the
+       * project id for project number. A single list may contain both formats. At
+       * most 100 projects can be listed.
+       * </pre>
+       *
+       * <code>repeated string list = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The list to add.
+       * @return This builder for chaining.
+       */
+      public Builder addList(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureListIsMutable();
+        list_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of projects to receive events from.
+       *
+       * All the projects must be in the same org. The listed projects should have
+       * the format project/{identifier} where identifier can be either the
+       * project id for project number. A single list may contain both formats. At
+       * most 100 projects can be listed.
+       * </pre>
+       *
+       * <code>repeated string list = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param values The list to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllList(java.lang.Iterable<java.lang.String> values) {
+        ensureListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, list_);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of projects to receive events from.
+       *
+       * All the projects must be in the same org. The listed projects should have
+       * the format project/{identifier} where identifier can be either the
+       * project id for project number. A single list may contain both formats. At
+       * most 100 projects can be listed.
+       * </pre>
+       *
+       * <code>repeated string list = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearList() {
+        list_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        ;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. A list of projects to receive events from.
+       *
+       * All the projects must be in the same org. The listed projects should have
+       * the format project/{identifier} where identifier can be either the
+       * project id for project number. A single list may contain both formats. At
+       * most 100 projects can be listed.
+       * </pre>
+       *
+       * <code>repeated string list = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes of the list to add.
+       * @return This builder for chaining.
+       */
+      public Builder addListBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureListIsMutable();
+        list_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions)
+    private static final com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions();
+    }
+
+    public static com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ProjectSubscriptions> PARSER =
+        new com.google.protobuf.AbstractParser<ProjectSubscriptions>() {
+          @java.lang.Override
+          public ProjectSubscriptions parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ProjectSubscriptions> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ProjectSubscriptions> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface OrganizationSubscriptionOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Enable org level subscription.
+     * </pre>
+     *
+     * <code>bool enabled = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The enabled.
+     */
+    boolean getEnabled();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Config to enabled subscribing to events from other projects in the org.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription}
+   */
+  public static final class OrganizationSubscription extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription)
+      OrganizationSubscriptionOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use OrganizationSubscription.newBuilder() to construct.
+    private OrganizationSubscription(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private OrganizationSubscription() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new OrganizationSubscription();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.eventarc.v1.GoogleApiSourceProto
+          .internal_static_google_cloud_eventarc_v1_GoogleApiSource_OrganizationSubscription_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.eventarc.v1.GoogleApiSourceProto
+          .internal_static_google_cloud_eventarc_v1_GoogleApiSource_OrganizationSubscription_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription.class,
+              com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription.Builder.class);
+    }
+
+    public static final int ENABLED_FIELD_NUMBER = 1;
+    private boolean enabled_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Enable org level subscription.
+     * </pre>
+     *
+     * <code>bool enabled = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The enabled.
+     */
+    @java.lang.Override
+    public boolean getEnabled() {
+      return enabled_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (enabled_ != false) {
+        output.writeBool(1, enabled_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (enabled_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, enabled_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription other =
+          (com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription) obj;
+
+      if (getEnabled() != other.getEnabled()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnabled());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Config to enabled subscribing to events from other projects in the org.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription)
+        com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscriptionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.eventarc.v1.GoogleApiSourceProto
+            .internal_static_google_cloud_eventarc_v1_GoogleApiSource_OrganizationSubscription_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.eventarc.v1.GoogleApiSourceProto
+            .internal_static_google_cloud_eventarc_v1_GoogleApiSource_OrganizationSubscription_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription.class,
+                com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        enabled_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.eventarc.v1.GoogleApiSourceProto
+            .internal_static_google_cloud_eventarc_v1_GoogleApiSource_OrganizationSubscription_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription
+          getDefaultInstanceForType() {
+        return com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription build() {
+        com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription buildPartial() {
+        com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription result =
+            new com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.enabled_ = enabled_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription) {
+          return mergeFrom(
+              (com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription other) {
+        if (other
+            == com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription
+                .getDefaultInstance()) return this;
+        if (other.getEnabled() != false) {
+          setEnabled(other.getEnabled());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  enabled_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean enabled_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Enable org level subscription.
+       * </pre>
+       *
+       * <code>bool enabled = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The enabled.
+       */
+      @java.lang.Override
+      public boolean getEnabled() {
+        return enabled_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Enable org level subscription.
+       * </pre>
+       *
+       * <code>bool enabled = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The enabled to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnabled(boolean value) {
+
+        enabled_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Enable org level subscription.
+       * </pre>
+       *
+       * <code>bool enabled = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnabled() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        enabled_ = false;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription)
+    private static final com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription();
+    }
+
+    public static com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<OrganizationSubscription> PARSER =
+        new com.google.protobuf.AbstractParser<OrganizationSubscription>() {
+          @java.lang.Override
+          public OrganizationSubscription parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<OrganizationSubscription> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<OrganizationSubscription> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
+  private int wideScopeSubscriptionCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object wideScopeSubscription_;
+
+  public enum WideScopeSubscriptionCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    ORGANIZATION_SUBSCRIPTION(12),
+    PROJECT_SUBSCRIPTIONS(13),
+    WIDESCOPESUBSCRIPTION_NOT_SET(0);
+    private final int value;
+
+    private WideScopeSubscriptionCase(int value) {
+      this.value = value;
+    }
+
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static WideScopeSubscriptionCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static WideScopeSubscriptionCase forNumber(int value) {
+      switch (value) {
+        case 12:
+          return ORGANIZATION_SUBSCRIPTION;
+        case 13:
+          return PROJECT_SUBSCRIPTIONS;
+        case 0:
+          return WIDESCOPESUBSCRIPTION_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public WideScopeSubscriptionCase getWideScopeSubscriptionCase() {
+    return WideScopeSubscriptionCase.forNumber(wideScopeSubscriptionCase_);
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -820,6 +2310,148 @@ public final class GoogleApiSource extends com.google.protobuf.GeneratedMessageV
         : loggingConfig_;
   }
 
+  public static final int ORGANIZATION_SUBSCRIPTION_FIELD_NUMBER = 12;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config to enable subscribing to events from all projects in the
+   * GoogleApiSource's org.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription organization_subscription = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the organizationSubscription field is set.
+   */
+  @java.lang.Override
+  public boolean hasOrganizationSubscription() {
+    return wideScopeSubscriptionCase_ == 12;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config to enable subscribing to events from all projects in the
+   * GoogleApiSource's org.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription organization_subscription = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The organizationSubscription.
+   */
+  @java.lang.Override
+  public com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription
+      getOrganizationSubscription() {
+    if (wideScopeSubscriptionCase_ == 12) {
+      return (com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription)
+          wideScopeSubscription_;
+    }
+    return com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription
+        .getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config to enable subscribing to events from all projects in the
+   * GoogleApiSource's org.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription organization_subscription = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscriptionOrBuilder
+      getOrganizationSubscriptionOrBuilder() {
+    if (wideScopeSubscriptionCase_ == 12) {
+      return (com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription)
+          wideScopeSubscription_;
+    }
+    return com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription
+        .getDefaultInstance();
+  }
+
+  public static final int PROJECT_SUBSCRIPTIONS_FIELD_NUMBER = 13;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config to enable subscribing to all events from a list of
+   * projects.
+   *
+   * All the projects must be in the same org as the GoogleApiSource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions project_subscriptions = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the projectSubscriptions field is set.
+   */
+  @java.lang.Override
+  public boolean hasProjectSubscriptions() {
+    return wideScopeSubscriptionCase_ == 13;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config to enable subscribing to all events from a list of
+   * projects.
+   *
+   * All the projects must be in the same org as the GoogleApiSource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions project_subscriptions = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The projectSubscriptions.
+   */
+  @java.lang.Override
+  public com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions
+      getProjectSubscriptions() {
+    if (wideScopeSubscriptionCase_ == 13) {
+      return (com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions)
+          wideScopeSubscription_;
+    }
+    return com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config to enable subscribing to all events from a list of
+   * projects.
+   *
+   * All the projects must be in the same org as the GoogleApiSource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions project_subscriptions = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptionsOrBuilder
+      getProjectSubscriptionsOrBuilder() {
+    if (wideScopeSubscriptionCase_ == 13) {
+      return (com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions)
+          wideScopeSubscription_;
+    }
+    return com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -864,6 +2496,18 @@ public final class GoogleApiSource extends com.google.protobuf.GeneratedMessageV
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(11, getLoggingConfig());
+    }
+    if (wideScopeSubscriptionCase_ == 12) {
+      output.writeMessage(
+          12,
+          (com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription)
+              wideScopeSubscription_);
+    }
+    if (wideScopeSubscriptionCase_ == 13) {
+      output.writeMessage(
+          13,
+          (com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions)
+              wideScopeSubscription_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -921,6 +2565,20 @@ public final class GoogleApiSource extends com.google.protobuf.GeneratedMessageV
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getLoggingConfig());
     }
+    if (wideScopeSubscriptionCase_ == 12) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12,
+              (com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription)
+                  wideScopeSubscription_);
+    }
+    if (wideScopeSubscriptionCase_ == 13) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13,
+              (com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions)
+                  wideScopeSubscription_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -956,6 +2614,18 @@ public final class GoogleApiSource extends com.google.protobuf.GeneratedMessageV
     if (hasLoggingConfig() != other.hasLoggingConfig()) return false;
     if (hasLoggingConfig()) {
       if (!getLoggingConfig().equals(other.getLoggingConfig())) return false;
+    }
+    if (!getWideScopeSubscriptionCase().equals(other.getWideScopeSubscriptionCase())) return false;
+    switch (wideScopeSubscriptionCase_) {
+      case 12:
+        if (!getOrganizationSubscription().equals(other.getOrganizationSubscription()))
+          return false;
+        break;
+      case 13:
+        if (!getProjectSubscriptions().equals(other.getProjectSubscriptions())) return false;
+        break;
+      case 0:
+      default:
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -999,6 +2669,18 @@ public final class GoogleApiSource extends com.google.protobuf.GeneratedMessageV
     if (hasLoggingConfig()) {
       hash = (37 * hash) + LOGGING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getLoggingConfig().hashCode();
+    }
+    switch (wideScopeSubscriptionCase_) {
+      case 12:
+        hash = (37 * hash) + ORGANIZATION_SUBSCRIPTION_FIELD_NUMBER;
+        hash = (53 * hash) + getOrganizationSubscription().hashCode();
+        break;
+      case 13:
+        hash = (37 * hash) + PROJECT_SUBSCRIPTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getProjectSubscriptions().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1200,6 +2882,14 @@ public final class GoogleApiSource extends com.google.protobuf.GeneratedMessageV
         loggingConfigBuilder_.dispose();
         loggingConfigBuilder_ = null;
       }
+      if (organizationSubscriptionBuilder_ != null) {
+        organizationSubscriptionBuilder_.clear();
+      }
+      if (projectSubscriptionsBuilder_ != null) {
+        projectSubscriptionsBuilder_.clear();
+      }
+      wideScopeSubscriptionCase_ = 0;
+      wideScopeSubscription_ = null;
       return this;
     }
 
@@ -1230,6 +2920,7 @@ public final class GoogleApiSource extends com.google.protobuf.GeneratedMessageV
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
@@ -1277,6 +2968,17 @@ public final class GoogleApiSource extends com.google.protobuf.GeneratedMessageV
         to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.eventarc.v1.GoogleApiSource result) {
+      result.wideScopeSubscriptionCase_ = wideScopeSubscriptionCase_;
+      result.wideScopeSubscription_ = this.wideScopeSubscription_;
+      if (wideScopeSubscriptionCase_ == 12 && organizationSubscriptionBuilder_ != null) {
+        result.wideScopeSubscription_ = organizationSubscriptionBuilder_.build();
+      }
+      if (wideScopeSubscriptionCase_ == 13 && projectSubscriptionsBuilder_ != null) {
+        result.wideScopeSubscription_ = projectSubscriptionsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1366,6 +3068,22 @@ public final class GoogleApiSource extends com.google.protobuf.GeneratedMessageV
       }
       if (other.hasLoggingConfig()) {
         mergeLoggingConfig(other.getLoggingConfig());
+      }
+      switch (other.getWideScopeSubscriptionCase()) {
+        case ORGANIZATION_SUBSCRIPTION:
+          {
+            mergeOrganizationSubscription(other.getOrganizationSubscription());
+            break;
+          }
+        case PROJECT_SUBSCRIPTIONS:
+          {
+            mergeProjectSubscriptions(other.getProjectSubscriptions());
+            break;
+          }
+        case WIDESCOPESUBSCRIPTION_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1471,6 +3189,20 @@ public final class GoogleApiSource extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000400;
                 break;
               } // case 90
+            case 98:
+              {
+                input.readMessage(
+                    getOrganizationSubscriptionFieldBuilder().getBuilder(), extensionRegistry);
+                wideScopeSubscriptionCase_ = 12;
+                break;
+              } // case 98
+            case 106:
+              {
+                input.readMessage(
+                    getProjectSubscriptionsFieldBuilder().getBuilder(), extensionRegistry);
+                wideScopeSubscriptionCase_ = 13;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1485,6 +3217,20 @@ public final class GoogleApiSource extends com.google.protobuf.GeneratedMessageV
       } finally {
         onChanged();
       } // finally
+      return this;
+    }
+
+    private int wideScopeSubscriptionCase_ = 0;
+    private java.lang.Object wideScopeSubscription_;
+
+    public WideScopeSubscriptionCase getWideScopeSubscriptionCase() {
+      return WideScopeSubscriptionCase.forNumber(wideScopeSubscriptionCase_);
+    }
+
+    public Builder clearWideScopeSubscription() {
+      wideScopeSubscriptionCase_ = 0;
+      wideScopeSubscription_ = null;
+      onChanged();
       return this;
     }
 
@@ -3235,6 +4981,547 @@ public final class GoogleApiSource extends com.google.protobuf.GeneratedMessageV
         loggingConfig_ = null;
       }
       return loggingConfigBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription,
+            com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription.Builder,
+            com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscriptionOrBuilder>
+        organizationSubscriptionBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config to enable subscribing to events from all projects in the
+     * GoogleApiSource's org.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription organization_subscription = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the organizationSubscription field is set.
+     */
+    @java.lang.Override
+    public boolean hasOrganizationSubscription() {
+      return wideScopeSubscriptionCase_ == 12;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config to enable subscribing to events from all projects in the
+     * GoogleApiSource's org.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription organization_subscription = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The organizationSubscription.
+     */
+    @java.lang.Override
+    public com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription
+        getOrganizationSubscription() {
+      if (organizationSubscriptionBuilder_ == null) {
+        if (wideScopeSubscriptionCase_ == 12) {
+          return (com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription)
+              wideScopeSubscription_;
+        }
+        return com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription
+            .getDefaultInstance();
+      } else {
+        if (wideScopeSubscriptionCase_ == 12) {
+          return organizationSubscriptionBuilder_.getMessage();
+        }
+        return com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config to enable subscribing to events from all projects in the
+     * GoogleApiSource's org.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription organization_subscription = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setOrganizationSubscription(
+        com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription value) {
+      if (organizationSubscriptionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        wideScopeSubscription_ = value;
+        onChanged();
+      } else {
+        organizationSubscriptionBuilder_.setMessage(value);
+      }
+      wideScopeSubscriptionCase_ = 12;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config to enable subscribing to events from all projects in the
+     * GoogleApiSource's org.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription organization_subscription = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setOrganizationSubscription(
+        com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription.Builder
+            builderForValue) {
+      if (organizationSubscriptionBuilder_ == null) {
+        wideScopeSubscription_ = builderForValue.build();
+        onChanged();
+      } else {
+        organizationSubscriptionBuilder_.setMessage(builderForValue.build());
+      }
+      wideScopeSubscriptionCase_ = 12;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config to enable subscribing to events from all projects in the
+     * GoogleApiSource's org.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription organization_subscription = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeOrganizationSubscription(
+        com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription value) {
+      if (organizationSubscriptionBuilder_ == null) {
+        if (wideScopeSubscriptionCase_ == 12
+            && wideScopeSubscription_
+                != com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription
+                    .getDefaultInstance()) {
+          wideScopeSubscription_ =
+              com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription.newBuilder(
+                      (com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription)
+                          wideScopeSubscription_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          wideScopeSubscription_ = value;
+        }
+        onChanged();
+      } else {
+        if (wideScopeSubscriptionCase_ == 12) {
+          organizationSubscriptionBuilder_.mergeFrom(value);
+        } else {
+          organizationSubscriptionBuilder_.setMessage(value);
+        }
+      }
+      wideScopeSubscriptionCase_ = 12;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config to enable subscribing to events from all projects in the
+     * GoogleApiSource's org.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription organization_subscription = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearOrganizationSubscription() {
+      if (organizationSubscriptionBuilder_ == null) {
+        if (wideScopeSubscriptionCase_ == 12) {
+          wideScopeSubscriptionCase_ = 0;
+          wideScopeSubscription_ = null;
+          onChanged();
+        }
+      } else {
+        if (wideScopeSubscriptionCase_ == 12) {
+          wideScopeSubscriptionCase_ = 0;
+          wideScopeSubscription_ = null;
+        }
+        organizationSubscriptionBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config to enable subscribing to events from all projects in the
+     * GoogleApiSource's org.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription organization_subscription = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription.Builder
+        getOrganizationSubscriptionBuilder() {
+      return getOrganizationSubscriptionFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config to enable subscribing to events from all projects in the
+     * GoogleApiSource's org.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription organization_subscription = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscriptionOrBuilder
+        getOrganizationSubscriptionOrBuilder() {
+      if ((wideScopeSubscriptionCase_ == 12) && (organizationSubscriptionBuilder_ != null)) {
+        return organizationSubscriptionBuilder_.getMessageOrBuilder();
+      } else {
+        if (wideScopeSubscriptionCase_ == 12) {
+          return (com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription)
+              wideScopeSubscription_;
+        }
+        return com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config to enable subscribing to events from all projects in the
+     * GoogleApiSource's org.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription organization_subscription = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription,
+            com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription.Builder,
+            com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscriptionOrBuilder>
+        getOrganizationSubscriptionFieldBuilder() {
+      if (organizationSubscriptionBuilder_ == null) {
+        if (!(wideScopeSubscriptionCase_ == 12)) {
+          wideScopeSubscription_ =
+              com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription
+                  .getDefaultInstance();
+        }
+        organizationSubscriptionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription,
+                com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription.Builder,
+                com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscriptionOrBuilder>(
+                (com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription)
+                    wideScopeSubscription_,
+                getParentForChildren(),
+                isClean());
+        wideScopeSubscription_ = null;
+      }
+      wideScopeSubscriptionCase_ = 12;
+      onChanged();
+      return organizationSubscriptionBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions,
+            com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions.Builder,
+            com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptionsOrBuilder>
+        projectSubscriptionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config to enable subscribing to all events from a list of
+     * projects.
+     *
+     * All the projects must be in the same org as the GoogleApiSource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions project_subscriptions = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the projectSubscriptions field is set.
+     */
+    @java.lang.Override
+    public boolean hasProjectSubscriptions() {
+      return wideScopeSubscriptionCase_ == 13;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config to enable subscribing to all events from a list of
+     * projects.
+     *
+     * All the projects must be in the same org as the GoogleApiSource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions project_subscriptions = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The projectSubscriptions.
+     */
+    @java.lang.Override
+    public com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions
+        getProjectSubscriptions() {
+      if (projectSubscriptionsBuilder_ == null) {
+        if (wideScopeSubscriptionCase_ == 13) {
+          return (com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions)
+              wideScopeSubscription_;
+        }
+        return com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions
+            .getDefaultInstance();
+      } else {
+        if (wideScopeSubscriptionCase_ == 13) {
+          return projectSubscriptionsBuilder_.getMessage();
+        }
+        return com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config to enable subscribing to all events from a list of
+     * projects.
+     *
+     * All the projects must be in the same org as the GoogleApiSource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions project_subscriptions = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setProjectSubscriptions(
+        com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions value) {
+      if (projectSubscriptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        wideScopeSubscription_ = value;
+        onChanged();
+      } else {
+        projectSubscriptionsBuilder_.setMessage(value);
+      }
+      wideScopeSubscriptionCase_ = 13;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config to enable subscribing to all events from a list of
+     * projects.
+     *
+     * All the projects must be in the same org as the GoogleApiSource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions project_subscriptions = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setProjectSubscriptions(
+        com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions.Builder builderForValue) {
+      if (projectSubscriptionsBuilder_ == null) {
+        wideScopeSubscription_ = builderForValue.build();
+        onChanged();
+      } else {
+        projectSubscriptionsBuilder_.setMessage(builderForValue.build());
+      }
+      wideScopeSubscriptionCase_ = 13;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config to enable subscribing to all events from a list of
+     * projects.
+     *
+     * All the projects must be in the same org as the GoogleApiSource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions project_subscriptions = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeProjectSubscriptions(
+        com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions value) {
+      if (projectSubscriptionsBuilder_ == null) {
+        if (wideScopeSubscriptionCase_ == 13
+            && wideScopeSubscription_
+                != com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions
+                    .getDefaultInstance()) {
+          wideScopeSubscription_ =
+              com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions.newBuilder(
+                      (com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions)
+                          wideScopeSubscription_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          wideScopeSubscription_ = value;
+        }
+        onChanged();
+      } else {
+        if (wideScopeSubscriptionCase_ == 13) {
+          projectSubscriptionsBuilder_.mergeFrom(value);
+        } else {
+          projectSubscriptionsBuilder_.setMessage(value);
+        }
+      }
+      wideScopeSubscriptionCase_ = 13;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config to enable subscribing to all events from a list of
+     * projects.
+     *
+     * All the projects must be in the same org as the GoogleApiSource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions project_subscriptions = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearProjectSubscriptions() {
+      if (projectSubscriptionsBuilder_ == null) {
+        if (wideScopeSubscriptionCase_ == 13) {
+          wideScopeSubscriptionCase_ = 0;
+          wideScopeSubscription_ = null;
+          onChanged();
+        }
+      } else {
+        if (wideScopeSubscriptionCase_ == 13) {
+          wideScopeSubscriptionCase_ = 0;
+          wideScopeSubscription_ = null;
+        }
+        projectSubscriptionsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config to enable subscribing to all events from a list of
+     * projects.
+     *
+     * All the projects must be in the same org as the GoogleApiSource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions project_subscriptions = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions.Builder
+        getProjectSubscriptionsBuilder() {
+      return getProjectSubscriptionsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config to enable subscribing to all events from a list of
+     * projects.
+     *
+     * All the projects must be in the same org as the GoogleApiSource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions project_subscriptions = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptionsOrBuilder
+        getProjectSubscriptionsOrBuilder() {
+      if ((wideScopeSubscriptionCase_ == 13) && (projectSubscriptionsBuilder_ != null)) {
+        return projectSubscriptionsBuilder_.getMessageOrBuilder();
+      } else {
+        if (wideScopeSubscriptionCase_ == 13) {
+          return (com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions)
+              wideScopeSubscription_;
+        }
+        return com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config to enable subscribing to all events from a list of
+     * projects.
+     *
+     * All the projects must be in the same org as the GoogleApiSource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions project_subscriptions = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions,
+            com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions.Builder,
+            com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptionsOrBuilder>
+        getProjectSubscriptionsFieldBuilder() {
+      if (projectSubscriptionsBuilder_ == null) {
+        if (!(wideScopeSubscriptionCase_ == 13)) {
+          wideScopeSubscription_ =
+              com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions
+                  .getDefaultInstance();
+        }
+        projectSubscriptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions,
+                com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions.Builder,
+                com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptionsOrBuilder>(
+                (com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions)
+                    wideScopeSubscription_,
+                getParentForChildren(),
+                isClean());
+        wideScopeSubscription_ = null;
+      }
+      wideScopeSubscriptionCase_ = 13;
+      onChanged();
+      return projectSubscriptionsBuilder_;
     }
 
     @java.lang.Override

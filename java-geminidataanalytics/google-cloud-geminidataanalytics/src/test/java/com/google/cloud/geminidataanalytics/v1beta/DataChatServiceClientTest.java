@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -565,6 +565,63 @@ public class DataChatServiceClientTest {
     try {
       String parent = "parent-995424086";
       client.listMessages(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void queryDataTest() throws Exception {
+    QueryDataResponse expectedResponse =
+        QueryDataResponse.newBuilder()
+            .setGeneratedQuery("generatedQuery-1655820167")
+            .setIntentExplanation("intentExplanation-258914851")
+            .setQueryResult(ExecutedQueryResult.newBuilder().build())
+            .setNaturalLanguageAnswer("naturalLanguageAnswer425313727")
+            .addAllDisambiguationQuestion(new ArrayList<String>())
+            .build();
+    mockDataChatService.addResponse(expectedResponse);
+
+    QueryDataRequest request =
+        QueryDataRequest.newBuilder()
+            .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setPrompt("prompt-979805852")
+            .setContext(QueryDataContext.newBuilder().build())
+            .setGenerationOptions(GenerationOptions.newBuilder().build())
+            .build();
+
+    QueryDataResponse actualResponse = client.queryData(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    QueryDataRequest actualRequest = ((QueryDataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getPrompt(), actualRequest.getPrompt());
+    Assert.assertEquals(request.getContext(), actualRequest.getContext());
+    Assert.assertEquals(request.getGenerationOptions(), actualRequest.getGenerationOptions());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void queryDataExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataChatService.addException(exception);
+
+    try {
+      QueryDataRequest request =
+          QueryDataRequest.newBuilder()
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setPrompt("prompt-979805852")
+              .setContext(QueryDataContext.newBuilder().build())
+              .setGenerationOptions(GenerationOptions.newBuilder().build())
+              .build();
+      client.queryData(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

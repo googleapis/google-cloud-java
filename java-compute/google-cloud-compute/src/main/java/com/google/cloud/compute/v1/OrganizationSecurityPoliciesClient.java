@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,7 +67,9 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> AddAssociation</td>
- *      <td><p> Inserts an association for the specified security policy. This has billing implications. Projects in the hierarchy with effective hierarchical security policies will be automatically enrolled into Cloud Armor Enterprise if not already enrolled. Use of this API to modify firewall policies is deprecated. Use firewallPolicies.addAssociation instead if possible.</td>
+ *      <td><p> Inserts an association for the specified security policy.
+ * <p>  This has billing implications.  Projects in the hierarchy with effective hierarchical security policies will be automatically enrolled into Cloud Armor Enterprise if not already enrolled.
+ * <p>  Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API were used to modify firewall policies. This usage is now disabled for most organizations. Use firewallPolicies.addAssociation instead.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -86,7 +88,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> AddRule</td>
- *      <td><p> Inserts a rule into a security policy.</td>
+ *      <td><p> Inserts a rule into a security policy.
+ * <p>  Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API were used to modify firewall policies. This usage is now disabled for most organizations. Use firewallPolicies.addRule instead.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -105,7 +108,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CopyRules</td>
- *      <td><p> Copies rules to the specified security policy. Use of this API to modify firewall policies is deprecated. Use firewallPolicies.copyRules instead.</td>
+ *      <td><p> Copies rules to the specified security policy.
+ * <p>  Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API were used to modify firewall policies. This usage is now disabled for most organizations. Use firewallPolicies.cloneRules instead.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -124,7 +128,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Delete</td>
- *      <td><p> Deletes the specified policy. Use of this API to remove firewall policies is deprecated. Use firewallPolicies.delete instead.</td>
+ *      <td><p> Deletes the specified policy.
+ * <p>  Use this API to remove Cloud Armor policies. Previously, alpha and beta versions of this API were used to remove firewall policies. This usage is now disabled for most organizations. Use firewallPolicies.delete instead.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -143,7 +148,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Get</td>
- *      <td><p> List all of the ordered rules present in a single specified policy. Use of this API to read firewall policies is deprecated. Use firewallPolicies.get instead.</td>
+ *      <td><p> List all of the ordered rules present in a single specified policy.
+ * <p>  Use this API to read Cloud Armor policies. Previously, alpha and beta versions of this API were used to read firewall policies. This usage is now disabled for most organizations. Use firewallPolicies.get instead.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -161,7 +167,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetAssociation</td>
- *      <td><p> Gets an association with the specified name. Use of this API to read firewall policies is deprecated. Use firewallPolicies.getAssociation instead if possible.</td>
+ *      <td><p> Gets an association with the specified name.
+ * <p>  Use this API to read Cloud Armor policies. Previously, alpha and beta versions of this API were used to read firewall policies. This usage is now disabled for most organizations. Use firewallPolicies.getAssociation instead.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -179,7 +186,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetRule</td>
- *      <td><p> Gets a rule at the specified priority. Use of this API to read firewall policies is deprecated. Use firewallPolicies.getRule instead.</td>
+ *      <td><p> Gets a rule at the specified priority.
+ * <p>  Use this API to read Cloud Armor policies. Previously, alpha and beta versions of this API were used to read firewall policies. This usage is now disabled for most organizations. Use firewallPolicies.getRule instead.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -197,7 +205,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Insert</td>
- *      <td><p> Creates a new policy in the specified project using the data included in the request. Use of this API to insert firewall policies is deprecated. Use firewallPolicies.insert instead.</td>
+ *      <td><p> Creates a new policy in the specified organization using the data included in the request.
+ * <p>  Use this API to add Cloud Armor policies. Previously, alpha and beta versions of this API were used to add firewall policies. This usage is now disabled for most organizations. Use firewallPolicies.insert instead.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -216,7 +225,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> List</td>
- *      <td><p> List all the policies that have been configured for the specified project. Use of this API to read firewall policies is deprecated. Use firewallPolicies.list instead.</td>
+ *      <td><p> List all the policies that have been configured for the specified organization.
+ * <p>  Use this API to read Cloud Armor policies. Previously, alpha and beta versions of this API were used to read firewall policies. This usage is now disabled for most organizations. Use firewallPolicies.list instead.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -235,7 +245,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListAssociations</td>
- *      <td><p> Lists associations of a specified target, i.e., organization or folder. Use of this API to read firewall policies is deprecated. Use firewallPolicies.listAssociations instead if possible.</td>
+ *      <td><p> Lists associations of a specified target, i.e., organization or folder.
+ * <p>  Use this API to read Cloud Armor policies. Previously, alpha and beta versions of this API were used to read firewall policies. This usage is now disabled for most organizations. Use firewallPolicies.listAssociations instead.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -271,7 +282,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Move</td>
- *      <td><p> Moves the specified security policy. Use of this API to modify firewall policies is deprecated. Use firewallPolicies.move instead.</td>
+ *      <td><p> Moves the specified security policy.
+ * <p>  Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API were used to modify firewall policies. This usage is now disabled for most organizations. Use firewallPolicies.move instead.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -290,7 +302,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Patch</td>
- *      <td><p> Patches the specified policy with the data included in the request. Use of this API to modify firewall policies is deprecated. Use firewallPolicies.patch instead.</td>
+ *      <td><p> Patches the specified policy with the data included in the request.
+ * <p>  Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API were used to modify firewall policies. This usage is now disabled for most organizations. Use firewallPolicies.patch instead.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -309,7 +322,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> PatchRule</td>
- *      <td><p> Patches a rule at the specified priority. Use of this API to modify firewall policies is deprecated. Use firewallPolicies.patchRule instead.</td>
+ *      <td><p> Patches a rule at the specified priority.
+ * <p>  Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API were used to modify firewall policies. This usage is now disabled for most organizations. Use firewallPolicies.patchRule instead.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -328,7 +342,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> RemoveAssociation</td>
- *      <td><p> Removes an association for the specified security policy. Use of this API to modify firewall policies is deprecated. Use firewallPolicies.removeAssociation instead if possible.</td>
+ *      <td><p> Removes an association for the specified security policy.
+ * <p>  Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API were used to modify firewall policies. This usage is now disabled for most organizations. Use firewallPolicies.removeAssociation instead.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -347,7 +362,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> RemoveRule</td>
- *      <td><p> Deletes a rule at the specified priority.</td>
+ *      <td><p> Deletes a rule at the specified priority.
+ * <p>  Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API were used to modify firewall policies. This usage is now disabled for most organizations. Use firewallPolicies.removeRule instead.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -463,10 +479,15 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Inserts an association for the specified security policy. This has billing implications.
-   * Projects in the hierarchy with effective hierarchical security policies will be automatically
-   * enrolled into Cloud Armor Enterprise if not already enrolled. Use of this API to modify
-   * firewall policies is deprecated. Use firewallPolicies.addAssociation instead if possible.
+   * Inserts an association for the specified security policy.
+   *
+   * <p>This has billing implications. Projects in the hierarchy with effective hierarchical
+   * security policies will be automatically enrolled into Cloud Armor Enterprise if not already
+   * enrolled.
+   *
+   * <p>Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to modify firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.addAssociation instead.
    *
    * <p>Sample code:
    *
@@ -504,10 +525,15 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Inserts an association for the specified security policy. This has billing implications.
-   * Projects in the hierarchy with effective hierarchical security policies will be automatically
-   * enrolled into Cloud Armor Enterprise if not already enrolled. Use of this API to modify
-   * firewall policies is deprecated. Use firewallPolicies.addAssociation instead if possible.
+   * Inserts an association for the specified security policy.
+   *
+   * <p>This has billing implications. Projects in the hierarchy with effective hierarchical
+   * security policies will be automatically enrolled into Cloud Armor Enterprise if not already
+   * enrolled.
+   *
+   * <p>Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to modify firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.addAssociation instead.
    *
    * <p>Sample code:
    *
@@ -540,10 +566,15 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Inserts an association for the specified security policy. This has billing implications.
-   * Projects in the hierarchy with effective hierarchical security policies will be automatically
-   * enrolled into Cloud Armor Enterprise if not already enrolled. Use of this API to modify
-   * firewall policies is deprecated. Use firewallPolicies.addAssociation instead if possible.
+   * Inserts an association for the specified security policy.
+   *
+   * <p>This has billing implications. Projects in the hierarchy with effective hierarchical
+   * security policies will be automatically enrolled into Cloud Armor Enterprise if not already
+   * enrolled.
+   *
+   * <p>Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to modify firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.addAssociation instead.
    *
    * <p>Sample code:
    *
@@ -577,10 +608,15 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Inserts an association for the specified security policy. This has billing implications.
-   * Projects in the hierarchy with effective hierarchical security policies will be automatically
-   * enrolled into Cloud Armor Enterprise if not already enrolled. Use of this API to modify
-   * firewall policies is deprecated. Use firewallPolicies.addAssociation instead if possible.
+   * Inserts an association for the specified security policy.
+   *
+   * <p>This has billing implications. Projects in the hierarchy with effective hierarchical
+   * security policies will be automatically enrolled into Cloud Armor Enterprise if not already
+   * enrolled.
+   *
+   * <p>Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to modify firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.addAssociation instead.
    *
    * <p>Sample code:
    *
@@ -614,6 +650,10 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Inserts a rule into a security policy.
+   *
+   * <p>Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to modify firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.addRule instead.
    *
    * <p>Sample code:
    *
@@ -652,6 +692,10 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
   /**
    * Inserts a rule into a security policy.
    *
+   * <p>Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to modify firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.addRule instead.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -683,6 +727,10 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Inserts a rule into a security policy.
+   *
+   * <p>Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to modify firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.addRule instead.
    *
    * <p>Sample code:
    *
@@ -716,6 +764,10 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
   /**
    * Inserts a rule into a security policy.
    *
+   * <p>Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to modify firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.addRule instead.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -746,8 +798,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Copies rules to the specified security policy. Use of this API to modify firewall policies is
-   * deprecated. Use firewallPolicies.copyRules instead.
+   * Copies rules to the specified security policy.
+   *
+   * <p>Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to modify firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.cloneRules instead.
    *
    * <p>Sample code:
    *
@@ -777,8 +832,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Copies rules to the specified security policy. Use of this API to modify firewall policies is
-   * deprecated. Use firewallPolicies.copyRules instead.
+   * Copies rules to the specified security policy.
+   *
+   * <p>Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to modify firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.cloneRules instead.
    *
    * <p>Sample code:
    *
@@ -810,8 +868,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Copies rules to the specified security policy. Use of this API to modify firewall policies is
-   * deprecated. Use firewallPolicies.copyRules instead.
+   * Copies rules to the specified security policy.
+   *
+   * <p>Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to modify firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.cloneRules instead.
    *
    * <p>Sample code:
    *
@@ -843,8 +904,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Copies rules to the specified security policy. Use of this API to modify firewall policies is
-   * deprecated. Use firewallPolicies.copyRules instead.
+   * Copies rules to the specified security policy.
+   *
+   * <p>Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to modify firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.cloneRules instead.
    *
    * <p>Sample code:
    *
@@ -876,7 +940,10 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes the specified policy. Use of this API to remove firewall policies is deprecated. Use
+   * Deletes the specified policy.
+   *
+   * <p>Use this API to remove Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to remove firewall policies. This usage is now disabled for most organizations. Use
    * firewallPolicies.delete instead.
    *
    * <p>Sample code:
@@ -907,7 +974,10 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes the specified policy. Use of this API to remove firewall policies is deprecated. Use
+   * Deletes the specified policy.
+   *
+   * <p>Use this API to remove Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to remove firewall policies. This usage is now disabled for most organizations. Use
    * firewallPolicies.delete instead.
    *
    * <p>Sample code:
@@ -939,7 +1009,10 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes the specified policy. Use of this API to remove firewall policies is deprecated. Use
+   * Deletes the specified policy.
+   *
+   * <p>Use this API to remove Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to remove firewall policies. This usage is now disabled for most organizations. Use
    * firewallPolicies.delete instead.
    *
    * <p>Sample code:
@@ -971,7 +1044,10 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes the specified policy. Use of this API to remove firewall policies is deprecated. Use
+   * Deletes the specified policy.
+   *
+   * <p>Use this API to remove Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to remove firewall policies. This usage is now disabled for most organizations. Use
    * firewallPolicies.delete instead.
    *
    * <p>Sample code:
@@ -1002,8 +1078,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List all of the ordered rules present in a single specified policy. Use of this API to read
-   * firewall policies is deprecated. Use firewallPolicies.get instead.
+   * List all of the ordered rules present in a single specified policy.
+   *
+   * <p>Use this API to read Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to read firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.get instead.
    *
    * <p>Sample code:
    *
@@ -1031,8 +1110,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List all of the ordered rules present in a single specified policy. Use of this API to read
-   * firewall policies is deprecated. Use firewallPolicies.get instead.
+   * List all of the ordered rules present in a single specified policy.
+   *
+   * <p>Use this API to read Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to read firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.get instead.
    *
    * <p>Sample code:
    *
@@ -1061,8 +1143,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List all of the ordered rules present in a single specified policy. Use of this API to read
-   * firewall policies is deprecated. Use firewallPolicies.get instead.
+   * List all of the ordered rules present in a single specified policy.
+   *
+   * <p>Use this API to read Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to read firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.get instead.
    *
    * <p>Sample code:
    *
@@ -1091,8 +1176,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets an association with the specified name. Use of this API to read firewall policies is
-   * deprecated. Use firewallPolicies.getAssociation instead if possible.
+   * Gets an association with the specified name.
+   *
+   * <p>Use this API to read Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to read firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.getAssociation instead.
    *
    * <p>Sample code:
    *
@@ -1123,8 +1211,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets an association with the specified name. Use of this API to read firewall policies is
-   * deprecated. Use firewallPolicies.getAssociation instead if possible.
+   * Gets an association with the specified name.
+   *
+   * <p>Use this API to read Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to read firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.getAssociation instead.
    *
    * <p>Sample code:
    *
@@ -1156,8 +1247,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets an association with the specified name. Use of this API to read firewall policies is
-   * deprecated. Use firewallPolicies.getAssociation instead if possible.
+   * Gets an association with the specified name.
+   *
+   * <p>Use this API to read Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to read firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.getAssociation instead.
    *
    * <p>Sample code:
    *
@@ -1189,8 +1283,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a rule at the specified priority. Use of this API to read firewall policies is deprecated.
-   * Use firewallPolicies.getRule instead.
+   * Gets a rule at the specified priority.
+   *
+   * <p>Use this API to read Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to read firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.getRule instead.
    *
    * <p>Sample code:
    *
@@ -1220,8 +1317,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a rule at the specified priority. Use of this API to read firewall policies is deprecated.
-   * Use firewallPolicies.getRule instead.
+   * Gets a rule at the specified priority.
+   *
+   * <p>Use this API to read Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to read firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.getRule instead.
    *
    * <p>Sample code:
    *
@@ -1251,8 +1351,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a rule at the specified priority. Use of this API to read firewall policies is deprecated.
-   * Use firewallPolicies.getRule instead.
+   * Gets a rule at the specified priority.
+   *
+   * <p>Use this API to read Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to read firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.getRule instead.
    *
    * <p>Sample code:
    *
@@ -1283,8 +1386,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new policy in the specified project using the data included in the request. Use of
-   * this API to insert firewall policies is deprecated. Use firewallPolicies.insert instead.
+   * Creates a new policy in the specified organization using the data included in the request.
+   *
+   * <p>Use this API to add Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to add firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.insert instead.
    *
    * <p>Sample code:
    *
@@ -1316,8 +1422,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new policy in the specified project using the data included in the request. Use of
-   * this API to insert firewall policies is deprecated. Use firewallPolicies.insert instead.
+   * Creates a new policy in the specified organization using the data included in the request.
+   *
+   * <p>Use this API to add Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to add firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.insert instead.
    *
    * <p>Sample code:
    *
@@ -1349,8 +1458,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new policy in the specified project using the data included in the request. Use of
-   * this API to insert firewall policies is deprecated. Use firewallPolicies.insert instead.
+   * Creates a new policy in the specified organization using the data included in the request.
+   *
+   * <p>Use this API to add Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to add firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.insert instead.
    *
    * <p>Sample code:
    *
@@ -1382,8 +1494,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new policy in the specified project using the data included in the request. Use of
-   * this API to insert firewall policies is deprecated. Use firewallPolicies.insert instead.
+   * Creates a new policy in the specified organization using the data included in the request.
+   *
+   * <p>Use this API to add Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to add firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.insert instead.
    *
    * <p>Sample code:
    *
@@ -1414,8 +1529,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List all the policies that have been configured for the specified project. Use of this API to
-   * read firewall policies is deprecated. Use firewallPolicies.list instead.
+   * List all the policies that have been configured for the specified organization.
+   *
+   * <p>Use this API to read Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to read firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.list instead.
    *
    * <p>Sample code:
    *
@@ -1444,8 +1562,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List all the policies that have been configured for the specified project. Use of this API to
-   * read firewall policies is deprecated. Use firewallPolicies.list instead.
+   * List all the policies that have been configured for the specified organization.
+   *
+   * <p>Use this API to read Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to read firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.list instead.
    *
    * <p>Sample code:
    *
@@ -1481,8 +1602,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List all the policies that have been configured for the specified project. Use of this API to
-   * read firewall policies is deprecated. Use firewallPolicies.list instead.
+   * List all the policies that have been configured for the specified organization.
+   *
+   * <p>Use this API to read Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to read firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.list instead.
    *
    * <p>Sample code:
    *
@@ -1519,8 +1643,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List all the policies that have been configured for the specified project. Use of this API to
-   * read firewall policies is deprecated. Use firewallPolicies.list instead.
+   * List all the policies that have been configured for the specified organization.
+   *
+   * <p>Use this API to read Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to read firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.list instead.
    *
    * <p>Sample code:
    *
@@ -1564,8 +1691,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists associations of a specified target, i.e., organization or folder. Use of this API to read
-   * firewall policies is deprecated. Use firewallPolicies.listAssociations instead if possible.
+   * Lists associations of a specified target, i.e., organization or folder.
+   *
+   * <p>Use this API to read Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to read firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.listAssociations instead.
    *
    * <p>Sample code:
    *
@@ -1593,8 +1723,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists associations of a specified target, i.e., organization or folder. Use of this API to read
-   * firewall policies is deprecated. Use firewallPolicies.listAssociations instead if possible.
+   * Lists associations of a specified target, i.e., organization or folder.
+   *
+   * <p>Use this API to read Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to read firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.listAssociations instead.
    *
    * <p>Sample code:
    *
@@ -1625,8 +1758,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists associations of a specified target, i.e., organization or folder. Use of this API to read
-   * firewall policies is deprecated. Use firewallPolicies.listAssociations instead if possible.
+   * Lists associations of a specified target, i.e., organization or folder.
+   *
+   * <p>Use this API to read Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to read firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.listAssociations instead.
    *
    * <p>Sample code:
    *
@@ -1763,8 +1899,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Moves the specified security policy. Use of this API to modify firewall policies is deprecated.
-   * Use firewallPolicies.move instead.
+   * Moves the specified security policy.
+   *
+   * <p>Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to modify firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.move instead.
    *
    * <p>Sample code:
    *
@@ -1794,8 +1933,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Moves the specified security policy. Use of this API to modify firewall policies is deprecated.
-   * Use firewallPolicies.move instead.
+   * Moves the specified security policy.
+   *
+   * <p>Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to modify firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.move instead.
    *
    * <p>Sample code:
    *
@@ -1827,8 +1969,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Moves the specified security policy. Use of this API to modify firewall policies is deprecated.
-   * Use firewallPolicies.move instead.
+   * Moves the specified security policy.
+   *
+   * <p>Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to modify firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.move instead.
    *
    * <p>Sample code:
    *
@@ -1860,8 +2005,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Moves the specified security policy. Use of this API to modify firewall policies is deprecated.
-   * Use firewallPolicies.move instead.
+   * Moves the specified security policy.
+   *
+   * <p>Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to modify firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.move instead.
    *
    * <p>Sample code:
    *
@@ -1892,8 +2040,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Patches the specified policy with the data included in the request. Use of this API to modify
-   * firewall policies is deprecated. Use firewallPolicies.patch instead.
+   * Patches the specified policy with the data included in the request.
+   *
+   * <p>Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to modify firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.patch instead.
    *
    * <p>Sample code:
    *
@@ -1930,8 +2081,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Patches the specified policy with the data included in the request. Use of this API to modify
-   * firewall policies is deprecated. Use firewallPolicies.patch instead.
+   * Patches the specified policy with the data included in the request.
+   *
+   * <p>Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to modify firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.patch instead.
    *
    * <p>Sample code:
    *
@@ -1963,8 +2117,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Patches the specified policy with the data included in the request. Use of this API to modify
-   * firewall policies is deprecated. Use firewallPolicies.patch instead.
+   * Patches the specified policy with the data included in the request.
+   *
+   * <p>Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to modify firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.patch instead.
    *
    * <p>Sample code:
    *
@@ -1996,8 +2153,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Patches the specified policy with the data included in the request. Use of this API to modify
-   * firewall policies is deprecated. Use firewallPolicies.patch instead.
+   * Patches the specified policy with the data included in the request.
+   *
+   * <p>Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to modify firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.patch instead.
    *
    * <p>Sample code:
    *
@@ -2028,8 +2188,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Patches a rule at the specified priority. Use of this API to modify firewall policies is
-   * deprecated. Use firewallPolicies.patchRule instead.
+   * Patches a rule at the specified priority.
+   *
+   * <p>Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to modify firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.patchRule instead.
    *
    * <p>Sample code:
    *
@@ -2066,8 +2229,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Patches a rule at the specified priority. Use of this API to modify firewall policies is
-   * deprecated. Use firewallPolicies.patchRule instead.
+   * Patches a rule at the specified priority.
+   *
+   * <p>Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to modify firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.patchRule instead.
    *
    * <p>Sample code:
    *
@@ -2100,8 +2266,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Patches a rule at the specified priority. Use of this API to modify firewall policies is
-   * deprecated. Use firewallPolicies.patchRule instead.
+   * Patches a rule at the specified priority.
+   *
+   * <p>Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to modify firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.patchRule instead.
    *
    * <p>Sample code:
    *
@@ -2134,8 +2303,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Patches a rule at the specified priority. Use of this API to modify firewall policies is
-   * deprecated. Use firewallPolicies.patchRule instead.
+   * Patches a rule at the specified priority.
+   *
+   * <p>Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to modify firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.patchRule instead.
    *
    * <p>Sample code:
    *
@@ -2168,8 +2340,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Removes an association for the specified security policy. Use of this API to modify firewall
-   * policies is deprecated. Use firewallPolicies.removeAssociation instead if possible.
+   * Removes an association for the specified security policy.
+   *
+   * <p>Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to modify firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.removeAssociation instead.
    *
    * <p>Sample code:
    *
@@ -2200,8 +2375,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Removes an association for the specified security policy. Use of this API to modify firewall
-   * policies is deprecated. Use firewallPolicies.removeAssociation instead if possible.
+   * Removes an association for the specified security policy.
+   *
+   * <p>Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to modify firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.removeAssociation instead.
    *
    * <p>Sample code:
    *
@@ -2233,8 +2411,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Removes an association for the specified security policy. Use of this API to modify firewall
-   * policies is deprecated. Use firewallPolicies.removeAssociation instead if possible.
+   * Removes an association for the specified security policy.
+   *
+   * <p>Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to modify firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.removeAssociation instead.
    *
    * <p>Sample code:
    *
@@ -2269,8 +2450,11 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Removes an association for the specified security policy. Use of this API to modify firewall
-   * policies is deprecated. Use firewallPolicies.removeAssociation instead if possible.
+   * Removes an association for the specified security policy.
+   *
+   * <p>Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to modify firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.removeAssociation instead.
    *
    * <p>Sample code:
    *
@@ -2304,6 +2488,10 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
   /**
    * Deletes a rule at the specified priority.
    *
+   * <p>Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to modify firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.removeRule instead.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -2333,6 +2521,10 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a rule at the specified priority.
+   *
+   * <p>Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to modify firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.removeRule instead.
    *
    * <p>Sample code:
    *
@@ -2366,6 +2558,10 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
   /**
    * Deletes a rule at the specified priority.
    *
+   * <p>Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to modify firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.removeRule instead.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -2397,6 +2593,10 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a rule at the specified priority.
+   *
+   * <p>Use this API to modify Cloud Armor policies. Previously, alpha and beta versions of this API
+   * were used to modify firewall policies. This usage is now disabled for most organizations. Use
+   * firewallPolicies.removeRule instead.
    *
    * <p>Sample code:
    *

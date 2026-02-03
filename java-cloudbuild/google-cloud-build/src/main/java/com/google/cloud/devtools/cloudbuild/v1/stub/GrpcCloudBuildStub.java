@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,11 +38,13 @@ import com.google.cloudbuild.v1.CreateBuildRequest;
 import com.google.cloudbuild.v1.CreateBuildTriggerRequest;
 import com.google.cloudbuild.v1.CreateWorkerPoolOperationMetadata;
 import com.google.cloudbuild.v1.CreateWorkerPoolRequest;
+import com.google.cloudbuild.v1.DefaultServiceAccount;
 import com.google.cloudbuild.v1.DeleteBuildTriggerRequest;
 import com.google.cloudbuild.v1.DeleteWorkerPoolOperationMetadata;
 import com.google.cloudbuild.v1.DeleteWorkerPoolRequest;
 import com.google.cloudbuild.v1.GetBuildRequest;
 import com.google.cloudbuild.v1.GetBuildTriggerRequest;
+import com.google.cloudbuild.v1.GetDefaultServiceAccountRequest;
 import com.google.cloudbuild.v1.GetWorkerPoolRequest;
 import com.google.cloudbuild.v1.ListBuildTriggersRequest;
 import com.google.cloudbuild.v1.ListBuildTriggersResponse;
@@ -266,6 +268,19 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<GetDefaultServiceAccountRequest, DefaultServiceAccount>
+      getDefaultServiceAccountMethodDescriptor =
+          MethodDescriptor.<GetDefaultServiceAccountRequest, DefaultServiceAccount>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devtools.cloudbuild.v1.CloudBuild/GetDefaultServiceAccount")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetDefaultServiceAccountRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(DefaultServiceAccount.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private final UnaryCallable<CreateBuildRequest, Operation> createBuildCallable;
   private final OperationCallable<CreateBuildRequest, Build, BuildOperationMetadata>
       createBuildOperationCallable;
@@ -308,6 +323,8 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
       listWorkerPoolsCallable;
   private final UnaryCallable<ListWorkerPoolsRequest, ListWorkerPoolsPagedResponse>
       listWorkerPoolsPagedCallable;
+  private final UnaryCallable<GetDefaultServiceAccountRequest, DefaultServiceAccount>
+      getDefaultServiceAccountCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -347,6 +364,8 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
       PathTemplate.create("projects/*/locations/{location=*}/workerPools/*");
   private static final PathTemplate LIST_WORKER_POOLS_0_PATH_TEMPLATE =
       PathTemplate.create("projects/*/locations/{location=*}");
+  private static final PathTemplate GET_DEFAULT_SERVICE_ACCOUNT_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/defaultServiceAccount");
 
   public static final GrpcCloudBuildStub create(CloudBuildStubSettings settings)
       throws IOException {
@@ -585,6 +604,20 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<GetDefaultServiceAccountRequest, DefaultServiceAccount>
+        getDefaultServiceAccountTransportSettings =
+            GrpcCallSettings.<GetDefaultServiceAccountRequest, DefaultServiceAccount>newBuilder()
+                .setMethodDescriptor(getDefaultServiceAccountMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          request.getName(),
+                          "location",
+                          GET_DEFAULT_SERVICE_ACCOUNT_0_PATH_TEMPLATE);
+                      return builder.build();
+                    })
+                .build();
 
     this.createBuildCallable =
         callableFactory.createUnaryCallable(
@@ -703,6 +736,11 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
     this.listWorkerPoolsPagedCallable =
         callableFactory.createPagedCallable(
             listWorkerPoolsTransportSettings, settings.listWorkerPoolsSettings(), clientContext);
+    this.getDefaultServiceAccountCallable =
+        callableFactory.createUnaryCallable(
+            getDefaultServiceAccountTransportSettings,
+            settings.getDefaultServiceAccountSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -861,6 +899,12 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
   public UnaryCallable<ListWorkerPoolsRequest, ListWorkerPoolsPagedResponse>
       listWorkerPoolsPagedCallable() {
     return listWorkerPoolsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDefaultServiceAccountRequest, DefaultServiceAccount>
+      getDefaultServiceAccountCallable() {
+    return getDefaultServiceAccountCallable;
   }
 
   @Override

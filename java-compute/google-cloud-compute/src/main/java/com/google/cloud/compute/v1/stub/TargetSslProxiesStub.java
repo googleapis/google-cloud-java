@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,8 @@ import com.google.cloud.compute.v1.SetSslCertificatesTargetSslProxyRequest;
 import com.google.cloud.compute.v1.SetSslPolicyTargetSslProxyRequest;
 import com.google.cloud.compute.v1.TargetSslProxy;
 import com.google.cloud.compute.v1.TargetSslProxyList;
+import com.google.cloud.compute.v1.TestIamPermissionsTargetSslProxyRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -123,6 +125,11 @@ public abstract class TargetSslProxiesStub implements BackgroundResource {
 
   public UnaryCallable<SetSslPolicyTargetSslProxyRequest, Operation> setSslPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: setSslPolicyCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsTargetSslProxyRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,7 +76,7 @@ public final class ManagedInstancePropertiesFromFlexibilityPolicy
    *
    *
    * <pre>
-   * The machine type to be used for this instance.
+   * Output only. The machine type to be used for this instance.
    * </pre>
    *
    * <code>optional string machine_type = 227711026;</code>
@@ -92,7 +92,7 @@ public final class ManagedInstancePropertiesFromFlexibilityPolicy
    *
    *
    * <pre>
-   * The machine type to be used for this instance.
+   * Output only. The machine type to be used for this instance.
    * </pre>
    *
    * <code>optional string machine_type = 227711026;</code>
@@ -116,7 +116,7 @@ public final class ManagedInstancePropertiesFromFlexibilityPolicy
    *
    *
    * <pre>
-   * The machine type to be used for this instance.
+   * Output only. The machine type to be used for this instance.
    * </pre>
    *
    * <code>optional string machine_type = 227711026;</code>
@@ -511,7 +511,7 @@ public final class ManagedInstancePropertiesFromFlexibilityPolicy
      *
      *
      * <pre>
-     * The machine type to be used for this instance.
+     * Output only. The machine type to be used for this instance.
      * </pre>
      *
      * <code>optional string machine_type = 227711026;</code>
@@ -526,7 +526,7 @@ public final class ManagedInstancePropertiesFromFlexibilityPolicy
      *
      *
      * <pre>
-     * The machine type to be used for this instance.
+     * Output only. The machine type to be used for this instance.
      * </pre>
      *
      * <code>optional string machine_type = 227711026;</code>
@@ -549,7 +549,7 @@ public final class ManagedInstancePropertiesFromFlexibilityPolicy
      *
      *
      * <pre>
-     * The machine type to be used for this instance.
+     * Output only. The machine type to be used for this instance.
      * </pre>
      *
      * <code>optional string machine_type = 227711026;</code>
@@ -572,7 +572,7 @@ public final class ManagedInstancePropertiesFromFlexibilityPolicy
      *
      *
      * <pre>
-     * The machine type to be used for this instance.
+     * Output only. The machine type to be used for this instance.
      * </pre>
      *
      * <code>optional string machine_type = 227711026;</code>
@@ -594,7 +594,7 @@ public final class ManagedInstancePropertiesFromFlexibilityPolicy
      *
      *
      * <pre>
-     * The machine type to be used for this instance.
+     * Output only. The machine type to be used for this instance.
      * </pre>
      *
      * <code>optional string machine_type = 227711026;</code>
@@ -612,7 +612,7 @@ public final class ManagedInstancePropertiesFromFlexibilityPolicy
      *
      *
      * <pre>
-     * The machine type to be used for this instance.
+     * Output only. The machine type to be used for this instance.
      * </pre>
      *
      * <code>optional string machine_type = 227711026;</code>

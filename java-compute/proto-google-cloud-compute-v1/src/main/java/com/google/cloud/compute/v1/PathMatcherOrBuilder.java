@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,40 @@ public interface PathMatcherOrBuilder
    *
    *
    * <pre>
-   * defaultCustomErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. This policy takes effect at the PathMatcher level and applies only when no policy has been defined for the error code at lower levels like RouteRule and PathRule within this PathMatcher. If an error code does not have a policy defined in defaultCustomErrorResponsePolicy, then a policy defined for the error code in UrlMap.defaultCustomErrorResponsePolicy takes effect. For example, consider a UrlMap with the following configuration: - UrlMap.defaultCustomErrorResponsePolicy is configured with policies for 5xx and 4xx errors - A RouteRule for /coming_soon/ is configured for the error code 404. If the request is for www.myotherdomain.com and a 404 is encountered, the policy under UrlMap.defaultCustomErrorResponsePolicy takes effect. If a 404 response is encountered for the request www.example.com/current_events/, the pathMatcher's policy takes effect. If however, the request for www.example.com/coming_soon/ encounters a 404, the policy in RouteRule.customErrorResponsePolicy takes effect. If any of the requests in this example encounter a 500 error code, the policy at UrlMap.defaultCustomErrorResponsePolicy takes effect. When used in conjunction with pathMatcher.defaultRouteAction.retryPolicy, retries take precedence. Only once all retries are exhausted, the defaultCustomErrorResponsePolicy is applied. While attempting a retry, if load balancer is successful in reaching the service, the defaultCustomErrorResponsePolicy is ignored and the response from the service is returned to the client. defaultCustomErrorResponsePolicy is supported only for global external Application Load Balancers.
+   * defaultCustomErrorResponsePolicy specifies how the Load
+   * Balancer returns error responses when BackendServiceorBackendBucket responds with an error.
+   *
+   * This policy takes
+   * effect at the PathMatcher level and applies only when no
+   * policy has been defined for the error code at lower levels likeRouteRule and PathRule within thisPathMatcher. If an error code does not have a policy defined
+   * in defaultCustomErrorResponsePolicy, then a policy defined for
+   * the error code in UrlMap.defaultCustomErrorResponsePolicy
+   * takes effect.
+   *
+   * For example, consider a UrlMap with the following
+   * configuration:
+   *
+   *
+   *      - UrlMap.defaultCustomErrorResponsePolicy is configured
+   *      with policies for 5xx and 4xx errors
+   *      - A RouteRule for /coming_soon/ is configured for the
+   *      error code 404.
+   *
+   * If the request is for www.myotherdomain.com and a404 is encountered, the policy underUrlMap.defaultCustomErrorResponsePolicy takes effect. If a404 response is encountered for the requestwww.example.com/current_events/, the pathMatcher's policy
+   * takes effect. If however, the request forwww.example.com/coming_soon/ encounters a 404,
+   * the policy in RouteRule.customErrorResponsePolicy takes
+   * effect. If any of the requests in this example encounter a 500
+   * error code, the policy atUrlMap.defaultCustomErrorResponsePolicy takes effect.
+   *
+   * When
+   * used in conjunction withpathMatcher.defaultRouteAction.retryPolicy, retries take
+   * precedence. Only once all retries are exhausted, thedefaultCustomErrorResponsePolicy is applied. While attempting
+   * a retry, if load balancer is successful in reaching the
+   * service, the defaultCustomErrorResponsePolicy is ignored and
+   * the response from the service is returned to the client.
+   *
+   * defaultCustomErrorResponsePolicy is supported only for
+   * global external Application Load Balancers.
    * </pre>
    *
    * <code>
@@ -43,7 +76,40 @@ public interface PathMatcherOrBuilder
    *
    *
    * <pre>
-   * defaultCustomErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. This policy takes effect at the PathMatcher level and applies only when no policy has been defined for the error code at lower levels like RouteRule and PathRule within this PathMatcher. If an error code does not have a policy defined in defaultCustomErrorResponsePolicy, then a policy defined for the error code in UrlMap.defaultCustomErrorResponsePolicy takes effect. For example, consider a UrlMap with the following configuration: - UrlMap.defaultCustomErrorResponsePolicy is configured with policies for 5xx and 4xx errors - A RouteRule for /coming_soon/ is configured for the error code 404. If the request is for www.myotherdomain.com and a 404 is encountered, the policy under UrlMap.defaultCustomErrorResponsePolicy takes effect. If a 404 response is encountered for the request www.example.com/current_events/, the pathMatcher's policy takes effect. If however, the request for www.example.com/coming_soon/ encounters a 404, the policy in RouteRule.customErrorResponsePolicy takes effect. If any of the requests in this example encounter a 500 error code, the policy at UrlMap.defaultCustomErrorResponsePolicy takes effect. When used in conjunction with pathMatcher.defaultRouteAction.retryPolicy, retries take precedence. Only once all retries are exhausted, the defaultCustomErrorResponsePolicy is applied. While attempting a retry, if load balancer is successful in reaching the service, the defaultCustomErrorResponsePolicy is ignored and the response from the service is returned to the client. defaultCustomErrorResponsePolicy is supported only for global external Application Load Balancers.
+   * defaultCustomErrorResponsePolicy specifies how the Load
+   * Balancer returns error responses when BackendServiceorBackendBucket responds with an error.
+   *
+   * This policy takes
+   * effect at the PathMatcher level and applies only when no
+   * policy has been defined for the error code at lower levels likeRouteRule and PathRule within thisPathMatcher. If an error code does not have a policy defined
+   * in defaultCustomErrorResponsePolicy, then a policy defined for
+   * the error code in UrlMap.defaultCustomErrorResponsePolicy
+   * takes effect.
+   *
+   * For example, consider a UrlMap with the following
+   * configuration:
+   *
+   *
+   *      - UrlMap.defaultCustomErrorResponsePolicy is configured
+   *      with policies for 5xx and 4xx errors
+   *      - A RouteRule for /coming_soon/ is configured for the
+   *      error code 404.
+   *
+   * If the request is for www.myotherdomain.com and a404 is encountered, the policy underUrlMap.defaultCustomErrorResponsePolicy takes effect. If a404 response is encountered for the requestwww.example.com/current_events/, the pathMatcher's policy
+   * takes effect. If however, the request forwww.example.com/coming_soon/ encounters a 404,
+   * the policy in RouteRule.customErrorResponsePolicy takes
+   * effect. If any of the requests in this example encounter a 500
+   * error code, the policy atUrlMap.defaultCustomErrorResponsePolicy takes effect.
+   *
+   * When
+   * used in conjunction withpathMatcher.defaultRouteAction.retryPolicy, retries take
+   * precedence. Only once all retries are exhausted, thedefaultCustomErrorResponsePolicy is applied. While attempting
+   * a retry, if load balancer is successful in reaching the
+   * service, the defaultCustomErrorResponsePolicy is ignored and
+   * the response from the service is returned to the client.
+   *
+   * defaultCustomErrorResponsePolicy is supported only for
+   * global external Application Load Balancers.
    * </pre>
    *
    * <code>
@@ -58,7 +124,40 @@ public interface PathMatcherOrBuilder
    *
    *
    * <pre>
-   * defaultCustomErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. This policy takes effect at the PathMatcher level and applies only when no policy has been defined for the error code at lower levels like RouteRule and PathRule within this PathMatcher. If an error code does not have a policy defined in defaultCustomErrorResponsePolicy, then a policy defined for the error code in UrlMap.defaultCustomErrorResponsePolicy takes effect. For example, consider a UrlMap with the following configuration: - UrlMap.defaultCustomErrorResponsePolicy is configured with policies for 5xx and 4xx errors - A RouteRule for /coming_soon/ is configured for the error code 404. If the request is for www.myotherdomain.com and a 404 is encountered, the policy under UrlMap.defaultCustomErrorResponsePolicy takes effect. If a 404 response is encountered for the request www.example.com/current_events/, the pathMatcher's policy takes effect. If however, the request for www.example.com/coming_soon/ encounters a 404, the policy in RouteRule.customErrorResponsePolicy takes effect. If any of the requests in this example encounter a 500 error code, the policy at UrlMap.defaultCustomErrorResponsePolicy takes effect. When used in conjunction with pathMatcher.defaultRouteAction.retryPolicy, retries take precedence. Only once all retries are exhausted, the defaultCustomErrorResponsePolicy is applied. While attempting a retry, if load balancer is successful in reaching the service, the defaultCustomErrorResponsePolicy is ignored and the response from the service is returned to the client. defaultCustomErrorResponsePolicy is supported only for global external Application Load Balancers.
+   * defaultCustomErrorResponsePolicy specifies how the Load
+   * Balancer returns error responses when BackendServiceorBackendBucket responds with an error.
+   *
+   * This policy takes
+   * effect at the PathMatcher level and applies only when no
+   * policy has been defined for the error code at lower levels likeRouteRule and PathRule within thisPathMatcher. If an error code does not have a policy defined
+   * in defaultCustomErrorResponsePolicy, then a policy defined for
+   * the error code in UrlMap.defaultCustomErrorResponsePolicy
+   * takes effect.
+   *
+   * For example, consider a UrlMap with the following
+   * configuration:
+   *
+   *
+   *      - UrlMap.defaultCustomErrorResponsePolicy is configured
+   *      with policies for 5xx and 4xx errors
+   *      - A RouteRule for /coming_soon/ is configured for the
+   *      error code 404.
+   *
+   * If the request is for www.myotherdomain.com and a404 is encountered, the policy underUrlMap.defaultCustomErrorResponsePolicy takes effect. If a404 response is encountered for the requestwww.example.com/current_events/, the pathMatcher's policy
+   * takes effect. If however, the request forwww.example.com/coming_soon/ encounters a 404,
+   * the policy in RouteRule.customErrorResponsePolicy takes
+   * effect. If any of the requests in this example encounter a 500
+   * error code, the policy atUrlMap.defaultCustomErrorResponsePolicy takes effect.
+   *
+   * When
+   * used in conjunction withpathMatcher.defaultRouteAction.retryPolicy, retries take
+   * precedence. Only once all retries are exhausted, thedefaultCustomErrorResponsePolicy is applied. While attempting
+   * a retry, if load balancer is successful in reaching the
+   * service, the defaultCustomErrorResponsePolicy is ignored and
+   * the response from the service is returned to the client.
+   *
+   * defaultCustomErrorResponsePolicy is supported only for
+   * global external Application Load Balancers.
    * </pre>
    *
    * <code>
@@ -72,7 +171,19 @@ public interface PathMatcherOrBuilder
    *
    *
    * <pre>
-   * defaultRouteAction takes effect when none of the pathRules or routeRules match. The load balancer performs advanced routing actions, such as URL rewrites and header transformations, before forwarding the request to the selected backend. Only one of defaultUrlRedirect, defaultService or defaultRouteAction.weightedBackendService can be set. URL maps for classic Application Load Balancers only support the urlRewrite action within a path matcher's defaultRouteAction.
+   * defaultRouteAction takes effect when none of the
+   * pathRules or routeRules match. The load balancer
+   * performs advanced routing actions, such as URL rewrites and
+   * header transformations, before forwarding the request to the
+   * selected backend.
+   *
+   *
+   * Only one of defaultUrlRedirect, defaultService
+   * or defaultRouteAction.weightedBackendService can be set.
+   *
+   *
+   * URL maps for classic Application Load Balancers only support
+   * the urlRewrite action within a path matcher'sdefaultRouteAction.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;
@@ -86,7 +197,19 @@ public interface PathMatcherOrBuilder
    *
    *
    * <pre>
-   * defaultRouteAction takes effect when none of the pathRules or routeRules match. The load balancer performs advanced routing actions, such as URL rewrites and header transformations, before forwarding the request to the selected backend. Only one of defaultUrlRedirect, defaultService or defaultRouteAction.weightedBackendService can be set. URL maps for classic Application Load Balancers only support the urlRewrite action within a path matcher's defaultRouteAction.
+   * defaultRouteAction takes effect when none of the
+   * pathRules or routeRules match. The load balancer
+   * performs advanced routing actions, such as URL rewrites and
+   * header transformations, before forwarding the request to the
+   * selected backend.
+   *
+   *
+   * Only one of defaultUrlRedirect, defaultService
+   * or defaultRouteAction.weightedBackendService can be set.
+   *
+   *
+   * URL maps for classic Application Load Balancers only support
+   * the urlRewrite action within a path matcher'sdefaultRouteAction.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;
@@ -100,7 +223,19 @@ public interface PathMatcherOrBuilder
    *
    *
    * <pre>
-   * defaultRouteAction takes effect when none of the pathRules or routeRules match. The load balancer performs advanced routing actions, such as URL rewrites and header transformations, before forwarding the request to the selected backend. Only one of defaultUrlRedirect, defaultService or defaultRouteAction.weightedBackendService can be set. URL maps for classic Application Load Balancers only support the urlRewrite action within a path matcher's defaultRouteAction.
+   * defaultRouteAction takes effect when none of the
+   * pathRules or routeRules match. The load balancer
+   * performs advanced routing actions, such as URL rewrites and
+   * header transformations, before forwarding the request to the
+   * selected backend.
+   *
+   *
+   * Only one of defaultUrlRedirect, defaultService
+   * or defaultRouteAction.weightedBackendService can be set.
+   *
+   *
+   * URL maps for classic Application Load Balancers only support
+   * the urlRewrite action within a path matcher'sdefaultRouteAction.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;
@@ -112,7 +247,32 @@ public interface PathMatcherOrBuilder
    *
    *
    * <pre>
-   * The full or partial URL to the BackendService resource. This URL is used if none of the pathRules or routeRules defined by this PathMatcher are matched. For example, the following are all valid URLs to a BackendService resource: - https://www.googleapis.com/compute/v1/projects/project /global/backendServices/backendService - compute/v1/projects/project/global/backendServices/backendService - global/backendServices/backendService If defaultRouteAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. Only one of defaultUrlRedirect, defaultService or defaultRouteAction.weightedBackendService can be set. Authorization requires one or more of the following Google IAM permissions on the specified resource default_service: - compute.backendBuckets.use - compute.backendServices.use
+   * The full or partial URL to the BackendService resource. This
+   * URL is used if none of the pathRules orrouteRules defined by this PathMatcher are
+   * matched. For example, the
+   * following are all valid URLs to a BackendService resource:
+   *
+   *
+   *      - https://www.googleapis.com/compute/v1/projects/project/global/backendServices/backendService
+   *      - compute/v1/projects/project/global/backendServices/backendService
+   *      - global/backendServices/backendService
+   *
+   *
+   * If defaultRouteAction is also specified, advanced
+   * routing actions, such as URL rewrites, take effect before sending the
+   * request to the backend.
+   *
+   *
+   * Only one of defaultUrlRedirect, defaultService
+   * or defaultRouteAction.weightedBackendService can be set.
+   *
+   *
+   * Authorization requires one or more of the following Google IAM permissions on the
+   * specified resource default_service:
+   *
+   *
+   *       - compute.backendBuckets.use
+   *       - compute.backendServices.use
    * </pre>
    *
    * <code>optional string default_service = 370242231;</code>
@@ -125,7 +285,32 @@ public interface PathMatcherOrBuilder
    *
    *
    * <pre>
-   * The full or partial URL to the BackendService resource. This URL is used if none of the pathRules or routeRules defined by this PathMatcher are matched. For example, the following are all valid URLs to a BackendService resource: - https://www.googleapis.com/compute/v1/projects/project /global/backendServices/backendService - compute/v1/projects/project/global/backendServices/backendService - global/backendServices/backendService If defaultRouteAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. Only one of defaultUrlRedirect, defaultService or defaultRouteAction.weightedBackendService can be set. Authorization requires one or more of the following Google IAM permissions on the specified resource default_service: - compute.backendBuckets.use - compute.backendServices.use
+   * The full or partial URL to the BackendService resource. This
+   * URL is used if none of the pathRules orrouteRules defined by this PathMatcher are
+   * matched. For example, the
+   * following are all valid URLs to a BackendService resource:
+   *
+   *
+   *      - https://www.googleapis.com/compute/v1/projects/project/global/backendServices/backendService
+   *      - compute/v1/projects/project/global/backendServices/backendService
+   *      - global/backendServices/backendService
+   *
+   *
+   * If defaultRouteAction is also specified, advanced
+   * routing actions, such as URL rewrites, take effect before sending the
+   * request to the backend.
+   *
+   *
+   * Only one of defaultUrlRedirect, defaultService
+   * or defaultRouteAction.weightedBackendService can be set.
+   *
+   *
+   * Authorization requires one or more of the following Google IAM permissions on the
+   * specified resource default_service:
+   *
+   *
+   *       - compute.backendBuckets.use
+   *       - compute.backendServices.use
    * </pre>
    *
    * <code>optional string default_service = 370242231;</code>
@@ -138,7 +323,32 @@ public interface PathMatcherOrBuilder
    *
    *
    * <pre>
-   * The full or partial URL to the BackendService resource. This URL is used if none of the pathRules or routeRules defined by this PathMatcher are matched. For example, the following are all valid URLs to a BackendService resource: - https://www.googleapis.com/compute/v1/projects/project /global/backendServices/backendService - compute/v1/projects/project/global/backendServices/backendService - global/backendServices/backendService If defaultRouteAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. Only one of defaultUrlRedirect, defaultService or defaultRouteAction.weightedBackendService can be set. Authorization requires one or more of the following Google IAM permissions on the specified resource default_service: - compute.backendBuckets.use - compute.backendServices.use
+   * The full or partial URL to the BackendService resource. This
+   * URL is used if none of the pathRules orrouteRules defined by this PathMatcher are
+   * matched. For example, the
+   * following are all valid URLs to a BackendService resource:
+   *
+   *
+   *      - https://www.googleapis.com/compute/v1/projects/project/global/backendServices/backendService
+   *      - compute/v1/projects/project/global/backendServices/backendService
+   *      - global/backendServices/backendService
+   *
+   *
+   * If defaultRouteAction is also specified, advanced
+   * routing actions, such as URL rewrites, take effect before sending the
+   * request to the backend.
+   *
+   *
+   * Only one of defaultUrlRedirect, defaultService
+   * or defaultRouteAction.weightedBackendService can be set.
+   *
+   *
+   * Authorization requires one or more of the following Google IAM permissions on the
+   * specified resource default_service:
+   *
+   *
+   *       - compute.backendBuckets.use
+   *       - compute.backendServices.use
    * </pre>
    *
    * <code>optional string default_service = 370242231;</code>
@@ -151,7 +361,15 @@ public interface PathMatcherOrBuilder
    *
    *
    * <pre>
-   * When none of the specified pathRules or routeRules match, the request is redirected to a URL specified by defaultUrlRedirect. Only one of defaultUrlRedirect, defaultService or defaultRouteAction.weightedBackendService can be set. Not supported when the URL map is bound to a target gRPC proxy.
+   * When none of the specified pathRules orrouteRules match, the request is redirected to a URL specified
+   * by defaultUrlRedirect.
+   *
+   *
+   * Only one of defaultUrlRedirect, defaultService
+   * or defaultRouteAction.weightedBackendService can be set.
+   *
+   *
+   * Not supported when the URL map is bound to a target gRPC proxy.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;
@@ -165,7 +383,15 @@ public interface PathMatcherOrBuilder
    *
    *
    * <pre>
-   * When none of the specified pathRules or routeRules match, the request is redirected to a URL specified by defaultUrlRedirect. Only one of defaultUrlRedirect, defaultService or defaultRouteAction.weightedBackendService can be set. Not supported when the URL map is bound to a target gRPC proxy.
+   * When none of the specified pathRules orrouteRules match, the request is redirected to a URL specified
+   * by defaultUrlRedirect.
+   *
+   *
+   * Only one of defaultUrlRedirect, defaultService
+   * or defaultRouteAction.weightedBackendService can be set.
+   *
+   *
+   * Not supported when the URL map is bound to a target gRPC proxy.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;
@@ -179,7 +405,15 @@ public interface PathMatcherOrBuilder
    *
    *
    * <pre>
-   * When none of the specified pathRules or routeRules match, the request is redirected to a URL specified by defaultUrlRedirect. Only one of defaultUrlRedirect, defaultService or defaultRouteAction.weightedBackendService can be set. Not supported when the URL map is bound to a target gRPC proxy.
+   * When none of the specified pathRules orrouteRules match, the request is redirected to a URL specified
+   * by defaultUrlRedirect.
+   *
+   *
+   * Only one of defaultUrlRedirect, defaultService
+   * or defaultRouteAction.weightedBackendService can be set.
+   *
+   *
+   * Not supported when the URL map is bound to a target gRPC proxy.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;
@@ -191,7 +425,8 @@ public interface PathMatcherOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -204,7 +439,8 @@ public interface PathMatcherOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -217,7 +453,8 @@ public interface PathMatcherOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -230,7 +467,17 @@ public interface PathMatcherOrBuilder
    *
    *
    * <pre>
-   * Specifies changes to request and response headers that need to take effect for the selected backend service. HeaderAction specified here are applied after the matching HttpRouteRule HeaderAction and before the HeaderAction in the UrlMap HeaderAction is not supported for load balancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to a target gRPC proxy that has validateForProxyless field set to true.
+   * Specifies changes to request and response headers that need to take effect
+   * for the selected backend service.
+   *
+   * HeaderAction specified here are applied after the matchingHttpRouteRule HeaderAction and before theHeaderAction in the UrlMap
+   *
+   * HeaderAction is not supported for load balancers
+   * that have
+   * their loadBalancingScheme set to EXTERNAL.
+   *
+   * Not supported when the URL map is bound to a target gRPC proxy that
+   * has validateForProxyless field set to true.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
@@ -243,7 +490,17 @@ public interface PathMatcherOrBuilder
    *
    *
    * <pre>
-   * Specifies changes to request and response headers that need to take effect for the selected backend service. HeaderAction specified here are applied after the matching HttpRouteRule HeaderAction and before the HeaderAction in the UrlMap HeaderAction is not supported for load balancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to a target gRPC proxy that has validateForProxyless field set to true.
+   * Specifies changes to request and response headers that need to take effect
+   * for the selected backend service.
+   *
+   * HeaderAction specified here are applied after the matchingHttpRouteRule HeaderAction and before theHeaderAction in the UrlMap
+   *
+   * HeaderAction is not supported for load balancers
+   * that have
+   * their loadBalancingScheme set to EXTERNAL.
+   *
+   * Not supported when the URL map is bound to a target gRPC proxy that
+   * has validateForProxyless field set to true.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
@@ -256,7 +513,17 @@ public interface PathMatcherOrBuilder
    *
    *
    * <pre>
-   * Specifies changes to request and response headers that need to take effect for the selected backend service. HeaderAction specified here are applied after the matching HttpRouteRule HeaderAction and before the HeaderAction in the UrlMap HeaderAction is not supported for load balancers that have their loadBalancingScheme set to EXTERNAL. Not supported when the URL map is bound to a target gRPC proxy that has validateForProxyless field set to true.
+   * Specifies changes to request and response headers that need to take effect
+   * for the selected backend service.
+   *
+   * HeaderAction specified here are applied after the matchingHttpRouteRule HeaderAction and before theHeaderAction in the UrlMap
+   *
+   * HeaderAction is not supported for load balancers
+   * that have
+   * their loadBalancingScheme set to EXTERNAL.
+   *
+   * Not supported when the URL map is bound to a target gRPC proxy that
+   * has validateForProxyless field set to true.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
@@ -267,7 +534,7 @@ public interface PathMatcherOrBuilder
    *
    *
    * <pre>
-   * The name to which this PathMatcher is referred by the HostRule.
+   * The name to which this PathMatcher is referred by theHostRule.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -280,7 +547,7 @@ public interface PathMatcherOrBuilder
    *
    *
    * <pre>
-   * The name to which this PathMatcher is referred by the HostRule.
+   * The name to which this PathMatcher is referred by theHostRule.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -293,7 +560,7 @@ public interface PathMatcherOrBuilder
    *
    *
    * <pre>
-   * The name to which this PathMatcher is referred by the HostRule.
+   * The name to which this PathMatcher is referred by theHostRule.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -306,7 +573,19 @@ public interface PathMatcherOrBuilder
    *
    *
    * <pre>
-   * The list of path rules. Use this list instead of routeRules when routing based on simple path matching is all that's required. The order by which path rules are specified does not matter. Matches are always done on the longest-path-first basis. For example: a pathRule with a path /a/b/c/&#42; will match before /a/b/&#42; irrespective of the order in which those paths appear in this list. Within a given pathMatcher, only one of pathRules or routeRules must be set.
+   * The list of path rules. Use this list instead of routeRules
+   * when routing based on simple path matching is all that's required. A path
+   * rule can only include a wildcard character (*) after a
+   * forward slash character ("/").
+   *
+   * The order by which path rules are specified does not matter.
+   * Matches are always done on the longest-path-first basis.
+   *
+   * For example: a pathRule with a path /a/b/c/&#42; will match
+   * before /a/b/&#42; irrespective of the order in which those paths appear in this
+   * list.
+   *
+   * Within a given pathMatcher, only one ofpathRules or routeRules must be set.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.PathRule path_rules = 104439901;</code>
@@ -317,7 +596,19 @@ public interface PathMatcherOrBuilder
    *
    *
    * <pre>
-   * The list of path rules. Use this list instead of routeRules when routing based on simple path matching is all that's required. The order by which path rules are specified does not matter. Matches are always done on the longest-path-first basis. For example: a pathRule with a path /a/b/c/&#42; will match before /a/b/&#42; irrespective of the order in which those paths appear in this list. Within a given pathMatcher, only one of pathRules or routeRules must be set.
+   * The list of path rules. Use this list instead of routeRules
+   * when routing based on simple path matching is all that's required. A path
+   * rule can only include a wildcard character (*) after a
+   * forward slash character ("/").
+   *
+   * The order by which path rules are specified does not matter.
+   * Matches are always done on the longest-path-first basis.
+   *
+   * For example: a pathRule with a path /a/b/c/&#42; will match
+   * before /a/b/&#42; irrespective of the order in which those paths appear in this
+   * list.
+   *
+   * Within a given pathMatcher, only one ofpathRules or routeRules must be set.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.PathRule path_rules = 104439901;</code>
@@ -328,7 +619,19 @@ public interface PathMatcherOrBuilder
    *
    *
    * <pre>
-   * The list of path rules. Use this list instead of routeRules when routing based on simple path matching is all that's required. The order by which path rules are specified does not matter. Matches are always done on the longest-path-first basis. For example: a pathRule with a path /a/b/c/&#42; will match before /a/b/&#42; irrespective of the order in which those paths appear in this list. Within a given pathMatcher, only one of pathRules or routeRules must be set.
+   * The list of path rules. Use this list instead of routeRules
+   * when routing based on simple path matching is all that's required. A path
+   * rule can only include a wildcard character (*) after a
+   * forward slash character ("/").
+   *
+   * The order by which path rules are specified does not matter.
+   * Matches are always done on the longest-path-first basis.
+   *
+   * For example: a pathRule with a path /a/b/c/&#42; will match
+   * before /a/b/&#42; irrespective of the order in which those paths appear in this
+   * list.
+   *
+   * Within a given pathMatcher, only one ofpathRules or routeRules must be set.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.PathRule path_rules = 104439901;</code>
@@ -339,7 +642,19 @@ public interface PathMatcherOrBuilder
    *
    *
    * <pre>
-   * The list of path rules. Use this list instead of routeRules when routing based on simple path matching is all that's required. The order by which path rules are specified does not matter. Matches are always done on the longest-path-first basis. For example: a pathRule with a path /a/b/c/&#42; will match before /a/b/&#42; irrespective of the order in which those paths appear in this list. Within a given pathMatcher, only one of pathRules or routeRules must be set.
+   * The list of path rules. Use this list instead of routeRules
+   * when routing based on simple path matching is all that's required. A path
+   * rule can only include a wildcard character (*) after a
+   * forward slash character ("/").
+   *
+   * The order by which path rules are specified does not matter.
+   * Matches are always done on the longest-path-first basis.
+   *
+   * For example: a pathRule with a path /a/b/c/&#42; will match
+   * before /a/b/&#42; irrespective of the order in which those paths appear in this
+   * list.
+   *
+   * Within a given pathMatcher, only one ofpathRules or routeRules must be set.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.PathRule path_rules = 104439901;</code>
@@ -351,7 +666,19 @@ public interface PathMatcherOrBuilder
    *
    *
    * <pre>
-   * The list of path rules. Use this list instead of routeRules when routing based on simple path matching is all that's required. The order by which path rules are specified does not matter. Matches are always done on the longest-path-first basis. For example: a pathRule with a path /a/b/c/&#42; will match before /a/b/&#42; irrespective of the order in which those paths appear in this list. Within a given pathMatcher, only one of pathRules or routeRules must be set.
+   * The list of path rules. Use this list instead of routeRules
+   * when routing based on simple path matching is all that's required. A path
+   * rule can only include a wildcard character (*) after a
+   * forward slash character ("/").
+   *
+   * The order by which path rules are specified does not matter.
+   * Matches are always done on the longest-path-first basis.
+   *
+   * For example: a pathRule with a path /a/b/c/&#42; will match
+   * before /a/b/&#42; irrespective of the order in which those paths appear in this
+   * list.
+   *
+   * Within a given pathMatcher, only one ofpathRules or routeRules must be set.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.PathRule path_rules = 104439901;</code>
@@ -362,7 +689,11 @@ public interface PathMatcherOrBuilder
    *
    *
    * <pre>
-   * The list of HTTP route rules. Use this list instead of pathRules when advanced route matching and routing actions are desired. routeRules are evaluated in order of priority, from the lowest to highest number. Within a given pathMatcher, you can set only one of pathRules or routeRules.
+   * The list of HTTP route rules. Use this list instead ofpathRules when advanced route matching and routing actions are
+   * desired. routeRules are evaluated in order of priority, from
+   * the lowest to highest number.
+   *
+   * Within a given pathMatcher, you can set only one ofpathRules or routeRules.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HttpRouteRule route_rules = 376292225;</code>
@@ -373,7 +704,11 @@ public interface PathMatcherOrBuilder
    *
    *
    * <pre>
-   * The list of HTTP route rules. Use this list instead of pathRules when advanced route matching and routing actions are desired. routeRules are evaluated in order of priority, from the lowest to highest number. Within a given pathMatcher, you can set only one of pathRules or routeRules.
+   * The list of HTTP route rules. Use this list instead ofpathRules when advanced route matching and routing actions are
+   * desired. routeRules are evaluated in order of priority, from
+   * the lowest to highest number.
+   *
+   * Within a given pathMatcher, you can set only one ofpathRules or routeRules.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HttpRouteRule route_rules = 376292225;</code>
@@ -384,7 +719,11 @@ public interface PathMatcherOrBuilder
    *
    *
    * <pre>
-   * The list of HTTP route rules. Use this list instead of pathRules when advanced route matching and routing actions are desired. routeRules are evaluated in order of priority, from the lowest to highest number. Within a given pathMatcher, you can set only one of pathRules or routeRules.
+   * The list of HTTP route rules. Use this list instead ofpathRules when advanced route matching and routing actions are
+   * desired. routeRules are evaluated in order of priority, from
+   * the lowest to highest number.
+   *
+   * Within a given pathMatcher, you can set only one ofpathRules or routeRules.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HttpRouteRule route_rules = 376292225;</code>
@@ -395,7 +734,11 @@ public interface PathMatcherOrBuilder
    *
    *
    * <pre>
-   * The list of HTTP route rules. Use this list instead of pathRules when advanced route matching and routing actions are desired. routeRules are evaluated in order of priority, from the lowest to highest number. Within a given pathMatcher, you can set only one of pathRules or routeRules.
+   * The list of HTTP route rules. Use this list instead ofpathRules when advanced route matching and routing actions are
+   * desired. routeRules are evaluated in order of priority, from
+   * the lowest to highest number.
+   *
+   * Within a given pathMatcher, you can set only one ofpathRules or routeRules.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HttpRouteRule route_rules = 376292225;</code>
@@ -407,7 +750,11 @@ public interface PathMatcherOrBuilder
    *
    *
    * <pre>
-   * The list of HTTP route rules. Use this list instead of pathRules when advanced route matching and routing actions are desired. routeRules are evaluated in order of priority, from the lowest to highest number. Within a given pathMatcher, you can set only one of pathRules or routeRules.
+   * The list of HTTP route rules. Use this list instead ofpathRules when advanced route matching and routing actions are
+   * desired. routeRules are evaluated in order of priority, from
+   * the lowest to highest number.
+   *
+   * Within a given pathMatcher, you can set only one ofpathRules or routeRules.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HttpRouteRule route_rules = 376292225;</code>

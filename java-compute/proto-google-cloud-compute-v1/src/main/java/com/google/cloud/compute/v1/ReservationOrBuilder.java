@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,8 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Advanced control for cluster management, applicable only to DENSE deployment type reservations.
+   * Advanced control for cluster management, applicable only to DENSE
+   * deployment type reservations.
    * </pre>
    *
    * <code>
@@ -43,7 +44,8 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Advanced control for cluster management, applicable only to DENSE deployment type reservations.
+   * Advanced control for cluster management, applicable only to DENSE
+   * deployment type reservations.
    * </pre>
    *
    * <code>
@@ -58,7 +60,8 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Advanced control for cluster management, applicable only to DENSE deployment type reservations.
+   * Advanced control for cluster management, applicable only to DENSE
+   * deployment type reservations.
    * </pre>
    *
    * <code>
@@ -116,7 +119,8 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
+   * Output only. [Output Only] Full or partial URL to a parent commitment. This field
+   * displays for reservations that are tied to a commitment.
    * </pre>
    *
    * <code>optional string commitment = 482134805;</code>
@@ -129,7 +133,8 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
+   * Output only. [Output Only] Full or partial URL to a parent commitment. This field
+   * displays for reservations that are tied to a commitment.
    * </pre>
    *
    * <code>optional string commitment = 482134805;</code>
@@ -142,7 +147,8 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
+   * Output only. [Output Only] Full or partial URL to a parent commitment. This field
+   * displays for reservations that are tied to a commitment.
    * </pre>
    *
    * <code>optional string commitment = 482134805;</code>
@@ -155,7 +161,8 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -168,7 +175,8 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -181,7 +189,8 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -194,7 +203,8 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Duration time relative to reservation creation when Compute Engine will automatically delete this resource.
+   * Duration time relative to reservation creation when Compute Engine will
+   * automatically delete this resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Duration delete_after_duration = 323997099;</code>
@@ -207,7 +217,8 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Duration time relative to reservation creation when Compute Engine will automatically delete this resource.
+   * Duration time relative to reservation creation when Compute Engine will
+   * automatically delete this resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Duration delete_after_duration = 323997099;</code>
@@ -220,7 +231,8 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Duration time relative to reservation creation when Compute Engine will automatically delete this resource.
+   * Duration time relative to reservation creation when Compute Engine will
+   * automatically delete this resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Duration delete_after_duration = 323997099;</code>
@@ -231,7 +243,8 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Absolute time in future when the reservation will be auto-deleted by Compute Engine. Timestamp is represented in RFC3339 text format.
+   * Absolute time in future when the reservation will be
+   *  auto-deleted by Compute Engine. Timestamp is represented inRFC3339 text format.
    * </pre>
    *
    * <code>optional string delete_at_time = 83294405;</code>
@@ -244,7 +257,8 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Absolute time in future when the reservation will be auto-deleted by Compute Engine. Timestamp is represented in RFC3339 text format.
+   * Absolute time in future when the reservation will be
+   *  auto-deleted by Compute Engine. Timestamp is represented inRFC3339 text format.
    * </pre>
    *
    * <code>optional string delete_at_time = 83294405;</code>
@@ -257,7 +271,8 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Absolute time in future when the reservation will be auto-deleted by Compute Engine. Timestamp is represented in RFC3339 text format.
+   * Absolute time in future when the reservation will be
+   *  auto-deleted by Compute Engine. Timestamp is represented inRFC3339 text format.
    * </pre>
    *
    * <code>optional string delete_at_time = 83294405;</code>
@@ -312,7 +327,8 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -325,7 +341,8 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -338,7 +355,8 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -351,7 +369,8 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Indicates whether Compute Engine allows unplanned maintenance for your VMs; for example, to fix hardware errors.
+   * Indicates whether Compute Engine allows unplanned maintenance for your VMs;
+   * for example, to fix hardware errors.
    * </pre>
    *
    * <code>optional bool enable_emergent_maintenance = 353759497;</code>
@@ -364,7 +383,8 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Indicates whether Compute Engine allows unplanned maintenance for your VMs; for example, to fix hardware errors.
+   * Indicates whether Compute Engine allows unplanned maintenance for your VMs;
+   * for example, to fix hardware errors.
    * </pre>
    *
    * <code>optional bool enable_emergent_maintenance = 353759497;</code>
@@ -377,7 +397,8 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -390,7 +411,8 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -403,7 +425,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#reservations for reservations.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#reservations for reservations.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -416,7 +438,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#reservations for reservations.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#reservations for reservations.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -429,7 +451,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#reservations for reservations.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#reservations for reservations.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -442,7 +464,8 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Full or partial URL to parent commitments. This field displays for reservations that are tied to multiple commitments.
+   * Output only. [Output Only] Full or partial URL to parent commitments. This field
+   * displays for reservations that are tied to multiple commitments.
    * </pre>
    *
    * <code>repeated string linked_commitments = 470957784;</code>
@@ -455,7 +478,8 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Full or partial URL to parent commitments. This field displays for reservations that are tied to multiple commitments.
+   * Output only. [Output Only] Full or partial URL to parent commitments. This field
+   * displays for reservations that are tied to multiple commitments.
    * </pre>
    *
    * <code>repeated string linked_commitments = 470957784;</code>
@@ -468,7 +492,8 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Full or partial URL to parent commitments. This field displays for reservations that are tied to multiple commitments.
+   * Output only. [Output Only] Full or partial URL to parent commitments. This field
+   * displays for reservations that are tied to multiple commitments.
    * </pre>
    *
    * <code>repeated string linked_commitments = 470957784;</code>
@@ -482,7 +507,8 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Full or partial URL to parent commitments. This field displays for reservations that are tied to multiple commitments.
+   * Output only. [Output Only] Full or partial URL to parent commitments. This field
+   * displays for reservations that are tied to multiple commitments.
    * </pre>
    *
    * <code>repeated string linked_commitments = 470957784;</code>
@@ -496,7 +522,14 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * The name of the resource, provided by the client when initially creating
+   * the resource. The resource name must be 1-63 characters long, and comply
+   * withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be
+   * a dash, lowercase letter, or digit, except the last character, which cannot
+   * be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -509,7 +542,14 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * The name of the resource, provided by the client when initially creating
+   * the resource. The resource name must be 1-63 characters long, and comply
+   * withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be
+   * a dash, lowercase letter, or digit, except the last character, which cannot
+   * be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -522,7 +562,14 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * The name of the resource, provided by the client when initially creating
+   * the resource. The resource name must be 1-63 characters long, and comply
+   * withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be
+   * a dash, lowercase letter, or digit, except the last character, which cannot
+   * be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -535,7 +582,56 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Specify the reservation sharing policy. If unspecified, the reservation will not be shared with Google Cloud managed services.
+   * Protection tier for the workload which specifies the workload expectations
+   * in the event of infrastructure failures at data center (e.g. power
+   * and/or cooling failures).
+   * Check the ProtectionTier enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string protection_tier = 503959432;</code>
+   *
+   * @return Whether the protectionTier field is set.
+   */
+  boolean hasProtectionTier();
+
+  /**
+   *
+   *
+   * <pre>
+   * Protection tier for the workload which specifies the workload expectations
+   * in the event of infrastructure failures at data center (e.g. power
+   * and/or cooling failures).
+   * Check the ProtectionTier enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string protection_tier = 503959432;</code>
+   *
+   * @return The protectionTier.
+   */
+  java.lang.String getProtectionTier();
+
+  /**
+   *
+   *
+   * <pre>
+   * Protection tier for the workload which specifies the workload expectations
+   * in the event of infrastructure failures at data center (e.g. power
+   * and/or cooling failures).
+   * Check the ProtectionTier enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string protection_tier = 503959432;</code>
+   *
+   * @return The bytes for protectionTier.
+   */
+  com.google.protobuf.ByteString getProtectionTierBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specify the reservation sharing policy. If unspecified, the reservation
+   * will not be shared with Google Cloud managed services.
    * </pre>
    *
    * <code>
@@ -550,7 +646,8 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Specify the reservation sharing policy. If unspecified, the reservation will not be shared with Google Cloud managed services.
+   * Specify the reservation sharing policy. If unspecified, the reservation
+   * will not be shared with Google Cloud managed services.
    * </pre>
    *
    * <code>
@@ -565,7 +662,8 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Specify the reservation sharing policy. If unspecified, the reservation will not be shared with Google Cloud managed services.
+   * Specify the reservation sharing policy. If unspecified, the reservation
+   * will not be shared with Google Cloud managed services.
    * </pre>
    *
    * <code>
@@ -579,7 +677,9 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+   * Resource policies to be added to this reservation. The key is defined by
+   * user, and the value is resource policy url. This is to define placement
+   * policy with reservation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
@@ -590,7 +690,9 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+   * Resource policies to be added to this reservation. The key is defined by
+   * user, and the value is resource policy url. This is to define placement
+   * policy with reservation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
@@ -605,7 +707,9 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+   * Resource policies to be added to this reservation. The key is defined by
+   * user, and the value is resource policy url. This is to define placement
+   * policy with reservation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
@@ -616,7 +720,9 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+   * Resource policies to be added to this reservation. The key is defined by
+   * user, and the value is resource policy url. This is to define placement
+   * policy with reservation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
@@ -631,7 +737,9 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+   * Resource policies to be added to this reservation. The key is defined by
+   * user, and the value is resource policy url. This is to define placement
+   * policy with reservation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
@@ -642,7 +750,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Status information for Reservation resource.
+   * Output only. [Output Only] Status information for Reservation resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.AllocationResourceStatus resource_status = 249429315;
@@ -656,7 +764,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Status information for Reservation resource.
+   * Output only. [Output Only] Status information for Reservation resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.AllocationResourceStatus resource_status = 249429315;
@@ -670,7 +778,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Status information for Reservation resource.
+   * Output only. [Output Only] Status information for Reservation resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.AllocationResourceStatus resource_status = 249429315;
@@ -682,7 +790,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -695,7 +803,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -750,7 +858,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -763,7 +871,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -776,7 +884,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -789,7 +897,10 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Specify share-settings to create a shared reservation. This property is optional. For more information about the syntax and options for this field and its subfields, see the guide for creating a shared reservation.
+   * Specify share-settings to create a shared reservation. This property is
+   * optional. For more information about the syntax and options for this
+   * field and its subfields, see the guide for creating
+   * a shared reservation.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
@@ -802,7 +913,10 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Specify share-settings to create a shared reservation. This property is optional. For more information about the syntax and options for this field and its subfields, see the guide for creating a shared reservation.
+   * Specify share-settings to create a shared reservation. This property is
+   * optional. For more information about the syntax and options for this
+   * field and its subfields, see the guide for creating
+   * a shared reservation.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
@@ -815,7 +929,10 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Specify share-settings to create a shared reservation. This property is optional. For more information about the syntax and options for this field and its subfields, see the guide for creating a shared reservation.
+   * Specify share-settings to create a shared reservation. This property is
+   * optional. For more information about the syntax and options for this
+   * field and its subfields, see the guide for creating
+   * a shared reservation.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
@@ -870,7 +987,9 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Indicates whether the reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from this reservation.
+   * Indicates whether the reservation can be consumed by VMs with affinity
+   * for "any" reservation. If the field is set, then only VMs that target
+   * the reservation by name can consume from this reservation.
    * </pre>
    *
    * <code>optional bool specific_reservation_required = 226550687;</code>
@@ -883,7 +1002,9 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Indicates whether the reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from this reservation.
+   * Indicates whether the reservation can be consumed by VMs with affinity
+   * for "any" reservation. If the field is set, then only VMs that target
+   * the reservation by name can consume from this reservation.
    * </pre>
    *
    * <code>optional bool specific_reservation_required = 226550687;</code>
@@ -896,7 +1017,15 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress.
+   * Output only. [Output Only] The status of the reservation.
+   *
+   *
+   *      - CREATING: Reservation resources are being
+   *        allocated.
+   *      - READY: Reservation resources have been allocated,
+   *        and the reservation is ready for use.
+   *      - DELETING: Reservation deletion is in progress.
+   *      - UPDATING: Reservation update is in progress.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -910,7 +1039,15 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress.
+   * Output only. [Output Only] The status of the reservation.
+   *
+   *
+   *      - CREATING: Reservation resources are being
+   *        allocated.
+   *      - READY: Reservation resources have been allocated,
+   *        and the reservation is ready for use.
+   *      - DELETING: Reservation deletion is in progress.
+   *      - UPDATING: Reservation update is in progress.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -924,7 +1061,15 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress.
+   * Output only. [Output Only] The status of the reservation.
+   *
+   *
+   *      - CREATING: Reservation resources are being
+   *        allocated.
+   *      - READY: Reservation resources have been allocated,
+   *        and the reservation is ready for use.
+   *      - DELETING: Reservation deletion is in progress.
+   *      - UPDATING: Reservation update is in progress.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -938,7 +1083,8 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Zone in which the reservation resides. A zone must be provided if the reservation is created within a commitment.
+   * Zone in which the reservation resides. A zone must be provided if the
+   * reservation is created within a commitment.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -951,7 +1097,8 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Zone in which the reservation resides. A zone must be provided if the reservation is created within a commitment.
+   * Zone in which the reservation resides. A zone must be provided if the
+   * reservation is created within a commitment.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -964,7 +1111,8 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Zone in which the reservation resides. A zone must be provided if the reservation is created within a commitment.
+   * Zone in which the reservation resides. A zone must be provided if the
+   * reservation is created within a commitment.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>

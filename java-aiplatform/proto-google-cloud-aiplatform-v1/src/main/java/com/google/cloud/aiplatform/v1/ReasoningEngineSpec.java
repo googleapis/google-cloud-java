@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -153,8 +153,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The Python version. Currently support 3.8, 3.9, 3.10, 3.11.
-     * If not specified, default value is 3.10.
+     * Optional. The Python version. Supported values
+     * are 3.9, 3.10, 3.11, 3.12, 3.13. If not specified, the default value
+     * is 3.10.
      * </pre>
      *
      * <code>string python_version = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -167,8 +168,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The Python version. Currently support 3.8, 3.9, 3.10, 3.11.
-     * If not specified, default value is 3.10.
+     * Optional. The Python version. Supported values
+     * are 3.9, 3.10, 3.11, 3.12, 3.13. If not specified, the default value
+     * is 3.10.
      * </pre>
      *
      * <code>string python_version = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -395,8 +397,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The Python version. Currently support 3.8, 3.9, 3.10, 3.11.
-     * If not specified, default value is 3.10.
+     * Optional. The Python version. Supported values
+     * are 3.9, 3.10, 3.11, 3.12, 3.13. If not specified, the default value
+     * is 3.10.
      * </pre>
      *
      * <code>string python_version = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -420,8 +423,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The Python version. Currently support 3.8, 3.9, 3.10, 3.11.
-     * If not specified, default value is 3.10.
+     * Optional. The Python version. Supported values
+     * are 3.9, 3.10, 3.11, 3.12, 3.13. If not specified, the default value
+     * is 3.10.
      * </pre>
      *
      * <code>string python_version = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1205,8 +1209,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. The Python version. Currently support 3.8, 3.9, 3.10, 3.11.
-       * If not specified, default value is 3.10.
+       * Optional. The Python version. Supported values
+       * are 3.9, 3.10, 3.11, 3.12, 3.13. If not specified, the default value
+       * is 3.10.
        * </pre>
        *
        * <code>string python_version = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1229,8 +1234,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. The Python version. Currently support 3.8, 3.9, 3.10, 3.11.
-       * If not specified, default value is 3.10.
+       * Optional. The Python version. Supported values
+       * are 3.9, 3.10, 3.11, 3.12, 3.13. If not specified, the default value
+       * is 3.10.
        * </pre>
        *
        * <code>string python_version = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1253,8 +1259,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. The Python version. Currently support 3.8, 3.9, 3.10, 3.11.
-       * If not specified, default value is 3.10.
+       * Optional. The Python version. Supported values
+       * are 3.9, 3.10, 3.11, 3.12, 3.13. If not specified, the default value
+       * is 3.10.
        * </pre>
        *
        * <code>string python_version = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1276,8 +1283,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. The Python version. Currently support 3.8, 3.9, 3.10, 3.11.
-       * If not specified, default value is 3.10.
+       * Optional. The Python version. Supported values
+       * are 3.9, 3.10, 3.11, 3.12, 3.13. If not specified, the default value
+       * is 3.10.
        * </pre>
        *
        * <code>string python_version = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1295,8 +1303,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. The Python version. Currently support 3.8, 3.9, 3.10, 3.11.
-       * If not specified, default value is 3.10.
+       * Optional. The Python version. Supported values
+       * are 3.9, 3.10, 3.11, 3.12, 3.13. If not specified, the default value
+       * is 3.10.
        * </pre>
        *
        * <code>string python_version = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4787,6 +4796,52 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
+     * Source code is in a Git repository managed by Developer Connect.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource developer_connect_source = 3;
+     * </code>
+     *
+     * @return Whether the developerConnectSource field is set.
+     */
+    boolean hasDeveloperConnectSource();
+
+    /**
+     *
+     *
+     * <pre>
+     * Source code is in a Git repository managed by Developer Connect.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource developer_connect_source = 3;
+     * </code>
+     *
+     * @return The developerConnectSource.
+     */
+    com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource
+        getDeveloperConnectSource();
+
+    /**
+     *
+     *
+     * <pre>
+     * Source code is in a Git repository managed by Developer Connect.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource developer_connect_source = 3;
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+            .DeveloperConnectSourceOrBuilder
+        getDeveloperConnectSourceOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * Configuration for a Python application.
      * </pre>
      *
@@ -4886,8 +4941,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Required. Input only. The application source code archive, provided as
-       * a compressed tarball
-       * (.tar.gz) file.
+       * a compressed tarball (.tar.gz) file.
        * </pre>
        *
        * <code>
@@ -4955,8 +5009,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Required. Input only. The application source code archive, provided as
-       * a compressed tarball
-       * (.tar.gz) file.
+       * a compressed tarball (.tar.gz) file.
        * </pre>
        *
        * <code>
@@ -5352,8 +5405,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
          *
          * <pre>
          * Required. Input only. The application source code archive, provided as
-         * a compressed tarball
-         * (.tar.gz) file.
+         * a compressed tarball (.tar.gz) file.
          * </pre>
          *
          * <code>
@@ -5372,8 +5424,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
          *
          * <pre>
          * Required. Input only. The application source code archive, provided as
-         * a compressed tarball
-         * (.tar.gz) file.
+         * a compressed tarball (.tar.gz) file.
          * </pre>
          *
          * <code>
@@ -5398,8 +5449,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
          *
          * <pre>
          * Required. Input only. The application source code archive, provided as
-         * a compressed tarball
-         * (.tar.gz) file.
+         * a compressed tarball (.tar.gz) file.
          * </pre>
          *
          * <code>
@@ -5479,6 +5529,2132 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
 
       @java.lang.Override
       public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.InlineSource
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface DeveloperConnectConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectConfig)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Developer Connect Git repository link, formatted as
+       * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLink/&#42;`.
+       * </pre>
+       *
+       * <code>
+       * string git_repository_link = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The gitRepositoryLink.
+       */
+      java.lang.String getGitRepositoryLink();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Developer Connect Git repository link, formatted as
+       * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLink/&#42;`.
+       * </pre>
+       *
+       * <code>
+       * string git_repository_link = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for gitRepositoryLink.
+       */
+      com.google.protobuf.ByteString getGitRepositoryLinkBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Directory, relative to the source root, in which to run the
+       * build.
+       * </pre>
+       *
+       * <code>string dir = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The dir.
+       */
+      java.lang.String getDir();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Directory, relative to the source root, in which to run the
+       * build.
+       * </pre>
+       *
+       * <code>string dir = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for dir.
+       */
+      com.google.protobuf.ByteString getDirBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The revision to fetch from the Git repository such as a
+       * branch, a tag, a commit SHA, or any Git ref.
+       * </pre>
+       *
+       * <code>string revision = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The revision.
+       */
+      java.lang.String getRevision();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The revision to fetch from the Git repository such as a
+       * branch, a tag, a commit SHA, or any Git ref.
+       * </pre>
+       *
+       * <code>string revision = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for revision.
+       */
+      com.google.protobuf.ByteString getRevisionBytes();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the configuration for fetching source code from a Git
+     * repository that is managed by Developer Connect. This includes the
+     * repository, revision, and directory to use.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectConfig}
+     */
+    public static final class DeveloperConnectConfig extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectConfig)
+        DeveloperConnectConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use DeveloperConnectConfig.newBuilder() to construct.
+      private DeveloperConnectConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private DeveloperConnectConfig() {
+        gitRepositoryLink_ = "";
+        dir_ = "";
+        revision_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new DeveloperConnectConfig();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+            .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_DeveloperConnectConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+            .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_DeveloperConnectConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                    .DeveloperConnectConfig.class,
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                    .DeveloperConnectConfig.Builder.class);
+      }
+
+      public static final int GIT_REPOSITORY_LINK_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object gitRepositoryLink_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Developer Connect Git repository link, formatted as
+       * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLink/&#42;`.
+       * </pre>
+       *
+       * <code>
+       * string git_repository_link = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The gitRepositoryLink.
+       */
+      @java.lang.Override
+      public java.lang.String getGitRepositoryLink() {
+        java.lang.Object ref = gitRepositoryLink_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          gitRepositoryLink_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Developer Connect Git repository link, formatted as
+       * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLink/&#42;`.
+       * </pre>
+       *
+       * <code>
+       * string git_repository_link = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for gitRepositoryLink.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getGitRepositoryLinkBytes() {
+        java.lang.Object ref = gitRepositoryLink_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          gitRepositoryLink_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int DIR_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object dir_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Directory, relative to the source root, in which to run the
+       * build.
+       * </pre>
+       *
+       * <code>string dir = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The dir.
+       */
+      @java.lang.Override
+      public java.lang.String getDir() {
+        java.lang.Object ref = dir_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          dir_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Directory, relative to the source root, in which to run the
+       * build.
+       * </pre>
+       *
+       * <code>string dir = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for dir.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getDirBytes() {
+        java.lang.Object ref = dir_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          dir_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int REVISION_FIELD_NUMBER = 3;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object revision_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The revision to fetch from the Git repository such as a
+       * branch, a tag, a commit SHA, or any Git ref.
+       * </pre>
+       *
+       * <code>string revision = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The revision.
+       */
+      @java.lang.Override
+      public java.lang.String getRevision() {
+        java.lang.Object ref = revision_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          revision_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The revision to fetch from the Git repository such as a
+       * branch, a tag, a commit SHA, or any Git ref.
+       * </pre>
+       *
+       * <code>string revision = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for revision.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getRevisionBytes() {
+        java.lang.Object ref = revision_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          revision_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gitRepositoryLink_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, gitRepositoryLink_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dir_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, dir_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(revision_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, revision_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gitRepositoryLink_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, gitRepositoryLink_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dir_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, dir_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(revision_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, revision_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                .DeveloperConnectConfig)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectConfig
+            other =
+                (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                        .DeveloperConnectConfig)
+                    obj;
+
+        if (!getGitRepositoryLink().equals(other.getGitRepositoryLink())) return false;
+        if (!getDir().equals(other.getDir())) return false;
+        if (!getRevision().equals(other.getRevision())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + GIT_REPOSITORY_LINK_FIELD_NUMBER;
+        hash = (53 * hash) + getGitRepositoryLink().hashCode();
+        hash = (37 * hash) + DIR_FIELD_NUMBER;
+        hash = (53 * hash) + getDir().hashCode();
+        hash = (37 * hash) + REVISION_FIELD_NUMBER;
+        hash = (53 * hash) + getRevision().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectConfig
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectConfig
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectConfig
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectConfig
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectConfig
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectConfig
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectConfig
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectConfig
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectConfig
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectConfig
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectConfig
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectConfig
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectConfig
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the configuration for fetching source code from a Git
+       * repository that is managed by Developer Connect. This includes the
+       * repository, revision, and directory to use.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectConfig)
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+              .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_DeveloperConnectConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+              .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_DeveloperConnectConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                      .DeveloperConnectConfig.class,
+                  com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                      .DeveloperConnectConfig.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectConfig.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          gitRepositoryLink_ = "";
+          dir_ = "";
+          revision_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+              .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_DeveloperConnectConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                .DeveloperConnectConfig
+            getDefaultInstanceForType() {
+          return com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectConfig.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                .DeveloperConnectConfig
+            build() {
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectConfig
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                .DeveloperConnectConfig
+            buildPartial() {
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectConfig
+              result =
+                  new com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                      .DeveloperConnectConfig(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectConfig
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.gitRepositoryLink_ = gitRepositoryLink_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.dir_ = dir_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.revision_ = revision_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                  .DeveloperConnectConfig) {
+            return mergeFrom(
+                (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                        .DeveloperConnectConfig)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectConfig
+                other) {
+          if (other
+              == com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                  .DeveloperConnectConfig.getDefaultInstance()) return this;
+          if (!other.getGitRepositoryLink().isEmpty()) {
+            gitRepositoryLink_ = other.gitRepositoryLink_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (!other.getDir().isEmpty()) {
+            dir_ = other.dir_;
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          if (!other.getRevision().isEmpty()) {
+            revision_ = other.revision_;
+            bitField0_ |= 0x00000004;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    gitRepositoryLink_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    dir_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                case 26:
+                  {
+                    revision_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 26
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object gitRepositoryLink_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The Developer Connect Git repository link, formatted as
+         * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLink/&#42;`.
+         * </pre>
+         *
+         * <code>
+         * string git_repository_link = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return The gitRepositoryLink.
+         */
+        public java.lang.String getGitRepositoryLink() {
+          java.lang.Object ref = gitRepositoryLink_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            gitRepositoryLink_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The Developer Connect Git repository link, formatted as
+         * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLink/&#42;`.
+         * </pre>
+         *
+         * <code>
+         * string git_repository_link = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return The bytes for gitRepositoryLink.
+         */
+        public com.google.protobuf.ByteString getGitRepositoryLinkBytes() {
+          java.lang.Object ref = gitRepositoryLink_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            gitRepositoryLink_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The Developer Connect Git repository link, formatted as
+         * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLink/&#42;`.
+         * </pre>
+         *
+         * <code>
+         * string git_repository_link = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param value The gitRepositoryLink to set.
+         * @return This builder for chaining.
+         */
+        public Builder setGitRepositoryLink(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          gitRepositoryLink_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The Developer Connect Git repository link, formatted as
+         * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLink/&#42;`.
+         * </pre>
+         *
+         * <code>
+         * string git_repository_link = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearGitRepositoryLink() {
+          gitRepositoryLink_ = getDefaultInstance().getGitRepositoryLink();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The Developer Connect Git repository link, formatted as
+         * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLink/&#42;`.
+         * </pre>
+         *
+         * <code>
+         * string git_repository_link = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param value The bytes for gitRepositoryLink to set.
+         * @return This builder for chaining.
+         */
+        public Builder setGitRepositoryLinkBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          gitRepositoryLink_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object dir_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Directory, relative to the source root, in which to run the
+         * build.
+         * </pre>
+         *
+         * <code>string dir = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The dir.
+         */
+        public java.lang.String getDir() {
+          java.lang.Object ref = dir_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            dir_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Directory, relative to the source root, in which to run the
+         * build.
+         * </pre>
+         *
+         * <code>string dir = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for dir.
+         */
+        public com.google.protobuf.ByteString getDirBytes() {
+          java.lang.Object ref = dir_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            dir_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Directory, relative to the source root, in which to run the
+         * build.
+         * </pre>
+         *
+         * <code>string dir = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The dir to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDir(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          dir_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Directory, relative to the source root, in which to run the
+         * build.
+         * </pre>
+         *
+         * <code>string dir = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearDir() {
+          dir_ = getDefaultInstance().getDir();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Directory, relative to the source root, in which to run the
+         * build.
+         * </pre>
+         *
+         * <code>string dir = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for dir to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDirBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          dir_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object revision_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The revision to fetch from the Git repository such as a
+         * branch, a tag, a commit SHA, or any Git ref.
+         * </pre>
+         *
+         * <code>string revision = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The revision.
+         */
+        public java.lang.String getRevision() {
+          java.lang.Object ref = revision_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            revision_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The revision to fetch from the Git repository such as a
+         * branch, a tag, a commit SHA, or any Git ref.
+         * </pre>
+         *
+         * <code>string revision = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for revision.
+         */
+        public com.google.protobuf.ByteString getRevisionBytes() {
+          java.lang.Object ref = revision_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            revision_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The revision to fetch from the Git repository such as a
+         * branch, a tag, a commit SHA, or any Git ref.
+         * </pre>
+         *
+         * <code>string revision = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The revision to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRevision(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          revision_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The revision to fetch from the Git repository such as a
+         * branch, a tag, a commit SHA, or any Git ref.
+         * </pre>
+         *
+         * <code>string revision = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearRevision() {
+          revision_ = getDefaultInstance().getRevision();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The revision to fetch from the Git repository such as a
+         * branch, a tag, a commit SHA, or any Git ref.
+         * </pre>
+         *
+         * <code>string revision = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for revision to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRevisionBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          revision_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectConfig)
+      private static final com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                .DeveloperConnectConfig();
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<DeveloperConnectConfig> PARSER =
+          new com.google.protobuf.AbstractParser<DeveloperConnectConfig>() {
+            @java.lang.Override
+            public DeveloperConnectConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<DeveloperConnectConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<DeveloperConnectConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface DeveloperConnectSourceOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Developer Connect configuration that defines the
+       * specific repository, revision, and directory to use as the source code
+       * root.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the config field is set.
+       */
+      boolean hasConfig();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Developer Connect configuration that defines the
+       * specific repository, revision, and directory to use as the source code
+       * root.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The config.
+       */
+      com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectConfig
+          getConfig();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Developer Connect configuration that defines the
+       * specific repository, revision, and directory to use as the source code
+       * root.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectConfigOrBuilder
+          getConfigOrBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies source code to be fetched from a Git repository managed through
+     * the Developer Connect service.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource}
+     */
+    public static final class DeveloperConnectSource extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource)
+        DeveloperConnectSourceOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use DeveloperConnectSource.newBuilder() to construct.
+      private DeveloperConnectSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private DeveloperConnectSource() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new DeveloperConnectSource();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+            .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_DeveloperConnectSource_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+            .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_DeveloperConnectSource_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                    .DeveloperConnectSource.class,
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                    .DeveloperConnectSource.Builder.class);
+      }
+
+      private int bitField0_;
+      public static final int CONFIG_FIELD_NUMBER = 1;
+      private com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectConfig
+          config_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Developer Connect configuration that defines the
+       * specific repository, revision, and directory to use as the source code
+       * root.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the config field is set.
+       */
+      @java.lang.Override
+      public boolean hasConfig() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Developer Connect configuration that defines the
+       * specific repository, revision, and directory to use as the source code
+       * root.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The config.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectConfig
+          getConfig() {
+        return config_ == null
+            ? com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                .DeveloperConnectConfig.getDefaultInstance()
+            : config_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Developer Connect configuration that defines the
+       * specific repository, revision, and directory to use as the source code
+       * root.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectConfigOrBuilder
+          getConfigOrBuilder() {
+        return config_ == null
+            ? com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                .DeveloperConnectConfig.getDefaultInstance()
+            : config_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeMessage(1, getConfig());
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getConfig());
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                .DeveloperConnectSource)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource
+            other =
+                (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                        .DeveloperConnectSource)
+                    obj;
+
+        if (hasConfig() != other.hasConfig()) return false;
+        if (hasConfig()) {
+          if (!getConfig().equals(other.getConfig())) return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasConfig()) {
+          hash = (37 * hash) + CONFIG_FIELD_NUMBER;
+          hash = (53 * hash) + getConfig().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectSource
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectSource
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectSource
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectSource
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectSource
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectSource
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectSource
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectSource
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectSource
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectSource
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectSource
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectSource
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies source code to be fetched from a Git repository managed through
+       * the Developer Connect service.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource)
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectSourceOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+              .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_DeveloperConnectSource_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+              .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_DeveloperConnectSource_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                      .DeveloperConnectSource.class,
+                  com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                      .DeveloperConnectSource.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+            getConfigFieldBuilder();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          config_ = null;
+          if (configBuilder_ != null) {
+            configBuilder_.dispose();
+            configBuilder_ = null;
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+              .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_DeveloperConnectSource_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                .DeveloperConnectSource
+            getDefaultInstanceForType() {
+          return com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectSource.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                .DeveloperConnectSource
+            build() {
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                .DeveloperConnectSource
+            buildPartial() {
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource
+              result =
+                  new com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                      .DeveloperConnectSource(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource
+                result) {
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.config_ = configBuilder_ == null ? config_ : configBuilder_.build();
+            to_bitField0_ |= 0x00000001;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                  .DeveloperConnectSource) {
+            return mergeFrom(
+                (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                        .DeveloperConnectSource)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource
+                other) {
+          if (other
+              == com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                  .DeveloperConnectSource.getDefaultInstance()) return this;
+          if (other.hasConfig()) {
+            mergeConfig(other.getConfig());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(getConfigFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                .DeveloperConnectConfig
+            config_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                    .DeveloperConnectConfig,
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                    .DeveloperConnectConfig.Builder,
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                    .DeveloperConnectConfigOrBuilder>
+            configBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The Developer Connect configuration that defines the
+         * specific repository, revision, and directory to use as the source code
+         * root.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return Whether the config field is set.
+         */
+        public boolean hasConfig() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The Developer Connect configuration that defines the
+         * specific repository, revision, and directory to use as the source code
+         * root.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return The config.
+         */
+        public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                .DeveloperConnectConfig
+            getConfig() {
+          if (configBuilder_ == null) {
+            return config_ == null
+                ? com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                    .DeveloperConnectConfig.getDefaultInstance()
+                : config_;
+          } else {
+            return configBuilder_.getMessage();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The Developer Connect configuration that defines the
+         * specific repository, revision, and directory to use as the source code
+         * root.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder setConfig(
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectConfig
+                value) {
+          if (configBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            config_ = value;
+          } else {
+            configBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The Developer Connect configuration that defines the
+         * specific repository, revision, and directory to use as the source code
+         * root.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder setConfig(
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectConfig
+                    .Builder
+                builderForValue) {
+          if (configBuilder_ == null) {
+            config_ = builderForValue.build();
+          } else {
+            configBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The Developer Connect configuration that defines the
+         * specific repository, revision, and directory to use as the source code
+         * root.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder mergeConfig(
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectConfig
+                value) {
+          if (configBuilder_ == null) {
+            if (((bitField0_ & 0x00000001) != 0)
+                && config_ != null
+                && config_
+                    != com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                        .DeveloperConnectConfig.getDefaultInstance()) {
+              getConfigBuilder().mergeFrom(value);
+            } else {
+              config_ = value;
+            }
+          } else {
+            configBuilder_.mergeFrom(value);
+          }
+          if (config_ != null) {
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The Developer Connect configuration that defines the
+         * specific repository, revision, and directory to use as the source code
+         * root.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder clearConfig() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          config_ = null;
+          if (configBuilder_ != null) {
+            configBuilder_.dispose();
+            configBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The Developer Connect configuration that defines the
+         * specific repository, revision, and directory to use as the source code
+         * root.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                .DeveloperConnectConfig.Builder
+            getConfigBuilder() {
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return getConfigFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The Developer Connect configuration that defines the
+         * specific repository, revision, and directory to use as the source code
+         * root.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                .DeveloperConnectConfigOrBuilder
+            getConfigOrBuilder() {
+          if (configBuilder_ != null) {
+            return configBuilder_.getMessageOrBuilder();
+          } else {
+            return config_ == null
+                ? com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                    .DeveloperConnectConfig.getDefaultInstance()
+                : config_;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The Developer Connect configuration that defines the
+         * specific repository, revision, and directory to use as the source code
+         * root.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectConfig config = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                    .DeveloperConnectConfig,
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                    .DeveloperConnectConfig.Builder,
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                    .DeveloperConnectConfigOrBuilder>
+            getConfigFieldBuilder() {
+          if (configBuilder_ == null) {
+            configBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                        .DeveloperConnectConfig,
+                    com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                        .DeveloperConnectConfig.Builder,
+                    com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                        .DeveloperConnectConfigOrBuilder>(
+                    getConfig(), getParentForChildren(), isClean());
+            config_ = null;
+          }
+          return configBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource)
+      private static final com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectSource
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                .DeveloperConnectSource();
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectSource
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<DeveloperConnectSource> PARSER =
+          new com.google.protobuf.AbstractParser<DeveloperConnectSource>() {
+            @java.lang.Override
+            public DeveloperConnectSource parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<DeveloperConnectSource> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<DeveloperConnectSource> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectSource
           getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -6916,6 +9092,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       INLINE_SOURCE(1),
+      DEVELOPER_CONNECT_SOURCE(3),
       SOURCE_NOT_SET(0);
       private final int value;
 
@@ -6937,6 +9114,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         switch (value) {
           case 1:
             return INLINE_SOURCE;
+          case 3:
+            return DEVELOPER_CONNECT_SOURCE;
           case 0:
             return SOURCE_NOT_SET;
           default:
@@ -7066,6 +9245,75 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           .getDefaultInstance();
     }
 
+    public static final int DEVELOPER_CONNECT_SOURCE_FIELD_NUMBER = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * Source code is in a Git repository managed by Developer Connect.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource developer_connect_source = 3;
+     * </code>
+     *
+     * @return Whether the developerConnectSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasDeveloperConnectSource() {
+      return sourceCase_ == 3;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Source code is in a Git repository managed by Developer Connect.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource developer_connect_source = 3;
+     * </code>
+     *
+     * @return The developerConnectSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource
+        getDeveloperConnectSource() {
+      if (sourceCase_ == 3) {
+        return (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                .DeveloperConnectSource)
+            source_;
+      }
+      return com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+          .DeveloperConnectSource.getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Source code is in a Git repository managed by Developer Connect.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource developer_connect_source = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+            .DeveloperConnectSourceOrBuilder
+        getDeveloperConnectSourceOrBuilder() {
+      if (sourceCase_ == 3) {
+        return (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                .DeveloperConnectSource)
+            source_;
+      }
+      return com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+          .DeveloperConnectSource.getDefaultInstance();
+    }
+
     public static final int PYTHON_SPEC_FIELD_NUMBER = 2;
 
     /**
@@ -7158,6 +9406,13 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
             (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec)
                 languageSpec_);
       }
+      if (sourceCase_ == 3) {
+        output.writeMessage(
+            3,
+            (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                    .DeveloperConnectSource)
+                source_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -7181,6 +9436,14 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
                 (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec)
                     languageSpec_);
       }
+      if (sourceCase_ == 3) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                3,
+                (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                        .DeveloperConnectSource)
+                    source_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -7201,6 +9464,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       switch (sourceCase_) {
         case 1:
           if (!getInlineSource().equals(other.getInlineSource())) return false;
+          break;
+        case 3:
+          if (!getDeveloperConnectSource().equals(other.getDeveloperConnectSource())) return false;
           break;
         case 0:
         default:
@@ -7228,6 +9494,10 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         case 1:
           hash = (37 * hash) + INLINE_SOURCE_FIELD_NUMBER;
           hash = (53 * hash) + getInlineSource().hashCode();
+          break;
+        case 3:
+          hash = (37 * hash) + DEVELOPER_CONNECT_SOURCE_FIELD_NUMBER;
+          hash = (53 * hash) + getDeveloperConnectSource().hashCode();
           break;
         case 0:
         default:
@@ -7388,6 +9658,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         if (inlineSourceBuilder_ != null) {
           inlineSourceBuilder_.clear();
         }
+        if (developerConnectSourceBuilder_ != null) {
+          developerConnectSourceBuilder_.clear();
+        }
         if (pythonSpecBuilder_ != null) {
           pythonSpecBuilder_.clear();
         }
@@ -7443,6 +9716,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         result.source_ = this.source_;
         if (sourceCase_ == 1 && inlineSourceBuilder_ != null) {
           result.source_ = inlineSourceBuilder_.build();
+        }
+        if (sourceCase_ == 3 && developerConnectSourceBuilder_ != null) {
+          result.source_ = developerConnectSourceBuilder_.build();
         }
         result.languageSpecCase_ = languageSpecCase_;
         result.languageSpec_ = this.languageSpec_;
@@ -7508,6 +9784,11 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
               mergeInlineSource(other.getInlineSource());
               break;
             }
+          case DEVELOPER_CONNECT_SOURCE:
+            {
+              mergeDeveloperConnectSource(other.getDeveloperConnectSource());
+              break;
+            }
           case SOURCE_NOT_SET:
             {
               break;
@@ -7562,6 +9843,13 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
                   languageSpecCase_ = 2;
                   break;
                 } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getDeveloperConnectSourceFieldBuilder().getBuilder(), extensionRegistry);
+                  sourceCase_ = 3;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7868,6 +10156,279 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         sourceCase_ = 1;
         onChanged();
         return inlineSourceBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                  .DeveloperConnectSource,
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                  .DeveloperConnectSource.Builder,
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                  .DeveloperConnectSourceOrBuilder>
+          developerConnectSourceBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Source code is in a Git repository managed by Developer Connect.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource developer_connect_source = 3;
+       * </code>
+       *
+       * @return Whether the developerConnectSource field is set.
+       */
+      @java.lang.Override
+      public boolean hasDeveloperConnectSource() {
+        return sourceCase_ == 3;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Source code is in a Git repository managed by Developer Connect.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource developer_connect_source = 3;
+       * </code>
+       *
+       * @return The developerConnectSource.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectSource
+          getDeveloperConnectSource() {
+        if (developerConnectSourceBuilder_ == null) {
+          if (sourceCase_ == 3) {
+            return (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                    .DeveloperConnectSource)
+                source_;
+          }
+          return com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectSource.getDefaultInstance();
+        } else {
+          if (sourceCase_ == 3) {
+            return developerConnectSourceBuilder_.getMessage();
+          }
+          return com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectSource.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Source code is in a Git repository managed by Developer Connect.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource developer_connect_source = 3;
+       * </code>
+       */
+      public Builder setDeveloperConnectSource(
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource
+              value) {
+        if (developerConnectSourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          source_ = value;
+          onChanged();
+        } else {
+          developerConnectSourceBuilder_.setMessage(value);
+        }
+        sourceCase_ = 3;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Source code is in a Git repository managed by Developer Connect.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource developer_connect_source = 3;
+       * </code>
+       */
+      public Builder setDeveloperConnectSource(
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource
+                  .Builder
+              builderForValue) {
+        if (developerConnectSourceBuilder_ == null) {
+          source_ = builderForValue.build();
+          onChanged();
+        } else {
+          developerConnectSourceBuilder_.setMessage(builderForValue.build());
+        }
+        sourceCase_ = 3;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Source code is in a Git repository managed by Developer Connect.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource developer_connect_source = 3;
+       * </code>
+       */
+      public Builder mergeDeveloperConnectSource(
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource
+              value) {
+        if (developerConnectSourceBuilder_ == null) {
+          if (sourceCase_ == 3
+              && source_
+                  != com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                      .DeveloperConnectSource.getDefaultInstance()) {
+            source_ =
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                    .DeveloperConnectSource.newBuilder(
+                        (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                                .DeveloperConnectSource)
+                            source_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            source_ = value;
+          }
+          onChanged();
+        } else {
+          if (sourceCase_ == 3) {
+            developerConnectSourceBuilder_.mergeFrom(value);
+          } else {
+            developerConnectSourceBuilder_.setMessage(value);
+          }
+        }
+        sourceCase_ = 3;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Source code is in a Git repository managed by Developer Connect.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource developer_connect_source = 3;
+       * </code>
+       */
+      public Builder clearDeveloperConnectSource() {
+        if (developerConnectSourceBuilder_ == null) {
+          if (sourceCase_ == 3) {
+            sourceCase_ = 0;
+            source_ = null;
+            onChanged();
+          }
+        } else {
+          if (sourceCase_ == 3) {
+            sourceCase_ = 0;
+            source_ = null;
+          }
+          developerConnectSourceBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Source code is in a Git repository managed by Developer Connect.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource developer_connect_source = 3;
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectSource.Builder
+          getDeveloperConnectSourceBuilder() {
+        return getDeveloperConnectSourceFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Source code is in a Git repository managed by Developer Connect.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource developer_connect_source = 3;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectSourceOrBuilder
+          getDeveloperConnectSourceOrBuilder() {
+        if ((sourceCase_ == 3) && (developerConnectSourceBuilder_ != null)) {
+          return developerConnectSourceBuilder_.getMessageOrBuilder();
+        } else {
+          if (sourceCase_ == 3) {
+            return (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                    .DeveloperConnectSource)
+                source_;
+          }
+          return com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .DeveloperConnectSource.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Source code is in a Git repository managed by Developer Connect.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.DeveloperConnectSource developer_connect_source = 3;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                  .DeveloperConnectSource,
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                  .DeveloperConnectSource.Builder,
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                  .DeveloperConnectSourceOrBuilder>
+          getDeveloperConnectSourceFieldBuilder() {
+        if (developerConnectSourceBuilder_ == null) {
+          if (!(sourceCase_ == 3)) {
+            source_ =
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                    .DeveloperConnectSource.getDefaultInstance();
+          }
+          developerConnectSourceBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                      .DeveloperConnectSource,
+                  com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                      .DeveloperConnectSource.Builder,
+                  com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                      .DeveloperConnectSourceOrBuilder>(
+                  (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                          .DeveloperConnectSource)
+                      source_,
+                  getParentForChildren(),
+                  isClean());
+          source_ = null;
+        }
+        sourceCase_ = 3;
+        onChanged();
+        return developerConnectSourceBuilder_;
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<

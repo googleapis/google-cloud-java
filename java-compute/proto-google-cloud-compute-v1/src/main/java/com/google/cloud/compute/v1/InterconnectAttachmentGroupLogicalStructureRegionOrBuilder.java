@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,7 +70,7 @@ public interface InterconnectAttachmentGroupLogicalStructureRegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of a region, like "us-central1".
+   * Output only. [Output Only] The name of a region, like "us-central1".
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -83,7 +83,7 @@ public interface InterconnectAttachmentGroupLogicalStructureRegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of a region, like "us-central1".
+   * Output only. [Output Only] The name of a region, like "us-central1".
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -96,7 +96,7 @@ public interface InterconnectAttachmentGroupLogicalStructureRegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of a region, like "us-central1".
+   * Output only. [Output Only] The name of a region, like "us-central1".
    * </pre>
    *
    * <code>optional string region = 138946292;</code>

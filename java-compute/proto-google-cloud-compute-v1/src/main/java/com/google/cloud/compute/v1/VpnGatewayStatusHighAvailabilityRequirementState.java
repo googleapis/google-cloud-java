@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Describes the high availability requirement state for the VPN connection between this Cloud VPN gateway and a peer gateway.
+ * Describes the high availability requirement state for the VPN connection
+ * between this Cloud VPN gateway and a peer gateway.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState}
@@ -72,7 +73,8 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
    *
    *
    * <pre>
-   * Indicates the high availability requirement state for the VPN connection. Valid values are CONNECTION_REDUNDANCY_MET, CONNECTION_REDUNDANCY_NOT_MET.
+   * Indicates the high availability requirement state for the VPN connection.
+   * Valid values are CONNECTION_REDUNDANCY_MET,CONNECTION_REDUNDANCY_NOT_MET.
    * </pre>
    *
    * Protobuf enum {@code
@@ -93,7 +95,12 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
      *
      *
      * <pre>
-     * VPN tunnels are configured with adequate redundancy from Cloud VPN gateway to the peer VPN gateway. For both GCP-to-non-GCP and GCP-to-GCP connections, the adequate redundancy is a pre-requirement for users to get 99.99% availability on GCP side; please note that for any connection, end-to-end 99.99% availability is subject to proper configuration on the peer VPN gateway.
+     * VPN tunnels are configured with adequate redundancy from Cloud VPN
+     * gateway to the peer VPN gateway. For both GCP-to-non-GCP and GCP-to-GCP
+     * connections, the adequate redundancy is a pre-requirement for users to
+     * get 99.99% availability on GCP side; please note that for any
+     * connection, end-to-end 99.99% availability is subject to proper
+     * configuration on the peer VPN gateway.
      * </pre>
      *
      * <code>CONNECTION_REDUNDANCY_MET = 505242907;</code>
@@ -103,7 +110,8 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
      *
      *
      * <pre>
-     * VPN tunnels are not configured with adequate redundancy from the Cloud VPN gateway to the peer gateway
+     * VPN tunnels are not configured with adequate redundancy from the Cloud
+     * VPN gateway to the peer gateway
      * </pre>
      *
      * <code>CONNECTION_REDUNDANCY_NOT_MET = 511863311;</code>
@@ -127,7 +135,12 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
      *
      *
      * <pre>
-     * VPN tunnels are configured with adequate redundancy from Cloud VPN gateway to the peer VPN gateway. For both GCP-to-non-GCP and GCP-to-GCP connections, the adequate redundancy is a pre-requirement for users to get 99.99% availability on GCP side; please note that for any connection, end-to-end 99.99% availability is subject to proper configuration on the peer VPN gateway.
+     * VPN tunnels are configured with adequate redundancy from Cloud VPN
+     * gateway to the peer VPN gateway. For both GCP-to-non-GCP and GCP-to-GCP
+     * connections, the adequate redundancy is a pre-requirement for users to
+     * get 99.99% availability on GCP side; please note that for any
+     * connection, end-to-end 99.99% availability is subject to proper
+     * configuration on the peer VPN gateway.
      * </pre>
      *
      * <code>CONNECTION_REDUNDANCY_MET = 505242907;</code>
@@ -138,7 +151,8 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
      *
      *
      * <pre>
-     * VPN tunnels are not configured with adequate redundancy from the Cloud VPN gateway to the peer gateway
+     * VPN tunnels are not configured with adequate redundancy from the Cloud
+     * VPN gateway to the peer gateway
      * </pre>
      *
      * <code>CONNECTION_REDUNDANCY_NOT_MET = 511863311;</code>
@@ -235,7 +249,9 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
    *
    *
    * <pre>
-   * Indicates the reason why the VPN connection does not meet the high availability redundancy criteria/requirement. Valid values is INCOMPLETE_TUNNELS_COVERAGE.
+   * Indicates the reason why the VPN connection does not meet the high
+   * availability redundancy criteria/requirement.
+   * Valid values is INCOMPLETE_TUNNELS_COVERAGE.
    * </pre>
    *
    * Protobuf enum {@code
@@ -368,7 +384,8 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
    *
    *
    * <pre>
-   * Indicates the high availability requirement state for the VPN connection. Valid values are CONNECTION_REDUNDANCY_MET, CONNECTION_REDUNDANCY_NOT_MET.
+   * Indicates the high availability requirement state for the VPN connection.
+   * Valid values are CONNECTION_REDUNDANCY_MET,CONNECTION_REDUNDANCY_NOT_MET.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -385,7 +402,8 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
    *
    *
    * <pre>
-   * Indicates the high availability requirement state for the VPN connection. Valid values are CONNECTION_REDUNDANCY_MET, CONNECTION_REDUNDANCY_NOT_MET.
+   * Indicates the high availability requirement state for the VPN connection.
+   * Valid values are CONNECTION_REDUNDANCY_MET,CONNECTION_REDUNDANCY_NOT_MET.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -410,7 +428,8 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
    *
    *
    * <pre>
-   * Indicates the high availability requirement state for the VPN connection. Valid values are CONNECTION_REDUNDANCY_MET, CONNECTION_REDUNDANCY_NOT_MET.
+   * Indicates the high availability requirement state for the VPN connection.
+   * Valid values are CONNECTION_REDUNDANCY_MET,CONNECTION_REDUNDANCY_NOT_MET.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -440,7 +459,9 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
    *
    *
    * <pre>
-   * Indicates the reason why the VPN connection does not meet the high availability redundancy criteria/requirement. Valid values is INCOMPLETE_TUNNELS_COVERAGE.
+   * Indicates the reason why the VPN connection does not meet the high
+   * availability redundancy criteria/requirement.
+   * Valid values is INCOMPLETE_TUNNELS_COVERAGE.
    * Check the UnsatisfiedReason enum for the list of possible values.
    * </pre>
    *
@@ -457,7 +478,9 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
    *
    *
    * <pre>
-   * Indicates the reason why the VPN connection does not meet the high availability redundancy criteria/requirement. Valid values is INCOMPLETE_TUNNELS_COVERAGE.
+   * Indicates the reason why the VPN connection does not meet the high
+   * availability redundancy criteria/requirement.
+   * Valid values is INCOMPLETE_TUNNELS_COVERAGE.
    * Check the UnsatisfiedReason enum for the list of possible values.
    * </pre>
    *
@@ -482,7 +505,9 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
    *
    *
    * <pre>
-   * Indicates the reason why the VPN connection does not meet the high availability redundancy criteria/requirement. Valid values is INCOMPLETE_TUNNELS_COVERAGE.
+   * Indicates the reason why the VPN connection does not meet the high
+   * availability redundancy criteria/requirement.
+   * Valid values is INCOMPLETE_TUNNELS_COVERAGE.
    * Check the UnsatisfiedReason enum for the list of possible values.
    * </pre>
    *
@@ -695,7 +720,8 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
    *
    *
    * <pre>
-   * Describes the high availability requirement state for the VPN connection between this Cloud VPN gateway and a peer gateway.
+   * Describes the high availability requirement state for the VPN connection
+   * between this Cloud VPN gateway and a peer gateway.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.VpnGatewayStatusHighAvailabilityRequirementState}
@@ -910,7 +936,8 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
      *
      *
      * <pre>
-     * Indicates the high availability requirement state for the VPN connection. Valid values are CONNECTION_REDUNDANCY_MET, CONNECTION_REDUNDANCY_NOT_MET.
+     * Indicates the high availability requirement state for the VPN connection.
+     * Valid values are CONNECTION_REDUNDANCY_MET,CONNECTION_REDUNDANCY_NOT_MET.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -926,7 +953,8 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
      *
      *
      * <pre>
-     * Indicates the high availability requirement state for the VPN connection. Valid values are CONNECTION_REDUNDANCY_MET, CONNECTION_REDUNDANCY_NOT_MET.
+     * Indicates the high availability requirement state for the VPN connection.
+     * Valid values are CONNECTION_REDUNDANCY_MET,CONNECTION_REDUNDANCY_NOT_MET.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -950,7 +978,8 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
      *
      *
      * <pre>
-     * Indicates the high availability requirement state for the VPN connection. Valid values are CONNECTION_REDUNDANCY_MET, CONNECTION_REDUNDANCY_NOT_MET.
+     * Indicates the high availability requirement state for the VPN connection.
+     * Valid values are CONNECTION_REDUNDANCY_MET,CONNECTION_REDUNDANCY_NOT_MET.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -974,7 +1003,8 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
      *
      *
      * <pre>
-     * Indicates the high availability requirement state for the VPN connection. Valid values are CONNECTION_REDUNDANCY_MET, CONNECTION_REDUNDANCY_NOT_MET.
+     * Indicates the high availability requirement state for the VPN connection.
+     * Valid values are CONNECTION_REDUNDANCY_MET,CONNECTION_REDUNDANCY_NOT_MET.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -997,7 +1027,8 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
      *
      *
      * <pre>
-     * Indicates the high availability requirement state for the VPN connection. Valid values are CONNECTION_REDUNDANCY_MET, CONNECTION_REDUNDANCY_NOT_MET.
+     * Indicates the high availability requirement state for the VPN connection.
+     * Valid values are CONNECTION_REDUNDANCY_MET,CONNECTION_REDUNDANCY_NOT_MET.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -1016,7 +1047,8 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
      *
      *
      * <pre>
-     * Indicates the high availability requirement state for the VPN connection. Valid values are CONNECTION_REDUNDANCY_MET, CONNECTION_REDUNDANCY_NOT_MET.
+     * Indicates the high availability requirement state for the VPN connection.
+     * Valid values are CONNECTION_REDUNDANCY_MET,CONNECTION_REDUNDANCY_NOT_MET.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -1042,7 +1074,9 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
      *
      *
      * <pre>
-     * Indicates the reason why the VPN connection does not meet the high availability redundancy criteria/requirement. Valid values is INCOMPLETE_TUNNELS_COVERAGE.
+     * Indicates the reason why the VPN connection does not meet the high
+     * availability redundancy criteria/requirement.
+     * Valid values is INCOMPLETE_TUNNELS_COVERAGE.
      * Check the UnsatisfiedReason enum for the list of possible values.
      * </pre>
      *
@@ -1058,7 +1092,9 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
      *
      *
      * <pre>
-     * Indicates the reason why the VPN connection does not meet the high availability redundancy criteria/requirement. Valid values is INCOMPLETE_TUNNELS_COVERAGE.
+     * Indicates the reason why the VPN connection does not meet the high
+     * availability redundancy criteria/requirement.
+     * Valid values is INCOMPLETE_TUNNELS_COVERAGE.
      * Check the UnsatisfiedReason enum for the list of possible values.
      * </pre>
      *
@@ -1082,7 +1118,9 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
      *
      *
      * <pre>
-     * Indicates the reason why the VPN connection does not meet the high availability redundancy criteria/requirement. Valid values is INCOMPLETE_TUNNELS_COVERAGE.
+     * Indicates the reason why the VPN connection does not meet the high
+     * availability redundancy criteria/requirement.
+     * Valid values is INCOMPLETE_TUNNELS_COVERAGE.
      * Check the UnsatisfiedReason enum for the list of possible values.
      * </pre>
      *
@@ -1106,7 +1144,9 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
      *
      *
      * <pre>
-     * Indicates the reason why the VPN connection does not meet the high availability redundancy criteria/requirement. Valid values is INCOMPLETE_TUNNELS_COVERAGE.
+     * Indicates the reason why the VPN connection does not meet the high
+     * availability redundancy criteria/requirement.
+     * Valid values is INCOMPLETE_TUNNELS_COVERAGE.
      * Check the UnsatisfiedReason enum for the list of possible values.
      * </pre>
      *
@@ -1129,7 +1169,9 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
      *
      *
      * <pre>
-     * Indicates the reason why the VPN connection does not meet the high availability redundancy criteria/requirement. Valid values is INCOMPLETE_TUNNELS_COVERAGE.
+     * Indicates the reason why the VPN connection does not meet the high
+     * availability redundancy criteria/requirement.
+     * Valid values is INCOMPLETE_TUNNELS_COVERAGE.
      * Check the UnsatisfiedReason enum for the list of possible values.
      * </pre>
      *
@@ -1148,7 +1190,9 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
      *
      *
      * <pre>
-     * Indicates the reason why the VPN connection does not meet the high availability redundancy criteria/requirement. Valid values is INCOMPLETE_TUNNELS_COVERAGE.
+     * Indicates the reason why the VPN connection does not meet the high
+     * availability redundancy criteria/requirement.
+     * Valid values is INCOMPLETE_TUNNELS_COVERAGE.
      * Check the UnsatisfiedReason enum for the list of possible values.
      * </pre>
      *

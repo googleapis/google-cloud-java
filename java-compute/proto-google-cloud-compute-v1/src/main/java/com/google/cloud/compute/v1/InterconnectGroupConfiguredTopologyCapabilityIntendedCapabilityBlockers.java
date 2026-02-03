@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,9 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * [Output Only] Reasons why configuration.topologyCapability.sla differs from intent.topologyCapability. This list is empty if and only if those are the same.
+ * [Output Only] Reasons why configuration.topologyCapability.sla differs
+ * from intent.topologyCapability. This list is empty if and only if those
+ * are the same.
  * </pre>
  *
  * Protobuf type {@code
@@ -317,7 +319,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] The url of Google Cloud public documentation explaining this requirement. This is set for every type of requirement.
+   * Output only. [Output Only] The url of Google Cloud public documentation explaining
+   * this requirement. This is set for every type of requirement.
    * </pre>
    *
    * <code>optional string documentation_link = 93465183;</code>
@@ -333,7 +336,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] The url of Google Cloud public documentation explaining this requirement. This is set for every type of requirement.
+   * Output only. [Output Only] The url of Google Cloud public documentation explaining
+   * this requirement. This is set for every type of requirement.
    * </pre>
    *
    * <code>optional string documentation_link = 93465183;</code>
@@ -357,7 +361,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] The url of Google Cloud public documentation explaining this requirement. This is set for every type of requirement.
+   * Output only. [Output Only] The url of Google Cloud public documentation explaining
+   * this requirement. This is set for every type of requirement.
    * </pre>
    *
    * <code>optional string documentation_link = 93465183;</code>
@@ -386,7 +391,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] A human-readable explanation of this requirement and why it's not met. This is set for every type of requirement.
+   * Output only. [Output Only] A human-readable explanation of this requirement and
+   * why it's not met. This is set for every type of requirement.
    * </pre>
    *
    * <code>optional string explanation = 504745497;</code>
@@ -402,7 +408,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] A human-readable explanation of this requirement and why it's not met. This is set for every type of requirement.
+   * Output only. [Output Only] A human-readable explanation of this requirement and
+   * why it's not met. This is set for every type of requirement.
    * </pre>
    *
    * <code>optional string explanation = 504745497;</code>
@@ -426,7 +433,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] A human-readable explanation of this requirement and why it's not met. This is set for every type of requirement.
+   * Output only. [Output Only] A human-readable explanation of this requirement and
+   * why it's not met. This is set for every type of requirement.
    * </pre>
    *
    * <code>optional string explanation = 504745497;</code>
@@ -456,7 +464,9 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] Facilities used to explain this blocker in more detail. Like physicalStructure.metros.facilities.facility, this is a numeric string like "5467".
+   * Output only. [Output Only] Facilities used to explain this blocker in more detail.
+   * Like physicalStructure.metros.facilities.facility, this is a numeric
+   * string like "5467".
    * </pre>
    *
    * <code>repeated string facilities = 536683137;</code>
@@ -471,7 +481,9 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] Facilities used to explain this blocker in more detail. Like physicalStructure.metros.facilities.facility, this is a numeric string like "5467".
+   * Output only. [Output Only] Facilities used to explain this blocker in more detail.
+   * Like physicalStructure.metros.facilities.facility, this is a numeric
+   * string like "5467".
    * </pre>
    *
    * <code>repeated string facilities = 536683137;</code>
@@ -486,7 +498,9 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] Facilities used to explain this blocker in more detail. Like physicalStructure.metros.facilities.facility, this is a numeric string like "5467".
+   * Output only. [Output Only] Facilities used to explain this blocker in more detail.
+   * Like physicalStructure.metros.facilities.facility, this is a numeric
+   * string like "5467".
    * </pre>
    *
    * <code>repeated string facilities = 536683137;</code>
@@ -502,7 +516,9 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] Facilities used to explain this blocker in more detail. Like physicalStructure.metros.facilities.facility, this is a numeric string like "5467".
+   * Output only. [Output Only] Facilities used to explain this blocker in more detail.
+   * Like physicalStructure.metros.facilities.facility, this is a numeric
+   * string like "5467".
    * </pre>
    *
    * <code>repeated string facilities = 536683137;</code>
@@ -524,7 +540,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] Interconnects used to explain this blocker in more detail.
+   * Output only. [Output Only] Interconnects used to explain this blocker in more
+   * detail.
    * </pre>
    *
    * <code>repeated string interconnects = 520187301;</code>
@@ -539,7 +556,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] Interconnects used to explain this blocker in more detail.
+   * Output only. [Output Only] Interconnects used to explain this blocker in more
+   * detail.
    * </pre>
    *
    * <code>repeated string interconnects = 520187301;</code>
@@ -554,7 +572,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] Interconnects used to explain this blocker in more detail.
+   * Output only. [Output Only] Interconnects used to explain this blocker in more
+   * detail.
    * </pre>
    *
    * <code>repeated string interconnects = 520187301;</code>
@@ -570,7 +589,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] Interconnects used to explain this blocker in more detail.
+   * Output only. [Output Only] Interconnects used to explain this blocker in more
+   * detail.
    * </pre>
    *
    * <code>repeated string interconnects = 520187301;</code>
@@ -592,7 +612,10 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] Metros used to explain this blocker in more detail. These are three-letter lowercase strings like "iad". A blocker like INCOMPATIBLE_METROS will specify the problematic metros in this field.
+   * Output only. [Output Only] Metros used to explain this blocker in more detail.
+   * These are three-letter lowercase strings like "iad". A blocker like
+   * INCOMPATIBLE_METROS will specify the problematic metros in this
+   * field.
    * </pre>
    *
    * <code>repeated string metros = 533067386;</code>
@@ -607,7 +630,10 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] Metros used to explain this blocker in more detail. These are three-letter lowercase strings like "iad". A blocker like INCOMPATIBLE_METROS will specify the problematic metros in this field.
+   * Output only. [Output Only] Metros used to explain this blocker in more detail.
+   * These are three-letter lowercase strings like "iad". A blocker like
+   * INCOMPATIBLE_METROS will specify the problematic metros in this
+   * field.
    * </pre>
    *
    * <code>repeated string metros = 533067386;</code>
@@ -622,7 +648,10 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] Metros used to explain this blocker in more detail. These are three-letter lowercase strings like "iad". A blocker like INCOMPATIBLE_METROS will specify the problematic metros in this field.
+   * Output only. [Output Only] Metros used to explain this blocker in more detail.
+   * These are three-letter lowercase strings like "iad". A blocker like
+   * INCOMPATIBLE_METROS will specify the problematic metros in this
+   * field.
    * </pre>
    *
    * <code>repeated string metros = 533067386;</code>
@@ -638,7 +667,10 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] Metros used to explain this blocker in more detail. These are three-letter lowercase strings like "iad". A blocker like INCOMPATIBLE_METROS will specify the problematic metros in this field.
+   * Output only. [Output Only] Metros used to explain this blocker in more detail.
+   * These are three-letter lowercase strings like "iad". A blocker like
+   * INCOMPATIBLE_METROS will specify the problematic metros in this
+   * field.
    * </pre>
    *
    * <code>repeated string metros = 533067386;</code>
@@ -660,7 +692,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] Zones used to explain this blocker in more detail. Zone names are "zone1" and/or "zone2".
+   * Output only. [Output Only] Zones used to explain this blocker in more detail.
+   * Zone names are "zone1" and/or "zone2".
    * </pre>
    *
    * <code>repeated string zones = 116085319;</code>
@@ -675,7 +708,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] Zones used to explain this blocker in more detail. Zone names are "zone1" and/or "zone2".
+   * Output only. [Output Only] Zones used to explain this blocker in more detail.
+   * Zone names are "zone1" and/or "zone2".
    * </pre>
    *
    * <code>repeated string zones = 116085319;</code>
@@ -690,7 +724,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] Zones used to explain this blocker in more detail. Zone names are "zone1" and/or "zone2".
+   * Output only. [Output Only] Zones used to explain this blocker in more detail.
+   * Zone names are "zone1" and/or "zone2".
    * </pre>
    *
    * <code>repeated string zones = 116085319;</code>
@@ -706,7 +741,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] Zones used to explain this blocker in more detail. Zone names are "zone1" and/or "zone2".
+   * Output only. [Output Only] Zones used to explain this blocker in more detail.
+   * Zone names are "zone1" and/or "zone2".
    * </pre>
    *
    * <code>repeated string zones = 116085319;</code>
@@ -1009,7 +1045,9 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] Reasons why configuration.topologyCapability.sla differs from intent.topologyCapability. This list is empty if and only if those are the same.
+   * [Output Only] Reasons why configuration.topologyCapability.sla differs
+   * from intent.topologyCapability. This list is empty if and only if those
+   * are the same.
    * </pre>
    *
    * Protobuf type {@code
@@ -1482,7 +1520,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] The url of Google Cloud public documentation explaining this requirement. This is set for every type of requirement.
+     * Output only. [Output Only] The url of Google Cloud public documentation explaining
+     * this requirement. This is set for every type of requirement.
      * </pre>
      *
      * <code>optional string documentation_link = 93465183;</code>
@@ -1497,7 +1536,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] The url of Google Cloud public documentation explaining this requirement. This is set for every type of requirement.
+     * Output only. [Output Only] The url of Google Cloud public documentation explaining
+     * this requirement. This is set for every type of requirement.
      * </pre>
      *
      * <code>optional string documentation_link = 93465183;</code>
@@ -1520,7 +1560,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] The url of Google Cloud public documentation explaining this requirement. This is set for every type of requirement.
+     * Output only. [Output Only] The url of Google Cloud public documentation explaining
+     * this requirement. This is set for every type of requirement.
      * </pre>
      *
      * <code>optional string documentation_link = 93465183;</code>
@@ -1543,7 +1584,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] The url of Google Cloud public documentation explaining this requirement. This is set for every type of requirement.
+     * Output only. [Output Only] The url of Google Cloud public documentation explaining
+     * this requirement. This is set for every type of requirement.
      * </pre>
      *
      * <code>optional string documentation_link = 93465183;</code>
@@ -1565,7 +1607,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] The url of Google Cloud public documentation explaining this requirement. This is set for every type of requirement.
+     * Output only. [Output Only] The url of Google Cloud public documentation explaining
+     * this requirement. This is set for every type of requirement.
      * </pre>
      *
      * <code>optional string documentation_link = 93465183;</code>
@@ -1583,7 +1626,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] The url of Google Cloud public documentation explaining this requirement. This is set for every type of requirement.
+     * Output only. [Output Only] The url of Google Cloud public documentation explaining
+     * this requirement. This is set for every type of requirement.
      * </pre>
      *
      * <code>optional string documentation_link = 93465183;</code>
@@ -1608,7 +1652,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] A human-readable explanation of this requirement and why it's not met. This is set for every type of requirement.
+     * Output only. [Output Only] A human-readable explanation of this requirement and
+     * why it's not met. This is set for every type of requirement.
      * </pre>
      *
      * <code>optional string explanation = 504745497;</code>
@@ -1623,7 +1668,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] A human-readable explanation of this requirement and why it's not met. This is set for every type of requirement.
+     * Output only. [Output Only] A human-readable explanation of this requirement and
+     * why it's not met. This is set for every type of requirement.
      * </pre>
      *
      * <code>optional string explanation = 504745497;</code>
@@ -1646,7 +1692,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] A human-readable explanation of this requirement and why it's not met. This is set for every type of requirement.
+     * Output only. [Output Only] A human-readable explanation of this requirement and
+     * why it's not met. This is set for every type of requirement.
      * </pre>
      *
      * <code>optional string explanation = 504745497;</code>
@@ -1669,7 +1716,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] A human-readable explanation of this requirement and why it's not met. This is set for every type of requirement.
+     * Output only. [Output Only] A human-readable explanation of this requirement and
+     * why it's not met. This is set for every type of requirement.
      * </pre>
      *
      * <code>optional string explanation = 504745497;</code>
@@ -1691,7 +1739,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] A human-readable explanation of this requirement and why it's not met. This is set for every type of requirement.
+     * Output only. [Output Only] A human-readable explanation of this requirement and
+     * why it's not met. This is set for every type of requirement.
      * </pre>
      *
      * <code>optional string explanation = 504745497;</code>
@@ -1709,7 +1758,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] A human-readable explanation of this requirement and why it's not met. This is set for every type of requirement.
+     * Output only. [Output Only] A human-readable explanation of this requirement and
+     * why it's not met. This is set for every type of requirement.
      * </pre>
      *
      * <code>optional string explanation = 504745497;</code>
@@ -1742,7 +1792,9 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Facilities used to explain this blocker in more detail. Like physicalStructure.metros.facilities.facility, this is a numeric string like "5467".
+     * Output only. [Output Only] Facilities used to explain this blocker in more detail.
+     * Like physicalStructure.metros.facilities.facility, this is a numeric
+     * string like "5467".
      * </pre>
      *
      * <code>repeated string facilities = 536683137;</code>
@@ -1758,7 +1810,9 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Facilities used to explain this blocker in more detail. Like physicalStructure.metros.facilities.facility, this is a numeric string like "5467".
+     * Output only. [Output Only] Facilities used to explain this blocker in more detail.
+     * Like physicalStructure.metros.facilities.facility, this is a numeric
+     * string like "5467".
      * </pre>
      *
      * <code>repeated string facilities = 536683137;</code>
@@ -1773,7 +1827,9 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Facilities used to explain this blocker in more detail. Like physicalStructure.metros.facilities.facility, this is a numeric string like "5467".
+     * Output only. [Output Only] Facilities used to explain this blocker in more detail.
+     * Like physicalStructure.metros.facilities.facility, this is a numeric
+     * string like "5467".
      * </pre>
      *
      * <code>repeated string facilities = 536683137;</code>
@@ -1789,7 +1845,9 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Facilities used to explain this blocker in more detail. Like physicalStructure.metros.facilities.facility, this is a numeric string like "5467".
+     * Output only. [Output Only] Facilities used to explain this blocker in more detail.
+     * Like physicalStructure.metros.facilities.facility, this is a numeric
+     * string like "5467".
      * </pre>
      *
      * <code>repeated string facilities = 536683137;</code>
@@ -1805,7 +1863,9 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Facilities used to explain this blocker in more detail. Like physicalStructure.metros.facilities.facility, this is a numeric string like "5467".
+     * Output only. [Output Only] Facilities used to explain this blocker in more detail.
+     * Like physicalStructure.metros.facilities.facility, this is a numeric
+     * string like "5467".
      * </pre>
      *
      * <code>repeated string facilities = 536683137;</code>
@@ -1829,7 +1889,9 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Facilities used to explain this blocker in more detail. Like physicalStructure.metros.facilities.facility, this is a numeric string like "5467".
+     * Output only. [Output Only] Facilities used to explain this blocker in more detail.
+     * Like physicalStructure.metros.facilities.facility, this is a numeric
+     * string like "5467".
      * </pre>
      *
      * <code>repeated string facilities = 536683137;</code>
@@ -1852,7 +1914,9 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Facilities used to explain this blocker in more detail. Like physicalStructure.metros.facilities.facility, this is a numeric string like "5467".
+     * Output only. [Output Only] Facilities used to explain this blocker in more detail.
+     * Like physicalStructure.metros.facilities.facility, this is a numeric
+     * string like "5467".
      * </pre>
      *
      * <code>repeated string facilities = 536683137;</code>
@@ -1872,7 +1936,9 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Facilities used to explain this blocker in more detail. Like physicalStructure.metros.facilities.facility, this is a numeric string like "5467".
+     * Output only. [Output Only] Facilities used to explain this blocker in more detail.
+     * Like physicalStructure.metros.facilities.facility, this is a numeric
+     * string like "5467".
      * </pre>
      *
      * <code>repeated string facilities = 536683137;</code>
@@ -1891,7 +1957,9 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Facilities used to explain this blocker in more detail. Like physicalStructure.metros.facilities.facility, this is a numeric string like "5467".
+     * Output only. [Output Only] Facilities used to explain this blocker in more detail.
+     * Like physicalStructure.metros.facilities.facility, this is a numeric
+     * string like "5467".
      * </pre>
      *
      * <code>repeated string facilities = 536683137;</code>
@@ -1925,7 +1993,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Interconnects used to explain this blocker in more detail.
+     * Output only. [Output Only] Interconnects used to explain this blocker in more
+     * detail.
      * </pre>
      *
      * <code>repeated string interconnects = 520187301;</code>
@@ -1941,7 +2010,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Interconnects used to explain this blocker in more detail.
+     * Output only. [Output Only] Interconnects used to explain this blocker in more
+     * detail.
      * </pre>
      *
      * <code>repeated string interconnects = 520187301;</code>
@@ -1956,7 +2026,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Interconnects used to explain this blocker in more detail.
+     * Output only. [Output Only] Interconnects used to explain this blocker in more
+     * detail.
      * </pre>
      *
      * <code>repeated string interconnects = 520187301;</code>
@@ -1972,7 +2043,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Interconnects used to explain this blocker in more detail.
+     * Output only. [Output Only] Interconnects used to explain this blocker in more
+     * detail.
      * </pre>
      *
      * <code>repeated string interconnects = 520187301;</code>
@@ -1988,7 +2060,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Interconnects used to explain this blocker in more detail.
+     * Output only. [Output Only] Interconnects used to explain this blocker in more
+     * detail.
      * </pre>
      *
      * <code>repeated string interconnects = 520187301;</code>
@@ -2012,7 +2085,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Interconnects used to explain this blocker in more detail.
+     * Output only. [Output Only] Interconnects used to explain this blocker in more
+     * detail.
      * </pre>
      *
      * <code>repeated string interconnects = 520187301;</code>
@@ -2035,7 +2109,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Interconnects used to explain this blocker in more detail.
+     * Output only. [Output Only] Interconnects used to explain this blocker in more
+     * detail.
      * </pre>
      *
      * <code>repeated string interconnects = 520187301;</code>
@@ -2055,7 +2130,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Interconnects used to explain this blocker in more detail.
+     * Output only. [Output Only] Interconnects used to explain this blocker in more
+     * detail.
      * </pre>
      *
      * <code>repeated string interconnects = 520187301;</code>
@@ -2074,7 +2150,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Interconnects used to explain this blocker in more detail.
+     * Output only. [Output Only] Interconnects used to explain this blocker in more
+     * detail.
      * </pre>
      *
      * <code>repeated string interconnects = 520187301;</code>
@@ -2108,7 +2185,10 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Metros used to explain this blocker in more detail. These are three-letter lowercase strings like "iad". A blocker like INCOMPATIBLE_METROS will specify the problematic metros in this field.
+     * Output only. [Output Only] Metros used to explain this blocker in more detail.
+     * These are three-letter lowercase strings like "iad". A blocker like
+     * INCOMPATIBLE_METROS will specify the problematic metros in this
+     * field.
      * </pre>
      *
      * <code>repeated string metros = 533067386;</code>
@@ -2124,7 +2204,10 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Metros used to explain this blocker in more detail. These are three-letter lowercase strings like "iad". A blocker like INCOMPATIBLE_METROS will specify the problematic metros in this field.
+     * Output only. [Output Only] Metros used to explain this blocker in more detail.
+     * These are three-letter lowercase strings like "iad". A blocker like
+     * INCOMPATIBLE_METROS will specify the problematic metros in this
+     * field.
      * </pre>
      *
      * <code>repeated string metros = 533067386;</code>
@@ -2139,7 +2222,10 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Metros used to explain this blocker in more detail. These are three-letter lowercase strings like "iad". A blocker like INCOMPATIBLE_METROS will specify the problematic metros in this field.
+     * Output only. [Output Only] Metros used to explain this blocker in more detail.
+     * These are three-letter lowercase strings like "iad". A blocker like
+     * INCOMPATIBLE_METROS will specify the problematic metros in this
+     * field.
      * </pre>
      *
      * <code>repeated string metros = 533067386;</code>
@@ -2155,7 +2241,10 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Metros used to explain this blocker in more detail. These are three-letter lowercase strings like "iad". A blocker like INCOMPATIBLE_METROS will specify the problematic metros in this field.
+     * Output only. [Output Only] Metros used to explain this blocker in more detail.
+     * These are three-letter lowercase strings like "iad". A blocker like
+     * INCOMPATIBLE_METROS will specify the problematic metros in this
+     * field.
      * </pre>
      *
      * <code>repeated string metros = 533067386;</code>
@@ -2171,7 +2260,10 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Metros used to explain this blocker in more detail. These are three-letter lowercase strings like "iad". A blocker like INCOMPATIBLE_METROS will specify the problematic metros in this field.
+     * Output only. [Output Only] Metros used to explain this blocker in more detail.
+     * These are three-letter lowercase strings like "iad". A blocker like
+     * INCOMPATIBLE_METROS will specify the problematic metros in this
+     * field.
      * </pre>
      *
      * <code>repeated string metros = 533067386;</code>
@@ -2195,7 +2287,10 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Metros used to explain this blocker in more detail. These are three-letter lowercase strings like "iad". A blocker like INCOMPATIBLE_METROS will specify the problematic metros in this field.
+     * Output only. [Output Only] Metros used to explain this blocker in more detail.
+     * These are three-letter lowercase strings like "iad". A blocker like
+     * INCOMPATIBLE_METROS will specify the problematic metros in this
+     * field.
      * </pre>
      *
      * <code>repeated string metros = 533067386;</code>
@@ -2218,7 +2313,10 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Metros used to explain this blocker in more detail. These are three-letter lowercase strings like "iad". A blocker like INCOMPATIBLE_METROS will specify the problematic metros in this field.
+     * Output only. [Output Only] Metros used to explain this blocker in more detail.
+     * These are three-letter lowercase strings like "iad". A blocker like
+     * INCOMPATIBLE_METROS will specify the problematic metros in this
+     * field.
      * </pre>
      *
      * <code>repeated string metros = 533067386;</code>
@@ -2238,7 +2336,10 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Metros used to explain this blocker in more detail. These are three-letter lowercase strings like "iad". A blocker like INCOMPATIBLE_METROS will specify the problematic metros in this field.
+     * Output only. [Output Only] Metros used to explain this blocker in more detail.
+     * These are three-letter lowercase strings like "iad". A blocker like
+     * INCOMPATIBLE_METROS will specify the problematic metros in this
+     * field.
      * </pre>
      *
      * <code>repeated string metros = 533067386;</code>
@@ -2257,7 +2358,10 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Metros used to explain this blocker in more detail. These are three-letter lowercase strings like "iad". A blocker like INCOMPATIBLE_METROS will specify the problematic metros in this field.
+     * Output only. [Output Only] Metros used to explain this blocker in more detail.
+     * These are three-letter lowercase strings like "iad". A blocker like
+     * INCOMPATIBLE_METROS will specify the problematic metros in this
+     * field.
      * </pre>
      *
      * <code>repeated string metros = 533067386;</code>
@@ -2291,7 +2395,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Zones used to explain this blocker in more detail. Zone names are "zone1" and/or "zone2".
+     * Output only. [Output Only] Zones used to explain this blocker in more detail.
+     * Zone names are "zone1" and/or "zone2".
      * </pre>
      *
      * <code>repeated string zones = 116085319;</code>
@@ -2307,7 +2412,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Zones used to explain this blocker in more detail. Zone names are "zone1" and/or "zone2".
+     * Output only. [Output Only] Zones used to explain this blocker in more detail.
+     * Zone names are "zone1" and/or "zone2".
      * </pre>
      *
      * <code>repeated string zones = 116085319;</code>
@@ -2322,7 +2428,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Zones used to explain this blocker in more detail. Zone names are "zone1" and/or "zone2".
+     * Output only. [Output Only] Zones used to explain this blocker in more detail.
+     * Zone names are "zone1" and/or "zone2".
      * </pre>
      *
      * <code>repeated string zones = 116085319;</code>
@@ -2338,7 +2445,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Zones used to explain this blocker in more detail. Zone names are "zone1" and/or "zone2".
+     * Output only. [Output Only] Zones used to explain this blocker in more detail.
+     * Zone names are "zone1" and/or "zone2".
      * </pre>
      *
      * <code>repeated string zones = 116085319;</code>
@@ -2354,7 +2462,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Zones used to explain this blocker in more detail. Zone names are "zone1" and/or "zone2".
+     * Output only. [Output Only] Zones used to explain this blocker in more detail.
+     * Zone names are "zone1" and/or "zone2".
      * </pre>
      *
      * <code>repeated string zones = 116085319;</code>
@@ -2378,7 +2487,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Zones used to explain this blocker in more detail. Zone names are "zone1" and/or "zone2".
+     * Output only. [Output Only] Zones used to explain this blocker in more detail.
+     * Zone names are "zone1" and/or "zone2".
      * </pre>
      *
      * <code>repeated string zones = 116085319;</code>
@@ -2401,7 +2511,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Zones used to explain this blocker in more detail. Zone names are "zone1" and/or "zone2".
+     * Output only. [Output Only] Zones used to explain this blocker in more detail.
+     * Zone names are "zone1" and/or "zone2".
      * </pre>
      *
      * <code>repeated string zones = 116085319;</code>
@@ -2421,7 +2532,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Zones used to explain this blocker in more detail. Zone names are "zone1" and/or "zone2".
+     * Output only. [Output Only] Zones used to explain this blocker in more detail.
+     * Zone names are "zone1" and/or "zone2".
      * </pre>
      *
      * <code>repeated string zones = 116085319;</code>
@@ -2440,7 +2552,8 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Zones used to explain this blocker in more detail. Zone names are "zone1" and/or "zone2".
+     * Output only. [Output Only] Zones used to explain this blocker in more detail.
+     * Zone names are "zone1" and/or "zone2".
      * </pre>
      *
      * <code>repeated string zones = 116085319;</code>

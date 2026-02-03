@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -101,7 +101,8 @@ public final class SnapshotSettingsStorageLocationSettings
      *
      *
      * <pre>
-     * Store snapshot in the same region as with the originating disk. No additional parameters are needed.
+     * Store snapshot in the same region as with the originating disk.
+     * No additional parameters are needed.
      * </pre>
      *
      * <code>LOCAL_REGION = 403535464;</code>
@@ -111,7 +112,8 @@ public final class SnapshotSettingsStorageLocationSettings
      *
      *
      * <pre>
-     * Store snapshot in the nearest multi region Cloud Storage bucket, relative to the originating disk. No additional parameters are needed.
+     * Store snapshot in the nearest multi region Cloud Storage bucket,
+     * relative to the originating disk. No additional parameters are needed.
      * </pre>
      *
      * <code>NEAREST_MULTI_REGION = 212467515;</code>
@@ -121,7 +123,9 @@ public final class SnapshotSettingsStorageLocationSettings
      *
      *
      * <pre>
-     * Store snapshot in the specific locations, as specified by the user. The list of regions to store must be defined under the `locations` field.
+     * Store snapshot in the specific locations, as specified by the user.
+     * The list of regions to store must be defined under the `locations`
+     * field.
      * </pre>
      *
      * <code>SPECIFIC_LOCATIONS = 280093809;</code>
@@ -147,7 +151,8 @@ public final class SnapshotSettingsStorageLocationSettings
      *
      *
      * <pre>
-     * Store snapshot in the same region as with the originating disk. No additional parameters are needed.
+     * Store snapshot in the same region as with the originating disk.
+     * No additional parameters are needed.
      * </pre>
      *
      * <code>LOCAL_REGION = 403535464;</code>
@@ -158,7 +163,8 @@ public final class SnapshotSettingsStorageLocationSettings
      *
      *
      * <pre>
-     * Store snapshot in the nearest multi region Cloud Storage bucket, relative to the originating disk. No additional parameters are needed.
+     * Store snapshot in the nearest multi region Cloud Storage bucket,
+     * relative to the originating disk. No additional parameters are needed.
      * </pre>
      *
      * <code>NEAREST_MULTI_REGION = 212467515;</code>
@@ -169,7 +175,9 @@ public final class SnapshotSettingsStorageLocationSettings
      *
      *
      * <pre>
-     * Store snapshot in the specific locations, as specified by the user. The list of regions to store must be defined under the `locations` field.
+     * Store snapshot in the specific locations, as specified by the user.
+     * The list of regions to store must be defined under the `locations`
+     * field.
      * </pre>
      *
      * <code>SPECIFIC_LOCATIONS = 280093809;</code>
@@ -318,7 +326,9 @@ public final class SnapshotSettingsStorageLocationSettings
    *
    *
    * <pre>
-   * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored in the locations listed in this field. Keys are Cloud Storage bucket locations. Only one location can be specified.
+   * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored
+   * in the locations listed in this field. Keys are Cloud Storage bucket
+   * locations. Only one location can be specified.
    * </pre>
    *
    * <code>
@@ -348,7 +358,9 @@ public final class SnapshotSettingsStorageLocationSettings
    *
    *
    * <pre>
-   * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored in the locations listed in this field. Keys are Cloud Storage bucket locations. Only one location can be specified.
+   * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored
+   * in the locations listed in this field. Keys are Cloud Storage bucket
+   * locations. Only one location can be specified.
    * </pre>
    *
    * <code>
@@ -368,7 +380,9 @@ public final class SnapshotSettingsStorageLocationSettings
    *
    *
    * <pre>
-   * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored in the locations listed in this field. Keys are Cloud Storage bucket locations. Only one location can be specified.
+   * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored
+   * in the locations listed in this field. Keys are Cloud Storage bucket
+   * locations. Only one location can be specified.
    * </pre>
    *
    * <code>
@@ -399,7 +413,9 @@ public final class SnapshotSettingsStorageLocationSettings
    *
    *
    * <pre>
-   * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored in the locations listed in this field. Keys are Cloud Storage bucket locations. Only one location can be specified.
+   * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored
+   * in the locations listed in this field. Keys are Cloud Storage bucket
+   * locations. Only one location can be specified.
    * </pre>
    *
    * <code>
@@ -1014,7 +1030,9 @@ public final class SnapshotSettingsStorageLocationSettings
      *
      *
      * <pre>
-     * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored in the locations listed in this field. Keys are Cloud Storage bucket locations. Only one location can be specified.
+     * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored
+     * in the locations listed in this field. Keys are Cloud Storage bucket
+     * locations. Only one location can be specified.
      * </pre>
      *
      * <code>
@@ -1044,7 +1062,9 @@ public final class SnapshotSettingsStorageLocationSettings
      *
      *
      * <pre>
-     * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored in the locations listed in this field. Keys are Cloud Storage bucket locations. Only one location can be specified.
+     * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored
+     * in the locations listed in this field. Keys are Cloud Storage bucket
+     * locations. Only one location can be specified.
      * </pre>
      *
      * <code>
@@ -1064,7 +1084,9 @@ public final class SnapshotSettingsStorageLocationSettings
      *
      *
      * <pre>
-     * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored in the locations listed in this field. Keys are Cloud Storage bucket locations. Only one location can be specified.
+     * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored
+     * in the locations listed in this field. Keys are Cloud Storage bucket
+     * locations. Only one location can be specified.
      * </pre>
      *
      * <code>
@@ -1095,7 +1117,9 @@ public final class SnapshotSettingsStorageLocationSettings
      *
      *
      * <pre>
-     * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored in the locations listed in this field. Keys are Cloud Storage bucket locations. Only one location can be specified.
+     * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored
+     * in the locations listed in this field. Keys are Cloud Storage bucket
+     * locations. Only one location can be specified.
      * </pre>
      *
      * <code>
@@ -1130,7 +1154,9 @@ public final class SnapshotSettingsStorageLocationSettings
      *
      *
      * <pre>
-     * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored in the locations listed in this field. Keys are Cloud Storage bucket locations. Only one location can be specified.
+     * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored
+     * in the locations listed in this field. Keys are Cloud Storage bucket
+     * locations. Only one location can be specified.
      * </pre>
      *
      * <code>
@@ -1160,7 +1186,9 @@ public final class SnapshotSettingsStorageLocationSettings
      *
      *
      * <pre>
-     * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored in the locations listed in this field. Keys are Cloud Storage bucket locations. Only one location can be specified.
+     * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored
+     * in the locations listed in this field. Keys are Cloud Storage bucket
+     * locations. Only one location can be specified.
      * </pre>
      *
      * <code>
@@ -1186,7 +1214,9 @@ public final class SnapshotSettingsStorageLocationSettings
      *
      *
      * <pre>
-     * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored in the locations listed in this field. Keys are Cloud Storage bucket locations. Only one location can be specified.
+     * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored
+     * in the locations listed in this field. Keys are Cloud Storage bucket
+     * locations. Only one location can be specified.
      * </pre>
      *
      * <code>
@@ -1217,7 +1247,9 @@ public final class SnapshotSettingsStorageLocationSettings
      *
      *
      * <pre>
-     * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored in the locations listed in this field. Keys are Cloud Storage bucket locations. Only one location can be specified.
+     * When the policy is SPECIFIC_LOCATIONS, snapshots will be stored
+     * in the locations listed in this field. Keys are Cloud Storage bucket
+     * locations. Only one location can be specified.
      * </pre>
      *
      * <code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -888,6 +888,72 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
+     * Optional. Enable returning detailed reasons for suggestion results.
+     *
+     * For example, with this field disabled, Knowledge Search feature returns
+     * NotFound error when no answer is found for the input query. Enabling this
+     * field will change the behavior to return an OK response with
+     * detailed information indicating the lack of results.
+     *
+     * Supported features: KNOWLEDGE_SEARCH, KNOWLEDGE_ASSIST
+     * </pre>
+     *
+     * <code>bool enable_response_debug_info = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableResponseDebugInfo.
+     */
+    boolean getEnableResponseDebugInfo();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for Responsible AI checks.
+     * Supported features:  KNOWLEDGE_ASSIST
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.RaiSettings rai_settings = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the raiSettings field is set.
+     */
+    boolean hasRaiSettings();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for Responsible AI checks.
+     * Supported features:  KNOWLEDGE_ASSIST
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.RaiSettings rai_settings = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The raiSettings.
+     */
+    com.google.cloud.dialogflow.v2.RaiSettings getRaiSettings();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for Responsible AI checks.
+     * Supported features:  KNOWLEDGE_ASSIST
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.RaiSettings rai_settings = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.dialogflow.v2.RaiSettingsOrBuilder getRaiSettingsOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * Settings of suggestion trigger.
      *
      * Currently, only ARTICLE_SUGGESTION and FAQ will use this field.
@@ -1282,6 +1348,94 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       return enableQuerySuggestionOnly_;
     }
 
+    public static final int ENABLE_RESPONSE_DEBUG_INFO_FIELD_NUMBER = 18;
+    private boolean enableResponseDebugInfo_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enable returning detailed reasons for suggestion results.
+     *
+     * For example, with this field disabled, Knowledge Search feature returns
+     * NotFound error when no answer is found for the input query. Enabling this
+     * field will change the behavior to return an OK response with
+     * detailed information indicating the lack of results.
+     *
+     * Supported features: KNOWLEDGE_SEARCH, KNOWLEDGE_ASSIST
+     * </pre>
+     *
+     * <code>bool enable_response_debug_info = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableResponseDebugInfo.
+     */
+    @java.lang.Override
+    public boolean getEnableResponseDebugInfo() {
+      return enableResponseDebugInfo_;
+    }
+
+    public static final int RAI_SETTINGS_FIELD_NUMBER = 19;
+    private com.google.cloud.dialogflow.v2.RaiSettings raiSettings_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for Responsible AI checks.
+     * Supported features:  KNOWLEDGE_ASSIST
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.RaiSettings rai_settings = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the raiSettings field is set.
+     */
+    @java.lang.Override
+    public boolean hasRaiSettings() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for Responsible AI checks.
+     * Supported features:  KNOWLEDGE_ASSIST
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.RaiSettings rai_settings = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The raiSettings.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.RaiSettings getRaiSettings() {
+      return raiSettings_ == null
+          ? com.google.cloud.dialogflow.v2.RaiSettings.getDefaultInstance()
+          : raiSettings_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for Responsible AI checks.
+     * Supported features:  KNOWLEDGE_ASSIST
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.RaiSettings rai_settings = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.RaiSettingsOrBuilder getRaiSettingsOrBuilder() {
+      return raiSettings_ == null
+          ? com.google.cloud.dialogflow.v2.RaiSettings.getDefaultInstance()
+          : raiSettings_;
+    }
+
     public static final int SUGGESTION_TRIGGER_SETTINGS_FIELD_NUMBER = 10;
     private com.google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionTriggerSettings
         suggestionTriggerSettings_;
@@ -1303,7 +1457,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public boolean hasSuggestionTriggerSettings() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
@@ -1372,7 +1526,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public boolean hasQueryConfig() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -1436,7 +1590,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public boolean hasConversationModelConfig() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -1500,7 +1654,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public boolean hasConversationProcessConfig() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -1566,16 +1720,16 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(5, getSuggestionFeature());
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         output.writeMessage(6, getQueryConfig());
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         output.writeMessage(7, getConversationModelConfig());
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         output.writeMessage(8, getConversationProcessConfig());
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         output.writeMessage(10, getSuggestionTriggerSettings());
       }
       if (disableAgentQueryLogging_ != false) {
@@ -1589,6 +1743,12 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       }
       if (enableQuerySuggestionOnly_ != false) {
         output.writeBool(17, enableQuerySuggestionOnly_);
+      }
+      if (enableResponseDebugInfo_ != false) {
+        output.writeBool(18, enableResponseDebugInfo_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(19, getRaiSettings());
       }
       getUnknownFields().writeTo(output);
     }
@@ -1606,20 +1766,20 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getSuggestionFeature());
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getQueryConfig());
-      }
       if (((bitField0_ & 0x00000008) != 0)) {
-        size +=
-            com.google.protobuf.CodedOutputStream.computeMessageSize(
-                7, getConversationModelConfig());
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getQueryConfig());
       }
       if (((bitField0_ & 0x00000010) != 0)) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
+                7, getConversationModelConfig());
+      }
+      if (((bitField0_ & 0x00000020) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
                 8, getConversationProcessConfig());
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 10, getSuggestionTriggerSettings());
@@ -1641,6 +1801,12 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       if (enableQuerySuggestionOnly_ != false) {
         size +=
             com.google.protobuf.CodedOutputStream.computeBoolSize(17, enableQuerySuggestionOnly_);
+      }
+      if (enableResponseDebugInfo_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(18, enableResponseDebugInfo_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getRaiSettings());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1671,6 +1837,11 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       if (getEnableConversationAugmentedQuery() != other.getEnableConversationAugmentedQuery())
         return false;
       if (getEnableQuerySuggestionOnly() != other.getEnableQuerySuggestionOnly()) return false;
+      if (getEnableResponseDebugInfo() != other.getEnableResponseDebugInfo()) return false;
+      if (hasRaiSettings() != other.hasRaiSettings()) return false;
+      if (hasRaiSettings()) {
+        if (!getRaiSettings().equals(other.getRaiSettings())) return false;
+      }
       if (hasSuggestionTriggerSettings() != other.hasSuggestionTriggerSettings()) return false;
       if (hasSuggestionTriggerSettings()) {
         if (!getSuggestionTriggerSettings().equals(other.getSuggestionTriggerSettings()))
@@ -1719,6 +1890,12 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               + com.google.protobuf.Internal.hashBoolean(getEnableConversationAugmentedQuery());
       hash = (37 * hash) + ENABLE_QUERY_SUGGESTION_ONLY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableQuerySuggestionOnly());
+      hash = (37 * hash) + ENABLE_RESPONSE_DEBUG_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableResponseDebugInfo());
+      if (hasRaiSettings()) {
+        hash = (37 * hash) + RAI_SETTINGS_FIELD_NUMBER;
+        hash = (53 * hash) + getRaiSettings().hashCode();
+      }
       if (hasSuggestionTriggerSettings()) {
         hash = (37 * hash) + SUGGESTION_TRIGGER_SETTINGS_FIELD_NUMBER;
         hash = (53 * hash) + getSuggestionTriggerSettings().hashCode();
@@ -1891,6 +2068,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getSuggestionFeatureFieldBuilder();
+          getRaiSettingsFieldBuilder();
           getSuggestionTriggerSettingsFieldBuilder();
           getQueryConfigFieldBuilder();
           getConversationModelConfigFieldBuilder();
@@ -1912,6 +2090,12 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         enableQuerySuggestionWhenNoAnswer_ = false;
         enableConversationAugmentedQuery_ = false;
         enableQuerySuggestionOnly_ = false;
+        enableResponseDebugInfo_ = false;
+        raiSettings_ = null;
+        if (raiSettingsBuilder_ != null) {
+          raiSettingsBuilder_.dispose();
+          raiSettingsBuilder_ = null;
+        }
         suggestionTriggerSettings_ = null;
         if (suggestionTriggerSettingsBuilder_ != null) {
           suggestionTriggerSettingsBuilder_.dispose();
@@ -1999,30 +2183,38 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           result.enableQuerySuggestionOnly_ = enableQuerySuggestionOnly_;
         }
         if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.enableResponseDebugInfo_ = enableResponseDebugInfo_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.raiSettings_ =
+              raiSettingsBuilder_ == null ? raiSettings_ : raiSettingsBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
           result.suggestionTriggerSettings_ =
               suggestionTriggerSettingsBuilder_ == null
                   ? suggestionTriggerSettings_
                   : suggestionTriggerSettingsBuilder_.build();
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.queryConfig_ =
-              queryConfigBuilder_ == null ? queryConfig_ : queryConfigBuilder_.build();
           to_bitField0_ |= 0x00000004;
         }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.queryConfig_ =
+              queryConfigBuilder_ == null ? queryConfig_ : queryConfigBuilder_.build();
+          to_bitField0_ |= 0x00000008;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
           result.conversationModelConfig_ =
               conversationModelConfigBuilder_ == null
                   ? conversationModelConfig_
                   : conversationModelConfigBuilder_.build();
-          to_bitField0_ |= 0x00000008;
+          to_bitField0_ |= 0x00000010;
         }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
+        if (((from_bitField0_ & 0x00000800) != 0)) {
           result.conversationProcessConfig_ =
               conversationProcessConfigBuilder_ == null
                   ? conversationProcessConfig_
                   : conversationProcessConfigBuilder_.build();
-          to_bitField0_ |= 0x00000010;
+          to_bitField0_ |= 0x00000020;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -2099,6 +2291,12 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         if (other.getEnableQuerySuggestionOnly() != false) {
           setEnableQuerySuggestionOnly(other.getEnableQuerySuggestionOnly());
         }
+        if (other.getEnableResponseDebugInfo() != false) {
+          setEnableResponseDebugInfo(other.getEnableResponseDebugInfo());
+        }
+        if (other.hasRaiSettings()) {
+          mergeRaiSettings(other.getRaiSettings());
+        }
         if (other.hasSuggestionTriggerSettings()) {
           mergeSuggestionTriggerSettings(other.getSuggestionTriggerSettings());
         }
@@ -2153,28 +2351,28 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               case 50:
                 {
                   input.readMessage(getQueryConfigFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000080;
+                  bitField0_ |= 0x00000200;
                   break;
                 } // case 50
               case 58:
                 {
                   input.readMessage(
                       getConversationModelConfigFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000100;
+                  bitField0_ |= 0x00000400;
                   break;
                 } // case 58
               case 66:
                 {
                   input.readMessage(
                       getConversationProcessConfigFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000200;
+                  bitField0_ |= 0x00000800;
                   break;
                 } // case 66
               case 82:
                 {
                   input.readMessage(
                       getSuggestionTriggerSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000040;
+                  bitField0_ |= 0x00000100;
                   break;
                 } // case 82
               case 112:
@@ -2201,6 +2399,18 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
                   bitField0_ |= 0x00000020;
                   break;
                 } // case 136
+              case 144:
+                {
+                  enableResponseDebugInfo_ = input.readBool();
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 144
+              case 154:
+                {
+                  input.readMessage(getRaiSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000080;
+                  break;
+                } // case 154
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2750,6 +2960,308 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         return this;
       }
 
+      private boolean enableResponseDebugInfo_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enable returning detailed reasons for suggestion results.
+       *
+       * For example, with this field disabled, Knowledge Search feature returns
+       * NotFound error when no answer is found for the input query. Enabling this
+       * field will change the behavior to return an OK response with
+       * detailed information indicating the lack of results.
+       *
+       * Supported features: KNOWLEDGE_SEARCH, KNOWLEDGE_ASSIST
+       * </pre>
+       *
+       * <code>bool enable_response_debug_info = 18 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enableResponseDebugInfo.
+       */
+      @java.lang.Override
+      public boolean getEnableResponseDebugInfo() {
+        return enableResponseDebugInfo_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enable returning detailed reasons for suggestion results.
+       *
+       * For example, with this field disabled, Knowledge Search feature returns
+       * NotFound error when no answer is found for the input query. Enabling this
+       * field will change the behavior to return an OK response with
+       * detailed information indicating the lack of results.
+       *
+       * Supported features: KNOWLEDGE_SEARCH, KNOWLEDGE_ASSIST
+       * </pre>
+       *
+       * <code>bool enable_response_debug_info = 18 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enableResponseDebugInfo to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableResponseDebugInfo(boolean value) {
+
+        enableResponseDebugInfo_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enable returning detailed reasons for suggestion results.
+       *
+       * For example, with this field disabled, Knowledge Search feature returns
+       * NotFound error when no answer is found for the input query. Enabling this
+       * field will change the behavior to return an OK response with
+       * detailed information indicating the lack of results.
+       *
+       * Supported features: KNOWLEDGE_SEARCH, KNOWLEDGE_ASSIST
+       * </pre>
+       *
+       * <code>bool enable_response_debug_info = 18 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableResponseDebugInfo() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        enableResponseDebugInfo_ = false;
+        onChanged();
+        return this;
+      }
+
+      private com.google.cloud.dialogflow.v2.RaiSettings raiSettings_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.v2.RaiSettings,
+              com.google.cloud.dialogflow.v2.RaiSettings.Builder,
+              com.google.cloud.dialogflow.v2.RaiSettingsOrBuilder>
+          raiSettingsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Settings for Responsible AI checks.
+       * Supported features:  KNOWLEDGE_ASSIST
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.RaiSettings rai_settings = 19 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the raiSettings field is set.
+       */
+      public boolean hasRaiSettings() {
+        return ((bitField0_ & 0x00000080) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Settings for Responsible AI checks.
+       * Supported features:  KNOWLEDGE_ASSIST
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.RaiSettings rai_settings = 19 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The raiSettings.
+       */
+      public com.google.cloud.dialogflow.v2.RaiSettings getRaiSettings() {
+        if (raiSettingsBuilder_ == null) {
+          return raiSettings_ == null
+              ? com.google.cloud.dialogflow.v2.RaiSettings.getDefaultInstance()
+              : raiSettings_;
+        } else {
+          return raiSettingsBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Settings for Responsible AI checks.
+       * Supported features:  KNOWLEDGE_ASSIST
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.RaiSettings rai_settings = 19 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setRaiSettings(com.google.cloud.dialogflow.v2.RaiSettings value) {
+        if (raiSettingsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          raiSettings_ = value;
+        } else {
+          raiSettingsBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Settings for Responsible AI checks.
+       * Supported features:  KNOWLEDGE_ASSIST
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.RaiSettings rai_settings = 19 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setRaiSettings(
+          com.google.cloud.dialogflow.v2.RaiSettings.Builder builderForValue) {
+        if (raiSettingsBuilder_ == null) {
+          raiSettings_ = builderForValue.build();
+        } else {
+          raiSettingsBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Settings for Responsible AI checks.
+       * Supported features:  KNOWLEDGE_ASSIST
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.RaiSettings rai_settings = 19 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeRaiSettings(com.google.cloud.dialogflow.v2.RaiSettings value) {
+        if (raiSettingsBuilder_ == null) {
+          if (((bitField0_ & 0x00000080) != 0)
+              && raiSettings_ != null
+              && raiSettings_ != com.google.cloud.dialogflow.v2.RaiSettings.getDefaultInstance()) {
+            getRaiSettingsBuilder().mergeFrom(value);
+          } else {
+            raiSettings_ = value;
+          }
+        } else {
+          raiSettingsBuilder_.mergeFrom(value);
+        }
+        if (raiSettings_ != null) {
+          bitField0_ |= 0x00000080;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Settings for Responsible AI checks.
+       * Supported features:  KNOWLEDGE_ASSIST
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.RaiSettings rai_settings = 19 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearRaiSettings() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        raiSettings_ = null;
+        if (raiSettingsBuilder_ != null) {
+          raiSettingsBuilder_.dispose();
+          raiSettingsBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Settings for Responsible AI checks.
+       * Supported features:  KNOWLEDGE_ASSIST
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.RaiSettings rai_settings = 19 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.RaiSettings.Builder getRaiSettingsBuilder() {
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return getRaiSettingsFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Settings for Responsible AI checks.
+       * Supported features:  KNOWLEDGE_ASSIST
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.RaiSettings rai_settings = 19 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.RaiSettingsOrBuilder getRaiSettingsOrBuilder() {
+        if (raiSettingsBuilder_ != null) {
+          return raiSettingsBuilder_.getMessageOrBuilder();
+        } else {
+          return raiSettings_ == null
+              ? com.google.cloud.dialogflow.v2.RaiSettings.getDefaultInstance()
+              : raiSettings_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Settings for Responsible AI checks.
+       * Supported features:  KNOWLEDGE_ASSIST
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.RaiSettings rai_settings = 19 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.v2.RaiSettings,
+              com.google.cloud.dialogflow.v2.RaiSettings.Builder,
+              com.google.cloud.dialogflow.v2.RaiSettingsOrBuilder>
+          getRaiSettingsFieldBuilder() {
+        if (raiSettingsBuilder_ == null) {
+          raiSettingsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.dialogflow.v2.RaiSettings,
+                  com.google.cloud.dialogflow.v2.RaiSettings.Builder,
+                  com.google.cloud.dialogflow.v2.RaiSettingsOrBuilder>(
+                  getRaiSettings(), getParentForChildren(), isClean());
+          raiSettings_ = null;
+        }
+        return raiSettingsBuilder_;
+      }
+
       private com.google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionTriggerSettings
           suggestionTriggerSettings_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -2776,7 +3288,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * @return Whether the suggestionTriggerSettings field is set.
        */
       public boolean hasSuggestionTriggerSettings() {
-        return ((bitField0_ & 0x00000040) != 0);
+        return ((bitField0_ & 0x00000100) != 0);
       }
 
       /**
@@ -2830,7 +3342,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           suggestionTriggerSettingsBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -2856,7 +3368,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           suggestionTriggerSettingsBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -2878,7 +3390,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           com.google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionTriggerSettings
               value) {
         if (suggestionTriggerSettingsBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) != 0)
+          if (((bitField0_ & 0x00000100) != 0)
               && suggestionTriggerSettings_ != null
               && suggestionTriggerSettings_
                   != com.google.cloud.dialogflow.v2.HumanAgentAssistantConfig
@@ -2891,7 +3403,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           suggestionTriggerSettingsBuilder_.mergeFrom(value);
         }
         if (suggestionTriggerSettings_ != null) {
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000100;
           onChanged();
         }
         return this;
@@ -2911,7 +3423,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * </code>
        */
       public Builder clearSuggestionTriggerSettings() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000100);
         suggestionTriggerSettings_ = null;
         if (suggestionTriggerSettingsBuilder_ != null) {
           suggestionTriggerSettingsBuilder_.dispose();
@@ -2937,7 +3449,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public com.google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionTriggerSettings
               .Builder
           getSuggestionTriggerSettingsBuilder() {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
         onChanged();
         return getSuggestionTriggerSettingsFieldBuilder().getBuilder();
       }
@@ -3027,7 +3539,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * @return Whether the queryConfig field is set.
        */
       public boolean hasQueryConfig() {
-        return ((bitField0_ & 0x00000080) != 0);
+        return ((bitField0_ & 0x00000200) != 0);
       }
 
       /**
@@ -3076,7 +3588,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           queryConfigBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -3100,7 +3612,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           queryConfigBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -3119,7 +3631,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public Builder mergeQueryConfig(
           com.google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionQueryConfig value) {
         if (queryConfigBuilder_ == null) {
-          if (((bitField0_ & 0x00000080) != 0)
+          if (((bitField0_ & 0x00000200) != 0)
               && queryConfig_ != null
               && queryConfig_
                   != com.google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionQueryConfig
@@ -3132,7 +3644,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           queryConfigBuilder_.mergeFrom(value);
         }
         if (queryConfig_ != null) {
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000200;
           onChanged();
         }
         return this;
@@ -3150,7 +3662,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * </code>
        */
       public Builder clearQueryConfig() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000200);
         queryConfig_ = null;
         if (queryConfigBuilder_ != null) {
           queryConfigBuilder_.dispose();
@@ -3173,7 +3685,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        */
       public com.google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionQueryConfig.Builder
           getQueryConfigBuilder() {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
         onChanged();
         return getQueryConfigFieldBuilder().getBuilder();
       }
@@ -3257,7 +3769,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * @return Whether the conversationModelConfig field is set.
        */
       public boolean hasConversationModelConfig() {
-        return ((bitField0_ & 0x00000100) != 0);
+        return ((bitField0_ & 0x00000400) != 0);
       }
 
       /**
@@ -3306,7 +3818,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           conversationModelConfigBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -3330,7 +3842,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           conversationModelConfigBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -3349,7 +3861,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public Builder mergeConversationModelConfig(
           com.google.cloud.dialogflow.v2.HumanAgentAssistantConfig.ConversationModelConfig value) {
         if (conversationModelConfigBuilder_ == null) {
-          if (((bitField0_ & 0x00000100) != 0)
+          if (((bitField0_ & 0x00000400) != 0)
               && conversationModelConfig_ != null
               && conversationModelConfig_
                   != com.google.cloud.dialogflow.v2.HumanAgentAssistantConfig
@@ -3362,7 +3874,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           conversationModelConfigBuilder_.mergeFrom(value);
         }
         if (conversationModelConfig_ != null) {
-          bitField0_ |= 0x00000100;
+          bitField0_ |= 0x00000400;
           onChanged();
         }
         return this;
@@ -3380,7 +3892,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * </code>
        */
       public Builder clearConversationModelConfig() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000400);
         conversationModelConfig_ = null;
         if (conversationModelConfigBuilder_ != null) {
           conversationModelConfigBuilder_.dispose();
@@ -3404,7 +3916,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public com.google.cloud.dialogflow.v2.HumanAgentAssistantConfig.ConversationModelConfig
               .Builder
           getConversationModelConfigBuilder() {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000400;
         onChanged();
         return getConversationModelConfigFieldBuilder().getBuilder();
       }
@@ -3489,7 +4001,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * @return Whether the conversationProcessConfig field is set.
        */
       public boolean hasConversationProcessConfig() {
-        return ((bitField0_ & 0x00000200) != 0);
+        return ((bitField0_ & 0x00000800) != 0);
       }
 
       /**
@@ -3539,7 +4051,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           conversationProcessConfigBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -3563,7 +4075,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           conversationProcessConfigBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -3583,7 +4095,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           com.google.cloud.dialogflow.v2.HumanAgentAssistantConfig.ConversationProcessConfig
               value) {
         if (conversationProcessConfigBuilder_ == null) {
-          if (((bitField0_ & 0x00000200) != 0)
+          if (((bitField0_ & 0x00000800) != 0)
               && conversationProcessConfig_ != null
               && conversationProcessConfig_
                   != com.google.cloud.dialogflow.v2.HumanAgentAssistantConfig
@@ -3596,7 +4108,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           conversationProcessConfigBuilder_.mergeFrom(value);
         }
         if (conversationProcessConfig_ != null) {
-          bitField0_ |= 0x00000200;
+          bitField0_ |= 0x00000800;
           onChanged();
         }
         return this;
@@ -3614,7 +4126,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * </code>
        */
       public Builder clearConversationProcessConfig() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000800);
         conversationProcessConfig_ = null;
         if (conversationProcessConfigBuilder_ != null) {
           conversationProcessConfigBuilder_.dispose();
@@ -3638,7 +4150,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public com.google.cloud.dialogflow.v2.HumanAgentAssistantConfig.ConversationProcessConfig
               .Builder
           getConversationProcessConfigBuilder() {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000800;
         onChanged();
         return getConversationProcessConfigFieldBuilder().getBuilder();
       }
@@ -3959,6 +4471,55 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * @return The disableHighLatencyFeaturesSyncDelivery.
      */
     boolean getDisableHighLatencyFeaturesSyncDelivery();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enable skipping event based suggestion if the suggestion is
+     * empty.
+     *
+     * For example, with this field disabled, Knowledge Assist feature sends
+     * a Pub/Sub message when there are no suggestions. Enabling this field
+     * will change the behavior to skip the Pub/Sub message in this situation.
+     * </pre>
+     *
+     * <code>bool skip_empty_event_based_suggestion = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The skipEmptyEventBasedSuggestion.
+     */
+    boolean getSkipEmptyEventBasedSuggestion();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true,
+     * use unredacted transcript data (Supported features: AI_COACH) and
+     * use unredacted ingested context (Supported features: All Agent Assist
+     * features)
+     * </pre>
+     *
+     * <code>bool use_unredacted_conversation_data = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The useUnredactedConversationData.
+     */
+    boolean getUseUnredactedConversationData();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, enable asynchronous execution of tools.
+     * </pre>
+     *
+     * <code>bool enable_async_tool_call = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableAsyncToolCall.
+     */
+    boolean getEnableAsyncToolCall();
   }
 
   /**
@@ -4243,6 +4804,73 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       return disableHighLatencyFeaturesSyncDelivery_;
     }
 
+    public static final int SKIP_EMPTY_EVENT_BASED_SUGGESTION_FIELD_NUMBER = 6;
+    private boolean skipEmptyEventBasedSuggestion_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enable skipping event based suggestion if the suggestion is
+     * empty.
+     *
+     * For example, with this field disabled, Knowledge Assist feature sends
+     * a Pub/Sub message when there are no suggestions. Enabling this field
+     * will change the behavior to skip the Pub/Sub message in this situation.
+     * </pre>
+     *
+     * <code>bool skip_empty_event_based_suggestion = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The skipEmptyEventBasedSuggestion.
+     */
+    @java.lang.Override
+    public boolean getSkipEmptyEventBasedSuggestion() {
+      return skipEmptyEventBasedSuggestion_;
+    }
+
+    public static final int USE_UNREDACTED_CONVERSATION_DATA_FIELD_NUMBER = 8;
+    private boolean useUnredactedConversationData_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true,
+     * use unredacted transcript data (Supported features: AI_COACH) and
+     * use unredacted ingested context (Supported features: All Agent Assist
+     * features)
+     * </pre>
+     *
+     * <code>bool use_unredacted_conversation_data = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The useUnredactedConversationData.
+     */
+    @java.lang.Override
+    public boolean getUseUnredactedConversationData() {
+      return useUnredactedConversationData_;
+    }
+
+    public static final int ENABLE_ASYNC_TOOL_CALL_FIELD_NUMBER = 9;
+    private boolean enableAsyncToolCall_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, enable asynchronous execution of tools.
+     * </pre>
+     *
+     * <code>bool enable_async_tool_call = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableAsyncToolCall.
+     */
+    @java.lang.Override
+    public boolean getEnableAsyncToolCall() {
+      return enableAsyncToolCall_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -4268,6 +4896,15 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       }
       if (disableHighLatencyFeaturesSyncDelivery_ != false) {
         output.writeBool(5, disableHighLatencyFeaturesSyncDelivery_);
+      }
+      if (skipEmptyEventBasedSuggestion_ != false) {
+        output.writeBool(6, skipEmptyEventBasedSuggestion_);
+      }
+      if (useUnredactedConversationData_ != false) {
+        output.writeBool(8, useUnredactedConversationData_);
+      }
+      if (enableAsyncToolCall_ != false) {
+        output.writeBool(9, enableAsyncToolCall_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -4297,6 +4934,19 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             com.google.protobuf.CodedOutputStream.computeBoolSize(
                 5, disableHighLatencyFeaturesSyncDelivery_);
       }
+      if (skipEmptyEventBasedSuggestion_ != false) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(
+                6, skipEmptyEventBasedSuggestion_);
+      }
+      if (useUnredactedConversationData_ != false) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(
+                8, useUnredactedConversationData_);
+      }
+      if (enableAsyncToolCall_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, enableAsyncToolCall_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -4319,6 +4969,11 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       if (!getGeneratorsList().equals(other.getGeneratorsList())) return false;
       if (getDisableHighLatencyFeaturesSyncDelivery()
           != other.getDisableHighLatencyFeaturesSyncDelivery()) return false;
+      if (getSkipEmptyEventBasedSuggestion() != other.getSkipEmptyEventBasedSuggestion())
+        return false;
+      if (getUseUnredactedConversationData() != other.getUseUnredactedConversationData())
+        return false;
+      if (getEnableAsyncToolCall() != other.getEnableAsyncToolCall()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -4345,6 +5000,16 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           (53 * hash)
               + com.google.protobuf.Internal.hashBoolean(
                   getDisableHighLatencyFeaturesSyncDelivery());
+      hash = (37 * hash) + SKIP_EMPTY_EVENT_BASED_SUGGESTION_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(getSkipEmptyEventBasedSuggestion());
+      hash = (37 * hash) + USE_UNREDACTED_CONVERSATION_DATA_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(getUseUnredactedConversationData());
+      hash = (37 * hash) + ENABLE_ASYNC_TOOL_CALL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableAsyncToolCall());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4506,6 +5171,9 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         groupSuggestionResponses_ = false;
         generators_ = com.google.protobuf.LazyStringArrayList.emptyList();
         disableHighLatencyFeaturesSyncDelivery_ = false;
+        skipEmptyEventBasedSuggestion_ = false;
+        useUnredactedConversationData_ = false;
+        enableAsyncToolCall_ = false;
         return this;
       }
 
@@ -4570,6 +5238,15 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.disableHighLatencyFeaturesSyncDelivery_ = disableHighLatencyFeaturesSyncDelivery_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.skipEmptyEventBasedSuggestion_ = skipEmptyEventBasedSuggestion_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.useUnredactedConversationData_ = useUnredactedConversationData_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.enableAsyncToolCall_ = enableAsyncToolCall_;
         }
       }
 
@@ -4669,6 +5346,15 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           setDisableHighLatencyFeaturesSyncDelivery(
               other.getDisableHighLatencyFeaturesSyncDelivery());
         }
+        if (other.getSkipEmptyEventBasedSuggestion() != false) {
+          setSkipEmptyEventBasedSuggestion(other.getSkipEmptyEventBasedSuggestion());
+        }
+        if (other.getUseUnredactedConversationData() != false) {
+          setUseUnredactedConversationData(other.getUseUnredactedConversationData());
+        }
+        if (other.getEnableAsyncToolCall() != false) {
+          setEnableAsyncToolCall(other.getEnableAsyncToolCall());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -4730,6 +5416,24 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
                   bitField0_ |= 0x00000008;
                   break;
                 } // case 40
+              case 48:
+                {
+                  skipEmptyEventBasedSuggestion_ = input.readBool();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 48
+              case 64:
+                {
+                  useUnredactedConversationData_ = input.readBool();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 64
+              case 72:
+                {
+                  enableAsyncToolCall_ = input.readBool();
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 72
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5587,6 +6291,204 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public Builder clearDisableHighLatencyFeaturesSyncDelivery() {
         bitField0_ = (bitField0_ & ~0x00000008);
         disableHighLatencyFeaturesSyncDelivery_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean skipEmptyEventBasedSuggestion_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enable skipping event based suggestion if the suggestion is
+       * empty.
+       *
+       * For example, with this field disabled, Knowledge Assist feature sends
+       * a Pub/Sub message when there are no suggestions. Enabling this field
+       * will change the behavior to skip the Pub/Sub message in this situation.
+       * </pre>
+       *
+       * <code>bool skip_empty_event_based_suggestion = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The skipEmptyEventBasedSuggestion.
+       */
+      @java.lang.Override
+      public boolean getSkipEmptyEventBasedSuggestion() {
+        return skipEmptyEventBasedSuggestion_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enable skipping event based suggestion if the suggestion is
+       * empty.
+       *
+       * For example, with this field disabled, Knowledge Assist feature sends
+       * a Pub/Sub message when there are no suggestions. Enabling this field
+       * will change the behavior to skip the Pub/Sub message in this situation.
+       * </pre>
+       *
+       * <code>bool skip_empty_event_based_suggestion = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The skipEmptyEventBasedSuggestion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSkipEmptyEventBasedSuggestion(boolean value) {
+
+        skipEmptyEventBasedSuggestion_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enable skipping event based suggestion if the suggestion is
+       * empty.
+       *
+       * For example, with this field disabled, Knowledge Assist feature sends
+       * a Pub/Sub message when there are no suggestions. Enabling this field
+       * will change the behavior to skip the Pub/Sub message in this situation.
+       * </pre>
+       *
+       * <code>bool skip_empty_event_based_suggestion = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSkipEmptyEventBasedSuggestion() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        skipEmptyEventBasedSuggestion_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean useUnredactedConversationData_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true,
+       * use unredacted transcript data (Supported features: AI_COACH) and
+       * use unredacted ingested context (Supported features: All Agent Assist
+       * features)
+       * </pre>
+       *
+       * <code>bool use_unredacted_conversation_data = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The useUnredactedConversationData.
+       */
+      @java.lang.Override
+      public boolean getUseUnredactedConversationData() {
+        return useUnredactedConversationData_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true,
+       * use unredacted transcript data (Supported features: AI_COACH) and
+       * use unredacted ingested context (Supported features: All Agent Assist
+       * features)
+       * </pre>
+       *
+       * <code>bool use_unredacted_conversation_data = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The useUnredactedConversationData to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUseUnredactedConversationData(boolean value) {
+
+        useUnredactedConversationData_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true,
+       * use unredacted transcript data (Supported features: AI_COACH) and
+       * use unredacted ingested context (Supported features: All Agent Assist
+       * features)
+       * </pre>
+       *
+       * <code>bool use_unredacted_conversation_data = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUseUnredactedConversationData() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        useUnredactedConversationData_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean enableAsyncToolCall_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, enable asynchronous execution of tools.
+       * </pre>
+       *
+       * <code>bool enable_async_tool_call = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The enableAsyncToolCall.
+       */
+      @java.lang.Override
+      public boolean getEnableAsyncToolCall() {
+        return enableAsyncToolCall_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, enable asynchronous execution of tools.
+       * </pre>
+       *
+       * <code>bool enable_async_tool_call = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The enableAsyncToolCall to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableAsyncToolCall(boolean value) {
+
+        enableAsyncToolCall_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, enable asynchronous execution of tools.
+       * </pre>
+       *
+       * <code>bool enable_async_tool_call = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableAsyncToolCall() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        enableAsyncToolCall_ = false;
         onChanged();
         return this;
       }
@@ -14925,11 +15827,12 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * Version of current baseline model. It will be ignored if
      * [model][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.ConversationModelConfig.model]
      * is set. Valid versions are:
-     *   Article Suggestion baseline model:
-     *     - 0.9
-     *     - 1.0 (default)
-     *   Summarization baseline model:
-     *     - 1.0
+     *
+     * - Article Suggestion baseline model:
+     *   - 0.9
+     *   - 1.0 (default)
+     * - Summarization baseline model:
+     *   - 1.0
      * </pre>
      *
      * <code>string baseline_model_version = 8;</code>
@@ -14945,11 +15848,12 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * Version of current baseline model. It will be ignored if
      * [model][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.ConversationModelConfig.model]
      * is set. Valid versions are:
-     *   Article Suggestion baseline model:
-     *     - 0.9
-     *     - 1.0 (default)
-     *   Summarization baseline model:
-     *     - 1.0
+     *
+     * - Article Suggestion baseline model:
+     *   - 0.9
+     *   - 1.0 (default)
+     * - Summarization baseline model:
+     *   - 1.0
      * </pre>
      *
      * <code>string baseline_model_version = 8;</code>
@@ -14966,7 +15870,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
    * Custom conversation models used in agent assist feature.
    *
    * Supported feature: ARTICLE_SUGGESTION, SMART_COMPOSE, SMART_REPLY,
-   * CONVERSATION_SUMMARIZATION.
+   * CONVERSATION_SUMMARIZATION
    * </pre>
    *
    * Protobuf type {@code
@@ -15078,11 +15982,12 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * Version of current baseline model. It will be ignored if
      * [model][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.ConversationModelConfig.model]
      * is set. Valid versions are:
-     *   Article Suggestion baseline model:
-     *     - 0.9
-     *     - 1.0 (default)
-     *   Summarization baseline model:
-     *     - 1.0
+     *
+     * - Article Suggestion baseline model:
+     *   - 0.9
+     *   - 1.0 (default)
+     * - Summarization baseline model:
+     *   - 1.0
      * </pre>
      *
      * <code>string baseline_model_version = 8;</code>
@@ -15109,11 +16014,12 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * Version of current baseline model. It will be ignored if
      * [model][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.ConversationModelConfig.model]
      * is set. Valid versions are:
-     *   Article Suggestion baseline model:
-     *     - 0.9
-     *     - 1.0 (default)
-     *   Summarization baseline model:
-     *     - 1.0
+     *
+     * - Article Suggestion baseline model:
+     *   - 0.9
+     *   - 1.0 (default)
+     * - Summarization baseline model:
+     *   - 1.0
      * </pre>
      *
      * <code>string baseline_model_version = 8;</code>
@@ -15320,7 +16226,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * Custom conversation models used in agent assist feature.
      *
      * Supported feature: ARTICLE_SUGGESTION, SMART_COMPOSE, SMART_REPLY,
-     * CONVERSATION_SUMMARIZATION.
+     * CONVERSATION_SUMMARIZATION
      * </pre>
      *
      * Protobuf type {@code
@@ -15659,11 +16565,12 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * Version of current baseline model. It will be ignored if
        * [model][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.ConversationModelConfig.model]
        * is set. Valid versions are:
-       *   Article Suggestion baseline model:
-       *     - 0.9
-       *     - 1.0 (default)
-       *   Summarization baseline model:
-       *     - 1.0
+       *
+       * - Article Suggestion baseline model:
+       *   - 0.9
+       *   - 1.0 (default)
+       * - Summarization baseline model:
+       *   - 1.0
        * </pre>
        *
        * <code>string baseline_model_version = 8;</code>
@@ -15689,11 +16596,12 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * Version of current baseline model. It will be ignored if
        * [model][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.ConversationModelConfig.model]
        * is set. Valid versions are:
-       *   Article Suggestion baseline model:
-       *     - 0.9
-       *     - 1.0 (default)
-       *   Summarization baseline model:
-       *     - 1.0
+       *
+       * - Article Suggestion baseline model:
+       *   - 0.9
+       *   - 1.0 (default)
+       * - Summarization baseline model:
+       *   - 1.0
        * </pre>
        *
        * <code>string baseline_model_version = 8;</code>
@@ -15719,11 +16627,12 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * Version of current baseline model. It will be ignored if
        * [model][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.ConversationModelConfig.model]
        * is set. Valid versions are:
-       *   Article Suggestion baseline model:
-       *     - 0.9
-       *     - 1.0 (default)
-       *   Summarization baseline model:
-       *     - 1.0
+       *
+       * - Article Suggestion baseline model:
+       *   - 0.9
+       *   - 1.0 (default)
+       * - Summarization baseline model:
+       *   - 1.0
        * </pre>
        *
        * <code>string baseline_model_version = 8;</code>
@@ -15748,11 +16657,12 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * Version of current baseline model. It will be ignored if
        * [model][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.ConversationModelConfig.model]
        * is set. Valid versions are:
-       *   Article Suggestion baseline model:
-       *     - 0.9
-       *     - 1.0 (default)
-       *   Summarization baseline model:
-       *     - 1.0
+       *
+       * - Article Suggestion baseline model:
+       *   - 0.9
+       *   - 1.0 (default)
+       * - Summarization baseline model:
+       *   - 1.0
        * </pre>
        *
        * <code>string baseline_model_version = 8;</code>
@@ -15773,11 +16683,12 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * Version of current baseline model. It will be ignored if
        * [model][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.ConversationModelConfig.model]
        * is set. Valid versions are:
-       *   Article Suggestion baseline model:
-       *     - 0.9
-       *     - 1.0 (default)
-       *   Summarization baseline model:
-       *     - 1.0
+       *
+       * - Article Suggestion baseline model:
+       *   - 0.9
+       *   - 1.0 (default)
+       * - Summarization baseline model:
+       *   - 1.0
        * </pre>
        *
        * <code>string baseline_model_version = 8;</code>

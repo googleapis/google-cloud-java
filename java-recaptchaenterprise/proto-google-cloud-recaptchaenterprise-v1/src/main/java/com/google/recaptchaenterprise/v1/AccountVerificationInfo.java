@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,6 +73,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
    * <pre>
    * Result of the account verification as contained in the verdict token issued
    * at the end of the verification flow.
+   * Ensure that applications can handle values not explicitly listed.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.recaptchaenterprise.v1.AccountVerificationInfo.Result}
@@ -613,7 +614,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
    * <code>string username = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.recaptchaenterprise.v1.AccountVerificationInfo.username is deprecated.
-   *     See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=602
+   *     See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=621
    * @return The username.
    */
   @java.lang.Override
@@ -641,7 +642,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
    * <code>string username = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.recaptchaenterprise.v1.AccountVerificationInfo.username is deprecated.
-   *     See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=602
+   *     See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=621
    * @return The bytes for username.
    */
   @java.lang.Override
@@ -1783,7 +1784,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      * <code>string username = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.recaptchaenterprise.v1.AccountVerificationInfo.username is
-     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=602
+     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=621
      * @return The username.
      */
     @java.lang.Deprecated
@@ -1810,7 +1811,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      * <code>string username = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.recaptchaenterprise.v1.AccountVerificationInfo.username is
-     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=602
+     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=621
      * @return The bytes for username.
      */
     @java.lang.Deprecated
@@ -1837,7 +1838,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      * <code>string username = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.recaptchaenterprise.v1.AccountVerificationInfo.username is
-     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=602
+     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=621
      * @param value The username to set.
      * @return This builder for chaining.
      */
@@ -1863,7 +1864,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      * <code>string username = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.recaptchaenterprise.v1.AccountVerificationInfo.username is
-     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=602
+     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=621
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1885,7 +1886,7 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      * <code>string username = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.recaptchaenterprise.v1.AccountVerificationInfo.username is
-     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=602
+     *     deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=621
      * @param value The bytes for username to set.
      * @return This builder for chaining.
      */

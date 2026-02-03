@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -960,15 +960,16 @@ public interface AttachedClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. Input only. Tag keys/values directly bound to this resource.
+   * Optional. Input only. Tag keys and values directly bound to this resource.
    *
-   * Tag key must be specified in the format &lt;tag namespace&gt;/&lt;tag key name&gt;
+   * The tag key must be specified in the format
+   * `&lt;tag namespace&gt;/&lt;tag key name&gt;,`
    * where the tag namespace is the ID of the organization or name of the
-   * project that the tag key is defined in.
-   * The short name of a tag key or value can have a maximum length of 256
-   * characters. The permitted character set for the short name includes UTF-8
-   * encoded Unicode characters except single quotes ('), double quotes ("),
-   * backslashes (&#92;), and forward slashes (/).
+   * project that the tag key is defined in. The short name of a tag key or
+   * value can have a maximum length of 256 characters. The permitted character
+   * set for the short name includes UTF-8 encoded Unicode characters except
+   * single quotation marks (`'`), double quotation marks (`"`), backslashes
+   * (`&#92;`), and forward slashes (`/`).
    *
    * See
    * [Tags](https://cloud.google.com/resource-manager/docs/tags/tags-overview)
@@ -985,15 +986,16 @@ public interface AttachedClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. Input only. Tag keys/values directly bound to this resource.
+   * Optional. Input only. Tag keys and values directly bound to this resource.
    *
-   * Tag key must be specified in the format &lt;tag namespace&gt;/&lt;tag key name&gt;
+   * The tag key must be specified in the format
+   * `&lt;tag namespace&gt;/&lt;tag key name&gt;,`
    * where the tag namespace is the ID of the organization or name of the
-   * project that the tag key is defined in.
-   * The short name of a tag key or value can have a maximum length of 256
-   * characters. The permitted character set for the short name includes UTF-8
-   * encoded Unicode characters except single quotes ('), double quotes ("),
-   * backslashes (&#92;), and forward slashes (/).
+   * project that the tag key is defined in. The short name of a tag key or
+   * value can have a maximum length of 256 characters. The permitted character
+   * set for the short name includes UTF-8 encoded Unicode characters except
+   * single quotation marks (`'`), double quotation marks (`"`), backslashes
+   * (`&#92;`), and forward slashes (`/`).
    *
    * See
    * [Tags](https://cloud.google.com/resource-manager/docs/tags/tags-overview)
@@ -1014,15 +1016,16 @@ public interface AttachedClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. Input only. Tag keys/values directly bound to this resource.
+   * Optional. Input only. Tag keys and values directly bound to this resource.
    *
-   * Tag key must be specified in the format &lt;tag namespace&gt;/&lt;tag key name&gt;
+   * The tag key must be specified in the format
+   * `&lt;tag namespace&gt;/&lt;tag key name&gt;,`
    * where the tag namespace is the ID of the organization or name of the
-   * project that the tag key is defined in.
-   * The short name of a tag key or value can have a maximum length of 256
-   * characters. The permitted character set for the short name includes UTF-8
-   * encoded Unicode characters except single quotes ('), double quotes ("),
-   * backslashes (&#92;), and forward slashes (/).
+   * project that the tag key is defined in. The short name of a tag key or
+   * value can have a maximum length of 256 characters. The permitted character
+   * set for the short name includes UTF-8 encoded Unicode characters except
+   * single quotation marks (`'`), double quotation marks (`"`), backslashes
+   * (`&#92;`), and forward slashes (`/`).
    *
    * See
    * [Tags](https://cloud.google.com/resource-manager/docs/tags/tags-overview)
@@ -1039,15 +1042,16 @@ public interface AttachedClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. Input only. Tag keys/values directly bound to this resource.
+   * Optional. Input only. Tag keys and values directly bound to this resource.
    *
-   * Tag key must be specified in the format &lt;tag namespace&gt;/&lt;tag key name&gt;
+   * The tag key must be specified in the format
+   * `&lt;tag namespace&gt;/&lt;tag key name&gt;,`
    * where the tag namespace is the ID of the organization or name of the
-   * project that the tag key is defined in.
-   * The short name of a tag key or value can have a maximum length of 256
-   * characters. The permitted character set for the short name includes UTF-8
-   * encoded Unicode characters except single quotes ('), double quotes ("),
-   * backslashes (&#92;), and forward slashes (/).
+   * project that the tag key is defined in. The short name of a tag key or
+   * value can have a maximum length of 256 characters. The permitted character
+   * set for the short name includes UTF-8 encoded Unicode characters except
+   * single quotation marks (`'`), double quotation marks (`"`), backslashes
+   * (`&#92;`), and forward slashes (`/`).
    *
    * See
    * [Tags](https://cloud.google.com/resource-manager/docs/tags/tags-overview)
@@ -1068,15 +1072,16 @@ public interface AttachedClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. Input only. Tag keys/values directly bound to this resource.
+   * Optional. Input only. Tag keys and values directly bound to this resource.
    *
-   * Tag key must be specified in the format &lt;tag namespace&gt;/&lt;tag key name&gt;
+   * The tag key must be specified in the format
+   * `&lt;tag namespace&gt;/&lt;tag key name&gt;,`
    * where the tag namespace is the ID of the organization or name of the
-   * project that the tag key is defined in.
-   * The short name of a tag key or value can have a maximum length of 256
-   * characters. The permitted character set for the short name includes UTF-8
-   * encoded Unicode characters except single quotes ('), double quotes ("),
-   * backslashes (&#92;), and forward slashes (/).
+   * project that the tag key is defined in. The short name of a tag key or
+   * value can have a maximum length of 256 characters. The permitted character
+   * set for the short name includes UTF-8 encoded Unicode characters except
+   * single quotation marks (`'`), double quotation marks (`"`), backslashes
+   * (`&#92;`), and forward slashes (`/`).
    *
    * See
    * [Tags](https://cloud.google.com/resource-manager/docs/tags/tags-overview)
@@ -1088,4 +1093,51 @@ public interface AttachedClusterOrBuilder
    * </code>
    */
   java.lang.String getTagsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Kubernetes configurations for auto-installed components on the
+   * cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.SystemComponentsConfig system_components_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the systemComponentsConfig field is set.
+   */
+  boolean hasSystemComponentsConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Kubernetes configurations for auto-installed components on the
+   * cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.SystemComponentsConfig system_components_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The systemComponentsConfig.
+   */
+  com.google.cloud.gkemulticloud.v1.SystemComponentsConfig getSystemComponentsConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Kubernetes configurations for auto-installed components on the
+   * cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.SystemComponentsConfig system_components_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.gkemulticloud.v1.SystemComponentsConfigOrBuilder
+      getSystemComponentsConfigOrBuilder();
 }

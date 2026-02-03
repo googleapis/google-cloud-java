@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     acceleratorType_ = 0;
     gpuPartitionSize_ = "";
     tpuTopology_ = "";
+    minGpuDriverVersion_ = "";
   }
 
   @java.lang.Override
@@ -434,6 +435,67 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
         : reservationAffinity_;
   }
 
+  public static final int MIN_GPU_DRIVER_VERSION_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object minGpuDriverVersion_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The minimum GPU driver version that this machine
+   * requires. For example, "535.104.06". If not specified, the default GPU
+   * driver version will be used by the underlying infrastructure.
+   * </pre>
+   *
+   * <code>
+   * string min_gpu_driver_version = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The minGpuDriverVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getMinGpuDriverVersion() {
+    java.lang.Object ref = minGpuDriverVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      minGpuDriverVersion_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The minimum GPU driver version that this machine
+   * requires. For example, "535.104.06". If not specified, the default GPU
+   * driver version will be used by the underlying infrastructure.
+   * </pre>
+   *
+   * <code>
+   * string min_gpu_driver_version = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The bytes for minGpuDriverVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getMinGpuDriverVersionBytes() {
+    java.lang.Object ref = minGpuDriverVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      minGpuDriverVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -471,6 +533,9 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gpuPartitionSize_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, gpuPartitionSize_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(minGpuDriverVersion_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, minGpuDriverVersion_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -503,6 +568,9 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gpuPartitionSize_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, gpuPartitionSize_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(minGpuDriverVersion_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, minGpuDriverVersion_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -529,6 +597,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
     if (hasReservationAffinity()) {
       if (!getReservationAffinity().equals(other.getReservationAffinity())) return false;
     }
+    if (!getMinGpuDriverVersion().equals(other.getMinGpuDriverVersion())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -556,6 +625,8 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + RESERVATION_AFFINITY_FIELD_NUMBER;
       hash = (53 * hash) + getReservationAffinity().hashCode();
     }
+    hash = (37 * hash) + MIN_GPU_DRIVER_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getMinGpuDriverVersion().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -716,6 +787,7 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
         reservationAffinityBuilder_.dispose();
         reservationAffinityBuilder_ = null;
       }
+      minGpuDriverVersion_ = "";
       return this;
     }
 
@@ -777,6 +849,9 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
                 ? reservationAffinity_
                 : reservationAffinityBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.minGpuDriverVersion_ = minGpuDriverVersion_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -854,6 +929,11 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
       if (other.hasReservationAffinity()) {
         mergeReservationAffinity(other.getReservationAffinity());
       }
+      if (!other.getMinGpuDriverVersion().isEmpty()) {
+        minGpuDriverVersion_ = other.minGpuDriverVersion_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -923,6 +1003,12 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 58
+            case 74:
+              {
+                minGpuDriverVersion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1878,6 +1964,137 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
         reservationAffinity_ = null;
       }
       return reservationAffinityBuilder_;
+    }
+
+    private java.lang.Object minGpuDriverVersion_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The minimum GPU driver version that this machine
+     * requires. For example, "535.104.06". If not specified, the default GPU
+     * driver version will be used by the underlying infrastructure.
+     * </pre>
+     *
+     * <code>
+     * string min_gpu_driver_version = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The minGpuDriverVersion.
+     */
+    public java.lang.String getMinGpuDriverVersion() {
+      java.lang.Object ref = minGpuDriverVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        minGpuDriverVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The minimum GPU driver version that this machine
+     * requires. For example, "535.104.06". If not specified, the default GPU
+     * driver version will be used by the underlying infrastructure.
+     * </pre>
+     *
+     * <code>
+     * string min_gpu_driver_version = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The bytes for minGpuDriverVersion.
+     */
+    public com.google.protobuf.ByteString getMinGpuDriverVersionBytes() {
+      java.lang.Object ref = minGpuDriverVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        minGpuDriverVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The minimum GPU driver version that this machine
+     * requires. For example, "535.104.06". If not specified, the default GPU
+     * driver version will be used by the underlying infrastructure.
+     * </pre>
+     *
+     * <code>
+     * string min_gpu_driver_version = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The minGpuDriverVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMinGpuDriverVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      minGpuDriverVersion_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The minimum GPU driver version that this machine
+     * requires. For example, "535.104.06". If not specified, the default GPU
+     * driver version will be used by the underlying infrastructure.
+     * </pre>
+     *
+     * <code>
+     * string min_gpu_driver_version = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMinGpuDriverVersion() {
+      minGpuDriverVersion_ = getDefaultInstance().getMinGpuDriverVersion();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The minimum GPU driver version that this machine
+     * requires. For example, "535.104.06". If not specified, the default GPU
+     * driver version will be used by the underlying infrastructure.
+     * </pre>
+     *
+     * <code>
+     * string min_gpu_driver_version = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The bytes for minGpuDriverVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMinGpuDriverVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      minGpuDriverVersion_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

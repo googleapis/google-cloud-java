@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -153,7 +153,8 @@ public final class ListSkuGroupsRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. A token identifying a page of results beyond the first page.
    * Obtained through
-   * [ListSkuGroups.next_page_token][] of the previous
+   * [ListSkuGroupsResponse.next_page_token][google.cloud.channel.v1.ListSkuGroupsResponse.next_page_token]
+   * of the previous
    * [CloudChannelService.ListSkuGroups][google.cloud.channel.v1.CloudChannelService.ListSkuGroups]
    * call.
    * </pre>
@@ -181,7 +182,8 @@ public final class ListSkuGroupsRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. A token identifying a page of results beyond the first page.
    * Obtained through
-   * [ListSkuGroups.next_page_token][] of the previous
+   * [ListSkuGroupsResponse.next_page_token][google.cloud.channel.v1.ListSkuGroupsResponse.next_page_token]
+   * of the previous
    * [CloudChannelService.ListSkuGroups][google.cloud.channel.v1.CloudChannelService.ListSkuGroups]
    * call.
    * </pre>
@@ -781,7 +783,8 @@ public final class ListSkuGroupsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. A token identifying a page of results beyond the first page.
      * Obtained through
-     * [ListSkuGroups.next_page_token][] of the previous
+     * [ListSkuGroupsResponse.next_page_token][google.cloud.channel.v1.ListSkuGroupsResponse.next_page_token]
+     * of the previous
      * [CloudChannelService.ListSkuGroups][google.cloud.channel.v1.CloudChannelService.ListSkuGroups]
      * call.
      * </pre>
@@ -808,7 +811,8 @@ public final class ListSkuGroupsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. A token identifying a page of results beyond the first page.
      * Obtained through
-     * [ListSkuGroups.next_page_token][] of the previous
+     * [ListSkuGroupsResponse.next_page_token][google.cloud.channel.v1.ListSkuGroupsResponse.next_page_token]
+     * of the previous
      * [CloudChannelService.ListSkuGroups][google.cloud.channel.v1.CloudChannelService.ListSkuGroups]
      * call.
      * </pre>
@@ -835,7 +839,8 @@ public final class ListSkuGroupsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. A token identifying a page of results beyond the first page.
      * Obtained through
-     * [ListSkuGroups.next_page_token][] of the previous
+     * [ListSkuGroupsResponse.next_page_token][google.cloud.channel.v1.ListSkuGroupsResponse.next_page_token]
+     * of the previous
      * [CloudChannelService.ListSkuGroups][google.cloud.channel.v1.CloudChannelService.ListSkuGroups]
      * call.
      * </pre>
@@ -861,7 +866,8 @@ public final class ListSkuGroupsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. A token identifying a page of results beyond the first page.
      * Obtained through
-     * [ListSkuGroups.next_page_token][] of the previous
+     * [ListSkuGroupsResponse.next_page_token][google.cloud.channel.v1.ListSkuGroupsResponse.next_page_token]
+     * of the previous
      * [CloudChannelService.ListSkuGroups][google.cloud.channel.v1.CloudChannelService.ListSkuGroups]
      * call.
      * </pre>
@@ -883,7 +889,8 @@ public final class ListSkuGroupsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. A token identifying a page of results beyond the first page.
      * Obtained through
-     * [ListSkuGroups.next_page_token][] of the previous
+     * [ListSkuGroupsResponse.next_page_token][google.cloud.channel.v1.ListSkuGroupsResponse.next_page_token]
+     * of the previous
      * [CloudChannelService.ListSkuGroups][google.cloud.channel.v1.CloudChannelService.ListSkuGroups]
      * call.
      * </pre>

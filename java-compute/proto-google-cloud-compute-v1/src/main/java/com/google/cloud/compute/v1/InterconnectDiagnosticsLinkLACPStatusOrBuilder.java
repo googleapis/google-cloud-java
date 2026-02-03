@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,7 +106,11 @@ public interface InterconnectDiagnosticsLinkLACPStatusOrBuilder
    *
    *
    * <pre>
-   * The state of a LACP link, which can take one of the following values: - ACTIVE: The link is configured and active within the bundle. - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
+   * The state of a LACP link, which can take one of the following values:
+   *
+   *    - ACTIVE: The link is configured and active within the bundle.
+   *    - DETACHED: The link is not configured within the bundle. This means
+   *    that the rest of the object should be empty.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -120,7 +124,11 @@ public interface InterconnectDiagnosticsLinkLACPStatusOrBuilder
    *
    *
    * <pre>
-   * The state of a LACP link, which can take one of the following values: - ACTIVE: The link is configured and active within the bundle. - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
+   * The state of a LACP link, which can take one of the following values:
+   *
+   *    - ACTIVE: The link is configured and active within the bundle.
+   *    - DETACHED: The link is not configured within the bundle. This means
+   *    that the rest of the object should be empty.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -134,7 +142,11 @@ public interface InterconnectDiagnosticsLinkLACPStatusOrBuilder
    *
    *
    * <pre>
-   * The state of a LACP link, which can take one of the following values: - ACTIVE: The link is configured and active within the bundle. - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
+   * The state of a LACP link, which can take one of the following values:
+   *
+   *    - ACTIVE: The link is configured and active within the bundle.
+   *    - DETACHED: The link is not configured within the bundle. This means
+   *    that the rest of the object should be empty.
    * Check the State enum for the list of possible values.
    * </pre>
    *
