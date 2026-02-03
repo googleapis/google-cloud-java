@@ -68,6 +68,13 @@
         <artifactId>google-api-services-storage</artifactId>
         <version>v1-rev20251118-2.0.0</version>
       </dependency>
+      <dependency>
+        <groupId>io.opentelemetry</groupId>
+        <artifactId>opentelemetry-bom</artifactId>
+        <version>1.46.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
 
       <!-- Test dependencies -->
       <dependency>
@@ -124,6 +131,13 @@
         <groupId>org.objenesis</groupId>
         <artifactId>objenesis</artifactId>
         <version>3.4</version>
+        <scope>test</scope>
+      </dependency>
+      <!-- for java-logging tests -->
+      <dependency>
+        <groupId>io.opentelemetry</groupId>
+        <artifactId>opentelemetry-semconv</artifactId>
+        <version>1.1.0-alpha</version>
         <scope>test</scope>
       </dependency>
     </dependencies>
