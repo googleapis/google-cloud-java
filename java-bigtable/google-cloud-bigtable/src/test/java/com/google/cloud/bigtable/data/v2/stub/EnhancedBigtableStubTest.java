@@ -110,6 +110,7 @@ import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.Metadata;
 import io.grpc.Metadata.Key;
+import io.grpc.MethodDescriptor;
 import io.grpc.Server;
 import io.grpc.ServerCall;
 import io.grpc.ServerCall.Listener;
@@ -717,7 +718,7 @@ public class EnhancedBigtableStubTest {
       }
 
       // Ensure that the server got the overriden deadline
-      Context serverCtx = contextInterceptor.contexts.poll();
+      Context serverCtx = contextInterceptor.pollContext(BigtableGrpc.getMutateRowsMethod());
       assertThat(serverCtx).isNotNull();
       assertThat(serverCtx.getDeadline()).isAtLeast(Deadline.after(8, TimeUnit.MINUTES));
     }
@@ -747,7 +748,7 @@ public class EnhancedBigtableStubTest {
       }
 
       // Ensure that the server got the overriden deadline
-      Context serverCtx = contextInterceptor.contexts.poll();
+      Context serverCtx = contextInterceptor.pollContext(BigtableGrpc.getReadRowsMethod());
       assertThat(serverCtx).isNotNull();
       assertThat(serverCtx.getDeadline()).isAtLeast(Deadline.after(8, TimeUnit.MINUTES));
     }
@@ -970,15 +971,36 @@ public class EnhancedBigtableStubTest {
   }
 
   private static class ContextInterceptor implements ServerInterceptor {
-    final BlockingQueue<Context> contexts = Queues.newLinkedBlockingDeque();
+    final BlockingQueue<MethodContext> contexts = Queues.newLinkedBlockingDeque();
+
+    static class MethodContext {
+      final MethodDescriptor<?, ?> method;
+      final Context context;
+
+      MethodContext(MethodDescriptor<?, ?> method, Context context) {
+        this.method = method;
+        this.context = context;
+      }
+    }
 
     @Override
     public <ReqT, RespT> Listener<ReqT> interceptCall(
         ServerCall<ReqT, RespT> serverCall,
         Metadata metadata,
         ServerCallHandler<ReqT, RespT> serverCallHandler) {
-      contexts.add(Context.current());
+      contexts.add(new MethodContext(serverCall.getMethodDescriptor(), Context.current()));
       return serverCallHandler.startCall(serverCall, metadata);
+    }
+
+    Context pollContext(MethodDescriptor<?, ?> method) {
+      ContextInterceptor.MethodContext methodContext = contexts.poll();
+      while (methodContext != null) {
+        if (method.equals(methodContext.method)) {
+          return methodContext.context;
+        }
+        methodContext = contexts.poll();
+      }
+      return null;
     }
   }
 
