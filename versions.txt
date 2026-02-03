@@ -942,3 +942,6 @@ proto-google-cloud-auditmanager-v1:0.1.0:0.2.0-SNAPSHOT
 grpc-google-cloud-auditmanager-v1:0.1.0:0.2.0-SNAPSHOT
 proto-google-cloud-cloudapiregistry-v1:0.2.0:0.3.0-SNAPSHOT
 grpc-google-cloud-cloudapiregistry-v1:0.2.0:0.3.0-SNAPSHOT
+google-cloud-logging:3.24.0:3.24.1-SNAPSHOT
+grpc-google-cloud-logging-v2:0.113.0:0.113.1-SNAPSHOT
+proto-google-cloud-logging-v2:0.113.0:0.113.1-SNAPSHOT
