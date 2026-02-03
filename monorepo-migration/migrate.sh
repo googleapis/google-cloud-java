@@ -96,7 +96,7 @@ if [ -z "$CODEOWNER" ]; then
     if [ -n "$CODEOWNERS_FILE" ]; then
         # Extract the line(s) starting with * (global owners)
         # Use grep to find the line, then sed to remove the '*' and standard team handle
-        EXTRACTED_OWNERS=$(grep "^\* " "$CODEOWNERS_FILE" | sed 's/^\*[[:space:]]*//' | sed 's/@googleapis\/cloud-java-team-teamsync//g' | xargs)
+        EXTRACTED_OWNERS=$(grep "^\* " "$CODEOWNERS_FILE" | sed 's/^\*[[:space:]]*//' | sed -E 's/@googleapis\/(cloud-java-team-teamsync|yoshi-java|cloud-sdk-java-team)//g' | xargs)
         if [ -n "$EXTRACTED_OWNERS" ]; then
             DEFAULT_CODEOWNER="$EXTRACTED_OWNERS"
             echo "Found default CODEOWNER: $DEFAULT_CODEOWNER"
@@ -196,7 +196,7 @@ COMMIT_COUNT=$((COMMIT_COUNT + 1))
 if [ -n "$CODEOWNER" ]; then
     echo "Updating .github/CODEOWNERS..."
     mkdir -p .github
-    echo "/$SOURCE_REPO_NAME/ $CODEOWNER @googleapis/cloud-java-team-teamsync" >> .github/CODEOWNERS
+    echo "/$SOURCE_REPO_NAME/ $CODEOWNER @googleapis/cloud-sdk-java-team" >> .github/CODEOWNERS
 
     echo "Committing CODEOWNERS update..."
     git add .github/CODEOWNERS
