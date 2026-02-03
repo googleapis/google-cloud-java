@@ -79,9 +79,16 @@ import com.google.common.collect.Range;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.BytesValue;
 import com.google.protobuf.StringValue;
+import io.grpc.CallOptions;
+import io.grpc.Channel;
+import io.grpc.ClientCall;
+import io.grpc.ClientInterceptor;
+import io.grpc.ForwardingClientCall;
+import io.grpc.ForwardingClientCallListener;
 import io.grpc.ForwardingServerCall;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.Metadata;
+import io.grpc.MethodDescriptor;
 import io.grpc.ProxiedSocketAddress;
 import io.grpc.ProxyDetector;
 import io.grpc.Server;
@@ -159,6 +166,8 @@ public class BuiltinMetricsTracerTest {
   private InMemoryMetricReader metricReader;
 
   private DelayProxyDetector delayProxyDetector;
+
+  private final OutstandingRpcCounter outstandingRpcCounter = new OutstandingRpcCounter();
 
   @Before
   public void setUp() throws Exception {
@@ -272,7 +281,7 @@ public class BuiltinMetricsTracerTest {
           if (oldConfigurator != null) {
             builder = oldConfigurator.apply(builder);
           }
-          return builder.proxyDetector(delayProxyDetector);
+          return builder.proxyDetector(delayProxyDetector).intercept(outstandingRpcCounter);
         });
     stubSettingsBuilder.setTransportChannelProvider(channelProvider.build());
     EnhancedBigtableStubSettings stubSettings = stubSettingsBuilder.build();
@@ -541,10 +550,11 @@ public class BuiltinMetricsTracerTest {
   }
 
   @Test
-  public void testMutateRowAttemptsTagValues() {
+  public void testMutateRowAttemptsTagValues() throws InterruptedException {
     stub.mutateRowCallable()
         .call(RowMutation.create(TABLE, "random-row").setCell("cf", "q", "value"));
 
+    outstandingRpcCounter.waitUntilRpcsDone();
     MetricData metricData = getMetricData(metricReader, ATTEMPT_LATENCIES_NAME);
 
     Attributes expected1 =
@@ -724,6 +734,7 @@ public class BuiltinMetricsTracerTest {
     Duration proxyDelayPriorTest = delayProxyDetector.getCurrentDelayUsed();
     f.get();
 
+    outstandingRpcCounter.waitUntilRpcsDone();
     MetricData clientLatency = getMetricData(metricReader, CLIENT_BLOCKING_LATENCIES_NAME);
 
     Attributes attributes =
@@ -1120,6 +1131,46 @@ public class BuiltinMetricsTracerTest {
 
     public AtomicInteger getResponseCounter() {
       return responseCounter;
+    }
+  }
+
+  static class OutstandingRpcCounter implements ClientInterceptor {
+    private int numOutstandingRpcs = 0;
+    private final Object lock = new Object();
+
+    @Override
+    public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
+        MethodDescriptor<ReqT, RespT> methodDescriptor, CallOptions callOptions, Channel channel) {
+      synchronized (lock) {
+        numOutstandingRpcs++;
+      }
+      return new ForwardingClientCall.SimpleForwardingClientCall<ReqT, RespT>(
+          channel.newCall(methodDescriptor, callOptions)) {
+        @Override
+        public void start(Listener<RespT> responseListener, Metadata headers) {
+          super.start(
+              new ForwardingClientCallListener.SimpleForwardingClientCallListener<RespT>(
+                  responseListener) {
+                @Override
+                public void onClose(Status status, Metadata trailers) {
+                  super.onClose(status, trailers);
+                  synchronized (lock) {
+                    numOutstandingRpcs--;
+                    lock.notify();
+                  }
+                }
+              },
+              headers);
+        }
+      };
+    }
+
+    void waitUntilRpcsDone() throws InterruptedException {
+      synchronized (lock) {
+        while (numOutstandingRpcs > 0) {
+          lock.wait();
+        }
+      }
     }
   }
 

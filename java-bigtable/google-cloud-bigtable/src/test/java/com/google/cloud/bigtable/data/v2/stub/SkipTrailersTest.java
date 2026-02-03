@@ -102,7 +102,7 @@ public class SkipTrailersTest {
             .setInstanceId(INSTANCE_ID)
             .setMetricsProvider(NoopMetricsProvider.INSTANCE)
             .setCredentialsProvider(NoCredentialsProvider.create());
-    clientBuilder.stubSettings().setEnableSkipTrailers(true).setTracerFactory(tracerFactory);
+    clientBuilder.stubSettings().setTracerFactory(tracerFactory);
 
     client = BigtableDataClient.create(clientBuilder.build());
   }

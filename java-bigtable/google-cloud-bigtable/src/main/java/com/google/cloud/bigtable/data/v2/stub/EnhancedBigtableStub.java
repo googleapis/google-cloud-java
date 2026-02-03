@@ -21,7 +21,6 @@ import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConst
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.INSTANCE_ID_KEY;
 
 import com.google.api.core.ApiFuture;
-import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.Batcher;
@@ -112,7 +111,6 @@ import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsRetryingCalla
 import com.google.cloud.bigtable.data.v2.stub.readrows.FilterMarkerRowsCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.LargeReadRowsResumptionStrategy;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsBatchingDescriptor;
-import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsFirstCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsResumptionStrategy;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsRetryCompletedCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsUserCallable;
@@ -131,7 +129,6 @@ import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.ByteString;
 import io.grpc.MethodDescriptor;
 import io.opencensus.stats.Stats;
@@ -404,52 +401,31 @@ public class EnhancedBigtableStub implements AutoCloseable {
    */
   public <RowT> UnaryCallable<Query, RowT> createReadRowCallable(RowAdapter<RowT> rowAdapter) {
     ClientContext clientContext = bigtableClientContext.getClientContext();
-    if (!settings.getEnableSkipTrailers()) {
-      ServerStreamingCallable<ReadRowsRequest, RowT> readRowsCallable =
-          createReadRowsBaseCallable(
-              ServerStreamingCallSettings.<ReadRowsRequest, Row>newBuilder()
-                  .setRetryableCodes(settings.readRowSettings().getRetryableCodes())
-                  .setRetrySettings(settings.readRowSettings().getRetrySettings())
-                  .setIdleTimeout(settings.readRowSettings().getRetrySettings().getTotalTimeout())
-                  .build(),
-              rowAdapter);
 
-      ReadRowsUserCallable<RowT> readRowCallable =
-          new ReadRowsUserCallable<>(readRowsCallable, requestContext);
-      ReadRowsFirstCallable<RowT> firstRow = new ReadRowsFirstCallable<>(readRowCallable);
-      UnaryCallable<Query, RowT> traced =
-          new TracedUnaryCallable<>(
-              firstRow, clientContext.getTracerFactory(), getSpanName("ReadRow"));
-      return traced.withDefaultCallContext(
-          clientContext
-              .getDefaultCallContext()
-              .withRetrySettings(settings.readRowSettings().getRetrySettings()));
-    } else {
-      ServerStreamingCallable<ReadRowsRequest, RowT> readRowsCallable =
-          createReadRowsBaseCallable(
-              ServerStreamingCallSettings.<ReadRowsRequest, Row>newBuilder()
-                  .setRetryableCodes(settings.readRowSettings().getRetryableCodes())
-                  .setRetrySettings(settings.readRowSettings().getRetrySettings())
-                  .setIdleTimeoutDuration(Duration.ZERO)
-                  .setWaitTimeoutDuration(Duration.ZERO)
-                  .build(),
-              rowAdapter,
-              new SimpleStreamResumptionStrategy<>());
-      ServerStreamingCallable<Query, RowT> readRowCallable =
-          new TransformingServerStreamingCallable<>(
-              readRowsCallable,
-              (query) -> query.limit(1).toProto(requestContext),
-              Functions.identity());
+    ServerStreamingCallable<ReadRowsRequest, RowT> readRowsCallable =
+        createReadRowsBaseCallable(
+            ServerStreamingCallSettings.<ReadRowsRequest, Row>newBuilder()
+                .setRetryableCodes(settings.readRowSettings().getRetryableCodes())
+                .setRetrySettings(settings.readRowSettings().getRetrySettings())
+                .setIdleTimeoutDuration(Duration.ZERO)
+                .setWaitTimeoutDuration(Duration.ZERO)
+                .build(),
+            rowAdapter,
+            new SimpleStreamResumptionStrategy<>());
+    ServerStreamingCallable<Query, RowT> readRowCallable =
+        new TransformingServerStreamingCallable<>(
+            readRowsCallable,
+            (query) -> query.limit(1).toProto(requestContext),
+            Functions.identity());
 
-      return new BigtableUnaryOperationCallable<>(
-          readRowCallable,
-          clientContext
-              .getDefaultCallContext()
-              .withRetrySettings(settings.readRowSettings().getRetrySettings()),
-          clientContext.getTracerFactory(),
-          getSpanName("ReadRow"),
-          /* allowNoResponses= */ true);
-    }
+    return new BigtableUnaryOperationCallable<>(
+        readRowCallable,
+        clientContext
+            .getDefaultCallContext()
+            .withRetrySettings(settings.readRowSettings().getRetrySettings()),
+        clientContext.getTracerFactory(),
+        getSpanName("ReadRow"),
+        /* allowNoResponses= */ true);
   }
 
   private <ReqT, RowT> ServerStreamingCallable<ReadRowsRequest, RowT> createReadRowsBaseCallable(
@@ -1287,67 +1263,6 @@ public class EnhancedBigtableStub implements AutoCloseable {
   }
 
   private <BaseReqT, BaseRespT, ReqT, RespT> UnaryCallable<ReqT, RespT> createUnaryCallable(
-      MethodDescriptor<BaseReqT, BaseRespT> methodDescriptor,
-      RequestParamsExtractor<BaseReqT> headerParamsFn,
-      UnaryCallSettings<ReqT, RespT> callSettings,
-      Function<ReqT, BaseReqT> requestTransformer,
-      Function<BaseRespT, RespT> responseTranformer) {
-    if (settings.getEnableSkipTrailers()) {
-      return createUnaryCallableNew(
-          methodDescriptor, headerParamsFn, callSettings, requestTransformer, responseTranformer);
-    } else {
-      return createUnaryCallableOld(
-          methodDescriptor, headerParamsFn, callSettings, requestTransformer, responseTranformer);
-    }
-  }
-
-  private <BaseReqT, BaseRespT, ReqT, RespT> UnaryCallable<ReqT, RespT> createUnaryCallableOld(
-      MethodDescriptor<BaseReqT, BaseRespT> methodDescriptor,
-      RequestParamsExtractor<BaseReqT> headerParamsFn,
-      UnaryCallSettings<ReqT, RespT> callSettings,
-      Function<ReqT, BaseReqT> requestTransformer,
-      Function<BaseRespT, RespT> responseTranformer) {
-
-    UnaryCallable<BaseReqT, BaseRespT> base =
-        GrpcRawCallableFactory.createUnaryCallable(
-            GrpcCallSettings.<BaseReqT, BaseRespT>newBuilder()
-                .setMethodDescriptor(methodDescriptor)
-                .setParamsExtractor(headerParamsFn)
-                .build(),
-            callSettings.getRetryableCodes());
-
-    UnaryCallable<BaseReqT, BaseRespT> withStatsHeaders = new StatsHeadersUnaryCallable<>(base);
-
-    UnaryCallable<BaseReqT, BaseRespT> withBigtableTracer =
-        new BigtableTracerUnaryCallable<>(withStatsHeaders);
-
-    UnaryCallable<BaseReqT, BaseRespT> retrying = withRetries(withBigtableTracer, callSettings);
-
-    UnaryCallable<ReqT, RespT> transformed =
-        new UnaryCallable<ReqT, RespT>() {
-          @Override
-          public ApiFuture<RespT> futureCall(ReqT reqT, ApiCallContext apiCallContext) {
-            ApiFuture<BaseRespT> f =
-                retrying.futureCall(requestTransformer.apply(reqT), apiCallContext);
-            return ApiFutures.transform(
-                f, responseTranformer::apply, MoreExecutors.directExecutor());
-          }
-        };
-
-    UnaryCallable<ReqT, RespT> traced =
-        new TracedUnaryCallable<>(
-            transformed,
-            bigtableClientContext.getClientContext().getTracerFactory(),
-            getSpanName(methodDescriptor.getBareMethodName()));
-
-    return traced.withDefaultCallContext(
-        bigtableClientContext
-            .getClientContext()
-            .getDefaultCallContext()
-            .withRetrySettings(callSettings.getRetrySettings()));
-  }
-
-  private <BaseReqT, BaseRespT, ReqT, RespT> UnaryCallable<ReqT, RespT> createUnaryCallableNew(
       MethodDescriptor<BaseReqT, BaseRespT> methodDescriptor,
       RequestParamsExtractor<BaseReqT> headerParamsFn,
       UnaryCallSettings<ReqT, RespT> callSettings,

@@ -67,7 +67,6 @@ import java.util.Base64;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.logging.Logger;
@@ -118,11 +117,6 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   // If true, disable the bound-token-by-default feature for DirectPath.
   private static final boolean DIRECT_PATH_BOUND_TOKEN_DISABLED =
       Boolean.parseBoolean(System.getenv("CBT_DISABLE_DIRECTPATH_BOUND_TOKEN"));
-
-  private static final boolean SKIP_TRAILERS =
-      Optional.ofNullable(System.getenv("CBT_SKIP_HEADERS"))
-          .map(Boolean::parseBoolean)
-          .orElse(true);
 
   private static final Set<Code> IDEMPOTENT_RETRY_CODES =
       ImmutableSet.of(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE);
@@ -268,7 +262,6 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   private ImmutableList<String> primedTableIds;
   private final boolean enableRoutingCookie;
   private final boolean enableRetryInfo;
-  private final boolean enableSkipTrailers;
 
   private final ServerStreamingCallSettings<Query, Row> readRowsSettings;
   private final UnaryCallSettings<Query, Row> readRowSettings;
@@ -318,7 +311,6 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     primedTableIds = builder.primedTableIds;
     enableRoutingCookie = builder.enableRoutingCookie;
     enableRetryInfo = builder.enableRetryInfo;
-    enableSkipTrailers = builder.enableSkipTrailers;
     metricsProvider = builder.metricsProvider;
     metricsEndpoint = builder.metricsEndpoint;
     internalMetricsProvider = builder.internalMetricsProvider;
@@ -411,10 +403,6 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   @BetaApi("RetryInfo is not currently stable and may change in the future")
   public boolean getEnableRetryInfo() {
     return enableRetryInfo;
-  }
-
-  boolean getEnableSkipTrailers() {
-    return enableSkipTrailers;
   }
 
   /**
@@ -769,7 +757,6 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     private String jwtAudience;
     private boolean enableRoutingCookie;
     private boolean enableRetryInfo;
-    private boolean enableSkipTrailers;
 
     private final ServerStreamingCallSettings.Builder<Query, Row> readRowsSettings;
     private final UnaryCallSettings.Builder<Query, Row> readRowSettings;
@@ -810,7 +797,6 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       this.enableRoutingCookie = true;
       this.enableRetryInfo = true;
-      this.enableSkipTrailers = SKIP_TRAILERS;
       metricsProvider = DefaultMetricsProvider.INSTANCE;
       this.internalMetricsProvider = DEFAULT_INTERNAL_OTEL_PROVIDER;
       this.jwtAudience = DEFAULT_DATA_JWT_AUDIENCE;
@@ -1223,11 +1209,6 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       return enableRetryInfo;
     }
 
-    Builder setEnableSkipTrailers(boolean enabled) {
-      this.enableSkipTrailers = enabled;
-      return this;
-    }
-
     /** Returns the builder for the settings used for calls to readRows. */
     public ServerStreamingCallSettings.Builder<Query, Row> readRowsSettings() {
       return readRowsSettings;
@@ -1360,7 +1341,6 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
         .add("primedTableIds", primedTableIds)
         .add("enableRoutingCookie", enableRoutingCookie)
         .add("enableRetryInfo", enableRetryInfo)
-        .add("enableSkipTrailers", enableSkipTrailers)
         .add("readRowsSettings", readRowsSettings)
         .add("readRowSettings", readRowSettings)
         .add("sampleRowKeysSettings", sampleRowKeysSettings)

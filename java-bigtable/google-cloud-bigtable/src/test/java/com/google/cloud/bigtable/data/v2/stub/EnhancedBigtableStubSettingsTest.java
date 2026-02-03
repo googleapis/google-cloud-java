@@ -995,7 +995,6 @@ public class EnhancedBigtableStubSettingsTest {
     "primedTableIds",
     "enableRoutingCookie",
     "enableRetryInfo",
-    "enableSkipTrailers",
     "readRowsSettings",
     "readRowSettings",
     "sampleRowKeysSettings",
