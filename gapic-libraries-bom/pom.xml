@@ -805,6 +805,13 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-logging-bom</artifactId>
+        <version>3.24.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-lustre-bom</artifactId>
         <version>0.24.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-lustre:current} -->
         <type>pom</type>

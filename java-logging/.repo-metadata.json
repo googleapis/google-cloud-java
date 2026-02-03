@@ -7,7 +7,7 @@
   "release_level": "stable",
   "transport": "grpc",
   "language": "java",
-  "repo": "googleapis/java-logging",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-logging",
   "distribution_name": "com.google.cloud:google-cloud-logging",
   "api_id": "logging.googleapis.com",
