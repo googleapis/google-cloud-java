@@ -344,6 +344,28 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 6;
+  private boolean returnPartialSuccess_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, the response will return partial results when
+   * some regions are unreachable and the unreachable field in Feature proto
+   * will be populated. If set to false, the request will fail when some regions
+   * are unreachable.
+   * </pre>
+   *
+   * <code>bool return_partial_success = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The returnPartialSuccess.
+   */
+  @java.lang.Override
+  public boolean getReturnPartialSuccess() {
+    return returnPartialSuccess_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -373,6 +395,9 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(orderBy_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 5, orderBy_);
     }
+    if (returnPartialSuccess_ != false) {
+      output.writeBool(6, returnPartialSuccess_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -397,6 +422,9 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(orderBy_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(5, orderBy_);
     }
+    if (returnPartialSuccess_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, returnPartialSuccess_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -418,6 +446,7 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
     if (!getPageToken().equals(other.getPageToken())) return false;
     if (!getFilter().equals(other.getFilter())) return false;
     if (!getOrderBy().equals(other.getOrderBy())) return false;
+    if (getReturnPartialSuccess() != other.getReturnPartialSuccess()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -439,6 +468,8 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
     hash = (53 * hash) + getFilter().hashCode();
     hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
     hash = (53 * hash) + getOrderBy().hashCode();
+    hash = (37 * hash) + RETURN_PARTIAL_SUCCESS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnPartialSuccess());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -584,6 +615,7 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
       pageToken_ = "";
       filter_ = "";
       orderBy_ = "";
+      returnPartialSuccess_ = false;
       return this;
     }
 
@@ -635,6 +667,9 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.orderBy_ = orderBy_;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.returnPartialSuccess_ = returnPartialSuccess_;
+      }
     }
 
     @java.lang.Override
@@ -671,6 +706,9 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
         orderBy_ = other.orderBy_;
         bitField0_ |= 0x00000010;
         onChanged();
+      }
+      if (other.getReturnPartialSuccess() != false) {
+        setReturnPartialSuccess(other.getReturnPartialSuccess());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -728,6 +766,12 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 48:
+              {
+                returnPartialSuccess_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1344,6 +1388,71 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
       orderBy_ = value;
       bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private boolean returnPartialSuccess_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, the response will return partial results when
+     * some regions are unreachable and the unreachable field in Feature proto
+     * will be populated. If set to false, the request will fail when some regions
+     * are unreachable.
+     * </pre>
+     *
+     * <code>bool return_partial_success = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The returnPartialSuccess.
+     */
+    @java.lang.Override
+    public boolean getReturnPartialSuccess() {
+      return returnPartialSuccess_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, the response will return partial results when
+     * some regions are unreachable and the unreachable field in Feature proto
+     * will be populated. If set to false, the request will fail when some regions
+     * are unreachable.
+     * </pre>
+     *
+     * <code>bool return_partial_success = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The returnPartialSuccess to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReturnPartialSuccess(boolean value) {
+
+      returnPartialSuccess_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, the response will return partial results when
+     * some regions are unreachable and the unreachable field in Feature proto
+     * will be populated. If set to false, the request will fail when some regions
+     * are unreachable.
+     * </pre>
+     *
+     * <code>bool return_partial_success = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReturnPartialSuccess() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      returnPartialSuccess_ = false;
       onChanged();
       return this;
     }

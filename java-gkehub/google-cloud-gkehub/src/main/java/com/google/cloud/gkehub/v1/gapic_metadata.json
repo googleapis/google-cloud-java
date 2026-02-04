@@ -13,35 +13,134 @@
             "CreateFeature": {
               "methods": ["createFeatureAsync", "createFeatureAsync", "createFeatureAsync", "createFeatureOperationCallable", "createFeatureCallable"]
             },
+            "CreateFleet": {
+              "methods": ["createFleetAsync", "createFleetAsync", "createFleetAsync", "createFleetOperationCallable", "createFleetCallable"]
+            },
             "CreateMembership": {
               "methods": ["createMembershipAsync", "createMembershipAsync", "createMembershipAsync", "createMembershipOperationCallable", "createMembershipCallable"]
+            },
+            "CreateMembershipBinding": {
+              "methods": ["createMembershipBindingAsync", "createMembershipBindingAsync", "createMembershipBindingAsync", "createMembershipBindingOperationCallable", "createMembershipBindingCallable"]
+            },
+            "CreateMembershipRBACRoleBinding": {
+              "methods": ["createMembershipRBACRoleBindingAsync", "createMembershipRBACRoleBindingAsync", "createMembershipRBACRoleBindingAsync", "createMembershipRBACRoleBindingAsync", "createMembershipRBACRoleBindingOperationCallable", "createMembershipRBACRoleBindingCallable"]
+            },
+            "CreateScope": {
+              "methods": ["createScopeAsync", "createScopeAsync", "createScopeAsync", "createScopeOperationCallable", "createScopeCallable"]
+            },
+            "CreateScopeNamespace": {
+              "methods": ["createScopeNamespaceAsync", "createScopeNamespaceAsync", "createScopeNamespaceAsync", "createScopeNamespaceOperationCallable", "createScopeNamespaceCallable"]
+            },
+            "CreateScopeRBACRoleBinding": {
+              "methods": ["createScopeRBACRoleBindingAsync", "createScopeRBACRoleBindingAsync", "createScopeRBACRoleBindingAsync", "createScopeRBACRoleBindingAsync", "createScopeRBACRoleBindingOperationCallable", "createScopeRBACRoleBindingCallable"]
             },
             "DeleteFeature": {
               "methods": ["deleteFeatureAsync", "deleteFeatureAsync", "deleteFeatureAsync", "deleteFeatureOperationCallable", "deleteFeatureCallable"]
             },
+            "DeleteFleet": {
+              "methods": ["deleteFleetAsync", "deleteFleetAsync", "deleteFleetAsync", "deleteFleetOperationCallable", "deleteFleetCallable"]
+            },
             "DeleteMembership": {
               "methods": ["deleteMembershipAsync", "deleteMembershipAsync", "deleteMembershipAsync", "deleteMembershipOperationCallable", "deleteMembershipCallable"]
+            },
+            "DeleteMembershipBinding": {
+              "methods": ["deleteMembershipBindingAsync", "deleteMembershipBindingAsync", "deleteMembershipBindingAsync", "deleteMembershipBindingOperationCallable", "deleteMembershipBindingCallable"]
+            },
+            "DeleteMembershipRBACRoleBinding": {
+              "methods": ["deleteMembershipRBACRoleBindingAsync", "deleteMembershipRBACRoleBindingAsync", "deleteMembershipRBACRoleBindingAsync", "deleteMembershipRBACRoleBindingOperationCallable", "deleteMembershipRBACRoleBindingCallable"]
+            },
+            "DeleteScope": {
+              "methods": ["deleteScopeAsync", "deleteScopeAsync", "deleteScopeAsync", "deleteScopeOperationCallable", "deleteScopeCallable"]
+            },
+            "DeleteScopeNamespace": {
+              "methods": ["deleteScopeNamespaceAsync", "deleteScopeNamespaceAsync", "deleteScopeNamespaceAsync", "deleteScopeNamespaceOperationCallable", "deleteScopeNamespaceCallable"]
+            },
+            "DeleteScopeRBACRoleBinding": {
+              "methods": ["deleteScopeRBACRoleBindingAsync", "deleteScopeRBACRoleBindingAsync", "deleteScopeRBACRoleBindingAsync", "deleteScopeRBACRoleBindingOperationCallable", "deleteScopeRBACRoleBindingCallable"]
             },
             "GenerateConnectManifest": {
               "methods": ["generateConnectManifest", "generateConnectManifestCallable"]
             },
+            "GenerateMembershipRBACRoleBindingYAML": {
+              "methods": ["generateMembershipRBACRoleBindingYAML", "generateMembershipRBACRoleBindingYAMLCallable"]
+            },
             "GetFeature": {
               "methods": ["getFeature", "getFeature", "getFeature", "getFeatureCallable"]
+            },
+            "GetFleet": {
+              "methods": ["getFleet", "getFleet", "getFleet", "getFleetCallable"]
             },
             "GetMembership": {
               "methods": ["getMembership", "getMembership", "getMembership", "getMembershipCallable"]
             },
+            "GetMembershipBinding": {
+              "methods": ["getMembershipBinding", "getMembershipBinding", "getMembershipBinding", "getMembershipBindingCallable"]
+            },
+            "GetMembershipRBACRoleBinding": {
+              "methods": ["getMembershipRBACRoleBinding", "getMembershipRBACRoleBinding", "getMembershipRBACRoleBinding", "getMembershipRBACRoleBindingCallable"]
+            },
+            "GetScope": {
+              "methods": ["getScope", "getScope", "getScope", "getScopeCallable"]
+            },
+            "GetScopeNamespace": {
+              "methods": ["getScopeNamespace", "getScopeNamespace", "getScopeNamespace", "getScopeNamespaceCallable"]
+            },
+            "GetScopeRBACRoleBinding": {
+              "methods": ["getScopeRBACRoleBinding", "getScopeRBACRoleBinding", "getScopeRBACRoleBinding", "getScopeRBACRoleBindingCallable"]
+            },
+            "ListBoundMemberships": {
+              "methods": ["listBoundMemberships", "listBoundMemberships", "listBoundMemberships", "listBoundMembershipsPagedCallable", "listBoundMembershipsCallable"]
+            },
             "ListFeatures": {
               "methods": ["listFeatures", "listFeatures", "listFeatures", "listFeaturesPagedCallable", "listFeaturesCallable"]
+            },
+            "ListFleets": {
+              "methods": ["listFleets", "listFleets", "listFleets", "listFleetsPagedCallable", "listFleetsCallable"]
+            },
+            "ListMembershipBindings": {
+              "methods": ["listMembershipBindings", "listMembershipBindings", "listMembershipBindings", "listMembershipBindingsPagedCallable", "listMembershipBindingsCallable"]
+            },
+            "ListMembershipRBACRoleBindings": {
+              "methods": ["listMembershipRBACRoleBindings", "listMembershipRBACRoleBindings", "listMembershipRBACRoleBindings", "listMembershipRBACRoleBindings", "listMembershipRBACRoleBindingsPagedCallable", "listMembershipRBACRoleBindingsCallable"]
             },
             "ListMemberships": {
               "methods": ["listMemberships", "listMemberships", "listMemberships", "listMembershipsPagedCallable", "listMembershipsCallable"]
             },
+            "ListPermittedScopes": {
+              "methods": ["listPermittedScopes", "listPermittedScopes", "listPermittedScopes", "listPermittedScopesPagedCallable", "listPermittedScopesCallable"]
+            },
+            "ListScopeNamespaces": {
+              "methods": ["listScopeNamespaces", "listScopeNamespaces", "listScopeNamespaces", "listScopeNamespacesPagedCallable", "listScopeNamespacesCallable"]
+            },
+            "ListScopeRBACRoleBindings": {
+              "methods": ["listScopeRBACRoleBindings", "listScopeRBACRoleBindings", "listScopeRBACRoleBindings", "listScopeRBACRoleBindings", "listScopeRBACRoleBindingsPagedCallable", "listScopeRBACRoleBindingsCallable"]
+            },
+            "ListScopes": {
+              "methods": ["listScopes", "listScopes", "listScopes", "listScopesPagedCallable", "listScopesCallable"]
+            },
             "UpdateFeature": {
               "methods": ["updateFeatureAsync", "updateFeatureAsync", "updateFeatureAsync", "updateFeatureOperationCallable", "updateFeatureCallable"]
             },
+            "UpdateFleet": {
+              "methods": ["updateFleetAsync", "updateFleetAsync", "updateFleetOperationCallable", "updateFleetCallable"]
+            },
             "UpdateMembership": {
               "methods": ["updateMembershipAsync", "updateMembershipAsync", "updateMembershipAsync", "updateMembershipOperationCallable", "updateMembershipCallable"]
+            },
+            "UpdateMembershipBinding": {
+              "methods": ["updateMembershipBindingAsync", "updateMembershipBindingAsync", "updateMembershipBindingOperationCallable", "updateMembershipBindingCallable"]
+            },
+            "UpdateMembershipRBACRoleBinding": {
+              "methods": ["updateMembershipRBACRoleBindingAsync", "updateMembershipRBACRoleBindingAsync", "updateMembershipRBACRoleBindingOperationCallable", "updateMembershipRBACRoleBindingCallable"]
+            },
+            "UpdateScope": {
+              "methods": ["updateScopeAsync", "updateScopeAsync", "updateScopeOperationCallable", "updateScopeCallable"]
+            },
+            "UpdateScopeNamespace": {
+              "methods": ["updateScopeNamespaceAsync", "updateScopeNamespaceAsync", "updateScopeNamespaceOperationCallable", "updateScopeNamespaceCallable"]
+            },
+            "UpdateScopeRBACRoleBinding": {
+              "methods": ["updateScopeRBACRoleBindingAsync", "updateScopeRBACRoleBindingAsync", "updateScopeRBACRoleBindingOperationCallable", "updateScopeRBACRoleBindingCallable"]
             }
           }
         }
