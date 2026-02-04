@@ -61,15 +61,36 @@ if [[ -z "$ISSUE_NUMBERS" ]]; then
   exit 0
 fi
 
+# Extract short name from SOURCE_REPO (e.g., java-bigquery from googleapis/java-bigquery)
+REPO_SHORT_NAME=$(echo "$SOURCE_REPO" | cut -d'/' -f2)
+
 # Process each issue
 for ISSUE_NUMBER in $ISSUE_NUMBERS; do
-  echo "Transferring Issue #$ISSUE_NUMBER..."
+  echo "Processing Issue #$ISSUE_NUMBER..."
+
+  # Get the current title
+  TITLE=$(gh issue view "$ISSUE_NUMBER" --repo "$SOURCE_REPO" --json title --jq '.title')
+  NEW_TITLE="[$REPO_SHORT_NAME] $TITLE"
 
   if [ "$DRY_RUN" = true ]; then
-    echo "  Command: gh issue transfer $ISSUE_NUMBER $TARGET_REPO --repo $SOURCE_REPO"
+    echo "  [DRY RUN] Would transfer #$ISSUE_NUMBER to $TARGET_REPO"
+    echo "  [DRY RUN] Would update title to: $NEW_TITLE"
   else
-    gh issue transfer "$ISSUE_NUMBER" "$TARGET_REPO" --repo "$SOURCE_REPO"
-    echo "  Transferred #$ISSUE_NUMBER"
+    echo "  Transferring #$ISSUE_NUMBER..."
+    # Capture the output of transfer to get the new issue URL
+    TRANSFER_OUTPUT=$(gh issue transfer "$ISSUE_NUMBER" "$TARGET_REPO" --repo "$SOURCE_REPO")
+    
+    # The output is typically something like: https://github.com/googleapis/google-cloud-java/issues/1234
+    NEW_ISSUE_URL=$(echo "$TRANSFER_OUTPUT" | grep -o 'https://github.com/[^ ]*')
+    NEW_ISSUE_NUMBER=$(echo "$NEW_ISSUE_URL" | awk -F'/' '{print $NF}')
+
+    if [[ -n "$NEW_ISSUE_NUMBER" ]]; then
+      echo "  Transferred to $TARGET_REPO as #$NEW_ISSUE_NUMBER. Updating title..."
+      gh issue edit "$NEW_ISSUE_NUMBER" --repo "$TARGET_REPO" --title "$NEW_TITLE"
+      echo "  Title updated."
+    else
+      echo "  Warning: Could not determine new issue number from output: $TRANSFER_OUTPUT"
+    fi
   fi
 done
 
