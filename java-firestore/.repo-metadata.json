@@ -16,5 +16,8 @@
   "codeowner_team": "@googleapis/api-firestore @googleapis/firestore-dpe",
   "excluded_poms": "google-cloud-firestore,google-cloud-firestore-bom",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/5337669",
-  "recommended_package": "com.google.cloud.firestore"
+  "recommended_package": "com.google.cloud.firestore",
+  "library_path_overrides": {
+    "FirestoreAdminClient": "google-cloud-firestore-admin"
+  }
 }
