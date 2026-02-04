@@ -33,10 +33,27 @@ if [ -f "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secr
   source "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secrets"
 fi
 
+if [[ -n "${BUILD_SUBDIR}" ]]
+then
+  echo "Compiling and building all modules for ${BUILD_SUBDIR}"
+  mvn clean install \
+    -DskipTests \
+    -Dclirr.skip \
+    -Dflatten.skip \
+    -Dcheckstyle.skip \
+    -Djacoco.skip \
+    -Denforcer.skip \
+    --also-make \
+    --projects "${BUILD_SUBDIR}"
+  echo "Running in subdir: ${BUILD_SUBDIR}"
+  pushd "${BUILD_SUBDIR}"
+fi
+
 RETURN_CODE=0
 
 case ${JOB_TYPE} in
   test)
+    echo "SUREFIRE_JVM_OPT: ${SUREFIRE_JVM_OPT}"
     retry_with_backoff 3 10 \
       mvn test \
         -B -ntp \
@@ -48,7 +65,7 @@ case ${JOB_TYPE} in
         -Dflatten.skip=true \
         -Danimal.sniffer.skip=true \
         -Dmaven.wagon.http.retryHandler.count=5 \
-        -T 1C
+        -T 1C ${SUREFIRE_JVM_OPT}
     RETURN_CODE=$?
     echo "Finished running unit tests"
     ;;
@@ -124,6 +141,12 @@ case ${JOB_TYPE} in
   *) ;;
 
 esac
+
+if [[ -n "${BUILD_SUBDIR}" ]]
+then
+  echo "restoring directory"
+  popd
+fi
 
 if [ "${REPORT_COVERAGE}" == "true" ]; then
   bash ${KOKORO_GFILE_DIR}/codecov.sh
