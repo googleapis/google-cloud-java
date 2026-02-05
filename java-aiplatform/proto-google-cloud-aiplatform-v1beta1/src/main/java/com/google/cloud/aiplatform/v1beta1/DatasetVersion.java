@@ -85,10 +85,12 @@ public final class DatasetVersion extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. Identifier. The resource name of the DatasetVersion.
+   * Format:
+   * `projects/{project}/locations/{location}/datasets/{dataset}/datasetVersions/{dataset_version}`
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The name.
@@ -111,10 +113,12 @@ public final class DatasetVersion extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. Identifier. The resource name of the DatasetVersion.
+   * Format:
+   * `projects/{project}/locations/{location}/datasets/{dataset}/datasetVersions/{dataset_version}`
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for name.
@@ -1118,10 +1122,12 @@ public final class DatasetVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Identifier. The resource name of the DatasetVersion.
+     * Format:
+     * `projects/{project}/locations/{location}/datasets/{dataset}/datasetVersions/{dataset_version}`
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The name.
@@ -1143,10 +1149,12 @@ public final class DatasetVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Identifier. The resource name of the DatasetVersion.
+     * Format:
+     * `projects/{project}/locations/{location}/datasets/{dataset}/datasetVersions/{dataset_version}`
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for name.
@@ -1168,10 +1176,12 @@ public final class DatasetVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Identifier. The resource name of the DatasetVersion.
+     * Format:
+     * `projects/{project}/locations/{location}/datasets/{dataset}/datasetVersions/{dataset_version}`
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The name to set.
@@ -1192,10 +1202,12 @@ public final class DatasetVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Identifier. The resource name of the DatasetVersion.
+     * Format:
+     * `projects/{project}/locations/{location}/datasets/{dataset}/datasetVersions/{dataset_version}`
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -1212,10 +1224,12 @@ public final class DatasetVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Identifier. The resource name of the DatasetVersion.
+     * Format:
+     * `projects/{project}/locations/{location}/datasets/{dataset}/datasetVersions/{dataset_version}`
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for name to set.
