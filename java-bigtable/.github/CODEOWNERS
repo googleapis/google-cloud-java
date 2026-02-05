@@ -4,11 +4,11 @@
 # For syntax help see:
 # https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners#codeowners-syntax
 
-# The @googleapis/api-bigtable @googleapis/api-bigtable-partners is the default owner for changes in this repo
-*                       @googleapis/cloud-sdk-java-team @googleapis/api-bigtable @googleapis/api-bigtable-partners
+# The @googleapis/api-bigtable is the default owner for changes in this repo
+*                       @googleapis/cloud-sdk-java-team @googleapis/api-bigtable
 
 # for handwritten libraries, keep codeowner_team in .repo-metadata.json as owner
-**/*.java               @googleapis/api-bigtable @googleapis/api-bigtable-partners
+**/*.java               @googleapis/api-bigtable @googleapis/cloud-sdk-java-team
 
 
 # The java-samples-reviewers team is the default owner for samples changes
@@ -18,5 +18,5 @@ samples/**/*.java       @googleapis/java-samples-reviewers
 samples/snippets/generated/       @googleapis/cloud-sdk-java-team
 
 # Admin Module (Cloud Java Team ownership)
-**/com/google/cloud/bigtable/admin/** @googleapis/api-bigtable @googleapis/api-bigtable-partners @googleapis/cloud-sdk-java-team
-**/com/google/bigtable/admin/** @googleapis/api-bigtable @googleapis/api-bigtable-partners @googleapis/cloud-sdk-java-team
+**/com/google/cloud/bigtable/admin/** @googleapis/api-bigtable @googleapis/cloud-sdk-java-team
+**/com/google/bigtable/admin/** @googleapis/api-bigtable @googleapis/cloud-sdk-java-team

@@ -27,7 +27,7 @@ libraries:
   issue_tracker: https://issuetracker.google.com/savedsearches/559777
   release_level: stable
   distribution_name: com.google.cloud:google-cloud-bigtable
-  codeowner_team: '@googleapis/api-bigtable @googleapis/api-bigtable-partners'
+  codeowner_team: '@googleapis/api-bigtable'
   api_id: bigtable.googleapis.com
   library_type: GAPIC_COMBO
   extra_versioned_modules: google-cloud-bigtable-emulator,google-cloud-bigtable-emulator-core
