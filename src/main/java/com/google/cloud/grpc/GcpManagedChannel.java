@@ -28,7 +28,6 @@ import com.google.cloud.grpc.proto.ApiConfig;
 import com.google.cloud.grpc.proto.MethodConfig;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Joiner;
-import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.google.errorprone.annotations.concurrent.GuardedBy;
 import com.google.protobuf.Descriptors.FieldDescriptor;
 import com.google.protobuf.MessageOrBuilder;
@@ -139,7 +138,7 @@ public class GcpManagedChannel extends ManagedChannel {
 
   private final ExecutorService stateNotificationExecutor =
       Executors.newCachedThreadPool(
-          new ThreadFactoryBuilder().setNameFormat("gcp-mc-state-notifications-%d").build());
+          GcpThreadFactory.newThreadFactory("gcp-mc-state-notifications-%d"));
 
   // Callbacks to call when state changes.
   @GuardedBy("this")
@@ -177,7 +176,7 @@ public class GcpManagedChannel extends ManagedChannel {
       String.format("pool-%d", channelPoolIndex.incrementAndGet());
   private final Map<String, Long> cumulativeMetricValues = new ConcurrentHashMap<>();
   private final ScheduledExecutorService backgroundService =
-      Executors.newSingleThreadScheduledExecutor();
+      Executors.newSingleThreadScheduledExecutor(GcpThreadFactory.newThreadFactory("gcp-mc-bg-%d"));
 
   // Metrics counters.
   private final AtomicInteger readyChannels = new AtomicInteger();

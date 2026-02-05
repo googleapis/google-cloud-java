@@ -20,6 +20,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
 import static java.util.concurrent.TimeUnit.NANOSECONDS;
 
+import com.google.cloud.grpc.GcpThreadFactory;
 import com.google.common.annotations.VisibleForTesting;
 import io.grpc.CallOptions;
 import io.grpc.Channel;
@@ -84,7 +85,8 @@ public class GcpFallbackChannel extends ManagedChannel {
     if (execService != null) {
       this.execService = execService;
     } else {
-      this.execService = Executors.newScheduledThreadPool(3);
+      this.execService =
+          Executors.newScheduledThreadPool(3, GcpThreadFactory.newThreadFactory("gcp-fallback-%d"));
     }
     this.options = options;
     if (options.getGcpOpenTelemetry() != null) {
@@ -150,7 +152,8 @@ public class GcpFallbackChannel extends ManagedChannel {
     if (execService != null) {
       this.execService = execService;
     } else {
-      this.execService = Executors.newScheduledThreadPool(3);
+      this.execService =
+          Executors.newScheduledThreadPool(3, GcpThreadFactory.newThreadFactory("gcp-fallback-%d"));
     }
     this.options = options;
     if (options.getGcpOpenTelemetry() != null) {

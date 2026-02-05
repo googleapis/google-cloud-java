@@ -19,6 +19,7 @@ package com.google.cloud.grpc.multiendpoint;
 import static java.util.Comparator.comparingInt;
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
 
+import com.google.cloud.grpc.GcpThreadFactory;
 import com.google.cloud.grpc.multiendpoint.Endpoint.EndpointState;
 import com.google.common.base.Preconditions;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
@@ -78,7 +79,8 @@ public final class MultiEndpoint {
   private long recoverCnt = 0;
   private long replaceCnt = 0;
 
-  final ScheduledExecutorService executor = new ScheduledThreadPoolExecutor(1);
+  final ScheduledExecutorService executor =
+      new ScheduledThreadPoolExecutor(1, GcpThreadFactory.newThreadFactory("gcp-me-core-%d"));
 
   private MultiEndpoint(Builder builder) {
     this.recoveryTimeout = builder.recoveryTimeout;

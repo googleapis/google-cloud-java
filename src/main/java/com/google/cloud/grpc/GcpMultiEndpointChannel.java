@@ -168,7 +168,8 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
   @GuardedBy("this")
   private final Set<String> currentEndpoints = new HashSet<>();
 
-  private final ScheduledExecutorService executor = new ScheduledThreadPoolExecutor(1);
+  private final ScheduledExecutorService executor =
+      new ScheduledThreadPoolExecutor(1, GcpThreadFactory.newThreadFactory("gcp-me-%d"));
 
   /**
    * Constructor for {@link GcpMultiEndpointChannel}.
